@@ -1,40 +1,43 @@
 ---
-title:    "Rust: Konvertere en dato til en streng"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/converting-a-date-into-a-string.md"
+title:                "Rust: Konvertere en dato til en streng"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å konvertere en dato til en tekststreng er et vanlig behov for mange programmerere, spesielt når man jobber med datoer og tidsstempel. Dette gjøres for å kunne presentere datoer på en mer lesbar måte for brukerne av applikasjonen.
+Mange programmeringsprosjekter krever at man må konvertere en dato til en streng (string) for å vise den på en lesbar måte for brukeren. Dette er spesielt viktig i applikasjoner som inneholder kalendere eller tidslinjer. I Rust, kan dette gjøres ved hjelp av standardbibliotekets `DateTime` og `format` moduler. I denne bloggposten skal vi utforske hvordan man kan konvertere en dato til en streng i Rust.
 
-## Slik gjør du det
+## Hvordan gjøre det
 
-I Rust kan man enkelt konvertere en dato til en tekststreng ved å bruke funksjonen `to_string` og deretter velge ønsket format for datoen. La oss si at vi har en dato som er lagret som en `DateTime<Utc>` fra Chrono biblioteket, og vi ønsker å konvertere den til en tekststreng i formatet `dd/mm/yyyy`. Dette kan gjøres på følgende måte:
+Først må vi importere `DateTime` og `format` modulene fra Rusts standardbibliotek:
 
-```rust
-use chrono::prelude::*;
-
-let dato = Utc::now(); // hent nåværende dato og tidsstempel
-let formatert_dato = dato.format("%d/%m/%Y").to_string();
-
-println!("{}", formatert_dato);
+```Rust
+use std::time::DateTime;
+use std::time::Instant;
+use std::str::FromStr;
 ```
 
-Dette vil gi følgende utskrift: `08/10/2021`.
+Deretter må vi definere en dato ved hjelp av `DateTime` sin `from_str` funksjon og angi den ønskede datoformaten ved hjelp av `format` sin `parse` funksjon:
 
-Det er også mulig å endre formatet basert på brukerens preferanser, ved å la de velge mellom flere formater og deretter bruke `match` uttrykk for å velge riktig format.
+```Rust
+let date = DateTime::from_str("2021-05-31T15:30:00.00000000Z").unwrap();
+let formatted_date = date.format("%d.%m.%Y kl. %H:%M").to_string();
+```
+
+Til slutt må vi konvertere datoen til en streng ved hjelp av `to_string` funksjonen og lagre den i en variabel.
 
 ## Dypdykk
 
-For å forstå hvordan dette fungerer i Rust, må man først ha en forståelse for dato og tidsstempelrepresentasjon i programmering, spesielt i Rust. Datoer og tidsstempler lagres vanligvis som tallverdier, og det er derfor nødvendig å formatere disse tallene til mer leselige tekststrenger. Chrono biblioteket tilbyr et bredt utvalg av formateringsmuligheter, og man kan også lage sine egne tilpassede formater.
+Nå som vi har konvertert datoen til en streng, kan vi også formatere den på ulike måter. For eksempel kan vi endre rekkefølgen på dag, måned og år ved å bruke `%m.%d.%Y` istedenfor `%d.%m.%Y` i formatstrengen. Vi kan også inkludere månedsnavnet ved å bruke `%B` og årstallet uten forkortelse ved å bruke `%Y` istedenfor `%y`.
+
+Det er også viktig å merke seg at `format` modulen støtter å formatere datoer på ulike språk. Dette kan gjøres ved å spesifisere språkkoden i formatstrengen, for eksempel `%d.%m.%Y` for norsk og `%m/%d/%Y` for engelsk.
 
 ## Se også
 
-- [Chrono dokumentasjon](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust DateTime struct dokumentasjon](https://doc.rust-lang.org/std/time/struct.DateTime.html)
-- [Rust-Serde bibliotek for å konvertere dato og tidsstempler til JSON](https://serde.rs/)
-
-Vi håper dette innlegget har vært nyttig for å lære hvordan man konverterer datoer til tekst i Rust. Lykke til med programmeringen! 🚀
+- [Official Rust documentation for DateTime](https://doc.rust-lang.org/std/time/struct.DateTime.html)
+- [Official Rust documentation for format module](https://doc.rust-lang.org/std/fmt/index.html)
+- [Date and time formatting in Rust](https://www.educative.io/blog/rust-tutorial-datetime)

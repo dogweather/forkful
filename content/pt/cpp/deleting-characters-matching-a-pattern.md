@@ -1,51 +1,47 @@
 ---
-title:    "C++: Excluindo caracteres que correspondem a um padrão"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/deleting-characters-matching-a-pattern.md"
+title:                "C++: Excluindo caracteres que correspondem a um padrão"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Existe uma função útil na linguagem de programação C++ que permite deletar caracteres que correspondam a um determinado padrão de texto. Mas por que alguém iria querer fazer isso? Bem, o uso dessa função pode ser benéfico em diferentes situações, como por exemplo, alterar determinadas palavras ou caracteres em um texto.
+Há muitas razões pelas quais alguém pode querer deletar certos caracteres que se encaixam em um padrão em seu código C++. Pode ser para limpar a formatação, substituir pedaços de código antigo ou até mesmo para melhorar a eficiência e desempenho do programa. Em geral, a exclusão de caracteres é uma tarefa útil e necessária na programação.
 
 ## Como Fazer
 
-Para deletar caracteres seguindo um padrão em C++, é necessário utilizar a função `erase()` da biblioteca `string`. Primeiramente, é preciso criar uma variável do tipo `string` e atribuir a ela o texto em que será realizada a busca e a exclusão dos caracteres. Em seguida, utilizando a função `find()` é possível localizar a posição em que se encontra o padrão de texto a ser excluído.
+Para deletar caracteres em C++, podemos usar a função `std::remove_if` da biblioteca `<algorithm>`. Esta função recebe dois parâmetros: o primeiro é o início do intervalo de caracteres que será verificado, e o segundo é o final desse intervalo. Além disso, é necessário um predicado que será usado para determinar quais caracteres serão excluídos. Na maioria dos casos, podemos usar o `isspace` ou `isdigit` da biblioteca `<cctype>` para excluir espaços em branco ou dígitos numéricos.
 
-Exemplo de código:
+Aqui está um exemplo de código que exclui todos os espaços em branco de uma string:
 
-```
+```C++
 #include <iostream>
-#include <string>
-using namespace std;
+#include <algorithm>
+#include <cctype>
 
 int main() {
-    // criando variável com o texto
-    string texto = "Olá, meu nome é [João] e eu sou [programador]."; 
-    
-    // encontrando e excluindo o padrão de texto "[...]"
-    int posicao = texto.find("["); // encontra o '[' na posição 19
-    texto.erase(posicao, 7); // exclui o "[João]" da string
-    
-    // imprimindo o resultado
-    cout << texto << endl; // saída: Olá, meu nome é e eu sou [programador].
-    
+    std::string str = "Hello World!";
+    str.erase(std::remove_if(str.begin(), str.end(), isspace), str.end());
+    std::cout << str << std::endl;
     return 0;
 }
 ```
 
-Neste exemplo, foi encontrado e excluído o padrão de texto `[...]`, que pode ser modificado conforme a necessidade.
+A saída será `HelloWorld!` sem os espaços em branco.
 
-## Deep Dive
+Outra maneira de deletar caracteres é usando um laço `for` para percorrer a string e excluir cada caractere que corresponder ao padrão.
 
-A função `erase()` também pode receber dois parâmetros, onde o primeiro indica a posição inicial e o segundo a quantidade de caracteres a serem excluídos. Isso possibilita uma maior precisão na exclusão de caracteres seguindo um padrão específico.
+## Aprofundando
 
-Outra opção é utilizar a função `replace()` em conjunto com a `find()` para substituir o padrão de texto por outro, ao invés de simplesmente excluí-lo. Essas funções podem ser úteis para fazer modificações em strings, como mudar a formatação de datas, moedas, entre outros.
+A função `std::remove_if` não exclui realmente os caracteres, mas os move para o final da string. O que ela retorna é um iterador apontando para o início dos caracteres que foram excluídos. Para realmente excluir esses caracteres da string, podemos usar a função `erase` da classe `std::string`.
+
+É importante ressaltar que, ao excluir caracteres de uma string, a posição de cada caractere após os excluídos será alterada. Por isso, devemos sempre usar a função `erase` após a função `std::remove_if` para garantir que os caracteres sejam excluídos da posição correta.
 
 ## Veja também
 
-- [Função `erase()` em C++](https://www.cplusplus.com/reference/string/string/erase/)
-- [Método `find()` em C++](https://www.cplusplus.com/reference/string/string/find/)
-- [Função `replace()` em C++](https://www.cplusplus.com/reference/string/string/replace/)
+- Documentação oficial da função `std::remove_if` na C++ Reference: https://en.cppreference.com/w/cpp/algorithm/remove
+- Exemplo de código em C++ para deletar caracteres: https://www.geeksforgeeks.org/clear-the-screen-using-c/
+- Tutorial em vídeo sobre como deletar caracteres em C++: https://www.youtube.com/watch?v=Y9nGChsES68

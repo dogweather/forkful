@@ -1,63 +1,75 @@
 ---
-title:    "C: La lectura de argumentos de línea de comandos"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/reading-command-line-arguments.md"
+title:                "C: Leyendo argumentos de línea de comando"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué leer argumentos de línea de comandos en C?
 
-Si estás leyendo esto, es probable que estés buscando cómo leer argumentos de línea de comandos en tus programas de C. Puede parecer una tarea tediosa y poco útil, pero en realidad es una habilidad muy valiosa para cualquier programador serio.
+Los argumentos de línea de comandos son una herramienta esencial en el mundo de la programación, especialmente en el lenguaje C. Permiten que los usuarios pasen información a un programa desde la línea de comandos, lo que lo hace más versátil y personalizable. En esta publicación, aprenderemos cómo leer y utilizar argumentos de línea de comandos en C.
 
 ## Cómo hacerlo
 
-Para leer argumentos de línea de comandos en C, necesitamos utilizar la función `main()`, ya que es el punto de entrada de nuestro programa. La firma de esta función es la siguiente:
+Para leer los argumentos de línea de comandos en C, utilizamos la función `main()` y sus parámetros `argc` y `argv`. `argc` (argument count) es una variable entera que contiene el número de argumentos pasados al programa, mientras que `argv` (argument vector) es una matriz de cadenas que contiene los argumentos en sí. Veamos un ejemplo:
 
 ```C
-int main(int argc, char *argv[])
-```
-
-Donde `argc` es un entero que representa el número de argumentos de línea de comandos y `argv` es un array de strings que contienen los argumentos en sí. Ahora, veamos un ejemplo de cómo podemos utilizar esto para mostrar los argumentos ingresados por el usuario:
-
-```C
+// Ejemplo de código para leer argumentos de línea de comandos
 #include <stdio.h>
 
-int main(int argc, char *argv[])
-{
-    int i;
-
-    printf("Los argumentos de la línea de comandos son:\n");
-
-    for (i = 0; i < argc; i++) {
-        printf("%s\n", argv[i]);
-    }
-
-    return 0;
+int main(int argc, char *argv[]) {
+  printf("El número de argumentos pasados es %d\n", argc);
+  for(int i = 0; i < argc; i++) {
+    printf("Argumento %d: %s\n", i, argv[i]);
+  }
+  return 0;
 }
 ```
 
-Si compilamos y ejecutamos este programa con los argumentos "hola mundo", obtendremos la siguiente salida:
+Este código imprimirá el número de argumentos pasados al programa y cada uno de los argumentos en una línea separada. Ahora, si ejecutamos el programa con algunos argumentos como `./programa Hola mundo`, obtendremos la siguiente salida:
 
 ```
-Los argumentos de la línea de comandos son:
-./programa
-hola
-mundo
+El número de argumentos pasados es 3
+Argumento 0: ./programa
+Argumento 1: Hola
+Argumento 2: mundo
 ```
 
-Como podemos ver, el primer argumento siempre es el nombre del programa en sí.
+Podemos ver que el primer argumento (`argv[0]`) siempre es el nombre del programa. Los siguientes son los argumentos que hayamos pasado en la línea de comandos.
 
-## Buceo profundo
+## Profundizando
 
-Además de los argumentos ingresados por el usuario, también tenemos la opción de proporcionar argumentos predeterminados cuando ejecutamos nuestro programa desde el terminal. Esto se puede hacer añadiendo argumentos después del nombre del programa, separados por un espacio. Por ejemplo, si ejecutamos `./programa arg1 arg2`, `argc` será igual a 3 y `argv` contendrá los strings "arg1" y "arg2" además del nombre del programa.
+Además de leer los argumentos de línea de comandos, también podemos validarlos y utilizarlos en nuestro programa. Por ejemplo, podríamos crear un programa que convierte una temperatura de grados Celsius a Fahrenheit utilizando un argumento de línea de comandos. Para ello, necesitamos asegurarnos de que el usuario ingrese un argumento numérico. Podemos hacerlo utilizando la función `atoi()` para convertir `argv[1]` en un número entero y luego verificar si el resultado es mayor que cero (ya que no tendría sentido convertir una temperatura menor a cero en grados Celsius). Aquí hay un ejemplo de código:
 
-También es importante tener en cuenta que los argumentos de línea de comandos se pasan como strings, lo que significa que si queremos trabajar con números, tendremos que convertirlos mediante funciones como `atoi()` o `strtol()`.
+```C
+#include <stdio.h>
+#include <stdlib.h> // Para utilizar la función atoi()
 
-Además, aunque la mayoría de las veces solo necesitamos leer argumentos desde la línea de comandos, también podemos escribir en ellos utilizando la función `sprintf()`, por ejemplo.
+int main(int argc, char *argv[]) {
+  if(argc == 2) { // Verifica si se ha pasado un único argumento
+    int celsius = atoi(argv[1]); // Convierte el argumento a un número entero
+    if(celsius > 0) { // Verifica si es mayor a cero
+      float fahrenheit = ((celsius * 9) / 5) + 32; // Convierte a Fahrenheit
+      printf("%d grados Celsius equivale a %.2f grados Fahrenheit\n", celsius, fahrenheit);
+    } else {
+      printf("Ingrese un valor mayor a cero\n");
+    }
+  } else {
+    printf("Ingrese solo un argumento: temperatura en grados Celsius\n");
+  }
+  return 0;
+}
+```
+
+Al ejecutar este programa con `./programa 25`, obtendremos la siguiente salida:
+
+```
+25 grados Celsius equivale a 77.00 grados Fahrenheit
+```
 
 ## Ver también
 
-- [Documentación de la función `main()` en C](https://www.tutorialspoint.com/cprogramming/c_main_function.htm)
-- [Convertir strings a enteros en C](https://www.geeksforgeeks.org/converting-strings-numbers-cc/)
-- [Cómo utilizar la función `sprintf()` en C](https://www.includehelp.com/c-programs/sprintf-function-in-c-programming.aspx)
+- [Documentación de argc y argv en C](https://www.programiz.com/c-programming/c-command-line-arguments)
+- [Más sobre la función atoi() en C](https://www.geeksforgeeks.org/atoi-function-in-c-cpp/)

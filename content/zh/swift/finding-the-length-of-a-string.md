@@ -1,28 +1,48 @@
 ---
-title:    "Swift: 寻找字符串的长度"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/swift/finding-the-length-of-a-string.md"
+title:                "Swift: 查找字符串的长度"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # 为什么
-在编写程序时，常常需要对字符串的长度进行操作。因此，了解如何找到字符串的长度是非常重要的，在未来的编程工作中会经常用到。
 
-## 如何操作
-要找到字符串的长度，可以使用Swift内建的`count`方法。例如，假设我们有一个字符串变量`str`，要找到它的长度，可以在代码中使用以下命令：
-```Swift
-let length = str.count
-```
-如果我们想输出这个长度变量的值，可以使用`print`语句，并在括号中放入`length`变量：
-```Swift
-print(length)
-```
-使用这个代码段，就可以得到字符串的长度，并将其打印出来。比如，假设变量`str`是一个名字`Bob`，那么输出的结果就会是`3`。
+在Swift编程中，字符串（string）是一种常见的数据类型，通常用于存储文本。但是，在处理字符串时，我们经常需要知道它们的长度。知道字符串的长度有许多好处，例如可以帮助我们正确地格式化文本或者进行字符串比较。因此，了解如何计算字符串的长度是很重要的。
 
-## 深入探讨
-字符串的长度表示的是其中的字符数，并不是以字节为单位的。换句话说，一个中文字符的长度并不是一个字节，而是根据Unicode编码所确定的。因此，在处理包含中文字符的字符串时，使用`count`方法可能会得到比实际字符数少的结果。这时，应当考虑使用其他方法来计算长度，比如`NSString`类中的`length`属性。
+# 如何计算
+
+要计算字符串的长度，我们可以使用Swift内置的`count`方法。它的使用非常简单，只需将要计算长度的字符串放在方法的括号中即可。例如：
+
+```Swift
+let str = "Swift编程"
+print(str.count)
+
+// Output: 4
+```
+
+我们也可以将`count`方法与字符串的`characters`属性一起使用。`characters`属性是一个字符串中每个字符的集合，我们可以使用`count`方法计算该集合的长度，从而得到字符串的长度。代码示例如下：
+
+```Swift
+let str = "¡Hola!"
+print(str.characters.count)
+
+// Output: 6
+```
+
+# 深入探讨
+
+在Swift中，字符串的长度和它的`UnicodeScalars`属性有关。`UnicodeScalars`是一种表示字符的统一编码方式，它可以将不同语言和符号统一表示成数字。在计算字符串的长度时，Swift会根据每个字符所占用的`UnicodeScalar`数量来计算长度。例如，一个汉字所占用的`UnicodeScalar`数量为一个，而一个英文字母所占用的`UnicodeScalar`数量为一个。因此，在计算字符串长度时，我们也要考虑不同语言和符号的特殊性。
 
 # 参考链接
-- [Swift官方文档-字符串和字符](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [jikejunyi的博客-Swift字符串(String)字符(Character)](https://jikejunyi.github.io/2016/10/16/swift-string/&cd=17&hl=zh-CN&ct=clnk&gl=us&client=safari)
+
+- [Swift官方文档-字符串和字符](https://swiftgg.gitbook.io/swift/swift-jiao-cheng/03_strings_and_characters)
+- [如何在Swift中计算字符串长度](https://www.swiftbysundell.com/posts/string-length-in-swift)
+- [字符串处理的基本技巧](https://www.hackingwithswift.com/articles/175/advanced-swift-how-to-use-string-interpolation-in-swift)
+- [Swift中的Unicode编码](https://www.cnswift.org/unicode)
+
+
+# 参见
+
+[Swift常用字符串操作方法](https://www.jianshu.com/p/dfa161b290f2)

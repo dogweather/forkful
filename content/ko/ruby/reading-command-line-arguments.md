@@ -1,37 +1,48 @@
 ---
-title:    "Ruby: 컴퓨터 프로그래밍의 제목은 명령 줄 인수 읽기 입니다."
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/reading-command-line-arguments.md"
+title:                "Ruby: 컴퓨터 프로그래밍: 명령줄 인수 읽기"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-명령 줄 인자를 읽는 것은 소프트웨어 개발자에게 매우 중요한 기술입니다. 이를 통해 사용자가 프로그램을 실행할 때 추가적인 설정이나 정보를 전달할 수 있으며, 더 유연하고 사용자 친화적인 프로그램을 만들 수 있습니다. 따라서 이 기술을 배우고 싶은 사람은 이 포스트를 읽어보세요!
+커맨드 라인 인자를 읽는 것이 중요한 이유는 프로그래밍에서 유용한 기능 중 하나이기 때문입니다. 커맨드 라인 인자를 읽어들이면 사용자의 입력을 바탕으로 프로그램을 유연하게 동작시킬 수 있습니다.
 
 ## 어떻게
 
-```ruby
-#명령 줄 인자 읽기
-input = ARGV[0]
-puts "당신이 입력한 인자는 #{input}입니다."
+커맨드 라인 인자를 읽는 방법은 Ruby에서 간단하게 구현할 수 있습니다. ```ARGV```를 사용하여 입력된 인자를 배열로 저장하고, 인덱스를 통해 각 인자에 접근할 수 있습니다. 아래는 예시 코드입니다.
+
+```Ruby
+# 사용자 입력을 받아 출력하는 프로그램
+puts "당신이 입력한 인자는 #{ARGV[0]}입니다."
 ```
 
-위의 예시 코드와 같이, ARGV를 사용해 명령 줄 인자를 읽을 수 있습니다. 사용자가 입력한 인자는 배열 형태로 저장되며, 해당 배열의 첫 번째 요소가 실제 인자입니다. 즉, 위의 코드에서는 입력한 인자를 `input` 변수에 저장한 후, 해당 문자열을 출력하고 있습니다. 만약 여러 개의 인자를 읽고 싶다면, `ARGV` 배열의 다른 인덱스를 지정하면 됩니다.
+위 예시 코드에서 ```ARGV[0]```은 첫 번째 인자를 나타냅니다. 여러 개의 인자가 있을 경우에는 ```ARGV[1]```, ```ARGV[2]```와 같은 방식으로 접근할 수 있습니다.
 
-## 깊이 파헤치기
+그리고 사용자의 입력이 정수나 실수일 경우에는 반드시 ```to_i```나 ```to_f```와 같은 메소드를 사용하여 데이터 타입을 변환해주는 것이 중요합니다. 예를 들어 사용자가 ```"3"```이라는 문자열을 입력했을 경우, ```to_i```를 사용하지 않고 바로 사용할 경우 문자열로 인식되어 계산이 불가능하므로 주의해야 합니다.
 
-명령 줄 인자를 읽는 방법에는 여러 가지가 있지만, 일반적으로 `ARGV` 라이브러리를 사용하는 것이 가장 흔합니다. 이 라이브러리를 사용하면 사용자를 위한 안내 메세지를 출력하거나, 인자가 잘못 입력되었을 때 대처하는 로직을 구현할 수도 있습니다. 또한 인자를 점검하는 로직을 추가해 사용자가 올바르지 않은 입력을 하더라도 프로그램이 멈추지 않도록 할 수도 있습니다. `ARGV` 외에도 `OptionParser`와 같은 라이브러리를 사용해 명령 줄 인자를 더욱 정교하게 다룰 수 있습니다.
+```Ruby
+# 정수형으로 변환하여 계산하는 예시 코드
+puts "당신이 입력한 숫자는 #{ARGV[0].to_i + 10}입니다."
+```
 
-## 또 다른 참조
+위 예시 코드에서 ```ARGV[0]```이 ```"3"```이라면 출력은 ```13```이 될 것입니다.
 
-- [명령 줄 인자 관련 루비 공식 문서](https://ruby-doc.org/core-2.7.1/ARGV.html)
-- [유용한 루비 명령 줄 인자 팁과 트릭](https://blog.appsignal.com/2020/04/08/ruby-magic-parsing-command-line-arguments.html)
-- [모든 명령 줄 인자를 읽고 출력하기](https://www.rubyguides.com/2017/12/ruby-command-line-arguments/)
+## 깊이 살펴보기
 
-## 참조
+커맨드 라인 인자를 읽는 것은 Ruby 뿐만 아니라 다른 프로그래밍 언어에서도 기본적인 기능으로 제공됩니다. 이를 통해 사용자의 입력을 받아 동적으로 프로그램을 제어할 수 있으며, 특정 동작을 실행하는데 필요한 인자를 알맞게 전달할 수 있습니다. 또한 작은 규모의 프로그램에서는 인터페이스를 구현하지 않고도 사용자와의 상호작용을 위해 이 기능을 활용할 수 있습니다.
 
-- [이페이스 블로그](https://blog.everface.co.kr)
-- [루비 한국 사용자 그룹](https://ruby-korea.org)
-- [루비 공식 홈페이지](https://www.ruby-lang.org/ko/)
+## 더 알아보기
+
+* [Learn Ruby the Hard Way - Exercise 13: Parameters, Unpacking, Variables](https://learnrubythehardway.org/book/ex13.html)
+* [Command Line Arguments with Ruby](https://www.leighhalliday.com/command-line-arguments-ruby)
+* [Parsing Command Line Arguments in Ruby](https://www.rubyguides.com/2018/05/ruby-arguments/)
+
+## 관련 링크
+
+* [Ruby 공식 홈페이지](https://www.ruby-lang.org/ko/)
+* [Ruby 한국 사용자 그룹](http://ruby-korea.org/)
+* [Ruby API 문서](https://rubyapi.org/)

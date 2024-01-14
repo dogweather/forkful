@@ -1,56 +1,38 @@
 ---
-title:    "Fish Shell: Komentoriviparametrien lukeminen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/reading-command-line-arguments.md"
+title:                "Fish Shell: Komentoriviparametrien lukeminen"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Tervetuloa lukemaan blogikirjoitusta Fish Shell -ohjelmoinnista! Tässä kirjoituksessa käsittelemme komentoriviparametrien lukemista Fish Shellissa ja miten se voi auttaa tehokkaassa ohjelmointityössäsi.
 
-Komentoriviparametrit ovat tärkeitä osa Fish Shellin ohjelmoimista. Niiden avulla voit antaa käyttäjille enemmän valinnanvaraa ohjelman suorittamiseen ja muokata sen toimintaa eri tilanteissa. Tässä blogikirjoituksessa käymme läpi, miten lukea komentoriviparametrejä Fish Shellillä ja miten voit hyödyntää niitä omassa ohjelmoinnissasi.
+## Miten
+Fish Shell tarjoaa kätevän tavan lukea komentoriviparametreja ohjelmointikoodissa. Voit helposti käyttää näitä parametreja suorituksen aikana esimerkiksi tiedostojen käsittelyssä tai muissa toiminnoissa.
 
-## Kuinka
+Seuraavassa esimerkissä näytämme kuinka lukea komentoriviparametri, joka määrittelee tiedostopolun ja tulostaa sen sisällön:
 
-Käytä ```argparse``` -modulia lukeaksesi komentoriviparametreja Fish Shellissä. Seuraavassa on esimerkki kodista:
+```Fish Shell
+#!/bin/fish
 
-```
-# Alusta moduli ja määritä parametrit
-argparse "Verbose" "V" "Silent" "S"
-
-# Lukee parametrit annettu komentoriviltä
-set verbose (argparse -V)
-set silent (argparse -S)
-
-# Testi tulostus parametrien mukaan
-if test $verbose = 1
-    echo "Verbose moodi päällä"
-else if test $silent = 1
-    echo "Hiljainen moodi päällä"
+if test -f $1
+    cat $1
 else
-    echo "Ei lisäparametreja annettu"
+    echo "Tiedostoa ei löytynyt."
 end
 ```
 
-Kun suoritamme tämän koodin komentoriviltä esimerkiksi seuraavalla tavalla: ```fish read_arguments.fish -V```, tulostus olisi seuraava:
-```
-Verbose moodi päällä
-```
+Jos ajamme tämän komentoriviparametrilla "tiedosto.txt", ohjelma tulostaa tiedoston sisällön. Muuten se ilmoittaa, että tiedostoa ei löytynyt.
 
-Voit myös antaa useita parametreja samalla kertaa, esimerkiksi: ```fish read_arguments.fish -V -S```, jolloin tulostus olisi:
-```
-Ei lisäparametreja annettu
-```
+## Deep Dive
+Fish Shellin "stat" -komennolla voidaan lukea tarkemmin komentoriviparametreja ja niiden ominaisuuksia. Lisäksi "getopts" -komennolla voidaan helposti käsitellä useampia parametreja kerralla.
 
-Tämä oli yksinkertainen esimerkki komentoriviparametrien lukemisesta Fish Shellillä. Voit myös määrittää muita parametreja, kuten tiedostot tai numerot, ja käyttää niitä omassa ohjelmoinnissasi.
-
-## Syvällinen sukellus
-
-Komentoriviparametrien lukeminen on vain yksi esimerkki siitä, kuinka voit laajentaa Fish Shellin toiminnallisuutta. Voit myös käyttää muita moduuleja, kuten ```getopt``` tai ```docopt```, jotka tarjoavat erilaisia tapoja lukea ja käsitellä parametreja. Voit myös lukea lisää Fish Shellin ohjelmoinnista ja sen ominaisuuksista Fish Shellin verkkosivuilta.
+Komentoriviparametrien lukeminen voi olla hyödyllistä myös skripteissä, joissa esimerkiksi halutaan käynnistää erilaisia toimintoja eri parametreilla. Fish Shell tarjoaa monipuoliset mahdollisuudet näiden parametrien käsittelyyn ja helpottaa ohjelmointityötäsi.
 
 ## Katso myös
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Argparse Documentation](https://fishshell.com/docs/current/cmds/argparse.html)
-- [Getopt Documentation](https://fishshell.com/docs/current/cmds/getopt.html)
-- [Docopt Documentation](https://fishshell.com/docs/current/cmds/docopt.html)
+- Fish Shellin dokumentaatio: https://fishshell.com/docs/current/index.html
+- "getopts" -komennon käyttöohjeet: https://fishshell.com/docs/current/commands.html#getopts
+- "stat" -komennon tarkemmat ominaisuudet: https://fishshell.com/docs/current/cmds/stat.html

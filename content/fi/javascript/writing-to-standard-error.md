@@ -1,39 +1,62 @@
 ---
-title:    "Javascript: Tietokoneohjelmointi: Standardivirheeseen kirjoittaminen"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-to-standard-error.md"
+title:                "Javascript: Kirjoittaminen standardivirheelle"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Javascript-ohjelmoijilla on usein tarve kirjoittaa virheitä (errors) ja varoituksia (warnings) oikeaan paikkaan ohjelman suorituksen aikana. Tämä auttaa havaitsemaan ja korjaamaan mahdollisia ongelmia koodissa.
+Kirjoittaminen standardivirheeseen on tärkeä taito, jonka jokaisen ohjelmoijan tulisi omaksua. Se auttaa tunnistamaan ja korjaamaan virheitä, jotka eivät muuten tulisi ilmi tavallisista tulostuksista.
 
-## Miten
+## Kuinka
 
-Tämä tapahtuu käyttämällä standardin virheenkirjoitusta (standard error). Se on erityinen virta, joka välittää virheet ja varoitukset koodin suorituksen aikana. Virheen kirjoittamiseen käytetään console.error() -funktiota ja varoituksen kirjoittamiseen console.warn() -funktiota.
+Koodatessa on käytännöllistä tietää, kuinka kirjoittaa virheitä standardivirheeseen, jotta ne voidaan tunnistaa ja korjata mahdollisimman nopeasti. Selvennyksen vuoksi esittelemme tässä muutamia esimerkkejä, joiden avulla voit oppia tätä taitoa.
 
-```Javascript
-console.error("Tämä on virheviesti");
-console.warn("Tämä on varoitusviesti");
+``` Javascript
+// Esimerkki 1
+console.error("Tässä on virhe!");
+
+/*
+Tulostaa seuraavan virheen standardivirheeseen:
+"Console error: Tässä on virhe!"
+*/
+
+// Esimerkki 2
+let numero = "kolme";
+
+if (isNaN(numero)) {
+  console.error(`${numero} ei ole numero.`);
+}
+
+/*
+Tulostaa seuraavan virheen standardivirheeseen:
+"Console error: kolme ei ole numero."
+*/
+
+// Esimerkki 3
+function tarkistaSalasana(salasana) {
+  if (salasana.length < 8) {
+    console.error("Salasanan tulee olla vähintään 8 merkkiä pitkä.");
+  }
+}
+
+tarkistaSalasana("salasana");
+
+/*
+Tulostaa seuraavan virheen standardivirheeseen:
+"Console error: Salasanan tulee olla vähintään 8 merkkiä pitkä."
+*/
 ```
 
-Tässä esimerkissä koodi tulostaa seuraavan:
+## Syventyvä tarkastelu
 
-```
-Tämä on virheviesti
-Tämä on varoitusviesti
-```
-
-## Syvemmälle
-
-Standardin virheen kirjoitus on yksi Javascriptin sisäänrakennetuista toiminnoista. Sitä käytetään usein yhdessä try-catch-lauseiden kanssa, jotta ohjelmassa esiintyvät virheet voidaan havaita ja käsitellä.
-
-Virheiden ja varoitusten kirjoittaminen standardiin virhevirtaan auttaa myös debuggaamaan koodia, sillä ne tulostuvat selainkonsoliin tai muuhun kehitysympäristöön ja antavat tarkempaa tietoa mahdollisista ongelmista.
+Kirjoittaminen standardivirheeseen on tärkeä taito, jota tulisi harjoitella säännöllisesti. Se auttaa löytämään ja korjaamaan virheitä koodista, jotta se toimisi mahdollisimman sujuvasti. Lisäksi voit kirjoittaa haluamasi viestin standardivirheeseen, jolloin se voi toimia muistutuksena tulevia korjauksia varten. On myös tärkeää muistaa, että hyvä ohjelmointitaito sisältää myös virheiden tunnistamisen ja niiden korjaamisen.
 
 ## Katso myös
 
-- [MDN: console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [MDN: console.warn()](https://developer.mozilla.org/en-US/docs/Web/API/Console/warn)
-- [Nettipestaus: Javascript Debuggaus ja Console-loggaaminen](https://www.nettipestaus.fi/javascript-debuggaus-ja-console-loggaaminen/)
+- [MDN Web Docs: console.error()](https://developer.mozilla.org/fi/docs/Web/API/Console/error)
+- [W3Schools: JavaScript Errors - Throw and Try to Catch](https://www.w3schools.com/js/js_errors.asp)
+- [FreeCodeCamp: Introduction to errors in JavaScript](https://www.freecodecamp.org/news/introduction-to-errors-in-javascript/)

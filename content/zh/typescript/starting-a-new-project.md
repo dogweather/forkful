@@ -1,62 +1,43 @@
 ---
-title:    "TypeScript: 开始一个新项目"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/starting-a-new-project.md"
+title:                "TypeScript: 开始一个新的项目"
+programming_language: "TypeScript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要开始一个新的项目
+## 为什么
 
-无论是想要学习新技术，还是为了解决现有项目的缺陷，开始一个新的项目都是非常重要的。通过开始一个新的项目，你可以锻炼自己的编程技能，同时也可以为其他人提供有用的解决方案。在这篇博客文章中，我将向大家介绍如何使用TypeScript来开始一个新的项目。
+每个程序员都会有想要开始一个新项目的冲动，不管是为了学习新的技术还是为了解决某些问题。始终记住，项目的初衷是要去实现一个具体的目标，并且能够给自己带来成就感。
 
-## 如何开始一个新的项目
+## 怎么做
 
-首先，我们需要安装TypeScript。在命令行中输入以下命令来安装TypeScript：
+首先，我们需要安装TypeScript环境。可以通过NPM安装TypeScript插件，接着在项目的根目录下运行以下命令来初始化TypeScript配置文件：
 
 ```TypeScript
 npm install -g typescript
-```
-
-接下来，我们可以创建一个新的TypeScript项目。在命令行中输入以下命令：
-
-```TypeScript
 tsc --init
 ```
 
-这将创建一个名为"tsconfig.json"的文件，在这个文件中，我们可以配置我们的TypeScript项目。配置完成后，我们就可以开始编写我们的TypeScript代码了。
-
-下面是一个简单的例子，展示了如何在TypeScript中声明变量和打印输出：
+接下来，就可以开始编写TypeScript代码了。下面是一个简单的例子，演示如何创建一个函数并输出结果：
 
 ```TypeScript
-let message: string = "Hello, world!";
-console.log(message);
+function addNumbers(a: number, b: number) {
+    return a + b;
+}
+
+console.log(addNumbers(2, 3)); // 输出结果为5
 ```
 
-当我们运行这段代码时，控制台会输出"Hello, world!"。这是因为我们在声明变量时指定了变量的数据类型为字符串，并且赋值为"Hello, world!"。
+上面的代码先定义了一个名为“addNumbers”的函数，接着调用这个函数并传入两个数字参数，最后用console.log()方法输出结果。
 
-接下来，我们可以使用TypeScript中的其他功能，比如接口、泛型、类等来提高代码的可读性和复用性。通过学习这些功能，我们可以更好地编写优质的代码。
+## 深入了解
 
-## 深入探讨开始一个新的项目
+在开始一个新项目的时候，充分利用好TypeScript的功能是非常重要的。例如使用TypeScript的类型系统来避免一些常见的错误，以及使用接口来定义数据类型等等。此外，TypeScript还可以与一些常用的框架，如React或Angular搭配使用，让开发变得更加简单高效。
 
-在开始一个新的项目时，我们应该考虑以下几点：
+## 查看另外的链接
 
-- 项目的目的和目标
-- 使用什么技术来实现项目
-- 项目的架构和设计
-- 如何测试和部署项目
-
-当我们决定了以上这些问题后，我们就可以更加有条理地开始我们的项目，并保证项目的顺利进行。
-
-## 参考资料
-
-- [TypeScript官网](https://www.typescriptlang.org/)
-- [TypeScript入门教程](https://ts.xcatliu.com/introduction/what-is-typescript.html)
-- [TypeScript实战](https://pan.baidu.com/s/18uuA_fI6syGmK7pddy0TyQ) (提取码: k2aq)
-- [Node.js中文网](http://nodejs.cn/)
-
-## 参见
-
-- [TypeScript编程指南](https://www.processon.com/view/link/5e8ecb72e4b011f2f38efff4)
-- [TypeScript步步为赢](https://www.processon.com/view/link/5e8ecd46f346fb087bb7cd4d)
-- [TypeScript进阶指南](https://www.processon.com/view/link/5e8ecf0ae4b011f2f39046fb)
+- [TypeScript官方网站](https://www.typescriptlang.org/)
+- [TypeScript入门指南](https://www.tslang.cn/docs/home.html)
+- [React与TypeScript实践指南](https://github.com/swas3019/react-typescript-cheatsheet)

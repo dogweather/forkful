@@ -1,34 +1,40 @@
 ---
-title:    "Haskell: Att skriva tester"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-tests.md"
+title:                "Haskell: Att skriva tester"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva tester är en viktig del av en utvecklares arbete för att upprätthålla kvaliteten på koden och minska risken för buggar i programmet.
 
-## Så här gör du
-Det första steget för att skriva tester är att importera testningsbiblioteket "HUnit" med att skriva ```Haskell import Test.HUnit``` i början av ditt program. Sedan definierar du enskilda enhetstester genom att använda funktionen "TestCase" och kallar sedan på testningarna med hjälp av "test" funktionen. Här är ett exempel på hur en test skulle kunna se ut:
+Innan vi hoppar in i detaljerna av hur man skriver tester i Haskell, låt oss ta en titt på varför det är viktigt att göra det. Att skriva tester hjälper till att säkerställa att vårt program fungerar korrekt och att eventuella buggar upptäcks tidigt. Det är ett viktigt steg i utvecklingsprocessen som bidrar till att säkra kvaliteten på koden.
+
+## Hur man gör
+
+För att skapa tester i Haskell, behöver vi först importera "Hspec" biblioteket. Därefter kan vi definiera våra tester genom att använda funktionen "describe" och specificera vilken del av koden vi vill testa. Sedan använder vi "it" funktionen för att beskriva vad som förväntas hända i vårt test och skriva vår kod. Låt oss se ett exempel nedan med en funktion som lägger till två tal:
 
 ```Haskell
-testAddition = TestCase (assertEqual "2 + 2 ska vara 4" 4 (2+2))
-
-testMultiplikation = TestCase (assertEqual "3 * 5 ska vara 15" 15 (3*5))
-
-allaTester = TestList [testAddition, testMultiplikation]
-
-main = runTestTT allaTester
+describe "add" $ do
+  it "returns the sum of two numbers" $ do
+    add 2 3 `shouldBe` 5
 ```
-Kör detta program och om alla tester passerar, kommer du se utskriften "Cases: 2  Tried: 2  Errors: 0  Failures: 0", vilket visar att dina tester var lyckade.
+
+I denna kodspecifikation testar vi funktionen "add" och förväntar oss att den ska returnera rätt summa för två givna tal. Vi använder "shouldBe" för att jämföra det faktiska resultatet med det förväntade resultatet. Om de inte matchar, kommer vårt test att misslyckas och vi måste fixa vår kod.
 
 ## Djupdykning
-Ett bra tillvägagångssätt för att skriva tester är att följa principen "Arrange, Act, Assert". Det innebär att förbereda testet genom att skapa förutsättningar (Arrange), utföra en handling (Act) och sedan verifiera resultatet (Assert). Ett annat viktigt koncept är "edge cases", det vill säga att testa extremvärden eller ogiltig input för att se hur programmet hanterar dem.
 
-En annan fördel med att skriva tester är att de bidrar till en bättre design av koden. Genom att tänka på testfall under utvecklingsprocessen kan du skapa en mer hållbar och lättunderhållen kod.
+När vi skriver tester i Haskell, kan vi använda många olika funktioner och metoder för att säkerställa att vår kod fungerar som den ska. Vi kan använda "shouldBe" för att testa likhet, "shouldNotBe" för att testa olikhet, och "shouldSatisfy" för att testa en allmän sats. Vi kan också använda "pending" för att markera tester som ännu inte är implementerade och "after" för att köra kod efter tester.
 
-## Se även
-- [Hängiven¶alla-enhetstest](https://www.haskell.org/tutorial/unit2.html)
-- [HUnit-dokumentation](http://hackage.haskell.org/package/HUnit)
-- [Test-Driven Development med Haskell](https://www.fpcomplete.com/blog/2016/11/test-driven-development-in-haskell)
+Det finns också många andra bibliotek som kan hjälpa oss att skriva och köra tester i Haskell, som "QuickCheck" för slumpmässiga testscenarier och "HUnit" för enkel enhetstestning.
+
+## Se också
+
+Här är några användbara resurser för att lära dig mer om tester i Haskell:
+
+- Hspec dokumentation: https://hackage.haskell.org/package/hspec
+- "Testing in Haskell" guide: http://book.realworldhaskell.org/read/testing-and-quality-assurance.html
+- "A tutorial on Hspec" blogginlägg: https://vaibhavsagar.com/blog/2018/06/11/haskell-testing/
+
+Tveka inte att utforska dessa resurser och börja implementera tester i din egen Haskell-kod för att skapa en säkrare och buggfri programvara. Lycka till!

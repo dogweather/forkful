@@ -1,43 +1,41 @@
 ---
-title:    "TypeScript: המרת תאריך למחרוזת"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/converting-a-date-into-a-string.md"
+title:                "TypeScript: מרתיחת תאריך למחרוזת"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-מתי להמיר תאריך למחרוזת מיועד לכתובת קליטה בלבד ולאייבוא ונתונים בפלטים שונים.
 
-## כיצד לעשות זאת
-המרת תאריך למחרוזת היא דבר נפוץ בתשתית פיתוח תוכנה. זה כפולבלטם להמיר תאריך למחרוזת בצורה נכונה כדי שתוכל הקלט והפלט להיות במבנה חסכוני ונוח לטיפול בו.
+תהייה: להסיבות הפשוטות מצורפות את הפלט וההפלט לתאריך שנמצא באמצעות קידוד ושירות תאריך. ממשק תאריך אחד מיאה תאריכים ב- TypeScript, כך שכדאי ללמוד את הנושא בפירוט.
 
-הנה דוגמה לכיצד להמיר תאריך למחרוזת באמצעות פונקציית `toLocaleDateString` בסגנון TypeScript:
+## איך לעשות את זה
 
 ```TypeScript
-// יצירת אובייקט Date
-const date = new Date();
+// תאריך שנבחר
+const myDate = new Date('2021/01/01');
+// להמיר את התאריך למחרוזת עם תאריך מלא
+const fullDate = `${myDate.getDate()}/${myDate.getMonth() + 1}/${myDate.getFullYear()}`;
+console.log(fullDate); // פלט יהיה "01/01/2021"
 
-// המרת התאריך למחרוזת עם פורמט יום/חודש/שנה
-const dateString = date.toLocaleDateString("he-IL");
-console.log(dateString); // יום/חודש/שנה
+// להמיר את התאריך למחרוזת עם תאריך מלא ושעה
+const time = `${myDate.getHours()}:${myDate.getMinutes()}:${myDate.getSeconds()}`;
+console.log(time); // פלט יהיה "00:00:00"
 ```
 
-ניתן גם להגדיר פרמטרים נוספים לפונקציית `toLocaleDateString` כדי לקבל פלט מדויק יותר. למשל, הנה דוגמה שמשתמשת באזור זמן ופורמט יום/חודש/שנה בנוסף לשפת `he-IL`:
+בדוגמה הנ"ל, אנו משתמשים במחרוזת דמיונית ("`/`") כדי להפריד בין החלקים של התאריך או השעה. קוד זה משתמש בפעולות של `getDate()`, `getFullYear()`, וכו ', כך שהוא יכול להשתמש במתודות לתאריך ושעה נכונים.
 
-```TypeScript
-// יצירת אובייקט Date
-const date = new Date();
+## חקירה עמוקה
 
-// הגדרת אזור זמן
-const options = { timeZone: "Asia/Jerusalem" };
+עם TypeScript לשנות את התאריך המקורי המשתנה יכולה להיות מאוד מועילה כאשר אתה מנסה להציג מידע תאריך מפורט. במקרים שבהם תאריך מתחיל ב- 0, אנו יודעים שהתאריך לא נכתב בפורמט המלא. בעזרת קידוד TypeScript ותוכנית הפנימית שלו, אנו יכולים לגשת לתאריך ולשנות אותו לסדר חלקים במראה תאריך מלא.
 
-// המרת התאריך למחרוזת עם פורמט יום/חודש/שנה ואזור זמן
-const dateString = date.toLocaleDateString("he-IL", options);
-console.log(dateString); // יום/חודש/שנה, 09:00
-```
+בנוסף, ניתן להשתמש במתודות נוספות כמו `getDay()` לקבלת יום בשבוע מתאריך, `getMilliseconds()` לקבלת מילישניות, וכו ' כדי למלא תוסף מידע עם התאריך שנבחר.
 
-בכל פעם שאתם משתמשים בפונקציית `toLocaleDateString` תהיה ניתן להגדיר פרמטרים שונים תלוי כלכלה להתאמה לצרכים שלכם.
+## ראה גם
 
-## נכנס לפרטים
-כעת שאנו יודעים כיצד להמיר תאריך למחרוזת באמצעות קוד TypeScript, בואו נתחיל להתעמק בפרמטרים של `toLocaleDateString`. אחד הפרמטרים המשתנים ביותר הוא השפה, שכפה פורמטים שונים על הפלט. לדוגמה, שפות שונ
+הנה כמה מאמרים נוספים שעשויים לעניין אותך:
+
+- [תאריך מצפן כמו מחרוזת ב- TypeScript](https://link-to-external-article1)
+-

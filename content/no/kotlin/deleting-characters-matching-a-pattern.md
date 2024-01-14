@@ -1,54 +1,55 @@
 ---
-title:    "Kotlin: Slette tegn som matcher et mønster"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/deleting-characters-matching-a-pattern.md"
+title:                "Kotlin: Sletting av tegn som samsvarer med et mønster"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Noen ganger kan det være nyttig å fjerne spesifikke tegn fra en streng i Kotlin. Dette kan være for å formatere data eller for å oppfylle bestemte krav til input i en applikasjon.
+Det kan være mange grunner til å slette tegn som matcher et mønster i programmering. Kanskje du ønsker å rydde opp i unødvendig data, eller kanskje du vil filtrere ut uønskede tegn fra en tekststreng. Uansett hva årsaken er, kan du enkelt gjøre dette ved hjelp av Kotlin-programmering.
 
-## Slik gjør du det
+## Hvordan du gjør det
 
-For å fjerne tegn som matcher et bestemt mønster i en streng, kan du bruke metoden `replace` og en Regular Expression (Regex) i Kotlin. La oss si at vi vil fjerne alle bokstaver fra en streng:
-
-```Kotlin
-var tekst = "Dette er en tekst med ulike bokstaver"
-tekst = tekst.replace(Regex("[a-zA-Z]"), "")
-println(tekst)
-```
-
-Output:
-```
-        
-             
-        
-
-
-## Fordypning
-
-La oss gå litt dypere inn i hva som skjer i koden over. Metoden `replace` tar imot to parametere: et Regular Expression mønster og en ny verdi. I dette tilfellet bruker vi `[a-zA-Z]` som betyr alle bokstaver fra A-Z (både stor og liten). Denne koden vil dermed fjerne alle bokstaver og output blir en tom streng.
-
-Men hva om vi vil beholde noen bokstaver og fjerne resten? Da kan vi legge til de bokstavene vi vil beholde i mønsteret med et `|` mellom dem. For eksempel, hvis vi vil beholde A, E og I, men fjerne resten av bokstavene, kan vi bruke dette mønsteret: `[a-ei-z]`. Da vil koden se slik ut:
+For å slette tegn som matcher et mønster, kan du bruke Kotlin's `replace()`-metode sammen med regulære uttrykk.
 
 ```Kotlin
-var tekst = "Dette er en tekst med ulike bokstaver"
-tekst = tekst.replace(Regex("[a-ei-z]"), "")
-println(tekst)
+val regex = "[aeiou]".toRegex()
+val tekst = "Dette er en tekststreng med noen uønskede vokaler"
+
+val nyTekst = tekst.replace(regex, "") // Resultatet vil være "Dtt r n txtstrng m nn nskd vklr"
 ```
 
-Output:
-```
-A E I           
-             
+Her har vi definert et regulært uttrykk som matcher alle vokaler, og deretter brukt `replace()`-metoden til å erstatte disse tegnene med en tom streng. Dette vil resultere i en ny tekststreng uten de uønskede vokalene.
+
+Du kan også spesifisere et spesifikt antall tegn som skal slettes ved å bruke `{n}`, der `n` er antall tegn du ønsker å fjerne.
+
+```Kotlin
+val regex = "[0-9]{2}".toRegex()
+val tallrekke = "K1o2t3l4i5n"
+
+val nyRekke = tallrekke.replace(regex, "") // Resultatet vil være "Kotlin"
 ```
 
-Som du kan se, er bokstavene A, E og I beholdt, mens resten er fjernet.
+I dette eksempelet har vi brukt et regulært uttrykk som matcher to tall i rekken, og deretter erstattet dem med en tom streng. Dette vil resultere i en ny tekststreng med bare bokstavene "Kotlin".
+
+## Dypdykk
+
+Ved hjelp av Kotlin kan du også slette tegn basert på deres posisjon i en tekststreng. Dette kan være nyttig hvis du for eksempel ønsker å fjerne de første eller siste tegnene i en streng.
+
+```Kotlin
+val tekst = "Dette er en tekststreng"
+
+val nyTekst1 = tekst.drop(6) // Vil fjerne de første 6 tegnene og gi "er en tekststreng"
+val nyTekst2 = tekst.dropLast(9) // Vil fjerne de siste 9 tegnene og gi "Dette er en tekst"
+```
+
+Her har vi brukt Kotlin's `drop()`-metode til å fjerne et spesifikt antall tegn fra starten eller slutten av en tekststreng. Dette er spesielt nyttig hvis du vil fjerne for eksempel HTML-koder eller lignende som alltid er på samme posisjon i strengen.
 
 ## Se også
 
-- [Metoden `replace` dokumentasjon i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- [Regex i Kotlin: A complete guide](https://kotlinlang.org/docs/reference/regular-expressions.html)
-- [Kotlin Strings: A Complete Guide](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+* [Kotlin - Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+* [Java Regular Expressions - Pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+* [Kotlin - Regular Expressions](https://kotlinlang.org/docs/reference/regular-expressions.html)

@@ -1,48 +1,36 @@
 ---
-title:    "Kotlin: Att påbörja ett nytt projekt"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/starting-a-new-project.md"
+title:                "Kotlin: Att påbörja ett nytt projekt"
+programming_language: "Kotlin"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att starta ett nytt projekt kan kännas överväldigande och kräver tid och engagemang. Men det är också en spännande möjlighet att utveckla dina färdigheter, utforska nya idéer och skapa något unikt.
+Det kan finnas många anledningar till varför man vill engagera sig i att starta ett nytt projekt. Det kan vara för att utveckla en ny idé, förbättra en befintlig lösning eller helt enkelt för att lära sig något nytt. Oavsett anledning så kan Kotlin vara ett utmärkt verktyg för att förverkliga projektet.
 
-## Hur man gör
-För att skapa ett nytt projekt i Kotlin, följ dessa steg:
+## Så här gör du
+För att komma igång med Kotlin kan du följa dessa enkla steg:
 
-1. Öppna en kodredigerare på din dator.
-2. Skapa en ny fil och spara den med filnamnet <b>main.kt</b>.
-3. Börja koda i filen genom att definiera en main-funktion. ```Kotlin
-fun main() {
-    //kod här
-}
-```
-4. Nu kan du börja experimentera med olika Kotlin-funktioner och syntax inom din main-funktion. Här är ett exempel på en kod som skriver ut en hälsningsfras till konsolen.
 ```Kotlin
 fun main() {
-    val name = "Johanna"
-    println("Hej $name!") //output: Hej Johanna!
+  println("Hej världen!")
 }
 ```
-5. Fortsätt att lägga till och ändra kod tills du är nöjd med ditt projekt.
 
-## Deep Dive
-Att starta ett nytt projekt är en viktig del av att lära sig programmering. Det ger dig möjlighet att tillämpa dina kunskaper och utveckla din förmåga att lösa problem. När du skapar ett nytt projekt bör du överväga följande saker:
+Detta enkla program skriver ut strängen "Hej världen!" i konsolen. Det visar hur lätt det är att komma igång med Kotlin. Du kan även använda Kotlin i webbutveckling, mobilapplikationer och mycket mer. Det finns också många resurser online som kan hjälpa dig att lära dig mer om språket.
 
-- Vad är målet med ditt projekt?
-- Vilka steg behöver du ta för att nå ditt mål?
-- Vilka resurser behöver du för att genomföra projektet?
-- Hur kan du utöka och utmana dig själv genom projektet?
+## Djupdykning
+När du väl har bekantat dig med Kotlin kan det vara bra att fördjupa sig i grundläggande koncept som variabler, funktioner, klasser och objekt. Ett annat viktigt koncept är null-säkerhet, vilket är en av Kotlin's största fördelar. Detta innebär att du undviker krascher och felmeddelanden som kan uppstå när du arbetar med null-värden i ditt program.
 
-Det är också viktigt att komma ihåg att det är okej att göra misstag och ändra riktning under projektets gång. Det är genom utmaningar och motgångar som vi växer som programmerare.
+Kotlin erbjuder också möjligheter att använda funktionell programmering, vilket kan ge en mer elegant och lättläst kod. Ett annat användbart verktyg är utökningar, som låter dig lägga till nya funktioner till standardklasser utan att behöva ändra dess kod.
 
 ## Se även
-Här är några resurser som kan vara användbara när du startar ett nytt Kotlin-projekt:
+- [Officiell Kotlin hemsida](https://kotlinlang.org/)
+- [Kotlin för nybörjare](https://www.programiz.com/kotlin)
+- [Kotlin och Android utveckling](https://developer.android.com/kotlin)
+- [Kotlin standardbiblioteket](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
+- [Kotlin funktionell programmering](https://proandroiddev.com/from-event-driven-to-functional-programming-with-kotlin-part-i-f01b189a2d)
 
-- Officiell Kotlin-dokumentation (https://kotlinlang.org/docs/)
-- Tutorials från JetBrains (https://www.jetbrains.com/help/idea/discover.html)
-- Övningsexempel från Kotlin Koans (https://kotlinlang.org/docs/koans.html)
-
-Lycka till med ditt nya projekt!
+Genom att följa dessa tips och fortsätta utforska Kotlin kan du skapa fantastiska projekt och ta din programmeringsfärdighet till nästa nivå. Lycka till!

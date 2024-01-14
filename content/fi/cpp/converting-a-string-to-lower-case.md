@@ -1,57 +1,48 @@
 ---
-title:    "C++: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/converting-a-string-to-lower-case.md"
+title:                "C++: Muuntaminen merkkijonosta pienaakkosiin"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi muuntaa merkkijono pienaakkosiin
 
-Jotenkin ei ole ollenkaan harvinaista törmätä tarpeeseen muuttaa merkkijono pieniksi kirjaimiksi. Se voi johtua esimerkiksi vertailusta käyttäjän syöttämän tekstin kanssa tai tulosteen visuaalisesta muotoilusta. Lyhyesti sanottuna, pienten kirjainten käyttö on yleinen ja tarpeellinen ohjelmoinnissa.
+Merkkijonon muuntaminen pienaakkosiin on usein tärkeä toiminto, jota tarvitaan ohjelmoinnissa erilaisten tekstilähteiden käsittelyssä. Esimerkiksi käyttäjän syöttämä merkkijono voi sisältää niin isoja- kuin pieniaakkosia, ja yhtenäisen muodon varmistaminen on tärkeää monien toimintojen suorittamiseksi oikein.
 
-## Miten
+## Miten muuntaa merkkijono pienaakkosiin
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi C++: ssa on yksinkertaista. Käytännössä on kaksi yleistä tapaa tehdä tämä. Tässä ensimmäisessä esimerkissä käytetään std::transform-funktiota, joka tarjoaa yksinkertaisen tavan muuttaa merkkijono pienten kirjainten muotoon.
+Merkkijonon muuntaminen pienaakkosiin on yksinkertaista käyttämällä "transform" funktiota ja "tolower" metodia. Seuraavassa esimerkissä näytämme, miten tämä voidaan toteuttaa C++ -koodissa.
 
 ```C++
 #include <iostream>
 #include <algorithm>
-#include <string>
+
+using namespace std;
 
 int main() {
-    std::string s = "Merkkijono";
-    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
-    std::cout << "Merkkijonon pienten kirjainten muoto: " << s << std::endl;
+  string input = "TÄMÄ ON MERKKIJONO PIENAUKKOSINA";
+  transform(input.begin(), input.end(), input.begin(), ::tolower);
+  cout << input << endl;
+  return 0;
 }
 ```
 
-Tuloste: "merkkijono"
+### Output:
 
-Toinen tapa on käyttää kirjastofunktiota tolower(), joka muuttaa yhden merkin pienen kirjaimen muotoon. Käy läpi merkkijonon jokainen merkki ja muuta ne pieniksi kirjaimiksi.
+`tämä on merkkijono pienaakkosina`
 
-```C++
-#include <iostream>
-#include <string>
+Tässä koodissa käytämme "transform" funktiota käyttäjän syöttämän merkkijonon muuntamiseen. Ensimmäisenä argumenttina annamme merkkijonon alun ja lopun, jotta funktio tietää käsiteltävän osan. Toisena argumenttina annamme sen, mihin haluamme muuntaa merkkijonon ja kolmantena argumenttina annamme "tolower" metodin, joka muuntaa isot kirjaimet pieniksi.
 
-int main() {
-    std::string s = "Merkkijono";
-    for (int i = 0; i < s.length(); i++) {
-        s[i] = tolower(s[i]);
-    }
-    std::cout << "Merkkijonon pienten kirjainten muoto: " << s << std::endl;
-}
-```
+## Syvällinen sukellus merkkijonon muuntamiseen pienaakkosiin
 
-Tuloste: "merkkijono"
+Merkkijonon muuntaminen pienaakkosiin on tärkeä osa merkkijonojen käsittelyä ohjelmoinnissa. Monissa tapauksissa se on tarpeellista, jotta tiedot pysyvät yhtenäisinä ja virheet voidaan välttää. Lisäksi tällä toiminnolla voidaan helposti vertailla merkkijonoja, koska isot ja pienet kirjaimet vaikuttavat merkitykseen ja aakkosjärjestykseen.
 
-## Syventyminen
-
-Molemmissa esimerkeissä käytetty std::transform()-funktio ja tolower()-funktio ovat osa C++:n standardikirjastoa. Näiden käyttöön ei tarvita ulkopuolisia kirjastoja. Muista kuitenkin tarkistaa, että käytössäsi on oikein määritetty kieliversio, jotta nämä kirjastofunktiot ovat käytettävissä.
-
-On myös hyvä huomata, että merkkijono muutetaan pysyvästi pieniksi kirjaimiksi. Jos haluat vain vertailla alkuperäistä merkkijonoa, voit luoda kopion ja muuttaa sen pieniksi kirjaimiksi.
+On myös huomionarvoista, että tämä toiminto ei muuta alkuperäistä merkkijonoa, vaan se luo uuden kopion, jota voidaan käyttää edelleen. Tämä on tarpeellista, jotta alkuperäinen merkkijono säilyy muuttumattomana ja sitä voidaan edelleen käyttää muissa toiminnoissa.
 
 ## Katso myös
 
-- [C++ standardikirjasto: std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [C++ standardikirjasto: tolower](https://en.cppreference.com/w/cpp/string/byte/tolower)
+- [C++ kirjasto merkkijonojen käsittelyyn](https://www.cplusplus.com/reference/string/)
+- [Merkkijonon muuntaminen isoihin ja pieniin kirjaimiin](https://www.geeksforgeeks.org/converting-strings-to-upper-and-lower-case-in-c/)
+- [Merkkijonon käsittely C++:ssa](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

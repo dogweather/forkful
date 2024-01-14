@@ -1,45 +1,62 @@
 ---
-title:    "C++: Écrire des tests"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/writing-tests.md"
+title:                "C++: Ecrire des tests"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-### Pourquoi
+## Pourquoi écrire des tests en programmation C++
 
-Les tests sont une partie essentielle de tout processus de développement logiciel. Ils permettent de vérifier la qualité du code et de détecter les erreurs avant qu'elles ne causent des problèmes aux utilisateurs finaux. De plus, écrire des tests garantit que le code reste fonctionnel au fil du temps, même après des mises à jour ou des modifications.
+Si vous êtes un programmeur en C++, vous savez probablement à quel point il peut être difficile de déboguer votre code une fois qu'il est écrit. Cela peut être particulièrement vrai pour des projets complexes et à grande échelle. C'est là qu'écrire des tests peut être une étape précieuse pour vous et votre code. Les tests vous aident à vérifier que votre code fonctionne correctement et à détecter les erreurs dès le départ, ce qui peut vous faire gagner du temps et éviter des problèmes dans le futur.
 
-### Comment faire
+## Comment écrire des tests en programmation C++
 
-Pour écrire des tests efficaces en C++, vous pouvez utiliser le framework de test unitaire Catch2. Tout d'abord, installez Catch2 sur votre système et incluez le dossier `catch2` dans votre projet. Ensuite, créez un nouveau fichier de test avec l'extension `.cpp` et incluez `catch.hpp` au début du fichier.
+Pour écrire des tests efficaces en C++, il y a quelques notions de base à comprendre. Tout d'abord, il faut savoir que les tests doivent être assez simples pour être automatisés et devraient être exécutés fréquemment afin de s'assurer que tout fonctionne correctement. Il est également important de séparer les différents types de tests, tels que les tests unitaires, les tests d'intégration et les tests de validation, afin d'avoir une couverture complète de votre code.
 
-```C++
-#include "catch.hpp"
-
-// Écrivez vos tests ici
-```
-
-Ensuite, vous pouvez définir vos tests en utilisant la macro `TEST_CASE` de Catch2. Par exemple, pour tester une fonction qui ajoute deux nombres, vous pouvez écrire :
+Voici un exemple simple de test en C++ :
 
 ```C++
-TEST_CASE( "Additionner deux nombres" ) {
-    REQUIRE( addition(2, 3) == 5 );
+// Déclarer les en-têtes nécessaires
+#include <iostream>
+#include <cassert>
+
+// Fonction à tester
+int additionner(int a, int b)
+{
+    return a + b;
+}
+
+// Fonction de test
+void testAddition()
+{
+    // On s'attend à ce que 2+2 égale 4
+    assert(additionner(2, 2) == 4);
+}
+
+int main()
+{
+    // Appel de la fonction de test
+    testAddition();
+
+    // Message de succès si aucun assert n'a échoué
+    std::cout << "Tous les tests ont réussi!" << std::endl;
+
+    return 0;
 }
 ```
 
-Vous pouvez également utiliser la macro `REQUIRE` pour spécifier les conditions que votre code doit satisfaire et ainsi vérifier si elles sont remplies dans vos tests. Si une condition n'est pas remplie, le test échouera et vous pourrez corriger votre code en conséquence.
+Lorsque vous exécutez ce code, vous devriez voir le message "Tous les tests ont réussi!", indiquant que le test a réussi avec succès.
 
-Pour exécuter vos tests, vous pouvez simplement compiler et exécuter votre fichier de test. Si tout se passe bien, vous devriez voir un message de réussite pour chaque test.
+## Approfondir les tests en programmation C++
 
-### Plongée en profondeur
+Pour une couverture plus complète de vos tests en C++, vous pouvez également utiliser des bibliothèques de tests telles que Google Test ou Catch2, qui offrent une interface plus conviviale pour l'écriture et l'exécution de tests. Ces bibliothèques permettent également de gérer les erreurs plus efficacement et de générer des rapports détaillés sur les tests effectués.
 
-Écrire des tests peut sembler fastidieux et chronophage, mais cela peut vous faire économiser beaucoup de temps et d'efforts à long terme. En plus de vérifier la qualité de votre code, les tests peuvent également servir de documentation pour vos fonctions et vos classes. De plus, en utilisant Catch2, vous pouvez facilement intégrer des tests dans votre processus de développement en les exécutant à chaque fois que vous apportez des modifications à votre code.
+Dans la pratique, il est important d'écrire des tests pour chaque nouvelle fonctionnalité que vous ajoutez à votre code, afin de vous assurer qu'elle fonctionne correctement et de la maintenir à jour en cas de modifications ultérieures.
 
-De plus, la pratique du test-driven development, où les tests sont écrits avant même le code de production, peut vous aider à concevoir un code de meilleure qualité dès le début.
+## Voir aussi
 
-### Voir aussi
-
-- [Catch2 sur GitHub](https://github.com/catchorg/Catch2)
-- [Guide de démarrage Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md)
-- [Test-Driven Development (TDD): le guide complet](https://medium.com/swlh/test-driven-development-tdd-le-guide-complet-1-dans-ce-tutoriel-nous-plongeons-dans-la-6bd4febf3b8a)
+- [Google Test](https://github.com/google/googletest)
+- [Catch2](https://github.com/catchorg/Catch2)
+- [Tutoriel sur les tests en C++](https://www.tutorialspoint.com/cplusplus/cpp_testing.htm)

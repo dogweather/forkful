@@ -1,47 +1,43 @@
 ---
-title:    "Swift recipe: Writing a text file"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-a-text-file.md"
+title:                "Swift recipe: Writing a text file"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-In today's digital world, writing a text file may seem like a thing of the past. However, it still serves an important purpose in many applications. Whether you need to store simple data, transfer information between systems, or even just create a log, knowing how to write a text file can be a valuable skill for any Swift programmer.
+Text files are an essential part of programming as they allow for the storage and manipulation of data. Learning how to create and write to a text file is a vital skill for any Swift programmer.
 
 ## How To
+Creating and writing to a text file in Swift is a relatively straightforward process. First, we need to define the file path where we want our text file to be saved. We can do this by using the `FileManager` class and its `urls(for:in:)` method.
 
-Writing a text file in Swift is a simple process. First, we need to define the file path where we want to save our text file. We can do this by using the `URL` class and specifying the location and name of our file.
-
-```Swift
-let fileURL = URL(fileURLWithPath: "myTextFile.txt")
+```
+Swift
+let fileManager = FileManager.default
+let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+let filePath = documentDirectory.appendingPathComponent("myFile.txt")
 ```
 
-Next, we need to create a string with the contents we want to write to our text file. This can be anything from a single word to a large block of text.
+Next, we need to create the actual text file by using the `createFile(atPath:contents:attributes:)` method. We can specify the content of the file as a `Data` object, which we can convert from a `String` using the `data(using:)` method.
 
-```Swift
-let text = "Hello, world!"
+```
+Swift
+let fileContent = "This is the content of my text file."
+let fileData = fileContent.data(using: .utf8)
+fileManager.createFile(atPath: filePath.path, contents: fileData, attributes: nil)
 ```
 
-Now, we can use the `write(to:atomically:encoding:)` method to actually write the text to our file. This method takes in the file URL, a boolean value determining whether we want to write atomically (meaning the entire file is written at once), and an encoding value.
-
-```Swift
-do {
-    try text.write(to: fileURL, atomically: true, encoding: .utf8)
-    print("Text file successfully created!")
-} catch {
-    print("Error writing to file: \(error)")
-}
-```
-
-When we run this code, we should see our text file appear in the specified location with the text "Hello, world!" written inside.
+And that's it! We have successfully created and written to our text file.
 
 ## Deep Dive
+When creating a text file, there are a few things to keep in mind. The first parameter of the `urls(for:in:)` method takes in a `SearchPathDirectory` enum which specifies the location of the file. In this example, we used `.documentDirectory` which is a directory meant for user-generated content. Other options include `.cachesDirectory` for cached resources and `.applicationSupportDirectory` for application-specific data.
 
-The `write(to:atomically:encoding:)` method is just one way to write a text file in Swift. Another option is to use the `FileManager` class, which allows us to create the file if it doesn't already exist and append text to it. We can also specify a different encoding, such as UTF-16 or ASCII. Additionally, if we want to add more complex data, we can use the `NSKeyedArchiver` class to convert our data into an archived file, which can then be written to a text file.
+Additionally, the `createFile(atPath:contents:attributes:)` method also takes in an `attributes` parameter, where we can specify the file's attributes such as its creation date and file size.
 
 ## See Also
-
-- [File System Programming Guide](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)
-- [Encoding in Swift](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_data_with_coding/keyed_encoding)
+- [Apple Developer Documentation on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Apple Developer Documentation on NSData](https://developer.apple.com/documentation/foundation/nsdata)
+- [Learn Swift by Codecademy](https://www.codecademy.com/learn/learn-swift)

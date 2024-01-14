@@ -1,58 +1,58 @@
 ---
-title:    "C++: Extrahera delsträngar"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/extracting-substrings.md"
+title:                "C++: Extrahering av substrängar"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Substring, eller delsträng, är en viktig del av programmering då det tillåter oss att extrahera en del av en befintlig sträng. Detta kan vara användbart när vi exempelvis behöver manipulera en sträng eller jämföra en del av den med en annan sträng.
+Att extrahera substrängar är en vanlig uppgift inom programmering, särskilt när man arbetar med textsträngar. Genom att kunna extrahera substrängar kan du få tillgång till specifika delar av en sträng som du behöver för att utföra olika operationer.
 
-## Så här gör du
-
-För att extrahera en substring i C++, används funktionen `substr()`. Vi börjar genom att deklarera en sträng variabel och sedan anropa `substr()` funktionen med två parametrar: startindex och längden på den del av strängen vi vill extrahera. Exempelvis:
+## Hur man gör det
 
 ```C++
-#include <iostream> 
+#include <iostream>
+#include <string>
 
-using namespace std; 
+using namespace std;
 
-int main() { 
-   string str = "Hej världen";
-   string substr = str.substr(4, 6); // extraherar "världen" (startar på index 4 och har en längd på 6)
+int main() {
+    // Skapar en sträng som vi vill extrahera en substräng från
+    string namn = "Sofia Andersson";
 
-   // Utmatningen blir "världen"
-   cout << substr << endl; 
+    // Extraherar den första bokstaven i strängen
+    string forstaBokstaven = namn.substr(0, 1);
+    cout << "Första bokstaven i namnet är: " << forstaBokstaven << endl;
 
-   return 0; 
+    // Extraherar de första fyra bokstäverna i strängen
+    string forstaFyra = namn.substr(0, 4);
+    cout << "De första fyra bokstäverna är: " << forstaFyra << endl;
+
+    // Extraherar en del av strängen från en viss position
+    string efternamn = namn.substr(6);
+    cout << "Efternamnet är: " << efternamn << endl;
+
+    return 0;
 }
 ```
 
-Det är viktigt att notera att indexet börjar på 0 och att längden inte får överstiga längden på den ursprungliga strängen. Om den andra parametern inte anges kommer `substr()` funktionen automatiskt att extrahera resten av strängen från startindex.
-
-## Djupdykning
-
-Förutom startindex och längd, finns det ytterligare två parametrar som kan användas för att anpassa extraheringsprocessen: delimiter (avgränsare) och antal utföranden. Delimiter används för att definiera ett tecken som kommer att markera slutet på den extraherade delsträngen. Om den inte anges kommer funktionen att fortsätta extrahera tills slutet av den ursprungliga strängen. Antal utföranden används för att ange hur många gånger extraktionen ska utföras, vilket är användbart när strängen innehåller flera delar som vi inte vill extrahera.
-
-```C++
-#include <iostream> 
-
-using namespace std; 
-
-int main() { 
-   string str = "1,2,3,4,5";
-   string substr = str.substr(2, 5, ','); // extraherar "2,3,4,5" (startar på index 2 och har en längd på 5 med "," som avgränsare)
-
-   // Utmatningen blir "2,3,4,5"
-   cout << substr << endl; 
-
-   return 0; 
-}
+Output:
 ```
+Första bokstaven i namnet är: S
+De första fyra bokstäverna är: Sofia
+Efternamnet är: Andersson
+```
+
+## Fördjupning
+
+För att extrahera substrängar kan du använda funktionen `substr()` från standardbiblioteket `string`. Denna funktion tar två parametrar - startpositionen och längden på den önskade substrängen. Genom att välja rätt startposition och längd kan du få tillgång till olika delar av en sträng.
+
+Funktionen `substr()` har också en överslagsparameter som låter dig extrahera en substräng från en viss position till slutet av strängen, vilket är användbart när du arbetar med variabler av olika längder.
 
 ## Se även
 
-- [C++ String Class Reference](https://www.cplusplus.com/reference/string/string/)
-- [C++ substr() Function Reference](https://www.cplusplus.com/reference/string/string/substr/)
+- [C++ Strings (Swedish)](https://www.zeolearn.com/magazine/working-with-strings-in-c)
+- [String Substr function documentation (Swedish)](https://www.cplusplus.com/reference/string/string/substr/)

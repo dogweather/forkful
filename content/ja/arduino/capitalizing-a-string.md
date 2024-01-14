@@ -1,46 +1,36 @@
 ---
-title:    "Arduino: The title of an article on computer programming: 文字列の大文字化"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/capitalizing-a-string.md"
+title:                "Arduino: 文字列の先頭を大文字に変換する"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-あなたはArduinoプログラムを書くときに、文字列を大文字化する必要があるかもしれません。例えば、センサーから受け取ったデータを処理するときや、ディスプレイに表示するときには、大文字化した方が読みやすい場合があります。
+アルドゥイーノプログラミングでは、文字列を大文字に変換することは非常に一般的なタスクです。例えば、テキストメッセージや電子メールのタイトルを大文字で表示したり、ボタンのラベルを大文字で表示したりすることができます。文字列を大文字にすることで、テキストの読みやすさや視覚的な統一性を向上させることができます。
 
 ## 方法
 
-文字列を大文字化するためには、Arduinoの`toUpperCase()`関数を使用します。この関数は、指定した文字列をすべて大文字にすることができます。例えば、以下のようにコードを書くことができます。
+文字列を大文字に変換する方法はいくつかありますが、ここでは最も一般的な方法を紹介します。まず、`toUpperCase()`という関数を使います。この関数は、文字列を大文字に変換した新しい文字列を返します。下の例を見てみましょう。
 
-```Arduino
-String message = "Hello world!";
-message.toUpperCase();
-Serial.println(message);
+```
+ArduinoString myString = "hello world";
+ArduinoString upperString = myString.toUpperCase();
+```
+```
+"HELLO WORLD"
 ```
 
-このコードを実行すると、シリアルモニターには`HELLO WORLD!`という文字列が表示されます。
+このように、`toUpperCase()`関数を使うことで、元の文字列を変更せずに大文字に変換することができます。また、`toUpperCase()`関数は英数字だけでなく、日本語の文字列も大文字に変換することができます。
 
-## 深堀り
+## ディープダイブ
 
-Arduinoの`toUpperCase()`関数は、文字列の先頭以外のすべての文字を大文字に変換します。つまり、英数字や記号などの文字以外のものは変換されません。また、この関数は元の文字列を変更するのではなく、大文字化した新しい文字列を返します。そのため、元の文字列の内容が変わることはありません。
+文字列を大文字に変換する方法は、C言語と同じように`toupper()`関数を使う方法もありますが、`toUpperCase()`関数の方がArduinoプログラミングにおいてはより簡単で便利です。`toUpperCase()`関数は、内部で`toupper()`関数を使用しており、文字列内のすべての文字を大文字に変換します。また、文字列を大文字に変換する際には、文字エンコーディングにも注意する必要があります。日本語の場合、UTF-8の場合は問題なく大文字に変換されますが、Shift-JISなどのエンコーディングでは変換がうまく行われない場合もあります。
 
-## その他の情報
+## おすすめリンク
 
-上記の例では、文字列を変数に格納してから`toUpperCase()`関数を使用しましたが、直接関数を使用することもできます。例えば、以下のように書くことができます。
-
-```Arduino
-Serial.println("hello world!".toUpperCase());
-```
-
-この場合も、シリアルモニターには`HELLO WORLD!`が表示されます。
-
-## おわりに
-
-文字列を大文字化する方法を紹介しましたが、もちろん大文字化の必要がない場合は関数を使用する必要はありません。適宜使い分けるようにしましょう。
-
-## 関連リンク
-
-- [Arduinoの公式ドキュメント](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/touppercase/)
-- [文字列の操作についての日本語の記事](https://garretlab.web.fc2.com/arduino/lab/string.html)
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [C言語で文字列を大文字に変換する方法](https://www.tohoho-web.com/ex/case_up.html)
+- [Arduinoでの文字エンコーディングの扱い方](https://tomosoft.jp/design/?p=13834)

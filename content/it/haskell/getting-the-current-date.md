@@ -1,42 +1,78 @@
 ---
-title:    "Haskell: Ottenere la data corrente"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/getting-the-current-date.md"
+title:                "Haskell: Ottenere la data corrente"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se sei un appassionato di programmazione o stai imparando il linguaggio Haskell, potresti voler sapere come ottenere la data corrente nel tuo codice. Ci sono molte ragioni per cui potresti voler usare questa funzione, ad esempio per registrare gli orari delle tue attività o per gestire gli eventi in base alla data corrente.
+La data corrente è un'informazione fondamentale in quasi tutti i programmi che scriviamo. Sapere come ottenerla è essenziale per gestire correttamente i dati temporalmente correlati o semplicemente per visualizzarli nei nostri programmi.
 
-## Come fare
+## Come ottenerla
 
-Per ottenere la data corrente in Haskell, puoi utilizzare la funzione `getCurrentTime` dalla libreria `Data.Time`. Ecco un esempio di codice:
+Per ottenere la data corrente in Haskell, dobbiamo utilizzare il modulo `Data.Time` dalla libreria `time`. Possiamo farlo in diversi modi, ma il modo più semplice è utilizzando la funzione `getCurrentTime`.
 
 ```Haskell
 import Data.Time
 
 main = do
-  currentTime <- getCurrentTime
-  print currentTime
+    time <- getCurrentTime
+    putStrLn $ "La data e l'ora correnti sono: " ++ show time
 ```
-
-Questo codice importerà la libreria necessaria e poi utilizzerà la funzione `getCurrentTime` per ottenere la data e l'ora correnti. Il risultato verrà quindi stampato a schermo.
 
 L'output sarà qualcosa del genere:
 
 ```
-2021-10-02 14:30:00.123456789 UTC
+La data e l'ora correnti sono: 2021-03-31 10:24:18.487682 UTC
+```
+
+In questo esempio, stiamo semplicemente ottenendo la data e l'ora correnti e stampandole a schermo utilizzando la funzione `putStrLn` e l'operatore di concatenazione `++`.
+
+Ma cosa succede se vogliamo ottenere la data in un formato diverso, come ad esempio "DD/MM/YYYY"? In questo caso, dobbiamo utilizzare la funzione `formatTime`:
+
+```Haskell
+import Data.Time
+import System.Locale
+
+main = do
+    time <- getCurrentTime
+    let formattedTime = formatTime defaultTimeLocale "%d/%m/%Y" time
+    putStrLn $ "La data corrente è: " ++ formattedTime
+```
+
+Ecco l'output che riceveremo:
+
+```
+La data corrente è: 31/03/2021
 ```
 
 ## Approfondimento
 
-Esistono diversi modi in cui puoi ottenere la data corrente in Haskell, a seconda del formato desiderato. Ad esempio, potresti voler ottenere solo il giorno, il mese o l'anno corrente invece della data completa come nell'esempio sopra.
+Come accennato in precedenza, la funzione `getCurrentTime` restituisce l'ora corrente nel formato UTC. Ma cosa significa UTC? UTC (Coordinated Universal Time) è il tempo universale coordinato, una scala di tempo di riferimento utilizzata in molti paesi. È equivalente al tempo di Greenwich e viene spesso utilizzato come base per la gestione del tempo in tutto il mondo.
 
-Inoltre, la funzione `getCurrentTime` restituisce un'informazione più precisa di quella mostrata sopra, ma per motivi di spazio e semplicità, abbiamo troncato il risultato nell'esempio. Se vuoi, puoi approfondire la documentazione della libreria `Data.Time` per scoprire tutte le opzioni disponibili e come utilizzarle correttamente.
+Per ottenere la data e l'ora corrente nel fuso orario locale, possiamo utilizzare la funzione `getZonedTime`:
 
-## Vedi anche
+```Haskell
+import Data.Time.LocalTime
 
-- [Documentazione ufficiale di Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
-- [Tutorial su come utilizzare le date in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time)
+main = do
+    time <- getZonedTime
+    putStrLn $ "La data e l'ora correnti nel fuso orario locale sono: " ++ show time
+```
+
+L'output sarà simile a questo:
+
+```
+La data e l'ora correnti nel fuso orario locale sono: 2021-03-31 12:24:18.487682 CET
+```
+
+Esistono molte altre funzioni e tipi di dati definiti nel modulo `Data.Time` per lavorare con il tempo e la data in Haskell. Ti consiglio di dare un'occhiata alla documentazione ufficiale per ulteriori informazioni.
+
+## Vedere anche
+
+- [Documentazione ufficiale di `time`](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Tutorial su come lavorare con il tempo in Haskell](https://mmhaskell.com/blog/2017/4/13/working-with-time)
+- [Funzioni di formattazione avanzata per il tempo in Haskell](https://mmhaskell.com/lst/working-with-time/formatting-time)

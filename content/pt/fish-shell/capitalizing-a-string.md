@@ -1,41 +1,63 @@
 ---
-title:    "Fish Shell: Maiúsculas em uma string"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell: Capitalizando uma string"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que usar o Fish Shell para capitalizar strings?
+# Por que utilizar o Fish Shell para capitalizar uma string?
 
-Se você está procurando uma forma simples e eficiente de capitalizar strings em seus scripts de programação, o Fish Shell pode ser a solução perfeita! Com sua sintaxe intuitiva e poderosas ferramentas de manipulação de strings, o Fish Shell torna o processo de capitalização de strings rápido e fácil.
+Capitalizar uma string pode ser uma tarefa bastante comum ao trabalhar com dados ou strings de entrada. Ao utilizar o Fish Shell, podemos facilmente capitalizar strings com apenas algumas linhas de código, o que economiza tempo e esforço.
 
-## Como capitalizar strings usando o Fish Shell
+## Como fazer:
 
-Para capitalizar uma string usando o Fish Shell, basta utilizar o comando `string capitalize` seguido da string que você deseja capitalizar. Veja um exemplo:
-
-```
-Fish Shell> string capitalize "este é um exemplo"
-Este é um exemplo
+```Fish Shell
+set texto "exemplo de string"
+echo $texto | string capitalize
 ```
 
-Além disso, você também pode utilizar o operador `|` para encadear comandos e capitalizar strings em um único comando:
+Este pequeno bloco de código demonstra como podemos capitalizar uma string utilizando o comando "string capitalize" no Fish Shell. Basta definir a string que desejamos capitalizar em uma variável e, em seguida, utilizar o comando "echo" junto com a variável e o comando "string capitalize".
+
+O resultado do código acima será a seguinte saída:
 
 ```
-Fish Shell> set my_string "este é um exemplo" | string capitalize
-Este é um exemplo
+Exemplo de string
 ```
 
-## Deep Dive: Mais informações sobre a capitalização de strings
+Este é apenas um exemplo básico de como capitalizar uma string utilizando o Fish Shell. É importante notar que podemos usar esse comando com qualquer tipo de string, independentemente do tamanho ou quantidade de palavras.
 
-O comando `string capitalize` do Fish Shell utiliza a função `string capitalize` do próprio shell, que possui dois argumentos: a string a ser capitalizada e um valor booleano opcional para indicar se o restante da string deve ser convertido para letras minúsculas.
+## Aprofundando:
 
-Além disso, o Fish Shell também oferece outras ferramentas de manipulação de strings, como `string lower` e `string upper`, que permitem converter strings para letras minúsculas e maiúsculas, respectivamente.
+Ao utilizar o comando "string capitalize" no Fish Shell, além de capitalizar a primeira letra de cada palavra, também podemos especificar uma opção para capitalizar apenas a primeira letra de uma string. Isso pode ser útil ao trabalhar com títulos ou nomes próprios.
 
-Com esses recursos, é possível criar scripts mais robustos e eficientes em que a capitalização de strings é necessária.
+```Fish Shell
+set texto "exemplo de string"
+echo $texto | string capitalize -l
+```
 
-# Veja também
+No código acima, a opção "-l" é utilizada para especificar que queremos capitalizar apenas a primeira letra da string. O resultado será:
 
-- Documentação oficial do Fish Shell: https://fishshell.com/docs/current/
-- Comunidade Fish Shell no Reddit: https://www.reddit.com/r/fishshell/
-- Exemplos práticos de utilização da manipulação de strings no Fish Shell: https://fishshell.com/docs/current/cmds/string.html
+```
+Exemplo de string
+```
+
+Podemos, ainda, utilizar a opção "-a" para capitalizar todas as letras da string, ao invés de apenas a primeira letra de cada palavra.
+
+```
+set texto "exemplo de string"
+echo $texto | string capitalize -a
+```
+
+A saída será:
+
+```
+Exemplo De String
+```
+
+## Veja também:
+
+- [Documentação oficial do Fish Shell - String Manipulation](https://fishshell.com/docs/current/commands.html#string-manipulation)
+- [Curso de Fish Shell para iniciantes](https://www.udemy.com/course/fish-shell-linux/)
+- [Aprenda a usar o Fish Shell como um profissional](https://egghead.io/courses/preparing-for-the-fish-shell)

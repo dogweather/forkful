@@ -1,51 +1,41 @@
 ---
-title:    "Fish Shell: Excluindo caracteres que correspondem a um padrão"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell: Excluindo caracteres correspondentes a um padrão"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Uma das tarefas mais comuns ao lidar com texto é encontrar e substituir certos padrões de caracteres. No Fish Shell, existe uma função ampla e útil para fazer exatamente isso: a exclusão de caracteres que correspondem a um padrão. Neste post, vamos explorar por que você pode querer usar essa função e como fazê-la em seu código.
+## Porquê
+Deletar caracteres que correspondam a um padrão pode ser extremamente útil para limpar dados, desenvolver scripts automatizados ou simplificar tarefas no Fish Shell. Esta funcionalidade permite que os programadores excluam rapidamente partes específicas de um texto ou código, economizando tempo e esforço.
 
 ## Como Fazer
-Para excluir caracteres correspondentes a um padrão no Fish Shell, você pode usar o operador `~=` (tilde igual) seguido do padrão entre aspas duplas. Por exemplo, se quisermos excluir todas as vogais de uma string, podemos usar o seguinte código:
+Felizmente, a linguagem Fish Shell é ótima para manipular strings e oferece uma variedade de opções para excluir caracteres que correspondam a um padrão. Aqui está um exemplo de código mostrando como fazer isso:
 
-```
-set texto "Olá Mundo"
-set novo_texto $texto[~="aeiou"]
-echo $novo_texto
-```
-Isso imprimirá "Ol Mnd" na tela. O operador `~=` irá percorrer toda a string e excluir qualquer caractere que corresponda ao padrão "aeiou".
-
-Mas o que acontece se você desejar excluir apenas algumas letras e não todas? É aí que entra o operador `!~=` (tilde exclamação igual). Este operador exclui todos os caracteres que não correspondem ao padrão. Por exemplo, se quisermos excluir todas as letras maiúsculas em uma string, podemos usar o seguinte código:
-
-```
-set texto "Olá Mundo"
-set novo_texto $texto[!~="A-Z"]
-echo $novo_texto
-```
-Isso imprimirá "lá undo" na tela, já que todas as letras maiúsculas foram excluídas.
-
-Você também pode usar o operador `~=` em uma variável de array para excluir caracteres correspondentes de cada elemento. Por exemplo, se tivermos um array com vários nomes e quisermos excluir os sobrenomes de cada elemento, podemos fazer o seguinte:
-
-```
-set nomes João Silva José Pereira Maria Santos
-set nomes = $nomes[~="* *"]
-echo $nomes
+```Fish Shell
+set variavel = "Olá, Mundo!"
+echo $variavel
+Olá, Mundo!
+set novo_variavel = $variavel global-substituir -r "M" ""
+echo $novo_variavel
+Olá, undo!
 ```
 
-O resultado será "João José Maria", pois o padrão "* *" indica um nome seguido de um espaço e um sobrenome, que será excluído.
+Neste exemplo, usamos a função `global-substituir` com a opção `-r` para substituir todas as ocorrências da letra "M" na variável original (`$variavel`) por um espaço em branco. Isso é feito ao definir uma nova variável com o mesmo valor da primeira, seguida pelo comando `global-substituir` que exclui o padrão especificado. O resultado é uma nova variável (`$novo_variavel`) com a letra "M" removida da string original.
 
-## Deep Dive
-O operador `~=` utiliza expressões regulares para encontrar e excluir os caracteres correspondentes. Expressões regulares são padrões de caracteres que permitem pesquisar e manipular textos de maneira flexível e poderosa. No Fish Shell, você pode encontrar mais informações sobre as expressões regulares em seu guia de ajuda digitando `help regex` no terminal.
+Você também pode usar outras opções, como `local-substituir` que irá substituir apenas a primeira ocorrência do padrão, ou `substring-substituir`, que irá excluir uma seção específica da string. Experimente diferentes opções e veja qual funciona melhor para as suas necessidades!
 
-Além disso, o Fish Shell possui outras funções relacionadas à exclusão de caracteres correspondentes, como `string match`, que retorna se uma string corresponde a um padrão e `string replace`, que substitui o padrão por outro texto. Experimente essas funções para ver como elas podem ser úteis em seus scripts!
+## Explorando mais a fundo
+Se você é novo no uso da linguagem Fish Shell ou está procurando mais informações sobre como excluir caracteres correspondentes a um padrão, aqui está uma lista de recursos úteis para ajudá-lo a se aprofundar:
 
-## Veja Também
-- [Guia de ajuda do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Documentação sobre expressões regulares no Fish Shell](https://fishshell.com/docs/current/index.html#regex)
-- [Listagem de todas as funções de manipulação de strings no Fish Shell](https://fishshell.com/docs/current/cmds/string.html)
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/cmds/global-substitute.html)
+- [Fórum de discussão do Fish Shell](https://fishshell.com/docs/current/cmds/global-substitute.html)
+- [Vídeos tutoriais sobre o Fish Shell](https://www.youtube.com/watch?v=fEIIPJQNvCI)
+- [Comunidade Fish Shell no Reddit](https://www.reddit.com/r/fishshell/)
 
-Esperamos que este post tenha ajudado você a entender melhor a exclusão de caracteres correspondentes no Fish Shell e como aplicá-la em seu código. Explore mais funções e comandos do Fish Shell para se tornar um programador mais eficiente e produtivo!
+## Veja também
+Confira estes recursos adicionais para aprender mais sobre a linguagem Fish Shell e suas funcionalidades incríveis:
+
+- [Shell Scripting com Fish Shell: Um guia abrangente](https://raymondxie.medium.com/shell-scripting-with-fish-shell-a-comprehensive-guide-c44ac6695853)
+- [Dominando a linguagem Fish Shell](https://dev.to/franchessinee/mastering-the-fish-shell-5cano)

@@ -1,52 +1,65 @@
 ---
-title:    "C: Testien kirjoittaminen"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-tests.md"
+title:                "C: Ohjeistus testien kirjoittamiseen."
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi kirjoittaa testejä?
 
-Testien kirjoittaminen on tärkeä osa hyvän ja toimivan C-ohjelman kehittämistä. Ne auttavat tunnistamaan ja korjaamaan mahdollisia virheitä ennen kuin ohjelma julkaistaan, mikä parantaa sen luotettavuutta ja vähentää käyttäjien kohtaamien ongelmien määrää.
+Testien kirjoittaminen on tärkeä osa ohjelmointia, jota ei kannata jättää huomiotta. Se auttaa sinua varmistamaan, että koodisi toimii odotetulla tavalla ja vähentää virheiden esiintymistä tuotantokoodissa.
 
-## Miten
+## Miten kirjoittaa testejä?
 
-Ohjelmistotestauksen tärkein periaate on, että jokaisen funktion, luokan tai moduulin tulee olla itsenäisesti testattavissa. Tämä tarkoittaa, että koodin on oltava kirjoitettu siten, että sen toimivuutta voidaan testata erillisellä testikoodilla ilman muiden osien riippuvuutta. Seuraavassa esimerkissä näytetään yksinkertainen testi funktiolle, joka palauttaa kahden luvun keskiarvon:
+Testien kirjoittaminen C-kielellä on helppoa. Käytä vain testikirjastoa, kuten CUnit, ja kirjoita testit tapauksille, jotka haluat testata. Alla on esimerkki testikoodista sekä sen tulostuksesta:
 
 ```C
 #include <stdio.h>
+#include <CUnit/CUnit.h>
 
-double keskiarvo(int a, int b) {
-  return (a + b) / 2.0;
+int add(int num1, int num2)
+{
+    return num1 + num2;
 }
 
-int main() {
-  double tulos = keskiarvo(5, 10);
-  printf("Keskiarvo on: %.2f", tulos);
+void test_add()
+{
+    CU_ASSERT(add(5, 10) == 15);
+    CU_ASSERT(add(0, 0) == 0);
+}
 
-  return 0;
+int main()
+{
+    CU_initialize_registry();
+    CU_pSuite suite = CU_add_suite("add_suite", NULL, NULL);
+    CU_add_test(suite, "test_add", test_add);
+    CU_basic_run_suite(suite);
+    CU_cleanup_registry();
+    return 0;
 }
 ```
 
-Tämän testin tulisi palauttaa seuraava tulos:
+Tulostus:
 
 ```
-Keskiarvo on: 7.50
+Suite: add_suite
+  Test: test_add ... passed
+  
+Run Summary:  1/1 passed (100%)
 ```
 
-Tämän testin avulla voidaan varmistua siitä, että keskiarvon laskeminen toimii oikein ja että se palauttaa halutun tuloksen.
+## Syventävä sukellus
 
-## Syväsyventyminen
+Kirjoittaminen testitapauksille ja niiden ajamiselle voi tuntua aikaa vievältä, mutta se on erittäin tärkeää pitkällä aikavälillä. Se auttaa sinua varmistamaan ohjelmasi laadun ja tehokkuuden, sekä vähentämään virheiden määrää ja parantamaan koodisi ylläpidettävyyttä.
 
-Testien kirjoittamisen tarkoituksena on tarkastella ohjelman eri osia ja varmistaa niiden toimivuus. Tämä tarkoittaa, että sinun tulisi testata kaikki funktiot, luokat ja moduulit erikseen sekä myös niiden yhteistoimivuus. Lisäksi ohjelman eri toiminnallisuuksien on oltava testattuja ja toimintavarmoja kaikissa tilanteissa.
-
-Testikoodin kirjoittaminen voi myös auttaa sinua paremmin ymmärtämään ohjelmasi toimintaa ja tunnistamaan mahdollisia ongelmallisia alueita. Lisäksi testien avulla voit varmistaa, että muutokset ohjelmassa eivät aiheuta uusia ongelmia ja että ohjelma toimii edelleen odotetusti.
-
-Nykypäivänä on olemassa useita testikehyksiä, kuten esimerkiksi CUnit, joiden avulla voit helposti kirjoittaa ja suorittaa testejä ohjelmassasi. Suosittelemme tutustumaan näihin ja hyödyntämään niitä testikoodin kirjoittamisessa.
+Tärkeää on myös muistaa, että testien kirjoittaminen tilanteiden mukaan voi olla helpompi ja tehokkaampi tapa kuin jokaisen piirteiden testaaminen erikseen. Valitse siis testattavat tapaukset fiksusti ja varmista, että ohjelmasi toimii kaikissa mahdollisissa tilanteissa.
 
 ## Katso myös
 
-- [CUnit-testikehys](https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
-- [Hyödyllisiä vinkkejä C-ohjelmointiin](https://www.macs.hw.ac.uk/~hwloidl/Courses/F21SC/LEC01/LECTURE1.pdf)
-- [Miten kirjoittaa tehokasta testikoodia](https://www.guru99.com/unit-testing-guide.html)
+- [CUnit-dokumentaatio](http://cunit.sourceforge.net/doc/writing_tests.html)
+- [C-testikirjaston käyttö](https://overiq.com/c-programming-101/unit-testing-in-c-using-cunit/)
+- [Parhaiden käytäntöjen opas testien kirjoittamiseen C:llä](https://hackernoon.com/unit-testing-in-c-best-practices-c7dcab3b948f)
+
+Kiitos lukemisesta, toivottavasti tämä auttoi sinua ymmärtämään testien kirjoittamisen tärkeyttä C-ohjelmoinnissa. Onnea testaamiseen ja hyvien testikäytäntöjen noudattamiseen!

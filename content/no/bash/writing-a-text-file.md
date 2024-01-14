@@ -1,43 +1,27 @@
 ---
-title:    "Bash: Skriver en tekstfil"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-a-text-file.md"
+title:                "Bash: Skriver en tekstfil"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Å kunne skrive en tekstfil i Bash er en viktig ferdighet for enhver programmerer. Det lar deg lage og lagre informasjon på en enkel måte, som kan leses og behandles av datamaskinen.
 
-Å skrive en tekstfil kan være en viktig del av Bash programmering. Det lar deg lagre og organisere informasjon på en strukturert måte og kan være nyttig for å lage skript og automatisere oppgaver.
+# Hvordan
+For å skrive en tekstfil i Bash må du først åpne et terminalvindu. Deretter kan du bruke kommandoen "touch" etterfulgt av navnet på tekstfilen du vil lage. Dette vil opprette en tom tekstfil.
 
-## Hvordan
+Etter å ha opprettet filen, kan du bruke kommandoen "nano" etterfulgt av filnavnet for å åpne filen i et enkelt tekstredigeringsprogram. Her kan du skrive inn ønsket tekst og lagre filen ved å trykke "Ctrl + X" og deretter "Y" for å bekrefte at du vil lagre endringene.
 
-For å skrive en tekstfil i Bash, må du først åpne en terminal og navigere til mappen der du ønsker å lagre filen. Deretter kan du bruke kommandoen "touch" for å opprette en tom fil. For eksempel:
+Et alternativ til "nano" er å bruke "echo" kommandoen. Dette lar deg skrive inn tekst direkte i terminalen og deretter sende den til en fil ved å bruke ">" og ">>" operatørene. For å lage en ny fil kan du bruke "> filnavn.txt" og for å legge til tekst i en eksisterende fil kan du bruke ">> filnavn.txt".
 
-```Bash
-touch min_fil.txt
-```
+## Deep Dive
+Når du skriver en tekstfil i Bash, er det viktig å forstå at Bash tolker hvert tegn som en kommando eller en del av en kommando. Derfor må du passe på at du ikke bruker spesielle tegn eller syntaks som kan tolkes feil.
 
-Dette vil opprette en tekstfil med navnet "min_fil.txt" i den valgte mappen.
+I tillegg er det også viktig å være oppmerksom på at tekstfiler kan være forskjellige når det kommer til formatering og koding. Det anbefales å bruke "UTF-8" koding for å sikre at filen kan leses riktig på forskjellige plattformer.
 
-Du kan deretter åpne filen i et tekstredigeringsprogram, for eksempel Nano eller Vim, og skrive inn ønsket informasjon. Når du er ferdig, må du huske å lagre filen før du lukker den.
-
-For å lese innholdet i filen i terminalen, kan du bruke kommandoen "cat" etterfulgt av filnavnet. For eksempel:
-
-```Bash
-cat min_fil.txt
-```
-
-Dette vil vise innholdet i den valgte tekstfilen direkte i terminalvinduet.
-
-## Dypdykk
-
-Når du skriver en tekstfil i Bash, er det viktig å huske på at filene er lagret i ren tekstformat. Dette betyr at det ikke er noen formatering eller styling, bare ren tekst. Det er også viktig å bruke riktig filtype for den informasjonen du ønsker å lagre. For eksempel kan du bruke ".txt" for rene tekstfiler, ".csv" for komma-separerte verdier og ".sh" for Bash-skript.
-
-Det er også mulig å legge til kommentarer i en tekstfil ved å bruke "#" tegnet. Disse kommentarene blir ignorert av Bash når du kjører en fil, men kan være nyttige for å forklare hva koden gjør.
-
-## Se også
-
-- [Bash Guide for nybegynnere](https://www.gnu.org/software/bash/manual/bash.html)
-- [Utdypende artikkel om tekstfiler](https://www.howtogeek.com/657228/what-is-a-text-file/)
-- [Mer informasjon om filformater](https://www.lifewire.com/what-is-the-file-extension-2622157)
+# Se Også
+- Bash dokumentasjon for å lære mer om tekstfiler i Bash: https://www.gnu.org/software/bash/manual/bash.html#Text-Files
+- En tutorial om hvordan du kan manipulere tekstfiler i Bash: https://tutorials.ubuntu.com/tutorial/command-line-for-beginners#0

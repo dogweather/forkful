@@ -1,39 +1,48 @@
 ---
-title:    "Elixir: Å få nåværende dato"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/getting-the-current-date.md"
+title:                "Elixir: Å få gjeldende dato"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke Elixir for å få nåværende dato?
+## Hvorfor
 
-Det å kunne få nåværende dato er en viktig funksjon i mange programmeringsoppgaver. Enten du oppretter en kalenderapplikasjon, håndterer bestillinger, eller bare trenger å vite dagens dato, er det nødvendig å kunne få tilgang til denne informasjonen. Med Elixir, en funksjonell programmeringsspråk designet for å være robust og distribuert, er det enkelt å få nåværende dato ved hjelp av noen få linjer med kode.
+De fleste programmer, uansett om de er store eller små, vil på et eller annet tidspunkt trenge å vite hva dagens dato er. Det kan være for å vise dagens dato til brukeren, for å lagre den i en database, eller for å beregne alderen til en person. Uansett hva grunnen er, er det viktig å vite hvordan man kan få tak i dagens dato i Elixir.
 
-# Hvordan få nåværende dato i Elixir
+## Hvordan
 
-For å få nåværende dato i Elixir, kan du bruke funksjonen `Date.utc_today`, som returnerer en `Date` struktur som inneholder informasjon om nåværende dato, i UTC-tidssone.
-
-```Elixir
-Date.utc_today()
-
-%Date{day: 17, month: 6, year: 2021}
-```
-
-Om du ønsker å få nåværende dato i din lokale tidssone, kan du bruke `Date.utc_today |> Date.to_erl |> :calendar.universal_time_to_local_time`.
+Først og fremst må vi importere Elixir-modulen `Calendar` for å få tilgang til alle funksjonene som hjelper oss med å håndtere dato og tid. Deretter kan vi bruke funksjonen `Date.utc_today` for å få dagens dato i UTC-format. For eksempel:
 
 ```Elixir
-Date.utc_today |> Date.to_erl |> :calendar.universal_time_to_local_time()
+iex> import Calendar
 
-%{calendar: Calendar.ISO, day: 17, hour: 9, microsecond: {0,0,0}, minute: 0, month: 6, second: 0, standard_offset: 0, time_zone: "Europe/Oslo", universal_time: %{calendar: Calendar.ISO, day: 17, hour: 7, microsecond: {0,0,0}, minute: 0, month: 6, second: 0, time_zone: "Etc/UTC", universal_time: {2021,6,17}}}
+iex> Date.utc_today
+~D[2020-03-24]
 ```
 
-Som du kan se i eksemplene over, gir `Date.utc_today` forskjellige utdata avhengig av om du ønsker å bruke UTC-tidssone eller din lokale tidssone. Dette skyldes at `Date` strukturer inkluderer informasjon om tidssoner.
+Hvis vi vil ha datoen i et annet format, for eksempel i den lokale tidssonen, kan vi bruke funksjonen `Date.today`. Denne vil returnere datoen i det formatet som er satt på datamaskinen vår. Her er et eksempel på hvordan vi kan få dagens dato i Oslo:
 
-# Dypdykk i å få nåværende dato i Elixir
+```Elixir
+iex> Date.today("Europe/Oslo")
+~D[2020-03-24]
+```
 
-Bak kulissene bruker `Date.utc_today` funksjonen `System.get_time`, som returnerer nåværende tid i millisekunder siden 1. januar 1970. Denne informasjonen blir deretter konvertert til en `Date` struktur ved hjelp av `Date.from_erl` funksjonen. `Date` strukturer inkluderer også funksjoner for å utføre forskjellige operasjoner, som å hente ut informasjon om en spesifikk dato eller sammenligne datoer.
+Vi kan også bruke funksjonen `Calendar.strftime` for å få datoen på en spesifikk måte. Dette er spesielt nyttig når vi vil vise datoen til en bruker. For eksempel:
 
-Se også
-- [Elixir Dokumentasjon om Date modulen](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Dokumentasjon om System modulen](https://hexdocs.pm/elixir/System.html)
+```Elixir
+iex> Calendar.strftime(Date.utc_today, "%d-%m-%Y")
+"24-03-2020"
+```
+
+## Dypdykk
+
+Når vi bruker funksjonene `utc_today` og `today`, ser vi at datoen er representert som et Elixir struktur-objekt av typen `Date`. Dette objektet inneholder informasjon om dagen, måneden og året på en organisert måte, noe som gjør det enkelt å manipulere datoer. Vi kan bruke funksjoner som `Date.day`, `Date.month` og `Date.year` for å få de respektive verdiene.
+
+I tillegg til å få tak i dagens dato, kan vi også få tak i tidspunktet med `Time.utc_now` og `Time.now`. Dette vil returnere tiden i UTC og i lokal tidssone, akkurat som funksjonene for datoen. Vi kan også bruke `Calendar.strftime` for å formatere tiden på en spesifikk måte.
+
+## Se også
+
+- [Calendar-dokumentasjon](https://hexdocs.pm/elixir/Calendar.html)
+- [Elixir-dato og tid - en komplett guide](https://gorails.com/tutorials/elixir-dates-and-times)

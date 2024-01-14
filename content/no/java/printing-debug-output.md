@@ -1,41 +1,42 @@
 ---
-title:    "Java: Utskrift av feilsøkingsutdata"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/printing-debug-output.md"
+title:                "Java: Utskrift av feilsøkingsutdata"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Å skrive ut feilsøkingsmeldinger er en viktig del av å utvikle Java-programmer. Det lar deg utforske din kode, finne eventuelle feil og løse dem for å sikre at programmet kjører jevnt. Det er også en god måte å få et bedre innsyn i hvordan koden din fungerer.
+Før du begynner å skrive kode, tenk på hvorfor du ønsker å skrive den. Hvorfor skulle du bry deg om å inkludere utskrift av feil i koden din? Det kan virke unødvendig, men det er faktisk en viktig del av utviklingsprosessen. Ved å inkludere utskrift av feil, kan du enkelt diagnostisere og løse problemer i koden din.
 
 ## Slik gjør du det
 
-For å skrive ut feilsøkingsmeldinger i Java, bruker du metoden `System.out.println()`. Denne metoden skriver ut en melding til konsollet, som kan være nyttig når du prøver å forstå programflyten eller finne ut hvor i koden en feil oppstår.
-
-La oss se et enkelt eksempel på hvordan du kan bruke `System.out.println()`:
+Det er enkelt å inkludere utskrift av feil i Java-koden din. Alt du trenger å gjøre er å bruke metoden `System.out.println()` for å skrive ut en beskjed til konsollen. La oss se på et eksempel:
 
 ```Java
-public class Eksempel {
-
-    public static void main(String[] args) {
-        int tall = 10;
-        System.out.println("Verdien av variabelen tall er: " + tall);
-    }
-}
+int x = 5;
+int y = 0;
+int result = x / y;
+System.out.println("Resultat: " + result);
 ```
 
-I dette eksempelet oppretter vi en variabel `tall` med verdien 10. Deretter bruker vi `System.out.println()` til å skrive ut en melding som inneholder verdien til variabelen. Når programmet kjører, vil konsollet vise følgende output: "Verdien av variabelen tall er: 10". Dette viser oss at variabelen `tall` faktisk har verdien 10, og vi kan bruke denne informasjonen til å bedre forstå programmet vårt.
+I dette tilfellet vil det oppstå en feil siden vi prøver å dele med 0. Ved å inkludere utskrift av `result`-variabelen, kan vi se at feilene kommer fra der og enkelt rette dem.
 
 ## Dypdykk
 
-Det er flere måter å skrive ut feilsøkingsmeldinger på i Java, avhengig av hva du ønsker å oppnå. `System.out.println()`-metoden er den enkleste, men du kan også bruke `System.out.print()` eller `System.out.printf()` for å formatere utskriften på ulike måter.
+Når det gjelder utskrift av feil, er det forskjellige metoder du kan bruke for å få mer spesifikk informasjon. På denne måten kan du finne ut mer om hvor og når feilen skjer. Her er noen nyttige metoder:
 
-En annen nyttig måte å skrive ut feilsøkingsmeldinger på, er ved hjelp av loggelementer. Ved å bruke et loggelement, kan du definere forskjellige nivåer av meldinger basert på alvoret til feilen. Dette gjør det enklere å finne og løse feil i koden din.
+- `System.out.println()` - for å skrive ut generell informasjon
+- `System.err.println()` - for å skrive ut feilmeldinger
+- `System.out.printf()` - for å printe formatering
+- `System.out.format()` - for å printe formatering
+
+Ved bruk av disse metodene og å inkludere variabler i utskriften din, kan du få en dypere forståelse av feilene i koden din.
 
 ## Se også
 
-- [Java API for System.out](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out)
-- [Java Logging with SLF4J](https://www.baeldung.com/slf4j-logging)
+- [How to Use Debugging Techniques in Java](https://www.informit.com/articles/article.aspx?p=1946058)
 - [Debugging in Java](https://www.baeldung.com/java-debugging)
+- [Debug Your Java Code With Eclipse](https://www.codejava.net/ides/eclipse/how-to-debug-java-code-in-eclipse)

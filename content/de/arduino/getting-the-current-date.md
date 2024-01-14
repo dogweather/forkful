@@ -1,70 +1,47 @@
 ---
-title:    "Arduino: Das aktuelle Datum erhalten"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/getting-the-current-date.md"
+title:                "Arduino: Das aktuelle Datum erhalten"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-In diesem Beitrag geht es um die Programmierung von Arduino und warum es wichtig ist, das aktuelle Datum abzurufen. Das aktuelle Datum kann in vielen Projekten von entscheidender Bedeutung sein, beispielsweise in einer Wetterstation oder einer automatisierten Bewässerungsanlage für den Garten.
+# Warum
+Warum sollte man sich überhaupt damit beschäftigen, das aktuelle Datum mit einem Arduino zu programmieren? Nun, es kann viele Gründe geben. Zum Beispiel kann es für die Entwicklung von Zeit- und Datums-sensitiven Projekten sehr nützlich sein, oder auch einfach nur um eine Uhr oder Kalenderfunktion in ein Projekt einzubinden.
 
-## Wie
-Die aktuelle Datumserfassung kann mit der Funktion `millis()` in Arduino erreicht werden. Diese Funktion gibt die Anzahl der Millisekunden seit dem Start des Arduino-Boards zurück. Mit dieser Information können wir das aktuelle Datum und die Uhrzeit berechnen.
+# Wie geht's
+Um das aktuelle Datum mit einem Arduino zu bekommen, musst du zunächst sicherstellen, dass du ein Real-Time-Clock (RTC) Modul an deinem Arduino angeschlossen hast. Dieses Modul wird verwendet, um genaue Zeit- und Datumsinformationen bereitzustellen. Es gibt verschiedene Arten von RTC-Modulen, aber in diesem Beispiel werden wir uns auf das DS3231 Modul konzentrieren.
 
-```Arduino
-unsigned long currentTime = millis(); // aktuelle Zeit in Millisekunden
-int seconds = (currentTime / 1000) % 60; // Sekunden berechnen
-int minutes = (currentTime / (1000 * 60)) % 60; // Minuten berechnen
-int hours = (currentTime / (1000 * 60 * 60)) % 24; // Stunden berechnen
-```
-
-Um das aktuelle Datum abzurufen, müssen wir auch den Tag, den Monat und das Jahr berücksichtigen. Hier können wir die Funktionen `day()`, `month()` und `year()` verwenden.
-
-```Arduino
-int currentDay = day(); // aktuellen Tag abrufen
-int currentMonth = month(); // aktuellen Monat abrufen
-int currentYear = year(); // aktuelles Jahr abrufen
-```
-
-Mit diesen Informationen können wir das aktuelle Datum in einem bestimmten Format anzeigen. Hier ist ein Beispiel, wie man das aktuelle Datum im Format `TT.MM.JJJJ` ausgeben kann.
-
-```Arduino
-Serial.print(currentDay); // Tag ausgeben
-Serial.print("."); // Punkt hinzufügen
-Serial.print(currentMonth); // Monat ausgeben
-Serial.print("."); // Punkt hinzufügen
-Serial.println(currentYear); // Jahr ausgeben
-```
-
-Die Ausgabe wird dann wie folgt aussehen: 12.05.2021. Natürlich können Sie das Format an Ihre Bedürfnisse anpassen.
-
-## Deep Dive
-Es gibt auch die Möglichkeit, das aktuelle Datum über eine RTC (Real-Time Clock) zu erhalten. Eine RTC ist eine elektronische Uhr, die eine unabhängige Stromquelle hat und somit auch weiterläuft, wenn der Arduino ausgeschaltet ist.
-
-Hier ist ein Beispiel, wie Sie das aktuelle Datum von einer RTC abrufen können:
+Nachdem du dein Modul an den Arduino angeschlossen hast, musst du die erforderlichen Bibliotheken in deinem Sketch einbinden. Verwende dafür folgenden Codeblock:
 
 ```Arduino
 #include <Wire.h>
-#include "RTClib.h"
-RTC_DS1307 rtc;
-
-void setup() {
-  Wire.begin();
-  rtc.begin();
-  // Uhrzeit und Datum werden hier eingestellt
-  // rtc.adjust(DateTime(DATE, TIME));
-}
-void loop() {
-  DateTime now = rtc.now(); // aktuelles Datum und Uhrzeit abrufen
-  int currentDay = now.day(); // aktuellen Tag abrufen
-  // Weitere Funktionen wie in "Wie" erklärt benutzen
-}
+#include <DS3231.h>
 ```
 
-Es ist wichtig zu beachten, dass Sie die Uhrzeit und das Datum der RTC einmal einstellen müssen, bevor Sie das aktuelle Datum abrufen können.
+Als nächstes musst du in der `setup()` Funktion eine Verbindung zum RTC-Modul herstellen und das Datum initialisieren. Hier ist ein Beispielcode:
 
-## Siehe auch
-- [Arduino - millis()](https://www.arduino.cc/reference/en/language/functions/time/millis/)
-- [Arduino - day()](https://www.arduino.cc/reference/en/language/variables/time/day/)
-- [RTClib - Library für RTCs](https://github.com/adafruit/RTClib)
+```Arduino
+DS3231 rtc;
+rtc.begin(); // Initialisierung des RTC-Moduls
+DateTime now = rtc.now(); // Abrufen des aktuellen Datums
+```
+
+Jetzt hast du das aktuelle Datum im `now`-Objekt gespeichert und kannst es verwenden, um das Datum in der Seriellen Monitor-Schnittstelle auszugeben:
+
+```Arduino
+Serial.println(now.day()); // Tag im Monat (1-31)
+Serial.println(now.month()); // Monat im Jahr (1-12)
+Serial.println(now.year()); // Jahr (z.B. 2021)
+```
+
+# Tiefenschärfe
+Neben den oben genannten Beispielen gibt es noch viele weitere nützliche Funktionen, die das DS3231 Modul bietet. Zum Beispiel kannst du mit der `rtc.adjust(DateTime(DateTimeData));` Funktion das Datum direkt im Modul einstellen, ohne es jedes Mal in deinem Code zu ändern. Außerdem hat das Modul auch einen Alarm-Modus, der es dir ermöglicht, bestimmte Aktionen basierend auf dem Datum oder der Uhrzeit auszuführen.
+
+Es gibt auch verschiedene andere RTC-Module wie das DS1307 oder das PCF8563, die ähnliche Funktionen bieten. Wenn du also eine andere Art von RTC-Modul verwendest, können sich die oben genannten Beispiele etwas unterscheiden.
+
+# Siehe auch
+- Offizielle Arduino RTC Bibliothek (https://www.arduino.cc/en/Reference/RTC)
+- Informationen zum DS3231 Modul (https://www.instructables.com/Using-the-DS3231-I2C-Real-Time-Clock-Module/)
+- Tutorial zur Verwendung von RTC-Modulen mit Arduino (https://circuitdigest.com/microcontroller-projects/programming-rtc-using-arduino-and-a-ds3231-rtc-module)

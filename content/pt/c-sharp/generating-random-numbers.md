@@ -1,48 +1,42 @@
 ---
-title:    "C#: Gerando números aleatórios"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/generating-random-numbers.md"
+title:                "C#: Gerando números aleatórios"
+programming_language: "C#"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é importante
+## Por que gerar números aleatórios em um programa?
 
-Gerar números aleatórios é essencial em muitos programas de computador. Eles podem ser usados para criar senhas seguras, jogos de azar, testes de desempenho e muito mais. Sem esses recursos, muitas aplicações perderiam sua funcionalidade e utilidade.
+Gerar números aleatórios em um programa pode ser útil em diversas situações. Alguns exemplos incluem jogos, sorteios, simulações e criptografia. É uma ferramenta poderosa para adicionar imprevisibilidade e variedade em um programa, tornando-o mais dinâmico e interessante.
 
-## Como fazer isso em C#
+## Como gerar números aleatórios em C#
 
-Gerar números aleatórios em C# é simples e direto. Basta importar a biblioteca "System.Random" e utilizar o método "Next()" para gerar um número aleatório inteiro. Veja um exemplo abaixo:
+Para gerar um número aleatório em C#, utilizamos a classe `Random`, que pode ser encontrada no namespace `System`.
 
-```C#
-Random gerador = new Random();
-
-int numeroAleatorio = gerador.Next(1, 100);
-
-Console.WriteLine("O número aleatório gerado é: " + numeroAleatorio);
 ```
-Saída: O número aleatório gerado é: 53
+C# using System;
 
-Você pode personalizar o intervalo do número gerado, especificando o valor mínimo e máximo dentro dos parênteses do método "Next()". Além disso, também é possível gerar números aleatórios de ponto flutuante utilizando o método "NextDouble()".
+// Criando uma instância da classe Random
+Random random = new Random();
 
-## Aprofundando
+// Gerando um número aleatório entre 1 e 100
+int numeroAleatorio = random.Next(1, 101);
 
-É importante ressaltar que, apesar de parecerem aleatórios, os números gerados pelos computadores são baseados em um algoritmo matemático que segue uma lógica predefinida. Portanto, não podemos considerá-los completamente aleatórios.
-
-Uma forma de obter uma maior aleatoriedade é utilizar uma semente (seed), que é um valor inicial usado pelo algoritmo de geração de números aleatórios. Podemos definir uma semente personalizada utilizando o construtor da classe "Random", como mostrado abaixo:
-
-```C#
-Random gerador = new Random(1234);
-
-int numeroAleatorio = gerador.Next();
-
-Console.WriteLine("O número aleatório gerado é: " + numeroAleatorio);
+Console.WriteLine($"Número aleatório: {numeroAleatorio}");
 ```
-Saída: O número aleatório gerado é: 34521632
 
-Outra opção é utilizar a classe "RNGCryptoServiceProvider", que utiliza um processo de criptografia para gerar números aleatórios mais seguros e pouco previsíveis.
+No código acima, primeiro importamos o namespace `System` para ter acesso à classe `Random`. Em seguida, criamos uma instância da classe e utilizamos o método `Next()` para gerar um número aleatório entre 1 e 100. Por fim, imprimimos o resultado na tela.
+
+## Aprofundando-se em geração de números aleatórios
+
+A geração de números aleatórios não é algo realmente "aleatório", mas sim baseada em um algoritmo matemático. A classe `Random` utiliza o método de congruência linear para gerar uma sequência de números pseudoaleatórios. Isso significa que a sequência gerada não é realmente aleatória, mas possui propriedades estatísticas semelhantes a uma sequência aleatória.
+
+É importante ressaltar que a semente inicial da classe `Random` é baseada no relógio do sistema. Isso significa que se você criar duas instâncias da classe em sequência e não especificar uma semente manualmente, ambas irão gerar a mesma sequência de números. Para evitar isso, é recomendado utilizar uma semente diferente para cada instância, por exemplo, através da hora atual do sistema.
 
 ## Veja também
 
-- [Documentação do C#: Random Class](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1)
-- [Blog da Microsoft sobre geração de números aleatórios em C#](https://blogs.msdn.microsoft.com/pfxteam/2009/02/28/getting-random-numbers-in-a-thread-safe-way/)
+- [Documentação oficial do C# sobre a classe Random](https://docs.microsoft.com/pt-br/dotnet/api/system.random?view=net-5.0)
+- [Artigo sobre geração de números aleatórios em C#](https://www.tutorialspoint.com/generate-random-numbers-in-chash)
+- [Vídeo explicando como gerar números aleatórios em C#](https://www.youtube.com/watch?v=rODKLpgMe-w)

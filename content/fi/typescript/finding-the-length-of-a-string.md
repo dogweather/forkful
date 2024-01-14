@@ -1,34 +1,44 @@
 ---
-title:    "TypeScript: Merkkijonon pituuden löytäminen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/finding-the-length-of-a-string.md"
+title:                "TypeScript: Merkkijonon pituuden löytäminen"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi löytää merkkijonon pituus on hyödyllistä
 
-On monia tilanteita, joissa tarvitsemme selvittää merkkijonon pituuden TypeScriptissä. Tämä taito on tärkeä ohjelmoinnin perustaito, joka auttaa meitä käsittelemään ja käyttämään merkkijonoja monipuolisesti.
+Merkkijonojen pituuden löytäminen on tärkeää monessa ohjelmoinnin kontekstissa. Se voi auttaa tarkistamaan syötetyn tekstin oikeellisuuden ja tarjota tietoa tekstin sisällöstä. Se voi myös auttaa laskemaan merkkien määrää tietyssä viestissä tai dokumentissa.
 
-## Miten
+## Kuinka löydät merkkijonon pituuden TypeScriptillä
+
+Merkkijonon pituuden löytäminen TypeScriptillä on yksinkertaista käyttämällä `.length` -ominaisuutta. Esimerkiksi:
 
 ```TypeScript
-// Luodaan muuttuja, joka sisältää merkkijonon
-const merkkijono: string = "Tämä on esimerkkimerkkijono";
-
-// Käytetään sisäänrakennettua .length -metodia, joka palauttaa merkkijonon pituuden
-console.log(merkkijono.length); // Output: 27
+let nimi = "Maija";
+console.log(nimi.length); // Output: 5
 ```
 
-Kuten näemme yllä olevassa koodiesimerkissä, merkkijonon pituus saadaan käyttämällä merkkijonon nimeä, pisteellä erotettuna ja siihen liitettyä .length -metodia. Metodi palauttaa kokonaislukuna merkkijonon merkkien lukumäärän.
+Tässä koodissa käytämme `.length` -ominaisuutta muuttujassa `nimi` ja tulostamme sen pituuden konsoliin.
 
-## Syvällisemmin
+Voit myös käyttää `string`-tyyppisen muuttujan metodeita, kuten `.charAt()` ja `.substring()` löytääksesi merkkijonon pituuden. Esimerkiksi:
 
-Merkkijonon pituuden laskeminen tapahtuu käyttämällä .length -metodia, joka on sisäänrakennettu metodi TypeScriptissä. Tämä metodi toimii kaikille merkkijonoille ja se palauttaa aina kokonaislukuna merkkijonon merkkien lukumäärän. Metodin käyttäminen on nopea ja helppo tapa selvittää merkkijonon pituus.
+```TypeScript
+let lause = "Tämä on esimerkkilause.";
+console.log(lause.charAt(9)); // Output: e
+console.log(lause.substring(8, 17)); // Output: esimerkki
+```
 
-On myös hyvä huomata, että merkkijonon pituuteen lasketaan mukaan myös välilyönnit ja erikoismerkit. Esimerkiksi merkkijono "Hello world!" pituus on 12, vaikka siinä on vain 11 näkyvää merkkiä.
+Koodissa käytämme `.charAt()` ja `.substring()` -metodeita löytääksemme tietyn merkin ja osan merkkijonosta.
+
+## Syvempää tietoa merkkijonon pituudesta
+
+Merkkijonot ovat välttämättömiä tietokoneohjelmoinnissa ja useimmat kielet tarjoavat erilaisia työkaluja niiden käsittelyyn. Merkkijonon pituuden löytäminen voi auttaa meitä tarkistamaan syötetyn tekstin oikeellisuuden, kuten esimerkiksi salasanan, tai laskemaan merkkien määrän dokumentissa. Se voi myös auttaa meitä luomaan toiminnallisuuksia, kuten rajapintoja ja lomakkeita, joissa meidän täytyy tarkistaa tekstikenttien pituus tai rajoittaa niiden maksimipituutta. 
 
 ## Katso myös
 
-- [TypeScriptin sisäänrakennetut metodit](https://www.typescriptlang.org/docs/handbook/strings.html#built-in-string-methods)
-- [Merkkijonon ominaisuudet ja metodit TypeScriptissä](https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-typescript#string-properties-and-methods-in-typescript)
+- [Official TypeScript documentation on strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [W3Schools tutorial on finding the length of a string in TypeScript](https://www.w3schools.com/code/tryit.asp?filename=G76KACHEE1JE)
+
+Kiitos lukemisesta! Toivottavasti tästä oli apua ja hyötyä!

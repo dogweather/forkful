@@ -1,60 +1,49 @@
 ---
-title:    "C: Konwertowanie ciągu znaków na małe litery"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/converting-a-string-to-lower-case.md"
+title:                "C: Konwertowanie ciągu znaków na małe litery"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+### Dlaczego
 
-Konwersja ciągu znaków na małe litery jest ważnym aspektem programowania, szczególnie w języku C. Pozwala to na łatwiejsze porównywanie i przetwarzanie tekstu, co może być przydatne w różnych sytuacjach, na przykład w tworzeniu interfejsów użytkownika lub filtrowaniu danych. W tym artykule dowiesz się, jak dokonać konwersji ciągu znaków na małe litery w języku C.
+Gdy piszesz programy w języku C, często potrzebujesz manipulować tekstem. Jednym z często spotykanych zadań jest konwersja wszystkich liter w ciągu znaków na małe litery. W tym wpisie dowiesz się, dlaczego ten proces jest ważny i jak możesz go zaimplementować w swoim kodzie.
 
-# Jak to zrobić
+### Jak to zrobić
 
-Do konwersji ciągu znaków na małe litery w języku C możemy użyć funkcji `tolower()` z biblioteki standardowej `ctype.h`. Poniżej przedstawiamy przykładową implementację tej funkcji i jej wywołanie:
+Istnieje kilka sposobów na konwersję ciągu znaków na małe litery w języku C. Jednym z najprostszych jest użycie funkcji `tolower()` z biblioteki standardowej `ctype.h`. Przyjmie ona jako argument pojedynczy znak i zwróci jego małą literę.
+
+Przykładowy kod wykorzystujący tę funkcję może wyglądać następująco:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-// Funkcja konwertująca ciąg znaków na małe litery
-void toLowerCase(char* str) {
-  int i = 0;
-  while (str[i]) {
-    str[i] = tolower(str[i]);
-    i++;
+int main(void) {
+  char str[] = "POLSKI TEKST";
+  for (int i = 0; str[i] != '\0'; i++) { // pętla przechodząca przez każdy znak w ciągu
+      str[i] = tolower(str[i]); // użycie funkcji tolower() do konwersji na małe litery
   }
-}
-
-int main() {
-  // Przykładowy ciąg znaków
-  char str[] = "Hello World";
-
-  // Wywołanie funkcji
-  toLowerCase(str);
-
-  // Wyświetlenie wyniku
-  printf("Wynik: %s\n", str);
-
+  printf("%s", str); // wyświetlenie zmodyfikowanego ciągu
   return 0;
 }
-```
-
-Kod ten najpierw importuje bibliotekę `stdio.h`, która zawiera funkcję `printf()`, oraz bibliotekę `ctype.h`, która zawiera funkcję `tolower()`. Następnie definiujemy funkcję `toLowerCase()`, która przyjmuje jako argument wskaźnik na ciąg znaków. Funkcja ta iteruje po wszystkich znakach ciągu i zamienia je na ich odpowiedniki w postaci małych liter za pomocą funkcji `tolower()`. W głównej funkcji `main()` tworzymy przykładowy ciąg znaków, wywołujemy naszą funkcję i wyświetlamy wynik na ekranie.
-
-Przykładowy wynik działania programu:
 
 ```
-Wynik: hello world
-```
 
-# Deep Dive
+Po uruchomieniu kodu, otrzymamy na wyjściu "polski tekst". 
 
-Podczas konwersji ciągu znaków na małe litery w języku C należy pamiętać o kilku rzeczach. Po pierwsze, funkcja `tolower()` nie zmienia znaków niealfanumerycznych, więc jeśli w ciągu występują znaki specjalne, nadal będą one wyświetlane duże. Jeśli chcesz zamienić również te znaki na małe, możesz użyć pętli i wywołać funkcję `tolower()` dla każdego znaku osobno. Po drugie, konwersja na małe litery może zależeć od ustawień regionalnych systemu operacyjnego, więc nie zawsze możemy być pewni, że nasz kod będzie działał poprawnie na wszystkich urządzeniach.
+### Głębsza analiza
 
-# Zobacz także
+Funkcja `tolower()` zwraca liczbę całkowitą, dlatego aby otrzymać zmodyfikowany znak w formie pojedynczego bajtu, musimy użyć rzutowania na typ `char`. 
 
-- [Funkcja `tolower()` w dokumentacji języka C (ang.)](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [Inne sposoby konwersji ciągu znaków na małe litery w języku C (ang.)](https://www.geeksforgeeks.org/convert-string-lower-case-using-c/)
-- [Dokumentacja biblioteki `ctype.h` (ang.)](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+Pamiętaj również, że kod ASCII dla małych liter różni się od kodu dla dużych liter o 32. Dlatego nie możemy po prostu odjąć od wartości znaku 32, aby otrzymać jego małą literę. Dlatego funkcja `tolower()` jest bardzo przydatna, ponieważ sama zajmuje się uwzględnieniem różnic między kodami ASCII.
+
+Jeśli potrzebujesz konwertować całe wyrazy na małe litery, a nie pojedyncze znaki, warto użyć funkcji `strcpy()` i `strlwr()` z biblioteki `string.h`. Pierwsza skopiuje oryginalny ciąg do nowej zmiennej, a druga dokona konwersji na małe litery.
+
+Należy także pamiętać, że funkcja `tolower()` operuje tylko na literach alfabetu, a inne znaki pozostawia bez zmian. Jeśli chcesz uwzględnić wszystkie możliwe znaki, warto użyć funkcji `isalpha()` z biblioteki `ctype.h`, aby sprawdzić, czy dany znak jest literą.
+
+### Zobacz także
+- [Dokumentacja funkcji tolower()](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [Konwersja liter alfabetu łacińskiego na małe litery w języku C](https://stackoverflow.com/questions/1926423/converting-char-in-c-from-uppercase-to-lowercase)

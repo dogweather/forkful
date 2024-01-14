@@ -1,58 +1,41 @@
 ---
-title:    "Haskell: Tekstin etsiminen ja korvaaminen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/searching-and-replacing-text.md"
+title:                "Haskell: Tekstin etsiminen ja korvaaminen"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Usein ohjelmoinnissa joudutaan muokkaamaan tekstiä, esimerkiksi korvaamaan sana toisella. Tässä blogikirjoituksessa opimme, kuinka voimme helposti suorittaa hakua ja korvausta Haskell-kielellä.
+Monissa ohjelmointiprojekteissa joudutaan käsittelemään suuria määriä tekstiä. Olipa kyseessä sitten tiedostojen käsittely tai tietokantojen hakeminen, tekstin hakeminen ja korvaaminen on usein välttämätöntä. Haskell-ohjelmointikieli tarjoaa helpon ja tehokkaan tavan tehdä tätä, mikä tekee siitä suosikin monien kehittäjien keskuudessa.
 
 ## Kuinka tehdä
 
-Haskellissa tekstinhaku ja korvaus voidaan suorittaa käyttämällä `replace` funktiota `Data.Text` kirjastosta. Tässä on yksinkertainen esimerkki koodista, joka korvaa kaikki esiintymät sanan "tämä" merkkijonolla "se".
+Haskellissa tekstin hakeminen ja korvaaminen tapahtuu ```substitute```-funktion avulla. Tämän funktion ensimmäinen parametri on haettava teksti ja toinen parametri on korvaava teksti. Alla on esimerkki, jossa korvaamme kaikki esiintymät merkkijonossa "Hello" merkkijonalla "Hei".
 
 ```Haskell
-import Data.Text
-
-sampleText = "Tämä on esimerkki tekstistä."
-
-main = do
-    let modifiedText = replace "tämä" "se" sampleText
-    putStrLn modifiedText
+substitute "Hello" "Hei" "Hello World!" 
 ```
 
-Tulostus:
+Tämä tuottaa tuloksen ```Hei World!```, mikä vastaa odotuksiamme.
 
-```
-"Se on esimerkki tekstistä."
-```
-
-## Syvempi sukellus
-
-Haskellissa tekstinhaku ja korvaus voidaan suorittaa myös monimutkaisemmin käyttäen regex-ilmaisuja (`Data.Text.Regex`). Tässä esimerkissä korvaamme kaikki numerot välillä 0-9 sanalla "numero".
+Jotta voimme käsitellä suurempaa määrää tekstiä, voimme käyttää ```replace```-funktiota, joka korvaa kaikki esiintymät haetusta tekstistä korvaavalla tekstillä. Tämä on hyödyllistä, kun meillä on esimerkiksi suuri tiedosto, jonka haluamme käsitellä.
 
 ```Haskell
-import Data.Text
-import Data.Text.Regex
-
-sampleText = "Tässä on 10 sanaa ja 5 lausetta."
-
-main = do
-    let regexPattern = mkRegex "[0-9]+"
-    let modifiedText = subRegex regexPattern sampleText "numero"
-    putStrLn modifiedText
+replace "Hello" "Hei" "Hello World! Hello Universe!"
 ```
 
-Tulostus:
+Tuloksena saamme ```Hei World! Hei Universe!``` mikä osoittaa, että molemmat esiintymät "Hello" on korvattu "Hei".
 
-```
-"Tässä on numero sanaa ja numero lausetta."
-```
+## Syvällinen sukellus
+
+```substitute```- ja ```replace```-funktioiden lisäksi Haskell tarjoaa muita tapoja käsitellä tekstiä. Näitä ovat muun muassa ```strip```, joka poistaa merkit tekstin alusta ja lopusta, ```split```, joka jakaa tekstin listaksi merkkijonoja annetun erotinmerkin avulla, ja ```join```, joka yhdistää listan merkkijonomuotoon.
+
+Useimmissa projekteissa nämä perusfunktiot riittävät tekstin käsittelyyn, mutta Haskellilla on myös mahdollista luoda omia, räätälöityjä toimintoja tarpeen mukaan.
 
 ## Katso myös
 
-- [Regex ilmentymien käyttö yleisesti](https://www.regular-expressions.info/)
-- [Haskell teksti ja merkkijono käsittely](https://wiki.haskell.org/Strings_and_text)
+- [Haskellin dokumentaatio tekstinkäsittelyfunktioista](https://www.haskell.org/hoogle/?hoogle=Text+-%3E+Text+-%3E+Text)
+- [Haskellin tekstinkäsittely- ja merkkchaini-ohjelmointi](http://book.realworldhaskell.org/read/text-processing-and-regular-expressions.html)

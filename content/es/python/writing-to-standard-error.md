@@ -1,63 +1,42 @@
 ---
-title:    "Python: Escribiendo en el error estándar"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/writing-to-standard-error.md"
+title:                "Python: Escribiendo en el error estándar"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir a la salida de error?
+## Por qué: Escribir a la salida de error estandar
 
-Escribir a la salida de error es una práctica común en la programación de Python. Esta técnica se utiliza para mostrar mensajes de error o información de depuración durante la ejecución del programa. Al escribir a la salida de error, podemos separar claramente los mensajes de error de los mensajes de salida estándar, lo que facilita la identificación y resolución de problemas en nuestro código.
+Escribir a la salida de error estándar en Python es una forma útil de depurar y diagnosticar errores en nuestro código. También puede ayudar a mejorar la legibilidad y organización del código al separar la salida de error de la salida estándar.
 
 ## Cómo hacerlo
 
-Para escribir a la salida de error en Python, utilizamos el método `sys.stderr.write()`. Este método acepta un mensaje como parámetro y lo escribe en la salida de error. Veamos un ejemplo:
+Usar la función `print()` es una forma sencilla de imprimir a la salida estándar en Python. Para escribir a la salida de error estándar, simplemente usamos la función `print()` con el argumento `file=sys.stderr`.
 
-```python
+Por ejemplo:
+
+```Python
 import sys
-
-# escribir un mensaje de error
-sys.stderr.write("Ha ocurrido un error en el programa")
-
-# escribir un mensaje de depuración
-sys.stderr.write("La variable x tiene el valor: " + str(x))
+print("Este es un mensaje a la salida estándar")
+print("Este es un mensaje a la salida de error estándar", file=sys.stderr)
 ```
 
-La salida de este código se verá así:
+La salida de este código sería:
 
-```python
-Ha ocurrido un error en el programa
-La variable x tiene el valor: 5
 ```
-
-Podemos notar que ambos mensajes están separados y se escriben en la salida de error en lugar de la salida estándar.
-
-Otra forma de escribir a la salida de error es utilizando el módulo `logging` de Python. Este módulo nos permite manejar los mensajes de error de una manera más avanzada, como agregar información de fecha y hora, nivel de severidad, etc. Veamos un ejemplo:
-
-```python
-import logging
-
-# configurar el manejador de errores
-logging.basicConfig(filename='errores.log', level=logging.ERROR)
-
-# escribir un mensaje de error
-logging.error("Ha ocurrido un error en el programa")
-
-# escribir un mensaje de depuración
-logging.debug("La variable x tiene el valor: " + str(x))
+Este es un mensaje a la salida estándar
+Este es un mensaje a la salida de error estándar
 ```
-
-En este caso, los mensajes se escribirán en un archivo llamado "errores.log" en lugar de la salida de error estándar.
 
 ## Profundizando
 
-Escribir mensajes a la salida estándar puede ser útil para fines de depuración, pero es importante no abusar de esta técnica. Es recomendable utilizarla solo en casos de errores o para información de depuración crítica, ya que puede afectar el rendimiento de nuestro programa.
+Es importante tener en cuenta que la salida de error estándar se utiliza para mensajes de error, por lo que se supone que estos mensajes serán leídos por desarrolladores o usuarios avanzados. Por esta razón, se recomienda usar una sintaxis clara y descriptiva al escribir a la salida de error.
 
-También es importante tener en cuenta que cuando ejecutamos nuestro programa desde la línea de comandos, los mensajes de error se muestran en rojo para facilitar su identificación. Sin embargo, si estamos ejecutando el programa desde un entorno integrado de desarrollo (IDE), los mensajes de error pueden mezclarse con la salida estándar y se pueden perder.
+Además, si se está utilizando un entorno de desarrollo integrado (IDE), puede haber opciones para ver y filtrar la salida de error estándar. Asegúrese de revisar la documentación de su IDE para conocer sus características y cómo utilizarlas para depurar su código.
 
 ## Ver también
 
-- [Documentación oficial de Python sobre `sys.stderr`](https://docs.python.org/es/3/library/sys.html#sys.stderr)
-- [Tutorial de Real Python sobre el módulo `logging`](https://realpython.com/python-logging/)
-- [Página de la comunidad de Python en español](https://comunidad.python.org.ar/)
+- [Documentación de Python sobre la función print()](https://docs.python.org/es/3.9/library/functions.html#print)
+- [Preguntas frecuentes sobre la salida de error estándar en Python](https://docs.python.org/es/3.9/faq/programming.html#how-do-i-write-to-standard-error)

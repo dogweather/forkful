@@ -1,39 +1,45 @@
 ---
-title:    "C#: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/calculating-a-date-in-the-future-or-past.md"
+title:                "C#: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Berechnen von zukünftigen oder vergangenen Datumswerten kann in vielen Programmierprojekten nützlich sein, zum Beispiel bei der Planung von Terminen oder der Verarbeitung von Daten. Durch das Verständnis der Berechnungsmethoden können wir präzisere Ergebnisse erzielen und unsere Programmierfähigkeiten erweitern.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann nützlich sein, um bestimmte Ereignisse oder Termine im Voraus zu planen. Auch in der Datenverarbeitung und Programmierung kann die Berechnung von Datumswerten eine wichtige Rolle spielen.
 
-## Wie man das macht
+## Wie
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die DateTime Klasse in C# verwenden. Hier ist ein Beispiel, um 7 Tage in die Zukunft zu berechnen und das Ergebnis in der Konsole auszugeben:
-
-```C#
-DateTime zukunft = DateTime.Now.AddDays(7);
-Console.WriteLine(zukunft);
-```
-
-Das Ergebnis wird in folgendem Format ausgegeben: "Monat/Tag/Jahr 12:00:00 AM". Für die Vergangenheit können wir stattdessen die Subtract-Methode verwenden. Hier ist ein Beispiel, um 3 Monate in die Vergangenheit zu berechnen:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir in C# die DateTime-Klasse verwenden. Wir müssen lediglich das aktuelle Datum als Startpunkt festlegen und dann eine bestimmte Anzahl von Tagen, Monaten oder Jahren hinzufügen oder subtrahieren.
 
 ```C#
-DateTime vergangenheit = DateTime.Now.Subtract(new TimeSpan(90, 0, 0, 0));
-Console.WriteLine(vergangenheit);
+// Aktuelles Datum erhalten
+DateTime now = DateTime.Now;
+
+// Datum in der Zukunft berechnen
+DateTime futureDate = now.AddDays(7); // 7 Tage zukünftig
+
+// Datum in der Vergangenheit berechnen
+DateTime pastDate = now.AddDays(-3); // 3 Tage zurückliegend
+
+// Ausgabe der berechneten Datumswerte
+Console.WriteLine("Zukünftiges Datum: " + futureDate.ToString("dd.MM.yyyy"));
+Console.WriteLine("Vergangenes Datum: " + pastDate.ToString("dd.MM.yyyy"));
 ```
 
-Dieses Ergebnis wird in derselben Formatierung wie oben angezeigt. Wir können auch weitere Methoden verwenden, um spezifischere Berechnungen durchzuführen, wie z.B. das AddYears oder AddMonths. Es ist wichtig zu beachten, dass die DateTime Klasse auch die Berücksichtigung von Schaltjahren und unterschiedlichen Monatslängen ermöglicht.
+Die obigen Beispiele zeigen, wie wir die AddDays-Methode verwenden können, um ein Datum in der Zukunft oder Vergangenheit zu berechnen. Dies kann auch mit Monaten (AddMonths) oder Jahren (AddYears) erfolgen. Wir können auch jede beliebige Anzahl von Tagen, Monaten oder Jahren angeben, um das Datum zu berechnen.
 
-## Tiefes Eintauchen
+## Deep Dive
 
-Wenn wir uns tiefer mit dem Berechnen von Datumswerten auseinandersetzen möchten, können wir uns mit dem DateTime-Strukturdesign und den zugrunde liegenden Berechnungsmethoden beschäftigen. Es gibt auch verschiedene Optionen und Einstellungen, die wir bei der Verwendung der DateTime-Klasse beachten sollten, um die Genauigkeit und Effizienz unserer Berechnungen zu verbessern.
+Die DateTime-Klasse bietet auch viele weitere nützliche Methoden zur Berechnung von Datumswerten, wie zum Beispiel das Festlegen von bestimmten Wochentagen (SetDayOfWeek) oder das Ermitteln der Differenz zwischen zwei Daten (Subtract). Auch die Verwendung von DateTimeOffset, anstelle von DateTime, ermöglicht eine genauere Erfassung von Datum und Uhrzeit mit Zeitzonen.
 
-## Siehe auch 
+Es ist auch wichtig zu beachten, dass das Datum in verschiedenen Kulturen unterschiedlich formatiert werden kann. In C# können wir dies berücksichtigen, indem wir die Kultur (CultureInfo) bei der Ausgabe des berechneten Datums angeben.
 
-- [Microsoft Dokumentation: DateTime Klasse in C#](https://docs.microsoft.com/de-de/dotnet/api/system.datetime?view=net-5.0)
-- [Tutorial: Einstieg in die DateTime-Klasse in C#](https://www.c-sharpcorner.com/article/get-to-know-the-datetime-class-in-c-sharp/)
-- [C# Programmierforum: Fragen und Antworten zu DateTime](https://stackoverflow.com/questions/tagged/datetime?fbclid=IwAR1CajGFXvSfQMOAr9wPvVqOZfPgNk7CPH7odzU45SUeOaDMkVNFo_dDu9E)
+## Siehe auch
+
+- [Microsoft-Dokumentation zur DateTime-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.datetime?view=net-5.0)
+- [C#-Beispielsammlung für die DateTime-Klasse](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/how-to-use-datetime-values)
+- [Tutorial zum Umgang mit Zeit und Datum in C#](https://www.tutorialspoint.com/csharp/csharp_date_time.htm)

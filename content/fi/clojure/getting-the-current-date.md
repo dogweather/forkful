@@ -1,60 +1,33 @@
 ---
-title:    "Clojure: Nykyisen päivämäärän hakeminen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/getting-the-current-date.md"
+title:                "Clojure: Nykyisen päivämäärän hakeminen"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-
-On monia syitä, miksi joku haluaisi saada nykyisen päivämäärän Clojure-ohjelmassa. Ehkä päivämäärää tarvitaan laskelmien tekemiseen tai tietojen tallentamiseen tietokantaan.
+On monia eri syitä, miksi haluat tietää tämänhetkisen päivämäärän. Ehkä haluat tulostaa sen johonkin sovellukseen tai käyttää sitä laskennassa. Riippumatta siitä, miksi tarvitset päivämäärän, Clojure tekee sen saamisen helpoksi.
 
 ## Miten
-
-On olemassa useita tapoja saada nykyinen päivämäärä Clojure-ohjelmassa. Yksi tapa on käyttää Clojuren `java.time` -kirjastoa. Voit käyttää `LocalDate` -luokkaa saadaksesi nykyisen päivämäärän, ja `LocalDateTime` -luokkaa saadaksesi myös ajan. Voit kutsua näitä luokkia seuraavalla tavalla:
-
-```Clojure
-(require '[java.time :as time])
-
-(time/LocalDate/now)          ; Palauttaa nykyisen päivämäärän
-(time/LocalDateTime/now)      ; Palauttaa nykyisen päivämäärän ja ajan
-```
-
-Tämä palauttaa `LocalDate` - tai `LocalDateTime` -tyyppiset oliot, jotka voit tallentaa muuttujaan ja käyttää tarvittaessa.
-
-Voit myös käyttää Clojuren `clj-time` -kirjastoa, joka tarjoaa käteviä funktioita päivämäärän muotoiluun. Voit asentaa kirjaston Leiningenillä seuraavalla komennolla:
-
-```
-lein deps :tree
-```
-
-Sitten voit käyttää `clj-time.core` -kirjastoa seuraavalla tavalla:
+Voit saada tämänhetkisen päivämäärän Clojurella yksinkertaisesti käyttämällä funktiota `now`, joka löytyy `clojure.java.time` kirjastosta. Tämän funktion tulos on `java.time.LocalDateTime` objekti, joka sisältää tämänhetkisen päivämäärän ja ajan.
 
 ```Clojure
-(require '[clj-time.core :as time])
+(require '[clojure.java.time :as t])
 
-(time/today)           ; Palauttaa nykyisen päivämäärän muodossa #inst "yyy-mm-ddT00:00:00.000-00:00"
-(time/now)             ; Palauttaa nykyisen päivämäärän ja ajan muodossa #inst "yyy-mm-ddThh:mm:ss.000-00:00"
+(def today (t/now))
+(print today)
 ```
 
-## Syvällinen sukellus
+Tämän koodinpätkän tuloste olisi esimerkiksi `#object[java.time.LocalDateTime 0x4cd9992b "2021-11-24T13:37:00.540908500"]`, joka sisältää tiedon tämänhetkisestä päivämäärästä ja ajasta.
 
-Tarkastelemme nyt tarkemmin, mitä todellisuudessa tapahtuu, kun kutsut `java.time` -kirjaston funktioita. Clojure-ohjelmassa voit hyödyntää Javan omia luokkia ja metodeja nimiavaruuden `java.*` kautta. `java.time` -kirjaston toiminnot palauttavat Javan `LocalDate` ja `LocalDateTime` -luokkien ilmentymiä. Näiden luokkien avulla voit manipuloida päivämääriä ja aikoja, esimerkiksi lisäämällä päiviä tai muuttamalla aikavyöhykettä.
+## Syvällisempi sukellus
+`now` funktiolla on myös muutamia valinnaisia parametreja, joiden avulla voit määrittää tietyn aikavyöhykkeen tai kellonajan. Voit myös käyttää muita funktioita, kuten `today`, `yesterday` ja `tomorrow`, jotka ovat hyödyllisiä erilaisten päivämäärien saamiseksi.
 
-Jos haluat muotoilla päivämäärän tai ajan tietyn tyylisenä, voit käyttää `java.time.format` -nimiavaruutta. Esimerkiksi jos haluat muotoilla nykyisen päivämäärän muotoon "d.M.yyyy", voit tehdä sen seuraavasti:
-
-```Clojure
-(require '[java.time :as time])
-(require '[java.time.format :as format])
-
-(def now (time/LocalDate/now))
-
-(time/format now "d.M.yyyy")    ; Palauttaa nykyisen päivämäärän muodossa "päivä.kuukausi.vuosi"
-```
+Päivämäärä- ja aikatyypit ovat tärkeitä Clojuressa, koska niiden avulla voit tehdä tarkkoja laskutoimituksia ja muutoksia aikaan.
 
 ## Katso myös
-
-- [Java.time Javadoc](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Clojure.java-time dokumentaatio](https://clojure.github.io/java-time/)
-- [Clj-time dokumentaatio](https://github.com/clj-time/clj-time)
+- Clojure virallinen dokumentaatio: https://clojure.org/
+- Lyhyt opas Clojuren aloittamiseen: https://clojure.org/guides/getting_started
+- Elämä aikoina: Päivämäärä- ja aikatyypit Clojuressa: https://clojure.org/reference/java_time

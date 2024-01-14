@@ -1,59 +1,51 @@
 ---
-title:    "Swift: Debug-Ausgabe drucken"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/printing-debug-output.md"
+title:                "Swift: Fehlermeldungen ausgeben"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Beim Entwickeln von Apps kann es oft schwierig sein, herauszufinden, warum der Code nicht so funktioniert wie er sollte. In solchen Fällen ist das Arbeitsmittel der Wahl oft das bedruckte Output. Lesen Sie weiter, um herauszufinden, warum es eine wichtige Praxis beim Swift-Programmieren ist.
+Der Einsatz von Debug-Ausgaben ist eine gängige Praxis in der Entwicklung von Informatikprojekten. Sie ermöglichen es Entwicklerinnen und Entwicklern, den Ablauf des Codes zu verfolgen und potenzielle Fehler zu identifizieren. In diesem Blogbeitrag werden wir uns genauer damit beschäftigen, wie Debug-Ausgaben in Swift-Code verwendet werden können.
 
-## Wie
+## Wie geht's
 
-Um den Debug-Output in Swift zu aktivieren, gibt es verschiedene Methoden. Eine Möglichkeit ist die Verwendung der `print()` Funktion. Hier ist ein Beispielcode, der die Verwendung von `print()` zeigt:
+Um Debug-Ausgaben in Swift zu verwenden, können wir den Befehl "print()" verwenden. Dieser Befehl gibt den angegebenen Wert oder Variablenwert auf der Konsole aus. Im folgenden Beispiel geben wir den Wert "Hello World!" aus:
+
+```Swift
+print("Hello World!")
+```
+
+Die Ausgabe auf der Konsole würde dann wie folgt aussehen:
+
+```
+Hello World!
+```
+
+Wir können auch Variablenwerte ausgeben, indem wir diese in die Klammer von "print()" einfügen. Nehmen wir an, wir haben eine Variable "name" mit dem Wert "Max":
 
 ```Swift
 let name = "Max"
-print("Hallo \(name), wie geht es dir?")
+print(name)
 ```
-Dieser Code gibt "Hallo Max, wie geht es dir?" in der Konsole aus.
 
-Eine andere Möglichkeit ist die Verwendung des `debugPrint()` Befehls, der zusätzliche Informationen wie z.B. der Datentyp oder die Speicheradresse des Werts liefert. Hier ist ein Beispielcode, der `debugPrint()` verwendet:
+Die Ausgabe wäre dann:
 
-```Swift
-let age = 25
-debugPrint(age)
 ```
-Dieser Code gibt "25" aus, aber auch zusätzliche Informationen wie z.B. "Int(25)" und "0x7fb37bc3b3f0" (Speicheradresse des Werts).
-
-Es ist auch möglich, benutzerdefinierte Debug-Ausgaben mit dem `CustomStringConvertible` Protokoll zu erstellen. Hier ist ein Beispielcode, der dies zeigt:
-
-```Swift
-struct Person: CustomStringConvertible {
-    var name: String
-    var age: Int
-    
-    var description: String {
-        return "\(name) is \(age) years old."
-    }
-}
-
-let person = Person(name: "Emma", age: 30)
-print(person)
+Max
 ```
-Dieser Code gibt "Emma is 30 years old." aus.
 
-## Tiefentauchen
+## Tiefergehende Informationen
 
-Zusätzlich zu den oben genannten Methoden können Entwickler auch die `assert()` Funktion verwenden, um Bedingungen zu überprüfen und bei einem Fehler eine Debug-Ausgabe auszugeben. Eine weitere nützliche Funktion ist `precondition()`, die dafür sorgt, dass bestimmte Bedingungen erfüllt sind, bevor der Code ausgeführt wird.
+Es gibt verschiedene Techniken, um Debug-Ausgaben noch effektiver zu nutzen. Eine Möglichkeit ist es, im Code verschiedene Markierungen zu setzen, die es uns ermöglichen, gezielt bestimmte Ausgaben auszugeben. Dies kann hilfreich sein, um zum Beispiel Input-Werte oder den Ablauf von Schleifen zu verfolgen.
 
-Es ist auch wichtig, den Debug-Output richtig zu formatieren, um ihn leichter lesbar zu machen. Dazu kann das `separator` Argument verwendet werden, um zwischen den einzelnen Ausgaben zu unterscheiden, sowie `terminator` um anzugeben, was am Ende jeder Ausgabe stehen soll.
+Ein weiteres nützliches Feature ist der Einsatz von "conditional printing". Dabei wird die Ausgabe nur ausgeführt, wenn eine bestimmte Bedingung erfüllt ist. Dies kann dazu beitragen, dass die Konsolenausgabe übersichtlicher wird und unnötige Ausgaben vermieden werden.
 
 ## Siehe auch
 
-- [Swift Dokumentation über Debugging](https://docs.swift.org/swift-book/LanguageGuide/Debugging.html)
-- [Verwendung von `print()` und `debugPrint()`](https://www.hackingwithswift.com/read/15/4/print-and-debug-print-how-to-send-output-to-the-xcode-debugger)
-- [Benutzerdefinierte Debug-Ausgaben mit `CustomStringConvertible`](https://www.hackingwithswift.com/example-code/language/how-to-customize-debug-descriptions-using-customstringconvertible)
-- [Verwenden von `assert()` und `precondition()`](https://www.swiftbysundell.com/posts/debugging-in-swift-using-assertions-and-preconditions)
+- [Apple's Debugging Guide](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html#//apple_ref/doc/uid/TP40015022-CH5-SW2)
+- [Ray Wenderlich's Debugging Tutorial](https://www.raywenderlich.com/773-debugging-tips-and-tricks-swift-programming-25)
+- [Useful Debugging Techniques in Swift](https://medium.com/@jberczel/useful-debugging-techniques-in-swift-d23b32e8ba8b)

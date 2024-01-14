@@ -1,63 +1,42 @@
 ---
-title:    "Java: Kirjoittaminen standardivirheelle"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-to-standard-error.md"
+title:                "Java: Kirjoittaminen standardivirheeseen"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi Kirjoittaa Vakiorajauksen?
+# Miksi?
 
-Kirjoittaminen vakiorajaukseen eli standard erroon on tärkeä osa Java-ohjelmoinnin prosessia. Se antaa sinulle mahdollisuuden havaita ja korjata virheitä, jotka muuten voivat jäädä huomaamatta. Se myös auttaa sinua ymmärtämään paremmin koodisi toimintaa ja parantamaan sen suorituskykyä.
+Jokainen Java-ohjelmoija on varmasti törmännyt virheilmoituksiin. Pahimmillaan ne voivat hidastaa työskentelyä ja aiheuttaa harmaita hiuksia. Mutta mitä jos kerrommekin Java-ohjelmalle, että se näyttäisikin virheilmoituksensa standardi virhe -tulostevirrasta? Tämä voi tehdä ohjelmoinnista huomattavasti helpompaa ja mahdollistaa kätevämmän virheidenhallinnan.
 
-## Kuinka Kirjoittaa Vakiorajaukseen
+# Kuinka?
 
-Kirjoittaminen vakiorajaukseen on helppoa Java-koodin avulla. Sinun tarvitsee vain käyttää `System.err` -muuttujaa ja `println()` -metodia tulostamaan haluamasi virhetiedot. Esimerkiksi:
-
-```Java
-public static void main(String[] args) { 
-   System.err.println("Virhe: Et saa jakaa lukua nollalla!"); 
-}
-```
-Tämä koodi tulostaa virheen viestin vakiorajauksena, joka näyttää tältä:
-
-```
-Virhe: Et saa jakaa lukua nollalla!
-```
-
-Voit myös käyttää `System.err` -muuttujaa yhdessä poikkeusten kanssa, jolloin vakiorajaukseen tulostetaan tarkempi virheen kuvaus. Esimerkiksi:
+Käyttämällä `System.err` -oliota voimme kirjoittaa virheilmoituksia suoraan standardi virhe -tulostevirtaan. Tämä tapahtuu juuri kuten standardi tulostevirtaan kirjoittaminen, mutta käytämme `println()`-metodia. Alla on esimerkki koodista ja tulos.
 
 ```Java
-public static void divideNumbers(int a, int b) { 
-   if(b == 0) { 
-       throw new ArithmeticException("Et saa jakaa lukua nollalla!"); 
-   } 
-   System.out.println(a/b); 
-}
-
-public static void main(String[] args) { 
-   try { 
-       divideNumbers(9, 0); 
-   } catch (ArithmeticException e) { 
-       System.err.println("Virhe: " + e.getMessage()); 
-   } 
+public class StandardErrorExample {
+  public static void main(String[] args) {
+    System.err.println("Tämä on virheilmoitus!");
+  }
 }
 ```
 
-Tämä koodi tulostaa vakiorajaukseen seuraavan virheen viestin:
+Tulos:
 
 ```
-Virhe: Et saa jakaa lukua nollalla!
+Tämä on virheilmoitus!
 ```
 
-## Syvällinen Sukellus Vakiorajaukseen
+# Syvällisempi sukellus
 
-Vakiorajauksen käyttäminen auttaa sinua havaitsemaan ja hallitsemaan virheitä koodissasi. Yleisimpiä vakiorajauksessa käytettyjä luokkia ovat `System.out` ja `System.err`. Näillä luokilla on kyky ohjata tulostukset eri virtauksiin, joten jos haluat esimerkiksi tulostaa virheen viestin tiedostoon, voit käyttää `System.err` -luokkaa.
+Standardi virhe -tulostevirta on osa Java-kielen "systeemiviestintää". Sitä käytetään normaalisti näyttämään virheilmoituksia ohjelman suorituksen aikana. Tämä tapahtuu, kun esimerkiksi koodissa tapahtuu jokin virhe tai poikkeus. Voimme siis ajatella standardi virhe -tulostevirtaa vähän kuin ohjelman huudoille.
 
-Poikkeukset ovat myös tärkeä osa vakiorajauksen käyttöä, sillä ne auttavat sinua ymmärtämään mistä virheistä koodissasi johtuu ja miten ne voidaan korjata. Hyvä käytäntö on myös käsitellä poikkeukset koodissa, jotta ohjelmasi ei kaadu virhetilanteissa.
+Virheilmoitusten lisäksi voimme käyttää standardi virhe -tulostevirtaa myös muuhun viestintään. Esimerkiksi jos haluamme näyttää käyttäjälle jonkin ilmoituksen, voimme kirjoittaa sen standardi virhe -tulostevirtaan ja se näkyy samalla tavalla kuin virheilmoitukset.
 
-## Katso Myös
+# Katso myös
 
-- [Java Documentation: System Class](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Java Documentation: Standard Error](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#error)
-- [Tutorialspoint: Java - Writing to Standard Error](https://www.tutorialspoint.com/java/java_writing_to_standard_error.htm)
+- Java virheidenhallinta: https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html
+- System.err Java-kirjaston dokumentaatio: https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err
+- Java virheet ja poikkeukset: https://www.javatpoint.com/exception-handling-in-java

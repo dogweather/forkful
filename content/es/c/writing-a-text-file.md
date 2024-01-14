@@ -1,48 +1,48 @@
 ---
-title:    "C: Escribiendo un archivo de texto"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/writing-a-text-file.md"
+title:                "C: Redacción de un archivo de texto"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-¿Alguna vez ha necesitado guardar información en un archivo de texto en su programa de C? ¡Entonces ha venido al lugar correcto! En este artículo, le mostraremos cómo escribir un archivo de texto en C y profundizaremos en por qué es útil hacerlo.
+Escribir un archivo de texto es una tarea sencilla y fundamental en la programación en C. Los archivos de texto son utilizados para guardar información de manera permanente y permiten que los programas puedan acceder y manipular estos datos. Esto es esencial ya sea para almacenar configuraciones, registros o cualquier otra información que deba persistir después de que el programa finalice su ejecución.
 
-## Cómo hacerlo
+## Cómo
 
-Para escribir un archivo de texto en C, necesitaremos utilizar la biblioteca estándar de C <stdio.h> y sus funciones `fopen()` y `fprintf()`. Primero, abrimos el archivo con la función `fopen()` indicando el nombre del archivo y el modo de apertura, que puede ser "w" para escribir en el archivo. Luego, utilizamos la función `fprintf()` para escribir el contenido que deseamos en el archivo, especificando el archivo abierto y el texto que queremos escribir. Finalmente, cerramos el archivo con la función `fclose()`.
+La escritura de un archivo de texto en C se puede dividir en tres pasos fundamentales: abrir, escribir y cerrar el archivo. Primero, necesitamos declarar un puntero a tipo FILE, el cual actuará como nuestro acceso al archivo. Luego, con la función `fopen()` podemos abrir el archivo en el modo deseado, ya sea solo lectura, solo escritura o lectura/escritura.
 
-Veamos un ejemplo práctico:
 ```C
 #include <stdio.h>
 
-int main() 
+int main()
 {
-    FILE *archivo = fopen("mi_archivo.txt", "w");
-    
-    if (archivo == NULL) 
-    {
-        printf("Error abriendo el archivo.");
-        return 1;
-    }
-    
-    fprintf(archivo, "¡Hola, mundo!");
+    FILE *archivo;
+    archivo = fopen("ejemplo.txt", "w");
+    /* código para escribir en el archivo */
     fclose(archivo);
-    
     return 0;
 }
 ```
-La salida de este código será un archivo de texto llamado "mi_archivo.txt" con la siguiente línea escrita: ¡Hola, mundo!
+Una vez que el archivo está abierto, podemos utilizar la función `fprintf()` para escribir en él. Esta función funciona de manera similar a `printf()`, pero en vez de imprimir en la pantalla, imprime en el archivo.
+
+```C
+fprintf(archivo, "Este es un ejemplo de texto que será escrito en el archivo.");
+```
+
+Finalmente, cuando ya hemos terminado de escribir en el archivo, debemos cerrarlo utilizando la función `fclose()`. Esto asegura que la información se guarde y el archivo se cierre adecuadamente.
 
 ## Profundizando
 
-Ahora que sabemos cómo escribir un archivo de texto en C, es importante entender por qué es útil hacerlo. Al guardar información en un archivo de texto, podemos crear un registro de datos que podemos acceder y leer en cualquier momento. Esto es especialmente útil en programas que manejan grandes cantidades de información o requieren datos persistentes entre sesiones.
+Además de las funciones mencionadas anteriormente, existen otras funciones y opciones que pueden ser útiles al momento de escribir un archivo de texto en C. Por ejemplo, la función `fputc()` permite escribir un solo caracter en el archivo y `fputs()` permite escribir una cadena de caracteres. También es posible utilizar el modo "append" al abrir un archivo (utilizando "a" en vez de "w") para añadir información al final del archivo en lugar de sobrescribirlo completamente.
 
-También podemos utilizar la escritura de archivos de texto en conjunto con la lectura de archivos para crear bases de datos simples o almacenar configuraciones de programas.
+Ten en cuenta que al escribir un archivo en C, es importante asegurarse de que siempre se cierre de manera adecuada. De lo contrario, podemos perder información o incluso dañar el archivo.
 
 ## Ver también
 
-- [Cómo leer un archivo de texto en C] (link a un artículo sobre cómo leer archivos de texto en C)
-- [Introducción a la biblioteca estándar de C] (link a un artículo sobre la biblioteca estándar de C)
+- [Tutorial de archivos en C](https://www.programiz.com/c-programming/c-file-input-output)
+- [Documentación oficial de fopen()](https://www.cplusplus.com/reference/cstdio/fopen/)
+- [Declarando y utilizando archivos en C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)

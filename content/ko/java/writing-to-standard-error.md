@@ -1,34 +1,40 @@
 ---
-title:    "Java: 표준 오류에 쓰는 것"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/writing-to-standard-error.md"
+title:                "Java: 표준 오류에 쓰기"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-왜: 왜 누군가가 표준 오류로 쓰기에 참여할까요? 보통, 표준 오류는 프로그래밍 오류나 디버깅을 위해 사용됩니다. 표준 오류를 올바르게 사용하는 것은 오류를 파악하고 수정하는 데 있어서 매우 유용합니다.
+# 왜 *표준 에러*에 쓰레기를 쓰는가
 
-### 왜
+표준 에러는 많은 프로그래밍 언어에서 사용되는 역할입니다. 이 글에서는 자바에서의 표준 에러 쓰기의 이유에 대해 알아보겠습니다. 
 
-Java 프로그래밍에서 표준 출력과 표준 오류는 중요하게 사용되는 개념입니다. 표준 출력은 보통 콘솔 창이나 파일 등에 출력되는 결과를 의미합니다. 하지만 표준 오류는 오류나 예외 메시지를 의미합니다. 따라서, 표준 오류를 사용하여 오류나 버그를 파악하고 디버깅할 수 있습니다.
+## 어떻게 쓰레기를 쓰나
 
-### 어떻게 사용하나요
-
-만약 우리가 예기치 못한 오류나 예외 상황을 처리하고 싶다면, 우리는 표준 오류를 사용해야 합니다. 이를 위해서는 `System` 클래스에 있는 `err` 필드를 사용하면 됩니다. 예를 들어, 아래와 같이 사용할 수 있습니다.
+아래의 코드 블록에서는 자바에서 표준 에러를 쓰는 방법을 살펴보겠습니다. 
 
 ```Java
-System.err.println("이것은 예외 메시지입니다.");
+public static void main(String[] args) {
+    System.err.println("표준 에러 쓰기 예제");
+}
 ```
 
-위 코드를 실행하면, 표준 오류로 메시지가 출력될 것입니다. 이를 통해 우리는 예외 상황이 발생했음을 알 수 있고, 이를 처리할 수 있습니다.
+위 코드를 실행하면 다음과 같은 결과를 볼 수 있습니다:
 
-### 깊게 살펴보기
+`표준 에러 쓰기 예제`
 
-`print` 메소드와는 달리, `println` 메소드는 메시지 끝에 줄바꿈 문자를 붙여 출력합니다. 따라서 `System.err.println()`으로 오류 메시지를 출력하면, 콘솔 창에 나타날 때 훨씬 더 직관적인 결과를 볼 수 있습니다. 또한 `System.err`은 `PrintStream` 클래스의 인스턴스이므로, 다양한 출력 메소드를 활용할 수 있습니다.
+## 심층 탐구
 
-### 참고 자료
+자바에서 표준 에러를 쓰는 이유는 주로 디버깅을 위해서입니다. 보통 프로그램에서 발생하는 모든 오류와 예외를 표준 에러에 쓰레기하면서 프로그램이 실행되는 동안 오류를 실시간으로 알 수 있게 됩니다. 이를 통해 개발자는 빠르게 오류를 발견하고 수정할 수 있습니다. 
 
-- [Java 공식 문서 - System 클래스](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Java 공식 문서 - PrintStream 클래스](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
-- [Java 표준 오류에 대한 더 자세한 설명](https://www.edureka.co/community/391/what-is-standard-error-in-java)
-- [Java 프로그래밍의 표준 출력과 표준 오류](https://www.geeksforgeeks.org/standard-output-streams-in-java/)
+## 더 많은 정보
+
+- [Java 표준 출력 vs. 표준 에러: 무엇이 다른가?](https://www.baeldung.com/java-standard-output-error)
+- [Java에서 로그 작성하기: Log4j를 사용하는 방법](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%B1%EC%84%9C%EB%A6%AC%EB%B6%80-log4j-daily)
+- [Java 오류 처리: 각각의 예외에 대한 다른 처리 방법](https://howtoprogram.xyz/2016/08/17/java-exception-handling/)
+
+# 참고자료
+
+- [Java 표준 입력과 표준 출력을 다루는 방법](https://javatutorial.net/java-syst

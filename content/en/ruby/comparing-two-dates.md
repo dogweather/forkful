@@ -1,36 +1,56 @@
 ---
-title:    "Ruby recipe: Comparing two dates"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/comparing-two-dates.md"
+title:                "Ruby recipe: Comparing two dates"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Comparing dates is a common task in programming, especially in projects that involve managing and manipulating time-related data. In Ruby, there are built-in methods that make it easy to compare dates and perform operations based on the comparison. Understanding how to compare dates in Ruby is an important skill for any developer working with time-based data.
+
+Comparing two dates may seem like a simple task, but it can actually be quite useful in many programming scenarios. Whether you're working with date calculations, event scheduling, or data analysis, being able to accurately compare two dates is a valuable skill to have in your coding arsenal.
 
 ## How To
-Comparing two dates in Ruby is a simple process that involves using the built-in `Date` class. Here is an example of how to compare two dates:
 
-```ruby
-date_1 = Date.new(2021, 5, 15)
-date_2 = Date.new(2021, 7, 2)
+To begin, let's create two date objects using the Ruby Date class:
 
-puts date_1 < date_2 # Prints "true"
-puts date_1 > date_2 # Prints "false"
-puts date_1 == date_2 # Prints "false"
+```Ruby
+date_1 = Date.new(2021, 1, 1)
+date_2 = Date.new(2020, 12, 31)
 ```
 
-In the above example, we create two `Date` objects and use the comparison operators to compare them. This allows us to determine if one date comes before, after, or is the same as the other date. Ruby also has methods like `Date#<=>` and `Date#eql?` that can be used to compare dates.
+Next, we can compare these two dates using the comparison operators (>, <, ==, etc.):
 
-Additionally, the `DateTime` and `Time` classes in Ruby also have comparison methods that work similarly to the `Date` class. So, if you are working with time data that includes both date and time, these classes can be used to make comparisons as well.
+```Ruby
+date_1 > date_2  # false
+date_1 < date_2  # true
+date_1 == date_2 # false
+```
+
+We can also use the built-in methods provided by the Date class, such as `Date#before?` and `Date#after?`:
+
+```Ruby
+date_1.before?(date_2)  # false
+date_1.after?(date_2)   # true
+```
+
+To get a more specific comparison, we can use the `Date#strftime` method to format the dates in a specific way. For example, we can compare the years of the two dates:
+
+```Ruby
+date_1.strftime("%Y") > date_2.strftime("%Y") # true
+```
 
 ## Deep Dive
-When comparing dates in Ruby, it's important to understand how the comparison is actually being performed. Under the hood, Ruby is converting the date object to an integer representation before comparing them. This representation is the number of days since "January 1, 4712 BCE" in the proleptic Julian calendar. This means that Ruby is comparing the number of days that have passed since this date for each date object and determining which one is greater.
 
-It's also important to note that the `Date` class only compares the date portion of a DateTime object, so if you want to compare date and time, you will need to use the `DateTime` or `Time` class.
+When comparing two dates, it's important to understand that the comparison is not just based on the date itself, but also takes into account the time zone in which the dates are being compared. This can be especially important when dealing with events that cross over different time zones.
+
+Another important factor to consider is the accuracy of the date comparison. Depending on the precision of the date objects, the comparison may not be as accurate as desired. For example, if the dates have a precision of only days, any time differences within the same day will not be taken into account.
+
+Furthermore, comparing dates that fall on a leap day or during a leap year can also lead to unexpected results. It's important to have a thorough understanding of how the Ruby Date class handles these scenarios.
 
 ## See Also
-- [Ruby Date and Time Methods](https://www.ruby-lang.org/en/documentation/stdlib/date/)
-- [Comparing Dates in Ruby](https://ruby-doc.org/core-3.0.1/Date.html#method-i-3C-3D-3E)
-- [Understanding Date and Time in Ruby](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-programming/lessons/time-and-date-ruby-programming)
+
+- [Ruby Date Class Documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
+- [Date Calculation in Ruby](https://www.rubyguides.com/2019/05/ruby-date/)
+- [Comparing Dates in Different Time Zones](https://stackoverflow.com/questions/1457711/ruby-how-to-compare-two-dates-regardless-of-timezones)

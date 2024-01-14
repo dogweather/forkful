@@ -1,40 +1,34 @@
 ---
-title:    "C#: Debug-Ausgabe drucken"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/printing-debug-output.md"
+title:                "C#: Ausgabe von Debuginformationen drucken"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+Warum: Debugging-Output zu drucken kann ein nützliches Werkzeug sein, um Fehler in deinem C# Code zu finden und zu lösen.
 
-Das Drucken von Debug Output ist ein nützliches Tool für Entwickler, um Fehler in ihrem Code zu finden und zu beheben. Durch das Anzeigen von Variablenwerten und Nachrichten während der Ausführung wird es einfacher, die zugrunde liegenden Probleme zu identifizieren.
-
-# Wie geht man vor
-
-Um Debug Output in C# zu drucken, können Sie die `Console.WriteLine()` Methode verwenden, gefolgt von der zu druckenden Nachricht oder Variable. Hier ist ein Codebeispiel:
+Wie geht's: Um Debugging-Output in deinem Code zu drucken, kannst du die Methode "Console.WriteLine()" verwenden. Dies ermöglicht es dir, Text auf der Konsole auszugeben, um den Wert von Variablen oder andere relevante Informationen anzuzeigen.
 
 ```C#
-int myNumber = 10;
-Console.WriteLine("Der aktuelle Wert von myNumber ist: " + myNumber);
+int num1 = 5;
+int num2 = 10;
+Console.WriteLine("Der Wert von num1 ist: " + num1);
+Console.WriteLine($"Der Wert von num2 ist: {num2}"); 
 ```
 
-Die Ausgabe dieses Codes würde folgendermaßen aussehen:
-
+Ausgabe:
 ```
-Der aktuelle Wert von myNumber ist: 10
+Der Wert von num1 ist: 5
+Der Wert von num2 ist: 10
 ```
 
-Sie können auch Debug Output mit anderen nützlichen Methoden wie `Console.Write()` oder `Debug.WriteLine()` drucken. Diese Methoden bieten zusätzliche Funktionen wie z.B. das Formatieren von Strings oder das Einfügen von Variablenwerten in die Nachricht.
+Tipp: Du kannst auch Kombinationen von Text und Variablen innerhalb der "Console.WriteLine()" Methode verwenden, um mehr Informationen auszugeben.
 
-# Tiefere Einblicke
+Tiefergehende Informationen: Wenn du noch tiefer in das Thema Debugging-Output eintauchen möchtest, gibt es einige zusätzliche Techniken, die du verwenden kannst. Zum Beispiel kannst du die Methode "Console.Clear()" verwenden, um die Konsole vor jedem Aufruf von "Console.WriteLine()" zu leeren. Dies verhindert, dass sich die Ausgabe überschneidet und macht das Lesen des Outputs einfacher.
 
-Beim Drucken von Debug Output ist es wichtig, die Ausgabe sorgfältig zu planen. Vermeiden Sie zu viele Ausgaben, die zu einem unübersichtlichen Output führen könnten. Stattdessen sollten Sie gezielt wichtige Variablen und Nachrichten auswählen, um Probleme besser zu verstehen.
-
-Eine weitere nützliche Technik ist die Verwendung von bedingten Anweisungen, um Debug Output je nach Debug-Level zu drucken. Dadurch können Sie während der Entwicklung alle Nachrichten sehen, während in einer Produktionsumgebung nur wichtige Fehlermeldungen ausgegeben werden.
-
-# Siehe auch
-
-- [Guide für das Debugging in C#](https://docs.microsoft.com/de-de/visualstudio/debugger/debugger-feature-tour?view=vs-2019)
-- [10 Tipps für effektives Debugging](https://raygun.com/blog/debugging-tips/)
-- [Weitere Debugging Tools für C#](https://raygun.com/blog/top-c-sharp-debugging-tools/)
+Siehe auch:
+- [Microsoft Dokumentation zu Console.WriteLine()](https://docs.microsoft.com/en-us/dotnet/api/system.console.writeline)
+- [Tutorial zu Debugging in C#](https://www.tutorialspoint.com/csharp/csharp_debugging.htm)
+- [Blog Artikel: 5 Tipps zum effektiven Debugging in C#](https://www.syncfusion.com/blogs/post/5-tips-to-make-your-csharp-debugging-more-effective.aspx)

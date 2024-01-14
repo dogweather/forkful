@@ -1,41 +1,32 @@
 ---
-title:    "Bash: Generera slumpmässiga tal"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/generating-random-numbers.md"
+title:                "Bash: Generering av slumpmässiga nummer"
+programming_language: "Bash"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför använda slumpmässiga tal i Bash-programmering
+## Varför 
 
-Slumpmässiga tal är viktiga i många aspekter av programmering, inklusive Bash-programmering. Genom att generera slumpmässiga tal kan du skapa variation och osäkerhet i dina program, vilket gör dem mer användbara och mångsidiga. Att använda slumpmässiga tal kan också vara ett sätt att lösa problem på ett kreativt sätt och testa gränserna för dina kunskaper inom Bash-programmering.
+Att generera slumpmässiga nummer kan vara väldigt användbart för många olika ändamål. Det kan användas för att testa program, skapa unika lösenord, eller till och med för spel och underhållning.
 
-# Hur man genererar slumpmässiga tal i Bash
+## Så här gör du 
 
-För att generera slumpmässiga tal i Bash finns det flera metoder som kan användas. En enkel metod är att använda kommandot "shuf", som väljer slumpmässiga rader från en given fil eller input. Till exempel:
+För att generera slumpmässiga nummer i Bash, kan du använda dig av kommandot "shuf". Detta kommando slumpar om innehållet i en fil eller en lista. Här är ett exempel på hur du kan använda det för att generera slumpmässiga nummer mellan 1 och 10: 
 
-```Bash
-shuf -i 1-10
-```
+```Bash 
+shuf -i 1-10 -n 1 
+``` 
 
-Detta kommer att generera ett slumpmässigt tal mellan 1 och 10. Du kan också använda variabeln "$RANDOM" i kombination med matematiska uttryck för att generera slumpmässiga tal. Till exempel:
+Detta kommer att slumpmässigt välja ett nummer mellan 1 och 10 och skriva ut det på skärmen. Du kan också ange antalet nummer du vill generera genom att ändra värdet på "-n" parameter. Till exempel, om vi ändrar värdet till 5 kommer det att generera 5 slumpmässiga nummer istället för bara ett. 
 
-```Bash
-echo $(($RANDOM % 10 + 1))
-```
+## Djupdykning 
 
-Detta kommer att generera ett tal mellan 1 och 10. Det finns också andra avancerade metoder som använder "dd" kommandot eller slumpmässiga filer för att generera slumpmässiga tal - det är upp till dig att utforska och hitta den metod som passar dig bäst.
+Det finns många olika sätt att generera slumpmässiga nummer i Bash, inklusive användning av andra kommandon som "od" och "awk". Det är också möjligt att generera slumpmässiga strängar istället för bara numeriska värden. Detta kan vara särskilt användbart för att skapa unika lösenord. 
 
-# Djupgående om att generera slumpmässiga tal
+## Se även 
 
-Att generera slumpmässiga tal i Bash är en process som involverar flera steg. Först måste du förstå hur slumpmässiga tal egentligen fungerar - de är inte helt slumpmässiga eftersom de genereras av datorns programvara. Därför bör du tänka på säkerheten när du använder slumpmässiga tal, särskilt i krypterings- eller säkerhetsrelaterade program.
-
-Det är också viktigt att välja rätt metod för att generera slumpmässiga tal beroende på dina behov. Vissa metoder är snabbare och enklare att använda, men kan vara mindre slumpmässiga. Andra metoder kan vara mer komplicerade men ger en högre grad av slumpmässighet.
-
-Sist men inte minst är det viktigt att vara medveten om att genererade slumpmässiga tal kan upprepas. Om du till exempel försöker generera 10 slumpmässiga tal mellan 1 och 10 kan du få många upprepade tal, beroende på den metod du använder. Detta är värt att tänka på när du använder slumpmässiga tal i dina Bash-program.
-
-# Se även
-
-- [BashGuide - Randomization](http://mywiki.wooledge.org/BashGuide/Randomization)
-- [HowToRandom - Wiki](https://wiki.bash-hackers.org/howto/random)
-- [Bash - Shuf man-sida](https://linux.die.net/man/1/shuf)
+- [Random Number Generation in Bash](https://www.shell-tips.com/2010/06/14/introduction-to-random-numbers/)
+- [Generating Passwords in Bash](https://linuxconfig.org/generating-your-own-random-passwords-on-the-linux-command-line)
+- [Bash Built-in Commands](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Builtins)

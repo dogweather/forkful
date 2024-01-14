@@ -1,43 +1,41 @@
 ---
-title:    "Haskell: המרת תאריך למחרוזת"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/converting-a-date-into-a-string.md"
+title:                "Haskell: המרת תאריך למחרוזת"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה:
 
-למה לבצע המרה של תאריך למחרוזת? ב-Haskell, לנו יש צורך לעבוד עם תאריכים שונים באופן קבוע, לדוגמה בתוך מערכות פיננסיות או ליצירת דוחות. כמו כן, בעבודה עם API אנו נדרשים לשלוח תאריכים בתבנית מסוימת כדי לקבל תשובות תקינות. לכן, ייתכן ונחוץ להמיר תאריך למחרוזת ולהתאים אותו לצרכים המיוחדים שלנו.
+אחת התכונות הנפוצות בשפת פונקציונלית כמו Haskell היא היכולת להמיר משתנים מסוג אחד למשתנים מסוג אחר. בפוסט הזה נתמקד בהמרת תאריכים למחרוזות ונראה איך ניתן לעשות זאת באמצעות Haskell.
 
-## איך לבצע
+# כיצד להמיר תאריך למחרוזת:
 
-נדגים את התהליך של המרת תאריך למחרוזת באמצעות הפונקציה `formatTime` הכתובה בנוסחת Haskell. נשתמש בתאריך נוכחי כדי להדגים את הפעולה ונציג את התוצאות במבנה תאריך פשוט.
+מתחילים עם השתמשות בפונקציה `show`. הפונקציה הזאת מקבלת אובייקט מסוג "תאריך" ומחזירה מחרוזת המכילה את התאריך בפורמט של dd/mm/yyyy. לדוגמה, ננסה להמיר את התאריך  22/08/2021:
 
 ```Haskell
-import Data.Time.Format  
-import Data.Time.LocalTime 
+show (22, 8, 2021)
+```
+הפלט שנקבל הוא: `"22/08/2021"`
 
--- קביעת תאריך נוכחי 
-currentDate :: IO String  
-currentDate = do  
-    -- השמת תאריך נוכחי בטווח זמן ישראל 
-    currentTime <- getCurrentTime  
-    let time = DubaiTimeZone 
-    -- המרה למחרוזת מבחינה פורמטית 
-    return $ formatTime defaultTimeLocale "%-d/%-m/%Y" $ utcToLocalTime time currentTime 
+במקום לפנות ישירות לפונקציה `show`, נוכל לכתוב פונקציה עצמאית המקבלת את הפורמט של התאריך שנרצה להמיר ומעבירה אותו לפונקציה `show`. לדוגמה, נבקש מהמשתמש להזין את התאריך ונשתמש בפונקציה `getLine` כדי לקבל את הקלט מהמשתמש:
 
--- הדפסת התאריך הנוכחי בפורמט מחרוזת פשוט    
-main :: IO ()  
-main = do  
-    dateStr <- currentDate  
-    putStrLn $ "התאריך הנוכחי הוא: " ++ dateStr  
+```Haskell
+import System.IO
+
+main = do
+    putStrLn "נא להזין תאריך (dd/mm/yyyy): "
+    dateText <- getLine
+    let date = read dateText :: (Int, Int, Int) -- המרת הטקסט למשתנה של תאריך
+    let format = "%d/%m/%Y"
+    let dateString = formatCalendarTime defaultTimeLocale format date
+    putStrLn dateString 
 ```
 
-תוצאה:
+כאן אנחנו משתמשים בפונקציה `read` כדי להמיר את הטקסט שהמשתמש הזין למשתנה של תאריך. נעביר את המשתנה הזה לפונקציה `formatCalendarTime` עם הפורמט של התאריך שנרצה לקבל. במקרה הזה, הפורמט הוא "%d/%m/%Y" שמתאים לתאריך בפורמט של dd/mm/yyyy. בסוף, הפלט שנקבל הוא התאריך כמחרוזת בפורמט שבחרנו.
 
-`התאריך הנוכחי הוא: 7/12/2021`
+# מעמקים:
 
-## נחילות
-
-הפונקציה `formatTime` מופעלת על ידי פורמט תורף שמכיל מחרוזת של פקודות כמו יום (%-d), חודש (%-m) ושנה (%Y) ומשתמשת בטווח זמנים כדי להמיר את התאריך לתוצאה המוגדרת. ניתן גם לבצע המרה לפורמטים שונים כגון צורה אמריקאית (MM-dd-yyyy) או אירופאי (dd/MM/yyyy) על ידי שימוש בפקודות הנכונות. כמו כן, ניתן להשתמש בפונקציות נוספות לעיבוד תאריכ
+קיימת כמה שיטות נוספות להמרת תאריך למ

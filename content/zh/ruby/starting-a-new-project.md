@@ -1,42 +1,65 @@
 ---
-title:    "Ruby: 开始一个新项目"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/starting-a-new-project.md"
+title:                "Ruby: 开启一个新项目"
+programming_language: "Ruby"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-开始一个新的项目是每个程序员的噩梦之一。但是，它也是一种学习和进步的机会。通过开始一个新的项目，你可以学习新的技术和解决不同的挑战，从而提高你的编程能力。同时，你还可以通过开发一个自己的项目来展示自己的技能和个性，从而扩展你的职业发展机会。
+毋庸置疑，编程是当今世界中非常重要的技能之一。而学习一门编程语言，比如Ruby，就是掌握这项技能的第一步。开始一个新的项目，不仅能够帮助你提升编程能力，也能够锻炼你的解决问题的能力，为将来的职业发展打下良好的基础。
 
-## 如何做
+## 如何
 
-让我们来看一下如何开始一个新的Ruby项目吧。首先，我们需要创建一个新的文件夹，作为我们的项目文件夹。然后，在终端中导航到该文件夹，并执行以下命令来初始化我们的项目：
-
-```Ruby
-rails new my_project
-```
-
-这将创建一个名为"my_project"的新Rails项目。接下来，我们需要进入这个项目的文件夹，并执行以下命令来启动服务器：
+编程并不是一件容易的事情，但是学习Ruby会让这一过程变得更加有趣。下面的代码示例和输出将展示如何使用Ruby来创建一个简单的计算器程序。
 
 ```Ruby
-cd my_project
-rails server
+def calculator(num1, num2, operation)
+  if operation == "+"
+    return num1 + num2
+  elsif operation == "-"
+    return num1 - num2
+  elsif operation == "*"
+    return num1 * num2
+  elsif operation == "/"
+    return num1 / num2
+  else
+    return "Invalid operation!"
+  end
+end
+
+puts calculator(5, 3, "+")
+# Output: 8
+puts calculator(10, 2, "*")
+# Output: 20
+puts calculator(15, 5, "/")
+# Output: 3
+puts calculator(8, 4, "-")
+# Output: 4
+puts calculator(3, 4, "x")
+# Output: Invalid operation!
 ```
 
-这将启动一个本地服务器，并且你可以在浏览器中通过"http://localhost:3000"来访问你的项目。现在，你可以开始编写你的代码并按照你的项目需求来添加新的功能。最后，你可以使用Git来管理你的代码并将其托管到GitHub上，以便与其他人分享你的项目。
+以上的代码使用条件语句来判断运算符，并根据运算符来执行相应的计算。通过这个简单的例子，你可以了解到Ruby的一些基本语法，也可以发挥想象力来创建更具挑战性的程序。
 
-## 深入了解
+## 深入探讨
 
-在开始一个新的项目之前，你需要先确定项目的需求和目标。这将帮助你更好地规划和组织你的代码，并避免后期的混乱和冗余。你还可以考虑使用一些流行的Ruby开发工具和库，如RSpec、Capybara、Devise等来提高你的开发效率和质量。
+开始一个新的项目，需要考虑很多因素。首先，你需要明确项目的目的和目标。其次，你需要决定使用哪些工具和技术来完成项目。最后，你还需要制定一个计划和时间表，以便更好地组织和管理项目。
 
-此外，你还可以参考一些优秀的开源Ruby项目，如Rails、Spree、Discourse等，来学习和借鉴他们的架构和设计思路。最重要的是，不要忘记持续学习和实践，只有不断地学习和练习才能帮助你成为一个更好的程序员。
+同时，你也应该考虑与其他开发者合作，这样可以提高项目的效率和质量。你可以考虑使用版本控制系统，比如Git，来让团队成员协作开发。另外，也可以参考一些优秀的开源项目，学习他们的做法和经验。
+
+总之，开始一个新的项目需要仔细思考和计划，但是它也是一个学习和成长的过程。
 
 ## 参考链接
 
-- [Rails官方文档](https://guides.rubyonrails.org/)
-- [Ruby编程语言官方网站](https://www.ruby-lang.org/zh_cn/)
-- [Rails教程](https://railstutorial-china.org/)
-- [Ruby China论坛](https://ruby-china.org/)
-- [GitHub](https://github.com/)
+- [Learn Ruby in Y Minutes](https://learnxinyminutes.com/docs/zh-cn/ruby-cn/)
+- [Ruby 官方文档](https://ruby-china.github.io/rubydocs/) 
+- [Ruby on Rails 教程](https://railstutorial-china.org/ruby-on-rails-tutorial-4.0-cn/chapter1.html) 
+
+## 参考资料
+
+- [Ruby.org](https://www.ruby-lang.org/zh_cn/) 
+- [Ruby China 论坛](https://ruby-china.org/) 
+- [Git 官方文档](https://git-scm.com/book/zh/v2)

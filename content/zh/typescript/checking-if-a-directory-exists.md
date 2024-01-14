@@ -1,68 +1,60 @@
 ---
-title:    "TypeScript: 检查目录是否存在。"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript: 检查目录是否存在。"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为了保证程序的运行顺利，我们经常会需要检查某个目录是否存在。在进行文件操作、配置路径或者加载资源时，检查目录是否存在可以避免出现错误。
+为什么：检查目录是否存在是编程中非常常见的操作。当我们需要在代码中操作文件或目录时，首先需要确认目录是否存在。这可以帮助我们避免因为不存在的目录而导致的错误。
 
-如何做到：在TypeScript中，我们可以使用内置的Node.js函数`fs.existsSync()`来判断目录是否存在。
+如何：下面我们将使用 TypeScript 来演示如何检查目录是否存在。
 
 ```TypeScript
-// 导入fs模块
-import * as fs from 'fs';
+import fs from 'fs';
 
-// 检查目录是否存在
-if(fs.existsSync('./myFolder')){
-    console.log('目录存在');
-}else{
-    console.log('目录不存在');
+const directoryPath = './test';
+
+// 使用 fs.exists() 方法来检查目录是否存在
+fs.exists(directoryPath, (exists) => {
+  if (exists) {
+    console.log(`The directory ${directoryPath} exists.`);
+  } else {
+    console.log(`The directory ${directoryPath} does not exist.`);
+  }
+});
+
+// 使用 fs.accessSync() 方法来检查目录是否存在
+try {
+  fs.accessSync(directoryPath);
+  console.log(`The directory ${directoryPath} exists.`);
+} catch (err) {
+  console.log(`The directory ${directoryPath} does not exist.`);
 }
 ```
 
-输出：
-
-```
-目录存在
-```
-
-深入了解：`fs.existsSync()`函数的原理是通过调用Node.js的`fs.statSync()`函数来检查目录是否存在。它会返回一个`fs.Stats`对象，其中包含了目录的详细信息。如果目录不存在，则会抛出一个错误。
-
-除了`fs.existsSync()`，我们也可以使用`fs.accessSync()`函数来检查目录是否存在。它与`fs.existsSync()`的不同之处在于，它会尝试访问目录来检查其权限，因此更适合用来判断是否有权限对目录进行操作。
+输出结果：
 
 ```TypeScript
-// 导入fs模块
-import * as fs from 'fs';
-
-// 检查目录是否存在并具有可读权限
-fs.accessSync('./myFolder', fs.constants.R_OK, (err) => {
-    if (err) {
-        console.log('目录不存在或不可读');
-    }else{
-        console.log('目录存在且可读');
-    }
-});
+The directory ./test exists.
+The directory ./test does not exist.
 ```
 
-输出：
+深入了解：在 TypeScript 中，我们可以使用两种方法来检查目录是否存在：`fs.exists()` 和 `fs.accessSync()`。`fs.exists()` 是一个异步方法，它采用目录路径和回调函数作为参数。当目录存在时，回调函数的第一个参数为 `true`，否则为 `false`。另一种方法是 `fs.accessSync()`，它是一个同步的方法，它直接返回一个错误对象，通过捕获这个错误来判断目录是否存在。
 
-```
-目录存在且可读
-```
+查看相关信息：如果你想进一步了解有关检查目录是否存在的信息，可以参考下面的链接：
 
-另外，我们还可以使用`fs.mkdirSync()`函数来创建目录，如果目录已存在则会抛出一个错误。因此，在创建目录前，我们可以先使用`fs.existsSync()`或`fs.accessSync()`来判断目录是否存在，避免重复创建目录。
+[Synchronously/Asynchronously check whether directory exists in TypeScript](https://coderrocketfuel.com/article/synchronously-asynchronously-check-whether-directory-exists-in-typescript)
 
-总结：检查目录是否存在可以帮助我们避免不必要的错误，并且在操作文件时可以提高程序的健壮性。在选择使用哪种方法时，可以根据具体需求来决定。
+[Node.js | fs.existsSync() Method](https://www.geeksforgeeks.org/node-js-fs-existssync-method/)
 
-参考链接：
-- [Node.js官方文档 - fs模块](https://nodejs.org/api/fs.html)
-- [Node.js官方文档 - fs.stat](https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback)
-- [CNode - fs.existsSync()的原理](https://cnodejs.org/topic/5ae8e05e038c554f6755c4f0)
-- [CNode - fs.access()用法详解](https://cnodejs.org/topic/5693fa9439efda5c4088ed72)
+[Node.js | fs.accessSync() Method](https://www.geeksforgeeks.org/node-js-fs-accesssync-method/)
 
-# 查看也可
+可见也就是这样。Happy coding!
 
-- [Node.js官方文档 - fs模块](https://nodejs.org/api/fs.html)
-- [TypeScript官方文档 - Node.js类型声明](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html#type-checking-the-module)
+另见：
+
+[fs.exists vs fs.existsSync vs fs.statSync](https://stackoverflow.com/questions/17699599/fs-exists-vs-fs-existssync-vs-fs-statsync-in-node-js)
+
+[Node.js | fs.existsSync() vs fs.accessSync()](https://www.geeksforgeeks.org/node-js-fs-existssync-vs-fs-accesssync/)

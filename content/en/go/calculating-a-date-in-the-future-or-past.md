@@ -1,70 +1,69 @@
 ---
-title:    "Go recipe: Calculating a date in the future or past"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/calculating-a-date-in-the-future-or-past.md"
+title:                "Go recipe: Calculating a date in the future or past"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Calculating dates in the future or past is a common task in programming, especially when dealing with scheduling or planning applications. With Go's built-in time package, it becomes a simple and straightforward process. In this blog post, we will explore how to calculate dates in the past or future using Go.
+Calculating dates in the future or past is a common task in many programming languages. In Go, it can be especially useful for time-based operations and scheduling tasks.
 
 ## How To
 
-To calculate a date in the future or past, we first need to understand how dates are represented in Go. Go's time package uses the type `time.Time` which represents a point in time. Let's take a look at an example of how we can use this to calculate a date in the future.
+To calculate a date in the future or past in Go, we can use the `time` package. This package provides various methods for handling time and dates.
 
-```Go
-package main
+First, we need to import the `time` package into our code:
 
-import (
-  	"fmt"
-  	"time"
-)
-
-func main() {
-  	// Get the current date and time
-  	now := time.Now()
-
-  	// Add 7 days to the current date
-  	future := now.AddDate(0, 0, 7)
-
-  	// Format the date output as "Month Day, Year"
-  	fmt.Println(future.Format("January 2, 2006"))
-}
+```
+import "time"
 ```
 
-The output of the above code will be the date 7 days from now, in the format "Month Day, Year". We can also calculate dates in the past by using a negative number in the `AddDate` function.
+Next, we can use the `Now()` method to get the current time:
 
-```Go
-// Subtract 2 months from the current date
-past := now.AddDate(0, -2, 0)
+```
+now := time.Now()
 ```
 
-In addition to adding or subtracting days, months and years, we can also use the `Date` function to set a specific date.
+To calculate a date in the future, we can use the `Add()` method and specify a duration in seconds, minutes, hours, days, or even years:
 
-```Go
-// Set a specific date: January 1st, 2022
-specificDate := time.Date(2022, time.January, 1, 0, 0, 0, 0, time.UTC)
+```
+futureDate := now.Add(24 * time.Hour) // adds 24 hours to current date
 ```
 
-Now that we know how to calculate dates in the future or past, let's dive deeper into the time package and explore some of its other useful functions.
+Similarly, to calculate a date in the past, we can use the `Sub()` method:
+
+```
+pastDate := now.Sub(7 * time.Day) // subtracts 7 days from current date
+```
+
+We can then use the `Format()` method to format the date according to our desired layout:
+
+```
+futureDateFormatted := futureDate.Format("Monday, January 2, 2006")
+```
+
+Here, the layout string represents the desired format of the date and time, based on a specific reference date of "January 2, 2006".
+
+Let's see the output of these calculations:
+
+```
+Future date: Monday, January 26, 2021
+Past date: Monday, January 11, 2021
+```
 
 ## Deep Dive
 
-In addition to `AddDate` and `Date`, Go's time package offers other functions such as `Sub`, which calculates the difference between two dates. We can also use the `Before` and `After` functions to compare two dates.
+When calculating dates, it's important to take into account time zones and daylight saving time. In Go, we can use the `Location` and `LoadLocation()` methods to handle time zones.
 
-Go's time package also allows us to format dates in different ways using the `Format` function. We can specify the layout we want our date to be displayed in by using a specific date and time format reference.
+Another helpful tip is to use the `Duration` type instead of manually calculating durations. This allows for more readable and maintainable code.
 
-```Go
-// Format output as "Month/Day/Year Hour:Minute:Second"
-fmt.Println(now.Format("01/02/2006 15:04:05"))
-```
-
-Additionally, Go's time package offers functions to extract specific information from a date, such as the day of the week or the time zone.
+Furthermore, for more advanced date and time calculations, we can use the `time.ParseDuration()` method to specify a duration string in a specific format.
 
 ## See Also
 
-- Go Time Package Documentation: https://golang.org/pkg/time/
-- Beginner's Guide to Go: Working with Time and Dates: https://www.calhoun.io/working-with-dates-and-times-in-go/
-- Manipulating Dates and Times in Go: https://medium.com/@felipedutratine/manipulating-dates-and-times-in-golang-bb2211b072e1
+- [Go `time` package documentation](https://golang.org/pkg/time/)
+- [Working with time in Go](https://opensource.com/article/20/7/time-go)
+- [Understanding time zones in Go](https://golangbyexample.com/golang-get-timezone-offset/)

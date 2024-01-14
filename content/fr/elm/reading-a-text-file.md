@@ -1,62 +1,44 @@
 ---
-title:    "Elm: Lecture d'un fichier texte"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/reading-a-text-file.md"
+title:                "Elm: Lecture d'un fichier texte"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un programmeur débutant ou expérimenté, vous savez probablement que la lecture de fichiers texte est un élément important du développement de logiciels. Que vous souhaitiez récupérer des données à partir d'un fichier ou simplement le lire pour en vérifier le contenu, savoir comment le faire en Elm peut vous être très utile. Dans cet article, nous allons explorer les bases de la lecture de fichiers texte en Elm.
+Si vous êtes un développeur Elm, vous savez peut-être déjà que la lecture de fichiers texte peut être une tâche fastidieuse. Mais saviez-vous que c'est aussi une étape cruciale dans de nombreux projets de programmation ? Que vous soyez un débutant ou un expert en Elm, comprendre comment lire un fichier texte peut vous aider à réussir vos projets.
 
 ## Comment faire
 
-Pour lire un fichier texte en Elm, nous utiliserons la fonction `Text.readFile`. Cette fonction prend en paramètre le chemin du fichier à lire et renvoie une `Task` contenant le contenu du fichier. Voici un exemple de code :
+Heureusement, la syntaxe Elm simplifie grandement la lecture de fichiers textes. Tout d'abord, vous devez importer le module `File` de la bibliothèque standard Elm. Ensuite, vous pouvez utiliser la fonction `File.readAsString` pour lire le contenu d'un fichier texte. Voici un exemple de code :
 
-```
-import Text exposing (readFile)
+```Elm
+import File exposing (readAsString)
 
-main =
-  readFile "mon_fichier.txt" 
-```
+readTextFile : String -> Cmd Msg
+readTextFile filePath =
+    case filePath of
+        "mon_fichier.txt" ->
+            readAsString filePath
 
-Dans cet exemple, nous utilisons la fonction `readFile` pour lire le fichier texte "mon_fichier.txt". Cette fonction renvoie une `Task` que nous pouvons manipuler à l'aide de la fonction `Task.attempt`. Nous pouvons ensuite utiliser cette `Task` pour afficher le contenu du fichier ou le stocker dans une variable pour une utilisation ultérieure. Voici un exemple de code complet :
-
-```
-import Html exposing (text)
-import Task exposing (attempt)
-import Text exposing (readFile)
-
-main =
-  Task.attempt ReadFile (readFile "mon_fichier.txt")
-
-type Msg
-  = ReadFile (Result String Error)
-
-type alias Error =
-  { message : String
-  , code : Int
-  }
-
-update msg model =
-  case msg of
-    ReadFile result ->
-      case result of
-        Ok content ->
-          -- faire quelque chose avec le contenu du fichier
-          text content
-        Err error ->
-          -- gérer l'erreur d'ouverture du fichier
-          text error.message
+        _ ->
+            Cmd.none
 ```
 
-## Plongée profonde
+Ce code définit une fonction qui prend en paramètre le chemin d'un fichier et renvoie une commande `Cmd Msg` contenant le contenu du fichier sous forme de chaîne de caractères. Dans cet exemple, nous avons utilisé le motif `case` pour gérer différents cas de fichiers que nous pourrions vouloir lire. Vous pouvez également utiliser la fonction `Task.attempt` pour gérer les erreurs possibles lors de la lecture d'un fichier.
 
-La fonction `Text.readFile` prend en charge les chemins relatifs et absolus pour spécifier le fichier à lire. Il existe également la fonction `Text.get` qui prend en charge les demandes HTTP pour récupérer un fichier en ligne. De plus, il est important de noter que la `Task` renvoyée par `Text.readFile` est asynchrone, ce qui signifie que nous devons utiliser la fonction `Task.attempt` pour manipuler les résultats.
+## Plongée en profondeur
+
+Pour ceux qui aiment aller plus en profondeur, sachez qu'il existe différents modules et packages développés par la communauté Elm pour faciliter et améliorer la lecture de fichiers textes. Par exemple, le package `elm-blob` permet de lire des fichiers binaires, tandis que `elm-explorations/benchmark` fournit des outils pour mesurer la performance de la lecture de fichiers en Elm.
+
+Il est également important de comprendre les limites de la lecture de fichiers en Elm. Comme Elm est un langage de programmation purement fonctionnel, la lecture d'un fichier est une opération de « côté impur » qui doit être traitée avec soin pour ne pas compromettre l'immuabilité des données.
 
 ## Voir aussi
 
-- Documentation officielle sur la fonction `Text.readFile`: https://package.elm-lang.org/packages/elm/core/latest/Text#readFile
-- Documentation officielle sur la fonction `Task.attempt`: https://package.elm-lang.org/packages/elm/core/latest/Task#attempt
-- Tutoriel sur la lecture et l'écriture de fichiers en Elm: https://guide.elm-lang.org/io/files.html
+- [Documentation officielle Elm sur la lecture de fichiers](https://guide.elm-lang.org/interop/file.html)
+- [Programmation fonctionnelle : concepts de base pour les débutants en Elm](https://www.infoq.com/fr/articles/cesarini-functionnel/)
+- [Package Elm pour la manipulation de fichiers](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Package Elm pour la manipulation de fichiers binaires](https://package.elm-lang.org/packages/elm-explorations/blob/latest/)

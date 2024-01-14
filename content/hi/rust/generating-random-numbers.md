@@ -1,43 +1,32 @@
 ---
-title:    "Rust: संयोजित प्राकृतिक संख्याएं"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/generating-random-numbers.md"
+title:                "Rust: कंप्यूटर प्रोग्रामिंग पर 'यादृच्छिक संख्याएं उत्पन्न करना'।"
+programming_language: "Rust"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyun
+# क्यों
 
-Random numbers ka vyavhar karne ke liye kyun kisi ko uttejit karna chahiye, iske pichhe kya hai? Random numbers jode hue data ki vyakulta aur avyakta ko represent karte hain. Is liye, inse chunke data ko apne hisab se organize kar sakte hain, isse hamare code kaafi versatile ho jaate hain. Aur agar hamari software ke liye secure passwords banane ki zaroorat hai, toh random numbers bahut zaroori hote hain.
+क्या आपने कभी इसके बारे में सोचा है, कि आपके पास एक रैंडम नंबर बनाने का तरीका है? यदि हां, तो आपको शायद ही पता हो कि रैंडम नंबर ज्यादातर किसी शानदार प्रोजेक्ट का एक महत्वपूर्ण अंग होता है। इसके अलावा, रैंडम नंबर जेनरेशन करने का कोई न कोई उपयोगी उदाहरण भी हो सकता है। वह सही नंबर का चयन करने से लेकर, पासवर्ड, सुरक्षा, टोकन जेनरेशन, वेबसाइट्स के लिए बड़ी इनपुट फ़ाइलों बनाने तक उपयोगी हो सकता है। इस ब्लॉग पोस्ट में, हम आपको बताएंगे कि आप रस्ट में रैंडम नंबर जेनरेशन कैसे कर सकते हैं।
 
-# Kaise Karein
+यह आपके लिए मददगार हो सकता है, यदि आप किसी गेम, डेटा एनालिटिक्स या किसी और प्रकार के सोफ्टवेयर विकसन के लिए रैंडम नंबर की आवश्यकता हो। अधिकतम जुलाई सलाह प्राप्त करने के बाद भी, आप सही रैंडम नंबर जेनरेट करके इसे उपयोगी बना सकते हैं। इसलिए, इसे सीखने को प्रोत्साहित करते हुए हम अब चलनेवाली कोडिंग की ओर बढ़ते हैं!
 
-Kam karein, sunheri aankhein karein - yeh hona chahiye apke dimag mein agar apne shuruat mein naam nahin paaya Rust ke sath. Ho na sake, langauge ke saathe thoda der lag sakta hai, par is language ke madhyam mein, 	random numbers kaise ban sakta hai yeh seekhna zaroori hai. 
+# कैसे करें
 
-```Rust
-// Random numbers ka example
+```rust
 use rand::Rng;
-// Use karne wala path
+
 fn main() {
-    // Output mein 5 random numbers print karaye
-    println!("Random Numbers: ");
-    for _ in 0..5 {
-        println!("{}", rand::thread_rng().gen_range(0, 10));
-        // 0 se lekar 10 ke beech mein random numbers generate karein 
-    }
+    // एक असामान्य सक्रिय रैंडम जेनरेटर बनाएं
+    let mut rng = rand::thread_rng();
+
+    // सक्रिय रैंडम नंबर जेनरेट करें (0 से लेकर 10 तक के बीच)
+    let random_number: u32 = rng.gen_range(0..10);
+
+    println!(" आपका रैंडम नंबर है: {}", random_number);
 }
 ```
 
-Is code snippet mein, `rand` crate ka istemaal kiya gaya hai random numbers banane ke liye. Pehle `use` line mein, `rand::Rng` ko use kar ke, crate ko import kiya gaya hai. Fir, `main` function mein, `println` function ka istemaal kiya gaya hai random numbers print karne ke liye. Is mein `for` loop ka upayog kiya gaya hai, jisme har baar `rand::thread_rng().gen_range(0, 10)` call kiya jata hai, jisse humare program ko random numbers generate karne ke liye kaha jata hai.
-
-# Gahra Sukhchaar
-
-Random numbers generate karne ki peechhe, Rust ke `rand` crate ke alawa bahut se techniques dheere dheere develop huye gaye hain. Chuki random numbers ko secure banana bahut zaroori hai, is liye kai techniques hain jaise PRNGs (Pseudorandom number generators), CSPRNGs (Cryptographically secure pseudorandom number generators) aur entropy based random number generators. In sabhi techniques mein, randomness aur unpredictability ka balance dhyaan mein rakhna zaroori hai taki koi bhi hacker is randomness ko predict na kar sake.
-
-# Dekho Bhi
-
-Random numbers generate karne ke alawa, Rust mein aur bhi bahut se interesting features hain. Agar aapko is language ke bare mein aur jaankari chaiye, toh neeche diye gaye links check karein:
-
-- [Rust Official Website](https://www.rust-lang.org/)
-- [Rust Tutorial in Hindi](https://github.com/w3hexschool/rust-tutorials-in-hindi)
-- [Rust Programming - Full Course](https://www.youtube.com/watch?v=zF34dRivLOw)
+इस स्निपेट के अर

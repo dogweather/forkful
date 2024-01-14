@@ -1,40 +1,38 @@
 ---
-title:    "Kotlin: Säännöllisten lausekkeiden käyttö"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/using-regular-expressions.md"
+title:                "Kotlin: Säännöllisten lausekkeiden käyttö"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää tavallisia ilmaisuja (Regular Expressions)?
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Tavalliset ilmaisut (tunnetaan myös nimellä regex tai regexp) ovat voimakas työkalu ohjelmoijille, jotka haluavat käsitellä ja muokata merkkijonoja. Ne ovat erityisen hyödyllisiä silloin, kun haluat etsiä tiettyä kaavaa tai sääntöä merkkijonosta.
+Säännölliset lausekkeet ovat erittäin tehokkaita työkaluja, jotka auttavat koodaajia löytämään ja manipuloimaan tekstiä halutulla tavalla. Ne ovat erityisen hyödyllisiä, kun joudutaan käsittelemään suuria määriä tekstiä, joka sisältää tiettyjä kaavoja tai malleja. Säännöllisiä lausekkeita käyttämällä voit nopeasti löytää ja muokata tiettyjä kappaleita tai sanoja, mikä tekee työskentelystäsi helppoa ja tehokasta.
 
-## Kuinka käyttää tavallisia ilmaisuja?
+## Miten käyttää säännöllisiä lausekkeita Kotlinissa?
 
-Tavallisten ilmaisuiden käyttö Kotlinissa on yksinkertaista. Voit käyttää niitä String-luokan matchEntire()-funktiolla tai Regex-luokan oft*-funktioilla. Alla on esimerkki kuinka voit käyttää tavallisia ilmaisuja tarkistamaan, onko annettu merkkijono puhelinnumero:
+Säännöllisen lausekkeen luominen Kotlinissa on melko yksinkertaista. Sinun tarvitsee vain määrittää haluttu teksti ja käyttää säännöllistä lauseketta löytääksesi ja muokataksesi sitä. Esimerkiksi, jos haluat löytää kaikki numerot tekstistä, voit käyttää seuraavaa säännöllistä lauseketta:
 
 ```Kotlin
-val puhelinnumero = "123-456-7890"
-val regex = Regex("""\d{3}-\d{3}-\d{4}""")
-if (puhelinnumero.matchEntire(regex)) {
-    println("Puhelinnumero on oikeassa muodossa!")
-} else {
-    println("Puhelinnumero ei ole oikeassa muodossa.")
-}
+val teksti = "Tässä tekstissä on joitakin numeroita: 123 ja 456."
+val regex = Regex("[0-9]+")
+val numeroLista = regex.findAll(teksti).map { it.value }.toList()
+
+println(numeroLista) // [123, 456]
 ```
 
-Tämä koodi tulostaa "Puhelinnumero on oikeassa muodossa!" koska annettu merkkijono täyttää tavallisen ilmaisun säännön.
+Kuten näet, käyttämällä säännöllistä lauseketta `[0-9]+`, pystyimme löytämään kaikki numerot tekstistä ja tallentamaan ne listalle. Voit muuttaa säännöllisen lausekkeen kaavoja vastaavasti käyttämällä erilaisia merkkejä ja operaattoreita.
 
-## Syvällinen sukellus tavallisten ilmaisujen käyttöön
+## Syvempi sukellus säännöllisiin lausekkeisiin
 
-Tavalliset ilmaisut ovat tehokas työkalu merkkijonojen käsittelyyn, mutta niiden käyttö voi olla hieman haastavaa aluksi. Tärkeintä on ymmärtää perussäännöt ja erikoismerkit, joita tavallisissa ilmaisuissa käytetään. Alla on muutamia hyödyllisiä linkkejä, jotka auttavat sinua perehtymään tavallisten ilmaisuiden maailmaan ja hyödyntämään niitä oman koodisi parissa:
+Säännölliset lausekkeet seuraavat tiettyjä sääntöjä, kun etsitään tiettyjä kaavoja tai malleja tekstistä. Tämän vuoksi on tärkeää ymmärtää perusteet ennen kuin alat käyttää niitä. Voit esimerkiksi käyttää erilaisia merkkejä, kuten `[]`, `*` ja `+` ilmaisemaan haluttuja kaavoja. On myös olemassa erilaisia modifier- ja escape-merkkejä, jotka voivat auttaa tarkentamaan hakuja.
 
-- [Kotlinin virallinen dokumentaatio tavallisista ilmaisuista](https://kotlinlang.org/docs/regular-expressions.html)
-- [Regex Tester -työkalu, joka auttaa testaamaan ja tarkistamaan tavallisia ilmaisuja](https://regexr.com/)
-- [Regex One -verkkokurssi, jossa voit oppia perusteet tavallisista ilmaisuista](https://regexone.com/)
+On tärkeää harjoitella ja tutkia säännöllisiä lausekkeita ennen niiden käyttämistä tuotannossa, jotta ymmärrät täysin niiden toiminnan ja miten voit hyödyntää niitä.
 
 ## Katso myös
 
-- [Kotlinin String-luokan dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/) 
-- [Kotlindoc -tiedoston ilmaisuja ja säännöllisiä lausekkeita koskevat ohjeet](https://kotlinlang.org/docs/kotlindoc.html#regular-expressions-and-expressions-description-patterns)
+- [Kotlinin säännöllisten lausekkeiden dokumentaatio](https://kotlinlang.org/docs/regular-expressions.html)
+- [Säännöllisten lausekkeiden opas](https://www.regular-expressions.info/)
+- [Kotlinsäännöllisten lausekkeiden harjoituksia](https://regexone.com/lesson/introduction_abcs)

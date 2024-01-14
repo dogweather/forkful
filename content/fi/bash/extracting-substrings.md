@@ -1,65 +1,42 @@
 ---
-title:    "Bash: Alaryhmien erottaminen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/extracting-substrings.md"
+title:                "Bash: Alimerkkijonojen erottaminen"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi haluat oppia kuinka eristetään osamerkkijonoja?
+## Miksi
 
-On monia syitä, miksi joku haluaisi hallita osamerkkijonoja Bash-ohjelmoinnissa. Yksi yleisimmistä syistä on käsitellä merkkijonoja, jotka sisältävät enemmän tietoa kuin mitä tarvitset tai tarvitset tietyn osan merkkijonosta tarkemman analyysin suorittamiseksi.
+Substringien eristäminen on hyödyllinen taito, jota tarvitaan useimmissa Bash-ohjelmoinnin projekteissa. Se mahdollistaa tiettyjen merkkijonojen tai arvojen eristämisen suuremmista tekstimäärästä, mikä on erittäin hyödyllistä tietojen käsittelyssä ja analysoinnissa. 
 
-## Kuinka: Näin eristät osamerkkijonoja Bash-ohjelmoinnissa!
+## Kuinka tehdä
 
-Bashilla on useita erilaisia tapoja eristää osamerkkijonoja. Yksi yleisimmistä tavoista on käyttää `grep` -komentoa.
+Käytä komentoa `cut` eristämään osia merkkijonoista. Esimerkiksi, jos haluat eristää puhelinnumeron tekstistä "Puhelinnumeroni on +358 123 456 789", voit käyttää seuraavaa koodia:
 
-```
-Bash on muotoiltu kieli, joka on hyödyllinen
-```
-
-Lähtö:
-
-```
-muotoiltu kieli
+```Bash 
+puhelinnumero="+358 123 456 789"
+leikattu_puhelinnumero=$(echo $puhelinnumero | cut -d " " -f 4)
+echo $leikattu_puhelinnumero
 ```
 
-Voit myös käyttää `cut` -komentoa eristämään osamerkkijonoja tietyillä välimerkeillä.
+Tämä tulostaisi "123" terminaliin, sillä `cut`-komennolla leikataan puhelinnumerosta ensimmäiset kolme osaa (määritetty `-f` -flagilla) välilyöntien välillä (määritetty `-d` -flagilla).
 
-```
-Bash on hyödyllinen kieli, joka on muotoiltu
-```
+## Syvemmältä
 
-Lähtö:
+`cut`-komennon lisäksi on myös muita tapoja eristää substringeja Bash-ohjelmoinnissa. Esimerkiksi, voit käyttää `grep`-komentoa hakemaan tiettyjä merkkijonoja tekstimäärästä ja tallentaa sen muuttujaan:
 
-```
-kieli
-```
-
-Lisäksi, Bashilla on myös mahdollista käyttää regex (Regular Expression) -lausekkeita osamerkkijonojen eristämiseen. Esimerkiksi jos haluat eristää kaikki numerot merkkijonosta, voit käyttää seuraavaa komentoa:
-
-```
-echo "123aBCd" | grep -o '[0-9]*'
+```Bash 
+syntymapaiva="Olen syntynyt 01.01.2000"
+eristetty_vuosi=$(echo $syntymapaiva | grep -Eo "[0-9]{4}")
+echo $eristetty_vuosi
 ```
 
-Lähtö:
+Tämä tulostaisi "2000" terminaliin, sillä `grep` etsii tekstimäärästä numeroyhdistelmiä, jotka koostuvat neljästä numerosta (`[0-9]{4}`). 
 
-```
-123
-```
+## Katso myös
 
-Näitä ovat vain muutamia esimerkkejä siitä, kuinka osamerkkijonoja voidaan eristää Bashilla. Kokeile ja löydä menetelmä, joka toimii parhaiten sinulle ja tarpeisiisi.
-
-## Syvemmälle: Tietoa osamerkkijonojen eristämisestä Bashilla
-
-Kuten aiemmin mainittiin, Bashilla on mahdollista käyttää regex-lausekkeita osamerkkijonojen eristämiseen. Tämä avaa monia mahdollisuuksia tarkempaan ja monipuolisempaan merkkijonojen käsittelyyn.
-
-Regex-lausekkeet ovat sääntöjä, jotka kuvaavat, millaista tekstiä etsitään. Ne voivat sisältää erilaisia hakuehtoja ja erityisiä merkkijonoja, joilla määritellään haettavaa tekstiä.
-
-Bash tarjoaa myös muita hyödyllisiä komentoja, kuten `sed` ja `awk`, joita voidaan käyttää osamerkkijonojen käsittelyyn. Näitä komentoja voidaan yhdistää regex-lausekkeisiin, jotta erilaisia osia merkkijonosta voidaan eristää ja manipuloida.
-
-## Katso myös:
-- https://linuxhint.com/extract_substring_bash/
-- https://linuxize.com/post/bash-extract-substring-from-string/
-- https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
-- https://www.computerhope.com/unix/bash/replacing.html
+- [Bash-komentorivin opas](https://debianhandbook.info/browse/fi-FI/stable/sect.shell-get.html)
+- [Leikkaa komentorivityökalu](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
+- [Grep-komento](https://www.gnu.org/software/grep/manual/grep.html)

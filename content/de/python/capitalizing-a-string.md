@@ -1,67 +1,69 @@
 ---
-title:    "Python: Ein String großschreiben"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/capitalizing-a-string.md"
+title:                "Python: String in Großbuchstaben umwandeln"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum 
+## Warum
 
-Das Kapitalisieren von Strings ist eine häufige Aufgabe in der Python-Programmierung. Es kann verwendet werden, um Strings für eine bessere Lesbarkeit in der Ausgabe zu formatieren, in Datenbankabfragen oder für die Verwendung in Schlüssel- und Wertpaaren. Es ist eine einfache, aber nützliche Fähigkeit, die jeder Python-Programmierer beherrschen sollte.
+Die Großschreibung von Strings ist eine grundlegende Funktion in der Python-Programmierung. Sie ermöglicht es, die erste Buchstabe eines Strings in einen Großbuchstaben umzuwandeln. Dies kann wichtig sein, um die Lesbarkeit oder das Erscheinungsbild von Texten in Programmen zu verbessern.
 
-# Wie geht man vor 
+## Wie man es macht
 
-Es gibt mehrere Möglichkeiten, Strings in Python zu kapitalisieren. Die einfachste Methode ist die Verwendung der eingebauten Funktion `upper()`.
-
-```Python
-text = "dieser string wird kapitalisiert"
-
-print(text.upper())
-# Ausgabe: DIESER STRING WIRD KAPITALISIERT
-```
-
-Eine weitere Möglichkeit ist die Verwendung der Methode `capitalize()`, die nur den ersten Buchstaben des Strings groß macht.
+Um einen String in Python zu kapitalisieren, gibt es verschiedene Möglichkeiten. Die einfachste Methode ist die Verwendung der Funktion `capitalize()`. Hier ein Beispiel:
 
 ```Python
-text = "dieser string wird kapitalisiert"
-
-print(text.capitalize)
-# Ausgabe: Dieser string wird kapitalisiert
-```
-
-Um jeden ersten Buchstaben eines Wortes in einem String groß zu machen, kann die Funktion `title()` verwendet werden.
-
-```Python
-text = "dieser string wird kapitalisiert"
-
-print(text.title())
-# Ausgabe: Dieser String Wird Kapitalisiert
-```
-
-Wenn der String bereits teilweise großgeschrieben ist, kann die Methode `casefold()` verwendet werden, um alle Buchstaben in Kleinbuchstaben umzuwandeln und dann die Methode `capitalize()` oder `title()` anzuwenden.
-
-```Python
-text = "Das ist ein String mit teilweise großen Buchstaben"
-
-text = text.casefold()
+text = "python ist eine tolle Programmiersprache"
 print(text.capitalize())
-# Ausgabe: Das ist ein string mit teilweise großen buchstaben
-
-print(text.title())
-# Ausgabe: Das Ist Ein String Mit Teilweise Großen Buchstaben
 ```
 
-# Tiefer Einblick 
+Die Ausgabe für dieses Beispiel wäre:
 
-Strings in Python werden als unveränderliche Sequenzen von Zeichen behandelt. Dies bedeutet, dass sie nach der Erstellung nicht mehr verändert werden können. Daher erzeugen alle oben genannten Methoden neue Strings und ändern nicht den ursprünglichen String.
+```Python
+Python ist eine tolle Programmiersprache
+```
 
-Es ist auch wichtig zu beachten, dass die oben genannten Methoden je nach Spracheinstellung des Systems unterschiedlich funktionieren können. Zum Beispiel werden Umlaute in der deutschen Sprache nicht richtig in Großbuchstaben umgewandelt, wenn die Systemsprache auf Englisch eingestellt ist.
+Eine andere Möglichkeit ist die Verwendung der Funktion `title()`, die die ersten Buchstaben jedes Wortes eines Strings in Großbuchstaben umwandelt. Hier ein Beispiel:
 
-In Python gibt es auch die Möglichkeit, eigene Funktionen zu definieren, um Strings nach individuellen Kriterien zu kapitalisieren. Beispielsweise kann eine Funktion erstellt werden, die nur die ersten Buchstaben von Substrings zwischen Leerzeichen kapitalisiert.
+```Python
+text = "python ist eine tolle Programmiersprache"
+print(text.title())
+```
 
-# Siehe auch 
+Die Ausgabe für dieses Beispiel wäre:
 
-- [Python string methods](https://www.w3schools.com/python/python_ref_string.asp)
-- [Python string formatting](https://www.geeksforgeeks.org/python-formatting-output-using-string-formats/)
-- [Python documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)
+```Python
+Python Ist Eine Tolle Programmiersprache
+```
+
+Es ist auch möglich, die Großschreibung in einer eigenen Funktion zu implementieren. Hier ein Beispiel dafür:
+
+```Python
+def capitalize_string(text):
+    first_letter = text[0]
+    rest_of_string = text[1:]
+    capitalized_string = first_letter.upper() + rest_of_string
+    return capitalized_string
+
+text = "python ist eine tolle Programmiersprache"
+print(capitalize_string(text))
+```
+
+Die Ausgabe für dieses Beispiel wäre:
+
+```Python
+Python ist eine tolle Programmiersprache
+```
+
+## Tiefentauchen
+
+Es gibt einige Dinge zu beachten, wenn es darum geht, Strings in Python zu kapitalisieren. Zum Beispiel können Sonderzeichen wie Akzente oder Umlaute problematisch sein, da sie je nach Funktion möglicherweise nicht richtig in Großbuchstaben umgewandelt werden. Außerdem sollte beachtet werden, dass Strings in Python unveränderlich sind, was bedeutet, dass die Funktionen `capitalize()` und `title()` nicht den ursprünglichen String verändern, sondern einen neuen String mit den entsprechenden Änderungen zurückgeben.
+
+## Siehe auch
+
+- [Offizielle Dokumentation von Python zu Strings](https://docs.python.org/de/3/library/stdtypes.html#string-methods)
+- [Stack Overflow Beitrag über die Großschreibung von deutschen Umlauten](https://stackoverflow.com/questions/56402233/capitalizing-umlauts-in-python)
+- [Python-Tutorial zur Arbeit mit Strings](https://www.w3schools.com/python/python_strings.asp)

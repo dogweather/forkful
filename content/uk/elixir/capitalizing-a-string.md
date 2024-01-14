@@ -1,55 +1,37 @@
 ---
-title:    "Elixir: Перетворення тексту у верхній регістр"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/capitalizing-a-string.md"
+title:                "Elixir: Капіталізація рядка"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Під час програмування у Еліксирі часто зустрічається необхідність використовувати рядки. Деякі функції вимагають, щоб рядки були написані з великої букви. Наприклад, при роботі з іменами користувачів або назвами файлів. У цьому випадку, функція capitalize може бути дуже корисною. Вона перетворює першу букву рядка на велику.
+Нерідко у програмуванні потрібно змінити частину тексту, наприклад, зробити першу літеру слова великою. Це може бути потрібно для коректного відображення назв у списку, створення заголовків або для декоративних цілей.
 
-## Як використовувати
+## Як це зробити
 
-Для використання capitalize потрібно викликати його як метод модуля String. Наприклад:
-
-```Elixir
-String.capitalize("еліксир") #=> "Еліксир"
-```
-
-Якщо у рядку вже є велика буква, то capitalize залишить її такою.
+Для зміни першої літери у рядку в Elixir, використовуйте функцію `String.capitalize`. Наприклад:
 
 ```Elixir
-String.capitalize("Elixir") #=> "Elixir"
+String.capitalize("elixir") # повертає "Elixir"
+String.capitalize("hello world") # повертає "Hello world"
 ```
 
-Також capitalize може бути використаний для перетворення всього рядка на великі літери, за допомогою методу capitalize/1.
+Ви також можете використовувати цю функцію для зміни першої літери у кожному слові у рядку, використовуючи `String.capitalize_every/2`:
 
 ```Elixir
-String.capitalize("еліксир", :all) #=> "ЕЛІКСИР"
+String.capitalize_every("hello world", "_") # повертає "Hello_World"
 ```
 
-## Поглиблення
+## Глибше вдивляємось
 
-Функція capitalize фактично використовує метод String.upcase/1, який перетворює всі символи рядка на великі літери. Але перед тим, як виконувати upcase, capitalize перевіряє, чи є перший символ рядка великою літерою, і якщо так, то просто повертає вхідний рядок без змін. Якщо ж перший символ не є великою літерою, то capitalize виконує String.upcase, а потім повертає отриманий результат з першою великою літерою.
+Якщо ви хочете більш детально ознайомитись з `String.capitalize` та іншими функціями для роботи зі строками в Elixir, ви можете ознайомитись з офіційною документацією на сайті [Elixir lang](https://elixir-lang.org/docs.html).
 
-Це простий приклад імплементації capitalize у Еліксирі:
+## Дивіться також
 
-```Elixir
-def capitalize(string) do
-  if String.upcase(String.slice(string, 0)) == String.slice(string, 0) do
-    string
-  else
-    String.upcase(string)
-  end
-end
-```
-
-Цей приклад також показує використання методів String.slice та String.upcase.
-
-## Дивись також:
-
-- [Документація String.capitalize](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [Документація String.upcase](https://hexdocs.pm/elixir/String.html#upcase/1)
-- [Документація String.slice](https://hexdocs.pm/elixir/String.html#slice/3)
+- [Офіційна документація Elixir lang](https://elixir-lang.org/docs.html)
+- [Стаття про роботу з строками в Elixir](https://medium.com/coding-with-clarity/strings-in-elixir-7ff9614daa41)
+- [Відео уроки про Elixir на українській мові](https://www.youtube.com/watch?v=nuhfp6sbpuY)

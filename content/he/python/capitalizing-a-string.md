@@ -1,54 +1,44 @@
 ---
-title:    "Python: כתיבת מחרוזת באותיות רישיות"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/python/capitalizing-a-string.md"
+title:                "Python: שיפור מחרוזת בתוכנות"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# מדוע
+אילו: מדוע לדבר על לעורר סדרת הטקסט.
 
-אתם כנראה מתרגשים ללמוד על איך משתנה אחד קטן בפייתון יכול להיות מפתח חשוב בכתיבת קוד. כתיבת קוד באופן מונכרי ומסודר יכול להיות מאתגר ועיסוק סובלני, אבל שימוש בכלי פשוט זה יכול לעזור לכם לשמור על הקוד שלכם נקי ומסודר.
+C++- תוכנית הדוגמה Python הנושא הזה מטריד רבים מבעלי שפות תכנות אחרות, כדי להבין אותו למם קל מאוד. במקור, השימוש בפיתחי(ת) התוכנה,
 
-## איך לעשות
+`Python
+string = "hello world"
+print(string.capitalize())  #Output: Hello world
+`
+## איך לעשות את זה
 
-הנה דוגמה קוד פשוט שמדגיש איך להשתמש בפעולה "capitalize" כדי להמיר את האות הראשונה של מחרוזת לאות גדולה:
-
-```Python
-text = "hello world"
-print(text.capitalize())
-```
-הפלט:
-
-```
-Hello world
-```
-
-כאן אנו בעצם משנים את האות הראשונה של המחרוזת לאות גדולה ומדגישים איפה ישנו שינוי קטן, אבל חשוב.
-
-## הסתכלות עמוקה
-
-כדי להבין את איך הפעולה "capitalize" עובדת בקוד בפייתון, ניתן להשתמש בפונקציה "help" כדי לקבל מידע נוסף על הפעולה. נקלוט "help(str.capitalize)" כדי להציג פלט שמציג מידע על הפעולה ואת דרכי השימוש:
+האופן הכי פשוט לעורר סדרות טקסט בפייתון הוא על ידי שימוש בשיטת "capitalize ()". פשוט כתוב את המחרוזת שברצונך לעורר ולקרוא את הפעולה "capitalize ()". לדוגמה:
 
 ```Python
-help(str.capitalize)
+string = "hello world"
+print(string.capitalize())  #Output: Hello world
 ```
 
-הפלט:
+ניתן גם לעורר את המחרוזת הזו במצב תחילית, על ידי שימוש בפיתחי(ת) שפת תכנות אחרים או לעבד את הנתון בצורה יעילה יותר.
 
-```
-Help on method_descriptor:
-
-capitalize(...)
-    S.capitalize() -> str
-    
-    Return a capitalized version of S, i.e. make the first character
-    have upper case and the rest lower case.
+```Python
+sentence = "i love python"
+print(sentence.capitalize())  #Output: I love python
 ```
 
-ניתן לראות בפלט שהפעולה "capitalize" יוצרת גרסה חדשה של המחרוזת עם האות הראשונה מופעלת כאות גדולה, וכך משנה את כתיבת המחרוזת המקורית.
+כדי לעורר סדרות טקסט תחת שורת, עליך פשוט לכתוב את הפקודה "capitalize()" תחת המחרוזת הרלוונטית:
 
-# ראה גם
+```Python
+string = "this is a sentence."
+print(string.capitalize())  #Output: This is a sentence.
+```
 
-- [פייתון תיעוד רשמי על capitalize](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
-- [מדריך תיעוד רשמי על פריסת כתיבת קוד עם פייתון](https://www.python.org/dev/peps/pep-0008/#capitalized-names)
+## טיול עמוק
+
+פיתחי(ת) שפת תכנות פייתון בכלל, ומי שעובד בניהם מיודע שלטיפול בסדרות טקסט הוא חלק לא נסבל ביותר של תחביר שפת תכנות. כאשר מדובר על לעבוד עם סדרות טקסט גדולות ומורכבות, חשוב להתחיל כבר בשלב מוקדם עם יכולות כמו עיצוב וטפספוס של הסדרות. כתבו את הפקודה capitalize כדי להיותוחלות כהרץ את התהליך באופן מסודר ויעיל.
+פיתחי(ת) יכולים גם להשתמש בפיתח TutCaps שלהם כדי למצות באלפיט כדי התגובה פייתון. לעלא מתורה לעבוד עם סדרות טקס

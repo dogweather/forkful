@@ -1,34 +1,41 @@
 ---
-title:    "Fish Shell: Läsa kommandoradsargument"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/reading-command-line-arguments.md"
+title:                "Fish Shell: Läsning av kommandoradargument"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Command line-argument är en viktig del av programmering eftersom det ger möjlighet att interagera med programmet från kommandoraden. Att kunna läsa kommandoradsargument korrekt är en viktig färdighet för alla som arbetar med Fish Shell.
+# Varför
 
-## Hur man läser kommandoradsargument i Fish Shell
-Läsning av kommandoradsargument i Fish Shell kan göras enkelt med hjälp av inbyggda funktioner och variabler. Här är ett exempel på hur man kan läsa ett kommandoradsargument som representerar ett namn:
+Svart att navigera och använda kommandoraden kan vara en skrämmande uppgift, men med hjälp av Fish Shell-programmering kan det bli enkelt och effektivt. Läs vidare för att lära dig hur du läser kommandoradsargument och effektiviserar ditt arbetsflöde.
+
+# Hur man gör
+
+```Fish Shell``` är ett kraftfullt verktyg som ger användare möjlighet att göra avancerade och komplicerade uppgifter direkt från kommandoraden. För att läsa kommandoradsargument använder vi $argv-variabeln. Den här variabeln innehåller alla argument som matas in i kommandoraden när en fil exekveras. 
+
+För att visa de tillagda argumenten, skriver du ```echo $argv```. Detta ger dig en lista med alla angivna argument, separerade med mellanslag. 
+
+Om du vill ha mer exakt information om ett specifikt argument, kan du använda $argv[1] för att välja det första argumentet. Om du till exempel vill veta vad det andra argumentet är, skriver du: ```echo $argv[2]```.
+
+# Djupdykning
+
+Om du vill göra ett mer komplicerat kommando med hjälp av kommandoradsargument, kan du använda $argv-längden för att kontrollera antalet argument som matas in. Till exempel, om du vill skapa en enskild fil med namnet för det första argumentet, kan du skriva följande kod:
 
 ```Fish Shell
-set name $argv[1]
-echo "Hej $name!" 
+if not set -q 'argv[1]'
+    //Hantera en felstatus här
+else 
+    touch $argv[1]
 ```
 
-Om man till exempel kör skriptet "hello.fish" med kommandot `fish hello.fish John`, kommer resultatet att bli `Hej John!`.
+Detta kommer att skapa en ny fil med det första argumentet som namn. Om inte något argument är angivet, kommer det att resultera i en felstatus.
 
-`$argv` är en inbyggd Fish Shell-array som innehåller alla kommandoradsargument som har skickats in när skriptet körs. Indexeringen börjar på 1, så för att läsa första argumentet används `$argv[1]`.
+# Se även
 
-## Djupdykning
-När man arbetar med kommandoradsargument är det viktigt att tänka på hantering av fel. Om man till exempel förväntar sig ett visst antal argument men inte får det, kan detta orsaka problem i skriptet. Därför är det viktigt att alltid kontrollera antalet argument innan man läser in dem.
+- [Officiell Fish Shell dokumentation] (https://fishshell.com/docs/current/)
 
-Man kan även använda alternativa syntaxer för att läsa argument som innehåller specialtecken, till exempel `set name $arg1` för att läsa argumentet `$1`.
+- [Fish Shell-tutorials på YouTube] (https://www.youtube.com/playlist?list=PL7e8VJ_ZN6epq-oiYOJ7MfiSAc5SZ7ror)
 
-Det är också möjligt att kombinera flera olika kommandoradsargument och hantera dem på olika sätt i skriptet, beroende på vilka användaren väljer att skicka in.
-
-## Se även
-- [Fish Shell dokumentation om kommandoradsargument](https://fishshell.com/docs/current/cmds/set.html#synopsis)
-- [En tutorial om hantering av kommandoradsargument i Fish Shell](https://www.linode.com/docs/guides/writing-fish-shell-scripts/#command-line-arguments)
-- [Andra inbyggda Fish Shell-variabler för kommandoradsargument](https://fishshell.com/docs/current/cmds/set.html#set)
+- [Fish Shell-stödforum] (https://github.com/fish-shell/fish-shell/issues)

@@ -1,31 +1,47 @@
 ---
-title:    "C#: כתיבת אותיות גדולות במחרוזת"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/capitalizing-a-string.md"
+title:                "C#: כתיבת מחרוזת באותיות גדולות"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-המשוב אחורה במפתחת גורם התחרות להיות קשה ועיקש למציאת דרך פשוטה לפתור בעיות קטנות בתכנות. אחת הבעיות הקטנות הנפוצות ביותר היא בהדרגה של תווים שבהם חיבורים לבין אותיות בתוכם. כאשר נעשה זאת בשפת תכנות כמו C#, כמו שמומלץ בהמלצות התעשייה, גורם לשגיאה גדולה. במאמר זה, אנחנו נלמד כיצד לפתור את הבעיה הזו בצורה פשוטה באמצעות הדרגת סדרי שינוי לבין אותיות במחרוזת בשפת C#.
+## למה
 
-כיצד לדבר C#: כדי להדריג ממחרוזת ולהפוך את כל האותיות האותיות הראשונות לאותיות גדולות, אנחנו נשתמש בפונקציית `ToUpper()`.
+ישנם מספר סיבות לכך שבתכנות בשפת C# ייתכן שנאלץ לשנות את האות הראשונה של מחרוזת לאות גדולה. אחת הסיבות הנפוצות היא לצורך הצגת מידע בצורה מלאה ומותאמת לקריאה למשתמשים.
 
-```C#
-string text = "hello world";
-string capitalizedText = text.ToUpper(); // Outputs "HELLO WORLD"
-```
+## איך לעשות זאת
 
-תוצאה: `HELLO WORLD`
-
-עמוד עמוד כאשר נחשוב על פונקציית `ToUpper()` נעבוד מולה. אם נזכור, מחרוזת משתנה ניתן לחשוב כמערך של תווים. כאשר מופעלת פונקציית `ToUpper()` על מחרוזת, השינוי לבין מחרוזת חדשה עם התווים הגדולים מקוריים. כך, המחרוזת הראשונית ניתנת לגרימת תוכנית והמחרוזת הגדולה ניתנת להשתמש בה במקטע הקוד הנוכחי.
-
-לדוגמה, במקרה שלנו, אנחנו משתמשים במשתנה `text` עם מחרוזת `"hello world"`, ואז אנחנו מניחים שהחזרות כדי להתאים אותיות גדולות למשתנה הגדול. בסוף הדרכי ההתנסות של הכיתוב `text.ToUpper` מציג תוצאות מחדש את `HELLO WORLD`.
-
-הצגת:
+כדי להחליף את האות הראשונה של מחרוזת לאות גדולה בשפת C# ניתן להשתמש בפונקציה "ToUpper". הנה דוגמה קוד להמחשת השימוש בפונקציה זו:
 
 ```C#
-string text = "hello world";
-string capitalizedText = text.ToUpper(); // Outputs "HELLO WORLD"
+string name = "john";
+Console.WriteLine(name.ToUpper());
 ```
 
-עמוד עמוד אנחנו משתמשים בפונקציית `ToLower()` כ
+תוצאה:
+```C#
+JOHN
+```
+
+במקרים בהם ברצוננו להחליף את האות הראשונה של כל מילה במחרוזת, ניתן להשתמש גם בפונקציה "ToTitleCase". הנה דוגמה לשימוש בפונקציה זו:
+
+```C#
+string sentence = "hello world";
+Console.WriteLine(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(sentence));
+```
+
+תוצאה:
+```C#
+Hello World
+```
+
+## חקירה מעמיקה
+
+אם נרצה לעשות עבודה נוספת על המחרוזת, ניתן להשתמש במספר פונקציות נוספות כמו "Insert", "Replace" ו-"Remove". למשל, נהיה יכולים להחליף את התו הראשון של מחרוזת בעזרת הפונקציה "Replace" ולהוסיף תו או מחרוזת נוספת בתחילתה באמצעות הפונקציה "Insert".
+
+## ראה גם
+
+- [מדריך לפורמטים של מחרוזות בשפת C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/formatting-types)
+- [תיעוד פונקציות המחרוזות בשפת C#](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.7.2)

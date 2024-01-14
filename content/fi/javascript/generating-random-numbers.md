@@ -1,43 +1,36 @@
 ---
-title:    "Javascript: Satunnaislukujen luominen"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/generating-random-numbers.md"
+title:                "Javascript: Satunnaisten numeroiden generointi."
+programming_language: "Javascript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi käyttäisit JavaScriptiä satunnaisnumeroiden luomiseen?
+## Miksi
 
-JavaScriptillä on monia käyttötarkoituksia, kuten web-kehityksessä ja sovellusten luomisessa. Satunnaisnumeroiden luominen on yksi näistä käyttötarkoituksista. Satunnaisnumerot voivat olla hyödyllisiä esimerkiksi arpajaisten ja pelien yhteydessä, tai kun haluat testata koodia käyttämällä erilaisia satunnaisia arvoja.
+Uusimpana Javascript-ohjelmointimaailman trendinä on satunnaisten lukujen generoiminen. Tämän tekniikan avulla voit lisätä monimuotoisuutta ja jännitystä ohjelmiisi. Se voi myös olla hyödyllistä simulointeihin ja pelien kehittämiseen. 
 
-## Miten: Esimerkkejä koodista ja tulosteista ```Javascript
-// Luo satunnainen kokonaisluku välillä 1-100
-let randomNumber = Math.floor(Math.random() * 100) + 1;
-console.log(randomNumber);
-// Tulostaa esimerkiksi: 46
+## Miten
 
-// Luo satunnainen desimaaliluku välillä 0-1
-let randomDecimal = Math.random();
-console.log(randomDecimal);
-// Tulostaa esimerkiksi: 0.723955611097
+Satunnaisten lukujen generoiminen Javascriptilla on melko yksinkertaista. Käytämme siihen Math.random() -funktiota, joka palauttaa desimaaliluvun väliltä 0 (mukaan lukien) ja 1 (ei mukaan lukien). Voimme sitten kertoa tämän luvun halutulla välillä ja pyöristää sen haluttuun tarkkuuteen. Esimerkiksi, jos haluamme generoida kokonaislukuja väliltä 1-10, voimme käyttää seuraavaa koodia:
 
-// Luo satunnainen merkkijono
-let randomString = Math.random().toString(36).substr(2, 5);
-console.log(`Salasana: ${randomString}`);
-// Tulostaa esimerkiksi: Salasana: bcl1w
-
+```Javascript
+let satunnainenLuku = Math.random() * 10;
+let tulos = Math.floor(satunnainenLuku) + 1;
+console.log(tulos); // tulostaa satunnaisen luvun väliltä 1-10
 ```
 
-Voit myös käyttää muita JavaScriptin kirjastoja, kuten Chance.js tai Faker.js, joilla voit luoda erilaisia tietotyyppejä ja muokata satunnaisia arvoja tarkemmin.
+Voit myös generoida satunnaisia merkkejä käyttämällä String.fromCharCode() -funktiota ja Math.floor() -funktiota. 
 
-## Syvällinen sukellus
+## Syvempi sukellus
 
-Satunnaisnumeroiden luominen JavaScriptillä perustuu Math-objektiin, joka tarjoaa erilaisia metodeja satunnaisten arvojen luomiseen. Math.random() -metodi luo satunnaisen desimaaliluvun välillä 0-1. Tämän desimaaliluvun kertominen halutulla välillä ja lisääminen haluttuun lukumäärään antaa meille halutun alueen satunnaisia kokonaislukuja.
+Kaikki tietokonelaskelmat ovat periaatteessa ennustettavissa, joten satunnaislukujen generoiminen ei ole täysin sattumanvaraista. Math.random() käyttää taustalla tietokonelle siemenlukua, joka määrittää satunnaislukujen sarjan. Tämä tarkoittaa sitä, että jos annamme saman siemenluvun, huomaamme saman satunnaislukujen sarjan. Tämän vuoksi on tärkeää valita monimutkainen ja ainutlaatuinen siemenluku, kuten aikaleima tai satunnainen merkkijono, jotta saamme mahdollisimman sattumanvaraisia lukuja.
 
-Voit myös käyttää muita metodeja, kuten Math.floor(), Math.ceil() ja Math.round(), jotka pyöristävät satunnaisia arvoja haluttuihin kokonaislukuihin. Lisäksi voit käyttää substring- ja toString-metodeja muokkaamaan satunnaisia arvoja ja luomaan esimerkiksi satunnaisia merkkijonoja salasanoille tai tunnisteille.
+Voit myös käyttää muita Javascriptin esiasennettuja funktioita, kuten Date.now() ja Math.sin(), generoidaksesi satunnaisia lukuja, mutta tarvitaan lisätyötä niiden muuntamiseksi sopiviksi käyttöön. 
 
-# Katso myös
+## Katso myös
 
-- [MDN - Math](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Math)
-- [Chance.js](http://chancejs.com/)
-- [Faker.js](https://github.com/marak/Faker.js/)
+- [MDN dokumentaatio Math.random() -funktiosta](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Tietokonelehti Tieteen Kuvalehden artikkeli satunnaisten lukujen generoimisesta](https://tieku.fi/tekniikka/kasittelemattomat-luvut-tietokoneessa-ruokinta-estaa-yksinkertaisen-geometrian-haittavaikutukset)
+- [Javascript Generators -oppimisalusta](https://javascript.info/generators)

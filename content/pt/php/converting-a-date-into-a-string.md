@@ -1,68 +1,58 @@
 ---
-title:    "PHP: Traduzindo uma data em uma sequência de caracteres"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/converting-a-date-into-a-string.md"
+title:                "PHP: Convertendo uma data em uma string"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que converter uma data em uma string?
+## Por que converter uma data em uma string?
 
-Existem várias razões pelas quais um programador pode precisar converter uma data em uma string em PHP. Algumas dessas razões incluem:
+Converter uma data em uma string é uma tarefa comum em programação PHP. Isso permite que as datas sejam formatadas de maneira legível para os usuários, além de serem armazenadas ou transmitidas de forma mais fácil. Neste post, iremos explorar como realizar essa conversão e também nos aprofundar nas diferentes opções disponíveis.
 
-- Exibir a data de forma legível para os usuários em um site ou aplicativo
-- Armazenar a data em um banco de dados em formato de string
-- Manipular a data em uma funcionalidade específica, como ordenação ou cálculos de dias
+## Como fazer
 
-Dito isto, vamos dar uma olhada em como converter uma data em uma string em PHP.
+Para converter uma data em uma string, podemos utilizar a função `date()` do PHP. Essa função recebe dois parâmetros: o primeiro é o formato da data que desejamos obter e o segundo é o valor da data que queremos converter.
 
-# Como fazer
-
-Para converter uma data em uma string em PHP, devemos primeiro usar a função `date()` e especificar o formato de saída que desejamos. Vamos dar uma olhada em alguns exemplos:
+Por exemplo, se quisermos obter a data atual no formato “Dia da semana, dia de mês de ano”, podemos utilizar o seguinte código:
 
 ```
-<?php
-// Data atual em formato de string
-echo "Hoje é " . date("d/m/Y") . "<br>";
-
-// Data e hora atual em formato de string
-echo "Agora são " . date("d/m/Y h:i:s A") . "<br>";
-
-// Data e hora em uma localização específica
-date_default_timezone_set("America/Sao_Paulo");
-echo "A data e hora atual em São Paulo é " . date("d/m/Y h:i:s A") . "<br>";
-?>
+PHP
+$date = date('l, j \d\e F \d\e Y');
+echo $date;
 ```
 
-O código acima produz a seguinte saída:
+A saída desse código seria: “domingo, 22 de agosto de 2021”. O comando `\d\e` é utilizado para inserir o texto “de”, pois as letras “d” e “e” são caracteres especiais no formato de data do PHP.
+
+Também é possível utilizar a função `strtotime()` para converter uma data específica em timestamp antes de passá-la como parâmetro para a função `date()`. Isso pode ser útil quando precisamos trabalhar com datas em diferentes formatos ou realizar cálculos com elas.
 
 ```
-Hoje é 17/03/2021
-Agora são 17/03/2021 03:30:15 PM
-A data e hora atual em São Paulo é 17/03/2021 03:30:15 PM
+PHP
+$date = strtotime('2020-12-31');
+echo date('M d, Y', $date);
 ```
 
-Você também pode personalizar o formato da string de data de acordo com suas necessidades, usando caracteres específicos para representar os diferentes elementos da data, como dia, mês, ano e hora. Aqui estão alguns exemplos:
+A saída desse código seria: “Dec 31, 2020”.
 
-- `d` representa o dia do mês com dois dígitos, com um zero à esquerda para números menores que 10 (por exemplo: 02, 09)
-- `m` representa o mês com dois dígitos, com um zero à esquerda para meses menores que 10 (por exemplo: 07, 11)
-- `Y` representa o ano com quatro dígitos
-- `h` representa a hora no formato de 12 horas, com um zero à esquerda para horas menores que 10 (por exemplo: 09, 11)
-- `i` representa os minutos com dois dígitos, com um zero à esquerda para minutos menores que 10 (por exemplo: 05, 59)
-- `s` representa os segundos com dois dígitos, com um zero à esquerda para segundos menores que 10 (por exemplo: 03, 08)
-- `A` representa o período do dia, AM ou PM
+## Aprofundando
 
-# Aprofundando mais
+Além dos formatos de data pré-definidos do PHP, também é possível criar formatos personalizados utilizando os caracteres especiais disponíveis. Por exemplo, o caractere “m” representa o mês com dois dígitos e o “M” representa o mês com três letras.
 
-Além da função `date()`, existem outras funções em PHP que podem ajudar a converter uma data em uma string. Algumas delas incluem:
+Também é possível passar um parâmetro opcional de idioma para a função `date()` e obter a data formatada de acordo com o idioma escolhido. Por padrão, o idioma será baseado nas configurações do servidor, mas podemos especificá-lo através do parâmetro `setlocale()`.
 
-- `strtotime()` que converte uma string em uma data Unix. Por exemplo, `strtotime("October 13, 2015")` retorna o valor `1444713600`, que representa a data 13 de outubro de 2015 em formato Unix.
-- `strftime()` que permite formatar uma data de acordo com as configurações de localidade do sistema.
+```
+PHP
+setlocale(LC_TIME, 'pt_BR');
+echo date('l, d \d\e F \d\e Y');
+```
 
-É importante lembrar que, ao converter uma data em uma string, é necessário levar em consideração a configuração de localidade do sistema, pois o formato da data pode variar de acordo com a região.
+A saída seria “domingo, 22 de agosto de 2021” em português brasileiro.
 
-# Veja também
+Lembrando que é importante sempre conferir a documentação oficial do PHP para verificar a lista completa de caracteres especiais disponíveis e suas diferentes opções.
+
+## Veja também
 
 - [Documentação oficial do PHP sobre a função date()](https://www.php.net/manual/pt_BR/function.date.php)
-- [Tabelas de caracteres para formatação de datas em PHP](https://www.php.net/manual/pt_BR/function.date.php#refsect1-function.date-parameters)
-- [Guia de configuração de localidade no PHP](https://www.php.net/manual/pt_BR/function.setlocale.php)
+- [Documentação oficial do PHP sobre a função strtotime()](https://www.php.net/manual/pt_BR/function.strtotime.php)
+- [Lista completa de caracteres especiais para formatar datas no PHP](https://www.php.net/manual/pt_BR/datetime.format.php)

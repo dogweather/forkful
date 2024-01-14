@@ -1,49 +1,50 @@
 ---
-title:    "Java: 连接字符串"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/concatenating-strings.md"
+title:                "Java: 连接字符串"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-"## 为什么"
+## 为什么
+拼接字符串是Java编程中常用的操作，它可以将多个字符串连接在一起，形成一个新的字符串。这对于输出和处理文本信息非常有用，让我们来看一下如何使用Java代码进行拼接字符串操作。
 
-String拼接是Java编程中常见的操作，它可以将多个字符串连在一起，形成一个更长的字符串。为什么要进行字符串拼接呢？这是因为在实际的编程过程中，我们经常需要动态地构建字符串，而不是一次性写好所有内容。例如，当我们需要根据用户输入的不同信息来构建一条完整的消息时，就需要使用字符串拼接功能。
-
-"## 怎么做"
-
-在Java中，我们可以通过使用“+”操作符来进行字符串拼接。让我们来看一个例子：
+## 如何
+在Java中，可以通过 "+" 符号来拼接字符串，也可以使用字符串的 concat() 方法。下面是一个示例代码：
 
 ```Java
-String firstName = "小明";
-String lastName = "张";
-int age = 25;
-
-String message = firstName + lastName + "今年" + age + "岁。";
-System.out.println(message);
+String str1 = "Hello ";
+String str2 = "Mandarin readers!";
+String result = str1 + str2; // 使用加号拼接
+String result2 = str1.concat(str2); // 使用 concat() 方法拼接
+System.out.println(result); // 输出：Hello Mandarin readers!
+System.out.println(result2); // 输出：Hello Mandarin readers!
 ```
-
-在这个例子中，我们用“+”操作符将三个字符串和一个整数拼接在一起，最终输出的结果是：“小明张今年25岁。”
-
-除了使用“+”操作符，我们还可以使用String类的concat()方法来实现字符串拼接功能。让我们看一个与上面例子功能相同的例子：
+注意，拼接的顺序取决于字符串的顺序。如果需要在字符串中插入其他内容，可以用 " + " 将它们连接起来。
 
 ```Java
-String firstName = "小明";
-String lastName = "张";
-int age = 25;
-
-String message = firstName.concat(lastName).concat("今年").concat(String.valueOf(age)).concat("岁。");
-System.out.println(message);
+String str1 = "Hello";
+String name = "John";
+String result = str1 + " " + name + "!"; // 使用加号和空格拼接
+System.out.println(result); // 输出：Hello John!
 ```
 
-"## 深入了解"
+## 深入探讨
+在Java中，字符串是被视为不可变的，也就是说它们无法被修改。因此，每次拼接字符串都会生成一个新的字符串对象。这就意味着，每次使用加号和 concat() 方法拼接字符串，都会产生额外的内存开销。为了避免频繁地创建新的字符串对象，建议使用 StringBuilder 或 StringBuffer 类来拼接字符串。
 
-在Java中，字符串是不可变对象，也就是说一旦被创建，其值就无法改变。当我们进行字符串拼接时，实际上是创建了一个新的String对象，而不是在原有的对象上做改变。这也是为什么我们在每次循环中进行字符串拼接时，都会创建新的String对象，而不是直接在原有的字符串上做改变。
+```Java
+String str1 = "Hello";
+String name = "John";
+StringBuilder builder = new StringBuilder(); // 创建一个可变的StringBuilder对象
+builder.append(str1).append(" ").append(name); // 使用 append() 方法拼接
+String result = builder.toString(); // 将StringBuilder对象转换为字符串
+System.out.println(result); // 输出：Hello John!
+```
 
-另外，由于String对象的不可变性，每次字符串拼接都需要创建新的String对象，这也会带来一定的性能影响。因此，在需要进行大量字符串拼接操作时，建议使用StringBuilder或StringBuffer类，它们都是可变的字符串类，可以提高执行效率。
+另外，需要注意的是，在使用 String 类的 "+" 拼接字符串时，由于每次都会创建新的字符串对象，因此会占用较多的内存空间。而 StringBuilder 或 StringBuffer 类只会修改对象本身，不会创建新的对象，所以在处理大量字符串拼接时，建议使用可变的 StringBuilder 或 StringBuffer 类。
 
-"## 参考链接"
-
-- [Java String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java StringBuilder Class](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Java StringBuffer Class](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html)
+## 另请参阅
+- [Java String - concat() Method](https://www.w3schools.com/java/ref_string_concat.asp)
+- [Java String - StringBuilder](https://www.geeksforgeeks.org/java-string-builder-class/)
+- [Java String concatenation (+ vs concat())](https://javarevisited.blogspot.com/2013/03/java-string-concat-example-tutorial.html)

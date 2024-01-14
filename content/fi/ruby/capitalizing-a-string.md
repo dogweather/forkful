@@ -1,47 +1,40 @@
 ---
-title:    "Ruby: Merkkijonon isoittaminen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/capitalizing-a-string.md"
+title:                "Ruby: Merkkijonon suurennus"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi Päästä Jos-stringi
+## Miksi
 
-Miksi: Päästä Jos-stringi voi olla tärkeä ohjelmoinnissa esimerkiksi kun haluat muuttaa käyttäjän syöttämän tiedon oikeaan muotoon tai tehdä tiedon käsittelystä helpompaa.
+Käytettäessä ohjelmointikieltä Ruby, saatat jossain vaiheessa törmätä tarpeeseen muuttaa merkkijono, eli string, isoiksi kirjaimiksi. Tässä blogikirjoituksessa kerromme, miksi tähän voisi olla tarvetta ja miten se tehdään.
 
-## Miten tehdä se
+## Miten tehdä
 
-Päästä Jos-stringin välityksellä voit muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi. Tämä voi tehdä käytännölliseksi esimerkiksi silloin kun haluat muuttaa käyttäjän nimen alkukirjaimen isoksi. Käytännössä tämä olisi tehtävissä kahdella eri tavalla.
+Merkkijonon isoiksi kirjaimiksi muuttamiseen on Rubyssa käytettävissä valmis metodi nimeltään .capitalize. Seuraavassa esimerkissä käytämme sitä yhdessä muuttujan kanssa:
 
+```Ruby
+nimi = "mikko"
+p nimi.capitalize
 ```
-# Ensimmäinen tapa
+Tulosteena saamme "Mikko", jossa nimen alkukirjain on muuttunut isoksi.
 
-nimi = "emilia"
-puts nimi.capitalize
+Toinen tapa muuttaa merkkijono isoihin kirjaimiin on käyttää .upcase-metodia. Se muuttaa kaikki merkit isoksi kirjaimiksi, eikä pelkästään alkukirjainta:
 
-# Toinen tapa
-
-nimi = "emilia"
-puts nimi[0] = nimi[0].upcase
+```Ruby
+nimi = "mikko"
+p nimi.upcase
 ```
+Tulosteena saamme "MIKKO".
 
-## Syöte ja Tuloste
+## Syvällinen sukellus
 
-```
-Syöte: nimi = "emilia" (Merkkijono)
-
-Tuloste: Emilia (Merkkijono)
-```
-
-## Syvempi Sukellus
-
-Päästä Jos-stringin avulla voit myös tehdä muita muutoksia merkkijonolle, kuten muuttaa kaikki kirjaimet isoksi tai pieneksi. Tämä voidaan tehdä käyttämällä .upcase tai .downcase -metodeja.
-
-Voit myös muuttaa pelkästään ensimmäisen kirjaimen isoksi ja jättää loput kirjaimet alkuperäiseen muotoon .capitalize -metodilla.
+Rubyssa on monia eri tapoja muuttaa merkkijonon kuin merkkijonon isoksi. Esimerkiksi .capitalize!-metodi muuttaa muuttujan arvon pysyvästi isoksi kirjaimeksi. On myös mahdollista käyttää Regexiä, eli säännöllisiä lausekkeita, merkkijonon muuttamiseen isoksi.
 
 ## Katso myös
 
-- [Ruby String Documentation](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby String Methods](https://www.rubyguides.com/ruby-tutorial/string-methods/)
-- [Ruby String Manipulation](https://www.educative.io/blog/ruby-string-manipulation)
+- https://www.rubyguides.com/2019/04/ruby-string-methods/
+- https://apidock.com/ruby/String/capitalize
+- http://ruby-doc.org/core-2.6.3/String.html#method-i-capitalize

@@ -1,49 +1,48 @@
 ---
-title:    "Fish Shell: Odczyt pliku tekstowego"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/reading-a-text-file.md"
+title:                "Fish Shell: Odczytywanie pliku tekstowego."
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Czy kiedykolwiek miało miejsce, że potrzebowałeś przeczytać plik tekstowy w języku programowania Shell? Może chciałeś znaleźć najlepszy sposób na szybkie i skuteczne przetworzenie danych w pliku tekstowym? W tym blogu przedstawimy Ci możliwości czytania plików tekstowych za pomocą języka programowania Fish Shell, który jest jednym z najbardziej użytecznych i intuicyjnych narzędzi do automatyzacji w systemach Unix.
+Jeśli jesteś programistą lub po prostu lubisz eksperymentować z nowymi narzędziami, ten post jest dla Ciebie! Dowiecie się jak wykorzystać powłokę Fish Shell do odczytywania plików tekstowych, co może przydać się w różnych projektach.
 
-# Jak To Zrobić
+## Jak To Zrobić
 
-```Fish Shell``` jest potężnym narzędziem do przetwarzania danych tekstowych, dzięki swojej wygodnej i elastycznej składni. Możesz użyć polecenia ```cat``` aby wyświetlić zawartość pliku tekstowego. Na przykład:
+Pierwszym krokiem jest otworzenie aplikacji Terminal i uruchomienie Fish Shell. Aby odczytać plik tekstowy, musisz użyć wbudowanego polecenia `cat`. Na przykład, jeśli chcemy wyświetlić zawartość pliku o nazwie "tekst.txt", wykonujemy następującą komendę:
 
-```fish
-cat mojplik.txt
+```Fish Shell
+cat tekst.txt
 ```
 
-Możesz również używać operatora przekierowania ```>``` aby zapisać wynik polecenia do nowego pliku tekstowego, np.:
+Jeśli plik tekstowy jest w innym folderze, musisz podać jego dokładną ścieżkę. W przypadku, gdy chcesz wyświetlić więcej niż jeden plik, możesz podać ich nazwy rozdzielone spacjami. 
 
-```fish
-ls > zawartosc.txt
+Aby zapisać zawartość pliku do nowego pliku, używamy operatora `>` wraz z nazwą docelowego pliku. Na przykład:
+
+```Fish Shell
+cat tekst.txt > nowy_plik.txt
 ```
 
-W ten sposób możesz przetwarzać i analizować dane w plikach tekstowych w prosty i wydajny sposób.
+To samo możemy osiągnąć poprzez użycie polecenia `tee`, które wyświetli zawartość pliku oraz zapisze ją do nowego pliku. Na przykład:
 
-# Głębsza Analiza
-
-Jeśli chcesz uzyskać więcej informacji na temat przetwarzania plików tekstowych w języku Fish Shell, możesz skorzystać z opcji ```read``` wraz z poleceniem ```while```. Na przykład, jeśli chcesz wyświetlić każdą linię pliku tekstowego, możesz użyć poniższego kodu:
-
-```fish
-while read liniatext; do
-	echo $liniatext
-done < mojplik.txt
+```Fish Shell
+cat tekst.txt | tee nowy_plik.txt
 ```
 
-W tym przykładzie, polecenie ```while``` będzie powtarzać się, dopóki nie przeczyta wszystkich linii z pliku tekstowego. Wtedy polecenie ```echo``` wyświetli linię tekstu na ekranie.
+## Deep Dive
 
-# Zobacz Również
+Podczas odczytywania plików tekstowych z pomocą powłoki Fish Shell, mamy również dostęp do różnych flag i opcji. Na przykład, możemy użyć flagi `-n` aby wyświetlić numerowane linie pliku lub `-5` aby wyświetlić tylko pierwsze pięć linii. Możemy także użyć opcji `-s` aby wyciąć dane z pliku według podanych kryteriów. 
 
-W przypadku gdy chcesz poznać więcej możliwości czytania i przetwarzania plików tekstowych za pomocą języka Fish Shell, polecamy przeczytanie dokumentacji Fish Shell oraz innych dostępnych materiałów, takich jak:
+Możemy również wykorzystać polecenie `head` do wyświetlenia pierwszych kilku linii pliku lub `tail` do wyświetlenia jego ostatnich linii. Innym przydatnym narzędziem jest polecenie `less`, które pozwala przewijać plik w pionie oraz zapewnia dodatkowe funkcje, takie jak wyszukiwanie w tekście.
 
-- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/)
-- [Przewodnik po języku Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Oficjalne forum użytkowników Fish Shell](https://github.com/fish-shell/fish-shell/discussions)
+## Zobacz również
 
-Dzięki temu, możesz skorzystać w pełni z możliwości, jakie oferuje język Fish Shell w zakresie przetwarzania plików tekstowych. Pozwoli Ci to zaoszczędzić czas i zwiększyć wydajność Twoich codziennych zadań.
+- [Oficjalna dokumentacja Fish Shell] (https://fishshell.com/docs/current/)
+
+- [Poradnik Fish Shell dla początkujących] (https://fishshell.com/docs/current/tutorial.html)
+
+- [Materiały edukacyjne i przykładowe kody Fish Shell] (https://fishshell.com/docs/current/index.html)

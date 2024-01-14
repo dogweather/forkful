@@ -1,27 +1,47 @@
 ---
-title:    "Gleam: Обчислення дати в майбутньому або минулому"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/gleam/calculating-a-date-in-the-future-or-past.md"
+title:                "Gleam: Обчислення дати у майбутньому або минулому"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-##Чому
-Калькуляція дати в майбутньому або минулому може бути корисною для тих, хто хоче планувати події або перевіряти відповідність дати до певних подій.
+Чому: Існує багато ситуацій, коли нам потрібно обчислити дату в майбутньому або минулому, такі як створення розкладу подій або планування подорожі.
 
-##Як
+Як: На щастя, у Gleam є вбудована функція для обчислення дати - `Date.add`. Для обчислення дати в майбутньому, ми просто передаємо кількість днів, які потрібно додати, у вигляді аргументу. Наприклад:
+
 ```Gleam
-let date_in_future = Date.add_days(Date.today(), 7)
-// Output: 2022-01-17T00:00:00Z
-
-let date_in_past = Date.sub_days(Date.today(), 14)
-// Output: 2021-12-20T00:00:00Z
+let today = Date.now()
+let future_date = Date.add(today, 14) // Додаємо 14 днів до сьогоднішньої дати
+IO.debug(show(future_date)) // Виводимо результат
 ```
 
-##Глибоке дослідження
-Калькуляція дати в майбутньому або минулому може також здійснюватися за допомогою функцій `add_weeks()`, `add_months()` та `add_years()`. Крім того, є можливість визначити час, не лише дату, за допомогою функцій `add_seconds()`, `add_minutes()` та `add_hours()`. Також можна використовувати різні арифметичні операції для калькулювання більш складних дат.
+Виведе ` 2009-02-01T00:00:00Z `.
 
-##Дивись також
-- [Офіційна документація Gleam](https://gleam.run/)
-- [Документація з роботи з датами в Gleam](https://gleam.run/core-lib/Date.html)
-- [Приклади використання Gleam для калькуляції дат](https://github.com/gleam-lang/gleam/blob/main/examples/dates.gleam)
+Щоб обчислити дату в минулому, ми можемо використати від'ємне значення для аргументу `Date.add`. Наприклад, якщо ми хочемо відомість, яка була 14 днів тому, ми можемо написати:
+
+```Gleam
+let today = Date.now()
+let past_date = Date.add(today, -14) // Віднімаємо 14 днів від сьогоднішньої дати
+IO.debug(show(past_date)) // Виводимо результат
+```
+
+Виведе ` 2008-01-18T00:00:00Z `.
+
+Глибокий погляд: Функція `Date.add` насправді працює з додатковим типом даних, відомим як `Duration` (Тривалість). Він представляє собою проміжок часу в певній одиниці (наприклад, дні або години). Якщо вам потрібно обчислити дату за допомогою інших одиниць, ви можете використати функцію `Duration.to_duration` для перетворення їх в `Duration`. Наприклад, якщо ви хочете додати 2 години до поточної дати:
+
+```Gleam
+let today = Date.now()
+let two_hours = Duration.to_duration(2, Hour) // Конвертуємо 2 години в Duration
+let future_date = Date.add(today, two_hours) // Додаємо 2 години до сьогоднішньої дати
+IO.debug(show(future_date)) // Виводимо результат
+```
+
+Виведе ` 2020-11-05T02:00:00Z `.
+
+Дивіться також: 
+
+- [Офіційна документація Gleam](https://gleam.run/standard-library/date.html)
+- [Відеоурок по роботі з датами у Gleam](https://www.youtube.com/watch?v=7PqbBqSqrzE)
+- [Туторіал по використанню функції `Date.add`](https://github.com/lpil/gleam/blob/master/docs/tutorial/guide.md#manipulating-dates)

@@ -1,58 +1,50 @@
 ---
-title:    "Javascript: Extrahera substrängar"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/extracting-substrings.md"
+title:                "Javascript: Att extrahera delsträngar"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Ibland när vi arbetar med textsträngar i våra JavaScript-program vill vi endast extrahera en del av strängen, istället för hela strängen. Det kan bero på att vi behöver ett specifikt ord eller en del av en datingsträng. Genom att lära oss hur man extraherar substrängar kan vi göra våra program mer flexibla och kraftfulla.
+Att extrahera substrängar är en viktig del av Javascript-programmering eftersom det gör det möjligt att manipulera och anpassa textsträngar på ett effektivt sätt. Genom att kunna välja specifika delar av en textsträng kan du göra avancerade sökningar och ersättningar eller helt enkelt bara göra texten mer läsbar för användaren.
 
-## Så här gör du
+## Hur man gör det
 
-Först måste vi bestämma vilken del av strängen som vi vill extrahera. Detta kan göras genom att använda antingen index eller en söksträng. Om du bestämmer dig för att använda index, tänk på att den första bokstaven i en sträng har indexet 0.
-
-```Javascript
-const str = "Hej detta är en sträng."
-console.log(str.substring(4,7)) // Output: detta
-console.log(str.substring(5)) // Output:  är en sträng.
-console.log(str.slice(-9, -1)) // Output: n sträng
-console.log(str.substr(4)) // Output: detta är en sträng. 
-``` 
-
-Du kan också använda en söksträng för att extrahera en del av en sträng. I exemplet nedan använder vi `indexOf()` för att hitta indexet för den sökta texten, vilket sedan används i `substring()`.
+För att extrahera substrängar i Javascript finns det flera inbyggda metoder som kan användas. Den vanligaste metoden är att använda sig av `substring()` funktionen. Detta tar två parametrar, start- och slutindex, och returnerar den del av textsträngen som ligger mellan dessa index. Till exempel:
 
 ```Javascript
-const str = "Lorem ipsum dolor sit amet"
-const search = "dolor"
-const index = str.indexOf(search)
-console.log(str.substring(index, index+search.length)) // Output: dolor
+let text = "Jag älskar Javascript!";
+let extractedText = text.substring(7, 16);
+console.log(extractedText); // "Javascript"
 ```
 
-För att göra det ännu enklare finns det också metoder som `includes()`, `startsWith()` och `endsWith()` som kan användas tillsammans med `substring()` för att extrahera delar av en sträng baserat på kompletterande villkor.
+Du kan också använda `slice()` funktionen på samma sätt. Det som skiljer `slice()` från `substring()` är att `slice()` kan hantera negativa index, vilket gör det enklare att extrahera text från slutet av en sträng. Till exempel:
+
+```Javascript
+let text = "Jag älskar Javascript!";
+let extractedText = text.slice(-10);
+console.log(extractedText); // "Javascript"
+```
+
+En annan användbar metod är `substr()` som tar två parametrar, startindex och antalet tecken att extrahera. Detta är särskilt användbart när du inte känner till längden på den del du vill extrahera. Till exempel:
+
+```Javascript
+let text = "Jag älskar Javascript!";
+let extractedText = text.substr(7, 10);
+console.log(extractedText); // "Javascript"
+```
 
 ## Djupdykning
 
-Det är också möjligt att extrahera delar av en sträng baserat på ett regex-mönster. `match()`-metoden kan användas för att matcha texten mot ett regex-mönster och returnera en array med matchande delar av strängen.
+När du arbetar med substrängar är det viktigt att förstå skillnaden mellan `substring()` och `slice()` i vissa fall. Till exempel, om du försöker använda negativa index på `substring()` får du ett annat resultat än om du använder `slice()`. Dessutom finns det en subtil skillnad mellan `substring()` och `substr()` när det kommer till hur de hanterar sina parametrar - `substring()` tar emot två index, medan `substr()` tar ett startindex och ett antal tecken att extrahera.
 
-```Javascript
-const str = "Detta är en text med en specifik del som vi vill extrahera."
-const regex = /specifik del/
-const match = str.match(regex)
-console.log(match[0]) // Output: specifik del
-```
+En annan intressant sak att notera är att när du ger en negativ längd till `substr()` som den andra parameter, kommer den att behandla det som ett startindex och extrahera text från det indexet till slutet av strängen.
 
-Vi kan också använda en modifierare för att göra matchningen global eller fallkänslig.
+## Se också
 
-```Javascript
-const str = "Detta är Testtext"
-console.log(str.match(/test/gi)) // Output: Test
-```
-
-## Se även
-
-- [substr() - MDN webbdokumentation](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [substring() - MDN webbdokumentation](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [match() - MDN webbdokumentation](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+- [MDN - substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN - slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [MDN - substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)

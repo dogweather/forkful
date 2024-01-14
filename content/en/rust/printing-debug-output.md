@@ -1,71 +1,82 @@
 ---
-title:    "Rust recipe: Printing debug output"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/printing-debug-output.md"
+title:                "Rust recipe: Printing debug output"
+programming_language: "Rust"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Debugging is an essential part of software development, and it becomes even more crucial when working on complex projects in languages like Rust. One of the most useful tools for debugging is printing debug output, which allows you to get a closer look at what's happening within your code. In this blog post, we'll discuss the importance of printing debug output and how to do it in Rust.
+Printing debug output is an essential part of the debugging process in any programming language. It allows developers to get a deeper understanding of what is happening behind the scenes in their code and to identify and fix any issues that may arise.
 
 ## How To
 
-Printing debug output in Rust is a simple yet powerful way to understand what's happening in your code. To do so, we use the `println!` macro, which prints the specified text to the console. Let's look at an example:
+Printing debug output in Rust is quite simple and can be done using the `println!()` macro. Let's take a look at an example:
 
 ```Rust
 fn main() {
-    let x = 5;
-    println!("The value of x is {}", x);
+    let name = "John";
+    let age = 28;
+    println!("My name is {} and I am {} years old.", name, age);
 }
 ```
 
-In this example, we declare a variable `x` with the value of 5, and then use the `println!` macro to print the value of `x` to the console. The `{}` is a placeholder for the value of `x`, and the result of running this code would be:
+Running this code will print the following output:
 
 ```
-The value of x is 5
+My name is John and I am 28 years old.
 ```
 
-You can also print multiple variables and use formatting options within the `println!` macro. For example:
+You can also include more complex data types in your debug output by using the `{:?}` format specifier. Let's say we have a struct representing a person:
+
+```Rust
+struct Person {
+    name: String,
+    age: u32,
+    profession: String,
+}
+
+fn main() {
+    let john = Person {
+        name: String::from("John"),
+        age: 28,
+        profession: String::from("Software Engineer"),
+    };
+    println!("Debug output: {:?}", john);
+}
+```
+
+The output will be:
+
+```
+Debug output: Person { name: "John", age: 28, profession: "Software Engineer" }
+```
+
+As you can see, the `{:?}` format specifier prints out the debug representation of the `Person` struct.
+
+## Deep Dive
+
+In addition to the `println!` macro, Rust also provides the `dbg!` macro for more advanced debugging needs. It not only prints out the value of the variable but also the file and line where it was called from. Let's see an example:
 
 ```Rust
 fn main() {
     let x = 5;
     let y = 10;
-    println!("The sum of {} and {} is {}", x, y, x + y);
+    let z = dbg!(x + y);
 }
 ```
 
-The output for this would be:
+The output will be:
 
 ```
-The sum of 5 and 10 is 15
+[src/main.rs:4] x + y = 15
 ```
 
-This is just a basic example, but you can use `println!` to print out any variable or expression in your code, making it easier to understand and identify any errors.
-
-## Deep Dive
-
-While `println!` is a straightforward and useful tool for printing debug output, it's not the only option available in Rust. Rust also has a standard library module called `std::debug`, which provides a `Debug` trait that implements the `fmt::Debug` trait. This allows you to print out the debug representation of any data type, making it easier to inspect complex structures. You can use the `dbg!` macro to print out the debug representation of a variable or expression directly to the console.
-
-```Rust
-fn main() {
-    let language = "Rust";
-    dbg!(language);
-}
-```
-
-The output for this would be:
-
-```
-[Rust] language = "Rust"
-```
-
-This is especially useful for large data structures, as it provides a more structured and organized output compared to using `println!`.
+This can be very useful when debugging complex code with multiple variables and functions.
 
 ## See Also
-
-- Rust Programming Language: https://www.rust-lang.org/
-- `println!` documentation: https://doc.rust-lang.org/std/macro.println.html
-- `dbg!` documentation: https://doc.rust-lang.org/std/macro.dbg.html
+- [Rust Documentation: std::fmt - Formatting](https://doc.rust-lang.org/stable/std/fmt)
+- [Rust By Example: Formatted Printing](https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_debug.html)
+- [The Rust Book: Printing to the Console](https://doc.rust-lang.org/book/ch01-02-hello-world.html#printing-to-the-console)

@@ -1,39 +1,47 @@
 ---
-title:    "Gleam: 두 날짜 비교하기"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/comparing-two-dates.md"
+title:                "Gleam: 두 날짜 비교하기"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleam 프로그래밍 블로그 게시물 - 두 날짜 비교하기
+## 왜
+두 개의 날짜를 비교하는 것이 왜 중요한지 궁금하신가요? 그렇다면 이 블로그 포스트를 읽어보세요! 두 날짜를 비교하는 방법을 알려주고, 왜 이를 활용하는 지에 대해 소개해 드릴 것입니다.
 
-## 왜 하나요?
-두 날짜를 비교하려면 어떻게 해야 할까요? 파이썬에서는 날짜 2개를 비교하는 까다로운 작업입니다. 그래서 Gleam에서는 이 과정을 더 간단하게 만들어줍니다. 이 블로그 게시물에서는 왜 두 날짜를 비교해야 하는지 알려드리고, Gleam을 사용해서 어떻게 간단하게 비교할 수 있는지 알려드리겠습니다.
+## 어떻게
+두 개의 날짜를 비교하는 방법은 매우 간단합니다. 먼저, 두 날짜를 각각 변수에 할당합니다. 그 다음 "```Gleam
+```" 코드 블록 안에 `gleam/date` 에서 제공하는 `compare` 함수를 사용하여 두 날짜를 비교해보세요. 예를 들면 아래와 같습니다.
 
-## 어떻게 하나요?
-Gleam에서는 두 날짜를 비교하는 `Date.compare` 함수를 제공합니다. 이 함수는 첫 번째 인자에는 비교할 날짜를, 두 번째 인자에는 기준 날짜를 넣어주면 됩니다. 두 날짜가 서로 같은지, 앞서는지 혹은 뒤에 있는지 비교할 수 있습니다.
-
-```Gleam
-let result = Date.compare(#time(2021, 10, 10), #time(2021, 10, 11))
 ```
+Gleam
+import gleam/date
 
-위 코드의 결과는 `-1`이 나올 것입니다. 이는 첫 번째 인자인 `#time(2021, 10, 10)`이 기준 날짜 `#time(2021, 10, 11)`보다 앞서 있음을 나타냅니다.
+let today = date.now()
+let yesterday = date.add_days(today, -1)
 
-또 다른 예시를 살펴볼까요?
-
-```Gleam
-let result = Date.compare(#time(2021, 10, 11), #time(2021, 10, 10))
+date.compare(today, yesterday)
 ```
+위 코드는 오늘 날짜와 어제 날짜를 비교하고 있습니다. `compare` 함수는 첫 번째 매개변수가 두 번째 매개변수보다 크면 `Greater`를, 작으면 `Less`를, 같으면 `Equal`을 반환합니다. 코드를 실행해보면 `Less`가 출력될 것입니다.
 
-이번에는 `1`이 나올 것입니다. 첫 번째 인자인 `#time(2021, 10, 11)`이 기준 날짜 `#time(2021, 10, 10)`보다 뒤에 있음을 나타내죠.
+## 깊게 파보기
+두 개의 날짜를 비교할 때는 더 많은 정보가 필요할 수도 있습니다. 예를 들어 두 날짜 사이의 차이를 구하고 싶다면 어떻게 해야할까요? 이를 위해서는 `compare` 함수를 사용한 다음 `diff` 함수를 사용합니다.
 
-위와 같은 방법으로 두 날짜를 비교할 수 있습니다. 이렇게 간단하게 두 날짜를 비교할 수 있다는 것은 많은 시간과 노력을 아낄 수 있다는 점에서 매우 유용합니다.
+```
+Gleam
+import gleam/date
 
-## 딥 다이브
-Gleam에서는 `Date.compare` 함수를 뿐만 아니라 다양한 날짜 관련 함수를 제공합니다. 이 함수들을 잘 활용하면 복잡한 날짜 연산도 손쉽게 처리할 수 있습니다. 자세한 내용은 공식 문서를 참고해주세요.
+let today = date.now()
+let yesterday = date.add_days(today, -1)
 
-## 관련 자료
-[Gleam 공식 문서](https://gleam.run/)  
-[Gleam GitHub 저장소](https://github.com/gleam-lang)  
-[파이썬으로 두 날짜 비교하기](http://blog.naver.com/example)
+date.diff(today, yesterday)
+```
+위 코드는 오늘 날짜와 어제 날짜 사이의 차이를 일수로 반환합니다. 만약 날짜 사이의 차이를 시간 단위로 구하고 싶다면 `diff` 함수의 두 번째 매개변수에 `Time` 타입을 추가해주면 됩니다.
+
+## 더 읽어보기
+더 많은 정보를 원하신다면 아래 링크를 참고해보세요.
+
+- [Gleam 공식 문서](https://gleam.run/)
+- [Gleam Date 라이브러리 문서](https://gleam.run/modules/date)
+- [Gleam 공식 Github 레포지토리](https://github.com/gleam-lang/gleam)

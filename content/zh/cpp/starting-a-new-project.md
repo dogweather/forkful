@@ -1,42 +1,36 @@
 ---
-title:    "C++: 开始新项目"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/starting-a-new-project.md"
+title:                "C++: 开始一个新项目"
+programming_language: "C++"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要开始一个新的项目
+为什么：如果你是一位程序员，你很可能会发现自己每天都在处理各种各样的项目。而一个新项目的开始往往是一个令人兴奋和具有挑战性的时刻。无论是因为一个新的想法，一个新的技术，或者只是想要扩展你的技能，开始一个新的项目都可以带来许多好处。
 
-编程是一门充满乐趣，能够创造出令人惊叹的事物的艺术。通过开始一个新的项目，你有机会挑战自己的技能，学习新的知识，并最终创造出令人满意的成果。
+如何开始：首先，你需要一个代码编辑器和C++编译器。最常用的C++编译器之一是GNU编译器集合（GCC），它是免费的并且可以在各种操作系统上使用。在编写代码时，你需要了解C++的基本语法，例如变量、循环、条件语句等。接下来，你需要选择一个合适的IDE，例如Visual Studio或者Code::Blocks来帮助你更轻松地编写和调试代码。最后，创建一个新的项目并开始编写代码，试着运行一些简单的程序，确保一切正常。
 
-## 如何开始一个新的项目
+深入了解：除了基本的开发工具，你还需要学习一些关于软件开发的基础知识。了解程序的基本结构，如何组织代码，如何处理错误，以及如何使用源代码控制系统（如Git）来管理代码版本。此外，学习如何使用一些常用的C++库来帮助你更有效地编写代码，如STL（标准模板库）和Boost库。如果你想要创建一个图形化的界面，你也可以学习如何使用Qt框架来实现。
 
-首先，你需要选择一个编程语言来开始你的项目。在这里，我们将使用C++作为例子。下面是一个简单的C++代码示例，它打印出"Hello World!"：
+参考资料： 
+- GCC编译器下载: https://gcc.gnu.org/ 
+- C++基础语法: https://www.tutorialspoint.com/cplusplus/index.htm 
+- Visual Studio下载: https://visualstudio.microsoft.com/ 
+- Code::Blocks下载: http://www.codeblocks.org/ 
+- Git下载: https://git-scm.com/ 
+- STL教程: https://www.geeksforgeeks.org/the-c-standard-template-library-stl/ 
+- Boost库下载: https://www.boost.org/ 
+- Qt框架下载: https://www.qt.io/download/ 
 
-```C++
-#include <iostream>
-
-int main() {
-    std::cout << "Hello World!";
-
-    return 0;
-}
-```
-
-运行这段代码，你将在屏幕上看到输出结果"Hello World!"。现在你就可以开始修改这段代码，添加更多的功能来实现你想要的效果了。
-
-## 深入挖掘如何开始一个新的项目
-
-在开始一个新的项目时，有一些重要的事情需要考虑。首先，确定你的项目的目标和需求。这将帮助你正确地选择使用的工具和技术。其次，你需要计划好你的项目的结构和架构，这将有助于你更有效地编写代码并避免未来的问题。最后，对于一个成功的项目，你应该拥有良好的团队合作和沟通能力，这将确保项目的顺利进行。
+看看也可以帮助你了解更多关于如何开始一个新的C++项目的知识。记住，每个人的起步都不同，而且最重要的是保持学习的态度。祝你好运！ 
 
 ## 参考资料
-
-- [C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
-- [如何开始一个新的项目？](https://medium.com/zerotomastery/how-to-start-a-new-programming-project-956141c681b9)
-- [项目管理的基本原则](https://www.simplilearn.com/project-management-principles-and-practices-article)
-- [GitHub教程](https://www.runoob.com/github/github-tutorial.html)
-
-## 参见
-
-*新的编程项目可以是一项令人兴奋的挑战。通过合理的计划和团队合作，你将能够创造出令人满意的结果。希望这篇文章对你开始一个新的C++项目有所帮助。如果你想要了解更多有关C++编程的信息，可以参考下面的链接。祝你的项目顺利！*
+- GCC编译器下载: https://gcc.gnu.org/ 
+- C++基础语法: https://www.tutorialspoint.com/cplusplus/index.htm 
+- Visual Studio下载: https://visualstudio.microsoft.com/ 
+- Code::Blocks下载: http://www.codeblocks.org/ 
+- Git下载: https://git-scm.com/ 
+- STL教程: https://www.geeksforgeeks.org/the-c-standard-template-library-stl/ 
+- Boost库下载: https://www.boost.org/ 
+- Qt框架下载: https://www.qt.io/download/

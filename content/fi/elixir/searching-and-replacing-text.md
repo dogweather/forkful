@@ -1,59 +1,38 @@
 ---
-title:    "Elixir: Tekstin etsiminen ja korvaaminen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/searching-and-replacing-text.md"
+title:                "Elixir: Tekstin etsiminen ja korvaaminen"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi Elixir on hyvä valinta tekstin etsimiseen ja korvaamiseen
+## Miksi
 
-Tekstin etsiminen ja korvaaminen on yleinen tehtävä ohjelmointia tehdessä. Elixir tarjoaa tehokkaita työkaluja tämän tehtävän suorittamiseen. Se pystyy käsittelemään isoja datamääriä nopeasti ja tarjoaa monipuolisia toimintoja, joilla voit muokata tekstiä haluamallasi tavalla.
+Kuinka moneen kertaan olet joutunut muuttamaan sanan tai lauseen tekstissäsi ja sitten huomaat, että se esiintyy edelleen jossain toisessa kohdassa? Tämä on yleinen ongelma ohjelmoinnissa, mutta ei hätää - Elixirillä sinulla on helppo tapa etsiä ja vaihtaa tekstiä nopeasti ja vaivattomasti. Lue eteenpäin ja selvitetään kuinka.
 
-# Kuinka tehdä tekstien etsiminen ja korvaaminen Elixirillä
+## Kuinka tehdä
 
-Tekstin etsiminen ja korvaaminen Elixirillä onnistuu käyttämällä `String.replace/4` -funktiota. Tämä funktio ottaa neljä parametria: alkuperäinen merkkijono, hakusana, korvaava sana ja valinnaisen `options` -parametrin. Se palauttaa uuden merkkijonon, jossa kaikki hakusanat on korvattu korvaavalla sanalla.
-
-```Elixir
-iex> String.replace("Tervetuloa Elixir-maailmaan", "maailmaan", "universumi", global: true)
-"Tervetuloa Elixir-universumiin"
-```
-
-Voit myös käyttää säännöllisiä lausekkeita tekstien etsimiseen ja korvaamiseen `Regex.replace/3` -funktiolla. Tämä funktio ottaa kolme parametria: alkuperäinen merkkijono, säännöllinen lauseke ja korvaava sana. Se palauttaa uuden merkkijonon, jossa kaikki säännöllisen lausekkeen mukaiset osat on korvattu korvaavalla sanalla.
+Etsi ja vaihda -toiminto Elixirissä on hyvin yksinkertainen. Voit käyttää `String.replace/4` funktiota, joka ottaa neljä argumenttia. Ensimmäisenä on alkuperäinen merkkijono, jossa haluat tehdä muutoksia. Seuraava argumentti on etsittävä teksti, jonka haluat korvata. Kolmantena on muuttuva tekstimuoto, joka sisältää korvaavan tekstin. Viimeisenä on hakureittiparametri, joka määrittää minkä tyyppisiä korvauksia haluat tehdä, esimerkiksi onko se isoista ja pienistä kirjaimista riippumaton. Katso alla oleva esimerkki:
 
 ```Elixir
-iex> Regex.replace("Minulla on 123 euroa säästössä", ~r/\d+/, "100")
-"Minulla on 100 euroa säästössä"
+iex> String.replace("Tervetuloa maailmaan!", "maailmaan", "Elixir", [case: :insensitive])
+"Tervetuloa Elixir!"
 ```
 
-# Syvempi sukellus tekstien etsimiseen ja korvaamiseen
-
-Elixirin `String` -moduuli tarjoaa paljon muitakin hyödyllisiä toimintoja tekstien muokkaamiseen. Voit esimerkiksi käyttää `String.trim/2` funktiota poistamaan tyhjät välilyönnit alkupäästä ja lopusta.
+Huomaa, että funktio palauttaa uuden merkkijonon ja alkuperäinen merkkijono jää muuttumattomaksi. Voit myös käyttää regexpiä (Regular expression) hakureittinä:
 
 ```Elixir
-iex> String.trim("     Hei maailma     ")
-"Hei maailma"
+iex> String.replace("Hei 123, laskusi on maksettu.", ~r/[0-9]+/, "viisi")
+"Hei viisi, laskusi on maksettu."
 ```
 
-Voit myös muuttaa merkkijonon isoiksi tai pieniksi kirjaimiksi käyttämällä `String.upcase/1` ja `String.downcase/1` -funktioita.
+## Syvällisempi sukellus
 
-```Elixir
-iex> String.upcase("Tervetuloa Elixir-maailmaan")
-"TERVETULOA ELIXIR-MAAILMAAN"
+Elixirin String-moduulilla on muitakin hyödyllisiä funktioita hakemista ja korvaamista varten, kuten `String.replace_leading/3` ja `String.replace_trailing/3`, jotka toimivat samalla tavalla kuin `String.replace`, mutta etsivät vain merkkijonon alusta tai lopusta. Myös `"Elämä" <> "Rakkaus"` yhdistää kaksi merkkijonoa ja palauttaa "ElämäRakkaus". Ja jos haluat saada merkkijonon tietyltä alueelta, voit käyttää `String.slice/3` funktiota. Näitä kaikkia funktioita voit käyttää hakemiseen ja korvaamiseen tarvittaessa.
 
-iex> String.downcase("Tervetuloa Elixir-maailmaan")
-"tervetuloa elixir-maailmaan"
-```
+## Katso myös
 
-Jos haluat tehdä tekstien etsimisestä ja korvaamisesta vielä tehokkaampaa, voit käyttää `Map` -moduulin tarjoamia toimintoja. Voit esimerkiksi käyttää `Map.get/3` -funktiota poistamaan tiettyjä sanoja tai merkkejä merkkijonosta.
-
-```Elixir
-iex> "Olen käyttänyt Elixir-ohjelmointikieltä jo 3 vuotta!" |> String.split(" ") |> Map.get(&1, 3, "kieltä") |> Enum.join(" ")
-"Olen käyttänyt Elixir kieltä jo vuotta!"
-```
-
-# Katso myös
-
-- Elixirin virallinen dokumentaatio: https://elixir-lang.org/getting-started/basic-types.html#string-literals
-- Elixirin `String` -moduulin dokumentaatio: https://hexdocs.pm/elixir/String.html
-- Elixirin `Map` -moduulin dokumentaatio: https://hexdocs.pm/elix
+- [Elixir String-moduuli](https://hexdocs.pm/elixir/String.html)
+- [Regexp-tutoriaali Elixirissä](https://elixir-lang.org/getting-started/regexp.html)
+- [Elixirin kirjasto erikoiskorvauksiin](https://hexdocs.pm/poison/1.2.0/SpecialEncodings.html)

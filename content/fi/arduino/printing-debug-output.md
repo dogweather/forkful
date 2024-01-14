@@ -1,48 +1,57 @@
 ---
-title:    "Arduino: Tulostamassa vianmääritystietoja"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/printing-debug-output.md"
+title:                "Arduino: Virheenjäljitystulostuksen tulostaminen"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Onko Arduino-ohjelmoinnissa turhauttavaa, kun et saa selville miksi koodi ei toimi? Tulostaminen debug-tietoa voi auttaa sinua löytämään ongelmia ja korjaamaan ne nopeammin.
 
-Miksi tulostaisit debuggaustietoa Arduino-ohjelmoinnissasi? Debuggaustieto auttaa sinua ymmärtämään koodissasi tapahtuvia asioita, kuten virheitä ja muuttujien arvoja. Se on hyödyllistä etenkin kun yrität ratkaista ongelmia tai kehittää koodiasi.
-
-## Miten
-
-Alla on esimerkki koodista, jossa tulostetaan debuggaustietoa Arduino IDE:n sarjaportti-työkalun avulla:
+## Miten tehdä
+Arduino-koodissa, voit käyttää `Serial.println()` -funktiota tulostaa debug-tietoa. Esimerkki:
 
 ```Arduino
-int ledPin = 13;
-int buttonPin = 2;
-int buttonState = 0;
-
 void setup() {
-  pinMode(ledPin, OUTPUT);
-  pinMode(buttonPin, INPUT);
+  pinMode(13, OUTPUT);
   Serial.begin(9600);
 }
 
 void loop() {
-  buttonState = digitalRead(buttonPin); // lue napin tila
-  digitalWrite(ledPin, buttonState); // aseta LEDin tila napin tilan mukaan
-  Serial.println("Napin tila: " + String(buttonState)); // tulosta debuggaustieto sarjaporttiin
-  delay(100); // odota 100 millisekuntia
+  digitalWrite(13, HIGH);
+  Serial.println("LED vilkkuu nopeasti");
+  delay(1000);
+  digitalWrite(13, LOW);
+  Serial.println("LED ei vilku");
+  delay(1000);
 }
 ```
+Output:
 
-Kun käytät tätä koodia, voit avata sarjaportti-työkalun arvojen tarkastelemiseksi ja vahvistamiseksi. Jos nappi on painettuna, sarjaportista tulostuu "Napin tila: 1", ja jos nappi on irrotettuna, tulostuu "Napin tila: 0". Tämä auttaa sinua seuraamaan napin tilan muutoksia ja varmistamaan, että koodi toimii odotetusti.
+```
+LED vilkkuu nopeasti
+LED ei vilku
+```
 
-## Syvempää tietoa
+Voit myös käyttää `Serial.print()` ja `Serial.write()` -funktioita tulostamaan muuttujia ja merkkijonoja. Esimerkki:
 
-Debuggaustietoa ei kannata tulostella liikaa, sillä se hidastaa koodin suoritusta. Sen sijaan voit asettaa tiettyjä ehtoja, jolloin debuggaustieto tulostetaan vain silloin kun tarpeen. Esimerkiksi voit käyttää if-lausetta tietyn virheen tarkastamiseen ja tulostaa virheviestin vain silloin kun kyseinen virhe tapahtuu.
+```Arduino
+int luku = 10;
+Serial.print("Luku: ");
+Serial.println(luku);
+```
+Output:
 
-Tärkeintä on käyttää debuggaustietoa fiksusti. Se auttaa sinua löytämään ongelmia ja optimoimaan koodiasi, mutta liiallinen tulostelu voi hidastaa ohjelmasi suorituskykyä. Varmista siis, että poistat turhat debuggaustulosteet ennen kuin kirjoitat koodisi tuotantokäyttöön.
+```
+Luku: 10
+```
+
+## Syvemmälle
+Voit käyttää myös `Serial.begin()` -funktiota määrittämään oikea baud rate debug-tulostukseen, mikä voi auttaa nopeuttamaan tiedonsiirtoa. Voit myös lisätä `Serial.flush()` -funktion tulostamaan kaiken odottavan datan ennen kuin jatkat koodia.
 
 ## Katso myös
-
-- [Arduino Reference](https://www.arduino.cc/reference/en/): Officiaali Arduino referenssisivusto, jossa löydät tietoa sarjaportin käytöstä ja muista hyödyllisistä toiminnoista.
-- [Programming Electronics Academy](https://programmingelectronics.com/): Sivusto, jossa on paljon opetusmateriaalia Arduino-ohjelmoinnista ja elektroniikasta. Heillä on myös YouTube-kanava, joka tarjoaa hyödyllisiä opetusvideoita.
-- [Arduino Community Forum](https://forum.arduino.cc/): Täällä voit kysyä kysymyksiä ja saada apua muilta Arduino-harrastajilta.
+- [Serial println() reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Debugging in Arduino with Serial Monitor](https://create.arduino.cc/projecthub/Arduino_Genuino/debugging-arduino-with-serial-monitor-84b113?ref=tag&ref_id=debugging&offset=0)
+- [Print debugging in Arduino](https://medium.com/@plipr/how-i-survived-to-my-first-project-with-arduino-part-3-print-debugging-d67b1e6ddbd7)

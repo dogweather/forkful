@@ -1,37 +1,44 @@
 ---
-title:    "Rust: Ein Datum in eine Zeichenkette umwandeln."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/converting-a-date-into-a-string.md"
+title:                "Rust: Umwandlung eines Datums in einen String"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum 
+# Warum
 
-Das Umwandeln von Daten in eine Zeichenfolge ist eine gängige Aufgabe in der Programmierung. Es kann hilfreich sein, Daten in einer lesbaren Form anzuzeigen oder sie für die Ausgabe in einem bestimmten Format vorzubereiten.
+Das Konvertieren eines Datums in einen String ist eine häufige Aufgabe in der Programmierung, insbesondere wenn es um die Darstellung von Datumsangaben in einem benutzerfreundlichen Format geht. In Rust können wir diese Aufgabe effizient und fehlerfrei mit wenigen Zeilen Code erledigen. In diesem Blogpost werden wir uns genauer ansehen, wie wir diese Konvertierung durchführen können.
 
-## Wie man
+## Wie geht das?
 
-Um ein Datum in Rust in eine Zeichenfolge umzuwandeln, können wir die `format!` Macro verwenden. Hier ist ein Beispiel, das ein Datum in das Format "Tag.Monat.Jahr" umwandelt:
+Um ein Datum in einen String zu konvertieren, müssen wir zunächst das Modul "DateTime" aus der externen Crate "chrono" importieren. Dann können wir die Funktion "format" verwenden, um das Datum in einem gewünschten Format auszugeben. Hier ist ein Beispielcode:
 
-```Rust 
-use std::time::{SystemTime, UNIX_EPOCH};
+```Rust
+use chrono::prelude::*;
 
-let now = SystemTime::now();
-let seconds_since_epoch = now.duration_since(UNIX_EPOCH).unwrap().as_secs();
-
-let date = UNIX_EPOCH + Duration::from_secs(seconds_since_epoch);
-
-let formatted_date = format!("{}", date.format("%d.%m.%Y"));
+fn main() {
+    let date = Utc::now();
+    let formatted_date = date.format("%d.%m.%Y").to_string();
+    println!("{}", formatted_date);
+}
 ```
+Dieser Code importiert das aktuelle Datum in UTC und gibt es im Format "Tag.Monat.Jahr" aus. Wir können das Format beliebig ändern, indem wir die spezifischen Zeichen wie "%d" für den Tag, "%m" für den Monat und "%Y" für das vollständige Jahr austauschen.
 
-Die Ausgabe des oben genannten Codes würde ähnlich aussehen wie: "12.04.2021". Durch die Verwendung der `format!` Macro können wir auch angeben, welches Format wir für die Ausgabe verwenden möchten.
+Die Ausgabe wird in diesem Fall "10.08.2021" sein.
 
-## Tief eintauchen 
+## Tief eintauchen
 
-Wenn wir uns die `format!` Macro genauer ansehen, können wir sehen, dass sie tatsächlich eine Implementierung der `std::fmt::Display` Trait verwendet. Dieser Trait ist für die Anzeige von Daten verantwortlich und wird verwendet, um eine formatierte Zeichenfolge zurückzugeben. Die `format!` Macro ist also eine bequeme Möglichkeit, ein Datum in eine Zeichenfolge umzuwandeln, aber sie basiert auf den Konzepten des `Display` Traits.
+Wenn wir genauer hinschauen, stellen wir fest, dass die Funktion "format" eine Instanz der DateTime-Struktur erwartet, die in diesem Fall das aktuelle Datum und die Zeit in UTC darstellt. Diese Struktur bietet viele Methoden, um das Datum und die Zeit an unsere Bedürfnisse anzupassen. Wir können auch andere Datums- und Zeitformate verwenden, wie z.B. "Local" für das aktuelle Datum und die Zeit in der aktuellen Zeitzone.
+
+Es ist auch wichtig zu beachten, dass die Funktion "format" eine Reihe von Konfigurationsmöglichkeiten bietet, um das Ausgabeformat weiter anzupassen. Wir können z.B. die Sprache, das Zeitzonenformat und die Anzeige des Tages der Woche hinzufügen.
+
+Mit diesen Möglichkeiten können wir sicherstellen, dass das konvertierte Datum in unserem Programm genau so dargestellt wird, wie wir es möchten.
 
 ## Siehe auch
 
-- [Rust Standardbibliothek Dokumentation](https://doc.rust-lang.org/std/time/struct.Format.html)
-- [Weitere Beispiele zur Konvertierung von Daten in Zeichenfolgen in Rust](https://www.geeksforgeeks.org/formatting-macro-in-rust-format/)
+- Die offizielle Dokumentation von Rust für das Modul "DateTime" in der Crate "chrono": https://docs.rs/chrono/0.4.19/chrono/
+- Weitere Beispiele und Erklärungen zur Konvertierung von Datum in einen String in Rust: https://www.educative.io/blog/rust-date-time-tutorial
+
+Vielen Dank fürs Lesen und viel Spaß beim Programmieren mit Rust!

@@ -1,40 +1,53 @@
 ---
-title:    "Arduino: 文字列の長さを見つける"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/finding-the-length-of-a-string.md"
+title:                "Arduino: 文字列の長さを見つける"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
 
-文字列の長さを求めることの重要性を知りたいですか？その答えはとてもシンプルです。文字列の長さを知ることで、より正確にデータを処理したり、特定の操作を行ったりすることができます。例えば、入力された文字列が特定の長さを満たしているかどうかを判断する際に、文字列の長さが必要になることがあります。このように、文字列の長さはプログラミングにおいて非常に重要な役割を果たします。
+文字列の長さを求めることの重要性について説明します。このプログラミングスキルを習得することで、Arduinoプロジェクトにおいて文字列を効率的に処理することができます。
 
-## 手順
+## 方法
 
-Arduinoを使用して文字列の長さを求める方法を見てみましょう。まずは、入力された文字列を変数に代入します。次に、```strlen()```という関数を使用して、文字列の長さを求めることができます。例えば、以下のようなコードを書くことができます。
+文字列の長さを求めるには、以下のような「```Arduino ... ```」コードブロックのサンプルを参考にすることができます。
 
+```Arduino
+// 文字列の長さを求める関数を定義する
+int getLength(String str) {
+  // 文字列の1文字ずつカウントする
+  int count = 0;
+  for (int i = 0; i < str.length(); i++) {
+    count++;
+  }
+  // 最後にカウントした数を返す
+  return count;
+}
+
+// 文字列を定義する
+String myString = "こんにちは";
+
+// getLength()関数を呼び出して、文字列の長さを求める
+int length = getLength(myString);
+
+// シリアルモニターに文字列の長さを出力する
+Serial.print("文字列の長さは： ");
+Serial.println(length);
 ```
-Arduino
 
-char str[] = "Hello World";
-int length = strlen(str);
+上記のサンプルコードでは、文字列の長さを求めるために、`String`オブジェクトの`length()`関数を使用しています。また、`for`ループを使用して文字列の長さをカウントしています。最後に、`getLength()`関数を定義し、文字列の長さを返すように設定しています。
 
-```
+## ディープダイブ
 
-これで、変数```length```には文字列"Hello World"の長さが格納されます。これを使ってさまざまな操作を行うことができます。
+文字列の長さを求めるプロセスについてさらに詳しく説明します。
 
-## 深堀り
+Arduinoでは、文字列は`String`オブジェクトとして処理されます。そのため、文字列の長さを`length()`関数を使用して取得することができます。しかし、文字列の長さを求めるには、`for`ループなどのループ処理によって、文字列の1文字ずつをカウントする必要があります。そのため、プログラミングの基礎知識が必要になります。
 
-文字列の長さを求めるときには、注意すべき点があります。文字列の最後には常に```'\0'```という特殊な文字が自動的に追加されますが、これは文字列の長さには含まれません。つまり、実際に使われる文字数とは異なることになります。そのため、文字列の真の長さを求める場合は注意が必要です。
+## 関連リンク
 
-また、```strlen()```関数は、マルチバイト文字（日本語、中国語、韓国語など）には対応していません。そのため、マルチバイト文字を含む文字列の長さを求める場合は、別の方法を使う必要があります。
-
-## 併せて読みたい
-
-- [Arduinoの公式ドキュメント](https://www.arduino.cc/reference/en/language/functions/string/length/)
-- [C言語のstrlen()関数についての詳細](https://www.geeksforgeeks.org/strlen-function-in-c/)
-
-## さらに読み込む
-
-文字列の長さを求める方法について学べましたね！この記事を参考に、さまざまなプログラミングでの文字列操作を試してみてください。より深く理解するためにも、公式ドキュメントや他の記事も参考にしてみてください。楽しんでプログラミングをしましょう！
+- [Wiring Strings - Arduino公式ドキュメント](https://www.arduino.cc/en/Tutorial/StringLengthTrim)
+- [Stringオブジェクト - Arduino公式リファレンス](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [プログラミングの基礎知識 - Progate](https://prog-8.com/contents/basic/programming)

@@ -1,50 +1,51 @@
 ---
-title:    "Arduino: Opprette en midlertidig fil"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/creating-a-temporary-file.md"
+title:                "Arduino: Opprette en midlertidig fil"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Å lage midlertidige filer kan være en nyttig teknikk når du koder med Arduino. Det kan hjelpe deg med å organisere og lagre data i løpet av programkjøringen.
+## Hvorfor
 
-##Slik gjør du det
-For å lage en midlertidig fil i Arduino, kan du bruke funksjonen "tempFile = File.createTempFile("navn", "txt");". Dette vil opprette en fil med navnet "navn" og legge til ".txt" som filtype. Du kan også legge til et tredje argument for å spesifisere plasseringen for filen.
+Å lage midlertidige filer kan være en effektiv måte å organisere og lagre data på mens du kjører et Arduino program. Dette er spesielt nyttig hvis du trenger å behandle og manipulere store mengder data som kan overskride de begrensede minneressursene til en Arduino mikrokontroller.
 
-```
-Arduino
-File tempFile = File.createTempFile("sensorData", "csv");
-```
+## Hvordan lage en midlertidig fil på Arduino
 
-Når filen er opprettet, kan du bruke "tempFile.print()" for å skrive data til filen og "tempFile.read()" for å lese data fra filen.
+For å lage en midlertidig fil på Arduino, må du først inkludere filsystembiblioteket i koden din ved å legge til følgende linje på toppen av filen:
 
-```
-Arduino
-void setup() {
-  File tempFile = File.createTempFile("sensorData", "csv");
-  
-  // Skriv data til filen
-  tempFile.print("Temperatur, Fuktighet\n");
-  tempFile.print("25.5, 60%\n");
-  tempFile.print("26.8, 55%\n");
-  tempFile.print("24.7, 65%\n");
-
-  // Les data fra filen
-  while (tempFile.available()) {
-    Serial.println(tempFile.read());
-  }
-
-  // Lukk filen
-  tempFile.close();
-}
+```Arduino
+#include <FS.h>
 ```
 
-##Dypdykk
-Når du lager midlertidige filer i Arduino, blir de automatisk slettet når programmet avsluttes. Dette er nyttig for å spare på minne og unngå rot med flere filer.
+Deretter trenger du en variabel til å representere den midlertidige filen. Dette kan gjøres ved å bruke `File`-typen og tilordne den til `File::createTempFile()`-funksjonen:
 
-Du kan også angi størrelsen på den midlertidige filen ved å legge til et fjerde argument i "File.createTempFile" funksjonen. Dette er nyttig hvis du forventer at filen vil inneholde mye data, og du vil unngå å bruke for mye minne.
+```Arduino
+File tempFile = File::createTempFile();
+```
 
-##Se også
-- [Offisiell dokumentasjon om File.createTempFile](https://www.arduino.cc/reference/en/libraries/arduino-littlefs/using-file-create-temp-file/)
-- [Mer informasjon om midlertidige filer i Arduino](https://forum.arduino.cc/t/tempfile-no-example-code-in-this-forum-is-working-needs-correction-or-explanation/704108)
+Nå som filen er laget, kan du skrive data til den ved hjelp av `print()` eller `println()`-funksjonene:
+
+```Arduino
+tempFile.println("Dette er en midlertidig fil!");
+```
+
+Når du er ferdig med å skrive til filen, må du lukke den ved hjelp av `close()`-funksjonen:
+
+```Arduino
+tempFile.close();
+```
+
+Du kan også lese data fra den midlertidige filen på samme måte som du leser data fra andre filer ved å bruke `read()`- eller `readString()`-funksjonene.
+
+## Dypdykk
+
+Når du lager en midlertidig fil på Arduino, lagres den i ESP32s interne flashminne. Dette minnet er delt inn i to seksjoner - en for data, og en for koden til programmet ditt. Det midlertidige filsystemet er plassert i dataområdet, noe som betyr at det vil ha en begrenset størrelse som vil variere avhengig av størrelsen på koden din.
+
+Det er også viktig å merke seg at å lage midlertidige filer kan påvirke ytelsen til andre funksjoner på Arduinoen din. Dette skyldes at skriving og lesing fra filsystemet kan være en ressurskrevende operasjon.
+
+## Se også
+
+- [Offisiell ESP32 dokumentasjon om filsystemet](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/spiffs.html)
+- [Tutorial om å bruke SPIFFS filsystemet på ESP32](https://randomnerdtutorials.com/esp32-spiffs-file-system-tutorial/)

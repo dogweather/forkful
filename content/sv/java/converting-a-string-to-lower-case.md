@@ -1,41 +1,37 @@
 ---
-title:    "Java: Omvandla en sträng till gemener"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/converting-a-string-to-lower-case.md"
+title:                "Java: Konvertera en sträng till små bokstäver"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till små bokstäver är en vanlig uppgift inom Java-programmering. Detta kan vara användbart för att förbereda data inför jämförelser eller för att förbättra läsbarheten av en sträng.
+Många gånger har du förmodligen stött på en situation där du behöver omvandla en sträng till gemener (lower case) i ditt Java-program. Det kan vara för att jämföra två strängar på ett korrekt sätt eller för att få en enhetlig formatering. Oavsett anledning, är det viktigt att veta hur man går tillväga för att utföra denna uppgift på ett effektivt sätt.
 
-## Så här gör du
+## Hur man gör det
 
-För att konvertera en sträng till små bokstäver, kan vi använda metoden `toLowerCase()` i `String` klassen. Detta är en inbyggd metod som konverterar alla stora bokstäver i en sträng till små bokstäver. Här är en enkel kodexempel:
+För att omvandla en sträng till gemener i Java, finns det ett inbyggt kommando som kallas "toLowerCase()". Detta kommando ändrar alla stora bokstäver till små bokstäver i strängen. Här är ett exempel på hur man använder detta kommando:
 
-```java
-String input = "HEJ!"; 
-String output = input.toLowerCase(); 
-System.out.println(output); 
+```Java
+String str = "HeJ!";
+System.out.println(str.toLowerCase());
 ```
 
-Outputen av denna kod skulle bli: "hej!".
+Output: "hej!"
 
-För att konvertera en sträng till små bokstäver utan att använda `toLowerCase()`-metoden kan vi också använda oss av ASCII-värden för varje bokstav i strängen. Om du är intresserad av denna metod, kan du söka efter "ASCII-tabell" för en fullständig lista över de olika värdena för bokstäverna.
+Kommandot "toLowerCase()" kan också användas tillsammans med andra strängmanipulationsmetoder för att utföra mer komplexa uppgifter. Till exempel kan man använda "toLowerCase()" tillsammans med "substring()" för att omvandla en del av en sträng till gemener.
 
 ## Djupdykning
 
-De som är nya inom Java-programmering kan undra vilka typer av variationer som finns mellan små och stora bokstäver. Detta kan vara särskilt viktigt om man arbetar med jämförelser eller sorteringsfunktioner.
+När man använder "toLowerCase()" förbättras inte bara strängens formatering, utan det gör också jämförelser mer korrekt och effektivare. Detta beror på att Java interpreterar stora och små bokstäver olika och om man inte är konsekvent kan det leda till felaktiga resultat. Genom att omvandla alla bokstäver till gemener, elimineras risken för felaktiga jämförelser.
 
-Ett vanligt missförstånd är att endast engelska bokstäver påverkas av konvertering till små bokstäver, men faktum är att detta också gäller för andra språk som använder sig av specialtecken. Till exempel kommer den svenska bokstaven Å att omvandlas till å när man använder `toLowerCase()`-metoden.
-
-Det är också viktigt att notera att när vi konverterar en sträng till små bokstäver, så påverkas inte sifforna eller andra tecken. Så om vi exempelvis konverterar "Hej2!" till små bokstäver, kommer det att fortfarande vara "hej2!".
-
-Det finns också andra användningsområden för att konvertera en sträng till små bokstäver, såsom inför indexering och sökning av data. Om man inte konverterar alla bokstäver till små bokstäver, kan det leda till problem med sökningar som inte matchar på grund av en blandning av små och stora bokstäver.
+Det är också viktigt att notera att "toLowerCase()" endast fungerar med engelska bokstäver. För att hantera icke-engelska bokstäver, måste man använda andra metoder som "toLowerCase(Locale.default)". Man kan också använda "toUpperCase()" för att omvandla en sträng till versaler (uppefall).
 
 ## Se även
 
-- [Java String Klass Dokumentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [ASCII-tabell](https://ascii.cl/)
-- [Comparison of ASCII and Unicode](https://en.wikipedia.org/wiki/Comparison_of_ASCII_and_Unicode)
+- Java Strängar (Strings) Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+- Java Character Klass Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
+- Java Locale Klass Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html

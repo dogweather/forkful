@@ -1,37 +1,45 @@
 ---
-title:    "Java: 「文字列を小文字に変換する」"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/converting-a-string-to-lower-case.md"
+title:                "Java: 文字列を小文字に変換する"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-文字列を小文字に変換するのに関わるメリットや重要性について説明します。
+
+なぜ文字列を小文字に変換する必要があるのかと思うかもしれません。それは、入力された文字列が大文字や混在文字であっても、データを比較や操作する際に統一性を保つために必要です。
 
 ## 方法
+
+まず、文字列を入力する変数を作成します。
+
 ```Java 
-//　文字列を定義
-String str = "Hello WORLD";
-
-// 文字列を小文字に変換
-str = str.toLowerCase();
-
-//　出力
-System.out.println(str);
+String input = "Hello World";
 ```
-出力：hello world
 
-## ディープダイブ
-文字列を小文字に変換するには、まず文字列を定義し、その後に文字列を小文字に変換するメソッドを使用します。Javaでは、文字列は厳密なデータ型なため、変換によりバグを防ぐことができます。また、文字列を小文字に変換することで、文字列を比較する際にもより正確な結果を得ることができます。
+次に、input変数を小文字に変換するメソッドを使用します。
 
-## さらに参考になる情報
-### 参考リンク
-- [Javaで文字列を操作する方法](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
-- [Javaで文字列を比較する方法](https://www.geeksforgeeks.org/string-compareto-method-in-java/)
-- [文字列の正規化についての解説](https://www.ibm.com/developerworks/jp/opensource/library/os-unicode/index.html)
+```Java 
+String output = input.toLowerCase();
+System.out.println(output);
+```
 
-## 良きJavaプログラマーへの一歩
-この記事では、文字列を小文字に変換する方法を紹介しました。文字列を操作する際には厳密なデータ型であることを意識し、正確な結果を得るためにも小文字変換を積極的に使用しましょう。また、Javaには多くの文字列操作や比較に関するメソッドが存在するので、是非とも積極的に学習していきましょう。
+出力は、`hello world`となります。
 
-（この記事を書いた人のプロフィールや連絡先などの情報を記載する。）
+## 深堀り
+
+文字列を小文字に変換するメソッドは、`toLowerCase()`です。このメソッドは、文字列をすべて小文字に変換し、新しい文字列として戻り値を返します。元の文字列は変更されません。
+
+ただし、このメソッドは英字のみに対応しています。日本語のようなマルチバイト文字では、期待通りの動作をしないことがあります。その場合は、`toLowerCase(Locale.JAPANESE)`のように、指定のロケールを使用してください。
+
+## 参考文献
+
+- [Java String toLowerCase() Method](https://www.w3schools.com/java/ref_string_tolowercase.asp)
+- [Java マルチバイト文字とロケール](https://docs.oracle.com/javase/jp/6/api/java/util/Locale.html)
+
+## 参考になるリンク
+
+- [Markdownファイルを作成する方法](https://ja.wikipedia.org/wiki/Markdown)
+- [Javaの文字列操作について学ぶ](https://www.geeksforgeeks.org/string-class-in-java/)

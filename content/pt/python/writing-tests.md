@@ -1,51 +1,76 @@
 ---
-title:    "Python: Escrevendo testes"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/writing-tests.md"
+title:                "Python: Escrevendo testes"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+## Por que escrever testes em Python?
 
-Escrever testes é uma parte crucial do processo de programação em Python. Testes garantem que o código funcione corretamente e evitam que bugs sejam introduzidos no sistema. Eles também facilitam a identificação e correção de erros, economizando tempo e esforço no longo prazo.
+Se você é um programador Python, provavelmente já ouviu falar sobre a importância de escrever testes para o seu código. Mas por que isso é realmente necessário? Bem, existem vários motivos pelos quais escrever testes é uma boa prática em qualquer linguagem de programação, mas aqui estão os principais motivos pelos quais você deve considerar escrever testes em Python:
+
+- Testes ajudam a identificar e corrigir bugs: Ao escrever testes, você pode simular diferentes cenários e garantir que seu código funcione corretamente em todas as situações possíveis. Isso ajuda a evitar bugs e, se houver algum, facilita sua identificação e correção.
+- Testes fornecem documentação do código: Ao ler seus testes, outras pessoas podem entender melhor o que seu código faz e como ele deve ser usado. Isso é especialmente útil quando você trabalha em equipe.
+- Testes permitem alterar o código sem medo: Com testes adequados, você pode fazer alterações no seu código sem medo de introduzir novos bugs, pois seus testes garantem que o comportamento esperado do código não seja alterado.
 
 ## Como escrever testes em Python
 
-Para escrever testes em Python, é importante seguir algumas etapas básicas. Primeiro, importe o módulo `unittest` para utilizar suas funções de teste. Em seguida, crie uma classe para o seu teste usando a sintaxe `class TestXXXX(unittest.TestCase)`. Dentro da classe, escreva métodos de teste usando a sintaxe `def test_func():` seguida de asserções para verificar se o resultado está correto. Por fim, execute os testes usando o método `unittest.main()`.
+Agora que você sabe por que escrever testes é importante, vamos dar uma olhada em como escrevê-los em Python. Suponha que temos uma função simples que retorna o dobro de um número dado:
 
-Um exemplo de código de teste pode ser visto abaixo:
+```Python
+def double(num):
+    return num * 2
+```
+
+Para testar essa função, podemos criar um arquivo de teste separado, onde importamos a função e escrevemos diferentes casos de teste usando a biblioteca padrão de testes do Python, chamada `unittest`:
 
 ```Python
 import unittest
+from calculator import double # importa a função que queremos testar
 
-class TestCalculadora(unittest.TestCase):
-    def test_soma(self):
-        resultado = 2+2
-        self.assertEqual(resultado, 4)
+class TestCalculator(unittest.TestCase):
 
-    def test_subtracao(self):
-        resultado = 10-5
-        self.assertEqual(resultado, 5)
+    def test_positive_number(self):
+        self.assertEqual(double(2), 4) # verifica se o resultado é 4
 
-    def test_multiplicacao(self):
-        resultado = 3*4
-        self.assertEqual(resultado, 12)
+    def test_negative_number(self):
+        self.assertEqual(double(-3), -6) # verifica se o resultado é -6
+
+    def test_zero(self):
+        self.assertEqual(double(0), 0) # verifica se o resultado é 0
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-O código acima cria uma classe `TestCalculadora` e três métodos de teste para verificar as operações de soma, subtração e multiplicação. Ao executar o arquivo, o resultado será `OK`, indicando que os testes passaram.
+Ao executar esse arquivo de teste, se tudo estiver correto, você verá a seguinte saída:
 
-## Adentrando mais profundamente no tema
+```
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
 
-Existem diferentes tipos de testes que podem ser escritos em Python, como testes unitários, testes de integração e testes de aceitação. Cada tipo de teste tem seu propósito específico e é importante entender essas diferenças para garantir uma cobertura adequada dos testes. Além disso, existem ferramentas como o `coverage` que podem ser usadas para verificar a cobertura dos seus testes.
+OK
+```
 
-Também é importante lembrar que testes devem ser escritos de forma independente e não devem depender de outros testes para funcionar corretamente. Eles também devem ser atualizados conforme o código muda, garantindo que os testes ainda sejam relevantes e precisos.
+Caso algo esteja errado, o pytest mostrará qual teste falhou e por quê, o que facilita a correção do problema.
+
+## Deep Dive: Dicas para escrever testes eficazes em Python
+
+Aqui estão algumas dicas adicionais que podem ajudá-lo a escrever testes eficazes em Python:
+
+- Escreva testes para casos extremos e de borda, não apenas para casos típicos.
+- Teste pequenas partes do código de cada vez, em vez de testar tudo de uma vez.
+- Use nomes descritivos para seus testes e casos de teste, isso tornará seu código mais legível.
+- Seja consistente com a estrutura e organização dos seus testes.
+- Ao mudar o código, certifique-se de que seus testes ainda passem.
 
 ## Veja também
 
-- [Python.org: Unittest](https://docs.python.org/3/library/unittest.html)
-- [Python.org: Cobertura de testes](https://coverage.readthedocs.io/en/coverage-5.5/)
-- [Testes unitários vs testes de integração vs testes de aceitação](https://medium.com/meritt/testes-unit%C3%A1rios-vs-testes-de-integra%C3%A7%C3%A3o-vs-testes-de-aceita%C3%A7%C3%A3o-de061a4e8d5e)
+Aqui estão alguns links úteis para continuar aprendendo sobre testes em Python:
+
+- [Documentação oficial do unittest](https://docs.python.org/3/library/unittest.html)
+- [Tutorial sobre testes em Python](https://realpython.com/python-testing/)
+- [Vídeo sobre testes de unidade em Python](https://www.youtube.com/watch?v=1Lfv5tUGsn8)

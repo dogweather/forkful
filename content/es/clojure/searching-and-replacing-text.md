@@ -1,52 +1,44 @@
 ---
-title:    "Clojure: Buscando y reemplazando texto"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/searching-and-replacing-text.md"
+title:                "Clojure: Búsqueda y reemplazo de texto"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué usar Clojure para buscar y reemplazar texto?
+##¿Por qué?
 
-Buscar y reemplazar texto es una tarea común en la programación, puede ser una herramienta útil para hacer cambios rápidos en grandes cantidades de código. Con Clojure, puedes hacer esto de manera rápida y eficiente gracias a su sintaxis concisa y funcional.
+Realizar búsquedas y reemplazos de texto en tus programas Clover puede ahorrarte tiempo y esfuerzo en la corrección de errores y actualización de código.
 
-## Cómo hacerlo
+##Cómo hacerlo
 
-Buscar y reemplazar texto en Clojure es muy sencillo. Primero, importa la librería `clojure.string` para acceder a las funciones de texto. Luego, utiliza la función `replace` para especificar la cadena de texto que deseas reemplazar, seguida de la cadena de texto de reemplazo. A continuación, utiliza la función `str` para imprimir los resultados. Por ejemplo:
-
-```Clojure
-(ns buscar-reemplazar
-  (:require [clojure.string :as str]))
-
-(str/replace "Hola mundo" "mundo" "amigos")
-
-;; Output: Hola amigos
-```
-
-Otra forma de hacer esto es utilizando expresiones regulares. Por ejemplo:
+Los comandos `replace` y `replace-all` se utilizan para realizar búsquedas y reemplazos en una cadena de texto especificada. Por ejemplo, si queremos reemplazar todas las letras "a" con la letra "e" en la palabra "Casa", escribiríamos lo siguiente:
 
 ```Clojure
-(str/replace "Hola mundo" #"o" "u")
-
-;; Output: Hula mundu
+(replace "Casa" \a \e)
 ```
 
-También puedes utilizar la función `replaceAll` para reemplazar todas las instancias de una cadena de texto con otra. Por ejemplo:
+Este comando producirá la salida "Cese". Si queremos reemplazar todas las letras "a" con la letra "e" en todo un texto, podemos utilizar el comando `replace-all` de la siguiente manera:
 
 ```Clojure
-(str/replace-all "Hola hola hola" #"hola" "adios")
-
-;; Output: Adios adios adios
+(replace-all "Mi casa es azul" \a \e)
 ```
 
-## Profundizando
+La salida de este comando sería "Mi cese es ezul". Además de letras, también se pueden utilizar símbolos y cadenas de texto completas en reemplazos.
 
-Clojure también ofrece diferentes opciones y funciones para buscar y reemplazar texto de manera más compleja, como el uso de predicados en las expresiones regulares y la función `re-pattern` para construir expresiones regulares dinámicamente.
+##Profundizando
 
-Además, con Clojure, puedes aplicar estas técnicas no solo a cadenas de texto, sino también a otras estructuras de datos como listas o mapas.
+Para realizar búsquedas y reemplazos más complejos, se pueden utilizar expresiones regulares en lugar de símbolos. Por ejemplo, si queremos reemplazar todos los números en un texto con una cadena vacía, podemos usar la expresión regular `#"[0-9]+"` junto con el comando `replace-all`:
 
-## Ver también
+```Clojure
+(replace-all "La fecha es 02/10/20" #"[0-9]+" "")
+```
 
-- [Documentación oficial de Clojure sobre buscar y reemplazar](https://clojure.org/reference/strings)
-- [Video tutorial de búsqueda y reemplazo en Clojure](https://www.youtube.com/watch?v=XqxFZJMXVbw)
-- [Artículo de blog sobre cómo buscar y reemplazar en Clojure](https://www.braveclojure.com/getting-started-clojure/)
+La salida de este comando sería "La fecha es //". También se pueden utilizar grupos de captura en las expresiones regulares para realizar reemplazos más específicos.
+
+##Ver también
+
+- [Documentación oficial de comandos de búsqueda y reemplazo en Clojure](https://clojure.org/guides/text_processing)
+- [Tutorial de programación en Clojure en español](https://www.tutorialspoint.com/clojure/index.htm)
+- [Repositorio de código de ejemplo en Clojure](https://github.com/clojure/clojurescript)

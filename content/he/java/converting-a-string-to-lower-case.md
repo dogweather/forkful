@@ -1,29 +1,56 @@
 ---
-title:    "Java: המרת מחרוזת לאותיות קטנות"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/converting-a-string-to-lower-case.md"
+title:                "Java: המרת מחרוזת לאותיות קטנות"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-Why - למה: בדיקת אופי הטקסט חשובה לכל תוכנת תכנות, והמרה של מחרוזת לאותיות קטנות היא חלק חשוב מכך. ניתן להשתמש בפונקציה זו למגוון מטרות, כגון השוואת טקסטים ועיבוד מידע.
+Hebrew Translation:
 
-How To - איך לעשות זאת: באמצעות הפונקציה toLowerCase() של Java ניתן להמיר מחרוזת לאותיות קטנות בקלות. כדי להשתמש בפונקציה זו, השתמשו בקוד הבא:
+## למה
+מדוע אדם ימלאך להמיר מחרוזת לאותיות קטנות?
+
+## כיצד לבצע זאת
+לדוגמה ופלט בתוך בלוקי קוד "```Java ... ```"
+
+כאן תוכלו למצוא כמה דרכים להמיר מחרוזת לאותיות קטנות בשפת ג'אווה:
 
 ```Java
-String str = "HELLO WORLD";
-String lowerCaseStr = str.toLowerCase();
-System.out.println(lowerCaseStr);
+// דרך ראשונה: להשתמש בפונקציית toLowerCase()
+String str = "ג'אווה";
+String strLower = str.toLowerCase();
+System.out.println(strLower); // פלט: ג'אווה
+
+// דרך שנייה: להשתמש בלולאת פוריצ'
+String str = "ג'אווה";
+StringBuilder strLower = new StringBuilder();
+for(int i=0; i<str.length(); i++){
+    char c = str.charAt(i);
+    if(Character.isUpperCase(c)){
+        c = Character.toLowerCase(c);
+    }
+    strLower.append(c);
+}
+System.out.println(strLower); // פלט: ג'אווה
+
+// דרך שלישית: להשתמש במתודה של String שממירה את התווים לקודי ASCII ולהוסיף 32 יחידות
+String str = "ג'אווה";
+char[] chars = str.toCharArray();
+for(int i=0; i<chars.length; i++){
+    if(chars[i] > 64 && chars[i] < 91){
+        chars[i] += 32;
+    }
+}
+str = String.valueOf(chars);
+System.out.println(str); // פלט: ג'אווה
 ```
 
-פלט: hello world
+## העומק המתמטי
+כאשר מופעלת המתודה toLowerCase() במחרוזת, הרכיבים שלה נמחקים ומאוחסנים מחדש בתור אותיות קטנות במערך תווים חדש. זה משפיע על זיכרון המחשב ועל ביצועי התוכנה, אך בכמה מקרים יכול להיות עדיף להשתמש באחת מן הדרכים הנ"ל שתוצר תוצאה דומה בצורה יעילה יותר.
 
-Deep Dive - לכיוון העומק: כדי להבין מדוע חשוב להמיר מחרוזת לאותיות קטנות, ניתן להתמקד בנקודה הבאה - מחרוזות שונות עם אותיות גדולות וקטנות יכולות להיות נחשבות להבדלים ביניהן. זה יכול לגרום לתוכנית שלכם לצאת לא נכונה, לריבוי קודים ולעומס של זמן ריצה.
-
-כשנעשה המרה לאותיות קטנות, החישובים יהיו ידידותיים יותר ונתונים יתקבלו בכבוד רב יותר. בנוסף, כאשר משווים שני טקסטים, מרמז מותאם למחרוזת זו לא תשיג שגיאות בגלל אותיות גדולות וקטנות מתועבות.
-
-#### ראו גם
-
-- [מסמך Java על פונקציות מרחב שם](https://docs.oracle.com/javase/tutorial/java/index.html)
-- [כיצד להשתמש בפונקציות מרחב שם ב-Java](https://www.geeksforgeeks.org/java/)
-- [הבדלים בין אותיות גדולות לקטנות בפונקציות מחרוזת](https://alvinalexander.com/blog/post/java/differences-between-upper-case-lower-case-strings-java/)
+## ראו גם
+- דרכים נוספות להפעיל פונקציית toLowerCase(): https://www.geeksforgeeks.org/converting-roman-numerals-decimal-lying-1-3999/
+- דרך העברת מחרוזות ל-ASCII בג'אווה: https://stackoverflow.com/questions/5509025/how-do-i-convert-a-string-to-ascii-in-java
+- פונקציות חשבון וסימנים קיצורי דרך של ה-ASCII: https://www.rapidtables.com/code/text/ascii-table.html

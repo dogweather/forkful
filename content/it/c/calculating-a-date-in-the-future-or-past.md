@@ -1,62 +1,58 @@
 ---
-title:    "C: Calcolare una data nel futuro o nel passato"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/calculating-a-date-in-the-future-or-past.md"
+title:                "C: Calcolare una data nel futuro o nel passato"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché Calcolare una Data nel Futuro o nel Passato
+## Perché
 
-In questo blog post, esploreremo come calcolare una data nel futuro o nel passato utilizzando il linguaggio di programmazione C. Potrebbe sembrare un'operazione banale, ma in realtà può essere molto utile in molte situazioni, come nella gestione di scadenze, nel calcolo del tempo trascorso o nel previsione di eventi futuri.
+Ci sono molte ragioni per cui potresti essere interessato a calcolare una data nel futuro o nel passato. Forse stai lavorando su un progetto che richiede il calcolo di scadenze o periodi di tempo specifici. Oppure, potresti essere semplicemente una persona curiosa e vuoi saperne di più sulle funzioni di data del linguaggio di programmazione C. In entrambi i casi, questo post è per te!
 
-# Come Fare
+## Come fare
 
-Per calcolare una data nel futuro o nel passato, è prima necessario avere un dato di partenza, cioè una data di riferimento. Questa può essere fornita dall'utente o può essere predefinita dal programma stesso. Successivamente, è necessario determinare il numero di giorni da aggiungere o sottrarre alla data di riferimento per ottenere la nuova data desiderata. Infine, utilizzando funzioni di calcolo date come `mktime` e `localtime`, è possibile ottenere la data definitiva.
-
-Vediamo un esempio pratico di come calcolare una data nel futuro.
+Per calcolare una data nel futuro o nel passato in C, è necessario utilizzare alcune funzioni di data predefinite, come "time.h". Vediamo un semplice esempio di come utilizzare queste funzioni per calcolare la data di un determinato numero di giorni nel futuro:
 
 ```
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-
-    // definiamo la data di riferimento
-    struct tm date = {0};
-    date.tm_mday = 7;
-    date.tm_mon = 10;
-    date.tm_year = 2021 - 1900;
-
-    // numero di giorni da aggiungere alla data di riferimento
-    int days = 30;
-
-    // calcoliamo la nuova data
-    mktime(&date);
-    date.tm_mday += days;
-    mktime(&date);
-
-    // stampiamo la nuova data
-    printf("La nuova data è: %d/%d/%d\n", date.tm_mday, date.tm_mon + 1, date.tm_year + 1900);
+    // Definiamo il numero di giorni nel futuro
+    int giorni = 30;
+    // Otteniamo la data attuale
+    time_t now = time(NULL);
+    // Aggiungiamo il numero di giorni e otteniamo la nuova data
+    now += giorni * 24 * 60 * 60;
+    // Convertiamo la data in una stringa leggibile
+    char* future_date = ctime(&now);
+    // Stampiamo la data ottenuta
+    printf("La data di oggi nel futuro di %d giorni è: %s", giorni, future_date);
 
     return 0;
 }
 ```
 
-**Output:**
+L'output di questo codice sarà:
 
 ```
-La nuova data è: 6/12/2021
+La data di oggi nel futuro di 30 giorni è: Tue Oct 12 17:42:53 2021
 ```
 
-# Approfondimento
+Puoi anche calcolare una data nel passato utilizzando lo stesso approccio, ma sottraendo invece il numero di giorni. Sperimenta con diversi valori e vedrai che il codice funziona correttamente.
 
-Possiamo notare che nella libreria `time.h` esistono diverse funzioni per la manipolazione di date, come `mktime` e `localtime`, che ci permettono di convertire una data da formato `struct tm` a formato `time_t` e viceversa.
+## Deep dive
 
-Inoltre, il calcolo delle date nel futuro o passato può essere reso più complesso aggiungendo ulteriori parametri, come ad esempio considerare anche gli anni bisestili o i fusi orari.
+Ora che hai una comprensione generale di come calcolare una data nel futuro o nel passato, diamo uno sguardo più da vicino alle funzioni che abbiamo utilizzato e come funzionano.
 
-# Vedi Anche
+La funzione "time.h" contiene una serie di funzioni utili per la gestione delle date e dei tempi. La funzione "time()" viene utilizzata per ottenere il numero di secondi trascorsi dal 1 ° gennaio 1970. Questa è chiamata "Epoch time" ed è un concetto importante nella gestione delle date e dei tempi nei sistemi informatici.
 
-- [Funzioni di data e ora in C](https://www.geeksforgeeks.org/different-date-time-related-structures-c/)
-- [Tutorial su come utilizzare la libreria <time.h>](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Calcolo del tempo trascorso in C](https://www.includehelp.com/c-time-library-programming/calculating-time-difference.aspx)
+La funzione "ctime()" viene utilizzata per convertire il numero di secondi in una stringa leggibile. Questa funzione è molto utile per stampare la data e l'orario sullo schermo in un formato comprensibile.
+
+## Vedere anche
+
+- [Documentazione ufficiale di C su time.h](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Approfondimento sull'Epoch time](https://en.wikipedia.org/wiki/Unix_time)
+- [Tutorial su come gestire le date e i tempi in C](https://www.codeproject.com/Articles/5851/Working-with-Dates-and-Times-using-C)

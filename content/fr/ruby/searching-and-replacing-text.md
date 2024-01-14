@@ -1,67 +1,53 @@
 ---
-title:    "Ruby: Recherche et remplacement de texte"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/searching-and-replacing-text.md"
+title:                "Ruby: Recherche et remplacement de texte"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Lorsque l'on écrit du code, il est souvent nécessaire de rechercher et remplacer du texte dans nos fichiers. Cela peut être pour corriger des erreurs, modifier des noms de variables ou encore pour effectuer des changements sur plusieurs lignes en une seule fois. Heureusement, le langage de programmation Ruby nous permet de le faire assez facilement grâce à ses fonctionnalités de traitement de texte.
+Il est souvent nécessaire de remplacer du texte dans un programme pour corriger des erreurs ou pour modifier du contenu. Utiliser la fonction de recherche et de remplacement en Ruby peut vous faire gagner du temps et vous aider à éviter des erreurs manuelles.
 
-## Comment Faire
+## Comment faire
 
-Supposons que nous ayons un fichier texte contenant plusieurs occurences du mot "hello" :
-```
-hello world
-hello Ruby
-hello programming
-```
-Pour remplacer toutes ces occurrences par "bonjour", nous pouvons utiliser la méthode `gsub` :
+Pour utiliser la fonction de recherche et de remplacement en Ruby, il vous suffit d'utiliser la méthode `gsub` (global substitution) sur une chaîne de caractères. Voici un exemple de code :
+
 ```Ruby
-texte = "hello world
-hello Ruby
-hello programming"
+texte = "Bonjour le monde!"
+texte.gsub!("monde", "Ruby")
 
-texte.gsub!("hello", "bonjour")
-
-puts texte 
+puts texte #=> Bonjour le Ruby!
 ```
-Cela produirait la sortie suivante :
-```
-bonjour world
-bonjour Ruby
-bonjour programming
-```
-Comme vous pouvez le voir, toutes les occurrences de "hello" ont été remplacées par "bonjour". La méthode `gsub` prend également en compte la casse, donc si vous voulez remplacer également les mots en majuscules, utilisez la méthode `gsub!` sans le point d'exclamation.
+Dans cet exemple, nous avons défini une variable `texte` avec une phrase contenant le mot "monde". En utilisant la méthode `gsub`, nous avons remplacé le mot "monde" par "Ruby". En exécutant ce code, nous obtenons la phrase modifiée "Bonjour le Ruby!".
 
-Pour remplacer du texte dans un fichier existant, vous pouvez utiliser la méthode `File.read`, qui lira le contenu du fichier et le stockera dans une variable, puis vous pouvez utiliser la méthode `gsub` pour remplacer le texte, et enfin enregistrer les modifications avec la méthode `File.write`.
+Vous pouvez également utiliser la méthode `gsub` avec des expressions régulières pour effectuer des remplacements plus complexes. Voici un autre exemple de code :
 
-## Deep Dive
-
-Même si la méthode `gsub` est très utile pour les remplacements simples de texte, il existe également des options plus avancées pour effectuer des recherches et remplacements plus spécifiques.
-
-Par exemple, nous pouvons utiliser les Regex (expressions régulières) pour chercher des motifs de texte et les remplacer. Par exemple, si nous voulons remplacer tous les nombres dans une chaîne de caractères par "0", nous pouvons utiliser la fonction `gsub` suivante :
 ```Ruby
-texte = "Il y a 3 chats et 5 chiens dans le parc"
+texte = "J'aime manger du fromage."
+texte.gsub!(/manger (.*) fromage/, 'manger du bon fromage')
 
-texte.gsub!(/\d+/, "0")
-
-puts texte
+puts texte #=> J'aime manger du bon fromage.
 ```
-Et la sortie serait :
+Dans cet exemple, nous avons utilisé une expression régulière pour cibler une partie spécifique de la phrase et la remplacer par une nouvelle phrase.
+
+## Plongée en profondeur
+
+La méthode `gsub` accepte également un bloc en tant que paramètre, ce qui vous permet de personnaliser encore plus votre recherche et votre remplacement de texte. Vous pouvez y accéder en utilisant `gsub!` avec un bloc comme ceci :
+
+```Ruby
+texte = "Il fait beau dehors."
+texte.gsub!("beau") { |match| match.upcase }
+
+puts texte #=> Il fait BEAU dehors.
 ```
-Il y a 0 chats et 0 chiens dans le parc
-```
-Nous pouvons également spécifier des options supplémentaires pour nos Regex, telles que les options de casse sensible/insensible.
 
-## Voir Aussi
+Dans cet exemple, nous avons utilisé le bloc pour mettre en majuscule le mot "beau" dans notre phrase. Vous pouvez également utiliser le bloc pour effectuer des modifications plus complexes, telles que la transformation d'un mot en une autre forme grammaticale.
 
-Si vous souhaitez en savoir plus sur la recherche et le remplacement de texte en Ruby, voici quelques ressources utiles :
+## Voir aussi
 
-- [La documentation officielle de la méthode `gsub'](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
-- [Un tutoriel sur l'utilisation de Regex en Ruby](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
-- [Un article sur les bonnes pratiques de recherche et remplacement en Ruby](https://www.codewithjason.com/ruby-search-replace-text-files/)
-
-Bon codage !
+- [Guide sur les méthodes de manipulation de chaînes en Ruby](https://www.rubyguides.com/ruby-tutorial/string-methods/)
+- [Documentation officielle de Ruby sur la méthode `gsub`](https://ruby-doc.org/core-2.7.3/String.html#method-i-gsub)
+- [Tutoriel sur les expressions régulières en Ruby](https://www.regular-expressions.info/ruby.html)

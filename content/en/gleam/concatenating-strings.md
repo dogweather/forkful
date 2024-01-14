@@ -1,55 +1,54 @@
 ---
-title:    "Gleam recipe: Concatenating strings"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/concatenating-strings.md"
+title:                "Gleam recipe: Concatenating strings"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-String concatenation is an essential task in any programming language. It allows us to combine multiple strings into one, making it easier to manipulate and use them in our programs. In the Gleam programming language, concatenating strings is a simple and straightforward process that can greatly enhance the readability and functionality of our code.
+String concatenation is a fundamental and commonly used operation in programming, especially when working with text data. It allows us to combine multiple strings into one, making it easier to manipulate and display data in a desired format. In this blog post, we will explore how to concatenate strings in the Gleam programming language.
 
 ## How To
-
-To concatenate strings in Gleam, we use the built-in `<>` operator. Let's take a look at a simple example:
+To concatenate strings in Gleam, we can use the `<>` operator or the `String.concat` function. Let's see some examples:
 
 ```Gleam
 let first_name = "John"
-let last_name = "Doe"
+let last_name = "Smith"
 
+// Using the <> operator
 let full_name = first_name <> " " <> last_name
+// Output: "John Smith"
 
-IO.println(full_name)
+// Using the String.concat function
+let full_name = String.concat([first_name, " ", last_name])
+// Output: "John Smith"
 ```
 
-In the code above, we define two string variables `first_name` and `last_name` and then concatenate them using the `<>` operator. Finally, we print out the full name by passing the `full_name` variable to the `IO.println` function. The output of this code would be: `John Doe`.
-
-We can also use the `<>` operator to concatenate more than two strings at once. Here's another example:
+We can also use string interpolation to concatenate strings with other data types, such as integers or booleans:
 
 ```Gleam
-let message = "Welcome" <> " " <> "to" <> " " <> "Gleam!"
+let age = 30
+let intro = "I am " <> age <> " years old."
+// Output: "I am 30 years old."
 
-IO.println(message)
+let married = true
+let status = "I am currently " <> if married { "married" } else { "single" }
+// Output: "I am currently married"
 ```
 
-This code will output: `Welcome to Gleam!`
+It's important to note that string concatenation in Gleam always creates a new string and does not mutate the original strings.
 
 ## Deep Dive
+Behind the scenes, string concatenation in Gleam is implemented using an efficient data structure known as a rope. A rope consists of small chunks of text that are linked together, allowing for fast concatenation of strings without the need for creating new copies of the entire string. This is especially useful when dealing with large amounts of text data.
 
-Under the hood, the `<>` operator in Gleam actually uses the `String.concat` function. This function takes in a list of strings as input and returns a single string that is the result of concatenating all the input strings. This means that we can also use the `String.concat` function directly to concatenate our strings. Here's the equivalent code using `String.concat`:
-
-```Gleam
-let first_name = "John"
-let last_name = "Doe"
-
-let full_name = String.concat(["John", " ", "Doe"])
-
-IO.println(full_name)
-```
-
-Both the `<>` operator and the `String.concat` function are efficient ways of concatenating strings in Gleam. However, using the `<>` operator can make our code more readable and easier to understand.
+In Gleam, strings are also represented as Unicode code points, allowing for robust handling of different character sets and languages. This ensures that string concatenation works seamlessly regardless of the language used.
 
 ## See Also
+For more information on strings and other data types in Gleam, check out the official documentation and tutorials:
+- [Gleam Documentation](https://gleam.run/documentation/)
+- [Getting Started with Gleam](https://gleam.run/getting-started/)
+- [Working with Strings in Gleam](https://gleam.run/fundamentals/strings/)
 
-If you want to learn more about string concatenation in Gleam, check out the official documentation [here](https://gleam.run/book/tour/strings.html#string-interpolation). You can also explore other functions related to string manipulation in Gleam such as `String.substring` and `String.join` to further enhance your coding skills.
+Happy coding with Gleam!

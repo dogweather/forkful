@@ -1,47 +1,56 @@
 ---
-title:    "Gleam: Imprimindo saída de depuração"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/printing-debug-output.md"
+title:                "Gleam: Imprimindo saída de depuração."
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Às vezes, quando estamos codificando em Gleam, precisamos verificar o que está acontecendo em nosso programa. Uma maneira simples de fazer isso é imprimir saídas de depuração no console. Isso pode nos ajudar a entender melhor o fluxo do programa e identificar possíveis erros.
+Você já se deparou com um bug no seu programa e passou horas tentando descobrir onde estava o problema? Ou talvez você simplesmente queira entender melhor o fluxo do seu código enquanto está desenvolvendo? Seja qual for o motivo, imprimir saídas de depuração é uma técnica útil para entender o comportamento do seu código e identificar possíveis erros.
 
 ## Como fazer
 
-Imprimir saídas de depuração em Gleam é bastante simples. Podemos usar a função `io.inspect` e passar o valor que desejamos imprimir como argumento. Por exemplo:
+A impressão de saídas de depuração no Gleam é bastante simples. Basta usar a função `debug!` com uma expressão ou valor como argumento dentro de um bloco de código `Gleam`:
 
 ```
-Gleam.program
-module Main
-
-import gleam/io
-import gleam/string
-
-pub fn main() {
-  let name = "Gleam"
-  io.inspect(name)
-  io.inspect(string.length(name))
-}
+Gleam> debug!(minha_variavel)
 ```
 
-Isso irá imprimir o valor da variável `name` e seu comprimento no console, que no caso seria "Gleam" e 5, respectivamente.
-
-## Profundando no assunto
-
-Ao imprimir saídas de depuração, também podemos utilizar formatação para tornar a saída mais legível e informativa. Podemos especificar o formato desejado como o segundo argumento da função `io.inspect`, usando a sintaxe `%<format>`. Por exemplo:
+Isso imprimirá o valor da variável no console, permitindo que você visualize seu valor atual durante a execução do código. Você também pode imprimir várias variáveis de uma vez, separando-as por vírgula:
 
 ```
-io.inspect(name, %{"O nome é %{name} e possui %{length} letras"})
+Gleam> debug!(primeira_variavel, segunda_variavel)
 ```
 
-Isso resultaria na seguinte saída: "O nome é Gleam e possui 5 letras". Dessa forma, podemos ter uma visão mais detalhada do valor que estamos inspecionando.
+Além disso, você também pode imprimir mensagens adicionais para facilitar a compreensão da saída:
+
+```
+Gleam> debug!("O valor da primeira variável é", primeira_variavel)
+```
+
+## Profundidade
+
+Além de simplesmente imprimir valores e mensagens, a função `debug!` também permite que você acesse informações mais detalhadas sobre as variáveis e o estado do programa. Por exemplo, você pode imprimir o tipo de uma variável usando a função `type_of`:
+
+```
+Gleam> debug!(type_of(minha_variavel))
+```
+
+Você também pode imprimir o valor de uma variável em um determinado ponto de um padrão de combinação. Por exemplo:
+
+```
+Gleam> debug!(match minha_variavel {
+  True -> "A variável é verdadeira"
+  False -> "A variável é falsa"
+})
+```
+
+A impressão de saídas de depuração é uma técnica poderosa que pode ser usada para melhorar seu processo de desenvolvimento e tornar a depuração de erros mais eficiente.
 
 ## Veja também
 
-- Documentação oficial do Gleam sobre o uso de saídas de depuração: https://gleam.run/docs/getting-started/printing-debug-output
-- Artigo sobre saídas de depuração em Gleam do blog "Borja's Playground": https://www.borjasalguero.com/learn-gleam-print-debug-output 
-- Exemplo de código do uso de saídas de depuração no repositório oficial do Gleam: https://github.com/gleam-lang/gleam/blob/main/examples/debug_output.gleam
+- Documentação oficial do Gleam sobre saídas de depuração: https://gleam.run/documentation/guides/debug
+- Vídeo do Devs com Gleam: Depuração: https://www.youtube.com/watch?v=rJ11LkAKyE0

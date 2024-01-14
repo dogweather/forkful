@@ -1,44 +1,47 @@
 ---
-title:    "Elixir: Kahden päivämäärän vertailu"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/comparing-two-dates.md"
+title:                "Elixir: Kahden päivämäärän vertaaminen"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahden päivämäärän eroa?
+# Miksi vertailla kahta päivämäärää?
+Vertaileminen on tärkeä osa ohjelmointia ja voi auttaa meitä ymmärtämään tapahtumien järjestystä tai määrittämään tietyn ajanjakson kulkemista. Käyttäen Elixirin Date-moodulia, voimme helposti vertailla kahta päivämäärää ja saada selville niiden suhteen toisiinsa. Tässä blogikirjoituksessa opimme miten se tehdään.
 
-Vertailemalla kahta päivämäärää Elixir-ohjelmoinnin avulla, voit tarkastella niiden välillä olevaa aikaväliä ja laskea esimerkiksi kuinka monta päivää tai tuntia on kulunut.
+## Miten se tehdään
+MySQL-tietokannasta haetaan kaksi päivämäärää ja tallennetaan ne taulukkoon "dates". Sitten käytämme Elixirin Date-moodulia vertailemaan näitä kahta päivämäärää.
 
-## Kuinka tehdä vertailu
+```
+# Elixir-koodiesimerkki:
+dates = [date1: ~D[2021-01-01], date2: ~D[2021-03-15]]
+date1_after_date2 = Date.compare(dates[:date1], dates[:date2])
+date2_after_date1 = Date.compare(dates[:date2], dates[:date1])
 
-Vertaillessamme kahta päivämäärää Elixir-ohjelmoinnissa, käytämme DateTime-moduulia ja siinä olevia funktioita. Alla on esimerkki siitä, kuinka voit verrata kahta päivämäärää ja tarkastella aikaväliä niiden välillä.
-
-```Elixir
-date1 = DateTime.from_naive!("2021-01-01")
-date2 = DateTime.from_naive!("2021-03-01")
-diff = DateTime.diff(date2, date1)
-IO.puts "Aikaväli kahden päivämäärän välillä on #{diff.days} päivää."
+# Tulos:
+date1_after_date2 = :greater
+date2_after_date1 = :less
 ```
 
-Tämän koodinpätkän tulosteena saamme:
+Voit myös käyttää Date.compare-tietokantatoimintoa suoraan kahden tietokantapäivämäärän välillä:
 
-```Elixir
-Aikaväli kahden päivämäärän välillä on 59 päivää.
+```
+# Elixir-koodiesimerkki:
+date1 = Ecto.DateTime.cast(timestamp1)
+date2 = Ecto.DateTime.cast(timestamp2)
+comparison = Date.compare(date1, date2)
+
+# Tulos:
+comparison = :equal
 ```
 
-## Syventävä tieto vertailusta
+## Syvemmälle aiheeseen
+Elixirin Date-mooduli sisältää useita vertailuun liittyviä toimintoja. Voit käyttää Date.same?-toimintoa selvittääksesi ovatko kaksi päivämäärää samat ja Date.between?-toimintoa selvittääksesi, että onko tietty päivämäärä kahden annetun päivämäärän välissä. Voit myös käyttää Date.before?- ja Date.after?-toimintoja selvittääksesi mikä päivämäärä sijoittuu aikaisemmin tai myöhemmin kahdesta annetusta päivämäärästä.
 
-Elixirin DateTime-moduulissa on monia hyödyllisiä funktioita, joista voi olla hyötyä kahden päivämäärän vertailussa. Voit esimerkiksi tarkastella päivämäärien eroa sekunteina, minuutteina tai jopa vuosina. Voit myös lisätä tai vähentää päivämääriin aikaa ja tarkastella uutta päivämäärää.
-
-See Also:
-
-- [Elixir DateTime Documentation](https://hexdocs.pm/elixir/DateTime.html)
-- [Calculating the difference between two dates in Elixir](https://elixirway.io/dates-and-times/calculating-the-difference-between-two-dates.html)
-- [Using Elixir's DateTime Module](https://medium.com/@bimgates/using-elixirs-date-time-module-5b409d077e2d)
+Voit myös käyttää Date.diff-toimintoa saadaksesi tiedon kahden päivämäärän välisestä erosta päivinä, kuukausissa tai vuosissa. Tarkempien tietojen saamiseksi voit käyttää Date.diff-tietokantatoimintoa, joka palauttaa eron tietokantamuodossa.
 
 ## Katso myös
-
-- [Elixir DateTime Dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
-- [Kahden päivämäärän eron laskeminen Elixirissä](https://elixirway.io/dates-and-times/calculating-the-difference-between-two-dates.html)
-- [Elixirin DateTime-moduulin käyttö](https://medium.com/@bimgates/using-elixirs-date-time-module-5b409d077e2d)
+- Elixirin Date-moodulin dokumentaatio: https://hexdocs.pm/elixir/Date.html
+- Elixirin vertailutoiminnot: https://hexdocs.pm/elixir/master/comparisons.html
+- Elixir School: Elixirin opiskeluun tarkoitettu verkkosivusto: https://elixirschool.com/fi/

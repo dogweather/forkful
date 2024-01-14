@@ -1,39 +1,51 @@
 ---
-title:    "C++: Slette tegn som matcher et mønster"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/deleting-characters-matching-a-pattern.md"
+title:                "C++: Sletting av tegn som matcher et mønster"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Noen ganger kan det være nødvendig å slette bestemte tegn fra en tekststreng i et C++-program. Dette kan være for å fjerne uønskede tegn eller for å gjøre teksten mer lesbar og strukturert. Uansett hva grunnen måtte være, så kan det å slette tegn som matcher et mønster være en nyttig teknikk i programmering.
+Det er mange situasjoner i programmering hvor det kan være nødvendig å slette karakterer i en tekststreng som matcher et bestemt mønster. Dette kan være for å filtrere ut uønsket informasjon, eller for å formatere tekst på en spesiell måte. I denne bloggposten skal vi se nærmere på hvordan man kan slette karakterer som matcher et bestemt mønster i C++.
 
-## Hvordan
-For å slette tegn som matcher et mønster i C++, kan man bruke funksjonen `std::regex_replace`. Denne funksjonen tar inn tre parametere: tekststrengen man ønsker å endre, mønsteret som tegnene skal matches mot og hva de skal erstattes med. Her er et eksempel på hvordan man kan bruke denne funksjonen:
+## Slik gjør du det
+For å slette karakterer som matcher et mønster i en tekststreng, kan man bruke C++ funksjonen `erase` sammen med funksjonen `find_first_of`. Dette lar oss søke gjennom tekststrengen og slette alle karakterer som matcher et gitt sett av karakterer.
 
 ```C++
-#include <iostream>
-#include <string>
-#include <regex>
+// Først definerer vi en tekststreng og mønsteret vi ønsker å matche
+std::string tekst = "Hei, dette er en tekststreng!";
+std::string mønster = "aeiou"; // Denne gir oss et sett av vokaler
 
-int main() {
-  std::string tekst = "Jeg liker å spise frukt, men ikke epler";
-  std::regex mønster("frukt|epler");
-  std::string resultat = std::regex_replace(tekst, mønster, "grønnsaker");
-  std::cout << resultat;
-  // Output: Jeg liker å spise grønnsaker, men ikke grønnsaker
-  return 0;
+// Nå iterer vi gjennom tekststrengen og sjekker om hvert tegn matcher mønsteret vårt
+for(size_t i = 0; i < tekst.length(); i++){
+    if(mønster.find_first_of(tekst[i]) != std::string::npos){
+        // Hvis tegnet matcher mønsteret, sletter vi det ved å bruke erase funksjonen
+        tekst.erase(i, 1);
+        i--; // Vi må også gå ett steg tilbake for å ikke hoppe over neste tegn
+    }
 }
+
+// Til slutt skriver vi ut den endrede tekststrengen
+std::cout << tekst << std::endl;
 ```
 
-I dette eksempelet vil både "frukt" og "epler" bli erstattet med "grønnsaker", selv om de opptrer på forskjellige steder i tekststrengen.
+Kjøringen av denne koden vil gi følgende output:
+
+```
+H, dtt r n txtstrng!
+```
+
+Som du kan se, er alle vokalene blitt slettet fra tekststrengen.
 
 ## Dypdykk
-Det er mange forskjellige måter å bruke `std::regex_replace` på, avhengig av hvilke mønstre man ønsker å matche og hvordan man ønsker å erstatte dem. Det er også mulig å bruke såkalte "regular expressions" i mønsteret, som gjør det mulig å matche mer komplekse mønstre.
+I eksempelet ovenfor brukte vi `std::string` og `find_first_of` funksjonen fra C++ standard biblioteket. Men det finnes også andre måter å slette karakterer som matcher et mønster i C++. For eksempel kan man bruke regular expressions fra `std::regex` biblioteket, eller man kan implementere sin egen funksjon for å søke og slette karakterer.
 
-Det finnes også andre funksjoner i C++ som kan brukes til å slette tegn som matcher et mønster, som for eksempel `std::replace` og `std::remove_if`. Disse funksjonene kan være nyttige hvis man ønsker å slette et enkelt tegn eller enkelttegn på en bestemt plassering i tekststrengen.
+Det er også viktig å huske at denne metoden vil slette alle forekomster av karakterene som matcher mønsteret, og ikke bare de første. Derfor bør man være forsiktig med hvilke mønstre man bruker for å unngå utilsiktede endringer i tekststrengen.
 
-## Se Også
-- [Cppreference - std::regex_replace](https://en.cppreference.com/w/cpp/regex/regex_replace)
-- [GeeksforGeeks - std::regex_replace](https://www.geeksforgeeks.org/stdregex_replace-in-cpp/)
+## Se også
+- [C++ string::erase referanse](https://www.cplusplus.com/reference/string/string/erase/)
+- [C++ string::find_first_of referanse](https://www.cplusplus.com/reference/string/string/find_first_of/)
+- [C++ regular expressions tutorial (engelsk)](https://www.regular-expressions.info/cpp.html)
+- [C++ regex referanse (engelsk)](https://www.cplusplus.com/reference/regex/)

@@ -1,64 +1,54 @@
 ---
-title:    "Elixir: Commencer un nouveau projet"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/starting-a-new-project.md"
+title:                "Elixir: Lancer un nouveau projet"
+programming_language: "Elixir"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous êtes-vous déjà demandé ce qui fait d'Elixir un langage de programmation aussi populaire et en demande ? Ou peut-être vous êtes-vous retrouvé à vouloir commencer un nouveau projet en utilisant Elixir mais vous ne savez pas par où commencer ? Dans cet article, nous allons explorer pourquoi vous devriez envisager de démarrer un nouveau projet en utilisant Elixir et comment le faire.
+Il y a de nombreuses raisons pour lesquelles quelqu'un pourrait vouloir se lancer dans un nouveau projet de programmation en Elixir. Peut-être que vous cherchez à apprendre un nouveau langage de programmation ou à étendre vos compétences en programmation fonctionnelle. Ou peut-être que vous êtes simplement attiré par toutes les fonctionnalités intéressantes et dynamiques qu'Elixir a à offrir. Quelle que soit votre motivation, vous ne serez pas déçu d'explorer le monde de la programmation en Elixir.
 
 ## Comment faire
 
-Pour commencer, il est important de noter que Elixir est un langage open-source basé sur la machine virtuelle Erlang. L'un de ses avantages est qu'il est fortement centré sur la programmation fonctionnelle, ce qui signifie que ses fonctionnalités principales renforcent la capacité à créer des applications hautement extensibles et résistantes aux erreurs.
+Pour commencer votre nouveau projet en Elixir, suivez ces étapes simples :
 
-Pour créer un nouveau projet en utilisant Elixir, il suffit de suivre quelques étapes simples :
+```Elixir
+# Créer un nouveau fichier de projet
+mix new mon_projet
 
+# Entrer dans le dossier du projet
+cd mon_projet
+
+# Ouvrir le fichier d'application principal en utilisant Atom par exemple
+atom lib/mon_projet.ex
 ```
-Elixir.new("nom_du_projet")
-cd nom_du_projet
-mix"deps.get"
-mix"compile"
-```
 
-Une fois que ces étapes sont terminées, votre projet est prêt à être codé !
+Maintenant que vous avez créé votre projet, il est temps d'écrire votre premier code en Elixir. Voici un exemple de fonction qui prend en compte un nombre et retourne son double :
 
-Pour illustrer cela, voici un exemple de code d'une simple fonction Elixir qui additionne deux nombres et renvoie le résultat :
-
-```
-defmodule Addition do
-  def add(a, b) do
-    a + b
+```Elixir
+defmodule MonProjet do
+  def double(n) do
+    n * 2
   end
 end
 
-result = Addition.add(2, 3)
-IO.puts("Le résultat est :", result)
+MonProjet.double(5)
+
+# Output : 10
 ```
 
-La sortie de ce code serait :
+Vous pouvez également utiliser le mode interactif Elixir (en entrant la commande `iex` dans votre terminal) pour expérimenter avec du code en temps réel.
 
-```
-Le résultat est : 5
-```
+## Plongée en profondeur
 
-Vous pouvez également utiliser Elixir pour créer des sites Web dynamiques en utilisant le framework Phoenix. C'est un excellent moyen d'explorer et de se familiariser avec Elixir en construisant des applications du monde réel.
-
-## Deep Dive
-
-Maintenant que vous savez comment démarrer un nouveau projet en utilisant Elixir, plongeons dans les détails. L'une des principales raisons pour lesquelles Elixir est un choix évident pour un nouveau projet est sa scalabilité. En utilisant le modèle de programmation acteur, Elixir offre un traitement parallèle efficace qui peut gérer un grand nombre de connexions simultanées.
-
-De plus, la communauté Elixir est active et en constante croissance, ce qui signifie qu'il y a toujours de nouvelles bibliothèques et ressources disponibles pour vous aider avec votre projet. Avec un écosystème aussi dynamique, vous pouvez être sûr d'avoir un soutien et des mises à jour régulières pour votre application.
+Lorsque vous démarrez un nouveau projet en Elixir, il est important de comprendre quelques concepts clés tels que les modules, les fonctions, les types de données et les structures de contrôle. Vous devrez également apprendre à utiliser les nombreuses bibliothèques et frameworks disponibles pour Elixir, tels que Phoenix pour le développement d'applications web. Mais ne vous inquiétez pas, il y a une abondance de ressources en ligne pour vous aider à apprendre et à maîtriser Elixir.
 
 ## Voir aussi
 
-Si vous êtes intéressé à apprendre plus sur Elixir et à démarrer un nouveau projet, voici quelques ressources utiles à consulter :
-
-- [Site officiel Elixir](https://elixir-lang.org/)
-- [Documentation Elixir](https://elixir-lang.org/getting-started/introduction.html)
-- [Phoenix Framework](https://www.phoenixframework.org/)
-- [Awesome Elixir](https://awesomeelixir.com/)
-
-Avec ces informations, vous êtes désormais prêt à vous lancer et à commencer à construire avec Elixir. Bonne programmation !
+- [Site officiel d'Elixir](https://elixir-lang.org/)
+- [Documentation Elixir](https://hexdocs.pm/elixir/)
+- [Codecademy : Apprenez Elixir](https://www.codecademy.com/learn/learn-elixir)
+- [Elixir Forum (Forum de discussion sur Elixir)](https://elixirforum.com/)

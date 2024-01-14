@@ -1,52 +1,59 @@
 ---
-title:    "Kotlin: Ricerca e sostituzione di testo"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/searching-and-replacing-text.md"
+title:                "Kotlin: Ricerca e sostituzione di testo."
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Le funzioni di ricerca e sostituzione del testo sono fondamentali per un efficiente processo di programmazione e debugging. Grazie alla loro semplicità e flessibilità, sono uno strumento indispensabile per gestire grandi quantità di codice.
+Molti sviluppatori saranno d'accordo sul fatto che il testo è una parte fondamentale di qualsiasi programma. Ciò significa che, a volte, può essere necessario cercare e sostituire parti di un testo. Fortunatamente, Kotlin fornisce delle funzionalità che rendono questo processo semplice e veloce.
 
 ## Come Fare
 
-Per utilizzare la funzione di ricerca e sostituzione del testo in Kotlin, è possibile utilizzare il metodo `replace` di una stringa:
+Per cercare e sostituire un testo in Kotlin, puoi utilizzare il metodo `replace()` ed il metodo `replaceAll()`. Il metodo `replace()` sostituisce solo la prima occorrenza della stringa, mentre `replaceAll()` sostituisce tutte le occorrenze. Vediamo un esempio:
 
+```Kotlin
+val text = "Questo è un testo di esempio."
+val nuovoTesto = text.replace("testo", "codice")
+val nuovoTesto2 = text.replaceAll("testo", "codice")
+
+println(nuovoTesto) // Output: Questo è un codice di esempio.
+println(nuovoTesto2) // Output: Questo è un codice di esempio.
 ```
-val stringa = "Ciao, mi chiamo Maria"
-val nuovaStringa = stringa.replace("Maria", "Alessia")
-println(nuovaStringa)
 
-// Output: Ciao, mi chiamo Alessia
+Come puoi vedere, il metodo `replace()` ha sostituito solo la prima occorrenza della parola "testo", mentre il metodo `replaceAll()` ha sostituito tutte le occorrenze.
+
+Un'altra opzione è utilizzare l'espressione regolare `Regex` per eseguire una ricerca più avanzata e sostituire il testo. Vediamo un esempio:
+
+```Kotlin
+val text = "Questo è un testo di esempio 123."
+val nuovoTesto = text.replace(Regex("[0-9]"), "X")
+
+println(nuovoTesto) // Output: Questo è un testo di esempio XXX.
 ```
 
-In questo esempio, la stringa originale viene sostituita con la nuova stringa contenente il nome "Alessia". Per effettuare una ricerca non sensibile al caso, è possibile utilizzare il metodo `replace`, specificando il parametro `ignoreCase` come `true`:
-
-```
-val stringa = "Ciao, mi chiamo Maria"
-val nuovaStringa = stringa.replace("maria", "Alessia", true)
-println(nuovaStringa)
-
-// Output: Ciao, mi chiamo Alessia
-```
+L'espressione regolare `[0-9]` indica di cercare tutte le cifre da 0 a 9 e sostituirle con la lettera "X".
 
 ## Approfondimento
 
-La funzione di ricerca e sostituzione del testo offre anche la possibilità di utilizzare espressioni regolari per effettuare sostituzioni più complesse. Ad esempio, è possibile utilizzare il metodo `replaceAll` per sostituire tutte le occorrenze di una particolare espressione regolare all'interno di una stringa:
+Kotlin fornisce anche altre funzioni utili per la ricerca e la sostituzione di testo, come ad esempio `replaceRange()` per sostituire solo una parte specifica di una stringa o `buildString()` per costruire una nuova stringa durante il processo di sostituzione.
 
+Inoltre, è possibile utilizzare `StringTemplate` per eseguire sostituzioni di variabili all'interno di una stringa. Ad esempio:
+
+```Kotlin
+val nome = "Mario"
+val age = 30
+
+val profilo = "Il mio nome è \${nome} e ho \${age} anni."
+
+println(profilo) // Output: Il mio nome è Mario e ho 30 anni.
 ```
-val stringa = "Lorem ipsum dolor sit amet"
-val nuovaStringa = stringa.replaceAll("[aeiou]", "a")
-println(nuovaStringa)
-
-// Output: Laram apsam dalaram sat amat
-```
-
-In questo esempio, ogni vocale viene sostituita con la lettera "a". Per maggiori informazioni sulle espressioni regolari e su tutte le possibilità offerte dalla funzione di ricerca e sostituzione del testo di Kotlin, si consiglia di consultare la documentazione ufficiale.
 
 ## Vedi Anche
 
-- [Documentazione ufficiale Kotlin su `replace`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- [RegexOne - Guida alle espressioni regolari](https://regexone.com/)
+- [Documentazione ufficiale su Kotlin per la sostituzione di testo](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Tutorial su espressioni regolari in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm)
+- [Esempi pratici di utilizzo di StringTemplate in Kotlin](https://try.kotlinlang.org/#/Examples/Strings/String%20Templates/String%20Templates.kt)

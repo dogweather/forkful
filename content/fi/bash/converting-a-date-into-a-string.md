@@ -1,50 +1,34 @@
 ---
-title:    "Bash: Päivämäärän muuntaminen merkkijonoksi"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/converting-a-date-into-a-string.md"
+title:                "Bash: Muuntaminen päivämääräksi merkkijonona"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-#"## Miksi"
+## Miksi
 
-Tervetuloa blogiimme, jossa kerromme kuinka muuttaa päivämäärä merkkijonoksi käyttäen Bash-ohjelmointia. Tässä artikkelissa käymme läpi, miksi tämä prosessi olisi hyödyllinen ja annamme käytännön esimerkkejä sen toteuttamiseen.
+Harkitset ehkä päivämäärän muuttamista merkkijonoksi Bash-ohjelmointikielessä, koska haluat tulostaa päivämäärän lukijalle ymmärrettävässä muodossa. Päivämäärän muuttaminen merkkijonoksi voi myös olla tarpeellista päivämäärän käsittelyssä osana isompia Skriptejä tai sovelluksia.
 
-#"## Miten tehdä"
+## Miten
 
-Muuttaminen päivämäärä merkkijonoksi voi olla hyödyllistä monissa ohjelmointiprojekteissa. Se voi auttaa visualisoimaan päivämääriä selkeämmin, helpottaa tiedostojen nimeämistä ja tehdä päivämäärän käsittelemisestä yleisesti ottaen helpompaa. Alla esittelemme, kuinka voit tehdä tämän Bash-ohjelmointikielellä käyttämällä muutamia käteviä komentoja.
+Voit helposti muuttaa päivämäärän merkkijonoksi Bashissa käyttämällä `date` -komennon `+%Y%m%d` -muotoilua. Seuraavassa on yksi esimerkki:
 
 ```Bash
-# Asetetaan päivämäärä muuttujaan
-date=2021-08-15
-
-# Muutetaan päivämäärä merkkijonoksi käyttämällä "date" komentoa
-string_date=$(date -d $date +"%d/%m/%Y")
-
-# Tulostetaan muutettu merkkijono
-echo $string_date
-
+tanaan=$( date +%Y%m%d )
+echo $tanaan # tulostaa esimerkiksi "20201127"
 ```
 
-Tämä esimerkki muuntaa päivämäärän formaattiin "päivä/kuukausi/vuosi" ja tulostaa sen terminaaliin. Voit muokata komentoja, jotta ne vastaavat omaa tarvettasi. Esimerkiksi voit muuttaa päivämäärän formaattia tai lisätä siihen ajan.
+Jos haluat tarkempaa muotoilua, voit käyttää myös muita `date` -komennon vaihtoehtoja, kuten `+%d.%m.%Y`, joka tulostaa päivämäärän muodossa "27.11.2020". Voit myös muuttaa muuttujan, johon päivämäärä tallennetaan, nimeä ja käyttää sitä toistamiseen myöhemmin skriptissä.
 
-#"## Syvemmälle"
+## Syvällinen tutkimus
 
-Kun muutat päivämäärän merkkijonoksi Bashissa, käytät todennäköisesti "date" komentoa ja sen avulla saatavilla olevia muotoilumerkkejä. Voit esimerkiksi muuttaa päivämäärää käyttäen "d" merkkiä, jota seuraa merkkijono, joka määrittää halutun formaatin. Alla on muutamia esimerkkejä näistä merkkijonoista ja niiden tulostamista formaateista:
+Päivämäärää käsitellessä on tärkeää muistaa, että se tallentaa nykyisen päivämäärän ja ajan, kun se suoritetaan. Jos haluat tallentaa tulevan tai menneen päivämäärän, sinun on käytettävä muita vaihtoehtoja, kuten `--date` -vaihtoehtoa.
 
-- %a: päivän nimi lyhyessä muodossa (esim. ma, ti)
-- %A: päivän nimi pitkässä muodossa (esim. maanantai, tiistai)
-- %b: kuukauden nimi lyhyessä muodossa (esim. tammi, helmi)
-- %B: kauden nimi pitkässä muodossa (esim. tammikuu, helmikuu)
-- %m: kuukauden numero kahdella numerolla (esim. 08)
-- %d: päivämäärän numero kahdella numerolla (esim. 15)
-- %Y: vuosiluku neljällä numerolla (esim. 2021)
-- %T: aika 24-tuntisena kelloaikana (esim. 15:30:00)
+Voit myös muotoilla päivämäärän haluamallasi tavalla vaihtamalla `%Y%m%d` -osan muotoilua vastaavaan muotoiluun. Jokainen merkki tai yhdistelmä edustaa eri osaa päivämäärästä ja ajan kohdalla voit käyttää myös `+%H%M%S` -vaihtoehtoa.
 
-Voit käyttää näitä merkkejä yhdistämällä ne haluamallasi tavalla saadaksesi halutun muodon.
+## Katso myös
 
-#"## Katso myös"
-
-- Bashin "date" komennon dokumentaatio: https://www.gnu.org/software/coreutils/manual/html_node/Date-conversion-specifiers.html
-- Toisenlaisia Bashin päivämäärän muuntoesimerkkejä: https://bash.cyberciti.biz/guide/Relational_operators
-- Bashin Python-yhteysohjelman avulla voit tehdä päivämäärän muunto-operaatioita: https://github.com/eliben/code-for-blog/blob/master/2018/python-bash-bench/pipe_cmd_to_py_bench.sh
+- [`date` -komennon virallinen dokumentaatio](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Bash Scripting Tutorial](https://linuxhint.com/bash_scripting_tutorial_beginners/)

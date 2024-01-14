@@ -1,50 +1,49 @@
 ---
-title:    "Clojure: Die Länge eines Strings ermitteln"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/finding-the-length-of-a-string.md"
+title:                "Clojure: Die Länge eines Strings finden."
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Finden der Länge eines Strings ist eine grundlegende Fähigkeit beim Programmieren. Es ermöglicht uns, die Größe einer Zeichenkette zu bestimmen und sie je nach Bedarf zu verarbeiten.
+Das Finden der Länge eines Strings ist eine grundlegende Aufgabe in der Programmierung. Es ist besonders hilfreich, wenn man mit Texten arbeitet, da man oft wissen muss, wie viele Zeichen ein String enthält. In diesem Blog-Beitrag werden wir untersuchen, wie man die Länge eines Strings in Clojure berechnen kann.
 
-# Wie geht man vor?
+## Wie man String Länge in Clojure findet
 
-Das Finden der Länge eines Strings in Clojure ist einfach und unkompliziert. Hier sind ein paar Beispiele, die dir zeigen, wie du das machen kannst:
-
-```Clojure
-; Definiere einen String
-(def my-string "Hallo Welt")
-
-; Verwende die Funktion `count` um die Länge des Strings zu finden
-(count my-string)
-; Output: 10
-
-; Kombiniere `count` mit `format`, um eine Nachricht mit der Länge des Strings zu erstellen
-(format "Die Länge des Strings beträgt %d" (count my-string))
-; Output: "Die Länge des Strings beträgt 10"
-```
-
-# Tiefer tauchen
-
-Bei der Verwendung von `count` sollte beachtet werden, dass sie auch für andere Datentypen wie Vektoren und Maps funktioniert. Außerdem gibt `count` die Anzahl der Elemente in einem String oder einer Datenstruktur zurück, und nicht die Anzahl der tatsächlichen Buchstaben. Dies liegt daran, dass in Clojure Strings als Sequenzen von einzelnen Zeichen behandelt werden.
-
-Hier sind ein paar weitere Beispiele, um das Konzept der Länge in Clojure besser zu verstehen:
+Eine Möglichkeit, die Länge eines Strings in Clojure zu finden, ist die Verwendung der Funktion `count`. Diese Funktion zählt die Anzahl der Elemente in einem Collection-Datentyp. Da Strings in Clojure als Collection von Zeichen behandelt werden, können wir die `count`-Funktion verwenden, um die Länge eines Strings zu erhalten. Hier ist ein Beispiel:
 
 ```Clojure
-(count ["Hello" "World"])
-; Output: 2
-
-(count {:a 1 :b 2 :c 3})
-; Output: 3
+(def string "Guten Tag")
+(count string)
 ```
 
-Es ist auch wichtig zu beachten, dass `count` eine sehr effiziente Funktion ist und schnell auf große Datenstrukturen angewendet werden kann.
+Das Ergebnis wäre `9`, da der String "Guten Tag" 9 Zeichen hat. Wir können auch direkt einen String als Argument an die `count`-Funktion übergeben:
 
-# Siehe auch
+```Clojure
+(count "Hallo")
+```
 
-- Offizielle Dokumentation von Clojure zu `count`: https://clojuredocs.org/clojure.core/count
-- Clojure String-Funktionen: https://clojuredocs.org/quickref
-- Eine Liste von hilfreichen Funktionen zum Verarbeiten von Strings in Clojure: https://www.lispcast.com/8-handy-clojure-functions-for-string-manipulation
+Das gibt ebenfalls das Ergebnis `5` zurück.
+
+## Tief eintauchen
+
+Es ist wichtig zu beachten, dass die `count`-Funktion nicht nur für Strings verwendet werden kann, sondern für alle Collection-Datentypen. Das bedeutet, dass wir nicht nur die Länge von Strings, sondern auch von Vektoren, Listen oder Maps finden können.
+
+Wir können auch die `clojure.string` Bibliothek verwenden, um die Länge eines Strings zu berechnen. Diese Bibliothek enthält die Funktion `length`, die ähnlich wie `count` funktioniert. Hier ist ein Beispiel der Verwendung von `length`:
+
+```Clojure
+(require '[clojure.string :as str])
+(def string "Hallo")
+(str/length string)
+```
+
+Das Ergebnis wäre `5`. Eine andere hilfreiche Funktion in der `clojure.string` Bibliothek ist `trim`, die es uns ermöglicht, Leerzeichen am Anfang und Ende eines Strings zu entfernen, bevor wir die Länge berechnen.
+
+## Siehe auch
+
+- [Dokumentation für `count` Funktion](https://clojuredocs.org/clojure.core/count)
+- [Dokumentation für `clojure.string` Bibliothek](https://clojuredocs.org/clojure.string)
+- [Weitere Ressourcen für Clojure Programmierer (auf Deutsch)](https://www.clojure.org/resources)

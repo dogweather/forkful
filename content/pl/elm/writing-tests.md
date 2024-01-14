@@ -1,62 +1,44 @@
 ---
-title:    "Elm: Pisanie testów"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-tests.md"
+title:                "Elm: Pisanie testów"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie testów jest ważne?
+## Dlaczego pisać testy w Elm?
 
-Pisanie testów jest kluczowym elementem w procesie tworzenia aplikacji w Elm. Poprzez zapewnienie pokrycia testami, możemy mieć pewność, że nasz kod działa zgodnie z oczekiwaniami w każdej sytuacji. Dzięki temu unikamy błędów w trakcie działania aplikacji i zapewniając jej stabilność.
+Pisanie testów jest nieodłączną częścią procesu programowania w Elm. Dzięki testom możesz upewnić się, że Twoja aplikacja działa zgodnie z oczekiwaniami i uniknąć błędów. Jest to szczególnie ważne w przypadku większych projektów, gdzie łatwiej jest zapomnieć o pewnych detaliach lub niezamierzenie wprowadzić błędy w kodzie.
 
 ## Jak pisać testy w Elm?
 
-Aby rozpocząć pisanie testów w Elm, musimy najpierw zainstalować narzędzie elm-test. Następnie rozbudujemy naszą aplikację przy użyciu modułu Test i będziemy mogli pisać testy, które będą automatycznie uruchamiane wraz z naszą aplikacją. Poniższy przykład pokazuje, jak napisać test dla funkcji dodającej:
+Pierwszym krokiem do napisania testów w Elm jest importowanie pakietu "elm-explorations/test". Następnie, możesz użyć funkcji `test` wraz z `describe`, aby grupować testy tematycznie. Przykładowy kod wyglądałby następująco:
 
 ```Elm
-add : Int -> Int -> Int
-add x y =
-    x + y
-
--- Test
 import Test exposing (..)
-import Expect exposing (expect)
-import Main exposing (add)
+import Expect
 
-tests : Test
-tests =
-    describe "Dodawanie" [
-        test "2 + 3" (
-            expect (add 2 3)
-                |> toEqual 5
-        ),
-        test "5 + 5" (
-            expect (add 5 5)
-                |> toEqual 10
-        )
+describe "Przykładowy moduł" [
+    test "testowanie funkcji dodawania" [
+        Expect.equal 2 (1 + 1)
+    ],
+    test "testowanie długości list" [
+        Expect.equal 3 (List.length [1, 2, 3])
     ]
-
-main =
-    run tests
+]
 ```
 
-Po uruchomieniu testów, otrzymamy poniższy wynik:
+W powyższym przykładzie, mamy dwa testy: jeden sprawdza, czy funkcja dodawania działa poprawnie, a drugi sprawdza, czy długość listy jest zgodna z oczekiwaniami.
 
-```
-Dodawanie
-  ✓ 2 + 3
-  ✓ 5 + 5
-```
+## Zagłębienie się w temat
 
-Widzimy, że oba nasze testy przechodzą pomyślnie, co oznacza, że funkcja dodająca działa zgodnie z naszymi oczekiwaniami. 
+Pisanie testów w Elm może wydawać się skomplikowane, ale szybko zauważysz, że jest to bardzo wartościowy proces. Pamiętaj, aby pisać testy dla każdej funkcji, która ma jakikolwiek wpływ na działanie Twojej aplikacji. Dzięki temu, w razie zmian lub dodania nowego kodu, jesteś w stanie szybko przetestować, czy wszystko działa poprawnie.
 
-## Głębsza analiza pisania testów w Elm
+Jeśli chcesz dowiedzieć się więcej o pisaniu testów w Elm, warto zajrzeć na oficjalną stronę dokumentacji [Elm Test](https://package.elm-lang.org/packages/elm-explorations/test/latest/), gdzie znajdziesz szczegółowe informacje i przykłady.
 
-Pisanie testów w Elm jest bardzo łatwe dzięki narzędziu elm-test, które automatycznie uruchamia wszystkie nasze testy wraz z aplikacją. Dzięki temu mamy szybki i pewny sposób sprawdzania, czy nasz kod działa zgodnie z oczekiwaniami. Dodatkowo, pisząc testy, zmuszamy się do myślenia o różnych przypadkach działania naszego kodu, co przekłada się na lepszą jakość i niezawodność aplikacji.
+## Zobacz też
 
-## Zobacz także
+Jeśli jesteś początkującym programistą w Elm, warto zapoznać się z naszym poradnikiem [Jak zacząć z programowaniem w Elm](https://dev.to/milena1793/how-to-start-programming-in-elm-2a5j). Możesz także odwiedzić [oficjalną stronę Elm](https://elm-lang.org/) lub dołączyć do społeczności Elm na [Slacku](https://elmlang.herokuapp.com/).
 
-- [Dokumentacja elm-test](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Poradnik dla początkujących w Elm](https://guide.elm-lang.org/)
-- [Przykładowe aplikacje w Elm](https://github.com/elm/projects)
+Życzymy owocnej nauki i powodzenia w pisaniu testów w Elm!

@@ -1,38 +1,42 @@
 ---
-title:    "Elixir: Generering av tilfeldige tall"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/generating-random-numbers.md"
+title:                "Elixir: Generering av tilfeldige tall"
+programming_language: "Elixir"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å generere tilfeldige tall er en viktig del av mange programmeringsspråk, og Elixir er intet unntak. Tilfeldige tall kan brukes til å lage unike ID-nummer, tilfeldig valg av elementer fra lister, og mye mer. Det er en nyttig verktøy i mange ulike situasjoner og kan bidra til å gjøre programmer mer varierte og interessante.
+##Hvorfor
+I denne bloggposten vil vi utforske hvordan man kan generere tilfeldige tall i Elixir. Å kunne generere tilfeldige tall kan være nyttig i mange ulike programmeringssammenhenger, som for eksempel spill, simuleringer eller ved å teste ulike funksjoner.
 
-# Hvordan
-For å generere tilfeldige tall i Elixir, kan du bruke funksjonene i Elixir's `:rand` modul. Her er et enkelt eksempel som genererer et tilfeldig tall mellom 1 og 10:
+##Hvordan
+Vi kan generere tilfeldige tall i Elixir ved hjelp av funksjonen ```Enum.random/1```. Denne funksjonen tar inn en liste eller et range og returnerer et tilfeldig element fra denne listen eller rangen.
 
-```Elixir
-  :rand.uniform(1..10)
+For eksempel, for å generere et tilfeldig tall mellom 1 og 10, kan vi bruke følgende kode:
+
+```
+Elixir
+Enum.random(1..10)
 ```
 
-Dette vil returnere et tilfeldig heltall mellom 1 og 10, og det er så enkelt som det!
+Dette vil returnere et tilfeldig tall mellom 1 og 10 hver gang koden kjøres.
 
-Du kan også angi et seed-nummer for å få tilfeldige tall i en bestemt rekkefølge. Dette er nyttig hvis du for eksempel ønsker å teste forskjellige scenarier med det samme settet av tilfeldige tall. Her er et eksempel som angir et seed-nummer på 123 og genererer et tilfeldig tall mellom 1 og 100:
+Vi kan også generere tilfeldige flåttall ved å bruke funksjonen ```:rand.uniform/1```. Denne funksjonen tar inn et tall og returnerer et tilfeldig tall mellom 0 og tallet.
 
-```Elixir
-  :rand.seed(123)
-  :rand.uniform(1..100)
+```
+Elixir
+:rand.uniform(100)
 ```
 
-Det er også en rekke andre funksjoner i `:rand` modulen som kan brukes til å generere tilfeldige tall i forskjellige former, som f.eks. desimaltall og strenger.
+Dette vil generere et tilfeldig tall mellom 0 og 100 hver gang koden kjøres.
 
-# Dypdykk
-Elixir's `:rand` modul bruker en algoritme kalt "Mersenne Twister" for å generere tilfeldige tall. Denne algoritmen er i stand til å generere en stor mengde forskjellige tallsekvenser, og har en periode på over 2³¹⁸. Dette gjør det veldig usannsynlig at den vil generere samme tallsekvens igjen, og sikrer dermed en høy grad av tilfeldighet.
+##Dypdykk
+Bak kulissene genererer Elixir tilfeldige tall ved hjelp av en uniform fordeling. Dette betyr at hvert tall har samme sannsynlighet for å bli returnert. Elixir bruker også en generator kalt Mersenne Twister for å generere disse tilfeldige tallene.
 
-Det er også verdt å nevne at tilfeldigheten i tallene som genereres av `:rand` modulen ikke er helt perfekt (det er ingen virkelig tilfeldighet i en datamaskin). Men for de fleste formål i programmering, er dette nivået av tilfeldighet mer enn tilstrekkelig.
+Det er også mulig å sette en "seed" når man genererer tilfeldige tall i Elixir. Dette betyr at man kan få de samme tilfeldige tallene hver gang koden kjøres, noe som kan være nyttig for testing.
 
-# Se Også
-- Elixir's Offisielle Dokumentasjon om `:rand` Modulen: https://hexdocs.pm/elixir/Random.html 
-- En Artikkel om Tilfeldige Tall i Elixir på Medium: https://medium.com/@maelvls/random-numbers-and-generators-in-elixir-2a69b4ecde1c 
-- En Undervisningsvideo om Tilfeldige Tall i Elixir på YouTube: https://www.youtube.com/watch?v=ehyPkE6GzEk
+##Se også
+- [Dokumentasjon for Elixir's tilfeldige tall funksjoner](https://hexdocs.pm/elixir/Enum.html#random/1)
+- [Artikkel om tilfeldige tall i Elixir av Jose Valim](https://www.josevalim.com/elixir-random-numbers/)
+- [So treff du brukar Mersenne Twister gjennom Elixir](https://dailyelixir.com/post/so-brukar-du-mersenne-twister-gjennom-elixir/)

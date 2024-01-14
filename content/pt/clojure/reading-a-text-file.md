@@ -1,50 +1,45 @@
 ---
-title:    "Clojure: Lendo um arquivo de texto"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/reading-a-text-file.md"
+title:                "Clojure: Lendo um arquivo de texto"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto em Clojure?
+## Por que ler um arquivo de texto?
 
-Ler arquivos de texto é uma tarefa comum na programação, especialmente em Clojure. Ao entender como ler e manipular arquivos de texto, os programadores podem criar aplicativos mais robustos e eficientes. Além disso, aprender a ler arquivos de texto em Clojure pode ser um ótimo ponto de partida para explorar outros recursos da linguagem.
+Ler um arquivo de texto é uma habilidade básica para qualquer programador de Clojure. Isso permite que você acesse informações armazenadas em um formato simples e universalmente suportado. Além disso, pode ser útil para processar grandes conjuntos de dados ou interagir com bibliotecas externas que armazenam informações em arquivos de texto.
 
-## Como ler um arquivo de texto em Clojure
+## Como fazer
 
-Em Clojure, existem várias maneiras de ler um arquivo de texto, dependendo do formato do arquivo e da complexidade da leitura desejada. Vamos ver alguns exemplos práticos de como ler um arquivo de texto em Clojure e as saídas correspondentes.
-
-```Clojure
-;; Lendo um arquivo simples e imprimindo seu conteúdo
-(def arquivo (slurp "arquivo.txt"))
-(prn arquivo)
-
-;; Lendo um arquivo linha por linha e imprimindo cada linha
-(with-open [arquivo (reader "arquivo.txt")]
-  (doseq [linha (line-seq arquivo)]
-    (prn linha)))
-
-;; Lendo um arquivo CSV e convertendo em uma coleção de mapas
-(ns meu-projeto
-  (:require [clojure.data.csv :as csv]))
-
-(with-open [arquivo (reader "arquivo.csv")]
-  (doall (csv/parse-csv arquivo))))
+Ler um arquivo de texto em Clojure é uma tarefa simples e direta. Você pode usar a função `read-string` para ler um arquivo de texto e armazenar seu conteúdo em uma variável.
 
 ```
+Clojure
+(def conteudo (read-string "meu_arquivo.txt"))
+```
 
-A saída desses exemplos pode variar dependendo do conteúdo dos arquivos, mas é importante notar que a leitura é feita de forma eficiente, utilizando recursos do Clojure como `slurp`, `with-open` e `csv/parse-csv`. Essas funções facilitam a leitura de diferentes tipos de arquivos de texto e permitem que o programador manipule os dados de maneira fácil e eficaz.
+Isso irá ler o arquivo `meu_arquivo.txt` e armazenar seu conteúdo na variável `conteudo`. Em seguida, você pode usar a função `println` para imprimir seu conteúdo no console.
 
-## Mergulho profundo: lendo arquivos de texto em Clojure
+```
+Clojure
+(println conteudo)
+```
 
-Para aqueles que desejam se aprofundar no assunto, existem outros recursos e bibliotecas que podem ser utilizados ao ler arquivos de texto em Clojure. Por exemplo, a biblioteca `clojure.java.io` oferece funções úteis para trabalhar com arquivos, como `file-seq` para listar todos os arquivos de um diretório e `copy` para copiar arquivos de um local para outro.
+## Aprofundando-se
 
-Além disso, é importante entender os diferentes formatos de arquivos de texto e como trabalhar com eles em Clojure. Por exemplo, se o arquivo for um XML, pode ser útil utilizar a biblioteca `clojure.data.xml` para fazer a leitura e manipulação dos dados. Caso se trate de um arquivo JSON, a biblioteca `cheshire` pode ser útil para fazer o parsing dos dados.
+Existem várias maneiras de ler um arquivo de texto em Clojure. Além da função `read-string`, você também pode usar a função `slurp` para ler o conteúdo de um arquivo diretamente em uma string. Por exemplo:
+
+```
+Clojure
+(def conteudo (slurp "meu_arquivo.txt"))
+```
+
+Você também pode especificar o caminho absoluto ou relativo do arquivo. Além disso, é possível passar um modo de leitura opcional como segundo argumento da função `read-string` ou `slurp`, como `:utf-8` para especificar a codificação do arquivo de texto.
 
 ## Veja também
 
-- [Documentação oficial do Clojure sobre leitura de arquivos](https://clojure.org/reference/java_interop#_reading_and_writing_files)
-- [Clojure for Data Science: Reading and Writing CSV Files](https://cemerick.com/2011/07/05/clojure-reading-and-writing-csv/)
-- [Tutorial sobre leitura de arquivos em Clojure](https://www.davideroth.com/2014/09/06/reading-files-in-clojure/)
-
-Aprender a ler arquivos de texto em Clojure é um passo importante para dominar a linguagem e criar aplicativos mais poderosos e eficientes. Esperamos que esses exemplos e recursos sejam úteis para ajudá-lo a entender como trabalhar com arquivos de texto em suas próprias aplicações.
+- [Documentação oficial de Clojure sobre leitura de arquivos](https://clojuredocs.org/clojure.java.io/reader)
+- [Exemplos de leitura de arquivos em Clojure](https://gist.github.com/yogthos/2780362)
+- [Tutorial de Clojure sobre ler e escrever arquivos](https://www.tutorialspoint.com/clojure/clojure_file_io.htm)

@@ -1,26 +1,32 @@
 ---
-title:    "PHP: वर्तमान तारीख प्राप्त करना"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/php/getting-the-current-date.md"
+title:                "PHP: वर्तमान तारीख प्राप्त करना"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyu
-Agar aap ek PHP programmer hai, to aapne shayad kabhi na kabhi is sawal ka jawab dhundha hoga ki "abhi kaunsa tarikh hai?" Ya shayad aap ek website ya application bana rahe hai jisme aapko samay aur tithi ka pata hona zaruri hai. Isliye, "abhi ki tarikh" ka pata hona bahut zaruri hai har ek programmer ke liye.
+आज की तारीख प्राप्त करना आपको अपने प्रोग्राम में अनेक कार्यों में मदद कर सकता है।
 
-## Kaise Kare
-Agar aap PHP mein "abhi ki tarikh" jaanna chahte hai to aapko bas ek simple function ka use karna hoga: `date()`. Is function ke andar aapko 1 parameter dena hoga jisse aap apne hisab se tarikh ko format kar sakte hai. Man lijiye aapki website mein aapko sirf tarikh ke din aur mahine ka pata hona hai, to aap is tarah se function ka use kar sakte hai:
+## क्यों
+
+आपको अपने प्रोग्राम में आज की तारीख प्राप्त करने का उद्देश्य हो सकता है क्योंकि आप अपने प्रोग्राम को अपडेट करने के लिए या किसी ऑनलाइन में डेटा के आधार पर कार्य करने के लिए इस जानकारी की आवश्यकता हो सकती है।
+
+## कैसे करें
 
 ```PHP
-<?php
-$date = date("d-m");
-echo $date;
+// आज की तारीख प्राप्त करने के लिए इस रिक्ति का उपयोग कीजिए
+$date = date('d-m-Y');
+echo $date; //उदाहरण आउटपुट - 05-08-2021
 ```
-Is code ke output mein aapko tarikh ke din aur mahine ka format mil jayega. Agar aapko samay bhi pata karna hai to aap `h-i-s` format ka use kar sakte hai. Aur agar aapko ek specific tithi ki jankari chaahiye to aap `date()` ke saath `strtotime()` bhi use kar sakte hai.
 
-## Gehri Jankari
-Agar aapko "abhi ki tarikh" ke bare mein gehri jankari chaahiye, to aapko pata hona chahiye ki PHP mein `date()` function ka use UNIX timestamp ke saath hota hai. Is feature ki wajah se aap apni website mein local time ke alawa kisi doosre desh ya time zone ki tarikh bhi show kar sakte hai. Iske alawa, PHP mein ek aur function hai `mktime()` jo aapko kaafi flexibility deta hai tithi aur samay ko customize karne mein.
+आप इस प्रकार से स्थानांतरित कर सकते हैं: d - date, m - month, Y - year, या अपनी जरूरत के अनुसार। आप अपने प्रोग्राम में आज की तारीख को अलग-अलग ढंग से प्रयोग कर सकते हैं, जैसे कि तारीख का स्टोरेज, तिथि-मुद्रण, या किसी क्षेत्र के साथ तुलना करना।
 
-## Dekhe Bhi
-Agar aapne abhi tak PHP ke date functions ke baare mein gehri jankari nahi li hai, to aapko iske saath saath [`strtotime()`](https://www.php.net/manual/en/function.strtotime.php) function ka bhi use sikhna chahiye. Aur agar aapko aur bhi advanced date functions aur concepts ke baare mein jaanna hai to aap [PHP date and time functions documentation](https://www.php.net/manual/en/ref.datetime.php) ko dekh sakte hai.
+## गहराई में खोज
+
+आज की तारीख प्राप्त करने के लिए PHP के `date()` फंक्शन का उपयोग किया जाता है। यह फंक्शन आज की तारीख और समय के लिए स्ट्रिंग विश्लेषण डिक्शनरी को देता है जो अनेक अनुप्रयोगों में उपयोगी हो सकता है। आप इस फंक्शन को `strtotime()` के साथ भी उपयोग कर सकते हैं। इससे आप आज की तारीख के साथ अन्य तारीखों को जोड़ या घटा सकते हैं और उन्हें संगणन कर सकते हैं।
+
+## इससे सम्बंधित लेख
+
+[PHP तारीख और समय को स्ट्रिंग विश्लेषण में

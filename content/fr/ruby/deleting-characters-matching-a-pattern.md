@@ -1,51 +1,52 @@
 ---
-title:    "Ruby: Suppression de caractères correspondant à un modèle"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/deleting-characters-matching-a-pattern.md"
+title:                "Ruby: Suppression de caractères correspondant à un motif"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous êtes peut-être en train de travailler sur un projet en Ruby et vous vous demandez pourquoi quelqu'un se donnerait la peine de supprimer des caractères correspondant à un modèle. La réponse est simple: cela peut être utile lors de la manipulation de chaînes de caractères pour s'assurer qu'elles correspondent à un certain format ou pour supprimer des caractères indésirables.
+Vous vous demandez peut-être pourquoi vous devriez vous intéresser à la suppression de caractères correspondant à un modèle en utilisant Ruby. Eh bien, c'est une compétence utile qui peut être utilisée pour nettoyer des données ou pour effectuer des recherches dans des chaînes de caractères. Cela peut également être utile lorsque vous travaillez avec des expressions régulières dans vos projets.
 
 ## Comment faire
 
-Pour supprimer des caractères correspondant à un modèle en utilisant Ruby, vous pouvez utiliser la méthode `gsub` qui permet de remplacer un motif par un autre. Voici un exemple de code qui supprime les caractères non numériques d'une chaîne de caractères:
+Voici quelques exemples de code pour vous montrer comment supprimer des caractères correspondant à un modèle en utilisant Ruby :
 
 ```Ruby
-str = "12th May 1992"
-new_str = str.gsub(/\D/, "")
-puts new_str
+str = "Bonjour à tous !"
+
+# Supprimez tous les caractères qui ne sont pas des lettres
+str.gsub!(/[^a-z]/i, "")
+# Résultat : Bonjouratous
+
+# Supprimez tous les caractères spéciaux
+str.gsub!(/[^A-Z0-9]/i, "")
+# Résultat : BONJOURATOUS123
+
+# Supprimez tous les chiffres
+str.gsub!(/[0-9]/, "")
+# Résultat : BONJOURATOUS
 ```
 
-L'expression régulière `\D` correspond à tous les caractères non numériques, tandis que la chaîne vide `""` indique qu'ils doivent être remplacés par rien. Lorsque vous exécutez ce code, la sortie sera `121992`, où tous les caractères non numériques ont été supprimés.
+Dans cet exemple, nous utilisons la méthode `gsub!` qui remplace toutes les occurrences du modèle par une chaîne vide, ce qui a pour effet de supprimer ces caractères de la chaîne d'origine.
 
-Vous pouvez également utiliser la méthode `delete` pour supprimer plus facilement une liste spécifique de caractères. Voici un exemple:
+## Deep Dive
 
-```Ruby
-str = "Hello World!"
-new_str = str.delete("l")
-puts new_str
-```
+Maintenant que vous avez compris comment supprimer des caractères correspondant à un modèle en utilisant Ruby, plongeons un peu plus en profondeur. En utilisant des expressions régulières, vous pouvez affiner votre modèle pour qu'il corresponde à des caractères plus spécifiques ou pour utiliser des options telles que la sensibilité à la casse ou la correspondance globale à travers toute la chaîne de caractères.
 
-La sortie sera `Heo Word!`, où tous les caractères "l" ont été supprimés de la chaîne initiale.
+Voici quelques ressources supplémentaires pour vous aider à approfondir vos connaissances sur les expressions régulières en Ruby :
 
-## Plongée en profondeur
-
-Pour une utilisation plus avancée de la suppresion de caractères correspondant à un modèle en utilisant Ruby, vous pouvez également utiliser les expressions régulières pour capturer des groupes de caractères spécifiques à supprimer. Par exemple, si vous souhaitez supprimer tous les caractères compris entre des crochets dans une chaîne, vous pouvez utiliser l'expression régulière `\[.*?\]` pour capturer les caractères entre les crochets et les supprimer.
-
-```Ruby
-str = "I have [5] apples and [3] oranges"
-new_str = str.gsub(/\[.*?\]/, "")
-puts new_str
-```
-
-La sortie sera `I have apples and oranges`, où les groupes de caractères entre crochets ont été supprimés.
+- [Documentation Ruby sur les expressions régulières](https://ruby-doc.org/core-2.6.3/Regexp.html)
+- [Tutoriel sur les expressions régulières en Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Rubular, un outil pour tester vos expressions régulières en temps réel](https://rubular.com/)
 
 ## Voir aussi
 
-- [Ruby Docs - String#gsub](https://ruby-doc.org/core-2.7.4/String.html#method-i-gsub)
-- [Ruby Docs - String#delete](https://ruby-doc.org/core-2.7.4/String.html#method-i-delete)
-- [Rubular - Testeur d'expressions régulières en ligne](https://rubular.com/)
+- [Guide ultime pour les expressions régulières en Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Apprenez à utiliser les expressions régulières en 5 minutes](https://medium.com/rubyinside/learn-to-use-regular-expressions-in-5-minutes-3d8646ea7441)
+- [10 astuces pour maîtriser les expressions régulières en Ruby](https://www.geeksforgeeks.org/10-ruby-regular-expressions/)
+
+Maintenant que vous avez toutes les informations nécessaires, il est temps de vous mettre à l'œuvre et de commencer à utiliser la puissance des expressions régulières en Ruby pour supprimer des caractères correspondant à un modèle. Bonne chance !

@@ -1,51 +1,65 @@
 ---
-title:    "Elixir: Ekstrakcja podłańcuchów"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/extracting-substrings.md"
+title:                "Elixir: Ekstrakcja podciągów"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wyodrębnianie podłańcuchów jest ważnym narzędziem w programowaniu Elixir. Pozwala ono na pracę z konkretnymi częściami ciągów znaków, co jest szczególnie przydatne przy przetwarzaniu danych. W tym artykule opiszemy, dlaczego warto nauczyć się wyodrębniać podłańcuchy i jak to zrobić.
+Wyciąganie podciągów jest jedną z najczęściej używanych funkcji w programowaniu w Elixirze. Pozwala nam na wybieranie części ciągu znaków ze zmiennej lub arytmetycznej i używanie ich w różnych celach. W tym przewodniku omówimy, dlaczego jest to ważne i jak to zrobić w Elixirze.
 
 ## Jak to zrobić
 
-Wyodrębnianie podłańcuchów jest proste i intuicyjne w Elixirze. Możemy użyć funkcji `String.slice/3` wraz z indeksami początkowym i końcowym, aby wyodrębnić podłańcuch z danego ciągu znaków. Spójrzmy na przykładowy kod:
+Poniżej przedstawiamy przykłady kodu, które pokazują jak wyciągać podciągi w Elixirze. Kod jest zawarty w blokach ```Elixir ... ``` dla łatwej lektury. Przetestuj każdy przykład w swoim środowisku, aby zobaczyć, jak działa w praktyce.
+
+### Wyciąganie podciągu ze zmiennej
 
 ```Elixir
-string = "Programowanie jest super zabawne"
-
-slice = String.slice(string, 0, 11)
-
-IO.puts("Wyodrębniony podłańcuch: #{slice}")
-
+str = "Witaj świecie!"
+IO.puts(String.slice(str, 0, 5))
 ```
 
-Powyższe polecenie wyświetli "Wyodrębniony podłańcuch: Programowanie".
+Ten przykład pokazuje jak używać funkcji `String.slice` do wyciągania podciągu ze zmiennej `str`. Wynik powyższego kodu będzie wyglądał następująco:
 
-Możemy również wyodrębniać podłańcuchy na podstawie znaków zamiast indeksów. W tym celu możemy użyć funkcji `String.split/2`, która dzieli ciąg znaków na mniejsze podłańcuchy na podstawie określonego znaku lub wyrażenia regularnego. Na przykład:
+```
+Witaj
+```
+
+### Wyciąganie podciągu za pomocą indeksów
 
 ```Elixir
-string = "Mam jutro egzamin z Elixira"
-
-words = String.split(string, " ")
-
-IO.inspect(words)
-
+str = "Elixir jest super!"
+IO.puts(String.slice(str, 7..12))
 ```
 
-Powyższe polecenie wyświetli listę słów: ["Mam", "jutro", "egzamin", "z", "Elixira"].
+Ten przykład pokazuje, jak możesz użyć zakresów indeksów, aby wyciągnąć określony podciąg ze zmiennej `str`. Wynik tego kodu będzie wyglądał tak:
+
+```
+jest s
+```
+
+### Wyciąganie podciągu z wykorzystaniem wyrażenia regularnego
+
+```Elixir
+str = "Jestem super programistą w Elixirze!"
+IO.puts(str |> String.split(" ") |> Enum.find(&match?(&1, ~r/.+programistą/)))
+```
+
+Ten przykład pokazuje, jak użyć wyrażenia regularnego do wyszukania podciągu w zmiennej `str`. Wynik powyższego kodu będzie wyglądał następująco:
+
+```
+super programistą
+```
 
 ## Deep Dive
 
-W Elixirze istnieją również inne funkcje, które pozwalają na wyodrębnianie podłańcuchów, takie jak `String.joins/2`, `String.replace/3` czy `String.trim/2`. Możemy również użyć wyrażeń regularnych, aby dopasować i wyodrębnić określone wzorce z ciągu znaków.
+Wyciąganie podciągów jest możliwe dzięki funkcji `String.slice` oraz wyrażeniom regularnym. Funkcja `String.slice` przyjmuje dwa argumenty: zmienną, z której chcemy wyciągnąć podciąg, oraz indeks początkowy i końcowy, który określa, które znaki w zmiennej będą uwzględnione w podciągu. Wyrażenia regularne, takie jak `~r/.+programistą/`, są wyrażeniami, które pozwalają na bardziej precyzyjne określenie, jakiego podciągu szukamy w zmiennej.
 
-Ważne jest również zwrócenie uwagi na wydajność operacji wyodrębniania podłańcuchów. Ze względu na to, że w Elixirze ciągi znaków są niemodyfikowalne, każda operacja wyodrębniania podłańcuchu tworzy nowy ciąg, co może być kosztowne dla dużej ilości danych.
+## Zobacz również
 
-## Zobacz też
-
-- [Dokumentacja Elixir do funkcji String](https://hexdocs.pm/elixir/String.html)
-- [Poradnik programowania w Elixirze](https://www.tutorialspoint.com/elixir/index.htm)
-- [Github - przykładowe projekty w Elixirze](https://github.com/h4cc/awesome-elixir)
+- [Dokumentacja Elixir - String.slice](https://hexdocs.pm/elixir/String.html#slice/3)
+- [Wyrażenia regularne w Elixirze](https://elixirschool.com/pl/lessons/advanced/pattern-matching/#-regular-expressions)
+- [Przewodnik po Elixirze na NaszKod.pl](https://naszkod.pl/2017-03/Elixir-przewodnik-jak-dziala-jak-naprawic)

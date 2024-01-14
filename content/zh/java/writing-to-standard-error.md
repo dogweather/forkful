@@ -1,44 +1,65 @@
 ---
-title:    "Java: 写入标准错误"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-to-standard-error.md"
+title:                "Java: 向标准错误写入"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+#为什么
 
-很多人在编程的时候可能会遇到写到标准错误的问题，那么为什么要这么做呢？其实，写到标准错误是一种错误处理的方式，它可以帮助我们更好地定位和解决程序中出现的问题。
+写入标准错误是一种重要的编程技术，它可以帮助程序员在调试和错误处理中更有效地识别问题。通过写入和打印错误信息，程序员可以迅速地找出造成问题的源头，并进行相应的调整和修复。
 
-## 如何进行
+#如何操作
 
-首先，我们需要使用Java中的System类来进行写到标准错误。我们可以通过调用System.err.println()方法来实现。下面是一个简单的例子：
+在Java中，我们可以通过使用System.err.println（）来编写标准错误。这个方法可以将指定的字符串写入标准错误流中，并将其打印到控制台。下面是一个简单的示例代码：
 
-```Java
-public class WriteToStandardErrorDemo {
-  public static void main(String[] args) {
-    System.err.println("This message will be printed to the standard error stream.");
-  }
+```Java 
+public class ErrorWriter {
+    public static void main(String[] args) {
+        int num = 10 / 0; // 故意制造一个除零错误
+
+        System.err.println("出错啦！"); // 将错误信息写入标准错误流
+    }
 }
 ```
 
-运行上面的代码，将会在控制台中打印出相应的信息。
+执行上述代码后，我们可以在控制台中看到如下输出：
 
-## 深入了解
+```Java 
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+    at ErrorWriter.main(ErrorWriter.java:4)
+出错啦！
+```
 
-标准错误是一个输出流，它用于输出程序中的错误信息。与标准输出类似，它也可以被重定向到其他地方，比如文件中。此外，我们还可以将它与标准输出流结合起来，通过System.setErr()方法来设置。
+可以看到除零错误的具体信息被写入了标准错误流，而我们在代码中写入的 "出错啦！" 也被打印出来了。
 
-写到标准错误也是很有用的，比如在我们开发网络应用程序时，我们可以将错误信息输出到服务器日志文件中，方便我们及时发现和解决问题。此外，当我们与其他程序共同使用标准错误流时，可以更好地获取程序间的通信信息。
+#深入探讨
 
-## 参考资料
+除了可以将错误信息打印到控制台，我们还可以通过重定向标准错误流来实现其他功能。比如，我们可以将错误信息写入日志文件，或者将其发送给指定的错误处理系统。
 
-如果你想了解更多关于Java中写到标准错误的相关知识，可以参考以下链接：
+在Java中，我们可以使用System.setErr（）方法来重定向标准错误流。下面是一个简单的示例代码：
 
-- [Java System class (English)](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Java I/O (中文)](https://www.runoob.com/java/java-files-io.html)
-- [Java标准输出与标准错误解释 (中文)](https://juejin.im/post/5baeef0de51d450e7245e9e0)
-- [Java System类详解 (中文)](https://www.jianshu.com/p/29919c8dfaac)
+```Java 
+public class ErrorRedirector {
+    public static void main(String[] args) {
+        try {
+            int num = 10 / 0; // 故意制造一个除零错误
+        } catch (ArithmeticException e) {
+            // 将标准错误流重定向到指定的日志文件
+            System.setErr(new PrintStream(new FileOutputStream("error.log")));
+            // 将错误信息写入标准错误流
+            System.err.println(e.getMessage());
+        }
+    }
+}
+```
 
-## 参见
+执行上述代码后，除零错误的信息就会被写入到指定的日志文件中。
 
-- [关于Java标准输出 (中文)](https://github.com/Kayoxity/Java-System.out-println-Tutorial/blob/master/README.md)
+#另请参阅
+
+- [Java官方文档：System类](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Java官方文档：PrintStream类](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
+- [控制台输出和标准错误输出到文件](https://blog.csdn.net/myarrow/article/details/4647474)

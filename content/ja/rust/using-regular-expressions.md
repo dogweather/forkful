@@ -1,58 +1,64 @@
 ---
-title:    "Rust: 正規表現を使用する"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/using-regular-expressions.md"
+title:                "Rust: 正規表現の利用方法"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-Regular Expressions（正規表現）を使用する理由を説明します。正規表現は、文字列パターンを検索、抽出、置換するための非常に強力なツールです。これは、Rust言語を使用してテキストを処理する際に特に便利です。
+正規表現を使用する理由を簡単に説明します。正規表現は、文字列のパターンを検索、抽出、置換するために使用される強力なツールです。
 
 ## 使い方
 
-正規表現を使うためには、まずregexクレートをプロジェクトに追加してください。それから、以下のようなコードを使用して正規表現オブジェクトを作成することができます。
+正規表現はRustの標準ライブラリであるregexクレートを使用して実装することができます。以下のコード例では、文字列の中から特定のパターンにマッチする文字列を検索し、抽出する方法を示します。
 
 ```Rust
-// 例：「hoge」という単語を検索する正規表現
-let regex = Regex::new(r"hoge").unwrap();
+use regex::Regex;
+
+fn main() {
+    // 例: 電話番号の抽出
+    let re = Regex::new(r"\d{3}-\d{4}-\d{4}").unwrap(); // マッチするパターンを定義
+    let text = "私の電話番号は012-3456-7890です"; // 検索対象の文字列
+    for caps in re.captures_iter(text) { // マッチした文字列をイテレーターで取得
+        println!("電話番号が見つかりました: {}", caps.get(0).unwrap().as_str());
+    }
+}
 ```
 
-次に、作成した正規表現オブジェクトでテキストを検索することができます。例えば、以下のようなコードで「hoge」という単語がテキスト内に存在するかどうかを確認できます。
+上記のコードは次のような出力を生成します。
 
 ```Rust
-// テキストが「hoge」を含む場合、trueを返す
-regex.is_match("This is a hoge sentence.");
+電話番号が見つかりました: 012-3456-7890
 ```
 
-また、正規表現を使用してマッチした部分を抽出することもできます。例えば、以下のようなコードで「hoge」を含む単語を抽出できます。
+さらに、正規表現によって文字列を置換することもできます。次のコードでは電話番号をマスキングして出力します。
 
 ```Rust
-// 「hoge」が含まれるすべての単語を抽出する
-let matches: Vec<&str> = regex.find_iter("This is a hoge sentence.").map(|m| m.as_str()).collect();
+use regex::Regex;
+
+fn main() {
+    // 例: 電話番号のマスキング
+    let re = Regex::new(r"\d{3}-\d{4}-\d{4}").unwrap(); // マッチするパターンを定義
+    let text = "私の電話番号は012-3456-7890です"; // 検索対象の文字列
+    let masked = re.replace_all(text, "XXX-XXXX-XXXX"); // マッチした文字列を置換
+    println!("{}", masked); // 出力: 私の電話番号はXXX-XXXX-XXXXです
+}
 ```
 
-さらに、正規表現を使用してテキストを置換することもできます。例えば、以下のようなコードで「hoge」を「fuga」に置換できます。
+## 深堀り
 
-```Rust
-// 「hoge」を「fuga」に置換する
-let replaced_text = regex.replace_all("This is a hoge sentence.", "fuga");
-```
-
-## ディープダイブ
-
-正規表現を使用する上で覚えておくべき重要な点の一つは、正規表現パターンのエスケープ処理です。正規表現パターン内に特殊な意味を持つ文字がある場合には、バックスラッシュを使用してエスケープする必要があります。
-
-例えば、以下のような正規表現パターンでは、バックスラッシュを使用してピリオドをエスケープしています。
-
-```Rust
-let regex = Regex::new(r"www\.example\.com").unwrap();
-```
-
-また、正規表現を使用する際にはパフォーマンスにも注意が必要です。繰り返し使用する場合には正規表現オブジェクトをキャッシュすることでパフォーマンスを向上させることができます。
+正規表現は文字列のパターンマッチングを行うため、特定の行為に特化した独自の言語機能を提供します。Rustでは、regexクレートを使用することで、シンプルかつ効率的な正規表現を実装することができます。
 
 ## 参考リンク
 
-- [Rust公式ドキュメント - 正規表現](https://doc.rust-lang.org/std/regex/index.html)
-- [正規表現チュートリアル（Qiita）](https://qiita.com/morimolymoly/items/976a45114b87984cee71)
+- [Rustの正規表現チュートリアル](https://github.com/rust-lang/regex/blob/master/examples/tutorial.md)
+- [Rust crate: regex](https://crates.io/crates/regex)
+- [正規表現速習講座](https://www.javadrive.jp/regex/index1.html)
+
+## さらに見る
+
+- [Rustの文字列操作ガイド](https://doc.rust-lang.org/book/ch08-03-hash-maps.html#summary)
+- [Rustの標準ライブラリリファレンス](https://doc.rust-lang.org/std/str/index.html)

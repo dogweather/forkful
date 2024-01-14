@@ -1,42 +1,50 @@
 ---
-title:    "C#: Omvandla en sträng till gemener"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/converting-a-string-to-lower-case.md"
+title:                "C#: Konvertera en sträng till gemener"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför 
+## Varför
 
-Att konvertera en sträng till små bokstäver kan vara användbart i många olika situationer. Ofta behövs det när man arbetar med användarinmatningar, till exempel när man gör sökningar eller när man jämför strängar. Genom att konvertera alla bokstäver till små bokstäver så undviks eventuella fel som kan uppstå på grund av olika skrivningar.
+Att konvertera en sträng till gemener är en vanlig uppgift inom programmering, och det kan vara användbart i många olika sammanhang. Det kan användas för att jämföra strängar oberoende av deras stor- och småbokstäver, och för att standardisera data innan det sparas i en databas.
 
-##Så här gör du
+## Så här gör du
 
-Ett enkelt sätt att konvertera en sträng till små bokstäver i C# är genom att använda metoden `ToLower()` från klassen `String`. Detta gör att alla bokstäver i strängen omvandlas till små bokstäver och en ny sträng med de konverterade bokstäverna returneras.
+För att konvertera en sträng till gemener i C# använder man metoden `ToLower()`. Detta är en inbyggd metod som finns tillgänglig för alla strängar i C#, och den returnerar en kopia av strängen med enbart gemena bokstäver. Här är ett enkelt exempel:
 
-```c#
-string input = "Hejsan!";
-string lowerCase = input.ToLower();
-
-Console.WriteLine(lowerCase); // hejsan!
+```C#
+string str = "HELLO WORLD";
+Console.WriteLine(str.ToLower());
 ```
 
-Om du däremot endast vill konvertera vissa delar av en sträng kan du använda metoden `Substring()` från klassen `String` för att först ta ut den aktuella delen av strängen och sedan konvertera den till små bokstäver.
-
-```c#
-string input = "Hej på dig!";
-string subString = input.Substring(4, 6).ToLower(); // p
-
-Console.WriteLine(subString); // på
+Output:
+```
+hello world
 ```
 
-##Djupdykning
+## Djupdykning
 
-När du konverterar en sträng till små bokstäver i C# så används standarden för små bokstäver på det språk som du använder i din kod. Detta innebär att om du till exempel är svensk så kommer alla svenska bokstäver att konverteras till små bokstäver enligt den svenska standarden.
+Det finns ett par saker att tänka på när man konverterar en sträng till gemener. Först och främst är det viktigt att komma ihåg att metoden `ToLower()` endast konverterar bokstäver i ASCII-teckenuppsättningen. Detta innebär att den inte kommer att fungera korrekt för alla språk, särskilt de som använder specialtecken eller bokstäver utanför ASCII-området.
 
-Det finns också andra metoder som kan användas för att konvertera strängar till små bokstäver, till exempel `ToLowerInvariant()` som alltid returnerar en sträng i små bokstäver oavsett språkinställningar.
+En annan viktig sak att tänka på är att metoden inte ändrar den ursprungliga strängen, utan bara returnerar en kopia av den konverterade strängen. Om man vill ersätta den ursprungliga strängen måste man använda en tilldelningsoperator, t.ex. `str = str.ToLower()`.
 
-##Se även
+Vill man bara konvertera vissa delar av en sträng till gemener, kan man använda metoden `Substring()` tillsammans med `ToLower()` för att välja ut en del av strängen och konvertera den. Här är ett exempel där vi konverterar första bokstaven till gemener:
 
-- C# String ToUpper() Metod: [https://www.w3schools.com/cs/cs_ref_string_tolower.asp](https://www.w3schools.com/cs/cs_ref_string_tolower.asp)
-- Utforska fler strängmetoder i C#: [https://www.c-sharpcorner.com/article/c-sharp-string-methods-with-examples/](https://www.c-sharpcorner.com/article/c-sharp-string-methods-with-examples/)
+```C#
+string str = "Hello World";
+str = str.Substring(0, 1).ToLower() + str.Substring(1);
+Console.WriteLine(str);
+```
+
+Output:
+```
+hello World
+```
+
+## Se även
+
+- Microsoft C# Dokumentation: https://docs.microsoft.com/sv-se/dotnet/csharp/
+- ASCII-tabell: https://www.ascii-code.com/

@@ -1,60 +1,50 @@
 ---
-title:    "Gleam: Redacción de pruebas"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/writing-tests.md"
+title:                "Gleam: Escribiendo pruebas"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué escribir pruebas en Gleam es importante
+## Por qué escribir pruebas en Gleam
 
-Escribir pruebas en Gleam puede ser una tarea tediosa, ¡pero es increíblemente importante para garantizar que tu código funcione correctamente! Las pruebas nos permiten detectar errores y nos aseguran de que nuestro código hace lo que debería hacer.
+Escribir pruebas es una parte importante del proceso de programación en cualquier lenguaje, y Gleam no es una excepción. Las pruebas permiten verificar el funcionamiento correcto de nuestro código y nos brindan la confianza necesaria para realizar cambios en nuestro código sin temor a introducir errores. 
 
 ## Cómo escribir pruebas en Gleam
 
-Para escribir pruebas en Gleam, debemos primero importar el módulo de pruebas en nuestro archivo de código fuente:
+Las pruebas en Gleam se escriben utilizando el módulo `assert` y las palabras clave `assert` y `expect`. Por ejemplo, si queremos probar que la suma de dos números es correcta, podemos escribir lo siguiente en un archivo de pruebas:
 
 ```Gleam
-import testing
+import assert.{equal}
+
+test_addition() {
+  assert.equal(2 + 2, 4)
+}
 ```
 
-Luego, podemos definir nuestras pruebas utilizando la función `test` con un nombre descriptivo y una función que contenga nuestras comprobaciones:
+La función `equal` del módulo `assert` toma dos argumentos y verifica que sean iguales, en caso contrario, la prueba fallará y mostrará un mensaje de error.
+
+Otra forma de escribir pruebas en Gleam es utilizando la palabra clave `expect`. Esta palabra clave toma dos argumentos, el primero es el resultado que esperamos obtener y el segundo es la expresión que se evalúa para obtener el resultado. Por ejemplo:
 
 ```Gleam
-test("Comprobar que 2 + 2 es igual a 4", fn () {
-  assert_equal(2 + 2, 4)
-})
+import assert.{expect}
+
+test_subtraction() {
+  expect(10, 20 - 10)
+}
 ```
 
-En este ejemplo, estamos utilizando la función `assert_equal` para comprobar si el resultado de la suma es igual a 4. Si la comprobación falla, nuestro test fallará y se nos informará del error.
-
-Podemos ejecutar nuestras pruebas utilizando el comando `gleam test` en la terminal y recibiremos una respuesta como esta:
-
-```Shell
-$ gleam test
-
-Running....
-
-Test 1: Comprobar que 2 + 2 es igual a 4     OK 
-```
-
-¡Genial! Ahora sabemos que nuestro código funciona correctamente. Además de la función `assert_equal`, existen otras funciones de prueba que podemos utilizar, como `assert_not_equal`, `assert_true` y `assert_false`, entre otras.
+En este caso, la prueba pasará si el resultado de `20 - 10` es igual a 10.
 
 ## Profundizando en la escritura de pruebas
 
-Las pruebas son una parte importante del desarrollo de software y existen diferentes estrategias y técnicas para escribirlas. Algunas recomendaciones para escribir pruebas efectivas en Gleam incluyen:
+Además de las funciones de `assert` y `expect`, Gleam también ofrece la posibilidad de utilizar patrones de igualdad en nuestras pruebas, lo que nos da una mayor flexibilidad en la escritura de las mismas. También es posible utilizar macros para generar pruebas automáticamente, lo que es especialmente útil cuando tenemos una gran cantidad de casos de prueba similares.
 
-- Asegúrate de que tus pruebas cubran todos los casos posibles.
-- Utiliza nombres descriptivos y claros para tus pruebas.
-- Divide tus pruebas en diferentes funciones para mantenerlas organizadas.
-- Incluye comentarios para explicar el propósito de cada prueba y qué se espera.
-- Utiliza datos de prueba específicos y relevantes para tus comprobaciones.
-
-Recuerda que no hay una única forma correcta de escribir pruebas en Gleam, ¡así que experimenta y encuentra la que mejor se adapte a tu estilo de programación!
+Otro aspecto importante a considerar al escribir pruebas en Gleam es la cobertura de prueba. Esto se refiere a la cantidad de nuestro código que se está ejecutando en nuestras pruebas. Para garantizar una cobertura adecuada, se pueden utilizar herramientas externas como `coveralls` o `codecov`.
 
 ## Ver también
-- [Documentación de pruebas en Gleam](https://gleam.run/documentation/stdlib/testing/)
-- [Estrategias para escribir pruebas efectivas](https://www.softwaretestinghelp.com/how-to-write-good-test-cases-examples-types-tips/)
-- [Tutorial introductorio a Gleam](https://dev.to/joelkemp/taking-a-deep-dive-in-the-shiny-new-gleam-programming-language-67b)
 
-¡Ahora es tu turno de poner en práctica la escritura de pruebas en Gleam! Recuerda que mientras más pruebas escribas, más confianza tendrás en tu código y en su correcto funcionamiento. ¡Hasta la próxima!
+- [Documentación oficial de pruebas en Gleam](https://gleam.run/book/tour/testing.html)
+- [Ejemplos de pruebas en Gleam](https://github.com/elixir-lang/gleam/blob/master/lib/stdlib/test/stdlib_test.gleam)
+- [Tutorial de pruebas en Gleam](https://medium.com/@jennerson/how-to-code-and-test-gleam-language-df6942b86878)

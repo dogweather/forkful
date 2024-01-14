@@ -1,43 +1,33 @@
 ---
-title:    "Javascript: Перетворення рядка на рядок з малими літерами"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/converting-a-string-to-lower-case.md"
+title:                "Javascript: Перетворення рядка в нижній регістр"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Чому
+## Чому
 
-Перетворення рядка в нижній регістр є важливою функцією в програмуванні. Воно дозволяє зрівняти рядки без врахування регістру і полегшує пошук, фільтрацію та маніпуляцію з даними.
+Конвертування рядка в нижній регістр може знадобитись, якщо ви хочете змінити регістр введеного користувачем тексту, зробити його більш однорідним або зробити пошук більш гнучким.
 
-##Як
-
-```Javascript
-// Приклад коду для перетворення рядка в нижній регістр
-let text = "Привіт, Світе!";
-console.log(text.toLowerCase());
-
-// Вивід: привіт, світе!
-```
-При використанні методу `toLowerCase()`, всі букви в рядку будуть перетворені в нижній регістр. Це дозволить точне порівняння з іншими рядками незалежно від того, які букви були використані. Також ця функція корисна при фільтрації даних або збереженні однакових слів в базі даних.
+## Як це зробити
 
 ```Javascript
-// Приклад коду для порівняння двох рядків
-let firstString = "Привіт, Світе!";
-let secondString = "привіт, світе!";
-console.log(firstString.toLowerCase() === secondString.toLowerCase());
+let str = "Приклад Тексту";
 
-// Вивід: true
+console.log(str.toLowerCase());
 ```
 
-## Глибоке дослідження
+Вивід: "приклад тексту"
 
-В JavaScript існує кілька інших методів для перетворення рядка в нижній регістр, таких як `toLowerCase()`, `toLocaleLowerCase()` та `String.fromCharCode()`. Кожен з них має свої особливості і варто ознайомитися з ними, щоб детальніше зрозуміти як працює ця функція.
+Ви можете використовувати метод `toLowerCase()` для будь-якого рядка, щоб конвертувати його в нижній регістр. Цей метод повертає новий рядок зі зміненим регістром.
 
-Наприклад, метод `toLocaleLowerCase()` використовується для перетворення рядка в нижній регістр з урахуванням локалі. Це важливо для міжнародних проектів, де мови використовують різні алфавіти та правила написання.
+## Глибокий аналіз
 
-## Дивіться також
+При виклику методу `toLowerCase()`, всі букви рядка перетворюються на малі літери. Це може бути корисно при порівнянні рядків, оскільки вони будуть рівні, незалежно від поточного регістру. Також, метод `toLowerCase()` не впливає на розділові знаки та цифри, тому вони залишаються без змін.
 
-- [MDN документація про toLowerCase()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Стаття про працю з рядками в JavaScript](https://www.w3schools.com/jsref/jsref_obj_string.asp)
-- [Відеоурок про методи строки в JavaScript](https://www.youtube.com/watch?v=hS_XsZbaMVE)
+## Дивись також
+
+- [Стрічки в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [Регулярні вирази в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Guide/Regular_Expressions)

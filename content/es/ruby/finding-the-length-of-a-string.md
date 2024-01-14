@@ -1,29 +1,56 @@
 ---
-title:    "Ruby: Encontrando la longitud de una cadena"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/finding-the-length-of-a-string.md"
+title:                "Ruby: Encontrando la longitud de una cadena"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Antes de sumergirnos en cómo encontrar la longitud de una cadena en Ruby, es importante entender por qué es una habilidad útil en programación. En términos simples, la longitud de una cadena se refiere al número de caracteres que tiene una cadena. Conocer la longitud de una cadena puede ser útil para diversas tareas como validar la entrada de un usuario, formatear texto para una presentación visual y realizar operaciones matemáticas con cadenas numéricas.
+Algunas veces cuando estamos programando en Ruby, necesitamos saber la longitud de una cadena de texto. Esto nos permite realizar diferentes manipulaciones y operaciones con los datos. En este artículo, te mostraré cómo encontrar la longitud de una cadena en Ruby y algunas cosas interesantes que puedes hacer con ella.
 
-## Cómo hacerlo
-Para encontrar la longitud de una cadena en Ruby, utilizamos el método `length`. Este método es aplicable a cualquier objeto de cadena y devuelve el número de caracteres en esa cadena. Aquí hay un ejemplo de código:
+## Cómo Hacerlo
+En Ruby, hay una forma muy fácil y directa de encontrar la longitud de una cadena. Simplemente usamos el método `length` seguido de la cadena a la que deseamos aplicarlo. Por ejemplo:
 
-```
 ```Ruby
-cadena = "Hola, ¿cómo estás?"
-puts cadena.length
+cadena = "Esto es una cadena de texto"
+puts cadena.length # Output: 28
 ```
 
-Este código imprimirá `18` ya que la cadena tiene 18 caracteres en total. Podemos ver cómo esto sería útil para, por ejemplo, limitar el número de caracteres permitidos en una entrada de texto de un usuario.
+Como puedes ver, el método `length` nos devuelve el número de caracteres de la cadena. Incluso puede funcionar con cadenas más largas:
 
-## Profundizando
-Ahora que ya sabemos cómo encontrar la longitud de una cadena, es importante entender cómo funciona esto detrás de escena. Ruby trata a todas las cadenas como objetos y el método `length` es realmente un método del objeto String. Por lo tanto, cuando llamamos al método `length` en una cadena, lo que estamos haciendo es llamar al método `length` del objeto String que contiene esa cadena. Este método cuenta los caracteres en la cadena y devuelve un número entero que representa la longitud.
+```Ruby
+cadena_larga = "¡Wow, esta cadena tiene más de 50 caracteres!"
+puts cadena_larga.length # Output: 51
+```
+
+¡Pero espera! ¿Qué pasa si tenemos una cadena vacía? Intentemos con esto:
+
+```Ruby
+cadena_vacia = ""
+puts cadena_vacia.length # Output: 0
+```
+
+Como era de esperar, incluso si la cadena está vacía, el método `length` funciona y nos devuelve 0.
+
+Ahora, ¿qué pasa con los caracteres especiales? En Ruby, se les conoce como "caracteres escapados" y se representan con una barra invertida. Por ejemplo, el carácter de nueva línea se escribe como `\n` y el tabulador como `\t`. Pero, ¿cómo afectan estos caracteres a la longitud de una cadena? Veamos un ejemplo:
+
+```Ruby
+cadena_espacios = "Unos espacios al final \t"
+puts cadena_espacios.length # Output: 31
+```
+
+Aunque visualmente solo tenemos unos pocos caracteres al final, en realidad el carácter escapado `\t` cuenta como 4 caracteres, por lo tanto la longitud total de la cadena aumenta en 4.
+
+## Buceo Profundo
+Ahora que sabemos cómo encontrar la longitud de una cadena en Ruby, hablemos de algunas otras cosas interesantes que podemos hacer con ella.
+
+Una de esas cosas es el método `size`. Este método es equivalente a `length`, así que devuelve la misma cantidad de caracteres. Entonces, ¿por qué existe el método `size` si ya tenemos `length`? Bueno, la respuesta es que en Ruby hay algunas clases como Array y Hash que tienen tanto `length` como `size` y cada uno puede tener un comportamiento diferente. Por lo tanto, `size` se usa para mantener una coherencia sintáctica en el código.
+
+Además, también hay otros métodos como `bytesize` y `each_char`. El primero nos devuelve el tamaño en bytes de la cadena y el segundo nos permite iterar sobre cada uno de los caracteres de la cadena. ¡Puedes investigar más sobre estos métodos y descubrir todas las posibilidades que ofrecen!
 
 ## Ver también
-- Guía de Ruby: https://www.ruby-lang.org/es/documentation/
-- Método `length` en la documentación de Ruby: https://ruby-doc.org/core-2.7.1/String.html#method-i-length
-- Ejemplos de uso del método `length`: https://www.geeksforgeeks.org/ruby-string-length-method-with-examples/
+- [Documentación oficial de Ruby sobre el método `length`](https://ruby-doc.org/core-2.7.1/String.html#method-i-length)
+- [Stack Overflow: Diferencias entre `length` y `size` en Ruby](https://stackoverflow.com/questions/2590355/what-is-the-difference-between-size-and-length-in-ruby/2590378)
+- [RubyGuides: Tutorial completo sobre cadenas en Ruby](https://www.rubyguides.com/2019/04/ruby-strings/)

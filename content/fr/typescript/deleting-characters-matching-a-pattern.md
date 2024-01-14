@@ -1,36 +1,50 @@
 ---
-title:    "TypeScript: Suppression de caractères correspondant à un motif"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/deleting-characters-matching-a-pattern.md"
+title:                "TypeScript: Suppression de caractères correspondant à un motif"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Souvent lors de la programmation, nous sommes confrontés à des chaînes de caractères qui peuvent contenir des caractères indésirables. Supprimer ces caractères peut être utile dans de nombreuses situations, comme nettoyer une entrée utilisateur ou formater des données pour une utilisation ultérieure. Dans cet article, nous allons apprendre comment supprimer des caractères correspondant à un modèle en utilisant TypeScript.
+L'envie de supprimer des caractères correspondant à un motif peut survenir lors de la manipulation de données ou de chaînes de caractères. Cela peut également être utile dans le cadre de la validation ou du formatage de données saisies par l'utilisateur.
 
-## Comment exécuter
+## Comment Faire
 
-Pour supprimer des caractères correspondant à un modèle, nous utiliserons la méthode `replace()` de TypeScript. Cette méthode prend deux paramètres: le premier est le modèle dont nous voulons supprimer les caractères et le deuxième est une chaîne de remplacement vide. Voici un exemple de code montrant comment utiliser la méthode `replace()`:
+Pour supprimer des caractères correspondant à un motif en TypeScript, vous pouvez utiliser la méthode `replace()` avec une expression régulière comme motif. Voici un exemple de code qui supprime tous les caractères non alphabétiques d'une chaîne de caractères et renvoie le résultat :
 
+```TypeScript
+const string = "Hé% 1ll0!";
+const pattern = /[^a-zA-Z]/g;
+const result = string.replace(pattern, "");
+console.log(result); // Résultat : "Héll"
 ```
-TypeScript
-let str:string = "Bonjour Monde!"
-let newStr:string = str.replace(/o/g, "")
-console.log(newStr)
-// Output: Bnjur Mnde!
+
+Dans l'exemple ci-dessus, la méthode `replace()` a été utilisée avec deux arguments : le motif à rechercher (tous les caractères non alphabétiques) et la chaîne de remplacement vide (pour supprimer ces caractères).
+
+Vous pouvez également accéder à la liste des caractères correspondant au motif en utilisant la méthode `match()` avec la même expression régulière :
+
+```TypeScript
+const string = "Hé% 1ll0!";
+const pattern = /[^a-zA-Z]/g;
+const result = string.match(pattern);
+console.log(result); // Résultat : ["%", "1", "0"]
 ```
 
-Dans cet exemple, nous utilisons la méthode `replace()` pour supprimer tous les caractères "o" de la chaîne de caractères. Nous déclarons d'abord une variable `str` contenant la chaîne de caractères initiale et ensuite nous utilisons la méthode `replace()` pour retourner une nouvelle chaîne sans les caractères "o". Finalement, nous imprimons cette nouvelle chaîne avec `console.log()`.
+## Plongée Profonde
 
-## Plongée en profondeur
+La méthode `replace()` en TypeScript utilise les expressions régulières pour rechercher et remplacer des motifs dans une chaîne de caractères. Les expressions régulières sont des séquences de caractères utilisées pour décrire un motif de recherche plutôt que des caractères littéraux. Elles offrent une grande flexibilité et puissance dans la manipulation de chaînes de caractères.
 
-Il est important de noter que pour supprimer tous les caractères correspondant à un modèle, nous utilisons les expression régulières en plaçant un "g" à la fin du modèle dans la méthode `replace()`. Cela indique à TypeScript de rechercher et remplacer tous les caractères correspondant au modèle dans la chaîne de caractères. De plus, la méthode `replace()` ne modifie pas la chaîne initiale, mais retourne plutôt une nouvelle chaîne avec les modifications appliquées.
+Pour en savoir plus sur les expressions régulières et comment les utiliser en TypeScript, vous pouvez consulter ces ressources :
+
+- [Expressions régulières en TypeScript - Site officiel](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Tutoriel sur les expressions régulières en TypeScript - TutorialsTeacher](https://www.tutorialsteacher.com/typescript/regexp)
+- [Introduction à JavaScript : expressions régulières - MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res)
 
 ## Voir aussi
 
-Vous pouvez consulter ces ressources pour en savoir plus sur les expressions régulières et la méthode `replace()` de TypeScript:
-
-- [Documentation sur les expressions régulières pour TypeScript](https://www.typescriptlang.org/docs/handbook/regex.html)
-- [Documentation sur la méthode `replace()` de TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#pattern-matching)
+- [Méthode `replace()` - Site officiel de TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#string-methods)
+- [Méthode `match()` - Site officiel de TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#match)
+- [Les expressions régulières en TypeScript pour le formatage de chaînes de caractères - Medium](https://medium.com/@sourabhkasudhan/typescript-regular-expressions-to-format-string-c28f3749d7a8)

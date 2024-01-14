@@ -1,44 +1,36 @@
 ---
-title:    "Arduino: Generazione di numeri casuali"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/generating-random-numbers.md"
+title:                "Arduino: Generazione di numeri casuali"
+programming_language: "Arduino"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Generare numeri casuali è un'attività fondamentale nella programmazione di Arduino. È utile per creare giochi, simulazioni o per aggiungere una componente di casualità ai tuoi progetti. In questo articolo, imparerai come generare numeri casuali utilizzando Arduino.
+Il generatore di numeri casuali è uno strumento utile per creare varietà e casualità nei progetti di Arduino. Può essere utilizzato per creare giochi, animazioni o contenuti multimediali interattivi.
 
 ## Come fare
 
-Per generare numeri casuali in Arduino, puoi utilizzare la funzione `random()` che restituisce un valore compreso tra 0 e il numero massimo che gli viene passato come parametro. Ad esempio, per generare un numero casuale tra 1 e 10, puoi utilizzare il seguente codice:
+Per generare numeri casuali in Arduino, è possibile utilizzare la funzione ```random(min, max)```, che restituisce un numero intero compreso tra il valore minimo e massimo specificato. Ad esempio, se si vuole generare un numero casuale tra 1 e 10, il codice sarebbe:
 
 ```Arduino
-int randomNumber = random(1, 11);
+int numero = random(1, 10); 
 ```
 
-Puoi anche utilizzare la funzione `randomSeed()` per impostare un valore di partenza per la generazione dei numeri casuali. Questo è utile se vuoi ottenere sempre gli stessi risultati ogni volta che esegui il tuo programma. Per esempio:
-
-```Arduino
-randomSeed(1234);
-int randomNumber = random(1, 11); // restituirà sempre lo stesso numero
-```
-
-Potresti anche voler generare numeri casuali con decimali. In questo caso, puoi utilizzare la funzione `random()` e poi dividerla per un numero per ottenere un numero con la precisione desiderata. Ad esempio, se vuoi generare un numero casuale tra 1 e 5 con una cifra decimale, puoi fare così:
-
-```Arduino
-float randomNumber = random(1, 6) / 10.0; // restituirà un numero con una cifra decimale tra 1.0 e 1.5
-```
+È importante anche impostare il seme del generatore di numeri casuali utilizzando la funzione ```randomSeed()```, in modo da ottenere numeri differenti ogni volta che si esegue il programma.
 
 ## Approfondimento
 
-La generazione di numeri casuali non è una cosa del tutto casuale, ma è determinata da un algoritmo che produce una sequenza prevedibile di numeri. In Arduino, viene utilizzato l'algoritmo Park-Miller-Carta per generare numeri casuali.
+La funzione ```random(min, max)``` utilizza un algoritmo chiamato "linear congruential generator" (LCG) per generare i numeri casuali. Questo algoritmo utilizza una formula matematica per produrre una sequenza pseudo-casuale di numeri, che a loro volta sono influenzati dal seme impostato.
 
-Se hai bisogno di una sequenza più complessa e meno prevedibile di numeri casuali, puoi utilizzare la libreria `random()` di Arduino che contiene algoritmi come la generazione di numeri casuali a 8, 16 o 32 bit e i numeri casuali basati sull'orologio del sistema.
+È importante notare che questa sequenza di numeri non è veramente casuale, ma piuttosto prevedibile e ripetibile se si utilizza lo stesso seme. Tuttavia, per scopi pratici, la maggior parte degli utilizzi di numeri casuali in progetti di Arduino non richiedono un alto grado di casualità.
+
+Un'altra opzione per generare numeri casuali più "casuali", è utilizzare un componente esterno come il sensore di luce o di temperatura, poiché questi valori possono variare in modo imprevedibile e possono essere utilizzati come seme per il generatore di numeri casuali.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Arduino per la funzione `random()`](https://www.arduino.cc/reference/en/language/functions/random-numbers/)
-- [Spiegazione dettagliata dell'algoritmo Park-Miller-Carta](https://www.firstpr.com.au/dsp/rand31/p1192-park.pdf)
-- [Libreria `random()` di Arduino](https://www.arduino.cc/en/Reference/Random)
+- [Funzione random() - Documentazione di Arduino](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Come generare numeri casuali in Arduino - Tutorial di programmazione C ++](https://www.arduino.cc/en/Tutorial/Foundations/RandomNumbers)
+- [Algoritmo LCG - Wikipedia](https://it.wikipedia.org/wiki/Linear_congruential_generator)

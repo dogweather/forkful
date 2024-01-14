@@ -1,85 +1,42 @@
 ---
-title:    "Fish Shell recipe: Reading command line arguments"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/reading-command-line-arguments.md"
+title:                "Fish Shell recipe: Reading command line arguments"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When it comes to programming, there are often multiple ways to achieve the same task. One of the options for passing input and parameters to a script or program is through command line arguments. In this blog post, we will explore how to read command line arguments in Fish Shell.
+If you're new to Fish Shell, you might be wondering why you would even bother learning about command line arguments. After all, can't you just click around in your file manager instead? But mastering command line arguments can make your Fish Shell experience more efficient and customizable. 
 
 ## How To
 
-Coding examples will be provided using the Fish Shell syntax and the resulting output will be shown. Below is a basic example of how to read command line arguments in Fish Shell:
+To read command line arguments in Fish Shell, you can use the `$argv` variable. This variable contains an array of all the arguments that were passed into the shell. Let's see an example:
 
-```
-Fish Shell: How to Read Command Line Arguments
+```Fish Shell
+# command: fish my_script.fish argument1 argument2
 
-#!/usr/bin/env fish
-
-for arg in $argv
-    echo "Argument: $arg"
-end
-
+echo $argv
 ```
 
-Running the above code with the command ```fish read_args.fish arg1 arg2``` will produce the following output:
+This will output `argument1 argument2`, showing that the arguments have been stored in the `$argv` array. You can also access individual arguments by using the array index, starting at 1. For example: 
 
-```
-Argument: arg1
-Argument: arg2
-```
-
-We can also use the built-in ```set``` command to assign command line arguments to variables as shown below:
-
-```
-Fish Shell: Reading Command Line Arguments Into Variables
-
-#!/usr/bin/env fish
-
-set argument1 $argv[1]
-set argument2 $argv[2]
-
-echo "First argument: $argument1"
-echo "Second argument: $argument2"
-
+```Fish Shell
+echo $argv[1]
 ```
 
-Running ```fish read_args.fish this_is_arg1 this_is_arg2``` will give us the output:
-
-```
-First argument: this_is_arg1
-Second argument: this_is_arg2
-```
-
-In addition to using the ```for``` loop and the ```set``` command, we can also access command line arguments using the ``` count ``` and ```argv``` variables. The following code will print the total number of arguments and the arguments themselves:
-
-```
-Fish Shell: Accessing Count and argv Variables
-
-#!/usr/bin/env fish
-
-echo "Number of arguments: $count"
-echo "All arguments: $argv"
-
-```
-
-Executing ```fish read_args.fish arg1 arg2 arg3``` will output:
-
-```
-Number of arguments: 3
-All arguments: arg1 arg2 arg3
-```
+This will output `argument1`. 
 
 ## Deep Dive
 
-Reading command line arguments can be very useful in creating scripts or programs that need user input. It allows for flexibility and customization as the user can provide different input each time the script is run. The ```argv``` array in Fish Shell automatically splits input based on spaces, making it easy to iterate through each argument using a ```for``` loop. Using the ```set``` command to assign arguments to variables can also be helpful in organizing and manipulating the input.
-
-It is important to note that command line arguments are read as strings, so if your program requires a different data type, you will need to convert the input accordingly. Additionally, the first argument in the ```argv``` array is always the name of the script or program being run, so keep that in mind when accessing arguments.
+While using the `$argv` variable is a quick and easy way to access command line arguments, there are some other useful functions and flags to be aware of. For example, you can use `count` to get the number of arguments passed in, and `contains` to check if a specific argument is present. Additionally, you can use the `-n` flag to only output numeric arguments, or the `-c` flag to only output string arguments. 
 
 ## See Also
 
-- [Fish Shell documentation on command line arguments](https://fishshell.com/docs/current/cmds/set.html#set-variable)
-- [Fish Shell tutorial on command line arguments](https://dev.to/danicat/fish-shell-tutorial-reading-command-line-arguments-l5p)
+To learn more about command line arguments in Fish Shell, check out these resources:
+
+- [Fish Shell documentation on Arguments](https://fishshell.com/docs/current/tutorial.html#tut_arguments)
+- [The Fish Shell Programming Language](https://fishshell.com/docs/current/index.html#Chapter-tutorial)
+- [Guide to Shell Scripting in Fish Shell](https://dev.to/rishirajc/guide-to-shell-scripting-in-fish-shell-3p5m)

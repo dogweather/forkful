@@ -1,51 +1,77 @@
 ---
-title:    "TypeScript: Sjekke om en mappe eksisterer"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript: Sjekke om en mappe eksisterer."
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Hvorfor 
 
-Å sjekke om en mappe eksisterer kan være en viktig del av programmering. Det lar deg sikre deg at nødvendige filer og mapper er på plass før du fortsetter med kritiske operasjoner.
+Å sjekke om en mappe eksisterer er en viktig del av filbehandling i TypeScript. Dette kan hjelpe utviklere å unngå unødvendige feil og krasj i deres kode.
 
-## How To
+## Hvordan 
 
-Å sjekke om en mappe eksisterer er en enkel prosess i TypeScript. Du trenger bare å bruke `fs.existsSync()`-funksjonen. Her er et eksempel som vil sjekke om en mappe ved navn "bilder" eksisterer:
+For å sjekke om en mappe eksisterer, kan vi bruke Node.js innebygd modul "fs". Dette gir oss funksjoner for å jobbe med filer og mapper.
 
 ```TypeScript
-if(fs.existsSync("./bilder")){
-    console.log("Mappen finnes!");
+import * as fs from 'fs';
+
+const mappeNavn = 'testMappe';
+
+// Sjekker om mappen eksisterer 
+if (fs.existsSync(mappeNavn)) {
+    console.log('Mappen eksisterer');
 } else {
-    console.log("Mappen finnes ikke.");
+    console.log('Mappen eksisterer ikke');
 }
 ```
 
-Det vil også være nyttig å vise en liste over filer og mapper i en eksisterende mappe. Her er et eksempel som gjør nettopp det:
+Eksempelet over viser hvordan vi kan bruke funksjonen "fs.existsSync()" for å sjekke om en mappe eksisterer. Hvis mappen finnes, vil konsollen skrive ut "Mappen eksisterer". Hvis mappen ikke finnes, vil den skrive ut "Mappen eksisterer ikke".
+
+Et annet alternativ er å bruke "fs.accessSync()" funksjonen. Denne sjekker ikke bare om mappen eksisterer, men også om vi har tilgang til den.
 
 ```TypeScript
-fs.readdirSync("./bilder").forEach((file) => {
-    console.log(file);
-})
+import * as fs from 'fs';
+
+const mappeNavn = 'testMappe';
+
+// Sjekker om mappen finnes og om vi har tilgang
+try {
+    fs.accessSync(mappeNavn, fs.constants.F_OK);
+    console.log('Vi har tilgang til mappen');
+} catch (err) {
+    console.log('Vi har ikke tilgang til mappen');
+}
 ```
 
-Output:
+I dette eksemplet bruker vi "fs.accessSync()" i en "try-catch" blokk. Hvis vi har tilgang til mappen, vil konsollen skrive ut "Vi har tilgang til mappen". Hvis vi ikke har tilgang, vil den skrive ut "Vi har ikke tilgang til mappen".
 
+## Dypdykk
+
+Når vi sjekker om en mappe eksisterer, kan vi også spesifisere hvilken type tilgang vi ønsker å sjekke. Dette gjøres ved å bruke konstanter fra "fs.constants" modulen.
+
+For eksempel kan vi bruke "fs.constants.R_OK" for å sjekke om vi har lesetilgang til mappen, eller "fs.constants.W_OK" for å sjekke om vi har skrivetilgang.
+
+```TypeScript
+import * as fs from 'fs';
+
+const mappeNavn = 'testMappe';
+
+// Sjekker om mappen eksisterer og om vi har lese- og skrivetilgang
+try {
+    fs.accessSync(mappeNavn, fs.constants.R_OK | fs.constants.W_OK);
+    console.log('Vi har både lese- og skrivetilgang til mappen');
+} catch (err) {
+    console.log('Vi har ikke både lese- og skrivetilgang til mappen');
+}
 ```
-bilde1.jpg
-bilde2.jpg
-bilde3.jpg
-```
 
-## Deep Dive
+Det er også verdt å merke seg at "fs.accessSync()" funksjonen vil returnere en feil hvis mappen ikke eksisterer. Dette kan være nyttig å vite hvis du ønsker å håndtere forskjellige tilfeller i koden din.
 
-Når du bruker `fs.existsSync()`, må du passe på at stien du oppgir er korrekt. Hvis stien er relativ, vil den være relatert til den gjeldende arbeidsmappe. Hvis du vil sjekke en sti som er relatert til filen som kjører, kan du bruke `__dirname`-variabelen.
+## Se også 
 
-En annen ting å merke seg er at `fs.existsSync()` bare sjekker om en mappe eksisterer, men ikke om den er tilgjengelig for skriving eller lesing. For å sjekke om en mappe kan skrives til, kan du for eksempel bruke `fs.accessSync()`-funksjonen.
-
-## Se Også
-
-- [Node.js FileSystem-dokumentasjon](https://nodejs.org/api/fs.html)
-- [Sjekke eksistens av filer og mapper i TypeScript](https://www.fyneworks.com/2012/03/29/check-if-a-file-or-directory-exists-while-using-typescript/)
-- [En grundig guide til filbehandling i TypeScript](https://medium.com/@romanonthego/file-handling-with-typescript-e4249eeba5a0)
+- [Offisiell Node.js dokumentasjon for "fs" modulen](https://nodejs.org/api/fs.html)
+- [Guide for å lære TypeScript filbehandling](https://www.digitalocean.com/community/tutorials/typescript-filbehandling)
+- [10 sbeste måter å sjekke om en fil eksisterer i JavaScript](https://insource.io/blog/articles/js-typescript/check-if-file-exists)

@@ -1,48 +1,35 @@
 ---
-title:    "Fish Shell: Konvertering av en streng til små bokstaver"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/converting-a-string-to-lower-case.md"
+title:                "Fish Shell: Konvertere en streng til små bokstaver"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Mange programmerere ønsker å konvertere en streng til små bokstaver av flere grunner. Det kan for eksempel være for å sammenligne tekst uten å tenke på store og små bokstaver, eller for å følge gitte konvensjoner i programmeringsspråket de bruker. Uansett grunn, kan Fish Shell gjøre dette enkelt og effektivt.
+Hvorfor skulle noen ønske å konvertere en streng til små bokstaver? Vel, det kan være en nyttig funksjon å ha i ditt programmeringsverktøy. Kanskje du ønsker å lage et program som automatisk konverterer innkommende brukerinput til små bokstaver, eller kanskje du trenger å sammenligne tekststrenger som ikke er nøyaktig t idsnev. Uansett årsak, så er det enkelt å gjøre med Fish Shell.
 
-##Hvordan gjøre det
+## Hvordan man gjør det
 
-Fish Shell har en innebygd funksjon som heter `lowercase` som gjør akkurat det navnet antyder - den konverterer en streng til små bokstaver. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+For å konvertere en streng til små bokstaver i Fish Shell, kan du bruke kommandoen `string tolower`. For eksempel:
 
-```Fish Shell
-set my_str "FISH SHELL"
-echo "$my_str"
-echo (lowercase "$my_str")
 ```
-
-Dette vil gi følgende utoutput:
-
-```Fish Shell
-FISH SHELL
+Fish Shell: string tolower "FISH SHELL"
 fish shell
 ```
 
-Som du kan se, konverterte `lowercase`-funksjonen strengen `FISH SHELL` til små bokstaver. Det er viktig å merke seg at denne funksjonen ikke endrer den originale variabelen, men heller returnerer en ny verdi.
+Som du kan se, konverteres strengen "FISH SHELL" til "fish shell". Dette gjøres ved å bruke det innebygde funksjonskallet `tolower` som endrer hver bokstav i strengen til små bokstaver.
 
-Hvis du vil konvertere en hel fil til små bokstaver, kan du bruke `tr`-kommandoen i kombinasjon med `lowercase`-funksjonen. For eksempel:
+## Dypdykk
 
-```Fish Shell
-cat my_file.txt | tr '[:upper:]' '[:lower:]'
-```
+En interessant ting å merke seg er at `string tolower` også kan håndtere ikke-ASCII bokstaver, som å, ø og å. Dette gjør det til et kraftig verktøy i situasjoner der du trenger å håndtere forskjellige språk og tegnsett.
 
-Dette vil skrive ut innholdet av filen `my_file.txt` med alle bokstaver konvertert til små bokstaver.
+En annen ting å huske på er at `string tolower` bare endrer de bokstavene som allerede er i små bokstaver. Hvis strengen inneholder store bokstaver, tall eller spesialtegn, vil de ikke bli endret. Du kan også bruke `string toupper` for å konvertere en streng til store bokstaver.
 
-##Dykk dypere
+## Se også
 
-Hvis du er interessert i å lære mer om hvordan Fish Shell konverterer en streng til små bokstaver, kan du ta en titt på kildekoden. Du vil se at selve funksjonen er ganske enkel og kun bruker et enkelt `for`-løkke for å gjøre konverteringen. Dette er en flott måte å dykke dypere inn i Fish Shells funksjonalitet og forstå hvordan ting fungerer under overflaten.
-
-##Se også
-
-- Fish Shell sin offisielle dokumentasjon om `lowercase`-funksjonen: https://fishshell.com/docs/current/cmds/lowercase.html
-- En bloggpost om å konvertere store og små bokstaver med `tr`-kommandoen: https://www.howtogeek.com/196653/how-to-use-the-tr-command-on-linux/
-- En artikkel om grunnleggende bruk av Fish Shell: https://medium.com/@michaelburri/fish-shell-a-beginners-guide-79a9b0df1c3e
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/string.html#tolower)
+- [Konverter en streng til små bokstaver i Python](https://www.programiz.com/python-programming/methods/string/lower)
+- [UTF-8 og Unicode forklart](https://www.utf8.no)

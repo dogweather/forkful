@@ -1,61 +1,58 @@
 ---
-title:    "PHP recipe: Using regular expressions"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/using-regular-expressions.md"
+title:                "PHP recipe: Using regular expressions"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Regular expressions, also known as regex, are a powerful tool for string manipulation in PHP. They allow for efficient searching and replacing of patterns within strings, making complex tasks much simpler to accomplish. Utilizing regular expressions can greatly improve the functionality and readability of your PHP code.
+Regular expressions, also known as regex, are a powerful and commonly used tool in programming. They allow developers to search for patterns within strings, making tasks such as data validation, parsing, and manipulating much easier. So, if you want to improve your coding efficiency and make your life easier, learning regular expressions is a must.
 
 ## How To
 
-To use regular expressions in PHP, we first need to use the `preg_match()` function to check if a pattern exists within a string. Let's take a look at an example:
+Regular expressions are written using specific characters and symbols to represent patterns. Let's take a look at a simple regex example to find all email addresses in a string. 
 
-```PHP
-$string = "Hello World!";
-$pattern = "/World/";
-
-if (preg_match($pattern, $string)) {
-  echo "Pattern found!";
-} else {
-  echo "Pattern not found!";
-}
+```PHP 
+$string = "My email is john@example.com and my friend's email is jane@hotmail.com";
+$pattern = "/\S+@\S+\.\S+/";
+preg_match_all($pattern, $string, $matches);
+print_r($matches[0]);
 ```
 
-In this example, we have a string containing the phrase "Hello World!" and we are searching for the pattern "/World/" within it. The `preg_match()` function takes in two parameters, the pattern to search for and the string to search within. In this case, the pattern is found within the string, so "Pattern found!" will be echoed.
+The output of this code would be:
 
-We can also use regex to replace patterns within a string using the `preg_replace()` function. Let's see how this looks in code:
-
-```PHP
-$string = "Hello John!";
-$pattern = "/John/";
-$replacement = "Jane";
-
-$new_string = preg_replace($pattern, $replacement, $string);
-echo $new_string;
+```
+Array
+(
+    [0] => john@example.com
+    [1] => jane@hotmail.com
+)
 ```
 
-In this example, we have a string containing the name "John" and we want to replace it with "Jane". By using the `preg_replace()` function, we can easily accomplish this. The output will be "Hello Jane!".
+Let's break down the pattern we used in the code:
+
+- `\S` represents any non-whitespace character
+- `+` means that the previous character or group can appear one or more times
+- `@` represents the `@` symbol
+- `\.` represents the `.` symbol (notice the `\` is used to escape the special meaning of the `.`)
+- `$matches[0]` will contain all the matches, while `$matches[1]` will contain only the email addresses without the `@` and `.` symbols.
+
+This is just a basic example, but as you can see, regular expressions can be a powerful and efficient way to find patterns in strings. There are many other symbols and methods that can be used, so it's important to refer to documentation and practice using them.
 
 ## Deep Dive
 
-Regular expressions in PHP follow a specific syntax that may seem intimidating at first, but it becomes easier to understand with practice. Some common characters used in regex include:
+Regular expressions can be used in various programming languages, including PHP. In PHP, the `preg_match()` and `preg_match_all()` functions are used to perform regex operations. These functions take three parameters - the pattern, the subject string, and an optional variable to store the matches.
 
-- `.` - Matches any character except for new line.
-- `*` - Matches the previous character 0 or more times.
-- `+` - Matches the previous character 1 or more times.
-- `?` - Matches the previous character 0 or 1 time.
-- `|` - Matches either the expression before or after the pipe.
-- `[]` - Matches any character within the brackets.
-- `()` - Groups together expressions and remembers the matched values.
+There are also different modifiers that can be added to the end of a regex pattern to specify things such as case-insensitivity, multiline matching, and more. It's important to understand different modifiers and their effects on the pattern match.
 
-To learn more about regular expressions in PHP, you can refer to the PHP documentation or online tutorials. It may also be helpful to practice using regex with online tools like Regex101 or Debuggex.
+Another thing to keep in mind when using regular expressions is to be aware of performance. While they are great for certain tasks, they can also cause performance issues if not used correctly. It's best to test and optimize your regex patterns to ensure they are running efficiently.
 
 ## See Also
 
-- [PHP Regular Expressions Documentation](https://www.php.net/manual/en/book.pcre.php)
-- [Regex101](https://regex101.com/)
-- [Debuggex](https://www.debuggex.com/)
+- [PHP Official Documentation on Regular Expressions](https://www.php.net/manual/en/book.pcre.php)
+- [Regex101 - Tool for testing and building regular expressions](https://regex101.com/)
+- [Mastering Regular Expressions - Book by Jeff Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)

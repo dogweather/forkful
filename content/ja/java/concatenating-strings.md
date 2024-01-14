@@ -1,51 +1,45 @@
 ---
-title:    "Java: 文字列の連結"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/concatenating-strings.md"
+title:                "Java: 文字列の連結"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+文字列を連結することについて、なぜその方法を採用するのかを説明します。
 
-文字列を連結させることに関わる理由について説明します。Javaのプログラミングにおいて、文字列の連結は非常に重要な操作です。複数の文字列を一つに合体させることで、より複雑で役立つプログラムを作ることができます。また、出力したい文字列の形式を自由に設定することができます。
+## メソッド
+文字列を連結する方法はいくつかありますが、基本的な方法としては「+」演算子を使用する方法があります。例えば、次のようなコードを使用することで、2つの文字列を連結することができます。
 
-## 方法
-
-文字列を連結させるためには、文字列を加算演算子（+）で結合することができます。例えば、"Hello"と"World"を連結させる場合は次のように記述します。
-
-```Java
-String str1 = "Hello";
-String str2 = "World";
-
+```java
+String str1 = "こんばんは";
+String str2 = "。";
 String result = str1 + str2;
-
-System.out.println(result); //output: HelloWorld
+System.out.println(result); // 出力結果: こんばんは。
 ```
 
-複数の文字列を連結させる場合は、文字列変数を区切り記号として文字列を加えたり、文字列ライブラリのメソッドを使用することができます。以下は、複数の文字列をスペースで区切って連結させる例です。
+もう1つの方法として、```StringBuffer```クラスを使用する方法があります。これは、可変の文字列を扱うことができるクラスで、連結するためのメソッドとして```append()```があります。例えば、次のようなコードを使用することで、同じように2つの文字列を連結することができます。
 
-```Java
-String str1 = "Hello";
-String str2 = "World";
-String str3 = "from";
-String str4 = "Java";
-
-String result = str1 + " " + str2 + " " + str3 + " " + str4;
-
-System.out.println(result); //output: Hello World from Java
+```java
+String str1 = "こんにちは";
+String str2 = "！";
+StringBuffer sb = new StringBuffer();
+sb.append(str1);
+sb.append(str2);
+System.out.println(sb.toString()); // 出力結果: こんにちは！
 ```
 
-## 深堀り
+## 詳細について
+文字列の連結方法には、メモリの使用方法やパフォーマンスに関わる重要な点があります。例えば、上記の2つの方法の場合、```String```クラスを使用する方法の方がメモリの使用量が大きくなり、その結果パフォーマンスの面で劣ることがあります。そのため、大量の文字列を連結する場合は、```StringBuffer```クラスを使用する方が良いでしょう。
 
-文字列を連結させる際に気をつける点として、文字列の連結回数や位置などによってパフォーマンスに影響があることが挙げられます。文字列変数に代入する求める文字列の数が少ない場合は、加算演算子を使用するのが適しています。しかし、大量の文字列を連結させる場合は、文字列ライブラリのStringBuilderクラスを使用することが推奨されています。StringBuilderクラスは、文字列を可変で格納することによってパフォーマンスを向上させることができます。
+また、連結する文字列の数が少ない場合は、```String```クラスを使用した方がシンプルで理解しやすいコードになると言えます。
 
-## その他
+## 参考リンク
+- [Java String Concatenation](https://www.baeldung.com/java-string-concatenation)
+- [StringBuffer Class in Java](https://www.geeksforgeeks.org/stringbuffer-class-in-java/)
+- [String vs StringBuffer in java](https://www.guru99.com/string-vs-stringbuffer-vs-stringbuilder.html)
 
-もし文字列の連結についてもっと深く学びたい場合は、以下のリンクを参考にしてください。
-
-見出し：参考リンク
-
-- [Java公式ドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#concat-java.lang.String-)
-- [String, StringBuffer, StringBuilderの違い](https://zero5eight9.com/java-string/#i-3)
-- [Javaにおける文字列の扱い方](https://qiita.com/AkihiroTakamura/items/9a8ab575f16365700f88)
+## 関連情報
+- Javaでは、文字列を連結する方法以外にも、文字列を扱うためのさまざまなメソッドやクラスが用意されています。ぜひ、それらも学習してみてください。

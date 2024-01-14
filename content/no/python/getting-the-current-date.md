@@ -1,87 +1,82 @@
 ---
-title:    "Python: Få gjeldende dato"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/getting-the-current-date.md"
+title:                "Python: Å få nåværende dato"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å få den nåværende datoen kan virke som en enkel oppgave, men det er en viktig del av programmering. Å kunne få og manipulere datoer kan være avgjørende for å lage funksjonelle og nøyaktige programmer. I denne bloggposten vil vi se på hvordan du kan få den nåværende datoen ved hjelp av Python.
+Å få tak i dagens dato kan være viktig for å lage dynamiske programmer eller å registrere informasjon på en korrekt måte. Det er også nyttig for å holde oversikt over tidssensitive oppgaver eller å generere rapporter.
 
 ## Hvordan
 
-For å få den nåværende datoen i Python bruker vi "datetime" modulen. Først importerer vi modulen ved å skrive følgende kode:
+Å få tak i dagens dato i Python er enkelt. Først må vi importere biblioteket "datetime" ved å skrive følgende kode:
 
 ```Python
 import datetime
 ```
 
-Deretter kan vi bruke "datetime.now()" funksjonen for å få den nåværende datoen og klokkeslettet. Dette er et eksempel på hvordan du kan skrive koden:
+Deretter kan vi bruke funksjonen "datetime.now()" for å få tak i dagens dato og klokkeslett. La oss se på et eksempel:
 
 ```Python
-dato = datetime.now()
-print(dato)
+current_date = datetime.now()
+print(current_date)
+```
+Dette vil gi oss følgende output:
+
+```Output
+2021-03-18 15:25:00.244533
 ```
 
-Dette vil gi følgende utdata:
-
-2021-05-10 13:35:20.794843
-
-Som du kan se, gir funksjonen oss både dato og klokkeslett. Men hva om vi bare vil ha datoen? Da kan vi bruke "date()" funksjonen, som tar bort klokkeslettet og bare gir oss datoen. Her er et eksempel:
+Vi kan også formatere outputen ved å bruke funksjonen "strftime()" og spesifisere ønsket format. Her er et eksempel:
 
 ```Python
-dato = datetime.now().date()
-print(dato)
+current_date = datetime.now()
+formatted_date = current_date.strftime("%d.%m.%Y")
+print(formatted_date)
 ```
 
-Dette vil gi følgende utdata:
+Dette vil gi oss følgende output:
 
-2021-05-10
+```Output
+18.03.2021
+```
 
-Vi kan også formatere datoen slik vi ønsker ved å bruke "strftime()" funksjonen. Her er et eksempel på hvordan vi kan få datoen til å se ut som "10.05.2021":
+## Dypdykk
+
+"datetime" biblioteket gir også muligheten til å få tak i spesifikke deler av datoen, som for eksempel dag, måned og år. Dette kan være nyttig hvis vi ønsker å utføre beregninger eller sammenligninger basert på disse verdiene. Her er et eksempel på hvordan vi kan få tak i dagens år:
 
 ```Python
-dato = datetime.now().strftime("%d.%m.%Y")
-print(dato)
+current_date = datetime.now()
+year = current_date.year
+print(year)
 ```
 
-Dette vil gi følgende utdata:
+Dette vil gi oss følgende output:
 
-10.05.2021
+```Output
+2021
+```
 
-## Deep Dive
-
-Nå som du vet hvordan du kan få den nåværende datoen ved hjelp av Python, la oss se på noen andre måter å manipulere og lagre datoen på.
-
-Vi kan for eksempel legge til eller trekke fra dager fra den nåværende datoen ved hjelp av "timedelta" objektet. Det kan være nyttig hvis vi for eksempel vil finne ut hva datoen vil være en uke fra nå. Her er et eksempel:
+Vi kan også bruke "timedelta" funksjonen for å gjøre beregninger basert på datoer. For eksempel, hvis vi ønsker å legge til 100 dager til dagens dato, kan vi gjøre følgende:
 
 ```Python
-from datetime import timedelta
-dato = datetime.now() + timedelta(days=7)
-print(dato)
+current_date = datetime.now()
+new_date = current_date + timedelta(days=100)
+print(new_date)
 ```
 
-Dette vil gi følgende utdata:
+Dette vil gi oss følgende output:
 
-2021-05-17 13:35:20.794843
-
-Vi kan også konvertere en streng til en dato-objekt ved hjelp av "strptime()" funksjonen. Dette kan være nyttig hvis vi for eksempel har en brukerinput og ønsker å konvertere den til en dato. Her er et eksempel:
-
-```Python
-dato = datetime.strptime("2021-05-20", "%Y-%m-%d")
-print(dato)
+```Output
+2021-06-26 15:40:00.244533
 ```
 
-Dette vil gi følgende utdata:
+## Se Også
 
-2021-05-20 00:00:00
-
-Det finnes mange flere måter å arbeide med datoer på i Python, og det er lurt å utforske dem for å bli mer komfortabel med å manipulere og lagre datoer i programmene dine.
-
-## Se også
-
-- "Python dokumentasjon om datetime modulen" (https://docs.python.org/3/library/datetime.html)
-- "Tutorialspoint tutorial om arbeid med datoer i Python" (https://www.tutorialspoint.com/python/python_date_time.htm)
-- "W3 Schools tutorial om date og datetime objekter i Python" (https://www.w3schools.com/python/python_datetime.asp)
+- [Python offisiell dokumentasjon for datetime](https://docs.python.org/3/library/datetime.html)
+- [RealPython - Manipulating Dates and Times in Python](https://realpython.com/python-datetime/)
+- [W3Schools - Python Datetime](https://www.w3schools.com/python/python_datetime.asp)

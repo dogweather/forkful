@@ -1,36 +1,49 @@
 ---
-title:    "Gleam: Ikke noe."
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/capitalizing-a-string.md"
+title:                "Gleam: The title of an article: Stor bokstaving av en streng"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
+Det kan være flere grunner til å ville kapitalisere en streng i programmering. En vanlig årsak kan være å få en mer estetisk og lesbar tekst. Dette kan være spesielt nyttig når man jobber med brukergrensesnitt eller utskrifter til konsollen. I tillegg kan det være nødvendig å formatere data slik at den følger bestemte konvensjoner, for eksempel når man sender data til et API.
 
-Å kapitalisere en streng kan virke som en liten og ubetydelig kodeøvelse, men det kan faktisk være svært nyttig i visse programmeringssituasjoner. Enten det er for å opprettholde en ensartet stil i teksten, eller for å fremheve viktige ord i en setning, kan kapitalisering av strenger være en nødvendig funksjonalitet.
-
-## Hvordan
-
-For å kapitalisere en streng i Gleam, kan du bruke funksjonen `String.capitalize`. Denne funksjonen tar inn en streng og returnerer samme streng, men med første bokstav store bokstaver. Her er et eksempel på hvordan du kan bruke denne funksjonen i Gleam:
+##Slik gjør du det
+For å kapitalisere en streng i Gleam, kan du bruke den innebygde funksjonen `String.to_uppercase`. Se et eksempel nedenfor:
 
 ```Gleam
-let navn = "jeg elsker gleam"
-let kapitalisert_navn = String.capitalize(navn)
-
-// Output: "Jeg elsker gleam"
+let tekst = "gleam programming er gøy"
+let kapitalisert_tekst = String.to_uppercase(tekst)
 ```
 
-Som du kan se, vil funksjonen gi oss en kapitalisert versjon av strengen "jeg elsker gleam". Det er viktig å huske at denne funksjonen kun vil kapitalisere første bokstav i en streng, så hvis du ønsker å kapitalisere alle ord, må du bruke en annen funksjon eller en løkke.
+Dette vil gi følgende resultat:
 
-## Dypdykk
+```
+"GLEAM PROGRAMMING ER GØY"
+```
 
-Det kan være lurt å ha litt kunnskap om hvordan strenger fungerer i Gleam før du begynner å kapitalisere dem. I Gleam, som de fleste andre programmeringsspråk, er en streng en sekvens av tegn. Dette betyr at hver bokstav, symbol og mellomrom i en streng har en tilhørende numerisk verdi som datamaskinen kan forstå.
+Du kan også formatere lengre strenger ved å iterere gjennom ordene og kapitalisere den første bokstaven i hvert ord. Dette kan gjøres ved hjelp av `String.split` og `List.map` funksjoner. Her er et eksempel:
 
-Når vi bruker funksjonen `String.capitalize`, vil den bruke disse numeriske verdiene til å endre noen av tegnene til store bokstaver. Dette er en enkel, men viktig funksjonalitet som kan hjelpe med å gi en profesjonell og konsistent stil til tekst i et program.
+```Gleam
+let setning = "python er et populært programmeringsspråk"
+let kapitalisert_setning =
+    setning
+    |> String.split(" ")  // Deler strengen ved mellomrom for å få en liste med ord
+    |> List.map(String.to_uppercase) // Mapper hver streng til å bli kapitalisert
+    |> String.join(" ") // Slår strengene sammen igjen
+```
 
-## Se også
+Dette vil produsere følgende resultat:
 
-- [Offisiell Gleam dokumentasjon](https://gleam.run/documentation/)
-- [Kapitalisering av strenger i andre programmeringsspråk](https://www.programiz.com/dsa/program-to-capitalize-first-letter-of-each-word-in-sentence)
-- [Mer om strenger i Gleam](https://gleam.run/articles/working-with-strings-in-gleam/)
+```
+"PYTHON ER ET POPULÆRT PROGRAMMERINGSSPRÅK"
+```
+
+##Dypdykk
+Hvis du ønsker å dypere forståelse av hvordan kapitalisering av strenger fungerer i Gleam, kan du se på hvordan `String.to_uppercase` funksjonen er implementert. Denne funksjonen bruker Unicode "character properties" for å bestemme hvilke bokstaver som skal bli kapitalisert. Det betyr at denne funksjonen også fungerer for ikke-vestlige språk som bruker andre alfabet enn det latinske.
+
+##Se også
+- Offisiell Gleam dokumentasjon for `String` modulen: https://gleam.run/modules/string
+- En artikkel om Unicode character properties: https://en.wikipedia.org/wiki/Unicode_character_property

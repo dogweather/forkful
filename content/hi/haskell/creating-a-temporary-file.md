@@ -1,42 +1,41 @@
 ---
-title:    "Haskell: एक अस्थायी फाइल बनाना"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/creating-a-temporary-file.md"
+title:                "Haskell: अस्थायी फाइल बनाना"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-कभी-कभी हस्केल प्रोग्रामर अपने कोड में अस्थाई फाइलों की आवश्यकता हो सकती है। यह अस्थाई फाइलें उनके कोड को योग्य संरक्षण और प्रक्रियाओं से सुरक्षित रखने में मदद कर सकती हैं।
+अगर आप एक हैस्केल प्रोग्रामर हैं तो आपने temporary files के बारे में सुना होगा। ये एक common programming practice है जो हमें ध्यान रखना चाहिए। इस लेख में हम temporary files के बारे में गहराई से बात करेंगे।
 
-# कैसे करें
+## कैसे करें
 
-अस्थाई फाइलें बनाने के लिए हस्केल में आसान और सरल तरीका है। आप निम्न उदाहरण का पालन करके अपने कोड में आसानी से अस्थाई फाइलें बना सकते हैं:
+यदि आप हास्केल में temporary files बनाना चाहते हैं तो आपको `System.IO.Temp` मॉड्यूल का उपयोग करना होगा। ये मॉड्यूल temporary फ़ाइल को create, read और delete करने के लिए फ़ंक्शन प्रदान करता है।
+
+आइए हम एक example देखें जहाँ हम temporary file बनाकर उसमें कुछ लिखते हैं और फिर उसको पढ़ते हैं।
 
 ```Haskell
-import System.IO
+import System.IO.Temp (withSystemTempFile)
+import System.IO (hPutStrLn, hGetContents)
 
-main = do
-  -- अपनी अस्थाई फाइल के लिए एक नाम बनाएं
-  let fileName = "temp.txt"
-  -- हस्केल फांक्शन 'withFile' का उपयोग करके एक अस्थाई फाइल बनाएं
-  withFile fileName WriteMode $ \file ->
-    do
-      -- अपनी अस्थाई फाइल में डेटा लिखें
-      hPutStrLn file "यह एक अस्थाई फाइल है"
-    -- अक्षम करें
-    putStrLn "काम समाप्त हुआ!"
+main = withSystemTempFile "example.txt" $ \path handle -> do
+    hPutStrLn handle "नमस्ते दुनिया!"
+    hGetContents handle >>= putStrLn
 ```
 
-इस उदाहरण में, हम अस्थाई फाइल "temp.txt" नाम से बनाते हैं और फिर हम उसमें "यह एक अस्थाई फाइल है" लिखते हैं। आप अपनी स्वतंत्रता के अनुसार अस्थाई फाइल का उपयोग कर सकते हैं और उसे हटा सकते हैं।
-
-उपरोक्त कोड का आउटपुट निम्न रूप में हो सकता है:
+इस कोड का output नीचे दिया गया है:
 
 ```
-काम समाप्त हुआ!
+नमस्ते दुनिया!
 ```
 
-# गहराई में जाएं
+इस code में हमने `withSystemTempFile` फ़ंक्शन का उपयोग किया है जो दो arguments लेता है - एक temporary फ़ाइल का prefix और एक callback function। यह callback function temporary फ़ाइल का path और handle को लेता है जिसका हम उपयोग कर सकते हैं। हमने `hPutStrLn` function का उपयोग करके temporary फ़ाइल में लिखा है और फिर `hGetContents` फ़ंक्शन का उपयोग करके उसमें से text को पढ़ा है।
 
-अस्थाई फाइलें हस्केल में IO मॉनाड से बनती हैं, जो आपको फॉर्मेटिंग और अन्य प्रक्रियाओं के साथ डेटा को फाइल में लिखने की अनुमति देता है। आप सभी IO मॉनाड फंक्शन को अपने कोड में उपयोग कर सकते हैं और तब तक अस्थाई फाइ
+## गहराई में
+
+Temporary files को create करने के कई तरीके हैं लेकिन वे सभी कुछ common features share करते हैं। जब temporary file create होता है तो वो system के default लोकेशन में जाता है। यदि आप इस default लोकेशन को override करना चाहते हैं तो आप `withSystemTempDirectory` फ़ंक्शन का उपयोग कर सकते हैं। भी temporary file को delete करने के लिए `removeFile` function का उपयोग कर सकते हैं।
+
+एक ऐसा

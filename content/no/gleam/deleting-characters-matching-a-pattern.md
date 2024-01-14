@@ -1,37 +1,43 @@
 ---
-title:    "Gleam: Sletting av tegn som samsvarer med et mønster"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/deleting-characters-matching-a-pattern.md"
+title:                "Gleam: Slette tegn som matcher et mønster"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å slette tegn som matcher et mønster kan være viktig for å lage effektive og ryddige programmer. Ved å fjerne unødvendige tegn, kan man forbedre ytelsen til programmet og gjøre koden enklere å lese og forstå.
+Det er ofte behov for å slette bestemte tegn eller bokstaver fra en tekststreng når du arbeider med programmering. Dette kan være for å rense og formatere data, filtrere uønskede tegn eller bare for å forenkle tekstbehandlingen din. I denne bloggposten vil jeg vise deg hvordan du kan bruke Gleam til å slette tegn som matcher et bestemt mønster, og hvorfor dette kan være nyttig.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å slette tegn som matcher et mønster i Gleam, kan man bruke funksjonen `String.replace` sammen med et regex-uttrykk. Her er et eksempel på hvordan dette kan gjøres:
+For å slette tegn som matcher et mønster i Gleam, kan du bruke Funktsjonen `String.replace` sammen med en regulær uttrykksparameter. La oss si at vi har en tekststreng som inneholder både tall og bokstaver, men vi kun ønsker å beholde bokstaver. Vi kan enkelt gjøre dette ved å bruke følgende kode:
 
-```Gleam
-import Gleam.Regex.String
-
-let input = "Å slette tegn som matcher et mønster kan være viktig"
-let pattern = Regex.compile("e+")
-let output = String.replace(input, pattern, "")
-
-assert output == "Å sltte tgn som matcher t mønstr kan vr viktg"
+```
+Gleam
+let tekst = "123-abc-456"
+let kun_bokstaver = String.replace(tekst, ~regexp="\d", ~replacement="")
 ```
 
-I koden over har vi først importert funksjonaliteten for regex-uttrykk fra Gleam-biblioteket. Deretter har vi definert en input-tekst og et regex-uttrykk som leter etter én eller flere "e"-tegn. Ved å bruke `String.replace`, kan vi erstatte alle tegn som matcher mønsteret med et tomt streng. Til slutt bruker vi `assert`-funksjonen for å sikre at outputen er som forventet.
+I dette eksempelet bruker vi funksjonen `String.replace` til å finne alle tall i tekststrengen og bytte dem ut med et tomt streng (""), altså slettet dem. Dette etterlater oss med tekststrengen "abc", som kun inneholder bokstaver.
 
-## Dypdykk
+I tillegg til å slette tegn, kan du også bruke denne metoden til å beholde kun visse tegn. For eksempel kan vi bruke følgende kode for å slette alle bokstaver fra en tekststreng, og kun beholde tallene:
 
-Bak koden i eksempelet over ligger det et kraftig regex-bibliotek som gjør det mulig å lage avanserte mønstre for å matche tegn. Det er verdt å utforske dette biblioteket nærmere og lære hvordan man kan bruke flere søkealternativer, grenser og grupperinger for å finne og erstatte spesifikke tegn i tekststrenger.
+```
+Gleam
+let tekst = "123-abc-456"
+let kun_tall = String.replace(tekst, ~regexp="[a-zA-Z]", ~replacement="")
+```
 
-# Se også
+Dette vil gi oss tekststrengen "123-456".
 
-- [Gleam Regex bibliotek](https://gleam.run/packages/greggreg/regex)
-- [Eksempler på regex-mønstre](https://www.regular-expressions.info/examples.html)
-- [Gleam dokumentasjon](https://gleam.run/documentation)
+## Dykk dypere
+
+Nå som du har en forståelse for hvordan du kan slette tegn som matcher et mønster, kan du også utforske andre måter å bruke denne funksjonen på. For eksempel kan du kombinere `String.replace` med andre funksjoner for å manipulere og formatere tekst på en mer kompleks måte. Du kan også eksperimentere med ulike regulære uttrykk for å finne den perfekte strategien for ditt brukstilfelle.
+
+## Se også
+
+- [Gleam dokumentasjon om String modulet](https://gleam.run/documentation/std_lib/string/)
+- [Essential Guide to Regular Expressions in Gleam](https://medium.com/@gleamlang/an-essential-guide-to-regular-expressions-in-gleam-72f24c1320f8)

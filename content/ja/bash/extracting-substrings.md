@@ -1,56 +1,39 @@
 ---
-title:    "Bash: 部分文字列の抽出"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/extracting-substrings.md"
+title:                "Bash: 部分文字列の抽出"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を抽出することをどうしてあなたはやるか、それがどのようにあなたに役立うかについて書かれたBashプログラミングのブログ投稿です。この記事では、文字列を抽出する方法、そしてそれについてさらに深く掘り下げる方法を紹介します。
+サブストリングの抽出を行う理由はさまざまです。その一つは、特定の文字列や単語を抽出してより効率的な処理を行うことができるからです。また、テキストデータの分析や検索を行う際にも便利です。
 
-## 抽出する方法
+## 方法
 
-文字列を抽出するには、Bashの組み込みコマンドである`substr`を使用します。使用例を見てみましょう。
+サブストリングを抽出するには、以下の方法を使うことができます。
 
-```Bash
-# 文字列の最初から3文字を抽出する
-string="こんにちは"
-echo ${string:0:3}
+```
+Bash
+# 変数を定義
+str="こんにちは、私の名前は太郎です。"
 
-# 出力: こん
+# 抽出したい文字列を指定してサブストリングを抽出
+echo ${str:9:3}
 
-# 文字列の3文字目から最後までを抽出する
-string="こんにちは"
-echo ${string:2}
-
-# 出力: にちは
+# 出力結果: 太郎
 ```
 
-`substr`コマンドを使用することで、変数の値から一部の文字を抽出することができます。
+## ディープダイブ
 
-## 深く掘り下げる
+サブストリングを抽出する方法には様々なバリエーションがあります。例えば、文字列の開始位置や終了位置を指定したり、特定のパターンに一致する部分文字列を抽出することもできます。また、正規表現を使用してサブストリングを抽出することも可能です。
 
-文字列を抽出する方法は簡単ですが、いくつかのトリックを覚えることでより柔軟に操作することができます。
+しかし、サブストリングを抽出する際には文字列のインデックス番号に注意する必要があります。Bashでは、文字列の1文字目が0番目となります。また、マイナスの数値を指定すると文字列の末尾からカウントされます。
 
-- `:`の後の数字を省略すると、指定した位置から最後までの文字を抽出することができます。
-- `:`の前の数字を負の値にすると、文字を後ろから数えることができます。
-- `:`の後の数字を`-`にすると、指定した位置から最後までの文字を逆順に抽出することができます。
+## 関連リンク
 
-詳しい使い方は、Bashの公式ドキュメントを参照してください。
-
-## さらに参考に
-
-他にも有用なBashの文字列操作については、こちらの記事をチェックしてください。
-
-- [Bash Hackers Wiki - 文字列操作](https://wiki.bash-hackers.org/syntax/pe)
-- [Bashドリル - 文字列操作のテクニック](http://bash.drill.so/?chapter=string_manipulation)
-
----
-参考リンク:
-
-## 関連記事
-
-- [文字列操作の基本 - substrコマンドの使用方法](https://www.example.com/substr-basics)
-- [Bashプログラミングの基礎学習ガイド](https://www.example.com/bash-tutorial)
+* [Bash Guide for Beginners](https://guide.bash.academy/)
+* [Bash Substring Manipulation](https://www.baeldung.com/linux/bash-substring)
+* [Advanced Bash-Scripting Guide - Substring Expanding](https://www.tldp.org/LDP/abs/html/parameter-substitution.html#SUBSTREXPAND)

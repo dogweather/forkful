@@ -1,47 +1,41 @@
 ---
-title:    "Haskell: Zufallszahlen generieren"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/generating-random-numbers.md"
+title:                "Haskell: Zufallszahlen generieren"
+programming_language: "Haskell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Generieren von Zufallszahlen ist ein wichtiges Konzept in der Programmierung. Es ermöglicht uns, zufällige Ergebnisse in unsere Programme einzubauen, was besonders in der Spieleentwicklung und Simulationen nützlich ist.
+In der Programmierung gibt es oft Situationen, in denen man zufällige Zahlen benötigt. Das können simulierte Spiele oder statistische Analysen sein. Mit Haskell kann man auf einfache Weise zufällige Zahlen generieren und somit ein vielseitiges Werkzeug für verschiedene Anwendungen schaffen.
 
-## Wie man es macht
+## Wie es geht
 
-In Haskell gibt es verschiedene Bibliotheken und Techniken, mit denen wir Zufallszahlen generieren können. Eine beliebte Option ist die `random` Bibliothek, die Funktionen zur Erzeugung von Zufallszahlen verschiedener Datentypen wie Integer und Gleitkommazahlen bereitstellt. Schauen wir uns ein Beispiel an:
-
-```Haskell
-import System.Random
-
-main = do
-  gen <- getStdGen
-  let (r, _) = randomR (1, 100) gen -- generiert eine Zufallszahl zwischen 1 und 100
-  print ("Deine zufällige Zahl ist: " ++ show r)
-```
-
-Dieses kleine Programm nutzt die `getStdGen` Funktion, um einen Zufallsgenerator zu initialisieren, und gibt dann eine zufällige Zahl zwischen 1 und 100 aus.
-
-Aber was ist, wenn wir mehrere Zufallszahlen auf einmal generieren möchten? Hier kommt die `randoms` Funktion ins Spiel, die uns eine unendliche Liste von Zufallszahlen zurückgibt. Schauen wir uns ein Beispiel an:
+Die Haskell-Funktion `randomR` ermöglicht es uns, eine zufällige Zahl innerhalb eines bestimmten Bereichs zu erzeugen. Wir können dies nutzen, um beispielsweise eine zufällige Zahl zwischen 1 und 10 zu generieren:
 
 ```Haskell
-import System.Random
-
-main = do
-  gen <- getStdGen
-  let rands = take 10 $ randoms gen :: [Int] -- generiert eine Liste von 10 Zufallszahlen
-  print ("Deine Liste von Zufallszahlen ist: " ++ show rands)
+randomR (1,10) :: RandomGen g => g -> (Int, g)
 ```
 
-## Tiefergehende Informationen
+Hier sehen wir, dass `randomR` ein Typklasse `RandomGen` erfordert und einen Tupel von Integer und Generatoren zurückgibt. Wir können diese Funktion mit einer Variablen von Typ `StdGen` verwenden, die eine Startzahl für unsere Zufallszahlengenerierung enthält:
 
-Es gibt noch viele weitere Nuancen und Techniken beim Generieren von Zufallszahlen in Haskell. Beispielsweise gibt es auch die Möglichkeit, nicht-deterministische Funktionen zu schreiben, die bei jedem Aufruf unterschiedliche Ergebnisse liefern. Eine tiefergehende Beschäftigung mit diesem Thema kann dabei helfen, ein besseres Verständnis von Funktionsprogrammierung zu bekommen.
+```Haskell
+gen <- getStdGen
+let (number, newGen) = randomR (1,10) gen
+```
+
+Der Wert `number` enthält nun eine zufällige Zahl zwischen 1 und 10 und `newGen` ist eine aktualisierte Version unseres Generators, die für die nächste Zufallszahl verwendet werden kann.
+
+## Tieferer Einblick
+
+Das Konzept der Zufallszahlengenerierung in Haskell basiert auf einer sogenannten "reinen" Funktion, die für dieselben Eingabewerte immer denselben Ausgabewert liefert. Um dieses Konzept auf Zufallszahlen anzuwenden, werden Generatoren verwendet, die bei jedem Aufruf eine neue Zahl erzeugen, aber dennoch deterministisch sind. Das bedeutet, dass dieselben Eingabewerte immer dieselben zufälligen Zahlen erzeugen werden.
+
+Um die `randomR` Funktion noch besser zu verstehen, können wir uns die zugrunde liegenden Generatoren und Algorithmen genauer ansehen. In Haskell gibt es verschiedene Generatoren mit unterschiedlichen Eigenschaften, die je nach Anwendung ausgewählt werden können.
 
 ## Siehe auch
 
-- [Haskell-Dokumentation zur `random` Bibliothek](https://hackage.haskell.org/package/random)
-- [Haskell-Dokumentation zur `System.Random` Bibliothek](https://hackage.haskell.org/package/random-1.2.1/docs/System-Random.html)
-- [Video-Tutorial zur Verwendung von Zufallszahlen in Haskell](https://www.youtube.com/watch?v=dz3LWfyaAs8)
+- [Die offizielle Dokumentation zu `randomR`](https://hackage.haskell.org/package/random/docs/System-Random.html#v:randomR)
+- [Eine kurze Einführung in Haskell](https://haskell.org) (Englisch)
+- [Weitere Artikel zu fortgeschrittenen Themen in Haskell](https://wiki.haskell.org/Research_papers/Functional_pearls) (Englisch)

@@ -1,40 +1,29 @@
 ---
-title:    "Swift: Перетворення дати у рядок"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/converting-a-date-into-a-string.md"
+title:                "Swift: Перетворення дати в рядок"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
-Конвертування дати у рядок є важливим кроком у багатьох програмах, особливо якщо вони працюють з інформацією про час. Наприклад, можливо, вам потрібно відображати дату у локальному форматі або використовувати її у URL-адресі. Конвертування дати у рядок дозволить вам легко використовувати цю інформацію у вашій програмі.
+Навіщо конвертувати дату у рядок? Існує багато ситуацій, коли потрібно вивести дату у певному форматі, наприклад, на екрані або у відправленому повідомленні. Конвертування дати у рядок дозволяє досягти цього одним простим кроком.
 
 ## Як
-Для початку нам знадобиться об'єкт типу `Date`, який містить дату, що ми хочемо конвертувати. Для цього ми використаємо функцію `Date()`:
-
+За допомогою функції `dateFormat()` можна конвертувати дату у рядок з заданим форматом. Наприклад, для виведення дати у форматі "дд/мм/рррр" потрібно використати наступний код:
 ```Swift
-let date = Date()
+let currentDate = Date()
+let formatter = DateFormatter()
+formatter.dateFormat = "dd/MM/yyyy"
+let dateString = formatter.string(from: currentDate)
+print(dateString)
 ```
-
-Тепер нам потрібно створити об'єкт типу `DateFormatter`, який дозволить нам встановити формат дати. Для цього ми використаємо функцію `dateFormat()`:
-
-```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd.MM.yyyy"
-```
-
-Наступним кроком є використання функції `string(from:)` для конвертування дати у рядок:
-
-```Swift
-let dateString = dateFormatter.string(from: date)
-```
-
-Тепер `dateString` містить рядок у форматі "день.місяць.рік" з поточної дати. Якщо ви хочете використовувати інший формат, наприклад, різні місяці українською мовою, можна змінити рядок форматування `dateFormat`.
+Результат виведення буде виглядати приблизно так: "25/09/2021".
 
 ## Deep Dive
-Конвертування дати у рядок виконується за допомогою функції `string(from:)` у класі `DateFormatter`. Ця функція приймає об'єкт типу `Date` і повертає рядок, використовуючи поточні налаштування класу `DateFormatter`. Якщо ви хочете змінити формат дати, ви можете змінити властивість `dateFormat` об'єкта `DateFormatter` перед викликом функції `string(from:)`. Крім того, ви можете встановити інші налаштування, такі як локаль, календар або часовий пояс, для досягнення більш точного конвертування дати у рядок.
+Функція `dateFormat()` дозволяє також використовувати різні символи для форматування дати. Наприклад, символ "E" визначає день тижня в форматі "написання повністю", "EEE" - в форматі "скороченого написання", а "EEEE" - в форматі "назва повністю". Також можна задати часовий пояс за допомогою символу "z", наприклад, "zZZZZ" виведе назву часового поясу відповідно до налаштувань пристрою. Докладніше про всі доступні символи можна дізнатися у [документації Apple](https://developer.apple.com/documentation/foundation/dateformatter).
 
-## Дивіться також
-- [Документація Apple про клас `DateFormatter`](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Стаття про використання `DateFormatter` для конвертування дати у рядок](https://www.hackingwithswift.com/example-code/system/how-to-convert-a-date-to-a-string)
-- [Приклади форматів дати для використання у `dateFormat()`](https://nsdateformatter.com/)
+## Див. також
+- [Рядки у Swift](https://developer.apple.com/documentation/swift/string)
+- [Процес форматування дати](https://www.hackingwithswift.com/articles/153/how-to-use-dateformat-and-datatimeformatter-in-swift)

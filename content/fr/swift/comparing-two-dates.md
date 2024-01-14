@@ -1,49 +1,61 @@
 ---
-title:    "Swift: Comparaison de deux dates"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/comparing-two-dates.md"
+title:                "Swift: Comparaison de deux dates"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes développeur Swift, il est souvent nécessaire de comparer des dates dans votre code. Cela peut être utile pour déterminer si un événement a déjà eu lieu, calculer la durée entre deux dates ou trier des données chronologiquement. Dans cet article, nous allons vous montrer comment comparer efficacement deux dates en Swift.
+Dans le monde de la programmation Swift, il est souvent nécessaire de comparer deux dates. Que ce soit pour des fonctionnalités liées à la gestion des rendez-vous, des tâches à effectuer ou tout simplement pour vérifier si une date est passée ou future, la comparaison de dates est une compétence essentielle pour tout développeur Swift.
 
-## Comment Faire
+## Comment faire
 
-La première étape pour comparer deux dates en Swift est de les convertir en types de données `Date`. Dans l'exemple suivant, nous avons deux dates représentant le 1er janvier 2020 et le 1er juillet 2020 :
-
-```Swift
-let date1 = Date(timeIntervalSince1970: 1577836800) // 1 janvier 2020 à minuit
-let date2 = Date(timeIntervalSince1970: 1593561600) // 1 juillet 2020 à minuit
-```
-
-Maintenant que nous avons défini nos deux dates, nous pouvons utiliser la méthode `compare(_:)` de la classe `Date` pour les comparer. Cette méthode renvoie une énumération `ComparisonResult` qui nous indique si la première date est antérieure, égale ou ultérieure à la seconde.
+La première étape pour comparer deux dates en Swift est de les convertir en objets de type `Date`. Ensuite, il existe plusieurs méthodes pour effectuer la comparaison, en fonction de nos besoins.
 
 ```Swift
+let dateFormatter = DateFormatter() // Création d'un objet DateFormatter
+dateFormatter.dateFormat = "dd/MM/yyyy" // Format souhaité pour notre date
+
+let date1 = dateFormatter.date(from: "10/02/2020") // Conversion de notre première date en objet de type Date
+let date2 = dateFormatter.date(from: "15/02/2020") // Conversion de notre deuxième date en objet de type Date
+
+// Comparaison de dates en utilisant l'opérateur ">"
+if date1 > date2 {
+    print("La date 1 est plus récente que la date 2")
+} else {
+    print("La date 2 est plus récente que la date 1")
+}
+
+// Comparaison de dates en utilisant la méthode "compare"
 let result = date1.compare(date2)
-print(result) // Affiche : .orderedAscending (car date1 est antérieure à date2)
+if result == .orderedDescending {
+    print("La date 1 est plus récente que la date 2")
+} else if result == .orderedAscending {
+    print("La date 2 est plus récente que la date 1")
+} else {
+    print("Les deux dates sont identiques")
+}
 ```
 
-Il est également possible de comparer des composants spécifiques d'une date, comme le jour, le mois ou l'année. Pour cela, nous pouvons utiliser la classe `Calendar` pour extraire les composants de nos dates et les comparer.
+### Output :
 
-```Swift
-let calendar = Calendar.current
-let day1 = calendar.component(.day, from: date1) // 1
-let day2 = calendar.component(.day, from: date2) // 1
-let result = day1.compare(day2)
-print(result) // Affiche : .orderedSame (car les deux dates ont le même jour)
+```
+La date 2 est plus récente que la date 1
+La date 2 est plus récente que la date 1
 ```
 
-## Plongée en Profondeur
+Bien sûr, il est également possible de comparer les dates en prenant en compte les heures, minutes et secondes en utilisant `Calendar` et `DateComponents`.
 
-Lorsque vous comparez des dates en Swift, il est important de prendre en compte les fuseaux horaires. La classe `Date` stocke les dates sous la forme d'un intervalle de temps en secondes à partir de la date de référence du 1er janvier 1970 à minuit UTC. Cela signifie qu'une date peut être interprétée différemment en fonction du fuseau horaire dans lequel elle est affichée.
+## Plongée en profondeur
 
-Il est donc recommandé d'utiliser la classe `DateComponents` pour comparer des composants de date spécifiques, plutôt que de comparer des dates complètes. Cela garantit que les différences de fuseau horaire ne faussent pas les résultats.
+Il est important de comprendre que la comparaison de dates en Swift peut être influencée par la timezone du dispositif sur lequel l'application est utilisée. Il est donc recommandé de définir explicitement la timezone lors de la création des objets de type `Date`.
+
+Une autre astuce utile est d'utiliser `Calendar.current` pour obtenir les informations sur la timezone actuelle du dispositif, plutôt que d'essayer de déterminer la timezone manuellement.
 
 ## Voir aussi
 
-- [Documentation officielle de Swift sur la classe `Date`](https://developer.apple.com/documentation/foundation/date)
-- [Article de Ray Wenderlich sur la comparaison de dates en Swift](https://www.raywenderlich.com/5522-date-and-calendar-tutorial-for-swift-part-1-nsdate)
-- [Tutoriel vidéo de Brian Advent sur la comparaison de dates en Swift](https://www.youtube.com/watch?v=p6bzVjfjm1o)
+- [Documentation officielle Apple - Comparer des dates](https://developer.apple.com/documentation/foundation/date)
+- [Tutoriel sur la comparaison de dates en Swift](https://learnappmaking.com/compare-dates-swift-how-to/)

@@ -1,58 +1,86 @@
 ---
-title:    "C: Extrahera substrängar"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/extracting-substrings.md"
+title:                "C: Extrahering av delsträngar"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför använda substrängar i C
+## Varför
+I denna bloggpost kommer vi att gå igenom hur man extraherar substrängar i C-programmering. Detta kan vara användbart när du behöver arbeta med strängar och bara behöver en del av dem. Att kunna extrahera substrängar ger dig större flexibilitet och effektivitet i ditt program.
 
-Att extrahera substrängar är en viktig del av programmering på C-språket. Det är en nödvändig färdighet för att hantera textsträngar och används ofta i utvecklingen av appar, spel och andra program som arbetar med data.
-
-## Så här extraherar du substrängar i C
-
-Det finns flera olika sätt att extrahera substrängar i C, men det vanligaste sättet är att använda funktionen "strncpy", vilken kopierar en viss del av en textsträng till en annan variabel.
+## Hur man gör det
+För att extrahera en substräng i C, måste du använda funktionen "strncpy" från standardbiblioteket "string.h". Det tar tre parametrar - målsträngen, källsträngen och antalet tecken som ska kopieras. Här är ett enkelt exempel som extraherar de första sex tecknen från en sträng:
 
 ```C
 #include <stdio.h>
 #include <string.h>
- 
-int main () {
-   char str1[20] = "Hej, världen!";
-   char str2[10];
- 
-   /* Kopiera de första 5 tecknen av strängen str1 till str2 */
-   strncpy(str2, str1, 5);
- 
-   printf("Sträng 1 : %s\n", str1);
-   printf("Sträng 2 : %s\n", str2);
- 
-   return 0;
+
+int main() {
+    char str1[] = "Jag älskar programmering!";
+    char str2[7];
+
+    // Kopiera de första 6 tecknen från str1 till str2
+    strncpy(str2, str1, 6);
+
+    // Avsluta str2 med en null-tecken
+    str2[6] = '\0';
+
+    // Skriv ut resultatet
+    printf("Den extraherade substrängen är: %s\n", str2);
+
+    return 0;
 }
 ```
 
-**Output:**
+Kodblocket ovan skulle ge följande resultat:
 
-```bash
-Sträng 1 : Hej, världen!
-Sträng 2 : Hej, 
+```
+Den extraherade substrängen är: Jag äl
 ```
 
-Det finns också andra funktioner som kan användas för att extrahera substrängar, såsom "strchr" och "strstr", beroende på vilken del av strängen du behöver extrahera.
+Du kan också använda funktionen "strstr" för att hitta en delsträng inom en större sträng och sedan använda "strncpy" för att extrahera den delsträngen. Här är ett exempel på hur du kan använda detta:
 
-## Djupdykning i substrängar
+```C
+#include <stdio.h>
+#include <string.h>
 
-Att extrahera substrängar kan verka som en enkel uppgift, men det finns flera saker att tänka på för att undvika buggar och ineffektiv kod. Några viktiga punkter att tänka på inkluderar:
+int main() {
+    char str1[] = "Programmering är kul!";
+    char str2[] = "kul";
+    char *ptr;
 
-- Att alltid se till att slutet av den extraherade substrängen är korrekt terminerad med en nolltecken (vilket markerar slutet av en sträng i C).
-- Att beakta storleken på den extraherade substrängen för att undvika bufferöverflöden.
-- Att vara medveten om att den ursprungliga strängen kan ändras efter att en substräng har extraherats, särskilt om man använder "strncpy".
+    // Hitta "kul" i str1
+    ptr = strstr(str1, str2);
 
-En annan viktig aspekt av substrängsextraktion är prestanda. I vissa fall kan det vara mer effektivt att manipulera en hel sträng istället för att extrahera en del av den. Det är också viktigt att undvika onödiga iterationer och använda lämpliga funktioner för att undvika en långsam eller ineffektiv kod.
+    // Kopiera allt efter "kul" till en ny sträng
+    char str3[4];
+    strncpy(str3, ptr + strlen(str2), 3);
+
+    // Avsluta str3 med en null-tecken
+    str3[3] = '\0';
+
+    // Skriv ut resultatet
+    printf("Den extraherade substrängen är: %s\n", str3);
+
+    return 0;
+}
+```
+
+Kodblocket ovan kommer att ge följande resultat:
+
+```
+Den extraherade substrängen är: !
+```
+
+## Djupdykning
+Nu när du har en grundläggande förståelse för hur man extraherar substrängar i C, låt oss titta på några viktiga saker att tänka på:
+
+- När du använder "strncpy" för att extrahera en del av en sträng, måste du se till att målsträngen (i vårt första exempel "str2") är tillräckligt stor för att rymma den extraherade substrängen. Annars kan du få överlappande tecken eller till och med ett programkrasch.
+- Om du använder "strncpy" för att kopiera delar av en sträng till en ny sträng, se till att avsluta den nya strängen med ett null-tecken för att undvika oönskade tecken.
+- Var noga med att hålla ordning på index och antal tecken när du använder "strncpy". Om du till exempel vill kopiera de sista tre tecknen från en sträng måste du använda "strlen" för att beräkna positionen för substrängen.
 
 ## Se även
-
-- [C-programmering](https://sv.wikipedia.org/wiki/C_%28programspr%C3%A5k%29)
-- [Strängmanipulation i C](https://www.cprogramming.com/tutorial/c/lesson9.html)
-- [Programmeringsspråket C - Grundläggande element](https://www.inf.unibz.it/~ricci/website/uploads/Teaching/A-02-1B5LAN-programmeringsspraket-c.pdf)
+- [C-programmering på Codecademy (på svenska)](https://www.codecademy.com/learn/learn-c)
+- [Officiell dokumentation för "string.h"](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

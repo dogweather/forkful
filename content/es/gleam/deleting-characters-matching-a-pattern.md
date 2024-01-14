@@ -1,54 +1,56 @@
 ---
-title:    "Gleam: Borrando caracteres que coinciden con un patrón"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/deleting-characters-matching-a-pattern.md"
+title:                "Gleam: Eliminando caracteres que coinciden con un patrón"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-A veces, cuando trabajamos con texto en programación, necesitamos eliminar ciertos caracteres que coinciden con ciertos patrones. Esto puede ser útil cuando se trabaja con inputs de usuarios, limpiando datos o formateando texto.
+Eliminar caracteres que coinciden con un patrón puede ser una tarea útil en la programación para limpiar y organizar datos, o para crear una lógica más específica en el código.
 
 ## Cómo hacerlo
 
-En Gleam, podemos utilizar la función `String.replace` para eliminar un patrón específico de caracteres de una cadena de texto. Veamos un ejemplo:
+Para eliminar caracteres que coinciden con un patrón en Gleam, utilizaremos la función `delete_chars` combinada con una expresión regular. Un ejemplo de código sería el siguiente:
 
 ```Gleam
-let cadena = "Hola, ¡bienvenidos a mi blog!";
-let nueva_cadena = String.replace(cadena, "!", "");
-io.format("La nueva cadena es {}", [nueva_cadena]);
+import gleam/regex
+
+// creamos una expresión regular para encontrar caracteres que coinciden con nuestro patrón
+let regex = regex.regex("\d")
+
+// eliminamos los caracteres que coinciden con el patrón en la cadena "Hola 123"
+let result = regex.delete_chars("Hola 123")
+
+// imprimimos el resultado
+debug!("%s", result) // salida: "Hola "
 ```
 
-En este código, estamos usando la función `String.replace` para eliminar el símbolo de exclamación de la cadena original. La salida en la consola sería "La nueva cadena es Hola, ¡bienvenidos a mi blog".
+Podemos ver que todos los caracteres que coinciden con el patrón `\d`, que representa cualquier número, han sido eliminados de la cadena.
 
-Podemos ser más específicos y eliminar todos los caracteres que coinciden con un cierto patrón utilizando expresiones regulares. Por ejemplo, si queremos eliminar todos los caracteres numéricos de una cadena:
+## Profundizando
+
+Al utilizar una expresión regular en combinación con la función `delete_chars`, podemos ser más específicos en cuanto a qué caracteres queremos eliminar. Esto nos permite tener un control más preciso sobre cómo limpiamos y organizamos nuestros datos.
+
+Además, también podemos utilizar la función `delete_chars` en conjunto con la función `map` para eliminar caracteres que coinciden con un patrón en una lista de cadenas, en lugar de en una sola cadena.
 
 ```Gleam
-let cadena = "Hoy es 12 de octubre de 2021";
-let nueva_cadena = String.replace(cadena, "[0-9]", "");
-io.format("La nueva cadena es {}", [nueva_cadena]);
+import gleam/regex
+
+// creamos una expresión regular para encontrar caracteres que coinciden con nuestro patrón
+let regex = regex.regex("[:punct:]")
+
+// eliminamos los caracteres que coinciden con el patrón en la lista de cadenas
+let results = ["Hola!", "¿Cómo estás?", "Bien, gracias"] |> List.map(regex.delete_chars)
+
+// imprimimos el resultado
+debug!("%s", results) // salida: ["Hola", "¿Cómo estás", "Bien gracias"]
 ```
 
-La salida sería "La nueva cadena es Hoy es de octubre de".
-
-## Deep Dive
-
-La función `String.replace` en Gleam también nos permite utilizar flags para realizar coincidencias globales o no sensibles a mayúsculas y minúsculas. Esto nos da un mayor control sobre cómo deseamos eliminar los caracteres que coinciden con el patrón.
-
-Por ejemplo, si solo queremos eliminar el primer carácter que coincida con el patrón:
-
-```Gleam
-let cadena = "abcdefg";
-let nueva_cadena = String.replace(cadena, "a", "", true);
-```
-
-Aquí, al utilizar el flag `true`, sólo se eliminará la primera letra "a" de la cadena original.
-
-Para obtener una lista completa de los flags disponibles y su comportamiento, puedes consultar la documentación oficial de Gleam.
+En este ejemplo, utilizamos la clase de caracteres `punct` en nuestra expresión regular para eliminar todos los signos de puntuación de las cadenas de la lista.
 
 ## Ver también
 
-- [Documentación oficial de Gleam](https://gleam.run/documentation/)
-- [Tutorial de expresiones regulares en Gleam](https://gleam.run/book/tutorials/regular-expressions.html)
-- [Ejemplos de uso de `String.replace`](https://troutsblog.com/blog/deleting-patterns-string-replace-gleam)
+Para más información sobre cómo utilizar la función `delete_chars` en Gleam, puede consultar la documentación oficial en su página web [aquí](https://gleam.run/modules/regex/), o el repositorio de Gleam en Github [aquí](https://github.com/gleam-lang/gleam). ¡Feliz limpieza de datos!

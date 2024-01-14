@@ -1,57 +1,49 @@
 ---
-title:    "Clojure: Umwandlung eines Datums in einen String"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/converting-a-date-into-a-string.md"
+title:                "Clojure: Ein Datum in einen String umwandeln"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-In der Programmierung gibt es häufig die Notwendigkeit, ein Datum in einen String umzuwandeln. Dies kann zum Beispiel nötig sein, um Benutzereingaben in einem bestimmten Format zu akzeptieren oder um Daten in einer Datenbank abzuspeichern. In diesem Blogbeitrag werden wir uns anschauen, wie man dies in Clojure erreichen kann.
 
-## How To
-Um ein Datum in einen String umzuwandeln, können wir die `time/format` Funktion verwenden. Diese Funktion akzeptiert zwei Argumente: das Datum selbst und ein Formatierungsmuster. Dabei ist das Formatierungsmuster optional und standardmäßig auf `"yyyy-MM-dd"` gesetzt. Schauen wir uns dazu ein Beispiel an:
+Das Konvertieren von Daten in Zeichenketten ist eine häufige Aufgabe beim Programmieren, die besonders in der Webentwicklung relevant ist. Es kann hilfreich sein, ein Datum in einer bestimmten Formatierung auszugeben, um es beispielsweise in einer Benutzeroberfläche darzustellen oder in einer Datenbank zu speichern. In diesem Artikel werden wir uns ansehen, wie man mithilfe von Clojure ein Datum in eine Zeichenkette umwandeln kann.
 
-```Clojure
-(require '[clojure.java-time :as time])
+## Wie geht das?
 
-(time/format (java.time.LocalDate/now)) ; Ausgabe: "2021-12-14"
-```
-
-In diesem Beispiel haben wir die aktuelle Datum mit `java.time.LocalDate/now` erhalten und dieses dann mit der `time/format` Funktion in einen String umgewandelt. Wie bereits erwähnt, wurde standardmäßig das Formatierungsmuster `"yyyy-MM-dd"` verwendet.
-
-Natürlich können wir das Formatierungsmuster nach unseren Bedürfnissen anpassen. Hier ein Beispiel, bei dem wir das Datum im Format "dd.MM.yyyy" ausgeben möchten:
+Um ein Datum in eine Zeichenkette zu konvertieren, benötigen wir zunächst das "clj-time" Paket von Clojure. Wir importieren es einfach in unser Programm und können dann die Funktion "format" verwenden, um eine beliebige Datumsangabe in ein bestimmtes Format umzuwandeln.
 
 ```Clojure
-(time/format (java.time.LocalDate/now) "dd.MM.yyyy") ; Ausgabe: "14.12.2021"
+(require '[clj-time.core :as time])
+
+;; Konvertierung von einem Datum in das Format TT.MM.JJJJ
+(time/format (time/date-time 2020 11 15) "dd.MM.yyyy")
+;; Output: "15.11.2020"
+
+;; Konvertierung von einem Datum und Uhrzeit in das Format TT.MM.JJJJ, hh:mm
+(time/format (time/date-time 2020 11 15 13 30) "dd.MM.yyyy, HH:mm")
+;; Output: "15.11.2020, 13:30"
 ```
 
-Es ist auch möglich, andere Zeitangaben, wie zum Beispiel eine bestimmte Uhrzeit, in den String einzubinden. Dazu können wir `java.time.LocalDateTime` verwenden:
+Hier sehen wir, dass wir durch die Verwendung von "dd" für den Tag, "MM" für den Monat und "yyyy" für das Jahr jedes Datum in das gewünschte Format bringen können. Ebenso können wir mit "HH" und "mm" für Stunden und Minuten das Datum und die Uhrzeit kombinieren.
 
-```Clojure
-(time/format (java.time.LocalDateTime/now) "dd.MM.yyyy HH:mm") ; Ausgabe: "14.12.2021 12:00"
-```
+## Tiefere Einblicke
 
-## Deep Dive
-Nun wollen wir uns etwas genauer anschauen, wie das Formatierungsmuster funktioniert. Das Muster besteht aus bestimmten Zeichen, die für verschiedene Zeitangaben stehen. Hier eine Übersicht der wichtigsten Zeichen:
+Es gibt viele verschiedene Optionen, die wir in unserem Format-String verwenden können, um ein Datum in eine Zeichenkette zu konvertieren. Zum Beispiel können wir auch Wochentage, Zeitzonen und sogar Schaltjahre berücksichtigen. Hier sind einige häufig verwendete Optionen:
 
-- `yyyy` - vierstellige Jahreszahl
-- `MM` - zweistelliger Monat
-- `dd` - zweistelliger Tag
-- `HH` - zweistellige Stunde (im 24-Stunden-Format)
-- `mm` - zweistellige Minute
-- `ss` - zweistellige Sekunde
-- `S` - Millisekunden
-- `z` - Zeitzone
+- "EEEE": Gibt den Namen des Wochentags aus, zum Beispiel "Sonntag"
+- "zz": Gibt die Zeitzone aus, zum Beispiel "+0100" für Mitteleuropäische Zeit
+- "LLLL": Gibt den vollen Namen des Monats aus, zum Beispiel "November"
+- "YYYY": Gibt das Jahr mit vier Ziffern aus, zum Beispiel "2020"
+- "yy": Gibt das Jahr mit zwei Ziffern aus, zum Beispiel "20"
+- "MM": Gibt den Monat mit zwei Ziffern aus, zum Beispiel "11"
 
-Es ist auch möglich, diese Zeichen zu kombinieren, um ein gewünschtes Format zu erhalten. Zum Beispiel können wir eine Uhrzeit mit Millisekunden und Zeitzone ausgeben:
-
-```Clojure
-(time/format (java.time.LocalDateTime/now) "HH:mm:ss.S z") ; Ausgabe: "12:00:00.000 GMT+01:00"
-```
-
-Eine ausführliche Liste aller verfügbaren Zeichen findet sich in der [Clojure-Dokumentation](https://clojuredocs.org/clojure.java-time/format).
+Es ist immer eine gute Idee, die offizielle Dokumentation von clj-time (https://github.com/clj-time/clj-time) zu Rate zu ziehen, um alle verfügbaren Optionen und ihre Bedeutung zu finden.
 
 ## Siehe auch
-- [Offizielle Clojure Dokumentation](https://clojuredocs.org/clojure.java-time/format)
-- [Java-Dokumentation zu java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+
+- https://github.com/clj-time/clj-time - Das offizielle Paket für die Arbeit mit Datum und Uhrzeit in Clojure.
+- https://clojuredocs.org/clj-time.core/format - Eine ausführliche Dokumentation zur "format" Funktion von clj-time.
+- https://daily-javascript.com/articles/converting-dates-in-clojure/ - Ein Artikel zum Konvertieren von Daten in Zeichenketten in Clojure, der zusätzlich einige hilfreiche Tipps gibt.

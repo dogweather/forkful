@@ -1,49 +1,49 @@
 ---
-title:    "Rust: Skrive tester"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/writing-tests.md"
+title:                "Rust: Skriving av tester"
+programming_language: "Rust"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tester i programmering er viktig for å sikre at koden vår fungerer som den skal. Det hjelper oss med å fange feil og feil tidlig i utviklingsprosessen, slik at vi kan fikse dem før de blir et større problem. Det er også en god praksis for å sikre at koden vår er pålitelig og skalerbar.
+Å skrive tester er en viktig del av å skrive stabil og pålitelig Rust-kode. Det hjelper deg med å oppdage feil og buggs tidlig i utviklingsprosessen, slik at du kan fikse dem før de forårsaker større problemer. Det gir også en god oversikt over koden din og gjør det enklere å forstå den.
 
-## Slik gjør du det
+## Hvordan
 
-For å skrive tester i Rust, må du først importere "test" biblioteket. Deretter kan du bruke makroen "assert_eq!" for å teste om to verdier er like. For eksempel:
+Det finnes flere forskjellige testrammeverk i Rust, men det mest populære er `cargo test` som er inkludert i Rust-verktøykassen.
 
-```rust
+
+For å skrive tester, må du lage et nytt bibliotek (eller mappe) i prosjektet ditt med navnet `tests`. Deretter kan du lage en ny fil med `.rs`-utvidelse inne i denne mappen og begynne å skrive testene dine.
+
+La oss si at du har en funksjon `add` som tar to tall som argumenter og returnerer summen av dem. For å teste denne funksjonen, kan du skrive følgende kode i testfilen din:
+
+```Rust
+fn add(x: i32, y: i32) -> i32 {
+    x + y
+}
+
 #[test]
-fn test_addition() {
-    let result = 2 + 2;
-    assert_eq!(result, 4);
+fn test_add() {
+    assert_eq!(add(2, 2), 4);
+    assert_eq!(add(5, 10), 15);
 }
 ```
 
-Dette vil kjøre en test som vil passere hvis resultatet er lik 4, og feile hvis det ikke er det. Du kan også bruke "assert!" makroen for å teste om en betingelse er sant.
+I dette tilfellet bruker vi `assert_eq!`-makroen som sammenligner forventet og faktisk resultat. Hvis de er like, passerer testen, ellers feiler den.
 
-```rust
-#[test]
-fn test_even_number() {
-    let number = 4;
-    assert!(number % 2 == 0);
-}
-```
+Etter å ha skrevet testene dine, kan du kjøre dem ved å kjøre kommandoen `cargo test` i terminalen. Hvis alle testene dine passerer, vil du se en grønn melding om at testene er bestått. Hvis det oppstår en feil, vil testen mislykkes og du vil få en rød melding.
 
-Denne testen vil passere fordi 4 er et partall, men hvis du endrer tallet til 3, vil testen feile.
+## Dypdykk
 
-## Dykk dypere
+I tillegg til å bruke `assert_eq!`, er det også andre nyttige makroer og funksjoner som du kan bruke når du skriver tester. For eksempel kan du bruke `assert_ne!` for å teste at to verdier ikke er like, eller `assert!` for å teste vilkårlige påstander.
 
-Det er mange flere ting du kan gjøre med Rust-tester, som å teste for panikk eller forventet feil, or å skrive tester for funksjoner med kompliserte returverdier. Du kan også skrive integrasjonstester som tester hele applikasjonen din for å sikre at alle deler fungerer riktig sammen.
-
-Det er også viktig å bruke kodecoverapportering for tester i Rust. Dette hjelper deg med å identifisere områder av koden din som ikke er tilstrekkelig testet og kan bidra til å forbedre kvaliteten på koden din ytterligere.
+Det er også verdt å nevne at `cargo test` har flere alternativer som du kan bruke for å begrense eller filtrere testene dine. For å se alle tilgjengelige alternativer, kan du kjøre kommandoen `cargo test --help`.
 
 ## Se også
 
-For mer informasjon om å skrive tester i Rust, sjekk ut disse nyttige ressursene:
-
-- ["Rust Book" om testing](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [The "assert" module documentation](https://doc.rust-lang.org/std/assert/index.html)
-- [Offisielle Rust dokumentasjon om kodedekning](https://doc.rust-lang.org/nightly/unstable-book/compiler-flags/code-coverage.html)
+- [The Rust Programming Language - Kapittel 6: Testing your Code](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Introduction to Rust Testing](https://danielkeep.github.io/tlborm/book/mk-1-ch01.html)
+- [Rust by Example - Testing](https://doc.rust-lang.org/rust-by-example/testing.html)

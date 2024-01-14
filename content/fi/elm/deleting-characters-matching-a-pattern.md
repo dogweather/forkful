@@ -1,44 +1,60 @@
 ---
-title:    "Elm: Kuvion mukaisten merkkien poistaminen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: Kuviota vastaavien merkkien poistaminen"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi poistaisit merkkejä, jotka vastaavat tiettyä kaavaa?
 
-Haluatko oppia kuinka poistaa merkkejä tietystä kuvioista Elm-ohjelmoinnissa? Tässä artikkelissa kerromme syyt miksi haluat ehkä tehdä niin ja kuinka se voi auttaa sinua kuvaamaan tiettyjä data-tyyppejä paremmin.
+Usein ohjelmoinnissa on tarpeen käsitellä tietynlaisia merkkijonoja ja joskus näissä merkkijonoissa on ylimääräistä tai ei-toivottua tietoa. Tässä tapauksessa poistamalla merkkejä, jotka vastaavat tiettyä kaavaa, voit helposti puhdistaa ja muokata merkkijonoja halutulla tavalla. Tämä on erityisen kätevää, jos sinun tarvitsee käsitellä suuria määriä dataa tai muokata sitä automaattisesti.
 
-## Kuinka tehdä se
+## Miten: Esimerkkejä koodista ja tulosteista ```Elm ...```
 
-Poistaminen merkkejä tietyistä kuvioista on helppoa ja kätevää Elm-kielellä. Katso alla oleva koodiesimerkki lähemmin ymmärtääksesi kuinka se toteutetaan:
-
-```Elm
--- Luo esimerkkidata
-matriisi = [ "ABC", "DEF", "GHI" ]
-
--- Määritä kuvio jota haluat poistaa, tässä tapauksessa "C"
-kuvio = "C"
-
--- Käytä "filter" funktiota ja lambda-lauseketta poistaa kuvio
-uusi_matriisi = List.filter (\x -> not (String.contains kuvio x)) matriisi
-
--- Tulostetaan uusi matriisi konsoliin
-Debug.toString uusi_matriisi
-```
-Yllä olevassa esimerkissä luomme listan "matriisi" joka sisältää kolme sanaa. Määrittelemme sitten poistettavan kuvion ja käytämme "filter" funktiota ja lambda-lauseketta poistaaksemme sen jokaisesta sanasta. Lopuksi tulostamme uuden matriisin konsoliin nähdäksemme tuloksen. Alla oleva tulos näyttää miten kuvio "C" on poistettu jokaisesta sanasta:
+Jos haluat poistaa merkkejä, jotka vastaavat tiettyä kaavaa, voit käyttää Elm-kielestä löytyviä valmiita funktioita, kuten `String.filter`. Tämä funktio ottaa parametreikseen merkkijonon ja funktion, joka määrittelee, mitkä merkit halutaan poistaa. Tässä esimerkissä poistetaan kaikki numerot merkkijonosta "ABCD1234":
 
 ```
-["AB", "DEF", "GHI"]
+import String exposing (filter)
+
+filteredString : String
+filteredString =
+    filter (\char -> not (Char.isDigit char)) "ABCD1234"
+
+-- 'filteredString' on nyt "ABCD"
 ```
 
-## Syvempää tietoa
+Toinen tapa poistaa merkkejä on käyttämällä `String.replace`-funktiota, joka korvaa tietyn kaavan vastaavat merkit halutulla merkkijonolla. Esimerkiksi voit korvata kaikki numerot tyhjällä merkkijonolla "":
 
-Voit myös käyttää samaa tekniikkaa poistaaksesi merkkejä muista kuvioista, kuten esimerkiksi kokonaisia sanoja tai lauseita. Voit myös yhdistää "filter" funktion muihin Elm-ohjelmointikielen ominaisuuksiin, kuten "map" ja "fold", saadaksesi monimutkaisempia ja tehokkaampia ratkaisuja. Kokeile erilaisia vaihtoehtoja ja löydä sinulle sopivin tapa poistaa merkkejä tietystä kuvioista!
+```
+import String exposing (replace)
+
+replacedString : String
+replacedString =
+    replace "1234" "" "ABCD1234"
+
+-- 'replacedString' on nyt "ABCD"
+```
+
+## Syvempi sukellus: Tietoa merkkien poistamisesta vastaavan kaavan avulla
+
+Edellä mainittujen esimerkkien lisäksi Elm-kielessä on muitakin tapoja poistaa merkkejä vastaavasta kaavasta. Yksi näistä on käyttää `Regex.replace`-funktiota, joka hyödyntää säännöllisiä lausekkeita (regex) merkkijonon muokkaamiseen. Tässä esimerkissä poistetaan kaikki välilyönnit merkkijonosta "Hello World":
+
+```
+import Regex exposing (replace)
+
+regexResult : Result String String
+regexResult =
+    replace (Regex.regex " ") (\match -> "") "Hello World"
+
+-- 'regexResult' on nyt Result.Ok "HelloWorld"
+```
+
+On myös hyvä huomata, että merkkejä voidaan poistaa myös ulkoisista lähteistä, kuten tietokannoista tai tiedostoista. Tässä tapauksessa voit käyttää `Task.attempt`-funktiota, joka avaa ulkoisen lähteen, poistaa merkkejä vastaavan kaavan mukaisesti ja palauttaa tuloksen.
 
 ## Katso myös
 
-- [String-moduuli Elmissä](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
-- [Stringin käsittely Elm-ohjelmoinnissa](https://elmprogramming.com/string-manipulation.html)
-- [Lambda-lausekkeet Elm-ohjelmoinnissa](https://elmprogramming.com/anonymous-functions.html)
+- [Elmin String-moduuli](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Säännölliset lausekkeet Elmissä](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Task-moduuli Elmissä](https://package.elm-lang.org/packages/elm/core/latest/Task)

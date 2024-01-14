@@ -1,41 +1,53 @@
 ---
-title:    "Python: 将字符串转换为小写"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/python/converting-a-string-to-lower-case.md"
+title:                "Python: 将字符串转换为小写"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要将字符串转换为小写
+#为什么
 
-字符串是计算机编程中的重要概念，它是由一系列字符组成的。有时，我们需要统一字符串的格式，例如将所有的字母转换为小写。这样做可以使得我们的程序更加健壮和高效。
+在Python编程中，经常需要对字符串进行大小写转换。将字符串转换为小写可能是因为需要进行字符串的匹配或比较，或者需要统一字符串的格式。无论是哪种情况，使用字符串的lower()方法是一个非常方便的解决方法。
 
-## 如何将字符串转换为小写
+#如何
+
+下面是使用Python代码将字符串转换为小写的示例：
 
 ```Python
-# 使用lower()方法
-str = "Hello World"
-new_str = str.lower()
-print(new_str)
-
-# 输出：hello world
+#定义一个字符串
+s = "Hello World!"
+#使用lower()方法将字符串转换为小写并赋值给新变量
+lower_s = s.lower()
+#打印转换后的字符串
+print(lower_s)
 ```
-使用lower()方法可以将字符串转换为小写形式，它会返回一个新的字符串，因此在最后一行我们需要使用print()函数来打印出转换后的结果。
 
-## 深入了解字符串转换为小写的过程
+输出结果为：
 
-在计算机中，每一个字符都会有一个对应的ASCII码。小写字母和大写字母的ASCII码相差32，因此将大写字母加上32就可以得到对应的小写字母。
+```
+hello world!
+```
 
-在Python中，字符串是不可变的数据类型，因此在使用lower()方法转换字符串时，实际上是创建了一个新的字符串，而原来的字符串并没有改变。
+在上面的示例中，首先定义了一个字符串变量s，然后使用lower()方法将其转换为小写并赋值给新变量lower_s，最后打印出转换后的字符串。可以看到，字符串中的所有字母都被转换为了小写形式。
 
-## 参考资料
+除了使用lower()方法外，还可以使用str.casefold()方法来进行字符串转换。这两个方法都能够实现将字符串转换为小写的功能，区别在于str.casefold()方法能够处理一些特殊字符的转换。
 
-[Python字符串转换为小写](https://www.runoob.com/python3/python3-string-lower.html)
+#深入探讨
 
-[ASCII码表](https://baike.baidu.com/item/ASCII/309296?fr=aladdin)
+在Python中，字符串是不可变类型的数据，这意味着一旦字符串被创建，就无法改变它的值。因此，使用字符串的lower()方法并不会改变原来字符串的值，而是返回一个新的字符串。
 
-## 参见
+另外，需要注意的是，lower()方法只能转换英文字符为小写，对于其他语言的字符可能会有不同的结果。此外，如果想要将字符串中的所有字符都转换为大写，可以使用upper()方法。
 
-[Python字符串教程](https://www.runoob.com/python3/python3-string.html)
+#参考链接
 
-[Python字符串格式化](https://www.runoob.com/python3/python3-string-format.html)
+- [Python字符串转换为小写](https://www.runoob.com/python/string-lower.html)
+- [Python字符串转换为小写和大写](https://blog.csdn.net/qq_24237183/article/details/76480620)
+- [Python字符串大小写转换的几种方式](https://www.cnblogs.com/lxlx1798/p/10620987.html)
+
+#另请参阅
+
+- [Python字符串处理教程](https://www.liaoxuefeng.com/wiki/1016959663602400/1017075323632448)
+- [Python字符串操作手册](https://www.studytonight.com/python-string/)
+- [Python标准库中的字符串处理模块](https://docs.python.org/3/library/string.html)

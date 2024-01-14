@@ -1,34 +1,50 @@
 ---
-title:    "Clojure: Eine beliebige Zukunft oder Vergangenheitsdatum berechnen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/calculating-a-date-in-the-future-or-past.md"
+title:                "Clojure: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Jeder muss manchmal ein Datum in der Zukunft oder Vergangenheit berechnen, sei es für eine Bewerbungsfrist oder ein wichtiges Ereignis. Mit Clojure können wir diesen Prozess einfacher und effizienter gestalten.
+## Warum
 
-# Wie gehts
-Wir verwenden die Funktion `java.util.Calendar` zusammen mit den Funktionen `add` und `get` um ein Datum in der Zukunft oder Vergangenheit zu berechnen.
+Das Berechnen von Datum in der Vergangenheit oder Zukunft kann in vielen Fällen sehr nützlich sein, z.B. um den Liefertermin für ein Paket zu bestimmen oder um eine Erinnerung für einen Termin in Zukunft zu setzen. Um diese Aufgabe mit Leichtigkeit zu bewältigen, ist es hilfreich, ein klares Verständnis der Programmiersprache Clojure zu haben.
 
-```
-;; Berechnung eines zukünftigen Datums: 14 Tage in Zukunft
-(def today (java.util.Calendar/getInstance))
-(.add today java.util.Calendar/DATE 14)
-(print (str "Das Datum in 14 Tagen ist: " (.get today java.util.Calendar/DAY_OF_MONTH) "." (.get today java.util.Calendar/MONTH) "." (.get today java.util.Calendar/YEAR)))
-```
+## Wie man es macht
 
-```
-;; Berechnung eines vergangenen Datums: vor 3 Jahren
-(def today (java.util.Calendar/getInstance))
-(.add today java.util.Calendar/YEAR -3)
-(print (str "Das Datum vor 3 Jahren war: " (.get today java.util.Calendar/DAY_OF_MONTH) "." (.get today java.util.Calendar/MONTH) "." (.get today java.util.Calendar/YEAR)))
+Um ein Datum in der Zukunft zu berechnen, können wir die "plus" Funktion verwenden. Angenommen, wir möchten 30 Tage zum aktuellen Datum hinzufügen, können wir dies wie folgt tun:
+
+```Clojure
+(plus (local-date) (days 30))
 ```
 
-## Deep Dive
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zuerst eine Instanz von `java.util.Calendar` erstellen. Dann können wir die Funktion `add` verwenden, um eine bestimmte Zeiteinheit (z.B. Tage, Monate oder Jahre) zum aktuellen Datum hinzuzufügen oder davon abziehen. Abschließend können wir die Funktion `get` verwenden, um das gewünschte Datum aus dem Kalenderobjekt zu extrahieren.
+Dies gibt uns das Datum 30 Tage nach dem heutigen Datum zurück. Wir können auch negative Werte verwenden, um ein Datum in der Vergangenheit zu berechnen. Zum Beispiel, um das Datum vor 2 Monaten zu erhalten, können wir Folgendes tun:
 
-# Siehe Auch
-- [Offizielle Clojure Dokumentation für Date-Berechnungen](https://clojure.org/api/java.util.Calendar)
-- [Youtube-Tutorial: Clojure für Anfänger](https://www.youtube.com/watch?v=TurbraO_Js0)
+```Clojure
+(plus (local-date) (months -2))
+```
+
+Dies gibt uns das Datum vor 2 Monaten zurück.
+
+## Tiefer tauchen
+
+Clojure hat auch integrierte Funktionen, um bestimmte Tage in einer Woche oder Monat zu berechnen. Zum Beispiel die Funktion "day-of-week" gibt uns einen numerischen Wert für den Wochentag eines bestimmten Datums zurück, wobei 1 für Sonntag und 7 für Samstag steht. Die Funktion "month-of-year" gibt uns den numerischen Wert für den Monat eines Datums zurück, wobei 1 für Januar und 12 für Dezember steht.
+
+```Clojure
+(day-of-week (local-date)) ;; Gibt uns den numerischen Wert für den heutigen Wochentag zurück
+(month-of-year (local-date)) ;; Gibt uns den numerischen Wert für den aktuellen Monat zurück
+```
+
+Mit diesen Funktionen können wir noch präziser ein Datum in der Vergangenheit oder Zukunft berechnen. Zum Beispiel, um den letzten Montag des nächsten Monats zu erhalten, können wir dies tun:
+
+```Clojure
+(plus (last (monday-of-month (local-date) (plus (local-date) (months 1)))))
+```
+
+Dieses Beispiel mag komplex erscheinen, aber es zeigt, dass die Kombination verschiedener Funktionen einen genaueren Ergebnis liefern kann.
+
+## Siehe auch
+
+- [Clojure-Dokumentation zu Datumsfunktionen](https://clojure.github.io/clojure/java-time/index.html)
+- [Beispiele für Datumskalkulationen mit Clojure](https://www.baeldung.com/java-8-date-time-intro)

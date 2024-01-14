@@ -1,44 +1,37 @@
 ---
-title:    "Go: Aloittaminen: Uuden projektin aloittaminen"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/starting-a-new-project.md"
+title:                "Go: Uuden projektin aloittaminen"
+programming_language: "Go"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi aloittaa uusi projekti Go-ohjelmointikielen avulla?
 
-Miksi aloittaa uusi projekti Go-kielellä? Go on moderni, tehokas ja helppokäyttöinen ohjelmointikieli, joka on erityisen hyvä ratkaisu suurten verkkopalveluiden kehittämiseen. Se tarjoaa myös monia hyödyllisiä työkaluja ja kirjastoja, jotka helpottavat ohjelmien rakentamista.
+Go on nykyaikainen ja tehokas ohjelmointikieli, joka on suunniteltu helppokäyttöiseksi ja skaalautuvaksi. Se on myös avoimen lähdekoodin, joten sen käyttö ja kehittäminen on ilmaista. Aloittaminen Go-ohjelmointiprojektin kanssa tarjoaa mahdollisuuden oppia uusia taitoja ja kehittää monipuolisia sovelluksia.
 
-## Miten
+## Kuinka aloittaa Go-ohjelmointiprojekti?
 
-Aloittaminen Go:n kanssa on helppoa. Aloita luomalla uusi kansio ja avaa se terminaalissa. Kirjoita ensimmäiseksi `go mod init projektin_nimi`, jolloin Go luo projektillesi moduulin hallinnoimista varten. Seuraavaksi voit luoda uuden tiedoston `main.go` ja aloittaa kirjoittamaan koodia.
+Aloittaaksesi uuden Go-projektin, sinun tulee ensin asentaa Go-kehitysympäristö. Voit tehdä tämän seuraamalla [Go:n virallista asennusohjetta](https://golang.org/doc/install). Kun asennus on tehty, voit aloittaa uuden projektin luomisen seuraamalla alla olevaa esimerkkiä:
 
-```
-Go import (
-  "fmt"
-)
+```Go
+package main
+
+import "fmt"
 
 func main() {
-  fmt.Println("Tervetuloa Go:n maailmaan!")
+    fmt.Println("Hei maailma!")
 }
 ```
+Tämä yksinkertainen ohjelma tulostaa konsoliin tekstin "Hei maailma!". Voit muokata koodia ja kokeilla erilaisia tulostuksia oppiaksesi lisää Go:n perusteista.
 
-Tämän jälkeen voit suorittaa ohjelman komennolla `go run main.go` ja näet tulosteen terminaalissa. Näin olet luonut ensimmäisen Go-ohjelmasi!
+## Syvällisempää tietoa uuden projektin aloittamisesta
 
-## Syvemmälle
-
-Go-kielellä on monia työkaluja ja kirjastoja, jotka auttavat kehittämään tehokkaita ja luotettavia ohjelmia. Suosittelemme tutustumaan seuraaviin resursseihin:
-
-- [Go:n virallinen dokumentaatio](https://golang.org/doc/)
-- [Awesome Go -listaus erilaisista Go-projekteista](https://github.com/avelino/awesome-go)
-- [Go:n oppimateriaalit ja esimerkkikoodit](https://github.com/golang/go/wiki/Learn%20to%20Program)
-- [Visual Studio Code ja sen Go-laajennus](https://code.visualstudio.com/docs/languages/go)
-
-Muista myös hyödyntää Go-koodisi versionhallintaa, kuten Git, ja jakaa projektejasi muiden kanssa esimerkiksi GitHubissa.
+Yllä oleva esimerkki oli vain yksinkertainen esimerkki Go-koodista. Syvällisempi tieto Go-ohjelmointikielen käytöstä löytyy sen virallisesta [dokumentaatiosta](https://golang.org/doc/). Sieltä löydät tietoa muun muassa Go:n sisäisestä rakenteesta, pakettien käytöstä ja erilaisten sovellusten kehittämisestä.
 
 ## Katso myös
 
-- [Go:n viralliset sivut](https://golang.org/)
-- [Go-kielestä suomeksi](https://github.com/melix/golang-suomi)
-- [Go:n käyttöohjeet ja tutoriaalit](https://golang.org/doc/tutorial/)
+- [Go:n virallinen sivusto](https://golang.org/)
+- [Go:n dokumentaatio](https://golang.org/doc/)
+- [Go:n esimerkkiprojektit](https://github.com/golang/go/wiki/Projects)

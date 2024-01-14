@@ -1,39 +1,39 @@
 ---
-title:    "Clojure: 文字列の結合"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/concatenating-strings.md"
+title:                "Clojure: 文字列の連結"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜ 
+文字列をつなぎ合わせるのかについての理由は、より複雑なデータを作るためです。たとえば、ユーザーの名前と姓を組み合わせてフルネームを作成したり、文章を動的に変更するために必要となる場合があります。
 
-文字列を連結することによって、より長い文字列を作り出すことができます。これは、プログラミングでテキストを操作する際に非常に便利であり、より複雑な文字列を生成することができます。
-
-## やり方
+##方法
+文字列をつなぎ合わせるには、Clojureの **str** 関数を使用します。この関数に結合したい文字列を引数として渡すことで、簡単に文字列を結合することができます。
 
 ```Clojure
-;; 文字列を連結するには、str関数を使用します
-(str "こんにちは、" "皆さん。" "今日はいい天気ですね。") 
-;; => "こんにちは、皆さん。今日はいい天気ですね。"
-
-;; 文字列と変数を連結する場合、str関数と文字列補間を組み合わせることができます
-(def name "太郎")
-(str "こんにちは、私の名前は" name "です。") 
-;; => "こんにちは、私の名前は太郎です。"
+(str "こんにちは" "、私の名前は" "太郎です。") 
 ```
 
-## ディープダイブ
+このコードを実行すると、以下のような出力が得られます。
 
-Clojureでは、文字列はイミュータブル（変更不可）なデータ構造であるため、文字列を連結する際には注意が必要です。連結された後の文字列が新しいオブジェクトとして生成されるため、大量の文字列を連結するとメモリ使用量が増加し、パフォーマンスの低下を引き起こす可能性があります。そのため、大量の文字列を連結する場合はStringBuilderを使用することを検討してください。
+```
+こんにちは、私の名前は太郎です。
+```
 
-## 参考リンク
+##深堀り
+Clojureでは、 **str** 関数以外にも、 **interpose** や **clojure.string/join** 等の関数を使用して文字列を結合することができます。これらの関数を使うことで、様々な方法で文字列を結合することができます。
 
-- [Official Clojure Documentation on Strings](https://clojure.org/reference/strings)
-- [Clojure Tutorial: Concatenating Strings](https://clojure.org/guides/learn/strings)
-- [Mastering Clojure Strings](https://purelyfunctional.tv/guide/clojure-strings/) 
+また、文字列の中に変数の値を埋め込む方法として、 **format** 関数を使用することもできます。この関数を使うと、より柔軟に文字列を結合することができます。
 
-## 関連記事
+##見てみる
+- [Clojure入門: 文字列操作](https://www.scalamatsuri.org/ja/2014/schedule/presentation/10/)
+- [文字列の結合 (Clojure)](https://docs.microsoft.com/ja-jp/learn/modules/clojure-string-concatenation/) 
+- [Clojureで文字列を操作する方法](https://dotinstall.com/lessons/basic_clojure_v3/24555)
 
-- [Clojure初心者向け：文字列を操作する方法](https://exampleblog.com/clojure-string-manipulation) 
-- [Clojureを使ったテキスト処理の基本](https://exampleblog.com/clojure-text-processing)
+##関連リンク
+- [Clojure公式ドキュメント](https://clojuredocs.org/)
+- [Clojureチュートリアル](https://clojure.org/guides/getting_started)
+- [Clojure入門講座](https://www.udemy.com/course/clojure-programming-beginners/)

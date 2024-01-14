@@ -1,43 +1,56 @@
 ---
-title:    "TypeScript recipe: Finding the length of a string"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/finding-the-length-of-a-string.md"
+title:                "TypeScript recipe: Finding the length of a string"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As programmers, we often encounter the need to manipulate strings in our code. One common task is to find the length of a string. Understanding how to do this in TypeScript can save us time and make our code more efficient.
+When working on a programming project, you may come across a scenario where you need to find the length of a string. This can be for various reasons such as input validation, string manipulation or data analysis. Knowing how to find the length of a string in TypeScript is an important skill to have as it can greatly improve your ability to work with strings in your code.
 
 ## How To
 
-To find the length of a string in TypeScript, we can use the built-in `length` property. This property returns the number of characters in the string, including white space. Let's take a look at an example:
+To find the length of a string in TypeScript, we can use the built-in `length` property. This property returns the number of characters in the string and can be accessed through dot notation.
 
 ```TypeScript
-let string = "Hello World";
-console.log(string.length);
+let str: string = "Hello World";
+console.log(str.length); //Output: 11
 ```
 
-This will output `11` since there are 11 characters in the string "Hello World". We can also use this property on an empty string `""` which will return a length of `0`.
-
-If we want to find the length of a string with special characters, we need to use the `length` property in combination with the `unicode` property. The Unicode value of a character is its numerical representation. For example, the Unicode value for the letter "a" is `97`. Here's an example of how we can find the length of a string with special characters:
+We can also use the type assertion operator to explicitly declare the type of a variable as `string` and then access the `length` property.
 
 ```TypeScript
-let string = "Héłłø Wörld";
-console.log(string.length); // Outputs 12
-console.log(string.unicode.length); // Outputs 13
+let str = "Hello World" as string;
+console.log(str.length); //Output: 11
 ```
 
-Here, the first `console.log` outputs `12` since there are 12 characters in the string. The second `console.log` outputs `13` since there are two special characters with Unicode values.
+Another way is to use the `toString()` method to convert the variable to a string, which will then allow us to access the `length` property.
+
+```TypeScript
+let str = 42;
+console.log(str.toString().length); //Output: 2
+```
+
+It's important to note that the `length` property only counts the characters in a string, not including spaces or special characters. To include spaces and special characters, we can use the `split()` method to separate each character and then get the length of the resulting array.
+
+```TypeScript
+let str = "Hello World";
+console.log(str.split("").length); //Output: 11
+```
 
 ## Deep Dive
 
-The `length` property may seem simple, but there is actually a lot going on behind the scenes. When we access the `length` property, TypeScript is essentially calling the `length()` method on the string object. This method calculates the length by iterating through each character in the string and counting them.
+Under the hood, strings in TypeScript are objects and the `length` property is a method that calculates the number of characters in the string. This means that when we access the `length` property, it actually invokes this method to return the length value.
 
-It's important to note that the `length` property only counts actual characters in the string, not the index positions. In other words, it does not count the index of the last character, but rather the number of characters from the first index to the last.
+It's also worth mentioning that the return type of the `length` property is a `number`, not a `string` like the variable it is being accessed from. This can be useful when performing numerical operations on the string length.
 
 ## See Also
 
-- [MDN web docs: String length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [TypeScript documentation: Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+Here are some additional resources to learn more about finding the length of a string in TypeScript:
+
+- [Official TypeScript documentation on strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [MDN web docs on string length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [TypeScript string data type](https://www.geeksforgeeks.org/typescript-string-data-type/)

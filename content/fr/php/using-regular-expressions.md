@@ -1,59 +1,34 @@
 ---
-title:    "PHP: Utilisation des expressions régulières"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/using-regular-expressions.md"
+title:                "PHP: Utiliser des expressions régulières"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Pourquoi
 
-Les expressions régulières sont un outil puissant dans la boîte à outils de tout programmeur PHP. Elles permettent de rechercher et de manipuler des chaînes de caractères avec une grande précision et facilité. Si vous cherchez à améliorer vos compétences en programmation et à gagner du temps dans vos projets, les expressions régulières sont un must.
+Les expressions régulières sont des outils utiles pour trouver des motifs dans une chaîne de caractères. Elles peuvent être utilisées pour valider des entrées utilisateur, filtrer des données ou encore pour extraire des informations spécifiques d'un texte. En utilisant des expressions régulières, les programmeurs peuvent économiser beaucoup de temps lors de la manipulation de données.
 
-##Comment faire
+## Comment faire
 
-L'utilisation des expressions régulières en PHP peut sembler intimidante au premier abord, mais une fois que vous maîtrisez les bases, les possibilités sont infinies. Voici quelques exemples de code pour vous aider à démarrer :
+Pour utiliser des expressions régulières en PHP, vous pouvez utiliser la fonction `preg_match()`. Par exemple, si vous souhaitez trouver tous les numéros de téléphone dans une chaîne de caractères, vous pouvez utiliser l'expression régulière suivante :
 
 ```PHP
-// Rechercher un mot spécifique dans une chaîne de caractères
-$string = "Bonjour à tous!";
-$searchWord = "bonjour";
-if (preg_match("/$searchWord/i", $string)) {
-    echo "Le mot $searchWord a été trouvé!";
-} else {
-    echo "Le mot $searchWord n'a pas été trouvé.";
-}
-
-// Remplacer tous les espaces par des tirets dans une URL
-$url = "www.monsite.com/nouvel_article.html";
-$newUrl = preg_replace("/\s+/", "-", $url);
-echo "L'URL formattée est : $newUrl";
+preg_match("/[0-9]{3}-[0-9]{3}-[0-9]{4}/", $texte, $resultats);
 ```
 
-Output:
-```
-Le mot bonjour a été trouvé!
-L'URL formattée est : www.monsite.com/nouvel-article.html
-```
+Cela va rechercher tous les numéros de téléphone sous le format `xxx-xxx-xxxx` dans la variable `$texte` et stocker les résultats dans le tableau `$resultats`. Vous pouvez ensuite utiliser ces résultats dans votre code pour effectuer différentes actions.
 
-##Plongée en profondeur
+## Plongée en profondeur
 
-Les expressions régulières en PHP utilisent une syntaxe spécifique pour définir des motifs de recherche. En voici quelques-unes des plus couramment utilisées :
+Les expressions régulières peuvent sembler complexes au premier abord, mais elles peuvent être très puissantes une fois que vous avez maîtrisé leur utilisation. En plus des caractères basiques pour matcher des chiffres ou des lettres, des symboles spéciaux comme `?`, `+` ou `*` peuvent être utilisés pour identifier des motifs plus complexes. De plus, les expressions régulières peuvent utiliser des groupes de capture qui vous permettent de récupérer des sous-parties spécifiques d'un texte.
 
-- `.` : correspond à n'importe quel caractère
-- `\d` : correspond à un chiffre
-- `\s` : correspond à un espace
-- `+` : correspond à un ou plusieurs caractères
-- `*` : correspond à zéro ou plusieurs caractères
-- `^` : correspond au début d'une chaîne de caractères
-- `$` : correspond à la fin d'une chaîne de caractères
+Il est important de noter que les performances peuvent être un problème lors de l'utilisation d'expressions régulières, en particulier si vous travaillez avec de gros volumes de données. Il est donc important de bien optimiser vos expressions régulières pour éviter tout ralentissement de votre programme.
 
-En outre, il est possible d'utiliser des crochets pour spécifier une liste de caractères possibles, ainsi que des accolades pour spécifier une quantité précise de caractères.
+## Voir aussi
 
-Il est important de noter que les expressions régulières peuvent également être combinées avec d'autres fonctions de manipulation de chaînes de caractères en PHP, telles que `preg_match_all()` et `preg_split()`.
-
-##Voir aussi
-
-- [Documentation officielle de PHP sur les expressions régulières](https://www.php.net/manual/fr/book.pcre.php)
-- [Tutoriel vidéo sur les expressions régulières en PHP](https://www.youtube.com/watch?v=v_1Isn8pD9E)
-- [Exemples de motifs de recherche courants avec explications](https://www.regular-expressions.info/tutorial.html)
+- [Documentation officielle de la fonction preg_match en PHP](https://www.php.net/manual/fr/function.preg-match.php)
+- [Tutoriel sur les expressions régulières en PHP](https://www.tutorialspoint.com/php/php_regular_expression.htm)
+- [Expressions régulières : un outil puissant en programmation](https://www.poeme-oslo.com/ressources/guides/are/expressions-regulieres/)

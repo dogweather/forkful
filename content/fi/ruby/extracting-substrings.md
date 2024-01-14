@@ -1,42 +1,53 @@
 ---
-title:    "Ruby: Alituksen erottaminen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/extracting-substrings.md"
+title:                "Ruby: Alimerkkijonojen erottelu"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi  joku haluaisi erottaa osajonoja
+# Miksi
 
-Substringien erottaminen on tärkeä osa Ruby-ohjelmoinnissa, koska se mahdollistaa tekstien ja merkkijonojen tehokkaan käsittelyn. Se voi myös auttaa parantamaan koodin suorituskykyä ja lisäämään toiminnallisuutta.
+Substringien erottaminen on tärkeä osa Ruby-ohjelmointikieltä. Se antaa sinulle kyvyn etsiä ja käsitellä tiettyjä osia merkkijonosta, mikä helpottaa monien ongelmien ratkaisemista. Se on erityisen tärkeää, kun työskentelyssä yksittäisen sanan tai lauseen kanssa on oleellista, ja haluat välttää manuaalisen tekstin pilkkomisen vaivan.
 
-## Miten tehdä se: Koodin esimerkkejä ja tulosteita käyttäen "```Ruby ... ```" koodilohkoja.
+# Miten
 
-```Ruby
-# Luo muuttuja, jossa on merkkijono
-teksti = "Tervetuloa Rubyyn!"
+Substringien erottaminen Rubyssä on helppoa. Voit käyttää nimettyä alaindeksimerkintää ja sisällyttää indeksin aloituskohdan ja lopetuskohdan välille.
 
-# Etsi ja tulosta tekstistä alkuosasta merkkijono
-puts teksti[0,7] # Tulostaa "Tervetu"
-puts teksti[8,2] # Tulostaa "lo"
-
-# Etsi ja tulosta tekstistä loppuosasta merkkijono
-puts teksti[-6,5] # Tulostaa "Ruby"
-puts teksti[-4,4] # Tulostaa "yn!"
-
-# Voit myös yhdistää merkkijonoja ja tulostaa ne samalla koodirivillä
-puts teksti[8,2] + teksti[-4,4] # Tulostaa "loyn!"
-
-# Käytä replace-metodia korvaamaan merkkijonoja
-puts teksti.replace("Tervehdys maailmalle!") # Tulostaa "Tervehdys maailmalle!"
+```
+Ruby
+string = "Tervetuloa!"
+string[0,4] # tulostaa "Terv"
 ```
 
-## Syvemmältä tutkien
+Voit myös käyttää indeksivälilehteä, joka sallii indeksien käyttämisen taulukoissa. Tässä tapauksessa voit antaa aloitus- ja lopetusindeksin välisen alueen, josta saat alastringin.
 
-Rubyssa substringeja voi erottaa käyttämällä indeksejä merkkijonon alusta tai lopusta. Voit määrittää indeksin käyttämällä hakasuluja merkkijonon perässä, ja määrittää halutun merkkijonon pituuden käyttämällä pilkkua. Jos haluat käyttää kokonaista merkkijonoa, voit käyttää "..." sijasta ".." määrittäessäsi sijainnin.
+```
+Ruby
+string = "Tervetuloa!"
+string[3..7] # tulostaa "etul"
+```
 
-Substringien erottaminen voi myös auttaa suorituskyvyn parantamisessa, koska merkkijonan alku- tai loppuosa voidaan vaihtaa nopeammin kuin koko merkkijono. Se voi myös auttaa lisäämään toiminnallisuutta, koska voit käyttää replace-metodia korvaamaan merkkijonoja haluamillasi teksteillä.
+# Syvällinen tarkastelu
 
-## Katso myös
-- Ruby:n viralliset dokumentaatiot substringeista: https://ruby-doc.org/core-2.7.1/String.html#method-i-5B-5D
-- Selitys merkki-indeksistä Rubyssa: https://www.tutorialspoint.com/ruby/ruby_strings.htm
+Rubyssä substringien erottaminen on mahdollista myös käyttäen `slice`-metodia. Tämän metodin avulla voit antaa myös negatiivisia indeksejä, jotka aloittavat merkkijonon lopusta.
+
+```
+Ruby
+string = "Tervetuloa!"
+string.slice(-2) # tulostaa "a"
+```
+
+Voit myös käyttää `slice!`-metodia, joka muuttaa alkuperäistä merkkijonoa ja poistaa erotetun alastringin.
+
+Seuraa allaolevia linkkejä lisätietoihin substringien erottamisesta Rubyssa:
+
+- Rubyn virallinen dokumentaatio: https://ruby-doc.org/core-2.7.1/String.html
+- RubyGuides: https://www.rubyguides.com/2019/05/ruby-substring/
+- SitePoint: https://www.sitepoint.com/ruby-string-methods/
+
+# Katso myös
+
+- Rubyn oppimateriaalit: https://docs.ruby-lang.org/en/3.0.0/Quickstart.html
+- Ruby Codecademy: https://www.codecademy.com/learn/learn-ruby

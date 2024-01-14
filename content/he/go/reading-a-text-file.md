@@ -1,58 +1,42 @@
 ---
-title:    "Go: קריאת קובץ טקסט"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/go/reading-a-text-file.md"
+title:                "Go: קריאת קובץ טקסט"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-
-קריאת קובץ טקסט היא חלק חשוב בתהליך של פיתוח תוכניות בשפת גו. היא מאפשרת לנו לטעון מידע מקובץ טקסט ולעבד אותו בתוך התוכנית שלנו. במאמר זה, נלמד כיצד לקרוא קובץ טקסט בשפת גו ונתאר בצורה מעשית כיצד ניתן להשתמש בזה בהתאם לצרכים שלנו.
+ריכוז כמה מילים מספר למה זה כדאי לקרוא קובץ טקסט.
 
 ## איך לעשות זאת
-
-כדי לקרוא קובץ טקסט בשפת גו, נצטרך להשתמש בפונקציה המתאימה, `ioutil.ReadFile()`. תחילה, נצטרך לייבא את החבילה `ioutil`, לאחר מכן נשתמש בפונקציה הזו כדי לקרוא את הקובץ ולשמור את התוכן שלו במשתנה. לדוגמה:
+השימוש בדוגמאות קוד ותוצאות דוגמא בתוך קובץ קוד מחובר עם הסימונים ```Go ... ```.
 
 ```Go
-import(
-  "fmt"
-  "io/ioutil"
-)
+// פתיחת קובץ טקסט
+file, err := os.Open("filename.txt")
+if err != nil {
+fmt.Println("ארעה שגיאה בפתיחת הקובץ:", err)
+}
 
-func main() {
-  // קריאת קובץ טקסט ושמירת התוכן במשתנה "data"
-  data, err := ioutil.ReadFile("file.txt")
-  if err != nil {
-    fmt.Println("אירעה שגיאה בקריאת הקובץ")
-    return
-  }
-  // הדפסת התוכן של הקובץ
-  fmt.Println(string(data))
+// קריאת תוכן הקובץ והדפסתו למסך
+scanner := bufio.NewScanner(file)
+for scanner.Scan() {
+fmt.Println(scanner.Text())
+}
+
+// סגירת הקובץ
+err = file.Close()
+if err != nil {
+	fmt.Println("ארעה שגיאה בסגירת הקובץ:", err)
 }
 ```
 
-כדי ליצור קובץ טקסט חדש וליצור בו תוכן, נשתמש בפונקציה `ioutil.WriteFile()` ונעבוד עם משתנה מסוג `[]byte`. לדוגמה:
+## כיולעמוק
+מידע נוסף על קריאת קובץ טקסט ושימוש בפונקציות נוספות, כמו פתיחת קובץ במצב כתיבה וכיצד לעבוד עם מירכיבי הקובץ.
 
-```Go
-import(
-  "fmt"
-  "io/ioutil"
-)
-
-func main() {
-  // יצירת תוכן לקובץ חדש
-  content := []byte("זהו התוכן שיהיה בקובץ החדש")
-  
-  // יצירת קובץ חדש ושמירת התוכן בו
-  err := ioutil.WriteFile("new_file.txt", content, 0644)
-  if err != nil {
-    fmt.Println("אירעה שגיאה ביצירת הקובץ")
-    return
-  }
-}
-```
-
-## חפר בעומק
-
-פונקציות `ioutil.ReadFile()` ו- `ioutil.WriteFile()` מספקות פתרונות קלים עבור קריאת וכתיבת קבצים טקסט בשפת גו. טרם קריאת התוכן, נוכל לעבוד איתו במשת
+## ראו גם
+- [מדריך לתכנות בשפת Go](https://golang.org/doc/)
+- [מאמר על פונקציות דגלים בשפה Go](https://blog.golang.org/slices)
+- [פרויקט מקור פתוח שמשתמש בשפת Go](https://github.com/golang/go)

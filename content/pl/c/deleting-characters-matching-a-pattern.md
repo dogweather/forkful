@@ -1,60 +1,44 @@
 ---
-title:    "C: Usuwanie znaków odpowiadających wzorcowi"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/deleting-characters-matching-a-pattern.md"
+title:                "C: Usuwanie znaków pasujących do wzorca"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często podczas pisania programów w języku C może zajść potrzeba usunięcia znaków zgodnych z określonym wzorem. Powodów może być wiele, na przykład chcemy oczyścić tekst z niepotrzebnych znaków lub szybko przetworzyć duże ilości danych. W tym artykule omówimy, jak dokonać tego w prosty sposób.
+JavaScript jest jednym z najpopularniejszych i najczęściej używanych języków programowania na świecie. Jednym z powodów jego popularności jest łatwość w użyciu i elastyczność. Jednak nawet doświadczeni programiści mogą czasami napotkać problem, który wymaga usunięcia konkretnych znaków z tekstu. Dlatego w tym artykule omówimy, jak usuwać znaki pasujące do wzorca w języku C.
 
 ## Jak to zrobić
 
-Aby usunąć znaki pasujące do wzoru w języku C, musimy wykorzystać funkcję `strcspn`. Przyjmuje ona jako parametry dwa łańcuchy znaków - pierwszy jest źródłem, z którego będą usuwane znaki, a drugi to wzorzec, według którego ma nastąpić usunięcie. Przykładowy kod może wyglądać następująco:
-```C
-#include <stdio.h>
-#include <string.h>
+Do usunięcia znaków pasujących do wzorca w języku C używamy funkcji `strpbrk()`. Ta funkcja znajduje pierwsze wystąpienie dowolnego z podanych znaków w tekście i zwraca wskaźnik na ten znak. Następnie możemy usunąć go przy pomocy funkcji `memmove()`, która przesuwa kolejne znaki w tekście o wskazaną liczbę bajtów.
 
-int main() {
-    char source[] = "Hello World!";
-    char pattern[] = "ld";
-    char * result = strcspn(source, pattern);
-    // result = 8, bo od indeksu 8 w źródle znajduje się pierwszy znak niepasujący do wzorca
-    source[result] = '\0';
-    printf("%s\n", source); // wypisze "Hello Wor"
-    return 0;
-}
+```C
+char *strpbrk(const char *s, const char *accept);
+void *memmove(void *dest, const void *src, size_t n);
 ```
 
-## Głębszy przegląd
+Spójrzmy na prosty przykład, gdzie chcemy usunąć znaki `a` i `b` z tekstu:
 
-Funkcja `strcspn` zwraca indeks pierwszego znaku niepasującego do wzorca w łańcuchu lub długość łańcucha, jeśli wszystkie znaki pasują. Możemy wykorzystać to w pętli do usunięcia wszystkich pasujących znaków. Przykładowy kod może wyglądać w ten sposób:
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char source[] = "Hello World!";
-    char pattern[] = "ld";
-    char * result = source;
-    while (strcspn(result, pattern) != strlen(source)) {
-        // znajdź kolejny znak niepasujący do wzorca
-        size_t index = strcspn(result, pattern);
-        // skopiuj pozostałe znaki do poprzedniego miejsca w łańcuchu
-        memmove(result + index, result + index + 1, strlen(result) - index);
-    }
-    printf("%s\n", source); // wypisze "Heo Wor!"
-    return 0;
-}
+char text[20] = "Hello World";
+char *match = strpbrk(text, "ab");
+memmove(match, match + 2, strlen(match + 2) + 1);
+printf("%s", text);
+// Output: Helo World
 ```
 
-Warto również pamiętać, że funkcja `strcspn` jest dostępna tylko w bibliotece `string.h`.
+Wynik wyświetla tekst bez znaków `a` i `b`, ponieważ funkcja `strpbrk()` zwróciła wskaźnik na pierwsze wystąpienie tych znaków, a następnie funkcja `memmove()` przesunęła resztę tekstu o 2 pozycje do przodu.
+
+## Deep Dive
+
+Funkcja `strpbrk()` jest bardzo wydajna, ponieważ porównuje tylko jeden znak z podanego wzorca w danym momencie. Może przeszukiwać duże teksty w czasie liniowym, zależnie od długości tekstu i wzorca.
+
+Warto także wspomnieć o funkcji `strspn()`, która znajduje pierwszy znak, który nie pasuje do wzorca, i zwraca jego indeks w tekście. Ta funkcja może być przydatna, jeśli chcemy usunąć wszystkie znaki z tekstu, które nie pasują do danego wzorca.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o tym, jak operować na łańcuchach znaków w języku C, zapoznaj się z poniższymi artykułami:
-- https://www.programiz.com/c-programming/c-strings
-- https://www.tutorialspoint.com/cprogramming/c_strings.htm
-- https://www.tutorialspoint.com/c_standard_library/string_h.htm
+- [Dokumentacja funkcji strpbrk()](https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm)
+- [Porównanie wydajności funkcji strpbrk() i strstr()](http://www.doc.ic.ac.uk/~ejc/ECAbramsen.pdf)

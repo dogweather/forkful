@@ -1,59 +1,75 @@
 ---
-title:    "Elixir: Skriving til standardfeil"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-to-standard-error.md"
+title:                "Elixir: Skriving til standard error"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å skrive til standardfeil kan være en nyttig feilsøkingsmetode for å oppdage potensielle problemer eller uønsket oppførsel i Elixir-kode. Det kan også hjelpe med å identifisere og isolere feil i større prosjekter.
+## Hvorfor
 
-# Hvordan
-For å skrive til standardfeil i Elixir, kan du bruke funksjonen `IO.puts/2` med argumentet `:stderr` for å skrive til standard error stream. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+Å skrive til standard error er et viktig aspekt av feilhåndtering i Elixir-programmering. Ved å skrive feilmeldinger til standard error, kan vi effektivt identifisere og håndtere eventuelle feil i koden vår. Derfor er det viktig å forstå og kunne implementere dette i våre programmer.
 
-```Elixir
-# Skriver en melding til standard error stream
-IO.puts(:stderr, "Dette er en feilmelding")
+## Hvordan
 
-# Skriver en variabelverdi til standard error stream
-feil = "Ingen tilkobling til server"
-IO.puts(:stderr, feil)
+Å skrive til standard error i Elixir er enkelt og kan gjøres ved hjelp av `IO.puts/1`-funksjonen. La oss se på et enkelt eksempel:
+
+``` Elixir
+defmodule Feilhåndtering do
+  def del_tall(tall1, tall2) do
+    if tall2 == 0 do
+      IO.puts("Kan ikke dele på 0!")
+    else
+      IO.puts(tall1 / tall2)
+    end
+  end
+end
+
+Feilhåndtering.del_tall(10, 2)
+Feilhåndtering.del_tall(10, 0)
 ```
 
-Denne koden vil skrive ut følgende til standard error stream:
+I dette eksempelet deler vi tall1 med tall2, men hvis tall2 er 0, skriver vi en feilmelding til standard error i stedet for å prøve å dele på 0. Når vi kjører dette programmet, vil vi få følgende utskrift:
 
-```
-Dette er en feilmelding
-Ingen tilkobling til server
-```
-
-Du kan også bruke `IO.inspect/2` funksjonen til å inspisere verdier og utskrive dem til standardfeil for feilsøking. Her er et eksempel på hvordan dette kan gjøres:
-
-```Elixir
-# Variabel som inneholder et komplekst struct
-bruker = %{
-  navn: "Johannes",
-  alder: 25,
-  interesser: ["programmering", "musikk", "friluftsliv"]
-}
-
-# Skriver ut structet til standard error stream
-IO.inspect(:stderr, bruker)
+``` Elixir
+5
+Kan ikke dele på 0!
 ```
 
-Dette vil skrive ut følgende til standard error stream:
+Som du kan se, kan vi enkelt skrive feilmeldinger til standard error ved å bruke `IO.puts/1`-funksjonen.
 
+## Dypdykk
+
+Hvis du vil ha mer kontroll over hvordan feilmeldinger håndteres, kan du bruke funksjonen `IO.write/2`. Denne funksjonen tar inn en IO-enhet og en liste av data som skal skrives til enheten. Dette gir oss muligheten til å skrive feilmeldinger til en spesifikk IO-enhet, som for eksempel en fil eller en logg.
+
+Vi kan også bruke `Kernel.SpecialForms.raise/1`-funksjonen til å heve en feil og skrive en melding til standard error samtidig. La oss se på et eksempel:
+
+``` Elixir
+defmodule Feilhåndtering do
+  def sjekk_tall(tall) do
+    if is_integer(tall) do
+      IO.puts("#{tall} er et heltall")
+    else
+      raise "Inndata må være et heltall"
+    end
+  end
+end
+
+Feilhåndtering.sjekk_tall(10)
+Feilhåndtering.sjekk_tall("ti")
 ```
-%{alder: 25, interesser: ["programmering", "musikk", "friluftsliv"], navn: "Johannes"}
+
+Når vi kjører dette programmet, vil vi få følgende utskrift:
+
+``` Elixir
+10 er et heltall
+** (RuntimeError) Inndata må være et heltall
 ```
 
-# Dypdykk
-Når du skriver til standardfeil, kan du også kontrollere nivået på meldingene ved hjelp av `Logger` modulen i Elixir. Dette lar deg spesifisere forskjellige nivåer som `:debug`, `:info` og `:warn`, som deretter kan filtreres og styres i loggfiler.
+Som du kan se, blir feilmeldingen også skrevet til standard error ved hjelp av `raise/1`-funksjonen.
 
-I tillegg kan du også bruke `raise/1` funksjonen for å løfte en unntaksmelding og utskrive den til standard error stream. Dette kan være nyttig når du vil få oppmerksomhet om en spesiell feilsituasjon i koden din.
+## Se også
 
-# Se også
-- [IO-modulen i Elixir](https://hexdocs.pm/elixir/IO.html)
-- [Logger-modulen i Elixir](https://hexdocs.pm/logger/Logger.html)
-- [Raise/1 funksjonen i Elixir](https://hexdocs.pm/elixir/Kernel.html#raise/1)
+- Elixir dokumentasjon for `IO`-modulen: https://hexdocs.pm/elixir/IO.html
+- Blogginnlegg om feilhåndtering i Elixir: https://elixirschool.com/en/lessons/advanced/error-handling/

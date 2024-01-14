@@ -1,38 +1,73 @@
 ---
-title:    "Javascript: Imprimiendo salida de depuración"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/printing-debug-output.md"
+title:                "Javascript: Imprimiendo salida de depuración"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+##Por qué: 
+Saber cómo imprimir mensajes de depuración en tu código Javascript es una habilidad importante para los desarrolladores. Te permite identificar y resolver errores en tu código de manera más eficiente, lo que ahorra tiempo y mejora la calidad de tu programa.
 
-¿Alguna vez te has encontrado con un error en tu código y no tienes ni idea de dónde viene? ¿O has querido ver el valor de una variable en un determinado punto de tu programa? La impresión de salida de depuración (*debug output*) es una herramienta útil para ayudarte a comprender lo que está sucediendo en tu código y a solucionar problemas.
+##Cómo hacerlo:
+Para imprimir mensajes de depuración en Javascript, puedes utilizar el método `console.log()`. Este método toma un argumento y lo imprime en la consola del navegador. Puedes utilizarlo para imprimir cualquier tipo de dato, como una cadena, un número o una variable.
 
-## Cómo hacerlo
+Por ejemplo:
 
-Imprimir salida de depuración en Javascript es muy sencillo. Simplemente utiliza el método `console.log()` y pasa como argumento lo que quieras imprimir. Por ejemplo:
+```JavaScript
+let name = "Juan";
+console.log("Hola " + name);
 
-```Javascript
-var nombre = "María";
-console.log("¡Hola, " + nombre + "!");
+// Output: Hola Juan
 ```
 
-Este código imprimirá en la consola: `¡Hola, María!`. Además de cadenas de texto, también puedes imprimir valores de variables, objetos o cualquier otra forma de datos que desees.
+También puedes utilizar `console.log()` para imprimir el valor de una expresión o una condición dentro de un bucle. Esto te permite verificar si tu código está funcionando correctamente.
 
-## Profundizando
+```Javascript
+for(let i = 0; i < 5; i++){
+  console.log(i);
+}
 
-Además de `console.log()`, existen otras formas de imprimir salida de depuración en Javascript, como `console.info()`, `console.warn()` y `console.error()`. Cada una de ellas tiene un estilo y color diferente en la consola, lo que puede facilitar la identificación de diferentes tipos de información.
+// Output: 0, 1, 2, 3, 4 
+```
 
-Otra opción es utilizar `console.table()` para imprimir datos tabulares en la consola, lo que puede ser especialmente útil para analizar objetos complejos.
+Otra forma de imprimir mensajes de depuración es utilizando `console.dir()`, que te permite ver los detalles de un objeto en la consola. Este método es especialmente útil cuando necesitas inspeccionar objetos complejos o anidados.
 
-También puedes utilizar `console.group()` y `console.groupEnd()` para agrupar varias líneas de salida de depuración, lo que puede ayudar a organizar mejor la información.
+```Javascript
+let person = {
+  name: "Maria",
+  age: 25,
+  address: {
+    street: "Calle Principal",
+    city: "Madrid"
+  }
+};
 
-Recuerda que siempre debes eliminar o comentar tus líneas de impresión de salida de depuración antes de publicar tu código en producción, ya que estas pueden ralentizar el rendimiento de tu programa.
+console.dir(person);
 
-## Ver también
+/* Output:
+  {
+    name: "Maria",
+    age: 25,
+    address: {
+      street: "Calle Principal",
+      city: "Madrid"
+    }
+  }
+*/
+```
 
-- [Artículo sobre salida de depuración en Javascript](https://codeburst.io/console-log-the-complete-guide-debugging-javascript-and-node-js-with-console-log-5122cd1c1f9f)
-- [Documentación de MDN sobre console.log()](https://developer.mozilla.org/es/docs/Web/API/Console/log)
-- [Video tutorial sobre salida de depuración en Javascript](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+##Profundizando:
+Además de `console.log()` y `console.dir()`, existen otras formas de imprimir mensajes de depuración en Javascript, como `console.warn()` y `console.error()`, que te permiten mostrar mensajes de advertencia y errores respectivamente.
+
+También puedes utilizar `console.table()` para imprimir datos en formato de tabla, lo que facilita la visualización y comparación de la información.
+
+Si necesitas imprimir mensajes de depuración en diferentes niveles de detalle, puedes utilizar `console.group()` y `console.groupEnd()`, que te permiten agrupar y expandir o contraer secciones de tus mensajes de depuración en la consola.
+
+Además, hay otras herramientas y técnicas que puedes utilizar para imprimir mensajes de depuración en Javascript, como las extensiones de navegador o la depuración mediante el editor de código.
+
+##Ver también:
+- [Usando la consola del navegador para depurar Javascript](https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/What_went_wrong)
+- [Herramientas de depuración en Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript)
+- [Usando `console.log()` como un profesional](https://medium.com/better-programming/how-to-console-log-like-a-pro-ac2c75aa60f8)

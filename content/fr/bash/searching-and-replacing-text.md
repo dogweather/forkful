@@ -1,51 +1,65 @@
 ---
-title:    "Bash: Rechercher et remplacer du texte"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/searching-and-replacing-text.md"
+title:                "Bash: Recherche et remplacement de texte"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La recherche et le remplacement de texte sont deux opérations courantes lors de la programmation en Bash. Ces fonctionnalités vous permettent de modifier facilement du texte dans un fichier, un répertoire ou encore une variable. Que vous soyez un développeur débutant ou expérimenté, apprendre à utiliser la recherche et le remplacement de texte en Bash peut grandement améliorer votre efficacité lors de la programmation.
+La recherche et le remplacement de texte sont des tâches courantes dans la programmation Bash. Cela permet de modifier rapidement du texte dans un fichier ou un script, ce qui peut faire gagner du temps et éviter les erreurs. Apprenez comment effectuer cette tâche en suivant les étapes ci-dessous.
 
-## Comment Faire
+## Comment faire
 
-La syntaxe de base pour la recherche et le remplacement de texte en Bash est la suivante :
+La syntaxe de base pour rechercher et remplacer du texte dans Bash est la suivante :
 
-```Bash
-sed 's/pattern/replacement/g' input_file > output_file
+```bash
+sed 's/mot_a_remplacer/nouveau_mot/g' fichier.txt
 ```
 
-Cette commande utilise l'outil de ligne de commande "sed" pour rechercher le motif spécifié dans le fichier d'entrée (input_file) et le remplacer par le texte spécifié (replacement) dans le fichier de sortie (output_file). L'option "g" à la fin de la commande indique à Bash de remplacer toutes les occurrences du motif, et non seulement la première.
+Ici, "sed" est la commande pour stream editor, "s" indique que nous voulons effectuer un remplacement, "mot_a_remplacer" est le mot que nous voulons remplacer, "nouveau_mot" est le mot que nous voulons utiliser à la place, et "fichier.txt" est le nom du fichier dans lequel nous voulons effectuer la modification.
 
-Par exemple, si nous voulons remplacer toutes les occurrences de "chat" par "chien" dans un fichier texte appelé "animaux.txt", nous pouvons utiliser la commande suivante :
+Par exemple, si le fichier "exemple.txt" contient le texte "Bonjour monde", nous pouvons utiliser la commande suivante pour le modifier :
 
-```Bash
-sed 's/chat/chien/g' animaux.txt > nouveaux_animaux.txt
+```bash
+sed 's/Bonjour/Hello/g' exemple.txt
 ```
 
-Le fichier de sortie, "nouveaux_animaux.txt", contiendra toutes les mêmes lignes que "animaux.txt", mais avec le mot "chien" à la place de "chat" chaque fois qu'il apparaît.
+Cela remplacera "Bonjour" par "Hello" et produira le texte "Hello monde" dans le fichier.
 
-## Plongée en Profondeur
+Nous pouvons également utiliser des expressions régulières pour rechercher et remplacer du texte. Par exemple, si nous voulons remplacer toutes les occurrences de nombres par le mot "numéro" dans un fichier, nous pouvons utiliser la commande suivante :
 
-Bash offre de nombreuses fonctions utiles pour la recherche et le remplacement de texte, telles que l'utilisation de variables pour spécifier les motifs ou les remplacements, ou encore l'utilisation d'expressions régulières pour des recherches plus spécifiques. Vous pouvez également combiner différentes commandes Bash pour créer des scripts complexes pour automatiser la recherche et le remplacement de texte dans plusieurs fichiers ou répertoires à la fois.
-
-Il est important de comprendre que la commande "sed" modifie uniquement le texte dans le fichier de sortie, et non le fichier d'entrée d'origine. Si vous voulez que les modifications soient apportées directement dans le fichier d'entrée, vous pouvez utiliser l'option "-i" comme ceci :
-
-```
-sed -i 's/pattern/replacement/g' input_file
+```bash
+sed 's/[0-9]/numéro/g' fichier.txt
 ```
 
-Enfin, si vous voulez simplement visualiser les modifications sans les enregistrer dans un nouveau fichier, vous pouvez utiliser l'option "-n" pour désactiver l'affichage automatique des lignes, et utiliser l'option "p" pour spécifier quelles lignes vous voulez visualiser. Par exemple, pour voir les lignes où le mot "pomme" a été remplacé par "banane" dans le fichier "fruit.txt", vous pouvez utiliser la commande suivante :
+Cela remplacera tous les chiffres par le mot "numéro".
 
+## Plongée en profondeur
+
+Vous pouvez également utiliser des options pour modifier le comportement de la commande "sed". Voici quelques-unes des options les plus courantes :
+
+- "i" : insérer du texte avant une ligne correspondante
+- "c" : remplacer la ligne entière par un nouveau texte
+- "d" : supprimer la ligne correspondante
+- "p" : imprimer la ligne correspondante
+- "g" : remplacer toutes les occurrences de la ligne correspondante
+- "n" : lire la ligne suivante
+
+Par exemple, si nous voulons remplacer une ligne entière par un nouveau texte dans un fichier, nous pouvons utiliser la commande suivante :
+
+```bash
+sed '3c/Nouveau texte/' fichier.txt
 ```
-sed -n 's/pomme/banane/p' fruit.txt
-```
 
-## Voir Aussi
+Cela remplacera la troisième ligne dans le fichier par "Nouveau texte".
 
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutoriel pour lire et écrire dans des fichiers en Bash](https://www.hostinger.fr/tutoriels/fichiers-bash-lecture-ecriture/)
-- [Guide complet pour les expressions régulières en Bash](https://www.cyberciti.biz/faq/guide-to-bash-regular-expressions-regex/)
+## Voir aussi
+
+Pour en savoir plus sur la commande "sed" et ses nombreuses options, consultez ces ressources :
+
+- [Document officiel pour la commande "sed"](https://www.gnu.org/software/sed/manual/sed.html)
+- [Guide pratique pour utiliser la commande "sed"](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
+- [Tutoriel vidéo sur la commande "sed"](https://www.youtube.com/watch?v=kEltwTZBI8U)

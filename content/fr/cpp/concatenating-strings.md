@@ -1,52 +1,38 @@
 ---
-title:    "C++: Concaténation de chaînes de caractères"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/concatenating-strings.md"
+title:                "C++: Concaténation de chaînes de caractères"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-La concaténation de chaînes de caractères est une tâche courante en programmation, surtout en C++. Elle permet de fusionner plusieurs chaînes pour en former une seule, ce qui peut être utile dans de nombreuses situations, telles que l'affichage de messages personnalisés ou la manipulation de données.
+Les chaînes de caractères sont un élément essentiel de la programmation en C++. Elles permettent de stocker et de manipuler du texte de manière efficace. La concaténation de chaînes de caractères consiste à combiner plusieurs chaînes en une seule, offrant ainsi une plus grande flexibilité dans la création de textes dynamiques.
 
 ## Comment faire
-
-En C++, la concaténation de chaînes de caractères se fait en utilisant l'opérateur `+` ou la fonction `concat()`. Voici quelques exemples de code pour mieux comprendre :
-
-```C++
-// Utilisation de l'opérateur +
-string nom = "Jean";
-string prenom = "Dupont";
-string message = "Bonjour " + prenom + " " + nom + " !";
-cout << message; // affiche "Bonjour Jean Dupont !"
-```
+Pour concaténer des chaînes de caractères en C++, vous pouvez utiliser l'opérateur "+" ou la fonction membre "append". Voyons un exemple concret :
 
 ```C++
-// Utilisation de la fonction concat()
-string chaine1 = "Hello";
-string chaine2 = " World!";
-string resultat = concat(chaine1, chaine2);
-cout << resultat; // affiche "Hello World!"
+// Déclaration de deux chaînes de caractères
+string prenom = "Jean";
+string nom = "Dupont";
+
+// Concaténation avec l'opérateur "+"
+string nomComplet = prenom + nom;
+cout << nomComplet << endl; // Affichera "JeanDupont"
+
+// Concaténation avec la fonction membre "append"
+nomComplet.append(" est un programmeur.");
+cout << nomComplet << endl; // Affichera "JeanDupont est un programmeur." 
 ```
-
-Il est important de noter que les chaînes de caractères doivent être du même type pour pouvoir être concaténées. Dans le cas contraire, une erreur de compilation sera générée.
-
-En plus de l'opérateur `+` et de la fonction `concat()`, il est également possible d'utiliser la bibliothèque `<sstream>` pour concaténer des variables de différents types.
 
 ## Plongée en profondeur
+En réalité, la concaténation de chaînes de caractères en C++ n'est pas si simple. En effet, cela peut entraîner des problèmes de performances et de gestion de la mémoire, particulièrement lorsque l'on travaille avec des boucles ou des opérations sur des chaînes de caractères de grande taille. Il est donc important de comprendre les différentes méthodes de concaténation et leurs implications sur les performances de votre programme.
 
-En C++, les chaînes de caractères sont en fait des objets de la classe `string`. Ainsi, lorsqu'on les concatène, on utilise en fait les méthodes de cette classe. Par exemple, l'opérateur `+` appelle la méthode `append()` qui permet de concaténer deux chaînes. De même, la fonction `concat()` fait appel à cette même méthode.
+Une méthode courante pour éviter ces problèmes est d'utiliser des objets tels que "stringstream" ou "stringbuilder" qui permettent de concaténer des chaînes de caractères sans affecter la mémoire de manière significative.
 
-De plus, la concaténation de chaînes de caractères peut également se faire avec des littéraux de chaînes, c'est-à-dire des chaînes de caractères écrites directement dans le code. Par exemple :
-
-```C++
-string message = "J'ai " + to_string(3) + " pommes."; // affiche "J'ai 3 pommes."
-```
-
-Dans ce cas, le compilateur effectue automatiquement la conversion entre le type `int` de la valeur `3` et le type `string` nécessaire pour la concaténation.
-
-## Voir aussi
-
-- [Documentation officielle de la classe string en C++](https://www.cplusplus.com/reference/string/string/)
-- [Tutoriel vidéo (en français) sur la concaténation de chaînes de caractères en C++](https://www.youtube.com/watch?v=YSQgu1y7Ovk)
+## Voir également
+- [Documentation officielle C++ sur la concaténation de chaînes de caractères](https://en.cppreference.com/w/cpp/string/basic_string/operator_plus)
+- [Article sur les performances de la concaténation de chaînes de caractères en C++](https://www.oreilly.com/library/view/high-performance-c/9781491927975/ch04.html)
+- [Tutoriel vidéo sur l'utilisation de "stringstream" pour concaténer des chaînes de caractères en C++](https://www.youtube.com/watch?v=NK4LP_mc2m4)

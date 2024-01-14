@@ -1,39 +1,41 @@
 ---
-title:    "Elm: 문자열 대문자로 변환하기"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/capitalizing-a-string.md"
+title:                "Elm: 문자열 대문자로 바꾸기"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-문자열을 대문자로 변환하는 것에 대해 고민해 본 적이 있나요? 당신이 알기 원하는 것은 어떤 이유로 이 작업이 유용한지에 대한 것입니다. 그래서 오늘은 Elm 프로그래밍에서 문자열을 대문자로 변환하는 방법에 대해 알아보겠습니다.
+문자열을 대문자로 바꾸는 이유는 우리가 프로그래밍에서 자주 사용하는 일반적인 작업이기 때문입니다. 예를 들어, 사용자의 입력을 강제로 대문자로 바꾸거나, 데이터베이스에 저장되는 문자열을 보다 일관성있게 처리하기 위해서 사용할 수 있습니다. 여러분이 이미 어떤 일을하든 간에, 문자열을 대문자로 변환하는 기능은 매우 유용합니다!
 
-# 어떻게
+## 이번에는 어떻게
 
-이 작업을 수행하는 가장 쉬운 방법은 Elm의 String 라이브러리에 있는 `toUpper` 함수를 사용하는 것입니다.
+Elm으로 문자열을 대문자로 바꾸는 방법은 매우 간단합니다. 먼저, `String` 모듈을 가져와서 `toUpper` 함수를 사용하면 됩니다. 예제 코드를 살펴보겠습니다.
 
-```Elm 
-import String
+```Elm
+import String exposing (toUpper)
 
-String.toUpper "hello" -- "HELLO"
+myString = "hello world"
+uppercaseString = toUpper myString
+
+-- "HELLO WORLD"
 ```
 
-`toUpper` 함수는 문자열을 모두 대문자로 변환하여 반환합니다. 위 예제에서는 "hello"라는 문자열이 대문자로 변환되어 "HELLO"가 출력됩니다.
+코드를 살펴보면, `toUpper` 함수는 문자열을 인자로 받고 대문자로 변환된 값을 리턴합니다. 따라서 `uppercaseString` 변수에는 `HELLO WORLD`라는 대문자로 된 문자열이 저장되게 됩니다.
 
-# 깊게 파헤치기
+## 깊은 곳까지 파헤쳐보기
 
-이 예제에서 사용한 `toUpper` 함수는 사실 `toUpper : String -> String`라는 타입 시그니처를 가지고 있습니다. 이는 `toUpper` 함수가 단일 문자열을 인수로 받아 대문자로 변환된 문자열을 반환한다는 것을 의미합니다.
+이제 문자열을 대문자로 바꾸는 것은 얼마나 쉽고 간단한 작업인지 알게 되었습니다. 하지만 우리는 여전히 더 자세히 살펴볼 수 있는 것들이 있습니다.
 
-또한, 이 함수는 인수로 받은 문자열 외에도 `foldl`이라는 또 다른 함수를 이용해 `toUpper`를 적용할 수 있는 리스트도 처리할 수 있습니다. 이를 통해 여러 문자열을 대문자로 변환하는 것도 가능합니다.
+우선, `String` 모듈은 `toUpper` 함수 외에도 여러 가지 다른 함수들을 제공합니다. 예를 들어, `toLower` 함수는 문자열을 소문자로 변환하는 역할을 합니다. 또한 `toCapitalize` 함수는 각 단어의 첫 글자를 대문자로 변환합니다.
 
-# 더 알아보기
+또한, `String` 모듈을 사용할 때에는 몇 가지 중요한 점들을 명심해야 합니다. 예를 들어, `toUpper` 함수는 영어 외의 다른 언어에서는 적용되지 않을 수 있으므로 주의해야 합니다.
 
-이외에도 `String.split` 함수를 사용해 문자열을 분할하여 대문자로 변경하는 등 다양한 방법으로 문자열을 대문자로 변환할 수 있습니다. Elm의 String 라이브러리에는 문자열을 다루는 다양한 함수들이 많이 있기 때문에 많은 공부가 필요할 수도 있습니다. 하지만 한 번 익숙해지고 나면 문자열을 다루는 작업에서 매우 유용하게 사용할 수 있습니다.
+## 관련 포스트 보기
 
-# 이어서 읽어보세요
-
-* [Elm 공식문서 - String 라이브러리](https://package.elm-lang.org/packages/elm/core/latest/String)
-* [Elm 공식문서 - 함수 연산자](https://guide.elm-lang.org/appendix/functions.html)
-* [코드스쿼드 블로그 - Elm 문자열 다루기](https://medium.com/@codesquad_yoda/elm-문자열-다루기-13545fd90dea)
+- [Elm 문자열 함수 문서](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm 문자열 기초 강좌](https://scrimba.com/playlist/p5nMr9){target="_blank"}
+- [Elm 한국어 커뮤니티](https://www.facebook.com/groups/ElmKorea){target="_blank"}

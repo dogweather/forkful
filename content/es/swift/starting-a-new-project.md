@@ -1,48 +1,53 @@
 ---
-title:    "Swift: Comenzando un nuevo proyecto"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/starting-a-new-project.md"
+title:                "Swift: Iniciando un nuevo proyecto"
+programming_language: "Swift"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué iniciar un nuevo proyecto en Swift
+¡Hola a todos, programadores españoles! ¿Están buscando emprender un nuevo proyecto de programación en Swift? ¡Entonces han venido al lugar correcto! En esta publicación de blog, les mostraremos por qué deberían embarcarse en un nuevo proyecto de Swift, cómo pueden hacerlo de manera efectiva y algunos consejos para profundizar en este emocionante lenguaje de programación.
 
-Iniciar un nuevo proyecto de programación puede ser una tarea emocionante pero también desafiante. Ya sea que seas un principiante o un programador experimentado, siempre hay motivos para embarcarse en un nuevo proyecto. Tal vez quieras expandir tus habilidades, aprender un nuevo lenguaje de programación o simplemente crear algo único y original. Sea cual sea la razón, comenzar un nuevo proyecto en Swift puede ser una excelente opción.
+## ¿Por qué?
 
-## Cómo iniciar un nuevo proyecto en Swift
+La pregunta principal que surge al comenzar un nuevo proyecto de programación es ¿por qué debo hacerlo? Bueno, hay muchas razones para empezar un nuevo proyecto de Swift. Tal vez quieran aprender un nuevo lenguaje de programación o mejorar sus habilidades en Swift. O tal vez quieren crear una aplicación innovadora para dispositivos iOS. Sea cual sea la razón, embarcarse en un nuevo proyecto de programación en Swift les permitirá desarrollar sus habilidades y conocimientos mientras crean algo nuevo e interesante.
 
-Iniciar un proyecto en Swift es bastante sencillo. Primero, debes asegurarte de tener instalado Xcode, el entorno de desarrollo integrado (IDE) de Apple para programar en Swift. Una vez que tengas Xcode, sigue estos pasos:
+## Cómo hacerlo
 
-1. Abre Xcode y selecciona "Create a new Xcode project".
-2. Selecciona "Single View App" como el tipo de aplicación y presiona "Next".
-3. Ingresa el nombre de tu proyecto y asegúrate de que el lenguaje seleccionado sea Swift.
-4. Elige la ubicación en la que deseas guardar tu proyecto y presiona "Create".
-
-¡Listo! Has creado tu primer proyecto en Swift. Ahora puedes comenzar a escribir código y ver los resultados en tiempo real utilizando la simulación de dispositivos en Xcode.
-
-Para ayudarte a entender mejor cómo funciona Swift, aquí hay un ejemplo de código que imprime "¡Hola mundo!" en la consola:
+Ahora que saben por qué deberían empezar un nuevo proyecto, es momento de hablar sobre cómo hacerlo. Aquí les mostraremos algunos ejemplos de código Swift para que puedan tener una idea de cómo se ve este lenguaje en acción.
 
 ```Swift
-print("¡Hola mundo!")
+// Declaración de una variable
+var nombre = "Juan"
+
+// Declaración de una constante
+let edad = 25
+
+// Estructura de control if-else
+if edad > 18 {
+    print("Eres mayor de edad")
+} else {
+    print("Eres menor de edad")
+}
+
 ```
 
-La salida será:
+Como pueden ver, Swift es un lenguaje de programación fácil de entender y utilizar. Incluso aquellos que no tengan mucha experiencia en programación pueden aprender rápidamente los conceptos básicos y comenzar a crear proyectos simples. Además, con la ayuda de herramientas como Xcode, pueden tener una vista previa de su aplicación en tiempo real mientras la están desarrollando.
 
-```
-¡Hola mundo!
-```
+## Profundizando
 
-## Profundizando en el inicio de un nuevo proyecto
+Ahora que tienen una comprensión básica de cómo empezar un nuevo proyecto de programación en Swift, es hora de profundizar en este lenguaje y descubrir todo lo que puede ofrecer. Algunas de las características más destacadas de Swift incluyen su sintaxis moderna y legible, su seguridad de tipo, su rendimiento rápido y su compatibilidad con dispositivos iOS, macOS, watchOS y tvOS.
 
-Iniciar un nuevo proyecto en Swift te abre un mundo de posibilidades. Puedes crear aplicaciones para iOS, macOS, watchOS y tvOS utilizando este lenguaje de programación moderno y potente. Además, Swift es un lenguaje de tipado seguro que te ayuda a escribir un código más limpio y menos propenso a errores.
+Además, Swift es un lenguaje de código abierto, lo que significa que su desarrollo está en constante evolución gracias a la comunidad de programadores que aportan sus ideas y mejoras. Esto también significa que hay una gran cantidad de recursos y documentación disponibles en línea para ayudarlos a mejorar sus habilidades en Swift.
 
-También es importante mencionar que Swift es de código abierto, lo que significa que puedes aprender de otros programadores y contribuir a la comunidad de desarrolladores mediante la colaboración en proyectos de código abierto.
+## Ver también
 
-En resumen, iniciar un nuevo proyecto en Swift es una gran oportunidad para mejorar tus habilidades y crear algo nuevo e innovador en el mundo de la programación.
+¡Esperamos que esta publicación de blog les haya sido de ayuda para empezar su nuevo proyecto de programación en Swift! Si desean seguir profundizando en este tema, aquí les dejamos algunos enlaces útiles que pueden revisar:
 
-## Ver También
+- [Sitio oficial de Swift](https://swift.org/)
+- [Guía de inicio rápido de Swift](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
+- [Curso de Swift en Udemy](https://www.udemy.com/course/swift-5-para-desarrolladores-de-ios/?LSNPUBID=oy03fUdCi4c&ranEAID=oy03fUdCi4c&ranMID=39197&ranSiteID=oy03fUdCi4c-ex5oRaFawPUtsCWeNrJx.Q)
+- [Comunidad de Swift en Reddit](https://www.reddit.com/r/swift/)
 
-- [Tutorial de Swift de Apple](https://developer.apple.com/swift/resources/)
-- [Documentación oficial de Swift](https://docs.swift.org/swift-book/)
-- [Proyectos de código abierto en Swift](https://github.com/search?q=swift&type=Repositories)
+¡Feliz codificación, amigos!

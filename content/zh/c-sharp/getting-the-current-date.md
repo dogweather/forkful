@@ -1,55 +1,48 @@
 ---
-title:    "C#: 获取当前日期"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/getting-the-current-date.md"
+title:                "C#: 获取当前日期"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
+在编写程序时，经常需要获取当前日期。这对程序的逻辑和功能都非常重要，因此学习如何获取当前日期是十分必要的。
 
-为什么要获取当前日期？日常生活中，我们经常需要使用当前日期来记录时间或进行一些特定的计算。在编写程序时，获取当前日期也是非常常见的需求，比如在日志记录、数据存储、任务调度等场景中。因此，了解如何获取当前日期是一项基本的编程技能。
+## 如何
+获取当前日期在C#中的实现非常简单。我们可以使用DateTime结构中的Now属性来获取当前日期。下面是一个简单的例子：
 
-## 如何做
-
-在C#中，可以使用DateTime类来获取当前日期。首先，需要在程序中引入System命名空间，然后创建一个DateTime对象，即可获取当前日期。下面的代码示例演示了如何使用DateTime类来获取当前日期，并通过控制台打印输出：
-
-```
-using System;
-
-DateTime currentDate = DateTime.Now;
-Console.WriteLine("当前日期为：" + currentDate);
+```C#
+var currentDate = DateTime.Now;
+Console.WriteLine(currentDate);
 ```
 
-运行上述代码，会在控制台输出类似以下结果：
+这段代码首先创建了一个DateTime对象，然后使用Console.WriteLine函数打印出来。在运行程序时，我们会看到当前日期和时间的输出，类似于这样的格式：2021/5/3 21:30:00。
 
-```
-当前日期为：2021/9/27 上午 9:20:50
-```
+我们也可以使用DateTime结构中的Today属性来获取当前日期的日期部分。下面是一个例子：
 
-除了获取当前日期外，我们也可以通过DateTime类的其他方法来获取年、月、日、时、分、秒等具体的时间信息。比如，下面的代码演示了如何获取当前日期的年份：
-
-```
-using System;
-
-DateTime currentDate = DateTime.Now;
-int currentYear = currentDate.Year;
-Console.WriteLine("当前年份为：" + currentYear);
+```C#
+var currentDate = DateTime.Today;
+Console.WriteLine(currentDate);
 ```
 
-运行以上代码，会在控制台输出当前的年份，比如：
+这段代码会输出当前日期的日期部分，例如2021/5/3。
 
-```
-当前年份为：2021
-```
+除了以上两种方法，我们也可以使用DateTime.Today.ToShortDateString()来获取当前日期的简短字符串表示。同样地，DateTime.Today.ToShortTimeString()可以获取当前日期的简短时间字符串表示。
 
 ## 深入了解
+在C#中，我们可以使用DateTime结构来表示一个日期和时间的值。它包含了年、月、日、小时、分钟、秒等各种属性，可以满足我们对日期和时间的各种需求。
 
-DateTime类是C#中用于处理日期和时间的核心类，除了可以获取当前日期外，它还提供了一系列方法来对日期进行操作和计算。例如，可以使用AddDays()方法来对日期进行加减天数的计算，或者使用ToString()方法来自定义日期的格式化输出。
+除了上面提到的方法之外，我们还可以使用DateTime结构中的其他属性来获取当前日期的各个部分。比如通过DateTime.Today.DayOfWeek属性可以获取当前日期是星期几，DateTime.Today.DayOfYear属性可以获取当前日期是今年的第几天等等。
 
-此外，C#中还有其他相关的日期时间类，比如DateTimeOffset和TimeSpan，它们分别用于表示带有时区信息的日期时间和时间间隔。在实际开发中，可以根据具体的需求来选择合适的日期时间类来处理日期相关的业务逻辑。
+了解DateTime结构的不同属性和方法，有助于我们更加灵活地操作日期和时间，满足不同的需求。
 
-## 参考资料
+## 参考链接
+- [C#中DateTime.Now和DateTime.Today的区别](https://blog.csdn.net/kevin26j/article/details/7573670)
+- [C#中获取当前日期和时间的几种方法](https://www.dotblogs.com.tw/bowwowxx/2018/06/11/160146)
+- [DateTime结构文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.datetime)
 
-- [DateTime Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [How to: Get the Current Date and Time (C# Programming Guide) (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/how-to-get-the-current-date-and-time)
+## 参见
+- [Markdown语法指南](https://www.jianshu.com/p/191d1e21f7ed)
+- [C#基础教程](https://www.runoob.com/csharp/csharp-tutorial.html)

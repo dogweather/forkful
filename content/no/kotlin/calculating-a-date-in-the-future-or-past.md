@@ -1,52 +1,63 @@
 ---
-title:    "Kotlin: Beregning av en dato i fremtiden eller fortiden"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/calculating-a-date-in-the-future-or-past.md"
+title:                "Kotlin: Kalkulere en dato i fremtiden eller fortiden"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge og organisere aktiviteter eller for å sjekke viktige datoer. Det kan også være morsomt å se hva datoen var på en spesiell hendelse i fortiden eller når en spesiell dato vil falle i fremtiden.
 
-Å beregne datoer i fremtiden eller fortiden er en viktig del av programmering. Enten det er for å opprette en kalenderfunksjon, planlegge fremtidige hendelser eller analysere historiske data, vil å kunne beregne datoer være nyttig for mange programmer.
+## Hvordan
+Det finnes forskjellige måter å beregne en dato i fremtiden eller fortiden på i Kotlin. En enkel metode er å bruke Date og Calendar klassene.
 
-# Hvordan
+```Kotlin
+import java.util.*
 
-For å beregne en dato i fremtiden eller fortiden i Kotlin, kan du bruke en kombinasjon av Java's `LocalDate` og Kotlin's `plusDays` eller `minusDays` funksjoner. Her er et eksempel på å beregne datoen 10 dager frem i tid:
-
-```kotlin
-val today = LocalDate.now()
-val futureDate = today.plusDays(10)
-println("Datoen 10 dager frem i tid er: $futureDate")
+val dato = Calendar.getInstance() 
+dato.add(Calendar.DAY_OF_YEAR, 10) // Legger til 10 dager på nåværende dato
+println("Datoen om 10 dager er ${dato.time}")
 ```
+Outputen av denne koden vil være 10 dager frem i tid fra kjøretidspunktet. Denne metoden kan også brukes til å beregne datoer i fortiden ved å bruke `add()` funksjonen med et negativt tall.
 
-Dette vil resultere i følgende utskrift:
+En annen måte å beregne en dato i fremtiden eller fortiden på er å bruke `LocalDate` og `LocalDateTime` klassene som er en del av Java 8 dato og tid biblioteket.
 
-`Datoen 10 dager frem i tid er: 2020-05-23`
+```Kotlin
+import java.time.LocalDate
+import java.time.LocalDateTime
 
-På samme måte kan du beregne en dato i fortiden ved hjelp av `minusDays` funksjonen. Her er et eksempel på å beregne datoen 5 dager tilbake i tid:
+val dato = LocalDate.now()
+val fremtidigDato = dato.plusDays(30) // Legger til 30 dager på nåværende dato
+val fortidigDato = dato.minusYears(2) // Trekker fra 2 år fra nåværende dato
 
-```kotlin
-val today = LocalDate.now()
-val pastDate = today.minusDays(5)
-println("Datoen 5 dager tilbake i tid er: $pastDate")
+val dateTime = LocalDateTime.now()
+val fremtidigDateTime = dateTime.plusMonths(6) // Legger til 6 måneder på nåværende dato og tid
+
+println("Datoen om 30 dager er $fremtidigDato")
+println("Datoen for 2 år siden var $fortidigDato")
+println("Dato og tid om 6 måneder er $fremtidigDateTime")
 ```
+Denne metoden gir mer fleksibilitet og nøyaktighet når du beregner datoer og tidspunkter.
 
-Dette vil resultere i følgende utskrift:
+## Dykk dypere
+Hvis du vil beregne mer avanserte datoer, som for eksempel faktiske dager i fremtiden eller fortiden basert på en bestemt hendelse, kan du også bruke `TemporalAdjuster` klassen som er en del av Java 8 dato og tid biblioteket.
 
-`Datoen 5 dager tilbake i tid er: 2020-05-08`
+```Kotlin
+import java.time.DayOfWeek
+import java.time.LocalDate
+import java.time.temporal.TemporalAdjusters
 
-Det er også mulig å bruke andre tidsenheter som måneder og år ved hjelp av `plusMonths` og `plusYears` funksjoner.
+val dato = LocalDate.of(2020, 7, 15) // Spesifikk dato for å beregne fra
+val nesteMandag = dato.with(TemporalAdjusters.next(DayOfWeek.MONDAY)) // Henter neste mandag fra denne datoen
+val sisteDagIAret = dato.with(TemporalAdjusters.lastDayOfYear()) // Henter siste dag i året
 
-# Dypdykk
+println("Neste mandag fra 15. juli 2020 er $nesteMandag")
+println("Siste dag i året 2020 er $sisteDagIAret")
+```
+Denne metoden gjør det mulig å beregne datoer basert på ulike kriterier, som ukedag eller posisjon i måneden.
 
-Det er viktig å være oppmerksom på forskjellen mellom `plusDays` og `plus` funksjoner i Kotlin. Mens `plusDays` tar inn en `Int` verdi og legger til det angitte antallet dager, tar `plus` funksjonen inn et `TemporalAmount` objekt og kan dermed legge til år, måneder, dager og andre tidsenheter.
-
-Det er også viktig å være klar over at datoen som returneres fra disse funksjonene er en ny `LocalDate` objekt, og at den opprinnelige datoen forblir uendret. Du må lagre resultatet i en ny variabel eller tilordne det til den opprinnelige datoen for å endre den.
-
-# Se også
-
-- [Kotlin dokumentasjon for LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/index.html)
-- [Java dokumentasjon for LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Kotlin dokumentasjon for plusDays funksjonen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-temporal/plus-days.html)
-- [Kotlin dokumentasjon for plus funksjonen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-temporal/plus.html)
+## Se også
+- [Java 8 dato og tid dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Kotlin offisiell dokumentasjon](https://kotlinlang.org/docs/reference/)

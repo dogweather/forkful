@@ -1,52 +1,69 @@
 ---
-title:    "Go: Extrahera delsträngar"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/extracting-substrings.md"
+title:                "Go: Extrahera delsträngar"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I många programmeringsprojekt kan det vara nödvändigt att arbeta med textsträngar på ett mer avancerat sätt. En vanlig uppgift är att extrahera delsträngar från en större sträng baserat på ett visst mönster eller villkor. I detta blogginlägg kommer vi att utforska hur man kan åstadkomma detta i Go-programmeringsspråket.
+I Go-programmering, eller något annat programmeringsspråk för den delen, finns det ofta tillfällen när vi behöver arbeta med strängar - en sekvens av tecken. Ibland kanske vi bara vill använda en del av en sträng, eller en "substring". I denna bloggpost kommer vi att titta på hur man extraherar substrängar i Go och varför det kan vara användbart.
 
 ## Hur man gör
 
-För att extrahera en delsträng från en större sträng i Go, kan man använda funktionen "Substring". Denna funktion tar två parametrar, det första är den ursprungliga strängen och det andra är en gräns som definierar vilken del av strängen som ska extraheras. Här är ett exempel på hur man kan använda funktionen "Substring" i Go:
+För att extrahera en substräng i Go använder vi funktionen `strings.Replace`. Den tar fyra argument: den ursprungliga strängen, den del av strängen vi vill byta ut, den del av strängen vi vill ersätta den första delen med, och slutligen det valfria argumentet `n` som anger hur många gånger vi vill byta ut delen.
+
+Låt oss säga att vi har en sträng "Hej världen" och vi bara vill ha "världen". Detta är hur vi skulle göra det i Go:
 
 ```Go
-sträng := "Jag älskar att lära mig Go-programmering!"
-delsträng := sträng[9:12]
-fmt.Println(delsträng)
+str := "Hej världen"
+substr := strings.Replace(str, "Hej ", "", 1)
+
+fmt.Println(substr) // världen
 ```
 
-Detta kommer att producera följande utdata: "att".
+Vi anger att vi vill ersätta "Hej " med en tom sträng `""` och `1` indikerar att vi bara vill byta ut den första förekomsten av "Hej ".
 
-För att extrahera en delsträng baserat på ett visst mönster eller villkor, kan man använda "Regular Expression" (regex) -tekniken i Go. Det finns olika paket och funktioner för att underlätta användningen av regex i Go, till exempel "regexp" -paketet och "FindStringSubmatch" -funktionen. Här är ett exempel på en regex-baserad delsträngsextraktion i Go:
+Om vi istället vill extrahera en del av en sträng baserat på positioner använder vi funktionen `strings.Substring`. Den tar två argument: den ursprungliga strängen och de två positionerna för delen vi vill extrahera.
+
+Låt oss säga att vi vill få ut "värld" från vår tidigare sträng "Hej världen". Så här skulle vi kunna göra det:
 
 ```Go
-sträng := "Min favoritfärg är blå"
-regEx := regexp.MustCompile("blå")
-delsträng := regEx.FindStringSubmatch(sträng)
-fmt.Println(delsträng)
+str := "Hej världen"
+substr := str[4:9]
+
+fmt.Println(substr) // värld
 ```
 
-Detta kommer att producera följande utdata: ["blå"].
+Här använde vi "slice notation" för att ange de två positionerna (4 och 9) som motsvarar början och slutet av den del av strängen vi vill ha.
 
 ## Djupdykning
 
-För mer komplicerade användningsfall kan det vara användbart att extrahera flera delsträngar från en större sträng samtidigt. Detta kan uppnås genom att använda "Split" -funktionen i Go, som delar upp en sträng baserat på ett visst separatorvärde. Här är en exempelkod på hur man kan använda "Split" -funktionen för att extrahera flera delsträngar från en sträng i Go:
+Som vi nämnde tidigare är `strings.Substring` den funktion som används för att extrahera delar av strängar baserat på positioner. Men vad händer bakom kulisserna?
+
+I själva verket är `strings.Substring` bara en bekvämlighetsfunktion som använder "slice notation" som vi tidigare använde. Om vi tittar på dess implementation i Go-källkoden så ser vi följande:
 
 ```Go
-sträng := "hund,katt,kanin,hamster"
-delsträngar := strings.Split(sträng, ",")
-fmt.Println(delsträngar)
+func Substring(s string, i, j int) string {
+	if i < 0 || i > len(s) {
+		panic("substring index out of bounds")
+	}
+	if j < 0 || j > len(s) {
+		panic("substring index out of bounds")
+	}
+	if i > j {
+		panic("substring index out of bounds")
+	}
+	return s[i:j]
+}
 ```
 
-Detta kommer att producera följande utdata: ["hund", "katt", "kanin", "hamster"].
+Som vi kan se kontrollerar den bara att de angivna positionerna finns inom strängens längd och returnerar därefter en del av strängen. Så nu vet vi att när vi använder `strings.Substring` händer egentligen inget speciellt, vi kan lika gärna använda "slice notation" direkt.
 
 ## Se även
 
-- Officiell Go-dokumentation för "Substring" -funktionen: https://golang.org/pkg/strings/#Substring
-- Tutorial för Regular Expression (regex) i Go: https://golang.org/pkg/regexp/
-- "Split" -funktionen i Go-dokumentationen: https://golang.org/pkg/strings/#Split
+- [Go's officiella dokumentation om strängar](https://golang.org/pkg/strings/)
+- [En djupare förklaring av "slice notation"](https://gobyexample.com/slices)
+- [Fler användbara strängfunktioner i Go](https://www.golangprograms.com/golang-package-examples.html)

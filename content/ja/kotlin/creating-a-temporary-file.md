@@ -1,65 +1,39 @@
 ---
-title:    "Kotlin: 一時ファイルを作成する"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/creating-a-temporary-file.md"
+title:                "Kotlin: 一時ファイルの作成"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-一時ファイルを作成するのに理由はいくつかあります。一時的なデータを保存する必要がある、またはプログラムの実行中に一時的に生成されたファイルを処理する必要がある場合などです。
+一時ファイルを作成するのには、いくつかの理由があります。最も一般的な理由は、一時ファイルを使用してプログラムを実行する際に、一時的なデータを保存することです。また、一時ファイルはシステムリソースの消費を少なくし、パフォーマンスを向上させることもできます。
 
 ## 作り方
 
-一時ファイルを作成するには、まずJava標準ライブラリの`java.io.File`をインポートする必要があります。その後、ファイルの名前と拡張子を指定してファイルを作成することができます。例えば、`temp.txt`という名前の一時ファイルを作成するには、次のように記述します。
+まず、ファイルを作成するために必要な権限を確認します。次に、`createTempFile()`メソッドを使用して、一時ファイルを作成します。以下の例をご覧ください。
 
 ```Kotlin
-import java.io.File
-
-val tempFile = File("temp.txt")
+val tempFile = createTempFile("prefix", "txt")
+println(tempFile.absolutePath)
+println(tempFile.delete())
+```
+出力結果:
+```
+/Users/username/prefix123456.txt
+true
 ```
 
-このようにすると、現在の作業ディレクトリに`temp.txt`というファイルが作成されます。また、ファイルの内容を指定したい場合には、`printWriter()`メソッドを使用することもできます。例えば、以下のようになります。
+`createTempFile()`メソッドには、prefix（ファイル名の接頭辞）とsuffix（ファイル名の拡張子）の2つのオプションの引数があります。さらに、デフォルトでは、一時ファイルはシステムの一時フォルダーに作成されます。ファイルが不要になったら、`delete()`メソッドを使用して、ファイルを削除することができます。
 
-```Kotlin
-import java.io.File
+## 詳しく見る
 
-val tempFile = File("temp.txt")
-tempFile.printWriter().use { out ->
-    out.println("This is a temporary file.")
-}
-```
+`createTempFile()`メソッドは、内部的にはJavaの`File.createTempFile()`メソッドを使用しています。そのため、一時ファイルの作成に関するさらに詳しい情報は、Javaのドキュメントを参照することができます。また、一時ファイルを使用する際の注意点として、ファイルが削除されずに残ってしまうことがある点についても知っておく必要があります。
 
-このコードでは、一時ファイルとして`temp.txt`が作成され、その中に`This is a temporary file.`という文字列が書き込まれます。
+## また見る
 
-また、一時ファイルを作成する際には、`createTempFile()`メソッドを使用することもできます。このメソッドを使用すると、一時ファイルを作成した際に自動的にユニークな名前が付けられるため、同じ名前のファイルが作成される心配がありません。
-
-```Kotlin
-import java.io.File
-
-val tempFile = File.createTempFile("temp", ".txt")
-```
-
-`temp`という名前のファイルが作成され、その後ろに自動的にユニークな文字列が付けられるため、ファイル名は`temp123456.txt`のようになります。
-
-## 深掘り
-
-一時ファイルを作成する際には、そのファイルを安全に削除する必要があります。Javaでは、`deleteOnExit()`メソッドを使用することで、プログラムが終了する際に自動的に一時ファイルが削除されるように設定することができます。ただし、このメソッドを使用するには、`createTempFile()`メソッドを使用してファイルを作成しなければなりません。
-
-また、一時ファイルを作成する際にはファイルパスの指定が重要です。特にWindows環境では、バックスラッシュ`\`をエスケープ文字として使用するため、正しいファイルパスの指定が必要です。以下のように記述すると、例外が発生する可能性があります。
-
-```Kotlin
-val tempFile = File("C:\Users\temp.txt") // バックスラッシュをエスケープ文字として使用するため、正しくファイルパスが指定されていない
-```
-
-なので、ファイルパスを指定する際には、次のように記述する必要があります。
-
-```Kotlin
-val tempFile = File("C:\\Users\\temp.txt")
-```
-
-## 参考リンク
-
-- [Temporary File Example in Kotlin](https://www.baeldung.com/java-temporary-files)
-- [Kotlin Reference | java.io.File](https://kotlinlang.org/api
+- [Kotlinドキュメント - `createTempFile()`メソッド](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
+- [Javaドキュメント - `File.createTempFile()`メソッド](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String,%20java.io.File))
+- [Java Code Geeks - Understanding Java's Temporary Files](https://www.javacodegeeks.com/2016/01/understanding-javas-temporary-files.html)

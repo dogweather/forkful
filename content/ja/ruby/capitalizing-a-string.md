@@ -1,39 +1,51 @@
 ---
-title:    "Ruby: 文字列の最初を大文字にする"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/capitalizing-a-string.md"
+title:                "Ruby: 文字列の大文字変換"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-ソフトウェア開発において、文字列を大文字に変換することは非常に重要です。これは、文字列を正しく処理するために必要な手法の一つです。
+文字列を大文字にすることにも意味がありますか？その理由を説明します！
 
-## 方法
+文字列を大文字にすることは、テキストを見やすくするためや、検索エンジンでの検索を容易にするために行われます。例えば、あなたの名前を大文字で書くことで、あなたの名前を探すのが簡単になります。また、日本語の場合、英語と比べて大文字と小文字の区別がないため、大文字にすることでテキストを強調することができます。
 
-文字列を大文字に変換するには、Rubyの `upcase` メソッドを使用します。例えば、以下のように記述します。
+## やり方
 
-```ruby
-my_string = "hello world"
-puts my_string.upcase
+文字列を大文字にするには、Rubyのcapitalizeメソッドを使用します。下の例を参考にしてください。
+
+```Ruby
+name = "yamada taro"
+puts name.capitalize
 ```
 
-このコードを実行すると、"HELLO WORLD"という出力が得られます。
+出力結果は "Yamada taro" になります。
 
-## ディープダイブ
+文字列だけでなく、変数やメソッド名にもcapitalizeメソッドを使用することができます。しかし、大文字にするには文字列が英語である必要があります。日本語の場合、発音が変わるため、使うことができません。
 
-文字列を大文字に変換する背景には、コンピューター内部で文字を保存する際の規則があります。例えば、英語の大文字と小文字を区別する必要があります。そのため、Rubyでは `upcase` メソッドを使用することで、文字列を大文字に変換することができます。
+## 深堀り
 
-## 参考リンク
+実は、Rubyのcapitalizeメソッドは文字列の先頭文字を大文字にするだけでなく、先頭以外の文字を全て小文字にします。例えば、"YAMADA Taro"という文字列をcapitalizeすると、"Yamada taro" になります。
 
-- [String#upcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-upcase)
-- [Ruby 入門: 文字列の大文字・小文字を切り替えて比較する](https://www.javadrive.jp/ruby/string/index7.html)
-- [文字列 manipulation のための Ruby ガイド](https://itnext.io/the-complete-guide-to-string-manipulation-in-ruby-366f7fc6512b)
+また、文字列全体を大文字にするには、upcaseメソッドを使用します。下の例を参考にしてください。
 
-## また見る
+```Ruby
+name = "yamada taro"
+puts name.upcase
+```
 
-参考になる他のRubyプログラミングの記事を読む際は、次のタグを確認してください。
+出力結果は "YAMADA TARO" になります。
 
-- [ルビー入門](https://ruby-jp.github.io/ruby-manual/)
-- [Rubyプログラミング入門](https://qiita.com/hiiragi/items/8c83936a05e34c3fad1a)
+## 今後も参考にしてね
+
+この記事を読んで、文字列を大文字にする方法を学びました。UNIXコマンドやJavaScriptでも同じことができるので、ぜひ練習してみてください。
+
+<!-- Japanese See Also -->
+## 関連記事
+
+- [Rubyの公式ドキュメント: String#capitalize](https://docs.ruby-lang.org/ja/latest/method/String/i/capitalize.html)
+- [文字列を大文字に変換する方法 - TECHacademyマガジン](https://techacademy.jp/magazine/10150)
+- [Rubyで文字列を大文字に変換する方法 - Qiita](https://qiita.com/hypermkt/items/df4c95850763e39e88be)

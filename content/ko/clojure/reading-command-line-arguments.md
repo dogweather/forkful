@@ -1,48 +1,24 @@
 ---
-title:    "Clojure: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/reading-command-line-arguments.md"
+title:                "Clojure: 명령 줄 인수 읽기"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-커맨드 라인 인수(arguments)를 읽는 것이 중요한 이유는 프로그램을 실행할 때 외부에서 입력을 받아와야 할 경우가 많기 때문입니다. 이는 사용자로부터 입력을 받아 다양한 조작을 할 수 있도록 하며, 프로그램의 유연성과 사용성을 높일 수 있습니다.
+커맨드 라인 인자를 읽는 것의 중요성은 여러분의 프로그램을 커스터마이징하고, 유연하게 만들며 사용자와 상호작용하기 위해서입니다.
 
-## 어떻게 하나요?
+## 사용 방법
 
-커맨드 라인 인수를 읽는 것은 간단합니다. 일반적으로 `*command-line-args*` 벡터를 사용하여 인수들을 읽어옵니다. 예를 들어, 다음과 같이 사용할 수 있습니다.
+커맨드 라인 인자를 읽는 것은 간단합니다. 먼저 ```clojure (def args (-> *command-line-args* rest)). ``` 을 사용하여 커맨드 라인 인자를 가져옵니다. 다음으로 ```clojure (println "Hello, " (first args) "!") ``` 처럼 다양한 방식으로 인자를 사용할 수 있습니다. 예를 들어, ```clojure java -jar my-program.jar John ``` 을 입력하면 "Hello, John!"이 출력됩니다.
 
-```Clojure
-(defn get-args [args]
-  (doseq [arg args]
-    (println arg)))
+## 심화 학습
 
-(get-args *command-line-args*)
-```
+커맨드 라인 인자를 더 깊이 이해하기 위해서는 Clojure의 ```*command-line-args*``` 함수를 더 자세히 살펴보세요. 이 함수는 Java의 ```args``` 배열로부터 커맨드 라인 인자를 가져옵니다.
 
-이 코드를 실행하면 `clojure my-program.clj arg1 arg2` 와 같이 인수들을 전달한 후 `arg1 arg2` 가 출력됩니다. 또 다른 예시로는 다음과 같은 코드가 있습니다.
+## 더 알아보기
 
-```Clojure
-(require '[clojure.java.io :as io])
-(require '[clojure.string :as str])
-
-(let [input-file (first *command-line-args*)]
-  (when input-file
-    (with-open [reader (io/reader input-file)]
-      (doseq [line (line-seq reader)]
-        (println (str/upper-case line))))))
-```
-
-위 코드는 전달된 입력 파일을 읽고, 각 줄을 대문자로 변환하여 출력하는 간단한 프로그램입니다.
-
-## 딥 다이브
-
-커맨드 라인 인수를 읽는 방법은 여러 가지가 있습니다. `clojure.tools.cli` 라이브러리를 사용하면 조금 더 복잡한 인수들을 읽고 처리할 수 있습니다. 또한, 다른 라이브러리나 샘플 코드를 참고하며 익힐 수도 있습니다. 인수들을 올바르게 처리하는 것이 중요하기 때문에 잘 알아두는 것이 좋습니다.
-
-# 참고
-
-- [Clojure - Command line args](https://clojure.org/guides/learn/reading_command_line_arguments)
-- [Clojure - Command-line processing with tools.cli](https://clojure.org/guides/devtools/cli)
-- [Introduction to Clojure - Reading command line arguments](https://clojure.org/guides/tutorials/introduction_to_command_line_utilities#_reading_command_line_arguments)
+"Command Line Arguments in Clojure"는 Clojure 공식 문서에서 커맨드 라인 인자를 다루는 방법에 대해 더 자세히 설명합니다. 또한 "Clojure for the Brave and True" 책의 "Reading Command-Line Arguments" 섹션도 이 주제에 대한 유용한 정보들을 담고 있습니다. 마지막으로 "Clojure CLI"는 더 복잡한 커맨드 라인 인자를 다루는 데 유용한 도구입니다.

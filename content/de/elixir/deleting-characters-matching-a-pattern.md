@@ -1,51 +1,48 @@
 ---
-title:    "Elixir: Löschen von Zeichen, die einem Muster entsprechen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/deleting-characters-matching-a-pattern.md"
+title:                "Elixir: Entfernen von Zeichen, die einem Muster entsprechen"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann hilfreich sein, wenn man bestimmte Daten in einer Elixir Anwendung filtern oder formatieren möchte.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine nützliche Fähigkeit in der Elixir Programmierung, um verschiedene Arten von Daten effizient zu manipulieren und zu bearbeiten.
 
-## Wie
+## Wie geht's?
 
-Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, kann die `String.replace/4` Funktion verwendet werden. Diese Funktion akzeptiert vier Argumente: den String, in dem das Muster gefunden werden soll, das zu ersetzende Muster, das Ersatzzeichen und einen Optionsparameter.
+Die Elixir-Standardbibliothek bietet die Funktion `String.replace/4`, um Zeichen in einem String durch ein anderes Zeichen zu ersetzen, das einem bestimmten Muster entspricht. Hier ist ein Beispiel, wie diese Funktion verwendet werden kann:
 
-```Elixir
-string = "Dies ist ein Beispieltext mit unerwünschten Zeichen!"
-
-result = String.replace(string, ~r/[^a-zA-Z]/, "")
-
-IO.puts result 
-
-# Output: DiesisteinBeispieltextmitunerwunschtenZeichen
+```
+Elixir defmodule StringManipulation do
+  def delete_characters(str) do
+    String.replace(str, ~r/[aeiou]/, "")
+  end
+end
 ```
 
-In diesem Beispiel wurde das Muster `[^a-zA-Z]` verwendet, um alle Zeichen zu löschen, die keine Buchstaben sind. Das vierte Argument `""` gibt an, dass diese Zeichen durch leere Strings ersetzt werden sollen.
+Der obige Code verwendet den regulären Ausdruck `[aeiou]`, um alle Vokale in einem String zu finden und durch ein leeres Zeichen zu ersetzen. 
 
-## Deep Dive
+Wenn wir nun diese Funktion aufrufen und einen String übergeben, erhalten wir das folgende Ergebnis:
 
-Es gibt verschiedene Beispiele, bei denen das Löschen von Zeichen, die einem bestimmten Muster entsprechen, hilfreich sein kann. Zum Beispiel kann es bei der Validierung von Benutzereingaben nützlich sein, um unerwünschte Zeichen zu entfernen und nur die gültigen Zeichen zuzulassen. Es kann auch hilfreich sein, um formatierte Telefonnummern oder Postleitzahlen aus einem String zu extrahieren.
-
-Eine weitere nützliche Funktion, um Zeichen zu löschen, die einem bestimmten Muster entsprechen, ist `Regex.replace/3`, die reguläre Ausdrücke verwendet.
-
-```Elixir 
-string = "123-456-789"
-
-result = Regex.replace(string, ~r/[^0-9]/, "")
-
-IO.puts result 
-
-# Output: 123456789 
+```
+# StringManipulation.delete_characters("Hello World")
+"HllWrld"
 ```
 
-In diesem Beispiel wird wieder das Muster `[^0-9]` verwendet, um alle Nicht-Zahlen aus dem String zu entfernen. Diese Funktion bietet mehr Flexibilität, da sie auch komplexere Muster unterstützt.
+Dies ist nur ein einfaches Beispiel, wie `String.replace/4` verwendet werden kann, aber es gibt viele weitere Möglichkeiten, diese Funktion in der Praxis einzusetzen. 
+
+## Tiefer tauchen
+
+Für ein tiefes Verständnis des Löschen von Zeichen in Elixir ist es wichtig, die verwendeten regulären Ausdrücke zu verstehen. Dies sind spezielle Zeichenmuster, die verwendet werden, um bestimmte Teile eines Strings zu finden oder zu ersetzen. Elixir verwendet die Syntax von PCRE (Perl Compatible Regular Expressions) für reguläre Ausdrücke und es gibt viele hilfreiche Ressourcen online, um mehr über sie zu erfahren.
+
+Eine weitere wichtige Sache, die es zu beachten gilt, ist, dass `String.replace/4` eine unveränderliche Funktion ist, was bedeutet, dass sie den ursprünglichen String nicht ändert, sondern einen neuen String zurückgibt. Dies ist ein wichtiger Aspekt der funktionalen Programmierung in Elixir und es ist wichtig, dies zu verstehen, um unerwartete Ergebnisse zu vermeiden.
 
 ## Siehe auch
 
-- [Elixir String Dokumentation](https://hexdocs.pm/elixir/String.html)
-- [Reguläre Ausdrücke in Elixir](https://elixirschool.com/de/lessons/advanced/regex/)
-- [Musterabgleich in Elixir](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#=~/2)
+- [Elixir Dokumentation zu String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
+- [PCRE reguläre Ausdrucksbibliothek](https://www.pcre.org/)
+
+Vielen Dank, dass Sie diesen Blogbeitrag zum Löschen von Zeichen in Elixir gelesen haben. Wir hoffen, dass Sie daraus etwas gelernt haben und es in Ihren zukünftigen Elixir-Projekten anwenden können!

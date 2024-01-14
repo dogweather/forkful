@@ -1,45 +1,41 @@
 ---
-title:    "C#: दो तारीखों की तुलना करना"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/comparing-two-dates.md"
+title:                "C#: दो तारीखों का तुलना करना"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों:
+## क्यों
 
-कभी-कभी हमें दो तिथियों को तुलना करने की आवश्यकता होती है, जैसे कि कोई ईवेंट की तारीख से अगले साल की तारीख अनुमानित करना या दो आगामी घटनाओं के बीच अंतर निकालना। इसलिए हम आपको बताएंगे कि आप C# में दो तिथियों को कैसे तुलना कर सकते हैं। 
+आपको दो तारीखों को तुलना करने में क्या कारण हो सकता है? तारीखों को तुलना करने से आप पहले से ज्ञात होने वाली तारीखों के बीच अंतरों को जान सकते हैं, जो आपको अपने कोड को सुधारने और सुधारने में मदद कर सकते हैं।
 
-## कैसे: 
+## कैसे
+
+जब हम तारीखों की तुलना करने की बात करते हैं, हमें तारीख को मिलाने के लिए जानकारी होना चाहिए, तारीख की स्थिति क्या है और तब तक कैसे चलचित्रण करना है जब आपको तुलना करनी हो। नीचे दिए गए उदाहरण में हम इस प्रक्रिया को समझेंगे:
 
 ```C#
-// दो तिथियों को मिलाने के लिए DateTime वेरिएबल बनाएं
-DateTime date1 = new DateTime(2021, 10, 15);
-DateTime date2 = new DateTime(2021, 10, 20);
+DateTime dateOne = new DateTime(2021, 4, 14);
+DateTime dateTwo = new DateTime(2021, 4, 15);
 
-// DateTime.Compare () में दो तिथियों को सिम्पल कम्पेयर और दो तिथियों को बड़ा या बड़ी कम्पेयर देखे
-int compare = DateTime.Compare(date1, date2);
-int compare2 = DateTime.Compare(date2, date1);
+// साल के अंतर का माध्य निकालें
+int yearDifference = dateTwo.Year - dateOne.Year; 
+// महीनों के अंतर का माध्य निकालें
+int monthDifference = dateTwo.Month - dateOne.Month;
+// दिनों के अंतर का माध्य निकालें
+int dayDifference = dateTwo.Day - dateOne.Day;
 
-// सिम्पल कम्पेयर वापस -1 देगा अगर दो तिथियों में से एक पहले है और 0 यदि वे एक-सा हैं, और 1 यदि दोनों में से एक बड़ा है। 
-Console.WriteLine("Date 1 compared to date 2: " + compare);
-Console.WriteLine("Date 2 compared to date 1: " + compare2);
+Console.WriteLine($"तारीखों के बीच अंतर साल: {yearDifference}, महीने: {monthDifference}, दिन: {dayDifference}");
 
-// बड़ा या बड़ी कम्पेयर वापस -1 देगा अगर दो तिथियों में से कोई एक से भी बड़ा है, 0 यदि वे एकसा हैं, और 1 यदि दोनों से कोई एक भी बड़ी है।
-int compare3 = date1.CompareTo(date2);
-int compare4 = date2.CompareTo(date1);
-
-Console.WriteLine("Date 1 compared to date 2: " + compare3);
-Console.WriteLine("Date 2 compared to date 1: " + compare4);
+// Output:
+// तारीखों के बीच अंतर साल: 0, महीने: 0, दिन: 1
 ```
 
-आउटपुट: 
+## गहराई में जाएँ
 
-Date 1 compared to date 2: -1
-Date 2 compared to date 1: 1
-Date 1 compared to date 2: -1
-Date 2 compared to date 1: 1
+तारीखों को तुलना करने के फायदे ही नहीं, बल्कि हमारे पास तारीखों को तुलना करने के लिए कई तरीके हैं। जैसे कि, हम हालांकि दिए गए उदाहरण में तारीखों के बीच अंतर की गणना कर सकते हैं, लेकिन हम अपनी तारीखों को तुलना करने के लिए महीनों, सालों, दिनों आदि के बीच सार्वजनिक प्रभाव के बीच भी तुलना कर सकते हैं।
 
-## गहराई में जाएं: 
+## देखें भी
 
-दो तिथियों को तुलना करने के लिए, सबसे पहले हम इसे DateTime वेरिएबल में लोड करते हैं। आप दो तिथियों के बीच अंतर निकालने के लिए इस्तेमाल कर सकते हैं DateTime.Subtract () विधि, जो दो DateTime वेरिएबल दो
+- [

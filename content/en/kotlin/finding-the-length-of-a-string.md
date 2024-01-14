@@ -1,43 +1,55 @@
 ---
-title:    "Kotlin recipe: Finding the length of a string"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/finding-the-length-of-a-string.md"
+title:                "Kotlin recipe: Finding the length of a string"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Finding the length of a string is a common and essential task in programming. It allows us to manipulate and analyze text in our programs, making them more dynamic and useful.
+Finding the length of a string is a fundamental operation in programming, regardless of the language being used. It allows us to manipulate and analyze text, and is useful for a wide range of applications.
 
 ## How To
-To find the length of a string in Kotlin, we can use the `length` property. Let's take a look at an example:
+To find the length of a string in Kotlin, we can use the built-in function `length()`.
 
 ```Kotlin
-val string = "Hello World"
-val length = string.length
-println(length) // Output: 11 
+// Example string
+val text = "Hello, World!"
+
+// Finding the length using length() function
+val length = text.length()
+
+// Output
+println(length)
+// 13
 ```
 
-In the above code, we first create a string variable called `string` and assign it the value "Hello World". Then, we use the `length` property to find the length of the string, which is 11 in this case. Finally, we print out the length and see the result in the console.
+In the above example, we declare a string variable named `text` and assign it the value of "Hello, World!". Then, we use the `length()` function to find the length of the string and store it in a variable named `length`. Finally, we print the value of `length` and it outputs `13`, which is the length of the string.
 
-We can also use the `length` property on user input. Let's see how that works:
+We can also use the `length` property of a string, which is essentially the same as using the `length()` function.
 
 ```Kotlin
-print("Enter a word: ")
-val input = readLine()
-val length = input?.length // Use safe call operator in case of null input
-println(length) // Output: Length of the input word
-```
+// Example string
+val text = "Hello, World!"
 
-In the above code, we ask the user for a word and store it in the `input` variable using the `readLine()` function. Then, we use the `length` property to find the length of the input word. It is important to note that the `length` property only works on nullable strings, which is why we use the safe call operator `?.` to handle null input.
+// Finding the length using length property
+val length = text.length
+
+// Output
+println(length)
+// 13
+```
 
 ## Deep Dive
-Behind the scenes, the `length` property in Kotlin uses the `length` property in Java's `String` class. This property returns an integer value representing the number of characters in the string. In some programming languages, the length of a string is determined by the number of bytes it takes up. However, in Kotlin, the `length` property counts the number of Unicode code points in the string, making it more accurate.
+The `length()` function and `length` property count the number of characters in a string, including spaces and punctuation marks. It returns an integer value representing the length of the string.
 
-It is also worth noting that the `length` property is a read-only property, which means we cannot modify it or change the length of a string directly. However, we can manipulate strings and change their length using other methods and functions.
+In Kotlin, strings are treated as arrays of characters. This means that the length of a string is equal to the number of elements in that array. For example, in the string "Hello", there are five characters, and therefore, the length of the string is 5.
 
-## See Also 
-- [Kotlin Strings Documentation](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Java String length() Method](https://www.w3schools.com/java/ref_string_length.asp)
+It is also important to note that the index of the last character in a string is always one less than the length of the string. For example, in the string "Hello", the last character "o" is at index 4, while the length of the string is 5.
 
-Finding the length of a string is a fundamental skill in programming, and it is important to understand how it works in Kotlin. With the knowledge gained from this article, you can confidently manipulate and use strings in your Kotlin programs. Happy coding!
+## See Also
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin Standard Functions](https://kotlinlang.org/docs/reference/lambdas.html#function-literals-with-receiver)
+
+By understanding how to find the length of a string in Kotlin, we can now effectively use this operation in our programs. So, go ahead and explore the various ways you can manipulate and analyze strings in Kotlin with this knowledge!

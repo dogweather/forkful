@@ -1,34 +1,74 @@
 ---
-title:    "Elixir: Einen zukünftigen oder vergangenen Datum berechnen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/calculating-a-date-in-the-future-or-past.md"
+title:                "Elixir: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Es gibt viele Szenarien, in denen das Berechnen eines Datums in der Zukunft oder Vergangenheit hilfreich sein kann, z.B. beim Erstellen von Terminplanern oder bei der Erfassung von Daten in einer Datenbank. Mit Elixir und seinen eingebauten Funktionen ist es einfach, solche Berechnungen durchzuführen.
 
-## Wie geht das?
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, kann die Funktion `Date.add` verwendet werden. Hier ist ein Beispiel, um das Datum in 30 Tagen zu berechnen:
+Das Berechnen von zukünftigen oder vergangenen Datumswerten ist eine wichtige Funktion in vielen Elixir-Anwendungen. Es ermöglicht uns, Datumsangaben zu planen und zu organisieren, um unsere Aufgaben effizient zu erledigen.
 
-```Elixir
-today = Date.today()                # Zurückgegebenes Datum: 2020-09-10
-future_date = Date.add(today, 30)   # Zurückgegebenes Datum: 2020-10-10
-```
+## So geht's
 
-Um das Datum in der Vergangenheit zu berechnen, muss lediglich ein negativer Wert für die Anzahl der Tage übergeben werden:
+Die Elixir Standard-Library bietet eine Vielzahl von Funktionen zur Arbeit mit Datumsangaben. Eine davon ist die `Calendar.DateTime`-Funktion, die uns ermöglicht, ein angegebenes Datum in die Zukunft oder Vergangenheit zu verschieben.
+
+Um ein zukünftiges Datum zu berechnen, verwenden wir die `add/3`-Funktion und geben ihr das aktuelle Datum, die Anzahl der Tage, die wir hinzufügen möchten, und eine Liste von Optionen an, die das gewünschte Datum formatieren.
 
 ```Elixir
-today = Date.today()                     # Zurückgegebenes Datum: 2020-09-10
-past_date = Date.add(today, -90)         # Zurückgegebenes Datum: 2020-06-12
+current_date = %DateTime{year: 2021, month: 10, day: 1}
+future_date = Calendar.DateTime.add(current_date, 5, [:day, :time])
+
+IO.puts future_date
+# Output: 2021-10-06T00:00:00Z
 ```
 
-Die berechneten Daten können dann weiter verarbeitet oder in eine Datenbank gespeichert werden.
+Ebenso können wir ein vergangenes Datum berechnen, indem wir die `sub/3`-Funktion verwenden und die Anzahl der Tage subtrahieren.
 
-## Tiefergehende Informationen
-Elixir bietet auch eine Reihe anderer Funktionen für die Arbeit mit Datum und Uhrzeit, wie z.B. `Date.subtract`, um eine bestimmte Anzahl von Tagen zu subtrahieren, `Date.compare`, um mit Datumswerten zu vergleichen, und `Date.utc_now`, um die aktuelle UTC-Uhrzeit abzurufen. Weitere Informationen zu diesen Funktionen und deren Verwendung finden Sie in der offiziellen Elixir-Dokumentation.
+```Elixir
+past_date = Calendar.DateTime.sub(current_date, 10, [:day, :time])
+
+IO.puts past_date
+# Output: 2021-09-21T00:00:00Z
+```
+
+## Tieferes Eintauchen
+
+Mit Elixir können wir auch spezifische Datumsangaben berechnen, wie z.B. das aktuelle Datum, das Datum von gestern oder das Datum von morgen.
+
+```Elixir
+current_date = Calendar.DateTime.now
+IO.puts current_date
+# Output: 2021-10-01T14:30:00Z
+
+yesterday_date = Calendar.DateTime.from_erl({{2021, 10, 1}, {12, 0, 0}})
+IO.puts yesterday_date
+# Output: 2021-09-30T12:00:00Z
+
+tomorrow_date = Calendar.DateTime.from_erl({{2021, 10, 2}, {12, 0, 0}})
+IO.puts tomorrow_date
+# Output: 2021-10-02T12:00:00Z
+```
+
+Außerdem können wir Funktionen wie `diff/2` und `compare/2` verwenden, um Datumsangaben zu vergleichen und die Differenz zwischen ihnen zu berechnen.
+
+```Elixir
+date_1 = DateTime.now
+date_2 = DateTime.add(date_1, 3, [:day])
+
+diff = Calendar.DateTime.diff(date_1, date_2, :days)
+IO.puts diff
+# Output: 2
+
+comparison = Calendar.DateTime.compare(date_1, date_2)
+IO.puts comparison
+# Output: :lt
+```
 
 ## Siehe auch
-- [Elixir-Dokumentation zu Datums- und Uhrzeitfunktionen](https://hexdocs.pm/elixir/Date.html)
-- [Tutorial zum Umgang mit Datums- und Uhrzeitfunktionen in Elixir](https://elixirschool.com/de/lessons/advanced/date-time/)
+
+- [Elixir Calendar Module Documentation](https://hexdocs.pm/elixir/Calendar.html)
+- [Elixir DateTime Module Documentation](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir Date Module Documentation](https://hexdocs.pm/elixir/Date.html)

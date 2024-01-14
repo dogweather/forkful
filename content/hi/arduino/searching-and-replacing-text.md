@@ -1,23 +1,31 @@
 ---
-title:    "Arduino: टेक्स्ट को ढूंढे और बदले"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/searching-and-replacing-text.md"
+title:                "Arduino: टेक्स्ट खोज और प्रतिस्थापन"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-आज कल हमारे दैनिक जीवन का एक अहम अंश है कंप्यूटर और उसके साथ अर्डुइनो भी हमारे पास उपलब्ध है। जब हम कंप्यूटर का उपयोग करते हैं, हमें कई बार किसी पाठ के संशोधन और बदलाव करने की जरूरत पड़ती है। इसमें सबसे अहम विधि है खोज और स्थानांतरण। इस आर्टिकल में हम आपको कंप्यूटर पर टेक्स्ट को खोजने और स्थानांतरण करने के तरीके बताएंगे जो आपको अर्डुइनो प्रोग्रामिंग मे पूर्ण ज्ञान प्रदान करेंगे।
+## क्यों 
+आपने अर्दुइनो प्रोग्रामिंग को काफी समय से कर रहे होंगे और आपने यह शब्द "search and replace" सुना होगा। यह जानने के लिए आप काफी आश्चर्य जनक होंगे कि यह क्या है और यह आपके लिए कितना महत्वपूर्ण है। यह आर्टिकल आपको समझाएगा कि आपको क्यों "search and replace" करने की आवश्यकता हो सकती है और इससे आपको क्या लाभ हो सकते हैं।
 
 ## कैसे करें
-अर्डुइनो में टेक्स्ट को खोजने और स्थानांतरण करने के लिए हमें "string.replace()" फ़ंक्शन का उपयोग करना होता है। इसमें हमें दो पैरामीटर पास करने होते हैं। पहला पैरामीटर टेक्स्ट का पहला स्थानांतरण है और दूसरा पैरामीटर उस टेक्स्ट के स्थानांतरण का स्ट्रिंग होता है। यह सभी कोड को टेक्स्ट को खोजेगा और उसे स्थानांतरित कर देगा।
-
-```Arduino
-String text = "Hello, my name is Arduino!";
-text.replace("Hello", "Namaste");
+```arduino
+void setup(){
+    String message = "Hello World!";
+    message.replace("Hello", "Namaste"); 
+    // "search and replace" करें
+    Serial.println(message); 
+    // "Namaste World!" मुद्रित करें
+}
 ```
+ऊपर दिए गए कोड ब्लॉक में हमने अपनी स्ट्रिंग "message" में शब्द "Hello" को खोज और उसे "Namaste" से बदल दिया है। फिर हमने अपना संदेश मुद्रित किया जो अब "Hello World!" की जगह "Namaste World!" है। इस तरह से, हम आसानी से स्ट्रिंग में शब्दों को खोजें और उसे बदल सकते हैं।
 
-इस कोड में, "Hello" के जगह "Namaste" कर दिया गया है, जो आउटपुट में "Namaste, my name is Arduino!" देगा। इस तरह से आप अपने कोड में टेक्स्ट को बदलकर अपनी पसंद के अनुसार स्थानांतरित कर सकते हैं।
+## गहराई से जाने
+अपनी प्रोग्रामिंग जानकारी को और भी बढ़ाने के लिए, आप "search and replace" और उसके विभिन्न तकनीकों की गहराई में जानकारी हासिल कर सकते हैं। यह एक आर्डिनो प्रोग्रामिंग में उपयोगी टूल है जो आपको स्ट्रिंग में आसानी से शब्दों को खोजने और बदलने की अनुमति देता है। इसलिए, अपनी आर्डिनो प्रोग्रामिंग को और भी अधिक प्रभावी और स्मार्ट बनाने के लिए यह टूल अपनाएं।
 
-## गहराई जाँच करें
-टेक्स्ट को खोजने और स्थानांतरित करने का एक और तरीका है "find" और "replace" फ़ंक्शन का उपयोग करना। यह फ़ंक्शन स
+## देखें भी
+- [String replace() method in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Using Strings in Arduino](https://learn.sparkfun.com/tutorials/using-the-arduinonbspsupplied-nbspstring-class)
+- [Arduino String Manipulation](https

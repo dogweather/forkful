@@ -1,33 +1,43 @@
 ---
-title:    "Swift: Excluindo caracteres que correspondam a um padrão"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/deleting-characters-matching-a-pattern.md"
+title:                "Swift: Excluindo caracteres que correspondem a um padrão"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
-
-A exclusão de caracteres que correspondem a um padrão pode ser útil em várias situações de programação, como por exemplo, manipulação de string e processamento de dados.
+Às vezes, em programação Swift, pode ser necessário excluir caracteres específicos dentro de uma string. Isso pode ser útil em casos como validação de entrada de usuário ou manipulação de dados.
 
 ## Como fazer
-
-Para deletar caracteres que correspondem a um padrão no Swift, podemos usar a função `replacingOccurrences` da classe `String`. Veja um exemplo abaixo:
+Você pode deletar caracteres que correspondem a um determinado padrão usando o método `replacingOccurrencies(of:with:)`. Veja um exemplo abaixo:
 
 ```Swift
-let minhaString = "Olá, mundo!"
-let novaString = minhaString.replacingOccurrences(of: "mundo", with: "")
-print(novaString) // Saída: Olá,!
+let minhaString = "Este texto contém ##alguns# caracteres# de# teste"
+let novoTexto = minhaString.replacingOccurrences(of: "#", with: "")
+
+print(novoTexto)
+
+// Saída:
+"Este texto contém alguns caracteres de teste"
 ```
 
-Neste exemplo, usamos a função `replacingOccurrences` para substituir a palavra "mundo" por uma string vazia, resultando na exclusão dessa palavra da string original.
-
 ## Aprofundando
+O método `replacingOccurrences(of:with:)` é muito útil, mas você também pode querer fazer uma exclusão mais específica, como excluir todos os dígitos de uma string. Para isso, você pode usar a classe `CharacterSet`. Vamos dar uma olhada em outro exemplo:
 
-Essa função pode receber diferentes parâmetros, permitindo assim uma maior flexibilidade na exclusão de caracteres. Além disso, é possível usar expressões regulares para especificar o padrão a ser excluído. As expressões regulares são uma forma poderosa de lidar com padrões de texto e podem ser muito úteis na exclusão de caracteres.
+```Swift
+let meuNumero = "+123 456-7890"
+let setDeCaracteres = CharacterSet.decimalDigits
+let novoNumero = meuNumero.components(separatedBy: setDeCaracteres).joined()
+print(novoNumero)
+
+// Saída:
+"+ -"
+```
+
+Neste exemplo, usamos o método `components(separatedBy:)` para separar a string em componentes com base no conjunto de caracteres especificado. Em seguida, usamos o método `joined()` para juntar os componentes novamente sem os dígitos. Você pode experimentar com diferentes conjuntos de caracteres para excluir diferentes tipos de caracteres de uma string.
 
 ## Veja também
-
-- [Documentação oficial do Swift sobre a função `replacingOccurrences`](https://developer.apple.com/documentation/foundation/nsstring/1416386-replacingoccurrences)
-- [Guia de expressões regulares em Swift](https://www.raywenderlich.com/661-regex-tutorial-swift-getting-started)
-- [Documentação do Swift sobre expressões regulares](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID434)
+- [Documentação oficial do Swift sobre o método `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/swift/string/1786172-replacingoccurrences)
+- [Documentação oficial do Swift sobre a classe `CharacterSet`](https://developer.apple.com/documentation/foundation/characterset)

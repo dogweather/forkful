@@ -1,35 +1,36 @@
 ---
-title:    "Gleam: המרת מחרוזת לאותיות קטנות"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/gleam/converting-a-string-to-lower-case.md"
+title:                "Gleam: המרת מחרוזת לאותיות קטנות"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## עבור מה
+### למה: 
 
-מדוע כדאי להמיר מחרוזת לאותיות קטנות בשפת גלים?
+המרת מחרוזת לאותיות קטנות היא תהליך נפוץ שמשמש לשיפור ביצועים וקריאות בקוד. כך ניתן לקבל קלט טקסטואלי ולהמיר אותו למחרוזת עם אותיות קטנות בלבד.
 
-## איך לעשות זאת
+### איך לעשות:
 
-הנה דוגמאות לקוד ולפלט בתוך בלוקי קוד "```Gleam ... ```".
+דוגמאות קוד ופלט למשתמשים של Gleam נמצאים מתחת לחסימת הקוד הבאה:
 
-קוד דוגמה:
+``` Gleam
+fn main() {
+    let input = "HELLO WORLD";
+    let output = input.to_lowercase();
 
-```Gleam
-import gleam/strings
-
-let string = "This Is A Test"
-let lower_case_string = strings.to_lower_case(string)
-
-// פלט: "this is a test"
+    // פלט: "hello world"
+    io.print(output);
+} 
 ```
 
-## חקירה מעמיקה
+### לחקור עמוק:
 
-המרת מחרוזת לאותיות קטנות היא תהליך חשוב בתכנות גלים. המרת האותיות לאותיות קטנות מאפשרת לנו לבדוק תנאים ולעבוד עם נתונים בצורה נוחה יותר. בנוסף, זה עוזר להבין קוד נכתב על ידי אחרים בצורה טובה יותר.
+המרת מחרוזת לאותיות קטנות היא תהליך פשוט וחשוב בתכנות. ניתן להיעזר בפונקציות כמו `to_lowercase()` ו- `to_casefold()` כדי לתמוך במגוון שפות וסביבות שונות. בנוסף, כדאי לוודא כי ההכנסה היא מחרוזת כדי למנוע שגיאות לא צפויות בעת ההרצה.
 
-## ראו גם
+### ראה גם:
 
-- [Strings Module in Gleam](https://gleam.run/standard-library/strings.html)
-- [Gleam Documentation](https://gleam.run/docs/getting-started)
+- מדריכי התחלה ל-Gleam: https://gleam.run/getting-started/
+- התיעוד הרשמי של Gleam: https://gleam.run/core_api/index.html
+- קוד המקור של Gleam ב-GitHub: https://github.com/gleam-lang/gleam

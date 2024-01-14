@@ -1,53 +1,54 @@
 ---
-title:    "Swift: 使用正则表达式"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/swift/using-regular-expressions.md"
+title:                "Swift: 使用正则表达式"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要使用正则表达式
+## 为什么要使用正则表达式？
 
-随着编程语言的不断发展，我们可以使用各种各样的工具来处理字符串。而正则表达式是其中最强大的工具之一。它可以帮助我们快速有效地处理字符串，让编程变得更加高效和便捷。
+使用正则表达式可以在编程中更有效地匹配和处理文本。它可以帮助我们快速地搜索特定的模式，从而节省时间和精力。 
 
-# 如何使用正则表达式
+## 如何使用正则表达式
 
-首先，我们需要在代码中导入正则表达式的模块。在Swift中，我们可以使用`import Foundation`来导入。然后，我们可以使用`NSRegularExpression`来创建正则表达式的实例。
+在Swift中，我们可以使用正则表达式来匹配字符串。首先，我们需要导入`Foundation`库。然后，我们可以使用`NSRegularExpression`类来创建正则表达式，并将其与要匹配的字符串进行匹配。
 
-```Swift
-import Foundation 
-
-// 创建正则表达式实例
-let regex = try NSRegularExpression(pattern: "^[a-zA-Z]{5}$", options: [])
 ```
+import Foundation
 
-接下来，我们需要使用正则表达式的`matches(in:string:options:range:)`方法来匹配字符串，并通过遍历结果来获取匹配到的内容。
+// 创建正则表达式，搜索小写的"a"或大写的"b"
+let regex = try! NSRegularExpression(pattern: "[ab]", options: [])
 
-```Swift
-let testString = "Hello"
-let results = regex.matches(in: testString, options: [], range: NSRange(location: 0, length: testString.utf16.count))
+// 要搜索的字符串
+let string = "ab56@swift.com"
 
-// 遍历匹配结果
-for result in results {
-    // 获取匹配到的内容
-    let match = testString[Range(result.range, in: testString)!]
+// 匹配正则表达式，并将匹配结果输出
+let range = NSRange(location: 0, length: string.utf16.count)
+let matches = regex.matches(in: string, options: [], range: range)
+
+for match in matches {
     print(match)
 }
 ```
 
-以上代码将会打印出字符串中匹配到的内容，即"Hello"。
+输出：
 
-# 深入了解正则表达式
+```
+<NSRegularExpressionCheckingResult: 0x600003c0ca80>{0, 1}{<NSRegularExpression: 0x600002cec5c0> [ab] 0x1}
+<NSRegularExpressionCheckingResult: 0x600003c00d20>{1, 1}{<NSRegularExpression: 0x600002cec5c0> [ab] 0x1}
+<NSRegularExpressionCheckingResult: 0x600003c08440>{4, 1}{<NSRegularExpression: 0x600002cec5c0> [ab] 0x1}
+```
 
-除了简单的匹配外，正则表达式还可以使用特殊字符、量词和分组来更加精确地匹配字符串。例如：
+在上面的例子中，我们使用正则表达式来匹配字符串中的小写字母"a"和大写字母"b"，并将匹配的结果输出。
 
-- 使用`|`来匹配多个可选项：`H(i|ello)`可以匹配"I"或"Hello"。
-- 使用`+`和`*`来匹配多个相同字符：`e+xample`可以匹配"example"、"eeexample"等。
-- 使用小括号来创建分组，并使用`()`来捕获匹配到的内容。
+## 深入了解正则表达式
 
-若想深入学习更多关于正则表达式的知识，可以查阅相关文档或教程。
+正则表达式由一系列字符和特殊符号组成，它们用来匹配文本中的模式。我们可以在正则表达式中使用特殊的元字符，例如元字符`[]`用来匹配一个字符的集合，元字符`.`用来匹配任意字符等等。正则表达式的学习曲线可能比较陡峭，但是一旦掌握，它将成为编程中非常有用的工具。
 
-# 参考文献
+## 参考链接
 
-- [Swift.org官方文档](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [NSRegularExpression类参考文档](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Swift正则表达式手册](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID281)
+- [正则表达式基础知识](https://www.regular-expressions.info/)
+- [更多有关正则表达式的内容](https://regex101.com/)

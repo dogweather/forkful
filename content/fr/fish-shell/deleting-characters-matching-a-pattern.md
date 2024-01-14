@@ -1,55 +1,40 @@
 ---
-title:    "Fish Shell: Suppression de caractères correspondant à un motif"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell: Suppression de caractères correspondant à un motif"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Supprimer des caractères correspondant à un motif peut sembler être une opération simple, mais elle peut en fait être très utile dans certaines situations. Par exemple, cela peut être utile lorsque vous souhaitez nettoyer ou modifier une chaîne de caractères en supprimant des éléments indésirables.
+L'une des fonctionnalités les plus utiles du Fish Shell est la possibilité de supprimer des caractères correspondant à un motif. Que vous souhaitiez nettoyer un fichier de données ou supprimer des lignes indésirables dans votre code, cette fonctionnalité peut vous faire gagner un temps précieux.
 
-# Comment faire
+## Comment faire
 
-Pour supprimer des caractères correspondant à un motif dans Fish Shell, vous pouvez utiliser la fonction `string replace` suivie du motif à supprimer et de l'élément par lequel le motif sera remplacé. Voici un exemple de code :
+Dans Fish Shell, vous pouvez utiliser la commande `sed` pour supprimer des caractères correspondant à un motif. Par exemple, pour supprimer toutes les lignes contenant "hello" dans un fichier, vous pouvez utiliser la commande suivante :
 
-```
-Fish Shell > set phrase "Bonjour le monde!"
-Fish Shell > echo $phrase
-Bonjour le monde!
-Fish Shell > string replace r"le \w+" $phrase ""
-Bonjour !
+```Fish Shell
+sed '/hello/d' fichier.txt 
 ```
 
-Dans cet exemple, nous avons utilisé le motif "le" suivi d'un espace et d'un ou plusieurs caractères alphabétiques (`\w+`). Ce motif correspond à "le monde" dans la phrase initiale, que nous avons ensuite remplacé par une chaîne vide afin de le supprimer.
+Cela supprimera toutes les lignes contenant "hello" dans le fichier et affichera le résultat dans le terminal. Vous pouvez également utiliser des expressions régulières pour affiner votre sélection. Par exemple, pour supprimer toutes les lignes contenant un nombre à quatre chiffres, vous pouvez utiliser :
 
-# Plongée en profondeur
-
-Lorsque vous utilisez `string replace` pour supprimer des caractères correspondant à un motif, vous pouvez également utiliser des expressions régulières plus complexes. Par exemple, si vous souhaitez supprimer tous les nombres contenus dans une chaîne de caractères, vous pouvez utiliser le motif `\d+` qui correspond à un ou plusieurs chiffres. Voici un exemple de code :
-
-```
-Fish Shell > set phrase "Il y a 3 pommes et 5 oranges dans le panier."
-Fish Shell > echo $phrase
-Il y a 3 pommes et 5 oranges dans le panier.
-Fish Shell > string replace r"\d+" $phrase ""
-Il y a pommes et oranges dans le panier.
+```Fish Shell
+sed '/[0-9]\{4\}/d' fichier.txt
 ```
 
-Vous pouvez également utiliser `string replace` pour supprimer des caractères à partir d'un fichier texte en utilisant la commande `grep`. Par exemple, si vous voulez supprimer toutes les lignes contenant le mot "erreur" dans un fichier de log, vous pouvez utiliser cette commande :
+Assurez-vous de bien maîtriser les expressions régulières avant d'utiliser cette fonctionnalité, car elles peuvent être délicates.
 
-```
-Fish Shell > cat log.txt
-Ligne 1 - erreur système
-Ligne 2 - erreur de connexion
-Ligne 3 - tout va bien
-Fish Shell > grep -v "erreur" log.txt > log_sans_erreurs.txt
-Fish Shell > cat log_sans_erreurs.txt
-Ligne 3 - tout va bien
-```
+## Plongée en profondeur
 
-# Voir aussi
+La commande `sed` utilise en fait des flux de texte pour supprimer les caractères correspondant à un motif. Cela signifie qu'au lieu de modifier directement le fichier source, elle affiche le résultat modifié dans le terminal. Vous pouvez également utiliser la redirection pour enregistrer le résultat dans un nouveau fichier.
 
-- [Documentation officielle du Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutoriel sur les expressions régulières dans Fish Shell](https://dev.to/fulara/fish-shell-regular-expression-tutorial-1bha)
-- [Liste des commandes Fish Shell](https://fishshell.com/docs/current/commands.html)
+De plus, la commande `sed` peut être utilisée conjointement avec d'autres commandes de manipulation de texte, telles que `grep`, pour créer des expressions plus complexes.
+
+## Voir aussi
+
+- [Les expressions régulières avec Fish Shell](https://fishshell.com/docs/current/regexp.html)
+- [La référence de la commande sed](https://fishshell.com/docs/current/cmds/sed.html)
+- [Utiliser des pipelines en Fish Shell](https://fishshell.com/docs/current/tutorial.html#using-pipelines)

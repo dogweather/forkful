@@ -1,55 +1,41 @@
 ---
-title:    "Clojure: Trouver la longueur d'une chaîne de caractères"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/finding-the-length-of-a-string.md"
+title:                "Clojure: Trouver la longueur d'une chaîne"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
+Trouver la longueur d'une chaîne de caractères est une tâche courante en programmation, peu importe le langage que vous utilisez. Cela peut être utile pour vérifier si une chaîne est assez longue pour être stockée dans une base de données ou pour effectuer des opérations de manipulation de chaînes.
 
-Parfois, lors de l'écriture de code Clojure, il est nécessaire de trouver la longueur d'une chaîne de caractères. Cela peut sembler être une tâche simple, mais cela peut être utile dans de nombreuses situations telles que la manipulation de données, la validation de saisie utilisateur ou même l'affichage de résultats.
+## Comment faire
 
-# Comment faire
+Pour trouver la longueur d'une chaîne en Clojure, vous pouvez utiliser la fonction `count`. Par exemple:
 
-Il existe plusieurs façons de trouver la longueur d'une chaîne de caractères en Clojure. Dans cet article, nous allons en explorer quelques-unes en utilisant des exemples de code dans des blocs de code ```Clojure ...```.
-
-1. Utiliser la fonction `count`
-
-```Clojure
-(count "Bonjour") ; Retourne 7
-(count "") ; Retourne 0
+```
+Clojure (count "Bonjour")
+=> 7
 ```
 
-2. Utiliser l'opérateur `count`
+Cette fonction renverra le nombre de caractères dans la chaîne donnée. Vous pouvez également l'utiliser sur d'autres types de données, comme des listes ou des vecteurs.
 
-```Clojure
-(= 6 (count "Hello")) ; Retourne true
-(= 0 (count "")) ; Retourne true
+```
+Clojure (count [1 2 3 4])
+=> 4
 ```
 
-3. Utiliser la fonction `length`
+Si vous souhaitez trouver la longueur d'une chaîne en utilisant des boucles ou des récursions, il existe plusieurs façons de le faire. Vous pouvez parcourir chaque caractère de la chaîne en utilisant `nth` et `count`, ou utiliser une boucle `for`.
 
-```Clojure
-(length "Bonjour") ; Retourne 7
-(length "") ; Retourne 0
-```
+## Plongée en profondeur
 
-4. Utiliser la méthode `.length` sur un objet String Java
+Alors que la fonction `count` est un moyen simple et rapide de trouver la longueur d'une chaîne, il est important de comprendre comment elle fonctionne réellement. En réalité, elle utilise une approche récursive en interne pour parcourir la chaîne et compter chaque caractère jusqu'à ce qu'elle atteigne la fin.
 
-```Clojure
-(.length "Hello") ; Retourne 5
-(.length "") ; Retourne 0
-```
+Une chose intéressante à noter est que `count` utilisera une approche différente en fonction du type de données fourni. Pour les chaînes, elle utilisera la méthode `length` de la classe Java String, tandis que pour d'autres types de données, elle utilisera une approche récursive.
 
-# Plongée en profondeur
+## Voir aussi
 
-Si nous regardons de plus près la fonction `count`, nous pouvons voir qu'elle utilise un protocole appelé `Counted` qui fournit une implémentation de la fonction `count` pour tout type qui implémente ce protocole. Cela signifie que nous pouvons utiliser la fonction `count` non seulement sur des chaînes de caractères, mais aussi sur d'autres types tels que des listes, des vecteurs et des sets.
-
-Une autre chose intéressante à noter est que la méthode `.length` sur un objet String Java utilise une approche différente pour trouver la longueur d'une chaîne de caractères, en utilisant le mécanisme de reflection Java. Cette méthode peut être plus efficace pour les chaînes de caractères plus longues, mais elle n'est pas spécifique à Clojure et n'utilise pas les fonctionnalités propres du langage.
-
-# Voir aussi
-
-- [Documentation officielle de la fonction `count`](https://clojuredocs.org/clojure.core/count)
-- [Documentation officielle du protocole `Counted`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.protocols/Counted)
-- [Guide de référence des opérateurs en Clojure](https://clojure.org/reference/protocols#counted)
+- [Documentation officielle de clojure.string](https://clojure.github.io/clojure/clojure.string-api.html)
+- [Exemples de code de manipulation de chaînes en Clojure](https://gist.github.com/Aluriak/5260891)
+- [Tutoriel sur les fonctions récursives en Clojure](http://clojure-doc.org/articles/tutorials/recursion.html)

@@ -1,62 +1,41 @@
 ---
-title:    "Bash: Sammenligning av to datoer"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/comparing-two-dates.md"
+title:                "Bash: Sammenligning av to datoer"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å sammenligne to datoer kan være en nyttig ferdighet i Bash-programmering. Det kan være nyttig i situasjoner der du trenger å sjekke om en dato kommer før eller etter en annen, eller om de er like.
+Når man jobber med programmering, er det ofte nødvendig å sammenligne to forskjellige datoer. Dette kan være for å sortere data, filtrere ut gamle eller nye elementer, eller for å sjekke om en hendelse ligger før eller etter en annen. Enten du er en erfaren utvikler eller nybegynner, er det viktig å ha kunnskap om hvordan man sammenligner datoer i Bash-programmering.
 
 ## Hvordan
-For å sammenligne to datoer i Bash, kan du bruke `date` og `test` kommandoene. Her er et eksempel på hvordan du kan sammenligne to datoer for å se om den første er før den andre:
+I Bash-programmering, kan man sammenligne datoer ved hjelp av kommandoen "timespans". Denne kommandoen lar deg sammenligne to datoer og returnere et resultat basert på forholdet mellom dem. La oss se på et eksempel:
 
-```
-#!/bin/bash
+```Bash
+start_date = "2021-05-20"
+end_date = "2021-05-25"
 
-# Lag to variabler med datoer
-date1="2021-01-01"
-date2="2021-02-01"
-
-# Sjekk om date1 er før date2
-if [[ $(date -d "$date1" +%Y%m%d) -lt $(date -d "$date2" +%Y%m%d) ]]
-then
-  echo "$date1 er før $date2"
+if [ "$start_date" -eq "$end_date" ]; then
+    echo "Datoene er like"
+elif [ "$start_date" -lt "$end_date" ]; then
+    echo "Startdatoen kommer før sluttdatoen"
+else
+    echo "Sluttdatoen kommer før startdatoen"
 fi
 ```
 
-Output for dette eksemplet vil være:
-```
-2021-01-01 er før 2021-02-01
-```
-
-Du kan også bruke `test` kommandoen for å sjekke om to datoer er like eller ikke:
-
-```
-#!/bin/bash
-
-# Lag to variabler med datoer
-date1="2021-01-01"
-date2="2021-01-01"
-
-# Sjekk om date1 er lik date2
-if [[ $(date -d "$date1" +%Y%m%d) == $(date -d "$date2" +%Y%m%d) ]]
-then
-  echo "$date1 er lik $date2"
-fi
-```
-
-Output vil være:
-```
-2021-01-01 er lik 2021-01-01
-```
+I dette eksempelet, blir datoen "start_date" sammenlignet med "end_date". Hvis de to datoene er like, vil skriptet returnere "Datoene er like", hvis startdatoen kommer før sluttdatoen vil det returnere "Startdatoen kommer før sluttdatoen", og hvis sluttdatoen kommer før startdatoen vil det returnere "Sluttdatoen kommer før startdatoen". Dette kan du bruke til å filtrere ut elementer basert på dato, eller utføre ulike handlinger avhengig av forholdet mellom to datoer.
 
 ## Deep Dive
-Når vi sammenligner to datoer i Bash, konverterer vi dem først til et tall ved hjelp av `date` kommandoen. Dette gjør det lettere å sammenligne datoene ved å bruke de vanlige matematiske sammenligningsoperatorene som `>` (større enn) og `<` (mindre enn). Ved å bruke `+%Y%m%d` formatet, får vi ut datoene som tall i åtte siffer, som gjør det enklere å sammenligne dem.
-
-Husk også at formatet for datoer kan variere i forskjellige land og systemer, derfor er det viktig å sjekke hva som er det riktige formatet på datoene du sammenligner.
+I Bash-programmering, er datoer representert som "timespans" - en litenere enhet enn sekunder. Dette er en grunnleggende enhet som brukes til å måle tidsintervaller. Timespans kan representeres på flere forskjellige måter, og man kan endre formatet ved å bruke kommandoen "date". For mer informasjon om timespans, kan man lese mer om det her: [https://www.gnu.org/software/bash/manual/bash.html#Shell-Arithmetic](https://www.gnu.org/software/bash/manual/bash.html#Shell-Arithmetic)
 
 ## Se Også
-- [Bash-dokumentasjonen om `date` og `test` kommandoene](https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html)
-- [En guide til å konvertere datoer til tall i Bash](https://unix.stackexchange.com/questions/25025/how-to-compare-two-dates-in-a-shell)
+Her er noen nyttige ressurser for å lære mer om Bash-programmering:
+
+- Bash Manual (på norsk): [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
+- Bash Cheatsheet: [https://devhints.io/bash](https://devhints.io/bash)
+- Bash scripting tutorial: [https://linuxconfig.org/bash-scripting-tutorial-for-beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+
+Lykke til med å sammenligne datoer i Bash-programmering!

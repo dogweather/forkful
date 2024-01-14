@@ -1,43 +1,55 @@
 ---
-title:    "PHP: 将来または過去の日付の計算"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/calculating-a-date-in-the-future-or-past.md"
+title:                "PHP: 「未来や過去の日付を計算する」"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-「なぜ日付の計算をするのか？」
+# なぜ日付を未来や過去で計算するのか
 
-日付の計算をする理由はさまざまです。例えば、特定のイベントや記念日を予定する場合や、ある日から何日後にある日付を知りたい場合などが挙げられます。PHPを使えば、未来や過去の日付を簡単に計算することができます。
+日付を未来や過去で計算するのには様々な理由があります。例えば、イベントの予定日を計算するためや、期限を設定するために使用されることがあります。また、日付に関するデータを処理するプログラムを作成する際にも、日付の計算は必須の要素となります。
 
-「方法」
+## 方法
 
-まずは、``date``関数を使って現在の時刻を取得します。次に、``strtotime``関数を使って未来や過去の日付を計算します。``strtotime``関数は、引数として日付のフォーマットや時間の単位を指定することができます。以下は、ある日から5日後の日付を取得する例です。
+未来や過去の日付を計算する方法は、PHPの「strtotime」関数を使用することで簡単に実装することができます。以下に具体的なコード例を示します。
 
-```PHP
-$date = date("Y-m-d"); // 現在の日付を取得
-$new_date = strtotime("+5 days", strtotime($date)); // 現在の日付に5日を足して新しい日付を取得
-echo date("Y-m-d", $new_date); // 新しい日付をフォーマットして出力
+```
+<?php
+// 今日の日付を取得する
+$today = date('Y-m-d');
+
+// 1週間後の日付を計算する
+$future_date = date('Y-m-d', strtotime('+1 week'));
+
+// 1ヶ月前の日付を計算する
+$past_date = date('Y-m-d', strtotime('-1 month'));
+
+// 結果を出力する
+echo '今日の日付: ' . $today . PHP_EOL;
+echo '1週間後の日付: ' . $future_date . PHP_EOL;
+echo '1ヶ月前の日付: ' . $past_date . PHP_EOL;
 ```
 
-もし、ある日から1週間後の日付を取得したい場合は、下のようにコードを変更します。
+このコードを実行すると、以下のような結果が得られます。
 
-```PHP
-$new_date = strtotime("+1 week", strtotime($date));
+```
+今日の日付: 2021-07-01
+1週間後の日付: 2021-07-08
+1ヶ月前の日付: 2021-06-01
 ```
 
-同様に、過去の日付を計算することもできます。例えば、ある日から1か月前の日付を取得する場合は、以下のようにコードを書きます。
+## ディープダイブ
 
-```PHP
-$new_date = strtotime("-1 month", strtotime($date));
-```
+日付を未来や過去で計算する方法は、「strtotime」関数以外にも様々な方法があります。例えば、PHPの「DateTime」クラスを使用する方法や、外部のライブラリを導入する方法もあります。また、タイムゾーンの設定や特殊な日付フォーマットへの対応方法など、さまざまなテクニックも存在します。
 
-「深堀り」
+しかし、いずれの方法を選択するにせよ、日付を計算する際には日付のフォーマットについても注意する必要があります。日付のフォーマットが間違っていると、意図しない結果が得られる可能性があります。そのため、事前に十分なテストを行うことが重要です。
 
-PHPでは、``strtotime``関数の引数として有効な日付のフォーマットや時間の単位が多数あります。例えば、``next week``や``+3 months``などの指定方法もあります。また、``strtotime``関数は、UNIXタイムスタンプを作成するための方便でもあります。UNIXタイムスタンプとは、1970年1月1日からの経過秒数のことで、主に日付や時間の計算に用いられます。
+# 参考リンク
 
-「参考リンク」
+[PHP公式ドキュメント - strtotime関数](https://www.php.net/manual/ja/function.strtotime.php)
 
-- [date関数の使い方 | PHPマニュアル](https://www.php.net/manual/ja/function.date.php)
-- [strtotime関数の使い方 | PHPマニュアル](https://www.php.net/manual/ja/function.strtotime.php)
-- [UNIXタイムスタンプとは | GeeksforGeeks](https://www.geeksforgeeks.org/javascript-date-object/)
+[PHP公式ドキュメント - DateTimeクラス](https://www.php.net/manual/ja/class.datetime.php)
+
+[日付と時刻の処理に便利なPHPライブラリ6選](https://qiita.com/yyoshiki41/items/3dde463064f871ecd4b1)

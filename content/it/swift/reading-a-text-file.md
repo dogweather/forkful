@@ -1,45 +1,54 @@
 ---
-title:    "Swift: Lettura di un file di testo"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/reading-a-text-file.md"
+title:                "Swift: Leggere un file di testo"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché leggere un file di testo in Swift?
+## Perché
 
-La lettura di un file di testo può essere utile in molti casi, come ad esempio l'importazione di dati esterni nel tuo programma o la creazione di un semplice sistema di salvataggio e caricamento dei dati.
+Stai cercando un modo semplice e veloce per leggere un file di testo in Swift? In questo articolo ti spiegheremo come farlo utilizzando semplici esempi di codice.
 
-## Come fare
+## Come farlo
 
-Per leggere un file di testo in Swift, puoi utilizzare la classe `FileHandle`. Il seguente esempio mostra come aprire e leggere un file di testo:
+Per leggere un file di testo in Swift, segui questi semplici passi:
+
+1. Usa la funzione `String(contentsOfFile:)` per leggere il contenuto del file come una stringa.
+2. Se necessario, utilizza la funzione `components(separatedBy:)` per suddividere la stringa in righe separate.
+3. Puoi quindi utilizzare `for ... in` o `forEach` per iterare attraverso le righe e utilizzare il contenuto nel modo desiderato.
+
+Ecco un esempio di codice che legge il contenuto di un file di testo e lo stampa a console:
 
 ```Swift
-// Apriamo un file di testo chiamato "file.txt" in modalità lettura
-let file = FileHandle(forReadingAtPath: "file.txt")
-
-// Assicuriamoci che il file esista
-if file != nil {
-    // Leggiamo il contenuto del file
-    let text = String(data: file!.readDataToEndOfFile(), encoding: .utf8)
-    print(text)
-    
-    // Chiudiamo il file
-    file!.closeFile()
-} else {
-    // Il file non esiste o non è stato trovato
-    print("Il file non è stato trovato")
+if let fileURL = Bundle.main.url(forResource: "fileDiTesto", withExtension: "txt") {
+    do {
+        let fileContents = try String(contentsOf: fileURL)
+        let righe = fileContents.components(separatedBy: "\n")
+        righe.forEach { riga in
+            print(riga)
+        }
+    } catch {
+        print("Errore durante la lettura del file: \(error)")
+    }
 }
 ```
 
-L'esempio sopra legge il contenuto del file di testo e lo salva nella variabile `text` utilizzando l'encoding UTF-8. Ricorda sempre di chiudere il file dopo aver finito di leggere i dati.
+Ecco un esempio di output per un file di testo con contenuto "Ciao mondo!\nQuesto è un esempio\ndi file di testo":
+
+```
+Ciao mondo!
+Questo è un esempio
+di file di testo
+```
 
 ## Approfondimento
 
-Ci sono altre opzioni per leggere un file di testo in Swift, come ad esempio l'utilizzo della classe `URL` per specificare il percorso del file o la conversione dei dati in un array di byte per una maggiore flessibilità nella lettura dei dati. Inoltre, è possibile gestire eventuali errori durante la lettura del file utilizzando il blocco `do-catch`.
+Oltre a leggere il contenuto di un file di testo, ci sono anche altre cose che si possono fare. Ad esempio, puoi utilizzare la classe `FileManager` per gestire i file e le cartelle sul tuo dispositivo iOS. Puoi anche utilizzare `String(contentsOf:usedEncoding:)` per controllare l'encoding del file e decodificare correttamente il contenuto.
 
 ## Vedi anche
 
-- [Documentazione Apple su FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [Esempio di lettura di un file di testo in Swift](https://www.codegrepper.com/code-examples/swift/swift+read+text+file)
-- [Tutorial: Lettura e scrittura di file di testo in Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-strings-in-text-files)
+- [Documentazione di Apple su la classe `String`](https://developer.apple.com/documentation/foundation/filemanager)
+- [Documentazione di Apple su la classe `FileManager`](https://developer.apple.com/documentation/foundation/nsstring/1416621-init)
+- [Documentazione di Apple su l'utilizzo di encoding nei file di testo](https://developer.apple.com/library/archive/qa/qa1235/_index.html)

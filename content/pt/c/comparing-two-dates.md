@@ -1,49 +1,52 @@
 ---
-title:    "C: Comparando duas datas"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/comparing-two-dates.md"
+title:                "C: Comparando duas datas"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em um programa em C?
+# Por que comparar duas datas em programação?
 
-Ao desenvolver um programa em C, muitas vezes é necessário trabalhar com datas. Isso pode ser para calcular o tempo decorrido, agendar tarefas ou simplesmente para exibir a data atual. Em alguns casos, também pode ser necessário comparar duas datas para verificar se uma é maior, menor ou igual à outra. Saber como fazer essa comparação é importante para garantir a precisão e funcionalidade do seu programa. Neste artigo, vamos explicar por que é importante comparar duas datas e como fazer isso em C.
+As datas são um elemento fundamental em muitos programas e projetos de software. Comparar duas datas pode ser uma tarefa comum em algumas situações, como verificar a idade de uma pessoa ou determinar o intervalo de tempo entre duas datas. Portanto, é importante saber como comparar duas datas em linguagem C.
 
-## Como comparar duas datas em C
+## Como fazer a comparação em C?
 
-A linguagem C possui uma biblioteca padrão chamada time.h, que contém funções para manipulação e exibição de datas e horas. O primeiro passo para comparar datas em C é obter as datas que serão comparadas. Isso pode ser feito usando as funções time() ou localtime().
+Para comparar duas datas em C, é necessário primeiro entender como as datas são representadas em um programa. Em linguagem C, as datas são armazenadas em variáveis do tipo `struct tm`, que contém informações como ano, mês, dia, entre outros. 
 
-```C
-time_t t = time(NULL); // Obtém a data atual em forma de segundos desde 1 de janeiro de 1970
-struct tm *data_atual = localtime(&t); // Converte a data atual em uma estrutura tm
-```
-
-Uma vez que você tenha as duas datas que deseja comparar, você pode usar a função difftime() para calcular a diferença entre elas em segundos. Se a diferença for maior que 0, significa que a primeira data é mais recente que a segunda, se for igual a 0, as datas são iguais e se for menor que 0, a primeira data é mais antiga que a segunda.
+Para fazer a comparação, é possível utilizar as funções `difftime()` e `mktime()` da biblioteca `<time.h>`. A função `difftime()` calcula a diferença entre duas datas em segundos, enquanto a função `mktime()` cria um objeto de tempo a partir dos valores de uma `struct tm`.
 
 ```C
-time_t t1, t2;
-// Código para obter as duas datas
-double diferença = difftime(t1, t2);
-if(diferença > 0) {
-    // Código para data1 > data2
-} else if(diferença == 0) {
-    // Código para data1 = data2
-} else {
-    // Código para data1 < data2
+#include <stdio.h>
+#include <time.h>
+
+int main(void) {
+  struct tm data1 = { .tm_year = 2020, .tm_mon = 10, .tm_mday = 1 }; // 01/10/2020
+  struct tm data2 = { .tm_year = 2021, .tm_mon = 10, .tm_mday = 1 }; // 01/10/2021
+
+  time_t t1 = mktime(&data1); // cria um objeto de tempo a partir da primeira data
+  time_t t2 = mktime(&data2); // cria um objeto de tempo a partir da segunda data
+  
+  double diferenca = difftime(t2, t1); // calcula a diferença em segundos
+  int dias = (int) diferenca / (24 * 60 * 60); // converte para dias
+  
+  printf("Entre as duas datas há %d dias de diferença.", dias);
+
+  return 0;
 }
 ```
 
-## Uma olhada mais profunda na comparação de datas em C
+O código acima calcula a diferença em dias entre duas datas e imprime o resultado. No exemplo, a diferença é de 365 dias, já que a segunda data é um ano após a primeira.
 
-Ao trabalhar com datas, é importante considerar os diferentes formatos de representação. Por exemplo, enquanto podemos pensar em uma data como "10 de maio de 2020", o computador a vê como "2020-05-10". Isso pode afetar a forma como nós, humanos, comparamos datas e pode causar erros em nosso programa se não levado em consideração. Além disso, é importante verificar se as datas estão no mesmo fuso horário antes de fazer a comparação.
+## Aprofundando mais na comparação de datas
 
-Além disso, a biblioteca time.h possui funções para trabalhar com datas em diferentes formatos, como dias, meses e anos separados, ou em segundos desde 1 de janeiro de 1970. É importante escolher o formato mais adequado para o seu programa e garantir que as datas sejam convertidas corretamente antes de compará-las.
+Além das funções mencionadas acima, existem outras maneiras de comparar datas em linguagem C, como utilizando operadores lógicos e condicionais. Também é importante estar atento às particularidades de cada linguagem, já que algumas podem ter funções específicas para comparação de datas.
+
+Além disso, é necessário ter cuidado ao comparar datas em formatos diferentes, como datas com e sem horas, ou datas em fuso horário diferente. Isso pode afetar o resultado da comparação e gerar resultados inesperados.
 
 ## Veja também
 
-- [Documentação oficial da biblioteca time.h em C](https://en.cppreference.com/w/c/chrono)
-- [Tutorial de manipulação de data e hora em C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Comparando datas em C utilizando strftime](https://www.tutorialspoint.com/compare-dates-in-c-programming-using-strftime)
-
-Esperamos que agora você tenha uma compreensão melhor de por que e como comparar datas em um programa em C. Lembre-se sempre de considerar os diferentes formatos de datas e converter corretamente antes de fazer a comparação. Isso garantirá a precisão e funcionalidade do seu programa.
+- [Documentação da biblioteca time.h em linguagem C](https://www.gnu.org/software/libc/manual/html_node/Time.html)
+- [Como comparar datas em Java](https://www.devmedia.com.br/como-comparar-datas-em-java/28279)
+- [Manipulando datas e horas em Python](https://dicasdepython.com.br/como-manipular-datas-e-horas-em-python/)

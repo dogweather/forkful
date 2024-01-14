@@ -1,107 +1,68 @@
 ---
-title:    "Elm: Lesen von Befehlszeilenargumenten"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-command-line-arguments.md"
+title:                "Elm: Lesen von Befehlszeilenargumenten"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil der Entwicklung von Elm-Anwendungen. Es ermöglicht, dass Programme flexibler und interaktiver gestaltet werden können. In diesem Blogpost werde ich zeigen, wie man Befehlszeilenargumente in Elm liest und verwaltet.
+Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil der Programmierung in Elm. Es ermöglicht es dir, auf die Eingaben deiner Benutzer zu reagieren und interaktive Programme zu erstellen. In diesem Blog-Beitrag werden wir uns genauer mit diesem Thema befassen und lernen, wie man Befehlszeilenargumente liest.
 
-# Wie geht's?
+## Wie geht man vor
 
-Um Befehlszeilenargumente in Elm zu lesen, müssen wir zunächst das Modul `Platform.Cmd` importieren. Anschließend können wir die Funktion `Cmdline.programWithFlags` verwenden, um das Hauptmodul unserer Anwendung zu erstellen. Diese Funktion erwartet zwei Argumente: eine Funktion, die die Befehlszeilenargumente verarbeitet, und eine Funktion, die das eigentliche Programm initialisiert.
-
-Ein Beispiel für eine einfache Elm-Anwendung, die Befehlszeilenargumente liest, könnte wie folgt aussehen:
+Um Befehlszeilenargumente zu lesen, müssen wir zuerst ein Modul importieren, das uns hilft, auf die Argumente zuzugreifen:
 
 ```Elm
-import Platform.Cmd exposing (..)
-
-type alias Args =
-  { name : String
-  , age : Int
-  }
-
-init : (Args -> Cmd msg) -> Cmd msg
-init handleArgs =
-  Cmdline.programWithFlags
-    (handleArgs << toArgs)
-    []
-
-toArgs : List String -> Args
-toArgs args =
-  case args of
-    [name, age] ->
-      { name = name
-      , age = String.toInt age |> Result.withDefault 0
-      }
-    _ ->
-      { name = "Unknown"
-      , age = 0
-      }
-
-handleArgs : Args -> Cmd msg
-handleArgs args =
-  Cmd.none
-
-main : Program () () Args
-main =
-  init handleArgs
+import Basics exposing (..)
+import Platform.Cmd exposing (args)
 ```
 
-Wenn wir diese Anwendung mit den Befehlszeilenargumenten "Max 25" aufrufen, erhalten wir als Output folgendes:
-
-```
-{ name = "Max", age = 25 }
-```
-
-# Tiefentauchen
-
-Es ist auch möglich, Befehlszeilenargumente während der Ausführung des Programms zu ändern. Dazu können wir die Funktion `Platform.Cmd.send` verwenden, um Befehle an den `update`-Funktion unseres Programms zu senden. Ein Beispiel könnte folgendermaßen aussehen:
+Als nächstes können wir die Funktion `elmApp` verwenden, um die Argumente als Liste von Zeichenketten zu erhalten. Diese Funktion erwartet, dass wir ihr ein Mapping übergeben, welches die Argumente verarbeitet. Hier ist ein einfaches Beispiel:
 
 ```Elm
--- restliche Code aus vorherigem Beispiel
-
-type Msg
-  = UpdateName String
-  | UpdateAge Int
-
-update : Msg -> Args -> ( Args, Cmd Msg )
-update msg args =
-  case msg of
-    UpdateName newName ->
-      ( { args | name = newName }, Cmd.none )
-    UpdateAge newAge ->
-      ( { args | age = newAge }, Cmd.none )
-
-view : Args -> Html Msg
-view args =
-  div []
-    [ input
-        [ type_ "text"
-        , value args.name
-        , onInput (UpdateName << targetValue)  -- Verarbeitung von Benutzereingaben
-        ] []
-    , input
-        [ type_ "number"
-        , value (String.fromInt args.age)
-        , onInput (UpdateAge << parseInt)       -- Verarbeitung von Benutzereingaben
-        ] []
-    ]
-
-main : Program () Model Args
 main =
-  init handleArgs
+  elmApp processArgs
 
--- restliche hilfreiche Funktionen aus dem vorherigen Beispiel
+processArgs arguments =
+  case arguments of
+    [] -> Text.color Text.red <| Text.fromString "Keine Argumente angegeben!"
+    _ -> Text.fromString "Argumente erhalten!"
 ```
 
-Nach jedem Eingeben eines Werts in eines der Input-Felder wird die `update`-Funktion mit dem entsprechenden `Msg`-Wert aufgerufen, der dann das Befehlszeilenargument entsprechend aktualisiert.
+In diesem Beispiel verwenden wir das `elmApp`-Mapping, um auf alle Argumente zuzugreifen und sie dann mit einem einfachen Musterabgleich zu verarbeiten. Wenn keine Argumente angegeben werden, wird eine Meldung in roter Farbe angezeigt, ansonsten wird einfach bestätigt, dass die Argumente erhalten wurden.
 
-# Siehe auch
+## Tiefer eintauchen
 
-- Offizielle Elm-Dokumentation zu `Platform.Cmd`: https://guide.elm-lang.org/interop/cmd.html
-- Elm-Befehlszeilenargument-Parser: https://package.elm-lang.org/packages/elm-community/parser/latest/
-- "6 Gründe, warum du mit Elm programmieren solltest": https://medium.com/@markus_fit/how-i-fell-in-love-with-elm-6-reasons-you-should-too-6c6b4eadb42e
+Das `args`-Modul bietet mehrere Funktionen, die uns dabei helfen, die Befehlszeilenargumente weiter zu verarbeiten. Beispielsweise können wir die Funktion `getAt` verwenden, um ein bestimmtes Argument auszuwählen oder die Funktion `length` verwenden, um die Anzahl der Argumente zu ermitteln.
+
+```Elm
+main =
+  elmApp processArgs
+
+processArgs arguments =
+  if length arguments > 2 then
+    let 
+      firstArg = getAt 0 arguments
+      secondArg = getAt 1 arguments
+      thirdArg = getAt 2 arguments
+    in
+      Text.concat [ Text.fromString "Die ersten drei Argumente sind: "
+                  , firstArg
+                  , Text.fromString ", "
+                  , secondArg
+                  , Text.fromString " und "
+                  , thirdArg
+                  ]
+  else
+    Text.fromString "Nicht genug Argumente angegeben!"
+```
+
+In diesem Beispiel nutzen wir `length` und `getAt`, um die ersten drei Argumente aus der Liste auszuwählen und sie dann in einer zusammengefügten Zeichenkette anzuzeigen.
+
+## Siehe auch
+
+- [Dokumentation zum Platform.Cmd-Modul](https://package.elm-lang.org/packages/elm-lang/core/5.1.1/Platform-Cmd)
+- [Codebeispiel zum Lesen von Befehlszeilenargumenten](https://github.com/elm-lang/core/blob/master/tests/Platform/Platform/Platform/Command.elm)

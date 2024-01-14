@@ -1,57 +1,45 @@
 ---
-title:    "Kotlin: Radera tecken som matchar ett mönster"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/deleting-characters-matching-a-pattern.md"
+title:                "Kotlin: Radera tecken som matcher ett mönster"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster kan vara en användbar teknik inom programmering för att filtrera och manipulera data på ett effektivt sätt.
+Att ta bort karaktärer som matchar ett mönster är en vanlig uppgift som ofta uppstår vid datahantering och programmering. Det kan vara användbart för att rensa bort oönskad information eller för att förbereda data för analys.
 
-## Hur man gör det
+## Hur man gör
 
-För att ta bort tecken som matchar ett visst mönster i Kotlin, kan vi använda en funktion som heter `replace(regex: Regex, replacement: String)`. Denna funktion tar emot två parametrar - ett reguljärt uttryck (Regex) och en sträng som ska ersätta de matchande tecknen.
+För att ta bort karaktärer som matchar ett visst mönster, kan man använda funktionen `replace()` tillsammans med reguljära uttryck i Kotlin.
 
-```Kotlin
-val string = "Välkommen till Kotlin bloggen!"
-val regex = Regex("[a-zA-Z]") // Regular expression för bokstäver a till z, både stora och små tecken
-val newString = string.replace(regex, "") // Tar bort alla bokstäver från strängen
-println(newString) // Output: "!"
-
-```
-
-I det här exemplet tar vi först en given sträng och definierar sedan ett reguljärt uttryck som matchar alla bokstäver från a till z, både stora och små. Sedan använder vi `replace()` funktionen för att ersätta varje matchande tecken med en tom sträng, vilket resulterar i att alla bokstäver tas bort från den ursprungliga strängen.
-
-Vi kan också använda reguljära uttryck för att matcha och ta bort specifika tecken eller kombinationer av tecken. Till exempel, om vi vill ta bort alla siffror från en sträng, kan vi använda `[0-9]` i vårt reguljära uttryck.
+Exempel:
 
 ```Kotlin
-val string = "123abc456def789"
-val regex = Regex("[0-9]")
-val newString = string.replace(regex, "")
-println(newString) // Output: "abcdef"
-
+val text = "Hej!123 Det här är en text 456 som innehåller siffror"
+val cleanedText = text.replace("[^A-Za-z ]".toRegex(), "")
+println(cleanedText)
 ```
 
-Vi kan också använda `^` för att negerealera ett reguljärt uttryck, vilket betyder att vi kan ta bort alla tecken som inte matchar vårt uttryck.
-
-```Kotlin
-val string = "Welcome to 123 Kotlin 456 blog!"
-val regex = Regex("[^a-zA-Z ]") // Tar bort alla tecken som inte är bokstäver eller mellanslag
-val newString = string.replace(regex, "")
-println(newString) // Output: "Welcome to Kotlin blog"
+Output:
 
 ```
+Hej Det här är en text som innehåller siffror
+```
+
+I detta exempel så ersätts alla karaktärer som inte är bokstäver eller mellanslag med en tom sträng, vilket resulterar i att alla siffror blir borttagna från texten.
 
 ## Djupdykning
 
-Att ta bort tecken som matchar ett visst mönster kan vara användbart när vi till exempel behöver rensa en sträng från specifika tecken innan vi utför ytterligare manipulationer på den. Det kan också vara användbart för att filtrera och bearbeta stora datamängder där vi vill ta bort oönskade tecken eller kombinationer av tecken.
+För att förstå hur detta fungerar, behöver vi först förstå vad reguljära uttryck är. Det är en syntax för att beskriva mönster i strängar. Genom att använda reguljära uttryck kan man söka efter och ersätta text baserat på olika mönster snarare än exakta ord.
 
-Men det är viktigt att vara försiktig när vi använder reguljära uttryck, eftersom ett felaktigt uttryck kan resultera i att fel tecken tas bort eller inte tas bort alls. Det är också viktigt att ha i åtanke att reguljära uttryck kan variera mellan olika programmeringsspråk och implementeringar.
+I exemplet ovan användes `[ ]` för att beskriva ett set av karaktärer som matchar, och `^` betyder alla karaktärer som inte finns i setet. Så `/[^A-Za-z ]/` betyder alla karaktärer som inte är bokstäver eller mellanslag.
+
+Det finns även andra modifierare eller symboler som kan användas i reguljära uttryck för mer avancerad sökning, men det är utanför omfattningen av denna artikel.
 
 ## Se även
 
-- [Kotlin Regex documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-
-- [Regular Expression Tutorial](https://regexone.com/) (engelska)
+- [Kotlin Regex Dokumentation](https://kotlinlang.org/docs/reference/regular-expressions.html)
+- [RegExr - Reguljära uttryck tester och referens](https://regexr.com/)

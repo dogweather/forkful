@@ -1,37 +1,46 @@
 ---
-title:    "Elm: Berechnen der Länge eines Strings"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/finding-the-length-of-a-string.md"
+title:                "Elm: Die Länge eines Strings finden"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es ist oft notwendig, die Länge eines Strings in einer Programmiersprache zu bestimmen. In Elm können wir dies auf einfache Weise tun, um die Anzahl der Zeichen in einem Text zu bestimmen.
+Das Finden der Länge eines Strings kann sehr nützlich sein, um Information über einen bestimmten Text zu erhalten. Zum Beispiel könnte man die Länge eines Nutzernamens überprüfen oder die Anzahl der Buchstaben in einem Wort zählen. In diesem Blog-Beitrag werden wir uns ansehen, wie man dies in der funktionalen Programmiersprache Elm umsetzen kann.
 
-## Wie man es macht
-
-Um die Länge eines Strings in Elm zu finden, können wir die build-in Funktion `String.length` verwenden. Schauen wir uns ein Beispiel an:
+## Wie gehts?
 
 ```Elm
-main = 
-let
-    text = "Hallo Welt"
-    length = String.length text
-in
-    length
-
+stringLength : String -> Int
+stringLength str =
+    String.length str
 ```
 
-Die Ausgabe dieses Codes ist 11, da die Zeichenkette "Hallo Welt" 11 Zeichen hat. Wir definieren zuerst eine Variable `text`, die unseren String enthält. Dann verwenden wir die Funktion `String.length`, um die Länge des Strings zu bestimmen und weisen das Ergebnis der Variablen `length` zu. Schließlich geben wir mithilfe von `in` die Länge unseres Textes aus.
+Das obige Beispiel zeigt eine Funktion namens `stringLength`, die einen String als Eingabe akzeptiert und die Anzahl der Zeichen in diesem String als Ganzzahl zurückgibt. Die `String.length` Funktion in Elm gibt die Anzahl der Zeichen in einem String zurück.
 
-## Tiefergehender Einblick
+Um diese Funktion aufzurufen, können wir sie einfach in unserem Code verwenden:
 
-Die `String.length` Funktion gibt die Anzahl der UTF-8 Codierungseinheiten zurück, nicht die tatsächliche Anzahl der Zeichen im String. Dies bedeutet, dass Zeichen aus Nicht-Lateinischen Alphabeten oder Emojis, die aus mehreren Codierungseinheiten bestehen, als mehrere Zeichen gezählt werden. Um die tatsächliche Anzahl der Zeichen in einem String zu erhalten, gibt es einige Techniken, die wir anwenden können, wie zum Beispiel das Aufteilen des Strings in ein Array und die Verwendung der Länge dieses Arrays.
+```Elm
+stringLength "Hallo Welt" --> 11
+stringLength "" --> 0
+```
+
+In diesem Beispiel bekommt die Funktion den String "Hallo Welt" und die leere Zeichenkette als Eingabe und gibt die entsprechende Anzahl von Zeichen zurück.
+
+## Tiefentauchen
+
+Obwohl wir bereits gesehen haben, wie einfach es ist, die Länge eines Strings in Elm zu finden, gibt es einige weitere Dinge, die man beachten sollte. Zum Beispiel behandelt die `String.length` Funktion Unicode Zeichen richtig, was bedeutet, dass sie auch mit nicht-ASCII Zeichen umgehen kann. Außerdem gibt diese Funktion immer die korrekte Anzahl von Zeichen zurück, unabhängig von der Verwendung von verschiedenen Zeichenkodierungen.
+
+Eine weitere nützliche Funktion in Elm ist `String.indexed`, die eine Liste von Tupeln zurückgibt, die jedes Zeichen im String zusammen mit seinem Index enthält. Dadurch können wir bessere Kontrolle über eine bestimmte Position in einem String haben.
+
+```Elm
+String.indexed "Hallo Welt" --> [(0, 'H'), (1, 'a'), (2, 'l'), (3, 'l'), (4, 'o'), (5, ' '), (6, 'W'), (7, 'e'), (8, 'l'), (9, 't')]
+```
 
 ## Siehe auch
 
-- Offizielle Dokumentation zur Funktion `String.length`: https://package.elm-lang.org/packages/elm/core/latest/String#length
-- Eine Erklärung von UTF-8 und dessen Auswirkungen auf die String-Länge: https://www.elm-tutorial.org/de/03-strings/02-utf8.html
-- Ein Beispiel, wie man die tatsächliche Anzahl von Zeichen in einem String bestimmt: https://discourse.elm-lang.org/t/string-length-in-elm-unicode-and-utf8/3869
+- [String Module Elm Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Einführung in Elm Blog-Beitrag](https://blog.hive.fi/elm-introduction-the-ultimate-beginners-guide/)

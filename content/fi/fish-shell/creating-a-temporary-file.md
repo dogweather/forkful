@@ -1,41 +1,51 @@
 ---
-title:    "Fish Shell: Tilapäistiedoston luominen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/creating-a-temporary-file.md"
+title:                "Fish Shell: Väliaikaisen tiedoston luominen"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi Luoda Väliaikainen Tiedosto?
+## Miksi luoda väliaikainen tiedosto?
 
-Väliaikaisten tiedostojen luominen voi olla hyödyllistä monissa ohjelmointitilanteissa. Se voi auttaa pitämään projektin tiedostorakenteen siistinä ja hallittavissa, tai se voi olla tarpeen tietyn toiminnon suorittamiseksi väliaikaisesti.
+On monia syitä, miksi haluat luoda väliaikaisen tiedoston Fish Shell -ohjelmoinnissa. Ne voivat vaihdella tallennettavan datan määrästä ja tarkoituksesta. Joissakin tapauksissa on hyödyllistä tallentaa väliaikainen tiedosto muistuttaakseen, että käyttäjä on jo suorittanut tietyn toiminnon tai käyttäneet tiettyä ohjelmaa. Toisissa tapauksissa väliaikainen tiedosto voi olla väliaikainen varastointialue, kun odotetaan jonkin toisen tehtävän valmistumista. Riippumatta syystä, luominen väliaikaisesta tiedostosta voi olla hyödyllistä Fish Shellin ohjelmoijalle.
 
-## Kuinka Teet Sen
+## Kuinka luoda väliaikainen tiedosto Fish Shellillä?
 
-Fish Shell tarjoaa helpon tavan luoda väliaikaisia tiedostoja käyttämällä `mktemp` -komentoa. Tämä komento luo yksilöllisen, satunnaisen tiedostonimen määritellylle tiedostotyypille.
+On olemassa muutamia tapoja luoda väliaikainen tiedosto Fish Shellin avulla. Alla on muutamia esimerkkejä ja niiden tulostukset Markdown-muodossa.
 
-```
-Fish Shell's older brother but with a better memory
+````Fish Shell
+# Luodaan tyhjä väliaikainen tiedosto
+touch $TMPDIR/temporary.txt
+echo "Väliaikainen tiedosto luotu!"
+````
 
-$ mktemp
-/home/käyttäjänimi/tiedostonimi.XXXXXXXXXX
-```
+- Tulostus: Väliaikainen tiedosto luotu!
 
-Voit myös määrittää etuliitteen tai páätteen tiedostonimelle käyttämällä `mktemp -p` tai `mktemp -s` -komentoja.
+````Fish Shell
+# Luodaan väliaikainen tiedosto, jossa on tekstiä
+echo "Tämä on väliaikainen tiedosto." > $TMPDIR/textfile.txt
+cat $TMPDIR/textfile.txt
+````
 
-```
-Fish Shell:na saat tietoa vain .mk zuong teet
+- Tulostus: Tämä on väliaikainen tiedosto.
 
-$ mktemp -p etuliite_ -s .pääte
-/home/käyttäjänimi/etuliite_XXXXXXXXXX.pääte
+````Fish Shell
+# Luodaan väliaikainen tiedosto, joka käyttää prosessin ID:tä nimenä
+set name (echo (pid))
+touch $TMPDIR/$name.txt
+echo "Väliaikainen tiedosto luotu nimellä $name"
+````
 
-```
+- Tulostus: Väliaikainen tiedosto luotu nimellä 12345.txt (jos prosessin ID on 12345).
 
-## Syväsukeltaminen
+## Syvempi sukellus väliaikaisten tiedostojen luomiseen
 
-Väliaikaisten tiedostojen luominen on tärkeä osa tiedostojen hallintaa ja koodin suorituskykyä. Fish Shellin `mktemp` -komento tarjoaa helpon tavan luoda yksilöllisiä väliaikaisia tiedostoja eri projekteihin. On myös tärkeää varmistaa, että käytetyt tiedostot ja tiedostorakenteet poistetaan oikein, jotta ne eivät kerääntyy järjestelmään useiden suoritusten jälkeen.
+Fish Shell tarjoaa monia hyödyllisiä työkaluja väliaikaisten tiedostojen luomiseen. Yllä esitetyt esimerkit ovat vain jäävuoren huippu, eikä niitä välttämättä tarvita kaikissa tilanteissa. On tärkeää ymmärtää, miksi väliaikaisia tiedostoja luodaan ja miten niitä voidaan käyttää tehokkaasti Fish Shellin ohjelmoinnissa. Lisäksi on hyödyllistä ottaa huomioon turvallisuusnäkökohdat, kun luodaan väliaikaisia tiedostoja ja varmistaa, että ne poistetaan turvallisesti käytön jälkeen.
 
-## Katso Myös
-- [Fish Shell Ohjeet](https://fishshell.com/docs/current/)
-- [mktemp Man-sivu](https://man7.org/linux/man-pages/man1/mktemp.1.html)
-- [Temporär Finne näytteen metlför laajennus](https://github.com/microsoft/vscode-python/issues/7146)
+## Katso myös
+
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/)
+- [Ohjeet väliaikaisten tiedostojen luomiseen Bashilla](https://linuxize.com/post/bash-create-temporary-file/)
+- [Väliaikaisten tiedostojen turvallisuus ja poistaminen](https://www.cyberciti.biz/faq/linux-delete-all-files-in-directory/)

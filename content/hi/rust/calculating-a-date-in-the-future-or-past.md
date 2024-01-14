@@ -1,29 +1,58 @@
 ---
-title:    "Rust: भविष्य या भूतकाल में एक दिन का हिसाब लगाना"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/calculating-a-date-in-the-future-or-past.md"
+title:                "Rust: भविष्य या भूतकाल में एक तिथि की गणना"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-प्रोग्रामिंग दुनिया में, तारीखों को अपनी आवश्यकताओं के अनुसार गणित करने का एक महत्वपूर्ण हिस्सा है। हम अक्सर अपने काम में टाइमस्टाम्प (timestamp) का उपयोग करते हैं या फिर किसी विशेष तारीख की जानकारी जानने के लिए तारीख को गणना करते हैं। इसलिए हम आज देखेंगे कि हम इसे कैसे अपने रस्ट प्रोग्राम में गणित कर सकते हैं।
+क्या आप कभी सोचा है कि अगले या पिछले तारीख को कैसे निर्धारित किया जाए? यह एक बहुत ही उपयोगी कौशल है जो रशिया कोडिंग में जानना बहुत ही जरूरी है। इसलिए इस ब्लॉग पोस्ट में हम आपको बताएंगे कि हम अगले या पिछले तारीख को कैसे निर्धारित कर सकते हैं।
 
-## कैसे गणित करें
+## कैसे करें
 
-तारीखों की गणना करने के लिए हमें `chrono` पैकेज को इम्पोर्ट करने की जरूरत होगी। इस पैकेज के साथ हम बहुत सारे उपयोगी क्लासेस और फंक्शन्स को अपने दिनचर्या में शामिल कर सकते हैं। तो चलिए देखते हैं कि इसे इस्तेमाल करने के लिए हमें कैसे कोड करना होगा।
+इस पोस्ट को पढ़ने के बाद हम आपको स्पष्ट और सरल ढंग से बताएंगे कि आप इस कौशल को कैसे अपने कोडिंग में इस्तेमाल कर सकते हैं। इसके लिए हम रशिया के कोडिंग के उदाहरण और संकेतों के साथ "```Rust ... ```" कोड ब्लॉक देंगे।
 
 ```Rust
-// आगामी 5 दिनों के लिए तारीख की गणना
-use chrono::{NaiveDate, Duration};
-let today = NaiveDate::today();
-let future_date = today + Duration::days(5);
-println!("आगामी 5 दिनों की तारीख: {}", future_date);
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    // Calculate date 7 days in the future
+    let seven_days_from_now = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_secs()
+        + (7 * 24 * 60 * 60);
+        
+    // Convert to date format
+    let date_in_future = UNIX_EPOCH
+        .checked_add(std::time::Duration::from_secs(seven_days_from_now))
+        .unwrap();
+        
+    // Print output in readable format
+    println!("Date 7 days from now: {:?}", date_in_future);
+    
+    // Calculate date 30 days in the past
+    let thirty_days_ago = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_secs()
+        - (30 * 24 * 60 * 60);
+        
+    // Convert to date format
+    let date_in_past = UNIX_EPOCH
+        .checked_add(std::time::Duration::from_secs(thirty_days_ago))
+        .unwrap();
+        
+    // Print output in readable format
+    println!("Date 30 days ago: {:?}", date_in_past);
+}
 ```
 
-इस उदाहरण में, हमने `chrono` तारीख क्लास का इस्तेमाल किया है जो हमें आज की तारीख को दूसरे प्रकार की तारीख में बदलने की अनुमति देता है। विशेष ध्यान दें कि यह उदाहरण भारतीय मानक समय के अनुसार है।
+यहां हमने रशिया हेतु स्टैंडर्ड लाइब्रेरी का उपयोग किया है जो हमें सिस्टम के समय को प्राप्त करने और उसे डेटा टाइम के फॉर्मेट में बदलने में मदद करता है। हमने सरल उदाहरण दिया है जो आपको समझने में आसानी करेगा। आप भी अपने कोड में इस तरह का लोजिक इस्तेमाल कर सकते हैं।
 
-## गहराई में जाएं
+## डीप डाइव
 
-रस्ट में तारीखों की गणना करने के लिए `chrono` पैकेज अपने आप में काफी सक्षम है। समय के अलावा यह दिन, महीना, वर्ष आदि को भी गणित कर सकता है। इसके अलावा, यह दु
+जब हम इस काम को

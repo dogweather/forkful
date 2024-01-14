@@ -1,45 +1,40 @@
 ---
-title:    "Javascript: 문자열 길이 찾기"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/finding-the-length-of-a-string.md"
+title:                "Javascript: 문자열의 길이 찾기"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 문자열의 길이를 찾는 것에 관심을 가지게 되는 이유
+## 왜 
+문자열의 길이를 찾는 것에 참여하는 이유는 단순합니다 - 우리는 인터넷 시대에 살고 있기 때문입니다. 우리는 웹 페이지, 어플리케이션, 소셜 미디어 등에서 많은 텍스트를 보게 되고, 그 텍스트의 길이를 파악하는 데는 중요한 이슈가 됩니다. 
 
-문자열의 길이를 찾는 것은 프로그래밍에서 매우 일반적이고 중요한 작업입니다. 예를 들어, 문자열이 얼마나 길고 얼마나 많은 문자로 이루어져 있는지에 따라 다른 조건이 발생할 수 있습니다. 따라서 문자열의 길이를 정확하게 파악하는 것은 프로그래밍을 할 때 매우 중요한 요소가 됩니다.
-
-## 하는 방법: 코드 예시와 샘플 출력
+## 어떻게
+문자열의 길이를 찾는 것은 Javascript에서 매우 간단하고 쉽습니다. 아래는 예시 코드와 결과값입니다.
 
 ```Javascript
-// 문자열의 길이를 구하는 함수
-function findLength(str) {
-  // str의 길이를 담을 변수 선언
-  let length = 0;
-  // for 루프를 이용해 문자열을 한 글자씩 검사
-  for(let i = 0; i < str.length; i++) {
-    // 각 글자마다 길이를 1씩 증가
-    length++;
-  }
-  // 최종적으로 문자열의 길이 출력
-  console.log(length);
-}
-
-// 함수 호출과 입력값으로 문자열 전달
-findLength("Hello, world!"); // 출력 결과: 13
+let string = "안녕하세요";
+console.log(string.length); // 출력 값: 5
 ```
 
-위의 코드 예시에서는 문자열의 길이를 구하는 함수를 정의하고, for 루프를 이용해 문자열의 길이를 한 글자씩 검사합니다. 각 글자마다 길이를 1씩 증가시키고, 최종적으로 문자열의 길이를 콘솔에 출력하는 방법을 보여줍니다.
+문자열에는 글자 뿐만 아니라 공백도 포함되기 때문에, 실제로 입력한 글자 수와 다를 수 있습니다. 이것은 단순히 글자 수가 아니라 글자 + 공백의 수를 의미합니다. 예를 들어, 위의 예시에서 "안" 다음에 공백이 있기 때문에 총 3글자로 카운트됩니다.
 
-## 깊게 들어가기: 문자열의 길이에 대한 추가 정보
+또한 문자열의 길이를 찾는 또 다른 방법은 `.length` 메소드를 사용하는 것입니다. 아래는 이 방법의 예제 코드와 결과값입니다.
 
-실제로는 문자열의 길이를 구하는 것이 위의 예시처럼 간단하지 않을 수 있습니다. 예를 들어, 문자열 안에 공백이나 특수 문자가 포함되어 있을 경우 이를 어떻게 처리할지 고민해야 할 수 있습니다. 또한, 문자열 안에 유니코드 문자가 포함되어 있는 경우 이를 어떻게 처리할지도 중요한 고려 사항입니다.
+```Javascript
+let string = "안녕하세요";
+console.log(string.length()); // 출력 값: 5
+```
 
-따라서 프로그래머들은 실제로 문자열의 길이를 구할 때 이러한 추가 정보들을 고려하고 적절한 방법을 사용해야 합니다.
+## 깊이 파고들기
+문자열의 길이를 찾는 더 깊은 정보를 알고 싶나요? 그렇다면 아래의 몇 가지 사실을 확인해보세요.
 
-## 더 배우기: 관련 자료
+- `.length`는 Javascript의 내장된 속성으로 다른 데이터 타입에는 적용되지 않습니다. 즉, 숫자나 논리값에는 적용할 수 없습니다.
+- `.length`는 문자열의 길이를 찾는 유일한 방법은 아닙니다. `.size()` 메소드를 사용할 수도 있고, `Array.from()` 메소드로 배열을 만들어 그 길이를 확인할 수도 있습니다.
+- 긴 문자열을 잘라서 특정 부분만 확인하려면 `.substring()` 메소드를 사용할 수 있습니다. 예를 들어, `"Hello World".substring(0,5)`는 "Hello"를 반환합니다.
 
-- [MDN 웹 문서: String.length](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [MDN 웹 문서: 문자열 다루기](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Keyed_collections#The_Map_object)
-- [Tutorials Point: 문자열 다루기](https://www.tutorialspoint.com/javascript/javascript_strings.htm)
+## 참고자료
+- [Javascript에서 문자열의 길이를 찾는 방법](https://www.tutorialspoint.com/find-the-length-of-a-string-in-javascript)
+- [문자열과 숫자의 차이점이 뭘까요?](https://velog.io/@chalkboard/문자열과-숫자의-차이점이-뭘까요-q9gncwj6gi)
+- [`.substring()` 메소드에 대한 자세한 정보](https://www.w3schools.com/jsref/jsref_substring.asp)

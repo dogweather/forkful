@@ -1,44 +1,54 @@
 ---
-title:    "TypeScript: Rechercher et remplacer du texte"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/searching-and-replacing-text.md"
+title:                "TypeScript: Recherche et remplacement de texte"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Lorsque vous travaillez sur un projet de développement TypeScript, il est courant de devoir effectuer des modifications de texte dans votre code. Ceci peut être pour corriger des fautes d'orthographe, modifier des noms de variables ou même remplacer un morceau de code entier. Dans cet article, nous allons explorer comment rechercher et remplacer du texte dans TypeScript.
+La recherche et le remplacement de texte sont des tâches courantes en programmation, qui peuvent être effectuées pour diverses raisons telles que la correction de fautes d'orthographe, la mise à jour de noms de variables ou la modification de chaînes de caractères. Cela peut vous faire économiser beaucoup de temps et d'efforts, surtout si vous avez un grand nombre de lignes de code à modifier.
 
-# Comment faire
+## Comment faire
 
-La première étape pour rechercher et remplacer du texte dans TypeScript est de déterminer quelles parties de votre code doivent être modifiées. Pour cela, nous pouvons utiliser la méthode `indexOf()` qui renvoie l'index de la première occurrence d'un mot ou d'une chaîne de caractères dans une autre chaîne. Voici un exemple de code qui utilise `indexOf()` pour trouver l'index d'une chaîne de caractères dans une autre :
-
-```TypeScript
-const str1 = "Bonjour le monde !";
-console.log(str1.indexOf("monde"));
-```
-
-Lorsque vous exécutez ce code, il vous affichera l'index de la première occurrence de "monde" dans la chaîne de caractères "Bonjour le monde !". Dans cet exemple, l'index renvoyé sera 12 car la chaîne de caractères "monde" commence à l'index 12 dans la chaîne de caractères "Bonjour le monde !".
-
-Maintenant que nous avons l'index du texte que nous voulons remplacer, nous pouvons utiliser la méthode `substring()` pour créer une nouvelle chaîne de caractères avec les parties que nous voulons garder et celles que nous voulons remplacer. Voici un exemple de code qui utilise `substring()` pour remplacer le mot "monde" par "univers" dans la chaîne de caractères "Bonjour le monde !" :
+La recherche et le remplacement de texte en TypeScript peuvent être réalisés en utilisant la méthode `replace` de l'objet `String`. Voici un exemple de code pour rechercher et remplacer un mot spécifique dans une chaîne de caractères :
 
 ```TypeScript
-let str2 = "Bonjour le monde !";
-str2 = str2.substring(0, 12) + "univers" + str2.substring(17);
-console.log(str2);
+let phrase: string = "Bonjour à tous !";
+let nouvellePhrase: string = phrase.replace("Bonjour", "Hello");
+console.log(nouvellePhrase);
+
+// Sortie : "Hello à tous !"
 ```
 
-En exécutant ce code, vous verrez que la chaîne de caractères "Bonjour le monde !" a été modifiée en "Bonjour l'univers !", en remplaçant "monde" par "univers".
+Vous pouvez également utiliser des expressions régulières pour effectuer des recherches et des remplacements plus complexes. Voici un exemple pour remplacer toutes les occurrences de chiffres dans une chaîne de caractères par des astérisques :
 
-# Plongée en profondeur
+```TypeScript
+let phrase: string = "Mon code secret est 12345.";
+let nouvellePhrase: string = phrase.replace(/\d/g, "*");
+console.log(nouvellePhrase);
 
-Il existe différentes méthodes pour rechercher et remplacer du texte en TypeScript, et cela dépendra de vos besoins spécifiques. Vous pouvez utiliser des méthodes telles que `replace()`, `split()` ou même des expressions régulières pour effectuer des modifications de texte plus complexes.
+// Sortie : "Mon code secret est *****."
+```
 
-En outre, lorsque vous travaillez avec des objets, vous pouvez utiliser `Object.keys()` pour obtenir une liste des clés d'un objet, puis parcourir cette liste pour trouver et remplacer du texte dans les valeurs correspondantes.
+## Plongée en profondeur
 
-# Voir aussi
+En TypeScript, la méthode `replace` prend deux paramètres : la chaîne à rechercher et la chaîne de remplacement. Cependant, en utilisant des expressions régulières, vous pouvez également utiliser des groupes de capture pour capturer des parties spécifiques de la chaîne d'origine et les utiliser dans la chaîne de remplacement. Par exemple :
 
-- [Documentation TypeScript sur les méthodes de chaîne de caractères](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [Guide sur les expressions régulières en TypeScript](https://www.tutorialspoint.com/typescript/typescript_regular_expressions.htm)
-- [Exemples de rechercher/remplacer en TypeScript](https://www.geeksforgeeks.org/ts-strings-replace-method/#:~:text=%7B%7D%29%20method,characters%20with%20new%20string%20characters.&text=replace(%2F2350%2F%2C%20'3254%3F%20'%29%20%2F%2F%20prints%20G,letters%20with%20new%20string%20characters.)
+```TypeScript
+let html: string = "<h1>Bienvenue sur mon site !</h1>";
+let nouvelleHtml: string = html.replace(/<([\/]?)h1>/g, "<$1h2>");
+console.log(nouvelleHtml);
+
+// Sortie : "<h2>Bienvenue sur mon site !</h2>"
+```
+
+En utilisant des expressions régulières, les possibilités de recherche et de remplacement de texte sont presque infinies. N'hésitez pas à explorer et à expérimenter pour trouver la meilleure méthode pour votre cas d'utilisation.
+
+## Voir aussi
+
+- La documentation officielle de TypeScript sur la méthode `replace` : https://www.typescriptlang.org/docs/handbook/basic-types.html#string-replace
+- Un tutoriel sur les expressions régulières en TypeScript : https://www.tutorialspoint.com/typescript/typescript_regular_expressions.htm
+- Un outil en ligne pour tester et créer des expressions régulières : https://regex101.com/

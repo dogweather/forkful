@@ -1,58 +1,53 @@
 ---
-title:    "Arduino recipe: Starting a new project"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/starting-a-new-project.md"
+title:                "Arduino recipe: Starting a new project"
+programming_language: "Arduino"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-
-Starting a new project with Arduino can be an exciting and rewarding experience. Arduino is a versatile microcontroller platform that allows you to bring your ideas to life through coding and electronics. Whether you are a beginner or an experienced programmer, there is always something new to learn with Arduino projects.
+## Why?
+Are you looking to learn a new skill or expand your knowledge in programming? Starting a project using an Arduino board can be a great way to do so. With the growing popularity of robotics, Internet of Things, and other technology-related fields, knowing how to program an Arduino can be a valuable skill. Plus, it's a fun and creative way to explore your interests and bring your ideas to life!
 
 ## How To
+To get started with an Arduino project, you will need an Arduino board, a computer, and the Arduino software. Once you have everything set up, you can begin coding using the Arduino programming language, which is based on C++. 
 
-To start a new project with Arduino, first, you will need to have an Arduino board and the Arduino IDE (Integrated Development Environment) software installed on your computer. Once you have these, you can follow these steps to get started:
-
-1. Connect your Arduino board to your computer using a USB cable.
-2. Open the Arduino IDE software.
-3. Write your code in the editor window. This can be a simple "Hello World" program or a more complex project.
-4. Verify your code by clicking on the Verify button (checkmark icon) on the top left corner of the IDE.
-5. Once the code is verified, upload it to your Arduino board by clicking on the Upload button (right arrow icon).
-6. Your code will be compiled and uploaded to the Arduino board. You can see the status in the bottom console of the IDE.
-7. If everything went well, your project should now be running on the Arduino board.
-
-Here is a simple example of a "Hello World" program in Arduino:
+To give you an idea, here's a simple example of a program that makes an LED light blink using an Arduino board:
 
 ```Arduino
-void setup() {
-  Serial.begin(9600); // set baud rate to 9600
+int led = 13; //assigning the LED to pin 13
+
+void setup() 
+{
+  pinMode(led, OUTPUT); //configuring pin 13 as an output
 }
 
-void loop() {
-  Serial.println("Hello World!"); // print the message to the serial monitor
-  delay(1000); // wait for 1 second
+void loop() 
+{
+  digitalWrite(led, HIGH); //turning on the LED
+  delay(1000); //delaying for 1 second
+  digitalWrite(led, LOW); //turning off the LED
+  delay(1000); //delaying for 1 second
 }
 ```
-
-Once you upload this code to your Arduino board, you should see "Hello World!" being printed on the serial monitor every second.
+And that's it! Once you have uploaded this code to your Arduino board, you should see the LED blinking on and off every second.
 
 ## Deep Dive
+Now, let's dive a bit deeper into starting a new project using an Arduino. It's important to have a clear idea of what you want to achieve before starting your project. This will help you in choosing the right components and writing efficient code.
 
-Now that you know how to get started with your Arduino project, let's dive a bit deeper. Arduino boards come in different models and have different capabilities. It is essential to choose the right board for your project, depending on its requirements.
+Another thing to keep in mind is to always test and troubleshoot your code as you go along. This will save you from bigger headaches later on. Don't be afraid to experiment and try out different things – that's part of the fun and learning process!
 
-You can also add different components, such as sensors, displays, and actuators to your Arduino board to expand its capabilities. These components can be connected to the board using specific pins and can be controlled through your code.
-
-Additionally, there is a vast community of Arduino enthusiasts who share their projects, ideas, and code. You can find many tutorials, guides, and resources online to help you with your project.
-
-One crucial thing to keep in mind while starting a new project is to have a clear idea and plan. It is always helpful to break your project into smaller, manageable tasks and tackle them one by one. You can also make use of flowcharts and diagrams to visualize your project and its components.
+Another useful tip is to make use of online resources such as tutorials, forums, and documentation. They can provide valuable information and help you overcome any obstacles you may encounter.
 
 ## See Also
+If you're looking to delve deeper into Arduino programming, here are some helpful links to get you started:
 
-Here are some helpful links to get you started on your Arduino journey:
+- [Arduino Official Website](https://www.arduino.cc/)
+- [Arduino Tutorials](https://www.arduino.cc/en/Tutorial/HomePage)
+- [Arduino Forum](https://forum.arduino.cc/)
+- [Arduino Libraries](https://www.arduino.cc/en/Reference/Libraries)
+- [Arduino Project Ideas](https://create.arduino.cc/projecthub)
+- [C++ Tutorial](https://www.learncpp.com/) (a good foundation for Arduino programming language)
 
-- [Arduino official website](https://www.arduino.cc/)
-- [Getting started with Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-cb3e51)
-- [Arduino forum](https://forum.arduino.cc/)
-- [Arduino project hub](https://create.arduino.cc/projecthub)
-- [Adafruit learning system](https://learn.adafruit.com/category/learn-arduino)
+Now that you have some basic knowledge and resources, it's time to start your own Arduino project and let your creativity and coding skills shine! Happy tinkering!

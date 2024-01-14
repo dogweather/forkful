@@ -1,56 +1,48 @@
 ---
-title:    "Fish Shell: Skrive tester"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/writing-tests.md"
+title:                "Fish Shell: Skriving av tester"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Tester er en integrert del av ethvert programmeringsprosjekt, uavhengig av programmeringsspråk eller plattform. De bidrar til å sikre koden din, fange feil og bugs, og forbedre den generelle kvaliteten på programvaren din. Å skrive tester kan ta litt ekstra tid, men det sparer deg for mye tid og frustrasjon i det lange løp.
 
-Å skrive tester i programmering kan virke tidkrevende og unødvendig for mange, men det er faktisk en viktig del av å utvikle høykvalitetsprogrammer. Tester sikrer at koden fungerer som den skal, og gjør det enklere å finne og fikse feil.
-
-## Slik gjør du det
-
-For å skrive tester i Fish Shell, må du først importere testrammen ved å legge til følgende linje i toppen av filen din:
+## Hvordan gjøre det
+For å skrive tester i Fish Shell, kan du bruke den innebygde `assert`-kommandoen. Denne kommandoen tar inn en betingelse og en feilmelding og vil bare gi en feil hvis betingelsen ikke er oppfylt. La oss ta en titt på et eksempel:
 
 ```Fish Shell
-source ~/.config/fish/fish_test.fish
+set var "Hei"
+
+assert "Hei" = "$var" "Variabelen er ikke satt til 'Hei'"
 ```
 
-Deretter kan du definere en test ved å bruke funksjonen "describe", etterfulgt av en beskrivelse av testen og en blokk med kode som skal testes:
+I dette tilfellet sjekker vi om variabelen `var` er satt til strengen "Hei". Hvis den ikke er det, vil testen feile og gi feilmeldingen "Variabelen er ikke satt til 'Hei'". Du kan også bruke `assert` for å sjekke om kommandoen din gir den forventede utgangen, for eksempel:
 
 ```Fish Shell
-describe "Addisjon"
-    if [ (add 2 2) = 4 ]
-        pass
-    else
-        fail "'add 2 2' should equal 4"
-    end
-end
+set output (echo "Hei")
+
+assert "Hei" = "$output" "Utgangen er ikke det forventede"
 ```
 
-For å kjøre testen, kan du bruke kommandoen "fish_test":
-
-```Fish Shell
-fish_test
-```
-
-Du vil se en oversikt over alle tester som ble kjørt, og om de ble bestått eller ikke.
+Disse er bare noen få eksempler, og du kan bruke `assert` til å teste nesten alle typer betingelser og utganger.
 
 ## Dypdykk
-
-Når du skriver tester, er det viktig å tenke på ulike scenarioer som kan føre til feil i koden din. Det kan også være lurt å bruke funksjoner som "setup" og "teardown" for å sette opp og rydde opp etter tester, slik at de ikke påvirker hverandre.
-
-Du kan også bruke eksterne tester ved å legge de i separate filer og importere dem i hovedtesten din ved å bruke funksjonen "source":
+Å skrive gode tester handler ikke bare om å bruke riktig kommando, men også om å skrive effektive tester som dekker alle mulige tilfeller. En god praksis er å lage forskjellige tester for suksess og feiltilfeller. Du kan også bruke `not`-operatøren for å teste for negative scenarier, for eksempel:
 
 ```Fish Shell
-source ~/tests/addition_test.fish
+set var 10
+
+assert not "5" -lt "$var" "Variabelen er mindre enn 5"
 ```
 
-Dette gjør det enklere å organisere og vedlikeholde tester, spesielt for større prosjekter.
+Denne testen vil bare passere hvis variabelen `var` er større eller lik 5.
+
+Det er også viktig å organisere og strukturere testene dine på en måte som gjør det enkelt å finne og feilsøke dem. Du kan bruke `describe` og `it` kommandoene for å organisere testene dine i logiske grupper og gi dem beskrivende navn.
 
 ## Se også
-
-- [Fish Shell sin offisielle dokumentasjon om testing](https://fishshell.com/docs/current/tutorial.html#tut_testing)
-- [En guide til hvordan man skriver gode tester i Fish Shell (på engelsk)](https://medium.com/@seththompson/testing-in-fish-shell-6554cde79216)
+- [Fish Shell dokumentasjon om å skrive tester](https://fishshell.com/docs/current/#writing-tests)
+- [GitHub-siden til Fish Shell](https://github.com/fish-shell/fish-shell)
+- [En guide til å skrive effektive tester i Fish Shell](https://medium.com/@fantasticfiasco/fish-shell-testing-45f52c5f7561)

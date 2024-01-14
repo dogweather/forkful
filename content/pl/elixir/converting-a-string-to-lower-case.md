@@ -1,45 +1,50 @@
 ---
-title:    "Elixir: Konwertowanie ciągu znaków na małe litery"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/converting-a-string-to-lower-case.md"
+title:                "Elixir: Konwertowanie ciągu znaków na małe litery"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często zdarza się, że w programowaniu musimy operować na długich ciągach znaków. Aby ułatwić sobie pracę i zapewnić spójność danych, warto umieć konwertować stringi na małe litery.
+Czasami, gdy pracujemy z różnymi danymi w Elixir, musimy zmienić wielkość liter w ciągu znaków. Jest to szczególnie przydatne przy walidacji danych lub porównywaniu ich wartości. W tym artykule omówimy, jak prosto i skutecznie przekształcić ciąg znaków na małe litery przy użyciu Elixir.
 
 ## Jak to zrobić
 
-W języku Elixir mamy kilka prostych sposobów na konwersję stringów do małych liter. Jedną z nich jest użycie funkcji `String.downcase/1`:
+Aby przekształcić ciąg znaków na małe litery w Elixir, możemy użyć funkcji `String.downcase/1`. Przykładowe użycie wyglądałoby następująco:
 
 ```Elixir
-string = "Elixir jest niesamowitym językiem!"
-String.downcase(string)
+iex> String.downcase("PRZYKLADOWY CIAG ZNAKOW")
+"przykladowy ciag znakow"
 ```
-```
-"elixir jest niesamowitym językiem!"
-```
-
-Możemy również użyć konstrukcji `|>` w celu łańcuchowego wywołania funkcji:
+Możemy także wykorzystać tę funkcję na listach znaków, stosując ją jako drugi argument funkcji `Enum.map/2`, na przykład:
 
 ```Elixir
-"Elixir jest niesamowitym językiem!" |> String.downcase
+iex> "PRZYKLADOWY CIAG ZNAKOW" |> String.graphemes() |> Enum.map(&String.downcase/1) |> Enum.join()
+"przykladowy ciag znakow"
 ```
+Zauważ, że używamy funkcji `String.graphemes/1` aby podzielić ciąg znaków na pojedyncze znaki, ponieważ funkcja `String.downcase/1` działa tylko na pojedyncze znaki lub listy znaków.
+
+## Dogłębna analiza
+
+Istnieje także funkcja `String.downcase/2`, która pozwala na określenie języka, w którym ma być przeprowadzona konwersja na małe litery. Jest to szczególnie ważne, ponieważ nie wszystkie języki mają takie same reguły przy zmienianiu wielkości liter. Na przykład, w języku tureckim znak "I" jest zmieniany na "ı" zamiast na "i" w języku angielskim. Przykładowe użycie wyglądałoby następująco:
+
+```Elixir
+iex> String.downcase("BÜYÜK I", :turkish)
+"büyüki"
 ```
-"elixir jest niesamowitym językiem!"
+
+Ponadto, w celu zapewnienia całkowitej zgodności z Unicode, możemy użyć funkcji `String.downcase/3`, która przyjmuje opcjonalny argument "case" jako drugi argument i pozwala na określenie reguł dla konkretnych języków i przypadków. Przykładowe użycie wyglądałoby następująco:
+
+```Elixir
+iex> String.downcase("İ", [:case, :fold])
+"i"
 ```
 
-Warto również zwrócić uwagę na funkcję `String.downcase/2`, która pozwala ustawić język, w którym zostanie wykonana konwersja. Dzięki temu możemy zapewnić poprawną konwersję dla różnych alfabetów.
+## Zobacz także
 
-## Głębszy zanurzenie
-
-Aby lepiej zrozumieć proces konwersji stringów do małych liter w Elixirze, warto poznać kilka szczegółów. Na początek, funkcja `String.downcase/1` wykorzystuje mechanizm "case mapping", który w łatwy sposób pozwala na przekształcenie liter do odpowiednich małych lub wielkich odpowiedników. W przypadku alfabetów spoza standardowych znaków ASCII, kodowanie jest ustalane za pomocą konfiguracji `String.Unicode`.
-
-Ponadto, warto wiedzieć, że funkcja `String.downcase/1` używa funkcji `String.to_charlist/1`, która przekształca ciąg znaków na listę znaków (charlist). Dzięki temu możemy operować na pojedynczych znakach zamiast całego stringa.
-
-## Zobacz również
-
-- Dokumentacja Elixira na temat `String.downcase/1`
-- Przewodnik po konwersji stringów i znaków w Elixirze na blogu Politechniki Warszawskiej
+- Elixir String moduł dokumentacja: https://hexdocs.pm/elixir/String.html
+- Elixir Enum moduł dokumentacja: https://hexdocs.pm/elixir/Enum.html
+- Unicode Case Folding: https://unicode-table.com/en/sections/case-folding/

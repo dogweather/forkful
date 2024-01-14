@@ -1,68 +1,42 @@
 ---
-title:    "TypeScript: Opprette en midlertidig fil"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/creating-a-temporary-file.md"
+title:                "TypeScript: Oppretting av midlertidig fil"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+I denne artikkelen vil vi se på hvordan man kan opprette midlertidige filer i TypeScript. Midlertidige filer er nyttige når man trenger å lagre midlertidig data eller når man ønsker å slette data etter en viss tid. Dette kan være nyttig for å redusere belastningen på serveren eller for å sikre at sensitiv informasjon ikke blir lagret for lenge.
 
-Å lage midlertidige filer er en vanlig oppgave for utviklere, spesielt når man håndterer datafiler eller lagrer midlertidige data. Dette kan være nyttig når man arbeider med store mengder data eller når man trenger å lagre informasjon midlertidig for å utføre en spesifikk oppgave.
-
-## Hvordan lage midlertidige filer i TypeScript
-
-For å opprette en midlertidig fil i TypeScript, kan man bruke Node.js-modulen "fs" (file system). Følgende eksempel viser hvordan man kan lage en midlertidig fil med en enkel tekststreng som innhold:
+## Hvordan lage en midlertidig fil i TypeScript
+For å opprette en midlertidig fil i TypeScript, kan vi bruke Node.js' `fs`-modul. Følgende kode viser hvordan man kan opprette en midlertidig fil ved hjelp av `fs.mkdtempSync()`-metoden:
 
 ```TypeScript
-import { mkdtempSync, writeFileSync } from 'fs';
-
-const tempDir = mkdtempSync('/tmp/');
-const tempFile = `${tempDir}/my_temp_file.txt`;
-
-writeFileSync(tempFile, 'Dette er innholdet i den midlertidige filen.');
-
-console.log('Midlertidig fil opprettet:', tempFile);
+import * as fs from 'fs';
+const tempPath = fs.mkdtempSync('tmp-');
+console.log(tempPath);
 ```
 
-Output:
+Denne koden vil opprette en midlertidig mappe i det gjeldende arbeidsområdet og returnere banen til mappen. Merk at mappeprefikset `tmp-` brukes for å angi at det er en midlertidig mappe. Dette kan endres etter behov. 
 
-```
-Midlertidig fil opprettet: /tmp/my_temp_file.txt
-```
-
-Man kan også opprette en midlertidig fil med tilfeldig innhold ved å bruke "Buffer" og "randomFillSync" fra Node.js:
+Hvis man vil lagre data i den midlertidige filen, kan man bruke `fs.writeFileSync()`-metoden. Denne metoden tar imot en filbane og data som skal skrives til filen. Følgende kode viser hvordan man kan lagre data til den midlertidige filen:
 
 ```TypeScript
-import { mkdtempSync, writeFileSync } from 'fs';
-import { randomFillSync } from 'crypto';
-
-const tempDir = mkdtempSync('/tmp/');
-const tempFile = `${tempDir}/random_temp_file.txt`;
-const buffer = Buffer.alloc(10);
-
-randomFillSync(buffer);
-
-writeFileSync(tempFile, buffer);
-
-console.log('Midlertidig fil opprettet:', tempFile);
+import * as fs from 'fs';
+const tempPath = fs.mkdtempSync('tmp-');
+const data = 'Dette er en midlertidig fil.';
+fs.writeFileSync(`${tempPath}/myfile.txt`, data);
 ```
 
-Output:
+## Dykk dypere inn i midlertidige filer
+Det er flere ting man bør vurdere når man jobber med midlertidige filer i TypeScript. For det første, vil filen slettes automatisk når Node.js-prosessen avsluttes. Dette betyr at det ikke er nødvendig å slette filen manuelt.
 
-```
-Midlertidig fil opprettet: /tmp/random_temp_file.txt
-```
+I tillegg er det viktig å være oppmerksom på sikkerhet når man bruker midlertidige filer. Hvis filen inneholder sensitiv informasjon, bør man sørge for å slette filen så snart den ikke lenger er nødvendig for å unngå at uautoriserte får tilgang til informasjonen.
 
-## De dypeste dykk
-
-Å lage midlertidige filer krever også kunnskap om best practices for å unngå sikkerhetsrisikoer og optimalisere effektiviteten. Det er viktig å sørge for at midlertidige filer blir slettet når de ikke lenger er nødvendige, for å forhindre at sensitiv informasjon blir liggende igjen på systemet. Man bør også unngå å bruke for mange midlertidige filer, da det kan føre til unødvendig lagring og belastning på systemet.
-
-Det er også viktig å sørge for at midlertidige filer har unike navn og at de blir opprettet og slettet på riktig måte, avhengig av operativsystemet. Det er også verdt å undersøke om det finnes spesifikke verktøy eller biblioteker som kan hjelpe med å håndtere midlertidige filer i TypeScript.
+En annen ting å huske på er at midlertidige filer kan være nyttige for å redusere belastningen på serveren, men de kan også føre til rotete lagring av data hvis de ikke håndteres riktig. Derfor bør man alltid være nøye med å slette midlertidige filer når de ikke lenger er nødvendige.
 
 ## Se også
-
-- [Node.js fs-modulen](https://nodejs.org/api/fs.html)
-- [Node.js crypto-modulen](https://nodejs.org/api/crypto.html)
-- [Best practices for temporary files](https://www.owasp.org/index.php/Unprotected_Temporary_File)
-- [Tempy - bibliotek for håndtering av midlertidige filer i Node.js](https://github.com/sindresorhus/tempy)
+- [Node.js FileSystem API](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
+- [Temporary file - Wikipedia](https://en.wikipedia.org/wiki/Temporary_file)

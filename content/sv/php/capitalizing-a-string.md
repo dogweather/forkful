@@ -1,46 +1,37 @@
 ---
-title:    "PHP: Att skriva ut en sträng"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/capitalizing-a-string.md"
+title:                "PHP: Kapitalisera en sträng"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför capitalizera en sträng?
+# Varför
+Ibland behöver vi konvertera en sträng så att den börjar med en stor bokstav. Detta kan vara för att göra den mer läsbar eller för att följa specifika konventioner inom programmering.
 
-När vi skriver kod, finns det ofta behov av att formatera text på olika sätt. En vanlig uppgift är att göra första bokstaven i en sträng till en stor bokstav, så kallad "capitalization". Detta kan vara användbart när vi vill presentera information på ett mer estetiskt sätt, eller för att möta specifika krav från användare eller system. I denna bloggpost kommer vi att utforska hur man kan göra detta med hjälp av PHP-programmering.
-
-##Hur man kapitaliserar en sträng i PHP
-
-För att kapitalisera en sträng i PHP, kan vi använda funktionen `ucfirst()`. Denna funktion tar en sträng som argument och returnerar samma sträng med första bokstaven kapitaliserad. Vi kan se detta i följande kodexempel:
-
-```PHP 
-$str = "hej, jag är en sträng";
-echo ucfirst($str);
-```
-
-Detta kommer att ge oss resultatet "Hej, jag är en sträng". Vi kan också använda funktionen `ucwords()` som kapitaliserar första bokstaven i varje ord i en sträng. Detta kan vara användbart när vi vill ha en mer konsekvent kapitalisering i vår text.
+# Hur man gör
+Att konvertera en sträng till stora bokstäver i PHP är enkelt med hjälp av funktionen `ucfirst()`. Denna funktion tar emot en sträng som parameter och returnerar en ny sträng där den första bokstaven är stor. Här är ett exempel:
 
 ```PHP
-$str = "jag har många ord i den här strängen";
-echo ucwords($str);
+$str = "hallå världen";
+echo ucfirst($str); // Output: Hallå världen
 ```
 
-Detta kommer att ge oss resultatet "Jag Har Många Ord I Den Här Strängen". Som ni ser, kapitaliseras första bokstaven i varje ord.
+För att konvertera varje ord i en sträng till stora bokstäver kan vi använda funktionen `ucwords()`. Den tar också en sträng som parameter och returnerar en ny sträng där varje ord börjar med en stor bokstav. Här är ett exempel:
 
-##En djupdykning i kapitalisering av strängar
+```PHP
+$str = "hej på dig";
+echo ucwords($str); // Output: Hej På Dig
+```
 
-Det finns också andra sätt att kapitalisera en sträng i PHP, inklusive att använda inbyggda funktioner som `strtoupper()` och `strtolower()`. Dessa funktioner ändrar alla bokstäver i en sträng till antingen stora eller små bokstäver. Det kan också vara användbart att använda `mb_convert_case()` för att hantera specialtecken och teckenkodning i en sträng.
+# Djupdykning
+Det finns även andra funktioner och metoder inom PHP som kan användas för att konvertera en sträng till stora bokstäver. Till exempel `strtoupper()` som returnerar en sträng där alla bokstäver är stora eller `mb_convert_case()` som kan hantera flerspråkiga strängar.
 
-Vi kan också utveckla våra egna funktioner för att få mer kontroll över kapitaliseringsprocessen. Till exempel kan vi skapa en funktion som kapitaliserar första bokstaven av varje mening i en sträng. Detta kan uppnås genom att splitta strängen vid varje period och sedan använda `ucfirst()` på varje del av strängen.
+Det är också viktigt att notera att olika språk och plattformar kan ha olika standarder för att konvertera strängar till stora bokstäver. Det är därför viktigt att se över dokumentationen för det specifika språket eller plattformen du arbetar med.
 
-I vissa fall kan det vara lämpligt att inte kapitalisera specifika ord i en sträng, som till exempel förkortningar eller egennamn. I sådana fall kan vi använda reguljära uttryck för att känna igen och undvika att kapitalisera dessa ord.
-
-##Se även
-
-Här är några länkar för att läsa mer om kapitalisering av strängar och annan användbar information om PHP-programmering:
-
-- [PHP manual för "ucfirst" och "ucwords"](https://www.php.net/manual/en/function.ucfirst.php)
-- [W3Schools tutorial om kapitalisering av strängar i PHP](https://www.w3schools.com/php/func_string_ucfirst.asp)
-- [Freecodecamp tips för att hantera specialtecken vid kapitalisering i PHP](https://www.freecodecamp.org/news/php-string-upper-lower-case-functions/)
-- [PHP manual för reguljära uttryck](https://www.php.net/manual/en/ref.pcre.php)
+# Se även
+- [PHP's officiella dokumentation för ucfirst()](https://www.php.net/manual/en/function.ucfirst.php)
+- [PHP's officiella dokumentation för ucwords()](https://www.php.net/manual/en/function.ucwords.php)
+- [PHP's officiella dokumentation för strtolower()](https://www.php.net/manual/en/function.strtolower.php)
+- [MB_STRING-dokumentationen för mb_convert_case()](https://www.php.net/manual/en/function.mb-convert-case.php)

@@ -1,44 +1,37 @@
 ---
-title:    "Haskell: 新しいプロジェクトを始める"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/starting-a-new-project.md"
+title:                "Haskell: 新しいプロジェクトを始める"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ新しいプロジェクトを始めるか
+## なぜ
 
-Haskellの魅力のひとつは、強力な静的型システムです。新しいプロジェクトを始めることで、柔軟性と堅牢性を兼ね備えたソフトウェアを作ることができます。
+プログラミングの世界では常に新しいプロジェクトが生まれています。新しいプロジェクトを始める理由は人それぞれでしょう。しかし、新しいプロジェクトを始めることで、新しいアイデアを実現したり、スキルを磨いたり、社会に貢献することができるかもしれません。
 
-## やり方
+## はじめに
 
-まず、Haskellのコミュニティのサポートを受けるために、Haskellプロジェクトを始める前に、Haskellの基礎知識を身につけることが重要です。それから、以下のような手順で新しいプロジェクトを始めることができます。
+Haskellは純粋関数型プログラミング言語の一つであり、強力な型システムを持っています。今回は、Haskellを使って新しいプロジェクトを始める方法を紹介します。
 
-```
-Haskell 
-1. プロジェクトのディレクトリを作成する。
-2. プロジェクトのルートディレクトリに移動する。
-3. `stack new [プロジェクト名]` でプロジェクトを作成する。
-4. `cd [プロジェクト名]` でプロジェクトのディレクトリに移動する。
-```
+まずは、Haskellのコードを書くために必要な環境を整えましょう。Haskellの開発環境をインストールするためには、[Haskell Platform](https://www.haskell.org/platform/)をダウンロードしてインストールする必要があります。また、[Atom](https://atom.io/)や[Visual Studio Code](https://code.visualstudio.com/)などのエディターを使用することをおすすめします。
 
-これで、プロジェクトを始める準備が整いました。以下のようなコードを書くことで、Haskellのパワーを実感することができます。
+プロジェクトを始める前に、まずはプロジェクトの目的を明確にしましょう。どのような問題を解決するのか、どのような機能を実装するのか、どのようなユーザーを対象にするのか、などを考えることが重要です。目的が明確になれば、コードを書く際の方針も定まりやすくなります。
 
-```
-Haskell
-main :: IO ()
-main = do
-    putStrLn "こんにちは、世界！"
-```
+## ディープダイブ
 
-上記のコードを実行すると、`こんにちは、世界！`というメッセージが表示されます。
+新しいプロジェクトを始める際、まずはルートディレクトリーを作成し、その中に```src```と```test```のディレクトリーを作成しましょう。```src```ディレクトリーには、プロジェクトのコードを格納し、```test```ディレクトリーにはテストコードを格納します。
 
-## 深堀り
+次に、プロジェクトの依存関係を管理するために、[Cabal](https://www.haskell.org/cabal/)を使用します。```cabal init```コマンドを実行すると、プロジェクト用のCabalパッケージが作成されます。このパッケージには、プロジェクトの設定や依存関係などが記述されています。
 
-新しいプロジェクトを始めるときに気をつけるべきことはいくつかあります。まず、プロジェクトの目的や構造を明確に決めることが重要です。また、Haskellの関数型プログラミングスタイルに慣れることも大切です。さらに、Haskellの著名なライブラリーである`Hackage`を活用することで、プロジェクトをより効率的に進めることができます。
+さらに、Haskellのコードを書く際には、```ghci```コマンドを使用してREPLを起動することもできます。REPLを使用すると、コードを実行しながら試行錯誤することができます。
 
-## 関連リンク
+最後に、Haskellには豊富なライブラリーが用意されていますので、必要な機能を実装する際には、事前に調べて使いやすいライブラリーがあれば積極的に活用するようにしましょう。
+
+## See Also
 
 - [Haskell公式サイト](https://www.haskell.org/)
-- [Haskellの基礎知識](https://learn.hfm.io/)
-- [Hackage](https://hackage.haskell.org/)
+- [Haskell入門サイト](https://www.learnyouahaskell.com/)
+- [Real World Haskell](http://book.realworldhaskell.org/)
+- [Haskell Reddit](https://www.reddit.com/r/haskell_jp/)

@@ -1,43 +1,36 @@
 ---
-title:    "Haskell: Das aktuelle Datum erhalten"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/getting-the-current-date.md"
+title:                "Haskell: Das aktuelle Datum erhalten"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Abrufen des aktuellen Datums ist eine häufige Aufgabe in der Programmierung. Es kann nützlich sein, um bestimmte Funktionen abhängig vom Datum oder zur Erstellung von Zeitstempeln zu steuern.
+In der heutigen Zeit ist es üblich, dass wir auf unserem Computer oder Smartphone jederzeit die aktuelle Uhrzeit und das Datum abrufen können. Aber hast du dich schon einmal gefragt, wie diese Informationen eigentlich auf deinem Gerät erscheinen? In dieser Blog-Post werden wir uns mit der Programmierung von Haskell beschäftigen und lernen, wie wir das aktuelle Datum in unserer Software anzeigen können.
 
-## Wie
+## Wie geht das?
 
-Um das aktuelle Datum in Haskell abzurufen, müssen wir zunächst die `Data.Time` Bibliothek importieren. Dann können wir die `getCurrentTime` Funktion aufrufen, die uns ein `UTCTime` Objekt zurückgibt.
+Zunächst müssen wir in Haskell die `Data.Time` Bibliothek importieren, die uns verschiedene Funktionen und Datenstrukturen zur Verarbeitung von Datum und Uhrzeit bietet. Ein Beispielcode dafür sieht folgendermaßen aus:
 
 ```Haskell
 import Data.Time
 
-currentDate :: IO UTCTime
-currentDate = getCurrentTime
+main = do
+  now <- getCurrentTime -- Speichert die aktuelle Uhrzeit in der Variable "now"
+  let date = utctDay now -- Extrahiert das Datum aus der aktuellen Uhrzeit
+  putStrLn $ "Heute ist der " ++ show date -- Gibt das Datum in dem String aus
 ```
 
-Dieses Objekt enthält das aktuelle Datum und die Uhrzeit in der koordinierten Weltzeit (UTC). Wenn wir das Datum in einem anderen Zeitformat anzeigen möchten, können wir die `formatTime` Funktion verwenden.
+Wenn wir diesen Code ausführen, bekommen wir als Output das aktuelle Datum in der Form `2021-10-07` angezeigt. Natürlich können wir auch andere Formate verwenden, je nachdem wie wir das Datum darstellen möchten. Dafür stehen uns verschiedene Funktionen zur Verfügung, zum Beispiel `formatTime` oder `parseTimeM`.
 
-```Haskell
-import Data.Time.Format
+## Tiefere Einblicke
 
-dateString :: String
-dateString = formatTime defaultTimeLocale "%d.%m.%Y" currentDate
-```
-
-Dieser Code würde uns das Datum im Format "DD.MM.YYYY" als String zurückgeben. Wir können auch die `getCurrentTime` Funktion mit einem `TimeZone` Argument aufrufen, um das Datum in einer bestimmten Zeitzone zu erhalten.
-
-## Tiefgehende Einblicke
-
-Die `getCurrentTime` Funktion ruft tatsächlich die aktuelle Systemzeit vom Betriebssystem ab. Dies wird als "IO-Aktion" bezeichnet, da es eine Aktion im Eingabe/Ausgabe-System ist. Dies bedeutet, dass das Abrufen des aktuellen Datums immer eine geringe Wahrscheinlichkeit hat, dass es fehlschlägt oder sich verzögert, da es vom Betriebssystem abhängig ist. Es ist wichtig, dies bei der Verwendung des aktuellen Datums in kritischen Anwendungen zu berücksichtigen.
+Um das aktuelle Datum zu verstehen, müssen wir uns etwas tiefer in die verwendeten Datenstrukturen einarbeiten. In Haskell wird das Datum in der Form `UTCTime` dargestellt, welches aus einem `Day` und einer `DiffTime` besteht. Der `Day` beinhaltet das Datum, während die `DiffTime` die Differenz zur UTC-Zeit angibt. Die Funktion `getCurrentTime` gibt uns ein `UTCTime` Objekt zurück, welches wir dann mit verschiedenen Funktionen verarbeiten können.
 
 ## Siehe auch
 
-- Offizielle Dokumentation zu `Data.Time`: https://hackage.haskell.org/package/time/docs/Data-Time.html
-- Ein Tutorial zum Umgang mit Datum und Zeit in Haskell: https://wiki.haskell.org/Time_and_Date_Library
-- Weitere Ressourcen und Codebeispiele für die Arbeit mit Datum und Zeit: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/date-and-time
+- [Haskell Dokumentation zu Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Beispielcode zu Datum und Uhrzeit in Haskell](https://riptutorial.com/haskell/example/18941/date-and-time)

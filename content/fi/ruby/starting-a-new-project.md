@@ -1,47 +1,42 @@
 ---
-title:    "Ruby: Uuden projektin aloittaminen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/starting-a-new-project.md"
+title:                "Ruby: Uuden projektin aloittaminen"
+programming_language: "Ruby"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Oletko joskus halunnut aloittaa uuden ohjelmointiprojektin, mutta et ole ollut varma mistä aloittaa? Ruby on erinomainen ohjelmointikieli monipuoliseen käyttöön ja sen avulla on helppo luoda erilaisia projekteja. Tässä kirjoituksessa käymme läpi, miksi sinun kannattaa harkita uuden projektin aloittamista Rubylla.
+Miksi aloittaa uusi ohjelmointiprojekti? Hyvä kysymys. On monia syitä, miksi voit haluta aloittaa uuden projektin. Ehkä haluat oppia uusia ohjelmointitaitoja, luoda jotain omaa tai vain haastaa itseäsi uusien haasteiden parissa.
 
-# Kuinka aloittaa
+## Miten aloittaa
 
-Ensimmäiseksi tarvitset tietenkin Rubyn ohjelmointikielen asennettuna tietokoneellesi. Tämän jälkeen voit aloittaa uuden projektisi luomisen.
+Aloittaaksesi uuden projektin Rubyssa, tarvitset ensin Ruby-ohjelmointikielen ja kehitysympäristön, kuten RubyMine tai Visual Studio Code. Voit myös käyttää SaaS-palveluita, kuten Repl.it, jos haluat aloittaa nopeasti ilman ohjelmistojen asentamista.
 
-Vaihtoehto 1: Voit käyttää Ruby'ssa sisäänrakennettua `new`-komentoa uuden projektin luomiseen:
-
-
-```Ruby
-$ new project_name
-```
-
-Tämä luo uuden projektikansion nimeltä `project_name` nykyiseen hakemistoosi. Voit sitten siirtyä tähän kansioon ja aloittaa koodaamisen!
-
-Vaihtoehto 2: Voit myös alustaa uuden Git-repositorion ja luoda uuden Ruby-projektin samalla kertaa:
+Kun olet valinnut kehitysympäristön, voit aloittaa koodaamisen. Tässä on yksinkertainen esimerkki, joka tulostaa "Tervetuloa uuteen projektiin!" konsoliin:
 
 ```Ruby
-$ git init project_name
-$ cd project_name
-$ touch app.rb
+puts "Tervetuloa uuteen projektiin!"
 ```
-`touch`-komento luo uuden tiedoston `app.rb` projektikansioosi. Tämän jälkeen voit aloittaa koodaamisen.
+Tulosteen tulisi olla:
 
-# Syventyminen
+```
+Tervetuloa uuteen projektiin!
+```
 
-Uuden projektin aloittaminen Rubylla ei kuitenkaan rajoitu vain uuden projektikansion luomiseen. Voit myös käyttää jo olemassa olevia Ruby-työkaluja ja kirjastoja helpottamaan koodaamista ja lisäämään toiminnallisuutta projektiisi.
+Nyt voit luoda omia luokkia, metodeja ja funktioita ja rakentaa ohjelmasi haluamallasi tavalla.
 
-Jos tarvitset graafista käyttöliittymää, voit esimerkiksi kokeilla Ruby GUI -kirjastoa, joka tarjoaa valmiita työkaluja käyttöliittymän luomiseen Rubylla.
+## Syvällisempi sukellus
 
-Jos haluat luoda web-sovelluksen, voit käyttää Ruby on Rails -kehyksen tarjoamia työkaluja nopeuttamaan projektisi kehitystä.
+Uuden projektin aloittaminen voi tuntua pelottavalta ja haastavalta, mutta se on myös erittäin palkitsevaa. Muista aina suunnitella ja tutkia hyvin ennen koodaamisen aloittamista. Tutustu myös erilaisiin ohjelmointikäytäntöihin ja kodin ulkopuolisiin kirjastoihin, joita voit hyödyntää projektissasi.
 
-# Katso myös
+On myös tärkeää huolehtia koodin ylläpidettävyydestä ja dokumentoinnista, jotta muutkin voivat ymmärtää ja muokata koodiasi tarvittaessa. Muista myös käyttää versionhallintaa, kuten Git, jotta voit seurata tehdyt muutokset ja palata tarvittaessa aiempiin versioihin.
 
-- [Ruby:n virallinen verkkosivusto](https://www.ruby-lang.org/fi/)
-- [Ruby GUI -kirjasto](https://www.ruby-toolbox.com/categories/GUI_Frameworks)
-- [Ruby on Rails -kehys](https://rubyonrails.org/)
+## Katso myös
+
+- [Ruby-opas aloittelijoille](https://www.ruby-lang.org/fi/documentation/)
+- [Ruby oppimisresursseja](https://rubygarage.org/blog/how-to-learn-ruby-and-rails)
+- [Ruby-kirjastoja ja kehitystyökaluja](https://www.ruby-toolbox.com/)
+- [Git-opas](https://rogerdudler.github.io/git-guide/index.fi.html)

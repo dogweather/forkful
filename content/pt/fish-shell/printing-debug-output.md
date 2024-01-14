@@ -1,42 +1,37 @@
 ---
-title:    "Fish Shell: Saida de Debugging"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/printing-debug-output.md"
+title:                "Fish Shell: Imprimindo saída de depuração"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que usar o Fish Shell para imprimir saída de depuração?
+## Por que?
 
-Às vezes, durante o processo de desenvolvimento de um programa, nos deparamos com erros ou comportamentos inesperados. Para solucionar esses problemas, é importante ter uma maneira de verificar o que está acontecendo dentro do programa e onde exatamente está ocorrendo o erro. Aqui é onde entra a saída de depuração. Ao imprimir informações específicas no terminal, podemos entender melhor o fluxo do nosso programa e identificar possíveis erros.
+A impressão de saída de depuração é uma técnica fundamental para o desenvolvimento de software, pois permite que os programadores inspecionem o estado do programa em diferentes pontos de execução. Isso pode ser especialmente útil para identificar e corrigir erros.
 
-## Como usar o Fish Shell para imprimir saída de depuração?
-
-O Fish Shell possui uma funcionalidade integrada para imprimir saída de depuração, o comando "echo". Ele permite que imprimamos valores de variáveis, mensagens de erro ou qualquer outra informação que precisamos verificar. Vamos ver um exemplo simples de como usar o "echo" no Fish Shell:
+## Como fazer
 
 ```Fish Shell
-set nome "João"
-echo "Olá, meu nome é" $nome
+# Utilizar o comando echo para imprimir uma mensagem de depuração
+echo "Executou até aqui!"
+
+# Imprimir o conteúdo de uma variável
+set nome "Maria"
+echo "Olá, $nome! Seu saldo é de $saldo."
 ```
 
-Ao executar esse código, veremos a seguinte saída no terminal:
+A impressão de saída de depuração pode ser feita usando o comando `echo`, que imprimirá a mensagem especificada entre aspas. Também é possível imprimir o valor de uma variável usando a sintaxe `$variavel`. Isso pode ser útil para verificar o valor de variáveis em diferentes etapas do código.
 
-```
-Olá, meu nome é João
-```
+## Mergulho Profundo
 
-Perceba que utilizamos a variável $nome dentro do comando "echo". Isso nos permite imprimir seu valor atual e verificar se está correto. Além disso, podemos usar o "echo" em conjunto com estruturas de controle, como "if" e "for", para imprimir a saída apenas em determinadas condições ou repetidamente.
+Há muitas outras maneiras de imprimir saída de depuração no Fish Shell. O uso de `echo` é uma forma rápida e simples, mas também é possível formatar a saída com a função `printf`. Além disso, o Fish Shell oferece uma variedade de variáveis internas que podem ser usadas para imprimir informações úteis, como a hora atual ou o diretório atual do usuário.
 
-## Mergulho profundo: mais informações sobre a impressão de saída de depuração
+Além disso, é possível redirecionar a saída de depuração para um arquivo usando o operador `>` seguido pelo nome do arquivo. Isso pode ser útil para salvar registros de saída de depuração para referência posterior.
 
-Além do comando "echo", o Fish Shell também possui outras ferramentas para imprimir saída de depuração. Podemos usar o comando "printf" para formatar a saída e o comando "set -x" para habilitar o modo de depuração, que imprime todas as linhas de código executadas.
+## Veja também
 
-Outra opção útil é o redirecionamento de saída, que permite enviar a saída de um comando diretamente para um arquivo. Isso é especialmente útil para guardar a saída de depuração para futuras análises.
-
-O importante é lembrar que a impressão de saída de depuração deve ser usada com moderação e de forma estratégica. Imprimir muitas informações pode poluir o terminal e dificultar a análise. Por isso, é importante saber onde e quando utilizar essas ferramentas.
-
-# Veja também
-
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial do Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Exemplos de uso do Fish Shell](https://github.com/fish-shell/fish-shell/wiki/Examples-of-Use)
+- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
+- [Tutorial de introdução ao Fish Shell](https://www.learnshell.org/en/Fish_Shell)
+- [Guia de uso do comando `echo`](https://linuxize.com/post/bash-echo-command/)

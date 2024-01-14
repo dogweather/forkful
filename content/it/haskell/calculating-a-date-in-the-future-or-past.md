@@ -1,35 +1,47 @@
 ---
-title:    "Haskell: Calcolare una data nel futuro o nel passato."
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/calculating-a-date-in-the-future-or-past.md"
+title:                "Haskell: Calcolo di una data nel futuro o nel passato"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Calcolare una data nel futuro o nel passato può essere utile in diverse situazioni, come ad esempio nella gestione di calendari o nella pianificazione di eventi.
 
-Calcolare una data nel futuro o nel passato può essere utile in molte situazioni. Ad esempio, potresti voler sapere quale giorno della settimana cadrà il tuo compleanno in un determinato anno, o quando un dato evento si ripeterà in futuro. Inoltre, imparare a scrivere codice per calcolare date può aiutarti a sviluppare abilità di programmazione più avanzate.
+## Come Fare
+Per calcolare una data nel futuro o nel passato in Haskell, possiamo utilizzare la libreria `Data.Time`, che offre molte funzioni utili per la manipolazione del tempo e delle date.
 
-## Come fare
-
-Per calcolare una data nel futuro o nel passato in Haskell, è necessario utilizzare la biblioteca `Time`. Ecco un esempio di codice che calcola la data di oggi più 10 giorni e la stampa nel formato "DD/MM/YYYY":
+Per prima cosa, dobbiamo importare il modulo `Data.Time` nel nostro programma:
 
 ```Haskell
 import Data.Time
-
-today = getCurrentTime
-futureDate = fmap (addDays 10) today
-formattedDate = fmap (formatTime defaultTimeLocale "%d/%m/%Y") futureDate
-print formattedDate
 ```
 
-L'uscita di questo codice sarà `31/01/2021`, se eseguito il 21 gennaio 2021. Possiamo anche calcolare una data nel passato utilizzando `addDays (-10)`.
+Per calcolare una data nel futuro, possiamo utilizzare la funzione `addUTCTime` che accetta come parametri una quantità di secondi e una data di riferimento, e restituisce una nuova data corrispondente alla somma dei secondi specificati alla data di riferimento. Ad esempio:
+
+```Haskell
+addUTCTime (60*60*24) (UTCTime (fromGregorian 2021 1 1) 0)
+```
+Questa funzione calcolerà la data corrispondente a 24 ore dopo il primo gennaio 2021 (2021-01-02).
+
+Invece, se vogliamo calcolare una data nel passato, possiamo utilizzare la funzione `addUTCTimeNeg` che funziona allo stesso modo della funzione `addUTCTime`, ma sottrae la quantità di secondi specificata alla data di riferimento.
+
+Ad esempio, per ottenere la data corrispondente a un giorno prima del primo gennaio 2021, possiamo scrivere:
+
+```Haskell
+addUTCTimeNeg (60*60*24) (UTCTime (fromGregorian 2021 1 1) 0)
+```
 
 ## Approfondimento
+Oltre alle funzioni `addUTCTime` e `addUTCTimeNeg`, la libreria `Data.Time` offre anche molte altre funzioni utili per il calcolo delle date nel futuro o nel passato. Possiamo ad esempio utilizzare la funzione `addDays` per aggiungere o sottrarre un determinato numero di giorni da una data, oppure la funzione `addGregorianMonthsClip` per aggiungere o sottrarre un determinato numero di mesi, facendo attenzione a considerare anche gli anni bisestili.
 
-Per calcolare una data nel futuro o nel passato, è importante comprendere come Haskell gestisce le date. In Haskell, le date sono rappresentate utilizzando il tipo `UTCTime`, che rappresenta un momento specifico nel tempo in UTC. L'aggiunta di giorni o altri valori a una data avviene utilizzando le funzioni `addDays` e `addUTCTime`, rispettivamente. Inoltre, il formato di visualizzazione delle date è gestito dalla funzione `formatTime`, che accetta un formato desiderato e una data da formattare.
+Inoltre, possiamo utilizzare la funzione `diffUTCTime` per calcolare la differenza in secondi tra due date, e così via.
 
-## Vedi anche
+Per ulteriori informazioni sulle funzioni disponibili nella libreria `Data.Time`, si può consultare la documentazione ufficiale su Hackage: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time).
 
-- [Documentazione di Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Esempi di Codice per Calcolare Date in Haskell](https://www.organicdesign.co.nz/Calculating_dates_in_Haskell)
+## Vedi Anche
+- [https://www.haskell.org/tutorial/io.html](https://www.haskell.org/tutorial/io.html)
+- [http://book.realworldhaskell.org/read/io.html](http://book.realworldhaskell.org/read/io.html)
+- [https://www.tutorialspoint.com/haskell/haskell_date_time.htm](https://www.tutorialspoint.com/haskell/haskell_date_time.htm)

@@ -1,43 +1,46 @@
 ---
-title:    "PHP: Sattumanvaraisten numeroiden generoiminen"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/generating-random-numbers.md"
+title:                "PHP: Satunnaislukujen luominen"
+programming_language: "PHP"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Random-numeroiden generointi on hyödyllistä ja välttämätöntä monissa ohjelmointiprojekteissa. Se voi lisätä vaihtelevuutta ja arvaamattomuutta sovellukseesi, mikä tekee siitä turvallisemman ja viihdyttävämmän käyttäjille.
 
-Satunnaislukujen luominen on tärkeä osa monia ohjelmointitehtäviä, kuten pelejä, salausmenetelmiä ja data-analyysiä. Satunnaislukujen avulla voidaan luoda ennakoimattomia ja monipuolisia tuloksia, jotka tekevät ohjelmista mielenkiintoisempia ja turvallisempia.
-
-## Kuinka
+## Miten
+Random-numeroiden generointi on helppoa PHP:lla hyödyntäen valmiita toimintoja. Voit käyttää esimerkiksi `rand()`-funktiota, joka palauttaa satunnaisen kokonaisluvun annetulta väliltä. Katso alla olevia esimerkkejä ja niiden tulosteita.
 
 ```PHP
-// Satunnaisen kokonaisluvun generointi
-rand();
-
-// Satunnaisen desimaaliluvun generointi annetulta väliltä
-rand(10, 100);
-
-// Satunnaisen merkkijonon generointi määritellyn pituuden ja merkkejoukon avulla
-$characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$result = substr(str_shuffle($characters), 0, 8);
-
-echo $result; // tulostaa esimerkiksi "oPGeslJd"
-
-// Satunnaisen boolean-arvon generointi
-(bool)rand(0, 1); // palauttaa joko true tai false
+// Palauttaa satunnaisen kokonaisluvun väliltä 1-10
+echo rand(1, 10); // Esim. 7
 ```
 
-Lopputulos voi vaihdella jokaisella kerralla, kun koodia suoritetaan. Näin saadaan luotua arvaamattomia tuloksia, jotka tekevät ohjelmista mielenkiintoisempia.
+```PHP
+// Palauttaa satunnaisen numerojoukon väliltä 1000-9999
+echo rand(1000, 9999); // Esim. 4687
+```
 
-## Syvällinen sukellus
+Kokeile myös `mt_rand()`-funktiota, joka käyttää parempaa algoritmia satunnaislukujen generointiin.
 
-PHP:ssä on käytössä useita suuria satunnaislukugeneraattoreita, kuten `mt_rand()` ja `random_int()`, jotka ovat tehokkaampia kuin yksinkertainen `rand()`. Näiden generoimia lukuja pidetään myös turvallisempina, sillä niiden luonteesta tullee vaikeammin arvattavia.
+```PHP
+// Palauttaa satunnaisen kokonaisluvun väliltä 1-10
+echo mt_rand(1, 10); // Esim. 3
+```
 
-On myös tärkeää huomata, että satunnaislukujen generointiin käytettävät algoritmit ovat matemaattisia ja siten eivät voi olla täysin arvaamattomia. Esimerkiksi `rand()` käyttää standardoimatonta Mersenne Twister -generaattoria, mikä tarkoittaa, että suuri määrä generoituja lukuja voisi potentioida koodin ennustettavuutta.
+```PHP
+// Palauttaa satunnaisen numerojoukon väliltä 1000-9999
+echo mt_rand(1000, 9999); // Esim. 8175
+```
+
+## Deep Dive
+Satunnaislukujen generointi ei kuitenkaan ole täysin sattumanvaraista. Ohjelmoinnissa käytettävät algoritmit eivät pysty luomaan täysin satunnaisia lukuja, vaan ne perustuvat matemaattisiin kaavoihin. Lisäksi muuttujat ja tietokoneen kelloa käytetään usein generointiprosessissa.
+
+Täysin satunnaisia lukuja voidaan kuitenkin lähestyä esimerkiksi käyttämällä ulkoisia tekijöitä, kuten tietokoneen lämpötilaa tai verkkoliikennettä, generointiprosessissa.
 
 ## Katso myös
-
-- PHP:n virallinen dokumentaatio satunnaislukujen generoinnista: https://www.php.net/manual/en/function.rand.php
-- Artikkeli parhaista tavoista generoida satunnaislukuja PHP:ssä: https://stackoverflow.com/questions/550023/generate-a-random-number-within-range/54695033#54695033
+- [PHP:n virallinen rand() -dokumentaatio (englanniksi)](https://www.php.net/manual/en/function.rand.php)
+- [PHP:n virallinen mt_rand() -dokumentaatio (englanniksi)](https://www.php.net/manual/en/function.mt-rand.php)
+- [Satunnaislukujen generoinnin periaatteet (englanniksi)](https://medium.com/@ refurb66/how-do-computers-generate-random-numbers-4f43051107b6)

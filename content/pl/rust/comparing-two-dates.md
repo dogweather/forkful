@@ -1,60 +1,49 @@
 ---
-title:    "Rust: Porównywanie dwóch dat."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/comparing-two-dates.md"
+title:                "Rust: Porównywanie dwóch dat"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Porównywanie dat jest niezbędnym elementem programowania. Często musimy porównywać daty w celu sprawdzenia, czy dany event już się wydarzył, czy też nie. W Rust istnieje wiele sposobów na porównywanie dat, więc warto poznać je wszystkie, aby mieć wybór w zależności od potrzeb.
+Jeśli jesteś programistą, z pewnością spotkałeś już sytuację, w której musiałeś/musiałaś porównać dwa daty. Czy kiedykolwiek zastanawiałeś się, jak w prosty sposób można to zrobić w języku Rust? W tym artykule pokażę Ci kilka przykładów porównywania dat w Rust oraz wyjaśnię, dlaczego może być to przydatne w Twoich projektach.
 
 ## Jak to zrobić
 
-W Rust istnieje kilka metod porównywania dat. Jedną z nich jest użycie metody `.cmp()`, która zwraca Enum `std::cmp::Ordering`. Możemy również użyć dostępnych operatorów porównania, takich jak `<`, `>`, `<=`, `>=`, `==`, `!=`. W przykładzie poniżej przyjrzymy się jak porównywać daty za pomocą tych metod:
+Porównywanie dat w Rust jest bardzo proste. Wystarczy użyć wbudowanych bibliotek do pracy z datami oraz kilku funkcji dostępnych w języku. Przedstawiam Ci przykładowy kod:
 
 ```Rust
-use std::cmp::Ordering;
+use std::time::{SystemTime, UNIX_EPOCH};
 
-fn main() {
-    let date1 = chrono::NaiveDate::from_ymd(2021, 10, 1);
-    let date2 = chrono::NaiveDate::from_ymd(2021, 8, 15);
+// Obecna data
+let now = SystemTime::now()
+	.duration_since(UNIX_EPOCH)
+	.expect("Nieprawidłowy czas");
 
-    // Porównujemy daty za pomocą metody .cmp()
-    match date1.cmp(&date2) {
-        Ordering::Less => println!("{} jest wcześniejsza od {}", date1, date2),
-        Ordering::Greater => println!("{} jest późniejsza od {}", date1, date2),
-        Ordering::Equal => println!("{} jest taka sama jak {}", date1, date2)
-    }
+// Data do porównania
+let compare_date = UNIX_EPOCH
+	+ Duration::from_secs(1000000);
 
-    // Porównujemy daty za pomocą operatora >
-    if date1 > date2 {
-        println!("{} jest późniejsza od {}", date1, date2)
-    }
-
-    // Porównujemy daty za pomocą operatora ==
-    if date1 == date2 {
-        println!("{} jest taka sama jak {}", date1, date2)
-    }
+// Porównanie dat
+if now < compare_date {
+	println!("Data obecna jest wcześniej niż ta do porównania.");
+} else {
+	println!("Data obecna jest później niż ta do porównania.");
 }
-```
-
-Powyższy kod wypisze:
 
 ```
-2021-10-01 jest późniejsza od 2021-08-15
-2021-10-01 jest późniejsza od 2021-08-15
-```
+
+W powyższym przykładzie korzystamy z biblioteki `std::time` oraz funkcji `now()` i `expect()` do pobrania bieżącej daty oraz funkcji `from_secs()` do ustawienia daty do porównania. Następnie porównujemy je za pomocą operatora porównania `<` i wyświetlamy odpowiednią informację. 
 
 ## Deep Dive
 
-Warto również zwrócić uwagę na fakt, że w Rust porównywanie dat odbywa się w oparciu o kalendarz gregoriański. To ważne, ponieważ w niektórych kalendarzach różnica między dwoma datami może wynosić mniej niż dzień, a w innych nawet kilka dni.
+Porównywanie dat może być przydatne w wielu przypadkach, na przykład w systemach rezerwacji, gdzie trzeba sprawdzać dostępność terminów, czy też w aplikacjach finansowych, gdzie trzeba upewnić się, że operacje finansowe są wykonywane w odpowiednim czasie. W języku Rust porównywanie dat jest bardzo wygodne i intuicyjne, co ułatwia pracę z tym elementem w projektach.
 
-W przypadku porównywania dat i czasów, możemy wykorzystać bibliotekę `chrono`, która jest najpopularniejszym narzędziem do pracy z datami w Rust. Możemy również użyć jej w połączeniu z metodą `Duration` do obliczenia różnicy między dwoma datami lub dodania lub odjęcia czasu do dat. Warto też zwrócić uwagę na obsługę stref czasowych i zamianę dat na różne formaty.
+## Zobacz również
 
-## Zobacz także
-
-- [Dokumentacja biblioteki `chrono`](https://docs.rs/chrono/)
-- [Porównywanie i obliczanie czasów w Rust](https://medium.com/@azummo/porównywanie-i-obliczanie-czasów-w-rust-47818b1ec1af)
-- [Kalendarze w Rust](https://www.youtube.com/watch?v=g8R-7Q83PiE)
+- [Przewodnik po bibliotekach do pracy z datami w języku Rust](https://doc.rust-lang.org/std/time/index.html)
+- [Porównywanie dat w języku Rust na przykładzie projektu](https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)
+- [Kurs języka Rust - zaawansowane techniki manipulacji datami](https://www.tutorialspoint.com/rust/rust_date_time.htm)

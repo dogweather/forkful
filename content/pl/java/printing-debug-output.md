@@ -1,51 +1,37 @@
 ---
-title:    "Java: Drukowanie wyników debugowania"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/printing-debug-output.md"
+title:                "Java: Wydrukowanie wyników debugowania"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Debugowanie jest nieodłączną częścią pisania kodu w Javie i może okazać się bardzo pomocne w chwilach trudności. Dlatego drukowanie komunikatów debugujących jest ważnym narzędziem dla programistów w celu znalezienia i naprawienia błędów w kodzie.
+Pisanie kodu to część pracy każdego programisty, ale równie ważne jest umiejętne debugowanie. Jedną z wielu przydatnych technik debugowania jest wyświetlanie treści do celów diagnostycznych, zwane także "debug output". Dzięki niemu możemy śledzić wartości zmiennych i krok po kroku analizować działanie naszego programu. W tym artykule dowiesz się, dlaczego warto korzystać z tej techniki i jak to zrobić.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Istnieje wiele sposobów drukowania komunikatów debugujących w Javie, ale najprostszym i najczęściej stosowanym jest użycie metody `System.out.println()`. Pozwala ona na wyświetlenie tekstu lub wartości zmiennych w miejscu, gdzie została wywołana.
-
-Przykład:
+Aby wyświetlać debug output w Javie, możemy skorzystać z klasy `System` i metody `out.println()`, która przyjmuje jako argument dowolny obiekt i wyświetli jego wartość jako String. W ten sposób możemy szybko sprawdzić działanie naszego kodu i śledzić wartości zmiennych w różnych etapach programu. Przykłady kodu i odpowiedzi na konsoli wyglądają następująco:
 
 ```Java
-System.out.println("To jest przykładowy komunikat debugujący");
-int liczba = 10;
-System.out.println("Wartość zmiennej liczba to: " + liczba);
+int x = 5;
+System.out.println("Wartość x to: " + x);
 ```
 
-Output:
-
-To jest przykładowy komunikat debugujący
-Wartość zmiennej liczba to: 10
-
-Można również wykorzystać metodę `System.out.printf()`, która umożliwia formatowanie wyświetlanego tekstu, na przykład:
-
-```Java
-System.out.printf("Tekst: %s, liczba: %d, zmiennoprzecinkowa: %f", "Java", 10, 10.5);
+```
+Wartość x to: 5
 ```
 
-Output:
-Tekst: Java, liczba: 10, zmiennoprzecinkowa: 10.5
+Możemy także wyświetlać debug output w większej ilości miejsc w naszym kodzie, aby dokładniej prześledzić działanie programu. Pamiętaj jednak, aby usuwać te wywołania przed przekazaniem kodu do produkcji, ponieważ nie są one potrzebne w wersji finalnej i mogą spowolnić działanie aplikacji.
 
 ## Deep Dive
 
-Drukowanie komunikatów debugujących jest szczególnie przydatne, gdy chcemy monitorować stan wykonania naszego programu i sprawdzić wartości zmiennych w określonych momentach. Może to pomóc nam zidentyfikować potencjalne błędy i zrozumieć, jak nasz kod działa w danym momencie.
+Wyświetlanie debug output to ogromnie przydatna technika, ale należy pamiętać o kilku ważnych rzeczach. Po pierwsze, musimy pamiętać o usuwaniu wywołań tego typu przed dostarczeniem kodu do użytku, ponieważ nie są one potrzebne w wersji finalnej i mogą utrudnić odnalezienie błędów. Po drugie, ważne jest stosowanie odpowiednich komunikatów i czytelnych nazw zmiennych, aby łatwiej było analizować debug output. Po trzecie, pamiętajmy, że debug output jest tylko jedną z wielu technik debugowania i nie powinien zastępować innych narzędzi, takich jak debuger czy logowanie.
 
-W Javie istnieje również możliwość ustawienia poziomu wyświetlanych komunikatów debugujących za pomocą metody `System.setOut()`. Pozwala to na precyzyjne kontrolowanie wyświetlanych informacji w zależności od potrzeb.
+## Zobacz także
 
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o drukowaniu komunikatów debugujących w Javie, zapoznaj się z poniższymi linkami:
-
-- [Java Debugging Tutorial](https://www.baeldung.com/java-debugging)
-- [Using the printf Method in Java](https://www.baeldung.com/java-printf)
-- [Debugging and Troubleshooting in Java](https://stackify.com/java-debugging-tips/)
+- [Jak debugować w Javie](https://www.codejava.net/coding/10-techniques-to-debug-java-program)
+- [Wyświetlanie informacji w konsoli](https://javastart.pl/jaki-konsoli-uzywa-sie-w-javie/)
+- [Przydatne narzędzia do debugowania](https://github.com/takipi/awesome-java-debugging)

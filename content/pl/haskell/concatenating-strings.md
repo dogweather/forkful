@@ -1,35 +1,58 @@
 ---
-title:    "Haskell: Łączenie łańcuchów znaków"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/concatenating-strings.md"
+title:                "Haskell: Lączenie ciągów znaków"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Istnieją wiele różnych powodów, dla których programiści używają konkatencji łańcuchów w swoich projektach Haskell. Jednym z najważniejszych jest możliwość łączenia różnych fragmentów tekstu w jeden logicznie spójny tekst, co może być niezbędne w przypadku tworzenia, na przykład, generowanych dynamicznie raportów lub komunikatów użytkownikowi.
-
-Jednak konkatencja łańcuchów może również być wykorzystywana w celach czysto estetycznych, w celu poprawienia czytelności kodu, dzięki użyciu jednego ciągu zamiast wielu oddzielnych fragmentów. W końcu, pisanie krótszego i bardziej przejrzystego kodu jest zawsze korzystne.
+Witajcie! W dzisiejszym poście zobaczymy, dlaczego tak ważną z funkcji w Haskellu jest łączenie stringów. Jeśli jesteś programistą i zastanawiasz się, dlaczego warto się tego nauczyć, to ten artykuł jest dla Ciebie!
 
 ## Jak to zrobić
 
-Konkatencja łańcuchów w Haskell jest wykonywana za pomocą operatora `++`. Możemy użyć go do łączenia łąńcuchów, na przykład:
+Jedną z najbardziej podstawowych funkcji w Haskellu jest concat, która służy do łączenia różnych stringów w jeden. Możemy to zrobić za pomocą operatora ++ lub funkcji concat. Przykładowy kod i jego wyjście wyglądać będzie następująco:
 
 ```Haskell
-"Pierwszy łańcuch " ++ "Drugi łańcuch"
+-- Przykładowy kod łączący stringi
+-- Operator ++
+"Hello " ++ "world"
+-> "Hello world"
+
+-- Funkcja concat
+concat ["Hello", " ", "world"]
+-> "Hello world"
 ```
 
-Operator `++` może również być wykorzystany do łączenia łańcuchów z innymi typami danych, takimi jak Int czy Bool. Jednak należy pamiętać, że typy muszą być zgodne, w przeciwnym razie Haskell nie będzie w stanie wykonać operacji.
+W przypadku łączenia większej liczby stringów, możemy wykorzystać funkcję concat z listą stringów jako argumentem, lub też zastosować funkcję join z biblioteki Data.List. Przykładowy kod i jego wyjście przedstawione jest poniżej:
 
-## Głębszy wgląd
+```Haskell
+-- Wykorzystanie funkcji concat
+concat ["Hello", " ", "world", "!"]
+-> "Hello world!"
 
-W przypadku przekazywania do operatora `++` więcej niż dwóch argumentów, Haskell będzie wykonywał wewnątrz zagnieżdżane wykonania, co oznacza, że ​​najpierw zostaną połączone pierwsze dwa argumenty, a następnie wynik będzie połączony z kolejnym argumentem i tak dalej.
+-- Wykorzystanie funkcji join
+import Data.List (join)
+join ", " ["Hello", "world", "!"]
+-> "Hello, world, !"
+```
 
-Ponadto, operator `++` można również zapisywać w ten sposób: `[Łańcuch 1, Łańcuch 2, ..., Łańcuch n] ++ [Łańcuch (n+1), Łańcuch (n+2), ..., Łańcuch m]`, co jest szczególnie przydatne, gdy chcemy połączyć wiele łańcuchów w jednym miejscu.
+Na koniec warto wspomnieć o funkcji show, która pozwala na łączenie stringów z innymi danymi, jak na przykład liczbami. Dzięki temu możemy wyświetlać teksty i zmienne w jednej linii. Przykładowy kod i jego wyjście wyglądać będzie tak:
+
+```Haskell
+-- Wykorzystanie funkcji show
+"Hello " ++ show 2020 ++ "!"
+-> "Hello 2020!"
+```
+
+## Wnikliwe spojrzenie
+
+W Haskellu istnieje wiele sposobów na łączenie stringów, jednak warto zwrócić uwagę, że nie jest to operacja zoptymalizowana pod względem wydajności. Dzieje się tak dlatego, że stringi w Haskellu są listami znaków, a listy w tym języku są leniwe, co oznacza, że niektóre operacje nie są wykonywane do momentu,aż dane są faktycznie potrzebne. W przypadku łączenia stringów, operacja ta może być wykonywana wielokrotnie, co wpływa na wydajność programu.
 
 ## Zobacz także
 
-- [Dokumentacja Haskell o konkatencji łańcuchów](https://www.haskell.org/tutorial/strings.html#concatenation)
-- [Kalkulator Haskell dla konkatencji łańcuchów](https://www.haskell.org/hoogle/?hoogle=concat)
-- [Przykład użycia operatora ++](https://stackoverflow.com/questions/27078498/how-to-concatenate-two-string-in-haskell)
+- [Haskell concat function documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#g:18)
+- [Haskell Data.List module documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html)
+- [Haskell show function documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#g:5)

@@ -1,79 +1,56 @@
 ---
-title:    "Python: Ein Datum in der Zukunft oder Vergangenheit berechnen"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/calculating-a-date-in-the-future-or-past.md"
+title:                "Python: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann hilfreich sein, um beispielsweise Termine zu planen oder Daten für bestimmte Analysen zu sammeln.
+Das Berechnen von zukünftigen oder vergangenen Daten ist eine nützliche Fähigkeit für Programmierer, die in vielen Projekten nützlich sein kann. Egal ob es um die Planung von Events oder das Erstellen von Zeitreihen geht, das Berechnen von Datumsangaben kann den Umgang mit Datumswerten erleichtern.
 
-## Wie geht man vor?
+## Wie man es macht
 
-Die Berechnung eines Datums in der Zukunft oder Vergangenheit in Python ist ganz einfach. Zunächst müssen wir das `datetime` Modul importieren:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zunächst das `datetime` Modul von Python importieren. Dann können wir die Funktion `date` verwenden, um ein Datum zu erstellen und mit Hilfe von `timedelta` können wir eine Anzahl an Tagen für die Berechnung angeben.
 
 ```Python
 import datetime
+
+zukunfts_datum = datetime.date(2021, 10, 1)
+vergangenheits_datum = datetime.date(2018, 3, 15)
+
+differenz = datetime.timedelta(days=30)
+
+zukuenftiges_datum = zukunfts_datum + differenz
+vergangenes_datum = vergangenheits_datum - differenz
+
+print(zukuenftiges_datum)
+print(vergangenes_datum)
 ```
 
-Als Nächstes können wir ein bestimmtes Datum als `datetime` Objekt erstellen und der Variablen `datum` zuweisen:
+Die Ausgabe dieses Codes wären die Daten: `2021-10-31` und `2018-02-15`. Unsere Differenz von 30 Tagen wurde jeweils zu unserem Startdatum addiert bzw. subtrahiert, um die zukünftigen bzw. vergangenen Daten zu erhalten. 
+
+## Tiefer eintauchen
+
+Es ist auch möglich, nicht nur mit Tagen sondern auch mit Stunden, Minuten und Sekunden zu rechnen. Hierfür können wir die Funktion `datetime` verwenden, anstatt `date`.
 
 ```Python
-datum = datetime.datetime(2021, 10, 15)
+import datetime
+
+aktueller_zeitpunkt = datetime.datetime.now()
+
+zukuenftiger_zeitpunkt = aktueller_zeitpunkt + datetime.timedelta(hours=3, minutes=35)
+vergangener_zeitpunkt = aktueller_zeitpunkt - datetime.timedelta(minutes=10)
+
+print(zukuenftiger_zeitpunkt)
+print(vergangener_zeitpunkt)
 ```
 
-Um nun ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die `timedelta` Funktion verwenden. Diese Funktion erwartet als Argument eine Anzahl an Tagen, Wochen, Monaten oder Jahren. Wir können auch verschiedene Kombinationen von Zeiteinheiten angeben.
-
-```Python
-zukuenftiges_datum = datum + datetime.timedelta(days=30)
-vergangenes_datum = datum - datetime.timedelta(weeks=2)
-```
-
-Um das Ergebnis auszugeben, können wir einfach die `print` Funktion verwenden:
-
-```Python
-print("Das zukünftige Datum ist:", zukuenftiges_datum)
-print("Das vergangene Datum war:", vergangenes_datum)
-```
-
-Das resultierende Output sieht folgendermaßen aus:
-
-```
-Das zukünftige Datum ist: 2021-11-14 00:00:00
-Das vergangene Datum war: 2021-09-15 00:00:00
-```
-
-## Tiefergehende Informationen
-
-Das `datetime` Modul bietet noch weitere nützliche Funktionen für die Arbeit mit Datumsangaben. So können wir beispielsweise das aktuelle Datum und die aktuelle Uhrzeit mit der Funktion `now` abrufen:
-
-```Python
-aktuelles_datum = datetime.datetime.now()
-```
-
-Außerdem gibt es die `strftime` Funktion, mit der wir ein `datetime` Objekt in ein bestimmtes Datumsformat umwandeln können. Diese Funktion erwartet als Argument einen sogenannten Formatstring, der die gewünschte Darstellung des Datums definiert. Einige häufig verwendete Codes sind:
-
-- `%d` für Tag (zweistellig)
-- `%m` für Monat (zweistellig)
-- `%Y` für Jahr (vierstellig)
-- `%H` für Stunde (zweistellig, 24-Stunden-Format)
-- `%M` für Minute (zweistellig)
-- `%S` für Sekunde (zweistellig)
-
-Ein Beispiel für die Verwendung dieser Funktion wäre:
-
-```Python
-print("Heute ist der", aktuelles_datum.strftime('%d.%m.%Y'))
-```
-
-Das Ergebnis wäre dann beispielsweise `Heute ist der 27.10.2021`.
-
-Weitere Informationen und Möglichkeiten des `datetime` Moduls können in der offiziellen Dokumentation von Python gefunden werden.
+Die Ausgabe dieses Codes wäre ein zukünftiger Zeitpunkt, der 3 Stunden und 35 Minuten später als der aktuelle Zeitpunkt liegt, sowie ein vergangener Zeitpunkt, der 10 Minuten früher als der aktuelle Zeitpunkt liegt.
 
 ## Siehe auch
 
-- [Offizielle Dokumentation des `datetime` Moduls](https://docs.python.org/de/3/library/datetime.html)
-- [Tutorial zur Arbeit mit Datumsangaben in Python](https://www.python-kurs.eu/python3_formatierte_ausgabe.php) (auf Deutsch)
-- [Beispiele zur Verwendung von `timedelta`](https://www.geeksforgeeks.org/python-datetime-timedelta-function/) (auf Englisch)
+- Offizielle Dokumentation zum `datetime` Modul: https://docs.python.org/3/library/datetime.html
+- Weitere Informationen über die `timedelta` Funktion: https://docs.python.org/3/library/datetime.html#timedelta-objects

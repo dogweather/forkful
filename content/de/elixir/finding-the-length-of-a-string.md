@@ -1,39 +1,47 @@
 ---
-title:    "Elixir: Die Länge eines Strings finden"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/finding-the-length-of-a-string.md"
+title:                "Elixir: Die Länge eines Strings finden"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Finden der Länge einer Zeichenkette scheint auf den ersten Blick eine einfache Aufgabe zu sein, aber es ist ein grundlegender Schritt beim Schreiben von effektivem Code. Es ist wichtig, die Länge einer Zeichenkette zu kennen, um z.B. die richtige Formatierung oder Validierung von Eingaben zu gewährleisten.
+Das Finden der Länge einer Zeichenkette mag auf den ersten Blick trivial erscheinen, aber es ist eine wichtige Fähigkeit für jeden Elixir Programmierer. Indem man die Länge einer Zeichenkette bestimmt, kann man z.B. überprüfen, ob eine Eingabe die erwartete Länge hat oder ob eine Zeichenkette länger oder kürzer als eine bestimmte Anzahl von Zeichen ist.
 
-## Wie man die Länge einer Zeichenkette in Elixir finden kann
+## Wie man die Länge einer Zeichenkette berechnet
 
-```Elixir
-# Beispieldaten definieren
-string = "Hallo Welt!"
+Das Berechnen der Länge einer Zeichenkette ist einfach in Elixir. Wir können die Funktion `String.length/1` verwenden, die uns die Anzahl der Zeichen in der Zeichenkette zurückgibt. Betrachten wir dieses Beispiel:
 
-# Verwendung der Funktion String.length()
-length = String.length(string)
-
-# Ausgabe der Länge der Zeichenkette
-IO.puts("Die Länge der Zeichenkette ist: #{length}")
-
-# Ausgabe: Die Länge der Zeichenkette ist: 11
+```elixir
+length = String.length("Hallo Welt!")
+IO.puts "Die Länge der Zeichenkette beträgt #{length} Zeichen."
 ```
 
-Um die Länge einer Zeichenkette in Elixir zu finden, können wir die vordefinierte Funktion `String.length()` verwenden. Diese Funktion gibt die Anzahl der Zeichen in einer Zeichenkette zurück.
+Dies gibt uns die Ausgabe:
 
-## Tiefere Einblicke
+`Die Länge der Zeichenkette beträgt 11 Zeichen.`
 
-Beim Finden der Länge einer Zeichenkette ist es wichtig zu beachten, dass nicht alle Zeichen gleich gezählt werden. In Elixir werden Zeichen mit einzelnen Bytes gezählt, was bedeutet, dass z.B. Buchstaben mit Akzenten oder spezielle Zeichen möglicherweise aus mehr als einem Byte bestehen und somit als mehrere Zeichen gezählt werden.
+Wir können auch die `length/1` Funktion auf eine Zeichenkette anwenden, die wir aus einer anderen Funktion erhalten haben:
 
-Eine weitere wichtige Funktion beim Umgang mit Zeichenketten ist `String.codepoints()`, die eine Liste der einzelnen Codepoints (numerische Darstellung eines Zeichens) zurückgibt. Mit dieser Funktion können wir die Anzahl der Zeichen in einer Zeichenkette genauer ermitteln.
+```elixir
+name = "Maria"
+greeting = "Hallo, #{name}!"
+length = String.length(greeting)
+```
+
+Die Variable `length` wird den Wert `10` enthalten, da der Name "Maria" insgesamt fünf Zeichen hat und die gesamte Zeichenkette "Hallo, " zusätzlich noch fünf Zeichen hat.
+
+## Vertiefung
+
+Bei der Berechnung der Länge einer Zeichenkette gibt es ein paar Dinge zu beachten. Zunächst einmal gibt `String.length/1` die Anzahl der Unicode-Zeichen in einer Zeichenkette zurück und nicht die Anzahl der Bytes. Das bedeutet, dass Zeichen mit Akzenten oder anderen diakritischen Zeichen als ein einzelnes Zeichen gezählt werden, während sie in der tatsächlichen Speicherung möglicherweise aus mehreren Bytes bestehen.
+
+Außerdem sollten wir beachten, dass bestimmte Sonderzeichen in einer Zeichenkette als zwei Unicode-Zeichen gezählt werden können. Zum Beispiel wird das Emoji "❤️" als zwei Zeichen gezählt, obwohl es nur ein Emoji ist. Dies ist wichtig zu wissen, wenn wir die Länge einer Zeichenkette mit bestimmten Einschränkungen überprüfen möchten, z.B. wenn wir eine Zeichenkette auf Twitter mit maximal 280 Zeichen posten möchten.
 
 ## Siehe auch
 
-- [Elixir Dokumentation zu String.length()](https://hexdocs.pm/elixir/String.html#length/1)
-- [Elixir Dokumentation zu String.codepoints()](https://hexdocs.pm/elixir/String.html#codepoints/1)
+- Die offizielle Elixir Dokumentation für die `String.length/1` Funktion: https://hexdocs.pm/elixir/String.html#length/1 
+- Elixir School: https://elixirschool.com/de/lessons/basics/strings/ 
+- Eine Übersicht über Unicode-Zeichen: https://unicode-table.com/de/

@@ -1,66 +1,42 @@
 ---
-title:    "Elm: 计算未来或过去的日期"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: 计算未来或过去的日期"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么
+# 为什么
 
-在编程世界中，我们经常需要计算未来或过去的日期。这可能是为了创建日历应用程序，或者是为了预测特定日期的发生事件。无论原因如何，学习如何用Elm编程语言计算日期是一个有用的技能。
+在日常的编程过程中，我们常常会遇到需要计算未来或过去日期的情况。例如，我们可能需要计算某个事件距离当前日期多久，或是在给定一个日期，计算出该日期的前一天或后一天是哪一天。此时，使用 Elm 来进行日期计算是一个非常方便的选择。它提供了简洁、可靠的方法来处理日期以及与日期相关的操作。
 
-##如何做
+# 如何使用
 
-要计算未来或过去的日期，我们需要使用一些预定义的函数和数据类型。首先，我们需要导入Date模块：
+为了计算未来或过去的日期，我们需要使用 Elm 的 [Date 模块](https://package.elm-lang.org/packages/elm-lang/core/latest/Date)。它提供了一组函数来处理日期，包括创建日期、解析日期、以及计算日期间的差值等。下面是一个计算未来日期的示例代码：
 
-```Elm
+```elm
 import Date exposing (..)
+
+-- 创建日期
+let current = fromCalendarDate 2021 10 20
+
+-- 计算未来5天的日期
+let future = add (days 5) current
 ```
 
-接下来，我们可以用以下函数来创建一个日期：
+在上面的代码中，我们首先使用 `fromCalendarDate` 函数来创建了一个日期，然后使用 `add` 函数来计算出距离当前日期5天后的日期。最后，我们可以通过 `toString` 函数将日期转换成字符串格式，方便输出。
 
-```Elm
-date : Int -> Int -> Int -> Date
-```
+另外，如果我们想要计算过去的日期，只需要将 `add` 函数的参数改为负数即可。例如，`add (days -5) current` 将会计算距离当前日期5天前的日期。
 
-这个函数接受年、月、日作为输入，并返回一个日期对象。例如，要创建2021年5月10日的日期，我们可以这样写：
+# 深入探讨
 
-```Elm
-date 2021 5 10
-```
+在 Date 模块中，还有一些其他有用的函数，例如 `toTime` 函数可以将日期转换成 Unix 时间戳，`dayOfWeek` 函数可以获取日期是星期几，以及 `isBefore` 和 `isAfter` 函数可以比较两个日期的先后顺序等。掌握这些函数的使用方法，可以让我们更加灵活地处理日期计算的需求。
 
-除此之外，我们还可以使用以下函数来计算未来或过去的日期：
+除了 Date 模块外，在 [Time 模块](https://package.elm-lang.org/packages/elm-lang/core/latest/Time) 中也提供了一些与日期相关的函数，例如 `toString` 函数可以将 Date 类型转换成字符串，`fromString` 函数可以将字符串解析成 Date 类型，以及 `posixToMillis` 函数可以将 Unix 时间戳转换成毫秒数等。深入了解这些函数的功能，可以让我们更加高效地处理日期相关的操作。
 
-```Elm
-add : Time -> Date -> Date
-```
+# 查看更多
 
-这个函数接受一个时间间隔和一个日期作为输入，并返回一个在指定时间间隔后的日期。例如，要计算2021年5月10日之后100天的日期，我们可以这样写：
-
-```Elm
-add (days 100) (date 2021 5 10)
-```
-
-类似地，我们还可以使用以下函数来计算过去的日期：
-
-```Elm
-sub : Time -> Date -> Date
-```
-
-这个函数接受一个时间间隔和一个日期作为输入，并返回一个在指定时间间隔前的日期。例如，要计算2021年5月10日之前100天的日期，我们可以这样写：
-
-```Elm
-sub (days 100) (date 2021 5 10)
-```
-
-##深入探讨
-
-对于日期计算，我们可以使用不同的时间单位，如天、月、年、秒等。Elm提供了各种函数来处理日期和时间，使得在计算中更加便捷。
-
-相比其他语言，Elm的日期和时间模块具有强大的类型安全性，因此可以减少一些常见的错误。此外，它也可以与其他模块结合使用，使得在实际项目中更加方便。
-
-##另请参阅
-
-- Elm官方文档：https://elm-lang.org/docs 
-- Elm日期和时间模块：https://package.elm-lang.org/packages/elm/time/latest/
+* [Date 文档](https://package.elm-lang.org/packages/elm-lang/core/latest/Date)
+* [Time 文档](https://package.elm-lang.org/packages/elm-lang/core/latest/Time)
+* [Date Calculator 示例代码](https://ellie-app.com/bCvNFwQGWQva1)

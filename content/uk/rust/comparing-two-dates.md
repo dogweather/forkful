@@ -1,69 +1,41 @@
 ---
-title:    "Rust: Порівняння двох дат"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/rust/comparing-two-dates.md"
+title:                "Rust: Порівняння двох дат"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Існує багато ситуацій, коли програмістам необхідно порівняти дві дати. Наприклад, для перевірки терміну дії ліцензії або для виведення даної у заданому форматі. В цьому блозі ми розглянемо, як порівняти дві дати в мові програмування Rust.
+Компарування дат є важливою задачею в програмуванні, оскільки дати є одними з найпоширеніших типів даних. Це допомагає визначити, яка дата раніша чи пізніша за іншу, порівняти часові періоди та зробити різні обрахунки.
 
 ## Як це зробити
 
-Найпростіший спосіб порівняти дві дати в Rust - використовуючи стандартну бібліотеку. Давайте створимо дві константи з датами: 
+У Rust є багато різних методів порівняння дат. Один з найпростіших способів - використання функції `cmp` для порівняння двох дат. Ми також можемо використати структури дати, щоб отримати доступ до окремих елементів, таких як день, місяць або рік. Одним з варіантів є використання структури `DateTime` з бібліотеки `chrono`.
+
 ```Rust
-static DATE_1: &str = "2021-10-15";
-static DATE_2: &str = "2021-10-20";
-```
-Тепер ми можемо використовувати функцію `parse` із модуля `chrono` для перетворення цих значень у тип `DateTime<Local>`, який дозволяє порівнювати дати:
-```Rust
-use chrono::{DateTime, Local, NaiveDate, ParseResult, Timelike};
+use chrono::{DateTime, Utc, TimeZone};
 
-fn main() {
-    let date1 = parse_date(DATE_1).unwrap();
-    let date2 = parse_date(DATE_2).unwrap();
-    
-    if date1 < date2 {
-        println!("Дата {} наступна після дати {}", DATE_2, DATE_1);
-    } else if date2 < date1 {
-        println!("Дата {} наступна після дати {}", DATE_1, DATE_2);
-    } else {
-        println!("Обидві дати однакові");
-    }
-}
+let date1 = Utc.ymd(2021, 9, 1).and_hms(12, 0, 0);
+let date2 = Utc.ymd(2021, 10, 1).and_hms(12, 0, 0);
 
-fn parse_date(date: &str) -> ParseResult<DateTime<Local>> {
-    let parsed_date = NaiveDate::parse_from_str(date, "%Y-%m-%d");
-    parsed_date.map(|date| DateTime::<Local>::from(date.and_hms(0, 0, 0)))
-}
-```
-
-В результаті ми отримаємо рядок `Дата 2021-10-20 наступна після дати 2021-10-15`.
-
-## Глибоке дослідження
-
-Порівняння дат у мові Rust засноване на порівнянні типу `DateTime`. Якщо ми взнати кількість секунд від початку часу у форматі Unix, то ми зможемо легко порівнювати дати. Наприклад, давайте порівняємо дві дати у форматі Unix:
-```Rust
-use chrono::{NaiveDateTime, Timelike, Utc};
-
-fn main() {
-    let date1 = NaiveDateTime::from_timestamp(1634313600, 0).timestamp();
-    let date2 = NaiveDateTime::from_timestamp(1634673600, 0).timestamp();
-    
-    if date1 < date2 {
-        println!("Дата 2021-10-20 наступна після дати 2021-10-15");
-    } else if date2 < date1 {
-        println!("Дата 2021-10-15 наступна після дати 2021-10-20");
-    } else {
-        println!("Обидві дати однакові");
-    }
-}
-```
-
-Якщо перетворити ці дати в повноформатний час у форматі `*DateTime<Local>*`, то буде видно, що друга дата є більшою за кількістю годин:
-```Rust
 if date1 < date2 {
-    println!("Дата 2021-10-20 наступна після дати 2021-10-15");
-} else
+    println!("Date 1 is earlier than Date 2");
+} else {
+    println!("Date 2 is earlier than Date 1");
+}
+```
+
+Ви можете використовувати різні методи порівняння, такі як `lt` (менше), `gt` (більше), `eq` (рівне) та багато інших, залежно від вашої конкретної потреби.
+
+## Глибока навчання
+
+Для більш складних задач, пов'язаних з порівнянням дат, можуть знадобитися деякі додаткові знання та вміння. Наприклад, знання про поняття часових зон та переходів на літній та зимовий час. Також важливо бути усвідомленим, що порівняння дат може бути неточним через наявність різниці в часових зонах.
+
+## Див. також
+
+- [Офіційна документація бібліотеки Chrono](https://docs.rs/chrono/latest/chrono/)
+- [Стаття "Розуміння і використання дат та часу у Rust"](https://blog.logrocket.com/understanding-and-using-dates-and-times-in-rust/)
+- [Завдання на порівняння дат у Rust на платформі Exercism](https://exercism.org/tracks/rust/exercises/date-from-exercise)

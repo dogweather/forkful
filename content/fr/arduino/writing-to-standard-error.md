@@ -1,54 +1,36 @@
 ---
-title:    "Arduino: Ecrire sur l'erreur standard"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-to-standard-error.md"
+title:                "Arduino: Ecrire sur l'erreur standard"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Si vous êtes un programmeur Arduino passionné, vous avez probablement entendu parler d'écrire sur la sortie standard d'erreur. Mais pourquoi quelqu'un voudrait-il le faire ? Eh bien, la réponse est simple. L'écriture sur la sortie standard d'erreur peut être très utile pour déboguer votre code et trouver les erreurs plus rapidement.
+Lorsque vous programmez avec Arduino, il peut être utile d'écrire vers la sortie d'erreur pour déboguer votre code et trouver des erreurs plus facilement. Cela peut également vous aider à comprendre le fonctionnement interne de votre code.
 
 ## Comment faire
 
-Il existe plusieurs façons d'écrire sur la sortie standard d'erreur en utilisant Arduino. Vous pouvez utiliser la fonction `Serial.print()` ou `Serial.println()` pour afficher des messages sur le moniteur série. Vous pouvez également utiliser la fonction `printf()` pour formater vos messages et y ajouter des variables.
+Écrire vers la sortie d'erreur en utilisant Arduino est très simple. Vous pouvez le faire en utilisant la fonction ```Serial.println()``` et en passant votre message en paramètre. Par exemple :
 
-Voici un exemple de code pour écrire sur la sortie standard d'erreur en utilisant `Serial.print()` :
-
-```
-Arduino.begin();
-
-int num = 10;
-
-Serial.print("La valeur de num est : ");
-Serial.println(num); // cela ajoutera automatiquement un saut de ligne
+```Arduino
+Serial.println("Erreur de lecture du capteur de température !");
 ```
 
-Et voici un exemple utilisant `printf()` :
+Cela enverra le message "Erreur de lecture du capteur de température !" vers la sortie d'erreur, qui peut être consultée sur l'interface de communication série de votre Arduino.
 
-```
-Arduino.begin();
-
-int num1 = 20;
-int num2 = 30;
-
-printf("La valeur de num1 est : %d \n", num1);
-printf("La valeur de num2 est : %d \n", num2);
-```
-
-L'exemple ci-dessus montre comment formater les messages avec différentes variables.
+Pour voir ce message, vous devrez ouvrir l'interface de communication série en cliquant sur l'icône en forme de loupe en haut à droite de l'IDE Arduino.
 
 ## Plongée en profondeur
 
-Si vous voulez aller plus loin et comprendre le fonctionnement de l'écriture sur la sortie standard d'erreur, voici quelques informations supplémentaires. En utilisant la fonction `Serial.print()`, vous pouvez également spécifier un paramètre `BASE` pour spécifier dans quelle base numérique votre variable sera imprimée. Par exemple, `Serial.print(num, HEX)` imprimera la variable `num` en hexadécimal.
+En écrivant vers la sortie d'erreur, vous pouvez également spécifier le niveau de gravité de votre message en utilisant des constantes telles que ```INFO```, ```WARNING``` ou ```ERROR```. Cela peut être utile pour identifier rapidement le type d'erreur sans avoir à lire le message complet.
 
-De plus, avec la fonction `printf()`, vous pouvez utiliser différents spécificateurs de conversion pour formater vos messages. Par exemple, `%s` pour une chaîne de caractères, `%f` pour un nombre à virgule flottante, `%c` pour un caractère, etc.
-
-Maintenant que vous en savez plus sur l'écriture sur la sortie standard d'erreur, n'hésitez pas à l'exploiter pour améliorer votre processus de débogage.
+De plus, vous pouvez également écrire vers la sortie d'erreur en utilisant d'autres méthodes au lieu de ```Serial.println()```, par exemple en utilisant la bibliothèque ```SoftwareSerial``` pour envoyer des données vers une autre broche série.
 
 ## Voir aussi
 
-- [Documentation Arduino officielle sur la sortie standard d'erreur](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Tutoriel vidéo sur l'utilisation de la sortie standard d'erreur en Arduino](https://www.youtube.com/watch?v=5d48X2zK0cs)
-- [Article sur l'utilisation de la macro `DEBUG_PRINT` pour afficher des messages de débogage en Arduino](https://www.challengers101.com/arduino-tutorial/debug-print-arduino-tutorial/)
+- [Documentation officielle sur l'utilisation de la sortie d'erreur avec Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/) 
+- [Article sur la manipulation des erreurs en programmation Arduino](https://www.maketecheasier.com/error-handling-in-arduino/) 
+- [Forum de la communauté Arduino pour des discussions sur l'utilisation de la sortie d'erreur](https://forum.arduino.cc/)

@@ -1,39 +1,39 @@
 ---
-title:    "Haskell: יצירת קובץ זמני"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/creating-a-temporary-file.md"
+title:                "Haskell: יצירת קובץ זמני"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## מדוע
 
-יצירת קובץ זמני היא תהליך חשוב בתכנות הייסקל, שמאפשר לנו לנהל נתיבי קבצים ולתפעל בהם על מנת לרכוש נתונים וליצור פלט או מידע חדש. יצירת קובץ זמני היא גם חשובה למניעת תכניות חריגות ובעיות עם נתיבי הקבצים הראשוניים.
+יצירת קובץ זמני היא פעולה חיונית בתכנות בשפת Haskell ויש לה מגוון יישומים נרחבים. ניתן להשתמש בקובץ זמני כדי לשמור נתונים שנערכו או להשתמש בהם בתהליכים נפרדים של התכנית.
 
-## איך לעשות
+## איך לעשות זאת
 
-ראשית, נצטרך לייבא את החבילה המתאימה ליצירת קבץ זמני בהיסקל - `System.IO.Temp`. לאחר מכן, נחיל את הפונקציה `withSystemTempFile`, שתאפשר לנו ליצור קובץ זמני עם שם ונתיב מקרים רנדומליים:
+כדי ליצור קובץ זמני בשפת Haskell, ניתן להשתמש בפונקציית 'withSystemTempFile' המאפשרת ליצור קובץ זמני ולבצע פעולות עליו בתוך הפונקציה. לדוגמה:
 
 ```Haskell
+import System.IO
 import System.IO.Temp
 
 main = do
-  withSystemTempFile "example.txt" $ \tmpFilePath tmpHandle -> do
-    putStrLn $ "נוצר קובץ זמני בנתיב: " ++ tmpFilePath
-    hPutStrLn tmpHandle "תוכן הקובץ זמני."
+  withSystemTempFile "temp.txt" $ \h temp -> do
+    hPutStrLn temp "זהו קובץ זמני"
+    hFlush temp
+    hGetContents temp >>= putStrLn
 ```
 
-כפי שניתן לראות, אנו משתמשים בתוך הפונקציה `withSystemTempFile` בפרמטריו `tmpFilePath` ו- `tmpHandle`, שנוצרים באופן אוטומטי עם שמות ונתיבים רנדומליים, המכוונים לכך שנוכל לתפעל בקובץ זמני המיוצר.
+פלט התוכנית הנ"ל יהיה `זהו קובץ זמני`.
 
-התוכן שנכתוב בקובץ הזמני יופיע רק לאחר שנסגר הואנדל `withSystemTempFile`, כך שאם נרצה לעבוד עם הנתונים שהוכנסו לקובץ, ניתן יהיה לעשות זאת מתוך הפונקציה.
+## העומק
 
-## חפירה עמוקה
+קובץ זמני בשפת Haskell מייצג קובץ שמנוי עליו נמסרת העובדה שאין צורך בו לאחר שהתכנית הסתיימה. בשפת Haskell, ניתן להשתמש בקובץ זמני כדי לשמור נתונים שנערכו במהלך התכנית ולאחר מכן למחוק אותו.
 
-למרבה המזל, החבילה `System.IO.Temp` מציעה לנו כמה פונקציות נוספות כדי לנהל קבצים זמניים. למשל, ניתן להשתמש ב- `writeSystemTempFile` במקום ב־ `withSystemTempFile`, אשר תאפשר לנו לכתוב את הנתונים ישירות לקובץ זמני:
+פונקציית 'withSystemTempFile' משתמשת בפונקציות 'openTempFile' ו-'openBinaryTempFile' כדי ליצור את הקובץ הזמני. הפונקציה 'openTempFile' מוסיפה ספרה אקראית אחת לשם הקובץ כאשר 'openBinaryTempFile' מוסיפה ספרה אקראית מיוחדת לשם הקובץ כדי למנוע חזרות. לפונקציית 'openTempFile' יש את הספרה הנוספת 'r', מה שמאפשר לקרוא את הקובץ כאשר לפונקציית 'openBinaryTempFile' אין את הספרה הזאת מה שאומר שאין באפשרותך לצפות בתוכן הקובץ עד לשמירת המידע הנכון.
 
-```Haskell
-import System.IO.Temp
+## ראה גם
 
-main = do
-  tmpFilePath <- writeSystemTempFile "example.txt" "תוכן הקובץ זמני."
-  putStrLn
+- [מדריך על קבצים זמניים בשפת Haskell](https://www.haskell.org/cabal/users-guide/developing-packages.html#temp

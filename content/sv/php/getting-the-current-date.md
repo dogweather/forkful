@@ -1,45 +1,61 @@
 ---
-title:    "PHP: Att få dagens datum"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/getting-the-current-date.md"
+title:                "PHP: Få aktuellt datum"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att få dagens datum är en viktig del av många webbutvecklarars dagliga rutin. Det kan vara användbart för att visa aktuell information på en webbplats eller för att spåra aktiviteter inom ett projekt.
+Att få dagens datum är en väldigt användbar och vanlig funktion inom PHP programmeringsvärlden. Detta är särskilt användbart för webbutvecklare som behöver visa aktuellt datum på sina webbsidor. Det finns många olika sätt att få fram dagens datum i PHP, och det är viktigt att förstå varför det är så viktigt att veta hur man gör det.
 
-## Hur du gör det
+## Så här gör du
 
-Enklaste sättet att få aktuellt datum i PHP är genom att använda funktionen `date()`. Detta är ett exempel på hur du kan använda den:
-
-```PHP
-$current_date = date('Y-m-d');
-echo $current_date;
-```
-
-Outputten för detta kodblock kommer att vara dagens datum i formatet "åååå-mm-dd".
-
-Det finns många olika format som du kan använda för att få datumen på olika sätt. Till exempel kan du lägga till tiden i formatet genom att inkludera ett "H:i:s" efter datumet som i följande exempel:
+Ett enkelt sätt att få dagens datum är genom att använda inbyggda PHP-funktionen `date()`. Detta gör det möjligt att specificera ett format för datumet som ska returneras. Till exempel kan du använda följande kod för att få fram dagens datum i det vanliga formatet "dag/månad/år":
 
 ```PHP
-$current_date_and_time = date('Y-m-d H:i:s');
-echo $current_date_and_time;
+<?php
+    echo "Dagens datum är " . date("d/m/Y") . "<br>";
+?>
 ```
 
-Outputten kommer nu att innehålla både datum och tid i formatet "åååå-mm-dd hh:mm:ss" (där hh är timmar, mm är minuter och ss är sekunder).
+Det finns också möjlighet att använda formatet "år-månad-dag", vilket följer ISO-standard för datumformat. Detta kan användas för att sortera datum i kronologisk ordning inom en databas. Exempel på kod för att få fram dagens datum i detta format är:
 
-Det finns även möjlighet att använda andra funktioner för att få dagens datum, såsom `getDate()` som returnerar en array med många olika delar av datumet som år, månad och dag. Du kan läsa mer om dessa funktioner i PHP:s officiella dokumentation.
+```PHP
+<?php
+    echo "Dagens datum är " . date("Y-m-d") . "<br>";
+?>
+```
 
-## Deep Dive
+Om du vill inkludera dagens veckodag i datumet så kan du använda formatet "dag/månad/år (veckodag)". Detta kan göras genom att lägga till en extra parameter i `date()` funktionen. Exempel på kod för detta är:
 
-Att få dagens datum kan även vara användbart för att gå djupare in i tidsuppgifter. Du kan använda PHP-funktionen `strtotime()` för att konvertera ett datum till en Unix-timestamp (antalet sekunder som har gått sedan den 1 januari 1970). Sedan kan du använda andra tidsfunktioner för att utföra beräkningar eller manipulationer av datumen.
+```PHP
+<?php
+    echo "Dagens datum är " . date("d/m/Y (l)") . "<br>";
+?>
+```
 
-En annan intressant funktion är `strftime()` som låter dig formatera en tidsstämpel enligt specifika regionella inställningar. Du kan exempelvis få dagens datum skrivet på svenska med hjälp av denna funktion.
+Det finns också möjlighet att få fram andra tids- och datumrelaterade information såsom aktuellt år, månad, dag, vecka, timme, minut och sekund. Detta kan åstadkommas genom att använda inbyggda PHP-funktioner såsom `date("Y")` för att få fram aktuellt år eller `date("m")` för att få fram aktuell månad.
+
+## Djupdykning
+
+Som nämnts tidigare finns det många olika sätt att få fram dagens datum i PHP. En annan vanlig metod är att använda funktionen `strtotime()` som konverterar en textrepresentation av ett datum till en numerisk representation som sedan kan formateras med `date()` funktionen.
+
+Ett exempel på detta är att få fram datumet för nästa vecka genom att använda följande kod:
+
+```PHP
+<?php
+    $date = strtotime("+1 week");
+    echo "Datumet för nästa vecka är " . date("d-m-Y", $date);
+?>
+```
+
+Det finns många andra användbara funktioner och alternativ för att få fram dagens datum i PHP och det är viktigt att utforska dem för att hitta den bästa lösningen för din kod.
 
 ## Se även
 
-- PHP:s officiella dokumentation om datum och tid: https://www.php.net/manual/en/book.datetime.php
-- Konvertera datum till Unix-timestamp: https://www.w3schools.com/php/php_ref_date.asp
-- Mer detaljerad information om tidsuppgifter i PHP: https://www.geeksforgeeks.org/php-timestamping/
+- [PHP officiell dokumentation för date() funktionen](https://www.php.net/manual/en/function.date.php)
+- [PHP officiell dokumentation för strtotime() funktionen](https://www.php.net/manual/en/function.strtotime.php)
+- [Guide för att använda datum och tid i PHP](https://www.w3schools.com/php/php_date.asp)

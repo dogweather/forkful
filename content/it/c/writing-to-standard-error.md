@@ -1,53 +1,49 @@
 ---
-title:    "C: Scrivere su standard error"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/writing-to-standard-error.md"
+title:                "C: Scrivere su errore standard"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere su standard error è un aspetto importante della programmazione in C. Questo ci consente di gestire gli errori e di fornire informazioni utili agli utenti del nostro programma.
+Scrivere su standard error in programmazione C può sembrare un'operazione inutile o poco utilizzata, ma in realtà è importante per la gestione degli errori e la risoluzione dei bug nel codice. Inoltre, può aiutare a visualizzare messaggi di debug durante lo sviluppo.
 
-## Come Fare
+## Come fare
 
-Per scrivere su standard error in C, è necessario utilizzare la funzione `fprintf()` e passare `stderr` come primo parametro. Ad esempio:
+Per scrivere su standard error in C, è necessario includere la libreria `stdio.h` nel codice e utilizzare la funzione `fprintf` con il valore `stderr` come argomento. Ad esempio:
 
 ```C
 #include <stdio.h>
 
-int main() {
-    fprintf(stderr, "Questo è un messaggio di errore\n");
+int main(void) {
+    fprintf(stderr, "Questo è un messaggio scritto su standard error\n");
     return 0;
 }
 ```
 
-Questo codice stamperà il messaggio di errore "Questo è un messaggio di errore" su standard error.
+L'output sarà mostrato sulla console standard di errore come:
+
+```bash
+Questo è un messaggio scritto su standard error
+```
+
+In questo modo, è possibile inviare messaggi di errore o di debug direttamente sulla console senza influenzare l'output standard del programma. Si consiglia di utilizzare questo metodo quando si vuole distinguere i messaggi di errore dai messaggi di output regolari.
 
 ## Approfondimento
 
-La differenza principale tra standard output e standard error è che il secondo è utilizzato per stampare messaggi di errore e di debug, mentre il primo è utilizzato per l'output normale del programma. Inoltre, standard error è uno stream non bufferizzato, il che significa che i messaggi vengono stampati immediatamente senza aspettare che venga chiuso il programma.
+La funzione `fprintf` ha la seguente sintassi:
 
-Inoltre, è possibile utilizzare la funzione `perror()` per stampare un messaggio di errore con una stringa rappresentante il tipo di errore. Ad esempio:
-
-```C
-#include <stdio.h>
-#include <errno.h>
-
-int main() {
-    FILE* file = fopen("non_esiste.txt", "r");
-    if (file == NULL) {
-        perror("Errore nell'apertura del file");
-        return 1;
-    }
-    return 0;
-}
+```
+int fprintf(FILE *stream, const char *format, ...)
 ```
 
-Questo codice stamperà il messaggio di errore "Errore nell'apertura del file: No such file or directory" su standard error.
+Il primo argomento `stream` indica il file su cui scrivere, mentre il secondo argomento `format` è una stringa di formattazione che definisce il tipo di dati e il numero di argomenti successivi. Ci sono diversi tipi di dati che possono essere utilizzati, come `%s` per una stringa, `%d` per un intero e `%f` per un numero decimale. Ad esempio, `fprintf` può essere utilizzata per scrivere su file o eventualmente su altri tipi di stream diversi da `stderr`.
 
-## Vedi Anche
+## Vedi anche
 
-- [Funzioni di output in C](https://www.programiz.com/c-programming/c-input-output)
-- [Gestione degli errori in C](https://www.geeksforgeeks.org/error-handling-c-programs/)
+- [Manuale di riferimento di fprintf](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [Cos'è e come usare standard error in C](https://www.geeksforgeeks.org/what-is-standard-error-in-c/)
+- [Come gestire gli errori in C](https://www.programmingsimplified.com/c/error-handling-c-programs)

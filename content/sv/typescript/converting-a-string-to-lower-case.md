@@ -1,34 +1,45 @@
 ---
-title:    "TypeScript: Omvandla en sträng till gemener"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/converting-a-string-to-lower-case.md"
+title:                "TypeScript: Omvandla en sträng till små bokstäver"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till gemener (lower case) är en vanlig uppgift inom programmering, särskilt vid hantering av användarens inmatning. Genom att omvandla en sträng till gemener kan vi garantera att inmatningen är enhetlig och enklare att behandla.
+Att konvertera en sträng till gemener, eller lowercase, är ett vanligt problem som många programmerare står inför. Det kan vara användbart när du behöver göra jämförelser mellan strängar eller behöver formatera data på ett enhetligt sätt.
 
-## Så här gör du
+## Hur man gör det
 
-Vi kan enkelt konvertera en sträng till gemener med hjälp av inbyggda metoderna i TypeScript. Nedan följer ett exempel på hur vi kan göra detta:
+För att konvertera en sträng till gemener i TypeScript, kan du använda metoden `toLowerCase()` som finns tillgänglig för strängar. Här är ett exempel på hur du kan använda den:
 
 ```TypeScript
-let namn = "JOHANNA";
-console.log(namn.toLowerCase()); // ut skrift: johanna
+let namn = "Sven";
+console.log(namn.toLowerCase());
 ```
 
-I detta exempel använder vi metoden `toLowerCase()` på variabeln `namn` för att konvertera den till gemener. Detta fungerar för alla typer av strängar, oavsett hur de är skrivna.
+Output:
+
+```
+sven
+```
+
+Som du kan se konverterades den ursprungliga strängen "Sven" till en sträng med gemener "sven" genom att använda `toLowerCase()`.
 
 ## Djupdykning
 
-En intressant aspekt av att konvertera en sträng till gemener är att det inte bara handlar om att ändra bokstävernas storlek. Vissa språk, som svenska, har även bokstäver med accenter som kan påverkas av denna konvertering. Om du vill behålla dessa accenter i strängen kan du använda metoden `toLocaleLowerCase()` istället. Denna metod tar hänsyn till språket i strängen och behåller eventuella accenter.
+När du använder `toLowerCase()` för att konvertera en sträng till gemener, kommer alla bokstäver i strängen att omvandlas, även specialtecken och siffror. Detta inkluderar också bokstäver med diakritiska tecken, som å, ä, ö. Det gör att du kan göra exakta jämförelser mellan strängar oavsett bokstävernas storlek eller diakritiska tecken.
 
-En annan sak att tänka på är att om du vill konvertera en sträng som innehåller siffror, så kommer dessa inte att påverkas av metoden `toLowerCase()`. De kommer fortfarande att behålla sin ursprungliga form. Om du vill inkludera även siffror i konverteringen kan du använda metoden `replace()` tillsammans med en reguljär expression.
+Det är också värt att notera att `toLowerCase()` inte ändrar på den ursprungliga strängen, utan returnerar en ny sträng med den konverterade versionen. Så om du behöver behålla den ursprungliga strängen, se till att tilldela den konverterade versionen till en ny variabel.
 
 ## Se även
 
-- [String.toLowerCase() - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [String.replace() - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [String.toLocaleLowerCase() - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+Här är några användbara länkar för att lära dig mer om strängar i TypeScript och andra sätt att hantera dem:
+
+- [Officiell TypeScript dokumentation om strängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [En guide till stränghantering i TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-typescript)
+- [W3Schools artikel om strängmetoder i TypeScript](https://www.w3schools.com/js/js_string_methods.asp)
+
+Tack för att du läser!

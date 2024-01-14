@@ -1,44 +1,47 @@
 ---
-title:    "Swift: Cálcolare una data nel futuro o nel passato"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/calculating-a-date-in-the-future-or-past.md"
+title:                "Swift: Calcolare una data nel futuro o nel passato"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Calcolare una data nel futuro o nel passato può essere utile in diversi contesti, come per la pianificazione di eventi o per il calcolo del tempo tra due date. In questo articolo impareremo come farlo utilizzando il linguaggio di programmazione Swift.
+Calcolare una data nel futuro o nel passato può essere estremamente utile in diverse situazioni, come ad esempio per gestire scadenze o per pianificare eventi importanti.
 
-## Come Fare
+## Come fare
 
-In Swift, possiamo utilizzare la classe `Calendar` e il metodo `date(byAdding:value:to:)` per calcolare una data nel futuro o nel passato. Vediamo un esempio pratico:
+Per calcolare una data nel futuro o nel passato in Swift, possiamo utilizzare la classe `Calendar` e il metodo `date(byAdding:value:to:)`. Ad esempio, per ottenere la data di oggi più 7 giorni, possiamo scrivere il seguente codice:
 
 ```Swift
+let today = Date()
+
 let calendar = Calendar.current
-let currentDate = Date()
+let futureDate = calendar.date(byAdding: .day, value: 7, to: today)
 
-// Calcola la data tra 7 giorni
-let sevenDaysFromNow = calendar.date(byAdding: .day, value: 7, to: currentDate)
-print("Tra 7 giorni sarà il \(sevenDaysFromNow)")
-
-// Calcola la data 3 mesi fa
-let threeMonthsAgo = calendar.date(byAdding: .month, value: -3, to: currentDate)
-print("Tre mesi fa era il \(threeMonthsAgo)")
+print(futureDate) // Output: 2021-09-20 19:02:53 +0000
 ```
 
-Questo esempio utilizza la data corrente come punto di partenza e aggiunge o sottrae un determinato valore in base all'unità di tempo specificata (giorno, mese, anno, ecc.). Il risultato sarà una nuova istanza di `Date` con la data calcolata.
+In questo esempio, abbiamo utilizzato `.day` come componente di data e 7 come valore, indicando così che vogliamo aggiungere 7 giorni alla data di oggi. Possiamo utilizzare lo stesso metodo per calcolare una data nel passato, specificando un valore negativo.
 
-## Deep Dive
+## Approfondimento
 
-Nella classe `Calendar` ci sono molte opzioni disponibili per il metodo `date(byAdding:value:to:)` che possono essere utili per calcoli più complessi. Ad esempio, il parametro `value` può essere negativo per ottenere una data nel passato e possiamo utilizzare anche un'unità di tempo diversa da quelle presenti di default (come gli anni o le settimane).
+Il metodo `date(byAdding:value:to:)` ci permette di aggiungere o sottrarre una qualsiasi unità di tempo, come giorni, mesi, anni, ore, minuti, secondi, ecc. per ottenere una nuova data. Inoltre, possiamo anche specificare una data di riferimento diversa da quella odierna, passando al metodo un'altra data come parametro `to`.
 
-Inoltre, possiamo anche utilizzare il metodo `date(from: DateComponents)` per costruire una data specifica a partire da diverse componenti, come il giorno, il mese, l'anno, ecc.
+Un'altra opzione per calcolare date nel futuro o nel passato è utilizzare `TimeInterval`, che rappresenta una quantità di tempo in secondi e può essere aggiunta o sottratta da una data. Ad esempio:
 
-Vale la pena esplorare la documentazione ufficiale di Apple per avere un quadro completo delle opzioni disponibili per il calcolo di date in Swift.
+```Swift
+let today = Date()
 
-## Vedi Anche
+let futureDate = today + (7 * 24 * 60 * 60) // Aggiungiamo 7 giorni in secondi
 
-- [Documentazione ufficiale di Apple su Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Video tutorial su calcoli di date in Swift](https://www.youtube.com/watch?v=Hw1gEsyiBm4)
-- [Altro esempio pratico su calcoli di date in Swift](https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter)
+print(futureDate) // Output: 2021-09-20 19:02:53 +0000
+```
+
+## Vedi anche
+
+- [La classe `Calendar` in Swift](https://developer.apple.com/documentation/foundation/calendar)
+- [Il tipo `Date` in Swift](https://developer.apple.com/documentation/foundation/date)
+- [La struttura `DateComponents` in Swift](https://developer.apple.com/documentation/foundation/datecomponents)

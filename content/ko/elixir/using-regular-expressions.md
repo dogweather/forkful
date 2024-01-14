@@ -1,36 +1,37 @@
 ---
-title:    "Elixir: 정규식 사용하기"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/using-regular-expressions.md"
+title:                "Elixir: 정규 표현식 사용하기"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## 왜
+정규 표현식을 사용하는 이유에 대해 알아보겠습니다. 이 간단한 기술은 문자열 처리에 매우 유용하며 코딩 속도를 대폭 증가시킬 수 있습니다.
 
-정규 표현식은 코드에서 특정한 패턴을 찾고, 추출하거나 변경하는 데 아주 유용합니다. 이를 통해 코드를 더 간결하고 효율적으로 작성할 수 있으며, 데이터 처리 작업을 더 빠르고 쉽게 수행할 수 있습니다.
-
-## 어떻게 하나요?
-
-정규 표현식을 사용하려면 Elixir에서 `Regex` 모듈을 import해야 합니다. 그리고 `~r` 키워드를 사용하여 정규 표현식을 만들 수 있습니다. 예를 들어, 다음과 같은 코드로 이메일 주소에서 사용자 이름을 추출할 수 있습니다.
+## 사용 방법
+마크다운과 같은 문자열을 처리해야 할 때, 정규 표현식을 사용하면 코드의 양을 대폭 줄일 수 있습니다. 예를 들어, 특정 패턴을 찾아 대체하는 작업은 간단하게 `Regex.replace(pattern, replacement, target_string)` 함수를 사용하여 처리할 수 있습니다.
 
 ```Elixir
-import Regex
-
-email_address = "john.doe@example.com"
-regex = ~r/[a-z]+\.([a-z]+)@[a-z]+\.[a-z]+/
-match = Regex.run(regex, email_address)
-IO.puts match[1] # output: "john"
+Regex.replace(~r/hello/, "hi", "hello world")
+=> "hi world"
 ```
 
-## 깊은 공부
+또한, 패턴을 검색하고 추출할 수도 있습니다. 아래의 예시 코드를 살펴보세요.
 
-정규 표현식에서 사용되는 패턴과 메타 문자의 의미를 정확히 알아야 합니다. 그리고 직접 표현식을 작성하면서 연습하는 것이 가장 중요합니다. 또한 Elixir에서는 부분 일치를 지원하는 메서드들도 있으므로 사용 가능성도 살펴볼 필요가 있습니다.
+```Elixir
+Regex.scan(~r/[apple|orange]/, "I have an apple and an orange.")
+=> [["apple"], ["orange"]]
+```
 
-아래는 자주 사용되는 정규 표현식 패턴과 관련된 링크들입니다.
+위 예시에서 볼 수 있듯이, 정규 표현식은 여러 개의 결과를 반환할 수 있습니다. 따라서 이를 적절히 활용하면 복잡한 문자열 처리도 쉽게 할 수 있습니다.
 
-# 관련 자료
+## 깊은 곳 파헤치기
+정규 표현식은 수십 가지의 메타 문자와 특수한 사용 방법을 가지고 있습니다. 이에 대해 모두 다루는 것은 이 글의 범위를 넘어서므로, 아래의 링크들을 통해 추가 정보를 참고하시길 바랍니다.
 
-- [Elixir 정규 표현식 문서](https://hexdocs.pm/elixir/Regex.html)
-- [정규 표현식 테스트 사이트](https://regex101.com/)
-- [정규 표현식 치트시트](https://www.rexegg.com/regex-quickstart.html)
+## 더 알아보기
+- [Elixir 공식 문서 - 정규 표현식](https://elixir-lang.org/getting-started/runes-and-grapheme-clusters.html#regular-expressions)
+- [정규 표현식 레퍼런스](https://elixirschool.com/lessons/specifics/regexp)
+- [정규 표현식 playground](https://regex101.com/)
+- [정규 표현식 게임](https://regexcrossword.com/)

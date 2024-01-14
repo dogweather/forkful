@@ -1,48 +1,37 @@
 ---
-title:    "Kotlin: पैटर्न से मेल खाने वाले अक्षरों को हटाना"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/deleting-characters-matching-a-pattern.md"
+title:                "Kotlin: पैटर्न से मेल खाते अक्षर हटाना"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-यदि आप किसी भी शब्द पठनी के लिए भाषा स्ट्रिंग से अनुसूचित रूप से पठनी करना चाहते हैं, तो आप आमतौर पर उसे स्ट्रिंग से हटा देते हैं।
+कोई भी क्यों चुनेगा कि वे किसी भी पैटर्न से मैच करने वाले अक्षरों को हटाएं?
 
 ## कैसे करें
 
-कोटलिन में एक व्यवहार के लिए पठन समारोह या एक भाषा स्ट्रिंग से मिलने वाले सभी स्थानों को व्यवस्थित रूप से हटा सकते हैं।
-
-```kotlin
-fun stripText(text: String, pattern: String): String {
-    return text.replace(pattern, "")
+```Kotlin
+fun deleteMatchingCharacters(input: String, pattern: String): String{
+    return input.replace(Regex(pattern), "")
 }
 
-fun main() {
-    val string = "हमारे विश्व भाषा है"
-    println(stripText(string, "भाषा"))
-}
+println(deleteMatchingCharacters("हेल्लो वर्ल्ड", "[ाीूृेोौ्]"))
+// Output: हेल वर्ल्ड
+
+println(deleteMatchingCharacters("कोट्स", "[िुेाोूृ]") )
+// Output: कोट्
 ```
 
-आउटपुट:
-हमारे विश्व है
+मुख्य आकृति उपयोग करके एक नई स्ट्रिंग वापस दुबारा निर्माण करे। इसके लिए, हम `replace()` फंक्शन का उपयोग करते हैं और उस नयी दिन्र के लिये स्ट्रिंग को गुजारने वाले विशिष्ट पैटर्न प्रति सी छन्द पैर स्थानांतरण करते हैं।
 
-## गहराई की झलक
+## गहराई में जाएं
 
-स्ट्रिंग से अनुसूचित रूप से पठन समारोह हटाने को अधिक व्ययक्षमतापूर्ण बनाने के लिए, हम विभिन्न तरीकों का उपयोग कर सकते हैं। उपरोक्त कोड में, हमने अपनी स्त्रिंग हटाने वाली एक साधारण फ़ंक्शन बनाई है जो दो स्ट्रिंग पैरामीटर्स लेती है - पठन और अनुसूचित समारोह। अब हम इस फ़ंक्शन को कहीं भी इस्तेमाल कर सकते हैं और चाहे तो पुनर्निर्माण कर सकते हैं उदाहरण के लिए:
+कभी-कभी हमारे पास संख्याओं और मूल्यों की भारी संख्या रखीत ताजगी का साथ भी होता है। स्ट्रिंग संग्रहण में जो भी स्थान में होगा आसानी से उन में से निकल जाएगा जो कम या अधिक उपयुलंबित होगा। इसलिए, अधिक विवेकपूर्ण एप्लिकेशन के साथ मालूम हो सकता है कि हम कैसे किसी मान है उसके बादों से भ्रष्ट कर सकते हैं। इसलिए, पैटर्न से मेल न करने वाले अक्षरों को हटाते हैं हम स्पष्ट माटडौन निर्देशिका द्वारा पैटर्न साभान्ती निरुपण करेंगे।
 
-```kotlin
-// पठन समारोह को हटाने के लिए फ़ंक्शन का उपयोग करें
-println(stripText("विभाजन एक महत्वपूर्ण समस्या है", "महत्वपूर्ण"))
+## इसके अलावा
 
-// अन्य स्थानों से स्ट्रिंग हटाने के लिए फ़ंक्शन का उपयोग करें
-val string = "कठपुतली कहानियाँ का एक स्वर्ग है"
-println(stripText(string, "एक"))
-```
-
-आउटपुट:
-विभाजन एक समस्या है
-कठपुतली कहानियाँ का स्वर्ग है
-
-## देखें साथ ह
+* [Kotlin रिपो जेरासी ](https://newbedev.com/how-to-remove-special-character-from-string-using-jersey)
+* [श्रृति में छिपा करना होगा](http://www.learn4future.com/replace-all-characters-in-a-string-that-match-a-pattern-in-kotlin/)

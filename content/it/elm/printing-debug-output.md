@@ -1,53 +1,53 @@
 ---
-title:    "Elm: Stampa di output di debug"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/printing-debug-output.md"
+title:                "Elm: Stampa dell'output di debug"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Stampare i messaggi di debug è un'importante pratica di programmazione che può aiutare a identificare ed eliminare errori nel tuo codice. Invece di provare a capire dove il tuo programma sta fallendo, la stampa dei messaggi di debug ti permette di vedere esattamente ciò che sta accadendo durante l'esecuzione del codice. Questo può risparmiare tempo e frustrazione nella risoluzione di bug.
+Spesso durante lo sviluppo di un progetto Elm, ci troviamo di fronte a bug o a comportamenti inaspettati. In questi casi è fondamentale avere un modo per visualizzare informazioni sullo stato del nostro programma e sulla logica che lo sta guidando. Ecco perché la stampa di output di debug può essere uno strumento molto utile.
 
 ## Come fare
 
-Per stampare i messaggi di debug in Elm, è possibile utilizzare la funzione `Debug.log`, che accetta due argomenti: una stringa con il messaggio di debug e un valore da stampare.
+Per stampare output di debug in Elm, possiamo utilizzare la funzione `Debug.log` presente nel modulo `Debug`. Possiamo passare a questa funzione una stringa descrittiva del nostro output di debug e una variabile che vogliamo visualizzare. Ad esempio:
 
 ```Elm
-Debug.log "Debug message" 10
+import Debug exposing (log)
+
+x = 5
+log "Valore di x" x
+
+...
+
+--------------------------------------
+Valore di x: 5
 ```
 
-Questo codice produrrà il seguente output:
-
-```
-Debug message= 10
-```
-
-Puoi anche stampare valori più complessi, come liste o record, utilizzando la funzione `toString` per convertirli in stringhe.
+Kpossiamo anche passare più variabili alla funzione, separandole con una virgola. Inoltre, possiamo utilizzare la combinazione di stringhe e variabili per creare output di debug più elaborati. Ad esempio:
 
 ```Elm
-import Debug
+import Debug exposing (log)
 
-record = {name = "Mario", age = 30}
+nome = "Mario"
+cognome = "Rossi"
+log "Nome completo" (nome ++ " " ++ cognome)
 
-Debug.log "Record" (toString record)
-```
+...
 
-Questo produrrà l'output:
-
-```
-Record = "{ name = \"Mario\", age = 30 }"
+--------------------------------------
+Nome completo: Mario Rossi
 ```
 
 ## Approfondimento
 
-Mentre la stampa dei messaggi di debug può essere utile per identificare errori nel tuo codice, è importante non abusare di questa pratica. Troppi messaggi di debug possono essere confusi e rendere il codice meno leggibile. Inoltre, ricorda di rimuovere i messaggi di debug una volta risolti i bug.
-
-Inoltre, è possibile utilizzare il parametro `Always` nella funzione `Debug.log` per stampare i messaggi di debug anche in produzione. Questo può essere utile per verificare che il tuo codice sta funzionando correttamente in ogni contesto.
+Il modulo `Debug` offre molte altre funzioni oltre a `log`, come ad esempio `crash` per generare un messaggio di errore, `todo` per creare un punto di implementazione mancante e `program` per mostrare lo stato attuale del nostro programma. Inoltre, possiamo utilizzare la funzione `Debug.watch` per monitorare una variabile e visualizzarne il valore in tempo reale.
 
 ## Vedi anche
 
-- [Documentazione di Elm sul debug](https://guide.elm-lang.org/debugging/)
-- [Articolo su quando utilizzare la stampa dei messaggi di debug](https://medium.com/@jono_bruce/when-to-use-debug-log-in-elm-a8a5dab57c39)
-- [Video tutorial su come utilizzare Debug.log in Elm](https://youtu.be/pPhGXZVIeF8)
+- Documentazione ufficiale sul modulo `Debug`: https://package.elm-lang.org/packages/elm/core/latest/Debug
+- Utilizzo della funzione Debug.watch: https://www.elm-tutorial.org/debugging/01.html
+- Tutorial sulla stampa di output di debug in Elm: https://www.elm-tutorial.org/debugging/

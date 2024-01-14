@@ -1,44 +1,44 @@
 ---
-title:    "Java: З'єднання рядків"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/java/concatenating-strings.md"
+title:                "Java: Зливання рядків."
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Створення, збереження та обробка інформації - це основна частина багатьох програм, що розробляються на мові програмування Java. Для збереження та подальшої обробки даних, часто потрібно з'єднувати різні рядки тексту. У самому Java є спеціальний механізм для цього - конкатенація рядків.
+Робота з об'єднанням рядків може бути корисною у випадках, коли необхідно з'єднати два чи більше рядки в один, або додати до певного рядка додаткову інформацію. Наприклад, це може бути корисно при створенні повідомлень для виведення на екран або при форматуванні даних для подальшої обробки.
 
-## Як використовувати конкатенацію рядків
+## Як
 
-Для конкатенації рядків в Java можна використовувати оператор "+" або метод "concat()". Нижче наведені приклади коду та відповіді, що можуть бути виведені в консоль:
+```Java
+// Створення рядків
+String name = "Олександра";
+String greeting = "Привіт, ";
 
-```java
-// Застосування оператора "+"
-String name = "Марія";
-String greeting = "Привіт ";
-System.out.println(greeting + name);
+// Об'єднання рядків за допомогою оператора +
+String message = greeting + name;
+System.out.println(message); // Виведе "Привіт, Олександра"
 
-// Виведе: Привіт Марія
-
-// Застосування методу "concat()"
-String str1 = "Hello";
-String str2 = "World";
-String str3 = str1.concat(str2);
-System.out.println(str3);
-
-// Виведе: HelloWorld
+// Об'єднання рядків за допомогою методу concat()
+String phrase = "Я люблю " 
+String hobby = "програмування";
+String result = phrase.concat(hobby);
+System.out.println(result); // Виведе "Я люблю програмування"
 ```
 
-Конкатенація рядків також можлива з використанням методу "StringBuilder", який забезпечує більш ефективне з'єднання багатьох рядків.
+## Глибокий дослідження
 
-## Глибше занурення
+Об'єднання рядків виконується за допомогою оператора "+" або методу concat(). При цьому, є кілька нюансів, які варто враховувати при роботі з рядками:
 
-У Java конкатенація рядків відбувається шляхом створення нового об'єкта String. При використанні оператора "+" компілятор автоматично створює об'єкт StringBuilder, що дозволяє ефективно додавати до нього рядки. При використанні методу "concat()" змінні значення об'єктів не змінюються, а створюється новий об'єкт зєднаних рядків.
+- Об'єднання рядків займає більше часу та пам'яті, ніж робота зі змінними типу StringBuilder або StringBuffer.
+- Рядки можна об'єднати також за допомогою методу join(), який знаходиться у класі StringJoiner.
+- У разі об'єднання багатьох рядків, використання методу StringBuilder або StringBuffer є більш оптимальним, оскільки вони працюють зі змінними типу StringBuffer, що дозволяє уникнути надмірного створення об'єктів типу String.
 
 ## Дивись також
 
-- [Документація Java String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Туторіал по конкатенації рядків](https://www.programiz.com/java-programming/string-concatenation)
-- [Методи StringBuilder у Java](https://www.javatpoint.com/java-stringbuilder)
+- [Офіційна документація Java з роботою з рядками](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Стаття про роботу з рядками на блозі JavaCafe](https://javacafe.org.ua/articles/jdk/strings-0)
+- [Відеоурок з роботи з рядками на YouTube](https://www.youtube.com/watch?v=S_Ck7743Jes)

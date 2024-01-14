@@ -1,73 +1,39 @@
 ---
-title:    "Rust: Kirjoittaminen standardivirheeseen"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/writing-to-standard-error.md"
+title:                "Rust: Kirjoittaminen standardivirheeseen"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi kirjoittaa virherajoitin
+## Miksi kirjoittaa standardivirheeseen
 
-Monet ohjelmointikielet tarjoavat mahdollisuuden tulostaa virheitä standardivyörajaan, joka on teksti, joka näkyy ohjelman lokitiedostossa tai komentorivin tulosteessa. Tämä on erittäin hyödyllinen työkalu ohjelmointivirheiden tunnistamiseen ja korjaamiseen.
+Rust on yhä suositumpi ohjelmointikieli, joka tarjoaa korkean suorituskyvyn ja turvallisen kehitysympäristön. Yksi tärkeä ominaisuus Rustissa on kyky kirjoittaa ohjelmaan standardivirheeseen (stderr), jota käytetään ohjelman virheiden tulostamiseen. Tässä blogikirjoituksessa käymme läpi, miksi ja miten kirjoittaa standardivirheeseen Rust-ohjelmassa.
 
-## Kuinka tehdä se
+## Miten kirjoittaa standardivirheeseen
 
-Rust-ohjelmointikieli tarjoaa helpon ja tehokkaan tavan kirjoittaa virheilmoituksia standardiulostuloon. Tämä voidaan tehdä käyttämällä `eprintln!` -makroa, joka toimii samalla tavalla kuin `println!` mutta tulostaa virheitä standardivirheeseen.
-
-Esimerkki:
+Rustissa standardivirheeseen kirjoittaminen voidaan tehdä käyttämällä `println!` makroa ja välittämällä sille parametri `eprintln!` sijaan. Tämä varmistaa, että tuloste ohjataan standardivirheeseen eikä standarditulostukseen. Alla on esimerkki koodista:
 
 ```Rust
-use std::io;
-
 fn main() {
-    let input = io::stdin().read_line().unwrap();
-    if input.parse::<i32>().is_err() {
-        eprintln!("Virheellinen syöte. Syötä kokonaisluku.");
-    } else {
-        println!("Syöte oli oikein.");
-    }
+  // Kirjoitetaan standardivirheeseen käyttämällä eprintln! makroa
+  eprintln!("Tämä on virheilmoitus!");
 }
 ```
 
-Tämä koodi lukee käyttäjän syötettä ja tarkistaa, onko se kokonaisluku. Jos sitä ei voida muuttaa kokonaisluvuksi, virheilmoitus tulostetaan standardivirheeseen. Muussa tapauksessa tulostetaan ilmoitus, joka osoittaa, että syöte oli oikein.
+Esimerkin koodi tulostaisi "Tämä on virheilmoitus!" standardivirheeseen. Huomaa, että se ei tulostaisi mitään näytölle tai standarditulostukseen.
 
-Tuloste:
+## Syvällinen sukellus
 
-```
-$ cargo run
-123abc
-Virheellinen syöte. Syötä kokonaisluku.
-```
+Kirjoittaminen standardivirheeseen on hyödyllistä silloin, kun halutaan erottaa ohjelman virheilmoitukset tavallisista tulosteista. Tämä antaa mahdollisuuden selkeästi erottaa virheet ja helpottaa niiden havaitsemista ja käsittelyä. Standardivirheeseen kirjoittaminen on myös hyödyllistä silloin, kun halutaan suorittaa ohjelmaa esimerkiksi komentoriviltä, ja halutaan erottaa tulosteet ja virheilmoitukset.
 
-## Syvällinen tarkastelu
-
-Rustin `eprintln!`-makro on enemmän kuin vain ominaisuus mukava virheilmoitusten tulostamiseen. Se myös tarjoaa mahdollisuuden lisätä dynaamisia arvoja virheilmoituksiin, mikä tekee virheilmoituksista hyödyllisempiä korjata. Esimerkiksi, jos haluamme näyttää tarkemman syyn virheeseen, voimme käyttää `eprintln!`-makron kanssa muuttujia:
-
-```Rust
-use std::io;
-
-fn main() {
-    let input = io::stdin().read_line().unwrap();
-    if input.parse::<i32>().is_err() {
-        eprintln!("Virheellinen syöte {}. Syötä kokonaisluku.", input.trim());
-    } else {
-        println!("Syöte oli oikein.");
-    }
-}
-```
-
-Tuloste:
-
-```
-$ cargo run
-123abc
-Virheellinen syöte 123abc. Syötä kokonaisluku.
-```
-
-Käyttämällä `eprintln!`-makron kanssa muuttujia, voimme paremmin paikantaa ja korjata virheitä.
+Rustissa standardivirheeseen voi myös kirjoittaa käyttämällä `eprint!` makroa, joka toimii samalla tavalla kuin `eprintln!` mutta ei lisää uutta riviä loppuun. Tämä voi olla hyödyllistä, jos halutaan tulostaa useita virheilmoituksia peräkkäin samaan riviin.
 
 ## Katso myös
 
-- [Rust-kielen virallinen dokumentaatio](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Virherajoittimen käyttö C++:ssa](https://stackoverflow.com/questions/13944258/how-to-print-to-stderr-in-c)
-- [Vinkkejä ohjelmointivirheiden hallitsemiseen](https://www.pluralsight.com/guides/how-to-handle-errors-in-your-rust-application)
+Tässä blogikirjoituksessa kävimme läpi, miksi ja miten kirjoittaa standardivirheeseen Rust-ohjelmassa. Jos haluat tutustua lisää Rustin ominaisuuksiin ja kehitystyökaluihin, suosittelemme seuraavia linkkejä:
+
+- Rust-ohjelmointikielen virallinen verkkosivusto: https://www.rust-lang.org/fi
+- Rust-oppimateriaalit: https://www.rust-lang.org/learn
+- Visual Studio Coden Rust-laajennus: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust

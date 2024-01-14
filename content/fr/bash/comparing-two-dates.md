@@ -1,43 +1,63 @@
 ---
-title:    "Bash: Comparaison de deux dates"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/comparing-two-dates.md"
+title:                "Bash: Comparer deux dates"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Lorsque vous créez des scripts Bash, il est souvent nécessaire de comparer deux dates pour prendre une décision basée sur leur différence. Que ce soit pour effectuer une sauvegarde régulière de vos fichiers ou pour vérifier si un certificat SSL a expiré, la comparaison de dates peut être un outil très utile.
+Déterminer si deux dates sont identiques ou si l'une est antérieure ou postérieure à l'autre est une tâche courante en programmation. Cela peut être utile pour trier des données ou pour effectuer des calculs basés sur des dates. Dans cet article, nous allons explorer comment comparer deux dates en utilisant le langage de programmation Bash.
 
-## Comment faire
+# Comment faire
 
-Pour comparer deux dates en Bash, il vous suffit d'utiliser la commande `date -d` suivie des deux dates à comparer, puis de spécifier comment vous souhaitez les comparer. Voici un exemple de script pour comparer la date actuelle avec une date donnée :
+Pour comparer deux dates en Bash, nous allons utiliser la commande `date` et les opérateurs de comparaison `<` et `>`. Voici un exemple de code qui compare deux dates et affiche le résultat :
 
 ```Bash
-#!/bin/bash
+date1="2021-04-10"
+date2="2021-04-15"
 
-date1="2021-01-01" # Date à comparer
-date2=$(date +"%F") # Date actuelle
-
-if [ $(date -d "$date1" +%s) -lt $(date -d "$date2" +%s) ]
-then
+if [ "$date1" \< "$date2" ]; then
   echo "$date1 est antérieure à $date2"
-else
+elif [ "$date1" \> "$date2" ]; then
   echo "$date1 est postérieure à $date2"
+else
+  echo "Les deux dates sont identiques"
 fi
 ```
 
-Dans cet exemple, nous utilisons la commande `date -d` pour convertir les dates en format UNIX et les comparer en utilisant l'opérateur `-lt` (inférieur). Vous pouvez également utiliser des comparaisons telles que `-gt` (supérieur) ou `-eq` (égal).
+Dans cet exemple, nous avons défini deux variables représentant des dates au format `AAAA-MM-JJ`. Ensuite, nous utilisons une structure `if` pour comparer ces dates en utilisant l'opérateur `<` pour déterminer si la première date `date1` est antérieure à la seconde `date2` et l'opérateur `>` pour déterminer si la première date est postérieure à la seconde. Si aucune de ces conditions n'est vérifiée, cela signifie que les deux dates sont identiques.
 
-## Plongez plus profondément
+L'exemple ci-dessus ne couvre que les cas où les deux dates sont dans le même mois et la même année. Pour comparer des dates qui ne sont pas dans le même mois ou la même année, nous pouvons utiliser la commande `date` pour convertir ces dates en timestamp (nombre de secondes écoulées depuis le 1er janvier 1970) et comparer ces valeurs. Voici un autre exemple de code :
 
-En comparant deux dates en Bash, il est important de comprendre comment le système d'exploitation les interprète. Le format de date le plus couramment utilisé en Bash est celui des "secondes depuis l'époque UNIX" (1er janvier 1970). Il est également possible de les convertir en "jours depuis l'époque UNIX" en ajoutant l'option `--iso-8601=seconds` à la commande `date -d`.
+```Bash
+date1="2020-12-25"
+date2="2021-04-01"
 
-Il est également important d'être conscient des différences entre les dates locales et les dates universelles. La conversion en "jours depuis l'époque UNIX" peut être utile pour éviter les problèmes liés aux fuseaux horaires.
+timestamp1=$(date -d "$date1" +%s)
+timestamp2=$(date -d "$date2" +%s)
 
-## Voir aussi
+if [ "$timestamp1" -lt "$timestamp2" ]; then
+  echo "$date1 est antérieur à $date2"
+elif [ "$timestamp1" -gt "$timestamp2" ]; then
+  echo "$date1 est postérieur à $date2"
+else
+  echo "Les deux dates sont identiques"
+fi
+```
 
-- [Documentation officielle de la commande `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
-- [Guide pour utiliser la commande `date` en Bash](https://www.lifewire.com/date-command-linux-unix-4097048)
-- [Plus d'informations sur le format de date UNIX](https://www.epochconverter.com/)
+Dans cet exemple, nous utilisons la commande `date` avec l'option `-d` pour convertir les dates en timestamp et la commande `date` avec l'option `+%s` pour afficher ces timestamps. Ensuite, nous utilisons les opérateurs de comparaison `-lt` (inférieur à) et `-gt` (supérieur à) pour comparer ces timestamps. 
+
+# Plongée en profondeur
+
+Il est important de noter que les opérateurs de comparaison `<` et `>` fonctionnent uniquement avec des nombres. C'est pourquoi nous devons convertir les dates en timestamp avant de les comparer. Cela peut sembler un peu compliqué, mais cela garantit une précision et une fiabilité maximale lors de la comparaison de dates.
+
+De plus, il est important de s'assurer que les dates sont dans le bon format. Dans les exemples ci-dessus, nous avons utilisé le format `AAAA-MM-JJ` car c'est le format standard pour les dates en Bash. Si les dates sont dans un format différent, vous devrez peut-être les convertir avant de les comparer.
+
+# Voir aussi
+
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Comparaison de dates en Shell](https://stackoverflow.com/questions/8211566/how-do-i-compare-dates-in-shell-scripts)
+- [Convertir une date en timestamp en Bash](https://www.baeldung.com/linux/date-command-bash)

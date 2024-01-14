@@ -1,43 +1,55 @@
 ---
-title:    "Clojure: Extraindo Substrings"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/extracting-substrings.md"
+title:                "Clojure: Extraindo subcadeias"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que extrair substrings em Clojure?
 
-Extrair substrings é uma habilidade importante para qualquer programador Clojure. Isso permite que você trabalhe com partes específicas de uma string em vez de lidar com a string inteira. Isso pode ser útil em tarefas como manipulação de dados, validação de entrada e formatação de texto.
+Se você está trabalhando com strings em Clojure, é muito comum que em algum momento precise extrair uma parte específica dessa string. Isso pode ser útil para diversas finalidades, como por exemplo, validar um número de telefone, extrair o nome de um arquivo ou até mesmo realizar manipulações mais complexas nos dados. Neste artigo, vamos explorar como extrair substrings em Clojure de forma simples e eficiente.
 
-## Como Fazer
+## Como fazer?
 
-Extrair substrings em Clojure é bastante simples. Use a função `subs` e forneça a string original, o índice inicial e o índice final desejados. O índice final é opcional e, se omitido, a substring irá até o fim da string original.
+Para extrair substrings em Clojure, utilizamos a função `subs`, que recebe como parâmetros a string e os índices do início e fim do trecho que queremos extrair. Vamos ver um exemplo prático:
 
-Exemplo: 
 ```Clojure
-(subs "Olá mundo!" 4 9)
+(def texto "Hello World!")
+(subs texto 2 6) ; retorna "llo "
+;; O primeiro índice é inclusivo e o segundo é exclusivo, por isso o resultado não inclui o caracter na posição 6.
 ```
 
-Isso produzirá a saída "mundo", pois estamos especificando o índice inicial como 4 e o índice final como 9, que é o caractere "o" em "mundo".
+Além disso, é possível utilizar índices negativos que contam a partir do final da string. Por exemplo:
 
-Você também pode usar números negativos para especificar o índice a partir do final da string. Por exemplo, se quisermos extrair "olá" da string "Olá mundo!", podemos usar:
 ```Clojure
-(subs "Olá mundo!" 0 -6)
+(def texto "Hello World!")
+(subs texto -3 -1) ; retorna "ld"
+;; O mesmo resultado seria obtido com (subs texto 8 10)
 ```
 
-Isso produzirá a saída "olá", pois estamos especificando o índice inicial como 0 e o índice final como -6, que é seis caracteres antes do final da string original.
+Também é possível utilizar o caracter `nil` para indicar o início ou fim da string. Se não for especificado um início, o valor padrão será 0, e se não for especificado um fim, a string completa será retornada. Por exemplo:
 
-## Mergulho Profundo
+```Clojure
+(def texto "Hello World!")
+(subs texto nil 5) ; retorna "Hello"
+(subs texto 6 nil) ; retorna "World!"
+(subs texto nil) ; retorna "Hello World!"
+```
 
-Além do `subs`, Clojure também tem outras funções úteis para extrair substrings, como `subseq`, que retorna uma sequência de caracteres em vez de uma string, e `substring`, que permite que você especifique o índice inicial e a quantidade de caracteres para extrair.
+## Uma olhada mais aprofundada
 
-Também é importante lembrar que Clojure usa índices baseados em zero, o que significa que o primeiro caractere de uma string é representado pelo índice 0, o segundo pelo índice 1 e assim por diante.
+Agora que já sabemos como utilizar a função `subs` para extrair substrings, vamos dar uma olhada em alguns detalhes importantes a serem considerados. Primeiramente, é importante lembrar que as strings em Clojure são imutáveis, ou seja, não podemos modificar diretamente uma string existente. Portanto, ao extrair uma substring, na verdade estamos criando uma nova string com os caracteres desejados.
 
-Se você quiser saber mais sobre a manipulação de strings em Clojure, recomendamos a leitura da documentação oficial e a prática desses exemplos em seu próprio ambiente de desenvolvimento.
+Além disso, é importante tomar cuidado com as diferenças entre índices e posições. Enquanto os índices começam em 0, as posições começam em 1. Por exemplo, a primeira letra da string "Hello World!" está na posição 1, mas na posição 0 não há nenhum caracter.
 
-## Veja Também
+Por fim, é sempre bom lembrar que a função `subs` retorna uma nova string, portanto é necessário atribuir esse valor a uma variável ou utilizá-lo de alguma forma, caso contrário, a substring será criada mas não será salva em lugar algum.
 
-- Documentação oficial Clojure sobre `subs`: https://clojuredocs.org/clojure.core/subs
-- Documentação oficial Clojure sobre `subseq`: https://clojuredocs.org/clojure.core/subseq
-- Documentação oficial Clojure sobre `substring`: https://clojuredocs.org/clojure.core/substring
+## Veja também
+
+Aqui estão alguns links úteis para você se aprofundar ainda mais no assunto:
+
+- Documentação oficial sobre a função `subs`: https://clojuredocs.org/clojure.core/subs
+- Outras formas de manipluar strings em Clojure: https://clojuredocs.org/clojure.string/replace
+- Uma explicação mais detalhada sobre índices e posições em Clojure: https://clojurebridge.github.io/community-docs/docs/clojure/strings/

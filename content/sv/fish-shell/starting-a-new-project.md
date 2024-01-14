@@ -1,57 +1,39 @@
 ---
-title:    "Fish Shell: Att påbörja ett nytt projekt"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell: Att påbörja ett nytt projekt"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
+Att starta ett nytt programmeringsprojekt kan kännas överväldigande och tidskrävande, men med hjälp av Fish Shell kan processen förenklas och bli mer effektiv. Denna guide är avsedd för svenska läsare som vill lära sig mer om hur man kan använda Fish Shell för att snabbt komma igång med ett nytt projekt.
 
-Att starta ett nytt projekt kan vara både spännande och överväldigande. Men med rätt verktyg och kunskap kan det också vara en rolig och givande upplevelse. I detta inlägg kommer vi att titta på hur man kan använda Fish Shell för att underlätta skapandet och hanteringen av projekt.
+##Hur man gör
+För att börja ett nytt projekt med Fish Shell, behöver du följa följande steg:
 
-## Så här gör du
+1. Öppna din terminal och navigera till den plats där du vill skapa ditt projekt.
+2. Skriv "mkdir" följt av namnet på ditt projekt och tryck sedan på Enter för att skapa en ny mapp för ditt projekt.
+3. Ändra till ditt nya projekts mapp genom att skriva "cd" följt av namnet på mappen.
+4. Nu är det dags att starta Fish Shell genom att skriva "fish" i terminalen och trycka på Enter.
+5. Skriv sedan "touch README.md" för att skapa en fil som kommer att fungera som en beskrivning och guide för ditt projekt.
+6. Nu är det dags att börja koda! Använd "vim" kommandot för att öppna den nya README.md filen och börja skriva din kod.
 
-För att börja ett nytt projekt med Fish Shell, behöver du först se till att du har det installerat på din dator. Om du inte redan har det, kan du ladda ner det från deras hemsida eller använda ett pakethanteringssystem som Homebrew eller Aptitude för att installera det.
-
-När Fish Shell är installerat och konfigurerat, kan du börja skapa ditt nya projekt. Detta görs genom att skapa en mapp för ditt projekt och sedan navigera till den. För att skapa mappen kan du använda följande kommando i Fish Shell:
-
-```
-mkdir mitt-projekt
-```
-
-När mappen är skapad kan du gå till den genom att använda följande kommando:
-
-```
-cd mitt-projekt
-```
-
-Nu är det dags att skapa en ny fil för ditt projekt. Detta görs genom att använda kommandot ```touch``` följt av namnet på din fil. Till exempel:
-
-```
-touch index.html
+```Fish Shell
+fish
+touch README.md
+vim README.md
 ```
 
-Nu har du skapat en fil med namnet "index.html" som du kan börja arbeta med.
+När du är klar med att skriva din kod, tryck på Esc och skriv ":wq" för att spara och avsluta filen.
 
-För att koda i Fish Shell, kan du använda alla de vanliga kommandona och syntaxen som du är van vid. Här är ett enkelt exempel på hur en hello world-applikation kan se ut i Fish Shell:
+##Djupdykning
+Det finns många olika sätt att använda Fish Shell för att förenkla processen att starta ett nytt projekt. En av de mest användbara funktionerna är autofullständighet, vilket gör att Fish Shell kan förutse och slutföra dina kommandon, filnamn och sökvägar baserat på tidigare inmatningar. Du kan också lägga till egna kommandon och genvägar för att snabbt navigera och utföra uppgifter i ditt projekt.
 
-```
-echo "Hello World"
-```
+För att lära dig mer om Fish Shell och dess funktioner, kan du läsa mer på deras officiella hemsida https://fishshell.com/ eller gå igenom dokumentationen https://fishshell.com/docs/current/index.html.
 
-När du har gjort dina ändringar i ditt projekt och är nöjd med resultatet, kan du spara dem genom att lägga till filerna med kommandot ```git add``` och sedan göra en commit med ```git commit -m "meddelande"```.
-
-## Djupdykning
-
-En av de största fördelarna med att använda Fish Shell för att starta ett projekt är dess kraftfulla funktioner för automatiskt fullbordande av kod. Detta gör att du kan skriva mindre och arbeta snabbare.
-
-Om du vill lära dig mer om Fish Shell och dess alla funktioner, kan du besöka deras officiella dokumentationssida eller gå med i deras community på Reddit eller andra forum. Genom att delta i dessa forum kan du också få hjälp och stöd från andra användare om du stöter på problem eller behöver tips och tricks.
-
-## Se även
-
+##Se också
 - [Fish Shell hemsida](https://fishshell.com/)
-- [Homebrew](https://brew.sh/)
-- [Aptitude](https://wiki.debian.org/aptitude)
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
-- [Reddit Fish Shell community](https://www.reddit.com/r/fishshell/)
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
+- [Guide för Fish Shell på svenska](https://fishshell.com/docs/current/index.html#other-languages)

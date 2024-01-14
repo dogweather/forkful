@@ -1,29 +1,49 @@
 ---
-title:    "Swift: दिनांक को स्ट्रिंग में रूपांतरित करना।"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/converting-a-date-into-a-string.md"
+title:                "Swift: तारीख को स्ट्रिंग में परिवर्तित करना"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-विषय: स्विफ्ट में डेट को स्ट्रिंग में बदलने की क्यों कारण
-## क्यों
-डेट को स्ट्रिंग में बदलने के लिए यह काफी उपयोगी हो सकता है, विशेष रूप से जब आपको उस डेट को अपनी अनुभूति तक प्रस्तुत करने की आवश्यकता हो।
+# Kyun
+Aaj ke digital yug mein, humein apne programming projects mein dates ko string mein convert karna bahut zaruri hai. Isse hum uss date ko easily readable aur displayable bana sakte hain. Is blog post mein hum aapko batayenge ki kis tarah se aap Swift mein dates ko string mein convert kar sakte hain.
 
-## कैसे करें
-```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd-MMM-yyyy"
-let date = Date()
-let dateString = dateFormatter.string(from: date)
-print(dateString)
+# Kaise Karein
+Iske liye, humein Swift programming language mein ek inbuilt function "dateFormatter()" ka istemal karna hoga. Is function ke through hum apne date ko string mein convert kar sakte hain.
+
 ```
-आपको स्ट्रिंग में डेट को बदलने के लिए संभवतः DateFormatter का उपयोग करना होगा। इसके लिए आपको एक डेट फॉर्मैटर बनाना होगा और फिर उसमें आप एक डेट ऑब्जेक्ट से स्ट्रिंग को प्राप्त कर सकते हैं। इस उदाहरण में हम "dd-MMM-yyyy" डेट फॉर्मेट का उपयोग कर रहे हैं जो 08-Sep-2021 की तारीख को "08-सितंबर-2021" के रूप में प्रस्तुत करेगा।
+// Input date
+let date = Date()
 
-## गहराई में जाएं
-डेट और स्ट्रिंग को एक दूसरे में बदलने की खोज करने से पहले, अच्छी तरह से समझ लेना चाहिए कि ये दोनों टाइम क्या होते हैं। Date डेटे सेटिंग को स्वीकार करने के लिए उपयोग किया जाता है, वहीं String वर्चुअल ऑब्जेक्ट कोस्रूप में उपयोग किया जाता है। इसलिए, डेट और स्ट्रिंग के बीच विपरीतताओं को स्पष्ट करें और फिर उन्हे कनवर्ट करने की कोशिश करें।
+// Create date formatter
+let formatter = DateFormatter()
 
-# आगे देखें
-## इसके अतिरिक्त लेख:
-- [डेट और स्विफ्ट फार्मेटिंग](https://developer.apple.com/documentation/foundation/nsdate)
-- [Swift डेट और स्ट्रिंग को बदलने का एक शानदार उदाहरण](https://iosdevcenters.blogspot.com/2017/07/date
+// Set date format
+formatter.dateFormat = "dd.MM.yy"
+
+// Convert date to string
+let stringDate = formatter.string(from: date)
+
+// Output string
+print(stringDate)
+
+```
+
+Output:
+12.03.21
+
+Is coding example mein humne sabse pehle ek input date li hai. Fir, humne "formatter" naam ka ek DateFormatter object create kiya hai. Uske baad, humne date format ko "dd.MM.yy" set kiya hai. Isse humein output string mein "12.03.21" milega, jis date ko humne input kiya tha. Aap is format ko apne requirements ke according customize kar sakte hain.
+
+# Deep Dive
+DateFormatter ke alawa bhi kayi aur tariko se Swift mein dates ko string mein convert kiya ja sakta hai. Jaise ki, date ko "string interpolation" ka istemal karke bhi convert kiya ja sakta hai. Iske alawa, date ki properties jaise ki "month", "year", "day" ko bhi combine karke string mein convert kiya ja sakta hai.
+
+Is tarah se, aap apne projects mein dates ko string mein convert karke unhe manipulate aur display kar sakte hain.
+
+# Dekhiye Bhi
+Is blog post mein humne aapko basic tarika bataya hai dates ko string mein convert karne ka. Agar aapko aur in-depth information chahiye toh neeche diye gaye links ko dekh sakte hain.
+
+- [Official Apple documentation on DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Medium article on converting dates to strings in Swift](https://medium.com/learn-to-code-ios/swift-string-from-date-fa0ba758b79)
+- [Tutorial on string interpolation in Swift](https://www.tutorialspoint.com/swift/swift_string_interpolation.htm)

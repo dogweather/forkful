@@ -1,46 +1,55 @@
 ---
-title:    "Swift: Iniciando um novo projeto"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/starting-a-new-project.md"
+title:                "Swift: Iniciando um novo projeto"
+programming_language: "Swift"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que começar um novo projeto em Swift?
 
-Existem várias razões pelas quais alguém pode querer iniciar um novo projeto em Swift. Talvez você esteja se aventurando no desenvolvimento de aplicativos para iOS pela primeira vez ou talvez esteja buscando uma linguagem de programação moderna e eficiente para suas próximas criações.
+Começar um novo projeto em Swift pode trazer uma série de benefícios, como aprender uma nova linguagem de programação, criar aplicativos para dispositivos móveis e desenvolver habilidades em programação orientada a objetos.
 
-Independente do motivo, Swift é uma excelente escolha para iniciar um novo projeto de programação. Esta linguagem de programação da Apple é altamente versátil, possui uma sintaxe simples e elegante, além de uma grande comunidade de desenvolvedores que podem te auxiliar em qualquer dúvida ou problema.
+## Como fazer:
 
-## Como começar seu projeto em Swift
+Para começar um novo projeto em Swift, é necessário ter acesso a um computador com Xcode instalado. Xcode é o IDE (Integrated Development Environment) da Apple para desenvolvimento em Swift e permite criar aplicativos para iOS, macOS e outras plataformas Apple.
 
-A seguir, apresentarei um pequeno exemplo de código para ajudar você a dar seus primeiros passos em Swift.
+O primeiro passo é criar um novo projeto no Xcode. Você pode fazer isso selecionando a opção “Criar um novo projeto” no menu File ou pressionando Command + Shift + N. Na janela que abrir, selecione “Single View App” como tipo de projeto e clique em Next.
+
+Em “Product Name”, dê um nome ao seu projeto. Certifique-se de selecionar “Swift” como linguagem de programação e “Storyboard” como interface de usuário. Você pode deixar as outras opções como padrão e clicar em Next. Escolha um local para salvar o projeto e clique em Create.
+
+Agora, você pode começar a escrever seu código Swift. Abra o arquivo ViewController.swift e você verá o seguinte código:
 
 ```Swift
-// Hello World em Swift
-let message = "Hello World!"
-print(message)
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Write your code here
+    }
+}
 ```
 
-Este é um programa simples que atribui uma mensagem à uma variável e depois a imprime na tela. Para executar este código, abra o Xcode, crie um novo projeto em Swift e copie-o na seção `ViewController.swift`.
+Dentro da função `viewDidLoad()`, você pode começar a escrever seu código para criar seu aplicativo. Por exemplo, para exibir uma mensagem na tela, você pode adicionar o seguinte código:
 
-Ao pressionar o botão de execução, você verá a mensagem "Hello World!" impressa no console do Xcode. Parabéns, você acabou de executar seu primeiro programa em Swift!
+```Swift
+print("Olá Swift!")
+```
 
-A partir daqui, você pode explorar os diversos recursos e recursos oferecidos pela linguagem, como variáveis, loops, estruturas de decisão e muito mais.
+Para verificar a saída, você pode pressionar o botão “Play” no canto superior esquerdo da tela e selecionar “Run” no menu suspenso. Você também pode usar o atalho Command + R. Isso irá executar seu aplicativo em um simulador ou dispositivo real, se estiver conectado.
 
-## Aprofundando-se em Swift
+## Aprofundando:
 
-Ao começar um novo projeto em Swift, é importante aprender mais sobre a linguagem e suas funcionalidades. Existem diversos recursos online, como tutoriais, documentação oficial e fóruns de discussão para te ajudar nesta jornada.
+Ao começar um novo projeto em Swift, é importante entender os conceitos fundamentais da linguagem, como tipos de dados, estruturas de controle, funções e classes. Também é importante familiarizar-se com o desenvolvimento para dispositivos móveis e as melhores práticas de design de aplicativos.
 
-Além disso, experimentar e criar pequenos projetos é uma excelente maneira de se familiarizar com a sintaxe e os recursos de Swift. Não tenha medo de errar e sempre procure aprender com seus erros.
+Uma ótima maneira de se aprofundar em Swift é através de tutoriais e cursos online, como o Swift Playgrounds da Apple e o Curso de Swift do Udacity. Também é útil participar de meetups e conferências para se conectar com outros desenvolvedores e trocar experiências e conhecimentos.
 
-## Veja também
+## Veja também:
 
-Aqui estão alguns links úteis para você continuar aprendendo sobre Swift:
-
-- [Documentação oficial do Swift](https://docs.swift.org/swift-book/)
-- [Tutorial do Swift da Apple](https://developer.apple.com/tutorials/swift/)
-- [Comunidade do Swift no Reddit](https://www.reddit.com/r/swift/)
-- [Curso de Swift gratuito](https://www.udemy.com/course/swift-4-programming-for-beginners/)
-
-Agora você está pronto para começar seu projeto em Swift e explorar tudo que esta linguagem tem a oferecer. Boa sorte e divirta-se codando!
+- [Swift Playgrounds](https://www.apple.com/swift/playgrounds/)
+- [Curso de Swift do Udacity](https://www.udacity.com/course/swift-for-beginners--ud1022)
+- [Meetup de desenvolvedores iOS no Brasil](https://www.meetup.com/pt-BR/topics/ios-development/br/)
+- [Conferência WWDC da Apple](https://developer.apple.com/wwdc/)

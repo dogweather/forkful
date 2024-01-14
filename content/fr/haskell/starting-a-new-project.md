@@ -1,31 +1,46 @@
 ---
-title:    "Haskell: Commencer un nouveau projet"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/starting-a-new-project.md"
+title:                "Haskell: Commencer un nouveau projet"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un programmeur en herbe ou un passionné de programmation, vous savez peut-être à quel point Haskell est un langage de programmation unique et incroyablement puissant. Sa syntaxe fonctionnelle et son système de types solide en font un choix populaire pour un large éventail de projets informatiques. Dans cet article, nous allons nous plonger dans les détails de la création d'un nouveau projet en Haskell et pourquoi vous devriez envisager de le faire.
+Lorsqu'on apprend à programmer, il est important de se fixer de nouveaux défis et de créer de nouveaux projets. Cela nous permet de mettre en pratique nos connaissances et de découvrir de nouvelles techniques de résolution de problèmes.
 
-## Comment le faire
+## Comment démarrer
 
-Avant de commencer un projet Haskell, il est important de bien comprendre la syntaxe et les concepts de base du langage. Une fois que vous avez une bonne compréhension de ces éléments, il est temps de plonger dans le processus de création de projet.
+Pour commencer un nouveau projet en Haskell, il est important de bien comprendre les bases du langage. Voici un exemple de code qui utilise les fonctions "map" et "filter" pour afficher uniquement les nombres pairs d'une liste.
 
-Tout d'abord, vous devez vous assurer que vous avez installé le compilateur GHC et le gestionnaire de paquets Cabal sur votre ordinateur. Vous pouvez ensuite créer un nouveau projet en utilisant la commande ```haskell cabal init```, qui générera un template de projet avec une structure de fichiers de base.
+```Haskell
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-Une fois que vous avez votre projet initialisé, il est temps d'écrire votre code. Vous pouvez utiliser des commandes telles que ```haskell cabal build``` et ```haskell cabal run``` pour compiler et exécuter votre code respectivement. N'hésitez pas à explorer les nombreuses bibliothèques et fonctionnalités disponibles pour enrichir votre projet.
+evenNumbers = filter even numbers
 
-## Plongée en profondeur
+doubledNumbers = map (*2) evenNumbers
 
-L'une des principales forces de Haskell est son système de types puissant. Il est donc important de comprendre comment définir et utiliser correctement les types dans votre code. Vous pouvez également utiliser des concepts tels que la programmation fonctionnelle pure, les fonctions d'ordre supérieur et la récursivité pour rendre votre code plus élégant et facile à comprendre.
+main = print doubledNumbers
+```
 
-Il est également important de noter que Haskell a une communauté active et soutenue avec de nombreuses ressources disponibles pour vous aider dans votre parcours de programmation. N'hésitez pas à rejoindre des groupes de discussion en ligne ou à regarder des tutoriels pour vous inspirer et vous aider dans votre projet.
+Résultat :
+
+```Haskell
+[4, 8, 12, 16, 20]
+```
+
+Ce petit exemple montre à quel point Haskell peut être puissant en termes de manipulation de données. Il est également important de se familiariser avec les types de données et les fonctions de base telles que "fold" et "zip". Une fois que vous avez acquis une compréhension solide de ces concepts, vous pouvez commencer à utiliser des bibliothèques externes et à explorer des projets plus complexes.
+
+## Approfondissement
+
+Pour démarrer un nouveau projet en Haskell, il est essentiel de se poser quelques questions clés : quel est l'objectif du projet ? De quelles ressources avez-vous besoin ? Quels sont les défis auxquels vous pourriez être confronté ? Une fois que vous avez les réponses à ces questions, vous pouvez commencer à mettre en place votre environnement de développement et à coder votre projet.
+
+Si vous rencontrez des difficultés, n'hésitez pas à consulter la documentation officielle de Haskell ou à rejoindre des communautés en ligne pour obtenir de l'aide et des conseils.
 
 ## Voir aussi
 
-- [Tutoriel Haskell pour débutants](https://www.haskell.org/tutorial/)
-- [Documentation officielle de Haskell](https://www.haskell.org/documentation/)
-- [Communauté Haskell en ligne](https://www.haskell.org/community/)
+- [Documentation de Haskell](https://www.haskell.org/documentation/)
+- [Communauté Haskell sur Reddit](https://www.reddit.com/r/haskell/)
+- [Tutoriels et projets officiels de Haskell](https://wiki.haskell.org/Haskell_in_5_steps)

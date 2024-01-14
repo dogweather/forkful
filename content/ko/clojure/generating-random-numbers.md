@@ -1,61 +1,34 @@
 ---
-title:    "Clojure: 난수 생성하기"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/generating-random-numbers.md"
+title:                "Clojure: 랜덤 숫자 생성"
+programming_language: "Clojure"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+Korean:
 
-랜덤한 숫자를 생성하는 일을 왜 할까요? 우리가 많은 프로그래밍 작업을 수행할 때 필요한 것들 중 하나는 랜덤한 값을 가진 데이터입니다. 예를 들어서 게임을 만들거나, 사용자에게 랜덤한 문제를 제공하거나, 무작위로 데이터를 처리하거나 할 때 랜덤한 숫자 생성 기능이 필요합니다. 또는 스터디나 시험 때 학생들에게 랜덤한 순서로 문제를 내주는 것도 가능하죠. 여러분이 할 수 있을 거라고 생각하지 못했던 새로운 아이디어를 찾을 수도 있습니다. 하지만 이러한 모든 작업에는 랜덤한 숫자 생성이 필수적이라는 것을 기억해 주세요.
+## 왜
+랜덤 숫자를 생성하는 것에 참여하는 이유는 무엇일까요? 일반적으로 우리는 사람이나 컴퓨터가 만든 패턴을 피하는 경향이 있습니다. 우리가 랜덤 숫자를 사용하는 이유는 이것이 우리에게 예측이 어려운 결과를 만들어내기 때문입니다. 이러한 예측 불가능성은 게임이나 암호화 등 다양한 영역에서 매우 중요합니다.
 
-## 어떻게 할까요?
-
-우선 우리는 랜덤한 숫자를 생성하는 데 필요한 함수를 알아야 합니다. Clojure에서는 `rand` 함수를 사용하면 됩니다. 이 함수는 0과 1 사이의 랜덤한 숫자를 생성합니다. 예제를 먼저 살펴보겠습니다.
-
-```Clojure
-(rand)
-```
-
-위의 코드를 실행하면 실행할 때마다 다른 랜덤한 숫자가 생성됩니다.
+## 방법
+랜덤 숫자를 생성하는 가장 간단한 방법은 `rand` 함수를 사용하는 것입니다. 이 함수는 0과 1 사이의 실수를 랜덤하게 생성해줍니다. 예를 들면:
 
 ```Clojure
-(rand) ; 0.5424162125660655
-(rand) ; 0.10781328403267403
+(rand) ; => 0.7187084376468706
 ```
 
-우리는 `rand` 함수를 사용하여 원하는 범위의 랜덤한 숫자를 생성할 수도 있습니다. 예를 들어서 1부터 10 사이의 숫자를 생성하려면 다음과 같이 할 수 있습니다.
+만약 우리가 특정 범위의 숫자를 원한다면 `rand-int` 함수를 사용하면 됩니다. 예를 들면, 1부터 10 사이의 숫자를 생성하기 위해서는 다음과 같이 할 수 있습니다.
 
 ```Clojure
-(+ (rand-int 10) 1)
+(rand-int 10) ; => 6
 ```
 
-위의 코드는 1부터 10 사이의 랜덤한 정수를 생성합니다. 이를 실행하면 다음과 같은 결과가 나오게 됩니다.
+## 딥 다이브
+랜덤 숫자를 생성하는 원리에 대해 깊이 알아보고 싶다면, 우리는 유사 난수 생성기를 살펴볼 필요가 있습니다. 랜덤 숫자 생성에서 가장 중요한 개념은 재현 가능성입니다. 유사 난수 생성기는 어떤 시드(seed) 값을 사용하여 숫자를 생성하는데, 이 시드 값을 바꾸면 다른 숫자가 나오게 됩니다. 만약 시드 값을 고정하면 항상 동일한 결과를 얻을 수 있습니다.
 
-```Clojure
-(+ (rand-int 10) 1) ; 9
-(+ (rand-int 10) 1) ; 7
-```
-
-## 깊이 나가보기
-
-Clojure에서 랜덤한 숫자를 생성하는 `rand` 함수는 기본적으로 Java의 `java.util.Random` 클래스를 사용합니다. 이 클래스는 구현된 알고리즘에 따라 랜덤한 값을 생성하기 때문에 종종 보안적인 문제로 이어질 수 있습니다. 또한 무작위성이 필요한 경우, 예를 들어서 노래를 재생할 때나 게임을 할 때에는 `SecureRandom` 클래스를 사용하는 것이 좋습니다.
-
-또한 Clojure는 랜덤한 숫자를 생성하기 위해 `Math.random` 함수를 사용할 수도 있습니다. 이 함수는 더 빠른 속도로 랜덤한 값을 생성하지만 더 높은 수준의 무작위성을 보장하지는 않습니다.
-
-## 더 알아보기
-
-아래의 링크를 통해 더 많은 정보를 얻을 수 있습니다.
-
-https://clojure.org/reference/java_interop#_java_util_random
-
-https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
-
-# 더 알아보기
-
-아래의 링크를 통해 더 많은 정보를 얻을 수 있습니다.
-
-https://clojure.org/reference/java_interop#_java_util_random
-
-https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
+## 참고
+- [ClojureDocs - rand](https://clojuredocs.org/clojure.core/rand)
+- [ClojureDocs - rand-int](https://clojuredocs.org/clojure.core/rand-int)
+- [Wikipedia - Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

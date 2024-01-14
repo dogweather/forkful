@@ -1,38 +1,48 @@
 ---
-title:    "Fish Shell recipe: Extracting substrings"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/extracting-substrings.md"
+title:                "Fish Shell recipe: Extracting substrings"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Substrings are a useful concept in programming, as they allow us to extract specific parts of a larger string. In the Fish Shell, extracting substrings can be particularly helpful when dealing with file names or system outputs. It allows us to easily manipulate and use specific sections of text without having to manually search for them.
+
+Have you ever needed to extract a specific part of a string in your Fish Shell programming? Maybe you want to extract a username from a URL or a timestamp from a log file. Whatever the reason may be, learning how to extract substrings can save you time and make your code more efficient.
 
 ## How To
-To extract substrings in Fish Shell, we can use the `string` command followed by the `-r` flag to specify the substring we want to extract. For example, if we have a string called `filename` with the value of `my_file.txt`, we can use the following code to extract just the file extension:
 
-```Fish Shell
-string -r ".txt" $filename
+Coding in Fish Shell is all about simplicity and elegance. Using the `string` command, we can easily extract substrings from a given string. Let's take a look at some examples using the `string` command along with the `contains` and `match` functions.
+
+```
+# Extracting a substring between two known characters
+set url "https://www.example.com/users/JohnDoe"
+string split "/" $url
+contains JohnDoe $string[4] # Output: 1 (true)
 ```
 
-This would return the value `txt`. We can also specify a range of characters to extract by using the `-s` flag for the starting index and the `-l` flag for the length. For example, if we wanted to extract the first 5 characters of a string, we could use the following code:
+In the example above, we use the `string` command to split the `url` variable into an array, using the "/" character as the delimiter. Then, we use the `contains` function to check if the array contains "JohnDoe", which is the username we want to extract.
 
-```Fish Shell
-string -s 1 -l 5 "Hello world"
+```
+# Extracting a substring using a regular expression
+set log "2021-01-10 12:34:56 | INFO | This is a log message"
+match -r "([0-9]{2}):([0-9]{2}):([0-9]{2})" $log
+echo $math[1] # Output: 12
+echo $math[2] # Output: 34
+echo $math[3] # Output: 56
 ```
 
-This would return the value `Hello`.
+In this example, we use the `match` function with a regular expression to extract the timestamp from the log message. The `match` function returns an array with the matched groups, which we can then access using indices.
 
 ## Deep Dive
-The `string` command is actually a shortcut for the `string match` command, which allows for more advanced substring extraction. We can use regular expressions to define the pattern we want to match and extract. For example, if we have a string called `phone_number` with the value of `123-456-7890`, we can use the following code to extract just the area code:
 
-```Fish Shell
-string match -r "([0-9]{3})-[0-9]{3}-[0-9]{4}" $phone_number
-```
+The `contains` function and the `-r` flag for the `match` function are just two ways you can extract substrings in Fish Shell. There are also other useful string-related functions such as `index`, `startswith`, and `endswith` that can be used for substring extraction.
 
-This would return the value `123`, as it matches the first group of 3 numbers within the parentheses.
+Additionally, you can also use the `sub` function to replace substrings in a given string. This can be useful if you only need to change a part of a string while keeping the rest intact.
 
 ## See Also
-- Official Fish Shell documentation on string manipulation: https://fishshell.com/docs/current/cmds/string.html
-- A guide to regular expressions in Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_regex
+
+- [Fish Shell documentation on string functions](https://fishshell.com/docs/current/cmds/string.html)
+- [Regular Expressions tutorial for Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-grep)
+- [Fish Shell tutorials on YouTube](https://www.youtube.com/c/FishShellOfficial/playlists)

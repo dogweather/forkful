@@ -1,35 +1,51 @@
 ---
-title:    "Gleam recipe: Creating a temporary file"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/creating-a-temporary-file.md"
+title:                "Gleam recipe: Creating a temporary file"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Creating temporary files is a common practice in programming, especially when dealing with large or complex data that needs to be stored temporarily. These files are typically used for input/output operations or temporary caching of data.
+# Why Creating a Temporary File is Useful in Gleam Programming
 
-## How To
-To create a temporary file in Gleam, we can use the `temp_file` function from the `gleam_temp` module. This function takes in a file name and returns a temporary file handle. Let's see an example of how we can create a temporary file and write data to it:
+Creating temporary files in Gleam can greatly improve the efficiency and reliability of your code. Temporary files are often used to store data during runtime, which can then be accessed and manipulated without altering the original files. This can be especially useful when working with large amounts of data or when testing new code.
+
+# How To Create a Temporary File in Gleam
+
+To create a temporary file in Gleam, we will use the `:file` module from the standard library. First, we will need to import the module:
 
 ```Gleam
-import gleam/temp
-
-fn write_to_temp_file() {
-  let mut temp = temp_file("data.txt")
-  temp.write("Hello, world!")
-}
+import file
 ```
 
-The above code will create a temporary file named `data.txt` and write the string "Hello, world!" to it. We can also specify the location where we want the temporary file to be created, by passing in a second argument to the `temp_file` function.
+Next, we can use the `file.new_temporary` function to create a temporary file. This function takes in two parameters: the directory in which the temporary file should be created, and the prefix of the temporary file's name.
 
-Once we are done using the temporary file, we can close it using the `close` function from the `gleam_temp` module. This will delete the temporary file from the system.
+```Gleam
+let temp_file = file.new_temporary(".", "data_")
+```
 
-## Deep Dive
-Under the hood, the `temp_file` function creates a file in the system's temporary directory. This location can vary depending on the operating system and environment variables. The temporary file created will have a unique name to avoid conflicts with other temporary files.
+This will create a temporary file named `data_xxxx` (where `xxxx` is a unique identifier) in the current directory. You can also specify a directory other than the current one, such as a temporary directory, to avoid cluttering your project directory with temporary files.
 
-It is important to note that temporary files should not be relied upon for permanent data storage as their lifespan is unpredictable and they can be deleted at any time. They should only be used for temporary storing and processing of data.
+We can then write data to the temporary file using the `file.write` function:
 
-## See Also
-- [The `gleam_temp` module](https://gleam.run/documentation/stdlib/gleam_temp/)
-- [Using temporary files in Rust](https://doc.rust-lang.org/std/fs/struct.File.html)
+```Gleam
+file.write(temp_file, "This is some sample data.")
+```
+
+And finally, we can read the data from the temporary file using the `file.read` function:
+
+```Gleam
+let data = file.read(temp_file)
+```
+
+# Deep Dive into Creating Temporary Files in Gleam
+
+Temporary files in Gleam are created using the `/tmp` directory by default. However, you can also specify a different temporary directory by setting the `GLEAM_TEMP` environment variable. This can be useful if you have limited storage space on your machine or want to keep temporary files separate from your main project directory.
+
+Additionally, temporary files in Gleam are automatically deleted when the program exits, so you don't have to worry about manually deleting them. This helps keep your code clean and prevents any potential conflicts with future runs of your program.
+
+# See Also
+
+- Official Gleam Documentation on File Module: https://gleam.run/documentation/stdlib/file.html
+- Creating Temporary Files in Other Programming Languages: https://www.thegeekstuff.com/2008/09/temporary-file-and-directory-in-java-and-other-programming-languages/

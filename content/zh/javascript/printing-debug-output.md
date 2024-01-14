@@ -1,62 +1,55 @@
 ---
-title:    "Javascript: 打印调试输出"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/printing-debug-output.md"
+title:                "Javascript: 打印调试输出。"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么：为什么要打印调试输出？
+## 为什么要打印调试信息
+在编写JavaScript程序时，打印调试信息是一种常用的调试方法。通过打印调试信息，开发人员可以实时查看程序中的变量值和代码执行路径，从而更快地定位和解决bug。
 
-调试是编程过程中必不可少的一部分。当我们编写复杂的Javascript代码时，可能会遇到错误或bug，这时候打印调试输出就能帮助我们更容易地理解程序执行的过程以及发现问题所在。通过打印调试输出，我们可以看到程序中各个变量的值，从而更快地找到错误并进行修复。
-
-# 如何：如何打印调试输出？
-
-要打印调试输出，我们可以使用console.log()函数来将需要打印的信息作为参数传入。下面是一个示例代码：
+## 如何打印调试信息
+要打印调试信息，可以使用console.log()方法。这个方法接受一个或多个参数，可以是字符串、数字、变量等，它会打印出这些参数的值。例如：
 
 ```Javascript
-// 定义一个变量
-var num = 10;
-
-// 打印调试输出
-console.log("当前num的值为：" + num);
-
-// 运行结果：当前num的值为：10
+let name = "小明";
+let age = 25;
+console.log("姓名：" + name);
+console.log("年龄：" + age);
 ```
 
-我们也可以在调试输出中使用多个参数，例如：
+这段代码会在控制台打印出以下信息：
+
+```
+姓名：小明
+年龄：25
+```
+
+除了console.log()，还有console.error()和console.warn()等方法可以用来打印不同级别的调试信息。
+
+## 深入了解打印调试信息
+除了简单地打印变量值，还可以在调试信息中加入一些额外的内容，帮助进一步定位问题。比如在console.log()中可以使用模板字符串，来动态地拼接字符串和变量。例如：
 
 ```Javascript
-console.log("Hello", "world", "!");
-
-// 运行结果：Hello world !
+let count = 10;
+console.log(`当前计数值为：${count}`);
 ```
 
-除了打印变量的值，我们还可以在调试输出中使用条件语句和循环语句来帮助我们更有效地调试代码。下面是一个使用条件语句的示例：
+这段代码会打印出如下信息：
 
-```Javascript
-// 定义一个变量
-var name = "Amy";
-
-// 使用条件语句
-if (name === "Amy") {
-    console.log("欢迎，" + name + "!");
-}
-
-// 运行结果：欢迎，Amy!
+```
+当前计数值为：10
 ```
 
-# 深入了解
+另外，还可以使用console.group()和console.groupEnd()方法来对调试信息进行分组。这样可以更清晰地显示调试信息的层次结构，方便调试复杂的程序。
 
-除了console.log()函数，还有其他方法可以帮助我们打印调试输出。例如，我们可以使用console.error()来打印错误信息，或者使用console.table()来打印一组数据。另外，我们也可以使用条件断点来在特定条件下暂停代码执行，并通过调试器来检查程序状态。
+## 查看更多
+- [MDN documentation on console](https://developer.mozilla.org/zh-CN/docs/Web/API/Console)
+- [Debugging JavaScript with console](https://www.w3schools.com/js/js_debugging.asp)
+- [The art of debugging JavaScript](https://www.freecodecamp.org/news/the-art-of-debugging-javascript/)
+- [JavaScript调试技巧](https://juejin.im/post/5962b8e3518825006b1d09f5)
 
-打印调试输出并不仅仅局限于Javascript语言，其他编程语言也提供了类似的调试功能。因此，掌握打印调试输出的方法不仅能提高Javascript编程的效率，也会为学习其他编程语言打下基础。
-
-# 参考链接
-
-- [JavaScript 调试指南](https://www.ruanyifeng.com/blog/2011/03/javascript_debugging.html)
-- [JavaScript 调试工具介绍](https://segmentfault.com/a/1190000020460501)
-- [JavaScript 调试神器——Chrome DevTools](https://zhuanlan.zhihu.com/p/363829832)
-- [JavaScript 控制台调试入门教程](http://www.jb51.net/article/130825.htm)
-
-# 参见
+## 请参考
+对于需要调试的程序，打印调试信息是一种简单而有效的方法。希望这篇文章能帮助到你在JavaScript编程中的调试工作。如果想要更加深入地了解JavaScript调试技巧，也可以参考上面提供的链接。

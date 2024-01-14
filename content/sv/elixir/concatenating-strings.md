@@ -1,58 +1,51 @@
 ---
-title:    "Elixir: Sammanfogning av strängar"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/concatenating-strings.md"
+title:                "Elixir: Sammanslagning av strängar"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-
-Att sammanslå strängar (concatenation) är en vanlig uppgift vid programmering. Det kan användas för att skapa dynamisk text, formulär eller presentera data på ett lättbegripligt sätt. I Elixir är det väldigt enkelt att sammanslå strängar och i denna bloggpost kommer vi att titta närmare på hur man gör det.
+# Varför
+Att konkatenera strängar, det vill säga sammanslå flera strängar till en enda, är en grundläggande och användbar funktion inom Elixir-programmering. Genom att kunna sammanslå strängar kan du skapa dynamiska texter och formatera data på ett smidigt sätt.
 
 ## Hur man gör
-
-I Elixir finns det ett antal olika sätt att sammanslå strängar på. Det enklaste sättet är att använda operatorn `<>`. Detta operatorn tar två strängar och sätter ihop dem till en enda sträng.
-
-```Elixir
-"Hello" <> " world!" 
-```
-
-Detta kommer att ge oss resultatet `Hello world!`.
-
-En annan metod är att använda Elixirs modul `String`. Denna modul har en funktion `concat` som tar in en lista av strängar och sätter ihop dem.
+Att konkatenera strängar i Elixir är enkelt. Använd funktionen `<>` för att sammanslå två eller flera strängar. Se nedan för exempel:
 
 ```Elixir
-String.concat(["Hello", " ", "world!"])
+sträng1 = "Hej "
+sträng2 = "Elixir"
+konkatenerad_sträng = sträng1 <> sträng2
+IO.puts konkatenerad_sträng
 ```
 
-Detta kommer också att ge oss samma resultat `Hello world!`.
+Output:
+```Elixir
+Hej Elixir
+```
 
-Vi kan också använda interpolering genom att sätta in variabler direkt i strängen med `#{}`.
+Du kan även konkatenera strängar med andra värden, som till exempel en variabel eller en konstant. Se exempel nedan:
 
 ```Elixir
-name = "John"
-"Hello, #{name}!"
+namn = "Anna"
+ålder = 28
+IO.puts "Mitt namn är " <> namn <> " och jag är " <> ålder <> " år gammal."
 ```
 
-Detta kommer att ge oss `Hello, John!`.
-
-En annan viktig del av att sammanslå strängar är att hantera specialtecken och formattering. I Elixir kan vi använda `|>` (pipeline operator) tillsammans med `String.replace` för att hantera detta.
-
+Output:
 ```Elixir
-"Hello, world!" |> String.replace("o", "0")
+Mitt namn är Anna och jag är 28 år gammal.
 ```
-
-Detta kommer att ge oss resultatet `Hell0, w0rld!`.
 
 ## Djupdykning
+När du konkatenerar strängar i Elixir skapas en helt ny sträng istället för att ändra på de ursprungliga strängarna. Detta sker på grund av Elixir's immutabilitet, vilket innebär att värden inte kan ändras efter att de har skapats. Detta kan kallas för "copy and concat" approach.
 
-Det är viktigt att notera att sammanslående strängar i Elixir skapar en ny kopia av strängen varje gång. Detta innebär att om en sträng behöver sammanslås många gånger, kan det vara mer effektivt att använda `IOLists` i Elixir som minimerar antalet kopior som skapas.
+En annan viktig aspekt är att funktionen `<>` tar två argument av samma typ, vilket innebär att om du försöker sammanslå en sträng med en annan typ av värde, som en integer eller en lista, kommer det att resultera i ett error.
 
-För att undvika problem med minnesallokering kan det också vara användbart att använda `<<>>` syntax istället för `<>`.
+## Se även
+För mer information om strängar och andra grundläggande koncept inom Elixir, kolla in följande resurser:
 
-## Se också
-
-- [Elixir String Modul](https://hexdocs.pm/elixir/String.html)
-- [Elixir IOLists](https://elixirschool.com/sv/lessons/advanced/io-lists/)
-- [Elixir Pattern Matching](http://elixir-lang.org/getting-started/pattern-matching.html)
+- [Elixir School](https://elixirschool.com/sv/)
+- [Officiell Elixir Dokumentation](https://hexdocs.pm/elixir/overview.html)
+- [Awesome Elixir](https://github.com/h4cc/awesome-elixir) - en samling av användbara bibliotek, tools och resurser för Elixir-programmering.

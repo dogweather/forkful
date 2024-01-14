@@ -1,39 +1,43 @@
 ---
-title:    "Python: Tulostaminen debug-ulosanto"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/printing-debug-output.md"
+title:                "Python: Tulostaa virheenkorjaustulostus"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Ihmiset usein ymmärtävät ohjelmoinnin olevan vain koodien kirjoittamista ja virheiden korjaamista. Mutta mitä jos kerran koodi ei toimikaan niin kuin pitäisi? Tämä on kun tulostus virhe viestejä (debug output) tulee pelastajaksi. Tulostus virhe viesti on prosessi, jossa ohjelmaan lisätään lisäkoodia, jotta voidaan saada tietoa mitä ohjelmassa tapahtuu ja missä vaiheessa se menee pieleen.
+Miksi tulostaa debug-lokeja ohjelmointissa? Debug-lokit ovat olennainen osa ohjelmointia, sillä ne auttavat havaitsemaan ja korjaamaan virheitä koodissa. Tulostamalla debug-lokeja voit helposti seurata ohjelman suoritusta ja selvittää, missä mahdollinen virhe aiheuttaa ongelman.
 
-## Miten
+## Miten tehdä
 
-Tulostus virhe viestejä voidaan lisätä ohjelmaan yksinkertaisilla "print" komennoilla. Esimerkiksi, jos haluat nähdä tietyn muuttujan arvon tiettynä hetkenä, voit lisätä koodiisi seuraavanlaisen rivin:
-
-```Python
-print(muuttuja)
-```
-
-Tämä tulostaa muuttujan arvon konsoliin, jolloin voit tarkistaa sen oikeellisuuden. Voit myös lisätä tekstiä tulosteen sekaan selittämään paremmin mitä tapahtuu:
+Debug-lokkien tulostaminen on helppoa Pythonissa. Voit käyttää sisäistä "print()" -funktiota tulostamaan haluamasi viestin. Voit myös käyttää "logging" -moduulia, joka antaa sinulle enemmän hallintaa siitä, mitä haluat tulostaa ja minne haluat sen tallentaa. Alla on esimerkkejä molemmista tavoista:
 
 ```Python
-print("Muuttujan arvo on:", muuttuja)
+# Käyttäen print() -funktiota:
+x = 10
+print("x on:", x) # Tulostaa "x on: 10"
+
+# Käyttäen logging-moduulia:
+import logging
+logging.basicConfig(filename='debug_loki.txt', level=logging.DEBUG) # Asettaa tason, jolla haluat tulostaa debug-lokkeja
+
+x = 10
+logging.debug("x on " + str(x)) # Tulostaa "x on 10" debug_loki.txt -tiedostoon 
 ```
 
-Tämän avulla voit seurata ohjelman suorittamista ja havaita mikä aiheuttaa ongelman.
+Tässä esimerkissä käytämme "logging" -moduulia ja asetamme tason "DEBUG". Tämä tarkoittaa, että kaikki "debug()" -funktiolla tulostetut viestit tallennetaan tiedostoon nimeltä "debug_loki.txt". Voit myös asettaa tason esimerkiksi "WARNING", mikä tarkoittaa, että vain varoituksia ja tärkeitä viestejä tallennetaan.
 
-## Syvällinen sukellus
+## Syvällisempi tieto
 
-Tulostus virhe viestien lisääminen ohjelmaan voi auttaa sinua löytämään ja korjaamaan virheitä nopeammin. Voit valita tarkalleen missä kohdissa tulostus tapahtuu ja mitä tietoja haluat nähdä. Näin voit tutkia ohjelman suoritusta vähän syvemmältä ja ymmärtää paremmin mitä tapahtuu.
+Debug-lokit voivat auttaa paljon virheiden löytämisessä ja korjaamisessa, mutta ne voivat myös hidastaa ohjelman suoritusta, jos niitä käytetään liikaa. On tärkeää käyttää niitä vain tarvittaessa ja poistaa ne lopullisesta koodista.
 
-Tärkeää on myös muistaa poistaa tulostus virhe viestit ohjelmasta, kun olet löytänyt ja korjannut virheet. Muuten koodisi saattaa olla turhan tilava ja hidastaa ohjelman suoritusta.
+Lisäksi voit myös käyttää "assert" -lausetta, joka tarkistaa koodisi tietyillä ehdoilla ja tulostaa virheen, jos jokin ei toteudu. Tämä on hyödyllinen työkalu, kun haluat varmistaa, että koodisi toimii halutulla tavalla.
 
 ## Katso myös
 
-- https://www.codecademy.com/articles/how-to-debug-python
-- https://realpython.com/python-print/
-- https://www.python.org/dev/peps/pep-0020/
+- Tulostaminen Pythonissa: https://www.python.org/dev/peps/pep-0201/ 
+- "logging" -moduulin dokumentaatio: https://docs.python.org/3/library/logging.html 
+- "assert" -lauseen dokumentaatio: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement

@@ -1,53 +1,60 @@
 ---
-title:    "Java: Calculando una fecha en el futuro o pasado"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/calculating-a-date-in-the-future-or-past.md"
+title:                "Java: Calculando una fecha en el futuro o pasado"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué:
-Calcular una fecha en el futuro o en el pasado es una habilidad útil en la programación. Puede servir para planificar eventos, automatizar tareas y mucho más.
+## Por qué
 
-## Cómo hacerlo:
-Para calcular una fecha en el futuro o en el pasado, debemos entender cómo funciona el sistema de fechas en Java y utilizar las clases y métodos adecuados. A continuación, se muestra un ejemplo de código para calcular una fecha 7 días en el futuro y mostrarla en el formato "dd/MM/yyyy":
+Calcular una fecha en el futuro o en el pasado puede ser una tarea muy útil en muchas situaciones diferentes. Puede usar este tipo de cálculo para planear eventos, recordar fechas importantes o simplemente para tener una mejor comprensión del paso del tiempo.
+
+## Cómo hacerlo
 
 ```Java
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class CalculadoraDeFechas {
+public class CalculadorDeFechas {
 
     public static void main(String[] args) {
 
-        // Obtener la fecha actual
-        LocalDate fechaActual = LocalDate.now();
-        System.out.println("Fecha actual: " + fechaActual);
+        // Calculando la fecha 10 días después de hoy
+        LocalDate fechaFutura = LocalDate.now().plusDays(10);
+        System.out.println("Fecha futura: " + fechaFutura);
 
-        // Calcular la fecha 7 días en el futuro
-        LocalDate fechaFutura = fechaActual.plusDays(7);
-        System.out.println("Fecha en 7 días: " + fechaFutura);
+        // Calculando la fecha 2 años en el pasado
+        LocalDate fechaPasada = LocalDate.now().minusYears(2);
+        System.out.println("Fecha pasada: " + fechaPasada);
 
-        // Formatear la fecha en el formato "dd/MM/yyyy"
-        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String fechaFormateada = fechaFutura.format(formateador);
-        System.out.println("Fecha formateada: " + fechaFormateada);
+        // Convirtiendo una fecha de string a objeto LocalDate
+        String fechaString = "25/05/2022";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fechaEspecifica = LocalDate.parse(fechaString, formatter);
+        System.out.println("Fecha específica: " + fechaEspecifica);
     }
 }
-```
-El resultado de ejecutar este código sería:
-```
-Fecha actual: 27/06/2021
-Fecha en 7 días: 04/07/2021
-Fecha formateada: 04/07/2021
+
 ```
 
-## Profundizando:
-Para calcular una fecha en el futuro o en el pasado, se utilizan las clases LocalDate y LocalDateTime de la librería java.time. Además, podemos utilizar otros métodos como plusDays() para sumar días a una fecha o minusDays() para restar días. También podemos formatear la fecha en diferentes formatos utilizando la clase DateTimeFormatter.
+**Salida:**
 
-Ahora que conocemos cómo funciona el sistema de fechas en Java, podemos utilizar esta habilidad en proyectos más complejos y mejorar nuestra eficiencia en la programación.
+```
+Fecha futura: 2021-09-27
+Fecha pasada: 2019-09-27
+Fecha específica: 2022-05-25
+```
 
-## Ver también:
-- [LocalDate documentación](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [DateTimeFormatter documentación](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Tutorial de Java en español](https://www.javatpoint.com/java-tutorial)
+## Profundizando
+
+La clase `LocalDate` en Java proporciona métodos útiles para trabajar con fechas. Con el método `plusDays()` podemos agregar días a una fecha dada, y con el método `minusYears()` podemos restar años. Además, podemos usar el método `parse()` y especificar un formato para convertir una fecha de string a un objeto `LocalDate`.
+
+Es importante tener en cuenta que el método `plusDays()` y `minusYears()` devuelven un nuevo objeto `LocalDate`, ya que las fechas en Java son inmutables. Esto significa que no podemos modificar un objeto `LocalDate` existente, sino que siempre crearemos uno nuevo con la fecha modificada.
+
+## Ver también
+
+- [Documentación de la clase LocalDate en Java](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Tutorial de Java: Trabajando con fechas](https://www.javatpoint.com/java-localdate)
+- [Cómo calcular una fecha en Java](https://stackabuse.com/how-to-calculate-the-date-in-java/)

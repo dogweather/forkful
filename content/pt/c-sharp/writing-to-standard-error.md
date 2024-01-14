@@ -1,35 +1,48 @@
 ---
-title:    "C#: Escrevendo para o erro padrão"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/writing-to-standard-error.md"
+title:                "C#: Escrevendo para o erro padrão"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para erro padrão?
+## Por que escrever para o standard error em C#?
 
-Escrever para o erro padrão, ou standard error, é uma técnica importante na programação. Permite que os erros e mensagens de debug sejam exibidos de forma clara para o desenvolvedor, facilitando a identificação e correção de problemas no código.
+Escrever para o standard error pode ser útil para depurar o seu código e identificar possíveis erros e falhas durante a execução do programa. Ao redirecionar os erros para o standard error, você pode obter mais informações sobre o que está acontecendo no seu código e ajudar a identificar e corrigir problemas rapidamente.
 
-## Como fazer
+## Como fazer isso em C#?
 
-Para escrever para o erro padrão em C#, podemos utilizar o método `Console.Error.WriteLine()`, que envia uma mensagem para a saída de erro. Veja um exemplo abaixo:
+Para escrever para o standard error em C#, você pode utilizar o objeto "Console.Error" e o método "WriteLine()" para imprimir uma mensagem de erro no console. Aqui está um exemplo de código:
 
 ```C#
-Console.Error.WriteLine("Erro: não foi possível conectar ao banco de dados.");
+using System;
+
+namespace escrevendoErros
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Error.WriteLine("Ocorreu um erro no programa.");
+        }
+    }
+}
 ```
 
-Isso irá exibir no console a mensagem "Erro: não foi possível conectar ao banco de dados" na cor vermelha, indicando que é uma mensagem de erro.
+E a saída do programa será:
 
-Outra forma de escrever para o erro padrão é utilizando o `Console.SetError()` para redirecionar a saída para um arquivo de log, por exemplo. Isso pode ser útil em casos onde é necessário salvar o log de erros para análise posteriormente.
+```
+Ocorreu um erro no programa.
+```
 
-## Uma análise mais profunda
+## Mais informações sobre escrever para o standard error
 
-É importante mencionar que, ao escrever para o erro padrão, estamos lidando com saída de texto sem formatação. Isso significa que é responsabilidade do desenvolvedor garantir que as mensagens sejam claras e fáceis de entender.
+Além de imprimir mensagens de erro, você também pode utilizar o objeto "Console.Error" para gravar informações de depuração durante a execução do programa. Essas informações podem ser úteis para identificar a causa de um erro e corrigi-lo com mais precisão.
 
-Além disso, é importante lembrar que a saída de erro é diferente da saída padrão `Console.WriteLine()`. Enquanto a saída padrão envia mensagens para o console de forma geral, a saída de erro é destinada apenas para mensagens de erro e debug.
+Além disso, vale ressaltar que ao escrever para o standard error, você também pode redirecionar essas informações para um arquivo de log, por exemplo. Isso pode facilitar a análise de erros e o monitoramento do seu programa.
 
 ## Veja também
-
-- [Documentação oficial da Microsoft sobre o método Console.Error.WriteLine()](https://docs.microsoft.com/pt-br/dotnet/api/system.console.error.writeline)
-- [Artigo da DevMedia sobre a saída de erro em C#](https://www.devmedia.com.br/utilizando-a-saida-de-erro-no-c/22108)
-- [Vídeo tutorial sobre a saída de erro no canal Programação Dinâmica](https://www.youtube.com/watch?v=xS7NBQvyQys)
+- [Guias de referência para C#](https://docs.microsoft.com/pt-br/dotnet/csharp/)
+- [Documentação oficial do Console (C#)](https://docs.microsoft.com/pt-br/dotnet/api/system.console?view=netcore-3.1)
+- [Como usar a depuração em C#](https://docs.microsoft.com/pt-br/visualstudio/debugger/?view=vs-2019)

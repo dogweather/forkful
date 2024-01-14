@@ -1,75 +1,44 @@
 ---
-title:    "Javascript: Obtenir la date actuelle"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/getting-the-current-date.md"
+title:                "Javascript: Obtenir la date actuelle"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Obtenir la date et l'heure actuelles est un concept fondamental dans la programmation. Cela permet aux développeurs de créer des applications dynamiques et de suivre le temps et les événements.
+Obtenir la date actuelle dans un programme JavaScript peut sembler banal, mais c'est en fait une étape importante pour de nombreux projets. La date actuelle peut être utilisée pour afficher l'heure de publication d'un article, pour suivre le temps écoulé depuis une certaine date ou pour créer des fonctionnalités basées sur le temps telles que des rappels ou des compteurs.
 
 ## Comment faire
 
-Pour obtenir la date et l'heure actuelles en Javascript, il existe différentes méthodes. La plus simple est d'utiliser l'objet `Date()` intégré dans le language.
+Il existe plusieurs façons d'obtenir la date actuelle en JavaScript. Voici deux exemples:
 
 ```Javascript
-// Créer un nouvel objet Date
-let date = new Date();
+// Utiliser l'objet Date pour créer une instance de la date actuelle
+let currentDate = new Date();
 
-// Obtenir la date actuelle
-let currentDate = date.getDate();
+// Utiliser la méthode Date.now() pour obtenir la date actuelle en millisecondes depuis le 1er janvier 1970
+let currentDateInMs = Date.now();
 
-// Obtenir le jour de la semaine (de 0 à 6)
-let dayOfWeek = date.getDay();
+console.log(currentDate); // Affiche la date complète, y compris l'heure et la zone horaire
+console.log(currentDateInMs); // Affiche la date en millisecondes
 
-// Obtenir le mois actuel (de 0 à 11)
-let currentMonth = date.getMonth();
-
-// Obtenir l'année actuelle
-let currentYear = date.getFullYear();
-
-// Obtenir l'heure actuelle (de 0 à 23)
-let currentHour = date.getHours();
-
-// Obtenir les minutes actuelles
-let currentMinutes = date.getMinutes();
-
-// Obtenir les secondes actuelles
-let currentSeconds = date.getSeconds();
-
-// Obtenir le temps écoulé en millisecondes depuis le 1er janvier 1970
-let milliseconds = date.getTime();
+// Pour formater la date selon vos préférences, vous pouvez utiliser des méthodes telles que .getFullYear(), .getMonth() ou .toLocaleDateString()
+console.log(currentDate.toLocaleDateString()); // Affiche la date au format MM/JJ/YYYY
 ```
 
-La méthode `getDate()` renvoie le jour du mois, `getDay()` renvoie le jour de la semaine, `getMonth()` renvoie le mois et `getFullYear()` renvoie l'année. Il existe également des méthodes pour obtenir l'heure, les minutes, les secondes et les millisecondes.
+## Plongez plus en profondeur
 
-## Plongée en profondeur
+La méthode Date.now() peut sembler simple, mais elle repose en fait sur un concept appelé "timestamp". Ce timestamp est le nombre de millisecondes écoulées depuis le 1er janvier 1970, également connu sous le nom de Epoch ou UNIX time. En utilisant ce timestamp, les appareils peuvent facilement suivre le temps écoulé sans avoir à se soucier des zones horaires ou des changements de date.
 
-L'objet `Date()` offre également d'autres fonctionnalités utiles telles que la manipulation de dates et la comparaison de dates.
-
-Par exemple, pour ajouter un jour à une date donnée, nous pouvons utiliser la méthode `setDate()`.
-
-```Javascript
-let date = new Date(2020, 8, 15); // 15 septembre 2020
-let newDate = date.setDate(date.getDate() + 1); // 16 septembre 2020
-```
-
-De même, pour comparer deux dates, nous pouvons utiliser la méthode `getTime()` qui renvoie le temps en millisecondes et ensuite les comparer.
-
-```Javascript
-let date1 = new Date(2020, 8, 15);
-let date2 = new Date(2020, 8, 16);
-if (date1.getTime() < date2.getTime()) {
-  console.log("date1 est avant date2");
-}
-```
-
-La manipulation et la comparaison de dates peuvent être extrêmement utiles pour les tâches telles que la planification d'événements ou la création d'agenda.
+Pour en savoir plus sur les différentes méthodes de l'objet Date et le fonctionnement des timestamps, vous pouvez consulter la documentation officielle de JavaScript.
 
 ## Voir aussi
 
-- [Documentation sur l'objet Date en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
-- [Exemples de code pour l'utilisation de l'objet Date en Javascript](https://www.w3schools.com/js/js_date_formats.asp)
-- [Tutoriel sur la manipulation des dates en Javascript](https://www.tutorialspoint.com/javascript/javascript_date_object.htm)
+- [Documentation de JavaScript sur l'objet Date](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
+- [Timestamp et Epoch time expliqués](https://www.epochconverter.com/)
+- [Formater les dates en JavaScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-in-javascript)
+
+Merci d'avoir lu cet article sur l'obtention de la date actuelle en JavaScript. Nous espérons que cela vous sera utile dans vos projets futurs !

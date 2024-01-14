@@ -1,55 +1,36 @@
 ---
-title:    "Go: 将来や過去の日付を計算する"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/calculating-a-date-in-the-future-or-past.md"
+title:                "Go: 未来や過去の日付の計算"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-Why:
 ## なぜ
+日付を過去や未来に計算する理由は、覚えておくことが重要です。例えば、リマインダーやスケジュール作成など、日常生活で非常に役立つ機能です。
 
-計算を行い将来や過去の日付を求めることの意義は何か、1-2文で説明します。
-
-How To:
 ## 方法
-
-Go言語で日付を計算する方法をコーディング例と共に説明します。サンプルの出力も `` `Go ...」 `` コードブロックを使って示します。
+Goプログラミング言語を使用して日付を計算する方法はとてもシンプルです。以下のコードを参考にしてください。
 
 ```Go
-package main
+// 現在の日付
+今日 := time.Now()
 
-import (
-	"fmt"
-	"time"
-)
+// 1ヶ月後の日付を計算する
+1ヶ月後 := 今日.AddDate(0, 1, 0)
 
-func main() {
-	// 現在の日付
-	now := time.Now()
-
-	// 将来の日付を求める
-	future := now.AddDate(1, 0, 0) // 1年後
-	fmt.Println("1年後の日付は:", future)
-
-	// 過去の日付を求める
-	past := now.AddDate(-1, 0, 0) // 1年前
-	fmt.Println("1年前の日付は:", past)
-}
+// 1ヶ月前の日付を計算する
+1ヶ月前 := 今日.AddDate(0, -1, 0)
 ```
 
-```
-// 出力
-1年後の日付は: 2022-07-16 16:32:05.61477 +0900 JST m=+31536000.000000000
-1年前の日付は: 2020-07-16 16:32:05.61477 +0900 JST m=+0.000000001
-```
+上記のコードでは、`time`パッケージの`AddDate()`関数を使用して日付を計算しています。第一引数は年数、第二引数は月数、第三引数は日数を表します。このように、数値を調整することで未来や過去の日付を計算することができます。
 
-## ディープダイブ
+## 深堀り
+日付を計算する際には、`time`パッケージの他にも様々な方法があります。例えば、`time.Parse()`関数を使用すれば特定の日付型の文字列を解析して日付を取得することができます。また、`time.Date()`関数を使用すれば独自の日付を作成することも可能です。さらに、タイムゾーンやロケールを設定することもできます。これらの機能を上手く組み合わせて使うことで、あなたのプログラムに最適な日付計算方法を見つけることができます。
 
-日付を計算する際のより深い情報を提供します。例えば、 `AddDate()` 関数では年、月、日を指定することで任意の日数を加算・減算することができます。また、 `Time` 型の変数を使用することで、より柔軟な日付の操作を行うことができます。
-
-See Also: 
-## 関連リンク
-- [Go言語公式ドキュメント（日付と時刻）](https://golang.org/pkg/time/)
-- [Go言語での日付操作の基本](https://qiita.com/K_ohkubo/items/52189dd6b3507b215646)
-- [Go言語での日付と時刻の処理方法](https://helloworldpark.com/programming/go-time-package/)
+## 参考リンク
+- [Goプログラミング言語公式サイト](https://golang.org/)
+- [timeパッケージドキュメント](https://golang.org/pkg/time/)
+- [Effective Go日本語訳](https://github.com/golang-jp/golang.org/blob/master/doc/effective_go.ja.md#%E6%97%A5%E4%BB%98%E3%81%AE%E8%A8%AD%E5%AE%9A)
+- [Goで日付を計算する方法について学ぼう](https://developer.ibm.com/jp/blogs/try-to-calculate-date-in-golang/)

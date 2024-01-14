@@ -1,53 +1,48 @@
 ---
-title:    "Ruby: Debug-Ausgabe drucken"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/printing-debug-output.md"
+title:                "Ruby: Ausgabe von Debug-Informationen drucken"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-Das Drucken von Debug-Ausgaben ist ein wichtiger Schritt beim Programmieren in Ruby, um Fehler und Probleme im Code zu identifizieren. Es kann uns helfen, die Logik und den Fluss unseres Codes besser zu verstehen und zu überprüfen, ob unsere Erwartungen erfüllt werden.
+Debugging ist ein wichtiger Teil der Programmierung und das Einbinden von Debug-Ausgaben in den Code kann dabei sehr hilfreich sein. Es ermöglicht uns, den Programmablauf zu verfolgen und zu verstehen, was im Hintergrund passiert. Dadurch können wir Fehler schneller finden und beheben.
 
-## Wie geht das
+## Wie macht man das?
 
-Um Debug-Ausgaben in Ruby zu drucken, können wir die `puts` oder `p` Methode verwenden. `puts` gibt einfach den Inhalt der übergebenen Variablen oder Strings in der Konsole aus, während `p` die Ausgabe mit zusätzlichen Informationen wie dem Datentyp anzeigt. Hier ist ein Beispiel:
+Um Debug-Ausgaben in Ruby zu erstellen, können wir die `puts` Methode verwenden. Diese gibt den angegebenen String im Terminal aus. Zum Beispiel:
 
-```Ruby
-name = "Max Mustermann"
-puts "Hallo, mein Name ist " + name
-# Ausgabe: Hallo, mein Name ist Max Mustermann
-
-p age = 25
-# Ausgabe: 25 (mit Informationen über Datentyp)
+```ruby
+puts "Hallo, Welt!"
 ```
 
-## Tiefgehende Infos
+Die Ausgabe des obigen Codes wird `Hallo, Welt!` sein. Dies kann uns dabei helfen, bestimmte Variablen oder Werte im Programmablauf zu überwachen.
 
-Zusätzlich zu `puts` und `p` gibt es auch die `print` und `printf` Methoden, die für Debug-Ausgaben verwendet werden können. `print` gibt den Inhalt ohne Zeilenumbruch aus, während `printf` formatierte Ausgaben ermöglicht, ähnlich wie `sprintf` für Strings. Hier sind weitere Beispiele:
+## Tiefer in die Materie eintauchen
 
-```Ruby
-items = ["Apfel", "Banane", "Orange"]
+Neben `puts` gibt es auch die `p` Methode, die den Wert einer Variablen und deren Datenstruktur ausgibt. Zum Beispiel:
 
-print items
-# Ausgabe: ["Apfel", "Banane", "Orange"]
-
-printf("Ich habe %d Stück Obst.", items.length)
-# Ausgabe: Ich habe 3 Stück Obst.
+```ruby
+name = "Max"
+p name
 ```
 
-Debug-Ausgaben sind auch hilfreich, wenn wir Codeabschnitte oder Schleifen durchlaufen und überprüfen möchten, ob unsere Variablen die erwarteten Werte haben.
+Die Ausgabe wird `Max` inklusive der Anführungszeichen sein, was uns zeigt, dass es sich um einen String handelt. Dies kann uns dabei helfen, Variablen mit komplexen Datentypen wie Arrays oder Hashes besser zu verstehen.
 
-## Weitere Informationen
+Es ist auch möglich, die `puts` oder `p` Methode mit dem `inspect` Befehl zu verwenden, um die Ausgabe noch detaillierter zu gestalten. Hier ist ein Beispiel, bei dem wir das `inspect` verwendet haben:
 
-Weitere Informationen über das Drucken von Debug-Ausgaben in Ruby finden Sie in der offiziellen Ruby Dokumentation und in den folgenden Ressourcen:
+```ruby
+array = [1, 2, 3]
+puts array.inspect
+```
 
-- [Official Ruby Documentation](https://ruby-doc.org/core-2.7.1/IO.html#method-i-puts)
-- [The Ruby Way: Debugging](https://www.rubyguides.com/2019/01/ruby-debugging/)
-- [Debugging Tips and Tricks in Ruby](https://medium.com/@aliciapquintana/debugging-tips-and-tricks-in-ruby-e3093e4170a7)
+Die Ausgabe wird `[1, 2, 3]` sein, was uns zeigt, dass es sich um ein Array handelt. Wenn wir jedoch die `p` Methode verwendet hätten, wäre die Ausgabe ` [1, 2, 3]` inklusive der eckigen Klammern und Kommas gewesen.
 
 ## Siehe auch
 
-- [Effektives Debugging](https://rubyonrails.org/doctrine/2015/12/02/effective_debugging_in_rails.html)
-- [6 Tips for Debugging in Ruby](https://www.sitepoint.com/6-tips-debugging-ruby/)
+- [Ruby-Dokumentation zu puts](https://ruby-doc.org/core-2.7.3/Kernel.html#method-i-puts)
+- [Ruby-Dokumentation zu p](https://ruby-doc.org/core-2.7.3/Kernel.html#method-i-p)
+- [Ruby-Dokumentation zu inspect](https://ruby-doc.org/core-2.7.3/Object.html#method-i-inspect)

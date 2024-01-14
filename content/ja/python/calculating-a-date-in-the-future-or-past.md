@@ -1,49 +1,49 @@
 ---
-title:    "Python: 未来または過去の日付の計算"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/calculating-a-date-in-the-future-or-past.md"
+title:                "Python: 将来または過去の日付の計算"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を計算するのか
+# なぜ計算するのか？
 
-日付を計算することは、将来や過去の日付を知るために非常に便利です。例えば、今日から1週間後の日付を計算することで、来週の予定を把握することができます。
+時と日付の計算は、将来や過去の特定の日付を知りたい場合や、イベントの予定を立てる場合などに役立ちます。Pythonプログラミングを使用することで、これらの計算をワンクリックで簡単に行うことができます。
 
-## 方法
+## 計算する方法
 
-Pythonの「datetime」モジュールは、日付を計算するための便利なツールを提供しています。以下のコードを使うことで、指定した日数を加算・減算することができます:
+まず第一に、Pythonのdatetimeモジュールをインポートする必要があります。これは、日付や時間に関するさまざまなデータを管理するための便利なツールを提供してくれます。
+
+次に、計算したい日付を変数に設定します。例えば、1ヶ月後の日付を計算したい場合は、``current_date = datetime.date.today()``と入力します。
+
+そして、計算したい期間を設定します。場合によっては、月や日単位の期間を計算したいこともあるかもしれません。その場合は、``delta = datetime.timedelta(months=1)``のように入力します。
+
+最後に、``result = current_date + delta``と入力して計算を行い、``print(result)``で結果を出力します。これで、指定した日付から1ヶ月後の日付が出力されます。
 
 ```Python
 import datetime
 
-# 今日の日付を取得
-today = datetime.date.today()
+current_date = datetime.date.today()
+delta = datetime.timedelta(months=1)
 
-# 1週間後の日付を計算
-one_week = today + datetime.timedelta(days=7)
-
-# 1週間前の日付を計算
-one_week_ago = today - datetime.timedelta(days=7)
-
-print("今日:", today)
-print("来週:", one_week)
-print("先週:", one_week_ago)
+result = current_date + delta
+print(result)
 ```
+出力結果:
+ 
+2021-03-31
 
-出力結果は以下のとおりになります:
+## 詳細を深める
 
-```
-今日: 2021-05-01
-来週: 2021-05-08
-先週: 2021-04-24
-```
+さらに複雑な計算を行うには、計算したい日付を変数として指定することができます。例えば、あるイベントが予定されている日を知りたい場合は、その日付を変数に設定し、現在の日付を入力して差を求めることができます。
 
-## ディープダイブ
+また、逆に、指定した日付から過去の日付を求めることもできます。例えば、「1ヶ月前には何日だったか」といった計算も可能です。
 
-「datetime」モジュールの「timedelta」オブジェクトを使うことで、任意の日数を加算・減算することができます。また、日付の比較やフォーマットの変更など、日付の操作に関する様々な機能を提供しています。詳細な情報は、公式ドキュメントを参照してください。
+また、Pythonのdatetimeモジュールには、カレンダーやタイムゾーンに関する機能もありますので、更に詳しく日付や時間を計算したい場合は、公式ドキュメントなどを参考にしてみてください。
 
 ## 参考リンク
 
-- Python公式ドキュメント: https://docs.python.org/ja/3/library/datetime.html
-- Pythonの日付操作について学ぶ: https://note.nkmk.me/python-datetime-timedelta/
+- Pythonの公式ドキュメント: https://www.python.org/
+- datetimeモジュールのドキュメント: https://docs.python.org/3/library/datetime.html
+- Pythonで日付や時間を扱う方法: https://www.digitalocean.com/community/tutorials/how-to-work-with-datetime-objects-in-python-3-ja

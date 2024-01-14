@@ -1,44 +1,45 @@
 ---
-title:    "Go: Encontrando o tamanho de uma string."
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/finding-the-length-of-a-string.md"
+title:                "Go: Encontrando o comprimento de uma string"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que encontrar o comprimento de uma string em Go?
+## Por que
 
-Às vezes, quando estamos escrevendo um programa em Go, pode ser necessário encontrar o comprimento de uma string. Isso pode ser útil em diversas situações, como realizar verificações de entrada ou manipular dados.
+Encontrar o comprimento de uma string é uma tarefa bastante comum ao programar em Go. É importante entender como essa função funciona e como utilizá-la corretamente.
 
-# Como fazer isso em Go?
+## Como Fazer
 
-Em Go, podemos encontrar o comprimento de uma string usando a função `len()`. Essa função é nativa da linguagem e pode ser aplicada diretamente em uma string, sem a necessidade de importar pacotes adicionais.
-
-Por exemplo, se tivermos a string "Olá, mundo!", podemos encontrar seu comprimento da seguinte forma:
+Para encontrar o comprimento de uma string em Go, podemos utilizar a função `len()`. Esta função retorna um valor numérico correspondente ao número total de bytes da string.
 
 ```Go
-s := "Olá, mundo!"
-fmt.Println(len(s))
+texto := "Olá, mundo!"
+fmt.Println(len(texto)) // Output: 12
 ```
 
-A saída desse código será `12`, indicando que a string possui 12 caracteres.
+Note que em Go, cada caractere de uma string é representado por um byte. Portanto, o comprimento de uma string pode ser diferente do número de caracteres individuais.
 
-# Passo a passo mais detalhado
+## Mergulho Profundo
 
-Agora que sabemos como encontrar o comprimento de uma string em Go, vamos nos aprofundar um pouco mais no processo. Quando aplicamos a função `len()` em uma string, o que realmente acontece é que ela contabiliza o número de bytes que a compõem.
+Além da função `len()`, também podemos utilizar o pacote `unicode/utf8` para encontrar o número de caracteres em uma string. Este pacote possui a função `RuneCountInString()` que retorna o número de caracteres Unicode presentes na string.
 
-Isso significa que para uma string como "Olá", que possui quatro caracteres, o comprimento será de 7 bytes, já que cada caractere é representado por um byte e há ainda um byte extra para o caractere de acentuação "á".
+```Go
+import (
+    "fmt"
+    "unicode/utf8"
+)
 
-É importante lembrar que em Go, uma string é uma sequência de bytes e, por isso, o número de bytes será igual ao comprimento da string.
+texto := "Olá, mundo!"
+fmt.Println(utf8.RuneCountInString(texto)) // Output: 10
+```
 
-# Veja também
+Isso acontece porque a letra "á" em uma string é representada por dois bytes em UTF-8, enquanto que em Unicode, é representada por apenas um caractere.
 
-- [Documentação oficial sobre a função len() em Go](https://golang.org/pkg/builtin/#len)
-- [Artigo sobre manipulação de strings em Go](https://medium.com/rungo/string-data-type-in-go-8f25aefed9b6)
-- [Stack Overflow thread sobre a diferença entre tamanho e comprimento de uma string em Go](https://stackoverflow.com/questions/16660197/golang-strings-why-is-the-byte-length-of-string-1)
+## Veja Também
 
-See Also:
-
-https://golang.org/pkg/builtin/#len
-https://medium.com/rungo/string-data-type-in-go-8f25aefed9b6
-https://stackoverflow.com/questions/16660197/golang-strings-why-is-the-byte-length-of-string-1
+- [Documentação oficial do pacote unicode/utf8](https://pkg.go.dev/unicode/utf8)
+- [Exemplos práticos de uso da função len()](https://www.geeksforgeeks.org/golang-sting-len-function/)
+- [Vídeo tutorial sobre o uso da função len() em Go](https://www.youtube.com/watch?v=nL5sponzVQE)

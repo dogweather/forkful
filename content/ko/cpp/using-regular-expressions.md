@@ -1,18 +1,19 @@
 ---
-title:    "C++: 정규식 사용하기"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/using-regular-expressions.md"
+title:                "C++: 정규 표현식 사용하기"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## 왜 Regular Expressions을 사용할까요?
 
-정규 표현식을 사용하는 이유는 무엇인가요? 모든 프로그래머에게 잘 알려진 것은 아니기 때문에 불필요한 시간 낭비를 피하기 위해서라면 다음을 읽어보세요.
+Regular Expressions은 컴퓨터 프로그래밍에서 중요한 역할을 담당하는 도구입니다. 이 도구를 사용하면 문자열에서 특정 패턴을 쉽게 찾아낼 수 있으며, 이를 통해 텍스트 처리 작업을 간단하고 효율적으로 수행할 수 있습니다. 또한 Regular Expressions을 사용하면 코드의 가독성과 유지 보수성을 향상시킬 수 있습니다.
 
-## 어떻게?
+## 사용 방법
 
-정규 표현식을 어떻게 사용할까요? 일반적인 C++ 코드를 사용하여 예제와 출력을 살펴보고 실제로 어떻게 동작하는지 알아보세요.
+Regular Expressions를 사용하기 위해서는 C++에서 제공하는 <regex> 라이브러리를 사용해야 합니다. 먼저 문자열에 포함된 패턴을 정의한 다음, 이 정의된 패턴을 사용하여 해당 패턴과 일치하는 문자열을 찾아내면 됩니다. 다음은 Regular Expressions을 사용해서 이메일 주소를 찾는 간단한 예제 코드입니다.
 
 ```C++
 #include <iostream>
@@ -21,23 +22,39 @@ editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/usin
 using namespace std;
 
 int main() {
-  // 정규 표현식을 사용해 hello를 찾는 예제
-  string str = "hello world";
-  smatch match;
-  regex reg("hello");
-  if (regex_search(str, match, reg)) {
-    cout << match.str() << endl; // 출력 결과: hello
-  }
+    // 정규표현식 패턴 정의
+    regex pattern("[a-z]+@[a-z]+\\.[a-z]+");
+    // 검색할 문자열
+    string text = "My email address is abc123@gmail.com";
+    // 정규표현식과 일치하는 문자열 찾기
+    smatch matches;
+    regex_search(text, matches, pattern);
+    // 결과 출력
+    cout << "Found email address: " << matches.str() << endl; 
+    return 0;
 }
 ```
 
-## 깊이 들어가기
+위 코드의 실행 결과는 다음과 같습니다.
 
-더 나은 프로그래머가 되기 위해 더 많은 정보를 알고 싶나요? 정규 표현식을 사용하여 문자열을 검색, 대체 및 매칭하는 다양한 방법과 적절한 문법을 익힐 수 있습니다.
+```
+Found email address: abc123@gmail.com
+```
 
-참고: [C++ 정규 표현식 참조 가이드](https://www.cplusplus.com/reference/regex/)
+## 더 깊게 알아보기
 
-# 또 보기
+Regular Expressions을 더 깊게 사용하기 위해서는 정규표현식의 문법과 기능을 잘 이해해야 합니다. 정규표현식을 작성할 때는 특수 문자, 문자 클래스, 양자법 등을 사용하여 패턴을 지정할 수 있습니다. 또한 정규표현식의 검색 결과를 다양한 방법으로 처리할 수 있습니다. 이를 통해 더욱 정교한 패턴을 찾아낼 수 있습니다.
 
-- [C++ 문자열 처리 가이드](https://www.cplusplus.com/reference/string/)
-- [정규 표현식 사용 예제 (한글)](https://velog.io/@max9106/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0)
+## 더 많은 정보 보기
+
+더 많은 정보를 알아보려면 다음 링크들을 참고해보세요.
+
+[Regular Expressions - GeeksforGeeks](https://www.geeksforgeeks.org/regular-expressions-in-c/) <br/>
+[regex - cppreference](https://en.cppreference.com/w/cpp/regex) <br/>
+[정규표현식의 기본과 활용 - 나무위키](https://namu.wiki/w/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D) <br/>
+
+## 관련 링크
+
+[Regular Expressions - 외부 링크](https://en.wikipedia.org/wiki/Regular_expression) <br/>
+[정규표현식 사용 예제 - 외부 링크](https://www.tutorialspoint.com/regex/regex_examples.htm) <br/>
+[정규표현식 문법 설명 - 외부 링크](https://www.rexegg.com/regex-quickstart.html)

@@ -1,52 +1,39 @@
 ---
-title:    "Ruby: Trouver la longueur d'une chaîne de caractères"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/finding-the-length-of-a-string.md"
+title:                "Ruby: Trouver la longueur d'une chaîne de caractères"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles on pourrait vouloir trouver la longueur d'une chaîne de caractères en programmation. Par exemple, cela peut être utile pour vérifier la validité d'une entrée utilisateur, calculer des statistiques sur des données textuelles ou simplement pour satisfaire votre curiosité en tant que développeur.
+L'une des tâches les plus courantes en programmation est de trouver la longueur d'une chaîne de caractères. Cela peut sembler être une tâche simple, mais il est important de comprendre comment cela fonctionne pour pouvoir utiliser cette fonctionnalité correctement dans vos programmes.
 
 ## Comment faire
 
-En Ruby, pour trouver la longueur d'une chaîne de caractères, il suffit d'utiliser la méthode `length` comme ceci :
+Pour trouver la longueur d'une chaîne de caractères en Ruby, vous pouvez utiliser la méthode `length` ou `size`. Voici un exemple de code:
 
 ```Ruby
-"Bonjour".length # renvoie 7
+phrase = "Bonjour tout le monde!"
+
+puts phrase.length
+puts phrase.size
 ```
 
-Vous pouvez également utiliser la méthode `size` qui renvoie également la longueur d'une chaîne :
+Cela va imprimer le nombre de caractères présents dans la chaîne, qui est 21 dans ce cas.
 
-```Ruby
-"Bonjour".size # renvoie 7
-```
+Il est important de noter que les espaces comptent également comme des caractères dans une chaîne. Donc, si vous avez une phrase avec des espaces, cela va également les inclure dans la longueur de la chaîne.
 
-Il est important de noter que ces méthodes renvoient également la longueur des espaces et des caractères spéciaux.
+## Plongée en profondeur
 
-## Une plongée plus profonde
+Pour trouver la longueur d'une chaîne de caractères, Ruby utilise la propriété `size` de l'objet String. Cette propriété renvoie la valeur de `@length`, qui est une variable d'instance. Cela signifie que chaque fois que vous appelez `size`, il va compter le nombre de caractères dans la chaîne et l'affecter à cette variable.
 
-Il est possible d'accéder directement à la longueur d'une chaîne de caractères en accédant à sa propriété `length`. Cela peut être utile lorsque vous devez vérifier la longueur d'une chaîne avant de l'utiliser.
-
-Par exemple, si vous voulez vérifier qu'un mot de passe a au moins 8 caractères, vous pouvez utiliser une structure conditionnelle comme ceci :
-
-```Ruby
-password = gets.chomp # demande à l'utilisateur de saisir un mot de passe
-if password.length < 8 # vérifie si la longueur du mot de passe est inférieure à 8
-  puts "Le mot de passe doit contenir au moins 8 caractères."
-else
-  puts "Le mot de passe est valide."
-end
-```
+Ruby utilise également la méthode `length`, qui utilise la propriété `size` en interne pour renvoyer la longueur de la chaîne. Les deux méthodes sont donc équivalentes et la seule différence entre les deux est la préférence personnelle du programmeur.
 
 ## Voir aussi
 
-Pour en savoir plus sur les méthodes `length` et `size` en Ruby, consultez la documentation officielle [ici](https://ruby-doc.org/core-2.7.1/String.html#method-i-length) et [ici](https://ruby-doc.org/core-2.7.1/String.html#method-i-size). Vous pouvez également explorer d'autres fonctionnalités utiles de Ruby en parcourant les liens suivants :
-
-- [Manipulation de chaînes de caractères avec Ruby](https://www.rubyguides.com/2015/05/working-with-strings-in-ruby/)
-- [Tutoriel Ruby pour débutants](https://www.codecademy.com/learn/learn-ruby)
-- [10 astuces Ruby pour les développeurs](https://www.rubygarage.org/blog/ruby-tricks-for-productivity)
-
-Merci d'avoir lu et à bientôt pour plus de contenu sur la programmation en Ruby !
+- [Les chaînes de caractères en Ruby](https://www.lucaswillems.com/cours/apprendre-ruby/chaine-de-caracteres/)
+- [Méthodes de manipulation de chaînes de caractères en Ruby](https://zetcode.com/lang/rubyr/stringsmethods/)
+- [Documentation officielle de Ruby sur les chaînes de caractères](https://ruby-doc.org/core-2.7.2/String.html)

@@ -1,53 +1,82 @@
 ---
-title:    "Gleam: コマンドライン引数の読み込み"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/reading-command-line-arguments.md"
+title:                "Gleam: コンピュータプログラミングの記事のタイトル：コマンドライン引数の読み取り"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ読むのか
+## なぜ
 
-コマンドライン引数を読む必要は、コンピュータープログラミングにおいて非常に重要です。コマンドライン引数を使用することで、プログラムを簡単にカスタマイズしたり、さまざまなオプションを提供したりすることができます。この記事では、Gleamプログラミング言語を使用して、コマンドライン引数を読み取る方法を紹介します。
+コマンドラインの引数を読むことの重要性について説明します。コマンドライン引数を読むことは、Gleamプログラミングにおいて非常に役に立ちます。これにより、ユーザーがプログラムの実行時にさまざまな変数を渡すことができます。この記事では、コマンドライン引数を読む方法を学ぶことで、より柔軟なプログラミングが可能になることを紹介します。
 
-## 読み取り方法
+## 方法
 
-コマンドライン引数を読み取るには、`Command` モジュールを使用します。まず、コマンドライン引数を読み取るための `parse` 関数を宣言します。
-
-```Gleam
-import gleam/command
-
-command.parse(args, []) 
-```
-
-この関数では、`args` というリストを引数として受け取ります。`args` には、実際のコマンドライン引数が格納されます。また、空のリスト `[]` を引数として渡します。これは、オプションを指定することで、より詳細な読み取りを行うことができるようになります。
-
-次に、`Command.parse` 関数を使用して、コマンドライン引数を解析します。
+コマンドライン引数を読むための基本的な構文は以下のようになります。
 
 ```Gleam
-let { "arg1", "arg2" } = command.parse(args, []) 
+fn main(args: List(String)) {
+    // 引数を処理するコードを記述する
+}
 ```
 
-この例では、コマンドライン引数の最初の2つを `arg1` と `arg2` という変数に格納しています。
+上記の例では、"args"という名前のリスト変数を使用して、引数を受け取ります。これにより、argsリストを使用して引数を処理することができます。
 
-## 深堀り
-
-`Command` モジュールには、より詳細なオプションが用意されています。例えば、`parse_required` 関数を使用することで、必須の引数を指定することができます。
+次に、実際のコード例を見てみましょう。
 
 ```Gleam
-let { "arg1", "arg2" } = command.parse_required(args, ["required_arg1", "required_arg2"]) 
+// サンプルの引数を受け取る
+fn main(args: List(String)) {
+    // 引数の数を取得してマッチする
+    let num_args = length(args)
+    case num_args {
+        // 引数が1つの場合、その引数を出力する
+        1 -> {
+            let arg = hd(args)
+            io.print("引数: ", arg)
+        }
+        // 引数が2つの場合、2つ目の引数を出力する
+        2 -> {
+            let arg = hd(tl(args))
+            io.print("2つ目の引数: ", arg)
+        }
+        // 引数が3つ以上の場合、全ての引数を出力する
+        _ -> {
+            io.print("引数の数: ", num_args)
+            // リストをループして全ての引数を出力する
+            for arg in args {
+                io.print("引数: ", arg)
+            }
+        }
+    }
+}
 ```
 
-また、`parse_args` 関数を使用することで、指定されたオプションに基づいて引数を解析することもできます。
+上記の例では、引数の数に応じて条件文で処理を分岐させています。こうすることで、異なる数の引数に対応できる柔軟性のあるプログラムを作ることができます。
 
-```Gleam
-let { "arg1", "arg2" } = command.parse_args(args, [flag("flag1"), string_flag("flag2")]) 
+以下は、上記のコードを実行した際の出力例です。
+
+```
+$ gleam run args.gleam one
+引数: one
+
+$ gleam run args.gleam one two
+2つ目の引数: two
+
+$ gleam run args.gleam one two three
+引数の数: 3
+引数: one
+引数: two
+引数: three
 ```
 
-これらのオプションを使用することで、より柔軟にコマンドライン引数を読み取ることができます。
+## 詳細
 
-## See Also
-- [Gleam公式ドキュメント](https://gleam.run/documentation/)
-- [Gleamコマンドライン引数の解析](https://gleam.run/articles/command-line-arguments/)
+コマンドライン引数を読む際には、いくつかの留意点があります。
 
-コマンドライン引数を解析することで、プログラムをより柔軟にカスタマイズすることができるようになります。是非、この記事を参考にして、ご自身のプロジェクトでコマンドライン引数を活用してみてください。
+まず、コマンドライン引数は通常、文字列として渡されるため、必要に応じて数値や他の型に変換する必要があります。
+
+また、コマンドライン引数は空白文字で区切られます。つまり、引数に空白文字を含める場合は、引数をクォーテーションで囲む必要があることに注意してください。
+
+さらに、コマンドライン引数を読む際に、ユーザーが期待する形式で引数を渡すようにしてください。例えば、引数が数値であることが期待される場合、ユーザーが数値以外を渡した場合にエラー処理を行うようにするなど、入力値のチェックを行う必要

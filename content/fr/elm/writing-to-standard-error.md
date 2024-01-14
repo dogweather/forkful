@@ -1,41 +1,41 @@
 ---
-title:    "Elm: Écrire sur l'erreur standard"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/writing-to-standard-error.md"
+title:                "Elm: Écriture vers les erreurs standard"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Écrire sur la sortie standard d'erreur est une pratique utile pour les développeurs qui veulent surveiller et déboguer leur code. En affichant des erreurs ou des messages de débogage précis, cela peut aider à identifier et résoudre rapidement les problèmes dans le code.
+L'écriture vers l'erreur standard est un outil utile pour comprendre et résoudre les erreurs dans votre code Elm. Cela vous permet de voir précisément où une erreur a été déclenchée et quelles données ont été utilisées lors de son exécution.
 
 ## Comment faire
 
-Il existe plusieurs façons d'écrire sur la sortie standard d'erreur en Elm. La méthode la plus simple consiste à utiliser la fonction `Debug.log` qui prend en paramètre une chaîne de caractères et une valeur à afficher. Par exemple :
+```Elm
+import Debug exposing (crash)
 
-```elm
-Debug.log "Mon message de débogage" variable
+goCrazy : Int -> Int
+goCrazy x =
+    if x < 10 then
+        x + 5
+
+    else
+        crash "Nombre x doit être inférieur à 10!"
 ```
+Sortie : `"Nombre x doit être inférieur à 10!"`
 
-Cela affichera "Mon message de débogage: variable" sur la sortie standard d'erreur.
-
-Pour afficher des messages d'erreur, vous pouvez utiliser la fonction `Debug.crash` qui prend en paramètre une chaîne de caractères représentant l'erreur. Par exemple :
-
-```elm
-Debug.crash "Le code a rencontré une erreur."
-```
-
-Cela affichera "Le code a rencontré une erreur." sur la sortie standard d'erreur et interrompra l'exécution du programme.
+En ajoutant la fonction `crash` à votre code Elm, vous pouvez spécifier un message d'erreur personnalisé qui sera affiché dans la console lorsque votre programme atteint cette ligne de code.
 
 ## Plongée en profondeur
 
-L'utilisation de la fonction `Debug.log` peut également être utile pour vérifier l'état interne de votre programme. Vous pouvez y passer n'importe quelle variable pour voir sa valeur à un moment précis de l'exécution. Cela peut être particulièrement utile pour trouver des erreurs difficiles à détecter. Cependant, n'oubliez pas de retirer toutes les fonctions `Debug.log` avant de mettre votre code en production car elles peuvent ralentir considérablement les performances.
+Il est important de noter que l'écriture vers l'erreur standard n'est pas la seule façon de gérer les erreurs dans votre code Elm. Il existe également des méthodes telles que la gestion d'erreur avec `Maybe` et `Result` ainsi que l'utilisation de `Debug.log` pour afficher des valeurs tout en déboguant.
 
-De plus, l'utilisation de la fonction `Debug.crash` est réservée aux messages d'erreur graves. Évitez son utilisation pour le débogage car cela peut interrompre le bon fonctionnement du programme.
+Cependant, l'écriture vers l'erreur standard peut être particulièrement utile pour les débutants en Elm, car elle leur permet de mieux comprendre où se trouvent les erreurs et pourquoi elles se produisent. De plus, cela peut aider à éviter les erreurs courantes telles que les boucles infinies ou les valeurs manquantes.
 
 ## Voir aussi
 
-- [Documentation officielle d'Elm sur le débogage](https://guide.elm-lang.org/debugging/)
-- [Article de blog sur l'utilisation de `Debug.log` en Elm](https://thoughtbot.com/blog/using-debug-log-in-elm)
-- [Tutoriel vidéo sur la gestion des erreurs en Elm](https://www.youtube.com/watch?v=zH9ZdUko6wI)
+- Documentation Elm sur l'écriture vers l'erreur standard
+- Article sur la gestion d'erreur en Elm avec `Maybe` et `Result`
+- Tutoriel sur l'utilisation de `Debug.log` en Elm pour déboguer votre code

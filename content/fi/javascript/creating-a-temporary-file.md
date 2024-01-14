@@ -1,44 +1,43 @@
 ---
-title:    "Javascript: Väliaikaisen tiedoston luominen"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/creating-a-temporary-file.md"
+title:                "Javascript: Luo väliaikainen tiedosto"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto?
+# Miksi luoda väliaikainen tiedosto?
 
-Väliaikaiset tiedostot ovat erittäin hyödyllisiä JavaScript-ohjelmoijille monissa eri tilanteissa. Ne voivat auttaa ratkaisemaan ongelmia, kuten tietojen tallentamista tilapäisesti tai ohjelman suorituksen aikana luotujen tiedostojen hallintaa. Väliaikaiset tiedostot myös parantavat koodisi suorituskykyä ja vähentävät turhien tiedostojen määrää laitteellasi.
+On olemassa monia syitä, miksi ohjelmoijat joutuvat luomaan väliaikaisia tiedostoja. Yksi yleinen syy on, että sovellus tarvitsee tallentaa tilapäisiä tietoja, joita ei tarvita pysyvästi. Esimerkiksi sovellus voi ladata ja tallentaa käyttäjän syöttämiä tiedostoja väliaikaiseen tiedostoon ennen kuin ne käsitellään ja tallennetaan pysyvästi.
 
-## Miten luoda väliaikainen tiedosto?
+# Miten luoda väliaikainen tiedosto?
 
-Helpoin tapa luoda väliaikainen tiedosto JavaScript-ohjelmassa on käyttää `tmp` -moduulia. Voit asentaa tämän moduulin NPM:n avulla ja käyttää sitä koodissasi seuraavasti:
+Jotta voit luoda väliaikaisen tiedoston Javascriptissä, tarvitset Node.js-ympäristön. Voit käyttää fs-moduulia ja sen `mkdtempSync`-funktiota luomaan väliaikaisen tiedoston.
 
-```javascript
-const tmp = require('tmp');
+```Javascript
+const fs = require('fs');
+const path = require('path');
 
-tmp.file((err, path, fd, cleanupCallback) => {
-  if (err) throw err;
-
-  console.log('Temporary file:', path);
-  
-  // Use the temporary file here
-  // ...
-
-  // Delete the temporary file after using it
-  cleanupCallback();
-});
+const tempFilePath = fs.mkdtempSync(path.join('tmp', ''));
+console.log(`Luotiin väliaikainen tiedosto ${tempFilePath}`);
 ```
 
-Tämä koodi luo automaattisesti väliaikaisen tiedoston, jonka polku tallennetaan `path`-muuttujaan. Voit käyttää tätä tiedostoa haluamallasi tavalla ja se poistetaan automaattisesti sen käytön jälkeen. Voit myös määrittää erilaisia vaihtoehtoja, kuten tiedoston nimen ja sijainnin, `tmp.file` -metodin parametreina.
+Tämä koodi luo väliaikaisen tiedoston tmp-hakemistoon ja palauttaa polun, johon tiedosto tallennettiin. Voit tarkistaa, että tiedosto on todella luotu, käyttämällä `fs.existsSync`-funktiota.
 
-## Syvempi sukellus
+```Javascript
+const exists = fs.existsSync(tempFilePath);
+console.log(`Tiedosto on olemassa: ${exists}`);
+```
 
-Väliaikaisen tiedoston luominen käyttäen `tmp` -moduulia käyttää oikeastaan vain Node.js:n `os` -moduulissa olevaa `tmpdir` -toimintoa. Tämä funktio palauttaa polun, jossa väliaikaiset tiedostot tallennetaan. Moduuli `tmp` vain abstraktoi tämän toiminnallisuuden ja tarjoaa kätevämmän API:n.
+Tämä tulostaisi `Tiedosto on olemassa: true`, jos väliaikainen tiedosto on onnistuneesti luotu.
 
-On myös tärkeää huomata, että väliaikaiset tiedostot ovat usein välttämättömiä, mutta ne eivät ole pitkäaikainen ratkaisu tietojen tallentamiseen. Jos tarvitset pysyvää tallennuspaikkaa, kannattaa harkita esimerkiksi tietokannan käyttöä.
+# Syvempi tarkastelu väliaikaisten tiedostojen luomisesta
 
-## Katso myös
+Väliaikaiset tiedostot ovat hyödyllisiä monissa tilanteissa, mutta on tärkeää huolehtia niiden oikeasta käytöstä. Väliaikaisten tiedostojen nimet tulisi generoida uniikiksi, jotta vältetään mahdolliset konfliktit. Lisäksi nämä tiedostot tulisi poistaa käytön jälkeen, jotta ne eivät vie turhaan tilaa tai aiheuta tietoturvariskejä. Siksi on tärkeää huolehtia siitä, että tietokoneesi ja ohjelmasi ovat aina ajan tasalla ja suorittaa säännöllisesti puhdistustoimia väliaikaisia tiedostoja varten.
 
-- [Tmp-moduulin dokumentaatio](https://www.npmjs.com/package/tmp)
-- [Node.js:n os-moduulin dokumentaatio](https://nodejs.org/api/os.html#os_os_tmpdir)
+# Katso myös
+
+- [fs-moduuli Node.js-dokumentaatiossa](https://nodejs.org/api/fs.html)
+- [Väliaikaisten tiedostojen luominen Javascriptissä](https://www.digitalocean.com/community/tutorials/all-about-temporary-files-in-node-js)
+- [Temp-tiedostojen turvallisen poistamisen varmistaminen](https://www.theserverside.com/feature/Securely-Deleting-Temp-Files-in-Apache-Tomcat)

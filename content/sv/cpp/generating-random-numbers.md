@@ -1,53 +1,64 @@
 ---
-title:    "C++: Generera slumpmässiga nummer"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/generating-random-numbers.md"
+title:                "C++: Generering av slumpmässiga tal"
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att generera slumpmässiga nummer är en vanlig uppgift inom programmering, och kan vara användbart i en mängd olika scenarion. Oavsett om du behöver skapa en slumpmässig spelplan, ett lösenord eller någon annan sorts variation så kan slumpmässiga nummer hjälpa dig med detta.
+Att generera slumpmässiga nummer är en användbar teknik inom programmering, speciellt inom dataanalyser och spelutveckling. Genom att kunna skapa en serie av slumpmässiga nummer kan man simulera olika scenarion och förbättra algoritmer.
 
-## Så här
+## Så här gör man
 
-För att generera slumpmässiga nummer i C++ används funktionen `rand()`. För att använda denna funktion behöver du inkludera `cstdlib` i din kod. Sedan kan du använda `rand()` för att skapa ett slumpmässigt nummer. Se nedan för ett kodexempel:
+För att generera slumpmässiga nummer i C++, behöver man först inkludera biblioteket för slumpmässiga nummer ```<random>```. Sedan kan man använda funktioner såsom ```rand()``` för att få ett heltal eller ```double``` för att få ett decimaltal. Nedan är ett exempel på hur man kan generera 10 slumpmässiga tal mellan 1 och 100:
 
 ```C++
 #include <iostream>
-#include <cstdlib>
-using namespace std;
+#include <random>
 
-int main() {
-    // Genererar ett slumpmässigt heltal mellan 1 och 100
-    int random = rand() % 100 + 1;
+int main()
+{
+    // Skapar ett random generator objekt
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    // Definierar ett intervall mellan 1 och 100
+    std::uniform_int_distribution<> distr(1, 100);
 
-    // Skriver ut det slumpmässiga numret
-    cout << "Det slumpmässiga numret är: " << random << endl;
+    // Genererar 10 slumpmässiga tal
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << distr(gen) << std::endl;
+    }
 
     return 0;
 }
 ```
 
-Exempeloutput:
+Output:
 
 ```
-Det slumpmässiga numret är: 57
+58
+32
+91
+4
+79
+42
+99
+11
+72
+10
 ```
-
-Det är viktigt att komma ihåg att `rand()` inte genererar helt slumpmässiga nummer utan använder en algoritm för att skapa en sekvens av siffror som kan se slumpmässiga ut. Därför behöver du även inkludera `time.h` och använda funktionen `srand()` för att säkerställa att varje gång programmet körs så genereras en ny sekvens av nummer. Detta kan göras genom att använda tiden som en seed för `srand()`.
 
 ## Djupdykning
 
-Som nämnts tidigare så genererar `rand()` inte helt slumpmässiga nummer. Istället används en algoritm som genererar en viss sekvens av nummer baserat på vilken seed som används. Detta kan ha vissa konsekvenser om du inte väljer en lämplig seed. Om samma seed används varje gång programmet körs så kommer samma sekvens av nummer att genereras varje gång.
+Vad händer egentligen bakom kulisserna när man genererar slumpmässiga nummer? I C++ används ofta en algoritm som heter Mersenne Twister, vilken skapar en lång sekvens av pseudoslumpmässiga tal baserat på en startpunktsseed. Denna seed kan sättas manuellt genom att kalla på ```srand()``` eller automatiskt genom att använda ett objekt från ```std::random_device```, som ofta ger en seed baserad på tiden på datorn.
 
-En annan sak att tänka på är att `rand()` genererar heltal, vilket kan vara ett problem om du behöver generera decimaltal. För att göra detta kan du använda `static_cast<double>()` för att konvertera det slumpmässiga heltalet till ett decimaltal.
-
-För att läsa mer om `rand()` och använda den på mer avancerade sätt så rekommenderas det att utforska dokumentationen för C++ eller titta på olika guider och exempel online.
+Det finns också olika distributioner som kan användas för att reglera hur slumpmässiga nummer ska fördelas, såsom en jämn fördelning, normalfördelning eller binomialfördelning. Genom att använda rätt distribution kan man få mer kontrollerade och realistiska resultat från sina slumpmässiga nummer.
 
 ## Se även
 
-- [C++ Dokumentation - rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [C++ Dokumentation - srand()](https://www.cplusplus.com/reference/cstdlib/srand/)
-- [YouTube Tutorial - Slumpmässiga Nummer i C++](https://www.youtube.com/watch?v=8o9mV04BjLg)
+- [En introduktion till Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Dokumentation för ```<random>``` biblioteket i C++](https://en.cppreference.com/w/cpp/numeric/random)

@@ -1,43 +1,47 @@
 ---
-title:    "Bash: Vianetsinnän tulostus"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/printing-debug-output.md"
+title:                "Bash: Virheenjäljitystulostuksen tulostaminen"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi printata debuggaus-tulosteita?
+## Miksi
 
-Monet kehittäjät käyttävät debuggausta osana ohjelmointiprosessiaan, mutta miksi sitten pitäisi printata debug-tulosteita? Näihin tulosteisiin on helppo lisätä koodin seurantaa ja vianmääritystä, joten ne voivat olla erittäin hyödyllisiä kehitystyössä.
+Koodissa törmää usein ongelmiin, jotka vaativat tarkempaa tarkkailua. Debuggaamiseen käytetään usein print-lauseita, joiden avulla voidaan tulostaa tietoa ja seurata koodin suoritusta. Tämä on tärkeää, jotta voidaan havaita missä kohtaa koodi ehkä ei toimi oletetulla tavalla. Siksi debug-tulostus on tärkeä osa Bash-ohjelmointia.
 
-# Näin teet sen:
+## Kuinka
 
-Useimmissa ohjelmointikielissä on erityisiä komentoja tai funktioita, jotka mahdollistavat debug-tulosteiden printtaamisen. Bashissa voidaan käyttää komentoa "echo" tai "printf" tulostamiseen. Alla on Bash-esimerkki ja sen tuloste:
-
-```Bash
-# Määritetään muuttuja
-nimi="Matti Meikäläinen"
-# Printataan muuttujan sisältö
-echo "Tervehdys $nimi!"
-```
-
-Tulostus: Tervehdys Matti Meikäläinen!
-
-# Syvempi sukellus:
-
-Debug-tulosteet voi myös formatoida ja lisätä niihin muuta tietoa kuten aikaleimoja ja muuttujien arvoja. Tämä auttaa paremman ymmärryksen ja jäljittämisen kanssa. Alla on esimerkki, jossa käytetään "printf" ja siihen lisätään aikaleima ja muuttujan arvo:
+Bash-koodissa voit tulostaa debug-tietoja käyttämällä komentoa "echo". Esimerkiksi:
 
 ```Bash
-# Määritetään muuttuja
-numero=42
-# Printataan muuttujan sisältö formatoiden
-printf "Muuttujan arvo on %s ja aika on %(%H:%M:%S)T" "$numero" `date +%s`
+echo "Debug-tietoa tässä"
 ```
 
-Tulostus: Muuttujan arvo on 42 ja aika on 11:34:56
+Tulostuksena näet "Debug-tietoa tässä". Voit myös tulostaa muuttujien arvoja laittamalla ne lainausmerkkien sisään:
 
-# Katso myös:
+```Bash
+muuttuja="Tämä on debug-tietoa"
+echo "Muuttujan arvo on: $muuttuja"
+```
 
-- [Bashin echo-komennon dokumentaatio](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
-- [Bashin printf-komennon dokumentaatio](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
-- [Bash-debuggaus vinkkejä ja temppuja](https://dev.to/thiago641/debugging-utilities-cheatsheet-for-bash-1hbc)
+Tulostuksena näet "Muuttujan arvo on: Tämä on debug-tietoa".
+
+## Syväsukellus
+
+Debug-tulostuksen voi tehdä myös käyttämällä "-x" -valitsinta. Tämä vaihtoehto tulostaa jokaisen komennon ennen sen suorittamista ja sen jälkeen. Voit käyttää sitä esimerkiksi ajamalla skriptin seuraavasti:
+
+```Bash
+bash -x skripti.sh
+```
+
+Tällöin näet jokaisen komennon, jota skripti suorittaa, ja sen jälkeisen tulosteen.
+
+Voit myös käyttää komentoa "set -x" asettaaksesi koodiin tietyn kohdan, jossa debug-tulostus alkaa ja "set +x" asettaaksesi kohdan, jossa se loppuu. Tämä voi olla hyödyllistä, jos haluat tarkastella vain tiettyä osaa koodista.
+
+## Katso myös
+
+- [Bashin virallinen manuaali](https://www.gnu.org/software/bash/manual/bash.html)
+- [Debug-tulostuksen käyttämisen parhaat käytännöt](https://www.linuxjournal.com/content/bash-debugging-made-easy)
+- [Debug-tulostuksen käyttöönotto Bash-skripteissä](https://www.tecmint.com/debug-shell-scripts-linux/)

@@ -1,55 +1,61 @@
 ---
-title:    "Haskell recipe: Generating random numbers"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/generating-random-numbers.md"
+title:                "Haskell recipe: Generating random numbers"
+programming_language: "Haskell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Welcome to our blog on generating random numbers in Haskell! As a functional programming language, Haskell has a powerful built-in feature for generating random numbers. This can be incredibly useful for a variety of applications, from creating computer games to running simulations.
+
+As programmers, we often need to work with random numbers for a variety of tasks, from creating unique IDs to game development. In Haskell, generating random numbers can be a useful skill to have in your arsenal. Not only does it add an element of unpredictability to your code, but it can also help with testing and debugging.
 
 ## How To
-To demonstrate how to generate random numbers in Haskell, let's start with a simple code example. First, we need to import the `System.Random` module, which is responsible for generating random numbers.
+
+To generate random numbers in Haskell, we first need to import the `System.Random` module. This gives us access to functions and data types related to random number generation.
+
+Let's start by generating a single random integer between 1 and 10:
+
+```Haskell 
+import System.Random
+
+randomInt <- randomRIO (1,10)
+print randomInt
+```
+
+The `randomRIO` function takes a range and returns a random number within that range. The `<-` symbol is used to assign the result of `randomRIO` to the variable `randomInt`. Finally, we use the `print` function to display the random number.
+
+We can also generate a list of random numbers using the `randomRs` function. This function takes a range and returns a list of random numbers within that range. Let's generate a list of 5 random integers between 1 and 100:
 
 ```Haskell
 import System.Random
 
--- Generate a random integer between 1 and 10
-randomInt :: IO Int
-randomInt = randomRIO (1,10)
-
-main = do
-    num <- randomInt
-    putStrLn $ "Random number: " ++ show num
+randomInts <- take 5 . randomRs (1,100) <$> newStdGen
+print randomInts
 ```
 
-When we run this code, we get a different random number between 1 and 10 every time. For example, the output might be "Random number: 8" or "Random number: 3". This is because Haskell's `randomRIO` function generates numbers based on a global random number generator, ensuring that each number is truly random.
-
-Now, let's try generating a random boolean value using `randomIO`, which generates either `True` or `False`.
-
-```Haskell
--- Generate a random boolean value
-randomBool :: IO Bool
-randomBool = randomIO :: IO Bool
-
-main = do
-    value <- randomBool
-    putStrLn $ "Random boolean value: " ++ show value
-```
-
-The output of this code could be either "Random boolean value: True" or "Random boolean value: False". We can also generate random values of other data types, such as characters and floating point numbers, by using the `randomR` and `randomIO` functions.
+In this example, we first use `newStdGen` to create a new random number generator. Then, we use `randomRs` to generate an infinite list of random integers and use the `take` function to limit the list to only 5 elements. Finally, we use the `<$>` operator to apply the `take` function to the random number generator, and the `print` function to display the list.
 
 ## Deep Dive
-Now that we have some basic understanding of how to generate random numbers in Haskell, let's explore some deeper aspects of this topic. Haskell's random number generation relies on a concept called "monads", which allows for maintaining a pure functional programming style while still generating random values. Without monads, generating random numbers in Haskell would not be possible.
 
-Additionally, Haskell provides a way to generate reproducible random numbers by using the `mkStdGen` function. This allows us to specify a seed value, which will generate the same sequence of random numbers every time we run the code. This can be useful for testing and debugging purposes.
+When generating random numbers, it's important to understand the concept of pseudo-randomness. Computers can't generate truly random numbers, but they use algorithms to generate numbers that appear random. This is why we need to provide an initial "seed" to the random number generator, to ensure we get different results each time we run our code.
+
+The `randomR` function is another way to generate random numbers in Haskell. This function takes a range and a generator, and returns a random number and a new generator. This allows us to control the state of the random number generator and ensure that we get different results each time.
+
+```Haskell
+import System.Random
+
+(randomInt, newGen) <- randomR (1,100) <$> newStdGen
+print randomInt
+(randomInt, newerGen) <- randomR (1,100) <$> newGen
+print randomInt
+```
+
+In this example, we use the `newStdGen` function to create a new generator, and then use the `randomR` function twice to generate two random numbers. Notice how we use the result of the first `randomR` call as the generator for the second call, ensuring that we get a different random number each time.
 
 ## See Also
-To learn more about generating random numbers in Haskell, check out these helpful resources:
 
-- [Haskell Wiki: Random Number Generation](https://wiki.haskell.org/Random_number_generation)
-- [Real World Haskell: I/O and Randomness](http://book.realworldhaskell.org/read/io.html)
-- [Haskell For All: Generating Random Numbers in Haskell](https://www.haskellforall.com/2016/05/random-number-generation-in-haskell.html)
-
-Happy coding!
+- [Haskell documentation for System.Random module](https://hackage.haskell.org/package/random/docs/System-Random.html)
+- [Tutorial on generating random numbers in Haskell](https://wiki.haskell.org/Random_numbers)
+- [More examples of random number generation in Haskell](https://www.tutorialspoint.com/haskell/haskell_random_numbers.htm)

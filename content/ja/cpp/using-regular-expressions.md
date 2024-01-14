@@ -1,89 +1,60 @@
 ---
-title:    "C++: 正規表現の使用"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/using-regular-expressions.md"
+title:                "C++: 正規表現の使用"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ使うのか
+## なぜ
 
-正規表現を使う利点を説明します。正規表現を使うことで、テキストデータを簡単に検索・置換できるようになります。これはプログラミングにおいて非常に便利な機能です。
+正規表現を使う理由は、文字列の検索や操作を簡単に行うことができるからです。
 
 ## 使い方
 
-正規表現を使うには、まず ```#include <regex>``` というヘッダーファイルを追加する必要があります。次に、以下のようにコードを書くことで正規表現オブジェクトを作成することができます。
+正規表現を使うには、まずは正しい文法を学ぶ必要があります。以下のコードを参考にしてください。
 
-```
-#include <regex>
- 
-std::regex regex_obj("正規表現パターン");
-```
+```C++
+// 文字列を宣言
+std::string str = "Hello, world!";
 
-正規表現パターンの書き方は様々ありますが、基本的なものは以下の通りです。
+// 正規表現パターンを宣言
+std::regex pattern = std::regex("Hello");
 
-- ```[0-9]```：数字を表します。
-- ```[a-z]```：小文字のアルファベットを表します。
-- ```[A-Z]```：大文字のアルファベットを表します。
-- ```.*```：任意の文字列を表します。
+// 文字列をパターンにマッチング
+bool match = std::regex_match(str, pattern);
 
-例えば、「apple」という文字列を含む行を検索する正規表現パターンは以下のようになります。
-
-```
-^.*apple.*$
+// マッチングの結果を出力
+std::cout << match; // 出力結果: true
 ```
 
-この正規表現パターンを使って、テキストファイルから「apple」が含まれる行を検索するコードは以下のようになります。
+また、正規表現を使うと文字列の置換や切り出しも簡単に行うことができます。以下のコードを参考にしてください。
 
-```
-#include <iostream>
-#include <fstream>
-#include <regex>
- 
-using namespace std;
- 
-int main() {
-    // ファイルを開く
-    ifstream file("sample.txt");
- 
-    // ファイルが開けなかった場合はエラーを表示
-    if (!file) {
-        cout << "ファイルが開けませんでした。" << endl;
-        return 0;
-    }
- 
-    // 正規表現オブジェクトを作成
-    regex regex_obj("^.*apple.*$");
- 
-    // 行ごとにテキストを読み込み、正規表現にマッチするかチェック
-    string line;
-    while (getline(file, line)) {
-        if (regex_match(line, regex_obj)) {
-            cout << line << endl;
-        }
-    }
- 
-    // ファイルを閉じる
-    file.close();
- 
-    return 0;
-}
+```C++
+// 文字列を宣言
+std::string str = "John Doe";
+
+// 正規表現パターンを宣言
+std::regex pattern = std::regex("Doe");
+
+// 文字列を置換
+std::string result = std::regex_replace(str, pattern, "Smith");
+
+// 置換結果を出力
+std::cout << result; // 出力結果: John Smith
 ```
 
-以上のコードを実行すると、テキストファイルから「apple」が含まれる行が出力されます。
+正規表現を使うことで、複雑な文字列操作が簡単に行えます。
 
 ## 深堀り
 
-正規表現にはより高度な機能もあります。例えば、置換を行うこともできます。```std::regex_replace()``` 関数を使うことで、特定の文字列を置換することができます。
+正規表現にはさまざまな機能があり、パターンマッチングやグループ化などの機能についても詳しく学ぶことができます。また、文字列以外のデータ型にも正規表現を使うことができます。さらに、正規表現の性能を最大限に引き出すための最適化方法も存在します。
 
-また、正規表現パターンの中でグループを作成することもできます。これを使うことで、正規表現にマッチする部分文字列を取得することができます。
-
-正規表現を使う際は、[正規表現チュートリアル](https://www.javadrive.jp/cpp/regex/)や[cppreference.com](https://en.cppreference.com/w/cpp/regex)などのサイトを参考にするとより詳細な情報を得ることができます。
-
-## それではまた次回
-
-以上で正規表現を使う方法を紹介しました。次回は正規表現を使った実践的な例を紹介します。お楽しみにしていてください。
+正規表現は初心者にとっては少し難しいかもしれませんが、慣れてしまえばとても便利なツールです。是非活用してみてください。
 
 ## 関連情報
 
-- [正規表現: cppreference.com](
+- [C++正規表現チュートリアル](https://cpprefjp.github.io/reference/regex/basic_regex.html)
+- [正規表現が使えるC++ライブラリ「Boost Regex」](https://qiita.com/THE_BORE/items/ee1f886b110da22fe012)
+- [C++で正規表現を最適化する方法](https://www.slideshare.net/ryotako/cpp-84370031)

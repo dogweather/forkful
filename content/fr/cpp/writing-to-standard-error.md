@@ -1,62 +1,57 @@
 ---
-title:    "C++: Écrire vers l'erreur standard"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/writing-to-standard-error.md"
+title:                "C++: Écrire vers l'erreur standard"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi écrire vers la sortie d'erreur standard en C++
 
-L'écriture vers le standard error est un outil important pour les programmeurs en C++. Cela permet de signaler des erreurs ou des informations de débogage importantes pendant l'exécution d'un programme en dehors de la sortie standard. Cela peut être utile pour les développeurs lorsqu'ils déboguent leur code ou pour les utilisateurs lorsqu'ils exécutent des programmes en ligne de commande.
+Ecrire vers la sortie d'erreur standard est une pratique courante dans la programmation en C++. Cela permet d'afficher des messages d'erreur ou des informations de débogage pendant l'exécution d'un programme. Dans cet article, nous vous expliquerons pourquoi il est important d'utiliser cette méthode et comment le faire efficacement.
 
-## Comment faire
+## Comment utiliser la sortie d'erreur standard
 
-Pour écrire vers le standard error en C++, il suffit d'utiliser la fonction "std::cerr" qui est disponible dans la bibliothèque standard <iostream>. Voici un exemple de code qui affiche un message d'erreur et un message de débogage :
-
-```C++
-#include <iostream>
-
-int main() {
-    std::cerr << "Une erreur s'est produite !" << std::endl;
-    std::cerr << "Le numéro de ligne est : " << __LINE__ << std::endl;
-    return 0;
-}
-```
-
-La sortie de ce programme sera :
-
-```
-Une erreur s'est produite !
-Le numéro de ligne est : 5
-```
-
-Comme vous pouvez le voir, le premier message est affiché sur une ligne séparée de la sortie standard et est précédé par "[Erreur]" pour indiquer qu'il s'agit d'un message d'erreur.
-
-## Plongée en profondeur
-
-Il est également possible d'écrire vers le standard error en utilisant la classe "std::basic_ostream" qui est la classe de base pour les objets de flux tels que std::cout et std::cerr. Cela permet une plus grande flexibilité dans le formatage des messages d'erreur et de débogage. Par exemple :
+Pour écrire vers la sortie d'erreur standard en C++, il suffit d'utiliser la fonction `cerr` avec l'opérateur "<<" pour afficher ce que vous souhaitez. Voici un exemple de code:
 
 ```C++
 #include <iostream>
 
+using namespace std;
+
 int main() {
-    std::basic_ostream<char> my_error_stream(std::cerr.rdbuf());
-    my_error_stream << "[ERREUR] Une erreur s'est produite !" << std::endl;
+    double a = 10.5;
+    double b = 0;
+
+    if(b == 0) {
+        cerr << "Erreur: la variable b ne peut pas être égale à 0." << endl;
+    } else {
+        double resultat = a / b;
+        cout << "Le résultat est: " << resultat << endl;
+    }
+
     return 0;
 }
 ```
 
-La sortie de ce programme sera :
+Dans cet exemple, nous tentons de diviser la variable `a` par la variable `b`. Si `b` est égal à 0, nous afficherons un message d'erreur vers la sortie d'erreur standard à l'aide de la fonction `cerr`. Sinon, nous afficherons le résultat vers la sortie standard `cout`.
 
+Lors de l'exécution de ce programme, le résultat sera le suivant:
+
+```sh
+Erreur: la variable b ne peut pas être égale à 0.
 ```
-[ERREUR] Une erreur s'est produite !
-```
 
-Il est également important de noter que la fonction "std::cerr" est synchronisée par défaut avec la sortie standard, ce qui signifie que les messages d'erreur apparaîtront immédiatement dans le terminal, même si le programme se bloque ou se termine prématurément.
+Cela montre l'importance d'utiliser la sortie d'erreur standard pour informer l'utilisateur en cas d'erreur.
 
-## Voir aussi
+## Approfondissement
 
-- [Documentation de std::cerr en français](https://fr.cppreference.com/w/cpp/io/cerr)
-- [Article sur l'utilisation de std::cerr en C++](https://www.tutorialspoint.com/cplusplus/cpp_error_handling.htm)
-- [Exemple pratique d'utilisation de std::cerr pour le débogage](https://www.guru99.com/c-plus-plus-error-handling.html)
+En utilisant la sortie d'erreur standard, vous avez la possibilité d'afficher des informations de débogage qui peuvent vous aider à comprendre le comportement de votre programme. Vous pouvez également utiliser des indicateurs, tels que `cerr << "Ici" << endl;`, pour savoir à quel endroit de votre code la sortie d'erreur a été déclenchée.
+
+Il est également important de savoir que la sortie d'erreur standard n'a pas besoin d'être redirigée pour être affichée à l'utilisateur. Contrairement à la sortie standard, qui peut être redirigée vers un fichier ou un flux, la sortie d'erreur standard est toujours affichée sur la console.
+
+# Voir aussi
+
+- [Documentation - `cerr` en Cplusplus.com](https://www.cplusplus.com/reference/iostream/cerr/)
+- [Guide de débogage en C++, partie 1 - Sortie d'erreur standard et d'autres techniques](https://www.codeproject.com/articles/1029838/debugging-in-cplusplus-part-1-standard-error-outpu)

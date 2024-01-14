@@ -1,48 +1,52 @@
 ---
-title:    "Arduino: テキストファイルの読み込み"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/reading-a-text-file.md"
+title:                "Arduino: テキストファイルを読む"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+### なぜ
 
-なぜテキストファイルの読み込みをするのか、理由を説明します。テキストファイルを読み込むことで、データの保存やアクセスが容易になります。また、アプリケーションやデバイスによって生成されるデータを処理するためにも、テキストファイルの読み込みは重要な役割を果たします。
+Arduinoプログラミングに興味のある方なら、テキストファイルを読み込むことはとても役に立つスキルです。例えば、センサーのデータを保存しておくため、またはプログラムの設定を簡単に変更するために、テキストファイルで設定変数を保存することができます。
 
-## 使い方
+### 方法
 
-テキストファイルを読み込むためのArduinoのコード例と、実行結果を「```Arduino ... ```」のコードブロックで示します。
+まず、テキストファイルを読み込むためには、`SD`ライブラリを使用する必要があります。コードの始めに、次のように記述してライブラリをインポートします。
 
 ```Arduino
-// テキストファイルを読み込むためのファイルオブジェクトを作成
-File file = SD.open("data.txt");
-
-// ファイルが開けなかった場合、エラーを表示
-if (!file) {
-  Serial.println("error opening file");
-  return;
-}
-
-// ファイルの内容をシリアルモニターに表示する
-while (file.available()) {
-  Serial.write(file.read());
-}
-
-// ファイルを閉じる
-file.close();
+#include <SD.h>
 ```
 
-実行結果は、シリアルモニターやSDカードに保存されたテキストファイルに表示されます。
+次に、SDカードを初期化します。
 
-## ディープダイブ
+```Arduino
+if (!SD.begin(10)) {
+    Serial.println("SDカードが見つかりませんでした。");
+    return;
+}
+```
 
-テキストファイルの読み込みには、いくつかの重要な考慮事項があります。まず、デバイスやアプリケーションによってテキストファイルのフォーマットが異なることがあります。そのため、読み込むファイルのフォーマットに合わせてコードを変更する必要があります。また、大きなファイルの場合、メモリの制限によって読み込むことができないことがあります。そのため、ファイルを分割して読み込むなどの工夫が必要です。
+これで、SDカードからの読み込みが可能になりました。次のコードは、テキストファイルを1行ずつ読み込み、シリアルモニターに出力する例です。
 
-## 他のリソース
+```Arduino
+File myFile = SD.open("myfile.txt", FILE_READ);
+if (myFile) {
+    while (myFile.available()) {
+        Serial.println(myFile.readStringUntil('\n'));
+    }
+    myFile.close();
+}
+```
 
-詳しい情報やさらに学習したい場合は、以下のリソースを参考にしてください。
+### 深堀り
 
-- [Arduino公式サイト](https://www.arduino.cc/)
-- [SDライブラリのドキュメント](https://www.arduino.cc/en/reference/SD)
-- [プチコンで学ぶマイコン入門 - ファイル入出力編](https://chibacus.com/2020/11/24/ピココンで学ぶマイコン入門-ファイル入出力編/)
+テキストファイルを読み込むためには、SDカード内のファイルパスを指定する必要があります。上記の例では、`"myfile.txt"`と書いていますが、必要に応じてファイル名を変更することができます。
+
+また、`readStringUntil()`関数は、指定した文字までの文字列を読み込みますが、他の関数を使用してファイルから読み込むことも可能です。さらに、テキストファイル以外のファイルも読み込むことができます。詳細は[SDライブラリの公式ドキュメント](https://www.arduino.cc/en/Reference/SD)を参照してください。
+
+### 参考リンク
+
+- [SDライブラリの公式ドキュメント](https://www.arduino.cc/en/Reference/SD)
+- [ArduinoでSDカードを使用する方法](https://amba.to/2QDUDA6)

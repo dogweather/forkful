@@ -1,43 +1,39 @@
 ---
-title:    "Java: Перетворення рядка в нижній регістр."
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/java/converting-a-string-to-lower-case.md"
+title:                "Java: Перетворення рядка в нижній регістр"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-В цій статті ми розглянемо процес конвертування рядка в нижній регістр в Java. Це корисний інструмент, який допоможе вам зробити ваш код більш ефективним.
+Конвертація рядка в нижній регістр є важливою задачею в програмуванні, оскільки це дозволяє стандартизувати дані та полегшує їх подальшу обробку.
 
 ## Як
 
-Конвертація рядка в нижній регістр в Java дуже проста. Для цього використовується метод `toLowerCase()`.
+Конвертація рядка в нижній регістр може бути здійснена за допомогою методу `toLowerCase()` класу `String`. Нижче наведений приклад коду та його вихідний результат:
 
 ```Java
-String str = "HELLO WORLD!";
-String lowerCaseStr = str.toLowerCase();
-System.out.println(lowerCaseStr); 
+String message = "Hello World!";
+String convertedMessage = message.toLowerCase();
+System.out.println(convertedMessage); // виведе "hello world!" на екран
 ```
 
-**Вивід:**
+Цей метод також може бути використаний для конвертації окремих символів, наприклад:
 
-`hello world!`
+```Java
+char letter = 'A';
+char convertedLetter = Character.toLowerCase(letter);
+System.out.println(convertedLetter); // виведе "a" на екран
+```
 
-Як бачимо, метод `toLowerCase()` просто перетворює всі букви в рядку в нижній регістр. Також варто зазначити, що цей метод створює новий рядок, тому потрібно присвоїти його новій змінній.
+## Глибоке погруження
 
-## Deep Dive
+При виконанні конвертації рядка в нижній регістр, важливо пам'ятати, що цей процес залежить від локалі комп'ютера, який виконує програму. Це означає, що для різних мов та алфавітів можуть бути використані різні символи. Також варто враховувати вплив методу на рядки, що містять цифри та спеціальні символи.
 
-Якщо цікавить більш детальне розуміння процесу конвертації рядка в нижній регістр, варто звернути увагу на деякі важливі моменти:
+## Дивись також
 
-- Метод `toLowerCase()` працює з будь-якою мовою, включаючи кирилицю.
-- Зверніть увагу, що цей метод не змінює оригінальний рядок, а тільки створює новий.
-- Використовуючи цей метод, ви не будете впливати на регіональні налаштування вашої мови, тому не бояться можливих проблем з кодом.
-
-Тепер ви розумієте, як працює конвертація рядка в нижній регістр в Java і можете використовувати цей інструмент в своїх проектах.
-
-## Дивіться також
-
-- [Документація Java по методу `toLowerCase()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
-- [Туторіал з конвертації рядка в Java](https://www.geeksforgeeks.org/java-string-tolowercase-method-example/)
-- [Порівняння методів конвертації рядка в Java](https://www.baeldung.com/java-convert-string-to-lowercase)
+- [Документація з методу toLowerCase()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toLowerCase())
+- [Стаття про кодування символів в Java](https://www.baeldung.com/java-char-encoding)

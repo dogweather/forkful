@@ -1,63 +1,35 @@
 ---
-title:    "PHP: Rozpoczynanie nowego projektu"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/starting-a-new-project.md"
+title:                "PHP: Rozpoczynanie nowego projektu"
+programming_language: "PHP"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
- 
-Stworzenie nowego projektu programistycznego może przynieść wiele korzyści, takich jak rozwoje umiejętności programowania, budowanie portfolio oraz spełnienie osobistych celów. W tym blogu dowiecie się jak rozpocząć nowy projekt w PHP oraz jakie kroki należy podjąć, aby osiągnąć sukces.
+# Dlaczego rozpocząć nowy projekt?
 
-## Jak to zrobić
+Czasami w programowaniu potrzebujemy zacząć od zera, aby osiągnąć lepsze efekty lub rozwiązać trudne problemy. Niektórzy programiści lubią też po prostu zabawę w tworzeniu nowych rzeczy. Niezależnie od powodu, rozpoczynanie nowego projektu jest częstym i ważnym aspektem w świecie PHP.
 
-Przed rozpoczęciem nowego projektu warto zapoznać się z podstawowymi zasadami programowania w PHP. Poniżej przedstawiam przykładowe kody oraz wyniki wyświetlające funkcje języka.
+# Jak to zrobić?
 
-```PHP
-// Tworzenie zmiennej
-$imie = "Jan";
-
-// Wyświetlenie komunikatu
-echo "Witaj " . $imie;
-// Wynik: Witaj Jan
-```
+Aby zacząć nowy projekt w PHP, potrzebujesz przede wszystkim dostępu do serwera z interpreterem PHP zainstalowanym. Następnie możesz stworzyć nowy plik z rozszerzeniem .php i zacząć pisać kod. Oto przykładowy kod, który wyświetli napis "Hello world!" na stronie internetowej:
 
 ```PHP
-// Pętla for
-for($i = 1; $i <= 10; $i++){
-    echo $i . ", "; 
-}
-// Wynik: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+<?php 
+echo "Hello world!"; // to jest komentarz
+?>
+
 ```
 
-```PHP
-// Funkcja zwracająca sumę dwóch liczb
-function suma($a, $b){
-    $wynik = $a + $b;
-    return $wynik;
-}
+Po uruchomieniu tego kodu na serwerze, zobaczysz napis "Hello world!" na stronie. To tylko podstawowy przykład, ale pozwala zrozumieć, jak działa interpretacja kodu PHP.
 
-// Wywołanie funkcji
-echo suma(2, 3);
-// Wynik: 5
-```
+# Głębszy zanurzający się
 
-Kolejnym krokiem jest zapoznanie się z podstawowymi narzędziami potrzebnymi do stworzenia projektu w PHP, takimi jak edytor kodu, platforma do tworzenia baz danych oraz frameworki.
+Aby stworzyć bardziej zaawansowany projekt w PHP, musisz zapoznać się z podstawowymi konceptami, takimi jak zmienne, pętle i funkcje. Polecamy zacząć od nauki w języku angielskim, ponieważ większość dokumentacji i materiałów jest dostępna tylko w tym języku. Możesz też spojrzeć na przykładowe projekty na GitHubie i próbować je zrozumieć i przeanalizować.
 
-## Dogłębna wiedza
+# Zobacz także
 
-Podczas tworzenia nowego projektu warto pamiętać o kilku ważnych kwestiach. Przede wszystkim należy wybrać odpowiednie narzędzia, które będą odpowiednie dla naszych potrzeb. Dobrym pomysłem jest także zapoznanie się z najlepszymi praktykami programowania i dbanie o czytelność kodu.
-
-Następnie należy zdefiniować cel swojego projektu i zaplanować jego wykonanie. Warto także przemyśleć architekturę projektu i dobór odpowiednich wzorców projektowych.
-
-Ważnym aspektem jest również testowanie i debugowanie kodu, aby uniknąć potencjalnych błędów i poprawić jego wydajność. Nie należy także zapominać o dokumentacji kodu, która ułatwi pracę nad projektem w przyszłości.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja PHP](https://www.php.net/manual/en/index.php)
-- [10 najważniejszych zasad programowania w PHP](https://www.entrepreneur.com/article/308189)
-- [Narzędzia przydatne podczas tworzenia projektów w PHP](https://codecondo.com/must-have-php-tools-for-people-who-code/)
-- [Podstawy frameworka Laravel](https://laravel.com/docs/8.x)
-- [Podstawy baz danych MySQL](https://www.mysqltutorial.org/)
-- [Wzorce projektowe w PHP](https://designpatternsphp.readthedocs.io/en/latest/)
+- [Oficjalna strona PHP](https://www.php.net/)
+- [Dokumentacja PHP](https://www.php.net/docs.php)
+- [GitHub - przykładowe projekty w PHP](https://github.com/topics/php)

@@ -1,31 +1,41 @@
 ---
-title:    "Swift: Schriftlicher Standardfehler"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-to-standard-error.md"
+title:                "Swift: Schreiben zu Standardfehler"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Schreiben an die Standardfehlermeldung (Standard Error) kann hilfreich sein, um Fehler in Code zu identifizieren und das Debuggen zu erleichtern. Es ist auch eine Möglichkeit, um zusätzliche Informationen während der Programmausführung zu erhalten.
 
-## Wie man schreibt
-Um etwas an die Standardfehlermeldung zu schreiben, können Sie die Funktion `print()` mit dem Argument `to` und dem Wert `stderr` verwenden. Hier ist ein Beispiel in Swift:
+Das Schreiben von Fehlermeldungen in der Swift-Programmierung ist eine wichtige Technik, um Fehler und Probleme im Code zu identifizieren und zu beheben. Indem man Nachrichten im standard error stream ausgibt, können Entwickler wichtige Informationen über den Zustand ihres Codes erhalten, was wiederum zu einer effizienteren Fehlerbehebung führt.
+
+## Wie man schreibt zu standard error
+
+Um Nachrichten in den Standardfehlerstrom zu schreiben, kann man die Funktion `write(_ string: String)` verwenden. Diese Funktion akzeptiert eine Zeichenfolge als Eingabe und gibt sie als Fehlermeldung aus. Hier ist ein Beispiel:
 
 ```Swift
-print("Dies ist ein Beispiel für die Standardfehlermeldung.", to: &stderr)
+write("Fehler beim Öffnen der Datei")
 ```
 
-Das Ergebnis sieht dann folgendermaßen aus:
+Dies würde die Nachricht "Fehler beim Öffnen der Datei" in den Standardfehlerstrom schreiben. Wenn man mehrere Zeichenfolgen oder Variablen ausgeben möchte, kann man den `+` Operator verwenden, um sie zu kombinieren. Hier ist ein Beispiel, das auch Variablen verwendet:
 
-```
-Dies ist ein Beispiel für die Standardfehlermeldung.
+```Swift
+let dateiName = "Benutzerdaten.txt"
+write("Fehler beim Öffnen der Datei " + dateiName + ". Bitte überprüfe deine Datei.")
 ```
 
-## Tiefenblick
-Es ist wichtig zu beachten, dass das Schreiben an die Standardfehlermeldung nur innerhalb einer laufenden Anwendung funktioniert und nicht in einer Xcode-Konsole oder im Terminal. Außerdem ist es wichtig, sicherzustellen, dass das Logging-Level richtig eingestellt ist, damit die Ausgabe auch tatsächlich auf der Standardfehlermeldung erscheint.
+Die Ausgabe würde dann folgendermaßen aussehen:
+
+`Fehler beim Öffnen der Datei Benutzerdaten.txt. Bitte überprüfe deine Datei.`
+
+## Tief eintauchen
+
+Eine tiefere Auseinandersetzung mit dem Schreiben von Fehlern zu standard error umfasst den Umgang mit Fehlern und die Verwendung von Optionals. Die Funktion `write(_ string: String)` gibt einen `NSError?` zurück, der verwendet werden kann, um auf Fehler zu reagieren. Man kann auch die Funktion `writeLine(_ string: String)` verwenden, um automatisch einen Zeilenumbruch anzuhängen. Es gibt auch mehrere Möglichkeiten, den Ausgabeort von Fehlermeldungen zu ändern, je nach den Anforderungen des Programms.
 
 ## Siehe auch
-- [Offizielle Dokumentation zu Standard Error in Swift](https://developer.apple.com/documentation/swift/standarderror)
-- [Schreiben in die Standardfehlermeldung mit der Funktion `fprintf()`](https://www.gnu.org/software/libc/manual/html_node/Formatted-Output.html)
-- [Diskussion über die Verwendung von Standard Output und Standard Error in Swift](https://forums.swift.org/t/standard-error-stream-unthread-safe/14532)
+
+- [Swift-Dokumentation zur Fehlerbehandlung](https://developer.apple.com/documentation/swift/error_handling)
+- [Wichtige Befehle in der Swift-Programmierung](https://www.raywenderlich.com/34-swift-glossary-of-important-commands)
+- [Standard Error in Swift](https://www.avanderlee.com/swift/standard-error-output/)

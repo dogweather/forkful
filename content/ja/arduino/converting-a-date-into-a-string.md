@@ -1,53 +1,45 @@
 ---
-title:    "Arduino: 日付を文字列に変換する"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/converting-a-date-into-a-string.md"
+title:                "Arduino: 日付を文字列に変換する"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-日本語読者の皆さん、こんにちは！今日は、Arduinoプログラミングのトピックについてお話ししましょう。特に、日付を文字列に変換する方法について、学びたい方はいらっしゃいますか？そうであれば、この記事がお役に立てるかもしれません。では早速、見ていきましょう！
-
-## なぜ日付を文字列に変換するのか
-
-日付を文字列に変換する理由はさまざまです。例えば、センサーデータを収集している場合、取得した日付を記録したいときがあります。また、ディスプレイに日付を表示したいときなども、文字列に変換する必要があります。日付を扱う機会があるかもしれませんので、この方法は覚えておくと便利ですよ！
+## なぜ
+日付を文字列に変換する必要があるかもしれません。例えば、LCD画面に日付を表示したり、データをログに記録したりする際に、文字列形式で日付を扱う必要があります。Arduinoを使う場合、どのように日付を文字列に変換するかを学ぶことが重要です。
 
 ## 方法
+まずは、日付を取得する方法を確認しましょう。Arduinoでは、`DateTime`ライブラリを使うことで、現在の日付や時間を取得することができます。次に、取得した日付を文字列に変換する方法を見ていきます。
 
-では、実際に日付を文字列に変換する方法を見ていきましょう。以下のコードを参考にしてください。
+```
+Arduino ...
 
-```Arduino
 #include <DateTime.h>
+DateTime now = DateTime.now();
 
-void setup() {
-    // 現在の日付と時刻を取得
-    DateTime now = DateTime.now();
-    
-    // 日付を文字列に変換
-    char date_str[20]; // 文字列を格納するための配列を作成
-    sprintf(date_str, "%d/%d/%d", now.year(), now.month(), now.day()); // フォーマット指定して日付を文字列に変換
-    Serial.println(date_str); // シリアルモニターに出力
-}
+// 日付を取得する
+int year = now.year();
+int month = now.month();
+int day = now.day();
 
-void loop() {
-    // 何か処理を行う
-}
+// 日付を文字列に変換する
+String date = String(year) + "/" + String(month) + "/" + String(day);
+
 ```
 
-上記のコードでは、DateTimeライブラリを使用して、現在の日付を取得しています。そして、sprintf関数を使用して、指定したフォーマットに従って、日付を文字列に変換しています。最後に、Serial.println関数を使って、文字列を表示しています。
+この方法では、取得した日付を`String`型にキャストし、`+`演算子を使って文字列を結合しています。このようにすることで、日付を文字列として扱えるようになります。
 
-この方法を参考に、自分のプロジェクトで日付を文字列に変換してみてください！
+さらに、フォーマットを変更したい場合は、`DateTime`ライブラリに含まれる`toString()`関数を使うことで日付のフォーマットを指定することができます。例えば、`toString("YYYY-MM-DD")`とすると、年月日の順に表示されるようになります。
 
-## 詳しく見ていく
+## 深堀り
+日付を文字列に変換する方法はさまざまありますが、一般的な方法としては、`sprintf()`関数を使うことが挙げられます。この関数は、指定したフォーマットに従って文字列を生成することができます。例えば、`sprintf(output, "%04d/%02d/%02d", year, month, day)`とすると、`output`には`YYYY/MM/DD`形式で日付が生成されるようになります。
 
-DateTimeライブラリを使って日付を取得する方法は、上記のコードのように簡単です。ただし、注意しなければいけない点があります。DateTime.now()関数を呼び出す際に、事前にDateTimeライブラリをインクルードする必要があります。また、使用するマイクロコントローラによって、使用できるDateTimeライブラリが異なる場合があるので、事前に確認してください。
+また、日付を日本語表記にしたい場合は、外部ライブラリの`TimeLib`を使うことで可能です。このライブラリでは、`Japanese_Holidays.h`を追加することで、日本の祝日を日本語で表示することができます。
 
-さらに、sprintf関数では、日付だけでなく、時刻を文字列に変換することもできます。詳しい使い方については、Arduinoの公式サイトやコミュニティで調べてみてください。
-
-## See Also（関連リンク）
-
-- Arduino公式サイト - https://www.arduino.cc/
-- DateTimeライブラリの使い方 - https://www.arduino.cc/reference/en/libraries/datetime/
-- sprintf関数の使い方 - https://www.cplusplus.com/reference/cstdio/sprintf/ 
-
-以上が、日付を文字列に変換する方法についての紹介でした。日付を扱う機会があるかもしれませんので、ぜひ覚えておいてくださいね。それでは、楽しいArduinoプログラミングを！
+## 参考リンク
+- [DateTime Library by Makuna](https://github.com/Makuna/DateTime)
+- [sprintf() function](https://www.arduino.cc/reference/en/language/functions/communication/serial/sprintf/)
+- [Time Library by PaulStoffregen](https://github.com/PaulStoffregen/Time)
+- [Japanese Holidays Library](https://github.com/iwatake2222/Japanese_Holidays)

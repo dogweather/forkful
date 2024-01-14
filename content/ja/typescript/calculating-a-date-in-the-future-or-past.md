@@ -1,45 +1,54 @@
 ---
-title:    "TypeScript: 「過去や未来の日付の計算」"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/calculating-a-date-in-the-future-or-past.md"
+title:                "TypeScript: 「未来と過去の日付の計算」"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+なぜ将来や過去の日付を計算することに関わるのか、わずか1-2文で説明します。
 
-日付を未来や過去に計算する必要のある場面は様々あります。例えば、予定表にイベントを追加する際などです。今回はTypeScriptで日付を計算する方法を紹介します。
+時々、日付を計算する必要があります。例えば、ある特定の日数を加算して特定の日付を求めたり、ある年月日を基準として何日後や何日前の日付を求めたりする場合があります。そんな時、TypeScriptを使えば簡単に日付の計算ができます。
 
-## 方法
-
-まず、今日の日付を取得する必要があります。そのためにDateオブジェクトを使用し、現在の日付を取得します。
-
-```TypeScript
-const today: Date = new Date();
-```
-
-次に、今日の日付から未来や過去の日付が何日後や何日前かを計算して、目的の日付を取得します。具体的には、今回は15日後の日付を計算することにします。
+## 使い方
+まずは、日付を計算するために必要な日付オブジェクトを作成します。例えば、現在の日付を取得するには以下のように`Date`クラスを使います。
 
 ```TypeScript
-const futureDate: Date = new Date(today.getDate() + 15);
+const today = new Date();
 ```
 
-このコードを実行すると、15日後の日付が出力されます。例えば、今日が2021年10月20日の場合、futureDateには2021年11月4日が格納されます。
-
-同様に、過去の日付を計算することもできます。例として、5日前の日付を計算する方法を紹介します。
+次に、将来や過去の日付を計算するために必要な値を定義します。例えば、3日後の日付を求める場合は以下のように`setDate()`メソッドを使います。
 
 ```TypeScript
-const pastDate: Date = new Date(today.getDate() - 5);
+const futureDate = new Date();
+
+futureDate.setDate(today.getDate() + 3);
 ```
 
-このコードを実行すると、5日前の日付が出力されます。例えば、今日が2021年10月20日の場合、pastDateには2021年10月15日が格納されます。
+同様に、3日前の日付を求める場合は以下のように`setDate()`メソッドを使います。
 
-## ディープダイブ
+```TypeScript
+const pastDate = new Date();
 
-Dateオブジェクトを使用することで、簡単に日付の計算が可能です。また、今回は日付を計算する際にgetDate()メソッドを使用しましたが、他にもgetDay()やgetMonth()など様々なメソッドが用意されています。詳細な情報を知りたい方は、公式ドキュメントを参考にしてみてください。
+pastDate.setDate(today.getDate() - 3);
+```
+
+これで、`futureDate`と`pastDate`にそれぞれ3日後と3日前の日付が計算されます。
+
+## 詳細な解説
+日付を計算する際には、JavaScriptやTypeScriptに標準で用意されている`Date`クラスを使います。このクラスには、日付や時刻を扱うための様々なメソッドやプロパティが用意されています。
+
+例えば、`setDate()`メソッドは日付を設定するためのものであり、現在の日付に任意の数を加算または減算することができます。また、`getDate()`メソッドを使えば現在の日付を取得することもできます。
+
+他にも、`setFullYear()`や`setMonth()`などのメソッドを使えば、年や月を設定することができます。日付計算に必要なメソッドやプロパティを覚えておくと便利です。
+
+## 相関項目
+この記事では 日付の計算について説明しましたが、TypeScriptには日付以外にも様々な便利な機能があります。是非以下のリンクを参考にしてみてください。
+
+[TypeScript 公式ドキュメント](https://www.typescriptlang.org/docs/home.html)
+[TypeScript Deep Dive (日本語訳) ](https://typescript-jp.gitbook.io/deep-dive/)
 
 ## 参考リンク
-
-- [MDN web docs - JavaScript Dateオブジェクト](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript公式ドキュメント - Date](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-- [TypeScriptで日付を操作する](https://qiita.com/piro0919/items/ed9b5ca11fdfa79db754)
+[JavaScriptの日付操作まとめ](https://qiita.com/rio_h/items/4039c13bd8f30e7d3081)

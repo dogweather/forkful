@@ -1,83 +1,62 @@
 ---
-title:    "Go: Skrive en tekstfil"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/writing-a-text-file.md"
+title:                "Go: Å skrive en tekstfil."
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive en tekstfil er en essensiell del av programmering, spesielt når man jobber med å lagre og hente data. Det gir deg muligheten til å lagre informasjon permanent og gjøre den tilgjengelig for senere bruk. Tekstfiler kan også være nyttige for å lagre konfigurasjoner eller loggfiler for et program.
+Å skrive en tekstfil kan være en nyttig oppgave for utviklere, spesielt i Go-programmering. Det lar oss lagre og organisere data på en enkel og lett tilgjengelig måte. I denne bloggposten vil vi se nærmere på hvordan man skriver en tekstfil i Go.
 
-## Slik gjør du det
+## Hvordan
 
-For å skrive en tekstfil i Go, trenger du først å åpne en fil med navnet du ønsker å bruke og en skriveinnstilling. Deretter kan du bruke io-pakken til å skrive innhold til filen. Se eksempelet nedenfor:
+For å skrive en tekstfil i Go, må vi først opprette en filobjekt og angi ønsket filnavn og plassering. Dette gjøres ved hjelp av `os.Create()` -funksjonen, som tar inn navnet på filen som argument og returnerer et filobjekt.
 
 ```Go
-package main
+f, err := os.Create("tekstfil.txt")
 
-import (
-    "fmt"
-    "os"
-    "io"
-)
+if err != nil {
+  fmt.Println(err)
+}
 
-func main() {
-    // Åpner filen "tekstfil.txt" for skriving
-    fil, err := os.Create("tekstfil.txt")
-    if err != nil {
-        fmt.Println(err)
-    }
-    defer fil.Close()
+defer f.Close()
+```
 
-    // Skriver innhold til filen
-    tekst := "Dette er en tekst som vil bli lagret i filen."
-    _, err = io.WriteString(fil, tekst)
-    if err != nil {
-        fmt.Println(err)
-    }
+Vi bruker `defer` -nøkkelordet for å sørge for at filen blir lukket etter at vi har gjort operasjoner på den.
+
+Neste steg er å skrive innholdet til filen. Dette gjøres ved å bruke `WriteString()` -metoden til filobjektet. Denne metoden tar inn en streng som argument og skriver den til filen.
+
+```Go
+_, err = f.WriteString("Hei verden!")
+
+if err != nil {
+  fmt.Println(err)
 }
 ```
 
-Etter å ha kjørt programmet vil det bli opprettet en tekstfil med navnet "tekstfil.txt" og teksten vil bli lagt til i filen.
-
-## Dykk dypere
-
-For å skrive mer avanserte tekstfiler, kan du bruke bufio-pakken til å lese og skrive linje for linje. Dette er spesielt nyttig når du jobber med store filer eller når du trenger å kontrollere skriveprosessen mer nøyaktig. Se eksempelet nedenfor:
+For å lagre endringene og lukke filen, bruker vi `Sync()` -metoden.
 
 ```Go
-package main
+err = f.Sync()
 
-import (
-    "fmt"
-    "os"
-    "bufio"
-)
-
-func main() {
-    // Åpner filen "tekstfil.txt" for skriving
-    fil, err := os.Create("tekstfil.txt")
-    if err != nil {
-        fmt.Println(err)
-    }
-    defer fil.Close()
-
-    // Skriver innhold til filen linje for linje
-    skriver := bufio.NewWriter(fil)
-    tekst := "Dette er en tekst som vil bli lagret i filen."
-    _, err = skriver.WriteString(tekst)
-    if err != nil {
-        fmt.Println(err)
-    }
-    skriver.Flush()
+if err != nil {
+  fmt.Println(err)
 }
 ```
 
-Denne metoden gir deg mer kontroll over skriveprosessen og kan være nyttig i ulike situasjoner.
+Nå har vi en fullstendig tekstfil med innholdet "Hei verden!" lagret på den angitte plasseringen.
+
+## Dypdykk
+
+Ved å bruke `Write()` -metoden i stedet for `WriteString()` kan vi skrive binære data til tekstfilen. Dette lar oss lagre mer kompleks informasjon som for eksempel tall eller boolske verdier.
+
+Vi kan også inkludere mer avanserte funksjoner som å skrive til bestemte linjer i filen eller å skrive til filen i tillegg til å legge til nytt innhold.
 
 ## Se også
 
-- [Offisiell Go dokumentasjon om å skrive filer](https://golang.org/pkg/os/#File)
-- [En mer detaljert guide om å skrive tekstfiler i Go](https://medium.com/wesionary-team/text-file-operations-with-golang-675e1f3c254e)
-- [Golang for nybegynnere](https://www.golang-book.com/books/intro)
+- [Go offisiell dokumentasjon for filbehandling](https://golang.org/pkg/os/)
+- [En grundig guide til filbehandling i Go](https://tutorialedge.net/golang/reading-writing-files-in-go/)
+- [En oversikt over ulike måter å skrive til fil i Go](https://www.calhoun.io/writing-to-files-in-go/)

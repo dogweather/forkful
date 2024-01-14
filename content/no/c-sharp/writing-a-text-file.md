@@ -1,63 +1,59 @@
 ---
-title:    "C#: Å skrive en tekstfil"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/writing-a-text-file.md"
+title:                "C#: Skrive en tekstfil"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive en tekstfil kan være nyttig i mange sammenhenger innen programmering. Det kan være et enkelt og effektivt verktøy for å lagre og organisere data, eller for å opprette enkel tekstbasert output. Å kunne skrive en tekstfil er en viktig ferdighet for enhver utvikler.
+Det finnes mange grunner til å skrive en tekstfil i et programmeringsspråk som C#. Det kan være nyttig for å lagre data eller for å skrive ut informasjon. Uansett årsak, er det viktig å forstå hvordan man kan skrive og manipulere tekstfiler for å få full nytte av dem.
 
 ## Hvordan
 
-For å skrive en tekstfil i C#, må vi bruke System.IO biblioteket. Først må vi opprette en instans av StreamWriter-klassen for å kunne skrive til filen. Deretter kan vi bruke metoden `WriteLine()` for å skrive tekst til filen. Til slutt må vi lukke filen ved å bruke `Close()`-metoden.
+For å lage en tekstfil i C#, må vi først opprette et "StreamWriter" objekt som vil tillate oss å skrive til filen. Deretter må vi åpne filen ved å angi filbanen og filnavnet, samt spesifisere om vi vil skrive over en eksisterende fil eller lage en ny fil. Her er et eksempel på hvordan dette kan gjøres:
 
 ```C#
-using System.IO;
+StreamWriter skriver = new StreamWriter("minFil.txt", false);
 
-string filnavn = "minTekstfil.txt";
+skriver.WriteLine("Dette er en tekstfil som ble skrevet ved hjelp av C#.");
+skriver.WriteLine("Du kan også skrive variabler eller data ved hjelp av interpolering.");
+skriver.WriteLine($"Datoen i dag er {DateTime.Now}");
 
-// Oppretter en instans av StreamWriter og åpner filen for skriving
-StreamWriter sw = new StreamWriter(filnavn);
-
-// Skriver tekst til filen
-sw.WriteLine("Dette er en tekstfil som er skrevet i C#");
-sw.WriteLine("Den kan inneholde flere linjer med tekst");
-
-// Lukker filen
-sw.Close();
+skriver.Close();
 ```
 
-For å lese innholdet i tekstfilen kan vi bruke StreamReader-klassen på samme måte som vi brukte StreamWriter. Vi må først opprette en instans av klassen og åpne filen ved hjelp av `OpenRead()`-metoden. Deretter kan vi bruke `ReadLine()`-metoden for å lese linje for linje fra filen.
+Denne koden vil lage en fil med navnet "minFil.txt" i samme mappe som programmet kjører fra. Det vil deretter skrive tre linjer til filen, og til slutt lukke den for å sikre at dataene er lagret.
+
+Hvis du vil lese fra en eksisterende tekstfil, kan du bruke "StreamReader" objektet på samme måte som "StreamWriter". Her er et eksempel på hvordan du kan lese en fil og skrive ut innholdet på konsollen:
 
 ```C#
-// Oppretter en instans av StreamReader og åpner filen for lesing
-StreamReader sr = new StreamReader(filnavn);
+StreamReader leser = new StreamReader("minFil.txt");
 
-// Leser innholdet i filen linje for linje
-string linje = sr.ReadLine();
-while (linje != null)
+string linje = "";
+
+while ((linje = leser.ReadLine()) != null)
 {
     Console.WriteLine(linje);
-    linje = sr.ReadLine();
 }
 
-// Lukker filen
-sr.Close();
+leser.Close();
 ```
 
-Dette er en enkel måte å skrive og lese fra en tekstfil i C#, men det finnes også andre metoder og teknikker. Les gjerne mer om System.IO biblioteket for å utforske flere muligheter.
+Dette vil lese hver linje fra filen og skrive den ut på konsollen. Igjen, er det viktig å lukke filen når du er ferdig med å lese den.
 
 ## Dypdykk
 
-Å skrive en tekstfil er ikke bare nyttig for å lagre og lese data, men det kan også være nyttig for å generere rapporter eller loggfiler. Vi kan for eksempel bruke StreamWriter til å skrive ut informasjon om et program mens det kjører, og dermed få en oversikt over hva som skjer.
+Når du skriver tekstfiler i C#, er det viktig å inkludere "using System.IO" i toppen av koden din. Dette vil importere "System.IO" biblioteket som gir oss tilgang til "StreamReader" og "StreamWriter" objektene.
 
-En annen nyttig funksjon ved å skrive en tekstfil er at den er lesbar både for mennesker og maskiner. Dette gjør at dataene kan deles og behandles enklere av ulike programmer.
+Det er også viktig å huske på å håndtere eventuelle unntak som kan oppstå når du arbeider med filer, for eksempel hvis filen ikke kan åpnes eller skrives til. Dette kan gjøres ved hjelp av "try-catch" blokker.
 
-## Se også
+I tillegg kan du også konfigurere forskjellige innstillinger for filen din, som å angi kodingen eller endre lese- og skrivetilgangen. Mer informasjon om dette kan bli funnet ved å søke på nettet eller ved å lese dokumentasjonen for "System.IO" biblioteket.
 
-- [Microsoft Docs - System.IO Namespace](https://docs.microsoft.com/en-us/dotnet/api/system.io?view=net-5.0)
-- [C# FileStream Class](https://www.w3schools.com/cs/cs_filestreams.asp)
-- [C# Read and Write Files (Tutorial)](https://www.c-sharpcorner.com/blogs/working-with-text-files-in-c-sharp1)
+## Se Også
+
+- [Dokumentasjon for "System.IO" biblioteket](https://docs.microsoft.com/en-us/dotnet/api/system.io?view=netcore-3.1)
+- [Mer informasjon om å håndtere tekstfiler i C#](https://www.dotnetperls.com/file-reader)
+- [Eksempel på bruk av "StreamWriter" og "StreamReader" i C#](https://www.c-sharpcorner.com/uploadfile/mahesh/streamreader-and-streamwriter-in-C-Sharp/)

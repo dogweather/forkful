@@ -1,55 +1,63 @@
 ---
-title:    "C: Att skriva tester"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-tests.md"
+title:                "C: Att skriva tester"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva test i sin C-kod kan verka som en tidskrävande uppgift, men det kan faktiskt spara tid och frustration i det långa loppet. Genom att skriva tester kan du verifiera att din kod fungerar som den ska och minska risken för buggar och felaktigheter.
 
-## Hur man gör
-Ett enkelt sätt att komma igång med att skriva tester är att använda sig av C-enhetstester. Dessa enhetstester är små och isolerade tester som fokuserar på en specifik del av din kod. Genom att skriva dessa tester kan du säkerställa att varje liten del av din kod fungerar som den ska.
+Att skriva tester är en viktig del av en utvecklares arbete. Det hjälper till att bekräfta att koden fungerar som den ska och att den inte bryts av eventuella förändringar i kodbasen. Genom att skriva tester kan du också enklare hitta och lösa eventuella buggar, vilket i slutändan sparar tid och pengar.
 
-Låt oss titta på ett exempel. Vi vill skriva en funktion som beräknar medelvärdet av två tal.
+## Så här gör du
 
-```C
-float average(float a, float b) {
-    return (a + b) / 2;
-}
-```
+För att skriva tester i C måste du först förstå hur testning fungerar i denna programmeringsspråk. En vanlig metod är att använda ett testramverk, som till exempel CUnit. Genom detta ramverk kan du skriva testfall som kontrollerar att kodens olika funktioner fungerar korrekt.
 
-Vi kan nu skriva ett enhetstest för denna funktion:
+Här är ett exempel på hur man skriver ett enkelt testfall i C unit:
 
 ```C
 #include <stdio.h>
-#include <assert.h>
+#include <CUnit/CUnit.h>
+#include <CUnit/Basic.h>
 
-float average(float a, float b);
+int add(int x, int y) {
+    return x + y;
+}
+
+void test_add() {
+    CU_ASSERT_EQUAL(add(2, 2), 4);
+    CU_ASSERT_EQUAL(add(5, -2), 3);
+}
 
 int main() {
-    float num1 = 5.5;
-    float num2 = 7.3;
-    float result = average(num1, num2);
-
-    // Jämför resultatet med det förväntade värdet 6.4
-    assert(result == 6.4);
-
-    printf("Test passed!");
-
+    CU_initialize_registry();
+    
+    CU_pSuite suite = CU_add_suite("Add Test Suite", NULL, NULL);
+    
+    CU_add_test(suite, "add test", test_add);
+    
+    CU_basic_set_mode(CU_BRM_VERBOSE);
+    CU_basic_run_tests();
+    CU_cleanup_registry();
+    
     return 0;
 }
 ```
 
-Om testet går igenom kommer du att se "Test passed!" skrivas ut i terminalen. Om det inte går igenom, kan du enkelt identifiera och åtgärda felet i din kod.
+När detta test körs, kommer det att kontrollera att funktionen "add" returnerar rätt resultat för olika indata. Om testet lyckas, kommer du att få utskriften "CUnit: no failures" från programmet.
 
 ## Djupdykning
-Skrivande av enhetstester är bara en del av testningsprocessen. Du kan också skriva integrationstester för att testa hur olika delar av din kod samarbetar, samt systemtester för att verifiera att hela systemet fungerar korrekt.
 
-Det är också viktigt att tänka på vilka scenarier och värden din kod behöver hantera och se till att dessa testas ordentligt. Att skriva testbar kod kan också underlätta processen, så tänk på att implementera designmönster som gör det enkelt att testa din kod.
+Att skriva tester kan vara en tidskrävande process, men det finns några viktiga aspekter att tänka på för att göra uppgiften enklare. För det första bör du se till att testa så många möjliga vägar genom koden för att säkerställa att alla funktioner fungerar korrekt. Det är också viktigt att skriva testfall som täcker eventuella buggar som du vet finns i koden.
+
+Ett annat tips är att vara noggrann med namngivningen av dina testfall. Detta gör det enklare att förstå vad som testas och vilken typ av fel som uppstår om testet misslyckas.
+
+Slutligen är det viktigt att använda testdriven utveckling (TDD) för att säkerställa att nya kodändringar inte bryter befintlig fungerande kod. Genom att skriva testfall innan du skriver koden kan du upptäcka eventuella problem innan de blir svårare och dyrare att åtgärda.
 
 ## Se även
-- [En översikt av enhetstester i C](https://www.geeksforgeeks.org/c-unit-testing/)
-- [En översikt av integrationstester i C](https://www.softwaretestinghelp.com/c-programming-unit-integration-and-system-testing/)
-- [En lista över designmönster för testbar kod i C](https://en.wikipedia.org/wiki/Category:Software_design_patterns_for_testing)
+
+- [CUnit testramverk](https://frankmorgner.github.io/cunit/)
+- [TDD koncept och tekniker](https://www.softwaretestinghelp.com/test-driven-development-tdd/)
+- [En guide till enhetstestning i C](https://www.section.io/engineering-education/writing-unit-tests-in-c/)

@@ -1,46 +1,63 @@
 ---
-title:    "Arduino: 编写测试"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-tests.md"
+title:                "Arduino: 编写测试"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-测试是Arduino编程中至关重要的一部分。它可以帮助我们发现潜在的错误，并确保我们的代码在各种情况下都能正常工作。通过编写测试，我们可以更有效地调试和修改我们的代码，从而节省时间和精力。
+为什么：测试是软件开发中不可或缺的步骤。它可以帮助我们发现并解决潜在的错误，提高代码的质量和可靠性。
 
-## 如何做
-编写测试的一种常见方法是使用Arduino Unit Testing库。以下是一个简单的示例，展示如何将测试用例与Arduino代码结合使用：
+如何：编写测试代码的实际步骤如下所述：
+
+首先，我们需要定义一个测试类，以确保我们的程序以后仍然有效。例如：
 
 ```Arduino
-#include <ArduinoUnit.h>
+class TestClass{
+  public:
+  void runTest(){
+    //测试代码将在这里被运行
+  }
+};
+```
 
-// 定义一个测试用例
-test(squareTest) {
-  assertEqual(square(2), 4);
-}
+然后，我们可以在测试类中定义不同的测试方法来测试不同的功能。例如：
 
-// 定义一个将被测试的函数
-int square(int number) {
-  return number * number;
-}
-
-void setup() {
-  // 运行测试
-  Test::run();
-}
-
-void loop() {
-  // 不做任何事情，测试只在setup函数中运行
+```Arduino
+void testSum(){
+  int result = sum(2, 3);
+  assertEquals(5, result);
 }
 ```
 
-运行此代码后，将会输出 `OK (1 tests, 1 assertions)`，表示测试成功通过。
+最后，在我们的程序中引入测试类并运行测试代码。例如：
 
-## 深入了解
-使用Arduino Unit Testing库，我们可以编写更复杂的测试用例，并进行更多的断言。此外，我们还可以使用断言来测试特定的输出，以确保我们的代码产生了预期的结果。对于大型项目，编写测试可以帮助我们更好地组织和管理代码，从而提高可维护性。
+```Arduino
+TestClass tester;
+tester.runTest();
+```
 
-## 参考链接
-- [Arduino Unit Testing库文档](https://github.com/mmurdoch/arduinounit)
-- [详细介绍Arduino Unit Testing的博客文章](https://www.sparkfun.com/news/1322)
-- [如何写单元测试的指南](https://www.arduino.cc/en/Guide/UnitTesting)
+运行测试代码后，我们可以在串口监视器中看到每个测试方法的输出结果，从而判断程序是否按预期执行。
+
+深入了解：编写测试代码时，我们应该关注的主要方面是代码覆盖率。代码覆盖率指的是测试代码所覆盖的程序代码的百分比。通常，我们应该尽可能地提高代码覆盖率来确保程序的可靠性。
+
+另一个重要方面是使用断言来判断测试结果是否符合预期。断言是一种可以在测试代码中使用的语句，它可以根据我们设定的预期结果来判断程序是否执行正确。如果断言失败，它将在串口监视器中输出错误信息，指出程序出现了问题。
+
+另外，我们应该在编写程序的同时也写入测试代码，这样可以更早地发现和解决潜在的问题，从而减少后期修改的工作。
+
+参考链接：
+
+[Arduino官方文档](https://www.arduino.cc/reference/)
+
+[如何为Arduino进行单元测试](https://www.ionos.com/digitalguide/server/tools/how-to-test-your-arduino-code/)
+
+[覆盖率测试工具Codecov](https://docs.codecov.io/docs/arduino)
+
+[断言的用法和示例](https://www.arduino.cc/en/reference/assert)
+
+[如何写出高质量的代码：测试驱动的开发](https://www.arduino.cc/en/Hacking/TestDrivenDevelopment)
+
+与此同时：
+
+[注意事项：如何避免常见的Arduino编程错误](https://www.arduino.cc/en/Guide/Troubleshooting)

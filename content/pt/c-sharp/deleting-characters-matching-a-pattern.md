@@ -1,64 +1,44 @@
 ---
-title:    "C#: Excluindo caracteres que correspondem a um padrão"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/deleting-characters-matching-a-pattern.md"
+title:                "C#: Exclusão de caracteres correspondentes a um padrão"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Às vezes, enquanto estamos escrevendo códigos em C#, pode ser necessário deletar caracteres que correspondam a um padrão específico. Isso pode ser necessário para limpar strings de dados desnecessários ou para realizar operações específicas. Neste artigo, vamos explorar como fazer isso da maneira mais eficiente possível.
+Muitas vezes, ao trabalhar com strings e textos em C#, pode ser necessário remover certos caracteres que correspondam a um determinado padrão. Isso pode ser útil para limpar dados da entrada do usuário ou para formatar o texto de uma maneira específica. Neste artigo, vamos explorar como podemos fazer isso no C#.
 
-## Como fazer
+## Como Fazer
 
-Para deletar caracteres que correspondam a um padrão em C#, podemos usar métodos já existentes na linguagem, como o método `Replace()` da classe `String`. Este método aceita dois parâmetros: o padrão a ser substituído e o novo padrão que substituirá o anterior. Por exemplo:
-
-```C#
-string frase = "Olá, meu nome é João";
-string novaFrase = frase.Replace("é", "am");
-
-Console.WriteLine(novaFrase);
-// Output: Olá, meu nome am João
-```
-
-Também podemos usar expressões regulares para encontrar e substituir caracteres correspondentes. Isso pode ser útil quando precisamos de uma abordagem mais poderosa e flexível. Veja um exemplo:
+Existem algumas maneiras de deletar caracteres que correspondam a um padrão em C#. Uma delas é usar o método `string.Replace()` combinado com expressões regulares para especificar o padrão que queremos deletar. Vamos dar uma olhada neste exemplo de código:
 
 ```C#
-string texto = "Hoje é dia de festa!";
-string novoTexto = Regex.Replace(texto, @"[!]", "");
-
-Console.WriteLine(novoTexto);
-// Output: Hoje é dia de festa
+string texto = "Este é um texto de exemplo que contém @ e # caracteres especiais.";
+string textoCorrigido = Regex.Replace(texto, "[#@]", "");
+Console.WriteLine(textoCorrigido);
 ```
 
-No exemplo acima, usamos uma expressão regular para substituir todos os caracteres de ponto de exclamação por uma string vazia, efetivamente deletando-os da string original.
+Aqui, usamos a classe `Regex` para especificar os caracteres `@` e `#` que queremos deletar do texto. O resultado retornado pela chamada do método `Replace()` é uma nova string sem esses caracteres. No exemplo acima, a saída seria: "Este é um texto de exemplo que contém e caracteres especiais."
 
-## Mergulho Profundo
-
-Além dos métodos mencionados acima, existem outras maneiras de deletar caracteres que correspondam a um padrão em C#. Uma delas é usando o método `Remove()` da classe `String`, que aceita um índice inicial e a quantidade de caracteres a serem removidos. Veja um exemplo:
+Além disso, podemos utilizar o método `string.Trim()` para remover espaços em branco ou caracteres indesejados do início ou do fim de uma string. Por exemplo:
 
 ```C#
-string texto = "Essa string tem um espaço em branco.";
-string novaString = texto.Remove(10, 6);
-
-Console.WriteLine(novaString);
-// Output: Essa stringtem um espaço em branco.
+string texto = "   Exemplo de texto com espaços em branco    ";
+string textoTrimmed = texto.Trim();
+Console.WriteLine(textoTrimmed);
 ```
 
-Outra maneira é utilizar o método `Substring()` combinado com o método `IndexOf()`. O `IndexOf()` retornará o índice do primeiro caractere do padrão e o `Substring()` retornará uma nova string a partir desse índice. Confira:
+O resultado seria a nova string "Exemplo de texto com espaços em branco". Podemos também usar o método `string.TrimStart()` ou `string.TrimEnd()` se quisermos especificar o lado da string que queremos "aparar".
 
-```C#
-string texto = "String com espaços antes e depois";
-string novoTexto = texto.Substring(texto.IndexOf("com"));
+## Deep Dive
 
-Console.WriteLine(novoTexto);
-// Output: com espaços antes e depois
-```
+Remover caracteres correspondentes a um padrão pode ser útil em diversas situações. Além dos exemplos acima, podemos usar essa técnica para validar entradas do usuário em um formulário ou para formatar corretamente um número de telefone. É importante lembrar que podemos usar expressões regulares para especificar padrões mais complexos, o que torna essa técnica ainda mais poderosa.
 
-## Veja também
+## Veja Também
 
-- [Documentação do método Replace()](https://docs.microsoft.com/pt-br/dotnet/api/system.string.replace?view=netcore-3.1)
-- [Documentação da classe Regex](https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
-- [Documentação do método Remove()](https://docs.microsoft.com/pt-br/dotnet/api/system.string.remove?view=netcore-3.1)
-- [Documentação do método Substring()](https://docs.microsoft.com/pt-br/dotnet/api/system.string.substring?view=netcore-3.1)
+- [Documentação da classe `Regex` em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
+- [Guia de expressões regulares em C#](https://csharp-station.com/Tutorial/CSharp/Lesson11)
+- [Tutorial de formatação de strings em C#](https://www.tutorialsteacher.com/csharp/csharp-string-format)

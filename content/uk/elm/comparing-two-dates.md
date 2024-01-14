@@ -1,47 +1,56 @@
 ---
-title:    "Elm: Порівняння двох дат"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/elm/comparing-two-dates.md"
+title:                "Elm: Порівняння двох дат"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Тому заквітчала Elm: Порівняння дат
+## Чому
 
-В програмуванні часто потрібно порівнювати дати, наприклад, для того, щоб визначити, яка з них більша або чи дві дати попадають в один день. Elm має вбудовану функцію для порівняння дат, що робить це завдання простим і зручним.
+Кожна мова програмування має свою унікальну особливість, і часто розуміти цю особливість може бути складно. У цій статті ми розглянемо, як порівнювати дві дати в Elm та чому це важливо.
 
-## Як це зробити:
+## Як
 
-У Elm для порівняння дат використовується функція `Date.compare`, яка приймає два параметри типу `Date` і повертає один з трьох результатів: `LT`, `EQ` або `GT`. Ось приклад використання цієї функції:
+Для початку, нам потрібно імпортувати модуль `Date` для роботи з датами:
 
-```elm
-firstDate = Date.fromString "2021-07-15"
-secondDate = Date.fromString "2021-07-20"
-
-result = Date.compare firstDate secondDate
-
--- результат: GT
+```Elm
+import Date exposing (compare)
 ```
 
-Функція `Date.fromString` конвертує рядок у тип `Date`, що дозволяє легко проводити операції з датами. Для отримання більш детальної інформації щодо роботи з датами у Elm, можна ознайомитися з [документацією](https://package.elm-lang.org/packages/elm/time/latest/Time#Date) по модулю `Time.Date`.
+Для порівняння двох дат ми будемо використовувати функцію `compare`, яка повертає одне з трьох значень: `Less`, `Equal` або `Greater`. Результат цієї функції залежить від порівнюваних дат та їх місця у календарі:
 
-## Глибоке погруження:
-
-Крім функції `Date.compare`, Elm також має функцію `Date.isInSameDay`, яка дозволяє перевірити, чи дві дати попадають в один день. Вона повертає `True`, якщо дати попадають в один день, і `False`, якщо ні. Ось приклад використання цієї функції:
-
-```elm
-firstDate = Date.fromString "2021-07-15"
-secondDate = Date.fromString "2021-07-15"
-
-result = Date.isInSameDay firstDate secondDate
-
--- результат: True
+```Elm
+compare (Date.fromCalendarDate 2021 3 4) (Date.fromCalendarDate 2021 3 10)
+-- повертає Less, оскільки 4 березня менше за 10 березня
 ```
 
-Також у модулі `Time.Date` є функції для отримання та зміни окремих компонентів дати, таких як день, місяць, рік тощо. Це дозволяє більш гнучко працювати з датами і виконувати різні операції з ними.
+Окрім порівняння двох конкретних дат, ми також можемо порівнювати поточну дату з будь-якою іншою за допомогою функції `compareWithCurrent`:
 
-## Дивіться також:
+```Elm
+compareWithCurrent (Date.fromCalendarDate 2021 3 15) -- повертає Greater, оскільки поточна дата (на момент виконання коду) більша за 15 березня 2021
+```
 
-- [Офіційна документація з модулю Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Порівняння дат у JavaScript, Python та PHP](https://blog.logrocket.com/comparing-dates-javascript-python-php/)
-- [Розрахунок різниці між датами у Elm](https://www.smoothterminal.com/articles/calculating-differences-between-dates-in-elm)
+## Глибокий занурення
+
+Щоб краще зрозуміти як працює порівняння дат в Elm, давайте детальніше розглянемо дату та час у цій мові.
+
+Дати в Elm представлені як тип `Date`, який може містити інформацію про рік, місяць та день. Також Elm має тип `Time` для представлення часу, який може бути використаний разом з типом `Date` для представлення повної дати та часу.
+
+Код для отримання поточної дати та часу виглядатиме так:
+
+```Elm
+Date |> Time.now -- повертає тип Time
+```
+
+Щоб отримати дату та час у певній віддаленій від поточної секунди, ми можемо використовувати функцію `fromPosix`, яка приймає у секундах кількість, на яку потрібно змістити поточну дату та час:
+
+```Elm
+Date |> Time.fromPosix 86400 -- поверне дату та час наступного дня
+```
+
+## Дивімося також
+
+- Офіційна документація по модулю Date в Elm: https://package.elm-lang.org/packages/elm/time/latest/Date
+- Онлайн курс Elm від Codecademy: https://www.codecademy.com/learn/learn-elm

@@ -1,46 +1,70 @@
 ---
-title:    "Elixir: Skriva en textfil"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-a-text-file.md"
+title:                "Elixir: Att skriva en textfil"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva en textfil är en viktig del av programmering eftersom det låter oss lagra information på ett enkelt och strukturerat sätt. Det är också ett bra sätt att lära sig grundläggande färdigheter som filhantering och datalagring.
+Att skriva en textfil med Elixir kan vara ett användbart verktyg för att lagra och manipulera data på ett strukturerat sätt. Det kan också vara ett sätt att öva och förbättra sina programeringsfärdigheter inom Elixir.
 
-## Hur du gör det
+## Så här gör du
 
-För att skriva en textfil i Elixir, behöver du först öppna en ny fil med hjälp av `File.open` funktionen. Du kan också ange parametrar som filens namn och läget för att skriva eller läsa. 
+För att skriva en textfil med Elixir behöver du först öppna en fil med önskat namn och filformat, t.ex. "mittexempel.txt". Sedan kan du använda funktionen "File.write" för att skriva innehållet i filen.
 
-```Elixir 
-File.open(“minfil.txt”, [:write]) 
+```Elixir
+iex> fil = File.open("mittexempel.txt", [:write])
+#File<file mittexempel.txt>
+iex> File.write(fil, "Hej världen!")
+:ok
 ```
 
-Nästa steg är att använda `IO.write` funktionen för att faktiskt skriva in text i filen. Du kan antingen skriva en hårdkodad sträng eller använda variabler för att skriva dynamiskt innehåll. 
+För att läsa innehållet i filen kan du använda funktionen "File.read":
 
-```Elixir 
-IO.write(file, “Hej världen!”)
-IO.write(file, variabel) 
+```Elixir
+iex> fil = File.open("mittexempel.txt")
+#File<file mittexempel.txt>
+iex> File.read(fil, :all)
+"Hej världen!"
 ```
 
-När du är klar med att skriva in allt innehåll i filen, måste du stänga den med `File.close` funktionen. Detta är viktigt för att spara eventuella ändringar och frigöra resurser som används av filen. 
+Du kan också använda "File.close" för att stänga filen när du är klar med den:
 
-```Elixir 
-File.close(file) 
+```Elixir
+iex> File.close(fil)
+:ok
 ```
 
-Om du vill lägga till mer text i filen, kan du öppna den igen med `File.open` och använda läget `:append` istället för `:write`. Du kan också lägga till fler rader med hjälp av `IO.puts` eller `IO.write`. 
+## Djupdykning
 
-## Djupdykning 
+När du skriver en textfil med Elixir har du möjlighet att lägga till olika options för att anpassa hur filen ska skrivas. Till exempel kan du ange om filen ska skrivas över en befintlig fil, om ett nytt innehåll ska läggas till slutet av filen eller om filen ska skrivas som binärt.
 
-När du skriver en textfil är det viktigt att du gör dig bekant med kodningsspråket som du använder. Elixir använder sig av Unicode, vilket betyder att du kan använda specialtecken och emojis i dina filer. Detta är särskilt användbart när du behöver skriva flerspråkiga eller mer visuella texter. 
+För att skriva över en befintlig fil, sätt options till :write och :overwrite:
 
-Några saker att tänka på när du skriver en textfil i Elixir är att se till att du öppnar och stänger den korrekt, använda rätt läge för dina behov och vara medveten om Unicode-kodning.
+```Elixir
+iex> File.write(fil, "Hej världen!", [:write, :overwrite])
+:ok
+```
 
-## Se också
+För att lägga till innehåll längst till slutet av filen, sätt options till :append:
 
-- Elixir dokumentation: https://elixir-lang.org/getting-started/introduction.html
-- Codecademy kurser för Elixir: https://www.codecademy.com/learn/learn-elixir
-- Gör det själv övningar på Exercism: https://exercism.io/tracks/elixir
+```Elixir
+iex> File.write(fil, "Ännu en rad", [:write, :append])
+:ok
+```
+
+Och om du vill skriva filen som binärt, använd options :binary:
+
+```Elixir
+iex> File.write(fil, "Binärt innehåll", [:write, :binary])
+:ok
+```
+
+Se Also
+
+- [Elixir Dokumentation om "File"](https://hexdocs.pm/elixir/File.html)
+- [En guide till Elixir för nybörjare](https://learnxinyminutes.com/docs/elixir/)
+- [En lista över populära Elixir-projekt](https://github.com/h4cc/awesome-elixir)

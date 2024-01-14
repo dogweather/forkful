@@ -1,18 +1,19 @@
 ---
-title:    "Go: 문자열 대문자화"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/capitalizing-a-string.md"
+title:                "Go: 그것은 문자열 대문자로 만들기라는 기사 제목입니다."
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 대문자로 바꾸는 것의 중요성을 간단하게 소개해보겠습니다. 왜냐하면 Go 언어는 대소문자를 엄격하게 구분하기 때문에, 문자열을 대문자로 바꾸지 않으면 예상치 못한 오류가 발생할 수 있습니다. 또한 대문자는 소문자보다 더 강조될 때가 있으므로 프로그램에서 문자열을 대문자로 변환하면 더욱 명확한 메시지를 전달할 수 있습니다.
+문자열을 대문자로 바꾸는 것에 대해 나는 왜 말할까요? 이것은 기초적이면서도 유용한 프로그래밍 스킬입니다. 예를 들어, 사용자로부터 받은 입력 값을 대문자로 바꾸어서 데이터의 일관성을 유지할 수 있습니다. 또는 출력 결과를 보기 좋게 만들기 위해서도 사용할 수 있습니다.
 
-## 어떻게 하나요?
+## 하는 방법
 
-문자열을 대문자로 바꾸는 가장 간단한 방법은 `strings` 패키지의 `ToUpper` 함수를 사용하는 것입니다. 이 함수는 문자열의 모든 문자를 대문자로 변환하고 변환된 문자열을 반환합니다. 아래는 이 함수를 사용하는 예시 코드와 결과물입니다.
+이제 실제 코드 예제를 살펴보겠습니다. Go 언어에서 문자열을 대문자로 바꾸기 위해서는 `strings` 패키지의 `ToUpper` 메서드를 사용합니다.
 
 ```Go
 package main
@@ -28,60 +29,35 @@ func main() {
 }
 ```
 
-출력결과:
+위 코드를 실행하면 `HELLO, WORLD!`가 출력됩니다.
 
-```
-HELLO, WORLD!
-```
+## 깊게 파고들기
 
-위에서 볼 수 있듯이 `strings.ToUpper` 함수를 사용하면 간단하게 문자열을 대문자로 변환할 수 있습니다.
-
-## 깊게 파헤쳐보기
-
-하지만 `strings.ToUpper` 함수 하나만으로는 문자열을 대문자로 바꾸는 과정을 완전히 이해하기는 어렵습니다. 따라서 이번 섹션에서는 문자열을 대문자로 변환하는 과정을 더 깊게 파헤쳐보겠습니다.
-
-문자열은 바이트(byte) 값의 슬라이스(slice)로 이루어져 있습니다. 따라서 문자열을 대문자로 변환하려면 문자열을 바이트 슬라이스로 변환한 후, 각 바이트 값에 해당하는 유니코드 문자에 대한 대문자 값을 계산해야 합니다.
-
-아래는 이 과정을 수행하는 간단한 예시 코드입니다.
+하지만 문자열의 길이가 길어지면 매번 `strings.ToUpper`를 사용하는 것은 번거롭습니다. 이럴 때는 `bytes` 패키지를 사용해보세요. `bytes` 패키지는 문자열을 바이트 단위로 쪼개서 처리할 수 있는 기능을 제공합니다. 따라서 `ToUpper`와 같이 모든 문자를 대문자로 바꾸는 작업보다는 빠른 처리가 가능합니다.
 
 ```Go
 package main
 
 import (
+    "bytes"
     "fmt"
-    "strings"
-    "unicode"
 )
 
 func main() {
     str := "hello, world!"
-    
-    // 문자열을 바이트 슬라이스로 변환
-    bytes := []byte(str)
-    
-    // 각 바이트 값에 해당하는 유니코드 문자에 대한 대문자 값을 계산
-    for i, b := range bytes {
-        bytes[i] = byte(unicode.ToUpper(rune(b)))
-    }
-    
-    // 변환된 바이트 슬라이스를 문자열로 다시 변환하여 출력
-    fmt.Println(string(bytes))
+    upperByte := bytes.ToUpper([]byte(str))
+    fmt.Println(string(upperByte))
 }
 ```
 
-출력결과:
+`ToUpper`를 사용한 코드보다 더 빠르게 실행될 것입니다. 하지만 문자열 중간에 대문자가 들어가 있는 경우에는 주의해야 합니다.
 
-```
-HELLO, WORLD!
-```
+## 참고 사항
 
-위 코드에서는 `unicode.ToUpper` 함수를 사용하여 각 바이트 값에 해당하는 대문자 값을 계산하였습니다. 이 함수는 `rune` 타입의 값을 인자로 받아 해당하는 대문자 값을 반환합니다.
+* [Go 공식 문서 - strings 패키지](https://golang.org/pkg/strings/)
+* [Go 공식 문서 - bytes 패키지](https://golang.org/pkg/bytes/)
+* [Go 언어로 문자열 조작하기 (Korean)](https://codingbot.net/golang/202)
 
-## 더 알아보기
+## 관련 링크
 
-Go 언어의 `strings` 패키지에는 대문자로 변환하는 `ToUpper` 함수 외에도 소문자로 변환하는 `ToLower` 함수 등 문자열을 다루는 다양한 유용한 함수가 포함되어 있습니다. 이 외에도 `unicode` 패키지의 함수들을 이용하여 문자열을 변환하는 방법을 배울 수 있으니 관련 문서를 참조해보시기 바랍니다.
-
-## 또한 참고해보세요
-
-- [Go 언어 `strings` 패키지 문서](https://golang.org/pkg/strings/)
-- [Go 언어 `unicode` 패키지 문서](https://golang.org/pkg/unicode/)
+* [Go 언어로 문자열을 대문자로 바꾸는 방법 (Korean)](https://streamkong.tistory.com/entry/Go-%EC%9E%85%EB%A0%A5-%EB%B0%9B%EC%9D%80-%EB%AC%B8%EC%9E%90%EC%97%90%EC%84%9C-%EB%8C%80%EB%AC%B8%EC%9E%90-%EC%B6%94%EB%9D%BC-%EB%B0%8F-%EB%AA%A8%EA%B8%B0%ED%99%94%ED%95%98%EA%B8%B0)

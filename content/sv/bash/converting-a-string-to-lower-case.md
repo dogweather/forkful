@@ -1,38 +1,40 @@
 ---
-title:    "Bash: Omvandla en sträng till gemener"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/converting-a-string-to-lower-case.md"
+title:                "Bash: Omvandla en sträng till gemener"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till gemener är en vanlig uppgift inom Bash-programmering. Det kan vara användbart om man vill standardisera input från användare eller jämföra strängar på ett enhetligt sätt.
+Det finns många anledningar till varför du skulle vilja konvertera en sträng till gemener (lower case) i Bash-programmering. En möjlig anledning kan vara för att jämföra strängar på ett mer enhetligt sätt, oavsett vilken stor bokstav de innehåller.
 
-## Hur man gör det
+## Så här gör du
 
-Det finns flera olika sätt att konvertera en sträng till gemener i Bash. Ett sätt är att använda inbyggda funktionen "tr". Här är ett exempel:
-
-```Bash
-echo "HELLO WORLD" | tr '[:upper:]' '[:lower:]'
-```
-
-Detta kommer att ta strängen "HELLO WORLD" och konvertera den till "hello world". Det finns också möjlighet att använda inbyggda variabler som "tolower" eller "^^" för att konvertera en del av en sträng. Här är ett exempel på detta:
+För att konvertera en sträng till gemener i Bash kan du använda kommandot `tr [a-z] [A-Z]` följt av det du vill konvertera. Till exempel: 
 
 ```Bash
-text="HeLlO WoRlD"
-echo "${text,,}"
+echo "HELLO WORLD" | tr [A-Z] [a-z]
 ```
 
-Detta kommer att konvertera hela strängen till gemener, vilket ger outputen "hello world".
+Detta kommer att ge utdatan "hello world". Om du vill spara utdatan i en variabel kan du använda följande kod:
+
+```Bash
+name="JOHN DOE"
+lowercase_name=$(echo $name | tr [A-Z] [a-z])
+echo $lowercase_name
+```
+
+Detta kommer att ge utdatan "john doe". Det är viktigt att notera att `tr`-kommandot bara konverterar bokstäver i det engelska alfabetet. Om du har specialtecken eller bokstäver från andra språk kan du behöva använda en annan metod för konvertering.
 
 ## Djupdykning
 
-För att förstå mer om hur man konverterar strängar till gemener i Bash är det viktigt att ha en grundläggande förståelse för "tr" och dess användningsområden. Detta kommando kan inte bara användas för att konvertera mellan gemener och versaler, utan också för att ändra tecken eller ta bort tecken helt. Det är också värt att notera att "tolower" och "^^" fungerar endast med bash version 4 eller senare.
+Bakom kulisserna använder `tr`-kommandot sig av ASCII-tabellen för att byta ut stora bokstäver mot små bokstäver. ASCII står för American Standard Code for Information Interchange och är ett vanligt använd format för att representera text i datorer. Varje bokstav har en numerisk värde som `tr`-kommandot refererar till för konverteringen.
 
 ## Se även
 
-- [Guide till "tr" kommandot](https://www.computerhope.com/unix/utr.htm)
-- [Komplett lista över inbyggda bash kommandon](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
-- [Mer information om inbyggda bash variabler](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
+- [Officiell dokumentation för `tr`](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
+- [Mer information om ASCII-tabellen](https://www.ascii-code.com/)
+- [En guide om andra sätt att konvertera bokstäver i Bash](https://askubuntu.com/questions/488875/is-there-a-way-to-create-an-alphabetically-rearranged-list-of-all-the-english-l)

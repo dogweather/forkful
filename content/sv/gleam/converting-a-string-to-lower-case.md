@@ -1,38 +1,34 @@
 ---
-title:    "Gleam: Konvertera en sträng till gemener"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/converting-a-string-to-lower-case.md"
+title:                "Gleam: Omvandla en sträng till gemener"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till små bokstäver är en vanlig operation inom programmering och kan vara användbar i många olika situationer. Till exempel kan det användas för att standardisera inmatade strängar och för att göra jämförelser mellan olika strängar mer exakta.
+Att konvertera en sträng till små bokstäver är ett vanligt uppgift inom programmering, och kan vara användbart i många olika situationer. Det kan hjälpa till att göra sträng jämförelsen mer exakt och lättare att hantera, eller det kan vara en del av en större process för att formatera data.
 
 ## Hur man gör det
 
-För att konvertera en sträng till små bokstäver i Gleam använder man en inbyggd funktion som heter `String.to_lower`. Denna funktion tar in en sträng som argument och returnerar en ny sträng med alla bokstäver i små bokstäver.
+Att konvertera en sträng till små bokstäver i Gleam är enkelt och kan göras med hjälp av en inbyggd funktion, `String.to_lower_case`. Här är ett exempel på hur man använder denna funktion:
 
 ```Gleam
-let original_sträng = "HeJ!"
-
-let låga_strängen = String.to_lower(original_sträng)
-
-io.println(låga_strängen)
+let original_sträng = "HEJ VÄRLDEN"
+let konverterad_sträng = String.to_lower_case(original_sträng)
 ```
 
-Output:
-
-```
-hej!
-```
+Resultatet av detta skulle vara `hej världen`, där alla bokstäver har omvandlats till små bokstäver. Det är viktigt att notera att detta också gäller för icke-latinska bokstäver och specialtecken. Till exempel skulle `ÄÄÄÖ` konverteras till `ääääö`.
 
 ## Djupdykning
 
-När man konverterar en sträng till små bokstäver är det viktigt att tänka på att olika språk och alfabet kan ha olika regler för stora och små bokstäver. Till exempel kan vissa språk använda accenttecken som också behöver tas hänsyn till vid konverteringen. Därför kan det vara bra att använda sig av funktionen `String.to_lower_case_normalized` istället, som också tar hänsyn till dessa skillnader.
+För att förstå hur funktionen `String.to_lower_case` fungerar i Gleam, är det viktigt att förstå Unicode-tecknen. I Unicode-systemet har varje tecken en unik kodpunkt, vilket möjliggör representativitet av alla språk och skriftsystem.
+
+När vi använder funktionen `String.to_lower_case` i Gleam, går datorn igenom varje tecken i strängen och kontrollerar dess Unicode-kodpunkt. Om tecknet finns i den stora bokstavsutförande, omvandlas det till motsvarande små bokstav. Om tecknet inte finns i den stora bokstavsutförande, lämnas det oförändrat.
 
 ## Se även
 
-- [Gleam dokumentation för String modulen](https://gleam.run/documentation/stdlib/string/)
-- [En guide för att arbeta med strängar i Gleam](https://medium.com/@gleamlang/guide-to-working-with-strings-in-gleam-4f7c0458d69f)
+- [Gleam dokumentation om strängar](https://gleam.run/documentation/stdlib/strings/)
+- [Unicode definition](https://unicode.org/)

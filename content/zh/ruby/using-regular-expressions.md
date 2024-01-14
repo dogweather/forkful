@@ -1,41 +1,62 @@
 ---
-title:    "Ruby: 使用正则表达式"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/using-regular-expressions.md"
+title:                "Ruby: 使用正则表达式"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要使用正则表达式？
+为什么:
 
-正则表达式是一种强大的工具，可以帮助程序员在编程中进行字符串匹配和替换。它们可以节省时间和精力，使得处理文本数据变得更加高效和简单。无论是在文本编辑器还是程序中使用，正则表达式都能大大提高生产力。
+如果你想要提高你的编程技能并且更加高效地处理文本数据，正则表达式就是你必须要了解的重要技能。它可以帮助你快速地匹配、替换和提取文本数据，让你的代码更加简洁和可读。正则表达式是编程世界里最受欢迎的工具之一，掌握它将为你的工作带来巨大的帮助。
 
-## 如何使用正则表达式
+如何使用:
 
-在Ruby中，使用正则表达式可以通过嵌入在代码中的简单的 ```/``` 符号来定义。例如，如果你想匹配包含单词“Hello”的句子，你可以使用 ```/Hello/```。下面是一个简单的例子：
-
-```Ruby
-str = "Hello world!"
-puts str =~ /Hello/ # 输出 0，表示匹配成功
-```
-
-你也可以使用正则表达式来替换文本中的字符串。例如，如果你想将所有的“apple”换成“orange”，你可以这样做：
+正则表达式是一种特殊的文本模式匹配工具，它使用特定的语法来创建模式并与文本进行匹配。下面是一个简单的例子，展示了如何使用正则表达式来提取一个字符串中的数字：
 
 ```Ruby
-str = "I have an apple."
-puts str.gsub(/apple/, "orange") # 输出 "I have an orange."
+str = "我有3个苹果。"
+num = str.match(/\d+/)
+puts num
+# Output: 3
 ```
 
-## 进阶技巧
+在这个例子中，我们使用了正则表达式的匹配方法`match`来找到`str`中的数字，并将结果存储在`num`变量中。这样，我们就提取出了`str`中的数字3。
 
-正则表达式还有许多其他功能，如捕获组、量词和元字符。要充分利用这些功能，你可以参考Ruby提供的正则表达式文档。此外，还有许多网站和工具可以帮助你练习和测试正则表达式，如[Regex101](https://regex101.com/)和[Rubular](https://rubular.com/)。
+我们也可以使用正则表达式来替换文本，比如将一个字符串中的所有空格替换为下划线：
 
-# 参考资料
+```Ruby
+str = "我是一个字符串。"
+new_str = str.gsub(" ", "_")
+puts new_str
+# Output: 我是一个字符串。
+```
 
-- [Ruby正则表达式文档](https://ruby-doc.org/core-2.7.2/doc/regexp_rdoc.html)
-- [Regex101](https://regex101.com/)
-- [Rubular](https://rubular.com/)
+在这个例子中，我们使用了正则表达式的替换方法`gsub`来替换`str`中所有的空格为下划线，并将结果存储在`new_str`变量中。通过这样的方式，我们可以轻松地处理文本数据，使得它们符合我们的要求。
 
-# 查看也许感兴趣的内容
+深入了解:
 
-想要了解更多关于Ruby的文章？请访问我们的 [GitHub仓库](https://github.com/ruby/ruby) 或浏览[官方文档](https://ruby-lang.org/zh_cn/documentation)。
+正则表达式的语法可能会让初学者感到有些复杂，但只要能掌握其基本语法和一些常用的特殊字符，就可以更加灵活地运用它。这里有一些常用的正则表达式特殊字符：
+
+- `.` : 匹配任意一个字符
+- `+` : 匹配它前面的字符一次或多次
+- `*` : 匹配它前面的字符零次或多次
+- `?` : 匹配它前面的字符零次或一次
+- `\d` : 匹配任意一个数字
+- `\w` : 匹配任意一个字母、数字或下划线
+- `^` : 匹配文本的开头
+- `$` : 匹配文本的结尾
+
+除了上面列举的特殊字符外，还有许多其他有用的正则表达式规则和语法，可以根据不同的需求来学习和使用。
+
+另外，一些代码编辑器和集成开发环境（IDE）也提供了正则表达式验证工具，可以帮助我们更加方便地测试和调试正则表达式的匹配结果。通过不断的练习和尝试，我们可以快速掌握正则表达式的使用方法和技巧。
+
+同时，还有许多优秀的正则表达式教程和网站可以帮助我们更加深入地学习和理解它的原理和用法。在使用正则表达式时，不妨多去探索这些资源，以便更加轻松地处理文本数据。
+
+## 参考资源:
+
+- [Ruby官方文档](https://ruby-doc.org/core-2.7.1/doc/regexp_rdoc.html)
+- [正则表达式101](https://regex101.com/)
+- [Ruby编程语言](https://www.ruby-lang.org/en/)
+- [正则表达式教程](

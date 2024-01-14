@@ -1,49 +1,51 @@
 ---
-title:    "Elixir: Convirtiendo una fecha en un string"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/converting-a-date-into-a-string.md"
+title:                "Elixir: Convirtiendo una fecha en una cadena"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Con frecuencia en la programación, es necesario convertir una fecha en una cadena de texto para poder mostrarla en una interfaz de usuario o almacenarla en una base de datos. En Elixir, podemos hacer esto de forma rápida y sencilla utilizando algunas funciones y módulos incorporados en el lenguaje.
+Muchas veces en el desarrollo de software, necesitamos manejar fechas y mostrarlas de una forma legible para el usuario. En tales casos, convertir una fecha en una cadena de texto es una tarea común. En este artículo, aprenderemos cómo hacer esto en Elixir y profundizaremos en el concepto.
 
 ## Cómo hacerlo
 
-Para convertir una fecha en una cadena de texto en Elixir, podemos utilizar la función `DateTime.to_string/2` y el módulo `Date`:
+Para convertir una fecha en una cadena de texto en Elixir, podemos usar la función `DateTime.to_string/1`. Esta función toma como argumento una fecha en formato `DateTime`, `Date` o `Time` y devuelve una cadena de texto en formato ISO8601.
 
-```
-Elixir DateTime.to_string(%{year: 2021, month: 10, day: 18})
-#=> "2021-10-18 00:00:00"
+Para entender mejor, echemos un vistazo a un ejemplo utilizando la función `DateTime.utc_now/0` para obtener la hora actual en formato UTC y luego convirtiéndola en una cadena de texto:
 
-Elixir Date.to_string({2021, 10, 18})
-#=> "2021-10-18"
+```Elixir
+DateTime.to_string(DateTime.utc_now())
 ```
 
-También podemos especificar un formato personalizado utilizando la función `DateTime.to_string/3`, que toma como argumentos la fecha, el formato y la zona horaria:
+El resultado de este código sería una cadena de texto similar a esta:
 
-```
-Elixir DateTime.to_string(%{year: 2021, month: 10, day: 18}, "{M}/{D}/{YY}")
-#=> "10/18/21"
+`"2021-10-12T15:43:27.422Z"`
+
+Este formato incluye la fecha, hora, minutos, segundos y milisegundos, junto con la marca de tiempo de la zona horaria UTC.
+
+También podemos especificar un formato personalizado utilizando la función `DateTime.to_string/2`, donde el segundo argumento es una cadena de texto que describe el formato deseado. Por ejemplo, si queremos mostrar solo la fecha en formato "aaaa-mm-dd", podemos hacer lo siguiente:
+
+```Elixir
+DateTime.to_string(DateTime.utc_now(), "{YYYY}-{MM}-{DD}")
 ```
 
-El módulo `Date` también ofrece la función `Date.to_string!/2`, que devuelve una cadena de texto sin formato para fechas que no se pueden representar en formato ISO:
+Esto resultaría en una cadena de texto similar a esta:
 
-```
-Elixir Date.to_string!({2021, 2, 30})
-#=> "2021-02-30"
-```
+`"2021-10-12"`
 
 ## Profundizando
 
-Detrás de estas funciones y módulos se encuentran varios protocolos y tipos de datos en Elixir. Uno de ellos es el protocolo `DateTime.Format`, que define cómo se debe formatear un `DateTime` para su representación en una cadena.
+En Elixir, todas las fechas y horas siguen el estándar de la biblioteca `Calendar`, que especifica la representación interna de la fecha y hora en forma de un número entero. Este número es conocido como "unix timestamp" y representa la cantidad de segundos transcurridos desde la medianoche del 1 de enero de 1970 en la zona horaria UTC.
 
-Además, los tipos concretos de fechas en Elixir son `DateTime`, `Date`, y `NaiveDateTime` (que no almacena información de zona horaria), y todos implementan el protocolo `Calendar.ISO`. Por lo tanto, podemos utilizar las mismas funciones en todos ellos.
+Al convertir una fecha en una cadena de texto, lo que realmente hacemos es convertir este número en una forma legible para los humanos. Por lo tanto, es importante conocer cómo funciona esta representación interna para realizar conversiones precisas.
+
+Además, también es importante tener en cuenta la zona horaria al convertir una fecha en una cadena de texto, ya que puede afectar el resultado final. Por ejemplo, si queremos mostrar la hora local de un usuario en lugar de la hora UTC, debemos tener en cuenta la ubicación y la configuración de la zona horaria en nuestro código.
 
 ## Ver también
 
-- [Documentación de Elixir sobre fechas y horarios](https://hexdocs.pm/elixir/Calendar.html)
-- [Ejemplos de formato de fechas en Elixir](https://devhints.io/elixir-date-time)
-- [Cheat sheet de Elixir sobre fechas y horarios](https://docs.plataformatec.com.br/elixir-cheatsheets/elixir-date-time.html)
+- [Documentación de Elixir sobre DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Artículo sobre soporte de zonas horarias en Elixir](https://www.brianstorti.com/timezone-support-in-elixir/)

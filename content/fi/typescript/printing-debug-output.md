@@ -1,40 +1,36 @@
 ---
-title:    "TypeScript: Tulostaminen virheenjäljitystiedostoon"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/printing-debug-output.md"
+title:                "TypeScript: Vianjäljitystulostuksen toteutus"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: 
 
-Debuggaustulosteiden tulostaminen on tärkeä osa ohjelmoinnin prosessia. Se auttaa kehittäjiä tunnistamaan ja korjaamaan virheitä sekä parantamaan koodin suorituskykyä. Lisäksi tulosteiden avulla voi seurata ohjelman suorituksen kulkua ja löytää mahdollisia optimointimahdollisuuksia.
+Yksi tärkeimmistä osista ohjelmoinnissa on varmistaa, että koodi toimii oikein ja on helppo ymmärtää. Tulostamalla virheviestejä ja muuta debug-tietoa voimme helpottaa koodimme testaamista ja selvittää mahdolliset ongelmat nopeasti.
 
-## Kuinka
+## Miten:
 
-```TypeScript
-// Luodaan yksinkertainen funktio, joka tulostaa kaksi muuttujaa yhteen laskettuna
-function tulostaSumma(a: number, b: number): void {
-  console.log("Summa: " + (a + b));
-}
+Debug-tulostukseen voidaan käyttää TypeScriptin `console`-komentoja. Esimerkiksi, jos haluaisimme tulostaa muuttujan `nimi` arvon konsoliin, käyttäisimme seuraavaa koodia:
 
-// Kutsutaan funktiota ja annetaan parametreiksi kaksi lukua
-tulostaSumma(5, 10);
-
-// Tulostus:
-// Summa: 15
+```TypeScript 
+console.log("Nimeni on " + nimi); 
 ```
 
-Koodiesimerkissä luodaan yksinkertainen funktio, joka ottaa vastaan kaksi lukua ja tulostaa niiden summan. Funktioon kutsuttaessa tulokseksi saadaan "Summa: 15". Scriptin suorituksen aikana tuloste näkyy konsolissa tai selaimen kehitystyökaluissa, kuten Chrome DevToolsissa.
+Tämä tulostaisi konsoliin tekstin "Nimeni on [nimi]". Voimme myös tulostaa useita muuttujia ja muita tietoja kerralla käyttämällä `console.log` -komennon sisällä olevia pilkkuja.
 
-## Syvempi sukellus
+## Syvällinen tarkastelu:
 
-Tulosteiden lisääminen koodiin on erittäin tärkeää virheiden ja suorituskyvyn parantamisen kannalta, mutta liiallinen tulostaminen voi hidastaa ohjelman suoritusta. On tärkeää löytää tasapaino tulosteiden määrän suhteen ja poistaa turhat tulosteet lopullisesta tuotantoversiosta.
+Tulostamalla debug-tietoja voimme tarkastella erilaisia virheitä ja havaita mahdollisia ongelmia koodissamme. Esimerkiksi voimme käyttää `console.error`-komentoa näyttämään virheviestejä, jos tiettyä ehtoa ei täytetä. Voimme myös käyttää `console.table` -komennolla näyttämään taulukkomuotoista dataa konsolissa.
 
-Toinen tärkeä huomioitava asia on tulosteiden muotoilu ja selkeys. Hyvä tapa on lisätä tulosteisiin tarkentavaa tekstiä, kuten funktion nimi tai laskutoimituksen selitys. Tämä auttaa hahmottamaan koodin toimintaa ja helpottaa mahdollisten virheiden löytämistä.
+Lisäksi, voimme asettaa ehtoja `console.assert` -komennolla tarkistamaan, että tietty ehto on totta ja muutoin tulostamaan virheilmoituksen.
 
-## Katso myös
+Voimme myös käyttää TypeScriptin debugger-ominaisuutta tarkasti tutkimaan koodimme toimintaa. Voimme asettaa breakpointteja koodiin ja tarkkailla muuttujien arvoja ja suoritusjärjestystä.
 
-- [TypeScript Debugging Documentation](https://www.typescriptlang.org/docs/handbook/debugging.html)
-- [The Importance of Debugging in Programming](https://generalassemb.ly/blog/importance-debugging-computer-science/)
-- [Using Console.log() Effectively](https://app.pluralsight.com/guides/using-console.log-effectively)
+## Katso myös:
+
+- [TypeScript console -dokumentaatio](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html)
+- [Debuggaus TypeScriptissa](https://www.tutorialsteacher.com/typescript/debugging-typescript-code)
+- [TypeScript debuggerin käyttö](https://code.visualstudio.com/docs/typescript/typescript-debugging)

@@ -1,38 +1,51 @@
 ---
-title:    "PHP: Encontrando o comprimento de uma string"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/finding-the-length-of-a-string.md"
+title:                "PHP: Encontrando o comprimento de uma string"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Porque
 
-Encontrar o comprimento de uma string é um processo fundamental em programação, pois permite que você obtenha informações importantes sobre os dados com os quais está trabalhando. Ao entender como determinar o comprimento de uma string, você pode melhorar suas habilidades em manipulação de dados e desenvolvimento de software.
+Você já se perguntou como os programadores conseguem contar o número de caracteres em uma frase ou palavra? Em PHP, isso é feito através de uma função simples chamada `strlen()`. Neste artigo, vamos explorar por que e como essa função é usada.
 
-## Como fazer?
+## Como Fazer
 
-A maneira mais simples de encontrar o comprimento de uma string em PHP é usando a função `strlen()`. Esta função aceita uma string como argumento e retorna o número de caracteres presentes nessa string. Veja um exemplo abaixo:
+Primeiro, vamos ver a estrutura básica da função `strlen()`:
 
 ```PHP
+<?php
 $string = "Olá mundo!";
-echo strlen($string); // Output: 11
+echo strlen($string);
+?>
 ```
-Além disso, também é possível usar a propriedade `length` de uma string para obter seu comprimento. Veja outro exemplo abaixo:
+
+Este código irá imprimir o número de caracteres na string, que nesse caso é 11. Isso acontece porque cada caractere, incluindo espaços, é contado pela função `strlen()`. Mas e se uma string tiver caracteres especiais, como acentos ou emojis? A função ainda irá contar corretamente, pois ela não leva em consideração a linguagem ou tipo de caractere.
+
+Agora, vamos ver um exemplo mais prático. Se quisermos limitar o número máximo de caracteres em uma frase, podemos usar a função `strlen()` para verificar esse limite. Veja o exemplo abaixo:
 
 ```PHP
-$string = "Lorem ipsum dolor sit amet";
-echo $string.length; // Output: 26
+<?php
+$frase = "A melhor forma de aprender é praticando.";
+if(strlen($frase) > 20){
+    echo "A sua frase possui mais de 20 caracteres.";
+} else {
+    echo "A sua frase possui 20 caracteres ou menos.";
+}
+?>
 ```
 
-## Profundidade
+Neste caso, a condição `if` irá verificar se a string possui mais de 20 caracteres e, se sim, irá imprimir uma mensagem de aviso. Você pode alterar esse valor para se adequar às suas necessidades.
 
-Ao trabalhar com diferentes tipos de dados, é importante entender como a linguagem de programação lida com cada um deles. Ao determinar o comprimento de uma string, você está essencialmente contando o número de caracteres presentes nessa string. No entanto, é importante notar que espaços em branco e caracteres especiais também são contados como caracteres. Isso pode afetar o resultado final do comprimento da string.
+## Mergulho Profundo
 
-Outro ponto importante a ser observado é que o comprimento de uma string pode variar dependendo da codificação utilizada. Por exemplo, uma string em UTF-8 pode ter um comprimento diferente de uma string em UTF-16, pois cada caractere em UTF-8 é representado por um byte, enquanto em UTF-16 é representado por dois bytes.
+Agora que já sabemos como usar a função `strlen()` em diferentes situações, vamos entender um pouco mais sobre como ela funciona. Internamente, a função usa um loop para percorrer a string e contar cada caractere individualmente. Isso significa que quanto maior a string, mais tempo a função irá levar para executar.
 
-Portanto, é importante ter cuidado ao lidar com diferentes codificações e considerar o uso da função `mb_strlen()` em vez de `strlen()` para obter um resultado mais preciso.
+Além disso, a função `strlen()` só recebe um argumento, que deve ser uma string. Isso significa que se você tentar passar um número ou um array, a função irá retornar um erro. Portanto, sempre certifique-se de usar a função corretamente, passando apenas uma string válida como argumento.
 
-## Veja também
-- Documentação oficial do PHP sobre a função `strlen()`: https://www.php.net/manual/pt_BR/function.strlen.php
-- Documentação oficial do PHP sobre a função `mb_strlen()`: https://www.php.net/manual/pt_BR/function.mb-strlen.php
+## Veja Também
+
+- [Documentação oficial da função `strlen()` em PHP](https://www.php.net/manual/pt_BR/function.strlen.php)
+- [Como usar a função `substr()` em PHP](https://linkparasite.com.br/php/como-usar-a-funcao-substr-em-php/)

@@ -1,38 +1,49 @@
 ---
-title:    "Ruby: Säännöllisten lausekkeiden käyttö"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/using-regular-expressions.md"
+title:                "Ruby: Käyttäen säännöllisiä lausekkeita"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi käyttää säännöllisiä lausekkeita Ruby-ohjelmoinnissa?
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja Ruby-ohjelmoijille, koska ne mahdollistavat tekstin käsittelyn ja muokkaamisen tehokkaasti koodin avulla. Ne ovat erityisen hyödyllisiä, kun halutaan tarkistaa, onko teksti halutun muotoinen tai etsiä tietyt osiot tekstistä.
+Säännölliset lausekkeet ovat voimallinen työkalu, jota voidaan käyttää tekstikäsittelyssä Ruby-ohjelmoinnissa. Niiden avulla voit etsiä, korvata ja muokata tekstiä tiettyjen sääntöjen perusteella, mikä tekee ohjelmoinnista helpompaa ja tehokkaampaa. Jos käytät paljon tekstin käsittelyä ohjelmissasi, säännölliset lausekkeet voivat olla ratkaisevan tärkeitä.
 
-## Kuinka käyttää säännöllisiä lausekkeita Rubyssa?
+## Miten käyttää säännöllisiä lausekkeita Ruby-ohjelmoinnissa?
 
-Säännölliset lausekkeet voidaan luoda Rubyssa käyttämällä RegExp-luokkaa. Käytännössä säännöllinen lauseke on merkkijono, joka sisältää erityisiä merkkejä ja merkkijonoja, jotka määrittelevät haetun kuvion. Seuraavassa esimerkissä käytetään säännöllistä lauseketta tarkistamaan, onko sana "kissa" läsnä annetussa lauseessa:
+Ensimmäinen askel säännöllisten lausekkeiden käytössä on tuoda Ruby-kielen regex-kirjasto. Voit tehdä tämän lisäämällä seuraavan rivin koodiisi:
 
-```Ruby
-# luodaan RegExp-olio ja tallennetaan se muuttujaan 'regex'
-regex = /kissa/
-
-# tarkistetaan, onko lauseessa esiintyy sana 'kissa'
-puts regex.match("Olen nähnyt kissan.") # tulostaa 'kissa'
-puts regex.match("Hänellä on koira.") # ei tulosta mitään
+```ruby
+require 'regex'
 ```
 
-Tässä esimerkissä luodaan säännöllinen lauseke, joka tarkistaa, onko sana "kissa" läsnä annetussa merkkijonossa. Jos sana löytyy, `match`-metodi tulostaa sen, muuten se ei tulosta mitään. Tämä on yksinkertainen esimerkki, mutta säännöllisiä lausekkeita voidaan käyttää monimutkaisempiin kuvioihin, kuten puhelinnumeron tai sähköpostiosoitteen tunnistamiseen.
+Seuraavaksi voit luoda säännöllisen lausekkeen antamalla sille haluamasi mallin. Esimerkiksi, jos haluat etsiä kaikki sanat, jotka alkavat kirjaimella "a", voit käyttää seuraavaa koodia:
 
-## Syventävää tietoa säännöllisistä lausekkeista
+```ruby
+string = "Hei kaikki, tässä on tekstiä jolla on sanoja jotka alkavat kirjaimella a!"
+regex = Regexp.new("\ba\w+")
+```
 
-Säännöllisiä lausekkeita on syvällisemmin useissa eri muodoissa, ja niitä voi käyttää monella eri tavalla. Niiden avulla voidaan esimerkiksi korvata tekstiä tai erottaa osioita tekstistä. Säännöllisiä lausekkeita voi myös optimoida muuttamalla niiden rakennetta tai käyttämällä erilaisia määreitä, kuten `case insensitive` tai `global`.
+Koodissa luodaan ensin muuttuja nimeltä "string", jolle annetaan haluttu teksti, ja sitten säännöllinen lauseke nimeltään "regex", joka etsii kaikki sanat, jotka alkavat bktimerkillä "a" ja jatkuvat vähintään yhden kirjaimen jälkeen. Seuraavaksi voit käyttää "string"-muuttujan "scan" metodia etsiäksesi kaikki säännöllisen lausekkeen vastaavat kohdat tekstistä:
 
-Toinen hyödyllinen asia säännöllisissä lausekkeissa on niiden yhdistäminen Ruby-merkkijonojen kanssa, jolloin saadaan luotua monimutkaisempia kuvioita. Lisäksi on olemassa useita hyödyllisiä kirjastoja, jotka tarjoavat valmiita säännöllisiä lausekkeita erilaisiin käyttötarkoituksiin.
+```ruby
+matches = string.scan(regex)
+puts matches
+```
+
+Tämä tulostaa listan kaikista sanoista, jotka täyttävät säännöllisen lausekkeen mallin.
+
+## Syvällisempi sukellus säännöllisten lausekkeiden käyttöön Ruby-ohjelmoinnissa
+
+Säännöllisten lausekkeiden käyttö Rubyssa ei rajoitu vain yksinkertaisiin haku- ja korvaustoimintoihin. Voit myös käyttää niitä monimutkaisempiin tehtäviin, kuten esimerkiksi tiedostojen käsittelyyn ja muotoiluun.
+
+Säännöllisten lausekkeiden luominen ei myöskään rajoitu vain yhdelle riville. Voit yhdistää useita lausekkeita yhteen monimutkaisten mallien luomiseksi. Lisäksi Rubyssa on useita erilaisia regex-operaattoreita ja symboleja, jotka tekevät säännöllisten lausekkeiden luomisesta joustavaa ja tehokasta.
+
+Jos haluat oppia lisää säännöllisistä lausekkeista ja niiden käytöstä Ruby-ohjelmoinnissa, suosittelemme tutustumaan alla oleviin lisäresursseihin:
 
 ## Katso myös
 
-* [Ruby-säännöllisten lausekkeiden opas](https://ruby-doc.org/core-2.7.1/Regexp.html)
-* [Ruby-merkkijonot](https://ruby-doc.org/core-2.7.1/String.html)
-* [Ruby-säännöllisiä lausekkeita hyödyntävät kirjastot](https://rubygems.org/search?query=regexp)
+- [Ruby Regex -opas](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Säännöllisten lausekkeiden opas Rubyssa](https://www.rubyguides.com/2015/08/ruby-regex/)

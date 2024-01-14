@@ -1,45 +1,39 @@
 ---
-title:    "Fish Shell: Utilizzando le espressioni regolari"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/using-regular-expressions.md"
+title:                "Fish Shell: Utilizzo delle espressioni regolari"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché Utilizzare le Espressioni Regolari nel Fish Shell
+## Perché Utilizzare le Espressioni Regolari?
 
-Le espressioni regolari sono una potente strumento utilizzato per riconoscere e manipolare testi secondo uno schema specifico. Nel Fish Shell, possono essere utilizzate per automazioni di compiti ripetitivi, ricerca di file e molte altre funzioni utili. Continua a leggere per scoprire come utilizzarle nel tuo codice.
+Le espressioni regolari sono uno strumento potente per manipolare e cercare testo. Possono essere utilizzate per filtrare, sostituire e verificare la correttezza del testo in modo rapido ed efficiente. Conoscere come utilizzare le espressioni regolari può migliorare la produttività di uno sviluppatore e semplificare molte attività di programmazione.
 
-## Come Utilizzare le Espressioni Regolari nel Fish Shell
+## Come Utilizzare le Espressioni Regolari in Fish Shell
 
-Per utilizzare le espressioni regolari nel Fish Shell, è necessario utilizzare il comando "string match". Ad esempio, se vogliamo cercare la parola "pesce" all'interno di una stringa, possiamo utilizzare il seguente codice:
-
-```
-Fish Shell stringmatch 'pesce' 'Mi piace il pesce'
-```
-
-Questo comando restituirà "1" se la parola "pesce" è presente nella stringa e "0" se non è presente. Possiamo anche utilizzare espressioni regolari più complesse, come nel seguente esempio che cerca una parola con una "h" alla fine:
+Per utilizzare le espressioni regolari in Fish Shell, è necessario utilizzare il comando `grep`. Ecco un esempio di come cercare una parola specifica in un file di testo utilizzando le espressioni regolari:
 
 ```
-Fish Shell string match '*h' 'Pesche'
+Fish Shell> grep "parola" file.txt
 ```
 
-In questo caso, il risultato sarà sempre "1" poiché la parola "Pesche" termina con una "h". Possiamo anche utilizzare gli operator con le espressioni regolari, come nel seguente esempio che cerca una stringa che inizia con "p" e termina con "h":
+Questo comando cercherà la parola "parola" all'interno del file di testo "file.txt" e mostrerà tutte le linee che contengono quella parola.
 
-```
-Fish Shell string match 'p*h' 'Pesce'
-```
+Per ulteriori opzioni e comandi utili relativi alle espressioni regolari in Fish Shell, si consiglia di consultare la documentazione ufficiale o utilizzare il comando `man grep` per visualizzare il manuale del comando `grep`.
 
-Questo comando restituirà "1" poiché la stringa "Pesce" rispetta la regola specificata.
+## Approfondimenti sulle Espressioni Regolari
 
-## Approfondimenti sull'utilizzo delle Espressioni Regolari
+Le espressioni regolari possono sembrare complesse all'inizio, ma una volta compreso il loro funzionamento, possono semplificare notevolmente molte attività di programmazione. Ecco alcune informazioni aggiuntive per aiutare a comprendere meglio le espressioni regolari:
 
-Oltre agli esempi sopra riportati, esistono molte altre funzioni e operatori che possono essere utilizzati con le espressioni regolari nel Fish Shell. Ad esempio, è possibile utilizzare l'operatore "not" per cercare una stringa che non corrisponde a una determinata espressione regolare.
+- Le espressioni regolari sono case sensitive, quindi "parola" e "Parola" sarebbero considerate due parole diverse.
+- Utilizzando il carattere `+` dopo una parola o un'espressione, è possibile specificare che deve essere presente almeno una volta, ad esempio "parola+" troverà "parola" e "parolaaaa", ma non "parol".
+- Il carattere `?` indica che l'espressione o il carattere precedente è opzionale, quindi "colou?r" troverà sia "color" che "colour".
+- Utilizzando i caratteri `^` e `$` è possibile specificare che l'espressione deve essere presente all'inizio e alla fine di una linea, rispettivamente, ad esempio "^testo$" troverà solo la linea che contiene esattamente la parola "testo".
 
-Per ulteriori informazioni su come utilizzare le espressioni regolari nel Fish Shell, consulta la documentazione ufficiale su [Fish shell manuale](https://fishshell.com/docs/current/cmds/string.html#string-match) o il [Fish Shell Cookbook](https://fishshell.com/docs/current/cookbook.html#Regexes). Questi risorse ti aiuteranno a sfruttare appieno questa potente funzionalità del Fish Shell.
+## Vedi Anche
 
-## Vedi anche
-
-- [How to Use Regular Expressions in Bash](https://www.linode.com/docs/development/bash/use-regexes-in-bash/)
-- [Using Regular Expressions in Python](https://realpython.com/regex-python/)
-- [An Introduction to Regular Expressions](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
+- Documentazione ufficiale su Fish Shell: https://fishshell.com/docs/current/
+- Guida alle espressioni regolari: https://www.regular-expressions.info/
+- Manuale del comando `grep`: https://fishshell.com/docs/current/cmds/grep.html

@@ -1,49 +1,45 @@
 ---
-title:    "Java: Capitalizzare una stringa"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/java/capitalizing-a-string.md"
+title:                "Java: Maiuscolare una stringa"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molte volte, quando si lavora con il linguaggio di programmazione Java, si trovano stringhe di testo che non sono capitalizzate correttamente. Per correggere questo problema, è necessario saper utilizzare il metodo `toUpperCase()` per le stringhe. In questo articolo, vedremo come utilizzare questo metodo per capitalizzare una stringa e approfondiremo il funzionamento dietro di esso.
+Capitalizzare una stringa è una pratica comune nella programmazione per rendere più leggibili e uniformi i dati. Per esempio, una stringa come "ciao a tutti" diventerà "Ciao a tutti" dopo la capitalizzazione.
 
 ## Come Fare
 
-Per capitalizzare una stringa, è necessario utilizzare il metodo `toUpperCase()` su di essa. Questo metodo restituisce una nuova stringa con tutti i caratteri convertiti in maiuscolo. Di seguito è riportato un esempio di codice che mostra come utilizzare questo metodo:
+Per capitalizzare una stringa in Java, è possibile utilizzare il metodo `toUpperCase()` della classe `String`. Di seguito viene mostrato un esempio di codice che visualizza l'utilizzo di questo metodo:
 
 ```Java
-String frase = "ciao a tutti!";
-String fraseCapitalizzata = frase.toUpperCase();
-System.out.println(fraseCapitalizzata);
+String str = "ciao a tutti";
+String maiuscolo = str.toUpperCase();
+System.out.println(maiuscolo);
 ```
 
-L'output di questo codice sarà `CIAO A TUTTI!`. Come puoi vedere, il metodo `toUpperCase()` ha convertito tutti i caratteri della stringa in maiuscolo.
+L'output di questo codice sarà "CIAO A TUTTI".
 
-Di solito è necessario salvare il risultato del metodo `toUpperCase()` in una nuova variabile, poiché il metodo non modifica la stringa originale. Tuttavia, è anche possibile utilizzare il metodo direttamente sulla stringa originale, come nell'esempio seguente:
+Si possono anche capitalizzare solo il primo carattere di una stringa utilizzando il metodo `substring()` insieme a `toUpperCase()`. Di seguito viene mostrato un esempio di codice:
 
 ```Java
-String frase = "ciao a tutti!";
-frase = frase.toUpperCase();
-System.out.println(frase);
+String str = "ciao a tutti";
+String primo = str.substring(0, 1).toUpperCase();
+String rimanente = str.substring(1);
+String maiuscolo = primo + rimanente;
+System.out.println(maiuscolo);
 ```
 
-In questo caso, l'output sarebbe lo stesso di prima, `CIAO A TUTTI!`.
-
-Un'altra cosa da tenere a mente è che questo metodo funziona solo per i caratteri ASCII. Se la stringa contiene caratteri di altre lingue, il risultato potrebbe non essere quello desiderato.
+L'output di questo codice sarà "Ciao a tutti".
 
 ## Approfondimento
 
-Il metodo `toUpperCase()` fa parte della classe `String` di Java, che è una classe built-in che rappresenta una sequenza di caratteri. Questo metodo è uno dei tanti metodi disponibili nella classe `String` che permette di manipolare le stringhe. 
-
-Uno dei vantaggi di utilizzare questo metodo è che rende più semplice la gestione delle stringhe durante confronti o operazioni di ricerca, poiché converte entrambe le stringhe in maiuscolo prima di eseguire l'operazione.
-
-Tuttavia, è importante ricordare che questo metodo crea una nuova stringa ogni volta che viene utilizzato, il che potrebbe causare problemi di performance durante l'esecuzione di operazioni complesse su molte stringhe. In questo caso, potrebbe essere più efficace utilizzare un buffer di caratteri o una stringa modificabile.
+La capitalizzazione delle stringhe in Java segue le regole dell'alfabeto della lingua inglese. Ciò significa che le lettere maiuscole sono diverse dalle lettere minuscole e che le lettere accentate vengono convertite in maiuscolo con il metodo `toUpperCase()`. È importante notare che il metodo `toUpperCase()` crea una nuova stringa mentre il metodo `toUpperCase()` modifica direttamente la stringa a cui viene applicato.
 
 ## Vedi Anche
 
-- [Java String documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Tutorial su Java String](https://www.geeksforgeeks.org/java-lang-string-class-in-java/)
-- [Spiegazione del metodo toUpperCase()](https://stackoverflow.com/questions/34595530/what-does-method-to-uppercase-do-in-java)
+- Documentazione ufficiale del metodo `toUpperCase()`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--
+- Tutorial di Java sulla manipolazione delle stringhe: https://www.w3schools.com/java/java_strings.asp

@@ -1,37 +1,46 @@
 ---
-title:    "Gleam: テキストファイルを読み込む"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/reading-a-text-file.md"
+title:                "Gleam: テキストファイルの読み込み"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストファイルを読み取るメソッドは、プログラマーにとって非常に重要です。テキストファイルには、さまざまなデータや情報が格納されている可能性があり、それらを読み取ることでプログラムの処理を効率的に行うことができます。また、他のプログラムやシステムとの連携においても必要不可欠です。
+テキストファイルを読み込むことの利点について説明します。テキストファイルを読み取ることで、データを取得し、処理し、表示できるようになります。
 
-## 使い方
+## 方法
 
-テキストファイルを読み取るためには、Gleamの`File`モジュールを使用します。以下は、ファイルを開いてその中身を読み取る例です。
+以下のGleamコードの例を参考に、テキストファイルを読み込む方法を学びましょう。コードブロック内には、コードの出力結果も表示されています。
 
 ```Gleam
-let file = File.open("sample.txt")
-let content = File.read(file)
+import gleam/file
+
+// テキストファイルを開く
+let file = file.open("example.txt")
+
+// ファイルから1行読み込む
+let line = file.read_line()
+
+// 読み込んだ行を表示する
+io.println(line)
+
+// ファイルを閉じる
+file.close()
 ```
 
-`File.open()`関数を使用して、ファイルを開き、`File.read()`関数を使用してその内容を読み取ります。ここで、`sample.txt`は読み取りたいテキストファイルのパスに置き換えてください。
+上記のコードを実行すると、テキストファイルの1行が表示されます。これを応用して、ファイル内のデータを取得し、処理することも可能です。
 
-読み取った内容は、文字列として変数`content`に格納されます。この文字列を処理することで、必要な情報を取得することができます。
+## より詳細な情報
 
-## 詳細を掘り下げる
+テキストファイルを読み込む際には、ファイルを開く、必要な行を読み込む、ファイルを閉じるなどのステップが必要です。また、ファイルが大きい場合は、さらに高度な処理方法が必要になることもあります。詳細な情報は、Gleamの公式ドキュメントを参照してください。
 
-テキストファイルを読み取る際には、エンコーディングや改行コードなどの詳細な処理が必要になる場合があります。Gleamの`File`モジュールには、さまざまな関数が用意されているため、これらの処理も容易に行うことができます。
+## 関連情報を参照
 
-また、テキストファイルの読み取りだけでなく、書き込みや更新、削除などの操作も可能です。より高度な処理が必要な場合には、Gleamのドキュメントを参照するか、コミュニティに質問することで詳細な情報を得ることができます。
+「## 関連情報を参照」の見出しの下に、参考になる他の記事やドキュメントのリンクを掲載しています。
 
-## 参考リンク
-
-- [Gleamドキュメント](https://gleam.run/documentation/v0.14.0/stdlib.html#file)
-- [テキストファイルの読み書き | スタックオーバーフロー](https://stackoverflow.com/questions/47836401/how-can-i-read-file-at-gleam)
-
-## 関連する記事を見る
+- [Gleam 公式ドキュメント](https://gleam.run/documentation/)
+- [テキストファイルを操作する方法](https://gleam.run/documentation/std-lib/file/)
+- [Gleamを使ってファイルを読み書きする方法](https://medium.com/@cwgem/reading-and-writing-files-in-gleam-6c807b08867a)

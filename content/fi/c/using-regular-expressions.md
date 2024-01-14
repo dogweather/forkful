@@ -1,62 +1,63 @@
 ---
-title:    "C: Säännöllisten lausekkeiden käyttö"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/using-regular-expressions.md"
+title:                "C: Säännöllisten lausekkeiden käyttö"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttäisit säännöllisiä lausekkeita C-ohjelmoinnissa?
+## Miksi 
 
-Säännölliset lausekkeet ovat kätevä työkalu tekstinparsimisessa ja muokkaamisessa. Ne mahdollistavat monimutkaisten merkkijonojen hakemisen ja manipuloinnin, mikä helpottaa esimerkiksi tiedostojen lukemista ja tietokantojen käsittelyä.
+Regular expressionit ovat voimakas työkalu C-ohjelmoinnissa. Ne mahdollistavat tiettyjen merkkijonojen etsimisen ja manipuloinnin, jotka ovat hyödyllisiä monissa ohjelmointitilanteissa.
 
-## Näin käytät säännöllisiä lausekkeita C-ohjelmoinnissa
+## Miten
 
-Säännöllisen lausekkeen käyttäminen C-ohjelmoinnissa vaatii muutaman perusasian ymmärtämisen. Ensinnäkin, säännöllinen lauseke koostuu erilaisista metakaraktäärimerkeistä, jotka kuvaavat erilaisia merkkijonoja. Esimerkiksi asteriski (*) tarkoittaa 0 tai useampaa esiintymää edeltävästä merkistä. Toinen olennainen asia on käyttää oikeaa funktiota, kuten "regcomp" säännöllisen lausekkeen käsittelemiseen.
+Käyttö: Regular expressionin käyttö on helppoa, sillä se koostuu vain muutamasta avainsanasta ja erikoismerkistä. Käytämme kirjastoa <regex.h>, joka sisältää tarvittavat toiminnallisuudet.
 
-Alla on esimerkki C-koodista, jossa etsitään ja tulostetaan kaikki "world" sanat annetusta merkkijonosta:
-
+Koodiesimerkki:
 ```C
 #include <stdio.h>
 #include <regex.h>
 
-int main(){
-    char *text = "Hello world! This is a sample text.";
-    char *pattern = "world";
-    regex_t regex;
+int main() {
+  // Luodaan regex-objekti ja määritellään muuttuja, johon tallennetaan mahdollinen virheilmoitus.
+  regex_t re;
+  int error;
 
-    if(regcomp(&regex, pattern, 0)){
-        printf("Säännöllinen lauseke ei kääntynyt oikein.");
-        return 1;
-    }
+  // Syötetään testimerkkijono.
+  char* test_string = "Tämä on testimerkkijono 123.";
+  
+  // Määritellään haluttu hakuilmaus.
+  char* pattern = "(.*123)";
 
-    regmatch_t match;
-    while(regexec(&regex, text, 1, &match, 0) == 0){
-        int start = match.rm_so;
-        int end = match.rm_eo;
-        for(int i = start; i < end; i++){
-            printf("%c", text[i]);
-        }
-        printf(" ");
-        text += end;
-    }
+  // Käännetään ilmaus ja tallennetaan virheilmoitus.
+  error = regcomp(&re, pattern, 0);
 
-    return 0;
+  // Tarkistetaan, onko ilmaus löytynyt testimerkkijonosta.
+  if (regexec(&re, test_string, 0, NULL, 0) == 0) {
+    printf("Merkkijonosta löytyi ilmaus!");
+  } else {
+    printf("Merkkijonosta ei löytynyt ilmausta.");
+  }
+
+  // Lopuksi vapautetaan regex-objekti.
+  regfree(&re);
+  return 0;
 }
-
-/* Output:
-world world 
-*/
 ```
 
-## Syvemmälle säännöllisten lausekkeiden käyttöön
+Tuloste:
+```
+Merkkijonosta löytyi ilmaus!
+```
 
-Säännöllisten lausekkeiden käyttö C-ohjelmoinnissa voi olla hyvin monipuolista ja monimutkaista. Niiden avulla voi esimerkiksi: etsiä tiettyjä merkkijonoja, validoida käyttäjän antamaa syötettä, korvata sanoja toisilla sanoilla ja niin edelleen. On tärkeää ymmärtää erilaiset metakaraktäärimerkit sekä osata käyttää niitä oikein eri tilanteissa.
+## Syväsyvennys
 
-Jotkut C-ohjelmointikielen ympäristöt tarjoavat myös omat säännöllisen lausekkeen kirjastonsa, kuten PCRE (Perl Compatible Regular Expressions). Näiden kirjastojen avulla on mahdollista hyödyntää säännöllisiä lausekkeita vielä monipuolisemmin ja suorituskykyisemmin.
+Regular expressionit voivat olla hyödyllisiä esimerkiksi datan validointiin, ohjelman suoritusnopeuden optimointiin ja erilaisten merkkijonojen ja tiedostojen käsittelyyn. Regex-kieli on myös laajalti käytössä muissa ohjelmointikielissä, joten sen oppiminen auttaa myös siirtymistä muihin kieliin.
 
 ## Katso myös
 
-- [Säännölliset lausekkeet Dokumentaatio](https://www.c-programming-simple-steps.com/regular-expressions.html)
-- [Säännölliset lausekkeet opetusvideo](https://www.youtube.com/watch?v=sa-TUpSx1JA)
-- [PCRE-kirjasto Dokumentaatio](https://www.pcre.org/)
+- [Regular expressions in C](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Regex cheatsheet](https://www.rexegg.com/regex-quickstart.html)
+- [Interactive regex tutorial](https://regex101.com/)

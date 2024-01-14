@@ -1,65 +1,55 @@
 ---
-title:    "PHP: Utskrift av felsökningsutdata"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/printing-debug-output.md"
+title:                "PHP: Utskrift av felsökningsresultat"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva ut felsökningsutgångar är en av de mest grundläggande och användbara teknikerna inom PHP-programmering. Det ger dig möjlighet att se vilken kod som körs och vilka värden variablerna har vid en viss punkt i din kod. Detta hjälper dig att identifiera och lösa eventuella problem som kan uppstå.
+Att skriva ut debuggmeddelanden är en viktig del av PHP-programmering. Det gör det enklare att spåra fel och hitta problem i koden. Utan dessa utskrifter kan det vara svårt att förstå varför en kod inte fungerar som den ska.
 
-## Hur man gör
+## Så här gör du
 
-För att skriva ut en felsökningsutgång i PHP, använd bara funktionen `print_r()` eller `var_dump()`. Dessa funktioner visar informationen om en variabel eller ett objekt.
-
-```PHP
-<?php
-$frukt = array('äpple', 'banan', 'apelsin');
-print_r($frukt);
-```
-
-**Output:**
-
-```PHP
-Array
-(
-    [0] => äpple
-    [1] => banan
-    [2] => apelsin
-)
-```
+Ett enkelt sätt att skriva ut debuggmeddelanden är att använda funktionen `echo`. Här är ett exempel på hur du kan använda det:
 
 ```PHP
 <?php
-$person = array('namn' => 'Anna', 'ålder' => 25, 'land' => 'Sverige');
-var_dump($person);
+$namn = "Lisa";
+echo "Hej " . $namn . "!"; // Utskrift: Hej Lisa!
+?>
 ```
 
-**Output:**
+Du kan också använda funktionen `print_r` för att skriva ut en array eller objekt. Här är ett exempel:
 
 ```PHP
-array(3) {
-  ["namn"]=>
-  string(4) "Anna"
-  ["ålder"]=>
-  int(25)
-  ["land"]=>
-  string(7) "Sverige"
-}
+<?php
+$frukter = array("äpple", "banan", "apelsin");
+print_r($frukter); // Utskrift: Array ( [0] => äpple [1] => banan [2] => apelsin )
+?>
 ```
 
-Dessa funktioner är särskilt användbara för att felsöka större och mer komplexa variabler och objekt.
+För att skriva ut mer detaljerade debuggmeddelanden kan du använda funktionen `var_dump`. Här är ett exempel:
 
-## Djupdyka
+```PHP
+<?php
+$ålder = 25;
+var_dump($ålder); // Utskrift: int(25)
+?>
+```
 
-Utöver att bara skriva ut värden på variabler, kan du också skriva ut felsökningsutgångar på olika platser i din kod för att följa hur värdena ändras och för att identifiera eventuella problem som uppstår. Du kan också använda `die()` -funktionen för att stoppa exekveringen av koden och skriva ut en felsökningsutgång på ett visst ställe.
+## Djupdykning
 
-Du kan också formatera din felsökningsutgång för att göra den lättare att läsa genom att använda HTML-taggar eller funkcionaliteten `print_r()` och `var_dump()` som tillåter att du skriver ut värden som element i en tabell.
+Det finns flera andra sätt att skriva ut debuggmeddelanden i PHP, som att använda felrapporteringsfunktioner eller logga meddelanden till en fil. Det är också viktigt att bara använda debuggutskrifter under utvecklingsfasen och ta bort dem när koden är klar för produktion.
 
-## Se även
+## Se också
 
-- [PHP Debugging with xdebug](https://www.php.net/manual/en/debugger.php)
-- [Debugging PHP Code on the Command Line](https://www.sitepoint.com/debugging-php-code-command-line/)
-- [PHP Debugging good practices](https://www.zend.com/blog/php-debugging-good-practices)
+Här är några länkar som kan vara användbara för att lära dig mer om att skriva ut debuggmeddelanden i PHP:
+
+- [PHP manualen för echo](https://www.php.net/manual/en/function.echo.php)
+- [PHP manualen för print_r](https://www.php.net/manual/en/function.print-r.php)
+- [PHP manualen för var_dump](https://www.php.net/manual/en/function.var-dump.php)
+- [En artikel om hur man använder felrapporteringsfunktioner i PHP](https://www.tutorialspoint.com/php/php_error_reporting.htm)
+- [En guide om att logga meddelanden till en fil i PHP](https://www.php.net/manual/en/function.error-log.php)

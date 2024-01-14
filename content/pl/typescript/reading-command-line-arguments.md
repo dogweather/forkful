@@ -1,61 +1,52 @@
 ---
-title:    "TypeScript: Odczytywanie argumentów linii poleceń."
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/reading-command-line-arguments.md"
+title:                "TypeScript: Odczytywanie argumentów wiersza poleceń"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek pracowałeś z aplikacjami, które muszą otrzymywać dane od użytkownika za każdym razem, gdy są uruchamiane? Jeśli tak, może zastanawiałeś się, jak można to zrobić w TypeScript. W tym krótkim poradniku dowiesz się, jak czytać argumenty wiersza poleceń przy użyciu tego języka programowania i dlaczego jest to ważne.
+Programowanie w języku TypeScript może być różnorodne i wymagać wielu umiejętności, ale jednym z podstawowych elementów jest umiejętność czytania argumentów wiersza poleceń. Niektórzy programiści mogą uważać to za zbędne lub trudne, ale prawda jest taka, że ​​umiejętność czytania argumentów wiersza poleceń może znacznie ułatwić pracę z programami w trybie konsolowym.
 
 ## Jak to zrobić
 
-Aby odczytać argumenty wiersza poleceń w TypeScript, musisz zaimportować moduł "process" i wykorzystać jego metodę "argv". Oto przykładowy fragment kodu:
+Aby czytać argumenty wiersza poleceń w języku TypeScript, należy użyć wbudowanego modułu "process". Ten moduł umożliwia dostęp do wszystkich argumentów przekazanych podczas uruchamiania programu. Poniżej przedstawiono przykładowy kod, który przedstawia, jak odczytać argumenty wiersza poleceń i wyświetlić je w konsoli.
 
 ```TypeScript
-import * as process from 'process';
-
-const args = process.argv;
+const args = process.argv.slice(2);
 console.log(args);
 ```
 
-Powyższy kod spowoduje wyświetlenie tablicy z wszystkimi argumentami wiersza poleceń, które zostały przekazane do aplikacji. Na przykład, jeśli uruchomisz ten kod z argumentami "node index.ts --name Jan", wyświetli się następująca tablica:
+W tym przykładzie zmienna "args" zawiera tablicę wszystkich argumentów przekazanych wierszu poleceń. Dzięki temu możemy łatwo operować na przekazywanych argumentach i wykorzystać je w naszym programie. Poniżej znajduje się przykładowy wynik wyświetlony w konsoli.
 
 ```
-["node", "index.ts", "--name", "Jan"]
+node index.ts argument1 argument2 argument3
 ```
 
-Możesz również ustawić domyślną wartość dla argumentów, jeśli nie zostaną one przekazane. W tym celu możesz użyć metody "slice", która pozwala pominąć pierwsze dwa elementy tablicy z argumentami ("node" i "index.ts"). Poniżej znajduje się przykład:
-
-```TypeScript
-import * as process from 'process';
-
-const args = process.argv.slice(2);
-const name = args[0] || 'Anonymous';
-console.log(`Witaj, ${name}!`);
+Wyjście:
 ```
-
-Jeśli uruchomisz ten kod bez podania argumentu, zostanie wyświetlone "Witaj, Anonymous!". Jednak po dodaniu argumentu "Jan", wyświetli się "Witaj, Jan!".
+[ 'argument1', 'argument2', 'argument3']
+```
 
 ## Deep Dive
 
-W języku TypeScript można również użyć biblioteki "yargs" do czytania argumentów wiersza poleceń. Oferuje ona wiele przydatnych metod, które ułatwiają pracę z argumentami, takie jak tworzenie flag lub wymaganych argumentów. Oto przykładowe wykorzystanie biblioteki "yargs":
+Warto zauważyć, że pierwszy element tablicy "process.argv" zawsze będzie zawierał ścieżkę do aplikacji Node.js, a drugi element będzie zawierał ścieżkę do uruchomionego pliku. Dzięki temu nasze działania mogą być dostosowane do różnych środowisk uruchomieniowych.
+
+Ponadto, do manipulacji argumentami wiersza poleceń możemy wykorzystać również wbudowany moduł "yargs". Ten moduł wykorzystuje strukturę linii poleceń i umożliwia łatwiejsze i bardziej elastyczne parsowanie argumentów. Przykładowy kod wykorzystujący moduł "yargs" mogłby wyglądać tak:
 
 ```TypeScript
-import * as yargs from 'yargs';
+import yargs from 'yargs';
 
-const args = yargs.argv;
-const firstName = args.firstname || 'Anonymous';
-const lastName = args.lastname || 'Anonymous';
-
-console.log(`Twoje imię to ${firstName} ${lastName}.`);
+const args = yargs(process.argv.slice(2)).argv;
+console.log(args);
 ```
 
-W powyższym kodzie, jeśli na przykład przekażesz argumenty "node index.ts --firstname Jan --lastname Kowalski", zostanie wyświetlony tekst "Twoje imię to Jan Kowalski.".
+W ten sposób możemy dodatkowo przypisać wartości i opcje do poszczególnych argumentów, co czyni nasz kod bardziej przejrzystym i dostępnych dla innych deweloperów.
 
-## Zobacz także
+## Zobacz również
 
-- [Dokumentacja modułu "process" w TypeScript](https://www.typescriptlang.org/docs/handbook/process.html)
-- [Dokumentacja biblioteki "yargs"](https://yargs.js.org/docs/)
+- [Dokumentacja wbudowanego modułu "process"](https://nodejs.org/api/process.html)
+- [Dokumentacja modułu "yargs"](https://www.npmjs.com/package/yargs)

@@ -1,42 +1,38 @@
 ---
-title:    "Gleam: Großschreibung einer Zeichenkette"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/capitalizing-a-string.md"
+title:                "Gleam: Großschreibung eines Strings"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Die Kapitalisierung von Strings kann ein nützliches Tool sein, um Texte in bestimmten Fällen besser lesbar zu machen oder um bestimmte formale Richtlinien einzuhalten. Zum Beispiel können Benutzernamen oder Überschriften durch die Kapitalisierung vereinheitlicht werden.
+Es gibt viele Gründe, warum man vielleicht einen String im Programmieren großschreiben möchte. Ein häufiger Grund ist, um Konsistenz und Lesbarkeit im Code zu gewährleisten, besonders bei der Darstellung von Benutzereingaben oder Ausgabe an den Benutzer.
 
-##Wie geht man vor?
+## Wie geht's
 
-Die Kapitalisierung in Gleam ist ganz einfach! Man kann den eingebauten `String.capitalize()` Befehl nutzen, um den ersten Buchstaben eines Strings zu einem Großbuchstaben zu machen. Hier ein Beispiel:
-
-```Gleam
-my_string = "hallo"
-kapitalisiert = String.capitalize(my_string)
-```
-
-Die Ausgabe im Falle von `kapitalisiert` wird "Hallo" sein. 
-
-Es ist auch möglich, alle Buchstaben in einem String zu kapitalisieren mit `String.uppercase()`. Hier ein Beispiel, wo beide Befehle genutzt werden:
+Die Gleam-Programmiersprache bietet ein einfaches und effektives Mittel, um einen String in Großbuchstaben umzuwandeln. Mit der Funktion `String.capitalize` können wir einen beliebigen String übergeben und erhalten als Ergebnis den selben String, jedoch mit dem ersten Buchstaben großgeschrieben. Hier ist ein Beispiel:
 
 ```Gleam
-mein_string = "GUTEN ABEND"
-normalisiert = String.lowercase(my_string)
-kapitalisiert = String.capitalize(normalisiert)
+let name = "max"
+let capitalized_name = String.capitalize(name)
+IO.print(capitalized_name)
 ```
 
-Die Ausgabe hier wird wieder "Guten Abend" sein. 
+Die Ausgabe wird sein:
 
-##Tiefergehende Information
+```
+Max
+```
 
-Die Kapitalisierung von Strings in Gleam nutzt die [Unicode character properties](https://unicode.org/reports/tr21/). Das heißt, dass es auch in anderen Sprachen als Englisch funktioniert und Sonderzeichen sowie Akzente korrekt behandelt. Es ist jedoch wichtig zu beachten, dass bestimmte Zeichenkodierungen und Schriften möglicherweise für die korrekte Kapitalisierung konfiguriert werden müssen.
+## Tiefergehend
 
-##Siehe auch
+Obwohl es einfach erscheinen mag, gibt es einige interessante Dinge zu beachten, wenn man einen String in Gleam großschreiben möchte. Zum Beispiel unterstützt die Funktion `String.capitalize` auch Unicode-Zeichen und Umlaute. Außerdem gibt es verschiedene Methoden, um nur einen Teil eines Strings in Großbuchstaben zu konvertieren oder um eine bestimmte Schreibweise beizubehalten. Durch die Verwendung von Gleams Pattern Matching-Konstrukten können wir auch komplexere Logik implementieren, um Strings in bestimmten Fällen zu großschreiben.
 
-- [Gleam Dokumentation über Strings](https://gleam.run/documentation/stdlib/String.html)
-- [Gleam Dokumentation über Unicode](https://gleam.run/documentation/stdlib/Unicode.html)
-- [Unicode Character Database](https://www.unicode.org/reports/tr44/#General_Category_Values)
+## Siehe auch
+
+- [Gleam-Dokumentation: `String.capitalize`](https://gleam.run/docs/stdlib/string#capitalize)
+- [Gleam-Dokumentation: Pattern Matching](https://gleam.run/docs/guide/pattern-matching)
+- [Blog-Beitrag: Warum Konsistenz in der Programmierung wichtig ist](https://www.codementor.io/@oleksiychupryna/why-consistency-matters-in-programming-best-practices-ntn06709p)

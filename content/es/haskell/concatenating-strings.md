@@ -1,46 +1,41 @@
 ---
-title:    "Haskell: Uniendo cadenas de texto"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/concatenating-strings.md"
+title:                "Haskell: Uniendo cadenas"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-
-La concatenación de cadenas es una técnica común en la programación que permite unir dos o más cadenas de texto en una sola. Esto puede ser útil en diversas situaciones, como cuando se desea mostrar una oración completa en lugar de varias partes separadas. También puede ser útil para crear nombres de archivos dinámicamente o generar mensajes personalizados para los usuarios.
+## ¿Por qué es importante concatenar cadenas?
+Al igual que en cualquier otro lenguaje de programación, en Haskell a menudo necesitamos combinar múltiples cadenas de texto juntas en una sola. Esto es especialmente útil cuando queremos mostrar información al usuario o crear mensajes personalizados. Además, la concatenación de cadenas nos permite crear programas más dinámicos y flexibles.
 
 ## Cómo hacerlo
-
-La concatenación de cadenas en Haskell es sencilla y se puede lograr utilizando el operador `++` o la función `concat`. A continuación se muestra un ejemplo de ambas formas:
+En Haskell, podemos concatenar cadenas utilizando el operador `++` o la función `concat`. Veamos algunos ejemplos utilizando ambos métodos:
 
 ```Haskell
--- usando el operador ++
-"¡Hola " ++ "mundo!" -- resulta en "¡Hola mundo!"
+-- Utilizando el operador ++
+concatenar = "Hola " ++ "mundo!"
+-- Output: "Hola mundo!"
 
--- usando la función concat con una lista de cadenas
-concat ["¡Hola", "mundo", "!"] -- resulta en "¡Hola mundo!"
+-- Utilizando la función concat con una lista de cadenas
+concatenarLista = concat ["Me ", "gusta ", " programar."]
+-- Output: "Me gusta programar."
 ```
-
-Tenga en cuenta que el operador `++` solo puede usarse para concatenar dos cadenas a la vez, mientras que la función `concat` puede unir una lista de cadenas.
 
 ## Profundizando
-
-En Haskell, las cadenas son en realidad listas de caracteres, lo que significa que se pueden utilizar las mismas funciones que se usan para trabajar con listas en general. Por ejemplo, se puede usar la función `map` para modificar cada carácter de una cadena antes de concatenarla con otra. Aquí hay un ejemplo:
+En Haskell, las cadenas de texto son en realidad listas de caracteres, por lo que podemos usar muchas funciones y métodos de listas con ellas. Por ejemplo, podemos utilizar la función `words` para dividir una cadena en una lista de palabras, y luego utilizar la función `unwords` para unir esa lista nuevamente en una sola cadena. Veamos un ejemplo:
 
 ```Haskell
--- función que convierte una letra mayúscula en minúscula
-toLower :: Char -> Char
-toLower c = toEnum( fromEnum c + 32)
+cadena = "Este es un ejemplo de una cadena de texto."
+palabras = words cadena
+-- Output: ["Este", "es", "un", "ejemplo", "de", "una", "cadena", "de", "texto."]
 
--- concatenación de cadenas con función map
-map toLower ("HOLA " ++ "AMIGOS!") -- resulta en "hola amigos!"
+cadenaNueva = unwords palabras
+-- Output: "Este es un ejemplo de una cadena de texto."
 ```
 
-También es importante tener en cuenta que la concatenación de cadenas en Haskell es una operación costosa en términos de tiempo de ejecución. Esto se debe a que una nueva cadena se crea cada vez que se realiza la concatenación. Por lo tanto, si se necesitan realizar múltiples concatenaciones, puede ser más eficiente usar la función `concat` con una lista de cadenas.
-
 ## Ver también
-
-- [Documentación oficial de Haskell sobre concatenación de cadenas](https://www.haskell.org/documentation/#strings)
-- [Tutorial sobre concatenación de cadenas en Haskell](https://wiki.haskell.org/Strings)
-- [Ejemplos de concatenación de cadenas en Haskell](https://www.programminghaskell.com/concatenating-strings-with-haskell/)
+- [Documentación oficial sobre cadenas en Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.14.0.0/Data-String.html)
+- [Tutorial sobre cadenas en Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
+- [Explicación detallada sobre listas en Haskell](https://www.fpcomplete.com/haskell/tutorial/list/)

@@ -1,50 +1,42 @@
 ---
-title:    "Elm: Skapa en tillfällig fil"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/creating-a-temporary-file.md"
+title:                "Elm: Skapa en temporär fil"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-En temporär fil är en fil som endast existerar temporärt och tas bort efter användning. Detta kan vara användbart inom programmering när man behöver skapa en fil för ett tillfälligt syfte, som till exempel att lagra data tillfälligt innan det skickas vidare till en annan plats. I denna bloggpost kommer vi att diskutera hur man skapar en temporär fil i Elm.
-
 ## Varför
 
-Det finns flera anledningar till att man skulle vilja skapa en temporär fil i Elm. Det kan till exempel vara användbart när man behöver skicka data till en extern tjänst men vill först lagra det lokalt för att kunna återanvända det senare. Det kan också vara praktiskt när man behöver skapa en fil på en server som sedan ska raderas automatiskt när den inte behövs längre.
+I dagens digitala värld används temporära filer ofta för att temporärt lagra data som behövs under körning av programmet. Det kan vara allt från att spara ner en användares uppladdningar till att lagra temporära cachefiler för snabbare åtkomst av data. I den här bloggposten kommer vi att utforska hur man skapar en temporär fil med hjälp av det funktionala programmeringsspråket Elm.
 
-## Så här gör du
+## Så här
 
-För att skapa en temporär fil i Elm behöver du först importera modulen "Temporary" från "elm/file". Sedan kan du använda funktionen "file" för att skapa en fil med det namn och den typ du önskar. Här är ett exempel på kod som skapar en temporär textfil med namnet "temp.txt":
+För att skapa en temporär fil i Elm, behöver vi först importera "File"-modulen. Detta kan göras genom att lägga till följande kod i början av din Elm-fil:
 
-```Elm
-import Temporary exposing (file)
-
-tempFile =
-    file "temp.txt" "text/plain"
+```elm
+import File exposing (File)
 ```
 
-Detta skapar en temporär fil i samma mapp som din Elm-kod, och ger dig sedan en "File"-typ som du kan använda för att lägga till data till filen. Du kan också specificera en annan sökväg för filen om du vill.
+Sedan använder vi funktionen "createTempFile" som tar emot en "String" som det första argumentet och en "Cmd File" som det andra argumentet. Den första "String"-argumentet är sökvägen där den temporära filen ska skapas och den andra "Cmd File" är en "Cmd"-typ för att utföra IO-operationer. Koden nedan visar hur man skapar en temporär fil i användarens hemkatalog:
 
-När du är klar med att använda filen, kan du radera den genom att använda funktionen "delete" från modulen "Temporary". Här är en kodexempel på hur du tar bort filen "temp.txt" som vi skapade tidigare:
-
-```Elm
-import Temporary exposing (file, delete)
-
-tempFile =
-    file "temp.txt" "text/plain"
-
--- Resten av din kod för att lägga till data till filen
-
-delete tempFile
+```elm
+createTempFile "/hem/användare/" Cmd.none
 ```
 
-## Gräva djupare
+När filen är skapad kommer funktionen att returnera en "File"-typ som innehåller information om den temporära filen, till exempel filnamn, sökväg och storlek. Om du vill utföra operationer på filen, som att skriva till den, kan du använda "File"-modulen och dess funktioner.
 
-Det finns också flera andra funktioner i modulen "Temporary" som kan vara användbara när man arbetar med temporära filer i Elm. Till exempel kan du använda funktionen "exists" för att kontrollera om en fil redan finns innan du försöker skapa den. Det finns också funktioner för att ändra en fils namn och typ om du behöver det.
+## Djupdykning
 
-Det är också värt att notera att när du skapar en temporär fil i Elm, så skapas den faktiskt inte direkt. Istället skapas en "Task"-värde som måste köras för att faktiskt skapa filen. Detta gör det möjligt att hantera felhantering och andra saker innan filen skapas.
+Det finns många anledningar till varför man skulle vilja skapa en temporär fil i Elm. En av de största fördelarna är möjligheten att snabbt och smidigt hantera dataunderlag som behövs under körning av programmet. Istället för att behöva lagra all data i minnet, kan du enkelt skapa en temporär fil och lagra data där istället.
 
-## Se även
+Det är också en bra praxis att använda temporära filer när man hanterar känslig data. Genom att använda en temporär fil som raderas efter användning, minskar risken för att känslig information lämnas kvar på enheten.
 
-- [Elm Dokumentation - Modulen Temporary](https://package.elm-lang.org/packages/elm/file/latest/Temporary)
-- [Elm Dokumentation - Modulen File](https://package.elm-lang.org/packages/elm/file/latest/File)
+En annan anledning till att arbeta med temporära filer är att det kan bidra till en bättre prestanda för ditt program. Genom att använda en temporär fil för att lagra cachad data, kan programmet snabbt återuppta bearbetningen istället för att behöva hämta data från en extern källa varje gång.
+
+## Se också
+
+- [Elm File-modulen dokumentation](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Elm HTTP-modulen dokumentation](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Elm Guide - Interaktion med JavaScript](https://guide.elm-lang.org/interop/javascript.html)

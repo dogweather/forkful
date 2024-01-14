@@ -1,33 +1,42 @@
 ---
-title:    "Swift: टेक्स्ट को खोजें और बदलें"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/searching-and-replacing-text.md"
+title:                "Swift: टेक्स्ट खोजना और बदलना"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-कोडिंग में सामान्यता से खोज और प्रतिस्थापित करने की आवश्यकता होती है। इस ब्लॉग पोस्ट में, हम जानेंगे कि स्विफ्ट में पाठ को खोजना और प्रतिस्थापित कैसे किया जाता है और इससे हमें क्या फायदे हो सकते हैं।
+इस ब्लॉग पोस्ट में हम स्विफ्ट प्रोग्रामिंग के माध्यम से उब्दों और मूल्यों की जगह तलाशने और बदलने के बारे में बात करेंगे। यह उपयोगकर्ता के लिए बहुत ही हासिल कार्य हो सकता है।
 
 ## कैसे करें
 
-आप ये कार्रवाई `replacingOccurrences(of:with:)` फ़ंक्शन का उपयोग करके कर सकते हैं। इसमें पाठ का प्रथम आर्ग्यूमेंट हमें वह पाठ बताता है जिसे हम खोजना चाहते हैं और दूसरा आर्ग्यूमेंट हमें वह पाठ बताता है जिससे हम उस पाठ को प्रतिस्थापित करना चाहते हैं। यहां एक उदाहरण है:
+स्विफ्ट में टेक्स्ट तलाशने और बदलने का अनुरोध ```String``` में इन्हें अपडेट करके किया जाता है। नीचे एक उदाहरण दिया गया है:
 
-```swift
-let text = "स्विफ्ट ब्लॉग पोस्ट"
-let newText = text.replacingOccurrences(of: "ब्लॉग", with: "प्रोग्रामिंग")
-print(newText) // Output: स्विफ्ट प्रोग्रामिंग पोस्ट
+```Swift
+var message = "मैं हिंदी में हूं।"
+message = message.replacingOccurrences(of: "में", with: "से")
+print(message)
 ```
 
-इस उदाहरण में, हमने `text` में से "ब्लॉग" को "प्रोग्रामिंग" के साथ बदल दिया है।
+आउटपुट: "मैं हिंदी से हूं।"
 
 ## गहराई में जाएं
 
-कुछ अन्य फ़ंक्शन जैसे `replacingOccurrences(of:with:options:range:)` भी है जो आपको खोज और प्रतिस्थापन का अधिक नियंत्रण देता है। आप अपनी खोज प्रकार और खोज ग्रंथि को भी निर्दिष्ट कर सकते हैं। आप यहां सारे विकल्प और उदाहरण देख सकते हैं: [Swift फ़ंक्शन शाब्दकोश](https://developer.apple.com/documentation/swift/string#function_shorthand).
+अगर आपको किसी स्ट्रिंग के आंशिक उपस्थिति को बदलने की जरूरत है, तो आप regular expressions का उपयोग कर सकते हैं। ```NSRegularExpression``` के साथ आपको एक मजबूत खंडन इंजन मिलता है जो कुछ भी तलाशने और बदलने में मदद कर सकता है। नीचे एक उदाहरण दिया गया है:
 
-## और भी देखें
+```Swift
+let input = "सर्वश्रेष्ठ भविष्य के लिए Swift है।"
+let regex = try! NSRegularExpression(pattern: "भविष्य")
+let output = regex.stringByReplacingMatches(in: input, range: NSRange(input.startIndex..., in: input), withTemplate: "भविष्य के लिए उत्तम")
+print(output)
+```
 
-अगर आप स्विफ्ट में अन्य प्रोग्रामिंग टिप्स और ट्रिक्स जानना चाहते हैं, तो नीचे दिए गए लिंक्स को जांचें:
+आउटपुट: "सर्वश्रेष्ठ भविष्य के लिए उत्तम Swift है।"
 
-- [स्विफ्ट फ़
+## देखें भी
+
+- [Swift String पढ़ना और बदलना](https://developer.apple.com/documentation/swift/string)
+- [NSRegularExpression के साथ काम करना](https://developer.apple.com/documentation/foundation/nsregularexpression)

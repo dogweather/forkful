@@ -1,33 +1,39 @@
 ---
-title:    "TypeScript: Excluindo caracteres que correspondem a um padrão"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/deleting-characters-matching-a-pattern.md"
+title:                "TypeScript: Removendo caracteres que correspondem a um padrão."
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Às vezes, durante o processo de programação, é necessário limpar e organizar uma string removendo certos caracteres que correspondem a um determinado padrão. Isso pode ser útil quando se trabalha com dados de entrada desorganizados ou quando se deseja formatar uma string de uma maneira específica.
+Você pode se deparar com situações em que precisa deletar caracteres que correspondem a um padrão específico em seu código TypeScript. Isso pode ser necessário para limpar ou formatar dados, ou até mesmo para resolver um problema específico em sua lógica de programação. Aprender como fazer isso pode ser útil para melhorar a eficiência e a qualidade do seu código.
 
 ## Como fazer
 
-Para deletar caracteres que correspondem a um padrão em TypeScript, podemos usar o método "replace" da classe String. Isso nos permite substituir os caracteres indesejados por uma string vazia, removendo-os da string final.
+Para deletar caracteres que correspondem a um padrão em TypeScript, você pode usar a função `replace()` combinada com expressões regulares. Por exemplo, se quisermos remover todos os espaços em branco de uma string, podemos usar o seguinte código:
 
-```TypeScript
-let texto: string = "Olá, Meu! Nome é *João*.";
-let novoTexto: string = texto.replace(/[*!]/g, "");
-// novoTexto é agora "Olá, Meu Nome é João."
+```
+const string = "Isso é uma string com espaços em branco"
+const novaString = string.replace(/\s/g, "")
+console.log(novaString) // "Issoéumastringcomespaçosembranco"
 ```
 
-No exemplo acima, usamos uma expressão regular para correspondência de padrões, representada pelos caracteres entre as barras. O "g" no final da expressão regular significa que ela deve ser aplicada globalmente em toda a string. É importante lembrar que expressões regulares são case sensitive, então é necessário garantir que os caracteres a serem removidos estejam na mesma caixa que na string original.
+O uso da expressão regular `/\s/g` nos permite encontrar todos os espaços em branco na string e, em seguida, substituí-los por uma string vazia, resultando em uma nova versão da string sem espaços em branco.
 
-## Aprofundamento
+Você também pode usar outras expressões regulares para atender a diferentes padrões de caracteres que deseja excluir. Por exemplo, se você quiser excluir letras minúsculas de uma string, pode usar `/[a-z]/g`.
 
-O uso de expressões regulares para correspondência de padrões é uma técnica poderosa em programação. Além de deletar caracteres em uma string, também podemos usá-las para buscar, substituir e formatar dados de maneira eficiente. É possível explorar mais sobre expressões regulares e suas aplicações em TypeScript em recursos como o [tutorial do TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html) ou [este artigo da MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+## Profundidade
+
+Ao trabalhar com a função `replace()` e expressões regulares, é importante entender como o operador de substituição funciona. Ele substituirá apenas o primeiro caractere que corresponde ao padrão, a menos que você adicione a flag `g` no final da expressão regular para indicar que a substituição deve ser global.
+
+Além disso, você pode usar os caracteres especiais `^` (início da string) e `$` (fim da string) para delimitar o padrão em uma determinada posição na string.
+
+Também é importante notar que o uso de expressões regulares pode afetar o desempenho do seu código, pois elas podem ser processadas de forma mais lenta do que outras operações de string.
 
 ## Veja também
 
-- [Documentação do método "replace" em String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Artigo sobre expressões regulares em TypeScript](https://medium.com/@vladtataranu/how-to-use-regular-expressions-in-typescript-b4346cc61f4a)
-- [Ferramenta online para testar e criar expressões regulares](https://regexr.com/)
+- [Documentação TypeScript para função `replace()`](https://www.typescriptlang.org/docs/handbook/utility-types.html#public)
+- [Referência de expressões regulares em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)

@@ -1,45 +1,43 @@
 ---
-title:    "Gleam: Das Berechnen eines Datums in der Zukunft oder Vergangenheit."
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/calculating-a-date-in-the-future-or-past.md"
+title:                "Gleam: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Berechnen von zukünftigen oder vergangenen Daten kann in vielen Situationen nützlich sein, sei es für die Planung von Veranstaltungen oder die Verwaltung von Fristen. Die Gleam-Programmiersprache bietet eine einfache Möglichkeit, diese Berechnungen durchzuführen.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann für viele Programmiererinnen und Programmierer eine nützliche Fähigkeit sein. Sei es für die Planung von Terminen oder das Durchführen von Datenanalysen, die Fähigkeit, zukünftige oder vergangene Termine zu berechnen, kann viel Zeit und Aufwand sparen.
 
 ## How To
 
-Die Berechnung von zukünftigen oder vergangenen Daten in Gleam kann mit Hilfe des `DateTime`-Moduls erfolgen. Zunächst müssen wir das Modul importieren, indem wir `DateTime` am Anfang unseres Codes angeben:
+Um ein Datum in der Zukunft oder Vergangenheit in Gleam zu berechnen, verwenden wir die Funktion `Date.add_days()` aus der `Date`-Bibliothek. Nehmen wir zum Beispiel an, wir möchten das Datum in 10 Tagen in der Zukunft berechnen. Die Codebeispiele und Ausgabe sehen wie folgt aus:
 
 ```Gleam
-import DateTime
+import Date
+
+let future_date = Date.add_days(Date.now(), 10)
+
+// Ausgabe: 2021-08-10
 ```
 
-Anschließend können wir eine Instanz der Struktur `DateTime` erstellen, indem wir den aktuellen Zeitstempel und die Anzahl der gewünschten Tage als Argumente übergeben. Zum Beispiel:
+Um ein Datum in der Vergangenheit zu berechnen, nutzen wir die Funktion `Date.sub_days()`, wie im folgenden Beispiel:
 
 ```Gleam
-let future_date = DateTime.now().add_days(5)
-let past_date = DateTime.now().sub_days(10)
+import Date
+
+let past_date = Date.sub_days(Date.now(), 5)
+
+// Ausgabe: 2021-07-26
 ```
-
-Die `add_days`-Methode fügt der aktuellen Zeit das angegebene Datum hinzu, während die `sub_days`-Methode es von der aktuellen Zeit abzieht. Wir können auch andere Zeiteinheiten wie Stunden, Minuten oder sogar Monate hinzufügen oder abziehen.
-
-Um das Ergebnis zu überprüfen, können wir die `format`-Methode verwenden, um das Datum in einem bestimmten Format auszugeben. Zum Beispiel:
-
-```Gleam
-let formatted_date = DateTime.format(past_date, "{dd}.{mm}.{yyyy}")
-```
-
-Dies würde das Datum im Format "TT.MM.JJJJ" ausgeben.
 
 ## Deep Dive
 
-Das `DateTime`-Modul bietet auch weitere nützliche Funktionen für die Arbeit mit Datumsangaben, wie zum Beispiel die Berechnung der Differenz zwischen zwei Daten oder das Vergleichen von Daten. Dazu ist es wichtig, dass die Daten in der richtigen Zeitzone angegeben sind. Die Gleam-Dokumentation bietet weitere Informationen und Beispiele zur Verwendung des `DateTime`-Moduls.
+Um ein tieferes Verständnis davon zu erlangen, wie Datumskalkulation in Gleam funktioniert, sollten wir uns die `Date`-Bibliothek genauer ansehen. Diese Bibliothek bietet neben den Funktionen `add_days()` und `sub_days()` auch weitere nützliche Funktionen wie `get_day()`, `get_month()` oder `get_year()`, mit denen wir spezifische Daten aus einem Datum extrahieren können. Außerdem können wir nicht nur mit Tagen, sondern auch mit Wochen, Monaten oder Jahren rechnen. Die `Date`-Bibliothek bietet auch Funktionen für zeitliche Differenzen und Vergleiche zwischen verschiedenen Datumsangaben.
 
 ## Siehe auch
 
-- [Gleam-Dokumentation zum DateTime-Modul](https://gleam.run/modules/datetime)
-- [Tutorial zur Verwendung von Gleam-Datumsangaben](https://gleam.run/docs/tutorials/dates)
+- [Offizielle Gleam Dokumentation](https://gleam.run/documentation/standard-library/date)
+- [Gleam Github Repository](https://github.com/gleam-lang/gleam)

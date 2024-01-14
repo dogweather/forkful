@@ -1,34 +1,49 @@
 ---
-title:    "PHP: Encontrando la longitud de una cadena"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/finding-the-length-of-a-string.md"
+title:                "PHP: Encontrando la longitud de una cadena"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+## Por qué
 
-En el mundo de la programación, hay veces en las que necesitamos saber la longitud de una cadena de texto. Esto puede parecer un concepto simple, pero saber la longitud de una cadena es esencial al manipular y procesar datos. Sigue leyendo para aprender cómo encontrar la longitud de una cadena en PHP.
+Si estás en el mundo de la programación, seguramente ya te has encontrado con la necesidad de encontrar la longitud de una cadena de texto. Ya sea para validar un campo de formulario o para manipular strings en tu código, conocer la longitud de una cadena puede ser fundamental. En este artículo, te explicaré cómo encontrar la longitud de una cadena en PHP.
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Para encontrar la longitud de una cadena en PHP, utilizamos la función `strlen()`. Esta función toma una cadena como argumento y devuelve su longitud como un número entero. A continuación se muestra un ejemplo de cómo utilizar esta función en un código PHP:
+Existen dos formas de encontrar la longitud de una cadena en PHP: utilizando la función `strlen()` o accediendo a la propiedad `length` de un string. Veamos un ejemplo de cada uno:
 
 ```PHP
-$cadena = "¡Hola, mundo!";
-echo strlen($cadena);
+$cadena = "¡Hola Mundo!";
+
+echo strlen($cadena); // Salida: 11
+
+echo $cadena->length; // Salida: 11
 ```
 
-El código anterior imprimirá `13` en la pantalla, ya que la cadena tiene 13 caracteres. También puedes asignar el valor devuelto por `strlen()` a una variable y utilizarla en tu código de la forma que desees.
+Como puedes ver, ambas opciones nos dan el mismo resultado. Sin embargo, es importante tener en cuenta que la función `strlen()` únicamente funciona con cadenas de texto, mientras que la propiedad `length` puede ser aplicada a diferentes tipos de datos. Por ejemplo:
 
-##Profundidad
+```PHP
+$numero = 1234;
 
-Ahora que sabes cómo usar la función `strlen()` para encontrar la longitud de una cadena, es importante entender cómo funciona en realidad. En PHP, cada cadena se almacena como una serie de bytes, que en términos simples, son una secuencia de números que representan los caracteres en la cadena. La función `strlen()` simplemente cuenta el número de bytes en una cadena, y ese número es lo que se devuelve.
+echo strlen($numero); // Salida: Nothing
 
-Es importante tener en cuenta que la función `strlen()` no cuenta los espacios en blanco al final de una cadena. Por lo tanto, si tienes un espacio al final de una cadena, este no se incluirá en la longitud devuelta. Es bueno tener esto en cuenta al tratar con datos y asegurarte de que estás obteniendo la longitud correcta.
+echo $numero->length; // Salida: Error
+```
 
-##Ver también
+Si necesitas usar la función `strlen()` en un número, deberás convertirlo a una cadena de texto primero.
+
+## Profundizando
+
+La función `strlen()` cuenta el número de caracteres en una cadena, incluyendo espacios en blanco y caracteres especiales como acentos. Pero si quieres contar el número de palabras en una cadena, puedes usar la función `str_word_count()`. También puedes usar la función `mb_strlen()` si necesitas contar caracteres en una cadena multibyte (como por ejemplo, en idiomas como el chino o el ruso).
+
+Otra forma de encontrar la longitud de una cadena de texto es utilizando un ciclo `for` e ir contando cada carácter hasta llegar al final. Sin embargo, esto es más ineficiente que utilizar las funciones ya mencionadas.
+
+## Ver también
 
 - [Documentación oficial de PHP sobre la función `strlen()`](https://www.php.net/manual/es/function.strlen.php)
-- [Artículo sobre otras formas de encontrar la longitud de una cadena en PHP](https://www.w3schools.com/php/func_string_strlen.asp)
-- [Más información sobre cómo se almacenan las cadenas en PHP](https://www.tutorialrepublic.com/php-tutorial/php-strings.php)
+- [Documentación oficial de PHP sobre la propiedad `length`](https://www.php.net/manual/es/language.types.string.php)
+- [Documentación oficial de PHP sobre la función `str_word_count()`](https://www.php.net/manual/es/function.str-word-count.php)
+- [Documentación oficial de PHP sobre la función `mb_strlen()`](https://www.php.net/manual/es/function.mb-strlen.php)

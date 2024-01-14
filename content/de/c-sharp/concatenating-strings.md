@@ -1,36 +1,47 @@
 ---
-title:    "C#: Zeichenfolgen verknüpfen"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/concatenating-strings.md"
+title:                "C#: Strings verknüpfen"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum Strings in C# konkatenieren?
+## Warum
 
-String-Konkatenation ist eine grundlegende und wichtige Funktion beim Programmieren in C#. Strings sind eine Datenstruktur, die häufig für die Verarbeitung und Darstellung von Text verwendet wird. Die Fähigkeit, Strings effektiv zu konkatenieren, ist daher unerlässlich, um komplexe und dynamische Programmlogik umzusetzen.
+Wenn Sie schon eine Weile programmieren, haben Sie wahrscheinlich schon von der Konkatenation von Zeichenfolgen gehört. Aber warum ist es so wichtig? Nun, das Verbinden von Zeichenfolgen ist eine wesentliche Fähigkeit im C#-Programmieren, da es uns ermöglicht, mehrere Zeichenfolgen zu einem einzigen Text zu kombinieren. Dies kann besonders nützlich sein, wenn wir Benutzereingaben oder Daten aus verschiedenen Variablen zusammenführen möchten, um sie in einer einzigen Ausgabe anzuzeigen.
 
-Wie wird es gemacht?
+## Wie geht das?
 
-Die Konkatenation von Strings in C# ist relativ einfach und erfordert nur die Verwendung des "+" Operators. Hier ist ein Beispielcode, der zwei Strings zusammenfügt:
+Um Zeichenfolgen in C# zu verbinden, verwenden wir den `+` Operator, der als Verknüpfungsoperator bezeichnet wird. Hier ist ein Beispielcode mit einer einfachen Zeichenfolgenverbindung:
 
 ```C#
-string firstName = "Max";
-string lastName = "Müller";
-string fullName = firstName + " " + lastName;
-Console.WriteLine(fullName);
+string str1 = "Hallo";
+string str2 = "Welt";
+string result = str1 + " " + str2;
+Console.WriteLine(result);
 ```
+Die Ausgabe wäre: "Hallo Welt". Wie Sie sehen können, haben wir mithilfe des `+` Operators die beiden Zeichenfolgen miteinander verbunden und ein Leerzeichen dazwischen eingefügt, um ein sinnvolles Ergebnis zu erzielen.
 
-Die Ausgabe dieses Codes wäre "Max Müller". Wie Sie sehen können, können nicht nur einzelne Zeichenfolgen, sondern auch Variablen und Ausdrücke miteinander konkateniert werden.
+Ein weiteres Beispiel, um die Nützlichkeit von Zeichenfolgenverbindungen zu demonstrieren, ist die Zusammenführung von Benutzereingaben und Variablen. Angenommen, wir erstellen ein einfaches Programm, das den Namen und das Alter des Benutzers abfragt und dann eine personalisierte Begrüßung ausgibt:
 
-Tiefergehende Erklärung
+```C#
+Console.WriteLine("Wie ist dein Name?");
+string name = Console.ReadLine();
+Console.WriteLine("Wie alt bist du?");
+int alter = Convert.ToInt32(Console.ReadLine());
+string ausgabe = "Hallo " + name + ", du bist " + alter + " Jahre alt.";
+Console.WriteLine(ausgabe);
+```
+Die Ausgabe könnte zum Beispiel lauten: "Hallo Lisa, du bist 25 Jahre alt."
 
-Bei der Konkatenation von Strings in C# müssen Sie sich bewusst sein, dass der "+" Operator hinter den Kulissen einen anderen Operator namens "String.Concat" verwendet. Dieser Operator nimmt eine beliebige Anzahl von Argumenten entgegen und fügt sie zu einer einzigen Zeichenfolge zusammen. Daher können Sie auch mehr als zwei Strings miteinander konkatenieren, indem Sie einfach weitere Argumente dem "+" Operator hinzufügen.
+## Tiefer eintauchen
 
-Ein weiterer wichtiger Punkt bei der String-Konkatenation ist die Performance. Da Strings in C# unveränderlich sind, müssen bei jedem Konkatenationsvorgang neue Strings erstellt werden, was zu einem höheren Speicherverbrauch führen kann. Daher ist es oft effizienter, die Klasse "StringBuilder" zu verwenden, um Strings zusammenzufügen, insbesondere wenn Sie eine größere Anzahl von Zeichenfolgen konkatenieren müssen.
+Jetzt wissen Sie, wie man Zeichenfolgen in C# verbindet, aber es gibt noch einige weitere wichtige Dinge, die Sie darüber wissen sollten. Zunächst ist es wichtig zu beachten, dass der `+` Operator genau wie bei arithmetischen Operationen eine Reihenfolge der Ausführung hat. Dies bedeutet, dass er von links nach rechts arbeitet und zuerst die Zeichenfolgen auf der linken Seite verbindet, bevor er mit denen auf der rechten Seite fortfährt.
 
-Siehe auch
+Außerdem gibt es in C# die `string.Format()` Methode, die es uns ermöglicht, Zeichenfolgen auf eine formatierte Art und Weise zu verbinden. Dies kann besonders nützlich sein, wenn wir komplexe Ausgaben erstellen wollen, indem wir Variablen innerhalb eines Textes platzieren.
 
-- Offizielle Dokumentation zu String-Konkatenation in C#: https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/strings/#concatenation
-- Ein ausführliches Tutorial zur String-Konkatenation in C#: https://www.tutorialspoint.com/csharp/csharp_string_concatenation.htm
-- Weitere Informationen zur Klasse "StringBuilder": https://www.dotnetperls.com/stringbuilder
+## Siehe auch
+
+- [MDN Web Docs: String Koncatenation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/koncatenieren)
+- [Microsoft Docs: Zeichenfolgenverbindungen](https://docs.microsoft.com/de-de/dotnet/csharp/how-to/concatenate-multiple-strings)

@@ -1,48 +1,43 @@
 ---
-title:    "Rust: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/calculating-a-date-in-the-future-or-past.md"
+title:                "Rust: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum 
 
-In der Welt der Programmierung gibt es immer wieder die Herausforderung, ein Datum in der Vergangenheit oder Zukunft zu berechnen. Egal ob es sich um Geburtstage, Fristen oder Feiertage handelt, es ist wichtig, dass wir als Entwickler*innen die korrekten Daten berechnen können. In diesem Blogbeitrag werden wir uns anschauen, wie man dies in der Programmiersprache Rust lösen kann.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann für viele Anwendungsfälle nützlich sein, wie z.B. die Planung von Aufgaben oder die Erstellung von Zeitplänen. In diesem Blog-Beitrag lernst du, wie du dies mit Rust programmieren kannst.
 
-## How To
+## Wie geht man vor
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zuerst das aktuelle Datum als Basis nehmen. In Rust können wir dies mit der Standardbibliothek "chrono" erreichen. Hier ist ein Beispielcode, in dem wir das aktuelle Datum berechnen und danach das Datum des nächsten Tages ausgeben:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zunächst das [`chrono` Paket](https://docs.rs/chrono/latest/chrono/) installieren und in unserem Code importieren. Dann können wir die Funktion `days` verwenden, um eine bestimmte Anzahl von Tagen zum aktuellen Datum hinzuzufügen oder davon abzuziehen.
 
-```rust
-use chrono::{Utc, Datelike};
+```Rust
+use chrono::{Duration, Local};
 
-fn main() {
-    let current_date = Utc::today();
-    let next_day = current_date + chrono::Duration::days(1);
-    println!("Das aktuelle Datum ist {}. Der nächste Tag ist {}.", current_date, next_day);
-}
+// Berechne das Datum, welches 20 Tage in der Zukunft liegt
+let future_date = Local::today() + Duration::days(20);
+
+// Berechne das Datum, welches 10 Tage in der Vergangenheit liegt
+let past_date = Local::today() - Duration::days(10);
+
+// Gib das Ergebnis aus
+println!("Zukünftiges Datum: {}", future_date);
+println!("Vergangenes Datum: {}", past_date);
 ```
 
-Die Ausgabe dieses Codes wird folgendermaßen aussehen:
+Dieses Code-Beispiel verwendet die aktuelle lokale Zeit, aber du kannst auch eine spezifische Zeitzone angeben, indem du die `FixedOffset` Funktion benutzt.
 
-`Das aktuelle Datum ist 2021-11-10. Der nächste Tag ist 2021-11-11.`
+## Tiefgehende Analyse
 
-In diesem Beispiel haben wir die `today()` Methode verwendet, um das aktuelle Datum zu erhalten. Danach haben wir die `Duration::days()` Methode verwendet, um eine Dauer von einem Tag zu erstellen und diese zur aktuellen Datum hinzuzufügen. Natürlich können wir diese Dauer auch anpassen, um ein Datum in der Zukunft oder Vergangenheit zu berechnen.
+Das `chrono` Paket bietet auch viele weitere Funktionen, um mit Datums- und Zeitberechnungen zu arbeiten. Du kannst z.B. bestimmte Wochentage oder Monate berechnen, die Anzahl der vergangenen Tage zwischen zwei Daten bestimmen oder Zeitintervalle hinzufügen.
 
-## Deep Dive
-
-Die "chrono" Bibliothek bietet uns viele weitere Funktionen und Möglichkeiten, um mit Datum und Uhrzeit in Rust umzugehen. Hier sind einige interessante Funktionen, die uns bei der Berechnung von Datums- und Zeiten helfen könnten:
-
-- Die `Date` Struktur ermöglicht es uns, individuelle Komponenten eines Datums (Tag, Monat, Jahr) auszulesen und zu bearbeiten.
-- Die `DateTime` Struktur bietet ähnliche Funktionen wie die `Date` Struktur, aber auch die Möglichkeit, die Uhrzeit einzuschließen.
-- Die `Offset` Struktur ermöglicht es uns, einen Zeitversatz hinzuzufügen oder zu subtrahieren, um verschiedene Zeitzonen zu berücksichtigen.
-- Die `weekday()` Methode gibt uns den Wochentag des Datums zurück.
-- Die `format()` Methode ermöglicht es uns, ein Datum in verschiedenen Formaten auszugeben.
-
-Es lohnt sich auf jeden Fall, sich mit der "chrono" Bibliothek auseinanderzusetzen und ihre vielfältigen Funktionen zu erkunden, um vollständigere und genaue Datumsberechnungen durchzuführen.
+Es ist auch möglich, Datumseingaben von Benutzern über die `parse_from_str` Funktion zu verarbeiten und sie dann in ein bestimmtes Datumsformat zu konvertieren.
 
 ## Siehe auch
 
-- [Offizielle "chrono" Dokumentation](https://docs.rs/chrono/0.4.19/chrono/)
-- [Weitere Beispiele und Tutorials zu "chrono"](https://rust-lang-nursery.github.io/rust-cookbook/datetime.html)
+- [Chrono Dokumentation](https://docs.rs/chrono/latest/chrono/)
+- [Date Calculation in Rust](https://medium.com/@phoomparin/calculating-date-in-rust-166c3b811def)

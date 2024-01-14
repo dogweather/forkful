@@ -1,62 +1,45 @@
 ---
-title:    "Javascript: Obteniendo la fecha actual"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/getting-the-current-date.md"
+title:                "Javascript: Obteniendo la fecha actual"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Uno de los conceptos fundamentales en programación es el manejo de fechas y horas. La obtención de la fecha y hora actual es uno de los puntos de partida para realizar diferentes tareas, como registros de tiempo, programación de eventos, entre otros. Además, conocer la fecha y hora actual también es útil para mostrar información actualizada a los usuarios.
+En la programación de JavaScript, es común necesitar obtener la fecha actual. Ya sea para mostrarla en una página web, registrar el tiempo de una acción o realizar cualquier otra tarea, conocer la fecha actual es fundamental. Afortunadamente, JavaScript cuenta con una herramienta integrada para obtener la fecha y hora actual fácilmente. En esta publicación, aprenderemos cómo obtener la fecha actual en JavaScript y cómo podemos manipularla para adaptarla a nuestras necesidades.
 
 ## Cómo hacerlo
 
-Para obtener la fecha y hora actual en JavaScript, podemos utilizar el objeto `Date` y sus respectivos métodos. Aquí te mostramos un ejemplo de cómo obtener la fecha actual en formato estándar:
+Para obtener la fecha actual en JavaScript, utilizamos el objeto incorporado Date. Este objeto contiene métodos para obtener la fecha, la hora y otros detalles relacionados con el tiempo. Para obtener la fecha actual, simplemente usamos el método `getDate()` junto con `new Date()`, de la siguiente manera:
 
-```Javascript
-const fechaActual = new Date();
+```
+let fechaActual = new Date();
 let dia = fechaActual.getDate();
-let mes = fechaActual.getMonth() + 1;
-let año = fechaActual.getFullYear();
-console.log(`La fecha actual es: ${dia}/${mes}/${año}`);
 ```
 
-La salida de este código sería:
+En este código, creamos una variable `fechaActual` que contiene el objeto Date con la fecha y hora actuales. Luego, utilizamos el método `getDate()` para obtener el día del mes actual y lo almacenamos en la variable `dia`. Podemos acceder a otros valores como el mes, el año o la hora utilizando métodos similares (e.g. `getMonth()`, `getFullYear()`, `getHours()`).
+
+También podemos personalizar el formato de la fecha utilizando el método `toLocaleDateString()` y pasando como parámetros las opciones de idioma y formato que deseamos. Por ejemplo:
+
 ```
-La fecha actual es: 14/6/2021
+let fechaActual = new Date();
+let opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+fechaActual.toLocaleDateString('es-ES', opciones); // Viernes, 19 de marzo de 2021
 ```
 
-Además, podemos obtener la hora actual utilizando los métodos `getHours()`, `getMinutes()` y `getSeconds()` del objeto `Date`.
-
-```Javascript
-const horaActual = new Date();
-let horas = horaActual.getHours();
-let minutos = horaActual.getMinutes();
-let segundos = horaActual.getSeconds();
-console.log(`La hora actual es: ${horas}:${minutos}:${segundos}`);
-```
-
-La salida sería:
-```
-La hora actual es: 23:30:45
-```
+En este caso, especificamos que queremos la fecha en formato largo de España y nos devuelve la fecha en el formato deseado.
 
 ## Profundizando
 
-Como mencionamos anteriormente, el objeto `Date` tiene diferentes métodos para obtener información de la fecha y hora actual. Algunos de estos métodos son:
+El objeto Date en JavaScript también permite manipular y comparar fechas. Por ejemplo, podemos crear una fecha específica utilizando el constructor con parámetros (año, mes, día) y luego compararla con la fecha actual utilizando operadores de comparación como `>`, `<`, `>=`, `<=`.
 
-- `getDate()`: devuelve el día del mes (1-31)
-- `getMonth()`: devuelve el mes (0-11)
-- `getFullYear()`: devuelve el año (4 dígitos)
-- `getHours()`: devuelve la hora (0-23)
-- `getMinutes()`: devuelve los minutos (0-59)
-- `getSeconds()`: devuelve los segundos (0-59)
-
-También podemos obtener la fecha y hora en diferentes formatos, como hora militar o formato AM/PM, utilizando los métodos `getUTCHours()` y `toLocaleTimeString()`.
+Además, el objeto Date también cuenta con métodos para sumar o restar días, meses o años a una fecha específica y obtener una nueva fecha resultante. Esto puede ser útil para tareas como calcular una fecha de vencimiento o una fecha futura para un recordatorio.
 
 ## Ver también
 
-- [Documentación oficial de JavaScript sobre el objeto Date](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date)
-- [Cómo trabajar con fechas y horas en JavaScript](https://www.digitalocean.com/community/tutorials/js-working-with-dates)
-- [Métodos de formato de fecha y hora en JavaScript](https://www.tutorialrepublic.com/javascript-tutorial/javascript-date-object.php)
+- [Objeto Date en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Manipulación de fechas en JavaScript](https://www.w3schools.com/js/js_dates.asp)
+- [Formato de fechas en JavaScript](https://www.w3schools.com/jsref/jsref_tolocaletimestring.asp)

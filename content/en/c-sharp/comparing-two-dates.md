@@ -1,36 +1,75 @@
 ---
-title:    "C# recipe: Comparing two dates"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/comparing-two-dates.md"
+title:                "C# recipe: Comparing two dates"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As a programmer, you may encounter situations where you need to compare two dates. This could be for tasks such as checking if a deadline has passed, or sorting a list of events by date. By understanding how to compare dates in C#, you can efficiently handle these scenarios in your code.
+As programmers, we often come across scenarios where we need to compare two dates. Whether it's checking if a user's subscription has expired or determining the age of an account, date comparisons are a common task in many programs. In this blog post, we will explore how to compare two dates using C#.
 
 ## How To
 
-To compare two dates in C#, we can use the `Compare()` method of the `DateTime` struct. This method takes two `DateTime` objects as parameters and returns an integer value. Here's an example:
+To compare two dates in C#, we can use the `DateTime` class and its `Compare()` method. Let's take a look at an example:
 
-```C#
-DateTime date1 = new DateTime(2021, 5, 1);
-DateTime date2 = new DateTime(2021, 4, 1);
+```
+DateTime date1 = new DateTime(2021, 01, 01);
+DateTime date2 = new DateTime(2021, 05, 01);
 
 int result = DateTime.Compare(date1, date2);
+
+if (result < 0)
+{
+    Console.WriteLine("Date1 is earlier than Date2");
+}
+else if (result > 0)
+{
+    Console.WriteLine("Date1 is later than Date2");
+}
+else
+{
+    Console.WriteLine("Date1 and Date2 are the same");
+}
+
 ```
 
-In this code, we create two `DateTime` objects representing May 1, 2021 and April 1, 2021 respectively. Then, we use the `Compare()` method to compare these two dates. The return value will be 1, indicating that `date1` is after `date2`.
+In the above code, we create two `DateTime` objects representing different dates and then use the `Compare()` method to compare them. The method returns an integer value based on the comparison. If the first date is earlier than the second one, the returned value is less than 0. If the first date is later than the second one, the returned value is greater than 0. And if both dates are the same, the returned value is 0.
 
-We can use this return value to perform different actions in our code. For example, we could check if the return value is greater than 0 to determine if one date is after another. Additionally, we can use other methods of the `DateTime` struct, such as `Equals()` and `CompareTo()`, for more specific comparison needs.
+You can also use the `DateTime` class's `Date` property to compare only the date part of a `DateTime` object and ignore the time component. Here's an example:
+
+```
+DateTime date1 = new DateTime(2021, 06, 01);
+DateTime date2 = new DateTime(2021, 06, 15);
+DateTime date3 = new DateTime(2021, 06, 01, 12, 00, 00);
+DateTime date4 = new DateTime(2021, 06, 15, 12, 00, 00);
+
+if (date1.Date == date2.Date)
+{
+    Console.WriteLine("The dates have the same date component");
+}
+
+if (date1.Date == date3.Date)
+{
+    Console.WriteLine("The dates have the same date component, even though their time component differs");
+}
+
+if (DateTime.Compare(date3, date4) == 0)
+{
+    Console.WriteLine("The dates have the same date and time component");
+}
+```
+In this example, `date1` and `date2` have the same date component, even though their time component differs. And `date3` and `date4` have the same date and time component. We can see the difference when we use the `Compare()` method to compare them.
 
 ## Deep Dive
 
-Behind the scenes, the `Compare()` method works by comparing the `Ticks` property of the two `DateTime` objects. The `Ticks` property represents the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 12:00 AM. This allows for a precise comparison of dates, including the time component.
+Under the hood, when we use the `Compare()` method of the `DateTime` class, it's actually comparing the `Ticks` property of each `DateTime` object. The `Ticks` property represents the date and time as the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00. So essentially, the `Compare()` method is just comparing two numbers.
 
-It's also worth noting that the `Compare()` method is culture-sensitive, meaning it takes into account the current culture of the system. This can cause unexpected results if not handled properly. To avoid this, we can use the `DateTime.Compare()` overload that takes a `DateTimeKind` parameter, specifying the type of comparison we want to perform.
+It's important to note that when we create a `DateTime` object, it defaults to the local time zone of the computer it's running on. So if you have a program that is being used in different time zones, you might need to take that into consideration when comparing dates.
 
 ## See Also
 
-For more information on comparing dates in C#, you can refer to the official Microsoft documentation on the `DateTime.Compare()` method (https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare), as well as the `DateTime` struct in general (https://docs.microsoft.com/en-us/dotnet/api/system.datetime).
+- [Date and Time comparisons in C#](https://docs.microsoft.com/en-us/dotnet/standard/datetime/comparing-dates?redirectedfrom=MSDN)
+- [DateTime.CompareTo Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=net-5.0)

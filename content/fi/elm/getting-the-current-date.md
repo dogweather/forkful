@@ -1,54 +1,38 @@
 ---
-title:    "Elm: Nykyisen päivämäärän saaminen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/getting-the-current-date.md"
+title:                "Elm: Nykyisen päivämäärän hakeminen."
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi käyttää nykyisen päivämäärän hankintaa?
+## Miksi
 
-Jokainen ohjelmoija tarvitsee ajoittain kykyä hakea nykyinen päivämäärä. Se voi olla hyödyllistä esimerkiksi luotaessa sovelluksia tapahtumakalentereille tai aikaperusteisten toimintojen suorittamiselle. Elm-ohjelmointikieli tarjoaa helpon ja tehokkaan tavan hakea nykyinen päivämäärä.
+Elm on suosittu ja suhteellisen uusi ohjelmointikieli, joka on suunniteltu helpottamaan verkkosovellusten kehittämistä. Yksi sen hyödyllisimpiä ominaisuuksia on sen kyky saada nykyinen päivämäärä ja aika, mikä on tärkeä toiminto monille sovelluksille. Tässä blogikirjoituksessa kerromme, miten voit käyttää Elm-kieltä saadaksesi nykyisen päivämäärän ja ajan.
 
-## Kuinka tehdä se?
+## Miten
 
-Onneksi Elmillä on sisäänrakennettu funktio, joka mahdollistaa nykyisen päivämäärän hankkimisen. Se on nimeltään `Time.Now` ja se palauttaa `Posix`-tyypin arvon, joka edustaa tämänhetkistä aikaa.
+Getting the current date with Elm is a simple task. First, you will need to import the `Time` module into your Elm program. Then, you can use the built-in function `now` to get the current date and time. Here is an example code block:
 
-```Elm
-import Time
+``` Elm
+import Time exposing (now)
 
--- haetaan nykyinen päivämäärä
-currentDate = Time.now
+currentDate = now
 ```
 
-Tämä funktio palauttaa `Posix`-tyypin käärittynä `Result`-tyyppiin. Tämä tarkoittaa sitä, että on mahdollista, että jotain menee vikaan, jolloin `Result`-tyyppi sisältää virheen sijaan `Posix`-tyypin arvon. Tämä pitäisi ottaa huomioon, kun käsittelet nykyisen päivämäärän hankintaa.
+The output will be a `Time.Posix` value, which represents the current date and time in milliseconds. This value can then be converted into a readable format using the `Time` module functions, such as `Time.toDate` or `Time.toString`.
 
-Jos haluat tarkastella nykyisen päivämäärän lisäksi myös kellonaikaa, voit käyttää `Time.millisToPosix`-funktiota muuntaaksesi millisekunnit `Posix`-tyypiksi.
+## Syväsukellus
 
-## Syvällinen sukellus
+Saadaksesi tarkemman käsityksen siitä, miten `now`-funktio toimii, voit tutustua Elm-kielen dokumentaatioon ja lähdekoodiin. On myös hyödyllistä tutkia `Time` moduulin muita toimintoja, kuten `fromCalendar` ja `atMidnight`, jotka tarjoavat erilaisia tapoja käsitellä päivämääriä ja aikoja Elm-ohjelmassa.
 
-Kun käytät `Time.now` -funktiota, Elm palauttaa nykyisen päivämäärän UTC-aikavyöhykkeessä. Jos haluat muuttaa aikavyöhykettä, voit käyttää `Time.inTimeZone` -funktiota ja antaa sille haluamasi aikavyöhykkeen `String`-muodossa.
+Lisäksi on tärkeää huomata, että saadessaan nykyisen päivämäärän ja ajan `now`-funktio käyttää tietokoneen paikallista aikavyöhykettä. Tämä on hyödyllistä ottaa huomioon niille, jotka käyttävät sovellustasi eri aikavyöhykkeillä.
 
-```Elm
-import Time
+## Katso myös
 
--- haetaan nykyinen päivämäärä ja kellonaika Euroopan aikavyöhykkeelle muunnettuna
-currentDateTime = Time.inTimeZone "Europe/Helsinki" Time.now
-```
+- [Elm-ohjelman aloittaminen] (https://guide.elm-lang.org/)
+- [Time Moduulin dokumentaatio] (https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Elm-kielen lähdekoodi] (https://github.com/elm/compiler)
 
-On myös tärkeää huomata, että `Time.now` palauttaa ajan millisekunteina. Jos haluat näyttää nykyisen päivämäärän ja kellonajan tietyn muodon mukaan, voit käyttää `Time.format`-funktiota, joka hyödyntää `iso8601`-formaatista.
-
-```Elm
-import Time
-
--- haetaan nykyinen päivämäärä ja formaatataan se stringiksi
-currentDateTime = Time.format Iso8601 Time.now
-```
-
-Tässä esimerkissä käytetään `Iso8601`-formaatia, mutta on myös muita vaihtoehtoja, kuten `Rfc3339`, `Rfc1123` ja `Rfc822`.
-
-# Katso myös
-
-- [Elm dokumentaatio](https://elm-lang.org/docs)
-- [Elm Weekly](https://elmweekly.nl)
-- [Finnish Elm Slack-yhteisö](https://elmslack.com)
+Kiitos kun luit tämän blogikirjoituksen saadaksesi lisätietoja siitä, miten saat nykyisen päivämäärän ja ajan Elm-ohjelmalla. Toivottavasti tämä auttoi sinua ymmärtämään tätä toimintoa paremmin ja voit nyt käyttää sitä tehokkaasti sovelluksissasi. Onnea koodaukseen!

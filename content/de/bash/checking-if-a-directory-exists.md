@@ -1,47 +1,49 @@
 ---
-title:    "Bash: Prüfen, ob ein Verzeichnis vorhanden ist"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/checking-if-a-directory-exists.md"
+title:                "Bash: Überprüfen, ob ein Verzeichnis existiert"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Bevor wir uns in die Details vertiefen, fragst du dich vielleicht, warum es überhaupt wichtig ist, zu überprüfen, ob ein Verzeichnis existiert. Nun, es kann verschiedene Gründe geben, warum du diese Überprüfung in deinem Bash-Skript benötigst. Zum Beispiel könnte dein Skript von einem bestimmten Verzeichnis abhängen, um Dateien zu finden oder zu lesen. Wenn das Verzeichnis nicht existiert, kann dein Skript nicht wie erwartet funktionieren. Aus diesem Grund ist es wichtig zu wissen, wie man überprüft, ob ein Verzeichnis vorhanden ist.
+In der Bash-Programmierung ist es häufig erforderlich, zu überprüfen, ob ein bestimmtes Verzeichnis vorhanden ist, bevor bestimmte Aktionen ausgeführt werden. Dies kann dazu beitragen, Fehler zu vermeiden und das Skript robust zu machen. In diesem Blog-Beitrag werden wir lernen, wie man überprüft, ob ein Verzeichnis vorhanden ist und einige weitere nützliche Informationen zu diesem Thema erfahren.
 
-## Wie geht's
+## Wie geht das?
 
-Es gibt einige Methoden in Bash, um zu überprüfen, ob ein Verzeichnis vorhanden ist. Eine einfache Möglichkeit ist die Verwendung des Befehls "test" mit der Bedingung "-d", gefolgt vom Pfad des Verzeichnisses, das überprüft werden soll. Dies könnte zum Beispiel so aussehen:
-
-```Bash
-test -d /home/benutzer/dokumente && echo "Das Verzeichnis existiert."
-```
-
-Dieser Befehl überprüft, ob das Verzeichnis "/home/benutzer/dokumente" existiert und gibt dann die Nachricht "Das Verzeichnis existiert." aus, falls dies der Fall ist.
-
-Du kannst auch den Befehl "if" verwenden, um eine Aktion auszuführen, wenn das Verzeichnis existiert, oder eine andere Aktion ausführen, wenn dies nicht der Fall ist. Ein Beispiel könnte so aussehen:
+Das Überprüfen, ob ein Verzeichnis vorhanden ist, wird in der Bash-Programmierung mit dem Befehl `test` und dem Flag `-d` durchgeführt. Hier ist ein Beispielcode, der überprüft, ob das Verzeichnis "Dokumente" im aktuellen Verzeichnis vorhanden ist:
 
 ```Bash
-if [ -d /home/benutzer/dokumente ]
+if test -d Dokumente
 then
-  echo "Das Verzeichnis existiert."
+  echo "Das Verzeichnis Dokumente existiert!"
 else
-  mkdir /home/benutzer/dokumente
-  echo "Das Verzeichnis wurde erstellt."
+  echo "Das Verzeichnis Dokumente existiert nicht."
 fi
 ```
 
-Dieser Code überprüft auch, ob das Verzeichnis existiert, führt dann aber verschiedene Aktionen aus, je nachdem, ob das Verzeichnis bereits vorhanden ist oder nicht.
+Wenn das Verzeichnis "Dokumente" existiert, wird die Meldung "Das Verzeichnis Dokumente existiert!" ausgegeben. Andernfalls wird die Meldung "Das Verzeichnis Dokumente existiert nicht." angezeigt.
 
-## Tiefere Einblicke
+## Tief tauchen
 
-Die Überprüfung eines Verzeichnisses in Bash ist eigentlich recht einfach, aber es gibt ein paar Dinge, die du beachten solltest. Zum Beispiel kann es sein, dass du die Rechte haben musst, um auf das Verzeichnis zugreifen zu dürfen, damit die Überprüfung richtig funktioniert. Außerdem kann es hilfreich sein, die Ausgabe der Überprüfung in einer Variablen zu speichern, um sie später in deinem Skript wiederzuverwenden.
+Neben dem Flag `-d` gibt es noch andere nützliche Flags, die beim Überprüfen von Verzeichnissen verwendet werden können. Zum Beispiel kann `-e` verwendet werden, um zu überprüfen, ob das angegebene Verzeichnis oder eine Datei existiert, und `-w` kann verwendet werden, um zu überprüfen, ob das Verzeichnis oder die Datei beschreibbar ist.
 
-Eine weitere nützliche Methode ist die Verwendung von Wildcards, um nach bestimmten Verzeichnissen zu suchen. Dabei kannst du beispielsweise eine Schleife verwenden, um alle existierenden Verzeichnisse in einem übergeordneten Ordner aufzulisten.
+Es ist auch möglich, eine bedingte Ausführung basierend auf dem Ergebnis der Überprüfung durchzuführen. Hier ist ein Beispiel, bei dem eine Datei nur erstellt wird, wenn das Verzeichnis "Dokumente" vorhanden ist:
+
+```Bash
+if test -d Dokumente
+then
+  touch Dokumente/NeueDatei.txt
+  echo "Die Datei NeueDatei.txt wurde erstellt."
+else
+  echo "Das Verzeichnis Dokumente existiert nicht."
+fi
+```
 
 ## Siehe auch
 
-- Hier findest du weitere Informationen zu Variablen in Bash: https://www.tutorialspoint.com/unix/unix-shell-variables.htm
-- Erfahre mehr über die Verwendung von Wildcards in Bash: https://www.tecmint.com/use-wildcards-for-matching-filenames-in-linux/
-- Eine umfangreiche Einführung in die Verwendung von Bedingungen in Bash: https://www.linux.com/topic/desktop/if-statement-bash/
+- [Bash Guide for Beginners - Test Constructs](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
+- [Linuxize - Bash IF Statement](https://linuxize.com/post/bash-if-else-statement/)
+- [Shell Scripting Tutorial - Conditional Statements](https://www.shellscript.sh/conditional.html)

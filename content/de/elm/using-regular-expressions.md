@@ -1,47 +1,60 @@
 ---
-title:    "Elm: Verwendung von regulären Ausdrücken"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/using-regular-expressions.md"
+title:                "Elm: Verwendung regulärer Ausdrücke"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+Elm: Warum Sie sich mit regulären Ausdrücken beschäftigen sollten
 
-Es gibt viele Gründe, warum Sie sich für die Verwendung von regulären Ausdrücken (oder kurz Regex) in Elm entscheiden könnten. Vielleicht möchten Sie eine anspruchsvolle Validierungsfunktion für Benutzereingaben erstellen oder ein Muster in einem Text suchen. Egal aus welchem Grund, reguläre Ausdrücke sind ein leistungsstarkes Werkzeug, das Ihnen dabei helfen kann, komplexe Aufgaben in Elm zu lösen.
+Reguläre Ausdrücke sind ein mächtiges Werkzeug beim Entwickeln von Webanwendungen, insbesondere in der funktionalen Programmiersprache Elm. Sie können verwendet werden, um Muster in Texten zu erkennen und zu verarbeiten, was oft in der Datenvalidierung oder bei der Suche nach bestimmten Werten in einer Zeichenkette nützlich ist. In diesem Blog-Beitrag werden wir uns ansehen, warum Sie sich mit regulären Ausdrücken beschäftigen sollten und wie Sie sie in Elm verwenden können.
 
-# Wie geht es?
+## Warum
 
-Wenn Sie bereits mit regulären Ausdrücken in anderen Programmiersprachen vertraut sind, werden Sie feststellen, dass die Syntax in Elm sehr ähnlich ist. Um einen regulären Ausdruck in Elm zu schreiben, müssen Sie das Modul `Regex` importieren.
+Reguläre Ausdrücke bieten eine effiziente Möglichkeit, komplexe Aufgaben der Textverarbeitung zu automatisieren. Mit regulären Ausdrücken können Sie gezielt nach bestimmten Mustern in Zeichenketten suchen und diese entsprechend verarbeiten. Dies kann besonders nützlich sein, wenn Sie beispielsweise Formulareingaben validieren oder bestimmte Daten aus einer API-Antwort extrahieren möchten.
 
-Schauen wir uns ein Beispiel an, um ein besseres Verständnis zu bekommen:
+## How To
 
-````Elm
+Um reguläre Ausdrücke in Elm zu verwenden, müssen Sie zuerst das Paket Regex installieren. Führen Sie dazu den folgenden Befehl in Ihrem Projektverzeichnis aus:
+
+`elm install elm/regex`
+
+Als nächstes importieren Sie das Modul `Regex` in Ihrer Elm-Datei:
+
+```Elm
 import Regex exposing (..)
+```
 
--- Prüft, ob eine Zeichenfolge eine gültige E-Mail-Adresse ist
-isValidEmail : String -> Bool
-isValidEmail email =
-    regex (Regex.fromString "[a-z0-9._ %+-]+@[a-z0-9.-]+\\.[a-z]{2,}") email |> Result.isOk
-````
+Nun können Sie mit regulären Ausdrücken arbeiten. Ein Beispiel wäre die Validierung einer E-Mail-Adresse. Dazu könnten Sie folgenden Code verwenden:
 
-In diesem Beispiel importieren wir das komplette `Regex`-Modul und definieren eine Funktion, die überprüft, ob eine Zeichenfolge eine gültige E-Mail-Adresse ist. Wir verwenden die `regex`-Funktion, die versucht, den regulären Ausdruck in der ersten Argumente auf die Zeichenfolge im zweiten Argument anzuwenden. Wenn die Übereinstimmung erfolgreich ist, gibt die Funktion `Ok` zurück, sonst `Err`.
+```Elm
+emailRegex : Regex.Pattern
+emailRegex =
+    Regex.fromRegex "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"
 
-# Tiefer ins Thema
+validateEmail : String -> Bool
+validateEmail email =
+    Regex.match emailRegex email
+        |> Result.map (\_ -> True)
+        |> Result.withDefault False
 
-Wie Sie im obigen Beispiel sehen können, besteht der reguläre Ausdruck aus verschiedenen Buchstaben, Zahlen und Sonderzeichen. Aber was bedeuten sie eigentlich?
+main =
+    validateEmail "meine-email@beispiel.com" -- True
+    validateEmail "ungültige-email" -- False
+```
 
-Ein regulärer Ausdruck stellt ein Muster dar, nach dem ein Text gesucht oder validiert werden kann. In unserem Beispiel verwenden wir vier Klassen von Zeichen:
+In diesem Beispiel verwenden wir das `fromRegex`-Funktion aus dem `Regex`-Modul, um ein reguläres Ausdrucksmuster zu erstellen, das einer gültigen E-Mail-Adresse entspricht. Dann verwenden wir die `match`-Funktion, um zu überprüfen, ob eine E-Mail-Adresse mit diesem Muster übereinstimmt. Das Ergebnis ist ein `Result Bool`, das angibt, ob die E-Mail-Adresse gültig ist oder nicht.
 
-- `[a-z0-9._ %+-]`: Dies steht für alle Kleinbuchstaben, Zahlen sowie die Zeichen `._ %+-`.
-- `@[a-z0-9.-]+`: Dies bedeutet, dass der Text `@` und dann eine oder mehrere Kleinbuchstaben, Zahlen oder das Zeichen `.` oder `-` enthalten muss.
-- `\\.`: Das doppelte Backslash ist nötig, um das Sonderzeichen `.` zu "escapen", da es normalerweise für jedes beliebige Zeichen steht. Hier steht es aber ganz konkret für den Punkt.
-- `{2,}`: Dies gibt an, dass das vorherige Element mindestens zwei Mal vorkommen muss. In unserem Fall muss die Domäne (z.B. `com`, `de`, `org`) mindestens zwei Buchstaben lang sein.
+## Deep Dive
 
-Mit regulären Ausdrücken können auch komplexere Muster definiert werden. Sie können beispielsweise auch Variablen und Gruppen verwenden, um bestimmte Teile eines Musters zu extrahieren. Für eine ausführlichere Erklärung empfehle ich, sich die offizielle [Dokumentation zu regulären Ausdrücken in Elm](https://package.elm-lang.org/packages/elm/regex/latest/) anzusehen.
+Es gibt viele verschiedene Operatoren und Funktionen, die in Elm reguläre Ausdrücke verwendet werden können. Einige davon sind `find`, `replace`, `replaceFirst`, `contains`, `split`, `matchAll` und viele mehr. Es ist ratsam, sich mit der offiziellen Dokumentation von `elm/regex` vertraut zu machen, um alle Möglichkeiten zu entdecken, die reguläre Ausdrücke bieten.
 
-# Siehe auch
+Zusätzlich zu den Standardoperatoren können Sie in Elm auch benutzerdefinierte Capture-Gruppen verwenden, um bestimmte Teile einer Übereinstimmung zu erfassen und in Verarbeitungsfunktionen zu verwenden. Dies kann besonders nützlich sein, wenn Sie Daten aus einer API-Antwort extrahieren oder formatieren möchten.
 
-- [Offizielle Dokumentation zu regulären Ausdrücken in Elm](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Online-RegEx-Tester](https://regexr.com/) zum Ausprobieren von regulären Ausdrücken
-- [Reguläre Ausdrücke in der Praxis](https://medium.com/swlh/regex-in-practice-486ea9702657) - Ein hilfreicher Artikel, der verschiedene Anwendungsbeispiele für reguläre Ausdrücke gibt.
+## Siehe auch
+
+- Offizielle Dokumentation von `elm/regex`: https://package.elm-lang.org/packages/elm/regex/latest/
+- Reguläre Ausdrücke in Elm: https://elm-lang.org/docs/strings#regular-expressions
+- Einführung in reguläre Ausdrücke: https://regexone.com/

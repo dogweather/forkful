@@ -1,42 +1,45 @@
 ---
-title:    "Gleam: Skriver til standard feil"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/writing-to-standard-error.md"
+title:                "Gleam: Skriving til standardfeil"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å skrive til standard error er en vanlig praksis i programmering, spesielt når man jobber med feilsøking og debugging. Det lar deg sende pålitelig og presis informasjon om eventuelle feil eller unntak som kan oppstå under kjøringen av programmet ditt.
+Hvorfor skrive til standard error? 
 
-## Hvordan du gjør det
+Noen ganger når man koder, kan det være nyttig å sende en melding til standard error (oftest forkortet til stderr). Dette er en vanlig måte å kommunisere feil og varselmeldinger til brukeren. Ved å skrive til stderr kan man få et bedre innblikk i eventuelle problemer i koden og feilsøke på en enklere måte. 
 
-For å skrive til standard error, kan du bruke den innebygde funksjonen `io.format_error/2` i Gleam. La oss se på et eksempel på hvordan vi kan bruke denne funksjonen:
+# Hvordan
 
-```
-Gleam
-let error_message = "En feil har oppstått"
-let error_code = 500
-io.format_error("Feilkode: {} - {}", [error_code, error_message])
-```
+Hvordan skrive til standard error i Gleam? 
 
-Dette vil skrive følgende til standard error:
+For å skrive til stderr i Gleam kan man bruke funksjonen `io.write_err()` som tar inn en streng som parameter. Her er et eksempel på hvordan dette kan gjøres: 
 
-```
-Feilkode: 500 - En feil har oppstått
+```Gleam
+fn main() {
+    io.write_err("Dette er en melding til standard error")
+}
 ```
 
-Som du kan se, kan du enkelt sette inn variabler inne i teksten ved å bruke krøllparenteser `{}`, som vil bli erstattet med verdien til variabelen. Dette gjør det enkelt å tilpasse meldingen basert på den aktuelle feilen.
+Dette vil skrive ut meldingen "Dette er en melding til standard error" til stderr. Dersom man ønsker å inkludere variabler i meldingen, kan man bruke formateringsstrenger slik som `%s` eller `%i`, og deretter oppgi variablene som tilhørende parametere. Her er et eksempel: 
 
-## Dykk ned i detaljene
+```Gleam
+let navn = "Per"
+let alder = 27
+io.write_err("%s er %i år gammel", navn, alder)
+```
 
-Det er viktig å merke seg at når du skriver til standard error, vil dette skje i sanntid mens programmet kjører. Dette betyr at det kan påvirke ytelsen, spesielt hvis du bruker det i en løkke eller andre raske operasjoner. Derfor bør du bare bruke denne metoden når det er nødvendig, for eksempel under feilsøkingsprosessen.
+Dette vil skrive ut meldingen "Per er 27 år gammel" til stderr. 
 
-Du kan også bruke `io.format_error/2` for å skrive til standard output ved å passere `io.stdout` som første argument. Men det er viktig å merke seg at standard output blir buffret, så utskriften din vil ikke vises umiddelbart.
+# Dypdykk 
 
-## Se også
+Det er viktig å huske at når man skriver til stderr, vil meldingene vises sammen med output fra standard out (oftest forkortet til stdout). Det kan derfor være nyttig å utnytte dette ved å skrive forskjellige typer meldinger til enten stderr eller stdout. Dette kan gjøres ved å bruke funksjonen `io.write_out()` for standard utput. 
 
-- [Offisiell Gleam-dokumentasjon om io-modulen](https://gleam.run/documentation/std/io)
-- [Artikkel om debugging i Gleam](https://dev.to/happi/debugging-in-gleam-15gj)
-- [Eksempelkode som viser bruk av `io.format_error/2`](https://github.com/gleam-lang/gleam/blob/main/examples/error_logs_error_handler.gleam)
+# Se også 
+
+- [Offisiell dokumentasjon for Gleam](https://gleam.run/documentation/)
+- [Gleam Github repository](https://github.com/gleam-lang/gleam)

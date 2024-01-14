@@ -1,33 +1,41 @@
 ---
-title:    "Python: Merkkijonon muuntaminen isoin kirjaimin"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/capitalizing-a-string.md"
+title:                "Python: Merkkijonon kirjoittaminen isoksi"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Joskus haluat muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Tähän voi olla monia erilaisia syitä, kuten yhdenmukaistaminen tai näyttävämpi ulkoasu.
+Miksi joku haluaisi muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi?
+
+Isolla alkukirjaimella kirjoitettu merkkijono voi näyttää tyylikkäämmältä ja helpommin luettavalta. Tämä voi olla erityisen tärkeää esimerkiksi ohjelmointitehtävissä, joissa selkeä koodi on avainasemassa.
 
 ## Miten
 
+Voit muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi käyttämällä Pythonin sisäistä capitalize()-metodia. Katso alla oleva esimerkki:
+
 ```Python
-# Luo merkkijono
 string = "tämä on esimerkki"
-
-# Käytä capitalize-funktiota muuttaaksesi ensimmäisen kirjaimen isoksi
-capitalized_string = string.capitalize()
-
-# Tulostaa: Tämä on esimerkki
-print(capitalized_string)
+print(string.capitalize())
 ```
 
-## Syvempi sukellus
+Tulosteena saat "Tämä on esimerkki". Huomaa, että capitalize()-metodi ei muuta muita kirjaimia, vaan pelkästään ensimmäisen kirjaimen isoksi.
 
-`capitalize()`-funktio muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja kaikki muut kirjaimet pieniksi. Tämä funktio on hyödyllinen myös silloin, kun haluat muuttaa useamman kuin yhden kirjaimen isoksi, mutta ensimmäinen kirjain on ainoa, joka muutetaan automaattisesti isoksi.
+Voit myös käyttää capitalize()-metodia yhdessä strip()-metodin kanssa, jolloin koodi poistaa ensin ylimääräiset välilyönnit merkkijonosta ennen ensimmäisen kirjaimen muuttamista isoksi.
+
+## Syväsyvennys
+
+Merkkijonon muuttaminen isolla alkukirjaimella on vain yksi esimerkki siitä, miten voit manipuloida merkkijonoja Pythonilla. Voit muun muassa muuttaa koko merkkijonon isoiksi tai pieniksi kirjaimiksi, poistaa tiettyjä merkkejä tai lisätä uusia merkkejä.
+
+Lisäksi kannattaa muistaa, että Python käyttää Unicode-standardia, joten merkkijonoihin voi lisätä myös muita kuin englannin kielen merkkejä.
+
+Lopuksi, kannattaa kokeilla myös muita Pythonin sisäisiä metodeja ja funktioita merkkijonojen manipulointiin. Kirjoita merkkijonoja, muokkaa niitä ja katso mitä tapahtuu!
 
 ## Katso myös
 
-- [Official Python String Methods Documentation](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [Python String Methods Tutorial](https://www.w3schools.com/python/python_strings_methods.asp)
+- [Pythonin merkkijonojen käsittely (Ohjelmointiopas.fi)](https://www.ohjelmointiopas.fi/python/kirjastoja/merkkijonot/)
+- [Pythonin virallinen dokumentaatio merkkijonojen käsittelystä](https://docs.python.org/3.8/library/stdtypes.html#text-sequence-type-str)
+- [Pythonin merkkijonojen käsittely (Tutkimus Apaja)](https://www.tutkimusapaja.fi/pythonin-merkkijonojen-kasittely/)

@@ -1,40 +1,36 @@
 ---
-title:    "Elixir: Kapitalisera en sträng"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/capitalizing-a-string.md"
+title:                "Elixir: Att göra en sträng stor bokstav"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Varför skulle du vilja konvertera en sträng till versaler? Det finns flera användbara tillämpningar för detta, till exempel om du vill jämföra texter som ska vara oberoende av versaler och gemener, eller om du vill göra en text mer läsbar genom att konvertera den till en större textstorlek.
 
-## Så här gör du
-För att konvertera en sträng till versaler i Elixir, kan du använda funktionen `String.upcase/1`. Detta är en inbyggd funktion som tar en sträng som argument och returnerar en ny sträng med alla bokstäver i versaler. Här är ett exempel på hur du kan använda den:
+Om du är ny inom programmering, har du kanske hört talas om "capitalizing a string" men inte riktigt förstått vad det betyder eller varför det är viktigt. Om du använder Elixir, kan det verka som ett Ytligt koncept, men det är faktiskt en viktig del av att hantera textsträngar i ditt program. Låt oss utforska varför det är relevant och hur du kan göra det i Elixir.
 
-```Elixir
-iex> String.upcase("hej") 
-"HEJ"
-```
+## Hur man gör
 
-Som du kan se, har vår sträng "hej" blivit konverterad till "HEJ". Det är viktigt att notera att `String.upcase/1` inte modifierar den ursprungliga strängen, utan returnerar bara en ny sträng med de ändrade bokstäverna.
+Först måste vi förstå vad det innebär att "capitalize a string". Programmerspråk följer ofta strikta regler för hur data ska formateras, och detta gäller även för textsträngar. När en sträng är "capitalized", betyder det att den första bokstaven i varje ord är en stor bokstav, medan resten av bokstäverna är små. Detta är viktigt för att göra texten mer läsbar och enhetlig.
 
-Om du vill konvertera en sträng till gemener kan du istället använda funktionen `String.downcase/1`. Du kan också använda funktionen `String.capitalize/1` för att konvertera den första bokstaven i en sträng till en versal och resten till gemener.
+För att göra detta i Elixir, kan du använda funktionen `String.capitalize/1`, som tar in en sträng som argument och returnerar den med den första bokstaven i varje ord som en stor bokstav. Se ett exempel nedan:
 
 ```Elixir
-iex> String.downcase("HEJ") 
-"hej"
-
-iex> String.capitalize("hej, det här är min sträng") 
-"Hej, det här är min sträng"
+String.capitalize("hej alla") #=> "Hej Alla"
 ```
+
+Som du kan se, är "h" i "hej" och "a" i "alla" nu kapitaliserade. Detta gör det lättare att läsa och ser mer professionellt ut. Om du vill capitalizera hela strängen, oavsett separation mellan ord, kan du använda `String.upcase/1` och `String.downcase/1` för att göra alla bokstäver stora respektive små.
 
 ## Djupdykning
-Det finns flera saker att tänka på när du ska konvertera en sträng till versaler. En är att det finns skillnader mellan hur olika språk hanterar versaler och gemener. Till exempel, i de flesta västerländska språk är det enkelt att konvertera till versaler eftersom de flesta bokstäver har en motsvarande versalform. Men i vissa språk, som till exempel turkiska, så finns det bokstäver som saknar motsvarande versaler, vilket kan leda till felaktig konvertering.
 
-Det är också viktigt att tänka på att inte alltid anta att versalformen av en bokstav är bara en större version av gemener. Till exempel i tyska så har bokstaven "ß" (ess-tsett) ingen versalform, utan ska istället bytas ut mot "SS" i versaler.
+En intressant sak att notera är att `String.capitalize/1` också tar hänsyn till specifika tecken i andra språk. Till exempel, om du har en sträng på svenska som börjar med "ö", kommer det att capitalizera som "Ö". Detta bevisar att Elixir är ett mycket mångsidigt och internationellt programmeringsspråk.
+
+Det är också viktigt att nämna att funktionen `String.capitalize/1` returnerar en kopia av den ursprungliga strängen, och ändrar inte den ursprungliga strukturen. Detta är en viktig aspekt att förstå när du arbetar med textsträngar i Elixir.
 
 ## Se även
-- [String.upcase/1 i Elixir Docs](https://hexdocs.pm/elixir/String.html#upcase/1)
-- [Turkiska och versaler](https://en.wikipedia.org/wiki/Turkish_alphabet#Case)
-- [Versaler och tyska språket](https://en.wikipedia.org/wiki/Capital_%C3%9F)
+
+- Officiell Elixir-dokumentation för `String.capitalize/1`: https://hexdocs.pm/elixir/String.html#capitalize/1
+- Tutorial om att arbeta med textsträngar i Elixir: https://elixircasts.io/working-with-strings-in-elixir
+- Översikt över Elixir-programmeringsspråket: https://elixir-lang.org/

@@ -1,78 +1,35 @@
 ---
-title:    "C++: 将字符串转换为小写"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/converting-a-string-to-lower-case.md"
+title:                "C++: 将字符串转换为小写"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：当我们在处理大量文本数据时，经常会遇到需要将文本转换为小写的需求。这样可以保证不同文本的一致性，方便后续的处理和分析。
+为什么：在编程中，我们经常需要处理字符串。有时候，我们需要将字符串转换为小写形式，这样我们可以进行比较或者其他操作。因此，了解如何将字符串转换为小写形式是很有用的。
 
-如何做：在C++中，可以使用transform函数来实现字符串的小写转换。代码示例如下所示：
+如何：为了将字符串转换为小写形式，我们可以使用C++的transform函数和tolower函数。首先，我们需要包含<algorithm>头文件和<cctype>头文件。然后，我们可以定义一个字符串并使用transform函数将其转换为小写形式。在括号中，我们需要传入字符串的开头和结尾，以及一个tolower函数作为第三个参数。最终，我们可以使用cout输出转换后的字符串。下面是一个简单的示例：
 
-```C++ 
-#include <iostream> 
-#include <string> 
-#include <algorithm> 
+```C++
+#include <iostream>
+#include <algorithm>
+#include <cctype>
 
-using namespace std; 
+using namespace std;
 
-int main() { 
-    string text = "HELLO WORLD"; 
-
-    // 将字符串转换为小写 
-    transform(text.begin(), text.end(), text.begin(), ::tolower); 
-
-    // 输出转换后的结果 
-    cout << text << endl; 
-
-    return 0; 
-} 
+int main() {
+    string s = "HELLO WORLD";
+    transform(s.begin(), s.end(), s.begin(), tolower);
+    cout << s << endl;
+    return 0;
+}
 ```
 
-输出结果为：
+输出将会是 “hello world”。
 
-```
-hello world
-```
+深入了解：在深入了解字符串转换为小写的内部原理之前，我们需要知道ASCII码表。ASCII码表是一个标准，它将每个字母、数字和特殊字符都映射到一个数字值。在C++中，我们可以使用cctype头文件中的函数来处理ASCII码。tolower函数就是其中之一，它将大写字母转换为相应的小写字母的ASCII码。使用transform函数可以遍历字符串并使用tolower函数对每个字符进行转换。最后，使用iostream头文件中的cout输出转换后的字符串。
 
-深入探讨：在上面的代码中，我们使用了C++中的transform函数来实现字符串的小写转换。该函数接受三个参数，分别是要转换的字符串的起始位置、结束位置和转换后的字符串的起始位置。在第四个参数中，我们使用了::tolower来指定转换的方法，这是C++中内置的一个函数。
+相关链接： -https://en.cppreference.com/w/cpp/string/byte/tolower -https://en.cppreference.com/w/cpp/algorithm/transform
 
-此外，在transform函数中，我们还可以自定义转换的方法。例如，我们可以使用lambda表达式来指定转换的具体方法，代码示例如下：
-
-```C++ 
-#include <iostream> 
-#include <string> 
-#include <algorithm> 
-
-using namespace std; 
-
-int main() { 
-    string text = "HELLO WORLD"; 
-
-    // 使用lambda表达式来指定转换的方法 
-    transform(text.begin(), text.end(), text.begin(), [](unsigned char c){ return std::tolower(c); }); 
-
-    // 输出转换后的结果 
-    cout << text << endl; 
-
-    return 0; 
-} 
-```
-
-输出结果为：
-
-```
-hello world
-```
-
-最后，值得注意的是，在进行字符串转换时，我们需要注意字符的编码。例如，在处理中文文本时，可能需要使用其他的转换方法来保证准确性。
-
-参考链接：
-- [C++ string处理函数transform()的用法](https://www.imooc.com/wenda/detail/509277)
-- [C++ primer Plus - 转换大写和小写](https://www.runoob.com/cplusplus/cpp-string-toupper-tolower.html)
-
-## 参考链接
-
-- [C++ string处理函数transform()的用法](https://www.imooc.com/wenda/detail/509277)
-- [C++ primer Plus - 转换大写和小写](https://www.runoob.com/cplusplus/cpp-string-toupper-tolower.html)
+看看这些链接，学习更多有关字符串转换为小写的细节。

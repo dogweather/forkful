@@ -1,48 +1,42 @@
 ---
-title:    "Kotlin: Comparando duas datas"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/comparing-two-dates.md"
+title:                "Kotlin: Comparando duas datas"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em Kotlin?
+## Por que Comparar Duas Datas?
 
-Comparar duas datas é uma tarefa comum em muitos aplicativos e programas. Por exemplo, pode ser necessário verificar se uma data de nascimento é maior que a data atual, ou se o prazo de um projeto já passou. Comparar datas permite que você crie lógicas e condições com base em valores de data, o que pode ser muito útil no desenvolvimento de aplicativos.
+Comparar duas datas é uma tarefa comum em muitos projetos de programação. Ao entender como funciona a comparação de datas, você poderá trabalhar com mais eficiência com valores de data em suas aplicações. Além disso, ao dominar esse conceito, você poderá evitar bugs e imprecisões ao lidar com datas em seu código.
 
-## Como comparar duas datas em Kotlin
+## Como Fazer
 
-Para comparar duas datas em Kotlin, você pode usar a classe `LocalDate`, que representa uma data sem hora e fuso horário. Vamos ver um exemplo de código:
+### Kotlin: 
 
 ```Kotlin
-import java.time.LocalDate
-
-fun main() {
-    // criando duas datas
-    val data1 = LocalDate.of(2019, 5, 12)
-    val data2 = LocalDate.now()
-
-    // comparando as datas
-    if (data1.isAfter(data2)) {
-        println("Data 1 é depois da data 2")
-    } else {
-        println("Data 1 é antes ou igual à data 2")
-    }
+fun main(){
+    val data1 = LocalDate.of(2021, 10, 23)
+    val data2 = LocalDate.of(2021, 10, 21)
+    val resultado = data2.compareTo(data1)
+    println(resultado)
 }
 ```
 
-Neste exemplo, nós criamos duas datas utilizando o método `of` da classe `LocalDate`, que recebe como parâmetros o ano, mês e dia. Em seguida, utilizamos o método `isAfter` para comparar se a data 1 é depois da data 2. Você também pode usar outros métodos, como `isBefore` e `isEqual`, para fazer diferentes tipos de comparações entre datas.
+### Saída: 
 
-O resultado desse código seria a saída "Data 1 é antes ou igual à data 2", pois a data 1 é anterior à data atual.
+`-2`
 
-## Uma análise mais detalhada sobre a comparação de datas
+Neste exemplo, criamos duas variáveis ​​do tipo `LocalDate`, que armazenam duas datas diferentes. Em seguida, usamos o método `compareTo()` para comparar as duas datas e armazenamos o resultado em uma nova variável `resultado`. Por fim, imprimimos o resultado, que no caso do exemplo é `-2`.
 
-Além dos métodos mencionados anteriormente, a classe `LocalDate` possui diversos outros métodos que podem ser úteis na comparação de datas, como `minusDays`, `plusWeeks`, entre outros. Além disso, você também pode utilizar a classe `LocalTime` para trabalhar com horas em suas comparações.
+## Mergulho Profundo
 
-É importante lembrar que, para comparar datas e obter resultados precisos, é necessário levar em consideração o fuso horário e o calendário utilizado em cada data. Portanto, é importante estar atento a esses detalhes ao trabalhar com datas em seu código.
+Para comparar duas datas em Kotlin, é preciso entender como o método `compareTo()` funciona. Ele retorna um valor inteiro que indica se a primeira data é anterior, igual ou posterior à segunda data. Se a primeira data for anterior à segunda, o valor retornado será negativo. Se as duas datas forem iguais, o valor retornado será zero. E se a primeira data for posterior à segunda, o valor retornado será positivo.
 
-## Veja também
+Além disso, existem outras formas de comparar datas em Kotlin, como o método `isBefore()` e `isAfter()`, que retornam um valor booleano indicando se a primeira data é antes ou depois da segunda data.
 
-- [Documentação do Kotlin sobre datas e horas](https://kotlinlang.org/docs/datetime.html)
-- [Tutorial de comparação de datas em Kotlin](https://www.baeldung.com/kotlin/comparing-dates)
-- [Lista de bibliotecas úteis para trabalhar com datas em Kotlin](https://www.baeldung.com/kotlin-date-time-libraries)
+## Veja Também
+
+- [Documentação oficial do Kotlin sobre datas](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
+- [Guia de comparação de datas em Kotlin](https://www.baeldung.com/kotlin/compare-dates)

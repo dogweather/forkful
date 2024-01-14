@@ -1,35 +1,39 @@
 ---
-title:    "Java: 新しいプロジェクトを始める"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/starting-a-new-project.md"
+title:                "Java: 新しいプロジェクトを始める"
+programming_language: "Java"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ新しいプロジェクトを始めるのか
+## なぜ新しいプロジェクトを始めるのか
 
-新しいプロジェクトを始めるのにはさまざまな理由があります。例えば、新しい技術を学ぶため、興味のある問題を解決するため、または新しいアイデアを試すためにプロジェクトを始めることができます。
+新しいプロジェクトを始めることによって、新しい技術を学び、成長することができます。また、新しいアイデアを実現し、他の人と共有することもできます。
 
 ## プロジェクトを始める方法
 
-プロジェクトを始めるには、まずはじめにJavaの開発環境をセットアップする必要があります。次に、新しいプロジェクトのフォルダを作成し、適切なファイル構造を設定する必要があります。
+プロジェクトを始めるには、まずはJavaの環境を準備する必要があります。次に、コードを書くエディタやIDEを選択し、プロジェクトの作成を行います。以下の例では、JavaのHello Worldプロジェクトを作成し、コードを実行する方法を紹介します。
 
 ```Java
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("新しいプロジェクトを始めましょう！");
-    }
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
 }
 ```
 
-上記のコードは、標準出力に"新しいプロジェクトを始めましょう！"というメッセージを表示するプログラムです。これが成功すれば、プロジェクトの基本的な大枠ができたことになります。
+上記のコードを実行すると、コンソールに「Hello World!」というメッセージが表示されます。
 
-## プロジェクトの深層
+## 深い掘り下げ
 
-新しいプロジェクトを始めるときには、いくつかの重要なことを考慮する必要があります。例えば、プロジェクトの目標を明確にすること、適切なデータ構造やアルゴリズムを選択すること、効率的なコーディング方法を学ぶことなどです。また、プロジェクトの進捗管理やチーム内でのコミュニケーションを確立することも重要です。
+新しいプロジェクトを始める際には、いくつかのステップを踏むことが重要です。まずはプロジェクトの目的を明確にし、必要なツールや技術を選択します。その後、コーディングを行い、テストを行い、最終的にリリースするまでの流れを確認することが重要です。
 
-## See Also
+また、チームでプロジェクトを行う場合には、Gitなどのバージョン管理ツールを使用することで、効率的にコードを共有し、コードの変更履歴を管理することができます。
 
-- [Java開発環境のセットアップ方法](https://www.tohoho-web.com/java/ide.html)
-- [Javaの基本構文](https://www.javadrive.jp/start/index1.html)
-- [プロジェクト管理のベストプラクティス](https://www.codeproject.com/articles/619735/project-management-best-practices)
+## さらに見る
+
+- [Javaの環境構築方法](https://www.javadrive.jp/start/install/)
+- [Javaチュートリアル](https://www.javadrive.jp/tutorial/)
+- [Gitの使い方](https://backlog.com/ja/git-tutorial/)
+- [Java開発におけるベストプラクティス](https://blog.codecamp.jp/bestpractice-for-beginners-java)

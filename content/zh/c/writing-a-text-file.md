@@ -1,55 +1,59 @@
 ---
-title:    "C: 编写文本文件"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-a-text-file.md"
+title:                "C: 编写文本文件"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要写文本文件?
+# 为什么要写文本文件？
 
-编程是一门强大的技能，它可以帮助我们完成各种各样的任务。其中一个任务就是编写文本文件。文本文件是一个存储文本信息的文件，它可以被电脑识别和读取。在这篇博文中，我们将讨论为什么要编写文本文件以及如何使用C语言来完成这个任务。
+文本文件被广泛使用来存储和传输数据。它们可以用来保存文本、数字、图像等各种类型的数据。因此，通过编写文本文件，我们可以轻松地存储和共享我们的数据，并且可以在不同的程序之间共享数据。
 
 ## 如何编写文本文件
 
-首先，让我们来看一下如何使用C语言编写文本文件。下面是一个简单的例子：
+首先，我们需要添加一个头文件`<stdio.h>`，它包含了一些必要的函数和数据类型用于处理输入/输出操作。
+
+在创建文本文件之前，我们需要首先打开一个文件指针。这可以通过`fopen()`函数来完成，它的第一个参数是文件名，第二个参数是打开方式，比如“w”表示写入模式。
+
+接下来，我们可以使用`fprintf()`函数来向文件写入数据。这个函数使用方式类似于`printf()`，只不过它的第一个参数是文件指针，而不是标准输出。
+
+最后，我们需要记得关闭文件指针，使用`fclose()`函数。
+
+下面是一个简单的例子，展示了如何写入文本文件：
 
 ```C
 #include <stdio.h>
 
-int main()
-{
-    FILE *file = fopen("my_text_file.txt", "w"); //打开一个名为"my_text_file.txt"的文本文件
-    fprintf(file, "这是我写的第一行文本。\n"); //向文件中写入一行文本
-    fputs("这是我写的第二行文本。", file); //向文件中写入一行文本
-    fclose(file); //关闭文件
-
+int main() {
+    // 打开文件指针
+    FILE *fp = fopen("my_file.txt", "w");
+    // 向文件写入数据
+    fprintf(fp, "Hello, world!");
+    // 关闭文件指针
+    fclose(fp);
     return 0;
 }
 ```
 
-以上代码中，我们使用`fopen()`函数来打开一个文件，并使用`fprintf()`和`fputs()`函数将文本写入文件中。最后，使用`fclose()`函数来关闭文件。
+运行这个程序后，你将会在当前目录下看到一个名为`my_file.txt`的文本文件，里面包含了一行“Hello, world!”的内容。
 
-运行这段代码后，我们将会在我们的程序所在的文件夹中生成一个名为"my_text_file.txt"的文本文件。打开它，我们就能够看到我们写入的两行文本。
+## 深入了解文本文件
 
-## 深入探讨文本文件的编写
+除了上述提到的函数，C语言还提供了一些其他的函数来处理文本文件，比如`fscanf()`用于从文件中读取数据，`fputc()`用于向文件写入单个字符等等。此外，通过使用不同的打开方式，我们还可以控制文件的读写权限，比如“r”表示只读模式，而“a”表示追加模式。
 
-为了更好地理解文本文件的编写，让我们来深入探讨一下它的结构。文本文件通常由一系列字符组成，每个字符都由一个字节来表示。在C语言中，我们可以使用`char`类型来表示一个字符。
+另外，文本文件也可以使用标准输入和输出函数来处理，比如`scanf()`和`printf()`，它们与文件指针无关。但是需要注意的是，这些函数读写的是标准输入输出流，而不是真正的文件。
 
-在编写文本文件时，我们需要注意一些特殊的字符，比如换行符`\n`、制表符`\t`等。这些字符在文本文件中都有着特殊的意义，它们可以帮助我们对文本进行格式化。
+总的来说，编写文本文件是一项非常有用的技能，它为我们处理各种类型的数据提供了便利。确保熟悉和掌握文本文件的相关函数和打开方式，将有助于提高你的C编程能力。
 
-除了使用`fprintf()`和`fputs()`函数来写入文本，我们还可以使用`fscanf()`和`fgets()`函数来读取文本文件中的内容，这在处理用户输入等情况时非常有用。
+## 参考链接
 
-## 查看与参考
+- [菜鸟教程 - C语言文件I/O](https://www.runoob.com/cprogramming/c-file-input-output.html)
+- [C语言中文网 - 文件操作函数](http://c.biancheng.net/cpp/html/198.html)
+- [C语言中文网 - 标准库函数](http://c.biancheng.net/cpp/html/210.html)
 
-了解如何编写文本文件后，你可能会想进一步学习相关的内容。下面是一些我们推荐的文章和资源：
+# 参见
 
-- [C语言文本文件操作教程](https://www.runoob.com/cprogramming/c-file-io.html)
-- [C语言文件操作完全指南](https://www.ibm.com/developerworks/cn/linux/l-cn-fopen/)
-- [C语言标准库文件操作函数参考](https://zhuanlan.zhihu.com/p/108438772)
-
-## 见他处
-
-- [Markdown的用法和语法 (简体中文版)](https://www.jianshu.com/p/988243aef57c)
-- [C语言教程 (简体中文版)](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [C语言标准库参考 (简体中文版)](https://gcc.gnu.org/onlinedocs/gcc-4.8.5/libstdc++/api/a00046.html)
+- [Markdown语法指南 - Markdown基础](https://www.markdown.xyz/basic/)
+- [维基百科 - 文本文件](https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6)

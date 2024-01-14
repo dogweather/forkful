@@ -1,37 +1,40 @@
 ---
-title:    "Gleam: 標準エラーへの書き込み"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/writing-to-standard-error.md"
+title:                "Gleam: 標準エラーに書き込む"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ標準エラーに書くのか
 
-標準エラーに書き込むのにエキスパートとしてはなぜお勧めするのでしょうか。言い換えると、標準エラーを利用することによって何を得られるのでしょうか。実際のコード例を交えてお話ししましょう。
+標準エラーとは、プログラムが実行中に発生したエラーを表示するための特殊な出力チャネルです。プログラムをデバッグする際に役立つだけでなく、エラーを取り出してログファイルに保存することもできます。標準エラーを活用することで、プログラムの品質を向上させ、より効率的にデバッグを行うことができます。
 
-## 使い方
+## 方法
 
-Gleamから標準エラーに書き込むための方法を解説します。下記コードブロック内に具体的なコード例と出力結果を示します。 
+標準エラーに書くには、Gleamの"```write_to_stderr()```"関数を使用します。この関数は、引数で指定したメッセージを標準エラーに書き込みます。以下の例を参考にしてください。
 
 ```Gleam
-import gleam/io
-let message = "こんにちは、世界！"
-Io.err(message)
+import gleam/format/unformatted
+
+fn main() {
+  let error_msg = "エラーメッセージ";
+  gleam/format/unformatted.write_to_stderr(error_msg);
+}
 ```
 
-出力結果: `こんにちは、世界！`
+上記のコードを実行すると、標準エラーに"エラーメッセージ"が出力されます。
 
-## 詳しく見ていく
+## 深堀り
 
-標準エラーについてさらに詳しく見ていきましょう。標準エラーは通常、メインのプログラムの標準出力とは異なる出力先として使用されます。これにより、エラーメッセージを確実に表示することができます。また、標準出力と同様に、標準エラーもファイルやパイプなどのリダイレクトが可能です。
+標準エラーに書く際に注意すべき点があります。標準エラーは、基本的にはエラーを出力するためのものですが、コンソール上に表示されるメッセージは必ずしもエラーとは限りません。そのため、プログラムをデバッグする際には、標準エラーに書き込まれたメッセージを注意深く確認することが重要です。
 
-## 同じような記事を見る
+また、標準エラーではなく標準出力に書き込む場合もあります。その際は、```write_to_stderr()```ではなく```write()```関数を使用します。
 
-[see_also]
+## See Also
 
-- [Gleam公式ドキュメント: IOモジュール](https://gleam.run/documentation/stdlib/io)
-- [標準エラーを理解する](https://qiita.com/moriokar/items/6ebdd2766d717ae809df)
-- [エラーメッセージを効果的に出力するテクニック](https://tech.gamewith.co.jp/entry/2018/08/31/155917)
+- Gleamの公式ドキュメント: https://gleam.run/
+- 標準エラーに関するより詳細な説明: https://ja.wikipedia.org/wiki/%E6%A8%99%E6%BA%96%E3%82%A8%E3%83%A9%E3%83%BC
 
-[see_also]
+この記事を読んで、あなたも標準エラーに書き込むことを活用し、よりスムーズなプログラミングを行ってください。

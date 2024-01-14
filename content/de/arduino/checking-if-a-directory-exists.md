@@ -1,50 +1,35 @@
 ---
-title:    "Arduino: Überprüfen, ob ein Verzeichnis existiert"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/checking-if-a-directory-exists.md"
+title:                "Arduino: Überprüfen, ob ein Verzeichnis vorhanden ist"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+Warum: Es gibt viele Gründe, warum man prüfen möchte, ob ein Verzeichnis existiert. Zum Beispiel könnte man diese Überprüfung nutzen, um sicherzustellen, dass eine Datei erfolgreich gespeichert wurde oder um sicherzustellen, dass ein bestimmtes Verzeichnis existiert, bevor man versucht, Daten dorthin zu speichern.
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Funktion beim Programmieren eines Arduino-Geräts. Es ermöglicht Ihnen, sicherzustellen, dass wichtige Dateien oder Daten vorhanden sind, bevor Sie diese bearbeiten oder darauf zugreifen.
-
-# How To
-
-Das Überprüfen, ob ein Verzeichnis existiert, kann einfach erreicht werden, indem Sie die `File::exists()` Funktion verwenden. Hier ist ein Beispielcode, um ein Verzeichnis mit dem Namen "Daten" zu überprüfen:
+Wie man prüft, ob ein Verzeichnis existiert: Um zu überprüfen, ob ein Verzeichnis existiert, kann man die Funktion "exists()" verwenden, die in der Arduino-IDE verfügbar ist. Diese Funktion akzeptiert eine Zeichenfolge, die den Pfad des zu prüfenden Verzeichnisses enthält, und gibt true zurück, wenn das Verzeichnis existiert, oder false, wenn es nicht existiert. Im Folgenden ist ein Beispielcode zu sehen:
 
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
-
-void setup() {
-  Serial.begin(9600);
-  // SD-Karte initialisieren
-  if (!SD.begin(4)) {
-    Serial.println("SD-Karte konnte nicht initialisiert werden.");
-    return;
-  }  
+if(SD.exists("/Mein-Verzeichnis")){
+  Serial.println("Das Verzeichnis existiert!");
 }
-
-void loop() {
-  if (SD.exists("Daten")) {
-    Serial.println("Das Verzeichnis existiert.");
-  } else {
-    Serial.println("Das Verzeichnis konnte nicht gefunden werden.");
-  }
+else{
+  Serial.println("Das Verzeichnis existiert nicht!");
 }
 ```
 
-Wenn das Verzeichnis "Daten" auf der SD-Karte vorhanden ist, wird die Ausgabe "Das Verzeichnis existiert." auf der seriellen Schnittstelle angezeigt. Andernfalls wird die Ausgabe "Das Verzeichnis konnte nicht gefunden werden." gegeben.
+Ausgabe:
 
-# Deep Dive
+```Arduino
+Das Verzeichnis existiert!
+```
 
-Zusätzlich zur Überprüfung eines Verzeichnisses können Sie auch überprüfen, ob eine Datei in diesem Verzeichnis vorhanden ist, indem Sie den kompletten Pfad zur Datei angeben, z.B. `Daten/daten.txt`. Sie können auch die `SD.begin()` Funktion verwenden, um auf eine andere SD-Karte oder ein anderes Laufwerk zuzugreifen.
+Tiefergehende Informationen: Bevor man versucht, auf ein bestimmtes Verzeichnis zuzugreifen oder Daten dorthin zu speichern, ist es wichtig, zu überprüfen, ob das Verzeichnis überhaupt existiert. Dies kann verhindern, dass Fehler auftreten und das Programm möglicherweise abstürzt. Es ist auch hilfreich, die Funktion "exists()" zu verwenden, um zu prüfen, ob ein neu erstelltes Verzeichnis erfolgreich erstellt wurde. Wenn das Programm weiß, dass das Verzeichnis existiert, kann es sicher darauf zugreifen und Daten speichern. 
 
-Es ist auch wichtig zu beachten, dass die Verwendung von `SD.exists()` nur überprüft, ob das Verzeichnis oder die Datei existieren. Es überprüft nicht, ob es tatsächlich lesbar oder beschreibbar ist. Um dies zu überprüfen, können Sie die Funktionen `SD.open()` oder `SD.mkdir()` verwenden.
+Siehe auch: 
 
-# Siehe auch
+- [Arduino Referenz für die Funktion "exists()"](https://www.arduino.cc/reference/en/libraries/sd/existence-functions/exists/) 
 
-- SD-Bibliothek Referenz: https://www.arduino.cc/en/Reference/SD
-- Arduino SD Library Tutorial: https://www.arduino.cc/en/Tutorial/LibraryExamples/SD
+- [Tutorial zum Speichern von Daten auf einer SD-Karte mit Arduino](https://create.arduino.cc/projecthub/Marcel/datalogger-getting-data-from-sensors-into-excel-ac

@@ -1,50 +1,50 @@
 ---
-title:    "C: Löschen von Zeichen, die einem Muster entsprechen"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/deleting-characters-matching-a-pattern.md"
+title:                "C: Löschen von Zeichen, die einem Muster entsprechen"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Manchmal muss man spezifische Zeichen aus einer Zeichenfolge löschen, sei es aus Gründen der Formatierung oder zur Datenbereinigung. In der Programmierung kann man dieses Problem mit dem Löschen von Zeichen entsprechend einem Muster lösen.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine nützliche Fähigkeit in der C-Programmierung. Es kann bei der Bearbeitung von Strings oder beim Filtern von Benutzereingaben hilfreich sein.
 
-## Wie
+# Wie geht es
 
-Die gängige Methode zum Löschen von Zeichen basiert auf der Verwendung von Schleifen und bedingter Anweisungen. Wir durchlaufen die Zeichenfolge und überprüfen jedes Zeichen auf Übereinstimmung mit dem Muster. Wenn das Zeichen dem Muster entspricht, wird es aus der Zeichenfolge entfernt. Hier ist ein Beispiel in C-Code:
+Um Zeichen anhand eines Musters zu löschen, können wir die Funktion "strpbrk" verwenden. Diese Funktion durchsucht einen String nach dem Muster und gibt einen Zeiger auf das erste Vorkommen zurück. Dann können wir den Teil des Strings, der vor dem gefundenen Zeichen liegt, mit dem Teil nach dem gefundenen Zeichen zusammenfügen, um das gewünschte Ergebnis zu erhalten.
 
 ```C
 #include <stdio.h>
+#include <string.h>
 
-void deleteChar(char *str, char pattern){
-    int i, j;
-    for(i = 0; str[i] != '\0'; i++){
-        if(str[i] == pattern){
-            for(j = i; str[j] != '\0'; j++){
-                str[j] = str[j+1];
-            }
-            i--;
-        }
-    }
-}
+int main(void)
+{
+  char str[100] = "Die Sonne scheint, der Himmel ist blau.";
 
-int main(){
-    char string[] = "Hallo Welt!";
-    deleteChar(string, 'l');
-    printf("%s", string);
-    return 0;
+  printf("Originaler String: %s\n", str);
+  char* ptr;
+
+  // Suche nach dem Muster ","
+  ptr = strpbrk(str, ",");
+
+  // Füge den Teil des Strings vor dem gefundenen Zeichen mit dem Teil danach zusammen
+  strcpy(ptr, ptr + 1);
+
+  printf("Geänderter String: %s\n", str);
+
+  return 0;
 }
 ```
 
-Das obige Beispiel zeigt eine Funktion, die einzelne Zeichen aus einer Zeichenfolge entfernt, basierend auf einem übergebenen Muster. In diesem Fall wird jedes 'l' aus der Zeichenfolge "Hallo Welt!" entfernt. Die Funktion durchläuft die Zeichenfolge und entfernt jedes gefundene Zeichen, indem sie die folgenden Zeichen einen Index nach vorne verschiebt. Das Ergebnis wird dann auf der Konsole ausgegeben und "Hao Wett!" angezeigt.
+# Tiefer Einblick
 
-## Deep Dive
+Die Funktion "strpbrk" durchläuft den String von links nach rechts und vergleicht jedes Zeichen mit denen im Muster angegebenen. Wenn ein Treffer gefunden wird, wird ein Zeiger auf das entsprechende Zeichen im String zurückgegeben. Wenn das Ende des Musters erreicht ist, wird NULL zurückgegeben, was angibt, dass kein Treffer gefunden wurde.
 
-Es gibt jedoch noch weitere Möglichkeiten, Zeichen entsprechend einem Muster zu löschen, wie zum Beispiel die Verwendung von Zeichenkettenmanipulationsfunktionen wie `strtok()` oder `strchr()`. Diese Funktionen können auch verwendet werden, um mehrere Zeichen in einer Zeichenfolge zu entfernen. Es ist wichtig, auf die genaue Verwendung der jeweiligen Funktion zu achten, um unerwünschte Ergebnisse zu vermeiden.
+Es ist auch möglich, die Funktion "strtok" zu verwenden, um einen String anhand eines Trennzeichen in einzelne Tokens zu zerlegen. Dann können wir die gewünschten Tokens zusammenfügen, um das Muster zu löschen.
 
-## Siehe auch
+# Siehe auch
 
-- [C-Referenz: String-Operationen](https://www.programiz.com/c-programming/string-handling-functions)
-- [Tutorial: Einführung in die Zeichenkettenmanipulation in C](https://www.guru99.com/c-strings.html)
-- [C-Programmierbeispiele für die Zeichenkettenmanipulation](https://www.geeksforgeeks.org/c-programming-language)
+1. [strpbrk-Funktion](https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm)
+2. [strtok-Funktion](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)

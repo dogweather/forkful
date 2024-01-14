@@ -1,38 +1,44 @@
 ---
-title:    "Gleam: Lendo argumentos da linha de comando"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/reading-command-line-arguments.md"
+title:                "Gleam: Lendo argumentos da linha de comando"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+# Por que?
 
-Ler argumentos da linha de comando é uma habilidade valiosa para qualquer programador, especialmente para aqueles que trabalham com a linguagem de programação Gleam. Ao compreender como ler e utilizar argumentos da linha de comando, você poderá criar programas que sejam mais interativos e flexíveis, tornando seu código ainda mais poderoso.
+Você pode estar se perguntando por que deveria se preocupar em aprender a ler argumentos de linha de comando em Gleam. Bem, a resposta é simples: a capacidade de ler argumentos de forma eficiente é uma habilidade fundamental para qualquer programador. Além disso, com o crescente uso de ferramentas de linha de comando no desenvolvimento de software, saber ler esses argumentos é uma vantagem significativa para qualquer desenvolvedor.
 
-## Como fazer isso:
+# Como Fazer
 
-A leitura de argumentos da linha de comando em Gleam pode ser feita facilmente usando a função `gleam.args.parse`. Confira o exemplo abaixo que mostra como ler um argumento da linha de comando contendo um nome e imprimir uma mensagem de saudação:
+Agora que você está convencido de que é importante aprender a ler argumentos de linha de comando, vamos ao essencial. Vamos começar com um exemplo básico de como ler um argumento e imprimir seu valor na tela:
 
 ```Gleam
-let
-  args = gleam.args.parse()
-  name = case args of
-    `Ok = [name] -> name
-    `Error = _ -> "Amigo"
-in
-  IO.println("Olá, " ++ name)
+import gleam/options
+
+fn main() {
+  options := options.parse(gleam.options.Args)
+  greeting := options.get("--greeting")
+  io.print("Olá, " ++ greeting)
+}
 ```
 
-A saída para esse código seria "Olá, Amigo" no caso de nenhum argumento ser fornecido, ou "Olá, [nome]" caso seja fornecido um argumento na linha de comando.
+Neste exemplo, estamos usando a biblioteca de opções Gleam para facilitar a leitura dos argumentos. Primeiro, importamos a biblioteca com `import gleam/options`. Em seguida, usamos a função `parse` para criar uma lista de opções a partir dos argumentos fornecidos na linha de comando. Em seguida, usamos a função `get` para obter o argumento específico que desejamos, neste caso, `--greeting`. Finalmente, usamos a função `print` do módulo IO para imprimir o valor na tela.
 
-## Mergulho profundo:
+Você pode testar este programa passando argumentos na linha de comando, por exemplo: `gleam run exemplo.gleam --greeting=Leitor`.
 
-A função `gleam.args.parse` retorna um tipo de dados especial chamado de resultado (ou "result" em inglês), que é usado para lidar com erros em Gleam. O resultado pode ser "Ok", indicando que não houve erros, ou "Error", indicando que houve algum tipo de erro. Ao definir o nome como `case args of`, estamos tratando essas duas possibilidades. Se o resultado for "Ok", então significa que um argumento da linha de comando foi fornecido. Se for "Error", podemos usar um valor padrão para o nome, nesse caso "Amigo".
+# Profundando
 
-## Veja também:
+Agora que você tem uma noção básica de como ler argumentos de linha de comando em Gleam, vamos mergulhar um pouco mais fundo. Como mencionamos anteriormente, estamos usando a biblioteca de opções Gleam para facilitar a leitura de argumentos. Esta biblioteca nos fornece funções úteis como `parse`, `get` e `with_default`. Confira a documentação desta biblioteca para aprender mais sobre todas as funcionalidades disponíveis.
 
-Para mais informações sobre argumentos da linha de comando em Gleam, consulte a documentação oficial: 
-- https://gleam.run/documentation/guides/interacting-with-the-command-line
-- https://gleam.run/documentation/core/args
-- https://gleam.run/documentation/reference/sources_stdlib#args
+Além disso, essa biblioteca pode ser personalizada para atender às suas necessidades específicas. Você pode, por exemplo, criar suas próprias funções para lidar com argumentos específicos ou até mesmo criar sua própria versão da biblioteca com funcionalidades adicionais.
+
+Outra coisa importante a se ter em mente é que a ordem dos argumentos na linha de comando é importante para que as funções de parsing funcionem corretamente. Portanto, é sempre bom ter uma estratégia para organizar seus argumentos de forma consistente.
+
+# Veja também
+
+- Documentação Gleam: https://gleam.run/documentation/
+- Biblioteca de opções Gleam: https://github.com/gleam-lang/options
+- Exemplos de código Gleam: https://github.com/search?q=topic%3Agleam+org%3Agleam-lang+type%3ARepositories

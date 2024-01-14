@@ -1,50 +1,48 @@
 ---
-title:    "Elixir: Borrando caracteres que coinciden con un patrón"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/deleting-characters-matching-a-pattern.md"
+title:                "Elixir: Borrando caracteres que coinciden con un patrón"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Por qué eliminar caracteres que coinciden con un patrón?
 
-Eliminar caracteres que coinciden con un patrón es una práctica útil cuando se trabaja con cadenas de texto en Elixir. Puede ser útil para limpiar entradas de usuario, manipular cadenas complejas o realizar búsquedas y reemplazos específicos.
+Eliminar caracteres que coinciden con un patrón es una tarea común en la programación. Puede ser útil para limpiar y formatear datos, o para filtrar resultados de búsqueda. Con Elixir, esta tarea se puede realizar de manera eficiente y elegante.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres que coinciden con un patrón en Elixir, podemos utilizar la función `String.replace/4` que nos permite especificar un patrón de búsqueda y reemplazo. Veamos algunos ejemplos:
+Para eliminar caracteres que coinciden con un patrón en Elixir, se utiliza la función `String.replace/3` junto con una expresión regular. Por ejemplo, si queremos eliminar todos los números de una cadena, podríamos usar la siguiente expresión:
 
-```Elixir
-# Eliminar todas las letras 'a' de una cadena de texto
-String.replace("Hola mundo", ~r/a/, "")
-
-# Output: "Hol mundo"
-
-# Eliminar todos los números de una cadena de texto
-String.replace("123 Elixir", ~r/[0-9]/, "")
-
-# Output: " Elixir"
+```
+Elixir
+Input: "Hola123 Mundo456"
+String.replace("Hola123 Mundo456", ~r/[0-9]/, "")
+Output: "Hola Mundo"
 ```
 
-Como podemos ver, el primer argumento de la función es la cadena de texto en la que queremos realizar la eliminación, el segundo argumento es el patrón de búsqueda que define qué caracteres queremos eliminar y el tercer argumento es el carácter o cadena con la que queremos remplazarlos, en este caso, lo dejamos en blanco para que sean eliminados.
+En este ejemplo, usamos la expresión regular `~r/[0-9]/` la cual coincide con cualquier número en la cadena. Luego, en la función `String.replace/3` especificamos que queremos reemplazar esos caracteres con una cadena vacía `""`. Esto resulta en una cadena final sin números.
 
-También podemos utilizar la función `String.replace/3` para eliminar caracteres que coinciden con un patrón utilizando una función de reemplazo personalizada. Por ejemplo:
+Otra forma de eliminar caracteres que coinciden con un patrón es utilizando la función `Regex.replace/3`. Esta función también utiliza expresiones regulares, pero en lugar de trabajar con cadenas, trabaja directamente con patrones. Siguiendo el mismo ejemplo anterior, podríamos escribirlo así:
 
-```Elixir
-# Eliminar los espacios en blanco al final de cada palabra en una cadena de texto
-String.replace("Hola mundo  ", ~r/\s$/, fn match -> "" end)
-
-# Output: "Hola mundo""
+```
+Elixir
+Input: "Hola123 Mundo456"
+Regex.replace(~r/[0-9]/, "Hola123 Mundo456", "")
+Output: "Hola Mundo"
 ```
 
-En este ejemplo, utilizamos una expresión regular para identificar los espacios en blanco al final de cada palabra y utilizamos una función de reemplazo personalizada que simplemente devuelve una cadena vacía para eliminarlos.
+Ambas funciones tienen sus propias particularidades y pueden ser utilizadas según la situación y la preferencia del desarrollador.
 
-## Un poco más profundo
+## Profundizando
 
-En realidad, cuando utilizamos `String.replace/4` o `String.replace/3`, lo que estamos haciendo es utilizar el módulo de expresiones regulares de Elixir, llamado `Regex`, para buscar y reemplazar caracteres en una cadena de texto. Si estás interesado en aprender más sobre cómo funcionan las expresiones regulares en Elixir, te recomiendo que consultes la documentación oficial [aquí](https://hexdocs.pm/elixir/Regex.html).
+Elixir tiene una librería incorporada llamada `Regex`, que nos permite crear y trabajar con expresiones regulares de manera sencilla. Esta librería proporciona una amplia gama de funciones para trabajar con patrones, incluyendo `Regex.match?`, `Regex.scan` y `Regex.split`, que pueden ser útiles en diferentes escenarios.
+
+También es importante mencionar que en Elixir, las cadenas de caracteres son listas de caracteres, lo que significa que podemos utilizar funciones de listas, como `Enum.filter/2`, para filtrar y eliminar caracteres que coincidan con un patrón específico.
 
 ## Ver también
 
-- [Documentación oficial de Elixir sobre `String.replace/4`](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Documentación oficial de Elixir sobre `String.replace/3`](https://hexdocs.pm/elixir/String.html#replace/3)
-- [Documentación oficial de Elixir sobre el módulo `Regex`](https://hexdocs.pm/elixir/Regex.html)
+- [Documentación de String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
+- [Documentación de Regex.replace/3](https://hexdocs.pm/elixir/Regex.html#replace/3)
+- [Documentación de la librería Regex en Elixir](https://hexdocs.pm/elixir/Regex.html)

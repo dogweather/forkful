@@ -1,62 +1,56 @@
 ---
-title:    "Swift: Att få den aktuella datumen"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/getting-the-current-date.md"
+title:                "Swift: Att hämta aktuellt datum"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att få den nuvarande datumet kan vara en viktig del av att utveckla appar eller program. Det kan hjälpa till att hålla reda på när en viss händelse inträffade eller visa realtidsinformation.
+Att kunna hämta och använda den aktuella datumet är en viktig del av många Swift-program. Det är användbart för att dynamiskt skapa datumbaserade funktioner och för att hålla koll på tidsreferenser i en applikation.
 
 ## Hur man gör
 
-För att få den nuvarande datumet, använd Swifts ```Date``` klass. Här är ett exempel på hur man skapar en instans av ```Date``` och få datumet ur den:
+För att hämta den nuvarande datumet i Swift, använder man sig av klassen Date och metoden Date().
 
+```Swift
+let nuvarandeDatum = Date()
+print(nuvarandeDatum)
 ```
-let currentDate = Date()
-print(currentDate)
-```
 
-Output:
+Output: 2021-03-12 17:00:00 +0000
 
-2021-10-15 17:25:00 +0000
+I exemplet ovan skapar vi en konstant "nuvarandeDatum" som är av typen Date och tilldelar det värdet som returneras av metoden Date(). Sedan använder vi print() funktionen för att skriva ut värdet på skärmen.
 
-För att få datumet i ett visst format, kan du använda ```DateFormatter``` klassen. Till exempel, om du vill ha datumet i ISO8601-formatet, kan du göra följande:
+Om man vill göra en anpassning av hur datumet visas, kan man använda sig av DateFormatter klassen. Detta gör det möjligt att formatera datumet på olika sätt, till exempel som ett kort datum eller ett datum med veckodag.
 
-```
+```Swift
+let nuvarandeDatum = Date()
 let formatter = DateFormatter()
-formatter.dateFormat = "yyyy-MM-dd"
-let currentDate = formatter.string(from: Date())
-print(currentDate)
+
+// För kort datumformat
+formatter.dateStyle = .short
+
+// För datum med veckodag
+formatter.dateStyle = .full
+
+print(formatter.string(from: nuvarandeDatum))
 ```
 
-Output:
+Output för kort datumformat: 12/03/21
 
-2021-10-15
-
-Det finns många olika formatalternativ att välja mellan beroende på dina behov. Se till att kolla dokumentationen för ```DateFormatter``` för en komplett lista av formatalternativ.
+Output för datum med veckodag: fredag 12 mars 2021
 
 ## Djupdykning
 
-En ```Date``` instans representerar en specifik punkt i tiden, precis som en punkt på en tidsaxel. Det är också möjligt att skapa en ```Date``` instans från en specifik tidpunkt. Till exempel, om du vill ha datumet för 1 januari 2021, kan du göra följande:
+Date klassen i Swift baseras på den C structen, time_t, som lagrar datumet och tiden i antalet sekunder sedan 1970-01-01 00:00:00 UTC. Detta är också känd som Unix-tiden. För att konvertera detta antal sekunder till ett datum, använder Swift en algoritm för att räkna ut det aktuella datumet baserat på antalet sekunder som har gått sedan dess.
 
-```
-let calendar = Calendar.current
-let dateComponents = DateComponents(year: 2021, month: 1, day: 1)
-let specificDate = calendar.date(from: dateComponents)
-print(specificDate)
-```
-
-Output:
-
-2021-01-01 00:00:00 +0000
-
-Det finns också möjlighet att jämföra olika ```Date``` instanser för att se om de är efter, före eller samtidigt. Detta kan vara användbart för att sortera datum och hantera händelser som inträffar vid olika tidpunkter.
+Man kan också använda sig av metoden timeIntervalSince1970() för att få antalet sekunder som har gått sedan 1970. Detta är en användbar metod för att beräkna skillnaden mellan två datum eller för att skapa en timestamp.
 
 ## Se även
 
-- [Swift Date and Time Tutorial](https://www.raywenderlich.com/5774132-swift-date-and-time-tutorial-getting-started)
-- [Apple Developer Documentation for Date](https://developer.apple.com/documentation/foundation/date)
-- [NSHipster article on Date](https://nshipster.com/date/)
+- [Apple dokumentation för Date klassen](https://developer.apple.com/documentation/foundation/date)
+- [Guide till Swift Date and Time](https://www.iosapptemplates.com/blog/swift-programming/date-time)
+- [Att arbeta med datum i Swift](https://medium.com/swift-india/working-with-date-in-swift-ii-f9a968975220)

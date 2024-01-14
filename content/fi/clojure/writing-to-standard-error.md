@@ -1,40 +1,49 @@
 ---
-title:    "Clojure: Kirjoittaminen standardivirheelle"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-to-standard-error.md"
+title:                "Clojure: Kirjoittaminen standardivirheeseen"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kirjoittaminen standardivirheeseen on tärkeää virheenkorjaustyökalu. Kun koodi ei toimi oikein, näet tietoja virheestä ja sen sijainnista standardivirheessä.
+On monia syitä, miksi kirjoittaa standardivirheeseen (standard error) Clojure-ohjelmoinnissa. Yksi tärkeimmistä on virheiden käsittely ja vianjäljitys. Kirjoittamalla standardivirheeseen, voit saada tietoa ohjelman suorituksen aikana tapahtuneista virheistä, mikä helpottaa niiden korjaamista ja estää mahdollisten ongelmien syntymistä.
 
-## Miten
+## Kuinka tehdä se
 
-Käytä `clojure.core` -kirjastoa kirjoittaessasi standardivirheeseen. Voit tehdä tämän `(:require [clojure.core :refer :all])` ja kirjoita sitten `(*err* "Viestisi tänne")` tai `(*eprn* "Viestisi tänne" [+ 1 2])` jos haluat tulostaa lopputuloksen.
+Standardivirheeseen kirjoittaminen Clojurella on hyvin yksinkertaista. Voit käyttää funktiota `println` ja antaa sille parametrina haluamasi viestin. Esimerkiksi:
 
 ```Clojure
-(:require [clojure.core :refer :all])
-
-(*err* "Tämä on virhe. Tarkista koodisi.")
-
-(*eprn* "Lopputulos: " [+ 1 2])
+(println "Tämä on esimerkki standardivirheen kirjoittamisesta.")
 ```
 
-Tämä tulostaisi seuraavan standardivirheen:
+Tämä koodi tulostaa viestin "Tämä on esimerkki standardivirheen kirjoittamisesta." standardivirheeseen.
 
+Jos haluat lisätä tietoa virheeseen, voit käyttää funktiota `prn` ja antaa sille parametrina virheen koodin tai arvon. Esimerkiksi:
+
+```Clojure
+(prn "Virhekoodi: " 404)
 ```
-Tämä on virhe. Tarkista koodisi.
-Lopputulos: 3
+
+Tulostaa "Virhekoodi: 404" standardivirheeseen. Tämä auttaa sinua tunnistamaan ja korjaamaan mahdollisia virheitä koodissasi.
+
+## Syvempi sukellus
+
+Standardivirheeseen kirjoittaminen Clojurella käyttää taustalla Java-luokkaa `System.err`, joka vastaa standardivirheen tulostamisesta. Clojuressa tämä luokkaa voidaan käyttää hyödyntämällä `java.lang.System` -moduulia.
+
+Voit myös asettaa muuttujan `*err*` ja kirjoittaa sen avulla standardivirheeseen. Esimerkiksi:
+
+```Clojure
+(set! *err* (java.lang.System/getErr))
+(.println *err* "Tämä on esimerkki standardivirheen kirjoittamisesta.")
 ```
 
-## Syvempää tietoa
-
-Standardivirheen kirjoittamisen lisäksi voit myös käyttää `*out*` -muuttujaa tulostamiseen standardilähtöön ja `*in*` -muuttujaa lukemiseen standardisyötteestä. Nämä muuttujat ovat osa `clojure.core` -kirjastoa ja voivat auttaa sinua kommunikoimaan koodisi kanssa.
+Tämä lähestymistapa saattaa vaikuttaa monimutkaisemmalta, mutta antaa enemmän hallintaa standardivirheeseen kirjoittamisessa. Voit esimerkiksi ohjata standardivirheen tulostuksen toiseen tiedostoon tai käsitellä sitä eri tavalla kuin standarditulostusta.
 
 ## Katso myös
 
-- [The Clojure Cheatsheet](https://clojure.org/api/cheatsheet)
-- [Clojure Dokumentaatio](https://clojuredocs.org/)
-- [Lyhyt opas Clojureen](https://clojure.org/guides/getting_started)
+- Virheiden käsittely Clojurella: https://clojure.org/guides/errors
+- Java-luokka System.err: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html
+- Moduuli java.lang.System: https://clojuredocs.org/clojure.core/java.lang/System

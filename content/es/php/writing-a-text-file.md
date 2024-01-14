@@ -1,35 +1,50 @@
 ---
-title:    "PHP: Escribiendo un archivo de texto"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/writing-a-text-file.md"
+title:                "PHP: Escribiendo un archivo de texto"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué escribir un archivo de texto
 
-Escribir un archivo de texto en PHP puede ser una forma eficiente de almacenar información y datos en un formato legible y accesible. Además, puede ser una manera conveniente de guardar y compartir datos entre diferentes aplicaciones o sistemas.
+Muchas veces en la programación es necesario almacenar información en un archivo, ya sea para guardarlo para futuras referencias o para compartirlo con otros usuarios. Escribir un archivo de texto es una forma sencilla y eficiente de lograr esto.
 
 ## Cómo hacerlo
 
-Para escribir un archivo de texto en PHP, se puede utilizar la función `fopen()` para abrir el archivo y especificar si se quiere escribir (`w`) o añadir (`a`) a él. Luego, se puede utilizar la función `fwrite()` para escribir en el archivo. A continuación, se muestra un ejemplo de código:
+Para escribir un archivo de texto en PHP, primero debemos abrirlo utilizando la función `fopen()` y especificando el modo de apertura como "w", que significa "write" o escribir. Luego, podemos utilizar la función `fwrite()` para escribir en el archivo. A continuación, cerramos el archivo con `fclose()`.
 
 ```PHP
-$file = fopen("ejemplo.txt", "w");
-fwrite($file, "Este es un ejemplo de texto que se escribirá en el archivo.");
-fclose($file);
+$archivo = fopen("mi_archivo.txt", "w") or die("No se pudo abrir el archivo"); //Abrir archivo
+$txt = "Este es un ejemplo de texto que se escribirá en el archivo."; //Texto a escribir
+fwrite($archivo, $txt); //Escribir texto en el archivo
+fclose($archivo); //Cerrar archivo
 ```
 
-Este código abrirá un archivo llamado "ejemplo.txt" y escribirá el texto especificado en él. Al utilizar la función `fclose()` se asegura de que el archivo se cierre correctamente después de terminar de escribir.
+El código anterior creará un archivo llamado "mi_archivo.txt" y escribirá el texto indicado en él. Si deseamos agregar más texto al archivo en lugar de reemplazarlo, podemos utilizar el modo de apertura "a" en lugar de "w".
 
-## Profundizando en la escritura de archivos de texto
+## Profundizando
 
-Existen diferentes métodos y funciones para escribir archivos de texto en PHP, como por ejemplo la función `file_put_contents()` que permite escribir en un archivo en una sola línea de código. También se pueden utilizar loops para escribir en archivos grandes o escribir en formatos específicos, como CSV.
+Además de escribir texto, también podemos escribir variables en un archivo de texto. Por ejemplo:
 
-Además, es importante tener en cuenta que al escribir en archivos de texto, es necesario asegurarse de tener los permisos de escritura adecuados para el archivo y comprobar la existencia del mismo antes de intentar escribir en él. También se pueden utilizar excepciones o condicionales para manejar posibles errores al escribir en el archivo.
+```PHP
+$nombre = "Juan";
+$edad = 25;
+$archivo = fopen("mi_archivo.txt", "w") or die("No se pudo abrir el archivo"); //Abrir archivo
+$txt = "Nombre: " . $nombre . "\nEdad: " . $edad; //Texto a escribir
+fwrite($archivo, $txt); //Escribir texto en el archivo
+fclose($archivo); //Cerrar archivo
+```
+
+Este código creará un archivo con el nombre y la edad especificados en variables. También podemos utilizar la función `file_put_contents()` para escribir en un archivo sin tener que abrir y cerrar manualmente el archivo.
+
+Ahora que sabemos cómo escribir en un archivo de texto, es importante recordar que debemos asegurarnos de tener los permisos adecuados para escribir en el archivo. Podemos cambiar los permisos utilizando herramientas como FileZilla o a través de la línea de comandos utilizando el comando `chmod`.
 
 ## Ver también
 
-- [Función fopen en PHP](https://www.php.net/manual/es/function.fopen.php)
-- [Función fwrite en PHP](https://www.php.net/manual/es/function.fwrite.php)
-- [Función file_put_contents en PHP](https://www.php.net/manual/es/function.file-put-contents.php)
+- [fopen() en PHP](https://www.php.net/manual/es/function.fopen.php)
+- [fwrite() en PHP](https://www.php.net/manual/es/function.fwrite.php)
+- [fclose() en PHP](https://www.php.net/manual/es/function.fclose.php)
+- [file_put_contents() en PHP](https://www.php.net/manual/es/function.file-put-contents.php)
+- [Comando chmod](https://www.linux.com/learn/chmod-versatile-command-setting-permissions-linux)

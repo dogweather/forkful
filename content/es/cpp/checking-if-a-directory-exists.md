@@ -1,54 +1,49 @@
 ---
-title:    "C++: Comprobando si existe un directorio"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/checking-if-a-directory-exists.md"
+title:                "C++: Comprobando si existe un directorio"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué 
 
-En la programación, a menudo es necesario verificar si una carpeta o directorio existe antes de realizar cualquier operación en él. Esto puede optimizar el rendimiento y evitar posibles errores en el código.
+Hay ocasiones en las que necesitamos asegurarnos de que una carpeta o directorio existe antes de realizar alguna acción en nuestro código. Esto puede ahorrarnos tiempo y evitar errores en nuestro programa.
 
-## Cómo hacerlo
+## Cómo
 
-Para verificar si un directorio existe en C++, podemos utilizar la función `opendir ()` del header `dirent.h`. Esta función retorna un puntero al directorio si existe o un valor nulo si no existe. Aquí hay un ejemplo de cómo podemos implementarlo:
+Para comprobar si existe una carpeta en C++, podemos utilizar la clase `std::filesystem::path` de la biblioteca de archivos estándar (filesystem). Esta clase nos permite trabajar con rutas y archivos en nuestro sistema de archivos.
+
+Primero, debemos incluir la biblioteca en nuestro código:
 
 ```C++
-#include <dirent.h>
-#include <iostream>
-using namespace std;
- 
-int main() {
-   DIR *dir;
-   string path = "/ruta/al/directorio";
+#include <filesystem>
+```
 
-   dir = opendir(path.c_str());
+Una vez que hemos incluido la biblioteca, podemos crear un objeto de la clase `std::filesystem::path` con la ruta de la carpeta que queremos verificar.
 
-   if (dir != NULL) {
-   	   cout << "¡El directorio existe!" << endl;
-   	   closedir(dir);
-   } else {
-   	   cout << "¡El directorio no existe!" << endl;
-   }   
-   return 0;
+```C++
+std::filesystem::path myFolder("ruta/a/mi/carpeta");
+```
+
+Luego, podemos comprobar si la carpeta existe utilizando la función `exists()` de la clase `std::filesystem::path`.
+
+```C++
+if (myFolder.exists()) {
+  // La carpeta existe
+} else {
+  // La carpeta no existe
 }
 ```
 
-En este ejemplo, primero incluimos el header `dirent.h` que nos da acceso a la función `opendir()`. Luego, definimos la ruta del directorio que queremos comprobar en la variable `path`. Después, llamamos a la función `opendir()` pasando la ruta del directorio como argumento. Si la función retorna un puntero distinto de nulo, eso significa que el directorio existe. Cerramos el puntero con la función `closedir()` para liberar memoria y evitar posibles errores en el futuro.
+## Deep Dive
 
-Si el directorio no existe, la función `opendir()` retornará un valor nulo, por lo que podemos utilizar una sentencia `if` para imprimir un mensaje de acuerdo al resultado.
+La función `exists()` devuelve un valor booleano `true` si la carpeta existe y `false` si no existe. También podemos utilizar la función `is_directory()` para asegurarnos de que la ruta especificada es una carpeta y no un archivo.
 
-## Profundizando en la verificación de directorios
-
-Además de la función `opendir()`, también podemos utilizar otras técnicas para verificar si un directorio existe. Por ejemplo, podemos utilizar el comando de sistema `mkdir()` para crear un directorio en la ruta especificada y luego eliminarlo. Si el directorio ya existe, el comando retornará un error y podemos utilizar esa información para determinar si el directorio existe.
-
-También podemos utilizar la librería `boost::filesystem` para verificar la existencia de un directorio en C++. Esta librería nos ofrece funciones más avanzadas para manejar la manipulación de archivos y directorios.
+Además, la clase `std::filesystem::path` ofrece otras funciones útiles para trabajar con rutas y archivos, como `create_directory()` para crear una carpeta y `remove()` para eliminar un archivo o carpeta.
 
 ## Ver también
 
-- [Cómo verificar si un archivo existe en C++](https://www.freecodecamp.org/news/how-to-check-if-a-file-exists-in-c/)
-
-- [Documentación de la función `opendir()`](https://www.man7.org/linux/man-pages/man3/opendir.3.html) 
-
-- [Guía de referencia de la librería `boost::filesystem`](https://www.boost.org/doc/libs/1_76_0/libs/filesystem/doc/reference.html#DirectoryIteration)
+- [Documentación de std::filesystem en cppreference](https://en.cppreference.com/w/cpp/filesystem)
+- [Tutorial de Programiz sobre std::filesystem](https://www.programiz.com/cpp-programming/filesystem)

@@ -1,61 +1,57 @@
 ---
-title:    "Java: Löschen von Zeichen, die einem Muster entsprechen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/deleting-characters-matching-a-pattern.md"
+title:                "Java: Zeichen löschen, die einem Muster entsprechen."
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
+In der Programmierung gibt es oft Situationen, in denen wir bestimmte Zeichen aus einem Text entfernen möchten. Dies kann zum Beispiel bei der Datenbereinigung oder beim Validieren von Eingaben erforderlich sein. In diesem Artikel werden wir uns genauer ansehen, wie wir in Java Zeichen entfernen können, die einem bestimmten Muster entsprechen.
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann bei der Bearbeitung von Daten oder Texten hilfreich sein. Es ermöglicht das einfache Entfernen von unerwünschten Zeichen oder das Anpassen von Formatierungen.
-
-# Wie Es Geht
-
-Im Folgenden wird gezeigt, wie man in Java Zeichen löschen kann, die einer bestimmten Regel entsprechen. Dafür werden zwei verschiedene Methoden vorgestellt.
-
-### Methode 1: ReplaceAll()
-
-Die erste Methode verwendet die `replaceAll()`-Funktion, die in Java Strings verfügbar ist. Diese Methode sucht nach einem bestimmten Muster in einem String und ersetzt alle passenden Zeichen durch ein leeres Zeichen (String ohne Inhalt). Dadurch werden die unerwünschten Zeichen gelöscht.
+# Wie geht das?
+Um Zeichen in Java zu entfernen, können wir die `replaceAll()` Methode nutzen. Diese Methode akzeptiert zwei Parameter - das Muster, nach dem gesucht werden soll und den Text, in dem die Zeichen entfernt werden sollen.
 
 ```Java
-String text = "Die Sonne scheint, es ist ein schöner Tag!";
-String bereinigterText = text.replaceAll("[,!]", "");
-System.out.println(bereinigterText);
+String text = "Dies ist ein Beispieltext!";
+String pattern = "e";
+
+String result = text.replaceAll(pattern, "");
+
+System.out.println(result); // gibt "Dis ist in Bispltext!" aus
 ```
 
-Output: "Die Sonne scheint es ist ein schöner Tag"
-
-In diesem Beispiel wird die `replaceAll()`-Funktion verwendet, um alle Kommata und Ausrufezeichen aus dem Text zu entfernen. Durch die Nutzung von eckigen Klammern kann man angeben, welche Zeichen gelöscht werden sollen. Der leere String am Ende der Funktion signalisiert, dass diese Zeichen durch nichts ersetzt werden.
-
-### Methode 2: Char Array
-
-Die zweite Methode basiert auf der Umwandlung eines Strings in ein Char Array. Hierbei wird jeder Buchstabe oder jedes Zeichen des Strings einzeln überprüft und gegebenenfalls aus dem Array gelöscht.
+In diesem Beispiel haben wir das Zeichen "e" aus dem Text entfernt, indem wir es durch einen leeren String ersetzt haben. Wir können jedoch auch andere Muster wie reguläre Ausdrücke verwenden, um spezifischere Zeichen zu entfernen.
 
 ```Java
-String text = "Eine 1 und eine 2 gehen ins Kino!";
-char[] textArray = text.toCharArray();
+String text = "Das ist eine Zahl: 12345!";
+String pattern = "\\D";
 
-for (int i = 0; i < textArray.length; i++) {
-    if (Character.isDigit(textArray[i])) {
-        textArray[i] = ' ';
-    }
-}
+String result = text.replaceAll(pattern, "");
 
-text = String.valueOf(textArray);
-System.out.println(text);
+System.out.println(result); // gibt "12345" aus
 ```
 
-Output: "Eine und eine gehen ins Kino!"
+Hier haben wir beispielsweise alle Nicht-Zahlen-Zeichen aus dem Text entfernt, um nur die Zahl "12345" zu erhalten.
 
-In diesem Beispiel wird jedes Zeichen des Strings auf eine Ziffer überprüft und gegebenenfalls durch ein leeres Zeichen ersetzt. Hierfür wird die Funktion `isDigit()` aus der `Character`-Klasse verwendet.
+# Tiefergehende Informationen
+Die `replaceAll()` Methode nutzt intern die `Pattern` und `Matcher` Klassen aus dem `java.util.regex` Paket. Diese ermöglichen es uns, reguläre Ausdrücke als Muster zu verwenden, um noch genauer zu definieren, welche Zeichen entfernt werden sollen.
 
-# Tiefer Eintauchen
+Beispielsweise können wir das vorherige Beispiel modifizieren, um auch Kommazahlen zu berücksichtigen.
 
-Beim Löschen von Zeichen sollte man darauf achten, dass die gewählte Methode auf die individuellen Anforderungen und Bedürfnisse angepasst wird. Die `replaceAll()`-Funktion ist in den meisten Fällen die einfachere und effizientere Wahl, da die Funktionalität bereits in Java integriert ist. Für spezifischere Fälle kann jedoch auch das Umwandeln in ein Char Array hilfreich sein.
+```Java
+String text = "Das ist eine Zahl: 123,45!";
+String pattern = "\\D|,";
 
-# Siehe Auch
+String result = text.replaceAll(pattern, "");
 
-- [Java String Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [String.replaceAll() Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
-- [Character.isDigit() Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isDigit-char-)
+System.out.println(result); // gibt "12345" aus
+```
+
+Hier haben wir sowohl Nicht-Zahlen-Zeichen als auch das Komma aus dem Text entfernt, um nur die Zahl "12345" zu erhalten.
+
+# Siehe auch
+- [Oracle Java Dokumentation - Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Oracle Java Dokumentation - Matcher](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html)
+- [W3Schools - Java Regular Expressions](https://www.w3schools.com/java/java_regex.asp)

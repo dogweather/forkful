@@ -1,48 +1,62 @@
 ---
-title:    "Arduino recipe: Reading command line arguments"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/reading-command-line-arguments.md"
+title:                "Arduino recipe: Reading command line arguments"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-As an Arduino programmer, it can often be helpful to have your program take in inputs from the command line. This allows for more flexibility and customization in your code.
+If you're new to Arduino programming, you may be wondering why you would want to learn about reading command line arguments. The short answer is that it can greatly expand the capabilities of your Arduino projects. By being able to take in input from the command line, you can create more interactive and dynamic programs.
 
 ## How To
 
-In order to read command line arguments in Arduino, you will need to utilize the `Serial` and `String` functions. First, set up the serial communication by including the `Serial.begin()` function in the `setup()` section of your code. Then, you can use the `Serial.readString()` function to read in the arguments as a string. Next, you can use `Serial.parseFloat()` or `Serial.parseInt()` to convert the string into a float or integer, respectively. Finally, use the `Serial.print()` or `Serial.println()` functions to output the argument values.
+To start, let's define what command line arguments are. They are essentially inputs that are typed into the command line when a program is executed. In the case of Arduino programming, we can use these inputs to customize the behavior of our program.
+
+To read command line arguments in Arduino, we will use the `argc` and `argv` variables. `argc` is an integer that represents the number of arguments, while `argv` is an array of strings that holds the actual arguments.
 
 ```Arduino
 void setup() {
-  Serial.begin(9600); // initialize serial communication
+  // initialize serial communication
+  Serial.begin(9600);
 }
 
 void loop() {
-  String input = Serial.readString(); // read in the arguments as a string
-  float num = Serial.parseFloat(); // convert string into float
-  int num2 = Serial.parseInt(); // convert string into integer
-
-  Serial.print("The first argument is: ");
-  Serial.println(input); // output the string argument
-  Serial.print("The second argument as a float: ");
-  Serial.println(num); // output the float argument
-  Serial.print("The third argument as an integer: ");
-  Serial.println(num2); // output the integer argument
+  // check if there are any arguments
+  if (argc > 0) {
+    // loop through each argument and print it out
+    for (int i = 0; i < argc; i++) {
+      Serial.println(argv[i]);
+    }
+  }
 }
 ```
 
+If we were to upload this code to our Arduino and open the Serial Monitor, we would see the arguments listed out.
+
+For example, if we uploaded the code and typed in "Hello World" as our argument, we would see:
+
+```
+Hello
+World
+```
+
+In this example, "Hello" is stored in `argv[0]` and "World" is stored in `argv[1]`.
+
 ## Deep Dive
 
-Reading command line arguments can be extremely useful for creating dynamic and customizable programs. In addition to the methods mentioned above, the `Serial.readStringUntil()` function can also be used to read in a string until a specific character is encountered. For example, `Serial.readStringUntil(',')` would read in a string until a comma is reached. This makes it useful for handling multiple arguments separated by a specific character.
+Now that we have a basic understanding of how to read command line arguments in Arduino, let's dive deeper into the topic. One potential use for this feature is to create a customizable LED light show. By taking in arguments for the color and duration of each LED, we can create a unique and personalized light show.
 
-However, it's important to note that command line arguments can only be read in one at a time. In order to read in multiple arguments at once, they must be entered in order and separated by the default Arduino serial monitor line ending, which is a carriage return or newline character.
+Another use case could be for controlling a robot. By taking in arguments for movement direction and speed, we can create a more dynamic and responsive interaction with the robot.
+
+The possibilities are endless with the ability to read command line arguments in Arduino. It allows for more flexibility and customization in our projects.
 
 ## See Also
 
-If you want to learn more about command line arguments and other ways to handle user input in Arduino, check out these helpful resources:
+Here are some helpful resources to explore further:
 
-- [Arduino Command Line Interface (CLI)](https://www.arduino.cc/pro/cli)
-- [Arduino Serial Communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Parsing and Formatting Strings with Arduino](https://www.robotshop.com/community/tutorials/show/arduino-parsing-string-data-from-serial-input)
+- [Arduino command line arguments documentation](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/)
+- [Tutorial on parsing command line arguments in Arduino](https://blog.arduino.cc/2019/01/11/parsing-command-line-arguments-in-arduino-code/)
+- [Example project using command line arguments](https://www.instructables.com/id/Control-A-Pixy-Using-Command-Line-Arguments-on-An/)

@@ -1,39 +1,60 @@
 ---
-title:    "Ruby: Używając wyrażeń regularnych"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/using-regular-expressions.md"
+title:                "Ruby: Używanie wyrażeń regularnych"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego korzystać z wyrażeń regularnych?
 
-Wyrażenia regularne są narzędziem, które ułatwiają odnajdywanie i manipulowanie tekstem w sposób precyzyjny. Dzięki nim programiści mogą znacznie szybciej i dokładniej przetwarzać dane, co przekłada się na wydajniejsze programy. Pozwalają one na wyszukiwanie wzorców w tekście, a także na podmianę lub wycinanie wybranych części. Dzięki temu są niezwykle przydatnym narzędziem dla każdego programisty.
+Wyrażenia regularne są niezwykle przydatnym i potężnym narzędziem w programowaniu w Ruby. Służą one do znajdowania i manipulowania tekstem, co może znacznie ułatwić pracę z danymi w aplikacjach. W tym artykule przekażemy Ci podstawową wiedzę na temat korzystania z wyrażeń regularnych w Ruby, abyś mógł z powodzeniem stosować je w swoich projektach.
 
-## Jak używać wyrażeń regularnych?
+## Jak to zrobić?
 
-Aby rozpocząć pracę z wyrażeniami regularnymi, należy w pierwszej kolejności zaimportować bibliotekę do obsługi wyrażeń regularnych w języku Ruby. W przykładach poniżej użyto skrótu "re" dla nazwy biblioteki. Następnie, przy użyciu metod zawartych w bibliotece, można wyszukiwać, wycinać lub zamieniać tekst według określonych wzorców.
+Aby rozpocząć używanie wyrażeń regularnych w Ruby, musimy najpierw zaimportować odpowiedni moduł. W tym celu użyjemy polecenia `require 'regexp'`. Następnie możemy zadeklarować wyrażenie regularne, np. `pattern = /raz/`, które oznacza, że szukamy tekstu, który zawiera słowo "raz".
+
+Teraz możemy wykorzystać różne metody na obiekcie wyrażenia regularnego, aby przeprowadzić operacje na tekście. Na przykład, możemy użyć metody `match` do sprawdzenia, czy w danym tekście znajduje się dopasowanie do wzorca, czyli naszego wyrażenia regularnego. Oto przykład kodu:
 
 ```Ruby
-# Szukanie słowa "Ruby" w tekście
-re = /Ruby/
-text = "Jestem wielkim fanem języka Ruby!"
-result = re.match(text)
-puts result # wyświetli: "Ruby"
+require 'regexp'
 
-# Zamiana liczby zapisanej cyframi arabskimi na słowną
-re = /(\d+)/
-text = "Mam 25 lat."
-result = text.gsub(re, "dwadzieścia pięć")
-puts result # wyświetli: "Mam dwadzieścia pięć lat."
+text = "Jest raz, bywa dwa razy, ale nigdy trzy razy"
+
+pattern = /raz/
+
+puts text.match(pattern)
 ```
 
-## Głębsze spojrzenie na wyrażenia regularne
+Output: `raz`
 
-Wyrażenia regularne w języku Ruby są bardzo zaawansowane i oferują wiele opcji, które mogą ułatwić pracę z tekstem. Przykładowo, można używać tzw. metaznaków, czyli specjalnych symboli, które określają różne znaki lub grupy znaków. Istnieje także możliwość ustawiania flag, które modyfikują sposób działania wyrażenia regularnego. Warto także zwrócić uwagę na operacje wyrażeń regularnych, takie jak alternacja czy kwantyfikatory, które pozwalają na jeszcze dokładniejsze dopasowanie wzorców.
+Możemy także użyć metody `scan`, aby znaleźć wszystkie dopasowania naszego wyrażenia regularnego w tekście. Oto przykład:
+
+```Ruby
+require 'regexp'
+
+text = "Dodaj +2, odejmij -1"
+
+pattern = /\+\d|-1/
+
+puts text.scan(pattern)
+```
+
+Output: `+2, -1`
+
+Ten prosty przykład pokazuje, jak wyrażenia regularne mogą być przydatne w prostych operacjach matematycznych.
+
+## Pogłębiona eksploracja
+
+Wyrażenia regularne oferują ogromne możliwości i ich pełen zakres funkcji jest nieco zaawansowany dla początkujących użytkowników. Jeśli chcesz dowiedzieć się więcej na temat korzystania z wyrażeń regularnych w Ruby, polecamy sprawdzić dokumentację oraz samodzielnie eksperymentować. Poniżej przedstawiamy kilka przydatnych linków:
+
+- [Dokumentacja Ruby o wyrażeniach regularnych](https://ruby-doc.org/core-3.0.0/Regexp.html)
+- [Interaktywny tutorial wyrażeń regularnych w Ruby](https://rubular.com/)
+- [Artykuł "Wyrażenia regularne w Ruby na przykładach"](https://geek.justjoin.it/wyrazenia-regularne-ruby-przyklady/) (po polsku)
 
 ## Zobacz także
 
-- [Dokumentacja biblioteki wyrażeń regularnych w Ruby](https://ruby-doc.org/core-3.0.0/Regexp.html)
-- [Kurs wyrażeń regularnych w Ruby na platformie Codecademy](https://www.codecademy.com/learn/learn-regular-expressions)
-- [Narzędzie do testowania wyrażeń regularnych online - Rubular](https://rubular.com)
+- [Kurs Ruby na Udemy](https://www.udemy.com/course/the-complete-ruby-programmer-course/?referralCode=4AAC0095AB1D9986A073)
+- [Książka "Kurs programowania w języku Ruby"](https://helion.pl/ksiazki/kurs-programowania-w-jezyku-ruby-jayant-sharma,jpruby.htm) (po polsku)
+- [Strona internetowa ruby-lang.org](https://www.ruby-lang.org/)

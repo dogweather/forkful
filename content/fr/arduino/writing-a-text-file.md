@@ -1,51 +1,60 @@
 ---
-title:    "Arduino: Écrire un fichier texte"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-a-text-file.md"
+title:                "Arduino: Ecriture d'un fichier texte"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Écrire un fichier texte peut sembler une tâche simple et banale, mais c'est en réalité un aspect très important de la programmation Arduino. Les fichiers texte sont utilisés pour stocker des données, des paramètres ou encore des messages, et peuvent être lus et écrits par un microcontrôleur Arduino. Dans cet article, nous allons vous expliquer pourquoi il est essentiel de savoir écrire un fichier texte en programmation Arduino et comment le faire.
+Si vous travaillez sur un projet Arduino et que vous avez besoin de stocker des données, la création d'un fichier texte peut être une solution simple et facile. Cela vous permet de stocker des informations telles que des paramètres, des valeurs de capteurs, ou même du texte que vous voulez afficher sur un écran LCD. Dans cet article, nous allons vous montrer comment écrire un fichier texte sur un Arduino.
 
 ## Comment faire
 
-Pour écrire un fichier texte en utilisant Arduino, vous devez suivre ces étapes simples :
+Tout d'abord, vous devez inclure la bibliothèque SD dans votre code. Cela vous permettra d'accéder à la carte SD connectée à votre Arduino. Ensuite, vous devez initialiser un objet SD en utilisant la fonction "begin" avec le numéro de broche de votre carte SD.
 
-1. Tout d'abord, vous devez ouvrir le fichier en mode écriture en utilisant la fonction `File.write()` et en spécifiant le nom du fichier ainsi que le mode d'écriture. Par exemple : 
+```Arduino
+#include <SD.h>
 
-```arduino
-File myFile = SD.open("fichier.txt", FILE_WRITE);
+//Initialiser un objet SD 
+SD.begin(10);
 ```
 
-2. Ensuite, vous pouvez écrire dans le fichier en utilisant la fonction `myFile.write()`, en spécifiant les données que vous souhaitez écrire. Par exemple : 
+Ensuite, vous pouvez créer un fichier texte avec la fonction "open". Vous devez spécifier le nom du fichier à créer, le type d'accès (lecture, écriture, ou les deux), et un Second paramètre facultatif pour spécifier le formatage du fichier (par exemple, "FILE_WRITE" pour ajouter du texte à la fin du fichier).
 
-```arduino
-myFile.write("Bonjour tout le monde !");
+```Arduino
+File monFichier = SD.open("data.txt", FILE_WRITE);
 ```
 
-3. Une fois que vous avez fini d'écrire dans le fichier, vous devez le fermer en utilisant la fonction `myFile.close()`. Cela permet de s'assurer que toutes les données sont enregistrées de manière sécurisée.
+Maintenant que votre fichier est prêt à être utilisé, vous pouvez écrire du texte à l'aide de la fonction "print" ou "println". Vous pouvez également utiliser une variable à la place du texte pour écrire une valeur de capteur, par exemple.
 
-4. Vous pouvez également ajouter des variables ou des valeurs dans votre fichier texte en utilisant la concaténation de chaînes de caractères. Par exemple : 
-
-```arduino
-int valeur = 5;
-myFile.write("La valeur est : " + String(valeur));
+```Arduino
+monFichier.println("Bonjour le monde !");
+monFichier.print("Ma valeur de capteur : ");
+monFichier.println(valeurCapteur);
 ```
+
+Enfin, n'oubliez pas de fermer le fichier une fois que vous avez terminé en utilisant la fonction "close". Cela assurera que toutes les données sont écrites sur le fichier et que vous pouvez y accéder ultérieurement.
+
+```Arduino
+monFichier.close();
+```
+
+Bravo ! Vous avez maintenant écrit un fichier texte sur votre Arduino. Vous pouvez accéder au fichier en le retirant de votre Arduino et en le connectant à un ordinateur via un lecteur de carte SD.
 
 ## Plongée en profondeur
 
-Il est important de noter que les fichiers texte sont stockés sur une carte SD ou dans la mémoire de l'Arduino, en fonction du type de carte utilisée. Pour utiliser une carte SD, vous devez inclure la bibliothèque SD en utilisant la fonction `#include <SD.h>` au début de votre programme.
+Si vous souhaitez en savoir plus sur les fichiers textes et leur fonctionnement sur un Arduino, voici quelques informations supplémentaires :
 
-De plus, n'oubliez pas de vérifier que votre microcontrôleur Arduino prend en charge l'écriture de fichiers texte. Certains modèles, comme l'Arduino Uno, ne disposent pas d'une carte SD intégrée, alors que d'autres, comme l'Arduino Mega, en ont une.
-
-Il est également important de bien gérer la mémoire lors de l'écriture de fichiers texte. Assurez-vous de fermer les fichiers après utilisation pour éviter tout problème de mémoire et utilisez des variables de taille appropriée pour stocker les données.
+- La taille maximale d'un fichier sur un Arduino est limitée à 2 Go.
+- Vous pouvez également utiliser la fonction "exists" pour vérifier si un fichier existe déjà avant de le créer.
+- Vous pouvez utiliser la fonction "flush" pour forcer l'écriture du contenu du fichier sur la carte SD immédiatement, au lieu d'attendre la fermeture du fichier.
+- Pour lire un fichier texte, vous pouvez utiliser la fonction "readLine" pour lire une ligne spécifique ou simplement utiliser la fonction "read" pour lire l'ensemble du fichier.
 
 ## Voir aussi
 
-- [Tutoriel complet sur l'écriture de fichiers texte en Arduino](https://www.arduino.cc/en/Reference/SD)
-- [Guide de référence Arduino pour l'écriture de fichiers](https://www.arduino.cc/reference/en/language/functions/files-and-dirs/)
-
-En utilisant ces informations, vous devriez maintenant être en mesure d'écrire des fichiers texte en toute confiance dans vos futurs projets Arduino. N'hésitez pas à expérimenter avec différentes fonctions et options pour découvrir toutes les possibilités que cela peut offrir. Bonne chance et amusez-vous bien !
+- Tutoriel officiel d'Arduino sur l'utilisation de cartes SD : https://www.arduino.cc/en/Tutorial/ReadWrite
+- Documentation officielle de la bibliothèque SD : https://www.arduino.cc/en/Reference/SD
+- Tutoriel vidéo de Programming Electronics sur la création et l'écriture de fichiers texte sur un Arduino : https://www.youtube.com/watch?v=mmnkO6h7QJw

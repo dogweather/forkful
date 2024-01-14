@@ -1,43 +1,45 @@
 ---
-title:    "Clojure: Kontroll av befintlig katalog"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/checking-if-a-directory-exists.md"
+title:                "Clojure: Kontrollera om en mapp existerar"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När man arbetar med Clojure, kan man ibland behöva kontrollera om en mapp (directory) finns eller inte. Detta kan vara användbart för att göra vissa åtgärder beroende på om mappen redan finns, eller om man behöver skapa den. I denna bloggpost kommer jag att förklara hur man kan göra detta i Clojure.
+Att kontrollera om en mapp existerar är en viktig del av Clojure-programmering eftersom det ger dig möjligheten att utföra specifika åtgärder baserat på mappens befintlighet. Detta är särskilt användbart i situationer där du behöver interagera med filsystemet.
 
-## Hur man gör
+## Hur man gör det
 
-För att kontrollera om en mapp finns eller inte, kan man använda funktionen "exists?" från biblioteket "clojure.java.io". Först behöver man importera biblioteket genom att lägga till följande rad i början av sin kod:
-
-```Clojure
-(require '[clojure.java.io :as io])
-```
-
-Sedan kan man använda sig av "exists?"-funktionen och ange en sträng med sökvägen till mappen som argument. Om mappen finns kommer funktionen att returnera "true", annars kommer den att returnera "false". Detta kan sedan användas som en boolesk variabel i villkorssatser.
-
-Låt oss se ett exempel:
+För att kontrollera om en mapp existerar i Clojure, kan du använda funktionen ```clojure.java.io/file```. Med denna funktion kan du skapa en instans av en mapp och sedan använda ```.exists``` för att kontrollera om den faktiskt existerar.
 
 ```Clojure
-(define directory "min-mapp")
-(if (io/exists? directory)
-  (println "Mappen finns redan")
-  (println "Mappen finns inte, skapar den..."))
+(def directory (clojure.java.io/file "sökväg/till/mappen"))
+
+(directory.exists)
+
+=> true
 ```
 
-Om "min-mapp" redan finns kommer utskriften att vara "Mappen finns redan", annars kommer utskriften att vara "Mappen finns inte, skapar den...".
+Om mappen inte existerar kommer funktionen ```directory.exists``` att returnera ```false```.
 
 ## Djupdykning
 
-För att förstå hur "exists?"-funktionen fungerar, kan vi titta på dess implementation i "clojure.java.io" biblioteket. Vi kan se att den använder Javas "File" klass och anropar dess "exists()" metod för att kontrollera om mappen finns eller inte.
+När du använder ```clojure.java.io/file``` för att skapa en instans av en mapp, kan du faktiskt passa in flera argument. Dessa argument kan inkludera en referens till en annan mapp, en URI eller en URL. Du kan också ange flera argument som leder till en specifik mapp eller fil.
 
-En viktig sak att notera är att "exists?"-funktionen inte kontrollerar om mappen är en giltig mapp, utan enbart om en fil eller mapp med det angivna namnet finns. Det är därför möjligt att funktionen returnerar "true" även om det inte är en giltig mapp eller om användaren inte har åtkomst till mappen.
+En annan användbar funktion är ```directory?``` som kan användas för att kontrollera om en viss fil är en mapp eller inte.
+
+```Clojure
+(directory?)
+
+=> true
+```
+
+En annan intressant funktion är ```resolve-path``` som kan användas för att få den fullständiga sökvägen till en mapp eller fil. Detta kan vara särskilt användbart när du behöver skapa en mapp eller fil på en specifik plats.
 
 ## Se även
 
-- [Dokumentation för Clojure biblioteket "clojure.java.io"](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Java File klassens dokumentation för "exists()" metoden](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#exists--)
+- [Clojure Dokumentation](https://clojure.org/guides/learn/syntax)
+- [Clojure Verktyg för Fil- och Mappinteraktion](https://clojure.github.io/java.io/)

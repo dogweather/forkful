@@ -1,55 +1,52 @@
 ---
-title:    "Elixir: Eine neue Programmierprojekt beginnen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/starting-a-new-project.md"
+title:                "Elixir: Ein neues Projekt beginnen."
+programming_language: "Elixir"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Elixir ist eine aufstrebende Programmiersprache, die immer mehr Fans gewinnt. Sie zeichnet sich durch eine einfache Syntax, Skalierbarkeit und Zuverlässigkeit aus. Wenn du nach einer neuen Herausforderung suchst oder einfach nur deine Skills erweitern möchtest, könnte es Zeit sein, ein neues Projekt mit Elixir zu starten.
+Es gibt viele Gründe, warum man ein neues Elixir-Projekt starten möchte. Vielleicht ist es ein persönliches Projekt, an dem man schon lange arbeitet und endlich in Produktionsumgebung bringen möchte. Oder vielleicht ist es ein geschäftliches Projekt, das von Grund auf mit Elixir aufgebaut werden soll. Egal aus welchem Grund, in diesem Blogbeitrag werden wir uns anschauen, wie man ein neues Elixir-Projekt startet und was dabei zu beachten ist.
 
-## Wie man anfängt
+## Wie geht's?
 
-Als erstes solltest du Elixir auf deinem Computer installieren. Dazu kannst du den offiziellen Guide auf der [Elixir-Website](https://elixir-lang.org/install.html) verwenden.
+Um ein neues Elixir-Projekt zu starten, müssen wir zunächst die Elixir-Entwicklungsumgebung einrichten. Dazu benötigen wir die Elixir-Sprache und die dazugehörige Laufzeitumgebung. Wenn du noch keine Erfahrung mit Elixir hast, ist es empfehlenswert, die offizielle Dokumentation zu lesen und ein paar Tutorials zu durchlaufen, um dich mit der Sprache vertraut zu machen.
 
-Sobald du Elixir installiert hast, kannst du ein neues Projekt erstellen, indem du den Befehl `mix new project_name` ausführst. Dieser Befehl erstellt eine Grundstruktur für dein Projekt und erstellt auch eine `mix.exs` Datei, in der du Abhängigkeiten angeben kannst.
-
-Nun kannst du deinen Code in der `lib` Ordner schreiben und die Tests in der `test` Ordner ausführen. Du kannst die Tests mit dem Befehl `mix test` ausführen.
-
-Um dein Projekt zu kompilieren und auszuführen, kannst du `iex -S mix` verwenden. Dies öffnet eine interaktive Konsole, in der du Codezeilen testen und ausführen kannst.
-
-### Beispiel
+Nachdem wir die Entwicklungsumgebung eingerichtet haben, können wir ein neues Projekt erstellen, indem wir das Terminal/ die Konsole öffnen und folgenden Befehl ausführen:
 
 ```Elixir
-defmodule Hello do
-  def print() do
-    IO.puts "Hallo Welt!"
-  end
+mix new my_project
+```
+
+Dieser Befehl erstellt ein neues Elixir-Projekt mit dem Namen "my_project" und fügt alle benötigten Dateien und Ordner hinzu. Nun können wir in unserem Projektordner die Datei "mix.exs" öffnen und die gewünschten Abhängigkeiten hinzufügen, indem wir sie in der `deps` Funktion angeben.
+
+```Elixir
+defp deps do
+  [
+    {:phoenix, "~> 1.4.0"}
+  ]
 end
 ```
 
-Dies ist ein einfaches Modul, das eine `print` Funktion enthält, die "Hallo Welt!" ausgibt. Um dies in der interaktiven Konsole auszuführen, können wir folgendes machen:
+Anschließend müssen wir die Abhängigkeiten mit dem Befehl `mix deps.get` installieren. Danach können wir unseren Code schreiben und mit `mix compile` kompilieren. Um unser Projekt auszuführen, können wir entweder den Befehl `mix run` verwenden, um alle Dateien auszuführen, oder wir können das Modul direkt aus dem Terminal aufrufen:
 
 ```Elixir
-iex> Hello.print()
-Hallo Welt!
-:ok
+iex -S mix
 ```
 
-## Deep Dive
+Jetzt können wir mit unserem neuen Elixir-Projekt loslegen!
 
-Wenn du tiefer in die Welt von Elixir eintauchen möchtest, gibt es noch viele weitere Funktionen und Konzepte, die es zu entdecken gibt. Eine wichtige Funktion von Elixir sind zum Beispiel die Pattern Matching Möglichkeiten. Auch das Konzept der Funktionspipelines ist einzigartig und ermöglicht es, komplexe Funktionalitäten auf einfache Weise zu kombinieren.
+## Tieferer Einblick
 
-Weiterhin gibt es in Elixir eine starke Unterstützung für parallele und nebenläufige Programmierung, was es zu einer guten Wahl für skalierbare Projekte macht.
+Bevor wir mit der Entwicklung unseres Projekts beginnen, gibt es noch ein paar wichtige Dinge zu beachten. Elixir verwendet das Konzept von "Supervisors" und "Workers", um Fehler zu verwalten und die Stabilität unserer Anwendung zu gewährleisten. Deshalb ist es wichtig, sich mit diesem Konzept vertraut zu machen und die richtige Strukturierung unserer Anwendung zu berücksichtigen.
 
-Ein weiterer Vorteil von Elixir ist die Verwendung der Virtual Machine Erlang, die für ihre Stabilität und Fehlertoleranz bekannt ist.
+Außerdem bietet Elixir eine leistungsfähige Standardbibliothek mit vielen nützlichen Funktionen und Modulen. Es lohnt sich, sich mit diesen vertraut zu machen und sie in unserem Projekt einzusetzen, um effizientere und wartbarere Code zu schreiben.
 
 ## Siehe auch
 
-- [Elixir offizielle Website](https://elixir-lang.org/)
-- [Elixir GitHub Repository](https://github.com/elixir-lang/elixir)
-- [Elixir Forum](https://elixirforum.com/)
-
-Wir hoffen, dieser Blogbeitrag hat dir einen Einblick in die Grundlagen von Elixir gegeben und dich dazu inspiriert, ein neues Projekt mit dieser aufstrebenden Programmiersprache zu starten. Viel Spaß beim Coden!
+- Offizielle Elixir-Dokumentation: https://elixir-lang.org
+- Elixir-Tutorials: https://elixir-lang.org/learning.html
+- Elixir Standardbibliothek: https://hexdocs.pm/elixir/Kernel.html

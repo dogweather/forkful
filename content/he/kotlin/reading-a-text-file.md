@@ -1,57 +1,43 @@
 ---
-title:    "Kotlin: קריאת קובץ טקסט"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/reading-a-text-file.md"
+title:                "Kotlin: קריאת קובץ טקסט"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-#למה
+## למה
 
-קובץ טקסט הוא אחד מסוגי הקבצים הנפוצים ביותר בתחום התכנות, כך שלימוד כיצד לקרוא קובץ טקסט בקוד Kotlin יהיה מאוד שימושי עבור מתכנתים המכוונים ליצור יישומים או כלים שעובדים עם קבצים.
+קריאת קבצי טקסט היא חלק חשוב מתהליך התכנות המודרני. באמצעות קריאת קבצי טקסט, ניתן לטעון ולעבד מידע טקסטואלי בקלות וליישם אותו בתהליך התכנות שלנו.
 
-# איך לעשות זאת
-
-בכדי לקרוא קובץ טקסט בקוד Kotlin, ניתן להשתמש בפונקציה שנקראת "readText", כאשר נמצאים בתוך מחלקת "java.io.File". להלן דוגמה פשוטה:
+## איך לעשות זאת
 
 ```Kotlin
 import java.io.File
 
 fun main() {
-    val file = File("myFile.txt")
-    val text = file.readText()
-    println(text)
+    val file = File("sample.txt")
+    val lines = file.readLines()
+    lines.forEach { line -> println(line) }
 }
 ```
 
-תוצאה:
+תחילה, ניבנה כיתה בשם "File" עם ערכים של קובץ הטקסט שרוצים לקרוא. לאחר מכן, נשתמש בפונקציית "readLines()" כדי לקרוא את הקובץ ולאחת את השורות שלו לתוך רשימה. לבסוף, נעבור על הרשימה ונדפיס כל שורה בנפרד. 
+
+פלט התוכנית יהיה:
+
 ```
-זהו קובץ טקסט פשוט
-```
-
-כדי לקרוא קובץ קשתוחיות יותר, ניתן להשתמש במתודה "forEachLine" שבתוך פונקצית הקביעה לקובץ. זאת מאפשרת לנו לעבור על כל שורות הקובץ ולבצע פעולה על כל אחת מהם. לדוגמה:
-
-```Kotlin
-import java.io.File
-
-fun main() {
-    val file = File("myFile.txt")
-    file.forEachLine { println(it) }
-}
+This is a sample text file.
+It contains multiple lines of text.
+We can easily read and process this data with Kotlin.
 ```
 
-תוצאה:
-```
-שורה 1
-שורה 2
-עוד שורה
-```
+## עיון מעמיק
 
-# העומק
+כדי לקרוא קובץ טקסט בפורמט אחר מUTF-8, ניתן להשתמש בפונקציית "readText(charset: Charset)" עם הפרמטר המתאים של Charset. בנוסף, ניתן לעבור על כל השורות בקובץ באמצעות פונקציית "forEachLine()" במקום "forEach()". כמו כן, ניתן לעבוד עם קובצים גדולים יותר על-ידי שימוש בפונקציית "bufferedReader()" במקום "readLines()".
 
-קריאת קובץ טקסט גורמת למחשב לטעון את הקובץ לזיכרון ולעבוד איתו כך שייתכן ותציג התנהגות פחות יעילה עבור קבצים גדולים. במקרה כזה, ניתן להשתמש בפתרון יעיל יותר כמו קריאת הקובץ מתוך עיבוד חוצה שעובר על הקובץ בפעם אחת במקום פעם כל איבר.
+## ראו גם
 
-# ראה גם
-
-- [תיעוד רשמי של Kotlin - קובץ](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [קריאת קבצי טקסט גדולים בכינוי קטן בשפת קוטלין](https://medium.com/@eliran139/reading-huge-text-files-in-kotlin-w-a-small-memory-footprint-a416de34bc36)
+- [מדריך לתרגול קוד בכיתה File בקוטלין](https://kotlinlang.org/docs/tutorials/kotlin-for-py/file-input-and-output.html)
+- [מסמך רשמי על פונקציונליות ועיבוד קבצים בקוטלין](https://kotlinlang.org/docs/functions.html#file-input-and-output)

@@ -1,45 +1,51 @@
 ---
-title:    "Ruby recipe: Converting a date into a string"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/converting-a-date-into-a-string.md"
+title:                "Ruby recipe: Converting a date into a string"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with dates in Ruby, it is often necessary to convert them into strings for various purposes such as display or storage. By converting a date into a string, you can easily manipulate and format it to meet your needs.
+Converting a date into a string may seem like a straightforward task, but it is an essential skill for any programmer working with dates and time in their Ruby projects. It allows for more readable and user-friendly date representations, making your code more accessible for others to understand.
 
 ## How To
 
-Converting a date into a string in Ruby is a simple process. Let's take a look at an example using the `strftime` method.
+To convert a date into a string in Ruby, we can use the `strftime` method. This method takes in a format string, which specifies how we want our date to be displayed.
 
 ```Ruby
+# Current Date
 date = Date.today
-# => #<Date: 2021-08-25 ((2459452j,0s,0n),+0s,2299161j)>
-date.strftime("%B %d, %Y")
-# => "August 25, 2021"
+
+# Convert to string using format "Day, Month Date, Year"
+puts date.strftime("%A, %B %d, %Y")
+
+# Output: Wednesday, July 21, 2021
 ```
 
-In this example, we first create a new Date object with today's date. Then, we use the `strftime` method with a format string to convert the date into a string in the desired format. The `%B` represents the full month name, `%d` represents the day of the month, and `%Y` represents the full year. You can use various format directives to customize the output based on your needs.
+The `%A` represents the full day name, `%B` represents the full month name, and `%d` represents the day of the month, while `%Y` represents the full year. You can also use other format codes to display the date in a different format. You can find a full list of format codes in the Ruby [documentation](https://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime).
 
 ## Deep Dive
 
-When using the `strftime` method, the format directives are based on the strftime() function from the C language. The following table lists some commonly used directives and their meanings:
+Behind the scenes, the `strftime` method uses the `strftime` format codes to format the date and time according to the current locale. The `strftime` method can also be used with the `Time` and `DateTime` objects, in addition to the `Date` object.
 
-| Directive | Output |
-| --- | --- |
-| %Y | Full year |
-| %m | Month number (01-12) |
-| %B | Full month name |
-| %d | Day of the month (01-31) |
-| %A | Full weekday name |
-| %j | Day of the year (001-365) |
+One crucial thing to note is that the format string must be surrounded by single quotes. Otherwise, the string may be interpreted as something else, resulting in an error or unexpected output.
 
-It is important to note that the `strftime` method only works with Date objects in Ruby. If you try to use it with a Time or DateTime object, it will result in an error.
+Another interesting feature of the `strftime` method is that you can use it to parse a string into a date or time object.
+
+```
+# Parse string "2021-07-21" into a Date object
+Date.strptime("2021-07-21", "%Y-%m-%d")
+
+# Output: #<Date: 2021-07-21 ...>
+```
+
+This is useful when working with user input or data from an external source that may not be in the correct format. Additionally, the `strftime` method allows for formatting the date based on your timezone, which can be specified using the `in_time_zone` method.
 
 ## See Also
 
-- [Date and Time Class in Ruby](https://ruby-doc.org/stdlib-2.6.0/libdoc/date/rdoc/Date.html)
-- [Format Directives for Date and Time in Ruby](https://www.rubyguides.com/2015/05/ruby-date-format/)
-- [The strftime() function in C](https://www.programiz.com/c-programming/library-function/time/strftime)
+- [Ruby Date and Time Documentation](https://ruby-doc.org/core-3.0.1/Date.html)
+- [Ruby DateTime Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/DateTime.html)
+- [Ruby Time Documentation](https://ruby-doc.org/core-3.0.1/Time.html)

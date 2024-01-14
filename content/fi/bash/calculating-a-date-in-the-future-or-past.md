@@ -1,43 +1,38 @@
 ---
-title:    "Bash: Tulevan tai menneen päivämäärän laskeminen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/calculating-a-date-in-the-future-or-past.md"
+title:                "Bash: Tulevan tai menneen päivän laskeminen"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet ihmiset saattavat ihmetellä miksi heidän pitäisi laskea tietty päivämäärä tulevaisuuteen tai menneisyyteen. Yksi yleinen syy tähän on, että he haluavat suunnitella tulevia tapahtumia tai tehdä merkintöjä menneistä tapahtumistaan. Bash ohjelmointikielen avulla tämä on helppoa ja nopeaa tehdä.
+Bash-ohjelmointikieli voi tuntua aluksi pelottavalta ja monimutkaiselta, mutta sen avulla on mahdollista suorittaa monia hyödyllisiä tehtäviä. Yksi näistä on päivämäärien laskeminen tulevaisuutta tai menneisyyttä varten. Tämä voi olla hyödyllistä esimerkiksi laskiessa eräpäivää tai suunnitellessa tulevia tapahtumia.
 
-## Miten
+## Kuinka tehdä se
 
-Laskemalla päivämääriä tulevaisuuteen tai menneisyyteen Bashilla on monia erilaisia tapoja. Yksi yleisimmistä tavoista on käyttää "date" komentoa. Voit käyttää sitä esimerkiksi näin:
+Päivämäärien laskeminen Bashissa onnistuu helposti käyttämällä `date` -komennolla. Tämä komento antaa mahdollisuuden käsitellä päivämääriä eri muodoissa ja laskea niitä haluttuun suuntaan. Käytännössä tätä varten tarvitsemme kolme asiaa: lähtöpäivämäärän, päivien määrän, ja halutun suunnan (tuleva vai menneisyyteen).
 
-```Bash
-date -d "next Monday"
-```
-
-Tämä tulostaa seuraavan maanantain päivämäärän nykyhetkestä. Voit myös määrittää minkä tahansa päivämäärän haluat lisäämällä tai vähentämällä päiviä.
+- Lähtöpäivämäärä määritellään muodossa `YYYY-MM-DD`.
+- Päivien määrä ilmoitetaan lisäämällä tai vähentämällä kokonaislukuja `+` tai `-` -merkkien perään.
+- Suunta määritellään viimeisenä parametrina `day` tai `days`.
 
 ```Bash
-date -d "4 days"
+# Laske päivämäärä 10 päivää tulevaisuuteen
+date -d "2021-10-25 + 10 days"
 ```
 
-Tämä tulostaa päivämäärän neljän päivän päästä nykyhetkestä. Voit myös määrittää haluamasi päivämäärän tietyn muodon mukaan, esimerkiksi päiväyksen muodossa.
+Tämän komennon tulosteena saamme uuden päivämäärän, joka tässä tapauksessa on `2021-11-04`.
 
-```Bash
-date -d "2021-12-25"
-```
+## Syvemmälle aiheeseen
 
-Tämä tulostaa joulupäivän päivämäärän vuonna 2021. Voit lisätä näihin komentoihin myös muita optioita, kuten ajan tai aikavyöhykkeen. Kokeile rohkeasti erilaisia vaihtoehtoja ja löydä itsellesi sopiva tapa laskea päivämääriä tulevaisuuteen tai menneisyyteen.
-
-## Syvällinen sukellus
-
-Bashilla on muitakin tapoja laskea päivämääriä tulevaisuuteen tai menneisyyteen kuin "date" komennon käyttö. Voit esimerkiksi käyttää "expr" komentoa laskemaan päiviä ja päivämääriä. Voit myös käyttää "let" tai "bc" komentoa laskemaan monimutkaisempia päivämääriä. Tarkempien ohjeiden ja esimerkkien löytämiseksi kannattaa tutustua Bashin manuaalisivuihin.
+`date` -komennolla on paljon muitakin vaihtoehtoja, joilla voit muokata päivämäärien laskemista haluamallasi tavalla. Voit esimerkiksi käyttää eri aikavyöhykkeitä, näyttää viikonpäivän tai vuoden päivän ja paljon muuta. Suosittelemme tutustumaan tarkemmin `date` -komennon manuaalisivuihin (`man date`) saadaksesi kaiken irti tästä kätevästä työkalusta.
 
 ## Katso myös
 
-- [Bashin manuaalisivut](https://www.gnu.org/software/bash/manual/bash.html)
-- [LinuxCommand.org: Date and Time Manipulation in Linux Bash](https://linuxcommand.org/lc3_lts0080.php)
-- [The Linux Documentation Project: Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/datecalc.html)
+- [Bashin viralliset dokumentaatiot](https://www.gnu.org/software/bash/manual/)
+- [Date-komennon manuaalisivu](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Date-Manipulation)
+
+Kiitos lukemisesta ja onnea Bash-ohjelmointisi kanssa!

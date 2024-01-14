@@ -1,48 +1,65 @@
 ---
-title:    "C++: Testien kirjoittaminen"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-tests.md"
+title:                "C++: Testien kirjoittaminen"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Testien kirjoittamisen tärkeys ohjelmoinnissa
+## Miksi: Miksi kirjoittaa testeja?
 
-Testien kirjoittaminen on tärkeä osa ohjelmointiprosessia, koska se auttaa varmistamaan, että koodi toimii odotetulla tavalla ja vähentää mahdollisia virheitä. Testien avulla voidaan myös helposti havaita ja korjata ohjelmistossa olevia ongelmia, mikä säästää aikaa ja vaivaa pitkällä aikavälillä.
+Kirjoittaminen testeja on tärkeä osa ohjelmistokehitystä, koska se varmistaa koodin toimivuuden ja vähentää mahdollisia virheitä. Testien avulla voit myös helpommin tunnistaa ja korjata mahdollisia ongelmia koodissasi ennen kuin ne aiheuttavat vakavampia ongelmia.
 
-## Kuinka tehdä: Esimerkkejä ja koodinpätkiä testien kirjoittamisesta
+## Miten: Esimerkkejä C++ koodin kera
+
+Testien kirjoittaminen C++:ssa on helppoa, kun tiedät mitä teet. Alla on muutamia esimerkkejä testein kirjoittamisesta koodiblokkien avulla.
 
 ```C++
 #include <iostream>
-#include <cassert>
+#include "functions.h"
 
-int sum(int a, int b){
-  return a + b;
+using namespace std;
+
+int main() {
+    // Luodaan testiluokka
+    class Test {
+        private:
+            int a, b;
+
+        public:
+            // Luodaan konstruktori
+            Test(int x, int y) {
+                a = x;
+                b = y;
+            }
+
+            // Testataan funktiota sum
+            int testSum() {
+                return sum(a, b);
+            }
+    };
+
+    // Määritetään testiluokan objekti
+    Test myTest(3, 7);
+
+    // Ajetaan testi ja tulostetaan tulos
+    cout << "Tulos: " << myTest.testSum();
 }
 
-int main(){
-  // Testataan sum-funktion toimivuus
-  assert(sum(2,2) == 4);
-  assert(sum(-3,5) == 2);
-
-  std::cout << "Testit läpäisty!" << std::endl;
-  return 0;
-}
+// Output:
+// Tulos: 10
 ```
 
-Kooditestejä voidaan kirjoittaa erilaisilla testikehyksillä, kuten CppUnit tai Google Test. Näillä kehyksillä voidaan testien suorittamisen lisäksi myös raportoida automaattisesti mahdollisista virheistä.
+Edellä olevassa esimerkissä luomme testiluokan ja ajamme testin funktiolle "sum", joka lisää kaksi numeroa yhteen. Testi tulostaa oikean tuloksen, mikä tarkoittaa että funktiomme toimii odotetusti.
 
-## Syvällisempi perehtyminen testien kirjoittamiseen
+## Syväsukellus: Syvempää tietoa testeistä
 
-Testien kirjoittamisessa on hyvä noudattaa TDD (Test Driven Development) -menetelmää, jossa testit kirjoitetaan ennen varsinaista koodia. Näin varmistetaan, että koodi toimii halutulla tavalla ja mahdolliset virheet havaitaan aikaisessa vaiheessa.
+Testien kirjoittaminen ei ainoastaan auta sinua havaitsemaan ja korjaamaan mahdollisia virheitä, vaan se myös auttaa sinua ymmärtämään koodiasi paremmin. Kirjoittamalla testejä, sinun täytyy ajatella koodiasi eri näkökulmista ja tarkkailla sen toimintaa erilaisilla syötteillä.
 
-Hyödyllisiä testattavia alueita ovat esimerkiksi rajapinnat, paluuarvot ja reunaehtojen käsittely. Myös erilaisia virhetilanteita kannattaa testata, jotta varmistetaan ohjelman toimivuus mahdollisissa poikkeustilanteissa.
-
-Testien kirjoittaminen vaatii myös taitoa ja kokemusta, joten niiden tekemistä kannattaa harjoitella ja opetella jatkuvasti. Lisäksi on tärkeää huolehtia testien ylläpidosta ja päivittämisestä uusien ominaisuuksien tai muutosten yhteydessä.
+Testit myös auttavat sinua välttämään koodin muuttumista liian monimutkaiseksi. Kun tiedät tarkalleen mitä koodisi pitäisi tehdä, ei ole niin helppoa kirjoittaa ylimääräistä koodia tai tehdä tarpeettomia muutoksia.
 
 ## Katso myös
-
-- [CppUnit](https://cppunit.sourceforge.io/)
-- [Google Test](https://github.com/google/googletest)
-
-Loppujen lopuksi testien kirjoittaminen on investointi ohjelmiston laatuun ja helpottaa pitkällä aikavälillä kehittäjän työtä. Suosittelemme siis vahvasti testien sisällyttämistä osaksi ohjelmointiprosessia.
+- [C++ testaamisen aloittelijan opas](https://www.softwaretestinghelp.com/cpp-unit-testing-beginners-guide/)
+- [Miksi testaaminen on tärkeää ohjelmistokehityksessä](https://www.agilealliance.org/glossary/tdd/)
+- [C++:n testaaminen käyttäen Google Test frameworkia](https://github.com/google/googletest)

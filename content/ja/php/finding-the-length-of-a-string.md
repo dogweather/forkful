@@ -1,44 +1,63 @@
 ---
-title:    "PHP: 文字列の長さを見つける"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/finding-the-length-of-a-string.md"
+title:                "PHP: 文字列の長さを見つける"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-「なぜ」：文字列の長さを調べることに興味を持つ理由を1-2文で説明します。
+## なぜ
 
-「方法」：「```PHP ...```」のコードブロック内のコーディング例とサンプルの出力。
+文字列の長さを求めることの利点について説明します。文字列の長さを知ることは、プログラミングにおいて非常に重要な情報です。例えば、文字列の長さを知ることで、テキストを正しくフォーマットすることができ、必要なメモリーの量を最適化することができます。
 
-「深堀り」：文字列の長さを調べる際の詳細な情報。
+## 方法
 
-「参考リンク」：この記事と関連するリンクのリスト。 
-
-##なぜ
-
-文字列の長さを調べることは、プログラミングにおいて非常に重要なタスクです。例えば、データの入力や処理の際、文字列の長さを確認する必要がある場合があります。また、文字列の長さを正確に把握することで、データの整合性を保つことができます。
-
-##方法
-
-文字列の長さを調べるには、PHPの組み込み関数である`strlen()`を使用します。この関数は、与えられた文字列の長さを整数で返します。例えば、下記のコードを使用すると、文字列「こんにちは、世界！」の長さを知ることができます。
+文字列の長さを求めるための基本的な方法は、PHPの組み込み関数である`strlen()`を使用することです。以下のように`strlen()`を使用して、文字列`Hello World!`の長さを求めることができます。
 
 ```PHP
-<?php
-
-$string = "こんにちは、世界！";
-echo strlen($string);
-
-//出力結果：10
+$str = "Hello World!";
+echo strlen($str);
 ```
 
-##深堀り
+上記のコードを実行すると、次の出力が得られます。
 
-文字列の長さを調べる際には、マルチバイト文字やUTF-8文字列に注意する必要があります。これらの文字は1文字あたりのバイト数が異なるため、`strlen()`関数を使用すると正確な結果が得られません。その場合は代わりに、`mb_strlen()`関数を使用することで正しい長さを取得することができます。
+```
+12
+```
 
-また、文字列内に特定の文字や文字列が何回出現するかを調べる場合には、`substr_count()`関数を使用することで簡単にカウントすることができます。
+文字列の中に日本語や特殊文字が含まれる場合、`strlen()`は正しい長さを返さないことがあります。そのような場合は、マルチバイト文字列も扱える`mb_strlen()`を使用しましょう。下記のように使用することができます。
 
-##参考リンク
+```PHP
+$str = "こんにちは、世界！";
+echo mb_strlen($str);
+```
 
-- PHPの`strlen()`関数について: https://www.php.net/manual/en/function.strlen.php
-- マルチバイト文字と`mb_strlen()`関数: https://www.php.net/manual/en/function.mb-strlen.php
-- `substr_count()`関数の使用方法: https://www.php.net/manual/en/function.substr-count.php
+上記のコードを実行すると、次の出力が得られます。
+
+```
+9
+```
+
+また、文字列に含まれる単語の数を求めるには、`str_word_count()`を使用することもできます。下記のように使用することができます。
+
+```PHP
+$str = "Today is a beautiful day.";
+echo str_word_count($str);
+```
+
+上記のコードを実行すると、次の出力が得られます。
+
+```
+5
+```
+
+## ディープダイブ
+
+`strlen()`による文字列の長さの取得は、非常に基本的な操作ですが、その実装には少し興味深い点があります。実際には、`strlen()`は文字列のバイト数を返しており、日本語や特殊文字が含まれる場合、文字数とは必ずしも一致しません。これは、日本語や特殊文字が複数のバイトで表現されるためです。そのため、真の意味での文字数を取得するには、`mb_strlen()`のようなマルチバイト対応の関数を使用する必要があります。
+
+## それ以外にも興味がある方は...
+
+- [PHPマニュアル - strlen()関数](https://www.php.net/manual/ja/function.strlen.php)
+- [PHPマニュアル - mb_strlen()関数](https://www.php.net/manual/ja/function.mb-strlen.php)
+- [PHPマニュアル - str_word_count()関数](https://www.php.net/manual/ja/function.str-word-count.php)

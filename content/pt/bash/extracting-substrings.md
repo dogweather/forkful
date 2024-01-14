@@ -1,51 +1,51 @@
 ---
-title:    "Bash: Extraindo subcadeias de caracteres"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/extracting-substrings.md"
+title:                "Bash: Extraindo subcadeias"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar extração de substrings?
+## Por que
 
-Extração de substrings é uma técnica importante em programação que é útil em muitas situações diferentes. Ao extrair substrings, você pode segmentar uma string maior em partes menores e trabalhar com essas partes separadamente. Isso pode economizar tempo e esforço, especialmente em situações onde você precisa lidar com informações específicas dentro de uma string.
+Extração de subcadeias é uma habilidade essencial para qualquer programador de Bash. Com ela, você pode facilmente extrair trechos específicos de uma string, permitindo que você manipule e utilize dados de forma mais eficiente em seus scripts.
 
-## Como fazer
+## Como Fazer
 
-Existem várias maneiras de realizar extração de substrings em um script Bash. Aqui estão dois exemplos simples:
+Para extrair uma subcadeia de uma string em Bash, você pode usar o operador de substituição de padrões `${string#substring}`. Isso irá remover a substring do início da string. Se você quiser remover a substring do final da string, você pode usar o operador `${string%substring}`.
+
+Por exemplo, se tivermos a string `Hello World`, e quisermos extrair apenas a palavra `World`, podemos usar o seguinte código:
 
 ```Bash
-# Exemplo 1
 string="Hello World"
-echo ${string:0:5}
+substring="Hello "
+echo ${string#substring}
 ```
 
-Neste exemplo, definimos a variável `string` como "Hello World" e usamos a sintaxe `${string:posição:comprimento}` para extrair os primeiros 5 caracteres. O resultado desse comando seria "Hello".
+Isso irá imprimir `World`, pois a substring `Hello ` será removida do início da string.
+
+Além disso, se você quiser extrair uma subcadeia baseada em sua posição, pode usar a sintaxe `${string:position:length}`. Isso irá retornar os caracteres da string a partir da posição especificada, com o comprimento especificado. Se o comprimento não for especificado, a subcadeia irá até o final da string.
+
+Por exemplo, se tivermos a string `Bash Programming`, e quisermos extrair apenas a palavra `Programming`, podemos usar o seguinte código:
 
 ```Bash
-# Exemplo 2
-string="Bom dia!"
-echo ${string: -5}
+string="Bash Programming"
+echo ${string:5}
 ```
 
-Neste segundo exemplo, usamos a mesma sintaxe, mas desta vez especificamos uma posição negativa. Isso significa que o Bash irá contar a posição a partir do final da string. Neste caso, o resultado seria "dia!".
+Isso irá imprimir `Programming`, pois o primeiro parâmetro especifica a posição a partir da qual queremos extrair a substring.
+
+Você também pode combinar esses métodos para extrair substrings mais complexas e realizar tarefas específicas em seus scripts.
 
 ## Mergulho Profundo
 
-Agora que você já sabe como extrair substrings em Bash, é importante entender alguns conceitos adicionais que podem ser úteis. Primeiro, a posição sempre começa em 0, o que significa que a primeira letra da string tem a posição 0, a segunda letra tem a posição 1 e assim por diante. Além disso, ao omitir o comprimento, o Bash irá extrair todos os caracteres a partir da posição especificada até o final da string.
+A extração de subcadeias pode ser ainda mais poderosa quando combinada com outras ferramentas do Bash, como loops e arrays. Combinando esses recursos, você pode facilmente processar grandes quantidades de dados e extrair informações relevantes diretamente de suas strings.
 
-Outra funcionalidade útil é a possibilidade de definir variáveis enquanto extrai substrings. Por exemplo:
-
-```Bash
-string="Olá amigo!"
-substring=$(echo ${string:4:6})
-echo $substring
-```
-
-Neste exemplo, primeiro nós extraímos a substring "amigo" da string "Olá amigo!" e a atribuímos à variável `substring`. Em seguida, imprimimos o valor dessa variável e o resultado seria "amigo".
+Além disso, existem muitas implementações diferentes de extração de substrings em Bash, permitindo que você escolha a sintaxe mais adequada para cada situação específica.
 
 ## Veja Também
 
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
-- [Tutorial sobre extração de substrings em Bash](https://www.baeldung.com/linux/bash-substring-commands)
-- [Outros exemplos de extração de substrings em Bash](https://linuxize.com/post/bash-substring/)
+- [The Bash Guide to Using Variables](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html)
+- [Bash String Manipulation](https://www.bashguru.com/2010/12/string-manipulation-in-bash.html)
+- [AWK String Functions](https://www.tutorialspoint.com/awk/awk_string_functions.htm)

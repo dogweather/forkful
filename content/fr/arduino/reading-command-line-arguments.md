@@ -1,86 +1,55 @@
 ---
-title:    "Arduino: Lecture des arguments de ligne de commande"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/reading-command-line-arguments.md"
+title:                "Arduino: Lecture des arguments de ligne de commande"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi lire des arguments de ligne de commande en Arduino ?
 
-Lors de la programmation d'Arduino, il est souvent nécessaire de recevoir des données d'entrée provenant de l'utilisateur ou d'un autre appareil. Les arguments de ligne de commande permettent aux utilisateurs de spécifier ces données au moment de l'exécution du programme, ce qui peut être utile dans de nombreuses situations.
+Si vous développez des projets Arduino, vous êtes probablement familier avec l'utilisation de la console série pour lire des données provenant de capteurs ou pour afficher des résultats. Mais saviez-vous qu'il est également possible de lire des informations à partir de la ligne de commande de votre ordinateur ? Dans cet article, nous allons discuter de pourquoi vous pourriez vouloir utiliser cette fonctionnalité et comment le faire en utilisant l'Arduino IDE.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande dans un programme Arduino, il faut utiliser la fonction `processCommand()` qui analyse et extrait les arguments. Elle retourne le nombre d'arguments présents ainsi que les valeurs sous forme de chaînes de caractères.
+Tout d'abord, il est important de comprendre ce qu'est une ligne de commande. Il s'agit d'un moyen de communiquer avec un ordinateur en tapant des instructions dans une fenêtre de terminal. En utilisant la ligne de commande, vous pouvez exécuter des programmes, modifier des fichiers, ou même lire des données sur l'Arduino.
 
-Voici un exemple de code montrant comment utiliser la fonction `processCommand()` et afficher les valeurs des arguments :
+Pour lire des commandes depuis la ligne de commande en Arduino, vous aurez besoin de trois choses : un câble pour connecter votre Arduino à votre ordinateur, un port série configuré dans l'IDE Arduino et un programme qui lira les données de la ligne de commande.
+
+Pour commencer, connectez votre Arduino à votre ordinateur en utilisant un câble USB. Assurez-vous que le port série est correctement sélectionné dans l'IDE Arduino en allant dans Outils > Port série. Maintenant, nous pouvons écrire notre programme pour lire les commandes.
 
 ```Arduino
-#include <stdio.h>
-
-void setup() {
-  Serial.begin(9600); // initialise la communication série
+void setup(){
+	Serial.begin(9600); // ouvrir le port série à une vitesse de 9600 bauds
 }
 
-void loop() {
-  int numberOfArguments; // variable pour stocker le nombre d'arguments
-  char* argumentValues[10]; // tableau pour stocker les valeurs des arguments
-
-  // Définit les valeurs des arguments
-  char input[] = "1 2 3 4 5";
-  
-  // Appelle la fonction processCommand() en lui passant l'entrée en tant que paramètre
-  numberOfArguments = processCommand(input, argumentValues);
-
-  // Affiche le nombre d'arguments présents
-  Serial.println("Nombre d'arguments : " + String(numberOfArguments));
-
-  // Affiche les valeurs des arguments
-  for (int i = 0; i < numberOfArguments; i++) {
-    Serial.println("Argument " + String(i + 1) + " : " + argumentValues[i]);
-  }
-
-  delay(1000);
-}
-
-// Fonction processCommand() qui analyse les arguments de ligne de commande
-int processCommand(char* input, char* values[]) {
-  int argumentCount = 0; // variable pour stocker le nombre d'arguments actuels
-  char* currentArgument = strtok(input, " "); // extrait le premier argument (jusqu'à l'espace)
-
-  // tant qu'il y a un argument
-  while (currentArgument != NULL) {
-    values[argumentCount] = currentArgument; // ajoute l'argument actuel au tableau des valeurs
-    argumentCount++; // incrémente le nombre d'arguments actuels
-    currentArgument = strtok(NULL, " "); // extrait le prochain argument
-  }
-
-  return argumentCount; // retourne le nombre d'arguments présents
+void loop(){
+	if (Serial.available()){ // vérifier si des données sont disponibles sur le port série
+		String cmd = Serial.readStringUntil('\n'); // lire les données jusqu'au prochain saut de ligne
+		// faire quelque chose avec la commande lue
+	}
 }
 ```
 
-### Exemple de sortie :
+Le programme commence par initialiser le port série, puis entre dans une boucle qui vérifie constamment si des données sont disponibles. Si c'est le cas, il lit les données jusqu'au prochain saut de ligne et les stocke dans une chaîne de caractères. Vous pouvez ensuite utiliser cette chaîne pour exécuter des actions ou affecter des valeurs à des variables.
 
-```
-Nombre d'arguments : 5
-Argument 1 : 1
-Argument 2 : 2
-Argument 3 : 3
-Argument 4 : 4
-Argument 5 : 5
-```
+Essayez d'envoyer des commandes à partir de la ligne de commande en utilisant des valeurs numériques ou des chaînes de caractères pour voir comment le programme les traite.
 
-## Plongée en profondeur
+## Profondeur
 
-Il est important de noter que la fonction `processCommand()` peut prendre en charge un nombre limité d'arguments (dans notre exemple, 10). Si plus d'arguments sont présents, ils ne seront pas pris en compte.
+Maintenant que nous savons comment lire des commandes depuis la ligne de commande, voyons à quoi cela peut être utile. Tout d'abord, cela peut être une alternative pratique à la création d'une interface utilisateur pour votre projet. Plutôt que d'avoir à appuyer sur des boutons ou de toucher un écran, vous pouvez contrôler votre Arduino directement depuis votre ordinateur en tapant des commandes.
 
-De plus, cette fonction ne peut lire que des arguments de type chaîne de caractères. Si vous avez besoin de lire des entiers, floats ou d'autres types de données, vous devrez utiliser des fonctions de conversion appropriées telles que `atoi()` ou `atof()`.
+De plus, cela peut simplifier le processus de débogage en vous permettant de vérifier rapidement les valeurs de vos variables ou de tester différentes configurations sans avoir à téléverser un nouveau programme sur l'Arduino à chaque fois. Vous pouvez même utiliser la ligne de commande pour contrôler plusieurs Arduinos connectés à votre ordinateur en même temps.
 
-Il est également possible de spécifier des options ou des flags dans les arguments de ligne de commande, qui peuvent être utiles pour modifier le comportement du programme. Cependant, leur gestion peut être complexe et peut nécessiter l'utilisation d'une librairie dédiée.
+Bien sûr, cela peut également avoir des applications plus avancées, selon vos besoins spécifiques. En utilisant les commandes de la ligne de commande, vous pouvez créer des programmes plus interactifs et même connecter votre Arduino avec des programmes ou des scripts fonctionnant sur votre ordinateur.
 
 ## Voir aussi
 
-- [Documentation officielle Arduino sur les arguments de ligne de commande](https://www.arduino.cc/en/Main/CommandLineArguments)
-- [Tutoriel sur les arguments de ligne de commande pour Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/arduino-cli-process-command-line-arguments-5aadd1)
-- [Article sur l'utilisation de librairies pour gérer les options et flags dans les arguments de ligne de commande Arduino](https://www.mathertel.de/Arduino/argscan/argscan.ino)
+Pour en savoir plus sur la lecture des commandes de la ligne de commande en Arduino, consultez les ressources suivantes :
+
+- [Documentation officielle Arduino pour le port série](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Un tutoriel sur comment utiliser la ligne de commande en Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/arduino-serial-basics-a74f94)
+- [Un exemple de projet utilisant la ligne de commande pour contrôler un afficheur LED](https://www.arduino.cc/en/Tutorial/CommandLineModule)
+
+Maintenant que vous savez comment lire des commandes depuis la ligne de commande en Arduino, vous pouvez explorer de nouvelles possibilités pour vos projets et améliorer votre expérience de développement. N'hésitez pas à expérimenter et à partager vos découvertes avec la communauté Arduino. Amusez-vous bien !

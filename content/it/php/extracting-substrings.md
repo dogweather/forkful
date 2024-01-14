@@ -1,53 +1,42 @@
 ---
-title:    "PHP: Estrapolazione di sottostringhe"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/extracting-substrings.md"
+title:                "PHP: Estrazione di sottostringhe"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Spesso durante la programmazione, è necessario lavorare con una stringa di testo più lunga estrarre solo una parte specifica. Questo è ciò che viene definito come estrazione di sottotringoli e può essere molto utile in diversi scenari di programmazione.
+
+Estrazione di sub-stringhe è un concetto fondamentale nella programmazione PHP. Ci permette di ottenere parti specifiche di una stringa, come ad esempio una parola o una frase specifica. Questa tecnica è estremamente utile e viene utilizzata in diverse situazioni, come nella gestione di dati di form o nella manipolazione di url.
 
 ## Come fare
-Per estrarre una sottostringa da una stringa più lunga, possiamo utilizzare la funzione `substr()` in PHP. Prendiamo ad esempio la seguente stringa:
+
+Per estrarre una sub-stringa in PHP, utilizziamo la funzione `substr()`, che prende tre argomenti: una stringa di origine, l'indice di inizio e la lunghezza della sub-stringa desiderata. Ad esempio, per estrarre la parola "programmazione" dalla stringa "Questo è un corso di programmazione", useremmo il seguente codice:
 
 ```PHP
-$stringa = "Questo è un esempio di una stringa.";
+$stringa = "Questo è un corso di programmazione";
+$parola = substr($stringa, 16, 13);
+echo $parola; // output: programmazione
 ```
 
-Se vogliamo estrarre solo la parola "esempio" da questa stringa, possiamo utilizzare la seguente istruzione:
+Se invece vogliamo ottenere la prima parola della stringa, possiamo utilizzare la funzione `explode()`, che divide la stringa in base a un delimitatore specificato e restituisce un array. Ad esempio, per ottenere la parola "Questo" dalla stringa precedente, useremmo il seguente codice:
 
 ```PHP
-$sottostringa = substr($stringa, 11, 7);
+$stringa = "Questo è un corso di programmazione";
+$prima_parola = explode(" ", $stringa)[0];
+echo $prima_parola; // output: Questo
 ```
 
-Qui, stiamo specificando che vogliamo estrarre una sottostringa di 7 caratteri a partire dall'indice 11 della stringa originale. Ovviamente, questi valori possono essere variati in base alle nostre esigenze.
+## Approfondimento
 
-L'output di questo codice sarà:
+Esistono altri metodi per estrarre sub-stringhe, come ad esempio utilizzare le funzioni `strpos()` e `strrpos()` per ottenere l'indice iniziale della sub-stringa desiderata e poi utilizzare la funzione `substr()` per estrarla. Inoltre, è anche possibile utilizzare le espressioni regolari per estrarre sub-stringhe in base a un pattern specifico.
 
-```PHP
-esempio
-```
-
-Possiamo anche specificare un solo parametro nella funzione `substr()` se vogliamo estrarre tutti i caratteri fino alla fine della stringa. Ad esempio:
-
-```PHP
-$altrosottostringa = substr($stringa, 27);
-```
-
-In questo caso, l'output sarà:
-
-```PHP
-una stringa.
-```
-
-Ci sono anche altre funzioni utili che possiamo utilizzare per estrarre sottotringoli, come ad esempio `strpos()`, `strrpos()`, `strstr()`, `strchr()`, etc. Consiglio di esplorare queste funzioni per avere una comprensione più approfondita.
-
-## Approfondimenti
-Oltre alla semplice estrazione di sottotringoli, ci sono alcune considerazioni importanti da tenere a mente. Ad esempio, dobbiamo fare attenzione agli indici quando utilizziamo le funzioni `substr()` e `strlen()` insieme. Inoltre, dobbiamo essere consapevoli di come le diverse funzioni gestiscono i caratteri speciali all'interno delle stringhe. Con una buona comprensione di questi aspetti, saremo in grado di utilizzare efficacemente le funzioni di estrazione di sottotringoli nella nostra programmazione.
+È importante ricordare che l'indice di una stringa inizia sempre da 0, quindi la prima lettera di una stringa ha indice 0, la seconda ha indice 1, e così via.
 
 ## Vedi anche
+
 - [Documentazione ufficiale di PHP su substr()](https://www.php.net/manual/en/function.substr.php)
-- [Come estrarre una sottostringa in PHP](https://www.geeksforgeeks.org/how-to-extract-a-substring-from-a-string-in-php/)
-- [Tutorial su stringhe in PHP](https://www.w3schools.com/php/php_strings_substrings.asp)
+- [Esempi pratici di estrazione di sub-stringhe in PHP](https://www.tutorialspoint.com/php/php_string_substr.htm)
+- [Approfondimento sulle espressioni regolari in PHP](https://www.php.net/manual/en/function.preg-match.php)

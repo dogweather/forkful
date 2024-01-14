@@ -1,62 +1,50 @@
 ---
-title:    "Python: Löschen von Zeichen, die einem Muster entsprechen"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/deleting-characters-matching-a-pattern.md"
+title:                "Python: Löschen von Zeichen, die einem Muster entsprechen"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung sehr nützlich sein, um ungewünschte Daten zu entfernen oder Daten in einem bestimmten Format zu bearbeiten.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in verschiedenen Situationen nützlich sein. Zum Beispiel könnte es helfen, unerwünschte Zeichen aus einer Textdatei zu entfernen, oder beim Scraping von Daten aus dem Internet den Text zu bereinigen.
 
-# How To
+## Wie man es macht
 
-Um Zeichen in einem String zu löschen, die einem bestimmten Muster entsprechen, können Sie die `re` Bibliothek in Python verwenden. Zuerst importieren wir die Bibliothek:
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann mit Hilfe von regulären Ausdrücken in Python durchgeführt werden. Hier ist ein einfaches Beispiel, das alle Zahlen aus einem String entfernt:
 
-```python
+```Python
 import re
+text = "Dies ist ein Beispiel123 Text"
+clean_text = re.sub('[0-9]+', '', text)
+print(clean_text)
 ```
 
-Dann definieren wir unseren String und das Muster, das wir löschen möchten:
+Die Ausgabe wäre: "Dies ist ein Beispiel Text". In diesem Beispiel wird die Funktion `re.sub()` verwendet, um alle Zahlen aus dem String zu entfernen. Das erste Argument gibt das Muster an, nach dem gesucht werden soll (hier `[0-9]+` für jede beliebige Ziffer), das zweite Argument ist der String, in dem gesucht werden soll, und das dritte Argument ist der String, der anstelle des gefundenen Musters eingefügt werden soll.
 
-```python
-txt = "Mein Geburtsdatum ist am 01/01/2000."
-pattern = "[0-9]"
+Eine weitere nützliche Methode ist `re.findall()`, die alle Vorkommnisse eines Musters in einem String in einer Liste zurückgibt. Hier ist ein Beispiel, das alle Wörter mit mindestens vier Buchstaben aus einem String extrahiert:
+
+```Python
+import re
+text = "Dies ist ein Beispiel123 Text with English words"
+words = re.findall('[a-zA-Z]{4,}', text)
+print(words)
 ```
 
-Das Muster `[0-9]` bedeutet, dass wir alle Ziffern von 0 bis 9 löschen möchten. Nun wenden wir die `re.sub()` Funktion an, um unsere Zeichenfolge zu ändern:
+Die Ausgabe wäre: `['Dies', 'ist', 'Beispiel', 'Text', 'with', 'English', 'words']`. In diesem Beispiel wird das Muster `[a-zA-Z]{4,}` verwendet, um nach Wörtern mit mindestens vier Buchstaben zu suchen.
 
-```python
-new_txt = re.sub(pattern, "", txt)
-print(new_txt)
-```
+## Tieferer Einblick
 
-Die Ausgabe wäre:
+Um besser zu verstehen, wie reguläre Ausdrücke in Python funktionieren, ist es hilfreich, sich mit den verschiedenen Metazeichen und Ausdrücken vertraut zu machen. Dazu gehören zum Beispiel `+` für ein oder mehrere Vorkommnisse, `*` für null oder mehr Vorkommnisse und `[ ]` für eine Gruppe von Zeichen. Es gibt auch spezielle Sequenzen wie `\d` für eine beliebige Ziffer und `\w` für ein beliebiges alphanumerisches Zeichen.
 
-`Mein Geburtsdatum ist am //.`
+Eine weitere wichtige Methode, die es sich anzusehen lohnt, ist `re.compile()`, mit der man einen regulären Ausdruck kompilieren und wiederverwenden kann. Dies kann insbesondere bei der Verarbeitung großer Mengen an Texten nützlich sein.
 
-Wie Sie sehen können, wurden alle Ziffern in unserem String gelöscht. Sie können auch komplexere Muster verwenden, um bestimmte Zeichen oder Wörter zu löschen. Hier ist ein Beispiel, in dem wir alle Sonderzeichen und Leerzeichen aus einem String entfernen:
+Für eine detaillierte und umfassende Erklärung zu regulären Ausdrücken in Python empfehlen wir die offizielle Dokumentation unter [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html).
 
-```python
-txt = "Hallo! Wie geht es dir?"
-pattern = "[^A-Za-z0-9]"
-new_txt = re.sub(pattern, "", txt)
-print(new_txt)
-```
+## Siehe auch
 
-Die Ausgabe wäre:
-
-`HalloWiegehtesdir`
-
-# Deep Dive
-
-Das `re` Modul in Python bietet eine breite Palette an Funktionen und Möglichkeiten, um mit regulären Ausdrücken zu arbeiten. Mit dem `re.sub()` Befehl können Sie nicht nur Zeichen löschen, sondern auch ersetzen oder hinzufügen, je nachdem, welche Argumente Sie der Funktion übergeben. Es gibt auch verschiedene Optionen und Flags, die Sie verwenden können, um Ihre regulären Ausdrücke anzupassen.
-
-Um mehr über die Verwendung von regulären Ausdrücken in Python zu erfahren, können Sie die offizielle Dokumentation der `re` Bibliothek lesen oder verschiedene Tutorials online finden.
-
-# Siehe auch
-
-- Offizielle Dokumentation der `re` Bibliothek: https://docs.python.org/de/3/library/re.html
-- Tutorial über reguläre Ausdrücke in Python: https://realpython.com/regex-python/
-- Einführung in reguläre Ausdrücke in Python: https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial
+- [Eine Einführung in reguläre Ausdrücke in Python](https://realpython.com/regex-python/)
+- [RegExr - Ein interaktiver Regulärer-Ausdruck Tester für Python](https://regexr.com/)
+- [RegEx Cheat Sheet für Python](https://cheatography.com/mutanclan/cheat-sheets/python-regular-expression-regex/)

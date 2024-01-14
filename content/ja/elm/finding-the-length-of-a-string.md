@@ -1,43 +1,32 @@
 ---
-title:    "Elm: 文字列の長さを求める"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/finding-the-length-of-a-string.md"
+title:                "Elm: 文字列の長さを求める方法"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ？
 
-文字列の長さを求めることに関わるモチベーションを紹介します。
+文字列の長さを求めることの意義を説明するために、エルムプログラミングのブログ投稿を書きます。
 
 ## 方法
 
-まず、文字列を定義します。
-
-```elm
-string = "Hello, World!"
+```Elm
+let str = "こんにちは"
+in
+String.length str
+-- 5
 ```
 
-次に、`String.length`関数を使って文字列の長さを求めます。
+文字列の長さを求めるには、`String.length`関数を使います。この関数は、渡された文字列の長さを返します。例として、上記のコードでは、文字列"こんにちは"の長さは5であることがわかります。
 
-```elm
-length = String.length string
-```
+## 深堀り
 
-最後に、求めた文字列の長さを出力します。
+文字列の長さを求める方法についてさらに詳しく説明します。文字列の長さは、文字の個数を数えることで求めることができます。エルムでは、文字列は1文字ごとにコードポイントという数字で表されます。そのため、文字列の長さはコードポイントの数に等しくなります。
 
-```elm
-"Hello, World!"の長さは、" + toString length + "です。"
-```
+## 参考リンク
 
-出力結果は、`Hello, World!`の長さが`13`であることを示します。
-
-## ディープダイブ
-
-文字列の長さを求める方法は単純ですが、Elmの内部ではどのように機能しているのでしょうか？実際には、`String.length`関数が文字列をリストとして扱い、その要素数を返しています。文字列は、1文字ずつリストの要素として格納されているため、リストの長さを求めることで文字列の長さが求められるのです。
-
-# See Also
-
-- [Elm Documentation](https://guide.elm-lang.jp/core_language.html#Strings)
-- [Learn X in Y Minutes - Elm](https://learnxinyminutes.com/docs/ja-jp/elm/)
-- [Unicode in Elm](https://elmprogramming.com/unicode-in-elm.html)
+- [ElmのStringモジュールドキュメント](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [エルムの文字列操作について学ぶ](https://dev.classmethod.jp/articles/learn-elm-with-string-manipulations/)

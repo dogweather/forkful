@@ -1,33 +1,41 @@
 ---
-title:    "TypeScript: भविष्य या भूतकाल में तारीख की गणना करना"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/calculating-a-date-in-the-future-or-past.md"
+title:                "TypeScript: भबिष्य या भूतकाल में एक दिन की गणना"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-किसी को भविष्य या भूतकाल में दिनांक की गणना करने की क्षमता अपने को स्वयं परिभाषित हो सकता है।
+कभी-कभी हमें भविष्य या अतीत की तारीख निकालने की जरूरत हो सकती है, जैसे किसी इमारत का निर्माण करने की तारीख, किसी समाचार के प्रकाशन की तारीख आदि। TypeScript प्रोग्रामिंग में हम आसानी से ऐसी तारीखों को निकाल सकते हैं जो भविष्य या अतीत की हो।
 
 ## कैसे करें
 
-`````TypeScript
-// एक दिनांक से दूरी का गणना करने के लिए:
-let currentDate: Date = new Date();
-let futureDate: Date = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 दिन पहले का दिनांक
-console.log(futureDate); // इसका आउटपुट 30 दिन के आगे की तारीख होगी
+इस कार्य को करने के लिए हमें `Date` ऑब्जेक्ट का उपयोग करना होगा। निम्नलिखित कोड ब्लॉक में हम देखेंगे कि कैसे हम अपने कोड में `Date` ऑब्जेक्ट को इस्तेमाल कर सकते हैं और कैसे हम भविष्य या अतीत की तारीखों को निकाल सकते हैं।
 
-// दो दिनों के बीच दिनांक की गणना करने के लिए:
-let pastDate: Date = new Date(currentDate.getTime() - (2 * 24 * 60 * 60 * 1000)); // 2 दिन पहले का दिनांक
-console.log(pastDate); // इसका आउटपुट 2 दिन पहले की तारीख होगी
-`````
+```TypeScript
+// अपने कोड में Date ऑब्जेक्ट को इम्पोर्ट करें
+import { Date } from 'typescript';
 
-## गहराई में जा
+// अब हम Date ऑब्जेक्ट का उपयोग करके भविष्य की तारीख निकाल सकते हैं
+let futureDate = new Date();
 
-जब हम एक दिनांक से दूर या पीछे की गणना करते हैं, तो हम इसे मिलीसेकंड्स में करते हैं। हम इसे अपनी आवश्यकतानुसार मिनट, घंटे, दिन या साल में भी बदल सकते हैं। इसके लिए हम समय की संख्या में गुणा या बाँट कर सकते हैं। अधिक गहराई में जाने के लिए, आप [यहाँ](https://www.w3schools.com/js/js_date_methods.asp) से और अधिक जानकारी प्राप्त कर सकते हैं।
+// यहां हम भविष्य की तारीख से 10 दिन आगे की तारीख निकाल रहे हैं
+futureDate.setDate(futureDate.getDate() + 10);
 
-## देखें भी
+console.log(futureDate); // Output: 2020-06-22T00:00:00.000Z
 
-- [Date ऑब्जेक्ट](https://www.w3schools.com/js/js_date_objects.asp)
-- [Date और Time समस्याएं](https://www.w3schools.com/js/js_datetime.asp)
+// अब आइसीटी स्पैन में हम अतीत की तारीख निकालेंगे
+let pastDate = new Date();
+
+// यहां हम अतीत की तारीख से 5 दिन पहले की तारीख निकाल रहे हैं
+pastDate.setDate(pastDate.getDate() - 5);
+
+console.log(pastDate); // Output: 2020-06-07T00:00:00.000Z
+```
+
+## गहरी खोज
+
+जब हम `Date` ऑब्जेक्ट का उपयोग करते हैं, तो हमें माह, दिन और साल के साथ तारीख सेट करने की अनुमति मिलती है। इसके अलावा, हम `getDate()`, `getMonth()`, `getFullYear()` जैसी फ़ंक्शन का उपयोग करके भी तारीख के प

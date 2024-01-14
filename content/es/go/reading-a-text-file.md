@@ -1,52 +1,51 @@
 ---
-title:    "Go: Leyendo un archivo de texto"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/reading-a-text-file.md"
+title:                "Go: Leyendo un archivo de texto"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué leer un archivo de texto
 
-¡Hola a todos! Si estás leyendo esto, es probable que estés interesado en aprender sobre cómo leer archivos de texto en Go. Leer un archivo de texto es una tarea común en la programación y saber cómo hacerlo puede ser muy útil en tus proyectos. ¡Vamos a sumergirnos en este tema juntos!
+Hay muchas razones por las cuales podrías querer leer un archivo de texto en tu programa de Go. Tal vez necesites procesar información de un archivo de configuración, leer datos de entrada del usuario o analizar un archivo de registro. Independientemente de la razón, aprender cómo leer archivos de texto en Go es una habilidad esencial para cualquier programador.
 
 ## Cómo hacerlo
 
-La forma más sencilla de leer un archivo de texto en Go es utilizando la función `ReadFile` de la librería `io/ioutil`. Esta función toma como argumento la ruta del archivo y devuelve un `[]byte` con los datos del archivo. A continuación, puedes convertir estos datos en una cadena de texto utilizando el paquete `strings`.
+Para leer un archivo de texto en Go, primero debes abrir el archivo utilizando la función ```os.Open()``` y pasarle la ruta del archivo como argumento. Luego, debes crear un búfer de lectura utilizando la función ```bufio.NewReader()``` y pasarle como argumento el archivo abierto. Finalmente, puedes usar el bucle ```for``` y el método ```ReadString()``` para leer cada línea del archivo hasta que se llegue al final.
+
+Un ejemplo de código podría ser el siguiente:
 
 ```Go
-package main
+archivo, err := os.Open("archivo.txt") // Abre el archivo
+if err != nil {
+  fmt.Println("Error al abrir el archivo:", err)
+}
 
-import (
-    "fmt"
-    "io/ioutil"
-    "strings"
-)
-
-func main() {
-    // Leer el archivo
-    data, err := ioutil.ReadFile("archivo.txt")
-    if err != nil {
-        fmt.Println("Error al leer el archivo:", err)
-        return
+lector := bufio.NewReader(archivo) // Crea un búfer de lectura
+for {
+  cadena, err := lector.ReadString('\n') // Lee una línea del archivo
+  if err != nil {
+    if err == io.EOF { // Comprueba si se llegó al final del archivo
+      break
     }
-
-    // Convertir los datos en una cadena de texto
-    text := strings.TrimSpace(string(data))
-
-    // Imprimir el contenido del archivo
-    fmt.Println(text)
+    fmt.Println("Error al leer el archivo:", err)
+  }
+  fmt.Println(cadena) // Imprime la línea leída
 }
 ```
 
-¡Eso es todo! Ahora puedes leer el contenido de cualquier archivo de texto en Go. Sin embargo, hay algunas cosas importantes que debes tener en cuenta cuando lees un archivo de texto.
+Este código abrirá el archivo llamado "archivo.txt" y leerá cada línea del mismo hasta que se llegue al final. Puedes ver el resultado impreso en la consola.
 
 ## Profundizando
 
-Primero, recuerda siempre manejar los errores correctamente, como se muestra en el ejemplo anterior. Además, es importante tener en cuenta la codificación del archivo que estás leyendo. Si el archivo utiliza una codificación diferente a UTF-8, puedes especificarla en la función `ReadFile` (por ejemplo, `ioutil.ReadFile("archivo.txt")`). Además, si necesitas leer un archivo grande, es mejor utilizar la función `ReadFile` en lugar de la función `ReadAll` para evitar la sobrecarga de memoria.
+Además de leer líneas de un archivo de texto, Go ofrece otras funcionalidades para trabajar con archivos, como la función ```ioutil.ReadFile()``` que lee todo el contenido de un archivo en un solo paso, o el método ```Scanner.Scan()``` que te permite escanear palabras, números o incluso tokens de un archivo.
+
+También puedes utilizar saltos de línea especiales, como ```\r\n``` o ```\r```, dependiendo del sistema operativo en el que estés trabajando. Además, debes tener en cuenta que es importante cerrar el archivo una vez que hayas terminado de leerlo utilizando el método ```Close()```.
 
 ## Ver también
 
-- [Documentación de la función ReadFile en Go](https://golang.org/pkg/io/ioutil/#ReadFile)
-- [Documentación sobre manipulación de archivos en Go](https://golang.org/pkg/os/#pkg-overview)
-- [Ejemplo de código para leer un archivo CSV en Go](https://github.com/golang/example/tree/master/csv)
+- [Documentation for os package in Go](https://golang.org/pkg/os/)
+- [Go by Example: Reading Files](https://gobyexample.com/reading-files)
+- [Tutorial: Reading and Writing Files in Go](https://www.digitalocean.com/community/tutorials/reading-and-writing-files-in-go)

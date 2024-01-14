@@ -1,32 +1,29 @@
 ---
-title:    "Kotlin: Scrivere su standard error"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-to-standard-error.md"
+title:                "Kotlin: Scrivere su errore standard"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
+## Perché
+Scrivere su standard error può sembrare un'operazione inutile o addirittura erronea per molti programmatori, ma in realtà può essere molto utile in alcune situazioni. Invece di inviare un messaggio di errore o di debug su standard output, scrivere su standard error consente di distinguere chiaramente i messaggi di errore dai messaggi di output regolari. Inoltre, molti strumenti di sviluppo e applicazioni di monitoraggio mostrano solo i messaggi di errore provenienti da standard error, quindi se vuoi assicurarti di essere a conoscenza di eventuali problemi nel tuo codice, scrivere su standard error è una buona abitudine da adottare.
 
-Scrivere su standard error può sembrare una pratica poco comune, ma in realtà può essere molto utile quando si vuole vedere un output che non è immediatamente visualizzato sullo schermo. Ad esempio, quando si esegue un programma in una console, scrivere su standard error invierà l'output su una console di errore dedicata, separandolo dal resto dei messaggi.
+## Come fare
+Per scrivere su standard error in Kotlin, è necessario utilizzare la funzione `println()` e specificare il valore di `System.err` come parametro. Per esempio:
 
-##Come fare
-
-Per scrivere su standard error in Kotlin, è necessario utilizzare la funzione `System.err.println()`, la quale prenderà in input il messaggio che si vuole inviare come errore. Ad esempio:
-
-```Kotlin
-System.err.println("Errore: il valore è troppo grande")
+```
+Kotlin val message = "Questo è un messaggio di errore."
+println(System.err, message)
 ```
 
-Questo comando scrive il messaggio "Errore: il valore è troppo grande" sullo standard error.
+Questo scriverà il messaggio di errore sulla console in rosso, rendendolo facilmente distinguibile dai messaggi di output regolari.
 
-##Deep Dive
+## Approfondimento
+Scrivere su standard error può essere particolarmente utile durante il processo di debugging, in cui si cerca di individuare e risolvere eventuali problemi nel codice. Inoltre, è una buona pratica durante lo sviluppo di applicazioni che verranno poi utilizzate in produzione, in quanto i messaggi di errore scritti su standard error saranno registrati nei file di log e potranno essere utilizzati per identificare e risolvere eventuali problemi successivamente.
 
-Quando un programma viene eseguito su una console, l'output viene di solito inviato allo standard output, rendendolo visibile all'utente. Tuttavia, ci possono essere situazioni in cui è necessario inviare un output diverso da quello principale, come ad esempio quando si desidera registrare un errore senza interrompere il normale flusso di output.
-
-In questi casi, scrivere su standard error può risultare molto utile. Ad esempio, se si vuole registrare gli errori in un file di log, si potrebbe redirectare lo standard output su quel file e scrivere gli errori direttamente su standard error.
-
-##Vedi anche
-
-- [Documentazione di Kotlin sullo standard error](https://kotlinlang.org/docs/reference/exceptions.html#error-handling)
-- [Tutorial su come catturare e gestire gli errori in Kotlin](https://www.baeldung.com/kotlin/exceptions-handling)
+## Vedi anche
+- [Documentazione ufficiale di Kotlin sulla funzione `println()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-print-stream/println.html)
+- [Come gestire gli errori in Kotlin](https://www.programiz.com/kotlin-programming/error-handling)
+- [Come scrivere su un file di log in Kotlin](https://www.baeldung.com/kotlin/print-to-file)

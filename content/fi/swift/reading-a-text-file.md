@@ -1,37 +1,61 @@
 ---
-title:    "Swift: Tiedostotiedoston lukeminen"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/reading-a-text-file.md"
+title:                "Swift: Tekstitiedoston lukeminen"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi lukea tekstiketjua Swift-ohjelmointia varten?
+## Miksi
 
-Jos olet aloitteleva Swift-ohjelmoija tai haluat oppia lisää tekstitiedostojen käsittelystä, tämä blogikirjoitus on juuri sinulle! Lukemalla tekstiketjuja voit oppia monia hyödyllisiä taitoja, kuten tiedon käsittelyä ja analysointia.
+Miksi lukisi tiedostoa ohjelmointitekstistä? Tämän kysymyksen tarkoituksena on valaista, miksi tämä taito voi olla hyödyllinen tai tarpeellinen ohjelmointikehityksessä.
 
-## Miten lukea tekstiketjua Swiftillä?
+## Kuinka tehdä se
+
+Seuraavaksi esittelemme yksinkertaisen tavan lukea tekstitiedosto Swift-kielellä käyttäen Foundation-kirjastoa.
+
+Ensinnäkin, tarvitset tekstitiedoston, jota haluat lukea. Voit käyttää esimerkiksi seuraavaa tekstiä:
 
 ```Swift
-let tiedostopolku = "tiedosto.txt"
+Tervetuloa lukemaan tekstiä Swiftille!
+Tässä on esimerkki tietokoneohjelmasta.
+Toivomme, että nautit lukemisesta!
+```
+
+Seuraavaksi, voit käyttää Foundation-kirjastoa avataksesi tekstitiedoston ja lukeaksesi sen sisältöä. Koodisi tulisi näyttää tältä:
+
+```Swift
+import Foundation
+
+//Valitse tekstitiedosto käyttämällä URL-osoitetta.
+let fileURL = URL(fileURLWithPath: "polku/tekstitiedosto.txt")
+
 do {
-    let tekstiData = try String(contentsOfFile: tiedostopolku)
-    // tulostetaan tiedoston sisältö
-    print(tekstiData)
+    //Avaa tiedosto ja lue sen sisältö käyttäen String-initialisaattoria.
+    let fileContent = try String(contentsOf: fileURL)
+    print(fileContent) //Tulostaa tekstitiedoston sisällön konsoliin.
 } catch {
-    // tiedoston lukeminen epäonnistui, tulostetaan virheilmoitus
-    print("Tiedoston lukeminen epäonnistui: \(error)")
+    //Jos virhe tapahtuu, tulostetaan virheviesti.
+    print("Virhe avatessa tekstitiedostoa: \(error)")
 }
 ```
 
-Tässä yksinkertaisessa esimerkissä käytämme "String" -luokan "contentsOfFile" -metodia lukeaksemme tekstiketjun ja tulostamme sen sisällön. Voit myös käyttää muita metodeja, kuten "initWithContentsOfFile" ja "stringWithContentsOfFile", saadaksesi erilaisia lopputuloksia.
+Kun suoritat tämän koodin, tulee tulosteena olla tekstin sisältö, joka näyttää tältä:
 
-## Syvempi sukellus tekstiketjun lukemiseen
+```
+Tervetuloa lukemaan tekstiä Swiftille!
+Tässä on esimerkki tietokoneohjelmasta.
+Toivomme, että nautit lukemisesta!
+```
 
-Tekstiketjun lukeminen Swiftillä tapahtuu usein käyttämällä "String" -luokan eri metodeja ja käsittelemällä tiedostopolkuja. Voit myös valita tietyn koodausjärjestelmän käyttämällä lisäparametreja "contentsOfFile" -metodiin. On myös tärkeää ottaa huomioon, että tiedoston lukeminen voi aiheuttaa virheitä, joten on hyvä olla valmistautunut käsittelemään näitä tilanteita.
+## Syventävää tietoa
 
-# Katso myös
+Tähän mennessä olemme läpikäyneet yksinkertaisen tavan lukea tekstitiedosto Swiftillä. On kuitenkin hyvä tietää, että Foundation-kirjastossa on myös muita tapoja lukea tekstitiedostoja, kuten Data- ja InputStream-luokat. Näitä luokkia voi käyttää esimerkiksi silloin, kun haluat lukea tiedoston pätkissä tai käsitellä tietoa binäärimuodossa.
 
-- [Swiftin virallinen dokumentaatio tiedostojen lukemisesta](https://developer.apple.com/documentation/swift/string/2428388-contents)
-- [Tutoriaali tekstiketjun lukemisesta Swiftillä](https://www.hackingwithswift.com/read/9/3/reading-a-text-file-into-a-string) 
-- [Tekstikäsittely Swift-ohjelmointikielellä](https://www.makeuseof.com/tag/text-processing-swift/)
+Kannattaa myös pitää mielessä, että tekstitiedostot eivät aina ole yksinkertaisia ja niiden lukeminen voi joskus johtaa virheisiin. On tärkeää käsitellä mahdollisia virheitä ja poikkeuksia koodissasi, jotta ohjelma toimii luotettavasti.
+
+## Katso myös
+
+- [Swiftin viralliset ohjekirjat Foundation-kirjastosta](https://developer.apple.com/documentation/foundation)
+- [Stack Overflow -kysymys ja vastaus tekstitiedoston lukemisesta Swiftillä](https://stackoverflow.com/questions/58494728/how-to-read-data-from-text-file-in-swift)

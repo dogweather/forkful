@@ -1,52 +1,54 @@
 ---
-title:    "Kotlin: Etsi ja korvaa teksti"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/searching-and-replacing-text.md"
+title:                "Kotlin: Tekstin hakeminen ja korvaaminen"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi tekstin etsiminen ja korvaaminen on tärkeää
+## Miksi
 
-Joskus ohjelmointiprojektit voivat olla hyvin suuria ja monimutkaisia, ja saattaa olla vaikeaa löytää tiettyä koodinpätkää tai muuttaa sitä. Tekstin etsiminen ja korvaaminen on tärkeä taito, joka auttaa säästämään aikaa ja vaivaa ohjelmoinnissa.
+Ehkä olet huomannut, että tekstiä joudutaan usein korvaamaan erilaisilla ohjelmointiprojekteissa. Se voi olla uuden määritelmän lisääminen tietokannan kyselyyn tai vain halu muuttaa tietyn sanan muotoilua. Harkitset sitten tekstieditoria tai koodieditoria, manuaalinen korvaaminen voi olla hidasta ja altis virheille. Onneksi Kotlin tarjoaa tehokkaan ja helpon tavan etsiä ja korvata tekstiä ohjelmallisesti.
 
-# Kuinka tehdä tekstinhaku ja korvaaminen Kotlinilla
+## Miten
 
-Tekstin etsiminen ja korvaaminen Kotlinilla on helppoa, sillä siinä on valmiina kätevä toiminto tähän tarkoitukseen. Voit käyttää tätä toimintoa String-luokassa ja se koostuu kahdesta osasta: etsimisestä ja korvaamisesta. 
-
-Tässä esimerkissä haemme tekstistä sanaa "tärkeää" ja korvaamme sen sanalla "arvokasta":
+Kotlinin String-tyypillä on valmiiksi määriteltyjä toimintoja, jotka helpottavat tekstien etsimistä ja korvaamista. Yksi näistä toiminnoista on `replace`-metodi, joka korvaa kaikki annetut merkkijonot toisella merkkijonolla. Esimerkiksi:
 
 ```Kotlin
-val teksti = "Tekstin etsiminen ja korvaaminen on tärkeää"
-println(teksti.replace("tärkeää", "arvokasta"))
+val teksti = "Tämä on vain esimerkki"
+val uusiTeksti = teksti.replace("vain", "ainoastaan")
+println(uusiTeksti)
 ```
 
 Tulostus:
 
-```Kotlin
-Tekstin etsiminen ja korvaaminen on arvokasta
+```
+Tämä on ainoastaan esimerkki
 ```
 
-Voit myös käyttää Regex-luokkaa (Regular Expressions) tarkempiin haku- ja korvaustoimintoihin. Tässä esimerkissä muutamme kaikki sanat "työ" sanaksi "projekti" käyttäen Regexiä:
+Voit myös antaa parametrina regex-lausekkeen, jolloin voit hakea ja korvata esimerkiksi erilaisia muotoiluja. Esimerkiksi:
 
 ```Kotlin
-val teksti = "Työskentelen suuressa ohjelmointiprojektissa"
-println(teksti.replace(Regex("työ"), "projekti"))
+val teksti = "Käytä email@example.com työpaikan hakemiseen"
+val uusiTeksti = teksti.replace("[a-z0-9\\.\\-]+@[a-z0-9\\.\\-]+".toRegex(), "**********")
+println(uusiTeksti)
 ```
 
 Tulostus:
 
-```Kotlin
-Projektilen suuressa ohjelmointiprojektissa
+```
+Käytä ********** työpaikan hakemiseen
 ```
 
-# Syvempi sukellus tekstinhakuun ja korvaamiseen
+## Syväsukellus
 
-Kotlinin String- ja Regex-luokat tarjoavat paljon erilaisia toimintoja ja vaihtoehtoja tekstinhakuun ja korvaamiseen. Voit esimerkiksi määrittää hakutulokselle erilaisia kohteita, kuten suur- ja pienikirjaimia. Lisäksi voit käyttää monimutkaisempia regexeja, jotka auttavat tarkempien hakujen tekemisessä.
+Kotlin tarjoaa myös muita tapoja etsiä ja korvata tekstiä, kuten `replaceFirst` ja `replaceBefore` -metodit, jotka korvaavat vain ensimmäisen löydetyn osuman tai korvaavat tekstin ennen tai jälkeen tietyn merkkijonon. Näitä kaikkia metodeja voi käyttää myös StringBuilder-tyypillä, jolloin pystyt muokkaamaan ja korvaamaan tekstiä vielä tehokkaammin.
 
-On myös tärkeää huomata, että tekstinhaku ja korvaaminen voivat olla tehokkaita työkaluja myös datan käsittelyssä. Esimerkiksi tekstitiedoston käsittelyssä voit käyttää näitä toimintoja helposti löytääksesi ja korvataksesi tiettyjä sanoja tai fraaseja.
+Kun ohjelmoit Kotlinilla, sinun ei tarvitse enää tehdä etsimistä ja korvaamista manuaalisesti - voit hyödyntää kielen valmiiksi sisäänrakennettuja toimintoja ja säästää aikaa ja vaivaa.
 
-# Katso myös
+## Katso myös
 
-- [Kotlinin String-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
-- [Kotlinin Regex-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Kotlinin virallinen dokumentaatio String-tyypin metodeista](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
+- [Ohjeet regex-lausekkeiden käyttöön Kotlinissa](https://www.regular-expressions.info/kotlin.html)
+- [Kotlinin virallinen verkkosivusto](https://kotlinlang.org/)

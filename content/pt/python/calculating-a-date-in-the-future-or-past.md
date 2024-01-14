@@ -1,53 +1,48 @@
 ---
-title:    "Python: Calculando uma data no futuro ou passado"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/calculating-a-date-in-the-future-or-past.md"
+title:                "Python: Calculando uma data no futuro ou no passado"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Calcular datas futuras ou passadas é uma habilidade importante para programadores em qualquer linguagem de programação. Isso permite que você automatize tarefas baseadas em datas e melhore a eficiência do seu código.
+Algumas vezes, precisamos saber o dia ou data de algum evento futuro ou passado, seja para planejar ou registrar informações. Com a ajuda da programação em Python, podemos facilmente calcular uma data no futuro ou passado sem precisar contar manualmente nos dedos.
 
-## Como fazer
+## Como Fazer
 
-Para calcular uma data no futuro ou passado, usamos a biblioteca `datetime` do Python. Primeiro, precisamos importar essa biblioteca no início do nosso código:
-
-```Python
-import datetime
-```
-
-Em seguida, podemos criar um objeto `datetime` com uma data específica usando a função `datetime()` e passando os argumentos `ano`, `mês` e `dia`:
+Para calcular uma data, primeiro precisamos importar o módulo "datetime" do Python. Em seguida, podemos utilizar a função "timedelta()" para adicionar ou subtrair dias, meses ou anos de uma data específica. Vamos ver um exemplo:
 
 ```Python
-data = datetime.datetime(2021, 9, 1)
+from datetime import date, timedelta
+data_atual = date.today() # data atual
+data_futura = data_atual + timedelta(days=30) # adicionar 30 dias
+print(data_futura)
 ```
 
-Agora, podemos realizar cálculos de datas utilizando o objeto `data`. Por exemplo, se quisermos calcular a data de 30 dias após a data atual, podemos usar a função `timedelta()` da seguinte forma:
+Neste exemplo, primeiro importamos o módulo "datetime" e definimos a data atual utilizando a função "today()". Em seguida, criamos uma nova variável chamada "data_futura" que armazenará a data atual mais 30 dias, utilizando a função "timedelta()". Por fim, imprimimos a data futura utilizando a função "print()". O output será a data daqui a 30 dias.
+
+Também podemos utilizar valores negativos dentro da função "timedelta()" para subtrair dias, meses ou anos. Por exemplo:
 
 ```Python
-data_futura = data + datetime.timedelta(days=30)
+from datetime import date, timedelta
+data_atual = date.today() # data atual
+data_passada = data_atual - timedelta(days=15) # subtrair 15 dias
+print(data_passada)
 ```
 
-Podemos então imprimir a data futura formatada para exibição ao usuário:
+## Mergulho Profundo
 
-```Python
-print(f"Daqui a 30 dias será: {data_futura.strftime('%d/%m/%Y')}")
-```
+Além de adicionar ou subtrair dias, meses e anos, também podemos utilizar a função "timedelta()" para calcular semanas, horas, minutos e segundos. Basta mudar o parâmetro dentro da função para a unidade desejada, como por exemplo "days=7" para calcular uma semana.
 
-A saída será:
+Outra funcionalidade interessante é a possibilidade de utilizar datas diferentes da atual. Por exemplo, podemos criar uma data específica utilizando a função "date()" e utilizar essa data como base para somar ou subtrair dias, meses ou anos utilizando a função "timedelta()".
 
-```
-Daqui a 30 dias será: 01/10/2021
-```
+É importante lembrar que a função "timedelta()" retorna um novo objeto de data, portanto, devemos sempre armazenar o resultado em uma nova variável.
 
-## Deep Dive
+## Veja Também
 
-Além de adicionar dias, podemos realizar diversos outros cálculos de datas, como subtrair dias, adicionar ou subtrair semanas, meses e anos, e até mesmo encontrar a diferença de dias entre duas datas. A biblioteca `datetime` possui diversas funções e métodos que permitem manipular e formatar datas de maneiras diferentes, tornando-a uma ferramenta poderosa para trabalhar com datas em programas Python.
-
-## Veja também
-
-- [Documentação oficial do módulo `datetime` do Python](https://docs.python.org/pt-br/3/library/datetime.html)
-- [Tutorial sobre manipulação de datas em Python](https://realpython.com/python-datetime/)
-- [Exemplos práticos de cálculo de datas em Python](https://www.w3schools.com/python/python_datetime.asp)
+- Documentação oficial do módulo "datetime": https://docs.python.org/3/library/datetime.html
+- Tutorial sobre a utilização do módulo "datetime": https://pt.wikibooks.org/wiki/Python/Conceito_de_datetime
+- Exemplos práticos de uso do módulo "datetime": https://www.guru99.com/date-time-and-datetime-classes-in-python.html

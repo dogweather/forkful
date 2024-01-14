@@ -1,44 +1,48 @@
 ---
-title:    "Swift: 开始一个新项目"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/swift/starting-a-new-project.md"
+title:                "Swift: 开始一个新项目。"
+programming_language: "Swift"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要开始一个新项目
+## 为什么
 
-开始一个新的项目可以带来许多好处，比如提高个人技能水平、解决现实生活中的问题、或者实现自己的创意想法。无论是学习新的编程语言还是提升自己的职业发展，一个新项目都能给您带来不同的挑战和机会。
+程序员们总是喜欢开始新的项目，因为它带来了兴奋感和潜在的成功。开始一个新的项目可以带来新的挑战和学习机会，还可以让你在编程技能上不断提高。
 
-## 如何开始一个新项目
+## 如何开始
 
-首先，您需要选择一个适合您的项目类型，比如移动应用、网站或者游戏。然后，您需要选择一个适合该项目类型的编程语言，比如Swift语言适合移动应用开发。接下来，您可以根据您的项目需求，学习相关的编程知识并开始编写代码。
+要开始一个新的项目，首先你需要有一个明确的想法。接下来，我们将用Swift语言来演示如何创建一个简单的计算器程序。
 
-以下是一个简单的Swift程序示例，用于打印“Hello World！”：
+首先，在Xcode中创建一个新的Single View App项目。然后，在Main.storyboard中拖拽一个按钮和一个Label组件到屏幕上。
 
+接下来，在ViewController.swift文件中，我们需要声明和连接按钮和Label的IBOutlet和IBAction功能。那么，我们将在IBOutlet获取文本输入，并在IBAction中使用if语句来检查文本是否可转换为数字，并将结果显示在Label中。最后，在IBAction函数中，我们使用.format去控制结果的精确度。
+
+最后，我们来编译并运行我们的程序，你将看到一个简单的计算器可以接受用户输入并计算结果的功能。
+
+```
 ```Swift
-print("Hello World!")
+@IBOutlet weak var textField: UITextField!
+@IBOutlet weak var resultLabel: UILabel!
+
+@IBAction func calculateButtonPressed(_ sender: UIButton) {
+    if let input = Double(textField.text!) {
+        let result = input * 2 // 假设要计算输入数的两倍
+        resultLabel.text = String(format: "%.2f", result) // 将结果保留两位小数
+    } else {
+        // 处理无效输入的代码
+    }
+}
+```
 ```
 
-输出结果为：
+## 深入了解
 
-```
-Hello World!
-```
+开始一个新的项目并不简单，它需要耐心和勇气。首先，你需要有一个明确的目标并且做好充分的准备工作。其次，你需要掌握所使用的编程语言，比如Swift。最后，要保持坚持不懈的态度，即使遇到挑战也不放弃，坚持学习和改进。
 
-## 深入了解如何开始一个新项目
+## 参考链接
 
-在开始一个新项目之前，最重要的是明确您的项目目标和需求。您可以写下一个项目计划，包括项目的功能、实现方式、时间表等。此外，您也可以选择使用一些常用的开发工具、框架或者库，来帮助您更快速地开发项目。
-
-另外，学习如何使用版本控制系统如Git，可以帮助您更好地管理您的项目代码。您也可以参考一些优秀的开源项目，并和其他开发者交流经验和思路。
-
-## 参考资料
-
-- [Swift Programming Language](https://swift.org/)
-- [Github](https://github.com/)
-- [Ray Wenderlich](https://www.raywenderlich.com/)
-- [Stack Overflow](https://stackoverflow.com/) 
-
-## 了解更多
-
-此外，您还可以参考一些其他的学习资源来提升自己的编程能力，比如阅读相关的技术博客、参加线上或线下的编程活动、参加培训课程等。总之，通过不断学习和实践，您可以成为一个优秀的Swift程序员，并成功地开始一个新的项目。
+- [Xcode官方网站](https://developer.apple.com/xcode/)
+- [Swift编程语言官方网站](https://developer.apple.com/swift/)
+- [Swift官方文档](https://docs.swift.org/swift-book/)

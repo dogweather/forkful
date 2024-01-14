@@ -1,42 +1,44 @@
 ---
-title:    "Ruby: Ein String in Kleinbuchstaben umwandeln"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/converting-a-string-to-lower-case.md"
+title:                "Ruby: Eine Zeichenfolge in Kleinbuchstaben umwandeln."
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie ein erfahrener Ruby-Programmierer sind, wissen Sie vielleicht bereits, wie man eine Zeichenfolge in Kleinbuchstaben umwandelt. Aber für diejenigen, die neu in der Programmiersprache sind, kann dieser Vorgang etwas verwirrend sein. Deshalb möchte ich Ihnen in diesem Blog-Beitrag zeigen, warum es wichtig ist, Strings in Kleinbuchstaben umzuwandeln und wie Sie dies in Ruby tun können.
+Das Konvertieren von einem String in Kleinbuchstaben kann hilfreich sein, um beispielsweise Benutzereingaben in einer Datenbank zu vereinheitlichen oder Textfilterungen durchzuführen.
 
-## So geht's
+# Wie
 
-Um eine Zeichenfolge in Kleinbuchstaben umzuwandeln, verwenden wir die `downcase` Methode. Sehen wir uns ein Beispiel an:
+Die Ruby-Methode `downcase` kann verwendet werden, um einen String in Kleinbuchstaben umzuwandeln. Beispiel:
 
 ```Ruby
-string = "HALLO WELT"
+string = "HELLO WORLD"
 puts string.downcase
 ```
+Ausgabe: `hello world`
 
-Dieser Code gibt `"hallo welt"` als Output aus. Wie Sie sehen, wurden alle Großbuchstaben in der Zeichenfolge in Kleinbuchstaben umgewandelt. Das kann besonders nützlich sein, wenn Sie mit Benutzereingaben arbeiten oder Text für die Ausgabe formatieren möchten.
-
-Um das Ganze noch besser zu verstehen, lassen Sie uns ein weiteres Beispiel betrachten, bei dem wir die `downcase!` Methode verwenden. Diese Methode ändert den ursprünglichen Wert der Variablen, anstatt einen neuen Wert zurückzugeben.
+Für die Verwendung mit deutschen Umlauten kann auch die Methode `unicode_normalize` genutzt werden. Beispiel:
 
 ```Ruby
-string = "Hallo Welt!"
-string.downcase!
-puts string
+string = "Äpfel und Birnen"
+puts string.downcase.unicode_normalize(:nfkd) # the :nfkd option decomposes complex characters into a single equivalent
 ```
+Ausgabe: `äpfel und birnen`
 
-Der Output für dieses Beispiel ist `hallo welt!`. Beachten Sie, dass wir hier keine `puts` Methode verwenden, da die Variable bereits den neuen Wert enthält.
+# Tiefgehende Erkundung
 
-## Tiefergehende Einblicke
+Bei der Konvertierung von Strings sollte beachtet werden, dass einige Sonderzeichen und Satzzeichen nicht in Kleinbuchstaben umgewandelt werden. Beispielsweise wird `'Äpfel'.downcase` kein Ergebnis liefern, da der Buchstabe "Ä" nicht zu "ä" konvertiert werden kann.
 
-Um Strings in Kleinbuchstaben umzuwandeln, verwendet Ruby intern die ASCII-Tabelle. Dies ist eine Tabelle, die jedem Zeichen eine numerische Darstellung zuweist. Großbuchstaben haben eine höhere numerische Darstellung als Kleinbuchstaben, daher wird durch die Anwendung von `downcase` die numerische Darstellung jedes Zeichens verringert. Dies ist jedoch nicht der einzige Weg, um Strings in Ruby zu konvertieren. Es gibt auch die `capitalize` und `swapcase` Methoden, die jeweils andere Ergebnisse erzielen.
+Um dieses Problem zu umgehen, kann die Ruby-Methode `unicode_normalize` in Kombination mit dem Parameter `:nfkd` verwendet werden, wie im obigen Beispiel gezeigt.
 
-## Siehe auch
+Eine weitere Sache, die beachtet werden muss, ist die Verwendung von Sprachen mit mehr als einem Alphabet, wie beispielsweise Chinesisch oder Koreanisch. In diesen Fällen kann die Konvertierung von Strings in Kleinbuchstaben eine komplizierte Angelegenheit sein und erfordert möglicherweise spezielle Methoden, die sich auf die jeweiligen Schriften beziehen.
 
-- [Ruby-Dokumentation zur downcase Methode](https://ruby-doc.org/core-2.5.1/String.html#method-i-downcase)
-- [ASCII-Tabelle](https://www.ascii-code.com/)
-- [Weitere String-Manipulationsmethoden in Ruby](https://www.rubyguides.com/2019/02/ruby-string-methods/)
+# Siehe auch
+
+- [Ruby-Dokumentation zu String-Klassenmethoden](https://ruby-doc.org/core-3.0.0/String.html#method-c-new)
+- [Ruby-Dokumentation zu String-Methoden](https://ruby-doc.org/core-3.0.0/String.html#method-i-downcase)
+- [Ruby-Forum-Thread zu Konvertierung von Strings mit Umlauten](https://www.ruby-forum.com/t/string-doesnt-change-after-downcase/182596)

@@ -1,34 +1,33 @@
 ---
-title:    "Java: 문자열의 길이 찾기"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/finding-the-length-of-a-string.md"
+title:                "Java: 문자열의 길이 찾기"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜?
 
-자바 프로그램을 개발하는 동안 문자열의 길이를 계산하는 것이 중요한 이유는 여러 가지가 있습니다. 첫째, 문자열의 길이를 알면 원하는 출력 형식을 만들 수 있습니다. 둘째, 입력으로 받은 문자열의 길이를 알면 프로그램의 실행 흐름을 제어할 수 있습니다.
+문자열 길이를 찾는 것에 참여하는 이유는 무엇일까요? 이 질문은 많은 프로그래머들이 자주 묻는 질문 중 하나입니다. 문자열의 길이를 알 수 있다면, 우리는 문자열을 다루는 데 더 많은 옵션을 가질 수 있고, 프로그램의 제어 흐름을 유연하게 조작할 수 있게 됩니다.
 
-# 어떻게
+## 어떻게?
 
-필자는 간단한 예제를 통해 어떻게 문자열의 길이를 계산하는지 알려드리겠습니다. 아래의 코드 블록을 보시면서 따라해보세요.
+그렇다면, 자바에서 문자열 길이를 찾는 방법은 무엇일까요? 우선, 문자열의 길이를 알고 싶은 변수를 선언합니다. 그리고 `length()` 메소드를 사용하여 변수에 할당된 문자열의 길이를 가져옵니다. 아래는 `length()` 메소드의 예시 코드와 출력 결과입니다.
 
 ```Java
-String word = "안녕하세요!";
-int length = word.length(); // 길이를 계산하여 변수에 저장
-System.out.println("문자열의 길이는 " + length + "입니다."); // 출력: 문자열의 길이는 7입니다.
+String str = "안녕하세요!";
+System.out.println(str.length());
 ```
+**출력 결과: 6**
 
-이 코드에서 우리는 `length()` 메소드를 사용하여 `word` 변수에 저장된 문자열의 길이를 계산합니다. 그리고 `println()` 메소드를 사용하여 문자열의 길이를 출력합니다.
+위의 예시 코드에서 `length()` 메소드는 문자열의 길이를 반환하는 것을 볼 수 있습니다. 문자열의 길이는 공백과 특수 문자를 포함하여 계산됩니다.
 
-# 깊이 있는 설명
+## 딥 다이브
 
-자바에서 문자열의 길이를 계산하는 메소드는 `length()` 메소드 뿐만 아니라 `getBytes()` 메소드도 있습니다. `length()` 메소드는 문자열의 길이를 측정할 때 유니코드 문자의 수를 기준으로 하지만 `getBytes()` 메소드는 문자열을 인코딩할 때 필요한 바이트 수를 반환합니다. 이러한 차이점을 알고 있으면 프로그램을 개발할 때 효율적으로 문자열을 다룰 수 있습니다.
+문자열 길이를 찾는 것은 매우 간단해 보입니다. 하지만 실제로는 어떻게 동작하는 걸까요? 자바에서 `length()` 메소드를 사용하여 문자열 길이를 반환하는 이유는 바로 문자열 클래스에서 `length` 변수를 통해 문자열의 길이를 저장하고 있기 때문입니다. 이 변수는 문자열이 생성될 때 자동으로 초기화되며, `length()` 메소드가 호출될 때마다 반환됩니다. 따라서 우리는 `length()` 메소드를 호출하여 문자열의 길이를 쉽게 알아낼 수 있습니다.
 
-# 참고 자료
+## 참고자료
 
-- [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Understanding the Java String API](https://www.baeldung.com/java-string-api)
-- [Java String 클래스를 이용한 문자열 다루기](https://codechacha.com/ko/java-string-manipulation/)
-- [Java 문자열 변수 선언하기](http://www.tcpschool.com/java/java_operator_string)
+- [Java String length() 메소드](https://www.w3schools.com/java/ref_string_length.asp)
+- [Java Reference - String Class](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)

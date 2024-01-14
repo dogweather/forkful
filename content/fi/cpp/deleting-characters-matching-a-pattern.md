@@ -1,48 +1,55 @@
 ---
-title:    "C++: Mallia vastaavien merkkien poistaminen"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/deleting-characters-matching-a-pattern.md"
+title:                "C++: Mallin mukaisten merkkien poistaminen"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Joskus ohjelmointitehtävissä saattaa syntyä tarve poistaa merkkejä tietystä kaavasta. Tämä voi johtua esimerkiksi tietojen puhdistamisesta tai tietojen käsittelystä.
+Monissa ohjelmointitilanteissa voi olla tarpeen poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi auttaa hallitsemaan ja muokkaamaan tekstiä tai datan käsittelyä tietyissä tapauksissa. Tässä blogipostissa käsittelemme, miten tämä tehdään C++:ssa ja miksi se voi olla hyödyllistä.
 
 ## Miten
 
-Poistaminen merkkejä, jotka vastaavat tietyssä kaavassa, voidaan suorittaa käyttämällä C ++: n sisäänrakennettuja merkkijonojen käsittelytoimintoja. Tässä on yksinkertainen koodiesimerkki, joka poistaa kaikki välimerkit annetusta merkkijonosta ja tulostaa tuloksen:
+Alla on esimerkki siitä, miten poistaa merkkejä vastaava kaava käyttämällä C++:n tilapäävariota ja standardikirjastosta löytyviä funktioita. Koodissa poistamme kaikki numerot sisältävät merkit ja tulostamme lopputuloksen:
 
 ```C++
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main() {
-  string s = "Tämä on#& esimerkkimerkkijono!";
-  string s_clean = "";
-
-  for (char c : s) {
-    if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
-      s_clean += c;
-    }
-  }
-
-  cout << s_clean << endl;
-
-  return 0;
+    string teksti = "Tämä on esimerkki 123 tekstistä 456!";
+    
+    // Poistetaan numerot käytettävän kaavan avulla
+    teksti.erase(remove_if(teksti.begin(), teksti.end(), ::isdigit), teksti.end());
+    
+    // Tulostetaan lopputulos
+    cout << teksti << endl;
+    
+    return 0;
 }
 ```
 
-Tämä tulostaa: "Tämäonesimerkkimerkkijono"
+Tulostus:
+```
+Tämä on esimerkki tekstistä !
+```
 
-## Syventävä sukellus
+Tämä esimerkki käyttää `std::remove_if()` funktiota, joka löytyy `<algorithm>` kirjastosta. Tämä funktio ottaa vastaan kolme parametria: alueen aloituselementin, alueen lopetuselementin ja käytettävän ehtofunktion. Ehtofunktio `::isdigit` tarkistaa, onko kyseinen merkki numero vai ei ja poistaa sen, jos se on. Lopuksi `teksti.erase()` funktiolla poistetaan kaikki ehtofunktion palauttamat merkit.
 
-Yllä oleva koodiesimerkki perustuu oletukselle, että haluamme poistaa välimerkit merkkijonosta. Jos haluamme poistaa kaikki numerot, voimme muuttaa ehtoa `if` lauseke seuraavasti: `c >= '0' && c <= '9'`. Sen sijaan voimme myös antaa luettelona kaikki halutut merkit poistettavaksi, esimerkiksi: `if (c == '#' || c == '&' || c == '$')`. Tällä tavalla voit mukauttaa poistettavat merkit tarpeidesi mukaan.
+## Syvällisempi tarkastelu
+
+Poistaessa merkkejä vastaavan kaavan C++:ssa on tärkeää muistaa, että poistamisen jälkeen merkkijono ei enää ole samankokoinen kuin ennen. Toisin sanoen, alkuperäistä merkkijonoa ei lyhennetä, vaan poistettavat merkit korvataan lopetuselementin ja alkuelementin välillä. Jos siis haluat täysin lyhentää merkkijonoa, sinun tulee käyttää esimerkiksi `std::erase()` funktiota.
+
+Lisäksi on hyödyllistä tietää, että ehtofunktiota voi muokata haluamallaan tavalla saavuttaakseen halutun lopputuloksen. Esimerkiksi, jos haluat poistaa vain tietyt kirjaimet tai tietyn pituiset merkkijonot, voit muokata ehtofunktiota vastaavasti.
 
 ## Katso myös
 
-- [Merkkijonojen käsittely C ++: lla](https://www.cplusplus.com/reference/string/string/)
-- [Merkit, jotka vastaavat erilaisia ​​ehtoja](https://en.cppreference.com/w/cpp/language/ascii)
+- [C++ reference - remove_if()](http://www.cplusplus.com/reference/algorithm/remove_if/)
+- [C++ reference - erase()](http://www.cplusplus.com/reference/string/string/erase/)
+- [C++ reference - isdigit()](http://www.cplusplus.com/reference/cctype/isdigit/)

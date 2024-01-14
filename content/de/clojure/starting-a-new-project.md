@@ -1,58 +1,52 @@
 ---
-title:    "Clojure: Ein neues Projekt beginnen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/starting-a-new-project.md"
+title:                "Clojure: Ein neues Projekt beginnen"
+programming_language: "Clojure"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
+German Translation:
+
 ## Warum
 
-Wenn du ein neues Projekt beginnen möchtest, könnte es aus verschiedenen Gründen sein. Vielleicht hast du eine neue Idee, die du unbedingt umsetzen möchtest. Oder du möchtest etwas lernen und dich in einer neuen Programmiersprache ausprobieren. Egal aus welchem Grund, es ist immer aufregend, ein neues Projekt zu starten.
+Es gibt viele Gründe, warum es sich lohnt, ein neues Programmierprojekt in Clojure zu starten. Zum einen bietet Clojure eine elegante Syntax, die es ermöglicht, komplexe Probleme auf einfache und elegante Weise zu lösen. Außerdem ist Clojure eine funktionale Programmiersprache, die auf der JVM läuft, was bedeutet, dass sie sowohl die Vorteile von Funktionen als auch die Leistung von Java bietet. Kurz gesagt, Clojure ist die perfekte Wahl für diejenigen, die leistungsstarke und moderne Projekte erstellen möchten.
 
-## Wie man anfängt
+## Wie man startet
 
-Zunächst benötigst du natürlich eine Entwicklungsumgebung, in der du Clojure programmieren kannst. Wenn du noch keine Erfahrung mit Clojure hast, empfehle ich dir, den offiziellen Leitfaden von Clojure.org durchzuarbeiten.
-
-Sobald du mit der Syntax vertraut bist, kannst du mit dem Schreiben von Code beginnen. Hier sind ein paar Beispiele, wie du mit Clojure verschiedene Aufgaben lösen kannst:
-
-```Clojure
-;; Eine einfache Funktion zum Verdoppeln von Zahlen
-(defn verdoppeln [zahl]
-  (* 2 zahl))
-
-(verdoppeln 5) ; => 10
-(verdoppeln -2) ; => -4
-(verdoppeln 3.5) ; => 7
-```
+1. Installieren Sie Java Development Kit (JDK) und Clojure auf Ihrem Computer.
+2. Öffnen Sie Ihr Terminal und starten Sie den Clojure REPL mit dem Befehl `clj`.
+3. Erstellen Sie ein neues Clojure-Projekt mit dem Befehl `(defproject mein-projekt "1.0.0" :dependencies [[org.clojure/clojure "1.10.1"]])`
+4. Navigieren Sie in den erstellten Projektordner mit dem Befehl `cd mein-projekt`.
+5. Öffnen Sie die Datei `src/mein-projekt/core.clj` mit einem Code-Editor Ihrer Wahl.
 
 ```Clojure
-;; Eine Funktion, die überprüft, ob eine Liste leer ist
-(defn ist-leer? [liste]
-  (empty? liste))
+(ns mein-projekt.core
+  (:gen-class))
 
-(ist-leer? []) ; => true
-(ist-leer? [1 2 3]) ; => false
+(defn -main [& args]
+  (println "Hallo von meinem neuen Clojure-Projekt!"))
 ```
 
-```Clojure
-;; Eine Funktion, die die Anzahl der Wörter in einem String zählt
-(defn anzahl-woerter [string]
-  (count (clojure.string/split string #" ")))
+6. Speichern Sie die Datei und kehren Sie zurück zum Terminal.
+7. Führen Sie das Projekt mit dem Befehl `clj -m mein-projekt.core` aus.
+8. Sie sollten die Ausgabe "Hallo von meinem neuen Clojure-Projekt!" sehen.
 
-(anzahl-woerter "Hallo Welt, wie geht es dir?") ; => 5
-```
+## Tiefes Eintauchen
 
-## Tiefergehende Infos
+Nachdem Sie Ihr neues Clojure-Projekt erstellt haben, können Sie jetzt tiefer in die Sprache eintauchen. Clojure bietet eine Vielzahl von Bibliotheken und Werkzeugen, die Ihnen helfen können, Ihr Projekt zu entwickeln. Ein paar wichtige Themen, mit denen Sie sich beschäftigen sollten, sind:
 
-Wenn du ein neues Projekt beginnst, gibt es ein paar Dinge, auf die du achten solltest. Zunächst solltest du dir überlegen, welches Problem du mit deinem Projekt lösen möchtest und welche Zielgruppe du ansprechen möchtest. Eine klare Vision hilft dir dabei, dein Projekt effektiver zu gestalten.
+- Funktionale Programmierung
+- Unveränderlichkeit
+- Threads und Concurrent Programming
+- Persistenz und Datenstrukturen
 
-Außerdem ist es wichtig, deine Codebasis gut strukturiert zu halten. Verwende sinnvolle Namen für Funktionen und Variablen und halte dich an gängige Coding Standards. So wird es einfacher für dich (und andere) den Code zu lesen und zu verstehen.
-
-Zuletzt aber nicht zuletzt, scheue dich nicht davor, Hilfe zu suchen, wenn du Fragen hast oder auf Probleme stößt. Die Clojure-Community ist sehr hilfsbereit und unterstützt dich gerne bei deinem Projekt.
+Es gibt auch viele Ressourcen online, die Ihnen dabei helfen können, wie z.B. Bücher, Tutorials, Foren und Meetups. Stellen Sie sicher, dass Sie sich jederzeit über die neuesten Entwicklungen in der Clojure-Community auf dem Laufenden halten.
 
 ## Siehe auch
 
-- [Offizieller Leitfaden von Clojure.org](https://clojure.org/guides/getting_started)
-- [Clojure-Dokumentation](https://clojure.org/documentation)
-- [Community-Wiki für Clojure](https://clojure.org/community/resources)
+- [Clojure Dokumentation](https://clojure.org/)
+- [Clojure Forum](https://clojureverse.org/)
+- [Clojure Meetup-Gruppen](https://www.meetup.com/topics/clojure/)
+- [Clojure Bücher und Tutorials](https://github.com/oremacs/awesome-clojure)

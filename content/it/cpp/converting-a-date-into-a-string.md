@@ -1,53 +1,53 @@
 ---
-title:    "C++: Convertire una data in una stringa"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/converting-a-date-into-a-string.md"
+title:                "C++: Convertire una data in una stringa"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molte volte, mentre si lavora con i dati, è necessario convertire una data in una stringa per scopi di presentazione o salvataggio. Per questo, è importante sapere come farlo in modo efficiente e accurato utilizzando il linguaggio di programmazione C++.
+Ci sono diverse ragioni per cui potresti avere la necessità di convertire una data in una stringa all'interno di un programma in C++. Forse stai lavorando con dati da un database e hai bisogno di un modo per rappresentare le date come testo leggibile. Oppure potresti voler creare un'applicazione che visualizzi le date in formati personalizzati per gli utenti. In ogni caso, sapere come convertire una data in una stringa può essere un'abilità utile per i programmatori.
 
-## Come Convertire una Data in una Stringa in C++
+## Come Fare
 
-Per convertire una data in una stringa in C++, è necessario utilizzare la libreria standard <ctime> che fornisce diverse funzioni per gestire le date e gli orari.
-
-Il primo passo è dichiarare una variabile di tipo struct tm che rappresenta una struttura per contenere una data e un orario. Successivamente, si utilizza la funzione std::time() che restituisce il tempo corrente in secondi dal 1 gennaio 1970. Questo valore viene poi passato alla funzione std::localtime() che converte il tempo in una data e la memorizza nella struct tm.
+Per convertire una data in una stringa in C++, è necessario utilizzare la funzione `strftime()` della libreria `<ctime>`. Ecco un esempio di codice che mostra come utilizzare questa funzione per convertire una data nel formato "DD/MM/YYYY":
 
 ```C++
 #include <iostream>
 #include <ctime>
 
 int main() {
-    //dichiarazione della variabile struct tm 
-    struct tm * timeinfo;
-    //acquisizione del tempo corrente
-    time_t current_time = std::time(0);
-    //conversione del tempo in una data
-    timeinfo = std::localtime(&current_time);
-    //utilizzo delle funzioni per ottenere i singoli componenti della data
-    int day = timeinfo->tm_mday;
-    int month = timeinfo->tm_mon + 1;
-    int year = timeinfo->tm_year + 1900;
-    //creazione della stringa della data nel formato desiderato
-    std::string date_str = std::to_string(day) + "/" + std::to_string(month) + "/" + std::to_string(year);
-    //stampa della data convertita
-    std::cout << date_str << std::endl;
+    // Definiamo una data come una struttura "tm"
+    std::tm data = {0, 0, 0, 20, 8, 2021 - 1900};
+
+    // Creiamo una stringa di output con una dimensione sufficiente per contenere la data formattata
+    char output[11];
+
+    // Utilizziamo la funzione strftime per formattare la data in una stringa
+    strftime(output, sizeof(output), "%d/%m/%Y", &data);
+
+    // Stampiamo la data formattata
+    std::cout << output << std::endl;
+
     return 0;
 }
 ```
 
-In questo esempio, si utilizzano le funzioni std::to_string() per convertire i numeri dei componenti della data in stringhe. Si noti che è necessario aggiungere 1 al mese e 1900 all'anno per ottenere il valore corretto.
+Output:
+```
+20/08/2021
+```
 
-L'output sarà qualcosa del tipo "13/08/2021" a seconda della data corrente.
+Ci sono molti parametri che è possibile utilizzare con `strftime()` per ottenere formati di data diversi. Ad esempio, `%d` rappresenta il giorno del mese con due cifre, `%m` rappresenta il mese con due cifre e `%Y` rappresenta l'anno con quattro cifre. Per maggiori informazioni su questi parametri e su come utilizzarli, si consiglia di consultare la documentazione ufficiale della funzione `strftime()`.
 
-## Approfondimenti 
+## Approfondimenti
 
-La funzione std::strftime() può essere utilizzata per ottenere una maggiore flessibilità nella conversione di una data in una stringa. Essa permette di specificare il formato desiderato della stringa di output, ad esempio "dd/mm/yyyy" o "mm/dd/yyyy". Inoltre, è possibile utilizzare la funzione std::put_time() per ottenere un formato personalizzato senza dover specificare i singoli componenti della data.
+La funzione `strftime()` può anche essere utilizzata per ottenere altre informazioni sulla data, come ad esempio il giorno della settimana o il numero della settimana dell'anno. Inoltre, è possibile utilizzare la libreria `<chrono>` per ottenere maggiori informazioni sugli intervalli di tempo e sulle date.
 
 ## Vedi Anche
 
-- Documentazione ufficiale di <ctime> in C++: https://en.cppreference.com/w/cpp/header/ctime
-- Guida alla gestione delle date e degli orari in C++: https://www.learncpp.com/cpp-tutorial/102-basic-inputoutput/
+- [Documentazione ufficiale della funzione `strftime()`](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+- [Documentazione ufficiale della libreria `<chrono>`](https://en.cppreference.com/w/cpp/chrono)

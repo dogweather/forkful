@@ -1,43 +1,54 @@
 ---
-title:    "TypeScript: Pisanie testów"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-tests.md"
+title:                "TypeScript: Pisanie testów"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisanie testów jest ważne?
 
-Napisanie testów jest kluczowym elementem każdego projektu programistycznego. Testy pozwalają upewnić się, że nasz kod działa poprawnie i zgodnie z oczekiwaniami. Są również niezwykle przydatne w wykrywaniu błędów i zapobieganiu regresji w kodzie. W tym wpisie dowiesz się dlaczego warto pisać testy i jak w prosty sposób możesz to zrobić w języku TypeScript.
+Pisanie testów jest kluczowym elementem w procesie tworzenia oprogramowania, ponieważ pomaga zapewnić wysoką jakość i niezawodność kodu. Testy pozwalają programistom automatycznie sprawdzać, czy ich kod działa poprawnie oraz wykrywać błędy i ewentualne problemy. Pomagają również w utrzymaniu czytelności kodu i ułatwiają wprowadzanie zmian.
 
-## Jak To Zrobić
+## Jak pisać testy w TypeScript
 
-Pisanie testów w TypeScript może wydawać się skomplikowane, jednak w rzeczywistości jest to dość proste. Najpierw musimy zainstalować odpowiednią bibliotekę testową za pomocą menedżera pakietów, na przykład npm lub Yarn. W przypadku TypeScript możemy korzystać z popularnej biblioteki o nazwie Jest.
+Pierwszym krokiem w pisaniu testów w TypeScript jest zainstalowanie narzędzia do testowania, takiego jak Jasmine, Mocha lub Jest. Następnie należy stworzyć nowy plik testowy z rozszerzeniem .spec.ts. W takim pliku należy zdefiniować testy przy pomocy funkcji describe, it i expect. Poniżej przedstawiam przykładowy kod testu w TypeScript dla funkcji dodawania.
 
-Po zainstalowaniu biblioteki, możemy przystąpić do tworzenia testów. Stwórzmy prosty plik o nazwie `Sum.test.ts` i dodajmy do niego kod:
+```
+// Importowanie funkcji z pliku z kodem
+import { add } from './filename.ts';
 
-```TypeScript
-import sum from '../src/sum';
+// Opis testu
+describe('Test dla funkcji dodawania', () => {
 
-test('correctly adds 2 numbers', () => {
-  expect(sum(2, 3)).toBe(5);
-});
+  // Kod testu
+  it('Powinno zwrócić poprawny wynik dla dwóch liczb dodatnich', () => {
 
-test('correctly adds a negative number', () => {
-  expect(sum(2, -5)).toBe(-3);
+    // Oczekiwany wynik
+    const expectedResult = 5;
+
+    // Wywołanie funkcji
+    const result = add(2, 3);
+
+    // Porównanie wyniku
+    expect(result).toEqual(expectedResult);
+  });
 });
 ```
 
-W powyższym przykładzie tworzymy dwa testy funkcji `sum()`, która oblicza sumę dwóch liczb. Wykorzystujemy tutaj funkcję `expect()` z biblioteki Jest, aby sprawdzić czy wynik jest zgodny z oczekiwaniami. Następnie uruchamiamy testy za pomocą polecenia `npm run test` lub `yarn run test` i powinniśmy otrzymać poprawny wynik.
+Po napisaniu testów należy je uruchomić przy użyciu narzędzia do testowania. Jeśli testy przejdą pozytywnie, oznacza to, że tworzony kod jest poprawny i nie zawiera błędów.
 
-## Deep Dive
+## Deep Dive: Wskazówki dotyczące pisania testów
 
-Pisanie testów może być bardziej zaawansowane niż pokazane w prostym przykładzie powyżej. W rzeczywistości możemy testować nie tylko małe funkcje, ale również interakcje z bazą danych, wywołania API czy interfejsy użytkownika. Jest to możliwe dzięki wykorzystaniu tzw. mocków, które pozwalają nam symulować różne scenariusze i sprawdzać czy nasz kod zachowuje się poprawnie w różnych warunkach.
+Poniżej przedstawiam kilka wskazówek, które pomogą Ci w pisaniu testów w TypeScript:
 
-Warto również wspomnieć o terminie TDD (ang. Test Driven Development), który jest popularną strategią wytwarzania oprogramowania. Polega ona na pisaniu testów przed napisaniem właściwego kodu, co pozwala na lepsze zrozumienie wymagań i zapobiega powstawaniu błędów.
+- Upewnij się, że nazwy funkcji i zmiennych użytych w teście są czytelne, aby ułatwić zrozumienie testu.
+- Nie twórz zbyt długich testów. Staraj się testować pojedyncze funkcjonalności zamiast całego modułu.
+- Używaj funkcji beforeEach i afterEach do wykonywania kodu przed i po każdym teście. Dzięki temu unikniesz duplikacji kodu i uprościsz proces testowania.
 
 ## Zobacz też
 
-- [Dokumentacja biblioteki Jest](https://jestjs.io/)
-- [Wprowadzenie do testów w TypeScript](https://dev.to/maxpou/introduction-to-testing-typescript-with-jest-2nae)
-- [Poradnik TDD dla początkujących](https://www.freecodecamp.org/news/learn-test-driven-development-in-10-minutes-7920b2aa1ec4/)
+- [Dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
+- [Narzędzia do testowania w TypeScript](https://medium.com/javascript-in-plain-english/top-5-testing-tools-for-typescript-68b5cd15b952)
+- [Materiały szkoleniowe TypeScript z testami](https://www.udacity.com/course/typescript-testing--ud015)

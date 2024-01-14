@@ -1,42 +1,40 @@
 ---
-title:    "Bash: Skriver tester"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-tests.md"
+title:                "Bash: Skriving av tester"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tester er en viktig del av å utvikle gode bash programmer. Å teste koden din vil bidra til å identifisere feil tidlig og sikre at programmet fungerer som forventet. Ved å skrive tester kan du også enkelt gjøre endringer i koden din uten å bekymre deg for å ødelegge funksjonaliteten.
+Å skrive tester i Bash-programmering er en viktig del av å utvikle pålitelig og feilfri kode. Tester bidrar til å identifisere og rette opp i eventuelle feil eller mangler i koden, noe som resulterer i bedre og mer stabil programvare. Det kan virke som en ekstra arbeidsbyrde, men langsiktig vil det spare deg for mye tid og frustrasjon.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å skrive tester i Bash, kan du bruke test-kommandoen som lar deg sammenligne verdier og returnere en sann eller usann verdi avhengig av resultatet. La oss se på et eksempel:
+Bash er et populært skriptspråk som brukes i mange Linux-distribusjoner og for administrasjon av servere. Skriving av tester i Bash utføres ved hjelp av [[Bats (Bash Automated Testing System)|https://github.com/sstephenson/bats]], et testverktøy spesielt utviklet for Bash-skript. La oss se på et eksempel på hvordan du kan skrive en test for en enkel funksjon som legger sammen to tall:
 
-```Bash
-# Definerer en variabel
-navn="Maria"
-
-# Sjekker om variabelen er lik "Maria"
-if [ $navn == "Maria" ];
-then
-    echo "Hei Maria!"
-else
-    echo "Hvem er du?"
-fi
 ```
+load 'support.bash' #definerer hjelpefunksjoner og bytter til testmappen
 
-I dette eksempelet bruker vi test-kommandoen `[ $navn == "Maria" ]` for å sammenligne verdien av variabelen "navn" med strengen "Maria". Hvis betingelsen er sann, vil programmet skrive ut "Hei Maria!", ellers vil det skrive ut "Hvem er du?". Dette viser hvordan testing kan hjelpe deg med å sikre at koden din fungerer som forventet.
+@test "Legg sammen to tall" {
+  run sum 5 5 # kjører funksjonen sum med argumentene 5 og 5
+  assert_output "10" # resultatet bør være 10
+}
+```
+Koden over definerer en test som sjekker om funksjonen "sum" returnerer riktig resultat når den får inn to tall som argumenter. Bats vil da kjøre koden og sjekke om resultatet stemmer med forventet output. Om ikke, vil testen feile og du vil få beskjed om at det er en bug som må fikses.
 
 ## Dypdykk
 
-Nå som du har fått en introduksjon til hvordan du kan skrive tester i Bash, kan det være nyttig å vite noen flere tips og triks for å skrive effektive tester. En viktig ting å huske på er å skrive tester for alle mulige utfall, ikke bare det som forventes. Dette vil sikre at programmet ditt håndterer uventede feil eller inndata også.
+Et godt skrevet testtilfelle bør være enkelt og tydelig, og bør alltid følge "Arrange, Act, Assert"-mønsteret. Dette betyr at testen bør først forberede miljøet (arrange), deretter kjøre koden som skal testes (act), og til slutt sjekke om resultatet stemmer overens med forventet output (assert).
 
-Du kan også lage tester for funksjonskall ved å lese output fra en funksjon og sammenligne det med det forventede resultatet, eller ved å teste forhåndsdefinerte variabler som skal oppdateres av funksjonen. Det kan også være lurt å bruke beskrivende tester, slik at du enkelt kan forstå hva testen skal gjøre uten å måtte lese selve koden.
+I tillegg er det viktig å skrive flere tester for å sikre at koden fungerer i ulike situasjoner, som for eksempel når ugyldige argumenter blir gitt eller når funksjonen kalles flere ganger.
 
-## Se Også
+En annen nyttig funksjon i Bats er muligheten til å gruppere sammen flere tester innenfor samme "describe" blokk, noe som gjør det enklere å organisere og forstå testene.
 
-- [Bash scripting tutorial (en)](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash test-kommando dokumentasjon (en)](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#Bourne-Shell-Builtins)
-- [Eksempler på Bash testing (en)](https://www.lifewire.com/test-for-an-empty-value-2201046)
+## Se også
+
+- [[Bats dokumentasjon|https://github.com/sstephenson/bats/blob/master/docs/01.writing-tests.md#assertions]]
+- [[The Art of Command Line|https://github.com/jlevy/the-art-of-command-line#automation-and-overcoming-internal-resistance]]
+- [[Bash-bibliotek med nyttige testfunksjoner|https://github.com/lehmannro/assert.sh]]

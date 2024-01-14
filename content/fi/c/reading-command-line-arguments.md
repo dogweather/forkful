@@ -1,57 +1,55 @@
 ---
-title:    "C: Lukeminen komentoriviparametreja"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-command-line-arguments.md"
+title:                "C: Komentoriviparametrien lukeminen"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+### Miksi:
 
-Tervetuloa lukemaan blogipostausta komentorivin argumenttien lukemisesta. Tässä artikkelissa käsittelemme, miksi on tärkeää osata lukea komentorivin argumentteja ja miten se voidaan tehdä C-ohjelmoinnissa. Jos olet kiinnostunut oppimaan lisää tästä tärkeästä aiheesta, jatka lukemista!
+Monet C-ohjelmoijat saattavat haluta lukea komentoriviargumentteja ohjelmaansa, jotta he voivat muokata sen toimintoja ja parametreja ilman koodin muokkaamista.
 
-## Miten
+### Miten:
 
-Komentorivin argumentit ovat käyttäjän antamia tietoja ohjelmalle sen ajamisen yhteydessä. Ne ovat tärkeitä, koska ne antavat ohjelmalle tietoa siitä, miten sitä tulee käyttää ja mitä toimintoja suorittaa. Tässä on yksinkertainen esimerkki, miten voidaan lukea komentorivin argumentteja C-kielellä:
+Komentoriviargumenttien lukeminen on tärkeä taito C-ohjelmoinnissa, ja se onnistuu muutamalla yksinkertaisella askeleella.
 
-```C
-#include <stdio.h>
+1. Esimerkiksi, käytä main-funktiota ja sen parametria argc.
+
+```
+#mukana <stdio.h>
 
 int main(int argc, char *argv[]) {
-  printf("Sinulla on %d argumenttia.\n", argc);
-  for (int i = 0; i < argc; i++) {
-    printf("Argumentti %d: %s\n", i, argv[i]);
-  }
 
-  return 0;
+    //tulostaa yhteensä komentoriviargumenttien määrän
+    printf("Yhteensä %d argumenttia annettu.\n", argc);
+
+    //tulostaa kaikki argumentit
+    for (int i = 0; i < argc; i++) {
+        printf("%s\n", argv[i]);
+    }
+
+    palauta 0;
 }
 ```
 
-Esimerkki koodi luo yksinkertaisen ohjelman, joka tulostaa kaikki komentoriviltä saadut argumentit. Jos suoritat ohjelman seuraavasti: ```./ohjelma hello world```, saat seuraavan tulosteen:
+2. Käännä ja aja ohjelma komentorivillä antamalla argumentteja, esimerkiksi:
 
 ```
-Sinulla on 3 argumenttia.
-Argumentti 0: ./ohjelma
-Argumentti 1: hello
-Argumentti 2: world
+./ohjelma argumentti1 argumentti2 argumentti3
 ```
 
-Nyt voit nähdä, miten koodi käsittelee argumentteja ja tulostaa ne käyttäjälle. Tämä on vain yksinkertainen esimerkki, mutta voit alkaa kehittämään sitä ja lisätä siihen toiminnallisuuksia ohjelmointitaitosi mukaan.
+Nyt voit havaita, että printf-käsky tulostaa argumenttien määrän ja kaikki argumentit, joita syötät ohjelman nimeä seuraavan jälkeen.
 
-## Syvempää tietoa
+### Syvennys:
 
-Kun suoritat ohjelmia komentoriviltä, saatat huomata, että jotkin argumentit ovat valinnaisia ja jotkin ovat pakollisia. Tämä tarkoittaa, että ohjelma ei välttämättä toimi oikein, jos et anna sille tiettyjä argumentteja. Tämä on tärkeää muistaa, kun suunnittelet ja kehität ohjelmia.
+Komentoriviargumenttien lukeminen on hyödyllistä esimerkiksi silloin, kun haluat käsitellä ohjelmasi tietoja dynaamisesti. Voit esimerkiksi vaihtaa tiettyjä toimintoja ohjelmassasi antamalla erilaisia argumentteja.
 
-On myös tärkeää, että osaat käsitellä komentorivin argumentteja oikein. Tässä on joitakin hyödyllisiä resursseja, jotka auttavat sinua syventymään aiheeseen:
+Lisäksi voit myös käyttää strcmp-funktiota vertailemaan argumentteja ja reagoida sen mukaan. Tämä avaa mahdollisuuksia kehittää joustavampia ja monipuolisempia ohjelmia.
 
-- [Argumenttien lukeminen C-ohjelmassa](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
-- [Ohjelmointitermit: Komentorivin argumentit](https://www.summarecon.com/en/glossary/command-line-arguments/)
-- [C: Komentorivin argumentit](https://www.codingunit.com/c-program-to-accept-command-line-arguments)
+### Katso myös:
 
-## Katso myös
-
-Jos haluat oppia lisää C-ohjelmoinnista ja muista aiheista, tarkista seuraavat resurssit:
-
-- [C-ohjelmoinnin perusteet](https://www.sololearn.com/Course/C/)
-- [Parhaat käytännöt C-ohjelmoinnissa](https://www.thegeekstuff.com/2011/12/c-programming-language-tutorial/)
-- [Ohjelmointitermit: C-ohjelmointi](https://www.summarecon.com/en/glossary/c-programming/)
+1. [C-kielen virallinen dokumentaatio](https://en.cppreference.com/w/c/language/main_function)
+2. [Codecademy C-opas](https://www.codecademy.com/learn/learn-c)
+3. [C-ohjelmoinnin 10 tärkeintä käsitettä](https://medium.com/launch-school/c-ohjelmoinnin-10-t%C3%A4rkeint%C3%A4-k%C3%A4sitett%C3%A4-d99ef5117246)

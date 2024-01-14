@@ -1,49 +1,52 @@
 ---
-title:    "C++: दो दिनांकों की तुलना करना"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/comparing-two-dates.md"
+title:                "C++: दो तिथियों की तुलना करना"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-"## Kyun: Do tareekhon ko tulna karne mein kyun samay bitana chahiye?"
+## क्यों
+क्या आपको कभी अपनी दस्तावेज़ों में दो तारीखों की तुलना करनी पड़ी है? शायद आपको मूल्यांकन करने के लिए सही समय का अनुमान लगाना था? या फिर आप सिर्फ दो तिथियों के बीच कितने दिनों का अंतर है जानना चाहते थे? चाहे आपका मुद्दा कोडिंग से संबंधित हो या दस्तावेज़ों को सरल रखने के लिए, दो तारीखों की तुलना सीखने का महत्व हो सकता है। इस ब्लॉग पोस्ट में हम दो तारीखों को तुलना करने के तरीकों पर विस्तार से चर्चा करेंगे।
 
-Do tareekhon ko tulna karne mein samay bitana aam baat hai, aur yeh desh mein chalne wale har vyakti ke liye zaroori ho sakta hai. Date comparison, humein do tareekhon ke beech mein antar ka pata lagane mein madad karta hai, jaise bharat sarkar dvaara jaari kiye gaye praman patron ko samajhne mein. Iske alawa, date comparison humein kisi bhi samay ke baare mein jaankari pradaan karta hai, jaise ki kitne din, mahine ya saal pahle koi ghatna ghatit hui thi. Isliye, do tareekhon ko tulna karne ke liye ek vyakti ko programming mein samay bitana bahut zaroori hai.
-
-"## Kaise Kare: C++ mein do tareekhon ko tulna kaise karein?"
-
+## कैसे
 ```C++
 #include <iostream>
 #include <ctime>
 
 using namespace std;
 
-int main() {
-    // Pahle tareekh ko decide karein
-    time_t t1 = time(0); 
+int main()
+{
+    // दो तारीखों को सेट करें
+    time_t t1 = time(0); // वर्तमान समय लें
+    tm *t2 = new tm();
+    t2->tm_year = 2020 - 1900; // साल
+    t2->tm_mon = 03 - 1; // महीना
+    t2->tm_mday = 08; // दिन
 
-    // Dusra tareekh ko decide karein
-    struct tm * now = localtime( & t1 ); 
-    int year = now -> tm_year + 1900;
-    int month = now -> tm_mon + 1;
-    int day = now -> tm_mday;
+    // दोनों तारीखों को समान करें
+    tm *date1 = localtime(&t1);
+    mktime(date1);
+    mktime(t2);
 
-    // Tareekhon ko tulna karein
-    t2 = mktime( & now);
+    // तारीखों का अंतर निकालें
+    int difference = date1->tm_mday - t2->tm_mday;
 
-    // Calculated antar ko pradaan karein
-    cout << "Antar: " << difftime(t2, t1) << " seconds." << endl;
+    // अंतर को आउटपुट करें
+    cout << "तारीखों का अंतर है: " << difference << " दिन" << endl;
+
+    // दुर्लभ तारीख से दो तारीखों का अंतर निकालें
+    tm *t3 = new tm();
+    t3->tm_year = 2020 - 1900;
+    t3->tm_mon = 03 - 1;
+    t3->tm_mday = 29;
+    mktime(t3);
+    int difference2 = t3->tm_mday - t2->tm_mday;
+    cout << "तारीखों का अंतर है: " << difference2 << " दिन" << endl;
 
     return 0;
 }
 ```
-
-"## Gehri Jhanjhavat: Do tareekhon ko tulna karne ki aur gehri jankari"
-
-Do tareekhon ko tulna karna koi mushkil kaam nahi hai, lekin usmein kuch zaroori baaton ka dhyan rakhna hai. Pahle, humein tareekhon ko sahi format mein store karna zaroori hai. Doosre, hume pata hona chahiye ki nirdharit tareekh kis time zone mein hai. Tisra, pata karna hai ki computer ka default time zone kya hai, kyunki date comparison time zone ke hisab se hota hai. Aur aakhir mein, sahi function ka istemaal karna zaroori hai tareekhon ko tulna karne ke liye.
-
-"## Dekhiye Bhi:"
-
-- https://www.geeksforgeeks.org/how-to-find-difference-between-two-dates-in-c-programming-language/
-- https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm
-- https://www.programiz.com/cpp-programming/library-function/ctime/time
+उपरोक्त कोड सिस्टम के स्क्रीनशॉट इंजीनियरिंग करें जो दो तारीखों को मिलाकर अंतर को प्रिंट करेगा। आउटपुट स्क्रीनशॉट मोबाइल फ्रेम में प्रदर

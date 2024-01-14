@@ -1,36 +1,38 @@
 ---
-title:    "Elm: Obliczanie daty w przyszłości lub przeszłości"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: Obliczanie daty w przyszłości lub przeszłości"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego?
+## Dlaczego
 
-Obliczanie daty w przyszłości lub przeszłości może być przydatne w wielu aplikacjach, na przykład przy planowaniu wydarzeń lub przypomnieniach. W języku Elm istnieje wiele sposobów na wykonanie takiej operacji, a w tym artykule dowiesz się jak to zrobić.
+Obliczanie daty w przyszłości lub przeszłości jest niezbędnym narzędziem w wielu aplikacjach internetowych. Dzięki temu można zaplanować przyszłe wydarzenia lub przewidzieć ważne daty w przeszłości. W tym artykule dowiesz się, jak w łatwy sposób obliczać daty w Elm.
 
-# Jak to zrobić?
+## Jak to zrobić?
 
-Pierwszym krokiem jest zaimportowanie modułu `Time`. Następnie można wykorzystać funkcję `Time.offsetInDays`, która przyjmuje dwa argumenty: datę początkową oraz liczbę dni, o jaką należy przesunąć datę. Przykładowy kod wyglądać będzie następująco:
+Aby obliczyć datę w Elm, musisz użyć wbudowanego modułu "Time". Przykładowy kod może wyglądać tak:
 
-```elm
-import Time
+```Elm
+import Time exposing (..)
 
-startDate = Time.millisToPosix 0
+futureDate = add 5 Days (millisToPosix 0)
+pastDate = add -2 Months (millisToPosix 0)
 
-futureDate = Time.offsetInDays startDate 10
-
-pastDate = Time.offsetInDays startDate -5
+main = text ("Data w przyszłości: " ++ toString futureDate ++ 
+"\nData w przeszłości: " ++ toString pastDate)
 ```
 
-W powyższym przykładzie użyto funkcji `millisToPosix` do przekonwertowania liczby milisekund na datę w formacie `Posix`, które jest używane przez funkcję `Time.offsetInDays`. Należy jednak pamiętać, że strefa czasowa w której działa aplikacja również wpływa na wynik, dlatego należy dokładnie sprawdzić dokumentację dla funkcji `millisToPosix`.
+W powyższym przykładzie, używając funkcji "add", można dodać lub odjąć określoną jednostkę czasu (np. dni, miesiące) od aktualnej daty, określonej przez funkcję "millisToPosix". Następnie za pomocą funkcji "toString" można przekonwertować wynik na czytelną dla człowieka formę. Takie obliczenia daty mogą być wykorzystane w wielu interesujących aplikacjach, na przykład do wyświetlania przyszłych urodzin użytkownika lub okresu, który minął od ważnego wydarzenia.
 
-# Głębszy wgląd
+## Wgląd w obliczanie daty w przyszłości lub przeszłości
 
-Obliczanie daty w przyszłości lub przeszłości jest tylko jednym z wielu zadań, które można wykonać przy pomocy modułu `Time` w Elmie. Warto zapoznać się również z innymi funkcjami, takimi jak `Time.now`, `Time.utc`, czy `Time.compare`.
+W celu głębszego zrozumienia, jak działają funkcje "add" i "millisToPosix", warto przeanalizować strukturę danych zawartą w modułach "Time" i "Posix". W module "Time" znajdują się funkcje do manipulacji czasem (np. "add", "subtract"), w tym funkcja "millisToPosix", która konwertuje wartość w milisekundach na typ danych "Posix". Moduł "Posix" zawiera funkcje do konwersji danych czasowych na odpowiednie formaty (np. "toString", "utc").
 
-# Zobacz także
-- Dokumentacja modułu `Time`: https://package.elm-lang.org/packages/elm/time/latest/
-- Przykłady wykorzystania modułu `Time`: https://elmprogramming.com/dates-and-times.html
-- Poradnik na temat dat w Elmie: https://guide.elm-lang.org/interop/dates_and_times.html
+## Zobacz także
+
+- Dokumentacja modułu "Time" w Elm: https://package.elm-lang.org/packages/elm/time/latest/
+- Dokumentacja modułu "Posix" w Elm: https://package.elm-lang.org/packages/elm/core/latest/Posix
+- Przykładowe aplikacje Elm wykorzystujące obliczanie daty: https://github.com/himdel/elm-dateexamples

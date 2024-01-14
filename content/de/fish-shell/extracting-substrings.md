@@ -1,51 +1,34 @@
 ---
-title:    "Fish Shell: Substrings extrahieren"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/extracting-substrings.md"
+title:                "Fish Shell: Substrings extrahieren"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Die Extraktion von Teilzeichenfolgen ist eine häufige Aufgabe in der Programmierung und kann in Fish Shell einfach und effizient durchgeführt werden. Dieser Artikel wird Ihnen zeigen, wie Sie dies mit einigen Beispielen und Codeschnipseln erreichen können.
+Substring-Extraktion, auch bekannt als Teilzeichenfolgenextraktion, ist ein nützliches Werkzeug, um bestimmte Teile einer Zeichenfolge zu isolieren. Dies kann hilfreich sein, wenn man zum Beispiel nur die ersten 5 Zeichen einer ID-Nummer benötigt oder bestimmte Wörter aus einem längeren Text herausfiltern möchte.
 
-## Eine Anleitung
+##Wie funktioniert es
 
-Um eine Teilzeichenfolge mit Fish Shell zu extrahieren, müssen Sie die `string sub` -Funktion verwenden. Dieses Beispiel zeigt, wie Sie eine Teilzeichenfolge aus einem Wort extrahieren können:
+Um Substrings in der Fish Shell zu extrahieren, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung des `string` Befehls. Hier ist ein Beispiel, um die ersten 3 Zeichen einer Zeichenfolge zu extrahieren und sie dann in Großbuchstaben auszugeben:
 
+```Fish Shell
+set text "Hallo Welt"
+string sub $text 0 3 | string upper
 ```
-Fish Shell substring Beispiel
+Die Ausgabe wäre `HAL`.
 
-set string "Hallo Welt"
+## Tiefer tauchen
 
-echo $string[2,5]
+Um tiefer in die Substring-Extraktion einzutauchen, gibt es mehrere Parameter, die man verwenden kann. Zum Beispiel kann mit dem `length` Parameter die Anzahl der extrahierten Zeichen festgelegt werden. Mit dem `start` Parameter kann man angeben, ab welchem Index in der Zeichenfolge die Extraktion beginnen soll.
 
-Ergebnis: llo
-```
+Zusätzlich gibt es auch die Möglichkeit, negative Zahlen für den `start` Parameter zu verwenden. Dies bedeutet, dass die Extraktion von rechts beginnt und nicht von links.
 
-Sie können auch mehrere Teilzeichenfolgen auf einmal extrahieren, indem Sie eine Liste von Indizes angeben:
+##Siehe auch
 
-```
-Fish Shell substring Beispiel
-
-set string "It's a beautiful day"
-
-echo $string[1,3][9,11]
-
-Ergebnis: ibeuti
-```
-
-## Tiefer eintauchen
-
-Um zu verstehen, wie die `string sub` -Funktion funktioniert, müssen Sie die Indizes verstehen, die Sie angeben. Die erste Zahl gibt den Startindex an und die zweite Zahl gibt an, wie viele Zeichen von diesem Startindex aus extrahiert werden sollen. Beachten Sie, dass das erste Zeichen den Index 1 hat, nicht 0.
-
-Wenn Sie ein `-` vor der zweiten Nummer angeben, wird angezeigt, dass der Index bis zum Ende der Zeichenfolge extrahiert werden soll.
-
-Sie können auch mehrere Zeichenfolgen in einer einzigen Zeile extrahieren, indem Sie sie zwischen `[]` und mit einem `,` trennen.
-
-## Siehe auch
-
-- [Die offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Strings in Fish Shell manipulieren](https://fishshell.com/docs/current/tutorial.html#strings)
-- [Das Tutorial zur Fish Shell von OMG! Ubuntu!](https://www.omgubuntu.co.uk/how-to-use-fish-shell-beginners-guide)
+- Fish Shell-Dokumentation zu `string` Befehl
+- Ein Tutorial zur Verwendung von Substrings in Fish Shell
+- Eine Liste von weiteren nützlichen Befehlen in der Fish Shell

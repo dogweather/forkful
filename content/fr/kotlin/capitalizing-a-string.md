@@ -1,57 +1,46 @@
 ---
-title:    "Kotlin: Majuscule d'une chaîne de caractères"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: Majuscule d'une chaîne de caractères"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Capitaliser une chaîne de caractères est une tâche commune en programmation. Cela peut être utile pour mettre en évidence certains mots ou pour suivre les conventions de nommage dans votre code. Dans cet article, nous allons explorer comment capitaliser une chaîne de caractères en utilisant le langage de programmation Kotlin.
+L'une des tâches les plus courantes en programmation est la manipulation de chaînes de caractères. Et parfois, nous avons besoin de capitaliser une chaîne de caractères pour des raisons de mise en forme ou de cohérence avec d'autres éléments de notre code. Dans cet article, nous allons discuter de manière détaillée comment capitaliser une chaîne de caractères en utilisant Kotlin.
 
 ## Comment faire
 
-Tout d'abord, nous allons créer une chaîne de caractères en utilisant l'opérateur de concaténation "+" :
+La méthode la plus simple pour capitaliser une chaîne de caractères en utilisant Kotlin est d'utiliser la fonction `capitalize()` incluse dans la librairie standard. Voyons un exemple concret:
 
 ```Kotlin
-var phrase = "je suis un programmeur kotlin"
+var name = "john doe"
+println(name.capitalize())
 ```
 
-Ensuite, nous allons utiliser la fonction .toUpperCase() pour capitaliser la première lettre de chaque mot dans la chaîne :
+Output: "John doe"
+
+Nous pouvons également capitaliser uniquement la première lettre d'une chaîne de caractères en utilisant la fonction `replaceFirstChar()` et en manipulant la première lettre pour la convertir en majuscule:
 
 ```Kotlin
-var phraseCapitale = phrase.split(' ').joinToString(" ") { it.capitalize() }
+var message = "hello world"
+message = message.replaceFirstChar { it.uppercase() }
+println(message)
 ```
+Output: "Hello world"
 
-Dans cet exemple, nous avons utilisé la fonction .capitalize() pour capitaliser la première lettre de chaque mot dans notre chaîne. Ensuite, nous avons utilisé la fonction .joinToString() pour rejoindre les mots capitalisés en une seule chaîne, en utilisant l'espace comme délimiteur.
+## Plongeons plus en profondeur
 
-Enfin, pour afficher le résultat, nous allons simplement imprimer la variable phraseCapitale :
+La méthode `capitalize()` est en fait un raccourci pour transformer la première lettre en majuscule et mettre toutes les autres lettres en minuscule. Si nous voulons uniquement mettre la première lettre en majuscule sans modifier les autres lettres, nous pouvons utiliser `replaceFirstChar()` comme mentionné précédemment. Mais nous pouvons également utiliser `toUpperCase()` sur la première lettre et `toLowerCase()` sur le reste de la chaîne de caractères pour obtenir le même résultat.
 
-```Kotlin
-println(phraseCapitale)
-```
+En outre, la méthode `capitalize()` ne prend en compte que la première lettre du premier mot d'une chaîne de caractères. Si nous voulons capitaliser chaque mot dans une chaîne de caractères, nous pouvons diviser la chaîne en utilisant `split()` et réappliquer `capitalize()` sur chaque élément du tableau retourné par `split()`.
 
-Lorsque nous exécutons ce code, nous obtenons la sortie suivante :
-
-```Kotlin
-Je Suis Un Programmeur Kotlin
-```
-
-## Plongée en profondeur
-
-En utilisant la fonction .capitalize() dans notre exemple, nous avons capitalisé la première lettre de chaque mot. Cependant, il est important de noter que cette fonction ne prend pas en compte les caractères spéciaux ou les nombres.
-
-Pour capitaliser une chaîne de caractères en tenant compte de ces éléments, nous pouvons utiliser la fonction .capitalize() avec .toUpperCase() :
-
-```Kotlin
-var phraseCapitale = phrase.split(' ').joinToString(" ") { it.toLowerCase().capitalize() }
-```
-
-En utilisant .toLowerCase() avant .capitalize(), nous nous assurons que tous les caractères sont en minuscules avant d'en capitaliser la première lettre. De cette façon, même les mots avec des caractères spéciaux ou des chiffres seront correctement capitalisés.
+Finalement, il est important de noter que ces méthodes ne changent pas la chaîne de caractères initiale. Elles retournent une nouvelle chaîne de caractères avec les modifications faites. Si vous souhaitez modifier la chaîne de caractères d'origine, il faudra l'assigner à la variable initiale comme nous l'avons fait dans les exemples ci-dessus.
 
 ## Voir aussi
 
-- [Documentation officielle Kotlin](https://kotlinlang.org/docs/reference/strings.html#accessing-parts-of-a-string)
-- [Comment capitaliser une chaîne en Kotlin](https://kotlinlang.org/docs/reference/extensions.html#scala-like-string-manipulation)
-- [Différentes façons de manipuler les chaînes en Kotlin](https://medium.com/@napperley/android-studio-different-ways-to-manipulate-strings-in-kotlin-f2d0148b4f9b)
+- [La documentation officielle de la librairie standard de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/capitalize.html)
+- [La documentation officielle de la fonction `replaceFirstChar()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first-char.html)
+- [Un guide complet sur les chaînes de caractères en Kotlin](https://blog.kotlin-academy.com/strings-and-chars-in-kotlin-7ac2c2d512f8)

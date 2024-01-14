@@ -1,48 +1,48 @@
 ---
-title:    "C++: 미래나 과거의 날짜 계산하기"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/calculating-a-date-in-the-future-or-past.md"
+title:                "C++: 미래나 과거의 날짜 계산하기"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+날짜를 미래나 과거로 계산하는 것이 왜 중요한지에 대해 소개하겠습니다.
 
-날짜를 미래나 과거로 계산하는 프로그래밍을 해야 하는 이유는 무엇일까요? 간단히 말해서, 우리는 특정한 날짜를 계산하여 일정한 시간만큼 이동하거나 얼마나 지난 날짜인지 알 수 있기 때문입니다.
+우리는 모두 일상 생활에서 날짜를 계산하는 일이 많이 있습니다. 미래에 예정된 일정을 확인하거나 과거에 일어난 사건을 기억하기 위해 날짜를 계산하는 경우가 대표적입니다. 따라서 프로그래밍에서도 날짜를 계산하는 기능은 매우 유용합니다.
 
-## 계산 방법
-
-날짜를 계산하는 방법은 매우 간단합니다. 먼저, 계산하고자 하는 과거나 미래의 날짜를 알아야 합니다. 그리고 그 날짜를 기준으로 얼마만큼 이동하고 싶은지, 혹은 어느 방향으로 이동하고 싶은지를 정해야 합니다. 이 정보를 바탕으로 ```C++``` 프로그래밍 언어를 이용하여 다음의 예제 코드를 사용할 수 있습니다.
+## 어떻게
+C++에서 날짜를 계산하는 방법을 예시 코드와 함께 알려드리겠습니다. 아래의 코드 블록은 미래 날짜를 계산하는 함수를 정의하는 코드입니다.
 
 ```C++
 #include <iostream>
-#include <iomanip>
-#include <chrono>
 
 using namespace std;
 
-// 오늘 날짜를 기준으로 1달 후의 날짜를 계산하는 예제 코드
+// 미래 날짜를 계산하는 함수
+string futureDate(int days) {
+    string date = "2021/10/10"; // 현재 날짜
+    int futureDays = days + 10; // 현재 날짜에서 10일 미래의 날짜 계산
+    date[date.size() - 2] = futureDays / 10 + '0'; // 날짜의 십의 자리 변환
+    date[date.size() - 1] = futureDays % 10 + '0'; // 날짜의 일의 자리 변환
+    return date;
+}
+
 int main() {
-  // 오늘의 날짜를 저장하는 변수
-  auto today = chrono::system_clock::now();
-  // 월 단위로 계산하기 위해 1달을 추가
-  auto future_date = today + chrono::months(1);
-  // 날짜를 출력하기 위해 필요한 포맷
-  auto formatDate = chrono::system_clock::to_time_t(future_date);
-  // 포맷에 맞는 날짜 출력
-  cout << put_time(localtime(&formatDate), "%Y/%m/%d") << endl;
-  return 0;
+    cout << "나는 10일 후가 " << futureDate(10) << "라는 걸 안다!" << endl;
+    return 0;
 }
 ```
 
-위 예제 코드를 실행하면 현재 날짜를 기준으로 1달 뒤의 날짜가 출력됩니다. 이와 같은 방법으로 다양한 시간 단위의 계산을 할 수 있으며, 필요에 따라서 날짜를 빼거나 더하여 원하는 결과를 얻을 수 있습니다.
+위의 코드를 실행하면 "나는 10일 후가 2021/10/20라는 걸 안다!"라는 출력 결과를 얻을 수 있습니다. 이처럼 날짜를 계산하는 함수를 만들어서 미래 날짜를 쉽게 계산할 수 있습니다.
 
-## 깊게 파고들어보기
+## 깊이 파고들기
+미래 날짜를 계산하는 것 외에도, 과거 날짜를 계산하는 함수를 만들 수 있습니다. 또한, 요일이나 월을 기준으로 날짜를 계산하는 방법도 있습니다. 이러한 기능을 적절하게 활용하면 더욱 다양한 날짜 계산을 수행할 수 있습니다.
 
-날짜 계산은 우리 일상 생활에서 매우 중요한 역할을 합니다. 예를 들어, 거래를 위해 공휴일을 고려하여 특정 날짜를 계산하거나, 여행 계획을 세울 때 날짜를 계산하고 예약하는 등 다양한 분야에서 사용될 수 있습니다. 이러한 날짜 계산을 컴퓨터 프로그램을 통해 더 쉽고 정확하게 할 수 있습니다. 날짜를 계산하는 방법은 프로그래밍 언어마다 다소 차이가 있지만 참고할만한 예제 코드나 라이브러리가 많이 존재합니다. 또한, 날짜 계산 과정에서 고려해야 할 점들도 많기 때문에 깊게 파고들어보면 더 많은 지식을 얻을 수 있습니다.
+## 관련 정보
+날짜 계산에 대한 더 많은 정보를 얻고 싶다면 아래의 링크들을 참고해보세요.
 
-## 또 다른 정보
-
-* [날짜 계산을 위한 C++ 라이브러리](https://www.boost.org/doc/libs/1_68_0/doc/html/date_time.html)
-* [날짜 계산 예제 코드](https://gist.github.com/tianon/6845679)
-* [나무위키: Excel에서 날짜 계산하는 방법](https://namu.wiki/w/Excel/%EB%82%A0%EC%A7%9C%20%EA%B3%84%EC%82%B0)
+- [C++ 함수 만드는 방법](https://modoocode.com/116)
+- [C++에서 문자열 다루기](https://doeofpost.tistory.com/34)
+- [C++에서 날짜 처리하는 방법](https://doeofpost.tistory.com/36)

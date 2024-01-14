@@ -1,44 +1,43 @@
 ---
-title:    "Haskell: Verificando se um diretório existe"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/checking-if-a-directory-exists.md"
+title:                "Haskell: Verificando se um diretório existe"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe
+## Por que
 
-Ao escrever programas em Haskell, é importante ter o controle de quais diretórios existem em um determinado sistema de arquivos. Isso pode ser útil quando se trabalha com arquivos e pastas, pois permite que o programa execute certas ações com base na existência de um diretório.
+Em programação, muitas vezes precisamos verificar a existência de um diretório antes de realizar alguma operação de leitura ou escrita nele. Saber se um diretório existe ou não pode ajudar a evitar erros e garantir que nosso código funcione corretamente.
 
 ## Como fazer
 
-A verificação da existência de um diretório em Haskell pode ser feita usando a função `doesDirectoryExist` da biblioteca `System.Directory`. Aqui está um exemplo de código e saída:
+Para checar se um diretório existe em Haskell, podemos utilizar a função `doesDirectoryExist` do módulo `System.Directory`. Esta função recebe como parâmetro o caminho do diretório que queremos verificar e retorna um valor booleano indicando se o diretório existe ou não.
 
-```
+Vamos ver um exemplo prático:
+
 ```Haskell
 import System.Directory
 
 main = do
-  dirStatus <- doesDirectoryExist "pasta"
-  if dirStatus
-    then putStrLn "O diretório existe"
-    else putStrLn "O diretório não existe"
+  let path = "/Users/usuario/Documents"
+  directoryExists <- doesDirectoryExist path
+  if directoryExists
+    then putStrLn "O diretório existe!"
+    else putStrLn "O diretório nao existe!"
 ```
-```
-Saída:
-```
-O diretório existe
-```
-Neste exemplo, a função `doesDirectoryExist` foi usada para verificar se o diretório "pasta" existe. Se o diretório existir, a mensagem "O diretório existe" será impressa na tela. Caso contrário, a mensagem "O diretório não existe" será exibida.
+
+Neste exemplo, estamos verificando se o diretório "/Users/usuario/Documents" existe e imprimindo uma mensagem de acordo com o resultado.
 
 ## Profundidade
 
-O processo de verificação da existência de um diretório em Haskell envolve mais do que apenas chamar a função `doesDirectoryExist`. Internamente, essa função usa a função `access` do sistema operacional para verificar se o diretório existe ou não. Além disso, existem outras funções relacionadas que podem ser úteis, como `createDirectory` e `removeDirectory`, que permitem criar ou remover um diretório, respectivamente.
+Além da função `doesDirectoryExist`, existem outras funções úteis para trabalhar com diretórios em Haskell, como `createDirectory`, `removeDirectory` e `renameDirectory`. É importante lembrar também que o caminho do diretório que passamos para essas funções deve estar no formato correto para o sistema operacional que estamos usando.
 
-Ao trabalhar com diretórios, é importante considerar as permissões de acesso do usuário que está executando o programa. Se o usuário não tiver as permissões necessárias, as funções de verificação e manipulação de diretórios podem falhar.
+Outro ponto importante é entender como o sistema operacional lida com permissões de diretórios. Se o usuário que está executando o código não tiver permissão para acessar ou modificar o diretório, as funções irão falhar.
 
 ## Veja também
 
-- [Documentação da função `doesDirectoryExist` em Haskell](https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist)
-- [Documentação da função `access` do sistema operacional](https://man7.org/linux/man-pages/man2/access.2.html)
-- [Artigo sobre manipulação de arquivos e diretórios em Haskell](https://wiki.haskell.org/Handling_files)
+- [Documentação oficial do módulo System.Directory](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Directory.html)
+- [Guia de Haskell para iniciantes](https://haskellbr.com/)
+- [Tutorial de programação funcional com Haskell](https://www.haskell.org/tutorial/)

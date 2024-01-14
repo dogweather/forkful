@@ -1,50 +1,42 @@
 ---
-title:    "Rust: 임시 파일 만들기"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/creating-a-temporary-file.md"
+title:                "Rust: 임시 파일 생성하기"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-임시 파일을 만드는 것에 참여하는 이유는 무엇일까요? 이 글에서는 Rust를 사용하여 임시 파일을 만드는 방법과 그 중요성에 대해 알아보겠습니다.
+
+일시적인 파일을 생성하는 것에 참여하는 이유는 무엇일까요? Rust 언어의 기능과 유틸리티에 대해 배우는 것을 좋아하거나, 다른 언어에서는 더욱 복잡하게 구현되는 작업을 간단하고 효율적으로 수행하고 싶어서일 수 있습니다.
 
 ## 어떻게
-임시 파일을 만드는 것은 파일 시스템에서 매우 일반적인 작업입니다. 이를 위해 Rust에서는 `tempfile` 라이브러리를 사용할 수 있습니다. 아래의 코드 블록을 살펴보세요.
+
+Rust는 `std::fs::File` 모듈 안에 `tempfile()` 함수를 포함하고 있습니다. 이 함수는 일시적인 파일을 생성할 수 있는 `Tempfile` 구조체를 반환합니다. 아래의 코드 예제는 이 함수를 사용하는 방법을 보여줍니다.
 
 ```Rust
-use tempfile::NamedTempFile;
-use std::io::prelude::*;
+use std::fs::File;
+use tempfile::tempfile;
 
-fn main() {
-    // 임시 파일 생성
-    let mut tmp_file = NamedTempFile::new().expect("Cannot create temporary file");
-
-    // 임시 파일에 쓰기
-    tmp_file
-        .write_all(b"Hello, world!")
-        .expect("Cannot write to temporary file");
-
-    // 임시 파일에서 읽기
-    let mut contents = String::new();
-    tmp_file.seek(std::io::SeekFrom::Start(0)).unwrap();
-    tmp_file.read_to_string(&mut contents).unwrap();
-    println!("임시 파일의 내용: {}", contents);
-}
+// 일시적인 파일 생성
+let mut tempfile = tempfile().unwrap();
+// 파일에 데이터 쓰기
+tempfile.write(b"Hello, world!").unwrap();
+// 파일 읽기
+let mut buffer = String::new();
+tempfile.read_to_string(&mut buffer).unwrap();
+println!("{}", buffer); // Hello, world!
 ```
 
-위의 코드는 `tempfile` 라이브러리를 사용하여 임시 파일을 생성하고, 해당 파일에 쓰고, 읽는 예제입니다. 실행하면 `Hello, world!`라는 내용을 임시 파일에서 읽어올 수 있습니다.
+위의 예제에서 `tempfile()` 함수는 일시적인 파일을 생성하기 위해 `Tempfile` 구조체를 사용합니다. 파일에 데이터를 쓰고 읽을 때는 기존의 `std::fs::File` 모듈과 동일하게 사용할 수 있습니다.
 
-## Deep Dive
-이제 임시 파일 생성에 대해 좀 더 깊이 알아보겠습니다. Rust에서는 `NamedTempFile`과 `TempDir` 두 가지 방법으로 임시 파일을 생성할 수 있습니다. `NamedTempFile`은 이름이 있는 임시 파일이며, 운영 체제에 영향을 받지 않는 고유한 이름을 가지고 있습니다. 반면 `TempDir`은 이름이 없는 임시 디렉토리를 생성하게 됩니다.
+## 딥 다이브
 
-또한 `tempfile` 라이브러리를 사용하여 생성된 임시 파일은 프로세스가 종료되면 자동으로 삭제되기 때문에 메모리 부족 현상을 방지할 수 있습니다.
+일시적인 파일을 생성하는 내부 동작을 조금 더 살펴보겠습니다. Rust는 `tempfile()` 함수를 호출할 때 `NamedTempFileOptions` 구조체를 매개변수로 받습니다. 이 구조체는 다양한 옵션을 설정할 수 있게 해줍니다. 예를 들어, 파일이 생성되는 위치, 파일의 접미사, 파일의 소유자 등을 지정할 수 있습니다. 또한 `tempfile()` 함수는 새로운 일시적인 파일을 생성하기 위해 Rust의 내장된 임시 디렉토리를 사용합니다.
 
-## 참조
-- [tempfile 라이브러리 공식 문서](https://docs.rs/tempfile/)
-- [Rust 표준 라이브러리의 `tempfile` 모듈](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html)
-- [Rust 임시 파일을 사용하여 데이터베이스를 테스팅하는 예제](https://github.com/psmarcin/tempfile)
-- [Rust 임시 파일을 활용한 예제 프로젝트](https://github.com/hallazzang/rust-tempfile-how-to)
+## 참고 자료
 
-## 더 알아보기
-위의 예제 코드에서 `tempfile` 라이브러리를 사용하여 임시 파일을 생성하고 다룬 방법 이외에도 다른 방법들이 있습니다. 더 자세한 내용은 [tempfile 라이브러리 공식 문서](https://docs.rs/tempfile/)를 참고해보세요.
+- [Rust 공식 문서 - std::fs::File 모듈](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [tempfile Crate 문서 - tempfile() 함수](https://docs.rs/tempfile/3.1.0/tempfile/fn.tempfile.html)
+- [Rust Playground에서 `tempfile()` 함수 사용하기](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=62f8810ced2719349be3dddc61df68ae)

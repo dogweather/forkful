@@ -1,46 +1,49 @@
 ---
-title:    "TypeScript: Jämförelse av två datum"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/comparing-two-dates.md"
+title:                "TypeScript: Jämföring av två datum"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att jämföra två datum kan vara en mycket användbar funktion inom programmering. Genom att jämföra datum kan vi hitta skillnader och utföra olika åtgärder baserat på resultaten. I den här bloggposten kommer vi att titta på hur man kan jämföra två datum i TypeScript.
+Att jämföra två datum är en vanlig uppgift inom programmering. Det kan vara till exempel för att bestämma vilket datum som är senare, beräkna antal dagar mellan två datum eller för att filtrera ut specifika datum i en lista. Det är också en användbar funktion för hantering av tidszoners skillnader och summering av arbetsdagar.
 
-## Hur man gör
-För att jämföra två datum i TypeScript behöver vi först skapa två variabler som innehåller de önskade datumerna. Detta kan göras på olika sätt, till exempel genom att använda Date-objektet eller Date.parse() funktionen. Här är ett exempel på hur man deklarerar två variabler och ger dem värden med hjälp av Date.parse() funktionen:
-
-```TypeScript
-let date1: Date = new Date(Date.parse("2021-01-01"));
-let date2: Date = new Date(Date.parse("2020-12-25"));
-```
-
-För att jämföra dessa datum kan vi använda JavaScripts inbyggda metoder, som getTime() eller valueOf(), för att få ut ett numeriskt värde av varje datum. Vi kan sedan använda någon vanlig jämförelseoperator, som till exempel "===" eller ">=" för att jämföra de numeriska värdena. Här är ett exempel på hur detta kan göras:
+## Hur man gör det
+För att jämföra datum i TypeScript finns det några användbara metoder som vi kan använda oss av. Vi kan använda det inbyggda Date objektet och dess metoder, eller så kan vi använda ett externt bibliotek som moment.js. Här är några exempel på hur man kan jämföra två datum:
 
 ```TypeScript
-if (date1.getTime() === date2.getTime()) {
-  console.log("Datumen är lika.");
-} else if (date1.getTime() > date2.getTime()) {
-  console.log("Datum1 är senare än Datum2.");
+// Jämför två datum med inbyggda metoder
+let datum1 = new Date('2021-01-01');
+let datum2 = new Date('2021-02-01');
+
+if (datum1 > datum2) {
+  console.log('Datum1 är senare än datum2');
+} else if (datum1 < datum2) {
+  console.log('Datum2 är senare än datum1');
 } else {
-  console.log("Datum1 är tidigare än Datum2.");
+  console.log('Datum1 och datum2 är samma datum');
 }
+
+// Beräkna antal dagar mellan två datum med moment.js
+let antalDagar = moment(datum2).diff(datum1, 'days');
+
+console.log('Antal dagar mellan datum1 och datum2 är ' + antalDagar);
 ```
 
-Resultatet av detta kodblock kommer att vara "Datum1 är senare än Datum2".
+Output:
+```
+Datum2 är senare än datum1
+Antal dagar mellan datum1 och datum2 är 31
+```
 
 ## Djupdykning
-Det finns många olika metoder för att jämföra datum i TypeScript, beroende på dina specifika behov och önskemål. En annan vanlig metod är att använda JavaScripts inbyggda Date-objekt, som har ett antal metoder för att jämföra olika delar av datum, som till exempel year, month och day.
+När vi jämför datum är det viktigt att förstå hur Datum objektet fungerar. Detta objekt sparar datum och tid i millisekunder från 1 januari 1970 00:00:00 UTC. Det betyder att ju senare datumet är, desto högre millisekunder har den. För att jämföra två datum använder JavaScript's inbyggda metoder, såsom `getTime()` eller `valueOf()`, för att konvertera datum till millisekunder och sedan jämföra dem.
 
-En annan aspekt att tänka på när du jämför datum är att se till att de är i samma tidszon. Olika tidszoner kan orsaka felaktiga jämförelser om man inte tar hänsyn till dem.
+Det är också viktigt att vara medveten om att tidzon och sommartid påverkar hur datum visas och beräknas. Detta kan orsaka problem när man jämför datum på olika platser i världen. Därför är det bäst att använda ett extern bibliotek som moment.js för att hantera dessa skillnader.
 
 ## Se även
-Här är några andra användbara länkar för att lära dig mer om att jämföra datum i TypeScript:
-
-- [Microsoft Docs - Date Object](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [TypeScript Tutorial - Compare Date](https://www.typescripttutorial.net/typescript-tutorial/compare-dates/)
-
-Tack för att du läste denna bloggpost om att jämföra datum i TypeScript. Vi hoppas att den varit användbar för dig!
+- [Moment.js dokumentation](https://momentjs.com/docs/)
+- [Official TypeScript handbook - Dates](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)
+- [Jämföra datum i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#comparisons)

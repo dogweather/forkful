@@ -1,18 +1,19 @@
 ---
-title:    "Haskell: Leyendo un archivo de texto."
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/reading-a-text-file.md"
+title:                "Haskell: Leyendo un archivo de texto"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Por qué leer un archivo de texto en Haskell?
 
-Leer un archivo de texto puede ser una tarea muy útil en programación, especialmente en el lenguaje Haskell. Ya sea para obtener datos de entrada, procesar información o guardar resultados, la lectura de archivos de texto es una herramienta esencial en el desarrollo de aplicaciones. En este artículo, aprenderemos cómo leer un archivo de texto en Haskell y profundizaremos en cómo funciona esta función.
+Los archivos de texto son una forma común de almacenar información en formato legible por humanos. Al aprender a leerlos en Haskell, podrás acceder y manipular datos externos en tus programas.
 
-## Cómo leer un archivo de texto en Haskell
+## Cómo hacerlo
 
-Para leer un archivo de texto en Haskell, utilizaremos la función `readFile` de la biblioteca estándar `System.IO`. Esta función toma como argumento la ruta del archivo a leer y devuelve una cadena con el contenido del archivo. Veámoslo en acción mediante un ejemplo de código:
+Para leer un archivo de texto en Haskell, primero debes importar el módulo `System.IO`. Luego, puedes utilizar la función `readFile` para leer el contenido del archivo en una cadena de texto. Aquí hay un ejemplo de cómo hacerlo:
 
 ```Haskell
 import System.IO
@@ -22,24 +23,15 @@ main = do
     putStrLn contenido
 ```
 
-En este ejemplo, importamos el módulo `System.IO` y utilizamos la función `readFile` en la línea `contenido <- readFile "archivo.txt"`. La expresión `contenido <-` indica que asignamos el resultado de `readFile` a la variable `contenido`. Luego, utilizamos la función `putStrLn` para imprimir el contenido del archivo en la consola.
+Este código primero lee el contenido del archivo "archivo.txt" y lo almacena en una variable llamada `contenido`. Luego, utiliza la función `putStrLn` para imprimir ese contenido en la consola. Nota que la función `readFile` también puede lanzar una excepción si el archivo no existe.
 
 ## Profundizando en la lectura de archivos de texto
 
-Al leer un archivo de texto en Haskell, es importante tener en cuenta cómo se manejan los errores. La función `readFile` puede lanzar una excepción si la ruta del archivo no existe o si no tenemos permiso para leer el archivo. Para manejar estas situaciones, podemos utilizar la función `catch` del módulo `Control.Exception`. Por ejemplo:
+La función `readFile` es útil cuando solo necesitas leer el contenido de un archivo de texto. Sin embargo, si deseas realizar operaciones más complejas, como leer línea por línea o analizar el contenido en formato CSV, deberás utilizar otras funciones y bibliotecas de Haskell.
 
-```Haskell
-import System.IO
-import Control.Exception
+Una función común para leer línea por línea es `readFileLines` del módulo `System.IO.Strict`. También hay bibliotecas de terceros que pueden facilitar la lectura y análisis de archivos de texto, como `Cassava` para archivos CSV o `parsec` para analizar texto con una gramática específica.
 
-main = do
-    contenido <- catch (readFile "archivo.txt") (\e -> return $ show (e :: IOException))
-    putStrLn contenido
-```
+## Ver también
 
-En este código, utilizamos la función `catch` para capturar cualquier excepción que pueda lanzar `readFile`. Si se produce una excepción, la función `catch` ejecuta la expresión después de la flecha, en este caso `return $ show (e :: IOException)`, que devuelve una cadena con información sobre el error. De esta manera, nuestro programa maneja adecuadamente cualquier excepción y puede imprimir un mensaje de error en lugar de fallar.
-
-## Véase también
-
-- [Documentación de la función `readFile` en Haskell](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html#v:readFile)
-- [Documentación de la función `catch` en Haskell](https://hackage.haskell.org/package/base-4.12.0.0/docs/Control-Exception.html#v:catch)
+- [Documentación de System.IO en Haskell](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html)
+- [Ejemplos de lectura de archivos en Haskell](https://www.programminglogic.com/reading-files-in-haskell/)

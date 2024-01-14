@@ -1,48 +1,58 @@
 ---
-title:    "Go: Skriva tester"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/writing-tests.md"
+title:                "Go: Skriva tester"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva tester är en viktig del av programmering i Go (Golang). Genom att skriva tester kan du säkerställa att din kod fungerar som den ska och undvika buggar och problem i framtiden. Dessutom hjälper det dig att förstå din kod bättre och gör det enklare att göra ändringar i framtiden.
+Att skriva tester är en viktig del av programmering, särskilt när det kommer till Go-språket. Genom att skriva tester kan du säkerställa att din kod fungerar som förväntat och undvika potentiella fel i produktion. Det hjälper också till att underlätta samarbete med andra utvecklare och gör det enklare att underhålla och vidareutveckla din kod.
 
 ## Hur man gör det
 
-För att skriva tester i Go behöver du använda paketet "testing". Det innehåller funktioner som gör det möjligt för dig att testa dina funktioner och metoder. Här är ett enkelt exempel på hur man skriver ett test i Go:
+Att skriva tester i Go är enkelt och följer ett bestämt format. Här är ett exempel på hur du kan skriva en enkel testfunktion för att kontrollera om två strängar är lika:
 
 ```Go
-package main
-
-import "testing"
-
-func Add(x, y int) int {
-	return x + y
-}
-
-func TestAdd(t *testing.T) {
-	result := Add(5, 2)
-	if result != 7 {
-		t.Errorf("Expected 7, but got %d", result)
-	}
+func TestStringEquality(t *testing.T) {
+    s1 := "Hello"
+    s2 := "Hello"
+    if s1 != s2 {
+        t.Errorf("Expected s1 and s2 to be equal, but they are not.")
+    }
 }
 ```
 
-I detta exempel har vi en funktion som heter "Add" som lägger till två tal och returnerar resultatet. Vi testar sedan funktionen genom att anropa den och kontrollera att resultatet är korrekt. Om det inte är det, så får vi ett felmeddelande.
+Genom att använda funktionen `testing.T` och `t.Errorf()` kan vi rapportera något felaktigt som händer. Just här kontrollerar vi om strängarna är lika, men det är bara en av många olika metoder som kan användas för att testa din kod på olika sätt.
 
-Det finns också andra funktioner i paketet "testing" som du kan använda för att testa olika aspekter av din kod, som till exempel "testing.T.Errorf" som används för att rapportera fel.
+## Djupdykning
 
-## Utforska djupare
+När du skriver tester i Go är det viktigt att förstå konceptet med "Table Driven Tests". Detta innebär att du kan testa din kod mot flera olika inputs för att säkerställa att den fungerar korrekt i olika scenarier. Här är ett exempel på hur det kan se ut:
 
-Att skriva tester handlar inte bara om att skapa enkla fall som ovan. Du kan också utforska andra aspekter av dina funktioner och metoder för att säkerställa att de fungerar korrekt. Det kan inkludera gränsvärden, felhantering och andra scenarier som kan påverka din kod.
+```Go
+func TestSquare(t *testing.T) {
+    inputs := []struct {
+        num, expected int
+    }{
+        {2, 4}, // test med num = 2, förväntat output = 4
+        {3, 9}, // test med num = 3, förväntat output = 9
+        {4, 16}, // test med num = 4, förväntat output = 16
+    }
+    for _, input := range inputs {
+        result := Square(input.num)
+        if result != input.expected {
+            t.Errorf("For input %d, expected output %d but got %d", input.num, input.expected, result)
+        }
+    }
+}
+```
 
-En annan viktig del av att skriva tester är att se till att de är enkla att förstå och underhålla. Genom att organisera dina tester på ett logiskt sätt och använda tydliga namn kan du göra det enklare för dig själv och andra utvecklare att förstå din kod och göra ändringar när det behövs.
+Genom att använda denna metod kan du snabbt och enkelt testa din kod mot olika värden och se till att den fungerar korrekt.
 
-## Se också
+## Se även
 
-- [Go-paketet "testing"](https://golang.org/pkg/testing/)
-- [5 tips for effective testing in Go (engelska)](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742)
-- [GopherCon talk: Advanced testing techniques with Go (engelska)](https://www.youtube.com/watch?v=8hQG7QlcLBk&t=333s) ## Se också
+- [Official Go documentation on testing](https://golang.org/pkg/testing/)
+- [Table Driven Tests in Go](https://github.com/golang/go/wiki/TableDrivenTests)
+- [Best practices for writing clean and effective tests in Go](https://medium.com/agrea-technogies/best-practices-for-writing-clean-go-test-code-inverse-coding-433cd73cdb7f)

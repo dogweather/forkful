@@ -1,43 +1,33 @@
 ---
-title:    "Arduino: Konwersja ciągu znaków na małe litery."
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/converting-a-string-to-lower-case.md"
+title:                "Arduino: Konwertowanie ciągu znaków na małe litery"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zamiana stringa na małe litery jest przydatną funkcją w programowaniu Arduino, ponieważ pozwala na porównywanie i analizowanie tekstu bez uwzględniania wielkości liter. Jest to szczególnie ważne w przypadku interakcji z użytkownikiem, gdzie wprowadzony tekst może mieć różne wersje z powodu niedokładnego wpisania. 
+Często w projektach związanych z programowaniem mikrokontrolerów Arduino musimy operować na tekście. Dlatego warto poznać jak efektywnie zamieniać litery w ciągu znaków na małe litery.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby zamienić string na małe litery w Arduino, należy wykorzystać funkcję ```toLowerCase()```. Poniższy kod przedstawia przykładową implementację:
+Aby zamienić ciąg znaków na małe litery w Arduino, możemy użyć funkcji `toLowerCase()`. Poniżej znajduje się przykładowy kod, który zamienia ciąg `Hello World!` na `hello world!`.
 
 ```Arduino
-void setup() {
-  Serial.begin(9600);                   // Inicjalizacja połączenia z komputerem
-}
-
-void loop() {
-  String tekst = "PrZyKłAdoWy TEKST";   // Przykładowy tekst do konwersji
-  String tekst_male = tekst.toLowerCase(); // Wywołanie funkcji toLowerCase()
-  Serial.println(tekst_male);           // Wyświetlenie zmienionego tekstu
-}
+String str = "Hello World!";
+String lower_str = str.toLowerCase();
+Serial.println(lower_str);
 ```
 
-Output:
+Output: `hello world!`
 
-```
-przykładowy tekst
-```
+## Głębsza analiza
 
-## Wgłębienie się w temat
-
-Konwersja na małe litery jest często wykonywana w celu ułatwienia porównania i analizy tekstu. Funkcja ```toLowerCase()``` w Arduino obsługuje kod ASCII, co oznacza, że niektóre znaki diakrytyczne mogą nie zostać poprawnie przetworzone. W przypadku konieczności uwzględnienia znaków specjalnych, warto skorzystać z bibliotek zewnętrznych, takich jak [Arduino String Functions] (https://github.com/greiman/Arduino-string-utilities).
+Funkcja `toLowerCase()` wykonuje pętlę po każdym znaku w ciągu i zamienia go na odpowiadającą mu małą literę, jeśli jest to możliwe. Dlatego ważne jest, aby upewnić się, że używany przez nas ciąg znaków jest zbudowany tylko z liter. W przypadku użycia innych znaków (np. cyfr lub symboli), funkcja pozostawi je bez zmian.
 
 ## Zobacz także
 
-- [Referencja funkcji toLowerCase() w Arduino] (https://www.arduino.cc/reference/en/language/functions/string/characters/tolowercase/)
-- [Zamiana liter na małe z polskimi znakami w programie Arduino] (https://programuj.ninja/arduino-podstawy-robota-piasty-sp1/)
-- [Manipulowanie tekstem w Arduino za pomocą funkcji String] (http://tesla4you.pl/zamiany-w-arduino-zacinamy-delikatna-materie-funkcja-string-part1)
+- [Dokumentacja funkcji toLowerCase() w Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
+- [Przykładowy projekt Arduino z użyciem funkcji toLowerCase()](https://create.arduino.cc/projecthub/circuito-io-team/text-transformation-with-arduino-to-lower-case-7b81ec)

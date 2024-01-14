@@ -1,48 +1,41 @@
 ---
-title:    "Swift: Obtendo a data atual."
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/getting-the-current-date.md"
+title:                "Swift: Obtendo a data atual"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual é importante?
+# Por que obter a data atual é importante
 
-Em programação, muitas vezes precisamos ter acesso à data atual para realizar diferentes tarefas, como registrar o tempo de um evento, verificar se o usuário está usando o aplicativo no horário correto, entre outras situações. Portanto, obter a data atual é uma funcionalidade extremamente valiosa e útil em qualquer linguagem de programação, inclusive no Swift.
+Ao desenvolver um aplicativo, muitas vezes precisamos trabalhar com datas. Seja para exibir a data de criação de um post, agendar um evento ou simplesmente para exibir a data atual ao usuário, é essencial saber como obter a data correta em seu aplicativo. Felizmente, o Swift possui uma maneira fácil e eficiente de fazer isso.
 
-## Como obter a data atual em Swift?
+## Como obter a data atual em Swift
 
-Existem várias maneiras de se obter a data atual em Swift, mas iremos mostrar a maneira mais comum e simples, utilizando a classe `Date` e o `DateFormatter`. Confira abaixo um exemplo de código e a saída no console:
+Para obter a data atual em Swift, podemos usar a classe `Date`. Essa classe representa uma data e hora específicas em nosso código. Veja um exemplo simples de como podemos obtê-la:
 
-```Swift
-// Importa a classe Foundation, que contém a classe Date
-import Foundation
-
-// Criação de uma instância de Date com a data e hora atual
+````Swift
 let dataAtual = Date()
+print(dataAtual)
+````
 
-// Cria um objeto DateFormatter para exibir a data atual em formato padrão
-let dateFormatter = DateFormatter()
+Isso irá imprimir a data e hora atual no formato padrão da sua localidade, como por exemplo `2020-09-20 22:30:00 +0000`. Se você quiser mostrar a data em um formato específico, podemos usar um `DateFormatter` para formatá-la. Veja um exemplo:
 
-// Define o estilo de formatação da data
-dateFormatter.dateStyle = .long
+````Swift
+let dataAtual = Date()
+let formatter = DateFormatter()
+formatter.dateFormat = "dd/MM/yyyy"
+let dataFormatada = formatter.string(from: dataAtual)
+print(dataFormatada) // imprime 20/09/2020
+````
 
-// Exibe a data atual formatada
-print(dateFormatter.string(from: dataAtual))
+## Mergulho Profundo
 
-// Saída: 12 de dezembro de 2020
-```
+Além de simplesmente obter a data atual, podemos também realizar outras operações com a classe `Date`, como comparações entre datas, realizar cálculos e manipular seu formato. Também é importante considerar o uso de `Calendar` e `TimeZone` para manipular datas de forma mais precisa e personalizada. No entanto, é importante ter cuidado ao trabalhar com diferentes fusos horários e precisar de datas precisas em diferentes regiões.
 
-Portanto, utilizando a classe `Date` e o `DateFormatter`, conseguimos obter a data atual e exibi-la no formato desejado.
+# Veja também
 
-## Um mergulho mais profundo
-
-Para aqueles que desejam explorar um pouco mais sobre como obter a data atual em Swift, é importante entender que a classe `Date` representa um ponto específico no tempo, e não apenas a data e hora atual. Além disso, é possível definir diferentes formatos de data utilizando o `DateFormatter`, como formato customizado, estilo de hora, fuso horário, entre outros.
-
-Também é importante mencionar que a classe `Date` é baseada em UTC (Tempo Universal Coordenado) e, portanto, não leva em consideração o fuso horário local do dispositivo. Para tratar isso, recomenda-se utilizar a classe `TimeZone` em conjunto com o `DateFormatter`.
-
-## Veja também
-
-- [Documentação oficial do Swift - Date](https://developer.apple.com/documentation/foundation/date)
-- [Documentação oficial do Swift - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Artigo sobre como trabalhar com datas em Swift](https://learnappmaking.com/format-dates-swift-how-to/)
+- Documentação oficial da classe `Date` em Swift: https://developer.apple.com/documentation/foundation/date
+- Como formatar datas em Swift: https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter
+- Manipulando datas com `Calendar` e `TimeZone`: https://www.raywenderlich.com/6368-working-with-dates-in-swift-tutorial-for-dummies

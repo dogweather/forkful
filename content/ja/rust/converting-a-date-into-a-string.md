@@ -1,40 +1,34 @@
 ---
-title:    "Rust: 日付を文字列に変換する"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/converting-a-date-into-a-string.md"
+title:                "Rust: 日付を文字列に変換する"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-日付を文字列に変換するのは、日付を表示したり、ファイル名に使用したりするために非常に便利です。Rustでは、このプロセスを非常に簡単にする便利な機能が用意されています。
+日付を文字列に変換することの意義や重要性については、まずその利便性から述べられます。例えば、データベースに日付を保存する場合や、ユーザーに特定の日付を表示する場合などに、日付を文字列に変換する必要があります。
 
 ## 方法
-
-日付を文字列に変換するには、Rustの標準ライブラリである「DateTime」モジュールを使用します。例えば、2021年4月13日を表す日付を文字列に変換するには、以下のようなコードを使用します。
+まずはRustの日付ライブラリであるchronoを利用します。次に、DateTimeと呼ばれるstructを使用して特定の日付を表します。その日付を文字列に変換するために、formatメソッドを使います。以下のコード例を参考にしてください。
 
 ```Rust
-use std::time::SystemTime;
-use std::time::Duration;
+use chrono::{DateTime, TimeZone, Utc};
 
-let now = SystemTime::now();
-let date = now - Duration::from_secs(86400);
-
-let date_string = date.format("%Y-%m-%d").to_string();
-
-println!("{}", date_string); // Output: 2021-04-13
+let now: DateTime<Utc> = Utc::now();
+let date_string = now.format("%d/%m/%Y").to_string();
+println!("{}", date_string)
 ```
 
-上記のコードでは、まず「SystemTime::now()」を使用して現在の日付を取得し、その後「Duration::from_secs(86400)」を使用して1日前の日付に変換しています。「date.format()」を使用して、指定したフォーマットに従って日付を文字列に変換し、最後に「to_string()」で文字列に変換しています。このように、Rustでは非常に簡単に日付を文字列に変換することができます。
+出力:
+```
+12/05/2021
+```
 
-## ディープダイブ
-
-日付を文字列に変換するには、フォーマットの指定が非常に重要です。Rustでは、「format!」マクロを使用してフォーマットを指定することができます。また、日付を文字列から解析することもできます。詳細は公式ドキュメントをご確認ください。
+## 深堀り
+日付を文字列に変換する際には、formatメソッドの引数に指定したフォーマットに従う必要があります。このフォーマットには、日付や時間を表記するための特定の文字列があります。例えば、"%d/%m/%Y"は日付を"DD/MM/YYYY"という形式で表すことを意味します。詳しくはchronoのドキュメントを確認してください。
 
 ## 参考リンク
-
-- Rust公式ドキュメント 「Date and Time Formatting」: https://doc.rust-lang.org/std/fmt/trait.Display.html#method.fmt-4
-- Rust公式ドキュメント 「Date and Time Parsing」: https://doc.rust-lang.org/std/time/struct.DateTime.html
-- Rust日本語ドキュメント 「std::format! マクロ」: https://doc.rust-jp.rs/rust-by-example-ja/std_misc/fmt.html
-- Qiita 「Rustで日付を扱う」: https://qiita.com/sirone/items/b8b531ea3c5a21e74234
+- [chronoドキュメント](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rustにおける日付と時刻の取り扱い](https://qiita.com/huyuumi/items/bb8eba7efd1592905bc4)

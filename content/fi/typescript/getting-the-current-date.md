@@ -1,41 +1,82 @@
 ---
-title:    "TypeScript: Nykyisen päivämäärän noutaminen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/getting-the-current-date.md"
+title:                "TypeScript: Nykyisen päivämäärän hakeminen"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
+Ehkä olet joskus miettinyt, mikä päivämäärä on tänään. Ehkä sinulla on projekti, jossa tarvitset tietoa nykyisestä päivämäärästä. Tämä ohje auttaa sinua saamaan nykyisen päivämäärän TypeScript-koodisi avulla.
 
-Jokaisen sovelluksen tarvitsee joskus käyttää päivämäärää joko käyttäjän näyttämiseksi tai tietojen tallentamiseen tietokantaan. Päivämäärän saaminen nykyisestä ajasta on yksi perustavanlaatuisista toiminnoista, joita jokaisen ohjelmoijan tulee tietää.
-
-## Miten?
-
-Päivämäärän saaminen nykyisestä ajasta on yksinkertaista TypeScript-kielellä. Käyttämällä sisäänrakennettua `Date`-luokkaa, voimme käyttää sen `getDate()`, `getMonth()` ja `getFullYear()` -metodeja palauttamaan halutun ajanhetken.
+## Miten
+Päivämäärän saamiseksi on olemassa useita erilaisia tapoja TypeScriptissä, mutta yksi yksinkertaisimmista on käyttää Date-objektia. Voit luoda uuden Date-objektin `new Date()`, joka antaa nykyisen päivämäärän ja ajan. Voit myös antaa halutun päivämäärän ja ajan parametreina `new Date(year, month, day, hours, minutes, seconds)`. Katso esimerkki alla olevassa koodilohkossa.
 
 ```TypeScript
-const currentDate: Date = new Date();
+// Luo uusi Date-objekti nykyisestä päivämäärästä
+const nykyinenPaivamaara = new Date();
 
-console.log(`Nykyinen päivä: ${currentDate.getDate()}`);
-console.log(`Nykyinen kuukausi: ${currentDate.getMonth() + 1}`); // Muista lisätä yksi, koska kuukaudet alkavat nollasta
-console.log(`Nykyinen vuosi: ${currentDate.getFullYear()}`);
+// Tulosta päivämäärä konsoliin
+console.log(nykyinenPaivamaara);
+
+// Luo uusi Date-objekti tiettyyn päivämäärään ja aikaan
+const tulevaPaivamaara = new Date(2021, 11, 24, 18, 30, 0);
+
+// Tulosta päivämäärä ja aika konsoliin
+console.log(tulevaPaivamaara);
 ```
 
-Koodin tuloste:
+Koodin tulostama tulos olisi seuraava:
 
 ```
-Nykyinen päivä: 7
-Nykyinen kuukausi: 10
-Nykyinen vuosi: 2021
+Mon Nov 16 2020 18:04:28 GMT+0200 (Eastern European Standard Time)
+Fri Dec 24 2021 18:30:00 GMT+0200 (Eastern European Standard Time)
 ```
 
-## Syvemmälle
+Voit myös käyttää Date-objektin erilaisia metodeita saadaksesi tarkempia tietoja päivämäärästä, kuten esimerkiksi `.getFullYear()` saadaksesi vuoden tai `.getMonth()` saadaksesi kuukauden numeron. Katso alla oleva esimerkki:
 
-Date-luokka tarjoaa myös muita hyödyllisiä metodeja kuten `getHours()`, `getMinutes()` ja `getSeconds()` jos haluat myös saada tarkempia tietoja nykyisestä ajasta. Lisäksi `Date`-luokkaan voidaan antaa myös parametrejä, kuten vuosi, kuukausi ja päivä, jolloin se palauttaa tietyn päivämäärän tiedot.
+```TypeScript
+// Hae vuosi nykyisestä päivämäärästä
+const vuosi = nykyinenPaivamaara.getFullYear();
+
+// Tulosta vuosi konsoliin
+console.log(vuosi);
+
+// Hae kuukauden numero (tammikuu on 0, joten lisää yksi)
+const kuukausi = nykyinenPaivamaara.getMonth() + 1;
+
+// Tulosta kuukausi konsoliin
+console.log(kuukausi);
+```
+
+Yllä olevan koodin tulostama tulos olisi seuraava:
+
+```
+2020
+11
+```
+
+## Syvimmät syövereet
+Date-objekti perustuu UTC-aikaan (Coordinated Universal Time), joka on vakioaika ympäri maailman. Kun tulostat Date-objektin konsoliin, saat tulokseksi UTC-aian. Voit kuitenkin muuntaa sen haluamaasi aikaan käyttämällä Date-objektin `.toLocaleString()`-metodia ja antamalla haluamasi aikavyöhykkeen parametrina.
+
+```TypeScript
+// Aseta päivämääräksi tulevaPaivamaara
+const nykyinenPaivamaara = tulevaPaivamaara;
+
+// Muunna päivämäärä haluttuun aikavyöhykkeeseen
+const muunnettuPaivamaara = nykyinenPaivamaara.toLocaleString('fi-FI', {timeZone: 'Europe/Helsinki'});
+
+// Tulosta muunnettu päivämäärä konsoliin
+console.log(muunnettuPaivamaara);
+```
+
+Yllä olevan koodin tulostama tulos olisi:
+
+```
+24.12.2021, 18:30:00
+```
 
 ## Katso myös
-
-- [TypeScript Date-luokan dokumentaatio](https://www.typescriptlang.org/docs/handbook/date-and-time.html)
-- [W3Schools - JavaScript Date-objekti](https://www.w3schools.com/js/js_dates.asp)
-- [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Date-objektin dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScriptin viralliset

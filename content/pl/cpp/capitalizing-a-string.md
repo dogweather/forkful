@@ -1,54 +1,53 @@
 ---
-title:    "C++: Zmiana wielkości litery w ciągu znaków"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/capitalizing-a-string.md"
+title:                "C++: Zastosowanie wielkich liter w ciągu znaków"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego zainteresować się zmianą wielkości liter w C++?
 
-Niedawno pewnie spotkaliście się z sytuacją, gdy musieliście zmienić napis na dużą literę w C++. Może to być nazwa użytkownika, tytuł artykułu lub dowolny inny ciąg znaków, który trzeba nagle "zabolować". Dlaczego warto poznać sposób na kapitalizację napisu w C++? Sprawia to, że nasze programy mają bardziej profesjonalny wygląd i są bardziej przyjemne dla oka.
+Manipulacja ciągami znaków jest nieodłączną częścią programowania w języku C++. Czasami istnieje potrzeba zmiany wielkości liter w danym ciągu na zdefiniowaną przez nas formę. Może to być wyświetlanie tekstu w jednolitej postaci lub też poprawianie błędów użytkowników wprowadzających dane. W tym artykule przedstawię prosty sposób na zmianę wielkości liter w C++ oraz kilka ciekawostek na temat tego zagadnienia.
 
-## Jak to zrobić
+## W jaki sposób zmienić wielkość liter w C++?
 
-W celu kapitalizacji napisu w C++, musimy użyć funkcji `toupper()` z biblioteki `<cctype>`. Poniżej znajduje się przykładowy kod, który pokazuje, jak to zrobić:
+Zmiana wielkości liter w C++ jest możliwa dzięki użyciu funkcji `toupper()` i `tolower()` z biblioteki `cctype`. Dzięki nim możemy zmienić każdy znak w ciągu znaków na jego odpowiednik w dużej lub małej literze. Poniżej przedstawiamy prosty kod w C++, który dokonuje tej zmiany:
 
 ```C++
 #include <iostream>
-#include <string>
 #include <cctype>
 
+using namespace std;
+
 int main() {
-  std::string napis = "witaj świecie";
+    string tekst = "Pierwsze zdanie.";
 
-  // Kapitalizacja pierwszej litery
-  napis[0] = toupper(napis[0]);
-  std::cout << napis << std::endl;
+    for (int i = 0; i < tekst.length(); i++) {
+        tekst[i] = tolower(tekst[i]);
+    }
 
-  // Kapitalizacja całego napisu
-  for (int i = 0; i < napis.length(); i++) {
-    napis[i] = toupper(napis[i]);
-  }
-  std::cout << napis << std::endl;
+    cout << tekst;
 
-  return 0;
+    return 0;
 }
+
 ```
 
-**Output**:
-```
-Witaj świecie
-WITAJ ŚWIECIE
-```
+#### Output:
 
-Jako wynik otrzymujemy kapitalizację pierwszej litery lub całego napisu, w zależności od naszych potrzeb.
+`pierwsze zdanie.`
 
-## Głębszy wgląd
+## Głębsze wgląd w zmianę wielkości liter
 
-Co dzieje się wewnątrz funkcji `toupper()`? Głównym zadaniem tej funkcji jest zmiana podanej litery na jej odpowiednik z dużej litery. Jeśli jednak nasz napis zawiera polskie znaki, warto pamiętać o tym, że funkcja ta działa tylko na literach angielskiego alfabetu. Dlatego warto upewnić się, że nasz napis nie zawiera polskich znaków przed użyciem funkcji `toupper()`.
+W powyższym przykładzie wykorzystaliśmy funkcję `tolower()` do zmniejszenia wielkości liter, ale w przypadku zmiany na duże litery, będziemy musieli użyć funkcji `toupper()`. Warto również zauważyć, że funkcje te nie zmieniają znaków specjalnych, takich jak kropki czy przecinki. Oznacza to, że jeśli mamy ciąg znaków, w którym występują te znaki, musimy dokonać kolejnej operacji na stosownych indeksach.
 
-## Zobacz też
+Inną ciekawą funkcją jest `isupper()` i `islower()`, które pozwalają sprawdzić, czy dany znak jest literą dużej lub małej wielkości. Dzięki nim możemy zastosować określone warunki w naszym kodzie, aby dokonać zmiany tylko na wybranych znakach.
 
-- Dokumentacja do funkcji `toupper()` w bibliotece `<cctype>`: https://www.cplusplus.com/reference/cctype/toupper/
-- Przykłady zastosowań kapitalizacji w C++: https://www.programiz.com/cpp-programming/library-function/cctype/toupper
+## Zobacz również
+
+- [Dokumentacja funkcji toupper() i tolower() w C++](https://www.cplusplus.com/reference/cctype/toupper/)
+- [Wartości ASCII znaków](http://www.asciitable.com/)
+
+Dziękujemy za przeczytanie tego artykułu. Mam nadzieję, że teraz wiesz jak zmienić wielkość liter w C++. Jeśli masz jakieś dodatkowe pytania lub uwagi, śmiało możesz zostawić je w komentarzu poniżej. Do zobaczenia w kolejnych artykułach!

@@ -1,54 +1,34 @@
 ---
-title:    "Fish Shell: Écrire des tests"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-tests.md"
+title:                "Fish Shell: Écriture de tests"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-De nos jours, il est essentiel pour les programmeurs de s'assurer de la qualité et de la stabilité de leur code. Cela peut sembler fastidieux, mais en réalité, écrire des tests peut vous faire gagner du temps et éviter des problèmes à long terme. Avec Fish Shell, vous pouvez facilement écrire des tests pour votre code, et cet article va vous montrer comment.
+Ecrire des tests peut sembler fastidieux au premier abord, mais cela peut en réalité vous faire gagner beaucoup de temps et d'efforts à long terme en vous assurant que votre code fonctionne correctement et en vous aidant à le maintenir dans le futur.
 
 ## Comment faire
 
-Pour écrire des tests avec Fish Shell, il suffit de créer un fichier avec l'extension .fish et d'utiliser la commande `test` pour effectuer les vérifications. Voici un exemple de code pour tester si une variable contient bien la valeur "bonjour" :
+Pour écrire des tests avec Fish Shell, vous pouvez utiliser la commande `test` suivie d'une condition et d'un bloc de code à exécuter si la condition est vraie. Par exemple:
 
 ```Fish Shell
-# Définition de la variable
-set message "bonjour"
-
-# Test pour voir si la variable contient la valeur "bonjour"
-test $message = "bonjour"
+test $var -eq 1
+echo "Le contenu de la variable est égal à 1"
 ```
 
-Le résultat de ce test sera un code de sortie 0, ce qui signifie que le test a réussi. Si la variable n'avait pas la bonne valeur, le code de sortie serait 1, indiquant un échec.
+Si la variable `$var` a une valeur de 1, le test sera réussi et la phrase "Le contenu de la variable est égal à 1" sera affichée à l'écran. Sinon, rien ne se passera.
 
-Vous pouvez également utiliser la commande `not` pour effectuer des tests négatifs, comme dans cet exemple :
+Vous pouvez également utiliser `test` pour vérifier des fichiers ou des dossiers, en utilisant des options telles que `-f` pour vérifier si un fichier existe ou `-d` pour vérifier si un dossier existe.
 
-```Fish Shell
-# Définition de la variable
-set nombre 10
+## Plonger plus profondément
 
-# Test pour voir si la variable n'est pas égale à 5
-not test $nombre -eq 5
-```
-
-Encore une fois, le résultat de ce test sera un code de sortie 0, indiquant que le test a réussi.
-
-## Deep Dive
-
-Maintenant que vous savez comment écrire des tests de base avec Fish Shell, voici quelques éléments supplémentaires à prendre en compte :
-
-- Vous pouvez également utiliser la commande `and` pour effectuer plusieurs tests en même temps. Le code de sortie sera 0 uniquement si tous les tests sont réussis.
-- La commande `or` peut être utilisée pour effectuer des actions différentes selon le résultat du test (code de sortie 0 ou 1).
-- Vous pouvez utiliser l'option `set -x` pour afficher les tests et leurs résultats dans la sortie standard.
-- Il existe également des commandes plus spécifiques pour tester des conditions telles que `test -d` pour vérifier si un dossier existe ou encore `test -x` pour tester si un fichier est exécutable.
-
-N'hésitez pas à consulter la documentation de Fish Shell pour plus d'informations et de détails sur l'écriture de tests.
+Pour ceux qui souhaitent en apprendre davantage sur les tests avec Fish Shell, il existe de nombreuses ressources en ligne qui expliquent en détail les différentes options disponibles pour la commande `test`, ainsi que des exemples de cas d'utilisation courants. Vous pouvez également utiliser la documentation officielle de Fish Shell pour en savoir plus sur l'écriture de tests dans ce langage.
 
 ## Voir aussi
 
-- La documentation de Fish Shell sur l'utilisation des tests : [lien ici]
-- Un tutoriel complet sur l'écriture de tests avec Fish Shell : [lien ici]
-- Des astuces pour écrire des tests efficaces : [lien ici]
+- [Documentation sur les tests de Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
+- [Exemples de cas d'utilisation de tests avec Fish Shell](https://dev.to/adelphym/fish-shell-test-samples-29g7)

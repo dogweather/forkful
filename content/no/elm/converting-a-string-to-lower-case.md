@@ -1,39 +1,40 @@
 ---
-title:    "Elm: Konvertere en streng til små bokstaver."
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/converting-a-string-to-lower-case.md"
+title:                "Elm: Konvertering av en streng til små bokstaver"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å konvertere en streng til små bokstaver er en vanlig oppgave når du jobber med tekstbehandling eller databehandling. Dette kan være nyttig for å sikre enhetlig formatering eller for å sammenligne tekststrukturer.
+Når vi jobber med tekstbehandling i programvare, kan det være nødvendig å konvertere strenger til små bokstaver. Dette kan være nyttig for å sammenligne strenger eller for en bedre brukeropplevelse. Elm har en innebygd funksjon for å gjøre dette, og i denne bloggposten skal vi se på hvordan den fungerer.
 
-# Hvordan
+## Hvordan
 
-For å konvertere en streng til små bokstaver i Elm, kan du bruke funksjonen "String.toLower". Her er et eksempel på hvordan du kan bruke denne funksjonen:
+For å konvertere en streng til små bokstaver i Elm, kan vi bruke funksjonen `String.toLower`. Her er et eksempel på hvordan det kan gjøres:
 
 ```Elm
 import String
 
-name = "ELM ER KULT"
+stringToConvert = "ELM Erin"
+convertedString = String.toLower stringToConvert
 
-toLower = String.toLower name
-
--- Output: "elm er kult"
 ```
 
-Dette koden vil konvertere den opprinnelige strengen "ELM ER KULT" til små bokstaver og lagre den i en ny variabel med navnet "toLower". Du kan deretter bruke denne nye variabelen i koden din.
+Den første linjen importerer `String` modulen, som gir oss tilgang til `String.toLower` funksjonen. Deretter lager vi en variabel `stringToConvert` med en verdi. I neste linje bruker vi `String.toLower` til å konvertere variabelen til små bokstaver og lagrer den i en ny variabel `convertedString`. Når vi kjører koden, vil `convertedString` bli `"elm erin"`.
 
-# Dykk dypere
+Dette er nyttig når vi for eksempel må sammenligne to strenger og vil ignorere forskjeller i store og små bokstaver. Vi kan også bruke dette til å formatere input fra brukeren til et konsistent format.
 
-Når du bruker funksjonen "String.toLower", er det viktig å være oppmerksom på at den bare konverterer bokstaver fra det engelske alfabetet til små bokstaver. Hvis du har tekst på andre språk, som for eksempel norsk, kan det bli feil i konverteringen. Det kan også føre til uønskede resultater hvis det er spesielle tegn eller symboler i strengen.
+## Dykk dypere
 
-En annen ting å være oppmerksom på er at funksjonen bare konverterer bokstaver, ikke tall eller andre tegn. Hvis du trenger å konvertere hele strengen, kan du bruke funksjonen "String.toLowercase", som også inkluderer tall og spesielle tegn.
+Det er verdt å merke seg at `String.toLower` funksjonen kun konverterer bokstaver i det engelske alfabetet til små bokstaver. Eventuelle bokstaver med aksenter eller spesielle tegn vil forbli uendret. Det er også verdt å merke seg at funksjonen ikke endrer originalstrengen, men heller returnerer en ny konvertert versjon.
 
-# Se også
+I tillegg til `String.toLower` finnes det også en tilsvarende `String.uppercase` funksjon for å konvertere til store bokstaver.
 
-- Offisiell dokumentasjon for "String.toLower" funksjonen: https://package.elm-lang.org/packages/elm/core/latest/String#toLower
-- Elm Guide: https://guide.elm-lang.org/
-- Elm Discuss Forum: https://discourse.elm-lang.org/
+## Se også
+
+- [Elm Docs - String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Docs - toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- [Elm Docs - uppercase](https://package.elm-lang.org/packages/elm/core/latest/String#uppercase)

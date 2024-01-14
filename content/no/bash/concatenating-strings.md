@@ -1,73 +1,50 @@
 ---
-title:    "Bash: Sammenslåing av strenger"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/concatenating-strings.md"
+title:                "Bash: Sammenslåing av tekststrenger"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å kombinere strenger i Bash-programmering kan være nyttig for å lage dynamiske og fleksible skript som kan håndtere variabelt innhold. Det kan også være en effektiv måte å formatere utdata på.
+Hvorfor bry seg om å kombinere strenger i Bash-programmering? Jo, fordi det er en nyttig og effektiv måte å manipulere og formatere tekst på. Ved å slå sammen flere strenger til en, kan man enkelt lage mer komplekse og tilpassede utskrifter.
 
 ## Hvordan
 
-For å kombinere strenger i Bash, bruker du konkatineringsoperatøren "=". Dette vil sette sammen to strenger side om side og danne en lengre streng.
-
-Et eksempel på dette kan være å kombinere to strenger som inneholder navn og alder. Vi begynner med å definere variablene:
+Det er enkelt å kombinere strenger i Bash med følgende syntaks:
 
 ```Bash
-navn="Marius"
-alder="25 år gammel"
+string1="Hei" 
+string2="verden!" 
+combined="$string1 $string2"
+echo $combined
 ```
 
-Deretter bruker vi konkateneringsoperatøren for å sette sammen de to strengene og lagre dem i en ny variabel:
+Dette vil gi utskriften "Hei verden!". Merk at man må bruke et dollar-tegn foran variabelnavnet når man vil ha verdien av variabelen.
+
+Man kan også legge til ekstra tegn eller variabler i strengen, for eksempel:
 
 ```Bash
-info="$navn er $alder."
-echo $info
+name="Ola"
+greeting="Hei $name, velkommen!"
+echo $greeting
 ```
 
-Output vil være:
+Dette vil gi utskriften "Hei Ola, velkommen!". Man kan også kombinere strenger med tall og spesialtegn, for å lage mer komplekse utskrifter.
 
-```
-Marius er 25 år gammel.
-```
+## Dype dykk
 
-Det er også mulig å kombinere flere strenger sammen ved å bruke flere konkateneringsoperatører, som vist i dette eksemplet:
+For de som er interessert i å lære mer om å kombinere strenger i Bash, er det viktig å huske på at det finnes forskjellige måter å gjøre det på. Her er noen tips og triks:
 
-```Bash
-fornavn="Eline"
-etternavn="Lund"
-epost="@example.com"
-```
-
-Vi kan da kombinere disse for å lage en e-postadresse ved å bruke flere konkateneringsoperatører:
-
-```Bash
-epostadresse="$fornavn$etternavn$epost"
-echo $epostadresse
-```
-
-Output vil være:
-
-```
-ElineLund@example.com
-```
-
-## Dykk dypere
-
-I Bash er det flere måter å kombinere strenger på, som for eksempel ved bruk av "printf" kommandoen eller ved å bruke "here" dokumenter. Det er også viktig å være oppmerksom på at det finnes forskjellige måter å håndtere spesialtegn og mellomrom mellom strenger på.
-
-For å lære mer om å kombinere strenger i Bash, kan du utforske disse ressursene:
-
-- [The Bash man page](https://linux.die.net/man/1/bash)
-- [Bash Guide for Nybegynnere](https://www.pa.msu.edu/~abtajora/BashProgABS-guide.pdf)
-- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash Concatenation - Manipulating Strings in Bash](https://jimshaver.net/2019/02/22/bash-concatenation-manipulating-strings-in-bash/)
+- Tilfeldige strenger: Ved hjelp av tilfeldig genererte tall, kan man lage lotto-nummer eller passord ved å kombinere tilfeldige tegn som a-z og 0-9.
+- Løkker: Man kan kombinere strenger i en løkke, for å lage flere utskrifter med forskjellige verdier.
+- Escape-tegn: Hvis man vil inkludere spesialtegn i strengen, som for eksempel "\n" for linjeskift, må man bruke et escape-tegn foran spesialtegnet for å unngå at det tolkes som en kommando.
+- For å lære mer om å kombinere strenger og andre nyttige tips for Bash-programmering, se lenkene nedenfor.
 
 ## Se også
 
-- [Bash Arrays - Working with Arrays in Bash](https://github.com/mariusbrataas/bash-arrays)
-- [Bash IF...ELSE - How to Use Conditional Statements in Bash](https://github.com/mariusbrataas/bash-if-else)
-- [Bash Loops - How to Use For, While, and Until Loops in Bash](https://github.com/mariusbrataas/bash-loops)
+- Official GNU Bash Manual: https://www.gnu.org/software/bash/manual/
+- Bash scripting cheatsheet: https://devhints.io/bash
+- Bash examples for beginners: https://www.codecademy.com/learn/learn-the-command-line/articles/bash-scripting-cheat-sheet

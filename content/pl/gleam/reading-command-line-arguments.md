@@ -1,45 +1,44 @@
 ---
-title:    "Gleam: Odczytywanie argumentów linii poleceń"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/reading-command-line-arguments.md"
+title:                "Gleam: Odczytywanie argumentów linii poleceń"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co chodzi?
 
-Istnieje wiele powodów, dla których powinieneś nauczyć się czytać argumenty z wiersza poleceń w Gleam. Przede wszystkim, jest to bardzo przydatna umiejętność, szczególnie jeśli pracujesz z większymi projektami. Pozwala to na dostosowanie zachowania programu w zależności od tego, w jaki sposób jest uruchamiany.
+Jeśli jesteś programistą lub chcesz się nauczyć programowania, na pewno słyszałeś o języku programowania Gleam. Jest to nowoczesny i wydajny język funkcyjny, który zyskuje coraz większą popularność wśród programistów. Dziś przyjrzymy się jednemu z podstawowych aspektów programowania w Gleam - odczytywaniu argumentów wiersza poleceń.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby wczytać argumenty z wiersza poleceń w Gleam, należy użyć funkcji `os.args()`, która zwraca listę argumentów przekazanych przy uruchamianiu programu. Następnie można przetworzyć tę listę w celu uzyskania wartości, które są potrzebne w programie.
+Odczytywanie argumentów wiersza poleceń w języku Gleam jest bardzo proste. Wystarczy użyć funkcji o nazwie `gleam/gleam:command_line:args`, która zwraca listę wszystkich argumentów przekazanych do programu. Przykładowo, jeśli chcemy odczytać dwa argumenty przekazane do programu, musimy wywołać funkcję w następujący sposób:
 
-Przykładowy kod:
+```
+Gleam import gleam/gleam
 
-```Gleam
-import os
-
-pubfn main() {
-  args = os.args()
-  for arg in args {
-    // przetwarzanie argumentu
-  }
+fn main() {
+  let args = gleam/gleam:command_line:args()
+  println("Pierwszy argument: #{args[0]}")
+  println("Drugi argument: #{args[1]}")
 }
 ```
 
-Przykładowy output dla komendy `gleam run program "argument1" 2`:
+W powyższym przykładzie użyliśmy funkcji `println`, aby wyświetlić odczytane argumenty wiersza poleceń. Możemy również użyć pętli `for` w celu przejścia przez wszystkie argumenty przekazane do programu.
 
-```Bash
-["program", "argument1", "2"]
-```
+## Deep Dive
 
-## Vert Deep Dive
+Podczas odczytywania argumentów wiersza poleceń, należy pamiętać o kilku ważnych rzeczach. Po pierwsze, `gleam/gleam:command_line:args` zwraca listę typu `List(String)`, co oznacza, że możemy używać standardowych funkcji listowych, takich jak `length` czy `map`.
 
-Funkcja `os.args()` zwraca listę argumentów jako typ `List(String)`. Taki typ może być przetwarzany na inne typy, na przykład `Int` lub `Float`, zależnie od potrzeb programu.
+Po drugie, warto pamiętać o obsłudze błędów. Jeśli użytkownik nie przekaże odpowiedniej liczby argumentów, nasz program może zakończyć się niepowodzeniem. Dlatego warto wykorzystać mechanizm obsługi błędów w języku Gleam, aby przewidzieć takie sytuacje i odpowiednio zareagować.
 
-Ważne jest również zauważyć, że argumenty z wiersza poleceń są przekazywane jako ciągi znaków. W przypadku, gdy wymagane są inne typy, należy odpowiednio je przekonwertować.
+## Zobacz również
 
-## Zobacz także
+Jeśli chcesz dowiedzieć się więcej o programowaniu w języku Gleam, warto przejrzeć inne artykuły na naszym blogu lub zapoznać się z dokumentacją języka. Poniżej znajdują się kilka przydatnych linków:
 
-- [Dokumentacja Gleam na temat argumentów z wiersza poleceń](https://gleam.run/book/tour/command-line-arguments.html)
-- [Przykładowy projekt z wykorzystaniem argumentów z wiersza poleceń w Gleam](https://github.com/yourusername/your-project-name)
+- [Oficjalna strona języka Gleam](https://gleam.run/)
+- [Dokumentacja języka Gleam](https://gleam.run/documentation/)
+- [Artykuły na temat Gleam na Medium](https://medium.com/tag/gleam)
+
+Dziękujemy za przeczytanie tego artykułu i życzymy powodzenia w nauce programowania w języku Gleam!

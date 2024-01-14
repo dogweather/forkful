@@ -1,17 +1,19 @@
 ---
-title:    "Go: 현재 날짜 가져오기"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/getting-the-current-date.md"
+title:                "Go: 현재 날짜 얻기"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-Go 언어 - 현재 날짜 가져오기<br>
-## 이유
-현재 날짜를 가져오는 작업은 많은 프로그래머에게 중요합니다. 예를 들어, 데이터베이스 작업을 할 때 특정 날짜의 데이터를 찾고 싶을 때, 또는 파일을 생성하거나 수정할 때 현재 날짜를 파일 이름에 넣고 싶을 때 등등 많은 상황에서 사용됩니다. 따라서 Go 언어에서 현재 날짜를 가져오는 방법을 알아보는 것은 매우 유용한 지식입니다.
+## 왜
 
-## 가져오는 방법
-먼저, 시간과 관련된 기능들을 가진 `time` 패키지를 import 해야합니다. 그리고 `Now()` 함수를 사용하여 현재 시간 정보를 가져올 수 있습니다. 아래는 현재 시간을 특정 형식으로 출력하는 예제 코드입니다.
+Go 프로그래밍을 위해 현재 날짜를 얻는 것에 대해 궁금할 수 있습니다. 알아보는 것에 관심이 있다면, 이 글을 읽어보세요.
+
+## 어떻게
+
+Go에서 현재 날짜를 얻는 것은 매우 쉽습니다. 단지 `time.Now()` 함수를 호출하면 됩니다. 아래의 코드를 보세요:
 
 ```Go
 package main
@@ -23,17 +25,42 @@ import (
 
 func main() {
     now := time.Now()
-
-    fmt.Println(now.Format("2006년 1월 2일")) // 출력 예시: 2019년 12월 1일
+    fmt.Println("오늘의 날짜는:", now)
 }
 ```
 
-위 코드에서 사용된 `Format()` 함수는 원하는 형식으로 시간을 출력할 수 있도록 해줍니다. 다양한 형식을 사용할 수 있으며, 각각의 의미는 `time` 패키지 문서에서 확인할 수 있습니다. 또한, 시간 관련 연산을 위한 다양한 함수들도 제공하고 있으니 자세한 내용은 공식 문서를 참고하면 좋습니다.
+위 코드를 실행하면 다음과 같은 출력이 나타납니다:
 
-## 더 자세한 내용
-`time` 패키지는 날짜와 시간을 다루는 데에 매우 유용한 기능들을 제공합니다. 예를 들어, 특정 시간 이후의 시간 정보를 구하거나 두 시간 사이의 차이를 구하는 등 다양한 연산을 할 수 있습니다. 또한 로컬 시간이 아닌 다른 시간대에서의 시간 정보를 다룰 수도 있습니다. 이러한 기능들을 다양하게 활용하면 더 다양한 프로그래밍 가능성이 열리게 됩니다.
+```
+오늘의 날짜는: 2020-05-19 13:46:00.1565351 +0900 KST m=+0.003985101
+```
 
-## 참고 자료
-- 공식 `time` 패키지 문서: https://golang.org/pkg/time/
-- `now` 패키지: https://github.com/jinzhu/now
-- `time` 패키지 예제 코드: https://zetcode.com/golang/time/
+위 예시에서 처럼, `time.Now()` 함수는 현재 시간뿐만 아니라 날짜와 시간의 모든 정보를 반환합니다. 따라서 원하는대로 날짜만을 사용하려면 `now.Date()` 메소드를 사용하면 됩니다. 아래의 코드를 참고하세요:
+
+```Go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    now := time.Now()
+    fmt.Println("오늘의 날짜는:", now.Date())
+}
+```
+
+위 코드를 실행하면 다음과 같은 출력이 나타납니다:
+
+```
+오늘의 날짜는: 2020 May 19
+```
+
+## 깊이 파고들기
+
+Go의 `time` 패키지에는 날짜 및 시간을 다루는 다양한 기능이 포함되어 있습니다. 이 중에는 시간대 변환, 날짜 계산 등 유용한 기능들이 있습니다. 자세한 내용은 공식 문서를 참고하시길 바랍니다.
+
+## 또 다른 자료들
+
+- Go 공식 문서: https://golang.org/pkg/time/

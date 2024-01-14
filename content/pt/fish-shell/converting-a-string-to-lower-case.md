@@ -1,33 +1,43 @@
 ---
-title:    "Fish Shell: Convertendo uma string para minúsculas"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/converting-a-string-to-lower-case.md"
+title:                "Fish Shell: Convertendo uma string em minúsculas."
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
+A conversão de strings para letras minúsculas é uma tarefa muito comum em programação, e é importante para garantir a consistência e a formatação adequada dos dados. Além disso, pode ser necessário converter strings em letras minúsculas para fins de comparação, classificação ou pesquisa.
 
-Se você é um iniciante em programação, pode parecer confuso por que alguém precisaria converter uma string para minúsculas. Mas para aqueles que trabalham com linguagens de programação, essa é uma etapa crucial para garantir que o código funcione corretamente.
+## Como fazer
+Para converter uma string em letras minúsculas no Fish Shell, podemos usar o comando `string tolower`, seguido da string que queremos converter. Por exemplo:
 
-## Como Fazer
+```
+Fish Shell
 
-```Fish Shell
-set minha_string "Hello World"
-string tolower $minha_string
+string tolower "Olá Mundo!"
+
+# saída: olá mundo!
 ```
 
-**Saída: hello world**
-
-Aqui, estamos definindo uma variável `minha_string` com o valor de "Hello World". Em seguida, usamos o comando `string tolower` para converter essa string para minúsculas. O resultado é a saída "hello world". Esse processo é útil ao lidar com entradas de usuário, pois elas podem ser sensíveis a maiúsculas e minúsculas.
-
-Além do comando `string tolower`, o Fish Shell também possui o comando `string toupper` para converter uma string para maiúsculas. Isso pode ser útil em situações em que você precisa alterar o caso de uma string de forma rápida e eficiente.
+No exemplo acima, a string "Olá Mundo!" foi convertida para letras minúsculas e a saída foi "olá mundo!".
 
 ## Profundidade
+Existem algumas coisas importantes a serem consideradas ao converter uma string para letras minúsculas. Primeiro, é importante lembrar que as letras acentuadas também serão convertidas em suas versões minúsculas, por exemplo "Ê" será convertido para "ê".
 
-Existem várias razões pelas quais pode ser necessário converter uma string para minúsculas. Por exemplo, ao comparar duas strings, pode ser necessário convertê-las para o mesmo caso para garantir uma comparação precisa. Além disso, o uso de letras maiúsculas e minúsculas em variáveis pode causar erros em alguns sistemas operacionais, portanto, converter para minúsculas pode ajudar a evitar esses problemas.
+Além disso, em alguns casos, pode ser necessário especificar o idioma para garantir que a conversão para minúsculas seja feita corretamente. Isso pode ser feito adicionando o parâmetro `-l` e o código do idioma após o comando `string tolower`. Por exemplo:
 
-## Veja Também
+```
+Fish Shell
 
-- Documentação oficial do Fish Shell: `https://fishshell.com/docs/current/cmds/string.html#string-tolower`
-- Como converter uma string para maiúsculas em Fish Shell: `https://example.com/converter-string-uppercase-fish-shell`
+string tolower -l pt "É Preciso Ser Homem"
+
+# saída: é preciso ser homem
+```
+
+No exemplo acima, especificamos o idioma como português (código "pt") e a saída foi convertida para "é preciso ser homem".
+
+## Veja também
+- [Documentação oficial do Fish Shell para o comando string tolower](https://fishshell.com/docs/current/commands.html#string-tolower)
+- [Exemplo de script em Fish Shell usando o comando string tolower](https://github.com/fish-shell/fish-shell/blob/master/share/doc/fish/functions/tolower.fish)

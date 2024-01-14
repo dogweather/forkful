@@ -1,46 +1,35 @@
 ---
-title:    "Clojure: स्ट्रिंग को लोअर केस में रूपांतरण"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/converting-a-string-to-lower-case.md"
+title:                "Clojure: शब्द स्तर को निचे लाना"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-
-कोई भी शब्द को छोटे अक्षरों में बदलने के संबंध में तो जानते ही होंगे। परंतु क्लोजर में भी यह चीज़ बहुत साधारण हो सकती है। इस आलेख में हम देखेंगे कि क्लोजर में शब्द को छोटे अक्षरों में बदलना कितना आसन है।
+क्या आपको कभी कभी स्ट्रिंग को लोअर केस में कन्वर्ट करने की जरूरत होती है? स्ट्रिंग ऑपरेशन में लोअर केस का उपयोग अक्सर टेक्स्ट प्रसंस्करण और डेटा मैनिपुलेशन के लिए किया जाता है।
 
 ## कैसे करें
-
-आप क्लोजर में शब्द को छोटे अक्षरों में बदलने के लिए निम्नानुसार कोड इस्तेमाल कर सकते हैं: 
-
-```Clojure
-(defn convert-to-lower [string]
-    (clojure.string/lower-case string))
-```
-
-इसका उपयोग करके आप आसानी से किसी भी शब्द को छोटे अक्षरों में बदल सकते हैं। नीचे दिए गए उदाहरण में हमने दो शब्दों को छोटे अक्षरों में बदला है और उनका आउटपुट प्रदर्शित किया है। 
-
-```Clojure 
-(convert-to-lower "क्लोजर") ; क्लोजर
-(convert-to-lower "हमारा साथी") ; हमारा साथी
-```
-
-## गहराई में जाएं
-
-यदि आप क्लोजर का एक दीवाना हैं और इसकी गहराई में जाना चाहते हैं तो आप शब्द को छोटे अक्षरों में बदलने का इनपुट कोड कैसे करते हैं, उसके बारे में भी जान सकते हैं। यह कोड मुख्य रूप से इस लाइन पर निर्धारित है: 
+आइए देखते हैं कि कैसे हम Clojure में स्ट्रिंग को लोअर केस में कन्वर्ट कर सकते हैं। नीचे दिए गए कोड ब्लॉक में Clojure स्क्रिप्ट को देखें:
 
 ```Clojure
-(str/lower-case string)
+(def text "HELLO WORLD")
+(.toLowerCase text)
 ```
 
-इसके अलावा आप इस फ़ंक्शन का भी इस्तेमाल कर सकते हैं: 
+इसका उत्पादन निम्न रूप में होगा:
 
 ```Clojure
-(clojure.string/lower-case string)
+hello world
 ```
 
-## देखें भी
+## गहराई तक
+Clojure में स्ट्रिंग को लोअर केस में कन्वर्ट करने के लिए, हम `toLowerCase` के साथ एक स्ट्रिंग ऑब्जेक्ट का उपयोग कर सकते हैं। यह फंक्शन स्ट्रिंग को दो श्रृंखलाओं में अलग करता है - एक श्रृंखला उपर केस और दूसरी श्रृंखला लोअर केस। स्ट्रिंग की गहराई तक होने से, हम स्ट्रिंग को सुविधाजनक तरीके से ड्यानामिकली अपडेट और प्रोसेस कर सकते हैं।
 
-- [आधिकारिक Clojure डॉक्यूमेंटेशन] (https://clojure.org/guides/cheatsheet)
-- [Clojure में शब्दों को छोटा करना] (https://www.baeldung.com/clojure/string-lowercase)
+## और देखें
+"स्ट्रिंग के सभी अक्षरों को यूनिकोड मानों में कन्वर्ट करने का तरीका" - https://www.tutorialspoint.com/clojure/clojure_string.htm
+
+"क्लोजर में स्ट्रिंग से अंक स्ट्रिप करने का तरीका" - https://clojure.org/guides/java_interop
+
+"प्रोरेसिंग में स्ट्रिंग प्रसंस्करण के आगे कैसे बढ़ें" - https://technologyconversations.com/2014/01/20/clojure-tutorial-processing-data-with-clojure/

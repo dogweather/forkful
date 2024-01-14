@@ -1,54 +1,51 @@
 ---
-title:    "Elm: Schreiben nach Standardfehler"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-to-standard-error.md"
+title:                "Elm: Schreiben auf Standardfehler"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-
-Das Schreiben auf den Standardfehler (standard error) ist eine wichtige Fähigkeit beim Programmieren in Elm. Es ermöglicht es uns, Fehlermeldungen und andere wichtige Informationen auf der Konsole auszugeben, um unseren Code zu debuggen.
-
-# Wie geht das?
-
-Das Schreiben auf den Standardfehler in Elm ist einfach und erfordert nur einige Zeilen Code. Wir nutzen dafür die eingebaute `Debug` Bibliothek und die `log` Funktion. Schauen wir uns ein Beispiel an:
-
+## Willkommen zur Elm Programmierblog
+ 
+## Warum
+ 
+In diesem Beitrag sprechen wir darüber, warum und wie man in Elm auf Standardfehler schreibt.
+ 
+Die Fähigkeit, auf Standardfehler zu schreiben, kann besonders nützlich sein, wenn es darum geht, Fehler und Probleme in Ihrem Code zu identifizieren und zu beheben. Es ermöglicht Ihnen, spezifische Fehlermeldungen zu generieren, die Ihnen helfen können, den Code zu debuggen und die Leistung Ihrer Anwendung zu verbessern.
+ 
+## Wie geht man vor
+ 
+Um auf Standardfehler in Elm zu schreiben, gibt es ein paar einfache Schritte, die Sie befolgen müssen. Zuerst importieren Sie das Modul "Debug" in Ihrer Elm-Datei. Dann verwenden Sie die Funktion "Debug.crash" und übergeben Sie ihr eine Nachricht als String. Zum Beispiel:
+ 
 ```Elm
 import Debug
-
--- Eine Zahl eingeben
-zahl = 5
-
--- Ausgabe der Zahl auf dem Standardfehler
-Debug.log "Die Zahl ist:" zahl
+ 
+Debug.crash "Fehler beim Laden der Daten!"
 ```
-
-Wenn wir dieses Programm ausführen, sehen wir die Ausgabe `Die Zahl ist: 5` auf unserer Konsole. Wie Sie sehen, haben wir die Funktion `Debug.log` genutzt, um einen Wert auf den Standardfehler zu schreiben. Diese Funktion erwartet zwei Argumente: einen String mit einer Beschreibung und den Wert, den wir ausgeben möchten.
-
-# Tiefergehende Informationen
-
-Manchmal wollen wir nicht nur einfache Werte, sondern komplexere Datenstrukturen auf den Standardfehler ausgeben. Dafür gibt es die Funktion `Debug.toString`, die ein beliebiges Elm-Objekt in einen String umwandelt. Wir können sie mit `Debug.log` kombinieren, um eine detailliertere Ausgabe zu erhalten:
-
+ 
+Dies wird eine Fehlermeldung ausgeben, wenn dieser Code ausgeführt wird. Sie können auch Variablen oder Ausdrücke in Ihre Nachricht einbetten, um spezifischere Informationen zu erhalten. Zum Beispiel:
+ 
 ```Elm
 import Debug
-
--- Ein Datensatz definieren
-type alias Person =
-    { name : String
-    , alter : Int
-    }
-
--- Eine Person erstellen
-person = Person "Max" 25
-
--- Ausgabe der Person auf dem Standardfehler
-Debug.log "Die Person ist:" (Debug.toString person)
+ 
+let
+    age = 25
+in
+    Debug.crash ("Es ist ein Fehler aufgetreten. Alter = " ++ String.fromInt age)
 ```
-
-Die Ausgabe sieht nun folgendermaßen aus: `Die Person ist: { name = "Max", alter = 25 }`. Auf diese Weise können wir komplexere Datenstrukturen untersuchen, um Fehler in unserem Code zu finden.
-
-# Siehe auch
-
-- Offizielle Elm Debugging-Dokumentation: https://guide.elm-lang.org/debugging/debugging.html
-- Mehr über die `Debug` Bibliothek erfahren: https://package.elm-lang.org/packages/elm/core/latest/Debug
+ 
+Dies würde die Nachricht "Es ist ein Fehler aufgetreten. Alter = 25" ausgeben.
+ 
+## Tiefentauchen
+ 
+Das Schreiben auf Standardfehler in Elm ist eine effektive Methode, um Fehler in Ihrem Code zu finden, aber es sollte nicht als Ersatz für ordnungsgemäßes Debuggen verwendet werden. Sie sollten immer noch Ihre Anwendung gründlich testen und bekannte Debugging-Techniken verwenden, um Fehler zu identifizieren und zu beheben.
+ 
+Eine wichtige Sache zu beachten ist, dass das Schreiben auf Standardfehler in Elm den Ausführungsfluss Ihrer Anwendung unterbricht. Wenn Sie also in einem produktiven Umfeld arbeiten, sollten Sie immer eine alternative Methode verwenden, um Fehler zu behandeln, z.B. durch das Rendern einer Fehlermeldung auf der Benutzeroberfläche.
+ 
+## Siehe auch
+ 
+- Debug-Modul Dokumentation: [https://package.elm-lang.org/packages/elm/core/latest/Debug](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- "Debugging in Elm" Blog-Beitrag: [https://elmprogramming.com/debugging-in-elm.html](https://elmprogramming.com/debugging-in-elm.html)
+- Elm Factory Webinar über Fehlerbehandlung: [https://www.youtube.com/watch?v=6DbRXeRwmg8](https://www.youtube.com/watch?v=6DbRXeRwmg8)

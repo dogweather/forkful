@@ -1,40 +1,45 @@
 ---
-title:    "Kotlin: Päivämäärän muuntaminen merkkijonoksi"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/converting-a-date-into-a-string.md"
+title:                "Kotlin: Päivämäärän muuttaminen merkkijonoksi"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: 
-Monet ohjelmoijat saattavat kysyä itseltään, miksi olisi hyödyllistä muuntaa päivämäärä merkkijonoksi. Tässä blogikirjoituksessa käymme läpi syitä ja annamme esimerkkejä siitä, miten tämä voidaan tehdä Kotlinilla.
+## Miksi
 
-## Miten: 
-Muuntaessa päivämäärää merkkijonoksi, tarvitset ensin päivämäärän ja sitten haluamasi muotoilun. Esimerkiksi, jos haluat näyttää päivämäärän muodossa "dd/mm/yyyy", käytä seuraavaa koodia:
+Kotlin-ohjelmointikieli tarjoaa monia hyödyllisiä ominaisuuksia, jotka tekevät siitä suositun kehittäjien keskuudessa. Yksi näistä ominaisuuksista on kyky muuttaa päivämäärä merkkijonoksi. Tämä on erittäin hyödyllinen toiminto monissa ohjelmointitehtävissä, kuten tietokannoissa tai käyttäjän syötteiden muokkaamisessa.
 
-```Kotlin
-val paivamaara = LocalDate.now()
-println(paivamaara.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+## Kuinka tehdä se
+
+Tämän toiminnon suorittamiseksi tarvitsemme `DateFormat`-luokkaa, joka on osa Kotlinin `java.text`-kirjastoa. Tämä luokka tarjoaa useita eri toimintoja, jotka mahdollistavat päivämäärän muuntamisen merkkijonoksi sekä halutun muotoilun säätämisen.
+
 ```
-Tämän koodin tuloste riippuu siitä, mikä päivämäärä se suoritetaan. Jos esimerkiksi suoritat tämän koodin tänään, tuloste olisi "21/09/2021".
+Kotlin 
+// Luodaan uusi DateFormat-instanssi
+val dateFormat = DateFormat.getDateInstance(DateFormat.LONG, Locale.getDefault())
 
-On myös mahdollista määrittää päivämäärä, jota haluat muuntaa merkkijonoksi, esimerkiksi:
+// Määritellään haluttu päivämäärä
+val calendar = Calendar.getInstance()
+calendar.set(Calendar.DAY_OF_MONTH, 12)
+calendar.set(Calendar.MONTH, 3)
+calendar.set(Calendar.YEAR, 2020)
 
-```Kotlin
-val syntymapaiva = LocalDate.of(2000, 4, 15)
-println(syntymapaiva.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+// Muunnetaan päivämäärä merkkijonoksi ja tulostetaan se
+val dateString = dateFormat.format(calendar.time)
+println(dateString)
+
+// Tulos: 12. huhtikuuta 2020
 ```
 
-Tällöin tuloste olisi "15/04/2000".
+## Syvällisempi katsaus
 
-## Syvempi sukellus: 
-Päivämäärän muuntaminen merkkijonoksi on hyödyllistä esimerkiksi silloin, kun haluat tallentaa päivämäärän tietokantaan tai näyttää sen käyttäjälle jollakin muulla kielellä kuin ohjelman käyttämällä.
+`DateFormat`-luokan `getDateInstance()`-metodi mahdollistaa päivämäärän ja ajan muuttamisen halutulla tavalla. Voimme muuttaa päivämäärän ja ajan muotoa, kieltä ja jopa alueellisia asetuksia. Voimme myös käyttää muita `DateFormat`-metodeja, kuten `getDateTimeInstance()` tai `getTimeInstance()` päivämäärän ja ajan yhdistämiseksi tai vain ajan muuntamiseen.
 
-Koltinissa on myös muita tapoja muuntaa päivämäärä merkkijonoksi, kuten käyttää valmiita kirjastoja, kuten JodaTimen tai strftime-komentoa. On myös tärkeää huomioida, että päivämäärän muodon merkkijonoksi muuntaminen on tarpeen, jos päivämääräsi sisältää aikaa tai aikavyöhykettä.
+On myös tärkeää huomata, että `DateFormat`-luokka käyttää Java-kirjastoa, joten voimme käyttää kaikkia Java-koodin ominaisuuksia, kuten `Locale.getDefault()`, jotta saamme käyttäjän alueellisen sijainnin oletusarvona.
 
-## Katso myös: 
-- [Java 8 Date and Time API]{https://www.baeldung.com/java-8-date-time-intro}
-- [JodaTime]{https://github.com/JodaOrg/joda-time}
-- [strftime-komento]{https://strftime.org/}
+## Katso myös
 
-Toivottavasti tämä kirjoitus auttoi sinua ymmärtämään, miksi ja miten päivämäärän muuntaminen merkkijonoksi voidaan tehdä Kotlinilla. Hyvää ohjelmointia!
+- [Java 8: n uudet päivämäärät ja kello API: t](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Kotlin language reference](https://kotlinlang.org/docs/reference/)

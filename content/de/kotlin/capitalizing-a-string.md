@@ -1,56 +1,58 @@
 ---
-title:    "Kotlin: Großschreibung eines Strings"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: Ein String großschreiben"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele verschiedene Gründe, warum Sie sich möglicherweise mit der Großschreibung von Strings beschäftigen wollen. Vielleicht müssen Sie Benutzereingaben standardisieren oder einen Titel in der richtigen Schreibweise anzeigen. Egal aus welchem Grund, das Kapitalisieren eines Strings ist eine nützliche Fähigkeit für jeden Programmierer.
+Capitalizing (Großschreibung) in Programmierung ist wichtig, um Texte lesbarer zu machen, Daten zu vergleichen oder für andere Prozesse zu nutzen.
 
-## Wie man es macht
+## Wie funktioniert es?
 
-Um einen String in Kotlin zu kapitalisieren, können Sie die `capitalize()`-Funktion verwenden. Sie akzeptiert keine Parameter und gibt den String in Großbuchstaben zurück.
+Kotlin bietet verschiedene Möglichkeiten, um einen String zu verändern und den ersten Buchstaben großzuschreiben.
 
-````Kotlin
-val name = "Max Mustermann"
-println(name.capitalize())
+### Beispiel 1
 
-// Output: Max mustermann
-````
+```Kotlin
+// Erstelle eine Beispiel-String Variable
+var text: String = "hallo welt"
 
-Sie können auch die `toUpperCase()`-Funktion verwenden, um alle Buchstaben in einem String in Großbuchstaben umzuwandeln.
+println(text.capitalize()) // Ausgabe: "Hallo welt"
+```
 
-````Kotlin
-val name = "Max Mustermann"
-println(name.toUpperCase())
+In diesem Beispiel wird die `capitalize()` Funktion verwendet, um den ersten Buchstaben des Strings großzuschreiben. Es ist wichtig zu beachten, dass der ursprüngliche String nicht verändert wird, sondern dass die Funktion einen neuen String mit der Großschreibung zurückgibt.
 
-// Output: MAX MUSTERMANN
-````
+### Beispiel 2
 
-Es ist auch möglich, nur den ersten Buchstaben eines Strings zu verändern und alle anderen Buchstaben in Kleinbuchstaben zu belassen. Hierfür können Sie die `capitalizeFirst()`-Funktion verwenden.
+```Kotlin
+// Erstelle eine Beispiel-String Variable
+var text: String = "das ist ein beispiel"
 
-````Kotlin
-val name = "max mustermann"
-println(name.capitalizeFirst())
+// Erstelle eine Liste der Wörter im String
+var words = text.split(" ")
 
-// Output: Max mustermann
-````
+// Verwende eine Schleife, um die Wörter in der Liste zu verändern
+for (i in 0 until words.size) {
+    words[i] = words[i].replaceFirstChar { it.uppercase() }
+}
 
-## Tiefere Einblicke
+// Füge die Wörter aus der Liste wieder zu einem String zusammen
+println(words.joinToString(" ")) // Ausgabe: "Das Ist Ein Beispiel"
+```
 
-Bei der Verwendung von `capitalize()` oder `toUpperCase()` ist es wichtig zu beachten, dass diese Funktionen nur ASCII-Zeichen umwandeln. Wenn Sie jedoch mit nicht-ASCII-Zeichen arbeiten möchten, sollten Sie die `toUpperCase(Locale)`-Funktion verwenden und eine bestimmte Sprachregion angeben, um eine korrekte Transformation zu gewährleisten.
+In diesem Beispiel wird der String zuerst in eine Liste von Wörtern aufgeteilt und dann innerhalb einer Schleife jedes Wort verändert, um den ersten Buchstaben großzuschreiben. Am Ende wird die Liste wieder zu einem String zusammengefügt und ausgegeben.
 
-Sie können auch selbst eine Funktion schreiben, die jedes Wort in einem String kapitalisiert. Hier ist eine Beispielimplementierung:
+## Tiefergehende Informationen
 
-````Kotlin
-fun String.capitalizeWords(): String = split(" ").joinToString(" ") { it.capitalize() }
-````
+Es gibt auch die Funktion `capitalizeWords()`, die gleichzeitig alle Wörter in einem String großschreibt. Darüber hinaus gibt es auch Möglichkeiten, um nur den ersten Buchstaben eines Satzes oder von Eigennamen großzuschreiben.
+
+Es ist auch wichtig zu beachten, dass die Großschreibung je nach Sprache unterschiedlich funktioniert. In manchen Sprachen ist es üblich, alle Wörter im Satz großzuschreiben, während in anderen nur der erste Buchstabe großgeschrieben wird. Es ist daher wichtig, die Anforderungen und Konventionen der jeweiligen Sprache zu beachten.
 
 ## Siehe auch
 
-- [String capitalization in Kotlin](https://www.baeldung.com/kotlin/capitalize-string)
-- [Official Kotlin documentation on strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Working with strings in Kotlin](https://blog.mindorks.com/working-with-strings-in-kotlin)
+- [Kotlin String API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Offizielle Dokumentation über Strings in Kotlin](https://kotlinlang.org/docs/strings.html)

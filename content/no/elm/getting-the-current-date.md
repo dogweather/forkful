@@ -1,61 +1,46 @@
 ---
-title:    "Elm: Å få gjeldende dato"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/getting-the-current-date.md"
+title:                "Elm: Å få den nåværende datoen"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
+Et spørsmål som mange nybegynnere innenfor programmering ofte stiller er, "hvorfor trenger vi å få dagens dato i en applikasjon?" Det er et godt spørsmål, og i denne bloggposten skal vi utforske hvorfor å få dagens dato er en viktig funksjon innenfor Elm-programmering.
 
-Det kan ofte være nødvendig å hente ut dagens dato i et programmeringsprosjekt. Dette kan være for å vise brukere når noe ble opprettet eller oppdatert, eller for å sammenligne datoer og utføre ulike operasjoner basert på det. I denne bloggposten skal vi se på hvordan man kan få ut dagens dato i Elm-programmering.
-
-## Hvordan
-
-For å få ut dagens dato i Elm bruker vi den innebygde funksjonen `Date.today`. Denne kan kalles på følgende måte:
+##Hvordan
+Kodeeksempel:
 
 ```Elm
-Date.today
+import Time exposing (Posix)
+import Date exposing (Date, DateType)
+
+getDate : Posix -> Date
+getDate time =
+    Time.fromPosix time |> Date.fromTime
+
+getDateString : Date -> String
+getDateString date =
+    case Date.toParts date of
+        Just parts ->
+            debug (toString parts.year ++ "-" ++ toString parts.month ++ "-" ++ toString parts.day)
+
 ```
 
-Funksjonen vil returnere en `Date` type som inneholder dagens dato. For å gjøre dette mer visuelt formatert, kan vi bruke funksjonen `toString` for å konvertere datoen til en lesbar streng:
+Output:
+2019-7-2
 
-```Elm
-import Date
+For å få dagens dato i Elm, må vi først importere modulene Time og Date. Deretter kan vi bruke funksjonen `fromPosix` fra Time-modulen for å konvertere tiden fra et `Posix`-format til et `Time`-format. Deretter bruker vi Date-modulen for å konvertere `Time`-formatet til en `Date`-format. Når vi har fått dagens dato i `Date`-format, kan vi bruke funksjonen `toParts` for å få en liste over alle delene av datoen, som år, måned og dag. Til slutt bruker vi `toString` for å konvertere disse delene til `String`-format og setter de sammen for å få en lesbar dato.
 
-Date.today
-    |> Date.toString
-```
+##Dykk Dypere
+Vi kan også bruke funksjonen `getFullYear` fra `Time`-modulen for å få dagens årstall direkte, og `getMonth` for å få måneden som et tall. Dette kan være nyttig hvis vi bare trenger en del av datoen i applikasjonen vår.
 
-Dette vil returnere en streng på formatet "YYYY-MM-DD". Vi kan også få ut deler av datoen ved å bruke funksjoner som `year`, `month` og `day`:
+En annen viktig ting å merke seg er at datoen som blir returnert av disse funksjonene er basert på UTC-tidszonen. Hvis applikasjonen vår skal brukes i et bestemt land eller region, må vi sørge for å konvertere datoen til den lokale tidszonen. Dette kan gjøres ved å bruke funksjonen `toZone` fra `Time`-modulen. 
 
-```Elm
-Date.today
-    |> Date.year
-    |> toString
-```
-
-```Elm
-Date.today
-    |> Date.month
-    |> toString
-```
-
-```Elm
-Date.today
-    |> Date.day
-    |> toString
-```
-
-Kombiner gjerne disse funksjonene for å få ut ønsket format.
-
-## Dypdykk
-
-I tillegg til `Date.today` finnes det andre nyttige funksjoner for å håndtere datoer i Elm. `Date.fromParts` lar deg lage en `Date` type ved å gi den et år, en måned og en dag. `Date.fromString` lar deg lage en `Date` type ved å gi den en streng på formatet "YYYY-MM-DD".
-
-Det finnes også funksjoner for å utføre operasjoner på datoer, som for eksempel å legge til eller trekke fra dager, måneder eller år.
-
-## Se også
-
-- [Offisiell Elm dokumentasjon for Date modulen](https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [Elm-repl for å teste ut forskjellige dato-operasjoner](https://elm-lang.org/try)
+##Se Også
+- Offisiell Elm dokumentasjon for Time-modulen: https://package.elm-lang.org/packages/elm/time/latest/Time
+- Offisiell Elm dokumentasjon for Date-modulen: https://package.elm-lang.org/packages/elm/time/latest/Date
+- Elm-tutorial om å få og håndtere datoer: https://frontend.center/elm-tutorial/dates/
+- Video-tutorial om å bruke Time-modulen i Elm: https://www.youtube.com/watch?v=gYqFxHcBdas

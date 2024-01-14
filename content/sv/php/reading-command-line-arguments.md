@@ -1,59 +1,42 @@
 ---
-title:    "PHP: Läsning av kommandoradsargument"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/reading-command-line-arguments.md"
+title:                "PHP: Läsning av kommandoradargument"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
+Att kunna läsa in kommandoradsargument är en praktisk och användbar färdighet för alla PHP-programmerare. Genom att kunna hantera input från kommandoraden kan du skapa dynamiska och interaktiva applikationer som kan ta emot användarinput och utföra olika funktioner baserat på det. Det är också ett sätt att automatisera uppgifter och göra dem snabbare och enklare att utföra.
 
-Att kunna läsa kommandoradsargument är en viktig färdighet för programmerare, särskilt i PHP. Genom att kunna läsa användarens inmatning från kommandoraden kan man skapa mer interaktiva och dynamiska program som kan anpassa sig efter användarens behov.
+## Hur man gör det 
+För att läsa in kommandoradsargument i PHP, används en inbyggd funktion `getopt()`. Den här funktionen tar två argument, det första är en sträng med de olika argumenten som ska läsas in och det andra är en array som lagrar de olika argumentvärdena. Nedan finns ett exempel på hur du kan använda `getopt()`.
 
-## Hur man gör det
-
-Läsning av kommandoradsargument i PHP görs med hjälp av en inbyggd funktion kallad `getopt()`. Denna funktion tar emot två parametrar - en sträng med de giltiga argumenten och en array som förvarar de lästa argumenten.
-
-```php
-// Enkelt exempel
-// Kör "php script.php -u username -p password" från kommandoraden
-$options = getopt("u:p:");
-
-// $options array innehåller nu:
-// [
-//     "u" => "username",
-//     "p" => "password"
-// ]
+```PHP
+$arguments = getopt("u:p:h"); 
 ```
 
-Det finns också möjlighet att ange en tredje parameter för att läsa in enskilda valfria argument. Dessutom kan man använda sig av `getopt()` för att läsa in olika typer av argument, som booleska och numeriska.
+I detta exempel anger vi att vi vill läsa in argumenten `u`, `p` och `h` från kommandoraden. Om vi till exempel kör vårt script med följande kommandorad:
 
-```php
-// Exempel med flera argument, inklusive valfria och numeriska
-// Kör "php script.php -u username -p password --color red -n 5" från kommandoraden
-$options = getopt("u:p:", ["color:", "number:"]);
-
-// $options array innehåller nu:
-// [
-//     "u" => "username",
-//     "p" => "password",
-//     "color" => "red",
-//     "number" => 5
-// ]
+```bash
+php script.php -u admin -p password -h
 ```
 
-## Djupdykning
+Då kommer `$arguments` att ha följande värden:
 
-I det föregående avsnittet talade vi om att ange en sträng med de giltiga argumenten som första parameter till `getopt()`. Denna sträng kan innehålla både korta och långa argument, och man kan också ange att ett argument kräver ett värde eller inte. Till exempel:
+```PHP
+$arguments['u'] = 'admin';
+$arguments['p'] = 'password';
+$arguments['h'] = true;
+```
 
-- `u` kräver ett värde (t.ex. `username`)
-- `p` kräver inte ett värde
-- `color:` kräver ett värde (t.ex. `red`)
-- `number::` kräver inte ett värde om man endast vill veta om argumentet finns med, men om ett värde anges så läses det in.
+Som du kan se så lagras varje argument som en nyckel i arrayen och värdet är det värde som angivits i kommandoraden. Om argumentet inte har ett värde (som i fallet med `h` i vårt exempel), lagras värdet som `true`.
 
-`getopt()` kommer också återge felmeddelanden om användaren matar in ogiltiga argument eller saknar krävda argument. Om man till exempel endast har angett strängen `u:p:`, men användaren matar in `--color red`, så kommer felmeddelandet `unknown option: color` att retuneras.
+## Djupdykning 
+Förutom `getopt()` finns det andra sätt att läsa in kommandoradsargument i PHP, såsom `$_SERVER['argv']`. Det finns också många olika bibliotek och paket som erbjuder mer avancerade funktioner för att hantera kommandoradsläsning i PHP. Det är viktigt att du väljer en metod som passar bäst för ditt specifika projekt och behov.
 
-## Se även
-
-- PHP manual om [getopt()](https://www.php.net/manual/en/function.getopt.php)
-- [PHP Getopt library](https://github.com/ics-software-engineering/php-getopt) för mer komplexa fall av att läsa kommandoradsargument
+## Se också 
+- [PHP Manual - Getopt](https://www.php.net/manual/en/function.getopt.php)
+- [PHP Command-line Usage](https://www.php.net/manual/en/features.commandline.usage.php)
+- [GetOpt PHP Library](https://github.com/getopt-php/getopt-php)

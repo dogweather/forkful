@@ -1,50 +1,46 @@
 ---
-title:    "TypeScript: Beregning av datoer i fremtiden eller fortiden"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/calculating-a-date-in-the-future-or-past.md"
+title:                "TypeScript: Å beregne en dato i fremtiden eller fortiden"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det er mange situasjoner hvor man kan ha behov for å beregne en dato i fremtiden eller fortiden. For eksempel når man planlegger en ferie eller skal sende ut viktige dokumenter med en bestemt frist. Ved å lære å beregne datoer i TypeScript, kan du lett automatisere denne prosessen og spare tid og energi.
 
-Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge tidsfrister eller for å vise historiske datoer. Det kan også være en morsom og lærerik utfordring for utviklere å programmere.
+## Slik gjør du det
 
-## Hvordan
+For å beregne en dato i TypeScript, må du først importere Date-objektet fra standard biblioteket og deretter opprette et nytt Date-objekt med den ønskede datoen. Deretter kan du bruke forskjellige metoder og eigenskapar på dette objektet for å manipulere og hente ut den ønskede datoen.
 
-For å beregne en dato i fremtiden eller fortiden, kan vi bruke TypeScript sin Date-klasse og dens metoder. La oss si at vi vil beregne datoen 10 år fra i dag:
+For å beregne en dato i fremtiden, kan du bruke metoden `setDate()` for å sette datoen til et bestemt antall dager etter dagens dato. For eksempel:
 
-```TypeScript
-let today = new Date(); // Oppretter et Date-objekt for dagens dato
-let futureDate = new Date();
-futureDate.setDate(today.getDate() + 365 * 10); // Setter datoen for 10 år fra i dag
+```
+TypeScript
+
+// Opprett et nytt Date-objekt
+const dato = new Date();
+
+// Sett datoen til 5 dager etter dagens dato
+dato.setDate(dato.getDate() + 5);
+
+// Skriv ut datoen i formatet dd.mm.yyyy
+console.log(`${dato.getDate()}.${dato.getMonth() + 1}.${dato.getFullYear()}`);
+
+// Output: 09.07.2021
 ```
 
-Resultatet vil være en dato 10 år fra i dag. Hvis vi vil beregne en dato i fortiden, kan vi bruke samme metode og trekke fra ønsket antall dager i stedet.
-
-Vi kan også formatere datoen ved å bruke metoder som `getMonth()`, `getFullYear()`, `getDay()`, etc. For eksempel, hvis vi vil ha datoen i formatet DD.MM.YYYY, kan vi gjøre følgende:
-
-```TypeScript
-let day = futureDate.getDate();
-let month = futureDate.getMonth() + 1; // Månedene i Date-klassen starter på 0 (januar = 0)
-let year = futureDate.getFullYear();
-
-console.log(`${day}.${month}.${year}`); // Dette vil logge "14.04.2031" til konsollen
-```
+På samme måte kan du også beregne en dato i fortiden ved å bruke metoden `setDate()` og trekke fra et bestemt antall dager.
 
 ## Dypdykk
+Å beregne datoer i TypeScript kan også gjøres ved hjelp av andre metoder og egenskaper på Date-objektet. For eksempel kan du bruke `setMonth()` for å sette måneden, `setFullYear()` for å sette året, og `setHours()` for å sette timene på en datodato. Du kan også bruke egenskapen `getDay()` for å hente ut hvilken dag i uken datoen vil falle på.
 
-I tillegg til å beregne datoen i fremtiden eller fortiden, kan vi også bruke Date-klassen til å gjøre mer avanserte beregninger. For eksempel kan vi sjekke om en dato er en helligdag eller en helgedag:
+En viktig ting å huske på er at månedene i JavaScript starter fra 0 (0 for januar, 1 for februar osv.), mens datoer starter fra 1. Derfor må du legge til 1 når du skriver ut måneden ved hjelp av `getMonth()`.
 
-```TypeScript
-let holiday = new Date('12/25/2021'); // Oppretter et Date-objekt for julaften
-console.log(holiday.getDay() === 0 || holiday.getDay() === 6); // Dette vil logge "true" siden 25. desember er en søndag
-```
-
-Vi kan også bruke metoden `getTime()` til å få tiden i millisekunder siden 1. januar 1970. Dette kan være nyttig når man sammenligner to datoer eller beregner tidsintervaller.
+I tillegg kan du også bruke andre metoder og biblioteker som Moment.js for mer avanserte datoberegninger.
 
 ## Se også
-
-- [Date-klasse dokumentasjon i TypeScript](https://www.typescriptlang.org/docs/handbook/2/objects.html#the-date-type)
-- [Liste over norske helligdager](https://www.timeanddate.no/helligdager/norge/2021)
-- [Blogginnlegg om å bruke TypeScript sitt Date-objekt](https://blog.angularindepth.com/date-handling-in-typescript-4a92152dbd7d)
+- [MDN dokumentasjon om JavaScript date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js dokumentasjon](https://momentjs.com/docs/)
+- [TypeScript offisiell dokumentasjon](https://www.typescriptlang.org/docs/home.html)

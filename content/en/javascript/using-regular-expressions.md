@@ -1,60 +1,54 @@
 ---
-title:    "Javascript recipe: Using regular expressions"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/using-regular-expressions.md"
+title:                "Javascript recipe: Using regular expressions"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Regular expressions are an essential tool for any programmer, allowing you to search, replace, and manipulate text efficiently. If you've ever been frustrated with manually searching and replacing text in a document or code, then learning regular expressions will save you time and effort.
+Regular expressions, or regex for short, are a powerful tool for text manipulation and pattern matching in programming. They allow us to search, replace, and extract specific pieces of text from large amounts of data. Whether you're parsing through user input, validating data, or cleaning up text, regular expressions can make your code more efficient and robust.
 
 ## How To
-
-### Basic Syntax
-Regular expressions are denoted by forward slashes (`/`) and include the pattern to match and any modifiers. For example, if we wanted to extract all the words that start with the letter "s" from a string, we could use the regular expression `/s\w+/g` where the `s` literal searches for the letter "s" and `\w+` matches any word character (letters, digits, and underscores) one or more times. The `g` modifier ensures that all instances are found and not just the first one.
+To use regular expressions in Javascript, we first need to create a regular expression object using the `RegExp` constructor. We can pass in a string containing the pattern we want to match, along with optional flags to modify the search behavior. For example:
 
 ```Javascript
-const string = "She sells seashells by the seashore.";
-const regex = /s\w+/g;
-const wordsStartingWithS = string.match(regex);
-console.log(wordsStartingWithS); // ["sells", "seashells", "seashore"]
+let regex = new RegExp("hello", "i");
 ```
 
-### Escaping Special Characters
-Some characters have special meanings in regular expressions and need to be escaped with a backslash (`\`) if you want to match them literally. For example, if we wanted to find all the parentheses in a string, we would need to escape the opening and closing parentheses, like this: `/[\(\)]+/g`.
+In this case, our regular expression will match the word "hello" in a case-insensitive manner. We can then use this regex object with methods like `test()` and `exec()` to search for patterns in strings.
 
 ```Javascript
-const string = "I have (probably) overused parentheses.";
-const regex = /[\(\)]+/g;
-const parentheses = string.match(regex);
-console.log(parentheses); // ["(", ")"]
+let str = "Hello world!";
+regex.test(str); // returns true
+regex.exec(str); // returns ["Hello"]
 ```
 
-### Using Quantifiers
-Quantifiers specify the number of times that a pattern should be matched. They are denoted by curly braces (`{}`) and are usually used after a character or group. For example, if we wanted to find all the words that are three letters long in a string, we could use the regex `/\w{3}/g`.
+We can also use regex with methods like `replace()` and `split()` to manipulate strings based on patterns. For example, let's say we want to replace all instances of "cat" or "dog" with "pet" in a string:
 
 ```Javascript
-const string = "The cat sat on the mat.";
-const regex = /\w{3}/g;
-const threeLetterWords = string.match(regex);
-console.log(threeLetterWords); // ["The", "cat", "mat"]
+let str = "I have a cat and a dog. They are the best pets!";
+let regex = new RegExp("cat|dog", "gi");
+let newStr = str.replace(regex, "pet");
+// newStr is now "I have a pet and a pet. They are the best pets!"
 ```
+Regular expressions also have a shorthand syntax in Javascript using forward slashes `/`, which is often preferred for its concise and readable format. The above example can be rewritten as:
+
+```Javascript
+let newStr = str.replace(/cat|dog/gi, "pet");
+```
+
+There are many other useful features and techniques for using regular expressions in Javascript, such as grouping, quantifiers, and capturing groups. For a more in-depth look, check out the resources listed in the "See Also" section below.
 
 ## Deep Dive
+Regular expressions may seem daunting at first, with their cryptic symbols and patterns, but they can greatly improve the efficiency and readability of our code once we understand how to use them. They are supported in most programming languages and text editors, making them a valuable skill to have in your toolbox.
 
-Regular expressions have many other features and modifiers that allow for more complex searches and replacements. Some popular ones include:
+One thing to keep in mind when using regular expressions is that they are powerful, but they can also be complex and prone to errors. It's important to thoroughly test and debug your regex patterns to ensure they give the desired results. Online tools like [Regex101](https://regex101.com/) and [Regexr](https://regexr.com/) can be helpful for experimentation and testing.
 
-- `i`: ignores case sensitivity
-- `m`: multi-line mode, allowing for matching on multiple lines
-- `w`: matches any non-word character (opposite of `\w`)
-- `^` and `$`: matches the beginning and end of a string, respectively
-
-Regular expressions can also be used in combination with string methods, such as `replace()`, `search()`, and `split()`, to perform more targeted text manipulations.
-
-It's important to note that regular expressions can be challenging to wrap your head around at first, but with practice and experience, they become a fundamental tool in a programmer's arsenal.
+Another thing to note is that while regular expressions are useful for many simple cases, they may not be the best solution for more complex tasks like parsing HTML or processing large datasets. In those situations, a combination of regex and other methods may be necessary.
 
 ## See Also
-- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Mastering Regular Expressions by Jeffrey E. F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/9780596528126/)
+- [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regular Expressions Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/javascript)
+- [Regex Crossword](https://regexcrossword.com/) (a fun way to practice and improve your regex skills)

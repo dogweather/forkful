@@ -1,37 +1,46 @@
 ---
-title:    "Arduino: Excluindo caracteres que correspondem a um padrão"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/deleting-characters-matching-a-pattern.md"
+title:                "Arduino: Excluindo caracteres que correspondem a um padrão"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-Olá leitores do Arduino!
+## Por que deletar caracteres que correspondem a um padrão?
 
-Hoje vamos falar sobre como deletar caracteres que seguem um determinado padrão em um programa de Arduino. Você pode estar se perguntando por que alguém iria querer fazer isso - a resposta é que pode ser útil para limpar dados ou formatar entradas em projetos eletrônicos.
+Ao trabalhar com programação, é comum que nos deparemos com situações em que precisamos manipular strings e filtrar informações específicas dentro delas. Nesses casos, a exclusão de caracteres que correspondem a um determinado padrão pode ser uma ferramenta extremamente útil e eficiente para atingir o resultado desejado. Em Arduino, essa tarefa pode ser realizada de forma simples e eficaz utilizando algumas funções e comandos específicos.
 
-## Por que
+## Como fazer:
 
-Agora que você sabe o *porquê* deste processo, vamos mergulhar no *como* fazê-lo no seu programa de Arduino.
+Para deletar caracteres que seguem um determinado padrão em uma string no Arduino, podemos utilizar a função `replaceAll()` juntamente com a função `String()` para converter a variável em uma string e realizar a manipulação necessária.  Veja um exemplo de código abaixo:
 
-## Como Fazer
+```
+void setup() {
+  Serial.begin(9600);
+  String texto = "Teste123abc";
+  Serial.println("Texto original: " + texto);
+  texto = String(texto).replaceAll("[0-9]", ""); //Apaga todos os números da string
+  Serial.println("Texto com números apagados: " + texto);
+}
 
-Para deletar caracteres que seguem um padrão em um programa de Arduino, você vai precisar usar a função `removeChars()` do tipo `String`. Essa função irá buscar por todos os caracteres que correspondem ao padrão especificado e os deletará da sua string original.
-
-```Arduino
-String minhaString = "Olá, Arduino!";
-minhaString.removeChars("lá"); //remove os caracteres "lá"
-Serial.println(minhaString); //Saída: O, Arduino!
+void loop() {
+  //vazio
+}
 ```
 
-## Deep Dive
+Nesse exemplo, o resultado final seria a string "Testeabc", pois a função `replaceAll()` funcionaria da seguinte forma: o primeiro parâmetro é o padrão a ser procurado - no caso, qualquer número entre 0 e 9 -, e o segundo parâmetro é o que será substituído. Como deixamos o segundo parâmetro vazio, os números serão simplesmente apagados da string.
 
-A função `removeChars()` utiliza o método `substring()` para remover os caracteres especificados da string original. Este método utiliza dois parâmetros - o primeiro é a posição inicial do trecho de caracteres a ser removido, e o segundo é o comprimento desse trecho. O método `substring()` retorna um novo `String` sem o trecho especificado, e é isso que a função `removeChars()` usa para deletar os caracteres do seu programa.
+## Profundidade:
 
-## Veja também
+Para uma compreensão mais aprofundada sobre o funcionamento da função `replaceAll()`, é importante entender como ela trabalha com a expressão regular utilizada no primeiro parâmetro. Essa expressão pode ser usada para especificar um conjunto de caracteres que serão procurados e substituídos.
 
-Aqui estão alguns links para mais informações sobre o uso da função `removeChars()` e outras funções úteis em projetos de Arduino:
+Uma expressão entre colchetes `[...]` significa que qualquer um dos caracteres que estiverem dentro dos colchetes será uma correspondência. Por exemplo, `[0-9]` significa que qualquer número de 0 a 9 será considerado uma correspondência. Além disso, podemos utilizar o caractere `^` para indicar a negação da expressão, ou seja, ela irá buscar por todos os caracteres diferentes dos especificados. Por exemplo, `[^A-Za-z]` irá buscar por todos os caracteres que não sejam letras maiúsculas ou minúsculas.
 
-- [Referência da função removeChars()](https://www.arduino.cc/reference/en/language/variables/string/functions/removechars/)
-- [Tutorial de String no Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Outras funções String do Arduino](https://www.arduino.cc/reference/en/language/functions/communication/string-functions/)
+Outra forma de utilizar a função `replaceAll()` é especificando uma sequência de caracteres que será procurada e substituída. Por exemplo, `replaceAll("tes", "carro")` irá substituir todas as ocorrências de "tes" por "carro" na string.
+
+## Veja também:
+
+- Documentação oficial da [função replaceAll()](https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/replaceall/)
+- [Tutorial sobre expressões regulares em Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/expression-regular-express-es-re-gulares-105f30)
+- [Vídeo explicativo sobre a função replaceAll()](https://www.youtube.com/watch?v=6iZKrBZsHEk)

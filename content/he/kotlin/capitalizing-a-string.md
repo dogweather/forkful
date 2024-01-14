@@ -1,44 +1,60 @@
 ---
-title:    "Kotlin: כתיבת מחרוזת רישיות"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: הפכו מחרוזת לאותיות רישיות"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
-במאמר זה, אנו נדבר על כיצד נוכל להפוך מחרוזת בקוד Kotlin לכתיב ראשוני גדול. כך תהיה לנו אפשרות להציג את המחרוזת בצורה יותר מסודרת ונוחה לקריאה.
+## למה
 
-# כיצד לעשות זאת
-כדי להפוך מחרוזת לכתיב ראשוני גדול בקוד Kotlin, אנו ניצור משתנה חדש שיכיל את המחרוזת המקורית. לאחר מכן, נפעיל פונקציה הנקראת "capitalize" על המשתנה כדי להפוך את הכתיב לראשוני גדול. לאחר מכן, נדפיס את המשתנה החדש כך שנוכל לראות את התוצאה המתאימה.
+מחרוזת קיימת בכמעט כל תכנית בקוד ולעיתים קרות שאנו רוצים להוסיף את כל האותיות הראשונות שלה באותיות גדולות. לדוגמה, ייתכן שנרצה להפוך את המשפט "זו היא משפט חשוב" ל "זו היא משפט חשוב בכל האותיות הראשונות גדולות". לכן, החלטנו לכתוב בלוג זה על איך לבצע את הפעולה הזאת באמצעות קוד Kotlin.
 
+## איך לעשות זאת
+
+הנה שתי דרכים להפעיל את העיבוד של מחרוזת עם אותיות גדולות בשפת Kotlin:
+
+```Kotlin
+fun capitalizeString(str: String): String {
+    // ראשית, נעשה מחרוזת קטנה כדי שלא נשנה את המשפט המקורי
+    val smallStr = str.toLowerCase()
+    
+    // ניקח את המילים במחרוזת ונבדוק את האות הראשונה של כל מילה
+    // אם היא אות קטנה, נחליף אותה באות גדולה
+    return smallStr.split(" ").joinToString(" ") { word ->
+        word.replaceFirstChar {
+            if (it.isLowerCase()) it.titlecase(
+                Locale.getDefault()
+            ) else it.toString()
+        }
+    }
+}
+
+println(capitalizeString("זו היא משפט חשוב"))
+// Output: זו היא משפט חשוב
+
+println(capitalizeString("this is an important sentence"))
+// Output: This Is An Important Sentence
 ```
-Kotlin val str = "hello world"
-val capitalizedStr = str.capitalize()
-println(capitalizedStr)
+
+אפשר לראות שהפעולה עובדת גם עם מחרוזת ארוכה יותר וגם עם מחרוזת מרובעת כמו "זהו משפט חשוב לשני אנשים".
+
+הדרך השניה היא להשתמש בפונקציה פנימית קיימת בשפת Kotlin שקוראת "replaceFirstChar", שגם מבצעת את הפעולה הזאת:
+
+```Kotlin
+fun capitalizeString(str: String): String {
+    return str.replaceFirstChar {
+        if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
+    }
+}
+
+println(capitalizeString("זהו משפט חשוב לשני אנשים"))
+// Output: זהו משפט חשוב לשני אנשים
 ```
 
-הפלט של הקוד הנלווה יהיה:
+בשתי הדרכים, אנו מצליחים להכניס את המשפט המקורי עם אותיות גדולות.
 
-```
-Hello world
-```
+## חפירה עמוקה
 
-במקרה שבו נרצה להפוך רק את האות הראשונה במחרוזת לגדולה, נוכל להשתמש בפונקציה "replaceRange" כדי להחליף את האות הראשונה במחרוזת לכתיב גדול. הנה דוגמא לכך:
-
-```
-Kotlin val str = "hello world"
-val capitalizedFirstLetterStr = str.replaceRange(0, 1, str.substring(0, 1).toUpperCase())
-println(capitalizedFirstLetterStr)
-```
-
-הפלט של הקוד הנלווה יהיה:
-
-```
-Hello world
-```
-
-# חפירה עמוקה
-הפונקציה "capitalize" מחזירה מחרוזת חדשה עם הכתיב ראשוני גדול, אך אינה משנה את המחרוזת המקורית. כאשר אנו משתמשים בפונקציה "replaceRange", אנו משנים את המחרוזת המקורית עצמה. גם פונקציות נוספות כמו "toTitleCase" ו-"toUpperCase" יכולות לשמש כדי להפוך את המחרוזות לכתיב ראשוני גדול.
-
-כדי להיות יעילים יותר ולמנוע טעויות, נוכל לעצור על בדיקה תנאית של המחרוזת לפני שאנו מנסים להפוך אותה לכתיב ראש
+בגרסה

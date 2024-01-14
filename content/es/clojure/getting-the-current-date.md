@@ -1,55 +1,60 @@
 ---
-title:    "Clojure: Obteniendo la fecha actual"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/getting-the-current-date.md"
+title:                "Clojure: Obteniendo la fecha actual"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-En programación, es común necesitar la fecha actual para realizar ciertas tareas, como registrar eventos o establecer límites de tiempo. Afortunadamente, en Clojure, obtener la fecha actual es muy sencillo gracias a una función incorporada.
+Obtener la fecha actual es una tarea común en la programación. Puede ser útil para registrar eventos, programar tareas o simplemente mostrar la fecha actual a un usuario.
 
-## Cómo hacerlo
+## Cómo Hacerlo
 
-```Clojure
-(def fecha (java.util.Date.))
-```
-
-En el código anterior, estamos llamando a la función `java.util.Date.` para crear un objeto de fecha actual y asignarlo a la variable `fecha`.
+En Clojure, podemos obtener la fecha actual utilizando la función `now` del paquete `java-time`. Primero, debemos importar el paquete:
 
 ```Clojure
-(prn fecha)
+(ns mi-app.core
+    (:require [java-time :as jt]))
 ```
 
-Esta línea imprimirá la fecha actual en la consola en un formato detallado como `Mon Jul 27 13:59:42 EDT 2020`.
+Luego, podemos llamar a la función `now` para obtener un objeto `LocalDateTime` que representa la fecha y hora actuales:
 
 ```Clojure
-(.getTime fecha)
+(def fecha-actual (jt/now))
 ```
 
-Si deseamos obtener la fecha en milisegundos desde la época, podemos llamar al método `getTime` en nuestro objeto `fecha`.
-
-## Inmersión profunda
-
-La clase `java.util.Date` en realidad representa un punto en el tiempo, no solo la fecha actual. Por lo tanto, si deseamos obtener solo la fecha actual sin la hora, podemos utilizar la clase `java.sql.Date` en su lugar.
+Para mostrar la fecha actual en un formato legible, podemos utilizar la función `format` y especificar un patrón de formato. Por ejemplo, para mostrar la fecha en formato de día/mes/año:
 
 ```Clojure
-(def solo-fecha (java.sql.Date.))
+(def fecha-formateada (jt/format fecha-actual "dd/MM/yyyy"))
 ```
 
-Esto creará un objeto de fecha actual sin la hora y nos permitirá hacer operaciones matemáticas con él.
+El resultado será una cadena de texto con la fecha actual en el formato deseado.
+
+## Profundizando
+
+Además de la función `now`, el paquete `java-time` ofrece varias funciones y clases útiles para trabajar con fechas y horas. Por ejemplo, la función `plus` nos permite agregar una cantidad específica de tiempo a una fecha:
 
 ```Clojure
-(.setYear solo-fecha 2020)
+(def fecha-futura (jt/plus fecha-actual (jt/period 1 :day)))
 ```
 
-Con el objeto `solo-fecha`, también podemos establecer valores específicos para el año, mes y día.
+La función `period` nos permite especificar el período que queremos agregar, en este caso 1 día. Luego, podemos formatear y mostrar esta nueva fecha al igual que lo hicimos antes.
 
-Para obtener más información sobre las funciones de fecha y hora en Clojure, puedes consultar la guía oficial de la documentación de Clojure en [este enlace](https://clojure.org/reference/java_interop#Time_and_Date_Manipulation).
+Otra función útil es `with-zone`, que nos permite cambiar la zona horaria de una fecha determinada:
 
-## Ver también
+```Clojure
+(def fecha-zona-horaria (jt/with-zone fecha-actual (jt/zone-offset "+05:00")))
+```
 
-- [Guía oficial de la documentación de Clojure](https://clojure.org/guides/learn/introduction)
-- [Documentación de la clase `java.util.Date`](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Documentación de la clase `java.sql.Date`](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html)
+Esto nos devuelve un nuevo objeto `LocalDateTime` con la misma fecha, pero en una zona horaria diferente.
+
+## Ver También
+
+- [Documentación de Java-Time en Clojure](https://github.com/dm3/clojure.java-time)
+- [Tutorial de Clojure para principiantes](https://aprende.clojure.pro/)
+
+¡Gracias por leer! Esperamos que esta guía te haya ayudado a comprender cómo obtener la fecha actual en tus proyectos de Clojure. ¡Feliz codificación!

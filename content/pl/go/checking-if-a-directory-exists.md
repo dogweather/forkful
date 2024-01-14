@@ -1,85 +1,61 @@
 ---
-title:    "Go: Sprawdzanie istnienia katalogu"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/checking-if-a-directory-exists.md"
+title:                "Go: Sprawdzanie, czy istnieje katalog."
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego 
+## Dlaczego
 
-Pisanie programów to nie tylko tworzenie rozwiązań, ale również dbanie o ich stabilność i niezawodność. Sprawdzenie istnienia katalogu jest ważnym elementem tego procesu, ponieważ pozwala uniknąć błędów i niepożądanych skutków.
+Często podczas pisania programów w języku Go, potrzebujemy sprawdzić czy dany katalog istnieje. W tym artykule dowiecie się dlaczego warto przyjrzeć się temu zagadnieniu oraz jak w prosty sposób można to zrobić.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-W języku Go sprawdzenie, czy dany katalog istnieje, jest bardzo proste. Wystarczy użyć funkcji `os.Stat(path string)` i sprawdzić, czy zwracany błąd jest równy `nil`. Poniżej znajduje się przykładowy kod oraz jego wynik:
+Sprawdzenie czy dany katalog istnieje jest bardzo proste w języku Go. Wystarczy użyć funkcji `os.Stat()` na podanej ścieżce i sprawdzić czy wystąpił błąd lub czy zwrócona wartość jest różna od `nil`. Poniższy przykład pokazuje jak to zrobić:
 
 ```Go
 package main
 
-import(
+import (
     "fmt"
     "os"
 )
 
 func main() {
-    path := "mydir" // zmienna z nazwą katalogu
-    
-    if _, err := os.Stat(path); err == nil {
-        fmt.Printf("Katalog %s istnieje\n", path)
-    } else {
-        fmt.Printf("Katalog %s nie istnieje\n", path)
-    }
-}
-```
+    // Sprawdzenie czy katalog "./test" istnieje
+    fileInfo, err := os.Stat("./test")
 
-Wynik:
-
-```
-Katalog mydir istnieje
-```
-
-W powyższym przykładzie użyto deklaracji `if` z warunkiem oraz funkcji `fmt.Printf()` do wyświetlenia komunikatu.
-
-## Głębsze zanurzenie
-
-Powyższa metoda sprawdzania istnienia katalogu jest bardzo prosta i działa w większości przypadków. Jednakże w niektórych sytuacjach może nie być wystarczająca, na przykład jeśli katalog jest ukryty lub nie ma uprawnień do jego odczytania. W takich przypadkach lepszym rozwiązaniem może być użycie funkcji `os.FileInfo.IsDir()` w celu sprawdzenia, czy dana ścieżka jest katalogiem. Poniżej znajduje się przykładowy kod:
-
-```Go
-package main
-
-import(
-    "fmt"
-    "os"
-)
-
-func main() {
-    path := "mydir" // zmienna z nazwą katalogu
-    
-    fileInfo, err := os.Stat(path)
     if err != nil {
-        fmt.Printf("Nie udało się uzyskać informacji o pliku %s\n", path)
-        return
-    }
-    
-    if fileInfo.IsDir() {
-        fmt.Printf("%s jest katalogiem\n", path)
+        // Jeśli wystąpił błąd, katalog nie istnieje
+        fmt.Println("Katalog nie istnieje")
     } else {
-        fmt.Printf("%s nie jest katalogiem\n", path)
+        // Jeśli nie ma błędu, katalog istnieje
+        fmt.Println("Katalog istnieje")
+        // Dostęp do informacji o katalogu
+        fmt.Println("Nazwa: ", fileInfo.Name())
+        fmt.Println("Rozmiar: ", fileInfo.Size())
+        fmt.Println("Czas modyfikacji: ", fileInfo.ModTime())
+        fmt.Println("Czy jest to katalog: ", fileInfo.IsDir())
     }
 }
 ```
 
-Wynik:
-
+### Przykładowy Output:
 ```
-mydir jest katalogiem
+Katalog istnieje 
+Nazwa: test 
+Rozmiar: 4096 
+Czas modyfikacji: 2020-01-01 12:00:00 +0000 UTC 
+Czy jest to katalog: true
 ```
 
-Zauważ, że w tym przypadku najpierw pobieramy informacje o pliku przy użyciu funkcji `os.Stat()`, a następnie sprawdzamy, czy jest to katalog przy użyciu metody `IsDir()` obiektu `fileInfo`.
+## Deep Dive
 
-## Zobacz także
+Gdybyśmy chcieli sprawdzić czy dany katalog istnieje w systemie plików, należy użyć `os.Stat()`. Ta funkcja zwraca informacje o danym pliku lub katalogu, bądź błąd, jeśli taki wystąpił. Ponadto, możemy również użyć funkcji `os.IsExist()` aby sprawdzić czy dany błąd jest spowodowany już istniejącym plikiem lub katalogiem.
 
-- [Dokumentacja języka Go](https://golang.org/doc/)
-- [Oficjalna strona Go](https://golang.org/)
-- [Blog Go dla świeżo upieczonych programistów](https://pl.golang.org/)
+## Zobacz również
+
+- [Dokumentacja języka Go: pakiet os](https://golang.org/pkg/os/)
+- [Przykładowy kod: sprawdzanie czy katalog istnieje](https://play.golang.org/p/-QXF4rU3IGH)

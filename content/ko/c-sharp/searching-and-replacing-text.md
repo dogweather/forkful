@@ -1,75 +1,37 @@
 ---
-title:    "C#: 텍스트 검색 및 대체"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/searching-and-replacing-text.md"
+title:                "C#: 텍스트 검색 및 대체하기"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
+텍스트 검색 및 바꾸기를 하는 이유는 매우 간단합니다. 우리는 프로그래밍에서 자주 사용하는 특정한 단어나 구문을 쉽게 바꿀 수 있기 때문입니다. 이를테면, 우리가 제품에서 브랜드 이름을 바꾸거나, 오타를 수정하거나, 또는 특정한 포맷의 데이터를 다른 포맷으로 변환할 때 사용할 수 있습니다. 쉽게 말하면, 텍스트 검색 및 바꾸기는 매우 유용하고 강력한 도구입니다.
 
-텍스트 검색 및 대체를 사용해야 하는 이유는 간단합니다. 이 기술은 대량의 텍스트를 다루는 프로그램에 꼭 필요하기 때문입니다. 예를 들어, 여러 개의 파일에서 특정 문자열을 찾아서 다른 문자열로 대체하거나, 특정 패턴에 맞는 문자열을 찾아서 다른 패턴으로 변경하는 등의 작업을 할 때 유용하게 사용할 수 있습니다.
-
-# 사용 방법
-
-텍스트 검색 및 대체를 코드로 구현하는 방법을 알아보겠습니다. 먼저, ```C# regex``` 패키지를 참조해야 합니다. 그리고 아래의 예시 코드를 통해 텍스트를 검색하고 대체하는 과정을 살펴보겠습니다.
+## 방법
+텍스트 검색 및 바꾸기를 코딩으로 해결하는 방법은 여러 가지가 있지만, 이번 글에서는 C#에서 가장 일반적으로 사용하는 방법을 소개하고자 합니다. 먼저, 우리는 `Regex.Replace()` 함수를 사용하여 특정한 텍스트 패턴을 찾아서 다른 텍스트 패턴으로 바꿀 수 있습니다. 이 함수는 `Regex` 라이브러리에서 제공되며, 정규 표현식을 사용하여 매우 강력한 검색 기능을 제공합니다. 예를 들어, 우리가 문자열에서 모든 숫자를 찾아서 `#` 문자로 바꾸고 싶다고 합시다. 그러면 우리는 다음과 같은 코드를 사용할 수 있습니다.
 
 ```C#
-using System;
 using System.Text.RegularExpressions;
 
-namespace TextSearchAndReplace
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // 텍스트 검색과 대체를 위한 정규식 패턴 설정
-            string pattern = @"cat";
-            string replacement = "dog";
-
-            // 검색하고 대체할 텍스트가 담긴 문자열
-            string input = "I have a cat and a dog.";
-
-            // 패턴과 대체문자열을 이용해 정규식 객체 생성
-            Regex regex = new Regex(pattern);
-
-            // 대체된 결과 출력
-            string result = regex.Replace(input, replacement);
-            Console.WriteLine(result);
-        }
-    }
-}
+string content = "123 Love Programming";
+string replaced = Regex.Replace(content, "[0-9]", "#");
+Console.WriteLine(replaced); // 결과: ### Love Programming
 ```
 
-위의 예시 코드의 실행 결과는 다음과 같습니다.
+위의 예제에서 우리는 `Regex.Replace()` 함수에 문자열에서 숫자를 찾는 정규 표현식 `[0-9]`과 바꿀 문자 `#`를 전달합니다. 이렇게 하면 숫자가 모두 `#`으로 바뀌게 됩니다.
 
+또 다른 방법으로는, 우리는 `String.Replace()` 함수를 사용할 수도 있습니다. 이 함수는 정확한 문자열을 찾아서 다른 문자열로 바꿀 수 있습니다. 예를 들어, 우리가 위의 예제에서 `123`을 찾아서 `OneTwoThree`로 바꾸고 싶다고 합시다. 그러면 우리는 다음과 같은 코드를 사용할 수 있습니다.
+
+```C#
+string replaced = content.Replace("123", "OneTwoThree");
+Console.WriteLine(replaced); // 결과: OneTwoThree Love Programming
 ```
-I have a dog and a dog.
-```
+위의 예제에서 우리는 `String.Replace()` 함수에 찾을 문자열과 바꿀 문자열을 전달하여 `123`을 `OneTwoThree`로 바꾸게 됩니다.
 
-# 깊이 파고들기
+## 깊이있게 들어가기
+텍스트 검색 및 바꾸기를 더욱 깊이있게 들어가보겠습니다. 우리는 지금까지 간단한 예제를 살펴보았지만, 실제로는 정규 표현식을 사용하여 매우 복잡한 텍스트 패턴도 찾고 바꿀 수 있습니다. 정규 표현식은 텍스트 검색 및 바꾸기를 더욱 강력하게 만들어주는 도구입니다. 이를테면, 우리는 이메일 주소를 검색하여 모두 `hidden`으로 바꾸거나, 주민등록번호를 검색하여 다른 포맷으로 바꾸는 등의 작업도 가능합니다.
 
-텍스트 검색 및 대체 기능을 사용할 때 유용하게 활용할 수 있는 다양한 특수 문자와 정규식 메타 문자가 있습니다. 이를 이용하면 더 복잡한 패턴을 적용하고 텍스트를 더 다양한 방식으로 검색 및 대체할 수 있습니다. 또한, 다양한 패턴을 조합해 사용하는 것도 가능합니다.
-
-예를 들어, 여러 개의 파일에서 "dog"로 시작하는 문자열을 찾아서 "cat"으로 대체한다면 아래와 같은 정규식 패턴을 사용할 수 있습니다.
-
-```
-^dog
-```
-
-위의 패턴은 주어진 텍스트에서 "dog"로 시작하는 문자열을 찾아내기 때문에 여러 개의 파일에서 해당 패턴에 맞는 문자열을 찾아서 대체하는 것이 가능해집니다.
-
-또한, 정규식을 사용하면 대/소문자 구분 없이 검색할 수 있는 옵션도 제공됩니다. 예를 들어, "Cat"이나 "cat" 또는 "CAT" 모두를 찾고 싶을 때는 아래와 같은 옵션을 추가하면 됩니다.
-
-```
-Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
-```
-
-이 외에도 정규식을 이용해 다양한 검색 및 대체 작업을 할 수 있고, 조금 더 깊숙한 지식이 필요한 경우에는 정규식에 대해 더 공부할 수 있습니다.
-
-# 참고 자료
-
-- [정규식 사용 방법](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [정규식 온라인 도구](https://regexr.com/)
-- [정규식 챌린지 사이트](https://regexone.com/)
+또한, 우리는 텍스트를 바꿀 때 대소문자를 구분하지 않아도 됩니다. `Regex.Replace()` 함수와 `String

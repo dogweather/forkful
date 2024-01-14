@@ -1,34 +1,39 @@
 ---
-title:    "C#: एक स्ट्रिंग को मजबूत बनाना"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/capitalizing-a-string.md"
+title:                "C#: एक स्ट्रिंग को मज़बूत बनाना"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-कोई भी व्यक्ति अपने स्ट्रिंग को capitalizing करने में आकर्षित क्यों होगा? यह काम अपने स्ट्रिंग को सबसे पहले छोटे अक्षरों से बड़े अक्षरों में परिवर्तित करने का एक आसान तरीका है! यह अपने कोड को और स्पष्ट और सुनिश्चित बनाने में मदद कर सकता है।
+## वजह
 
-## कैसे करे
-आप C# में अपने स्ट्रिंग को capitalizing करने के लिए बहुत सारे तरीके हो सकते हैं। एक मेथड ठीक तरीके से दिखाने के लिए हम तीन अलग-अलग method यूज़ करेंगे।
+कोई भी प्रोग्रामिंग भाषा में विभिन्न प्रकार की स्ट्रिंगों का उपयोग किया जाता है। इन स्ट्रिंगों में शब्दों के अक्षरों का समूह होता है जिसे हम कैपिटलाइज कर सकते हैं। इसका उपयोग निश्चित वजहों के साथ किया जाता है, जैसे उपयोगकर्ता से इनपुट लेने के दौरान टाइपिंग के स्पेलिंग की जांच करने के लिए या डेटाबेस के साथ संबंधित दस्तावेज़ों को सॉर्ट करने के लिए।
+
+## कैसे करें
+
+चलिए अब सीखें कि हम C# में स्ट्रिंगों को कैपिटलाइज कैसे कर सकते हैं। सबसे पहले, हम कैपिटलाइज करना चाहते हैं उस स्ट्रिंग को एक वेरिएबल में स्टोर करते हैं। फिर, हम String के "ToUpper" फंक्शन को इस वेरिएबल पर लागू करते हैं जिससे कि सभी अक्षर कैपिटलाइज हो जाएं। हमारा कोड निम्न हो सकता है: 
 
 ```C#
-string str = "hello world"; // स्ट्रिंग बनाएं
-string capitalizedStr = str.ToUpper(); //पूर्ण स्ट्रिंग को capitalizedStr में बदलें
-
-Console.WriteLine(capitalizedStr); // आपको "HELLO WORLD" मिलेगा
-
-string firstLetter = str.Substring(0, 1).ToUpper(); // पहले अक्षर को capitalized एक string में बदलें
-string restOfStr = str.Substring(1); // बाकी सभी अक्षरों को अलग string में स्टोर करें
-
-Console.WriteLine(firstLetter + restOfStr); // "Hello world" मिलेगा
+string s = "hello world!";
+s = s.ToUpper();
+Console.WriteLine(s);
+// Output: HELLO WORLD!
 ```
 
-## गहराई में जाएं
-स्ट्रिंग capitalize करना बहुत अधिक समय और memory का खपाई कर सकता है, इसलिए बेहतर होगा कि आप उसमें अपनी स्ट्रिंग को modify कर दें। आप अपनी स्ट्रिंग को char array में convert कर सकते हैं और उसे modify करके दोबारा स्ट्रिंग में convert कर सकते हैं। यह आपके कोड के लिए अधिक भरोसेमंद और उचित हो सकता है।
+इसके अलावा, हम "Mask" फंक्शन का भी उपयोग कर सकते हैं जो की कैपिटलाइज न होने वाले अक्षरों को छोड़कर बाकी सभी आउटपुट से हटा देता है। निम्न उदाहरण इसकी दिखाता है:
 
-## देखिए भी
-"देखिए भी" (See Also):
-- [C# char data type](https://www.tutorialspoint.com/csharp/csharp_char.htm)
-- [String manipulation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#manipulating-strings)
-- [Difference between ToUpper and ToUpperInvariant in C#](https://www.codeproject.com/Tips/136811/To-Upper-vs-To-UpperInvariant-are-we-always-suppos)
+```C#
+string s = "hello world!";
+var mask = "HlWd";
+s = s.Mask(mask);
+Console.WriteLine(s);
+// Output: eoro!
+```
+
+आप इस तरह से अपने स्ट्रिंग को कैपिटलाइज कर सकते हैं और अपनी जरूरतों के अनुसार उसे customize भी कर सकते हैं।
+
+## डीप डाइव
+
+स्ट्रिंग कैपिटलाइज करने के पीछे की तकनीक बहुत ही सरल होती ह

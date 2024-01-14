@@ -1,56 +1,45 @@
 ---
-title:    "Bash: Lendo um arquivo de texto"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/reading-a-text-file.md"
+title:                "Bash: Lendo um arquivo de texto"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto em Bash?
+## Por que
 
-Se você é novo na programação em Bash, ou mesmo se já está familiarizado com a linguagem, pode se perguntar por que alguém gostaria de ler um arquivo de texto em um script. A resposta é simples: a leitura de arquivos de texto é uma tarefa comum na programação e pode ser útil para acessar dados armazenados em um formato legível por humanos.
+Se você está aprendendo a programar em Bash, pode se perguntar por que seria importante saber ler arquivos de texto. A resposta é simples - a leitura de arquivos de texto é uma habilidade fundamental para automatizar processos e manipular grandes quantidades de dados em um sistema operacional Linux. Se você quiser aprender a trabalhar com Bash, entender como ler arquivos de texto é fundamental.
 
-## Como fazer
+## Como Fazer
 
-Para ler um arquivo de texto em Bash, é necessário utilizar o comando `read` em conjunto com a estrutura `while` para iterar sobre as linhas do arquivo. O código a seguir mostra um exemplo de como fazer isso:
+Para ler um arquivo de texto em Bash, primeiramente você precisa criar um arquivo de texto para ler. Você pode usar qualquer editor de texto, como o Nano ou o VI, para criar um arquivo simples com algumas linhas de texto. Depois de salvar o arquivo, você pode usar o comando "cat" para exibir o conteúdo do arquivo no terminal.
 
-```Bash
-#!/bin/bash
-
-# Abrir e ler arquivo
-while read linha
-do
-    echo "$linha" # Imprime cada linha do arquivo
-done < arquivo.txt # Substitua "arquivo.txt" pelo nome do seu arquivo
-
-```
-
-O comando `read` é usado para ler a entrada do usuário, mas também pode ser utilizado para ler arquivos. Em nosso exemplo, definimos a variável `linha` como sendo a entrada lida pelo `while`, e então a imprimimos usando o comando `echo`. O `< arquivo.txt` indica qual arquivo será lido pelo script.
-
-## Mergulhando mais fundo
-
-Ao ler um arquivo de texto, é importante ter em mente que o script irá percorrer o arquivo linha por linha. Isso significa que qualquer manipulação de dados ou lógica deve ser aplicada dentro da estrutura `while` para cada linha individualmente.
-
-Além disso, é possível utilizar o comando `read` para ler valores específicos em cada linha, dividindo-os por meio de um delimitador. Por exemplo, se quisermos ler um arquivo CSV com valores separados por vírgulas, podemos usar o comando `IFS` para definir a vírgula como delimitador:
+Para ler o arquivo em um script Bash, você pode usar o comando "read" seguido do nome do arquivo. O exemplo abaixo mostra como ler o conteúdo de um arquivo chamado "texto.txt" e atribuí-lo a uma variável chamada "texto".
 
 ```Bash
-#!/bin/bash
-
-# Abrir e ler arquivo CSV
-while IFS=',' read coluna1 coluna2 coluna3 # Define as colunas separadas por vírgulas
-do
-    # Faz algo com os valores lidos
-    echo "Nome: $coluna1"
-    echo "Sobrenome: $coluna2"
-    echo "Idade: $coluna3"
-done < arquivo.csv # Substitua "arquivo.csv" pelo nome do seu arquivo
-
+read texto < texto.txt
+echo $texto
 ```
 
-Neste caso, cada valor separado por vírgula será armazenado em sua respectiva variável, e podemos usar esses valores para realizar alguma ação específica no script.
+Se você quiser ler linha por linha do arquivo, pode usar um loop while com o comando "read", como mostrado no exemplo abaixo:
+
+```Bash
+while read linha; do
+    echo $linha
+done < texto.txt
+```
+
+O comando "read" é uma maneira útil de permitir que seu script Bash interaja com a entrada do usuário e arquivos de texto.
+
+## Deep Dive
+
+Quando você lê um arquivo de texto em Bash, o sistema basicamente armazena o conteúdo do arquivo em uma variável. Isso significa que você pode manipulá-lo da mesma maneira que faria com qualquer outra variável em Bash. Por exemplo, você pode concatenar várias variáveis e redirecionar o resultado para um novo arquivo de texto.
+
+Além disso, você também pode usar o comando "grep" para pesquisar por padrões específicos no conteúdo do arquivo. Isso é especialmente útil quando você precisa analisar grandes arquivos de texto em busca de informações importantes.
 
 ## Veja também
 
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Artigo sobre a leitura de arquivos em Bash no site Medium](https://medium.com/@LordGhostX/how-to-read-from-a-file-using-bash-a0b52a32d4ba)
-- [Vídeo tutorial sobre o uso do comando `read` em Bash](https://www.youtube.com/watch?v=SEqu5gHct-I)
+- [Tutorial de Script em Bash](https://www.tecmint.com/writing-shell-scripts/)
+- [Referência Bash para Leitura de Arquivos de Texto](https://linuxhint.com/bash_read_file_grep_input/)
+- [Cursos de programação Bash](https://www.udemy.com/topic/bash-scripting/)

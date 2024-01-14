@@ -1,41 +1,38 @@
 ---
-title:    "Gleam: Używanie wyrażeń regularnych"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/using-regular-expressions.md"
+title:                "Gleam: Korzystanie z wyrażeń regularnych"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto używać wyrażeń regularnych w programowaniu?
 
-Regularne wyrażenia są niezbędnym narzędziem w każdym programistycznym rękawie. Pozwalają nam na dokładne i szybkie przeszukiwanie tekstu oraz manipulowanie nim. Bez nich trudne byłoby radzenie sobie z złożonymi wyrażeniami, takimi jak adresy email czy numery telefonów. Dzięki nim możemy dokonać wielu skomplikowanych operacji w krótkim czasie, co jest szczególnie ważne w dzisiejszym szybkim świcie technologii.
+Wyrażenia regularne to potężne narzędzie, które pozwala na efektywne przetwarzanie tekstu i wyszukiwanie wzorców w tekście. Jest to szczególnie przydatne dla programistów, którzy pracują z danymi tekstowymi, takimi jak formularze czy zasoby internetowe. Dzięki wyrażeniom regularnym nie tylko zaoszczędzisz czas, ale także unikniesz błędów w swoim kodzie.
 
-## Jak to zrobić
+## Jak używać wyrażeń regularnych w Gleam?
 
-Kiedy piszesz w języku Gleam, aby wykorzystać regularne wyrażenia musisz skorzystać z biblioteki o nazwie `regex`. Pierwszym krokiem jest jej zaimportowanie do Twojego kodu:
-
-```Gleam
-import regex
-```
-
-Następnie możesz użyć funkcji `regex.replace` aby zastosować wyrażenie regularne do danego tekstu. Przykładowo, jeśli chcesz zamienić wszystkie spacje na myślniki w ciągu znaków "Hello World", możesz to zrobić w ten sposób:
+Używanie wyrażeń regularnych w Gleam jest bardzo proste. Wystarczy użyć wbudowanej biblioteki `re` i skorzystać z funkcji `match` lub `replace`. Spójrzmy na przykład:
 
 ```Gleam
-let result = regex.replace("Hello World", "\\s", "-")
+let text = "Witaj w świecie Gleam!"
+
+let pattern = r"[a-zA-Z]+"
+
+let result = re.match(pattern, text)
+
+// output: Some(["Witaj", "w", "świecie", "Gleam"])
 ```
 
-W powyższym przykładzie, pierwszy argument funkcji `replace` to ciąg znaków, w którym chcemy przeprowadzić zmiany. Drugi argument to szukane wyrażenie regularne, a trzeci to wartość, na którą chcemy je zamienić. W tym przypadku chcemy zamienić każdą spację (`\\s`) na myślnik.
+W powyższym przykładzie używamy funkcji `match` do wyszukania wszystkich słów składających się z liter od A do Z, zarówno małych jak i wielkich, w tekście. Wynikiem jest lista dopasowanych wyrazów. W podobny sposób możemy również skorzystać z funkcji `replace`, aby zamienić dopasowane wyrazy na inne.
 
-## Głębszy zanurzenie
+## Wprowadzenie do wyrażeń regularnych
 
-Aby wykorzystać regularne wyrażenia w języku Gleam, musisz mieć pewną znajomość notacji i składni. Regularne wyrażenia są sekwencją znaków, które opisują wzorzec do dopasowania. Mogą zawierać litery, cyfry i znaki specjalne, aby określić specyficzne typy znaków lub sekwencje, które chcemy znaleźć lub zamienić.
+Wyrażenia regularne są wyjątkowo przydatne w przetwarzaniu tekstu, ponieważ pozwalają na elastyczne wyszukiwanie wzorców za pomocą specjalnych symboli i operatorów. Możesz na przykład wyszukać konkretne słowa, frazy, liczby czy nawet daty w tekście, a także wykonywać operacje takie jak podstawianie, kasowanie czy zamiana. Aby poznać wszystkie możliwości, warto zacząć od nauki podstaw, takich jak znaki specjalne i operatory, a następnie praktykować na coraz bardziej zaawansowanych przykładach.
 
-Na przykład, wyrażenie regularne `/^\d{3}-\d{3}-\d{4}$/` będzie dopasowane do numeru telefonu w formacie XXX-XXX-XXXX (gdzie "X" oznacza cyfrę). W tym przypadku, `^` oznacza początek wyrażenia, `\d` oznacza cyfrę, a `{3}` mówi, że szukamy trzech cyfr. Znak `-` określa, że po trzech cyfrach musi wystąpić myślnik, a `$` oznacza koniec wyrażenia.
+## Zobacz również
 
-Istnieje wiele różnych kombinacji znaków i sekwencji, które możesz stosować w wyrażeniach regularnych. Dlatego warto poświęcić trochę czasu na naukę ich działania, aby z łatwością korzystać z nich w swoim kodzie.
-
-## Zobacz także
-
-- Dokumentacja biblioteki Regex dla języka Gleam: [https://gleam.run/modules/regex/latest/](https://gleam.run/modules/regex/latest/)
-- Przewodnik dla początkujących dotyczący wyrażeń regularnych: [https://regexone.com/](https://regexone.com/)
-- Interaktywne narzędzie do testowania wyrażeń regularnych: [https://regex101.com/](https://regex101.com/)
+* Dokumentacja wyrażeń regularnych w Gleam: <https://gleam.run/modules/std/re.html>
+* Poradnik dla początkujących: <https://regexone.com/>
+* Przykłady zadań do rozwiązania: <https://regexcrossword.com/>

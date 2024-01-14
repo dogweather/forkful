@@ -1,58 +1,56 @@
 ---
-title:    "Swift: Tilapäistiedoston luominen"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/creating-a-temporary-file.md"
+title:                "Swift: **Luodaan väliaikainen tiedosto"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto
+# Miksi luoda tilapäistiedosto?
 
-Väliaikaiset tiedostot ovat tärkeitä ohjelmoinnissa monilla eri tavoilla. Ne voivat auttaa tallentamaan väliaikaisia tietoja tai väliaikaisia tiedostoja, jotka ovat tarpeen tietyn tehtävän suorittamiseksi. Ne ovat myös käteviä tietojen siirtämiseen eri osioiden välillä ja voivat auttaa optimoimaan suorituskykyä. Joten jos haluat oppia lisää siitä, miten luoda väliaikaisia tiedostoja Swiftillä, jatka lukemista!
+Tilapäistiedostojen luominen on tärkeä osa ohjelmointia monessa tilanteessa. Voit käyttää niitä tallentamaan väliaikaisia tietoja tai luomaan välillisiä tiedostoja, jotka tarvitset suorittaessasi tiettyjä toimintoja ohjelmassasi. Tilapäistiedostot mahdollistavat myös tiedon tallentamisen väliaikaisesti ja sen poistamisen ohjelman suorituksen jälkeen, mikä voi olla hyödyllistä tietoturvasyistä.
 
-## Näin luot väliaikaisen tiedoston
+# Kuinka luoda tilapäistiedosto Swiftillä?
+
+Swift tarjoaa kätevän tavan luoda tilapäistiedostoja käyttäen FileManager-luokkaa. Se tarjoaa valmiita metodeja luoda, avata, kirjoittaa ja poistaa tiedostoja. Seuraavassa esimerkissä näytetään, miten voit luoda ja kirjoittaa tekstiä tilapäistiedostoon.
 
 ```Swift
-// Luodaan väliaikainen tiedoston nimi
-let temporaryFileName = "temporaryFile.txt"
+let fileManager = FileManager.default
+let temporaryFolder = NSTemporaryDirectory()
+let temporaryFile = temporaryFolder + "temp_file.txt"
 
-// Haetaan dokumenttipolku
-guard let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-  fatalError("Dokumenttipolkua ei löytynyt")
-}
-
-// Yhdistetään tiedostonimi document-polkuun
-let temporaryFilePath = documentPath.appendingPathComponent(temporaryFileName)
-
-// Kirjoitetaan tiedoston sisältö
-let content = "Tämä on väliaikainen tiedosto!"
-do {
-  try content.write(to: temporaryFilePath, atomically: false, encoding: .utf8)
-} catch {
-  print("Tiedoston luominen epäonnistui: ", error.localizedDescription)
-}
-
-// Tulostetaan tiedoston sisältö
-print("Tiedoston sisältö: ")
-do {
-  let retrievedContent = try String(contentsOf: temporaryFilePath, encoding: .utf8)
-  print(retrievedContent)
-} catch {
-  print("Tiedoston lukeminen epäonnistui: ", error.localizedDescription)
+if fileManager.createFile(atPath: temporaryFile, contents: nil, attributes: nil) {
+    print("Tilapäistiedosto luotu!")
+    
+    // Kirjoitetaan tekstiä tiedostoon
+    let textData = "Tämä on tilapäistiedoston teksti."
+    if let fileHandle = FileHandle(forWritingAtPath: temporaryFile) {
+        fileHandle.seekToEndOfFile()
+        fileHandle.write(textData.data(using: .utf8)!)
+        fileHandle.closeFile()
+    }
+    print("Teksti kirjoitettu tilapäistiedostoon!")
+} else {
+    print("Tilapäistiedoston luominen epäonnistui.")
 }
 ```
 
-**Tulostettu sisältö:**
+Tämän koodiesimerkin tulostus näyttää seuraavalta:
+
 ```
-Tämä on väliaikainen tiedosto!
+Tilapäistiedosto luotu!
+Teksti kirjoitettu tilapäistiedostoon!
 ```
 
-## Syventymistä väliaikaisiin tiedostoihin
+# Syvällisempi tarkastelu tilapäistiedostojen luomisesta
 
-Väliaikaiset tiedostot luodaan yleensä, kun tarvitaan väliaikaista tallennustilaa tiedon siirtämistä tai käsittelyä varten. Ne ovat yleensä tallennettuna sovelluksen kohdepisteen "/tmp" kansioon. Väliaikaiset tiedostot poistetaan yleensä automaattisesti käytön jälkeen. Voit myös käyttää `NSFileHandle`-luokkaa tiedoston avulla suorittamaan tietoja ja lukemaan tiedostoja. Lisäksi voit määrittää tiedoston luontipolitiikan antamalla `URL`-osoitteen `FileManager`-luokalle, esimerkiksi pitämällä tiedosto kohdistettuna vain sovelluksen elinaikana ja poistamaan sen poistumisen jälkeen.
+Swiftin FileManager-luokka tarjoaa lisäksi monia muita hyödyllisiä metodeja, joita voit käyttää tilapäistiedostojen luomiseen ja hallintaan. Voit esimerkiksi tarkistaa tiedoston olemassaolon, luoda puuhakemistoja ja noutaa tiedoston tiedot. On myös tärkeää varmistaa, että poistat tilapäistiedoston ohjelman suorituksen jälkeen, jotta et jätä jälkeesi turhia ja ehkä arkaluonteisia tietoja.
 
-## Katso myös
+Lisätietoja FileManager-luokan tarjoamista metodeista ja niiden käytöstä voit lukea Swiftin dokumentaatiosta.
 
-- [Swiftin virallinen dokumentaatio väliaikaisten tiedostojen luomisesta](https://developer.apple.com/documentation/foundation/filemanager/1407720-tempporarydirectory)
-- [NSFileHandle-dokumentaatio Swiftissä](https://developer.apple.com/documentation/foundation/nsfilehandle)
-- [Väliaikaisten tiedostojen käyttö Swiftillä](https://learnappmaking.com/temporary-files-swift-playground-dimpiaal-ad-da-f10-10-2017/)
+# Katso myös
+
+* [FileManager-luokan dokumentaatio](https://developer.apple.com/documentation/foundation/filemanager)
+* [Swiftin dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+* [Tietoturvasuositukset tiedostojen käsittelyyn Swiftillä](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)

@@ -1,53 +1,48 @@
 ---
-title:    "Rust: Generering av tilfeldige tall"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/generating-random-numbers.md"
+title:                "Rust: Å generere tilfeldige tall"
+programming_language: "Rust"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noen gang ønsket å lage et spill eller en applikasjon der tilfeldighet spiller en viktig rolle? Da trenger du å lære hvordan du genererer tilfeldige tall i din kode! Det kan være nyttig for å skape varierende resultater i simuleringer, lage tilfeldige karakterer eller generere tilfeldige utgangspunkt i et spill.
+Har du noen gang lurt på hva som skjer når du klikker på en knapp og et tilfeldig tall dukker opp? Eller kanskje du lurer på hvordan dataprogrammer genererer tilfeldige tall? Uansett hva som måtte være grunnen din for å lære å generere tilfeldige tall, så er du på rett sted! I denne bloggposten vil vi lære deg hvordan du kan generere tilfeldige tall ved hjelp av programmeringsspråket Rust. Det kan være nyttig i en rekke forskjellige situasjoner, enten det er i spillutvikling, simuleringer eller andre programmeringsprosjekter.
 
-## Hvordan generere tilfeldige tall i Rust
+## Hvordan
 
-I Rust kan vi bruke standardbiblioteket til å generere tilfeldige tall. Vi må bare inkludere `rand` biblioteket i vår kode og bruke funksjonen `thread_rng()` for å få en tilfeldig nummergenerator. La oss se et eksempel:
-
-```Rust
-extern crate rand; // inkluderer rand biblioteket
-
-use rand::Rng; // importerer rand::Rng i vår namespace
-
+```rust
 fn main() {
-    let mut rng = rand::thread_rng(); // oppretter en ny tilfeldig nummergenerator
-    let num: i32 = rng.gen(); // genererer et tilfeldig tall av typen i32
-    println!("Tilfeldig tall: {}", num);
+    // Importerer biblioteket "rand" som hjelper oss med å generere tilfeldige tall
+    use rand::Rng;
+
+    // Oppretter en variabel som vil inneholde det tilfeldige tallet
+    let mut rng = rand::thread_rng();
+
+    // Genererer et tilfeldig tall mellom 1 og 10
+    let random_number = rng.gen_range(1, 11);
+
+    // Skriver ut det genererte tallet
+    println!("Det tilfeldige tallet er: {}", random_number);
 }
 ```
 
-Dette vil produsere en utgang som dette: `Tilfeldig tall: 5210997089679590147`. Som du kan se, er tallet helt tilfeldig og kan variere hver gang koden kjøres.
+Kodeeksempelet ovenfor viser hvordan du med hjelp av Rust kan generere et tilfeldig tall mellom 1 og 10. Først importerer vi biblioteket "rand" som inneholder funksjoner og metoder for å generere tilfeldige tall. Deretter oppretter vi en variabel "rng" som vil brukes til å kalle på disse funksjonene. Vi benytter deretter "gen_range" funksjonen for å generere et tall mellom 1 og 10, og deretter skriver vi det ut.
 
-Vi kan også spesifisere et område for de tilfeldige tallene ved å bruke `gen_range()` funksjonen. La oss si at vi bare vil ha tilfeldige tall mellom 1 og 10:
+Du kan også bruke andre funksjoner som "gen_bool" for å generere tilfeldige boolske verdier eller "gen_range_f64" for å generere desimaltall. Det finnes også andre måter å tilpasse og kontrollere genereringen av tilfeldige tall på, som for eksempel å spesifisere et seed eller å bruke en annen RNG (Random Number Generator). Utforsk gjerne dokumentasjonen til biblioteket "rand" for mer avanserte eksempler og muligheter.
 
-```Rust
-let num: i32 = rng.gen_range(1, 11); // genererer et tilfeldig tall mellom 1 og 10
-```
+## Deep Dive
 
-Vi kan også generere tilfeldige boolske verdier ved å bruke `gen()` funksjonen og spesifisere typen:
+Mens det å generere tilfeldige tall kan virke enkelt i utgangspunktet, er det faktisk en mer kompleks prosess enn man kanskje skulle tro. Det involverer blant annet bruk av matematiske algoritmer, som er designet for å produsere tall som oppfører seg som tilfeldige tall. Dette er viktig for å sikre tilfeldigheten og fordelingen av tallene som blir generert.
 
-```Rust
-let boolean: bool = rng.gen(); // genererer en tilfeldig boolsk verdi
-```
+Noen av de vanligste algoritmene brukt for å generere tilfeldige tall inkluderer "Linear Congruential Generator", "Mersenne Twister" og "Xorshift". Disse algoritmene har alle ulike egenskaper og fordeler, og det er derfor biblioteket "rand" i Rust bruker en kombinasjon av disse for å generere optimale tilfeldige tall.
 
-## En dypere titt på tilfeldige tall i Rust
-
-Hvis du er interessert i å lære mer om hvordan tilfeldige tall blir generert, kan du ta en titt på `rand` biblioteket og dens implementasjon av `thread_rng()` funksjonen. Det bruker operativsystemets kryptografisk-sikre tilfeldige tallgenerator for å sikre at tallene virkelig er tilfeldige.
-
-En annen interessant ting å merke seg er at Rust har en `SeedableRng` trait som lar deg kontrollere startpunktet for tilfeldige tall. Dette kan være nyttig for testing eller for å kunne generere de samme tilfeldige tallene ved senere kjøring av koden.
+Det er også verdt å nevne at tilfeldige tall generert på en datamaskin faktisk ikke er 100% tilfeldige, da de er basert på en algoritme som i utgangspunktet er deterministisk. Det betyr at det samme seedet og de samme algoritmene vil føre til de samme tallene hver gang programmet kjøres. Dette er grunnen til at man vanligvis bruker et seed basert på tiden eller andre variabler for å skape en ilusjon av tilfeldighet.
 
 ## Se også
 
-- Offisiell dokumentasjon for `rand` biblioteket: https://docs.rs/rand/0.8.4/rand/
-- Tutorial på å generere tilfeldige tall i Rust: https://crates.io/crates/rand
-- Diskusjon om sikkerhet og tilfeldighet i Rust: https://www.reddit.com/r/rust/comments/4j9qso/discussion_best_practices_for_random_number/
+- [Rust dokumentasjon for tilfeldige tall](https://doc.rust-lang.org/stable/rust-by-example/rand.html)
+- [Offisiell dokumentasjon for biblioteket "rand"](https://docs.rs/rand/0.8.4/rand/)
+- [Sammenligning av ulike RNG-algoritmer](https://www.pcg-random.org/pdf/hmc-cs-2014-0905.pdf)

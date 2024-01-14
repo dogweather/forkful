@@ -1,50 +1,46 @@
 ---
-title:    "Go: String in Großbuchstaben umwandeln"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/capitalizing-a-string.md"
+title:                "Go: String in Großbuchstaben umwandeln"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Kapitalisieren eines Strings ist ein häufiges Problem beim Programmieren in Go, insbesondere bei der Verarbeitung von Benutzereingaben. Es kann auch nützlich sein, wenn man Daten in einer bestimmten konventionellen Formatierung ausgeben möchte.
+Warum sollte man sich in Go mit dem Großschreiben von Zeichenketten beschäftigen? Nun, diese Funktion ist oft in der Softwareentwicklung erforderlich, beispielsweise beim Validieren von Benutzereingaben oder beim Erstellen von Datenbankabfragen.
 
-## So geht's
+## Wie man es macht
 
-Die einfachste Methode, um einen String in Go zu kapitalisieren, ist die Verwendung der `strings` Bibliothek. Hier ist ein Beispielcode, der einen String in Großbuchstaben umwandelt:
+Um eine Zeichenkette in Go zu versalzen, gibt es mehrere Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung der `strings` Bibliothek und der `ToUpper()` Funktion, wie im folgenden Beispiel gezeigt:
 
 ```Go
-package main
+import "strings"
 
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    str := "hallo welt"
-
-    fmt.Println(strings.ToUpper(str))
-}
+fmt.Println(strings.ToUpper("hallo dort")) // Ausgabe: HALLO DORT
 ```
 
-Die Ausgabe für diesen Code wird wie folgt aussehen:
+Eine weitere Möglichkeit ist die Verwendung von Regex-Ausdrücken mit Hilfe der `regexp` Bibliothek:
 
+```Go
+import "regexp"
+
+// Muster, um nur die ersten beiden Buchstaben einer Zeichenkette zu großschreiben
+pattern := regexp.MustCompile(`^([a-z]{2})`)
+fmt.Println(pattern.ReplaceAllStringFunc("hallo dort", strings.ToUpper)) // Ausgabe: HALlo dort
 ```
-HALLO WELT
-```
 
-## Tieferer Einblick
+Wie man sehen kann, gibt es verschiedene Wege, um eine Zeichenkette in Go zu versalzen. Die Wahl hängt davon ab, in welchem Kontext und welcher Komplexität die Funktion verwendet werden soll.
 
-In Go gibt es viele eingebaute Funktionen, die bei der Manipulation von Strings hilfreich sein können. Im obigen Beispiel haben wir `strings.ToUpper()` verwendet, aber es gibt auch `strings.ToLower()`, `strings.Title()` und `strings.TrimSpace()` - um nur einige zu nennen.
+## Tiefen-Tauchgang
 
-Außerdem ist es wichtig zu beachten, dass Go standardmäßig mit UTF-8 Strings arbeitet, was bedeutet, dass es Unicode-Unterstützung bietet. Dies ermöglicht eine einfache Handhabung von Strings in verschiedenen Sprachen und Zeichensätzen.
+Wenn es um das Versalzen von Zeichenketten in Go geht, ist es wichtig zu wissen, dass Go standardmäßig UTF-8 verwendet. Das bedeutet, dass Zeichenketten auch Unicode-Zeichen enthalten können, die gegebenenfalls beim Versalzen berücksichtigt werden müssen.
+
+Eine andere wichtige Sache ist die Leistung. Wenn es in einem Programm erforderlich ist, viele Zeichenketten zu versalzen, kann es sinnvoll sein, einen schnelleren Ansatz zu wählen, z.B. durch Direktzugriff auf die Bytes der Zeichenkette anstatt auf String-Funktionen zurückzugreifen.
 
 ## Siehe auch
 
-- [Offizielle Go Dokumentation zur `strings` Bibliothek](https://golang.org/pkg/strings/)
-- [Tutorial zur Verwendung von Strings in Go](https://gobyexample.com/strings)
-- [Weitere Informationen zu Unicode in Go](https://blog.golang.org/strings)
-
-Vielen Dank fürs Lesen und viel Spaß beim Programmieren in Go!
+- [Offizielle Dokumentation zu `strings` in Go](https://pkg.go.dev/strings)
+- [Offizielle Dokumentation zu `regexp` in Go](https://pkg.go.dev/regexp)
+- [Tutorial über Unicode in Go](https://www.calhoun.io/unicode-tutorial-in-go/)

@@ -1,45 +1,42 @@
 ---
-title:    "Rust: 문자열을 소문자로 변환하기"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/converting-a-string-to-lower-case.md"
+title:                "Rust: 스트링을 소문자로 변환하는 방법"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-문자열을 소문자로 변환하는 것에 대해 관심이 생기는 이유는 다양할 수 있습니다. 예를 들어, 대소문자를 구분하지 않고 문자열을 비교해야 할 때, 또는 특정 작업을 수행하기 위해 문자열의 양식을 통일해야 할 때 등이 있을 수 있습니다. 또는 간단히 문자열을 보기 좋게 표현하기 위해서도 사용될 수 있습니다. Rust는 이를 위한 간단하고 효율적인 방법을 제공하고 있으니 이번 글에서는 그 방법에 대해 알아보도록 하겠습니다.
+문자열을 소문자로 변환하는 것에 참여하는 이유는 다양합니다. 예를 들어, 대소문자를 구분하지 않는 데이터베이스에서 문자열을 비교하거나, 사용자 입력을 처리할 때 대문자를 소문자로 바꾸어 일관된 데이터를 얻을 수 있습니다.
 
 ## 어떻게
 
-Rust에서 문자열을 소문자로 변환하기 위해서는 `to_lowercase()` 함수를 사용하면 됩니다. 이 함수는 `String` 타입의 문자열을 반환하며, 인자로는 변환하고자 하는 문자열의 참조자를 전달해주어야 합니다.
-
-```Rust
+```rust
 fn main() {
-    let name = "RUST PROGRAMMING";
-    let lower_name = name.to_lowercase();
-    println!("{}", lower_name);
+    let string = String::from("캐주얼 러스트 프로그래밍 블로그 포스트");
+
+    // 문자열을 소문자로 변환
+    let lower = string.to_lowercase();
+
+    println!("{}", lower);
 }
 ```
 
-위의 코드에서 `to_lowercase()` 함수를 이용해 `name` 변수에 할당된 문자열을 소문자로 변환하여 `lower_name` 변수에 저장했습니다. 그리고 `println!` 매크로를 이용해 변환된 소문자 문자열을 출력하도록 하였습니다. 이를 실행하면 다음과 같은 결과가 나타납니다.
-
 ```
-rust programming
+캐주얼 러스트 프로그래밍 블로그 포스트
 ```
 
-이와 같이 소문자로 변환된 결과를 얻을 수 있습니다.
+위의 예제 코드를 보면 `String` 타입의 `to_lowercase()` 메소드를 사용하여 문자열을 소문자로 변환하는 방법을 확인할 수 있습니다. 이 메소드는 원래의 문자열을 바꾸지 않고, 이를 복사하여 소문자로 변환한 새로운 문자열을 반환합니다.
 
-## 깊게 들어가기
+## 깊게 파헤치기
 
-Rust에서 문자열을 소문자로 변환하는 방법은 간단하지만, 실제로는 다소 복잡한 과정을 거칩니다. 특히, 영어 이외의 언어에서는 더욱 복잡한 경우가 있을 수 있습니다. Rust는 이를 해결하기 위해 내부적으로 `Unicode`와 관련된 기능을 활용하여 문자열을 변환합니다.
+문자열을 소문자로 변환하는 것에 대해 더 자세히 알아보겠습니다. Rust에서는 기본적으로 UTF-8 인코딩을 지원합니다. 따라서 유니코드 문자에 대한 올바른 변환을 수행하는 것이 중요합니다. Rust에서는 `String` 타입에 대해 `to_lowercase()` 메소드를 제공하지만, `&str` 타입에 대해서는 `to_lowercase()` 함수를 사용해야 합니다.
 
-예를 들어, 여러 언어에서 공백이나 기호 등을 포함한 문자열을 소문자로 변환해야 할 때, 이러한 문자들을 각각 모두 소문자로 변환하는 것이 아니라 해당 문자열의 `Unicode`를 고려하면서 정확하게 변환해줍니다. 또한, 다양한 언어 패턴과 규칙에 대해 자세히 알고 있어야만 정확한 변환 결과를 얻을 수 있습니다.
+또한 Rust는 언어 수준에서 문자열을 변경할 수 없도록 하는 **변수의 불변성** 원칙을 강제합니다. 이는 위의 예제에서 볼 수 있는 것처럼 `to_lowercase()` 메소드가 새로운 문자열을 반환하는 이유입니다. 만약 문자열이 변경되는 것을 허용하고 싶다면, `String` 대신 `String::from_mut()` 함수를 사용하여 가변 참조를 얻어와야 합니다.
 
-따라서 Rust에서 문자열을 소문자로 변환할 때는 이러한 내부적인 과정을 고려해야 한다는 점을 명심하시길 바랍니다.
+## 참고
 
-# 관련 링크
-
-- [Rust 문자열 관련 공식 문서](https://doc.rust-lang.org/beta/std/string/struct.String.html#method.to_lowercase)
-- [Rust 문자열 타입과 메서드 소개](https://www.rprogramming.net/rust-string-tutorial/)
-- [Rust 표준 라이브러리](https://doc.rust-lang.org/std/index.html)
+- [Rust 공식 문서 - `to_lowercase()` 메소드](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+- [Rust 공식 문서 - `to_lowercase()` 함수](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)

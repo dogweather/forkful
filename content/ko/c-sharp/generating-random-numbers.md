@@ -1,80 +1,46 @@
 ---
-title:    "C#: 랜덤 숫자 생성"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/generating-random-numbers.md"
+title:                "C#: 랜덤 숫자 생성"
+programming_language: "C#"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 그랜드 랜덤 숫자를 생성하는가?
+## 왜
 
-우리는 모두 컴퓨터 프로그래밍에서 랜덤 숫자 생성이 중요하다는 것을 알고 있습니다. 이것은 개발자가 다양한 상황에 대처할 수 있게 해주는 강력한 도구입니다. 여기서는 C#에서 랜덤 숫자를 생성하는 방법을 살펴보고 실제 코드 예제를 통해 보여줄 것입니다.
+우리가 가끔씩 우리의 프로그램에 무작위로 생성된 숫자를 필요로 할 때가 있습니다. 이럴 때는 어떤 방식으로 해당 숫자를 만들 수 있는지 알아보고 싶을 수 있습니다. 이 블로그 포스트에서는 C#에서 무작위 숫자를 생성하는 방법에 대해 알아보겠습니다.
 
-## 어떻게 하면 랜덤 숫자를 생성할 수 있나요?
+## 어떻게
 
-랜덤 숫자를 생성하는 가장 간단한 방법은 `Random` 클래스를 사용하는 것입니다. 이 클래스는 C#에서 기본적으로 제공됩니다. 먼저 `Random` 클래스의 인스턴스를 만듭니다.
-
-```C#
-Random rand = new Random();
-```
-
-여기서 `rand`는 우리가 사용할 랜덤 숫자 생성기 입니다.
-
-다음으로, `Next()` 메소드를 사용하여 랜덤 숫자를 생성할 수 있습니다. 인자로는 원하는 숫자 범위를 지정할 수 있습니다. 예를 들어, 1에서 100까지의 랜덤 숫자를 생성하고 싶다면 다음과 같이 사용합니다.
+우선 우리는 Random 라이브러리를 사용하여 무작위 숫자를 생성할 수 있습니다. 다음 코드 블록을 사용하여 한가지 방법을 살펴보겠습니다.
 
 ```C#
-int randomNumber = rand.Next(1, 101);
-Console.WriteLine(randomNumber);
+Random random = new Random(); // Random 객체 생성
+int randomNumber = random.Next(); // 다음 무작위 숫자 생성
+Console.WriteLine(randomNumber); // 생성된 숫자 출력
 ```
 
-코드를 실행하면 매번 다른 숫자가 출력되는 것을 확인할 수 있습니다.
+위 코드를 실행하면 무작위로 생성된 숫자가 출력됩니다. 하지만 이 코드는 항상 같은 숫자를 출력할 수도 있습니다. 이러한 경우 시드 값을 설정하여 숫자를 더욱 무작위하게 만들 수 있습니다. 다음 코드 블록을 사용하여 시드 값을 설정하는 방법을 알아보겠습니다.
 
 ```C#
-67
-23
-92
+Random random = new Random(Guid.NewGuid().GetHashCode()); // 시드 값을 설정한 Random 객체 생성
+int randomNumber = random.Next(); // 다음 무작위 숫자 생성
+Console.WriteLine(randomNumber); // 생성된 숫자 출력
 ```
 
-이처럼 간단한 방법으로 랜덤 숫자를 생성할 수 있습니다.
+위 코드에서 우리는 GUID를 사용하여 시드 값을 설정하여 숫자를 더욱 무작위하게 만들었습니다. 이 외에도 다양한 방법으로 시드 값을 설정할 수 있으며, 이를 이용해 원하는 만큼 무작위성을 조절할 수 있습니다.
 
-## 더 깊이 알아보기
+## 딥 다이브
 
-우리는 이제 `Next()` 메소드를 통해 랜덤 숫자를 생성할 수 있지만, 만약 우리가 숫자가 아닌 다른 자료형을 생성하고 싶다면 어떻게 할까요? 이때는 `Next()` 메소드에 다른 오버로드된 버전을 사용하면 됩니다.
+C#에서 무작위 숫자를 생성할 수 있는 라이브러리는 Random을 비롯해 다양합니다. 하지만 이 라이브러리들은 사실 완전히 무작위한 숫자를 생성하지는 못합니다. 컴퓨터는 알고리즘을 사용하여 숫자를 생성하기 때문에, 어떤 알고리즘을 사용하느냐에 따라 숫자의 무작위성이 결정됩니다.
 
-예를 들어, `NextDouble()` 메소드는 0 이상 1 미만의 랜덤 실수를 생성합니다.
+따라서 숫자의 무작위성을 높이기 위해서는 어떤 알고리즘을 사용하는지, 어떤 시드 값을 설정하는지 등에 대해 더욱 깊이 알아보는 것이 필요합니다. 또한 많은 수학적 이론과 알고리즘이 숨겨져 있기 때문에, 이를 공부하여 더 효율적이고 무작위한 숫자를 생성할 수 있도록 하는 것도 가능합니다.
 
-```C#
-double randomDouble = rand.NextDouble();
-Console.WriteLine(randomDouble);
-```
+## 관련 링크
 
-실행 결과는 다음과 같이 나타납니다.
+[Random 클래스 - Microsoft Docs](https://docs.microsoft.com/ko-kr/dotnet/api/system.random?view=net-5.0)
 
-```C#
-0.75892971487462
-0.439255462611492
-0.98204241185114
-```
+[Random 클래스 예제 - C# 프로그래밍 스터디](https://www.csharpstudy.com/Classes/random.aspx)
 
-또한 `NextBytes()` 메소드를 사용하면 `byte` 배열을 생성할 수 있습니다.
-
-```C#
-byte[] byteArray = new byte[5];
-rand.NextBytes(byteArray);
-Console.WriteLine(String.Join(" ", byteArray));
-```
-
-출력 결과는 다음과 같습니다.
-
-```C#
-123 48 202 17 61
-65 239 72 215 227
-9 90 79 172 33
-```
-
-이처럼 `Random` 클래스는 다양한 메소드들을 제공하여 우리가 다양한 자료형의 랜덤 값을 생성할 수 있게 해줍니다.
-
-## 참고
-
-- [Microsoft 문서 - `Random` 클래스](https://docs.microsoft.com/ko-kr/dotnet/api/system.random?view=net-5.0)
-- [C# Random 클래스의 사용법](https://blog.naver.com/PostView.nhn?blogId=dnet9&logNo=221211571918&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=thumbnailList)
+[컴퓨터는 어떻게 난수를 생성할까요? - DailyEngineering](https://dailyengineering.kr/how-computers-generate-random-numbers/)

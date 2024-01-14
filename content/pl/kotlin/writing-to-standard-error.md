@@ -1,41 +1,44 @@
 ---
-title:    "Kotlin: Pisanie do standardowego błędu"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-to-standard-error.md"
+title:                "Kotlin: Pisanie do standardowego błędu"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie do standardowego błędu (standard error) często jest wykorzystywane w programowaniu w celu wyświetlania błędów lub ostrzeżeń. Umożliwia to programiście szybkie zlokalizowanie potencjalnych problemów w kodzie i szybką naprawę błędów.
+Napisanie do standardowego wyjścia błędów jest ważnym aspektem programowania w Kotlinie. To narzędzie pozwala nam na lepsze zarządzanie wyjątkami i błędami w naszym kodzie. Jest to kluczowe dla stworzenia niezawodnego oprogramowania.
 
 ## Jak to zrobić
 
-Pisanie do standardowego błędu w języku Kotlin jest bardzo proste. Wystarczy użyć funkcji "println()" i przekazać jej jako argument obiekt typu "PrintStream", który będzie reprezentował standardowy błąd. Przykład kodu wyglądałby tak:
+Aby napisać błąd do standardowego wyjścia w Kotlinie, używamy funkcji "printSystemError()" i przekazujemy mu klasę wyjątku jako parametr. Możemy również dodać komunikat, aby lepiej zrozumieć, co się stało. Oto przykład:
 
 ```Kotlin
-println(System.err, "To jest wiadomość błędu.")
+val x = 10
+val y = 0
+try {
+  val result = x / y
+} catch (e: ArithmeticException) {
+  printSystemError(e, "Nie można dzielić przez 0")
+}
 ```
 
-W wyniku powyższego kodu, na konsoli zostanie wyświetlona wiadomość "To jest wiadomość błędu." z oznaczniem, że pochodzi ona ze standardowego błędu.
+W wyniku powyższego kodu, w konsoli zobaczymy następujący output:
 
-Możemy również przekazać do funkcji "println()" dowolny obiekt jako argument, a zostanie on automatycznie przekonwertowany do ciągu znaków. Przykład:
-
-```Kotlin
-val x = 5
-println(System.err, "Wartość x to: " + x) // Automatyczna konwersja do ciągu znaków
+```
+Nie można dzielić przez 0
 ```
 
-Wynik powyższego kodu będzie identyczny jak w poprzednim przykładzie.
+Dzięki temu możemy łatwiej zidentyfikować miejsce i przyczynę błędu w naszym kodzie.
 
-## Deep Dive
+## Głębszy wgląd
 
-Pisanie do standardowego błędu jest bardzo przydatne w przypadku, gdy chcemy wyświetlić błędy lub ostrzeżenia nie tylko na konsoli, ale również w dziennikach (logach) lub na innych wynikach wyjściowych. Standardowy błąd jest również wykorzystywany w bibliotekach i innych frameworkach, więc warto znać tę funkcję programowania.
-
-Dzięki wykorzystaniu funkcji "println()", programista może kontrolować wyświetlany komunikat błędu lub ostrzeżenia, co jest bardzo ważne w przypadku tworzenia aplikacji, które będą wykorzystywane przez użytkowników.
+Funkcja "printSystemError()" używa bezpośrednio metody "printStackTrace()" z klasy wyjątku. Oznacza to, że otrzymujemy informacje o stosie wywołań, co jest bardzo przydatne przy debugowaniu naszego kodu. Możemy również dodać wyspecjalizowaną obsługę błędów, jeśli chcemy lepiej kontrolować wyjątki w naszym programie.
 
 ## Zobacz także
 
-- Dokumentacja języka Kotlin dotycząca pisania do standardowego błędu: https://kotlinlang.org/docs/reference/standard-library.html#printing-to-the-standard-error-stream
-- Informacje na temat obsługi wyjątków w języku Kotlin: https://kotlinlang.org/docs/reference/exceptions.html
+- [Dokumentacja funkcji printSystemError w języku Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-extensions/print-system-error.html)
+- [Artykuł o obsłudze wyjątków w Kotlinie na blogu Simplified Coding](https://www.simplifiedcoding.net/kotlin-exceptions/)
+- [Oficjalna strona języka Kotlin](https://kotlinlang.org/)

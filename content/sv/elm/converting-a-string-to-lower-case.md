@@ -1,40 +1,38 @@
 ---
-title:    "Elm: Omvandla en sträng till gemener"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/converting-a-string-to-lower-case.md"
+title:                "Elm: Omvandling av en sträng till gemener"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till gemener är en vanlig uppgift inom programmering. Det är användbart om du till exempel vill jämföra två strängar utan att oroa dig för storleks- eller skiftlägesändringar. Med hjälp av Elm kan du enkelt lösa detta problem på ett effektivt sätt.
+Att konvertera en sträng till små bokstäver är en vanlig uppgift när man programmerar. Det kan vara användbart för att jämföra olika strängar utan att ta hänsyn till stor/🅼/uppläggnings-bokstäver, eller för att få enhetliga utskrifter.
 
-## Hur man gör
-
-```Elm
-toLowercase : String -> String
-toLowercase str =
-    String.toLower str
-```
-
-I denna enkla kod stycke, använder vi funktionen `toLower` från Elm's `String` modul för att konvertera en sträng till gemener. Vi skickar helt enkelt in vår önskade sträng som argument och funktionen returnerar en ny sträng med alla gemener. Här är ett exempel på hur vår funktion skulle fungera:
+## Hur man gör det
 
 ```Elm
-toLowercase "Elm Programmering"
+-- Definiera en funktion som konverterar en sträng till små bokstäver
+toLower : String -> String
+toLower str =
+  -- Använd funktionen String.toLower för att konvertera varje bokstav
+  String.toLower str
+
+-- Anropa funktionen på en sträng
+toLower "ELM"
+-- Output: "elm"
 ```
 
-Output:
-```Elm
-"elm programmering"
-```
+## Djupdykning
 
-## Djupdyka
+När man tittar närmare på funktionen `toLower` ser man att den använder sig av `String.toLower` för att konvertera varje bokstav i strängen. Men hur fungerar det egentligen?
 
-Att konvertera en sträng till gemener kan verka som en enkel uppgift, men det finns faktiskt flera saker att tänka på. Till exempel kan vissa språk ha specialtecken eller bokstäver med accenter som behöver angripas på ett annat sätt för att konvertera dem till gemener. I sådana fall kan det vara användbart att använda sig av en annan funktion från Elm's `String` modul, såsom `toLowerList` som hanterar mer komplexa fall av konvertering.
+Elm har en inbyggd funktion som heter `String.toLower` som tar emot en `String` och returnerar en ny `String` med alla bokstäver omvandlade till små bokstäver. Detta gör den genom att använda använda sig av Unicode-tabellen för att veta vilka bokstäver som ska konverteras.
 
 ## Se även
 
-- [Elm's String Modul](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [String.toLower dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- [Elm Programmering för nybörjare](https://guide.elm-lang.org/)
+- [Elm Language Guide](https://guide.elm-lang.org/) (på engelska)
+- [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String) (på engelska)
+- [Unicode Character Database](https://unicode.org/Public/UCD/latest/ucd/) (på engelska)

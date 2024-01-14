@@ -1,68 +1,57 @@
 ---
-title:    "C++: 文字列を大文字にする"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/capitalizing-a-string.md"
+title:                "C++: 文字列の大文字化"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜキャピタルゼーションするのか
 
-プログラマーの皆さんは、文字列を大文字にすることが必要な場合があります。例えば、データベースから取得した文字列をタイトルケースに変換する必要がある場合や、入力フォームで入力した文字列を大文字に統一する必要がある場合などです。
+プログラミングを行う上で、時には文字列を大文字にする必要が生じます。例えば、特定の文字を検索する際に大文字小文字を区別する必要がある場合や、正しいフォーマットで表示するためには大文字で表記する必要がある場合などです。そのため、C++では文字列をキャピタルゼーションする機能が提供されています。
 
-## 方法
+# キャピタルゼーションの方法
 
-文字列を大文字にする方法はいくつかありますが、今回はC++プログラミング言語を使用して紹介します。この言語を選んだ理由は、C++は高速でパワフルな言語であり、文字列操作にも向いているからです。
+文字列を大文字に変換するには、C++のアルゴリズムを使用します。これを使うことで、簡単に文字列を大文字に変換することができます。以下のコード例を参考にしてください。
 
-まずは、文字列を大文字に変換するために必要なライブラリをインクルードします。
-
-```
+```C++
 #include <iostream>
 #include <string>
-```
+#include <algorithm>
 
-次に、変換前の文字列を入力します。
+using namespace std;
 
-```
-std::string str = "hello, world!";
-```
+int main(){
 
-ここで、文字列を大文字に変換するための関数を定義します。
+  // 変換前の文字列を定義する
+  string str = "hello world";
 
-```
-std::string toUpper(std::string str) { 
-  for(int i = 0; i < str.length(); i++) {
-    str[i] = toupper(str[i]);
-  }
-  return str;
+  // 大文字に変換する
+  transform(str.begin(), str.end(), str.begin(), ::toupper);
+
+  // 変換後の文字列を出力する
+  cout << "キャピタルゼーション後の文字列: " << str << endl;
+
+  return 0;
 }
 ```
 
-この関数では、forループを使って文字列の各文字を大文字に変換しています。また、C++の標準ライブラリであるtoupper関数を使用しています。
-
-最後に、変換後の文字列を出力します。
+上記のコードを実行すると、次のような出力が得られます。
 
 ```
-std::cout << toUpper(str) << std::endl;
+キャピタルゼーション後の文字列: HELLO WORLD
 ```
 
-実行すると、"HELLO, WORLD!"という文字列が出力されます。
+このように、文字列をキャピタルゼーションすることで、大文字に変換されていることが確認できます。
 
-## ディープダイブ
+# 深堀り
 
-文字列を大文字に変換する方法は、プログラミングにおいて非常に基本的な操作です。しかし、文字列を操作する際には注意が必要です。例えば、日本語のようにマルチバイト文字を含む場合、直接文字列を変換すると文字化けが起きる可能性があります。
+文字列をキャピタルゼーションする際には、C++の標準テンプレートライブラリの一部である`transform()`関数を使用します。この関数は、指定された範囲の要素を変換するために使用されます。コード例では、`str.begin()`と`str.end()`の間の要素（つまり文字列全体）を大文字に変換しています。
 
-また、C++では文字列を表す型としてchar型やchar[]型を使うこともできますが、string型を使用することでより便利に文字列操作を行うことができます。
+また、`::toupper`はC++の標準ライブラリで定義されている大文字変換用の関数です。このように、C++の標準ライブラリを使用することで、簡単に文字列をキャピタルゼーションすることができます。
 
-さらに、文字列の大文字には変換規則があります。たとえば、英語ではタイトルケースとして単語の最初の文字を大文字にする場合もありますが、他の言語では規則が異なる場合もあります。プログラミングする際には、その言語の規則をしっかりと把握する必要があります。
+# 関連リンク
 
-## 併せて読みたい
-
-- [C++ stringクラスの使い方](https://www.javadrive.jp/cpp/string/)
-- [C++の文字列操作について](https://rementan.tokyo/2017/11/28/cpp_string_operation/)
-- [文字列を大文字に変換するアルゴリズムの比較](https://qiita.com/jin-jin/items/d9a6dc142f968d3cad1c)
-
-see also: 見てね
-- [文字列を小文字に変換する方法](https://github.com/miyabihito/capitalize_string/blob/main/capitalize_string.cpp)
-- [英語のタイトルケースに変換する方法](https://github.com/takumi1224/title_case/blob/master/title_case.cpp)
-- [Pythonで文字列を大文字に変換する方法](https://techacademy.jp/magazine/19386)
+- [C++ transform()関数の使い方](https://www.studytonight.com/cpp/vector-algorithms/cpp-transform-function)
+- [C++ toupper()関数の使い方](https://www.studytonight.com/cpp/vector-algorithms/cpp-toupper-function)

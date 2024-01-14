@@ -1,45 +1,38 @@
 ---
-title:    "Haskell: Leyendo argumentos de línea de comando"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/reading-command-line-arguments.md"
+title:                "Haskell: Leyendo los argumentos de línea de comando"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer argumentos de la línea de comandos?
+# Por qué leer argumentos de línea de comando en Haskell
 
-Hay muchas razones por las que alguien podría querer aprender a leer argumentos de la línea de comandos en Haskell. Los argumentos de la línea de comandos permiten a los usuarios proporcionar información y datos adicionales al programa, lo que lo hace más dinámico y personalizable.
+Leer argumentos de línea de comando en Haskell puede ser muy útil para crear programas más dinámicos y versátiles. Con esta habilidad, puedes tomar entrada directamente del usuario en la terminal y usarla en tu código de Haskell.
 
 ## Cómo hacerlo
 
-Para leer argumentos de la línea de comandos en Haskell, primero necesitamos importar el módulo "System.Environment". Luego, podemos utilizar la función "getArgs" para obtener una lista de todos los argumentos pasados al programa.
+Para leer los argumentos de línea de comando en Haskell, primero necesitamos importar el módulo System.Environment. Luego, podemos usar la función `getArgs` para obtener una lista de todos los argumentos ingresados por el usuario.
 
-```Haskell
+```
 import System.Environment
 
 main = do
-    args <- getArgs
-    putStrLn "Los argumentos que has pasado son:"
-    putStrLn $ show args
+args <- getArgs
+print args
 ```
 
-Si ejecutamos este código con el comando `runhaskell args.hs argumento1 argumento2`, obtendremos la siguiente salida:
+Al ejecutar este código y pasar argumentos en la terminal, obtendremos una lista de esos argumentos como salida. Por ejemplo, si ejecutamos `ghc programa.hs` y luego `./programa argumento1 argumento2`, la salida será `[argumento1, argumento2]`.
 
-```
-Los argumentos que has pasado son:
-["argumento1","argumento2"]
-```
+## Profundizando
 
-Podemos acceder a cada argumento individualmente a través de su índice en la lista, por ejemplo, `args !! 0` para el primer argumento. También podemos utilizar patrones de asignación para asignar valores directamente a variables.
+Ahora que sabemos cómo leer los argumentos de línea de comando, podemos utilizarlos en nuestro código de Haskell de diversas maneras. Podemos acceder a cada argumento individualmente usando las funciones `!!` y `head` para obtener el primer elemento de la lista de argumentos. También podemos convertir los argumentos en tipos de datos diferentes usando funciones como `read` o `fromString`.
 
-## Deep Dive
+Además, podemos combinar la lectura de argumentos de línea de comando con otras funciones de entrada de usuario, como `getLine` para crear un programa altamente interactivo.
 
-Además de la función "getArgs", también podemos utilizar la función "getProgName" para obtener el nombre del programa y la función "getEnv" para obtener variables de entorno específicas. También podemos utilizar la función "lookupEnv" para verificar la existencia de una variable de entorno antes de intentar acceder a ella.
+# Ver también
 
-Podemos manipular y procesar los argumentos de la línea de comandos de muchas maneras diferentes, como filtrar y transformar la lista de argumentos para obtener solo ciertos valores o utilizar patrones de coincidencia para realizar acciones específicas basadas en los argumentos proporcionados. ¡Las posibilidades son infinitas!
-
-## Ver también
-
-- [Documentación oficial sobre System.Environment](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
-- [Tutorial de programación en Haskell](https://www.tutorialspoint.com/haskell/index.htm)
-- [Ejemplos de programas Haskell](https://wiki.haskell.org/Example_code)
+- Documentación del módulo System.Environment: https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html
+- Tutorial de Haskell para principiantes: https://www.haskell.org/tutorial/
+- Ejemplos de código de Haskell: https://github.com/Haskell/Exercises

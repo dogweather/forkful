@@ -1,47 +1,63 @@
 ---
-title:    "Arduino: Comprobando si existe un directorio"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/checking-if-a-directory-exists.md"
+title:                "Arduino: Comprobando si existe un directorio"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-Hay muchas razones por las que uno podría querer verificar si un directorio existe en su proyecto de Arduino. Una de las razones más comunes es asegurarse de que los archivos necesarios se encuentren en la ubicación correcta antes de ejecutar un programa.
+En una aplicación de Arduino, puede ser útil verificar si un directorio existe antes de realizar ciertas operaciones, como guardar o leer archivos. Esto puede ayudar a evitar errores y a mejorar la eficiencia de nuestro código.
 
 ## Cómo hacerlo
 
-Para verificar si un directorio existe en Arduino, podemos utilizar la función de la biblioteca `File.exists()`. Esta función tomará como argumento la ruta del directorio que deseamos verificar y devolverá un booleano que indica si el directorio existe o no.
+Para verificar si un directorio existe en Arduino, podemos utilizar el método `exists()` de la librería `SD` (SD card library). Este método retorna `true` si el directorio existe y `false` si no existe. A continuación, un ejemplo de código que muestra cómo utilizarlo:
 
 ```Arduino
-if (SPIFFS.exists("/my_directory")) {
-  Serial.println("El directorio existe");
-} else {
-  Serial.println("El directorio no existe");
+#include <SD.h> // Incluimos la librería
+
+void setup() {
+  // Inicializamos la comunicación con la tarjeta SD
+  while(!Serial) { // Esperamos a que se establezca la comunicación serial
+    ; // No hacemos nada
+  }
+
+  Serial.begin(9600); // Iniciamos la comunicación serial
+  
+  // Verificar si el directorio "archivos" existe
+  if(SD.exists("archivos")) { // Si existe
+    Serial.println("El directorio existe.");
+  } else { // Si no existe
+    Serial.println("El directorio no existe.");
+  }
+}
+
+void loop() {
+
 }
 ```
 
-En este ejemplo, estamos utilizando la biblioteca `SPIFFS` para acceder al sistema de archivos en la placa de Arduino. Primero, llamamos a la función `exists()` de la biblioteca, y le pasamos la ruta del directorio que queremos verificar. Luego, usamos un condicional para imprimir un mensaje en función del valor booleano devuelto.
+Si ejecutamos este código y el directorio "archivos" existe, el resultado en el monitor serial sería:
+
+```
+El directorio existe.
+```
+
+Si el directorio no existe, el resultado sería:
+
+```
+El directorio no existe.
+```
 
 ## Profundizando
 
-Si deseamos hacer una verificación más completa, podemos utilizar la función `SPIFFS.openDir()` para obtener un directorio y luego recorrer todos los archivos y subdirectorios dentro de él. Podemos combinar esto con la función `SPIFFS.exists()` para verificar cada archivo o subdirectorio individualmente.
+El método `exists()` de la librería `SD` utiliza una estructura de directorios en árbol para determinar si un directorio existe o no. Esta estructura de directorios se basa en el formato FAT16/FAT32 utilizado en la mayoría de las tarjetas SD. Básicamente, el método recorre el árbol de directorios buscando el nombre del directorio específico que se le ha pasado como parámetro.
 
-```Arduino
-Dir dir = SPIFFS.openDir("/my_directory");
-while (dir.next()) {
-  if (dir.fileAttributes() == "D") {
-    Serial.println(dir.fileName() + " es un directorio.");
-  } else {
-    Serial.println(dir.fileName() + " es un archivo.");
-  }
-}
-```
-
-En este ejemplo, estamos obteniendo un objeto de tipo `Dir` llamado `dir` mediante la función `openDir()`. Luego, utilizamos un bucle `while` para recorrer todos los archivos y subdirectorios dentro del directorio. Podemos utilizar la función `fileAttributes()` para verificar si cada elemento es un directorio (valor "D") o un archivo (valor "F"). También podemos obtener el nombre de cada elemento utilizando la función `fileName()`. Esto nos permite realizar una verificación más detallada del contenido de un directorio específico.
+Una cosa importante a tener en cuenta es que este método solo funciona para verificar la existencia de directorios en la raíz de la tarjeta SD. Si deseamos verificar un directorio en una subcarpeta, debemos agregar el nombre de la subcarpeta al directorio que pasamos como parámetro. Por ejemplo, si queremos verificar si el directorio "subcarpeta" existe en la carpeta "archivos", deberíamos escribir `SD.exists("archivos/subcarpeta")`.
 
 ## Ver también
 
-- [Documentación de la biblioteca SPIFFS](https://arduino-esp8266.readthedocs.io/en/latest/filesystem.html)
-- [Tutorial de Arduino: acceder al sistema de archivos SPIFFS](https://randomnerdtutorials.com/esp8266-nodemcu-vs-code-platformio-spiffs/)
+- [Documentación oficial de la librería SD](https://www.arduino.cc/reference/en/libraries/sd/)
+- [Tutorial: Cómo utilizar una tarjeta SD con Arduino](https://www.prometec.net/tarjeta-sd-arduino/)

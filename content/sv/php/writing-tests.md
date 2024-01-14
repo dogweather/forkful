@@ -1,42 +1,45 @@
 ---
-title:    "PHP: Skriva tester"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/writing-tests.md"
+title:                "PHP: Skriva tester"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva tester är en viktig del i utvecklingsprocessen för alla programvaror. Tester hjälper till att säkerställa att koden fungerar som den ska och minskar risken för buggar och felaktigheter. Det kan också bidra till att öka kvaliteten på koden och underlätta underhållning av programvaran på lång sikt.
+Att skriva tester är en viktig del av programmering. Genom att skriva tester kan du försäkra dig om att din kod fungerar som den ska och hjälper dig att undvika ödesdigra buggar. Det sparar också tid i det långa loppet eftersom du slipper felsöka och fixa problem längre fram.
 
-## Hur man gör det
+## Så här gör du
 
-För att skriva tester i PHP, behöver du använda ett testramverk som till exempel PHPUnit. Med dessa ramverk kan du skapa tester för din kod genom att definiera olika förväntade resultat och jämföra dem mot det faktiska resultatet. Här nedanför finns ett enkelt exempel på hur man skriver en testmetod för att kontrollera om en given array innehåller ett specifikt värde:
+För att skriva tester i PHP kan du använda olika testramverk som till exempel PHPUnit eller Codeception. Här är ett exempel på hur du kan skriva en enkel test med PHPUnit:
 
 ```PHP
-function testContainsValue() {
-  $array = [1, 2, 3, 4, 5];
-  $value = 3;
+<?php
+use PHPUnit\Framework\TestCase;
 
-  $this->assertContains($value, $array);
+class CalculatorTest extends TestCase
+{
+    public function testAdd()
+    {
+        $calc = new Calculator();
+        $result = $calc->add(2, 3);
+        $this->assertEquals(5, $result);
+    }
 }
 ```
 
-I detta exempel använder vi funktionen `assertContains`, som är en del av PHPUnit-ramverket. Den jämför värdet som förväntas finnas i arrayen mot det faktiska resultatet.
+I detta exempel har vi en testklass som heter `CalculatorTest` som ärver från PHPUnit's `TestCase`-klass. Testmetoden `testAdd` skapar en instans av Calculator-klassen och anropar sedan dess `add`-metod med värdena 2 och 3. Till sist använder vi PHP's `assertEquals`-funktion för att kontrollera att resultatet av additionen är 5.
 
 ## Djupdykning
 
-Att skriva tester handlar om mer än bara att kontrollera att koden fungerar som den ska. Genom att använda olika typer av tester kan du också förbättra designen och strukturen hos din kod. Till exempel kan enhetstester hjälpa till att hålla koden modulär och lättare att förstå och ändra.
+Att skriva tester handlar inte bara om att kontrollera att din kod fungerar som den ska. Det kan också hjälpa dig att utforma bättre kod från början genom att tvinga dig att tänka på hur din kod ska användas och vilka resultat du förväntar dig.
 
-En annan fördel med att skriva tester är att det underlättar vid buggfixar och uppdateringar av koden. Om något skulle gå fel i din programvara, kan du snabbt isolera problemet genom att köra tester och hitta den specifika delen av koden som behöver åtgärdas.
+Ett annat viktigt koncept inom testning är "mocking". Med hjälp av mocking kan du simulera olika scenarier och kontrollera hur din kod beter sig. Detta kan vara särskilt användbart vid integrationstester där du testar hur olika delar av din kod samverkar.
 
 ## Se även
 
-För mer information om att skriva tester i PHP, se följande länkar:
-
 - [PHPUnit dokumentation](https://phpunit.de/documentation.html)
-- [Enhetstester vs integrations- och funktions tester](https://medium.com/@mknudsen01/unit-tests-vs-integration-tests-vs-functional-tests-22f738bf8b21)
-- [Enkelheten i enhetstester](https://www.toptal.com/qa/how-i-learned-to-write-unit-tests-in-php)
-
-Lycka till med att integrera tester i din utvecklingsprocess!
+- [Codeception dokumentation](https://codeception.com/docs/)
+- [Mocking with PHPUnit](https://phpunit.de/manual/current/en/test-doubles.html)

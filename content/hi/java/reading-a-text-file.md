@@ -1,63 +1,42 @@
 ---
-title:    "Java: एक टेक्स्ट फाइल पढ़ना"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/reading-a-text-file.md"
+title:                "Java: टेक्स्ट फ़ाइल पढ़ना"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-क्या आप जावा प्रोग्रामिंग में विशेषज्ञ बनना चाहते हैं? अगर हां, तो आपको टेक्स्ट फ़ाइल को पढ़ना सीखने में रुचि हो सकती है। इस आर्टिकल के माध्यम से, हम आपको बताएंगे कि आप कैसे जावा में एक टेक्स्ट फ़ाइल को पढ़ सकते हैं और इससे आपको कैसे लाभ हो सकता है।
+जब आप एक टेक्स्ट फाइल को पढ़ने के लिए जाते हैं, तो आप प्रोग्रामिंग दुनिया को जोड़ेंगे! टेक्स्ट फाइल को पढ़ना आपके कोड में आपके लिए बहुत सारे संभावित मुद्दों को उजागर कर सकता है जो आप दूसरे तरीकों से नहीं देख सकते।
 
-# कैसे करें
+## कैसे
 
-टेक्स्ट फ़ाइल को जावा में पढ़ने के लिए, हम एक `FileReader` और `BufferedReader` का उपयोग कर सकते हैं। नीचे दिए गए कोड ब्लॉक में हम आपको एक उदाहरण देंगे जिसमें हम टेक्स्ट फ़ाइल से दिनांक को पढ़ रहे होते हैं और उसे स्क्रीन पर प्रिंट कर रहे होते हैं।
+आप एक टेक्स्ट फाइल को पढ़ने के लिए निम्नलिखित आसान तरीके को अनुसरण कर सकते हैं।
 
 ```Java
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+// टेक्स्ट फाइल को पढ़ने के लिए फाइल ऑब्जेक्ट बनाएं
+File file = new File("फ़ाइल का पथ");
 
-public class ReadTextFile {
+// फाइल से पढ़ने के लिए फाइल रीडर बनाएं
+FileReader reader = new FileReader(file);
 
-    public static void main(String[] args) {
-    
-        File file = new File("example.txt");
-        BufferedReader br = null;
+//बफर रीडर का उपयोग करके फाइल का सामग्री अनुभागों में पढ़ें
+BufferedReader bufferedReader = new BufferedReader(reader);
 
-        try {
+// पंक्ति दर पंक्ति पढ़ने के लिए एक स्ट्रिंग बनाएं
+String line = bufferedReader.readLine();
 
-            br = new BufferedReader(new FileReader(file));
-            String date = "";
-            
-            while ((date = br.readLine()) != null) {
-                System.out.println(date);
-            }
+// सामग्री प्रिंट करें
+System.out.println(line);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
-```
-यहां, हम `ReadTextFile` नाम के एक क्लास बना रहे हैं जो `example.txt` नाम की एक फ़ाइल से दिनांक को अलग-अलग लाइनों पर पढ़ता है। हम पहले `File` ऑब्जेक्ट बनाते हैं और फिर `BufferedReader` का उपयोग करके उस फ़ाइल को पढ़ते हैं। अंत में, हम `BufferedReader` को बंद कर देते हैं।
-
-जब हम यह कोड अपने IDE में चलाते हैं, तो हमें निम्नलिखित आउटपुट मिलता है:
-
-```
-21/07/2020
-22/07/2020
-23/07/2020
-24/07/2020
-25/07/2020
+// सब कुछ पढ़ने के बाद, फाइल को बंद करें
+bufferedReader.close();
 ```
 
-इससे हम देखते हैं कि हमारी फ़ाइल में ये दिनांक
+उपरोक्त कोड उदाहरण से आप टेक्स्ट फाइल को कैसे पढ़ सकते हैं, और क्या परिणाम होगा, यह दिखाता है।
+
+## गहराई से खोजें
+
+जब आप एक टेक्स्ट फाइल को पढ़ने के बारे में सोचते हैं, महत्वपूर्ण है कि आप उसके संरचना और उसमें क्या शामिल है समझें। टेक्स्ट फाइल को पढ़ने के लिए, आपको उपयोगकर्ता द्वारा दी गई पठनीयता अनुसार पठनीयता मोड का उपयोग करना होगा। आप भी लाइन दर निर्धारित कर सकते हैं, जो आपको

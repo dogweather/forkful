@@ -1,59 +1,56 @@
 ---
-title:    "C: 检查目录是否存在"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/checking-if-a-directory-exists.md"
+title:                "C: 检查目录是否存在"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-在编写C语言程序时，有时候需要检查一个目录是否存在。这是因为在处理文件或者路径时，我们需要确定目录是否有效，以避免出现错误。
+在C语言编程中，我们经常需要检查某个目录是否存在。这可以帮助我们避免在程序中使用不存在的目录，从而导致运行错误。
 
-## 如何做
+## 如何
 
-要检查一个目录是否存在，可以使用`opendir()`函数来打开目录，如果返回的指针为NULL，那么该目录就不存在。接下来，可以使用`closedir()`函数关闭目录指针。下面是一个简单的示例代码：
+检查目录是否存在可以使用C语言中的`opendir()`函数。下面是一个例子：
 
-```C
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
 
-int main() {
-    DIR *dirptr;
-
-    // 打开目录
-    dirptr = opendir("path/to/directory");
-
-    // 检查目录是否存在
-    if(dirptr == NULL) {
-        printf("该目录不存在\n");
-    } else {
-        printf("该目录存在\n");
-
-        // 关闭目录指针
-        closedir(dirptr);
+int main()
+{
+    char *dir_path = "./my_directory"; // 需要检查的目录路径
+    DIR *dir = opendir(dir_path); // 打开目录
+    if (dir) // 如果成功打开目录，则目录存在
+    {
+        printf("Directory exists.\n");
+        closedir(dir); // 关闭目录
     }
-
+    else // 否则，目录不存在
+    {
+        printf("Directory does not exist.\n");
+        exit(1);
+    }
     return 0;
 }
 ```
 
-当目录存在时，输出结果为`该目录存在`，当目录不存在时，输出结果为`该目录不存在`。
+运行以上代码，如果`my_directory`目录存在，则会输出`Directory exists.`，如果目录不存在，则会输出`Directory does not exist.`。
 
-## 深入探讨
+## 深入了解
 
-在上面的示例中，我们使用了`opendir()`函数来打开目录，该函数属于C标准库中的`dirent.h`头文件。在打开目录时，我们需要注意的是，传入的参数应该是一个有效的路径，否则函数将返回NULL。
+`opendir()`函数使用`DIR`数据类型来表示一个打开的目录。它的返回值为`NULL`表示打开失败，也就是目录不存在。我们也可以使用`closedir()`函数来关闭已经打开的目录。
 
-如果需要对目录中的内容进行操作，需要使用`readdir()`函数来读取目录中的文件和子目录。除此之外，还可以使用`stat()`函数来获取目录的相关信息，如文件大小、创建时间等。
+此外，我们也可以使用`access()`函数来检查文件或目录是否存在。它的第一个参数为文件或目录的路径，第二个参数为检查的权限，这里我们使用`F_OK`表示检查是否存在。如果返回值为0，则表示文件或目录存在，否则不存在。
 
-## 参考链接
+## 参考资料
 
-- [C标准库手册 - opendir函数](https://zh.cppreference.com/w/c/io/opendir)
-- [C标准库手册 - readdir函数](https://zh.cppreference.com/w/c/io/readdir)
-- [C标准库手册 - stat函数](https://zh.cppreference.com/w/c/io/stat)
-- [C语言目录操作详解](https://www.cnblogs.com/Anker/p/3271773.html)
+- `opendir()`函数文档: https://www.cplusplus.com/reference/cstdio/opendir/
+- `access()`函数文档: https://www.cplusplus.com/reference/cstdio/access/
 
 ## 参见
 
-- [C语言文件操作：检查文件是否存在](https://learnku.com/articles/7184/checking-whether-a-file-exists-in-c-language)
+- `readdir()`函数文档: https://www.cplusplus.com/reference/cstdio/readdir/ (用于读取目录内的文件)

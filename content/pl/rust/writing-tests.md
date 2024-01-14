@@ -1,102 +1,52 @@
 ---
-title:    "Rust: Pisanie testów"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-tests.md"
+title:                "Rust: Pisanie testów"
+programming_language: "Rust"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie testów jest niezbędnym elementem tworzenia solidnego i niezawodnego kodu w języku Rust. Zapewnienie, że nasz kod przechodzi przez wszystkie testy, daje nam pewność, że działa on zgodnie z naszymi oczekiwaniami i minimalizuje ryzyko wystąpienia błędów w przyszłości.
+W dzisiejszych czasach pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki testom możemy upewnić się, że nasz program działa zgodnie z oczekiwaniami i minimalizować ryzyko błędów w przyszłości. W tym wpisie dowiesz się dlaczego warto pisać testy i jak w prosty sposób zacząć je implementować w języku Rust.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Język Rust jest wyjątkowo przyjazny dla tworzenia testów i dostarcza nam wiele narzędzi, które ułatwiają ten proces. Pierwszym krokiem jest dodanie adnotacji `#[cfg(test)]` nad naszymi testami oraz dodanie do zależności w pliku `Cargo.toml` biblioteki `test`:
+Zanim przejdziemy do tworzenia testów, musimy pamiętać o kilku rzeczach. Po pierwsze, nasze testy powinny być niezależne od siebie i niezależne od kodu aplikacji. Po drugie, należy pamiętać, że testy powinny być proste i łatwe do zrozumienia. W końcu, każdy test powinien sprawdzać tylko jedną funkcję lub metodę.
 
-```
-Rust
+Pierwszym krokiem jest dodanie `#[cfg(test)]` przed naszą funkcją lub metodę, aby powiedzieć kompilatorowi, że jest to test. Następnie używamy makra `assert_eq!` aby porównać oczekiwany wynik z rzeczywistym. Patrząc na przykład, kod wyglądałby tak:
+
+```Rust
 #[cfg(test)]
-mod tests {
-    #[test]
-    fn test_function() {
-        //kod testujący
-    }
+fn zsumuj(a: i32, b: i32) -> i32 {
+   a + b
 }
 
-Cargo.toml
-[dev-dependencies]
-test = "0.3.0"
-```
+#[cfg(test)]
+mod testy {
+   use super::*;
 
-Następnie możemy korzystać z makr `assert!` i `assert_eq!` aby sprawdzić czy nasze funkcje zwracają oczekiwane wartości:
+   #[test]
+   fn test_zsumuj_dodatnie() {
+      assert_eq!(zsumuj(3, 4), 7);
+   }
 
-```
-Rust
-#[test]
-fn test_addition() {
-    let result = add(2, 3);
-    assert!(result == 5);
-}
-
-#[test]
-fn test_subtraction() {
-    let result = subtract(10, 5);
-    assert_eq!(result, 5);
+   #[test]
+   fn test_zsumuj_ujemne() {
+      assert_eq!(zsumuj(-3, -4), -7);
+   }
 }
 ```
+W powyższym przykładzie zostają przetestowane dwie różne sytuacje - dodawanie dwóch liczb dodatnich i dodawanie dwóch liczb ujemnych. Dzięki temu mamy pewność, że nasza funkcja działa zgodnie z oczekiwaniami dla różnych przypadków.
 
-Możemy również tworzyć testy dla funkcji, które powinny zwracać błędy, poprzez użycie makra `should_panic`:
+## Deep Dive
 
-```
-Rust
-#[test]
-#[should_panic]
-fn test_divide_by_zero() {
-    divide(10, 0);
-}
-```
+Istnieje wiele różnych możliwości w języku Rust, które możemy wykorzystać do pisania testów. Na przykład, możemy użyć makra `assert_ne!` aby sprawdzić, czy dwa wartości są różne, lub `assert!` aby sprawdzić pewne warunki. Możemy także grupować nasze testy za pomocą modułów, aby zachować porządek i łatwiejszą organizację.
 
-## Głębsze zagadnienia
+Jednak pamiętajmy, że pisanie testów nie jest jedynie o sprawdzaniu poprawności naszego kodu, ale także o dokumentowaniu go. Używanie opisowych nazw funkcji testowych oraz komentarzy w kodzie może być bardzo pomocne dla nas i innych deweloperów, którzy będą czytać i pracować z naszym kodem w przyszłości.
 
-Pisanie testów w języku Rust pozwala nam również na dokładne testowanie naszego kodu, w tym także funkcji prywatnych. W tym celu możemy skorzystać z atrybutu `#[derive(Debug)]` i wywołać metodę `inspect()` obiektu, aby zobaczyć wartości jego pól.
+## Zobacz też
 
-```
-Rust
-#[derive(Debug)]
-struct Person {
-    name: String,
-    age: u32,
-    is_adult: bool,
-}
-
-impl Person {
-    fn new(name: &str, age: u32) -> Self {
-        let is_adult = if age >= 18 {
-            true
-        } else {
-            false
-        };
-        Self {
-            name: String::from(name),
-            age,
-            is_adult,
-        }
-    }
-}
-
-#[test]
-fn test_person_inspect() {
-    let person = Person::new("John", 25);
-    //dodatkowe informacje o tym, co test sprawdza
-    println!("name: {:?}, age: {:?}, is_adult: {:?}", person.name, person.age, person.is_adult);
-    //otrzymany output
-    name: "John", age: 25, is_adult: true
-}
-```
-
-## Zobacz także
-
-- Dokumentacja Rust o testowaniu: https://doc.rust-lang.org/book/ch11-01-writing-tests.html
-- Wprowadzenie do testowania w Rust: https://jamesmunns.com/post/rust-testing-intro/
-- Przykładowy projekt z wykorzystaniem testów w Rust: https://github.com/Luminarys/rust-units-example
+Jeśli jesteś zainteresowany/dziwię się programowaniem w języku Rust, możesz przeczytać więcej o testowaniu i innych przydatnych narzędziach na stronie [Rust Book](https://doc.rust-lang.org/book/ch11-00-testing.html) oraz [official Rust documentation](https://doc.rust-lang.org/std/macro.assert.html).
+Świetnym miejscem do poszukiwania informacji oraz zadawania pytań jest także [Rust Community Forum](https://users.rust-lang.org/). Powodzenia w pisaniu testów!

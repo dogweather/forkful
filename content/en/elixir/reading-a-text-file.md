@@ -1,65 +1,56 @@
 ---
-title:    "Elixir recipe: Reading a text file"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/reading-a-text-file.md"
+title:                "Elixir recipe: Reading a text file"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-If you're a beginner in Elixir or a seasoned developer looking to expand your skills, reading a text file is an essential task that you may encounter in your programming journey. In this blog post, we will explore how to read a text file in Elixir and the various options available to accomplish this task. 
+Reading a text file may seem like a mundane task, but in the world of programming, it is a crucial skill to have. With Elixir's built-in functions, it becomes even easier to manipulate and extract information from text files. In this blog post, we will explore how to do just that using Elixir.
 
 ## How To
 
-Reading a text file in Elixir is a straightforward process. We can use the `File.read` function to read the file and store its contents in a variable. Let's take a look at an example:
+Reading a text file in Elixir is quite simple. Let's take a look at a basic example of reading a file and printing its contents:
 
-```
-Elixir
-# Reading a text file
-file_contents = File.read("example.txt")
+```elixir
+file_path = "example.txt"
+file = File.open(file_path)
 
-# Printing the file contents to the console 
-IO.puts(file_contents)
-```
-If we have the following content in our `example.txt` file:
-```
-Hello, world!
-This is a text file.
-```
-The output of our code will be:
-```
-Hello, world!
-This is a text file.
+IO.puts(File.read(file))
+
+File.close(file)
 ```
 
-We can also use the `File.stream!` function to read large files efficiently. This function returns an enumerator, and we can use the `Enum.each` function to iterate over the lines of the file. Let's see an example:
+Here, we first define the file path, then open the file using `File.open()`, and finally print its contents using `File.read()`. It is important to close the file using `File.close()` once we are done to avoid any memory leaks. 
 
-```
-Elixir
-# Reading a large text file
-file_lines = File.stream!("big_file.txt")
+We can also specify the mode in which we want to open the file, such as read, write, or append. For example, to read a file in binary mode, we can use the following code:
 
-# Printing each line to the console
-Enum.each(file_lines, fn line ->
-  IO.puts(line)
-end)
+```elixir
+file_path = "binary.txt"
+file = File.open(file_path, [:binary])
+
+IO.puts(File.read(file))
+
+File.close(file)
 ```
+
+This will read the file as binary data instead of regular text. We can also use other modes such as `:utf8` or `:ascii` depending on the type of data in our text file.
 
 ## Deep Dive
 
-Elixir also offers different options to handle different types of files. For example, we can use `CSV.decode` to read CSV files or `Jason.decode` to read JSON files. We can also specify the format for reading a file using the `:encoding` option in the `File.read` function. Elixir also has built-in functions to handle reading binary files and to skip or rewind a file while reading.
+There are various Elixir functions that can be used for reading text files, such as `File.read()`, `IO.read()`, and `IO.gets()`. Each of these functions has its own use case and offers different features such as reading a specific number of bytes or lines from a file.
 
-Additionally, Elixir has a special function called `IO.gets` that can be used to read a file line by line. This function takes in a file handle and returns the next line in the file. It also has options to specify the delimiter and whether to include the delimiter in the returned string.
+Elixir also has a `File.stream!()` function, which allows us to read a file line by line without loading the entire file into memory. This is useful for large text files, as it helps to save memory and increase performance.
 
-It's also important to note that Elixir's `File` module offers error handling functions, such as `File.read!` and `File.stream!`. These functions raise exceptions if there is an error while reading the file, making error handling easier for developers.
+It is also worth noting that Elixir allows us to pattern match on file data. This means that we can extract specific information from a text file by matching on a specific pattern, making it easier to process and manipulate data.
 
 ## See Also
 
-To learn more about reading files in Elixir, check out these resources:
-
-- [Elixir File module documentation](https://hexdocs.pm/elixir/File.html)
-- [Elixir Enum module documentation](https://hexdocs.pm/elixir/Enum.html)
-- [IO module documentation](https://hexdocs.pm/elixir/IO.html)
+- Elixir File Module Documentation: https://hexdocs.pm/elixir/File.html
+- Elixir IO Module Documentation: https://hexdocs.pm/elixir/IO.html
+- Elixir File Streams: https://learningelixirjargon.wordpress.com/elixir-file-streams/
 
 Happy coding!

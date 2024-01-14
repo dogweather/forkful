@@ -1,48 +1,56 @@
 ---
-title:    "Arduino: Confrontare due date"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/comparing-two-dates.md"
+title:                "Arduino: Confronto tra due date"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+##Perché
+C'è un motivo comune per comparare due date quando si programma con Arduino, ad esempio per controllare se un evento è avvenuto prima o dopo una data specifica. In questo articolo imparerai come fare questo confronto in modo efficiente utilizzando il linguaggio di programmazione di Arduino.
 
-Se sei un appassionato di Arduino o stai iniziando a imparare a programmare con questa piattaforma, potresti trovarti confrontato con la necessità di dover confrontare due date. Questa operazione può sembrare difficile, ma in realtà è piuttosto semplice se si conoscono alcuni trucchi di programmazione. In questa guida, imparerai come confrontare efficacemente due date utilizzando la tua scheda Arduino.
-
-## Come fare
-
-Per confrontare due date con Arduino, devi innanzitutto conoscere il formato di data e ora utilizzato dalla scheda. Di default, Arduino utilizza il formato Unix Time, che conta i secondi trascorsi dallo 0:00 del 1 gennaio 1970. Tuttavia, esistono librerie di programmazione che permettono di convertire questo formato in un formato più comprensibile, come ad esempio la libreria Time.h.
-
-Una volta che hai importato la libreria Time.h nel tuo sketch, puoi utilizzare le funzioni di questa libreria per ottenere la data e ora attuali e salvarle in variabili. Ad esempio, con la funzione `hour()` puoi ottenere le ore attuali e salvarle in una variabile `ora_attuale`.
+##Come Fare
+Per confrontare due date con Arduino, è necessario prima impostare le date come variabili. Ad esempio, si può utilizzare la funzione di data e ora integrata di Arduino per impostare la data come variabile.
 
 ```Arduino
-#include <Time.h>
-
-int ora_attuale = hour(); //salva le ore attuali in una variabile
+#include <TimeLib.h>
+int giorno = 28;
+int mese = 9;
+int anno = 2021;
 ```
 
-Per confrontare due date, dovrai utilizzare operazioni condizionali come `if` o `switch`. Ad esempio, se vuoi confrontare una data con una data specifica, puoi utilizzare la funzione `dateIs()` della libreria Time.h. Questa funzione restituirà `true` se la data passata come argomento corrisponde alla data attuale.
+Una volta impostate le date come variabili, è possibile utilizzare l'operatore Booleano "maggiore di" e "minore di" per confrontare le date. Ad esempio, se si vuole controllare se la data è successiva al 28 Settembre 2021, si può utilizzare il seguente codice:
 
 ```Arduino
-#include <Time.h>
-
-bool data_corrisponde = dateIs(31,12,2020); //confronta la data attuale con il 31 dicembre 2020
-if(data_corrisponde) {
-  //esegue questo codice se la data corrisponde
-} else {
-  //esegue questo codice se la data non corrisponde
+if (giorno > 28 && mese == 9 && anno == 2021) {
+  // Codice da eseguire se la condizione è vera
 }
 ```
 
-## Approfondimento
+È importante notare che l'utilizzo dell'operatore Booleano "uguale a" è necessario per confrontare le variabili dei mesi e degli anni.
 
-Il confronto di date può diventare un'operazione piuttosto complessa se si devono considerare anche gli anni bisestili e i fusi orari. Per questo motivo, potresti voler utilizzare una libreria più avanzata, come TimeLib.h, che permette di gestire queste complicazioni in maniera più semplice e precisa.
+##Deep Dive
+È possibile andare più in profondità nel confronto di due date utilizzando la struttura di dati "struct" di Arduino. Questo permette di creare una variabile che combina giorno, mese e anno in una sola variabile, rendendo il confronto più semplice.
 
-Inoltre, se stai lavorando con date di un periodo di tempo molto lungo, potresti dover convertire il formato Unix Time in un formato leggibile dall'essere umano. In questo caso, potresti utilizzare la funzione `strftime()` della libreria Time.h, che ti permette di formattare la data come preferisci.
+```Arduino
+struct Data {
+  int giorno;
+  int mese;
+  int anno;
+};
 
-## Vedi anche
+Data data1 = {28, 9, 2021};
+Data data2 = {30, 9, 2021};
 
-- [Documentazione ufficiale Arduino - Time.h](https://www.arduino.cc/en/Reference/Time)
-- [TimeLib.h - Libreria avanzata per la gestione del tempo in Arduino](https://github.com/PaulStoffregen/Time)
-- [Tutorial per la conversione del formato Unix Time in formato leggibile](https://www.arduino.cc/en/Tutorial/ConversionTime)
+if (data2.giorno > data1.giorno && data2.mese == data1.mese && data2.anno == data1.anno) {
+  // Codice da eseguire se la data2 è successiva alla data1
+}
+```
+
+##Vedi Anche
+- [Cosa è Arduino?](https://it.wikipedia.org/wiki/Arduino)
+- [Documentazione di TimeLib](https://www.arduino.cc/reference/en/libraries/timelib/)
+- [Approfondimenti su utilizzo delle strutture di dati in Arduino](https://www.programming-electronics-diy.xyz/2017/10/explaining-struct-in-arduino.html)
+
+Buona programmazione con Arduino!

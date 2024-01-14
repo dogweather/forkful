@@ -1,34 +1,36 @@
 ---
-title:    "Fish Shell: Att få aktuellt datum"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/getting-the-current-date.md"
+title:                "Fish Shell: Att få nuvarande datum."
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna få den aktuella datumet kan vara användbart för många olika program och skript. Det kan ge en bättre översikt över när olika händelser inträffade eller när vissa åtgärder ska utföras.
 
-## Hur man gör
-Att få det nuvarande datumet i Fish Shell är enkelt. Använd kommandot `date` följt av flaggan `+%D`. Detta kommer att ge dig ett utskrift med dag, månad och år i formatet MM/DD/YY.
+Att få den aktuella datumet kan vara en viktig del av många programmeringsprojekt. Oavsett om du vill ha det för att logga händelser, spåra tidsstämplar eller för en annan anledning, är det viktigt att veta hur man kan göra detta i Fish Shell.
 
-```Fish Shell
-date +%D
+## Hur man gör det
+
+Att få den aktuella datumet i Fish Shell är enkel och kan göras med ett fåtal kommandon. Först måste du öppna Fish Shell i din terminal och sedan använda "echo" kommandot tillsammans med "date" för att få datumet. Detta kan göras enligt följande:
+
+```Fish Shell 
+echo (date)
 ```
 
-För att få datumet i formatet DD/MM/YY kan du använda flaggan `+%T` istället.
+Detta kommer att skriva ut den aktuella datumet i formatet "Dag, Månad DD TT:MM:SS ÅÅÅÅ".
 
-```Fish Shell
-date +%T
-```
+## Deep Dive
 
-Det finns flera olika flaggor som kan användas tillsammans med `date` för att få olika datumformat eller specifika datum från det förflutna. Se manualsidan för `date` för mer information.
+Det finns olika sätt att anpassa hur datumet visas i Fish Shell beroende på dina behov. Till exempel kan du lägga till olika flaggor vid "date" kommandot för att ändra formatet på datumet. Några vanliga flaggor inkluderar "-r" för att få den relativa tiden, "-f" för att ange önskat format och "-u" för att få UTC-tid istället för lokal tid.
 
-## Djupdykning
-Bakom kulisserna använder `date` kommandot operativsystemets klocka för att få den aktuella tiden och datumet. Detta gör att outputen kommer att vara baserad på vad din dator har för inställningar för datum och tid.
-
-För att ändra tidszonen som används för `date` kommandot kan du använda flaggan `-u` för att få UTC-tiden, eller kolla på inställningarna för din dator för att ändra tidszonen.
+Det är också möjligt att använda variabler och funktioner för att få mer avancerad information om datumet, som veckodag, veckonummer och årskalender. För att läsa mer om dessa möjligheter och andra användbara tips, kan du kolla in Fish Shells online-dokumentation och guider.
 
 ## Se även
-- [Fish Shell kommandon](https://fishshell.com/docs/current/cmds.html)
-- [`date` kommandots manualsida](https://fishshell.com/docs/3.3/cmds/date.html)
+
+Här är några användbara länkar för att lära dig mer om att få datumet i Fish Shell:
+
+- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
+- Fish Shell Cookbok: https://fishshell.com/docs/current/cookbook.html#getting-the-current-date-and-time
+- Fish Stack Exchange: https://fishshell.com/docs/current/index.html

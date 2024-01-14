@@ -1,56 +1,26 @@
 ---
-title:    "Java: उपयोग करके नियमित अभिव्यक्तियों का उपयोग"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/using-regular-expressions.md"
+title:                "Java: नियमित अभिव्यक्तियों का उपयोग"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्यों
 
-Regular expressions उन users के लिए उपयोगी हो सकते हैं जो अपने टेक्स्ट स्ट्रिंग्स में निश्चित प्रकार की डेटा को ढूंढना चाहते हैं या उन्हें उन डेटा को manipulate करना होता है।
+आजकल जहां तक डेटा प्रसंस्करण और विश्लेषण की बात है, लगभग सभी अनुप्रयोगों में डेटा को ध्यान से देखा जाता है। डेटा में से उपयोगी और महत्वपूर्ण जानकारियां निकालने के लिए, हमारे पास अपवादनीय डेटा को एनालाइज करने की जरूरत है। इस कठिनाई को कम करने के लिए, एक अच्छा तरीका है की रेगुलर एक्सप्रेशन (regular expressions) का इस्तेमाल करना।
 
-## कैसे करें
-
-### बुनियादी प्रकार का स्ट्रिंग मैच करना
+# कैसे करें
 
 ```Java
-String regex = "he..o";
-String input = "hello";
-Pattern pattern = Pattern.compile(regex);
-Matcher matcher = pattern.matcher(input);
-if (matcher.find()) {
-  System.out.println("String matched");
-} else {
-  System.out.println("String didn't match");
-}
+Pattern pattern = Pattern.compile("apple");
+Matcher matcher = pattern.matcher("I love apples!");
+System.out.println(matcher.find()); // Output: true
 ```
 
-आउटपुट:
+ऊपर दिए गए कोड का उदाहरण देखें, यहां हमने सरल ढंग से "apple" शब्द को ढूंढा है जो "I love apples!" स्ट्रिंग में मौजूद है। रेगुलर एक्सप्रेशन, स्ट्रिंग मैचिंग के लिए पॉवरफुल टूल है जिससे हम अपने स्ट्रिंग्स को परिष्कृत कर सकते हैं। इसमें कई विशेषाधिकार (special characters) होते हैं जो हमारे लिए उपयोगी हो सकते हैं। जैसे, "." हमारे लिए किसी भी एक चरित्र का वर्णन कर सकता है। इससे हम दो अक्षरों के बीच में कोई भी चरित्रों का मिलान कर सकते हैं।
 
-`String matched`
+# गहराई में जाएं
 
-### अंतर्जात्रिक कोड स्पैस निकालना
-
-```Java
-String input = "Language: जावा";
-String output = input.replaceAll("[^\\p{L}\\p{Nd}]+", "");
-System.out.println(output);
-```
-
-आउटपुट:
-
-`Languageजावा`
-
-## गहराई में जाने के लिए
-
-Regular expressions के बारे में अधिक जानने के लिए, आप इन लिंक्स को देख सकते हैं:
-
-- [Java Regular Expressions Tutorial](https://www.javatpoint.com/java-regex)
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Regex Tester](https://regex101.com/)
-
-## अन्य लिंक्स
-
-- [जावा क्लास और ऑब्जेक्ट का अध्ययन करें](https://www.studytonight.com/java/class-and-object.php)
-- [जावा स्ट्रिंग क्लास चिजे पढ़ें](https://www.javatpoint.com/java-string)
+लेकिन रेगुलर एक्सप्रेशन्स का इस्तेमाल करना सीखना कुछ मुश्किल हो सकता है। इसलिए, मुझे सब से आसान तरीका लगता है घूमना (experiment)। कोड को संशोधित करते हुए उत्पन्न आउटपुट को देखकर आप रेगुलर एक्सप्रेशन के प्रभाव को अच्छे से समझ सकते हैं। अतः जरू

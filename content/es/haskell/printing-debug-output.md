@@ -1,68 +1,44 @@
 ---
-title:    "Haskell: Imprimiendo salida de depuración"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/printing-debug-output.md"
+title:                "Haskell: Imprimiendo salida de depuración"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Muchas veces, cuando estamos programando en Haskell, nos encontramos con errores o comportamientos inesperados en nuestro código. Una forma muy útil de solucionar estos problemas es utilizando la técnica de imprimir salida de depuración. Esto nos permite ver el valor de variables en diferentes puntos de nuestro programa y entender cómo está funcionando realmente nuestro código.
+A veces, cuando estamos programando en Haskell, nos encontramos con errores que son difíciles de entender. Es en estos momentos cuando es de gran ayuda imprimir la salida de depuración en nuestra consola. Esto nos permite ver el estado y los valores de nuestras variables en diferentes puntos de nuestro código, lo que nos ayuda a entender mejor lo que está sucediendo en nuestro programa.
 
 ## Cómo hacerlo
 
-Para imprimir salida de depuración en Haskell, simplemente utilizamos la función `print` y le pasamos como argumento la variable que queremos ver. Por ejemplo:
-
-```Haskell
-nombre = "Juan"
-print nombre
-```
-
-Este código imprimirá "Juan" en la consola, permitiéndonos ver el valor de la variable `nombre` en ese momento. Además, podemos utilizar la función `show` para imprimir valores de tipos más complejos, como listas o tuplas. Por ejemplo:
-
-```Haskell
-numeros = [1, 2, 3]
-print (show numeros)
-```
-
-Este código imprimirá "[1,2,3]" en la consola, permitiéndonos ver el contenido de la lista `numeros`.
-
-Otra forma de imprimir salida de depuración es utilizando `putStrLn`, que nos permite imprimir cualquier tipo de datos en la consola. Por ejemplo:
-
-```Haskell
-edad = 25
-putStrLn ("Tengo " ++ show edad ++ " años")
-```
-
-Este código imprimirá "Tengo 25 años" en la consola. Podemos utilizar esta función en cualquier parte de nuestro código para imprimir información útil de depuración.
-
-## Profundizando
-
-Además de imprimir valores de variables, también podemos utilizar la función `trace` del módulo `Debug.Trace` para imprimir mensajes de depuración en momentos específicos de nuestro código. Por ejemplo:
+Para imprimir la salida de depuración en Haskell, podemos usar la función `Debug.Trace.trace` que se encuentra en el módulo `Debug.Trace`. Esta función toma dos argumentos: una cadena de texto y el valor que queremos imprimir. Por ejemplo, si tenemos una función que suma dos números y queremos imprimir la suma de los mismos, podemos hacer lo siguiente:
 
 ```Haskell
 import Debug.Trace
 
-multiplicar x y = trace "Multiplicando..." (x * y)
+sumar :: Int -> Int -> Int
+sumar x y = x + y
 
-resultado = multiplicar 4 3
-print resultado
+main = do
+  let resultado = sumar 2 3
+  trace "El resultado es:" resultado
 ```
 
-Este código imprimirá "Multiplicando..." en la consola antes de realizar la multiplicación y luego imprimirá el resultado. Esto nos permite entender qué está ocurriendo en cada etapa de nuestro programa.
+Al ejecutar este código, veremos en nuestra consola la siguiente salida:
 
-También podemos utilizar `traceShow` para imprimir tanto el mensaje de depuración como el valor de una variable. Por ejemplo:
-
-```Haskell
-nombre = "Ana"
-traceShow ("El nombre es " ++ nombre) nombre
+```
+El resultado es: 5
 ```
 
-Este código imprimirá "El nombre es Ana" en la consola y también devolverá "Ana" como valor de retorno.
+## Profundizando
+
+Una vez que estemos más familiarizados con la función `Debug.Trace.trace`, podemos explorar otras opciones disponibles en el módulo `Debug.Trace` que nos permiten imprimir información de depuración más detallada, como el tiempo de ejecución de una función o la pila de llamadas.
+
+También es importante tener en cuenta que imprimir demasiada salida de depuración puede ser contraproducente y afectar el rendimiento de nuestro programa. Por lo tanto, es importante utilizar esta herramienta con moderación y eliminar cualquier salida de depuración innecesaria antes de implementar nuestro código en producción.
 
 ## Ver también
-
-- [Documentación de Haskell sobre impresión de salida de depuración](https://www.haskell.org/tutorial/io.html#output)
-- [Tutorial de depuración en Haskell](https://dev.to/nchiusano/haskell-debugging-crash-course-d4l)
-- [Módulo Debug.Trace en Haskell](https://hackage.haskell.org/package/base/docs/Debug-Trace.html)
+- [Documentación oficial de Debug.Trace](https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html)
+- [Tutorial sobre depuración en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/guide-to-ghc-debugger)
+- [Artículo sobre buenas prácticas de depuración en Haskell] (https://www.parsonsmatt.org/2018/05/19/how_to_debug_haskell_code.html)

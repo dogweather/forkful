@@ -1,61 +1,87 @@
 ---
-title:    "Bash recipe: Finding the length of a string"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/finding-the-length-of-a-string.md"
+title:                "Bash recipe: Finding the length of a string"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When writing Bash scripts, it's often necessary to manipulate strings. One important piece of information when working with strings is their length. Knowing the length of a string can help with various tasks such as validation or formatting.
+Have you ever wondered how long a string of text is? Whether you are a beginner in Bash programming or an experienced coder, being able to find the length of a string is an essential skill when working with strings. It allows you to manipulate and process your data more efficiently. In this blog post, we will explore how to find the length of a string in Bash.
 
 ## How To
 
-To find the length of a string in Bash, we can use the `expr` command along with the `length` function. Here's an example of how to use it:
+There are two main ways to find the length of a string in Bash - using the `expr` command or the built-in `${#var}` variable. Let's see how these methods work with some examples.
+
+### Using the `expr` command
+
+The `expr` command is a built-in command in Bash that is used for performing basic arithmetic and string operations. To find the length of a string, we can use the `length` keyword with the string as the argument. Let's consider the string "Hello World!".
 
 ```Bash
-my_string="Hello, world!"
-string_length=$(expr length $my_string)
-echo "The length of the string is $string_length" 
+# Store the string in a variable
+str="Hello World!"
+
+# Use `expr` to find the length
+result=$(expr length "$str")
+
+# Print the result
+echo "The length of the string is $result"
 ```
 
-The output of this code would be:
+The output of the above code will be:
 
+```Bash
+The length of the string is 12
 ```
-The length of the string is 13
+
+### Using the `${#var}` variable
+
+Bash provides a built-in `${#var}` variable to find the length of a string. It is a more efficient and cleaner way of finding the length. Let's look at the same example as above using this variable.
+
+```Bash
+# Store the string in a variable
+str="Hello World!"
+
+# Use the `${#var}` variable to find the length
+result=${#str}
+
+# Print the result
+echo "The length of the string is $result"
 ```
 
-We first declare our string, "Hello, world!", in the `my_string` variable. Then, we use the `expr` command, which allows us to evaluate expressions. Inside the parentheses, we use the `length` function and pass in the variable containing our string.
+The output will be the same as the previous example:
 
-We assign the output of this expression to the `string_length` variable, using the `$( )` syntax to capture the output and save it to a variable.
-
-Finally, we can print out the length of our string by using `echo` and referencing the `string_length` variable.
+```Bash
+The length of the string is 12
+```
 
 ## Deep Dive
 
-While using `expr length` is the most common way to find the length of a string in Bash, there are a few other methods. One alternative is to use the `wc` (word count) command with the `-m` option, which stands for "character count". Here's an example:
+When using the `expr` command, keep in mind that the `length` keyword counts the number of characters, not the number of words. For example, in the string "Hello World!", the space between "Hello" and "World!" counts as a character and is included in the output. To get the number of words in a string, we can use the `-w` option with the `length` keyword.
 
 ```Bash
-my_string="Hello, world!"
-string_length=$(echo -n $my_string | wc -m)
-echo "The length of the string is $string_length"
+# Store the string in a variable
+str="Hello World!"
+
+# Use `expr` with the `-w` option to count words
+result=$(expr length -w "$str")
+
+# Print the result
+echo "The number of words in the string is $result"
 ```
 
-The output would be the same as before, 13. However, this method also takes into account any spaces or special characters in the string, which may be useful depending on your needs.
-
-Another way to find the length of a string is to use the `${#variable}` syntax. This will return the length of the variable without having to use the `expr` command. Here's an example:
+The output will be:
 
 ```Bash
-my_string="Hello, world!"
-string_length=${#my_string}
-echo "The length of the string is $string_length"
+The number of words in the string is 2
 ```
-
-Again, the output would be 13.
 
 ## See Also
 
-- Bash `expr` command documentation: https://www.gnu.org/software/coreutils/manual/html_node/expr-invocation.html
-- Bash `wc` command documentation: https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html
-- Bash string manipulation: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion
+For more information on working with strings in Bash, check out the following resources:
+
+- [Bash String Manipulation](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+- [Bash Scripting Guide - Manipulating Strings](https://bash.cyberciti.biz/guide/Manipulating_strings)
+- [Bash - Length of a String / Length of an Array](https://bash.cyberciti.biz/guide/Length_of_string:_length_of_array)

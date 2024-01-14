@@ -1,41 +1,39 @@
 ---
-title:    "C++: 一時ファイルの作成"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/creating-a-temporary-file.md"
+title:                "C++: 「一時ファイルの作成」"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-一時ファイルを作成するのか、その理由について説明します。一時ファイルは、プログラムの実行中に一時的なデータを保存するために使われます。例えば、プログラムが大量のデータを処理する場合、一時ファイルを使用することでメモリを節約し、プログラムの実行を効率的に行うことができます。
+# なぜ
+テンポラリファイルを作成することに携わる理由について、本記事では紹介します。
 
-## 作り方
-一時ファイルを作成するには、C++の`<fstream>`ライブラリを使用します。以下の例では、`std::fstream`クラスの`open`関数を使って一時ファイルを作成し、データを書き込んでいます。
+## 作成方法
+以下のようなステップでC++プログラミングを使用して、テンポラリファイルを作成することができます。
 
 ```C++
+#include <iostream>
 #include <fstream>
 
-int main() {
-  // ファイルを書き込みモードでオープン
-  std::fstream temp_file("my_temp_file.txt", std::ios::out);
+// ファイル名を指定して一時ファイルを作成する
+std::ofstream tempFile("temporary.txt");
 
-  // ファイルにデータを書き込む
-  temp_file << "This is a temporary file" << std::endl;
+// ファイルに内容を書き込む
+tempFile << "これはテストファイルです。" << std::endl;
 
-  // ファイルを閉じる
-  temp_file.close();
-  
-  return 0;
-}
+// ファイルを閉じる
+tempFile.close();
 ```
 
-実行すると、プログラムがあるディレクトリに`my_temp_file.txt`という一時ファイルが作成され、"This is a temporary file"という内容が書き込まれます。
+上記のコードを実行すると、`temporary.txt`という名前の一時ファイルが作成されて、指定した内容が書き込まれます。
 
-## 深掘り
-一時ファイルを作成する際には、`std::ofstream`クラスではなく`std::fstream`クラスを使用することが推奨されています。`std::ofstream`では、ファイルが既に存在する場合にデータを上書きしてしまいますが、`std::fstream`では既存のファイルを上書きするのではなく、新しいファイルを作成するように制御することができます。
+## 深堀り
+テンポラリファイルを作成することによって、アプリケーションが一時的に必要とするデータを保存することができます。また、ファイルのパスを指定せずに作成することができるため、エラーが起きる可能性が減ります。
 
-また、一時ファイルを作成する際には、プログラムが終了する際に一時ファイルを削除するようにすることが重要です。これにより、不要なファイルが残らず、システムのストレージが占有されることを防ぐことができます。
+また、一時ファイルには自動的に削除されるタイムスタンプが付与されるため、プログラムの実行後に手動でファイルを削除する必要がありません。
 
-## また参照
-- [C++ 公式ドキュメント - <fstream>](https://ja.cppreference.com/w/cpp/header/fstream)
-- [C++ ファイル操作 - ファイルの入出力](https://programming-place.net/ppp/contents/cpp/file/006.html)
+# 参考リンク
+- [std::ofstream - C++ Reference](https://www.cplusplus.com/reference/fstream/ofstream/)
+- [C++で一時ファイルを扱う](https://qiita.com/walkers/items/9b1070820e255c9b380a)

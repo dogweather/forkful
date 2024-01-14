@@ -1,37 +1,40 @@
 ---
-title:    "Gleam: Transformer une date en chaîne de caractères"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/converting-a-date-into-a-string.md"
+title:                "Gleam: Transformer une date en chaîne de caractères"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Pourquoi
+# Pourquoi
 
-Convertir une date en chaîne de caractères peut sembler être une tâche assez simple, mais cela peut s'avérer très utile dans certaines situations. Par exemple, cela peut être nécessaire lors de la manipulation de données pour les faire correspondre à un certain format ou lors de l'affichage d'informations dans un format spécifique.
+Lorsque vous travaillez avec des dates dans votre code, il peut être utile de les convertir en chaînes de caractères pour faciliter leur manipulation et leur affichage. Cela peut être particulièrement utile lorsque vous travaillez avec des données de calendrier ou que vous souhaitez formater des dates de manière spécifique pour correspondre à des exigences de présentation particulières.
 
-##Comment faire
+# Comment faire
 
-Pour convertir une date en chaîne de caractères en utilisant Gleam, vous pouvez utiliser la fonction `LocalDateTime.to_string()`. Voici un exemple de code avec une date précise et le format de chaîne de caractères voulu :
+La conversion d'une date en chaîne de caractères est assez simple en utilisant le langage de programmation Gleam. Dans l'exemple ci-dessous, nous utiliserons la fonction `Format` pour convertir une date en une chaîne de caractères au format `Mois année` (Month year) :
 
-```Gleam
-import gleam/datetime.{ LocalDateTime }
+```
+Gleam
+import gleam/time
 
-let date = LocalDateTime.from_date(2021, 8, 16)
-let formatted_date = date.to_string("%Y-%m-%d")
-
-IO.println(formatted_date) // output: 2021-08-16
+let month_year = time.Format
+    .month_year
+    { month : time.Month.April, year : 2021 }
+    # "Avril 2021"
 ```
 
-Comme vous pouvez le voir dans l'exemple, la fonction `to_string()` prend un argument de format facultatif, qui vous permet de personnaliser la façon dont la date est affichée en tant que chaîne de caractères. Vous pouvez utiliser des codes de formatage spécifiques pour changer l'ordre, le format ou l'affichage des éléments de la date.
+Nous pouvons également utiliser d'autres formats prédéfinis tels que `date_time`, `short_date` ou `long_date` pour obtenir des résultats différents. Vous pouvez également créer votre propre format personnalisé en utilisant les options de `time.Format`.
 
-## Plongée en profondeur
+# Plongeons plus profondément
 
-La raison pour laquelle `LocalDateTime.to_string()` fonctionne est parce qu'elle utilise le module `gleam/datetime/format` qui définit des fonctions pour convertir différents types de données en chaînes de caractères selon différents formats. Le module utilise également la bibliothèque d'extension Erlang `calendar` pour effectuer les conversions.
+En utilisant la fonction `Format`, il est également possible de formater une date en utilisant des spécificateurs de conversion tels que `a` pour le jour de la semaine abrégé en trois lettres, `A` pour le jour de la semaine complet, `d` pour le jour du mois, `m` pour le mois en chiffres et bien plus encore. Cela permet une personnalisation encore plus poussée de la chaîne de caractères résultante.
 
-Pour une liste complète des codes de formatage disponibles, vous pouvez consulter la documentation d'Erlang pour le module `calendar`.
+Vous pouvez également utiliser la fonction `DateTime.toString` pour convertir une date en une chaîne de caractères au format ISO 8601. Cela peut être particulièrement utile pour stocker et échanger des dates avec des systèmes externes.
 
-## Voir aussi
+# Voir également
 
-- [Documentation Gleam pour LocalDateTime](https://gleam.run/modules/gleam/datetime/#LocalDateTime)
-- [Documentation Erlang pour le module calendar](https://erlang.org/doc/man/calendar.html)
+- Documentation Gleam sur les formats et spécificateurs de conversion : [https://gleam.run/modules/gleam_time/latest/time.html#Format](https://gleam.run/modules/gleam_time/latest/time.html#Format)
+- Article de blog sur la manipulation des dates en Gleam : [https://bloggle.run/dates-in-gleam/](https://bloggle.run/dates-in-gleam/)
+- Exemples de code pour la manipulation des dates en Gleam : [https://github.com/gleam-lang/gleam_stdlib/blob/master/src/time/tests/tests.gleam](https://github.com/gleam-lang/gleam_stdlib/blob/master/src/time/tests/tests.gleam)

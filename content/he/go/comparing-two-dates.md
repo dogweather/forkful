@@ -1,61 +1,53 @@
 ---
-title:    "Go: השוואת שתי תאריכים"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/go/comparing-two-dates.md"
+title:                "Go: השוואת שתי תאריכים"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
-השוואת שני תאריכים בתכנות ב-Go יכולה להיות כלי מקצועי ושימושי לכל מתכנת. באמצעות השוואה של שני תאריכים, ניתן לממש פונקציונליות רבה כגון ייחוס זמן, פילטרים תאריכים וכו'. במאמר הזה נלמד כיצד לבצע השוואת תאריכים בתוכנית שכתובה ב-Go.
+# למה
+בתכנות בשפת Go ישנם רבים מהצורך להשוות בין שני תאריכים. המאמר הזה יציג טכניקות שונות להשוואת תאריכים בשפת Go ויכוון כיצד להשתמש בהן במקרים שונים.
 
-## כיצד לעשות זאת
-בכדי להשוות שני תאריכים בתוכנית ב-Go, ישנן כמה אפשרויות. האפשרות הראשונה היא על ידי שימוש בפונקציית `Equal` של חבילת `time`. הפונקציה מקבלת שני תאריכים ומחזירה אמת אם התאריכים זהים או שקר אם הם שונים. לדוגמא:
+# איך לעשות זאת
+כדי להשוות בין שני תאריכים בשפת Go, ישנם כמה מתודות שיכולות לנווט בין אורכים, תאריכי יום בשבוע ועוד. הנה כמה דוגמאות קוד ותוצאות להמחשה:
 
 ```Go
+package main
 import (
     "fmt"
     "time"
 )
-
 func main() {
-    date1 := time.Date(2020, 01, 01, 0, 0, 0, 0, time.UTC)
-    date2 := time.Date(2020, 01, 01, 12, 0, 0, 0, time.UTC)
-
+    date1 := time.Date(2020, time.January, 1, 0, 0, 0, 0, time.UTC)
+    date2 := time.Date(2021, time.February, 1, 0, 0, 0, 0, time.UTC)
+    
+    // השווה תאריך עם אחר לפי שנה, חודש ויום החל מהאורך
     if date1.Equal(date2) {
-        fmt.Println("The two dates are equal")
+        fmt.Println(date1, "הוא שווה ל", date2)
     } else {
-        fmt.Println("The two dates are not equal")
+        fmt.Println(date1, "אינו שווה ל", date2)
     }
-}
-
-// Output: The two dates are not equal
-```
-
-האפשרות השנייה היא להשתמש בפונקציית `Before` או `After` של חבילת `time`. פונקציית `Before` מחזירה אמת אם התאריך הראשון מופיע לפני התאריך השני ושקר אם התאריך הראשון מופיע אחרי התאריך השני. פונקציית `After` מחזירה אמת אם התאריך הראשון מופיע אחרי התאריך השני ושקר אם התאריך הראשון מופיע לפני התאריך השני. לדוגמא:
-
-```Go
-import (
-    "fmt"
-    "time"
-)
-
-func main() {
-    date1 := time.Date(2020, 01, 01, 0, 0, 0, 0, time.UTC)
-    date2 := time.Date(2021, 01, 01, 0, 0, 0, 0, time.UTC)
-
+    
+    // הצג את התאריך המוקדם יותר לפי שנה, חודש ויום
     if date1.Before(date2) {
-        fmt.Println("Date1 is before date2")
+        fmt.Println(date1, "קודם ל", date2)
+    } else {
+        fmt.Println(date2, "קודם ל", date1)
     }
-
-    if date2.After(date1) {
-        fmt.Println("Date2 is after date1")
-    }
+    
+    // הפכת חלקים של תאריך למערך
+    dateArray := []int{date1.Year(), int(date1.Month()), date1.Day()}
+    fmt.Println("מערך התאריך הוא:", dateArray)
 }
-
-// Output: Date1 is before date2
-//         Date2 is after date1
 ```
 
-## Deep Dive
-בכדי לשווא שני תאריכים בצ
+תוצאות יעילות:
+
+2020-01-01 00:00:00 +0000 UTC אינו שווה ל 2021-02-01 00:00:00 +0000 UTC
+2020-01-01 00:00:00 +0000 UTC קודם ל 2021-02-01 00:00:00 +0000 UTC
+מערך התאריך הוא: [2020, 1, 1]
+
+# חקירה מעמיקה
+בנוסף למתודות הבסיסיות של השוואת תאריכים, תוכלו להשתמש גם בחבילת "time" המכילה פונקציות נוספות כמו "Compare" המאפשרת להשוות בין שני תאריכים על פי תשובת תחילת האותיות או להשתמש בעדיפות למידות כמו "האם תאריך מסוים קודם או לא". כמו כן,

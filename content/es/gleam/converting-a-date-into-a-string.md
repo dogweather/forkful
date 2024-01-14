@@ -1,41 +1,52 @@
 ---
-title:    "Gleam: Convirtiendo una fecha en una cadena"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/converting-a-date-into-a-string.md"
+title:                "Gleam: Convirtiendo una fecha en una cadena"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Converting a date into a string (convertir una fecha en una cadena) is a common task in programming, especially when working with databases or user interfaces. In Gleam, this can be achieved with a few simple steps. Converting dates into strings allows for easier manipulation and presentation of data, making it a useful skill to have for any developer.
+Convertir una fecha en una cadena de texto es una tarea común en la programación. Puede ser útil para mostrar fechas en un formato específico en una aplicación o para trabajar con fechas en APIs. En Gleam, esto se puede lograr fácilmente utilizando la función `Date.to_string/1`.
 
 ## Cómo hacerlo
 
-```Gleam
-let date = Time.now() // fecha actual
-let string_date = Time.format(date, "%d/%m/%Y") // convertir fecha en cadena con el formato día/mes/año
+El primer paso para convertir una fecha en una cadena de texto en Gleam es crear una variable que contenga la fecha que deseamos convertir, utilizando la función `Date.new/4`.
+
+```
+Gleam
+let fecha = Date.new(2021, 10, 15)
 ```
 
-En el código de ejemplo anterior, utilizamos la función `format` de la biblioteca de fecha y hora de Gleam para convertir la fecha en una cadena. El primer argumento es la fecha que queremos convertir, mientras que el segundo argumento es el formato en el que queremos que se muestre. En este caso, utilizamos `%d` para el día, `%m` para el mes y `%Y` para el año. 
+Luego, podemos llamar a la función `Date.to_string/1` y pasarle la variable de fecha como argumento. Esto devolverá una cadena de texto en formato ISO 8601.
 
-Si queremos mostrar la hora junto con la fecha, también podemos utilizar `%H` para las horas, `%M` para los minutos y `%S` para los segundos. Por ejemplo:
+```
+Gleam
+let fecha = Date.new(2021, 10, 15)
+let fecha_string = Date.to_string(fecha)
 
-```Gleam
-let time = Time.from(12, 30, 0) // crear una nueva fecha y hora con las horas, minutos y segundos especificados
-let string_time = Time.format(time, "%H:%M:%S") // convertir la fecha y hora en cadena con el formato horas:minutos:segundos
 ```
 
-La biblioteca también ofrece otras opciones de formato, como el nombre del mes completo `%B` o el día de la semana `%A`. Puedes consultar la documentación de la biblioteca para ver todas las opciones disponibles.
+El resultado de `fecha_string` sería `"2021-10-15"`. Sin embargo, si queremos un formato específico, podemos utilizar la función `Date.format/2` y especificar el formato deseado.
+
+```
+Gleam
+let fecha = Date.new(2021, 10, 15)
+let fecha_string = Date.format(fecha, "D, d MMM YYYY")
+
+```
+
+El resultado de `fecha_string` sería `"Fri, 15 Oct 2021"`, ya que hemos especificado el formato para mostrar el día de la semana, el día del mes, el mes y el año.
 
 ## Profundizando
 
-Internamente, las fechas en Gleam se representan como una estructura de datos llamada `Time.DateTime` que contiene información sobre el año, mes, día, hora, minutos y segundos. Ver la fecha y hora de esta manera puede ser útil para realizar cálculos y manipulaciones con fechas. Sin embargo, cuando se trata de presentar las fechas a los usuarios, convertirlas en cadenas es más práctico.
+La función `Date.to_string/1` utiliza el formato ISO 8601 por defecto, pero también se puede especificar otro formato utilizando la función `Date.format/2`. La documentación de Gleam proporciona una lista de los formatos de fecha y hora disponibles para utilizar.
 
-Una cosa a tener en cuenta es que al convertir una fecha en una cadena, es importante utilizar el formato correcto. Por ejemplo, si usamos `%m` para el mes y la fecha es 2 de enero, obtendremos `"01"` en lugar de `"1"`. Esto puede ser confuso para los usuarios, así que asegúrate de revisar los formatos y elegir el más adecuado para tu caso de uso.
+También es importante tener en cuenta que, al igual que en otros lenguajes de programación, es necesario tener en cuenta las diferentes zonas horarias al trabajar con fechas y realizar conversiones a cadena de texto.
 
 ## Ver también
 
-- [Gleam - Biblioteca de fecha y hora](https://gleam.run/modules/time)
-- [Gleam - Documentación de la biblioteca de fecha y hora](https://gleam.run/modules/time#to_string)
-- [Convertir una fecha en una cadena en otros lenguajes de programación](https://www.programacion.com.py/escritorio/python/convertir-fecha-en-cadena-python)
+- [Documentación de Gleam sobre fechas](https://gleam.run/documentation/built-in-modules/date)
+- [Ejemplos de formato de fecha y hora en Gleam](https://blog2021.gleam.run/?p=174)

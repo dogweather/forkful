@@ -1,29 +1,48 @@
 ---
-title:    "Gleam: Mallien mukaan vastaavien merkkien poistaminen."
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/deleting-characters-matching-a-pattern.md"
+title:                "Gleam: Mallia vastaavien merkkien poistaminen"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Oletko joskus törmännyt tilanteeseen, jossa haluaisit poistaa tietyt merkit jostakin tekstistä? Ehkä haluat muokata käyttäjän syöttämää tietoa ennen sen tallentamista tietokantaan tai vain yksinkertaisesti siistiä muuttujan sisältöä. Gleam-ohjelmointikielen avulla tämä on helppoa ja nopeaa!
 
-Miksi poistaisit merkkejä, jotka vastaavat tiettyä mallia? Tämä voi olla hyödyllistä, jos haluat puhdistaa tekstistä pois tarpeettomia merkkejä, kuten symbolit tai välimerkit. Se voi myös auttaa sinua muotoilemaan tiettyä tietoa haluamallasi tavalla.
-
-## Miten
+## Miten tehdä
+Voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa Gleam-kielen `Regex.replace`-toiminnolla. Alla on esimerkki, jossa poistetaan kaikki välilyönnit antamastamme merkkijonosta ja tulostetaan muokattu versio.
 
 ```Gleam
-my_string = "Tervetuloa Gleam blogiin!"
-print(my_string |> String.replace(@regex("[A-Z]"), ""))
+let lause = "Hei, tämä on esimerkkilause."
+let kaava = Regex.new("\\s+", [global: true])
+let muokattu_lause = Regex.replace(kaava, lause, "")
 ```
-Tämä koodi poistaa kaikki kirjaimet @regex([A-Z]), jättäen jäljelle vain pienet kirjaimet ja tulostaa "ervetuloa lei blogiin!". Tämä koodinpätkä käyttää Gleamin built-in String.replace() -funktiota, ja voit käyttää myös muita regex-sääntöjä määrittämään, mitä merkkejä poistat tekstistä.
 
-## Syväsukellus
+Tämä tulostaa `Heitäänesimerkkilause.`
 
-Regex eli regular expression on tapa ilmaista tiettyjä merkkijonon malleja. Gleam tukee regexin käyttöä String-moduulissa sen sisäänrakennetulla @regex-makrolla. Mikä tekee Gleamista erityisen hyvän vapaamuotoisiin Regular Expressionien käyttöön verrattuna, on Gleamin kyky muuntaa säännöt puhtaaksi merkkijonoksi, mikä vähentää mahdollisia virheitä syntaktisen analyysin aikana.
+Voit myös käyttää `Regex.match?`-toimintoa tarkistaaksesi, vastaako merkkijono haluttua kaavaa. Alla on esimerkkejä, joissa tarkistetaan, onko antamamme merkkijono numero tai kirjain.
+
+```Gleam
+let numero = Regex.new("\\d+", [global: true])
+let onko_numero = Regex.match?(numero, "1234") // Palauttaa true
+let kirjain = Regex.new("[a-z]", [global: true])
+let onko_kirjain = Regex.match?(kirjain, "Hei") // Palauttaa true
+```
+
+## Syventävä sukellus
+Regex-toiminto mahdollistaa monipuolisen tekstien muokkauksen Gleam-ohjelmointikielessä. Voit käyttää myös "lipsautinvastaisia" kuvamerkkejä, kuten`\w` merkitsemään sanallisia merkkejä ja `\D` merkitsemään kaikkia paitsi numeerisia merkkejä.
+
+Voit myös lisätä muuttujan arvon kaavaan käyttämällä `#{muuttuja}`. Se vastaa ohjelmointikielien string-interpoloimista.
+
+```Gleam
+let muuttuja = "tekshti"
+let muokkaus = Regex.new("#{"muuttuja"}", [global: true])
+let muokattu_lause = Regex.replace(muokkaus, "Tämä on #{@muuttuja}.")
+```
+
+Tämä tulostaa `Tämä on teksti.`
 
 ## Katso myös
-
-- [Gleamin virallinen dokumentaatio regexeihin](https://gleam.run/core/Regex.html)
-- [Säännölliset lausekkeet: 10 asiaa, jotka sinun pitäisi tietää](https://opensource.com/article/19/1/regular-expressions-cheat-sheet)
-- [Gleamin Slack-kanava, jossa voit kysyä lisäkysymyksiä regexeihin liittyen](https://gleam-lang.slack.com/)
+- [Gleam-ohjelmointikielen virallinen dokumentaatio](https://gleam.run)
+- [Regex-toiminnon tiedot Gleam-kielen standardikirjastossa](https://gleam.run/lib/Regex.html)

@@ -1,59 +1,60 @@
 ---
-title:    "TypeScript: Väliaikaisen tiedoston luominen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/creating-a-temporary-file.md"
+title:                "TypeScript: Tilapäistiedoston luominen"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi 
+# Miksi luoda väliaikainen tiedosto TypeScriptillä?
 
-Pieniä, väliaikaisia tiedostoja luodaan usein ohjelmoinnissa monista syistä, joista yleisin on tallentaa väliaikaista dataa, jota ohjelma tarvitsee suorittaessaan tietyn toiminnon. Toinen yleinen syy on luoda väliaikainen tiedosto varmuuskopiointia varten. Kuitenkin, oli syy mikä tahansa, TypeScriptillä on helppo tapa luoda nämä väliaikaiset tiedostot.
+JavaScriptin suosion kasvaessa myös TypeScriptin suosio on kasvanut. TypeScript on staattisesti tyypitetty ohjelmointikieli, joka tarjoaa vahvaa tyypitystä ja työkaluja suuren mittakaavan sovellusten kehittämiseen. Yksi hyödyllinen työkalu, jota TypeScript tarjoaa, on kyky luoda väliaikaisia tiedostoja. Tässä blogikirjoituksessa kerromme, miksi tämä on hyödyllistä ja kuinka voit toteuttaa sen TypeScriptissä.
 
-## Kuinka tehdä
+## Kuinka luoda väliaikainen tiedosto TypeScriptillä?
 
-Ennen kuin aloitamme, varmista että sinulla on TypeScript asennettuna ja tiedostopääte `.ts` tiedostoillesi. Seuraa näitä yksinkertaisia vaiheita luodaksesi väliaikaisen tiedoston TypeScriptillä:
+Väliaikaiset tiedostot ovat erittäin hyödyllisiä, kun haluat tallentaa dataa väliaikaisesti sovelluksesi suorituksen aikana. Tämä voi olla esimerkiksi muotoilun aikana luomaasi väliaikainen tiedosto, joka poistetaan lopuksi, kun muotoilu on valmis.
 
-1. Tuodaan `fs` moduuli käyttöön, joka mahdollistaa tiedostojen luomisen ja käsittelyn TypeScriptissä:
-
-```TypeScript
-import * as fs from "fs";
-```
-
-2. Luodaan funktio, joka luo väliaikaisen tiedoston määritellyllä tiedostonimellä ja sisällöllä:
+Tämän toiminnon toteuttamiseksi voit käyttää TypeScriptin `fs` (file system) -moduulia. Se tarjoaa metodeja tiedostojen luomiseen, lukemiseen ja poistamiseen.
 
 ```TypeScript
-function createTemporaryFile(filename: string, content: string) {
-    fs.writeFile(filename, content, (err) => {
-        if (err) console.log(err);
-        console.log(`${filename} luotu.`);
-    })
-}
+import * as fs from 'fs';
+
+// Luodaan väliaikainen tiedosto
+fs.writeFile('valiaikainen.txt', 'Tervetuloa!', function(err) {
+  if(err) throw err;
+  console.log('Väliaikainen tiedosto on luotu!');
+});
 ```
 
-3. Kutsutaan funktiota ja määritellään tiedostonimi ja sisältö:
+Tämä koodi luo tiedoston `valiaikainen.txt` ja kirjoittaa siihen tekstin "Tervetuloa!". `writeFile`-funktio ottaa vastaan kolme parametria: tiedoston nimen, tiedostoon kirjoitettavan datan ja lopuksi callback-funktion, joka kutsutaan kun tiedosto on luotu.
+
+Voit myös käyttää `readFile`-funktiota lukemaan tiedoston sisällön ja `unlink`-funktiota poistamaan tiedoston.
 
 ```TypeScript
-createTemporaryFile("testi.txt", "Tämä on väliaikainen tiedosto.");
+// Luetaan tiedoston sisältö ja tulostetaan se konsoliin
+fs.readFile('valiaikainen.txt', 'utf8', function(err, data) {
+  if(err) throw err;
+  console.log(data);
+});
+
+// Poistetaan tiedosto
+fs.unlink('valiaikainen.txt', function(err) {
+  if(err) throw err;
+  console.log('Väliaikainen tiedosto on poistettu!');
+});
 ```
 
-4. Ajetaan koodi komentokehotteella ja tarkistetaan `testi.txt` tiedoston olemassaolo ja sisältö:
+## Syvällisempi sukellus väliaikaisiin tiedostoihin TypeScriptillä
 
-```TypeScript
-$ tsc temporary_file.ts
-$ node temporary_file.js
-```
+Miksi käyttää väliaikaisia tiedostoja, kun voit tallentaa dataa muuttujiin tai tietokantaan? Yksi tärkeä syy on suorituskyky. Väliaikaiset tiedostot ovat nopeampia käyttää kuin tietokanta, sillä tiedostoja ei tarvitse hakea tietokannasta eikä suorittaa erillistä queryä.
 
-Tämän tulisi luoda `testi.txt` tiedosto ja tulostaa komentokehotteelle viesti `"testi.txt luotu."`.
+Toinen hyödyllinen käyttökohde väliaikaisille tiedostoille on tiedostojen siirtäminen eri ympäristöjen välillä. Sovelluksen kehitystyössä on usein tarve siirtää tiedostoja esimerkiksi testiympäristöstä tuotantoympäristöön. Väliaikaiset tiedostot mahdollistavat tämän prosessin helposti.
 
-## Syventävä tieto
-
-Tässä syventävässä osiossa käsittelemme lyhyesti miten TypeScriptin `fs` moduuli toimii tiedostojen luomisen suhteen. Kuten yllä esitetyssä esimerkissä, `fs.writeFile()` funktio ottaa parametreikseen tiedostonimen ja sisällön, ja mahdollisen virheen käsittelyä varten callback funktion. Funktio luo tiedoston annetulla nimellä ja tallentaa annetun sisällön siihen.
-
-On myös hyvä huomata, että `fs.writeFile()` funktio korvaa automaattisesti jo olemassa olevan tiedoston, jos sellainen löytyy annetulla nimellä. Jos haluat estää tämän, voit käyttää `fs.writeFileSync()` funktiota, joka heittää virheen jos tiedosto on jo olemassa.
+Nämä ovat vain muutamia esimerkkejä siitä, kuinka väliaikaiset tiedostot voivat olla hyödyllisiä sovelluskehityksessä. Muista aina lopuksi poistaa väliaikaiset tiedostot, jotta ne eivät vie tilaa palvelimelta.
 
 ## Katso myös
 
-- [TypeScriptin virallinen sivusto](https://www.typescriptlang.org/)
-- [fs moduulin dokumentaatio](https://nodejs.org/api/fs.html#fs_file_system)
-- [Node.js tiedostojen käsittely](https://nodejs.dev/learn/file-system-in-nodejs)
+- [Official TypeScript Documentation](https://www.typescriptlang.org/docs/home.html)
+- [Node.js File System Documentation](https://nodejs.org/api/fs.html)
+- [Understanding TypeScript

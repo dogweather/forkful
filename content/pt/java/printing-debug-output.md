@@ -1,50 +1,42 @@
 ---
-title:    "Java: Imprimindo saída de depuração"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/printing-debug-output.md"
+title:                "Java: Imprimindo saída de depuração"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Imprimir saída de debug é uma prática fundamental para qualquer programador no processo de depuração de código. Ela permite visualizar dados, variáveis e informações importantes que podem ser úteis para identificar e corrigir erros.
+## Por que imprimir saída de depuração?
 
-## Como Fazer
-Para imprimir saída de debug em Java, é muito simples. O primeiro passo é importar o pacote `java.util.logging` no seu código:
+Imprimir saída de depuração é uma prática comum entre os desenvolvedores de Java. Ela é útil para entender o fluxo de execução do código e encontrar possíveis erros ou bugs.
 
-```Java
-import java.util.logging.*;
+## Como fazer
+
+A impressão de saída de depuração em Java é feita utilizando o método "System.out.println()". Este método permite que você imprima mensagens de texto ou variáveis ​​para a saída do sistema.
+
+Um exemplo simples de saída de depuração:
+
+```
+Java
+int numero = 10;
+System.out.println("O número é: " + numero);
 ```
 
-Em seguida, é preciso criar um objeto do tipo `Logger` e definir o nível de logging desejado, por exemplo:
+A saída deste código seria: "O número é: 10". Isso permite que o desenvolvedor verifique se o valor da variável está correto e, se houver algum erro, identificá-lo com mais facilidade.
 
-```Java
-Logger logger = Logger.getLogger("NomeDoArquivo.class");
-logger.setLevel(Level.INFO);
-```
+É importante lembrar de remover todas as saídas de depuração antes de finalizar o código, pois elas podem afetar negativamente o desempenho do programa em produção.
 
-Agora, podemos utilizar os métodos `info()`, `warning()` e `severe()` para imprimir as mensagens de debug, seguidos pelo `log()` do objeto `Logger`, como no exemplo abaixo:
+## Detalhes técnicos
 
-```Java
-logger.info("Mensagem de debug");
-logger.log(Level.WARNING, "Aviso: variável x é igual a " + x);
-```
+Existem algumas técnicas avançadas para imprimir saída de depuração em Java, como o uso de expressões lambda no método "System.out.format()". Este método permite que você imprima valores formatados, facilitando a leitura e análise do código.
 
-Ao executar o código, as mensagens de debug serão impressas no console.
+Também é possível redirecionar a saída de depuração para arquivos de log, o que pode ser útil para depurar problemas em ambientes de produção.
 
-## Deep Dive
-Além das informações básicas, é possível aprofundar ainda mais o processo de saída de debug em Java. É possível definir um `Formatter` para personalizar o formato das mensagens de log, como por exemplo:
+Além disso, existem bibliotecas de terceiros que podem fornecer funcionalidades adicionais para impressão de saída de depuração, como a biblioteca "Log4j".
 
-```Java
-formatter = new SimpleFormatter();
-consoleLogger.setFormatter(formatter);
-```
+## Veja também
 
-Também é possível especificar um `Handler` para redirecionar as mensagens de log para diferentes locais, como um arquivo de log ou um banco de dados.
-
-Outra opção é utilizar o método `setUseParentHandlers(false)` para impedir que as mensagens de debug sejam enviadas para cima na hierarquia de loggers, evitando logs duplicados.
-
-## Veja Também
-- [Documentação oficial do java.util.logging](https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html)
-- [Tutorial de saída de debug em Java](https://www.baeldung.com/java-logging-intro)
-- [Artigo sobre as melhores práticas de logging em Java](https://www.journaldev.com/977/logging-best-practices-java)<Paste>
+- [Documentação oficial do Java para System.out.println()](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html#println())
+- [Como imprimir saída de depuração em Java](https://www.baeldung.com/java-print-debugging)
+- [Uma visão geral do depurador de Java](https://www2.cs.duke.edu/csed/java/javanotes6/c13/debugger.html)

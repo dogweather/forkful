@@ -1,44 +1,40 @@
 ---
-title:    "Arduino: ランダムな数値の生成"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/generating-random-numbers.md"
+title:                "Arduino: ランダムな数字の生成"
+programming_language: "Arduino"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ乱数を生成するのか？
 
-なぜ誰かがランダムな数字を生成することに取り組むのか、それについて少し考えてみましょう。ランダムな数字を生成することで、異なる値をプログラムに組み込み、さまざまなアプリケーションを作ることができます。例えば、サイコロやくじ引きのようなゲームを作ることもできますし、ランダムな色を表示するライトアップディスプレイを作ることもできます。さらに、ランダムな数字や文字を用いて、機械学習のアルゴリズムや暗号の生成にも使われています。
+乱数は、Arduinoプログラミングの多くのアプリケーションで重要な役割を果たします。例えば、サイコロやカードゲーム、ランダムな音楽の生成などに使用されます。また、セキュリティの観点からも乱数の生成は重要です。Arduinoで乱数を使うことで、多様な機能を実現することができます。
 
-## 作り方
+## 乱数の生成方法
 
-Arduinoでランダムな数字を生成する方法は、非常に簡単です。まず、```random()```関数を使います。この関数は、0から指定した数までのランダムな数字を返します。例えば、ランダムな数字を0から9まで生成するには、次のようにコードを書きます。
-
-```Arduino
-int randomNumber = random(10);
-```
-
-これで、変数```randomNumber```には、0から9までのランダムな数字が格納されます。また、この関数を使えば、小数点以下の数字も生成することができます。例えば、0から1までの範囲で、小数点以下2桁のランダムな数字を生成するには、次のようにコードを書きます。
+乱数を生成するには、Arduinoの「random()」関数を使います。この関数は、乱数を生成するための擬似乱数ジェネレーターを内蔵しています。以下のコードを参考にしてください。
 
 ```Arduino
-float randomDecimal = random(100) / 100.0;
+// 0から100までの乱数を生成する
+int randomNumber = random(0, 100);
 ```
 
-こうすることで、変数```randomDecimal```には、0.00から0.99までのランダムな数字が格納されます。さらに、ランダムな文字を生成する方法についても知っておくと便利です。次のコードは、ランダムなアルファベットを表示する例です。
+このコードを実行すると、0から100の間のランダムな数値が取得できます。また、乱数を生成する前に「randomSeed()」関数を使用することで、よりランダムな数値を生成することができます。以下のコードを参考にしてください。
 
 ```Arduino
-char randomLetter = char(random(65,91));
+// ランダムな初期値を使用して乱数を生成する
+randomSeed(analogRead(A0));
 ```
 
-こうすることで、変数```randomLetter```には、AからZまでのアルファベットの中からランダムに選ばれた1つの文字が格納されます。
+## ディープダイブ
 
-## 深堀り
+Arduinoの「random()」関数は、内蔵の擬似乱数ジェネレーターのシード値を基にして乱数を生成します。これは、Arduinoの起動時に決められた初期値を使用するため、同じプログラムを実行しても同じ結果が得られる可能性があります。そのため、乱数を使用する前に「randomSeed()」関数を使用することで、よりランダムな数値を得ることができます。
 
-ランダムな数字を生成する際には、乱数生成アルゴリズムと呼ばれるものが使われます。これは、コンピュータがランダムな値を生成するための数学的な手法のことです。Arduinoでは、デフォルトでメルセンヌツイスターと呼ばれる乱数生成アルゴリズムが使われています。このアルゴリズムは、32ビットの整数を用いて、2^32-1までのランダムな数字を生成することができます。
+また、Arduinoの擬似乱数ジェネレーターは、実際の乱数ではなく、予測可能な数列を生成します。そのため、セキュリティ目的で乱数を使用する場合は、別の方法を検討する必要があります。
 
-しかし、注意しなければいけないのは、この乱数生成アルゴリズムは完全にランダムではないことです。コードやボードの状態などによって、実際には予測可能な乱数が生成されることがあります。そのため、本格的な暗号生成にはこの乱数生成アルゴリズムを使わないようにすることが推奨されています。よりセキュアな乱数を生成するには、外部のハードウェアやサードパーティのライブラリを使うことが勧められます。
+## 参考リンク
 
-## 参考サイト
-
-- [Arduinoの公式ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [メ
+- Arduino公式ドキュメント：[Random Numbers](https://www.arduino.cc/reference/en/language/functions/random-numbers/)
+- Arduinoチュートリアル：[Generating Random Numbers with Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/generating-random-numbers-with-arduino-5b677a)
+- 乱数ジェネレーターに関する詳細な説明：[Pseudorandom Number Generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

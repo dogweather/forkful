@@ -1,53 +1,51 @@
 ---
-title:    "Fish Shell: Formatowanie tekstu do wielkich liter"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell: Zapisywanie tekstu jako wielkie litery"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto używać Fish Shell do zapisywania ciągów
 
-Jedną z najczęściej wykonywanych operacji podczas pisania kodu jest zmiana stylu tekstowego. Jednym z takich przypadków jest zmiana z małych liter na duże. Pisanie tej samej logiki w różnych miejscach w kodzie jest czasochłonne i może przyczynić się do popełnienia błędów. Dlatego warto poznać narzędzia, które ułatwią nam tę czynność, takie jak funkcja capitalize w Fish Shell.
+Jeśli jesteś programistą lub hobbystą, który lubi pracować z językiem programowania, z pewnością spotkałeś się z sytuacją, w której musiałeś zmienić wielkość liter w tekście. Jest to codzienne wyzwanie, szczególnie jeśli pracujesz z dużymi ilościami danych. Dlatego dzisiaj przyjrzymy się funkcji z Fish Shell, która ułatwia operacje na tekstach - zmiana wielkości liter. 
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Fish Shell oferuje funkcję capitalize, która służy do zmiany pierwszej litery w ciągu znaków na dużą. Aby skorzystać z tej funkcji, należy użyć polecenia:
-
-```Fish Shell
-string capitalize string
-```
-
-Gdzie "string" to ciąg znaków, którego pierwsza litera ma zostać zamieniona na dużą. Przykładowe użycie można zobaczyć na poniższym przykładzie:
+Python jest językiem programowania, który oferuje wiele wbudowanych funkcji, które ułatwiają pracę z tekstami. Jedną z tych funkcji jest metoda `capitalize()`, która zmienia pierwszą literę w tekście na dużą, a wszystkie pozostałe na małe. Jest to bardzo przydatne narzędzie do standardyzacji danych lub tworzenia estetycznych wyjść.
 
 ```Fish Shell
-echo (capitalize hello world)
+set nazwa = "fish shell to super!"
+echo $nazwa
+# wyjście: fish shell to super!
+echo $nazwa | capitalize
+# wyjście: Fish shell to super!
 ```
 
-Output: "Hello world"
+W powyższym przykładzie, dzięki zastosowaniu metody `capitalize()`, tekst zaczyna się od wielkiej litery, a reszta jest zapisana małymi literami. Warto pamiętać, że ta metoda nie tylko zmienia wielkość liter, ale również zachowuje odstępy między wyrazami.
 
-Funkcja capitalize działa również z bardziej skomplikowanymi ciągami znaków, na przykład:
+Za pomocą Fish Shell można również zmienić tylko pierwszą literę w tekście na dużą, pozostawiając pozostałe bez zmian. W tym celu użyjemy funkcji `string replace`, która zamienia wybrany fragment tekstu na inny.
 
 ```Fish Shell
-echo (capitalize "it's a beautiful day")
+set nazwa = "FISH shell jest niesamowitym narzędziem!"
+echo $nazwa
+# wyjście: FISH shell jest niesamowitym narzędziem!
+string replace upper $nazwa 1 1 $nazwa
+echo $nazwa
+# wyjście: Fish shell jest niesamowitym narzędziem!
 ```
 
-Output: "It's a beautiful day"
+W powyższym przykładzie, za pomocą funkcji `string replace`, zamieniamy pierwszą literę tekstu na dużą, pozostawiając resztę tekstu bez zmian.
 
-W przypadku, gdy pierwszy znak nie jest literą, funkcja nie zwraca żadnego efektu. Na przykład:
+## Dogłębna analiza
 
-```Fish Shell
-echo (capitalize "123abc")
-```
+Mimo że zmiana wielkości liter w tekście wydaje się prosta, może być czasochłonna, szczególnie w przypadku dużych danych. Dlatego warto skorzystać z narzędzi, które ułatwią nam pracę. Metoda `capitalize()` to tylko jedna z wielu dostępnych w Fish Shell, a korzystając z innych funkcji, możemy dostosować wielkość liter w tekście do naszych potrzeb.
 
-Output: "123abc"
+Na przykład, jeśli chcemy zmienić wszystkie litery w tekście na duże, możemy skorzystać z metody `upper()`. Natomiast jeśli chcemy zamienić wszystkie litery na małe, wystarczy użyć funkcji `lower()`. Ponadto, przy operacjach na dłuższych ciągach tekstowych, warto zwrócić uwagę na wydajność funkcji i wybierać te najbardziej optymalne.
 
-## Deep Dive
+# Zobacz też
 
-Funkcja capitalize działa poprzez zamianę pierwszego znaku w ciągu znaków na jego wersję z dużej litery. Jest to bardzo przydatne narzędzie przy weryfikacji i poprawianiu danych wprowadzonych przez użytkownika. Jednak należy pamiętać, że zamiana pierwszej litery na dużą może wpływać na wydajność, zwłaszcza w przypadku długich ciągów znaków.
-
-## Zobacz też
-
-- Dokumentacja funkcji capitalize w Fish Shell: https://fishshell.com/docs/current/cmds/capitalize.html
-- Poradnik użytkownika Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Inne narzędzia do manipulacji tekstu w Fish Shell: https://fishshell.com/docs/current/tutorial.html#other-commands
+* Dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
+* Szybki start z Fish Shell: https://github.com/jorgebucaran/fish-shell-setup
+* Poradnik Fish Shell dla początkujących: https://medium.com/@thechampl8/setting-up-the-perfect-fish-shell-3ee7db3cecde

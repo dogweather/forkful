@@ -1,44 +1,45 @@
 ---
-title:    "Arduino: Omvandling av en datum till en sträng"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/converting-a-date-into-a-string.md"
+title:                "Arduino: Omvandla ett datum till en sträng"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att kunna konvertera ett datum till en sträng är en viktig del av många Arduino-projekt. Det kan hjälpa dig att visa datumet på en LCD-skärm, spara datumet i en datalog, eller använda det som del av ett meddelande i en kommunikationsmodul.
+När du arbetar med Arduino, kommer du troligtvis att stöta på behovet av att konvertera en datum till en sträng. Det kan vara för att skriva till en LCD-skärm, logga data eller helt enkelt för att spara information till en fil. Att veta hur man korrekt konverterar ett datum till en sträng är därför en viktig del av din Arduino programmeringskunskap.
 
 ## Hur man gör
-
-För att konvertera ett datum till en sträng i Arduino måste du använda funktionen `time_t to_tm(time_t t, struct tm *timezone)` från Time.h-biblioteket. Du behöver också ange en `time_t`-variabel som innehåller datumet som du vill konvertera, och en struktur för att lagra det konverterade datumet.
-
-Här är ett exempel på hur du kan använda denna funktion för att konvertera dagens datum till en sträng och skriva ut det på serieporten:
+För att konvertera ett datum till en sträng i Arduino, kan du använda funktionen `String()` tillsammans med `millis()`-funktionen, som genererar tiden sedan Arduino boardet startades. Här är ett exempel på hur du kan göra det:
 
 ```Arduino
-#include <Time.h> // inkludera Time.h-biblioteket
-
-time_t now = time(NULL); // skapa en time_t-variabel med dagens datum och tid
-struct tm *local_time = gmtime(&now); // skapa en struktur för att lagra konverterade datumet
-char date_string[30]; // skapa en array för att lagra strängen
-
-to_tm(now, local_time); // konvertera datumet till en strukturerad tid
-sprintf(date_string, "%d/%d/%d", local_time->tm_mday, local_time->tm_mon + 1, local_time->tm_year + 1900); // skapa en sträng med datumet och lagra den i en array
-
-Serial.println(date_string); // skriv ut strängen till serieporten
+unsigned long currentTime = millis(); // Hämtar tiden sedan Arduino boardet startades
+String date = String(currentTime); // Konverterar tiden till en sträng
+Serial.println(date); // Skriver ut strängen till seriell monitor
 ```
 
-I det här exemplet används `sprintf()`-funktionen för att formatera datumet i en sträng. I detta fall använder vi `%d` för att ange olika delar av datumet, såsom dag, månad och år. Men du kan även använda andra formatbeteckningar för att anpassa utseendet på din sträng.
+Kör detta program och du kommer att se en lång numerisk sträng på seriell monitorn. Men om du vill ha en specifik format för ditt datum, behöver du först konvertera din tid till ett läsbart datum och sedan använda `String()`-funktionen. Här är ett exempel på hur du kan göra det med hjälp av `day()/month()/year()` funktionerna:
 
-## Djupdykning
+```Arduino
+unsigned long currentTime = millis(); // Hämtar tiden sedan Arduino boardet startades
+unsigned long currentDate = currentTime/86400; // Konverterar tiden till antal dagar
+int day = day(currentDate); // Hämtar aktuell dag
+int month = month(currentDate); // Hämtar aktuell månad
+int year = year(currentDate); // Hämtar aktuellt år
+String date = String(day) + "/" + String(month) + "/" + String(year); // Skapar en sträng med formatet DD/MM/YYYY
+Serial.println(date); // Skriver ut strängen till seriell monitor
+```
 
-För att förstå hur man konverterar ett datum till en sträng behöver du först förstå hur datum lagras i Arduino. Date and Time Library (Time.h) använder Unix-tid som standard för att spara datum och tid. Unix-tidpunkten representerar antalet sekunder som har gått sedan 1 januari 1970.
+Kör detta program och du kommer nu att se ett läsbart datum på seriell monitorn.
 
-När vi använder funktionen `to_tm()` så konverteras Unix-tiden till en struktur med olika datum- och tidattribut, såsom år, månad, dag osv. Genom att använda formatbeteckningar som `%d` kan vi sedan skapa en sträng som representerar det konverterade datumet.
+## Djupdyka
+För att fördjupa dina kunskaper om att konvertera ett datum till en sträng i Arduino, kan det vara bra att undersöka vilka andra funktioner som kan vara användbara för att få det datumformat du vill ha. Till exempel kan du använda `hour()/minute()/second()` funktionerna för att lägga till tiden i ditt datum. Du kan också experimentera med olika sätt att formatera din sträng, som att lägga till olika separeringstecken eller ändra ordningen på dag, månad och år i formatet.
 
-## Se även
+## Se också
+Här är några resurser som kan hjälpa dig att fördjupa dina kunskaper om konvertering av datum till strängar i Arduino:
 
-- [Arduino Time Library dokumentation](https://www.arduino.cc/reference/en/libraries/time/)
-- [Unix Time på Wikipedia (engelska)](https://en.wikipedia.org/wiki/Unix_time)
-- [sprintf() funktionen på Arduino referenssidan](https://www.arduino.cc/reference/en/language/functions/communication/serial/sprintf/)
+- [Officiell Arduino referens för millis() funktionen](https://www.arduino.cc/reference/en/language/functions/time/millis/)
+- [Officiell Arduino referens för String() funktionen](https://www.arduino.cc/reference/en/language/variables/data-types/stringconstructor/)
+- [Tutorial: Date and time functions in Arduino](https://tronixstuff.com/2014/12/01/tutorial-date-and-time-functions-in-arduino/)
+- [Arduino forumtråd om konvertering av datum till sträng](https://forum.arduino.cc/index.php?topic=221763.0)

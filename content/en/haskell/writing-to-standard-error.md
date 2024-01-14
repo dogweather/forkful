@@ -1,58 +1,79 @@
 ---
-title:    "Haskell recipe: Writing to standard error"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/writing-to-standard-error.md"
+title:                "Haskell recipe: Writing to standard error"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Writing to standard error, also known as stderr, is an important skill for any Haskell programmer to have. It allows for better error handling and debugging in your code. In this blog post, we will explore the reasons behind writing to standard error and how to implement it in your Haskell programs.
+When programming in Haskell, one may come across the need to write to standard error instead of standard output. This could be useful for debugging purposes or for displaying error messages to the user. In this blog post, we will explore how to write to standard error using Haskell.
 
 ## How To
 
-To write to standard error in Haskell, we first need to import the ```System.IO``` library. This library provides functions for working with input and output handles. We will also need to use the ```hPutStrLn``` function, which takes two arguments: the output handle and the string we want to write. Let's look at an example:
+To write to standard error in Haskell, we can use the `hPutStr` or `hPutStrLn` functions from the `System.IO` module. These functions take in a handle and a string as arguments.
 
-```
-import System.IO
+A handle represents a stream of data, and in this case, it represents standard error. We can use the `stderr` function to get the handle for standard error.
 
-main :: IO ()
-main = do
-  hPutStrLn stderr "This is an error message."
-```
+Let's take a look at an example:
 
-When we run this program, we will see the following output in our terminal:
-
-```
-This is an error message.
-```
-
-Notice that the output is displayed in red, which is the default color for stderr. This makes it easy to distinguish between regular output and error output.
-
-We can also use the ```stderr``` function from the ```System.IO``` library to directly access the stderr handle and write to it. Let's see an example of this:
-
-```
-import System.IO
+```Haskell
+import System.IO (hPutStrLn, stderr)
 
 main :: IO ()
 main = do
-  hPutStrLn stderr "This is an error message."
-  stderr "This is another error message."
+    hPutStrLn stderr "This will be written to standard error."
 ```
 
-In this example, we are using the ```stderr``` function to directly write to the stderr handle. This can be useful when we want to write multiple error messages in a row.
+Running this code will print the given string to the standard error stream. The output will look something like this:
+
+```
+This will be written to standard error.
+```
+
+We can also use the `hPutStr` function to write to standard error without adding a new line at the end of the string. Here's an example:
+
+```Haskell
+import System.IO (hPutStr, stderr)
+
+main :: IO ()
+main = do
+    hPutStr stderr "This will be written"
+    hPutStr stderr " to standard error."
+```
+
+The output of this code will be:
+
+```
+This will be written to standard error.
+```
 
 ## Deep Dive
 
-Writing to standard error is helpful for a few reasons. First, it allows us to clearly separate our regular output from our error messages. This can make it easier to read and understand the output of our programs.
+Under the hood, the `hPutStr` and `hPutStrLn` functions make use of buffers to improve performance. A buffer is a temporary storage area for data before it is written to a stream.
 
-Additionally, writing to standard error can help with debugging. When we include specific error messages, we can pinpoint exactly where an error occurred in our code. This can save us time and effort when trying to fix bugs.
+When we use the `hPutStr` or `hPutStrLn` functions, the string is first stored in a buffer and then written to standard error. This allows the program to write multiple strings to standard error without constantly accessing the actual stream.
 
-It's also worth noting that both ```stdout``` (standard output) and ```stderr``` are streams, meaning they both follow the same rules for input/output. However, stderr is specifically designed for error messages, so it's best to use it for that purpose rather than using stdout for both regular and error output.
+If we want to manually flush the buffer and force the program to write the contents to the stream, we can use the `hFlush` function. Here's an example:
+
+```Haskell
+import System.IO (hPutStrLn, hFlush, stderr)
+
+main :: IO ()
+main = do
+    hPutStrLn stderr "This will be written to standard error."
+    hFlush stderr
+    hPutStrLn stderr "This string will also be written to standard error."
+```
+
+The `hFlush` function clears the buffer for standard error, so when we use `hPutStrLn` again, the string will be written to standard error immediately instead of waiting for the buffer to fill up or for the program to end.
 
 ## See Also
 
-- [Haskell I/O Functions](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html)
-- [Writing to Standard Output - Or Trying To](https://www.fpcomplete.com/blog/2016/11/writing-to-standard-output/)
-- [Understanding IO](https://en.wikibooks.org/wiki/Haskell/Understanding_IO)
+Here are some other helpful resources for writing to standard error using Haskell:
+
+- [Haskell documentation for System.IO module](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [A tutorial on I/O in Haskell](https://www.haskelltutorial.com/io.html)
+- [A video tutorial on handling I/O in Haskell](https://www.youtube.com/watch?v=Vgu82wiiZ90)

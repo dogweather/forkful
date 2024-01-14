@@ -1,57 +1,74 @@
 ---
-title:    "C++: 文字列を小文字に変換する"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/converting-a-string-to-lower-case.md"
+title:                "C++: 「文字列を小文字に変換する」"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ文字列を小文字に変換する必要があるのか
+## なぜ
 
-文字列を小文字に変換することは、プログラムの中でさまざまな理由で必要になることがあります。例えば、ユーザーからの入力を受け取る際に大文字と小文字の区別をしないようにするためや、文字列の比較を行う際に正確な結果を得るために必要です。
+このプログラミングブログでは、C++での文字列を小文字に変換する方法について説明します。文字列を小文字に変換する理由は、通常は比較や処理のために使用されます。例えば、ユーザーの入力を正しく処理するために、文字列の大文字と小文字を区別せずに処理する必要がある場合があります。
 
 ## 方法
 
-まずは、文字列を小文字に変換する方法を見ていきましょう。C++では、`std::string`クラスの`tolower()`関数を使用することで簡単に文字列を小文字に変換することができます。
+文字列を小文字に変換する方法には、いくつかの異なるアプローチがあります。ここでは、基本的な方法をいくつかの例と共に紹介します。
 
 ```C++
-#include <iostream> 
-#include <string> 
+#include <iostream>
+#include <string>
+#include <algorithm> // transform関数を使用するために必要
 
-int main() { 
-    std::string str = "HELLO WORLD"; 
-    std::cout << "Before: " << str << std::endl; 
+using namespace std;
 
-    // 文字列を小文字に変換 
-    for (int i = 0; i < str.length(); i++) { 
-        str[i] = tolower(str[i]); 
-    } 
+int main(){
+    string str = "Hello World!";
+    transform(str.begin(), str.end(), str.begin(), ::tolower); // 文字列を小文字に変換
 
-    std::cout << "After: " << str << std::endl; 
-
-    return 0; 
+    cout << str << endl; // 出力結果: hello world!
+    return 0;
 }
 ```
 
-上記のコードを実行すると、以下のような出力が得られます。
+もうひとつの方法は、ASCIIコードを使用する方法です。英字の大文字と小文字の間には、10進数の差が32あることを利用して、文字列を小文字に変換することができます。以下の例では、ループを使用して文字列の各文字を小文字に変換しています。
 
+```C++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    string str = "Hello World!";
+    
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] >= 65 && str[i] <= 90) {
+            str[i] += 32; // ASCIIコードの差を利用して小文字に変換
+        }
+    }
+
+    cout << str << endl; // 出力結果: hello world!
+    return 0;
+}
 ```
-Before: HELLO WORLD 
-After: hello world
-```
 
-## 深堀り
+## 深く潜る
 
-文字列を小文字に変換する際、いくつかの注意点があります。まず、C++では日本語などのマルチバイト文字を扱う場合に、`tolower()`関数を使用することで意図しない結果を得ることがあります。そのため、マルチバイト文字を扱う場合には`std::wstring`クラスの`tolower()`関数を使用することが、より安全な方法です。
+文字列を小文字に変換する方法について、さらに詳しく見ていきましょう。
 
-また、文字列を小文字に変換する際には、元の文字列よりも大きいサイズの文字列を用意する必要があります。例えば、元の文字列が10文字であれば、小文字に変換する際には11文字以上のサイズの文字列を用意する必要があります。これは、小文字のアルファベットが元の文字列よりも大きい場合に、文字列のサイズが変わるためです。そのため、十分なサイズの文字列を用意することが重要です。
+文字の大文字と小文字の間には、10進数の差が32あると説明しましたが、これはASCIIコードの範囲内の英字に限らず、ほとんどの場合に適用することができます。しかし、例外もあります。例えば、Unicode文字ではこの方法ではうまくいかない場合があります。
+
+また、今回紹介した2つの方法は、全ての言語で機能するわけではありません。特定の文字セットやエンコーディングによっては、上記の方法がうまく機能しない場合もあります。
+
+より確実な方法としては、C++の標準ライブラリである`locale`を使用する方法があります。これは地域や言語に応じた文字列操作を行うためのもので、安全な方法と言えるでしょう。
+
+## このようにして文字列を小文字に変換する
+
+文字列を小文字に変換する方法は多数ありますが、基本的にはASCIIコードを使用するか、`locale`を使用する方法が推奨されます。しかし、プロジェクトや環境によっては、さまざまな方法が存在する場合もあるので、まずはプロジェクトの要件や標準を確認することが重要です。
 
 ## 参考リンク
 
-- [C++ reference: std::tolower](https://en.cppreference.com/w/cpp/string/byte/tolower)
-- [C++リファレンス: std::wstring](https://cpprefjp.github.io/reference/string/basic_string/wstring.html)
-- [C++ stringのサイズを変更する方法](https://qiita.com/FANTOME_R/items/8fa32202a70ab344e635)
-
-# 参考文献
-
-[C++の文字列を小文字に変換する方法 | TECHSCORE BLOG](https://www.techscore.com/blog/2014/08/19/cpp-string-tolower/)
+[ASCIIコード表](https://ja.wikipedia.org/wiki/ASCII)  
+[C++ ドキュメント: transform関数](https://cpprefjp.github.io/reference/algorithm/transform.html)  
+[C++ ドキュメント: locale](https://cpprefjp

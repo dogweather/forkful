@@ -1,44 +1,47 @@
 ---
-title:    "Ruby: Utilisation des expressions régulières"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/using-regular-expressions.md"
+title:                "Ruby: Utiliser les expressions régulières"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Les expressions régulières sont un outil puissant pour manipuler et rechercher des chaînes de caractères dans un programme Ruby. Elles permettent d'effectuer des opérations complexes en utilisant des motifs ou des règles. En utilisant des expressions régulières, vous pouvez décomposer une chaîne de caractères et extraire des informations spécifiques, ou même vérifier la validité d'une chaîne selon un certain format. En bref, les expressions régulières sont un moyen efficace de traiter et de manipuler les données dans votre code Ruby.
+Utiliser des expressions régulières peut considérablement simplifier votre code lorsque vous travaillez avec des chaînes de caractères. Elles permettent de rechercher et de manipuler des motifs de texte de manière efficace et rapide.
 
 ## Comment faire
 
-Pour utiliser des expressions régulières dans votre code Ruby, vous devez d'abord les déclarer en utilisant la syntaxe `/pattern/`. Les expressions régulières consistent en des caractères spéciaux qui représentent des motifs et des règles à suivre. Par exemple, le caractère `.` représente n'importe quel caractère, tandis que `*` signifie « zéro ou plusieurs occurrences ». Voici un exemple de recherche d'une adresse e-mail valide en utilisant une expression régulière :
+Les expressions régulières en Ruby sont définies entre des barres obliques (slashes) et peuvent être utilisées avec des chaînes de caractères ou une variable contenant une chaîne de caractères.
 
 ```Ruby
-email = "example@test.com"
-if email =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  puts "Adresse e-mail valide"
-else
-  puts "Adresse e-mail invalide"
-end
-# Output: Adresse e-mail valide
+# Recherche dans une chaîne de caractères
+"Bonjour, je m'appelle Jean." =~ /Jean/  # retourne 19 (index de la première occurrence de "Jean")
+
+# Utilisation de la méthode « scan » pour récupérer tous les mots commençant par « from »
+"from date: 2021-01-01 to date: 2021-12-31" =~ /from[^ ]+/  # retourne ["from date:", "from date:"]
 ```
 
-Vous pouvez également utiliser des expressions régulières pour remplacer ou modifier certaines parties d'une chaîne de caractères. Par exemple, si vous souhaitez remplacer tous les espaces par des tirets dans un texte, vous pouvez utiliser la méthode `sub` avec une expression régulière :
+Il existe une variété de symboles spéciaux qui peuvent être utilisés pour créer des motifs plus complexes dans les expressions régulières. Par exemple, le symbole « ^ » peut être utilisé pour trouver des mots en début de ligne et le symbole « ? » pour rechercher des caractères optionnels. Vous pouvez trouver une liste complète de ces symboles et leur signification dans la documentation de Ruby.
+
+## Plongée en profondeur
+
+Les expressions régulières en Ruby peuvent être encore plus puissantes grâce à l'utilisation de blocs de code et de méthodes spéciales comme « sub » et « gsub ». Ces dernières permettent de remplacer une partie ou toutes les occurrences d'un motif dans une chaîne de caractères par un autre texte ou du code. Il est également possible de capturer des parties d'un motif pour les utiliser dans le remplacement.
+
+Par exemple, vous pouvez utiliser cette fonctionnalité pour remplacer automatiquement des noms dans une phrase :
 
 ```Ruby
-texte = "Ceci est un exemple de texte avec des espaces"
-texte = texte.sub(/\s+/, '-')
-puts texte
-# Output: Ceci-est-un-exemple-de-texte-avec-des-espaces
+# Remplacer automatiquement une partie d'une phrase
+"Il est parti en vacances avec son ami Pierre." =~ /(ami) ([A-Z][a-z]+)/
+puts "Il est parti en vacances avec son #{$1} #{ $2.gsub(/[A-Z]/, '')}."  # retourne "Il est parti en vacances avec son ami pierre."
 ```
 
-## Approfondissement
-
-Les expressions régulières peuvent sembler complexes au premier abord, mais elles peuvent être très utiles une fois que vous les maîtrisez. En plus des caractères spéciaux mentionnés précédemment, il existe également des groupes de captures, des opérateurs de quantité, des groupes de négation et bien d'autres fonctionnalités. En en apprenant davantage sur les expressions régulières, vous pourrez résoudre des problèmes plus complexes et augmenter l'efficacité de votre code.
+De plus, il existe des bibliothèques tierces, telles que « rubular » et « regexr », qui permettent de tester et de visualiser facilement vos expressions régulières en temps réel.
 
 ## Voir aussi
 
-- [Documentation sur les expressions régulières en Ruby](https://ruby-doc.org/core-2.7.0/Regexp.html)
-- [Ruby regular expressions: cheat sheet](https://www.rubyguides.com/2015/06/ruby-regex/#:~:text=Ruby%20Regular%20Expressions%20Tutorial%20%E2%80%94%20A%2023%2DPage%20Cheat%20Sheet&text=Cheat%20Sheet%E2%80%9D%20of%20just%2023%20pages,-%E2%80%94Scroll%20down) (en anglais)
-- [RegEx101 : pour tester et expérimenter avec des expressions régulières](https://regex101.com/) (en anglais)
+- [Documentation de Ruby sur les expressions régulières](https://ruby-doc.org/core-3.0.1/Regexp.html)
+- [Liste de symboles pour les expressions régulières en Ruby](https://medium.com/@mekhifiras/tips-for-regex-in-ruby-9715be3c805c)
+- [Bibliothèque rubular pour tester des expressions régulières en ligne](https://rubular.com/)
+- [Bibliothèque regexr pour tester et visualiser des expressions régulières en ligne](https://regexr.com/)

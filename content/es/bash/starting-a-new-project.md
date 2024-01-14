@@ -1,39 +1,38 @@
 ---
-title:    "Bash: Comenzando un nuevo proyecto"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/starting-a-new-project.md"
+title:                "Bash: Comenzando un nuevo proyecto"
+programming_language: "Bash"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué iniciar un nuevo proyecto
 
-Empezar un nuevo proyecto de programación puede ser emocionante y gratificante. Ya sea que quieras aprender un nuevo lenguaje de programación o crear una herramienta útil para tu trabajo, siempre es emocionante comenzar una nueva aventura de codificación. 
+Comenzar un nuevo proyecto de programación puede ser una tarea abrumadora, pero también puede ser muy emocionante y gratificante. Al empezar un proyecto, tienes la oportunidad de aprender nuevas habilidades y crear algo nuevo que puede ser útil para ti y para los demás.
 
 ## Cómo hacerlo
 
-Para empezar, necesitarás tener instalado y configurado Bash en tu ordenador. Si no lo tienes, puedes seguir los pasos de instalación en la documentación oficial de Bash. Una vez que tengas todo configurado, ¡es hora de empezar a codificar!
-
-A continuación, se muestra un ejemplo de un sencillo programa de Bash que imprime "¡Hola Mundo!" en la consola:
+Para iniciar un proyecto de Bash, primero debes crear un nuevo archivo con la extensión ".sh". Luego, escribe tu código dentro del archivo utilizando la sintaxis de Bash. Por ejemplo, para imprimir un mensaje en la pantalla, puedes usar el comando "echo" seguido del texto que deseas mostrar. Aquí hay un ejemplo:
 
 ```Bash
-#!/bin/bash
-
-echo "¡Hola Mundo!"
+echo "¡Hola, mundo!"
 ```
 
-Este código utiliza el comando "echo" para imprimir el texto "¡Hola Mundo!" en la consola. Puedes probarlo copiando y pegando en tu terminal de Bash y presionando enter. ¡Deberías ver el mensaje impreso en la pantalla!
-
-Ahora, si quieres crear un proyecto más complejo, es importante entender cómo se estructura un proyecto de Bash. Una buena práctica es tener una carpeta principal para el proyecto y dentro de ella, una carpeta para almacenar los scripts de Bash y otra para los recursos (como imágenes o archivos de texto). También se recomienda utilizar comentarios en tu código para hacerlo más legible y fácil de entender.
+Cuando ejecutas este código, verás el mensaje "¡Hola, mundo!" impreso en tu terminal. Puedes utilizar más comandos de Bash para realizar diferentes tareas, como escribir archivos o ejecutar otros programas.
 
 ## Profundizando
 
-Una vez que tengas dominados los conceptos básicos de Bash y ya tengas tu primer proyecto en marcha, puedes profundizar aún más en la programación de Bash. Algunas áreas en las que puedes adentrarte son el uso de variables, condicionales, bucles y funciones. También puedes aprender cómo trabajar con archivos y directorios, así como cómo interactuar con otros programas y aplicaciones desde Bash.
+Al iniciar un nuevo proyecto de Bash, es importante tener en cuenta algunas cosas. Primero, asegúrate de tener una idea clara de lo que quieres lograr con tu proyecto. También es importante entender cómo funciona la sintaxis de Bash y cómo puedes utilizarla para alcanzar tus objetivos.
 
-Sea cual sea tu objetivo final, siempre es importante empezar con una buena base y seguir aprendiendo y practicando. Es normal cometer errores y no entender algo al principio, pero ¡no te desanimes! La programación en Bash puede ser muy gratificante una vez que empieces a dominarla.
+Además, puedes explorar diferentes comandos y funciones de Bash para mejorar tu proyecto. Puedes utilizar estructuras de control como "if" o "for" para crear programas más complejos, o puedes aprender cómo utilizar variables para almacenar datos importantes.
+
+Por último, no dudes en buscar en línea y en recursos de programación para obtener más información y ayuda en tu proyecto. Es probable que haya muchas personas que ya hayan experimentado con ideas similares y puedan brindarte consejos valiosos.
 
 ## Ver también
 
-- Documentación de Bash: https://www.gnu.org/software/bash/
-- Tutorial de Bash en español: https://www.lawebdelprogramador.com/tutorials/bash/
-- Scripts Bash para principiantes: https://freecontent.manning.com/learning-bash-scripts/
+- [Introducción a Bash para principiantes](https://www.hostinger.es/tutoriales/linux-comandos-basicos/)
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [10 ejemplos útiles de scripting de Bash](https://www.linux.com/topic/desktop/10-useful-examples-linux-bash-scripting/)
+
+¡Buena suerte en tu nuevo proyecto de Bash! ¡Explora y diviértete creando algo nuevo e interesante!

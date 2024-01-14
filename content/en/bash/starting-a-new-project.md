@@ -1,73 +1,43 @@
 ---
-title:    "Bash recipe: Starting a new project"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/starting-a-new-project.md"
+title:                "Bash recipe: Starting a new project"
+programming_language: "Bash"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Starting a new project can seem like a daunting task, but the payoff is worth it. By creating something from scratch, you have the opportunity to improve your coding skills, learn new techniques, and potentially even contribute to the open-source community.
+Starting a new project can be both exciting and daunting. Whether you're a seasoned developer or just starting out, creating something from scratch allows you to unleash your creativity and bring your ideas to life. It's also a great way to learn new skills and expand your knowledge. So if you're feeling inspired, here's a guide on how to start a new project using Bash programming.
 
 ## How To
+To begin, open your terminal and create a new directory for your project. You can do this by using the `mkdir` command followed by the name of your project. For example, if you want to create a project called "MyBashProject", you would type `mkdir MyBashProject` in your terminal.
 
-To begin a new project in bash, follow these steps:
+Next, navigate into your new project directory using the `cd` command. Once inside, create a new file for your Bash script using the `touch` command. Let's name this file "my_script.sh". You can do this by typing `touch my_script.sh` in your terminal.
 
-1. Create a new directory for your project: 
-```Bash 
-mkdir my_project
+Now, let's open the file in a text editor using the `nano` command. Once opened, you can start writing your Bash script. For our example, let's create a simple "Hello World" script.
+
 ```
-
-2. Change into the newly created directory:
-```Bash
-cd my_project
-```
-
-3. Initialize a git repository:
-```Bash
-git init
-```
-
-4. Create a new bash file:
-```Bash
-touch my_script.sh
-```
-
-5. Open the file in a text editor such as Vim or Nano:
-```Bash
-vim my_script.sh  # or nano my_script.sh
-```
-
-6. Start coding! Use basic bash syntax to write your script, and don't forget to add comments to explain your code.
-
-Here's an example of a simple bash script that counts the number of files in a directory and prints the result:
-```Bash
+Bash
 #!/bin/bash
 
-# This script counts the number of files in the current directory
-
-count=$(ls | wc -l)
-echo "There are $count files in this directory."
+echo "Hello World!"
 ```
 
+To run this script, save the file and navigate back to your terminal. Make sure you are still in the project directory and use the `sh` command followed by the name of your script. In this case, it would be `sh my_script.sh`. You should see the output "Hello World!" in your terminal.
+
 ## Deep Dive
+Starting a new project in Bash gives you the opportunity to use a powerful and versatile scripting language. Bash, short for "Bourne Again SHell", is a command-line interpreter and a default shell for most Linux distributions. It offers a wide range of features such as variables, loops, conditional statements, functions and many more.
 
-When starting a new project, it's important to have a clear understanding of your goals and requirements. This will help guide your coding decisions and make the project more manageable.
+When creating a new project in Bash, it's important to have a clear understanding of what you want to achieve. Start by defining the problem you want to solve and breaking it down into smaller tasks. This will help you determine which Bash features you will need to use.
 
-Some tips to consider when starting a bash project:
+Another important aspect is proper error handling. Bash provides a set of tools that allows you to handle errors and exceptions gracefully. This will not only make your script more robust but also help with debugging and troubleshooting.
 
-- Plan out your script's functionality before writing any code.
-- Use variables to store data and make your code more dynamic.
-- Utilize control structures like loops and conditional statements for more complex scripts.
-- Research and utilize existing bash commands and functions to make your script more efficient.
-
-Remember to also regularly test and debug your code as you work on your project.
+Furthermore, there are many resources available online to help with learning Bash, including tutorials, forums, and documentation. Don't be afraid to reach out and ask for help when needed.
 
 ## See Also
+- [Bash Guide for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Bash Scripting Cheat Sheet](https://devhints.io/bash)
+- [Bash Official Documentation](https://tiswww.case.edu/php/chet/bash/bashtop.html)
 
-For more resources on Bash scripting, check out these helpful links:
-
-- [Bash scripting cheat sheet](https://devhints.io/bash)
-- [Bash Beginner's Guide](https://www.tldp.org/LDP/abs/html/)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+Starting a new project in Bash may seem daunting, but with practice and the right resources, you can become a proficient Bash programmer. Happy coding!

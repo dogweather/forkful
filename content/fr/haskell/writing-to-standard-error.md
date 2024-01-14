@@ -1,50 +1,52 @@
 ---
-title:    "Haskell: Écrire vers l'erreur standard"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-to-standard-error.md"
+title:                "Haskell: Écrire vers l'erreur standard"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi écrire vers l'erreur standard en Haskell?
 
-Ecrire dans la sortie d'erreur standard (standard error) est un moyen utile de signaler des erreurs et des avertissements lors de l'exécution d'un programme Haskell. Cela permet aux développeurs de comprendre rapidement ce qui s'est mal passé et d'apporter des corrections rapides.
+Écrire vers l'erreur standard en Haskell peut être utile pour afficher des messages d'erreur ou de débogage dans la console, plutôt que dans la sortie standard où ils peuvent aller inaperçus.
 
-## Comment Faire
+## Comment procéder?
 
-Ci-dessous se trouve un exemple de code Haskell montrant comment écrire dans la sortie d'erreur standard :
+Voici un exemple de code Haskell montrant comment écrire vers l'erreur standard en utilisant la bibliothèque `System.IO`:
 
 ```Haskell
--- Importer le module System.IO pour utiliser la fonction hPutStr
 import System.IO
 
--- La fonction main qui contiendra notre code
 main = do
-    -- Ecrire une chaîne de caractères dans la sortie d'erreur standard
-    hPutStr stderr "Une erreur s'est produite !"
-
-    -- Utiliser la fonction error pour générer une erreur
-    error "Une autre erreur est survenue."
+   hPutStrLn stderr "Ceci est un message d'erreur."
 ```
 
-En exécutant ce code, vous obtiendrez une sortie qui ressemble à ceci :
+Lorsque nous exécutons ce code, le message d'erreur sera affiché dans la console au lieu d'être redirigé vers la sortie standard. Voici l'exemple de sortie que nous obtiendrons:
 
 ```
-Une erreur s'est produite !*** Exception: Une autre erreur est survenue.
+Ceci est un message d'erreur.
 ```
 
-Comme vous pouvez le voir, la chaîne de caractères que nous avons écrite via la fonction hPutStr a été imprimée avant que l'erreur ne soit générée. Cela peut être très utile pour identifier la source d'une erreur.
+## Plongeons plus en profondeur
 
-## Plongée en profondeur
+Il est également possible de personnaliser le message d'erreur en utilisant des formats de chaîne et en passant des variables en tant qu'arguments de la fonction `hPutStrLn`. Voici un exemple de code pour illustrer cela:
 
-Il est important de noter que la sortie d'erreur standard n'est pas la même chose que la sortie standard (standard output). Alors que la sortie standard est généralement utilisée pour l'affichage de résultats ou informations utiles, la sortie d'erreur standard est spécifiquement destinée à signaler des erreurs et des avertissements.
+```Haskell
+import System.IO
 
-En utilisant la fonction hPutStr pour écrire dans la sortie d'erreur standard, vous pouvez également spécifier un fichier de sortie en plus de la sortie par défaut sur la console. Cela peut être utile pour enregistrer les erreurs et les avertissements dans un fichier pour les consulter ultérieurement.
+main = do
+   let num = 42
+   hPutStrLn stderr $ "Le nombre " ++ show num ++ " est un élément essentiel pour la réponse ultime de l'univers."
+```
 
-## Voir aussi
+Dans cet exemple, nous utilisons la fonction `show` pour convertir la variable `num` de type `Int` en une chaîne de caractères afin de concaténer correctement notre message. Voici à quoi ressemblera la sortie:
 
-Pour en savoir plus sur la gestion des erreurs en Haskell, consultez ces liens utiles :
+```
+Le nombre 42 est un élément essentiel pour la réponse ultime de l'univers.
+```
 
-- Documentation officielle de Haskell sur la gestion des erreurs : https://www.haskell.org/documentation/99.0.1/libraries/base/Control.Exception.html
-- Tutoriel sur la manipulation des erreurs en Haskell : https://wiki.haskell.org/Error_handling
-- Exemples pratiques de gestion des erreurs en Haskell : https://www.codewars.com/kata/haskell-error-handling-practices
+# Voir aussi
+
+- [Documentation sur la bibliothèque System.IO en Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- [Tutoriel Haskell pour débutants](https://www.tutorialspoint.com/haskell/index.htm)

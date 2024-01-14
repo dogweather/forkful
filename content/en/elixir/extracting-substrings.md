@@ -1,89 +1,55 @@
 ---
-title:    "Elixir recipe: Extracting substrings"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/extracting-substrings.md"
+title:                "Elixir recipe: Extracting substrings"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Substring extraction is a common task in programming, no matter what language you are using. It involves extracting a smaller portion of a string, also known as a substring, from a larger string. In this blog post, we will explore how to do this using Elixir.
+Substrings are a powerful tool in any programming language, including Elixir. By extracting substrings, you can manipulate and analyze smaller portions of a larger string, making it easier to work with and extract specific information. This can be especially useful when working with text data or user input.
 
 ## How To
 
-To extract substrings in Elixir, we can use the `String.slice/3` function. This function takes three arguments: the string we want to extract from, the starting index of the substring, and the ending index of the substring. Let's look at an example:
+Extracting substrings in Elixir is a fairly straightforward process. In order to do so, we use the `String.slice/3` function. Let's take a look at an example:
 
-```
-Elixir code:
-string = "Hello World"
-substring = String.slice(string, 0, 5)
-
-Output:
-"Hello"
+```Elixir
+string = "Hello, World!"
+substring = String.slice(string, 0..4)
 ```
 
-In the above code, we used `String.slice/3` to extract a substring containing the first five characters from the string "Hello World." We can also use negative numbers for the index, which will start counting from the end of the string. For example:
+In this example, we are extracting the first five characters of the string "Hello, World!". The `String.slice/3` function takes in three arguments: the string to be manipulated, the starting index of the substring, and the ending index of the substring. In this case, we start at index 0 and end at index 4, giving us the substring "Hello".
 
-```
-Elixir code:
-string = "Hello World"
-substring = String.slice(string, -5, -1)
+We can also use negative numbers to specify the index, in which case it will count backwards from the end of the string. Let's see an example of extracting the last three characters of a string:
 
-Output:
-"Worl"
+```Elixir
+string = "Hello, World!"
+substring = String.slice(string, -3..-1)
 ```
 
-In this code, we extracted a substring containing the last five characters from the string "Hello World."
-
-We can also use the shorthand notation `string[start..end]` to extract substrings. Using the same examples as above, we would write:
-
-```
-Elixir code:
-string = "Hello World"
-substring1 = string[0..4]
-substring2 = string[-5..-1]
-
-Output:
-substring1 = "Hello"
-substring2 = "Worl"
-```
+This time, the substring will be "ld!".
 
 ## Deep Dive
 
-When using `String.slice/3`, keep in mind that the ending index is not inclusive, meaning it will not be included in the extracted substring. So if we want to extract the first five characters of a string, we would use `0..4` as the range, not `0..5`.
+The `String.slice/3` function also has an optional fourth argument, the step size, which allows us to extract every nth character from a string. Let's see an example:
 
-We can also use `String.slice/2` if we want to extract a substring from a specific index until the end of the string. This function takes two arguments: the string and the starting index. For example:
-
+```Elixir
+string = "123456789"
+substring = String.slice(string, 0..8, 2)
 ```
-Elixir code:
-string = "Hello World"
-substring = String.slice(string, 6)
 
-Output:
-"World"
-```
-In this code, we extracted a substring starting from index 6 until the end of the string.
+In this case, we are extracting every second character from the string "123456789", resulting in the substring "13579".
 
-We can also use `String.left/2` and `String.right/2` to extract substrings from the beginning and end of a string, respectively. These functions take two arguments: the string and the number of characters to extract. For example:
-
-```
-Elixir code:
-string = "Hello World"
-left_substring = String.left(string, 5)
-right_substring = String.right(string, 5)
-
-Output:
-left_substring = "Hello"
-right_substring ="World"
-```
+It is also worth mentioning that `String.slice/3` is not limited to just extracting characters. It can also be used to extract words or phrases by using the index of the first and last character of the word or phrase.
 
 ## See Also
 
-To learn more about string manipulation in Elixir, check out the following resources:
+For more information on strings and manipulating text data in Elixir, check out the following resources:
 
-- [Elixir String module documentation](https://hexdocs.pm/elixir/String.html)
-- [Elixir String.slice/3 function documentation](https://hexdocs.pm/elixir/String.html#slice/3)
-- [Elixir String module tutorial](https://www.sojourner.io/elegant-string-manipulation-elixir/)
+- [Elixir Strings Documentation](https://hexdocs.pm/elixir/String.html)
+- [Elixir String Module Cheat Sheet](https://devhints.io/elixir-string)
+- [Elixir School - Strings](https://elixirschool.com/en/lessons/basics/strings/)
 
 Happy coding!

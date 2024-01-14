@@ -1,42 +1,65 @@
 ---
-title:    "Ruby: Läsning av kommandoradsargument"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/reading-command-line-arguments.md"
+title:                "Ruby: Läsa kommandoradsargument"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att läsa kommandoradsargument är en viktig del av programmering i Ruby eftersom det ger användaren möjlighet att interagera med programmet genom att skicka in olika värden vid körning.
+Det finns många anledningar till varför man skulle vilja läsa inkommande kommandoradsargument i ett Ruby-program. Det kan hjälpa dig att skriva mer interaktiva och anpassningsbara program, samla data från användare eller automatisera processer. Det är också en användbar färdighet för att ha i din programmeringsverktygslåda.
 
-## Hur man gör det
+# Hur man gör
 
-För att läsa kommandoradsargument i Ruby kan man använda ARGV-arrayen. Den här arrayen innehåller alla argument som skickas in via kommandoraden, där det första argumentet ligger på index 0 och de följande argumenten på efterföljande index.
-
-För att kunna använda ARGV-arrayen behöver vi först skapa en variabel som tar emot argumenten, till exempel "args". Sedan kan vi använda metoden "each" för att loopa igenom alla argument och utföra en handling på dem.
-
-I kodexemplet nedan visar jag hur man kan skriva ett program som tar in två tal som kommandoradsargument och sedan adderar dem och skriver ut resultatet.
+Att läsa kommandoradsargument i Ruby är ganska enkelt. Du behöver bara använda ARGV-objektet och dess metoder för att samla in argumenten. Här är ett exempel på kod:
 
 ```Ruby
-args = ARGV
-tal1 = args[0].to_i
-tal2 = args[1].to_i
-summa = tal1 + tal2
+# Sparar alla argument i en array
+arguments = ARGV
 
-puts "Summan av #{tal1} och #{tal2} är #{summa}"
+# Skriver ut det första argumentet
+puts "Hej #{arguments[0]}!"
 ```
 
-Om vi kör programmet med kommandoradsargumenten "ruby program.rb 2 5" kommer vi få utskriften "Summan av 2 och 5 är 7".
+Om du kör detta program med kommandot `ruby hello.rb världen` kommer det att skriva ut "Hej världen!". Det är värt att notera att det första elementet i ARGV-objektet alltid är namnet på programmet som körs.
 
-## Djupdykning
+Du kan också använda ARGV-metoden `shift` för att ta bort det första argumentet från arrayen och få ut alla resterande argument. Här är ett exempel:
 
-Utöver att läsa in kommandoradsargument finns det även andra sätt att interagera med användaren genom kommandoraden i Ruby. Till exempel kan man använda sig av gemet "tty-prompt" för att skapa en enklare och mer användarvänlig interaktion.
+```Ruby
+# Sparar alla argument i en array
+arguments = ARGV
 
-En annan intressant aspekt är att ARGV-arrayen även innehåller argumentet "-e" vilket gör det möjligt att skicka in en enstaka Ruby-rad som argument och få den exekverad.
+# Skriver ut alla argument förutom det första
+puts "Hej #{arguments.shift}!"
 
-## Se även
+# Skriver ut alla återstående argument
+arguments.each do |argument|
+  puts "#{argument} är också här!"
+end
+```
 
-- [Ruby ARGV documentation](https://ruby-doc.org/core-2.7.0/ARGF.html)
-- [TTY-prompt gem](https://github.com/piotrmurach/tty-prompt)
-- [Ruby command line arguments tutorial](https://www.rubyguides.com/2012/02/ruby-command-line-args/)
+Kör detta med samma kommando som ovan och det kommer att skriva ut "Hej världen!", följt av "världen är också här!".
+
+# Djupdykning
+
+ARGV-objektet innehåller också den ursprungliga kommandoradssträngen som skickades in till programmet. Detta kan vara användbart om du vill hitta ett specifikt argument eller göra mer avancerade manipulationer med kommandoradsargumenten.
+
+En annan användbar funktion är att du kan använda ARGV för att ange förväntat antal argument och skriva ut ett felmeddelande om användaren skickar in fel antal argument. Till exempel:
+
+```Ruby
+# Kontrollerar om antalet argument är 2
+if ARGV.length != 2
+  puts "Vänligen ange två argument."
+else
+  # Lager logik för att använda de två argumenten
+end
+```
+
+Med detta i åtanke kan du nu börja utforska alla möjligheter som läsning av kommandoradsargument erbjuder dig när du skriver dina Ruby-program.
+
+# Se även
+
+- [Dokumentation för ARGV-objektet](https://ruby-doc.org/core-2.6.5/ARGF.html)
+- [Exempel på kommandoradsargument i Ruby-program](https://www.rubyguides.com/2012/02/ruby-command-line-arguments/)

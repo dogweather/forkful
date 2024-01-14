@@ -1,43 +1,40 @@
 ---
-title:    "Rust: Å starte et nytt prosjekt"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/starting-a-new-project.md"
+title:                "Rust: Å starte et nytt prosjekt"
+programming_language: "Rust"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Rust er et kraftig programmeringsspråk som er kjent for sin stabilitet, sikkerhet og gode ytelse. Det er et ideelt valg for å utvikle pålitelige og effektive applikasjoner. Hvis du ønsker å starte et nytt programmeringsprosjekt, bør du definitivt vurdere å bruke Rust.
+
+Hvis du er en programmerer som er på utkikk etter et nytt språk å lære, så kan du ha hørt om Rust. Rust er et moderne, systemnært programmeringsspråk som har blitt mer og mer populært de siste årene. Det er kjent for sin sikkerhet, ytelse og kraftige verktøy. I denne bloggposten vil vi utforske hvorfor du bør vurdere å starte et nytt prosjekt med Rust.
 
 ## Hvordan
-La oss se på et enkelt eksempel på hvordan du kan bruke Rust til å lage en funksjon som legger sammen to tall og returnerer summen:
+
+For å vise hvor enkelt det er å kode i Rust, vil vi gå gjennom et enkelt eksempel. Først må du installere Rust ved å følge instruksjonene på deres offisielle nettside. Når du har installert det, kan du lage et nytt prosjekt ved hjelp av kommandoen "cargo new prosjektnavn". Deretter kan du redigere filen "src/main.rs" og legge til følgende kode:
 
 ```Rust
-fn legg_til(tall1: i32, tall2: i32) -> i32 {
-    return tall1 + tall2;
+fn main() {
+    println!("Hei, verden!");
 }
-
-// Kjør funksjonen med tallene 5 og 10
-let sum = legg_til(5, 10);
-
-println!("Summen av 5 og 10 er {}", sum);
 ```
 
-Dette vil produsere følgende output:
+Kjør deretter programmet ved å skrive "cargo run" i terminalen din. Hvis alt går som det skal, så vil du se teksten "Hei, verden!" i terminalen din. Dette er et enkelt eksempel på hvordan du kan skrive ut tekst ved hjelp av Rust.
 
-```
-Summen av 5 og 10 er 15
-```
-
-Som du kan se, er syntaksen i Rust ganske enkel og lesbar. Du definerer funksjoner med nøkkelordet `fn`, og angir hvilke parametere som skal tas i mot. Du må også spesifisere hvilken type verdi som skal returneres.
+Men Rust er mye mer enn bare å skrive ut tekst. Det er et kraftig språk som støtter konkurranseorientert programmering, parallell programmering og mye mer. Utforsk Rusts offisielle dokumentasjon og eksempler for å lære mer om hva du kan gjøre med dette språket.
 
 ## Dypdykk
-Når du starter et nytt prosjekt i Rust, er det viktig å sette opp riktig miljø og verktøy. Det er flere ulike IDE-er som støtter Rust-utvikling, som for eksempel Visual Studio Code, IntelliJ og Atom. Du kan også installere Rust og Rust-verktøyene direkte på datamaskinen din. Det kan også være lurt å lære om konseptet med Rusts packagemanager, cargo, og hvordan man bruker den til å håndtere avhengigheter og bygge prosjektet ditt.
 
-Når du har etablert et godt grunnlag, kan du begynne å utforske ulike biblioteker og rammerverk som finnes for Rust. Disse kan hjelpe deg med å bygge mer komplekse og funksjonsrike applikasjoner. Fordi Rust er et relativt nytt språk, kan det være lurt å søke etter dokumentasjon og eksempler for å hjelpe deg i gang.
+Når du starter et nytt prosjekt med Rust, er det viktig å ta deg tid til å forstå de grunnleggende konseptene og prinsippene i språket. Rust er et låntypet språk, som betyr at du må deklarere variablene dine og tydeliggjøre hva slags type data de skal inneholde. Det er også viktig å følge Rusts eierskapsregler for å sikre at minnehåndtering blir gjort på en sikker måte.
+
+En annen viktig del av Rust er pakkesystemet "Cargo". Dette verktøyet gjør det enkelt å håndtere avhengigheter og bygget av ditt Rust-prosjekt. Utforsk forskjellige pakker og biblioteker i Rusts pakkeindeks for å se hva som er tilgjengelig for deg å bruke i dine prosjekter.
 
 ## Se også
-- [Rust offisiell nettside](https://www.rust-lang.org/no)
-- [Rust dokumentasjon](https://doc.rust-lang.org/book/)
-- [Rust pakkehåndterer (cargo)](https://doc.rust-lang.org/cargo/)
-- [Minimal Rust IDE (rust-analyzer)](https://rust-analyzer.github.io/)
+
+- Offisiell Rust dokumentasjon: https://www.rust-lang.org/no/
+- Rusts pakkeregister: https://crates.io/
+- Rust Reddit forum: https://www.reddit.com/r/rust/
+
+Med disse ressursene og ditt nyoppdagede kunnskap om Rust, håper vi at du er inspirert til å starte et nytt prosjekt med dette spennende programmeringsspråket. Lykke til!

@@ -1,40 +1,59 @@
 ---
-title:    "C++: Konvertieren eines Datums in einen String"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/converting-a-date-into-a-string.md"
+title:                "C++: Ein Datum in einen String umwandeln."
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Die Konvertierung eines Datums in einen String ist eine häufige Aufgabe beim Programmieren, insbesondere beim Umgang mit Datums- oder Zeitfunktionen. Sie kann verwendet werden, um Daten in einem leserlichen Format darzustellen oder um weitere Berechnungen durchzuführen.
+Das Konvertieren eines Datums in einen String kann hilfreich sein, wenn man beispielsweise Daten in einer lesbaren und benutzerfreundlichen Form präsentieren möchte. Außerdem kann es auch zur Umwandlung von Datumsangaben in verschiedenen Formaten nützlich sein.
 
-## Wie geht das
+## Wie geht das?
+Um ein Datum in einen String umzuwandeln, verwenden wir in C++ die Funktion `strftime()`. Diese Funktion erwartet drei Parameter: einen Zeiger auf einen char-Array, der das Ergebnis der Umwandlung speichert, ein Formatierungsstring und eine Struktur, die das Datum enthält.
+
 ```C++
 #include <iostream>
-#include <string>
 #include <ctime>
 
+using namespace std;
+
 int main() {
-    std::time_t now = std::time(NULL); 
-    // Zeitstempel des aktuellen Datums
-    char date[40]; 
+  // Datum erstellen
+  time_t now = time(0);
+  tm *date = localtime(&now);
 
-    // Datumsformatierung
-    std::strftime(date, sizeof(date), "%d.%m.%Y", std::localtime(&now)); 
-    // "04.12.2021"
+  // Char-Array erstellen, um das Datum zu speichern
+  char strDate[100];
 
-    // Ausgabe des Datums als String
-    std::cout << "Das heutige Datum ist " << date << std::endl;
+  // Datum in String umwandeln
+  strftime(strDate, 100, "Heute ist %d.%m.%Y", date);
 
-    return 0;
+  // String ausgeben
+  cout << strDate << endl;
+
+  return 0;
 }
+
 ```
 
-## Tiefer Einblick
-Bei der Konvertierung eines Datums in einen String gibt es einige wichtige Schritte zu beachten. Zunächst muss das Datum als Zeitstempel gespeichert werden, damit es vom Computer verarbeitet werden kann. Dies kann mit der Funktion `time()` erreicht werden. Anschließend wird das Datum in das gewünschte Format gebracht, indem die Funktion `strftime()` verwendet wird. Hier können verschiedene Symbole und Zeichen verwendet werden, um das Datum im gewünschten Format darzustellen. Schließlich wird das formatierte Datum in einen String gespeichert und kann ausgegeben werden. Es ist wichtig zu beachten, dass die Verwendung von Datumsfunktionen von der verwendeten Plattform abhängig sein kann und dass die Formatierung von Datum und Uhrzeit differenzieren kann.
+Die Ausgabe dieses Codes wäre: "Heute ist 28.06.2021".
+
+## Tiefere Einblicke
+Die Funktion `strftime()` basiert auf einer älteren Funktion namens `asctime()`, die jedoch nur englische Monatsnamen verwendet. `strftime()` hingegen erlaubt es uns, beliebige Sprachen für die Monatsnamen zu verwenden, indem wir ein spezielles Formatierungssymbol `%Z` verwenden und die gewünschten Monatsnamen als Parameter übergeben.
+
+```C++
+// Setzen der französischen Monatsnamen
+setlocale(LC_TIME, "fr_FR.utf8");
+strftime(strDate, 100, "Aujourd'hui c'est le %d %B %Y", date);
+
+// Ausgabe: Aujourd'hui c'est le 28 juin 2021
+
+```
+
+Weitere Informationen und Formatierungsmöglichkeiten für die Funktion `strftime()` finden Sie in der offiziellen C++ Dokumentation.
 
 ## Siehe auch
-- [C++ Datums- und Zeitfunktionen](https://www.cplusplus.com/reference/ctime/)
-- [Online-Datumskonverter](https://www.onlinedatumskonverter.de/) für das Umrechnen von Datum und Uhrzeit in verschiedene Formate
-- [Tutorial: Einführung in die C++ Programmierung](https://www.tutorialspoint.com/cplusplus/index.htm) für weitere Grundlagen der C++ Programmierung.
+- [C++ strftime Dokumentation](https://www.cplusplus.com/reference/ctime/strftime/)
+- [C++ asctime Dokumentation](https://www.cplusplus.com/reference/ctime/asctime/)

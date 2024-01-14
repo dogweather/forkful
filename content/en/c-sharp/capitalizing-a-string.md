@@ -1,55 +1,54 @@
 ---
-title:    "C# recipe: Capitalizing a string"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/capitalizing-a-string.md"
+title:                "C# recipe: Capitalizing a string"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Capitalize a String
+Capitalizing a string may seem like a small and insignificant task, but it is an important aspect of string manipulation in programming. By capitalizing a string, we are able to make the first letter of each word uppercase, which is necessary for proper grammar and readability. It is also often used in data validation and creating user-friendly interfaces.
 
-Have you ever needed to convert a string to all uppercase or lowercase letters? Maybe you're creating a program that has specific naming conventions, or maybe you just want to manipulate user input. Whatever the reason may be, capitalizing a string is a common task in programming. In this blog post, we will explore how to capitalize a string in C#.
-
-## How To
-
-In C#, there are several ways to capitalize a string. Let's take a look at a few examples:
+## How To Capitalize a String in C#
+To capitalize a string in C#, we can use the `ToUpper()` method. This method returns a new string with all the characters converted to uppercase. Here is an example of how we can capitalize a string in C#:
 
 ```C#
-// Using the ToUpper() method to capitalize all letters in a string
+// Define a string
+string message = "hello world";
 
-string name = "john doe";
-string capitalized = name.ToUpper(); // JOHN DOE
+// Capitalize the string
+string capitalizedMessage = message.ToUpper();
 
+// Output: HELLO WORLD
+Console.WriteLine(capitalizedMessage);
 ```
+
+Another approach is to use the `CultureInfo` class, which allows us to specify a culture and its language-specific capitalization rules. Here is an example using the `TextInfo.ToTitleCase` method:
 
 ```C#
-// Using the ToLower() method to make all letters lowercase in a string
+// Define a string
+string message = "hello world";
 
-string name = "JOHN DOE";
-string lowercase = name.ToLower(); // john doe
+// Use the CultureInfo class to get language-specific capitalization rules
+CultureInfo cultureInfo = CultureInfo.CurrentCulture;
+
+// Capitalize the string
+string capitalizedMessage = cultureInfo.TextInfo.ToTitleCase(message);
+
+// Output: Hello World
+Console.WriteLine(capitalizedMessage);
 ```
 
-```C#
-// Using the CultureInfo class to capitalize the first letter in a string
+## Deep Dive into Capitalizing a String
+While the `ToUpper()` and `ToTitleCase()` methods are simple and efficient ways to capitalize a string, there are other techniques that can be used as well. For instance, we can use a `StringBuilder` to change the first character of each word to uppercase. Additionally, we can create our own custom methods to handle special cases, such as acronyms or abbreviations.
 
-string name = "jane doe";
-CultureInfo culture = new CultureInfo("en-US");
-TextInfo textInfo = culture.TextInfo;
-string capitalized = textInfo.ToTitleCase(name); // Jane Doe
-```
-
-As you can see, there are different methods and techniques to capitalize a string in C#. Depending on the specific requirements of your program, you can choose which approach works best for you. It is also important to note that these methods do not change the original string, but rather return a new string with the desired capitalization.
-
-## Deep Dive
-
-Under the hood, the ToUpper() and ToLower() methods use the ASCII table to convert letters to uppercase or lowercase. Each letter has a corresponding numeric value, and by adding or subtracting a certain number, we can convert it to uppercase or lowercase respectively. The CultureInfo class uses a more sophisticated approach by taking into account language-specific rules for capitalization.
-
-It is also worth mentioning that the C# language provides a method called "capitalize" for strings, but this method is only available in certain versions of the .NET framework. Additionally, there are third-party libraries that offer more advanced functionality for capitalizing strings, such as handling special characters or multiple languages.
-
-In conclusion, capitalizing a string may seem like a simple task, but there are various methods and techniques that can be used. Knowing the differences between these approaches can help you choose the best option for your specific programming needs.
+Furthermore, when dealing with large amounts of text, it is important to consider efficiency when capitalizing a string. In such cases, using `String.ToUpper()` or `CultureInfo.TextInfo.ToTitleCase()` may not be the best choice, as they create a copy of the original string. Instead, we can use `TextInfo.ChangeCase()` method for better performance.
 
 ## See Also
+Here are some additional resources on capitalizing a string in C#:
+- [Microsoft documentation on string manipulation](https://docs.microsoft.com/en-us/dotnet/standard/base-types/string-manipulation)
+- [CodeProject article on casing a string](https://www.codeproject.com/Articles/2129/Case-a-string-with-first-letter-of-each-word-in-cap)
+- [Tutorial on creating custom string manipulation methods](https://www.tutlane.com/tutorial/csharp/csharp-string-functions-with-examples)
 
-- [Microsoft Documentation on ToUpper() method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
-- [C# CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
-- [Third-party library for capitalizing strings in C#](https://www.nuget.org/packages?q=capitalize%20string&sortOrder=relevance&page=0)
+By utilizing these methods and techniques, we can effectively capitalize strings in C# and improve the readability and quality of our code. So the next time you come across a string that needs to be capitalized, you'll know exactly what to do. Happy coding!

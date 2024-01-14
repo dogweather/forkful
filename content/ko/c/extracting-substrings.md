@@ -1,51 +1,58 @@
 ---
-title:    "C: 부분 문자열 추출하기"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/extracting-substrings.md"
+title:                "C: 문자열 추출"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 추출할까요?
+## 왜?
 
-C 언어를 배우는 과정에서 많은 경우에 문자열에서 일부분을 추출하는 것이 필요하게 됩니다. 이것을 효율적으로 처리할 수 있으면 더 많은 데이터를 다루는 프로그래밍에 유용합니다.
+왜 문자열에서 부분 문자열을 추출하는 방법을 배워야 할까요? 부분 문자열을 추출하는 것은 문자열 처리에 있어서 필수적인 기술입니다. 예를 들어, 사용자로부터 입력받은 문자열에서 원하는 정보만을 추출하여 데이터베이스에 저장하거나, 특정한 문자열 패턴을 찾기 위해 필요한 기술입니다.
 
-## 추출하는 법
-
-문자열에서 일부분을 추출하는 방법은 다양합니다. 가장 간단한 방법은 하나의 문자를 추출하는 것입니다. 다음과 같은 코드를 사용할 수 있습니다.
+## 방법
 
 ```C
+// 문자열에서 부분 문자열 추출하기
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[] = "Hello, World!";
-    char ch;
+  char str[100]; // 사용자로부터 입력받을 문자열 변수
+  int start, end; // 추출할 부분 문자열의 시작과 끝 인덱스
+  char sub[100]; // 추출한 부분 문자열을 저장할 변수
 
-    // 문자열에서 'W' 추출
-    ch = str[7];
+  printf("문자열을 입력하세요: ");
+  scanf("%s", str); // 사용자로부터 문자열 입력받기
 
-    printf("추출한 문자는 %c입니다.", ch);
+  printf("추출할 부분 문자열의 시작과 끝 인덱스를 입력하세요: ");
+  scanf("%d %d", &start, &end); // 추출할 부분 문자열의 시작과 끝 인덱스 입력받기
 
-    return 0;
+  // 문자열 함수인 strncpy를 사용하여 부분 문자열 추출
+  strncpy(sub, str+start, end-start);
+  sub[end-start] = '\0'; // 추출한 부분 문자열 마지막에 널 문자 추가
+
+  printf("추출된 부분 문자열: %s\n", sub); // 추출한 부분 문자열 출력
+
+  return 0;
 }
 ```
 
-출력 결과는 다음과 같습니다.
+출력 예시:
 
+```bash
+문자열을 입력하세요: Hello World
+추출할 부분 문자열의 시작과 끝 인덱스를 입력하세요: 1 4
+추출된 부분 문자열: ello
 ```
-추출한 문자는 W입니다.
-```
-
-이외에도 다양한 방법으로 문자열에서 일부분을 추출할 수 있습니다. `strcpy()` 함수를 사용하여 substring을 새로운 문자열로 복사하는 방법이 있습니다. 또는 `strncpy()` 함수를 사용하여 원하는 길이만큼 문자열을 복사할 수도 있습니다.
 
 ## 깊게 파고들기
 
-C 언어에서 문자열에서 일부분을 추출하는 과정은 유용하지만 관련해서 몇 가지 주의할 점이 있습니다. 예를 들어, 추출하려는 substring의 인덱스가 문자열의 길이보다 크면 오류가 발생할 수 있습니다. 따라서 항상 문자열의 길이를 먼저 확인하는 것이 좋습니다. 또한 제대로 추출된 substring이 원하는 값과 일치하는지도 확인하는 것이 중요합니다.
+부분 문자열을 추출하는 것은 문자열을 다루는데 중요한 기술입니다. 그렇기 때문에 C 프로그래밍에서 문자열 처리를 위해 자주 사용되는 문자열 함수에 대해 알아보는 것이 좋습니다. 예를 들어, `strncpy` 함수는 문자열에서 일부분을 추출해주는 함수 중 하나이며, 이외에도 다양한 함수들이 있으니 필요할 때마다 찾아서 사용하시면 됩니다.
 
-또 다른 중요한 주의점은 메모리 관리입니다. 문자열에서 일부분을 추출한 후 새로운 문자열로 복사하면서 메모리가 낭비될 수 있습니다. 따라서 메모리 관리에 유의하여 코드를 작성하는 것이 중요합니다.
+## 참고자료
 
-# 이 외에도 알아보기
-
-- [프로그래밍 언어 C](https://ko.wikipedia.org/wiki/C)
-- [문자열 관련 함수](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+* [C 프로그래밍 - 문자열 관련 함수](https://modoocode.com/17)
+* [C언어에서 문자열 추출하는 방법](https://ered.tistory.com/30)
+* [C 문자열 처리 함수 모음](https://conceptdev.tk/ccc/232)

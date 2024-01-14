@@ -1,30 +1,71 @@
 ---
-title:    "Haskell: 문자열의 길이 찾기"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/finding-the-length-of-a-string.md"
+title:                "Haskell: 문자열 길이 찾기"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-Haskell은 함수형 프로그래밍 언어로써 많은 사람들이 놀라운 새로운 개념과 기술을 배우고 싶어합니다. 그 중 하나가 문자열의 길이를 찾는 것입니다! 이 작업을 하는 방법을 배워 더 많은 도전적인 프로그래밍을 할 수 있도록 해주세요.
+스트링의 길이를 찾는 과정에 참여하는 이유를 설명합니다. 
 
-## 어떻게
+스트링의 길이를 찾는 것은 프로그래밍을 할 때 매우 유용합니다. 예를 들어, 문자열을 다루는 알고리즘을 작성할 때, 문자열의 길이를 알 필요가 있을 수 있습니다. 또는 사용자의 입력을 검증할 때, 입력된 문자열의 길이를 확인해야 할 수도 있습니다. 그래서 스트링의 길이를 찾는 것은 매우 유용하며, 프로그래밍을 할 때 필수적인 요소입니다.
 
-이 작업을 수행하는 가장 간단한 방법은 `length` 함수를 사용하는 것입니다. ```Haskell
-length "한글" -- 출력: 2
-length "hello" -- 출력: 5
+# 어떻게
+
+스트링의 길이를 찾는 방법을 보여줍니다. 코드 예시와 샘플 출력을 포함한 "```Haskell ... ```" 코드 블록을 사용하여 설명합니다.
+
+```Haskell
+-- 길이를 계산할 문자열
+str = "Hello World!"
+
+-- `length` 함수를 사용하여 문자열의 길이를 계산합니다.
+length str
+
+-- 출력: 12
 ```
 
-이 함수는 문자열의 길이를 반환하는 것으로 검색할 수 있는 다른 것들과 비슷합니다.
+위의 예시에서 `length` 함수는 주어진 문자열의 길이를 정수로 반환합니다. 위의 문자열 "Hello World!"의 경우, 길이는 12이므로 함수는 12를 반환합니다.
 
-## 깊이 파고들기
+또 다른 방법으로는 재귀 함수를 사용하여 스트링의 길이를 찾을 수 있습니다. 아래의 코드는 `length` 함수의 구현을 보여줍니다.
 
-Haskell은 기본적으로 이미 정의된 `length` 함수를 제공하며, 인자로 들어오는 값에 따라 길이를 어떻게 계산하는지 다릅니다. 일반적인 문자열의 경우, 실제로 문자의 개수를 세어 길이를 계산합니다. 하지만 리스트나 튜플의 경우, 각 요소의 개수를 세어 길이를 반환합니다. 이렇게 다양한 데이터 타입에 대해서 `length` 함수를 사용할 수 있다는 것이 Haskell의 장점 중 하나입니다.
+```Haskell
+-- 재귀 함수를 사용하여 길이를 계산하는 함수
+length' :: [a] -> Int
+length' [] = 0                       -- 빈 리스트의 길이는 0
+length' (x:xs) = 1 + length' xs      -- 리스트를 하나씩 잘라서 길이를 계산
 
-## 관련 자료들
+-- `length'` 함수를 사용하여 문자열의 길이를 계산합니다.
+length' str
 
-* [Haskell 공식 문서](https://www.haskell.org/documentation/)
-* [Learn You a Haskell](http://learnyouahaskell.com/)
-* [Haskell Tutorial](https://www.tutorialspoint.com/haskell/index.htm)
+-- 출력: 12
+```
+
+두 번째 방법은 재귀 함수를 사용하여 스트링을 매개변수로 받아 문자 하나씩 잘라서 길이를 계산하는 방법입니다. 재귀 함수를 사용한 코드는 좀 더 복잡해 보일 수 있지만 직접 코드를 작성해보면 스트링의 길이를 찾는 과정을 이해할 수 있습니다.
+
+# 딥 다이브
+
+스트링의 길이를 찾는 더 깊은 정보를 제공합니다. 스트링의 길이를 찾는 과정은 프로그래밍에서 주로 사용되는 문자열 처리 방법 중 하나입니다. 따라서 스트링을 다루는 방법을 이해하고, 문자열의 길이와 관련된 다양한 함수를 활용할 수 있어야 합니다.
+
+예를 들어, 스트링을 조작하는 다양한 함수 중 `take`와 `drop`이 있습니다. `take` 함수는 매개변수로 받은 정수만큼 문자열을 왼쪽에서부터 잘라서 반환하고, `drop` 함수는 매개변수로 받은 정수만큼 문자열을 왼쪽에서부터 잘라서 나머지 문자열을 반환합니다.
+
+아래의 예시를 살펴봅니다.
+
+```Haskell
+-- 스트링 정의
+str = "Hello World!"
+
+-- `take` 함수를 사용하여 문자열의 첫 5글자를 가져옵니다.
+take 5 str
+
+-- 출력: "Hello"
+
+-- `drop` 함수를 사용하여 문자열의 첫 5글자를 제외한 나머지 문자열을 가져옵니다.
+drop 5 str
+
+-- 출력: " World!"
+```
+
+이처럼 스

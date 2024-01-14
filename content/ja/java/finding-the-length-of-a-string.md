@@ -1,38 +1,36 @@
 ---
-title:    "Java: 文字列の長さを見つける"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/finding-the-length-of-a-string.md"
+title:                "Java: 文字列の長さを探す"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
+文字列の長さを求めることに取り組む理由について1〜2文で説明します。
 
-文字列の長さを求めることに関心を持つか、その理由は何でしょうか？文字列の長さを知ることは、プログラミングで非常に便利です。例えば、文字列を処理する際に、その長さを事前に知っておくことで、メモリの使用量を最適化することができます。また、文字列の長さを知ることで、文字列を正しく表示したり、文字列の一部を取り出したりすることができます。つまり、文字列の長さを求めることは、プログラミングにおいて非常に重要なスキルです。
+文字列の長さを知ることは、テキスト処理やデータ処理において非常に重要なことです。文字列の長さを知ることで、必要な情報を取得したり、特定の文字を抽出することができます。
 
-# 方法
-
-文字列の長さを求める方法はいくつかありますが、ここではJavaでの実装方法を紹介します。まず、`String`クラスの`length()`メソッドを使うことで、文字列の長さを求めることができます。例えば、以下のコードを実行すると、文字列「Hello World」の長さである`11`が出力されます。
-
-```Java
-String str = "Hello World";
-int length = str.length();
-System.out.println(length);
-```
-
-また、文字列を扱う際には、引用符（「"」や「'」）を除いた実際の文字数を知りたい場合があります。その場合は、`String`クラスの`codePointCount()`メソッドを使うことで、単語の長さが分かります。例えば、以下のコードを実行すると、文字列「こんにちは」の文字数である`5`が出力されます。
+## 使い方
+文字列の長さを取得する方法のコーディング例と、その出力結果を示します。
 
 ```Java
-String str = "こんにちは";
-int length = str.codePointCount(0, str.length());
-System.out.println(length);
+String name = "John";
+int length = name.length();
+System.out.println("Name length: " + length);
 ```
 
-# ディープダイブ
+**出力結果:**
+`Name length: 4`
 
-文字列の長さを求める方法をより詳しく調べると、実際には文字コードという概念に基づいて長さが計算されることが分かります。文字コードとは、コンピュータが文字を表現するためのコードのことです。文字コードには様々な種類がありますが、JavaではUnicodeという文字コードが採用されています。このUnicodeという文字コードでは、英数字などの一部の文字は1つのbyteで表現されますが、他の言語の文字（例えば日本語）は2つのbyteで表されるため、文字数を計算する際にはこの点に注意する必要があります。
+## 深堀り
+文字列の長さを求める方法について、さらに詳しく説明します。
 
-# 参考リンク
+まず、文字列とは複数の文字で構成されるデータのことです。Javaでは`String`クラスを使用して文字列を扱います。そして、`length()`メソッドを使用することで文字列の長さを取得することができます。
 
-- [Java String length() method](https://www.javatpoint.com/java-string-length)
-- [Java String codePointCount() method](https://www.javatpoint.com/java-string-codepointcount)
+また、`length()`メソッドは日本語や特殊な文字も正しくカウントすることができます。しかし、半角と全角の文字では長さが異なることに注意が必要です。
+
+## 参考リンク
+- [JavaのStringクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
+- [Javaで文字列の長さを取得する方法](https://techacademy.jp/magazine/18850)

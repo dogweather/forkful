@@ -1,35 +1,45 @@
 ---
-title:    "Bash: Verwendung von regulären Ausdrücken"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/using-regular-expressions.md"
+title:                "Bash: Die Verwendung von regulären Ausdrücken"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Für viele Programmierer ist die Verwendung von regulären Ausdrücken ein unverzichtbares Werkzeug. Mit ihrer Hilfe können Textmuster effizient gefunden, überprüft und bearbeitet werden. Ob bei der Datenverarbeitung, der Textanalyse oder der Erstellung von Suchfunktionen - reguläre Ausdrücke sind ein leistungsstarkes Instrument für viele Anwendungsfälle.
+Reguläre Ausdrücke (oder auch Regular Expressions) sind ein mächtiges Werkzeug in der Bash-Programmierung. Sie ermöglichen es, Textmuster in Dateien oder Strings zu suchen und zu bearbeiten. Mit ihrer Hilfe können wir komplexe Such- und Ersetzungsaufgaben in einem Bruchteil der Zeit erledigen, die es mit herkömmlichen Textbearbeitungswerkzeugen benötigen würde.
 
-## Wie es funktioniert
+## Wie man reguläre Ausdrücke in Bash verwendet
 
-Um reguläre Ausdrücke in Bash zu verwenden, müssen wir zuerst das Programm `grep` aufrufen. Wir können dann einen regulären Ausdruck innerhalb von Anführungszeichen nach `grep ` eingeben. Hier ist ein einfaches Beispiel, um alle Wörter in einer Datei zu finden, die mit einem Großbuchstaben beginnen:
+Um reguläre Ausdrücke in Bash zu verwenden, müssen wir das `grep` oder `sed` Kommando verwenden. Beide Kommandos akzeptieren einen regulären Ausdruck als Argument und führen dann eine Suche oder Bearbeitung auf der angegebenen Datei oder dem String durch.
 
 ```Bash
-grep "^[A-Z]" datei.txt
+# Suche nach allen Dateien, die das Muster "blogpost" im Namen haben
+grep "blogpost" *.txt
+
+# Ersetze alle Vorkommen von "programming" durch "coding" in einer Datei
+sed -i 's/programming/coding/g' example.txt
 ```
 
-Dieser Code verwendet den regulären Ausdruck `^[A-Z]`, um nach allen Wörtern zu suchen, die mit einem Großbuchstaben beginnen. Der `^` am Anfang des Ausdrucks gibt an, dass der Ausdruck am Anfang jeder Zeile auftreten muss. Der `[A-Z]` Teil des Ausdrucks beschränkt die Suche auf alle Großbuchstaben.
+Die Ausgabe dieser Kommandos würde alle Zeilen ausgeben, die das Muster enthalten bzw. die bearbeitete Datei mit den korrekten Ersetzungen. Dadurch können wir schnell und einfach Änderungen an großen Dateien oder Texten durchführen, ohne manuell jede Zeile durchsuchen zu müssen.
 
-Die Ausgabe dieses Befehls wird alle passenden Wörter aus der Datei `datei.txt` ausgeben. Wie Sie sehen können, können reguläre Ausdrücke sehr präzise verwendet werden, um bestimmte Muster in Texten zu finden.
+## Tiefer Einblick in reguläre Ausdrücke
 
-## Tiefergehende Informationen
+Reguläre Ausdrücke verwenden verschiedene Zeichen und Zeichenfolgen, um Muster zu definieren. Einige grundlegende Beispiele hierfür sind:
 
-Die Verwendung von regulären Ausdrücken erfordert etwas Übung und Erfahrung, aber es gibt auch viele hilfreiche Tools, die Ihnen dabei helfen können. Zum Beispiel können Sie mit `egrep` einen erweiterten regulären Ausdruck verwenden, der zusätzliche Metazeichen und Funktionen bietet.
+- `.`: Sucht ein beliebiges Zeichen
+- `*`: Sucht nach 0 oder mehr Vorkommen des vorherigen Elements
+- `+`: Sucht nach 1 oder mehr Vorkommen des vorherigen Elements
+- `?`: Sucht nach 0 oder 1 Vorkommen des vorherigen Elements
+- `[]`: Sucht nach einem beliebigen der angegebenen Zeichen
+- `()` : Gruppieren von Ausdrücken
 
-Es gibt auch viele Online-Ressourcen und Tutorials, die Ihnen helfen können, die Verwendung von regulären Ausdrücken zu erlernen. Es kann zwar etwas Zeit in Anspruch nehmen, aber es lohnt sich definitiv, sich in dieses leistungsstarke Konzept einzuarbeiten.
+Es gibt noch viele weitere Möglichkeiten, reguläre Ausdrücke zu verwenden, z.B. indem wir Metazeichen verwenden, um Muster zu definieren. Es gibt auch einige spezielle Attribute, die wir verwenden können, um die Suche noch genauer zu gestalten, wie z.B. `\b` für Wortgrenzen oder `\d` für Zahlen. Es lohnt sich, tiefer in die Materie einzusteigen, um komplexe Suchmuster zu erstellen.
 
 ## Siehe auch
 
-- [Bash Regular Expressions](https://www.gnu.org/software/grep/manual/grep.html#Regular-Expressions)
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Bash Regex Cheat Sheet](https://gist.github.com/davica/ba3d6051f06e4f780c5f32482b708399)
+- [BashGuide - Regular Expression](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html)
+- [LinuxJournal - Regular Expressions in sed, a practical guide](https://www.linuxjournal.com/article/10356)
+- [Tutorialspoint - Regular Expressions in Bash](https://www.tutorialspoint.com/unix/unix-regular-expressions.htm)

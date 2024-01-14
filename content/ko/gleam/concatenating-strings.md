@@ -1,39 +1,44 @@
 ---
-title:    "Gleam: 문자열 연결"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/concatenating-strings.md"
+title:                "Gleam: 문자열 연결"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 
+# 왜
+이 글에서는 왜 누군가 문자열을 연결하는 것에 참여해야 하는지에 대해 알아보겠습니다. 
 
-항상 언어를 사용할 때 우리는 글자 또는 단어를 연결해야하는 경우가 있습니다. 이는 특히 문자열을 처리하는 프로그래밍에서 필수적이며, 올바르게 문자열을 연결하면 코드를 더 깔끔하고 읽기 쉽게 만들 수 있습니다. 그래서 오늘은 Gleam에서 문자열을 연결하는 방법을 알아보겠습니다.
+많은 프로그래밍 언어에서 문자열을 조합하는 것은 매우 자주 사용되는 작업입니다. 문자열을 연결하는 것은 단순하지만, 이를 제대로 이해하고 활용한다면 코드를 효율적으로 작성할 수 있습니다. 
 
-## 어떻게 
+# 어떻게
+이제 한글로 된 예제를 통해 문자열을 연결하는 방법을 알아보겠습니다. 아래의 코드 블록에서는 Gleam을 사용하여 문자열을 연결하는 방법을 보여줍니다. 
 
 ```Gleam
-// 두 개의 문자열을 간단하게 연결하는 방법
-let message = "안녕하세요" <> "Gleam!"
+let language = "Gleam"
+let greeting = "안녕하세요?"
 
-// 변수나 함수의 반환값과 결합하는 방법
-let name = "John"
-let greeting = message <> name
-
-// 여러 개의 문자열을 연결하는 방법
-let sentence = "제 이름은 " <> name <> "이고, " <> message <> " " <> "저는 프로그래머입니다."
+let welcome_message = "여러분, " ++ greeting ++ " 저희 " ++ language ++ " 세상에 오신 걸 환영합니다!"
 ```
 
-위의 예제 코드를 보면 <code><></code> 연산자를 사용하여 두 문자열을 쉽게 연결할 수 있다는 것을 알 수 있습니다. Gleam에서는 문자열을 마치 다른 기본 자료형처럼 취급하기 때문에, 더 복잡한 계산식이나 변수나 함수의 반환값과도 결합할 수 있습니다.
+위의 코드를 실행하면 다음과 같은 출력이 나옵니다. 
 
-## 깊게 파헤치기 
+```
+여러분, 안녕하세요? 저희 Gleam 세상에 오신 걸 환영합니다!
+```
 
-만약 여러분이 문자열을 연결하는데 있어서 더 깊이 파고들고 싶다면, Gleam에서 제공하는 문자열 라이브러리를 살펴보시는 것이 좋습니다. <code>gleam/string</code> 라이브러리에는 문자열을 처리하기 위한 다양한 함수들이 포함되어 있으며, 이를 이용해 더욱 다양한 기능을 구현할 수 있습니다. 예를 들어, <code>gleam/string</code> 라이브러리의 <code>join</code> 함수는 리스트 안의 문자열들을 모두 결합해 하나의 문자열로 만들어줍니다. 또한 <code>gleam/string_builder</code> 모듈을 사용하면 문자열을 효율적으로 추가하고 수정할 수 있습니다.
+위의 코드에서는 `++` 연산자를 사용하여 문자열을 연결하였습니다. 이 연산자는 양쪽의 문자열을 하나로 합쳐줍니다. 또한 필요한 경우 변수를 사용하여 문자열을 만들 수도 있습니다. 
 
-## 더 알아보기 
+# 깊게 파보기
+문자열을 연결하는 것은 매우 간단한 작업이지만, 다양한 방식으로 이를 활용할 수 있습니다. 예를 들어, 여러 개의 변수를 사용하거나 조건문과 함께 사용하는 등 다양한 상황에서 문자열을 연결하는 방법이 다를 수 있습니다. 
 
-Gleam에서 문자열을 다루는 것 외에도, 다른 유용한 기능들을 알아보세요! 아래 링크들을 참고하시면 프로그래밍에 더욱 능숙해질 수 있을 것입니다.
+또한 문자열 연결은 문자열 이외의 자료형을 연결하는 것도 가능합니다. 예를 들어, `1`과 `2`라는 숫자를 문자열로 변환한 다음에 연결하면 결과는 `"12"`가 됩니다. 따라서 문자열을 연결하는 방법을 이해하면 다양한 자료형을 조합하여 원하는 결과를 얻을 수 있습니다. 
 
-- [Gleam 공식 문서](https://gleam.run/documentation)
-- [Gleam 커뮤니티 포럼](https://discord.gg/gleam-lang)
-- [무료 온라인 과정 - Gleam 프로그래밍 입문](https://www.bitdegree.org/course/gleam-programming)
+# 또 다른 글들
+- [Gleam 공식 문서 - 문자열 사용하기](https://gleam.run/documentation/guide/strings.html)
+- [Gleam 공식 예제 - 문자열 연결하기](https://gleam.run/documentation/getting-started/concatenating-strings.html)
+- [Gleam 포럼 - 문자열 연결에 관한 토론](https://gleam.run/discuss/t/concatenation-in-gleam/294) 
+
+# 참고
+Gleam 공식 문서 및 예제, 포럼 등을 참고하시면 더 많은 정보를 얻을 수 있습니다. 문자열 연결은 매우 간단하지만, 다양한 방식으로 활용할 수 있으니 꼭 익혀두시기 바랍니다.

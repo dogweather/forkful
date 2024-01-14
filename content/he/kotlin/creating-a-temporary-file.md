@@ -1,37 +1,49 @@
 ---
-title:    "Kotlin: יצירת קובץ זמני"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/creating-a-temporary-file.md"
+title:                "Kotlin: יצירת קובץ זמני"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+##למה
 
-כיוון שיצירת קובץ זמני יכול להיות כלי מאוד חשוב בתהליכי קידום פיתוח בתוכניות קוד מבוססות Kotlin.
+יצירת קובץ זמני בקוד נדרש כאשר יש לנו צורך ליצור קובץ באופן זמני ולא לעולם לשמור עליו באופן קבוע. הקבצים הזמניים עשויים לשמש במגוון מטרות, כגון בדיקות יחידה, ניסיון פתרון בעיות, או כאמצעי לשמירת נתונים בזמן ריצת התוכנית. בכתבה זו נלמד כיצד ליצור ולנהל קבצים זמניים בשפת קוטלין.
 
-## איך לעשות
+##איך לעשות זאת
 
-בקוד הבא נראה איך ליצור קובץ זמני בשפת קוד Kotlin ואיך לנהל אותו בזמן ריצה:
-```Kotlin
-val temporaryFile = File.createTempFile("kotlin_blog_post", ".txt")
-temporaryFile.writeText("זוהי תוכן של קובץ זמני בשפת Kotlin!")
-println(temporaryFile.readText())
-temporaryFile.delete()
+כדי ליצור קובץ זמני בקוד קוטלין, נשתמש בתוכנה לניהול קבצים המכונה "TemporaryFile". נתחיל על ידי הוספת התלות הבאה לקובץ ה- build.gradle:
+
+```
+dependencies {
+    implementation("com.google.guava:guava:30.1.1-jre")
+}
 ```
 
-פלט של הקוד הנ"ל יהיה:
+לאחר מכן, נגדיר משתנה לכתיבת קובץ זמני בעזרת פקודת "createTempFile":
+
 ```
-"זוהי תוכן של קובץ זמני בשפת Kotlin!"
+val tempFile = Files.createTempFile("prefix", "suffix")
 ```
 
-## חקירה מעמיקה
+נוכל לשנות את התצורה של הקובץ הזמני על ידי שימוש בפרמטרים נוספים כגון: "directory" - להגדרה של התיקייה בה ייוצר הקובץ הזמני, "charset" - להגדרת קידוד התווים של הקובץ, ועוד.
 
-יצירת קובץ זמני נעשית בעזרת הפונקציה `createTempFile` של מחלקת `File` בשפת Kotlin. מדוע זה נחשב לכלי חשוב בתהליך קידום פיתוח? כיוון שקבצים זמניים מאפשרים למפתחים לבצע בדיקות מהירות ולעבוד עם קבצים שמכילים נתונים זמניים בלבד, תוך כדי שמתחילים לפתח את התוכנית הסופית.
+ניתן לכתוב נתונים לקובץ באמצעות פעולת "writeText" ולקרוא ממנו באמצעות "readText".
 
-בנוסף, יצירת קובץ זמני מאפשרת למפתחים לבדוק פעולות קבצים, כגון כתיבה וקריאה, בפועל בלי לחבר את התוכנית לקבצים קיימים במערכת הקבצים. זה מבטיח כי הקוד עובד כצפוי ומציב את הבסיס לפיתוח התוכנית הסופית.
+```
+// כתיבת נתונים לקובץ זמני
+tempFile.writeText("כתוב כאן את המילות שאתה צריך.")
+// קריאת נתונים מהקובץ זמני
+println(tempFile.readText())
+```
 
-## ראה גם
+למחיקת הקובץ הזמני, נשתמש בפעולה "delete":
 
-- המדריך הרשמי לשפת Kotlin: https://kotlinlang.org/docs/home.html
-- מדריך תיעוד של מחלקת File ב-Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/
+```
+tempFile.delete()
+```
+
+##צילום עמוק
+
+בדרך כלל, קבצים זמניים נשמרים בקישור של קובץ מסוג "java.io.File", בעוד שבקוטלין הם נלכדים במחלקת "java.lang.AutoCloseable", המיועדת לטיפול במחלקות המק

@@ -1,38 +1,43 @@
 ---
-title:    "Swift: Odczytywanie pliku tekstowego"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/reading-a-text-file.md"
+title:                "Swift: Czytanie pliku tekstowego"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek chciałeś lub potrzebowałeś przeczytać plik tekstowy w swoim programie Swift? Może chcesz przetworzyć dane lub wyświetlić zawartość pliku użytkownikowi. W tym artykule dowiesz się, jak możesz łatwo odczytać plik tekstowy przy użyciu języka Swift.
+Przeczytanie pliku tekstowego może wydawać się banalnym zadaniem, ale jest to podstawowa umiejętność, która jest niezbędna w świecie programowania. Bez możliwości odczytania i przetwarzania tekstu, trudno byłoby stworzyć aplikacje, które są użyteczne i wykonują konkretne zadania. Dlatego warto poświęcić czas na naukę odczytywania plików tekstowych.
 
-## Jak
+## Jak to zrobić
+
+Do odczytania pliku tekstowego w języku Swift wykorzystuje się klasę FileManager oraz funkcję Data(contentsOf:). Poniżej przedstawiony jest przykładowy kod, który pokazuje jak odczytać plik tekstowy w formacie CSV.
 
 ```Swift
-// Utwórz ścieżkę do pliku tekstowego
-let filePath = "sciezka/do/pliku.txt"
-
-// Użyj metody String do odczytania zawartości pliku jako ciągu tekstowego
-if let fileContents = try? String(contentsOfFile: filePath) {
-    print(fileContents)
-} else {
-    // W przypadku błędu wyświetl komunikat
-    print("Nie można odczytać pliku.")
+if let path = Bundle.main.path(forResource: "plik", ofType: "csv") {
+    do {
+        let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        if let contents = String(data: data, encoding: .utf8) {
+            print(contents)
+        }
+    } catch {
+        print(error)
+    }
 }
 ```
 
-Wykorzystując powyższy kod, możesz łatwo przeczytać zawartość pliku tekstowego i wyświetlić ją na konsoli. Istnieją jednak również inne metody odczytu plików, takie jak wykorzystanie enumeratora lub wykorzystanie biblioteki Foundation.
+Powyższy kod wykorzystuje Bundle, aby uzyskać ścieżkę do pliku w aplikacji, a następnie odczytuje zawartość pliku przy użyciu funkcji Data. Następnie zawartość pliku jest przetwarzana na String i wyświetlana na konsoli.
 
-## Deep Dive
+## Głębsza analiza
 
-Odczytywanie plików tekstowych może być przydatne w różnych sytuacjach, na przykład podczas analizowania danych lub tworzenia interfejsu użytkownika z dostępnymi opcjami. Istnieje wiele metod obsługi odczytu plików tekstowych, dlatego warto eksperymentować i znaleźć najlepszą dla swojego projektu.
+Odczytanie pliku tekstowego może być nieco bardziej skomplikowane, jeśli chcemy uwzględnić specyficzne formatowania, takie jak znaki nowej linii lub tabulatory. W takim przypadku, należy użyć klas dostępnych w języku Swift do manipulacji tekstem, takich jak NSString lub NSStringEncoding.
+
+Inną ważną rzeczą do zapamiętania podczas odczytywania pliku tekstowego jest właściwe obsłużenie błędów. Wielu początkujących programistów często pomija tę kwestię, ale jest to ważne dla uniknięcia nieoczekiwanych problemów w przyszłości.
 
 ## Zobacz także
 
-- [Dokumentacja języka Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutorial odczytu i zapisu plików w Swift](https://www.ralfebert.de/ios/tutorials/filemanager/)
-- [Przykładowy projekt czytający plik tekstowy w Swift](https://github.com/sunderijan/swift-reading-text-file/blob/master/README.md)
+- Dokumentacja Apple na temat FileManager: <https://developer.apple.com/documentation/foundation/filemanager>
+- Dokumentacja Apple na temat funkcji Data(contentsOf:): <https://developer.apple.com/documentation/foundation/data/3247231-init>
+- Przewodnik po języku Swift: <https://swift.org/documentation/>

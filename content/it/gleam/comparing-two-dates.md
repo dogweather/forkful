@@ -1,72 +1,42 @@
 ---
-title:    "Gleam: Confrontare due date"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/comparing-two-dates.md"
+title:                "Gleam: Confrontare due date"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Hai mai trovato difficile confrontare due date in un programma? Potresti aver notato che alcune lingue di programmazione hanno metodi integrati per confrontare date, ma Gleam non ne ha uno. Fortunatamente, Gleam ha una soluzione semplice che condivideremo in questo post.
+La comparazione di due date è uno strumento importante per i programmatori, in quanto consente di verificare facilmente la relazione temporale tra due eventi o dati.
 
 ## Come fare
 
-Per confrontare due date in Gleam, dobbiamo prima convertirle in un formato supportato per confronti. Questo formato è rappresentato dal tipo Int, che rappresenta il numero di secondi trascorsi dalla mezzanotte del 1 gennaio 1970. Per fare ciò, possiamo utilizzare la funzione ```to_posix_seconds``` del modulo ```Date``` di Gleam.
+Per confrontare due date in Gleam, è possibile utilizzare la funzione `DateTime.compare()` che accetta due argomenti di tipo `DateTime` e restituisce un valore `Ordering`. Questo è un tipo di dato che rappresenta la relazione tra due valori e può essere `Less`, `Equal` o `Greater` a seconda che il primo valore sia rispettivamente precedente, uguale o successivo al secondo.
 
-Dopo aver convertito le date in Int, possiamo utilizzare gli operatori di confronto ```>```, ```<``` e ```=``` per confrontare le date. Di seguito un esempio di codice:
+Ecco un esempio di codice che utilizza la funzione `DateTime.compare()`:
 
-```
-import gleam/datetime
-import gleam/timezone
+```Gleam
+let now = DateTime.now()
+let birthday = DateTime.make(1990, April, 25)
 
-let oggi = Date.now
-let domani = oggi + datetime.days(1)
+let relationship = DateTime.compare(now, birthday)
 
-let oggi_in_secondi = Date.to_posix_seconds(oggi, timezone.utc)
-
-let domani_in_secondi = Date.to_posix_seconds(domani, timezone.utc)
-
-if oggi_in_secondi > domani_in_secondi {
-  // fa qualcosa
-} elif oggi_in_secondi < domani_in_secondi {
-  // fa qualcos'altro
-} else {
-  // le date sono uguali
+case relationship {
+    Equal -> "Today is your birthday!"
+    Less -> "Your birthday has passed."
+    Greater -> "Your birthday is still to come."
 }
 ```
 
-Ecco un esempio di output:
+L'output del codice sopra sarà `Your birthday has passed.` se il giorno di oggi è successivo al 25 aprile 1990.
 
-```
-Il giorno di oggi è maggiore di domani
-```
+## Approfondimenti
 
-## Approfondimento
+È importante notare che la funzione `DateTime.compare()` non tiene conto del fuso orario, ma confronta solo le date nella stessa scala temporale. Inoltre, è possibile utilizzare altri metodi come `DateTime.add()`, `DateTime.sub()` e `DateTime.diff()` per manipolare le date e ottenere informazioni più dettagliate sulla relazione temporale tra di esse.
 
-Se vuoi eseguire confronti più specifici come ore, minuti o secondi, puoi utilizzare la funzione ```to_posix``` invece di ```to_posix_seconds```. Questa funzione restituirà un record contenente i valori dei singoli campi della data, che puoi quindi confrontare. Ad esempio:
+## Vedi anche
 
-```
-import gleam/datetime
-import gleam/timezone
-
-let oggi = Date.now
-let domani = oggi + datetime.days(1)
-
-let oggi_in_secondi = Date.to_posix(oggi, timezone.utc)
-
-let domani_in_secondi = Date.to_posix(domani, timezone.utc)
-
-if oggi_in_secondi.hour > domani_in_secondi.hour {
-  // fa qualcosa
-} elif oggi_in_secondi.minute < domani_in_secondi.minute {
-  // fa qualcos'altro
-} else {
-  // gli orari sono uguali
-}
-```
-
-## Vedere anche
-
-- Documentazione ufficiale di Gleam sul modulo Date: https://gleam.run/modules/gleam_datetime/latest/Date.html
-- Tutorial di Gleam sul confronto di date: https://gleam.run/articles/working-with-dates.html#comparing-dates
+- [La documentazione di Gleam sulla data e l'ora](https://gleam.run/documentation/stdlib/datetime/)
+- [Un articolo su come gestire le date in Gleam](https://medium.com/@gleamlang/how-to-handle-dates-in-gleam-355fe4b39d4e)

@@ -1,58 +1,55 @@
 ---
-title:    "Python: Test schreiben"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/writing-tests.md"
+title:                "Python: Tests schreiben"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Beim Programmieren geht es nicht nur darum, funktionierenden Code zu schreiben, sondern auch darum, sicherzustellen, dass der Code zuverlässig ist und erwartungsgemäß funktioniert. Das Schreiben von Tests ist eine Möglichkeit, dieses Ziel zu erreichen.
+Wenn man Python Programme schreibt, gibt es oft die Versuchung, direkt zum eigentlichen Programmcode überzugehen und die Tests auszulassen. Doch Testen ist ein wichtiger Teil des Entwicklungsprozesses und kann Zeit und Nerven sparen. In diesem Blogbeitrag erfahren Sie warum es sich lohnt, Tests in ihre Python Programme einzubauen.
 
-## Wie geht man vor?
+## So geht's
 
-Um Tests in Python zu schreiben, verwenden wir das Modul "unittest". Wir definieren eine Klasse, die von "unittest.TestCase" erbt, und fügen dann verschiedene Testfunktionen hinzu, die jeweils einen bestimmten Teil des Codes testen. Hier ist ein Beispiel für eine einfache Testsuite:
+Um Tests in Python zu schreiben, gibt es verschiedene Tools wie zum Beispiel die Module `unittest` oder `pytest`. Hier ist ein einfaches Beispiel mit `unittest`:
 
-```Python
+```python
 import unittest
 
-class TestCalculator(unittest.TestCase):
-    def test_addition(self):
-        self.assertEqual(5+10, 15) # Testet, ob die Addition von 5 und 10 das erwartete Ergebnis 15 liefert
+def square(x):
+    return x ** 2
 
-    def test_subtraction(self):
-        self.assertEqual(20-5, 15) # Testet, ob die Subtraktion von 20 und 5 das erwartete Ergebnis 15 liefert
+class SquareTestCase(unittest.TestCase):
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_square(self):
+        self.assertEqual(square(5), 25)
+
+    def test_negative(self):
+        self.assertEqual(square(-5), 25)
 ```
 
-Sie können die Tests ausführen, indem Sie das Skript ausführen. Wenn alle Tests erfolgreich sind, sehen Sie keine Ausgabe. Wenn jedoch ein Test fehlschlägt, wird eine Fehlermeldung angezeigt. Hier ist ein Beispiel:
+Ausgeführt mit `python -m unittest -v` sollte dieses Skript zwei erfolgreiche Tests ausgeben:
 
 ```
-======================================================================
-FAIL: test_subtraction (__main__.TestCalculator)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "my_test_file.py", line 9, in test_subtraction
-    self.assertEqual(20-5, 16)
-AssertionError: 15 != 16
+test_negative (__main__.SquareTestCase) ... ok
+test_square (__main__.SquareTestCase) ... ok
 
 ----------------------------------------------------------------------
 Ran 2 tests in 0.000s
 
-FAILED (failures=1)
+OK
 ```
 
-## Tief tauchen
+## Tieferer Einblick
 
-Tests ermöglichen es uns, unseren Code auf mehrere Arten zu testen und sicherzustellen, dass er in verschiedenen Szenarien funktioniert. Wir können z.B. "Edge Cases" testen, also unerwartete Eingaben, die unser Code möglicherweise nicht verarbeiten kann. Wir können auch "Mocking" verwenden, um bestimmte Teile des Codes zu simulieren und zu testen.
+Tests sind nicht nur hilfreich, um zu überprüfen, ob der Code richtig funktioniert. Sie können auch dazu beitragen, mögliche Fehlerquellen zu identifizieren und das Verständnis des Programms zu verbessern. Durch die gezielte Verwendung von `assert`-Statements können Sie genau festlegen, welche Bedingungen erfüllt sein müssen, um die Tests zu bestehen. Auch das Testen von komplexen Datenstrukturen wie Listen oder Dictionaries ist möglich.
 
-Es gibt auch verschiedene Arten von Tests, wie z.B. Unit-Tests, Integrationstests und Funktionstests. Jede Art von Test hat ihre eigene Funktion und sollte in bestimmten Situationen verwendet werden.
+Um Tests in Ihre Entwicklung zu integrieren, ist es hilfreich, einen Test-Driven-Development Ansatz zu verfolgen. Das bedeutet, dass man zuerst die Tests schreibt und danach den Code, der diese Tests bestehen lässt. Dadurch haben Sie immer eine kontinuierliche Rückmeldung über den Zustand Ihres Codes und können Fehler schnell erkennen und beheben.
 
 ## Siehe auch
 
-- [Offizielle Python-Dokumentation zu "unittest"](https://docs.python.org/3/library/unittest.html)
-- [Ein Tutorial zu Tests in Python](https://realpython.com/python-testing/#types-of-python-tests)
-- [Ein Artikel über die Wichtigkeit von Tests in der Softwareentwicklung](https://www.toptal.com/qa/why-test-infrastructure-matters-in-developing-software)
+- [Python Documentation: unittest](https://docs.python.org/3/library/unittest.html)
+- [Python Testing with pytest](https://realpython.com/python-testing/)
+- [Test Driven Development (TDD): Beispiel in Python](https://www.tutorialspoint.com/test-driven-development-example-in-python)

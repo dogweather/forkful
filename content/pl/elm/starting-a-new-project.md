@@ -1,40 +1,42 @@
 ---
-title:    "Elm: Rozpoczynanie nowego projektu"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/starting-a-new-project.md"
+title:                "Elm: Rozpoczynanie nowego projektu"
+programming_language: "Elm"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Mogłoby się wydawać, że na rynku jest już wystarczająco dużo języków programowania, ale Elm zdecydowanie jest warty uwagi. Jego wyrazista składnia, wydajność i bezbłędne obsługiwanie błędów sprawiają, że jest idealnym wyborem dla projektów webowych. 
+Zastanawiasz się, dlaczego warto rozpocząć nowy projekt w języku Elm? Przeczytaj ten artykuł, aby poznać odpowiedź na to pytanie.
 
-## Jak zacząć
+Tworzenie aplikacji w Elm jest nie tylko niezwykle przyjemne, ale również wysoce efektywne. W porównaniu do innych języków programowania, Elm oferuje wyjątkową stabilność i łatwość w utrzymaniu kodu. Z pewnością warto rozważyć jego użycie w swoim kolejnym projekcie.
 
-Aby rozpocząć nowy projekt w Elm, wystarczy zainstalować go na swoim komputerze, a następnie utworzyć prawidłowy plik `.elm` przy użyciu edytora tekstu. Następnie należy uruchomić Elm REPL (Read-Eval-Print-Loop) i wprowadzić komendę `import Html exposing (..)` aby zaimportować bibliotekę HTML. Następnie można przetestować działanie kodu przy użyciu funkcji `text` i `h1` aby wygenerować proste elementy HTML. 
+## Jak to zrobić
 
-Przykładowy kod i jego output można zobaczyć poniżej:
+Rozpoczęcie projektu w Elm jest prostsze, niż mogłoby się wydawać. Wystarczy zainstalować kompilator Elm oraz edytor kodu wspierający ten język, na przykład VS Code z wtyczką Elm. Następnie wystarczy utworzyć plik z rozszerzeniem ".elm" i już można zacząć pisać kod.
 
 ```Elm
-import Html exposing (..)
+module Main exposing (main)
 
-main = 
-  h1 [ ] [ text "Witaj, Elm!" ]
+import Html exposing (text)
+
+main =
+    text "Witaj, świecie!"
 ```
 
-```html
-<h1>Witaj, Elm!</h1>
-```
+Powyżej możesz zobaczyć przykładowy kod w Elm, który wyświetli prosty napis "Witaj, świecie!". Po uruchomieniu kompilatora zobaczysz w przeglądarce rezultat tego kodu.
 
-## Głębszy wgląd
+## Głębszy zanurzenie
 
-Podczas tworzenia nowego projektu w Elm, ważne jest, aby zacząć od stworzenia jasnego planu i struktury. Można zacząć od określenia stanu aplikacji za pomocą rekordów, a następnie tworzyć funkcje odpowiedzialne za zmiany w stanie. Elm jest również oparty na modelu widoku, więc konieczne jest zdefiniowanie funkcji widoku, która będzie odpowiedzialna za wyświetlanie elementów na ekranie. 
+Jeśli chcesz dowiedzieć się więcej o tym, jak rozpocząć nowy projekt w Elm, koniecznie przeczytaj oficjalną dokumentację języka. Znajdziesz tam wiele przydatnych informacji i porad dotyczących organizacji projektu, struktury kodu oraz użytecznych narzędzi.
 
-Ponadto, warto zapoznać się z pakietami społeczności Elm, takimi jak `elm/html` dla obsługi HTML, `elm/http` do wykonywania zapytań HTTP, oraz `elm/json` do pracy z formatem JSON. Dzięki temu można rozwijać swoje projekty i korzystać z gotowych i sprawdzonych rozwiązań. 
+Bardzo pomocnym źródłem wiedzy jest także społeczność użytkowników Elm. Wiele osób dzieli się swoimi doświadczeniami oraz przydatnymi narzędziami poprzez fora dyskusyjne, grupy na Facebooku czy konferencje. Dobrym pomysłem jest także przejrzenie repozytoriów na stronie GitHub, gdzie znajduje się wiele gotowych projektów napisanych w Elm.
 
-## Zobacz również
+## Zobacz także
 
-- Oficjalna strona Elm: https://elm-lang.org/
-- Dokumentacja Elm: https://guide.elm-lang.org/
-- Przydatne przykłady i narzędzia Elm: https://github.com/sporto/awesome-elm
+- Oficjalna strona języka Elm: https://elm-lang.org/
+- Dokumentacja języka Elm: https://elm-lang.org/docs
+- Społeczność Elm: https://elmlang.org/community
+- Przykładowe projekty w Elm na GitHub: https://github.com/topics/elm

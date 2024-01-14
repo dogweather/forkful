@@ -1,52 +1,60 @@
 ---
-title:    "Rust: Vergleich von zwei Daten"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/comparing-two-dates.md"
+title:                "Rust: Vergleich zweier Daten"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-In dieser Blog-Post geht es um die vergleichende Datumsfunktion in der Programmiersprache Rust. Warum sollte man das überhaupt tun? Vergleichen von Daten kann sehr hilfreich sein, um zum Beispiel zu überprüfen, ob ein Datum in der Zukunft oder Vergangenheit liegt oder um komplexe Zeitberechnungen durchzuführen.
+# Warum
 
-## Anleitung
-Um zwei Daten in Rust zu vergleichen, gibt es verschiedene Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung des `date`-Pakets, das nützliche Funktionen für die Arbeit mit Datumswerten bietet.
+Die Vergleichung von zwei Daten mag auf den ersten Blick vielleicht nicht besonders aufregend klingen, aber es ist ein grundlegender Aspekt der Datumsmanipulation in der Programmierung. Ob Sie nun eine Kalenderfunktion für eine Anwendung erstellen oder Daten filtern möchten, die Verwendung von Vergleichsoperatoren für Daten ist unerlässlich. In diesem Blog-Beitrag werden wir uns ansehen, wie man in Rust zwei Daten vergleichen kann und warum dies von Bedeutung ist.
 
-```Rust
-use date::{Date, Locale};
+## Wie Geht Man Vor
 
-fn main() {
-    let date1 = Date::parse("2021-01-01", "y-M-d", Locale::en_US).unwrap();
-    let date2 = Date::parse("2020-12-31", "y-M-d", Locale::en_US).unwrap();
-    // Vergleich der Daten mit der Funktion `cmp`
-    let comparison = date1.cmp(&date2);
-    println!("{}", comparison); // Output: Greater
-}
+Um zwei Daten in Rust zu vergleichen, werden wir die eingebauten Vergleichsoperatoren verwenden, wie zum Beispiel `==` (gleich), `!=` (ungleich), `<` (kleiner als), `>` (größer als), `<=` (kleiner oder gleich) und `>=` (größer oder gleich). Nehmen wir als Beispiel zwei Variablen mit Datumsangaben:
+
+```
+let date_1 = "2021-01-20";
+let date_2 = "2021-01-25";
 ```
 
-In diesem Beispiel werden zwei Datumswerte aus Strings erzeugt und dann miteinander verglichen. Die Funktion `cmp` gibt ein Enum zurück, das angibt, ob das erste Datum größer, kleiner oder gleich dem zweiten Datum ist.
+Um diese beiden Daten zu vergleichen, können wir die oben genannten Vergleichsoperatoren verwenden:
 
-Eine weitere Möglichkeit ist die Verwendung des `time`-Pakets, das es ermöglicht, komplexe Zeitberechnungen durchzuführen und Daten mit unterschiedlichen Zeitzonen zu vergleichen.
-
-```Rust
-use time::OffsetDateTime;
-
-fn main() {
-    // Datum mit Zeitzone erzeugen
-    let date1 = OffsetDateTime::parse("2020-01-01T00:00:00+00:00", "%Y-%m-%dT%H:%M:%S%:z");
-    let date2 = OffsetDateTime::parse("2020-01-01T00:00:00+01:00", "%Y-%m-%dT%H:%M:%S%:z");
-    // Vergleich der Daten mit der Funktion `partial_cmp`
-    let comparison = date1.partial_cmp(&date2);
-    println!("{:?}", comparison); // Output: Some(Greater)
-}
+```
+println!("Ist date_1 gleich date_2? {}", date_1 == date_2); // false
+println!("Ist date_1 ungleich date_2? {}", date_1 != date_2); // true
+println!("Ist date_1 größer als date_2? {}", date_1 > date_2); // false
+println!("Ist date_1 kleiner oder gleich date_2? {}", date_1 <= date_2); // true
 ```
 
-Hier wird zunächst ein Datum mit einer Zeitzone erzeugt und dann mit einem anderen Datum verglichen. Die Funktion `partial_cmp` gibt ein `Option<Ordering>` zurück, das angibt, ob das erste Datum größer, kleiner oder gleich dem zweiten Datum ist. Ein `Some` wird zurückgegeben, wenn der Vergleich erfolgreich war, ansonsten `None`.
+Wie Sie sehen, können wir mit diesen einfachen Vergleichsoperatoren schnell und einfach zwei Daten vergleichen. Es ist wichtig zu beachten, dass die verwendeten Datumsformate übereinstimmen sollten, da es sonst zu unerwarteten Ergebnissen kommen kann.
 
-## Tiefergehendes
-Beim Vergleich von Daten gibt es einige wichtige Dinge zu beachten, wie zum Beispiel die Berücksichtigung von Zeitzone oder die Umwandlung von Daten in einen anderen Datentyp. Eine detaillierte Erklärung dazu würde den Rahmen dieses Blog-Posts sprengen, aber es ist wichtig zu wissen, dass es je nach Anwendungsfall verschiedene Ansätze gibt und es wichtig ist, die richtige Methode für den Vergleich zu wählen.
+## Tiefer Eintauchen
 
-## Siehe auch
-- [Offizielle Dokumentation des `date`-Pakets](https://crates.io/crates/date)
-- [Offizielle Dokumentation des `time`-Pakets](https://crates.io/crates/time)
-- [Beispielcode für die Arbeit mit Datumswerten in Rust](https://github.com/rust-lang/chrono/tree/master/examples)
+Obwohl die oben genannten Vergleichsoperatoren gut geeignet sind, gibt es bestimmte Situationen, in denen eine tiefere Auseinandersetzung mit der Vergleichung von Daten erforderlich sein kann. Zum Beispiel kann es vorkommen, dass wir das Datum in ein bestimmtes Format konvertieren müssen, bevor wir es vergleichen können. Dafür können wir die in Rust eingebaute `DateTime`-Bibliothek verwenden. Hier ist ein Beispiel, wie wir ein Datum von einem String in ein `DateTime`-Objekt konvertieren können:
+
+```
+use std::str::FromStr;
+use chrono::{DateTime, Utc, TimeZone};
+
+let date_1 = DateTime::from_str("2021-01-20 00:00:00").unwrap();
+let date_2 = DateTime::from_str("2021-01-25 00:00:00").unwrap();
+```
+
+Nun können wir diese beiden Daten mit den oben genannten Vergleichsoperatoren vergleichen, da sie beide im gleichen Format vorliegen. Allerdings müssen wir nun auch die Zeitzone berücksichtigen, da `DateTime` standardmäßig in UTC arbeitet. Hier ist ein Beispiel für den Vergleich unter Berücksichtigung der Zeitzone:
+
+```
+let date_2_with_timezone = Utc.from_local_datetime(&date_2.naive_local()).unwrap();
+
+println!("Ist date_1 größer als date_2? {}", date_1 > date_2_with_timezone); // false
+```
+
+Nun erhalten wir das korrekte Ergebnis, da wir die Zeitzone berücksichtigt haben.
+
+# Siehe Auch
+
+- [Rust Dokumentation über Vergleichsoperatoren](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html)
+- [Chrono Dokumentation zur Datumsmanipulation in Rust](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rust Playground zum Ausprobieren](https://play.rust-lang.org/)

@@ -1,46 +1,47 @@
 ---
-title:    "Javascript: Tworzenie pliku tymczasowego"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/creating-a-temporary-file.md"
+title:                "Javascript: Tworzenie pliku tymczasowego"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego tworzyć plik tymczasowy w Javascript?
+## Dlaczego tworzymy pliki tymczasowe?
 
-Tworzenie plików tymczasowych jest ważnym aspektem programowania w Javascripcie. Są one używane do przechowywania danych tymczasowych, które są potrzebne w trakcie działania programu. Są one również wykorzystywane do przechowywania danych, które nie są potrzebne na stałe lub potrzebne są tylko na chwilę.
+Tworzenie tymczasowych plików jest wyjątkowo przydatne w programowaniu z wielu powodów. Może to być konieczne, jeśli chcemy zapisać pewne dane tymczasowo, ale nie trzeba trwale przechowywać ich w pliku. Innym powodem może być potrzeba pracy z danymi o różnych formatach, które muszą być tymczasowo przetworzone lub połączone w jednym miejscu. W tym artykule przedstawię Wam, jak stworzyć tymczasowy plik przy użyciu języka Javascript.
 
 ## Jak to zrobić?
 
-Tworzenie plików tymczasowych w Javascripcie jest stosunkowo proste. Można tego dokonać przy użyciu wbudowanych modułów takich jak "fs" lub "tmp". Oto przykładowy kod wraz z wyjaśnieniem:
+Aby utworzyć tymczasowy plik w Javascript, musimy skorzystać z wbudowanej funkcji fs. Najpierw musimy zaimportować moduł "fs", a następnie użyć metody "writeFile" z tego modułu. Kod będzie wyglądał następująco:
 
 ```Javascript
-// Importowanie modułu "fs", który pozwala na operacje na plikach
 const fs = require('fs');
-
-// Importowanie modułu "tmp", który umożliwia tworzenie plików tymczasowych
-const tmp = require('tmp');
-
-// Ustawienie nazwy i rozszerzenia pliku tymczasowego
-const tempFile = tmp.fileSync({ prefix: 'temp', postfix: '.txt' });
-
-// Zapisanie danych do pliku tymczasowego przy użyciu metody "writeFileSync" z modułu "fs"
-fs.writeFileSync(tempFile.name, 'To jest przykładowy tekst');
-
-// Odczytanie danych z pliku tymczasowego przy użyciu metody "readFileSync" z modułu "fs"
-const data = fs.readFileSync(tempFile.name);
-
-// Wyświetlenie danych w konsoli
-console.log(data) // Output: Buffer[To jest przykładowy tekst]
+fs.writeFile('temp.txt', 'To jest tymczasowy plik!', (err) => {
+    if (err) throw err;
+    console.log('Plik tymczasowy został utworzony!');
+});
 ```
 
-## Pogłębione wskazówki
+Po wykonaniu tego kodu, zostanie utworzony plik o nazwie "temp.txt" z zawartością "To jest tymczasowy plik!". Przykładowy output w konsoli wyglądałby tak:
 
-Można również ustawić inne opcje podczas tworzenia pliku tymczasowego, na przykład ustawienie miejsca zapisu, rozmiaru lub prawa dostępu. Więcej informacji na ten temat można znaleźć w dokumentacji modułu "tmp". Ważnym aspektem jest również usunięcie pliku tymczasowego po zakończeniu jego użytkowania. W tym celu można użyć metody "removeCallback" z modułu "tmp".
+```
+Plik tymczasowy został utworzony!
+```
+
+Możemy również użyć metody "writeFileSync", która jest synchroniczna i w przypadku błędu wyrzuci wyjątek. Kod będzie wyglądał podobnie:
+
+```Javascript
+const fs = require('fs');
+fs.writeFileSync('temp.txt', 'To jest tymczasowy plik!');
+```
+
+## Głębszy zanurzenie
+
+Tworzenie tymczasowych plików jest kluczowym elementem w wielu projektach programistycznych. Dzięki takim plikom możemy tymczasowo przechowywać dane, przetwarzać je lub połączać, a następnie usunąć plik, gdy już nie jest nam potrzebny. Istnieją również inne metody w module "fs", które pozwalają na bardziej zaawansowane operacje na plikach. Możemy również używać biblioteki "tmp", która dostarcza wygodny interfejs do tworzenia i zarządzania tymczasowymi plikami.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o operacjach na plikach w Javascripcie, możesz zapoznać się z poniższymi linkami:
-
-- [Dokumentacja modułu "fs"](https://nodejs.org/api/fs.html)
-- [Dokumentacja modułu "tmp"](https://github.com/tmpfs/tmp)
+- https://nodejs.org/api/fs.html
+- https://www.npmjs.com/package/tmp
+- https://www.w3schools.com/nodejs/nodejs_filesystem.asp

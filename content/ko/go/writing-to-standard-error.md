@@ -1,34 +1,40 @@
 ---
-title:    "Go: 표준 에러에 쓰는 것을 작성하기"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/writing-to-standard-error.md"
+title:                "Go: 표준 에러에 쓰는 방법"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 *표준 에러*로 쓰일 때가 있을까요?
+## 왜
+모든 프로그래머들은 오류를 쉽게 찾을 수 있도록 로깅(logging)을 배우는 것이 중요합니다. 이 글에서는 로깅의 한 종류인 표준 에러(standard error)에 대해 알아보겠습니다.
 
-개발하는 과정에서 버그 혹은 에러를 발견하는 것은 흔한 일입니다. 이때 우리는 표준 출력 대신 실행 결과를 *표준 에러*로 쓰는 것이 더욱 유용합니다. *표준 에러*로 쓰면 실행 결과와 별개로 에러 메시지를 확인할 수 있기 때문입니다. 
-
-## 어떻게 *표준 에러*를 쓸 수 있을까요?
-
+## 방법
+표준 에러에 쓰기 위해선 `os.Stderr`을 사용합니다. 다음은 Go 언어에서 표준 에러에 쓰는 예시 코드입니다:
 ```Go
-// 에러 메시지 출력
-fmt.Fprintf(os.Stderr, "가입 과정에서 에러가 발생했습니다: %v\n", err)
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    fmt.Fprintln(os.Stderr, "에러 메시지")
+}
 ```
 
-```bash
-# 에러 메시지 출력 예시
-가입 과정에서 에러가 발생했습니다: 이메일 주소가 이미 존재합니다.
+위 예시 코드는 `에러 메시지`를 표준 에러에 쓰게 됩니다. 이제 이 코드를 실행해보면 다음과 같은 출력을 볼 수 있습니다:
+```
+에러 메시지
 ```
 
-우선, `os` 패키지를 임포트하고 `Fprintf` 함수를 사용하여 에러 메시지를 출력할 수 있습니다. `Fprintf` 함수는 첫 번째 인자로 `os.Stderr`를, 두 번째 인자로 출력할 메시지를, 그리고 필요한 경우 추가적인 인자를 받습니다. 이를 이용하면 커스텀한 에러 메시지를 출력할 수 있습니다.
+## 깊이 파고들기
+표준 에러에 쓰는 것은 오류를 디버깅할 때 매우 유용합니다. 하지만 주의해야 할 점이 있습니다. 표준 에러는 오로지 오류 메시지만 출력되는 것이 아니라, 다른 정보들도 함께 출력될 수 있습니다. 따라서 표준 에러를 사용할 때에는 적절한 정보만 출력되도록 조심해야 합니다.
 
-## 깊이 들어가보면
+## 참고 자료
+- [Go 언어 공식 문서](https://golang.org/pkg/os/#Stderr)
+- [표준 에러와 표준 출력의 차이](https://stackoverflow.com/questions/2737344/difference-between-stdout-and-stderr-in-c)
+- [표준 에러를 사용할 때 주의할 점](https://blog.scottlowe.org/2015/01/02/understanding-stderr/)
+- [표준 에러를 사용한 로깅 예제](https://www.ardanlabs.com/blog/2018/03/logging-in-go-part-three.html)
 
-위에서 사용한 `os.Stderr`는 운영체제의 표준 에러 스트림을 가리키는 변수입니다. 프로그램을 실행할 때 출력과 에러 메시지를 서로 다른 스트림으로 분리하여 활용할 수 있습니다. 또한, 여러 운영체제에서 동일한 방식으로 사용할 수 있기 때문에 코드의 이식성도 좋습니다.
-
-# 또 읽어보기
-
-- [Go 언어 공식 문서: 표준 라이브러리](https://golang.org/pkg/)
-- [Go 언어 공식 문서: 커뮤니티 자료](https://golang.org/doc/#articles)
+## 참고 자료

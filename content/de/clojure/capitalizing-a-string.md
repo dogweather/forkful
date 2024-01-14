@@ -1,30 +1,35 @@
 ---
-title:    "Clojure: Eine Zeichenkette in Großbuchstaben umwandeln."
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/capitalizing-a-string.md"
+title:                "Clojure: Ein String großschreiben"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Es gibt viele Gründe, warum man eine Zeichenkette in Großbuchstaben umwandeln möchte. Zum Beispiel kann es nützlich sein, wenn man mit Benutzereingaben arbeitet und sicherstellen möchte, dass bestimmte Worte oder Sätze immer in Großbuchstaben erscheinen. Es kann auch hilfreich sein, um Strings in Sortieralgorithmen zu vergleichen, da Groß- und Kleinschreibung normalerweise anders behandelt werden.
+Es gibt viele Gründe, warum man in der Programmierung oft aufgefordert wird, einen String in Großbuchstaben zu konvertieren. Zum Beispiel bei der Eingabe von Benutzerdaten, bei der Validierung von Passwörtern oder bei der Formatierung von Ausgabemeldungen. Egal aus welchem Grund, die Fähigkeit, Strings zu groß zu schreiben, ist eine wichtige Fähigkeit, die jeder Programmierer beherrschen sollte. 
 
-##Wie geht das?
+## Wie man es macht
 
-In Clojure gibt es eine praktische Funktion namens `clojure.string/upper-case`, die eine Zeichenkette in Großbuchstaben konvertiert. Schauen wir uns ein Beispiel an:
+Die Lösung dieses Problems ist in Clojure relativ einfach, da die Programmiersprache eine eingebaute Funktion bereitstellt, um Strings in Großbuchstaben zu konvertieren.
+
+Um einen String in Großbuchstaben zu konvertieren, müssen wir die Funktion `clojure.string/upper-case` verwenden. Diese Funktion nimmt einen String als Eingabe und gibt den gleichen String in Großbuchstaben zurück. Schauen wir uns ein Beispiel an:
 
 ```Clojure
-(clojure.string/upper-case "hallo welt")
+(clojure.string/upper-case "hallo Welt")  ;=> "HALLO WELT"
 ```
-Dies würde die Ausgabe "HALLO WELT" erzeugen. Einfach, oder?
 
-##Tiefergehende Informationen
+Wie in diesem Beispiel zu sehen ist, wird der String "hallo Welt" in Großbuchstaben konvertiert. Dies gilt unabhängig von der ursprünglichen Schreibweise des Strings.
 
-Es gibt einige Dinge zu beachten, wenn man Strings in Großbuchstaben umwandelt. Zum Beispiel wird die Funktion `clojure.string/upper-case` Umlaute und Sonderzeichen nicht korrekt umwandeln. In solchen Fällen ist es ratsam, die Funktion `clojure.string/replace` zu verwenden und individuelle Ersetzungsregeln für diese Zeichen zu definieren.
+## Tiefentauchen
 
-##Siehe auch
+Nun wissen wir, wie man Strings in Großbuchstaben konvertieren kann, aber wie genau funktioniert die `clojure.string/upper-case` Funktion hinter den Kulissen? 
 
-- [Die offizielle Dokumentation zu `clojure.string`](https://clojuredocs.org/clojure.string)
-- [Eine praktische Anleitung zur Arbeit mit Strings in Clojure](https://www.braveclojure.com/strings/)
-- [Clojure Cheat Sheet mit nützlichen String-Funktionen](https://clojure.org/api/cheatsheet)
+Diese Funktion verwendet intern die Java-Methode `toUpperCase()`, die einen String in Großbuchstaben umwandelt. Einer der Vorteile von Clojure ist, dass es einfach ist, in die zugrunde liegende Java-Schicht einzutauchen, um zu verstehen, wie die Funktionen arbeiten.
+
+## Siehe auch
+
+- [Clojure Docs zu String Funktionen](https://clojuredocs.org/clojure.string)
+- [Java String Dokumentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())

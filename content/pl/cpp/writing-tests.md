@@ -1,46 +1,46 @@
 ---
-title:    "C++: Pisanie testów"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-tests.md"
+title:                "C++: Pisanie testów"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisać testy w C++?
 
-W dzisiejszych czasach programowanie stało się nieodzowną częścią naszego codziennego życia. Aby stworzyć niezawodny i wydajny system, ważne jest, aby wykonywać testy jednostkowe. Pisząc testy, możemy upewnić się, że nasz kod działa poprawnie i jest łatwiejszy w utrzymaniu. Jest to również ważny element procesu programistycznego, który pomaga w wykrywaniu błędów na wczesnym etapie, co może znacznie zmniejszyć koszty naprawy w przyszłości.
+Pisanie testów jest ważnym krokiem w procesie programowania w języku C++. Dzięki temu możemy zweryfikować poprawność działania naszego kodu i zapewnić jego niezawodność. Testy pomagają również w łatwym i szybkim znajdowaniu błędów, co przekłada się na efektywność pracy programisty.
 
-## Jak to zrobić
+## Jak pisać testy w C++?
 
-Pisanie testów jednostkowych jest procesem prostym, a dzięki zastosowaniu specjalnych bibliotek, takich jak Google Test czy Catch, możemy jeszcze bardziej ułatwić sobie pracę. Ważne jest, aby testy były napisane w myśl zasad "Arrange - Act - Assert". Poniżej przedstawiono przykładowy kod testu przy użyciu biblioteki Google Test:
+Do napisania testów w C++ możemy wykorzystać bibliotekę Google Test (GTest). W pierwszej kolejności należy zainstalować tę bibliotekę na swoim komputerze. Następnie, w pliku źródłowym naszego programu, należy dołączyć plik nagłówkowy "gtest/gtest.h" za pomocą dyrektywy "#include". Kolejnym krokiem jest zdefiniowanie testów za pomocą makr "TEST" i "TEST_F" oraz wywołanie funkcji "RUN_ALL_TESTS()" w funkcji main.
+
+Przykładowy kod testu wyglądałby następująco:
 
 ```C++
 #include <gtest/gtest.h>
-#include "program.h"
 
-TEST(ProgramTest, DodajTest) {
-  // Arrange
-  int a = 5;
-  int b = 3;
-  
-  // Act
-  int wynik = dodaj(a, b);
-  
-  // Assert
-  EXPECT_EQ(wynik, 8);
+TEST(NazwaTestu, PrzypadekTestowy) {
+  // kod testujący
+  ASSERT_TRUE(true);
 }
+
+TEST_F(NazwaKlasyTestowej, PrzypadekTestowy) {
+  // kod testujący dla metod zdefiniowanych w klasie
+  ASSERT_EQ(2, klasa.metoda(1));
+}
+
+RUN_ALL_TESTS();
 ```
 
-Zauważ, że najpierw tworzymy zmienne wejściowe, które będą wykorzystane w teście, a następnie wywołujemy funkcję, którą chcemy przetestować. Na końcu używamy asercji, aby sprawdzić, czy otrzymany wynik jest zgodny z oczekiwaniami. Dzięki temu, że testy są zautomatyzowane, możemy je łatwo uruchamiać za każdym razem, gdy wprowadzamy zmiany w naszym kodzie.
+Po uruchomieniu powyższego kodu, otrzymamy informację o wynikach testów - czy wszystkie testy zostały wykonane poprawnie, czy wystąpiły błędy oraz szczegółowe wyniki dla każdego testu.
 
-## Deep Dive
+## Głębszy przegląd pisania testów w C++
 
-Pisanie testów jednostkowych wiąże się również z pewnymi wyzwaniami. W przypadku skomplikowanych funkcji, może okazać się trudne przetestowanie wszystkich możliwych kombinacji wejściowych. Dlatego też ważne jest, aby wybierać takie wartości, które sprawdzą poprawność działania funkcji w jak największej ilości scenariuszy.
-
-Ponadto, istnieje wiele rodzajów testów jednostkowych, takich jak testy wydajnościowe czy testy integracyjne, które mogą dodatkowo zwiększyć jakość naszego kodu. Ważne jest, aby dostosować rodzaj testu do konkretnego problemu, aby uzyskać optymalne rezultaty.
+Pisanie testów w C++ wymaga umiejętności tworzenia efektywnych i precyzyjnych testów. Ważne jest aby pamiętać o przygotowaniu rzeczywistych przypadków testowych, aby testy najlepiej odwzorowywały rzeczywiste zachowanie programu. Kolejnym ważnym aspektem jest kontrolowanie zależności pomiędzy różnymi testami, aby uniknąć niepotrzebnej powtarzalności.
 
 ## Zobacz również
 
-- [Blog: Jak pisać testy jednostkowe w C++](https://blog.testproject.io/2019/08/28/how-to-write-unit-tests-in-cpp/)
-- [Poradnik: Testy jednostkowe w C++ z wykorzystaniem biblioteki Catch](https://www.catch-tests.net/)
-- [Kurs: Pisanie efektywnych testów jednostkowych w C++](https://www.udemy.com/course/coding-test-cpp/)
+- Oficjalna dokumentacja do biblioteki Google Test (https://google.github.io/googletest/)
+- Przykłady używania biblioteki GTest (https://github.com/google/googletest/tree/master/googletest/samples)
+- Wprowadzenie do pisania testów w języku C++ (https://www.toptal.com/developers/blog/writing-cpp-unit-tests-with-googletest)

@@ -1,49 +1,39 @@
 ---
-title:    "Elixir: Escrevendo testes"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/writing-tests.md"
+title:                "Elixir: Escrevendo testes"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que escrever testes é importante em Elixir?
+## Por que escrever testes em Elixir?
 
-Escrever testes é uma parte essencial do processo de programação em qualquer linguagem, e o Elixir não é exceção. Os testes nos permitem garantir que o nosso código funcione corretamente e sem erros antes mesmo de ser executado. Além disso, eles são uma forma de documentar e validar o código, facilitando a manutenção e colaboração em projetos.
+Escrever testes é uma prática essencial em qualquer linguagem de programação, mas especialmente importante em Elixir. Os testes garantem que nosso código esteja funcionando corretamente e nos dão a confiança para realizar alterações sem medo de quebrar o sistema. Além disso, escrever testes nos ajuda a entender melhor o funcionamento do código e facilita a manutenção do mesmo.
 
 ## Como escrever testes em Elixir
 
-Elixir possui uma biblioteca de testes padrão chamada ExUnit, que nos permite escrever e executar testes de forma eficiente. Para começar, devemos criar um módulo de testes em nosso arquivo de código-fonte, usando o nome do módulo original com o sufixo "_test". Por exemplo, se nosso arquivo se chama "calculadora.ex", nosso módulo de testes será "calculator_test.ex". Dentro do módulo, usamos a diretiva "use ExUnit.Case" para importar os recursos necessários para escrever os testes.
+Para escrever testes em Elixir, usamos o módulo `ExUnit`, que já vem incluído na linguagem. Primeiramente, devemos criar um arquivo com o sufixo `_test.exs` para indicar que se trata de um arquivo de testes. Dentro deste arquivo, criamos uma função com o nome `test` e passamos como parâmetro uma descrição do que estamos testando e uma função contendo o código que deve ser executado.
 
-```elixir
-defmodule CalculatorTest do
-  use ExUnit.Case
-```
-
-Dentro do módulo de testes, definimos funções de teste usando a macro "def", seguida pelo nome do teste e o operador "->". Dentro do corpo do teste, usamos as funções da biblioteca ExUnit para realizar as asserções e verificar se o resultado está correto.
-
-```elixir
-def test_addition do
-  assert Calculator.add(2, 3) == 5
+```Elixir
+test "soma de dois números" do
+  assert 2 + 3 == 5
 end
 ```
+No exemplo acima, estamos testando se a soma de dois números resulta em 5. O `assert` verifica se a expressão é verdadeira e, caso contrário, o teste falhará.
 
-Para executar os testes, basta rodar o comando "mix test". Se todos os testes forem aprovados, veremos uma saída como a seguinte:
+Podemos utilizar também a função `refute` para verificar se uma expressão é falsa. Além disso, é possível usar `assert_raise` e `refute_raise` para testar se uma determinada exceção é lançada.
 
-```
-Finished in 0.1 seconds
-1 test, 0 failures
-```
+## Aprofundando em testes em Elixir
 
-## Uma análise mais profunda sobre escrever testes
+Em Elixir, é possível utilizar blocos `do..end` ou `do:..` para agrupar testes e nomeá-los com o auxílio da palavra-chave `describe`. Isso ajuda a organizar melhor o código e a entender o que cada teste está cobrindo.
 
-Além dos testes unitários, que verificam o comportamento de funções individuais, também podemos escrever testes de integração em Elixir. Esses testes são responsáveis por testar o fluxo completo de uma funcionalidade e garantir que todas as partes do sistema funcionem em conjunto da maneira esperada.
+Outra funcionalidade interessante do `ExUnit` é a possibilidade de utilizar testes assíncronos, que são executados em paralelo, utilizando o módulo `ExUnit.Case` e a função `async_test`.
 
-Outro conceito importante em testes em Elixir é a ideia de imutabilidade. Por ser uma linguagem funcional, o Elixir possui variáveis imutáveis, o que significa que não podemos alterar o valor delas após a atribuição inicial. Isso pode tornar a escrita de testes um pouco diferente do que em linguagens imperativas, mas também traz benefícios, como testes mais previsíveis e menos propensos a erros.
+Além disso, é possível utilizar `setup` e `teardown` para executar código antes e depois de cada teste, permitindo que o ambiente seja preparado adequadamente para cada caso de teste.
 
-Em resumo, escrever testes é crucial para garantir a qualidade e a robustez do nosso código em Elixir. Além disso, nos ajuda a documentar e validar nossas funcionalidades, tornando o desenvolvimento mais eficiente e colaborativo.
+## Veja também
 
-## Ver também
-
-- [Documentação oficial do ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Tutoriais de testes em Elixir](https://medium.com/tag/elixir-testing)
-- [Guia de melhores práticas de testes em Elixir](https://medium.com/coding-hints/elixir-unit-test-best-practices-e63f1aa0ce2d)
+- [Documentação oficial do `ExUnit`](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir School: Testes](https://elixirschool.com/pt/lessons/advanced/testing/)
+- [Desenvolvendo com testes em Elixir](https://medium.com/@diegodsgarcia/desenvolvendo-com-testes-em-elixir-d113af6af269)

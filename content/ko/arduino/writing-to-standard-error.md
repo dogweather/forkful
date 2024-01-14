@@ -1,32 +1,32 @@
 ---
-title:    "Arduino: 표준 오류에 작성하기"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/writing-to-standard-error.md"
+title:                "Arduino: 표준 에러로 쓰기"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
+왜 standard error에 대한 쓰기를 할까요? 실수를 찾는데 도움이 되기 때문입니다.
 
-왜 누군가가 표준 오류에 쓰는 것을 시작하게 될까요? 아두이노 프로그래밍을 할 때 여러분은 종종 조치를 취하기 전에 디바이스가 무엇을 하고 있는지 알고 싶을 때가 있을 겁니다. 이것이 바로 표준 오류를 쓰는 이유입니다. 표준 오류는 디바이스의 상태나 에러 메시지 등을 보여줌으로써 여러분이 프로그램을 좀 더 안전하고 이해하기 쉽게 만들어줍니다.
-
-## 어떻게
-
-아두이노에서 표준 오류를 쓰는 것은 아주 간단합니다. 여러분이 할 일은 `Serial.println()`을 사용해서 내용을 보내는 것뿐입니다. 예를 들어, 디바이스의 온도를 읽어와서 표준 오류로 출력하는 코드는 다음과 같습니다.
-
+# 호우투
+standard error에 대한 쓰기는 간단합니다. 다음의 코드 블록을 참고하시기 바랍니다.
 ```Arduino
-int temp = analogRead(A0); // A0는 핀 번호
-Serial.println(temp);
+// 예제 코드
+int num = 10;
+Serial.println("Standard error: " + num);
+
+// 예상 출력 결과:
+Standard error: 10
 ```
 
-위의 코드는 디바이스의 온도를 읽어온 후, 표준 오류에 출력합니다. 여러분은 이 코드를 다른 함수나 조건문 등에도 적용할 수 있습니다. 이렇게 하면 여러분이 프로그램을 디버깅할 때 디바이스의 상태를 보다 쉽게 확인할 수 있습니다.
+# 딥 다이브
+standard error에 대해 알아야 할 더 깊은 내용이 있습니다. 우선, standard error는 프로그램에서 발생하는 에러 메시지를 의미합니다. 이 에러 메시지는 프로그램이 실행되는 동안 발생하는 예기치 않은 상황을 나타내며, 이를 통해 버그를 찾거나 프로그램을 디버깅할 수 있습니다.
 
-## 깊이 파고들기
+한 가지 중요한 차이점은 standard error가 단순한 출력 문장이 아니라는 것입니다. standard error는 표준 출력과 달리 버퍼링되지 않기 때문에, 프로그램이 종료되지 않으면 바로 출력됩니다. 이로 인해, 프로그램이 비정상적으로 종료되거나 강제 종료되더라도 standard error 메시지는 출력됩니다. 따라서 프로그램을 디버깅할 때 매우 유용합니다.
 
-보다 깊이 들어가서 설명하면, 표준 오류는 프로그램 실행 중에 어떤 문제가 발생했는지 여러분이 파악하고 해결할 수 있도록 도와줍니다. 만약 여러분이 로그 파일을 사용한다면, 표준 오류 메시지를 저장하고 나중에 분석할 수도 있을 것입니다. 또한 디바이스에 문제가 발생했을 때 주변에 있는 사람들에게도 도움을 줄 수 있습니다. 디바이스에 연결된 PC에서 실시간으로 표준 오류를 모니터링하면서 문제가 발생했을 때 즉시 조치를 취할 수 있습니다.
-
-## 이것도 참고해보세요
-
-- [아두이노 공식 홈페이지](https://www.arduino.cc/)
-- [아두이노 표준 라이브러리](https://www.arduino.cc/reference/en/libraries/)
-- [Serial.println() 설명서](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+# 참고 자료
+- [Arduino Serial.println() - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Standard Error - GeeksforGeeks](https://www.geeksforgeeks.org/standard-error/)
+- [Standard Error vs Standard Output - Linux Hint](https://linuxhint.com/standard-error-vs-standard-output/)

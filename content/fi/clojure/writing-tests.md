@@ -1,60 +1,34 @@
 ---
-title:    "Clojure: Testien kirjoittaminen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-tests.md"
+title:                "Clojure: Testien kirjoittaminen"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi testien kirjoittaminen kannattaa?
+## Miksi
 
-Testien kirjoittaminen on tärkeä osa ohjelmoinnin prosessia, sillä se auttaa varmistamaan, että koodi toimii oikein ja vähentää potentiaalisten bugien määrää. Ilman testejä koodin muutokset ja uudet ominaisuudet voivat helposti rikkoa vanhaa toimivaa koodia.
+Kirjoittaessamme koodia tai ohjelmia usein kohtaamme tilanteita, joissa haluamme varmistaa sen toimivuuden ja välttää mahdolliset virheet. Tämä on erityisen tärkeää silloin, kun koodiin tehdään muutoksia tai sitä jaetaan muiden kanssa. Tässä on tärkeää hyötyä testien kirjoittamisesta.
 
-## Miten: Esimerkkejä testien kirjoittamisesta Clojurella
+## Miten
 
-Yksi tapa kirjoittaa testejä Clojurella on käyttää testikirjastoa nimeltä `clojure.test`. Se mahdollistaa yksikkötestien kirjoittamisen ja suorittamisen helposti.
-
-```Clojure
-;; Tässä testissä tarkistetaan, että funktio laskee oikein kertoma faktaorialle 5
-(deftest test-faktaorio
-  (testing "Faktaorialaskun tulos on oikein"
-    (is (= (faktaorio 5) 120))))
-```
-
-Testin suorittamisen jälkeen näemme tuloksen:
-
-```
-Testing app.test-faktaorio
-
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
-```
-
-Testaamme myös toista funktiota, joka palauttaa tietyn indeksin arvon listasta:
+Testien kirjoittaminen Clojurella on helppoa ja nopeaa. Käytämme siihen "clojure.spec" kirjastoa, joka tarjoaa meille työkalut arvojen validointiin ja virheiden havaitsemiseen. Esimerkiksi, jos haluamme testata yksinkertaisen funktion, joka laskee kahden numeron summaa, voimme kirjoittaa testin seuraavasti:
 
 ```Clojure
-(deftest test-indeksi
-  (testing "Palauttaa oikean indeksin listasta"
-    (let [lista [1 2 3 4 5 6]]
-      (is (= (get-indeksi lista 3) 4)))))
+(clojure.spec.test/instrument `+)
+(is= 4 (+ 2 2)) ; tulisi palauttaa true
 ```
 
-Tulos:
+Kun ajamme tämän testin, ohjelma tulostaa meille testin tuloksen, joka kertoo, onko summa oikein vai ei.
 
-```
-Testing app.test-indeksi
+## Syvällisempi sukellus
 
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
-```
-
-## Syväsukellus: Lisätietoa testien kirjoittamisesta
-
-Yksikkötestien lisäksi on myös mahdollista kirjoittaa integraatiotestejä Clojurella. Integraatiotesteillä varmistetaan, että eri komponentit toimivat yhdessä odotetulla tavalla. Ne voivat myös auttaa löytämään mahdollisia ongelmia esimerkiksi tietokantakyselyissä.
-
-Testien kirjoittamisen lisäksi on tärkeää myös suunnitella testausstrategia, jotta testit kattavat mahdollisimman laajan osan koodista. Testien tulisi myös olla itsenäisiä, jotta yhden testin kaatuminen ei vaikuta muihin. Lisäksi on hyvä seurata testien kattavuutta ja varmistaa, että uuden koodin lisääminen ei vähennä testien kattavuutta.
+Testien kirjoittaminen on tärkeä osa koodin laadun varmistamista. Ne auttavat meitä havaitsemaan virheitä ja välttämään niitä ennen kuin koodi siirtyy tuotantoon. Clojuren "clojure.spec" kirjasto tarjoaa meille kattavan työkalun testien kirjoittamiseen ja suorittamiseen. Voimme myös kirjoittaa omia tarkistajia, jotka auttavat meitä löytämään tietyntyyppisiä virheitä ja varmistamaan, että koodi toimii oikein.
 
 ## Katso myös
-- Tietoa Clojuren testikirjastosta `clojure.test`: https://clojure.github.io/clojure/clojure.test-api.html
-- Hyviä käytäntöjä testien kirjoittamiseen: https://clojure.org/guides/testing_best_practices
-- Lisätietoa integraatiotesteistä: https://enterprisecraftsmanship.com/2015/01/07/integration-testing-your-clojure-applications/
+
+- [Documentation for clojure.spec](https://clojure.org/guides/spec)
+- [Guide for writing tests in Clojure](https://lambdaisland.com/blog/2019-03-07-generative-testing-in-clojure-part-2-spec-beyond-the-basics)
+- [Examples of using clojure.spec to improve code quality](https://www.therealest.host/blog/testing/
+- [Kurssi "Test Driven Development" Clojure-rakkailla](https://purelyfunctional.tv/courses/test-driven-development-in-clojure/)

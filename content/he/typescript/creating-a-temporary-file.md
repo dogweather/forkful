@@ -1,35 +1,54 @@
 ---
-title:    "TypeScript: יצירת קובץ זמני"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/creating-a-temporary-file.md"
+title:                "TypeScript: יצירת קובץ זמני"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
+יצירת קובץ זמני הוא כלי חשוב בתכנות TypeScript כאשר נרצה ליצור ולשנות קבצים בעת הריצה של התוכנית. תוכלו להשתמש בקבצים זמניים כדי להתאים את התוכנית שלכם לסביבה הנוכחית או לשמור על ניתובים מיוחדים.
 
-יצירת קובץ זמני היא כלי שימושי לכתיבת קוד בטיפול וניהול קבצים. היא מאפשרת לנו ליצור קובץ שימושי בזמן הרצת התוכנית ולאחר מכן למחוק אותו כאשר לא נדרש יותר.
+## איך ליצור קובץ זמני
 
-## איך לעשות זאת
-
-כדי ליצור קובץ זמני בטיפוסקריפט, אנו צריכים להשתמש בפונקציה "fs" המובנית של השפה. הנה דוגמא ליצירת קובץ זמני וכיצד להדפיס את התוכן שלו:
+תחילה, נצטרך להתקין את הספרייה "fs" מתוך הספרייה הפנימית של טיפוסקריפט.
 
 ```TypeScript
-import fs from 'fs';
-
-const tempFile = fs.mkdtempSync('myTempFile_'); // יוצר קובץ זמני עם קידומת myTempFile_
-fs.writeFileSync(tempFile, 'התוכן שלי'); // כותב לתוכן לקובץ הזמני שנוצר
-console.log(fs.readFileSync(tempFile, 'utf-8')); // מדפיס את התוכן של הקובץ הזמני
-// התוכן שלי
+import * as fs from 'fs';
 ```
 
-עם זאת, חשוב לזכור שנהורד לסגור את הקובץ הזמני לאחר שסיימנו להשתמש בו. ניתן לעשות זאת באמצעות פונקציות כמו "fs.unlinkSync" או "fs.unlink".
+כדי ליצור קובץ זמני, נבחר את השם של הקובץ ונגדיר את הנתיב שלו על ידי השתמשות בפונקציית "tmpfile()" של הספרייה "fs".
 
-## מעמקים
+```TypeScript
+const filename: string = 'temp.txt';
+const filepath: string = fs.tmpfile(filename);
+```
 
-יצירת קובץ זמני בטיפוסקריפט כוללת מספר שלבים. ראשית, אנו צריכים ליצור קובץ בעזרת הפונקציה "mkdtempSync" ולהעביר אליה את הקידומת המיוחדת שלנו. לאחר מכן, יש לכתוב תוכן לקובץ בעזרת הפונקציה "writeFileSync" ולקרוא ממנו עם "readFileSync". סוף סוף, יש למחוק את הקובץ באמצעות "unlinkSync".
+אחרי שיצרנו את הנתיב, נשתמש בפונקציית "writeFileSync()" כדי לכתוב לקובץ זמני טקסט שתצייןו.
 
-## ראה גם
+```TypeScript
+fs.writeFileSync(filepath, 'Hello World!');
+```
 
-- תיעוד מפורט לפונקציות "fs" של טיפוסקריפט: https://nodejs.org/api/fs.html#fs_file_system
-- מאמר על יצירת קובץ זמני בטיפוסקריפט: https://dev.to/shahil/stupid-easy-temporary-file-in-nodejs-using-tmp-filthy-easy--2nd5
+כעת, ניתן לקרוא ולערוך את הקובץ כרגיל.
+
+```TypeScript
+const data: string = fs.readFileSync(filepath);
+console.log(data);
+// פלט: Hello World!
+```
+
+## מעמד עמוק
+
+כאשר ניצור קובץ זמני, הספרייה fs תיצור נתיב לקובץ זמני באופן אקראי בתיקיה המכילה את הקוד הנוכחי. נתיב זה ישתנה בכל פעם שתפעילו את הפונקציה "tmpfile()". זה מבטיח שנוכל ליצור כמה קבצים זמניים שנרצה עם שמות שונים בכדי לבדוק את התוכנית שלנו.
+
+כדי למחוק את הקובץ הזמני כאשר אנחנו סיימנו להשתמש בו, אנחנו ניתן להשתמש בפונקציית "unlinkSync()" של הספרייה "fs".
+
+```TypeScript
+fs.unlinkSync(filepath);
+```
+
+תמיד יהיה טוב לבדוק את "נתיב קובץ זמני" כדי לוודא שהייתה הדמייה נכונה.
+
+## ראו גם

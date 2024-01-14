@@ -1,50 +1,64 @@
 ---
-title:    "Elixir: Leyendo argumentos de línea de comandos"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/reading-command-line-arguments.md"
+title:                "Elixir: Leyendo argumentos de línea de comandos"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué leer argumentos de línea de comando en Elixir
+## Por qué
 
-Si estás empezando a aprender Elixir o simplemente quieres mejorar tus habilidades, entender cómo leer argumentos de línea de comando es un paso importante. Esto te permitirá crear aplicaciones más dinámicas e interactivas, además de tener un mejor control sobre tu código.
+Los argumentos de línea de comando son una herramienta importante para los programadores de Elixir. Leer los argumentos de línea de comando puede ayudarte a crear programas que sean más dinámicos y adaptables a diferentes escenarios.
 
 ## Cómo hacerlo
 
-Para leer argumentos de línea de comando en Elixir, utilizamos la función `System.argv/0`. Esta función devuelve una lista de los argumentos pasados por línea de comando, donde el primer elemento es el nombre del script que estás ejecutando.
+La forma más sencilla de leer los argumentos de línea de comando en Elixir es utilizando la función `System.argv()`. Esta función devuelve una lista de cadenas que contienen los argumentos ingresados por el usuario al momento de ejecutar el programa.
+
+Veamos un ejemplo de cómo usarlo en un programa simple que toma dos argumentos y los suma:
 
 ```Elixir
-args = System.argv()
-```
+#!/usr/bin/env elixir
 
-Puedes acceder a cada uno de los argumentos utilizando el operador de indexación `[ ]` y pasando el índice del argumento que deseas obtener.
+defmodule Sumador do
+  def sumar() do
+    argumentos = System.argv()
+    primer_numero = String.to_integer(argumentos[1])
+    segundo_numero = String.to_integer(argumentos[2])
+    resultado = primer_numero + segundo_numero
 
-```Elixir
-first_arg = args[1]
-```
-
-A continuación, puedes utilizar estos argumentos en tu código según sea necesario. Por ejemplo, puedes utilizarlos para tomar decisiones en tu programa o para enviar información a una base de datos.
-
-## Inmersión profunda
-
-Además de la función `System.argv/0`, también podemos utilizar el módulo `OptionParser` para leer y validar argumentos de línea de comando en Elixir. Este módulo nos permite especificar argumentos con diferentes opciones y valores y proporciona funciones para obtenerlos fácilmente en nuestro código.
-
-```Elixir
-defmodule ArgsParser do
-  def print_name(args) do
-    arg_parser = OptionParser.parse(args, switches: [name: :required])
-    case arg_parser do
-      { _, [{:name, name}] } -> IO.puts("Tu nombre es #{name}")
-      _ -> raise "Por favor, ingresa tu nombre con el argumento --name"
-    end
+    IO.puts("La suma de los dos números es: #{resultado}")
   end
+end
+
+Sumador.sumar()
+```
+
+Si ejecutamos este programa desde la línea de comando con los argumentos `4` y `5`, el resultado será `La suma de los dos números es: 9`.
+
+## Profundizando
+
+Además de la función `System.argv()`, también podemos utilizar la biblioteca `OptionParser` para leer y manejar los argumentos de línea de comando de una manera más estructurada.
+
+Por ejemplo, si queremos permitirle al usuario ingresar un flag `-r` que indique si queremos sumar o restar los números, podemos utilizar `OptionParser` de la siguiente manera:
+
+```Elixir
+require OptionParser
+
+OptionParser.parse("-r", "Primer número", "Segundo número") do
+  {["add", primer_numero, segundo_numero], _, _} ->
+    resultado = primer_numero + segundo_numero
+    IO.puts("La suma de los dos números es: #{resultado}")
+  {["sub", primer_numero, segundo_numero], _, _} ->
+    resultado = primer_numero - segundo_numero
+    IO.puts("La resta de los dos números es: #{resultado}")
 end
 ```
 
-En este ejemplo, especificamos que el argumento `name` es requerido y luego lo obtenemos con la función `IO.puts/1`.
+De esta manera, si ejecutamos nuestro programa con los argumentos `add 4 5`, obtendremos `La suma de los dos números es: 9`, mientras que si ejecutamos `sub 5 3`, obtendremos `La resta de los dos números es: 2`.
 
 ## Ver también
 
-- Documentación de Elixir sobre la función `System.argv/0`: https://hexdocs.pm/elixir/System.html#argv/0
-- Documentación de Elixir sobre el módulo `OptionParser`: https://hexdocs.pm/elixir/OptionParser.html
+- [Documentación de `System.argv/0` en el sitio oficial de Elixir](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Documentación de `OptionParser` en el sitio oficial de Elixir](https://hexdocs.pm/elixir/OptionParser.html)
+- [Tutorial de Elixir: Reading Command Line Arguments](https://elixir-lang.org/getting-started/command-line.html)

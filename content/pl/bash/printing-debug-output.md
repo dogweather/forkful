@@ -1,42 +1,45 @@
 ---
-title:    "Bash: Dr"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/printing-debug-output.md"
+title:                "Bash: Drukowanie wyników debugowania"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią wielu dziedzin pracy. Dzięki temu, że programiści mają na swoim wyposażeniu narzędzia takie jak Bash, możliwe jest bardziej efektywne i wydajne tworzenie różnego rodzaju skryptów. Jednym z nich jest drukowanie informacji debugujących, które może być bardzo przydatne w procesie programowania. W tym artykule przyjrzymy się dokładniej dlaczego warto wykorzystywać debugging w Bashu.
+Jeśli już próbowałeś programować w Bash, być może zauważyłeś, że jednym z najważniejszych narzędzi do debugowania kodu jest wypisywanie wyjścia. W tym artykule dowiesz się, dlaczego drukowanie komunikatów debugowania jest kluczowym elementem w pracy z Bash i jak możesz skutecznie wykorzystać to narzędzie w swoim kodzie.
 
 ## Jak to zrobić
 
-Drukowanie informacji debugujących w Bashu jest bardzo proste i może być wykorzystane w wielu sytuacjach. Aby to zrobić, wystarczy użyć komendy "echo" w połączeniu z flagą "-e", która pozwala na wyświetlanie specjalnych znaków. Poniżej przedstawiam przykład wydruku z użyciem tej metody:
+Aby wypisać wyjście debugowania w Bash, możesz użyć komendy `echo` z odpowiednim flagiem. Na przykład, aby wyświetlić wartość zmiennej `i`, możesz użyć poniższego kodu:
 
-```Bash
-echo -e "Debug output: This is a debug message.\n"
+```bash
+echo "Wartość zmiennej i to: $i"
 ```
 
-Powyższa komenda wyświetli informację debugującą "Debug output: This is a debug message." wraz z nową linią, co ułatwia czytanie wyjścia. W ten sposób można również wyświetlać różne zmienne lub wyniki funkcji. Przykład:
+Będzie to wypisywać na ekranie "Wartość zmiennej i to: [wartość zmiennej i]". Możesz również wykorzystać operator `>` aby przekierować to wyjście do pliku. Na przykład:
 
-```Bash
-my_variable="testing"
-echo -e "Debug output: The value of my_variable is $my_variable.\n"
+```bash
+echo "Wartość zmiennej i to: $i" > output.txt
 ```
 
-Wyjście z powyższego kodu będzie wyglądać następująco: "Debug output: The value of my_variable is testing."
+Powyższy kod zapisze wartość zmiennej `i` do pliku `output.txt`. Istnieje również opcja `>>`, która będzie dodawać nowe zawartości do istniejącego pliku, zamiast go nadpisywać.
 
-## Deep Dive
+## Głębszy zanurzenie
 
-Drukowanie informacji debugujących jest bardzo przydatne podczas pisania skryptów w Bashu. Dzięki temu, że można dokładnie śledzić wartości zmiennych lub wyniki funkcji, łatwiej jest odnaleźć i usunąć błędy w kodzie. Dodatkowo, debugowanie może być również wykorzystane do zapisu informacji offline, co jest przydatne w przypadku długotrwałych skryptów. Można wtedy później przejrzeć wydruk i sprawdzić, co dokładnie wydarzyło się podczas wykonania skryptu.
+Drukowanie wyjścia debugowania jest kluczowym narzędziem w procesie debugowania kodu w Bash. Pozwala to na śledzenie wartości zmiennych i wyświetlanie komunikatów diagnostycznych w różnych etapach wykonywania kodu. Może to pomóc w łatwiejszym zlokalizowaniu i rozwiązaniu błędów w kodzie.
 
-Jednak należy uważać, aby nie nadużywać printowania informacji debugujących, ponieważ może to spowolnić wykonanie skryptu, szczególnie przy większych projektach.
+Jedną z ciekawszych opcji jest użycie kolorów w wyjściu debugowania. Można to osiągnąć poprzez użycie polecenia `tput setaf` z odpowiednimi parametrami. Na przykład, aby ustawić kolor na czerwony, można użyć:
+
+```bash
+echo "$(tput setaf 1) Error: Wystąpił błąd $(tput sgr0)"
+```
+
+Zobaczysz, że wyjście będzie wyświetlać tekst "Error: Wystąpił błąd" w kolorze czerwonym. To jest tylko jedna z wielu opcji, które można wykorzystać do bardziej czytelnego i przejrzystego wyjścia debugowania.
 
 ## Zobacz również
 
-- [Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/)
-- [Poradnik: Debugowanie w Bashu](https://linuxize.com/post/bash-debugging/)
-- [Blog: Najlepsze praktyki programowania w Bashu](https://blog.usejournal.com/my-10-favorite-features-of-bash-5722904cf3a3)
-
-Nadzieję, że ten artykuł pomógł Ci zrozumieć, dlaczego warto wykorzystywać debugowanie w Bashu oraz jak to zrobić w praktyce. Warto pamiętać, że jest to tylko jedna z wielu przydatnych funkcji tego języka skryptowego, więc warto poświęcić czas na naukę jego różnych możliwości.
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Kurs Bash na Codecademy](https://www.codecademy.com/learn/learn-bash)

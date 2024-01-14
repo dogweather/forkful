@@ -1,100 +1,47 @@
 ---
-title:    "Bash recipe: Printing debug output"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/printing-debug-output.md"
+title:                "Bash recipe: Printing debug output"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Debugging is an essential skill for any programmer, and printing debug output is a valuable technique that can save you time and frustration in the long run. By printing out specific values or messages during the execution of your code, you can track and understand how your code is running and identify any potential errors. So, if you want to become a more efficient and effective programmer, knowing how to print debug output is a must.
+Have you ever encountered errors in your Bash programs and had no idea why they were happening? Or have you wanted to track the flow of your code to better understand its execution? In these situations, printing debug output can be a useful tool for understanding and troubleshooting your code.
 
 ## How To
-
-Printing debug output in Bash is a straightforward process. You can use the built-in `echo` command to print out any desired text or variable value. Here's a simple example:
-
+To print debug output in Bash, we can use the `echo` command. We simply output the variable or value we are interested in and add a descriptive message inside the `echo` command. Let's see an example:
 ```Bash
-# Declare a variable
-name="John"
-
-# Print out a message
-echo "Hello, $name! It's nice to meet you."
+message="Hello, world!"
+echo "Printing message: $message"
 ```
-
-The output of this code would be:
-
+This will print the following output:
+```
+Printing message: Hello, world!
+```
+We can also use the `-e` flag with `echo` to enable interpretation of backslash escapes. This can be useful when we want to print variables and special characters in the same line. For example:
 ```Bash
-Hello, John! It's nice to meet you.
+message="Hello \n world!"
+echo -e "Printing message: $message"
 ```
-
-Another useful command for debugging is `printf`, which allows you to format the output in a specific way. Here's an example:
-
-```Bash
-# Declare a variable
-age=25
-
-# Print out a formatted message
-printf "I am %d years old.\n" "$age"
+This will print the following output:
 ```
-
-The output of this code would be:
-
-```Bash
-I am 25 years old.
+Printing message: Hello 
+world!
 ```
-
-You can also use these commands within functions to print out debug messages for different parts of your code. For example:
-
-```Bash
-# Define a function
-say_hello() {
-  name="Lisa"
-  echo "Hello, $name!"
-}
-
-# Call the function
-say_hello
-```
-
-The output of this code would be:
-
-```Bash
-Hello, Lisa!
-```
+If we want to add more debug output to our code, we can use the `>>` redirection operator to append the output to a file instead of printing it on the console. This allows us to save the debug output for later analysis.
 
 ## Deep Dive
+Printing debug output is a great way to understand the behavior of our code and identify any bugs. However, we should be careful not to overuse it. Too many debugging statements can clutter our code and make it difficult to read and maintain.
 
-Now let's dive a bit deeper into printing debug output in Bash. One thing to keep in mind is that when you're printing out variables, you should always use double quotes around the variable name to ensure that the value is actually printed instead of the name. For example:
+Furthermore, we should ensure that we remove or comment out any debug output once we have resolved the issue. Leaving them in our code can decrease its performance and make it harder to detect future bugs.
 
-```Bash
-# Declare a variable
-my_var="Hello"
-
-# This will print "my_var"
-echo "$my_var"
-
-# This will print "Hello"
-echo $my_var
-```
-
-Furthermore, you can also use the `set -x` command at the beginning of your Bash script to turn on debugging mode. This will print out the executed command and its arguments, which can be helpful in tracking down errors.
-
-Another useful tool for debugging is the `test` command, which allows you to test conditions and print out the results. For example:
-
-```Bash
-# Test if a variable is set
-test -n "$my_var" && echo "my_var is set" || echo "my_var is not set"
-```
-
-The output of this code would be:
-
-```Bash
-my_var is set
-```
+We can also use the `set -x` command at the beginning of our script to enable verbose debugging output for the entire script. This is useful if we want to see the detailed execution of our code, including function calls and variable assignments.
 
 ## See Also
+- [Guide to Debugging Bash Scripts](https://www.shellscript.sh/debugging.html)
+- [Bash Debugging Techniques by Example](https://wiki.bash-hackers.org/scripting/debuggingtips)
+- [Bash Documentation - echo](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
 
-- [Bash Debugging Techniques](https://www.linuxjournal.com/content/debugging-bash-scripts)
-- [Debugging Bash Scripts with xtrace](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin)
-- [Using the Test Command](https://www.tldp.org/LDP/abs/html/testconstructs.html)
+I hope this blog post has helped you understand the importance of printing debug output in Bash and how to effectively use it in your code. Happy debugging!

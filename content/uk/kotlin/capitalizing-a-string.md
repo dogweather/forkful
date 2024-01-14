@@ -1,39 +1,50 @@
 ---
-title:    "Kotlin: Капіталізація рядка"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: Перетворювання стрічки великими літерами"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Для чого
+## Чому
 
-Уперше у програмуванні може здатися, що перетворення тексту на великі літери - це пересічна задача, і навіщо взагалі ним займатися? Однак, цілком логічним є бажання, наприклад, виводити користувачу назви програм або веб-сторінки у вигляді заголовків з великих літер. Не забуваємо про чистоту коду, і в цьому випадку правильне форматування тексту також важливе!
+Просто й потрібно! Коли ви кодуєте, це важливо форматувати дані для зручного читання і розуміння, і це включає капіталізацію рядків.
 
-## Як те зробити
+## Як
 
-Потрібно лише використати вбудовану функцію `capitalize()`, яку надає мова Kotlin. Нижче наведено приклад коду, який перетворює рядок `hello world` на `Hello world`:
+Існує кілька способів капіталізувати рядки в Kotlin. Найбільш простий спосіб - використовувати метод ```capitalize()```. Наприклад:
 
-```Kotlin
-val text = "hello world"
-println(text.capitalize())
+```
+Kotlin val name = "привіт"
+println(name.capitalize())
+// Виведе: Привіт
 ```
 
-Результатом буде виведення `Hello world`. Якщо вам потрібно перетворити на великі літери кожне слово в рядку, використовуйте функцію `capitalizeWords()`, яка розділює рядок на окремі слова та перетворює їх:
+У разі, якщо потрібно капіталізувати кожне слово в рядку, можна використовувати метод ```split()``` та цикл ```for``` для проходження через кожне слово і додавання першої великої літери. Наприклад:
 
-```Kotlin
-val text = "hello world"
-println(text.capitalizeWords())
+```
+Kotlin val sentence = "це приклад речення для капіталізації"
+var capitalizedSentence = ""
+for (word in sentence.split(" ")) {
+    capitalizedSentence += word.capitalize() + " "
+}
+println(capitalizedSentence.trim())
+// Виведе: Це Приклад Речення Для Капіталізації
 ```
 
-Результатом буде виведення `Hello World`.
+Звичайно, існує багато інших способів капіталізовувати рядки в Kotlin, включаючи використання бібліотечних функцій та регулярних виразів. Ви можете експериментувати та обирати той, який вам найбільш підходить.
 
-## Глибока розкриття
+## Deep Dive
 
-Функції `capitalize()` та `capitalizeWords()` базуються на стандартній бібліотеці мови Kotlin та використовують метод `toUpperCase()` для перетворення рядків великі літери. Якщо ви хочете самостійно реалізувати подібний функціонал, можете скористатися цим методом і додати додаткові дії зі зміною форматування рядка.
+В Kotlin, кожен рядок представлений об'єктом типу ```String```. У цьому типі існує багато методів для роботи з рядками, включаючи і ```capitalize()```.
 
-## Дивіться також
+Цей метод перетворює першу букву рядка на велику літеру і залишає решту без змін. Наприклад, якщо рядок містить слово, яке уже починається з великої літери, то метод не змінить його.
 
-- [Документація Kotlin про `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Документація Kotlin про `capitalizeWords()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize-words.html)
-- [Документація Kotlin про `toUpperCase()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
+Крім того, метод ```capitalize()``` приймає параметр типу ```Locale```, який визначає правила капіталізації для конкретної мови. За замовчуванням, використовується системна локаль. Наприклад, якщо ваша системна локаль - українська, то метод ```capitalize()``` буде приводити до капіталізації рядків за правилами української мови.
+
+## Дивись Також
+
+- [Документація Kotlin про метод capitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Відео-урок про роботу з рядками в Kotlin](https://www.youtube.com/watch?v=IEuEcU7l6ko)
+- [Стаття про роботу з рядками в Kotlin](https://stackoverflow.com/questions/13752670/how-do-i-capitalize-every-word-first-letter-of-a-string-in-java)

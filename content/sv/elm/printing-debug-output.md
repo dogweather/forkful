@@ -1,51 +1,57 @@
 ---
-title:    "Elm: Utskrift av felsökningsutdata"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/printing-debug-output.md"
+title:                "Elm: Utskrift av felsökningsinformation"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva kod är ofta en ganska ensam uppgift, och det kan vara svårt att förstå varför något inte fungerar som det ska. Ibland kan det vara till hjälp att ha lite extra information om vad som händer i koden för att felsöka och hitta fel snabbare. Det är här utskrift av debug-utdata kan vara till stor hjälp.
+Att skriva kod är en process fylld av utmaningar och problem som måste lösas. Ibland kan det vara svårt att förstå vad som händer i koden och varför vissa fel inträffar. Att skriva ut debug-utdata kan hjälpa till att förbättra förståelsen av koden och effektivisera felsökningen.
 
-## Hur man gör det
+## Hur man gör
 
-För att skriva ut debug-utdata i Elm, kan du använda funktionen `Debug.log`. Det tar två argument - ett strängvärde som förklarar vad du vill skriva ut och ett värde som är det du faktiskt vill skriva ut. Här är ett exempel:
+För att skriva ut debug-utdata i Elm, använd funktionen `Debug.log` som tar emot en sträng och ett värde som ska skrivas ut. Till exempel:
 
 ```Elm
-import Debug exposing (log)
-
-x = 5
-y = 10
-
-z = x + y
-
-log "Värdet på z är:" z -- skriver ut "Värdet på z är: 15" i konsolen
+Debug.log "Värde" 5
 ```
 
-I exemplet ovan förklarar strängen `"Värdet på z är:"` vad som kommer att skrivas ut och värdet `z` är det som faktiskt skrivs ut. Genom att använda `Debug.log` på viktiga punkter i koden kan du enkelt spåra vad som händer och hitta eventuella fel.
+Detta kommer att skriva ut "Värde: 5" i konsolen när programmet körs.
+
+Man kan även göra det mer dynamiskt genom att skriva ut värden från variabler eller funktioner:
+
+```Elm
+Debug.log "Variabel" minVariabel
+Debug.log "Funktion" (minFunktion argument)
+```
+
+Det är också möjligt att kombinera flera värden i en sträng:
+
+```Elm
+Debug.log "Värden" ("Var1: " ++ var1 ++ ", Var2: " ++ var2)
+```
+
+Detta kommer att skriva ut "Värden: Var1: värde1, Var2: värde2".
 
 ## Djupdykning
 
-I Elm finns det också möjlighet att skriva ut mer avancerad utdata med hjälp av den inbyggda funktionen `Debug.toString`. Den konverterar ett värde till en strängrepresentation, vilket kan vara särskilt användbart för att skriva ut komplexa datastrukturer som listor eller tupler. Här är ett exempel:
+En viktig aspekt av att skriva debug-utdata är att hitta den rätta balansen mellan att ha tillräckligt med information för att förstå koden och att inte överväldigas av för mycket information. Det är viktigt att vara selektiv och noggrann med vilka uttryck som väljs för att skriva ut.
+
+En annan användbar funktion för debug-utdata är `Debug.todo` som används för att markera ställen i koden som behöver mer arbete eller implementering. Till exempel:
 
 ```Elm
-import Debug exposing (log)
-import List exposing (map)
-
-lista = [1, 2, 3]
-
-kvadrater = map (\x -> x * x) lista
-
-log "Lista med kvadrater:" (Debug.toString kvadrater) -- skriver ut "Lista med kvadrater: [1, 4, 9]" i konsolen
+todo "Fixa detta senare"
 ```
 
-Som du kan se i exemplet ovan använder vi här `Debug.toString` för att konvertera värdet `kvadrater` till en strängrepresenation som vi sedan skriver ut med hjälp av `Debug.log`. Detta gör det enklare att se vad som händer med våra data när vi använder funktionen `map`.
+Detta är ett sätt att ge sig själv eller andra programmerare en påminnelse om att återkomma till det här stället i koden.
 
-## Se även
+Att använda debugger-verktyget i din webbläsare kan också vara en användbar metod för att få mer detaljerad information om vad som händer i koden. Detta kan hjälpa till att identifiera och lösa problem som inte kan lösas med debug-utdata.
 
-- [Elm guide om felsökning](https://guide.elm-lang.org/debugging/)
-- [Officiell Elm-sida om Debug-modulen](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Artikel om felsökning med Elm](https://medium.com/@dannyfritz/a-comprehensive-guide-to-debugging-elm-a8a522efd6a4)
+## Se också
+
+- [Elm Documentation - Debug](https://elm-lang.org/docs/debug)
+- [Debugging Elm](https://medium.com/@anne_mit_m/elm-debugging-2a73da9dcb2c)
+- [Debugging in Elm](https://www.elm-tutorial.org/sv/03_debugging/00_introduction.html)

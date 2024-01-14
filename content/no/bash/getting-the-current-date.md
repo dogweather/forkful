@@ -1,61 +1,56 @@
 ---
-title:    "Bash: Få gjeldende dato"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/getting-the-current-date.md"
+title:                "Bash: Hente nåværende dato"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å få den nåværende datoen kan virke som en enkel og fremfor alt unødvendig oppgave. Men som enhver programmerer vet, er nøyaktighet og effektivitet viktig i koding. Å kunne hente den nøyaktige datoen kan være avgjørende for å utføre en bestemt operasjon eller for å sikre at et program fungerer riktig.
+Å få dagens dato er en vanlig oppgave i Bash-programmering. Dette kan være nyttig for å lage skript som automatiserer oppgaver som kjører på bestemte datoer, som for eksempel å ta sikkerhetskopier av filer, sende statusrapporter eller planlegge automatiserte prosesser. 
 
 ## Hvordan
 
-For å få den nåværende datoen i Bash, kan du bruke kommandoen "date" sammen med ønsket format. For eksempel, for å få datoen i standard format, kan du skrive følgende i terminalen:
+For å få dagens dato i Bash kan du bruke `date`-kommandoen. Dette vil skrive ut dagens dato i standardformatet som er satt på systemet ditt, vanligvis i form av måned/dag/år. Her er et eksempel på hvordan du kan bruke `date` i en Bash-skript:
 
 ```Bash
-date
+#!/bin/bash
+
+today=$(date)
+echo "Dagens dato er $today"
 ```
 
-Dette vil gi output som dette:
+Dette vil skrive ut følgende når det blir kjørt:
 
-```Bash 
-Fre Aug 13 19:16:53 CEST 2021
+```
+Dagens dato er Mon May 24 15:10:03 CEST 2021
 ```
 
-Du kan også formatere utdataen ved å inkludere spesifikke flagg. For eksempel, for å få datoen i formatet "DD/MM/YYYY", skriver du:
+Du kan også kontrollere hvilket format datoen blir skrevet ut i ved å bruke `date`-kommandoen med forskjellige opsjoner som `+%d/%m/%Y` for å få formatet dag/måned/år. Her er en eksempel på hvordan du kan bruke dette i en Bash-skript:
 
 ```Bash
-date +'%d/%m/%Y'
+#!/bin/bash
+
+today=$(date +%d/%m/%Y)
+echo "Dagens dato er $today"
 ```
 
-Dette vil gi følgende output:
+Dette vil skrive ut følgende når det blir kjørt:
 
-```Bash
-13/08/2021
+```
+Dagens dato er 24/05/2021
 ```
 
-Det finnes en rekke ulike formateringsflagg du kan bruke for å få ønsket output. En fullstendig liste finner du [her](https://www.gnu.org/software/coreutils/manual/html_node/Examples-using-date.html#Examples-using-date).
+Du kan også bruke `date`-kommandoen til å få dagens dato i en annen tidssone ved å bruke opsjonen `-d` etterfulgt av ønsket tidssone. For eksempel, `date -d "America/New_York"` vil skrive ut dagens dato i New York.
 
 ## Dypdykk
 
-Date-kommandoen henter faktisk ikke bare den nåværende datoen, men også klokkeslett og tidssone. Du kan også bruke den til å stille inn en fremtidig eller tidligere dato. For eksempel, for å få datoen 7 dager frem i tid, skriver du:
+Hvis du vil lære mer om hvordan `date`-kommandoen fungerer, kan du lese manualsidene ved å skrive `man date` i terminalen. Her kan du finne alle de forskjellige opsjonene og formatene som er tilgjengelige for `date`-kommandoen. Du kan også bruke `--help`-opsjonen for å få en kort oversikt over de vanligste opsjonene.
 
-```Bash
-date -d '+7 days'
-```
+## Se også
 
-Dette vil gi en output som dette:
-
-```Bash
-Lør 21 Aug 19:33:30 CEST 2021
-```
-
-I tillegg til å vise den nåværende datoen, kan datokommandoen også brukes til å endre systemets dato og klokkeslett. Dette kan være nyttig hvis du for eksempel skal teste et program på en bestemt dato eller tid.
-
-## Se Også
-
-- [GNU Coreutils - date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Linuxize - How To Get Current Date and Time in Bash](https://linuxize.com/post/bash-current-date-and-time/)
-- [TecMint - Basic Date and Time Management in Linux using 'date' Command](https://www.tecmint.com/date-command-examples/)
+- [Bash How To: Automate Tasks with Cron Jobs](https://www.makeuseof.com/tag/cron-linux-job-scheduler/)
+- [Bash scripting cheat sheet](https://devhints.io/bash)
+- [Bash manual pages](https://www.gnu.org/software/bash/manual/)

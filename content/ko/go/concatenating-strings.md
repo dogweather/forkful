@@ -1,32 +1,19 @@
 ---
-title:    "Go: 문자열 연결하기"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/concatenating-strings.md"
+title:                "Go: 문자열 연결하기"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 Go에서 문자열을 연결하는 것인가?
+## 왜
 
-문자열을 연결하는 것은 많은 개발자들에게 익숙한 일일 것입니다. 이것은 대부분의 프로그래밍 언어에서 가능한 기능이기 때문입니다. 그러나 그것이 Go에서도 가능하다는 것을 알고있다면, 더 빠르고 효율적인 코드를 작성할 수 있을 것입니다.
+문자열 연결을 하는 이유는 문자열을 동적으로 만들어내기 위해서입니다.
 
-# Go에서 문자열을 연결하는 방법
+## 하는 방법
 
-Go에서 문자열을 연결하는 방법은 간단합니다. ```+``` 연산자를 사용하여 두 개의 문자열을 연결할 수 있습니다. 예를 들어:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    firstString := "Hello"
-    secondString := "world"
-    fmt.Println(firstString + " " + secondString)
-}
-```
-
-이 코드는 "Hello world"를 출력합니다. 또한 여러 개의 문자열을 연결할 수도 있습니다. 예를 들어:
+Go 언어에서 문자열을 연결하는 가장 기본적인 방법은 `+` 연산자를 사용하는 것입니다. 예를 들어, `Hello`와 `world` 두 개의 문자열을 연결하면 `Helloworld`가 됩니다.
 
 ```Go
 package main
@@ -34,18 +21,15 @@ package main
 import "fmt"
 
 func main() {
-    firstString := "I"
-    secondString := "love"
-    thirdString := "Go"
-    fmt.Println(firstString + " " + secondString + " " + thirdString)
+	message := "Hello" + "world"
+	fmt.Println(message)
 }
+
+// Output:
+// Helloworld
 ```
 
-이 코드는 "I love Go"를 출력합니다.
-
-# 문자열 연결에 대해 더 알아보기
-
-때로는 문자열을 연결하기 위해 다른 방법을 사용해야할 수 있습니다. ```fmt.Sprintf()``` 함수는 여러 문자열을 한 번에 연결하는 데 사용될 수 있습니다. 예를 들어:
+또 다른 방법으로는 `fmt` 패키지에서 제공하는 `Sprintf()` 함수를 사용하는 것입니다. 이 함수는 서식 지정된 문자열을 반환하기 때문에 변수에 할당해야 합니다.
 
 ```Go
 package main
@@ -53,26 +37,23 @@ package main
 import "fmt"
 
 func main() {
-    firstString := "Hello"
-    secondString := "world"
-    fullString := fmt.Sprintf("%s %s!", firstString, secondString)
-    fmt.Println(fullString)
+	name := "John"
+	message := fmt.Sprintf("Hello %s!", name)
+	fmt.Println(message)
 }
+
+// Output:
+// Hello John!
 ```
 
-이 코드는 "Hello world!"를 출력합니다.
+## 깊게 들어가기
 
-# 자세히 알아보기
+Go 언어에서 연결될 문자열의 개수가 많아질수록 `+` 연산자를 사용하는 것 보다는 `Sprintf()` 함수를 사용하는 것이 더 효율적입니다. `+` 연산자는 문자열을 연결하기 위해 매번 새로운 문자열을 생성하기 때문에 메모리 관리 측면에서 비효율적입니다. 하지만 `Sprintf()` 함수를 사용하면 특정 서식을 지정하여 문자열을 만들 수 있기 때문에 더 효율적입니다.
 
-Go에서는 문자열 결합이 순서대로 수행되므로 많은 문자열을 결합할 때 ```bytes.Buffer```를 사용하는 것이 더 효율적일 수 있습니다. 또한 문자열 결합은 메모리 할당을 필요로하므로 큰 문자열의 경우 성능이 저하 될 수 있습니다.
+또한 Go 언어에서 문자열은 불변 값입니다. 따라서 문자열을 연결할 때마다 새로운 문자열이 생성되는 것이 아니라, 메모리에 새로운 주소 공간을 할당하고 문자열을 복사함으로써 연결되는 것입니다.
 
-# 더 자세한 정보를 원한다면...
+## See Also
 
-교차 컴파일러와 제로 가비지 컬렉션과 같은 여러 가지 흥미로운 기능을 갖춘 Go에 대한 더 자세한 정보를 원한다면 아래의 링크를 확인해보세요.
-
-## 참고자료
-
-- Go 공식 웹사이트: https://golang.org/
-- Go 언어 투어: https://tour.golang.org/
-- Effective Go: https://golang.org/doc/effective_go.html
-- Go 표준 라이브러리: https://golang.org/pkg/
+- [Go 언어 공식 문서](https://golang.org/doc/)
+- [Effective Go](https://golang.org/doc/effective_go.html)
+- [A Tour of Go](https://tour.golang.org/)

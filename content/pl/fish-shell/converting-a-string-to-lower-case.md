@@ -1,34 +1,34 @@
 ---
-title:    "Fish Shell: Konwertowanie ciągu znaków na małe litery"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/converting-a-string-to-lower-case.md"
+title:                "Fish Shell: Konwertowanie ciągu znaków na małe litery"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+### Dlaczego?
 
-Konwersja ciągów znaków na małe litery jest ważną umiejętnością dla każdego programisty. Używanie odpowiednich funkcji w językach programowania pozwala na łatwiejsze i bardziej skuteczne manipulowanie tekstem.
+Jeśli jesteś programistką lub programistą, prawdopodobnie spotkałaś się z sytuacją, w której potrzebowałaś lub potrzebowałeś zamienić napis na małe litery. Czy to dla porównania ze wzorcem, czy dla ujednolicenia danych, konwersja ta jest niezbędna w wielu przypadkach. W tym wpisie dowiecie się, jak zrobić to w Fish Shell.
 
-## Jak to zrobić
+### Jak to zrobić?
 
-```Fish Shell``` ma kilka wbudowanych funkcji, które pozwalają na konwersję ciągów znaków na małe litery. Oto kilka przykładów, jak to zrobić:
+Możesz użyć wbudowanej funkcji `string tolower`, która konwertuje napis na małe litery. Spróbujmy to na praktycznym przykładzie:
 
-```fish
-string tolower "PROGRAMOWANIE" # zwraca "programowanie"
-set tekst "To Jest Przykład" # zmienna z ciągiem znaków
-echo $tekst | tolower # zwraca "to jest przykład"
+```Fish Shell
+string tolower "PRZYKŁADOWY NAPIS"
 ```
-Powyższe przykłady pokazują użycie funkcji ```tolower``` do konwersji ciągów znaków. Możliwe jest także zastosowanie tej funkcji w połączeniu z innymi, na przykład do czyszczenia i porównywania tekstu.
 
-## Deep Dive
+Wynik wywołania tej funkcji będzie po prostu "przykładowy napis". Zauważmy, że funkcja ta jest nieczuła na to, czy w podanym napisie są już małe litery czy nie. Pozwala to na łatwe porównywanie napisów bez konieczności uwzględniania wielkości liter.
 
-Funkcja ```tolower``` w ```Fish Shell``` jest częścią standardowej biblioteki shell i działa podobnie jak w innych językach programowania. Od słów kluczowych lub wrażliwości na wielkość liter zależy, jak dokładnie będzie działać funkcja.
+Jeśli jednak chcemy mieć pełną kontrolę nad konwersją, możemy użyć innych wbudowanych funkcji jak `string tolower-macron` lub `string tolower-accent`. Warto też zapoznać się z funkcją `string toupper`, która konwertuje napis na duże litery.
 
-Funkcja ```tolower``` jest także przydatna w przypadku wykorzystywania specjalnych znaków w tekstach, na przykład polskich liter lub znaków specjalnych.
+### Dogłębny wgląd
 
-## Zobacz także
+W Fish Shell konwersja napisów oparta jest na standardowej bibliotece C dla języka C. Oznacza to, że funkcje te wykonują pewne operacje na poszczególnych znakach w napisie, np. zmiana wartości kodu ASCII na odpowiednią wartość dla małych liter. W przypadku użycia specjalnych znaków lub liter z akcentami, konwersja może być bardziej skomplikowana, dlatego też istnieją funkcje `tolower-macron` i `tolower-accent`, które obsługują te przypadki.
 
-- Dokumentacja funkcji ```tolower``` w ```Fish Shell```
-- Poradnik o funkcji ```tolower``` w języku Python
-- Przykładowy projekt wykorzystujący funkcję ```tolower``` do manipulowania tekstem
+### Zobacz także
+
+- [Dokumentacja Fish Shell - String Manipulation](https://fishshell.com/docs/current/tutorial.html#tutorial-manip)
+- [Dokumentacja Fish Shell - String Functions](https://fishshell.com/docs/current/cmds/string.html)
+- [Poradnik programisty - Konwersja napisów na małe litery w Shell](https://www.shell-tips.com/2014/06/04/how-to-convert-uppercase-letters-to-lowercase-in-bash/)

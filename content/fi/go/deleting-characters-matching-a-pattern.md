@@ -1,46 +1,44 @@
 ---
-title:    "Go: Kuvion mukaisen merkin poistaminen"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/deleting-characters-matching-a-pattern.md"
+title:                "Go: Kirjailu tietokoneohjelmointi: Kaavan mukaisten merkkien poistaminen"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Monesti Go-ohjelmoinnin aikana voi ilmetä tarve poistaa merkkejä tietyltä kaavalta. Tässä blogikirjoituksessa kerromme, miksi tällaista toimintoa saatetaan tarvita ja miten se voidaan toteuttaa.
+
+Päätöntä näppäinten naputtelua kaipaavan on vaikea ymmärtää, miksi joku haluaisi poistaa tietyn kuviomäärityksen mukaiset merkit Go-ohjelmoinnissa. Kyseessä saattaa kuitenkin olla tarpeellinen toiminto datan käsittelyssä, jota käsitellään tulevassa osiossa.
 
 ## Miten
-Go-ohjelmoinnissa merkkejä voidaan poistaa helposti erilaisten kaavojen avulla. Esimerkkikoodissa käytämme funktiota "ReplaceAllString" ja sen avulla poistamme kaikki pisteet merkkijonosta "abc.def.ghi". Alla näet koodin ja siihen liittyvän outputin:
+
+Go-kielellä on useita tapoja poistaa merkkejä kuviomäärityksen perusteella. Tässä on yksi esimerkki, jossa poistetaan kaikki välilyönnit annetusta merkkijonosta ja tulostetaan lopputulos.
 
 ```Go
 package main
 
 import (
 	"fmt"
-	"regexp"
+	"strings"
 )
 
 func main() {
-	// Luo uusi säännöllinen lauseke
-	re := regexp.MustCompile(`\.`)
-
-	// Käytä ReplaceAllString funktiota poistaaksesi pisteet merkkijonosta
-	result := re.ReplaceAllString("abc.def.ghi", "")
-
-	// Tulosta lopputulos
-	fmt.Println(result)
-	
-	// Output:
-	// abcdefghi
+	str := "Go-kieli on loistava!"
+	fmt.Println(strings.ReplaceAll(str, " ", ""))
 }
+
+// Output: Gokielionloistava!
 ```
 
-## Syvällinen tarkastelu
-Merkeillä poistaminen voi joskus olla tarpeellista esimerkiksi tietojen käsittelyssä tai merkkijonojen muokkaamisessa. Go-ohjelmoinnissa tähän on tarjolla monipuolisia työkaluja, kuten esimerkiksi säännölliset lausekkeet. Näiden avulla on mahdollista poistaa tai korvata merkkejä halutulla tavalla.
+On tärkeää muistaa, että tällä tavoin voidaan poistaa vain yksi merkkijono kerrallaan. Jos halutaan poistaa esimerkiksi sekä välilyönnit että välimerkit, täytyy käyttää useampia ReplaceAll-funktioita tai esimerkiksi Regular Expression -ratkaisua.
+
+## Syvempi sukellus
+
+Mikäli halutaan ymmärtää paremmin, miten merkkien poistaminen kuvion perusteella tapahtuu Go-kielessä, täytyy perehtyä Regular Expression (reguläärilausekkeet) -käsitteeseen. Tämä mahdollistaa monimutkaisempien kuviomääritysten käytön ja tarkempaan kontrollointiin poistettavien merkkien suhteen.
 
 ## Katso myös
-- [Go:n virallinen sivusto](https://golang.org/)
-- [Go-kieltä käsittelevä blogi](https://blog.golang.org/)
-- [Go-ohjelmoinnin opas](https://gobyexample.com/)
 
-Kiitos lukemisesta ja hauskoja Go-ohjelmointihetkiä!
+- [Go-kielin virallinen verkkosivusto](https://golang.org/)
+- [Regular Expression -tutoriaali](https://regexone.com/)
+- [Go-kieleen perehtyminen Askolan kunnan avoimen datan avulla](https://github.com/askolanvapaakaupunki/askola-opendata)

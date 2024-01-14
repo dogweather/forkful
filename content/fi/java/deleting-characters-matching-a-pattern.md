@@ -1,47 +1,40 @@
 ---
-title:    "Java: Poistetaan kaavan mukaiset merkkijonot"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/deleting-characters-matching-a-pattern.md"
+title:                "Java: Mallia vastaavien merkkien poistaminen"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-On monia syitä miksi joku haluaisi poistaa merkkejä, jotka vastaavat tiettyä kaavaa ohjelmointitehtävässä. Ehkä haluat puhdistaa merkkijonon ennen sen käyttämistä tai tunnistaa tietynlaisia merkkejä tietokannassa. Tässä blogipostissa keskitymme opettamaan, kuinka voit poistaa merkkejä tietyn kaavan perusteella käyttämällä Java-ohjelmointikieltä.
+Joillakin ohjelmankehittäjillä saatetaan olla tilanteita, joissa on tarpeen poistaa merkkejä tietyllä kaavalla. Tämä voi olla esimerkiksi siinä tapauksessa, että halutaan muokata tai analysoida tekstidataa, jossa on ylimääräisiä tai virheellisiä merkkejä.
 
-## Kuinka tehdä
+## Miten tehdä?
 
-Poistaminen karaktereita käyttäen kaavaa Java-ohjelmointikielellä voidaan tehdä monella tavalla, mutta tässä esittelemme yksinkertaisimman tavan käyttää `String.replaceAll()`-metodia. Tämä metodi korvaa tekstissä esiintyvät merkit, jotka vastaavat annettua kaavaa, uudella merkkijonolla.
+Tässä ohjelmointiblogissa esitellään erilaisia tapoja poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Ensimmäinen vaihtoehto on käyttää String-luokan replaceAll-metodia, joka hyödyntää säännöllisiä lausekkeita. Toinen vaihtoehto on käyttää StringBuilder-luokan deleteCharAt-metodia, joka poistaa merkin annetusta indeksistä. Näiden lisäksi on olemassa myös muita tapoja, mutta ne eivät välttämättä ole yhtä tehokkaita tai helppokäyttöisiä.
 
-Esimerkiksi, kun haluat poistaa kaikki numerot merkkijonosta, voit käyttää seuraavaa koodia:
+```Java 
+// Esimerkki replaceAll-metodista 
+String teksti = "Tämä on esimerkkiteksti, josta halutaan poistaa kaikki numerot 12345";
+String uusiTeksti = teksti.replaceAll("\\d", ""); // poistaa kaikki numerot
 
-```Java
-String s = "Tämä on 1 esimerkki 2 poistettavista numeroista!";
-s = s.replaceAll("[0-9]", "");
-System.out.println(s);
+System.out.println(uusiTeksti); // tulostaa "Tämä on esimerkkiteksti, josta halutaan poistaa kaikki numerot"
+
+// Esimerkki deleteCharAt-metodista
+StringBuilder teksti = new StringBuilder("Tämä on esimerkkiteksti, josta halutaan poistaa ensimmäinen merkki");
+teksti.deleteCharAt(0); // poistaa ensimmäisen merkin
+
+System.out.println(teksti.toString()); // tulostaa "ämä on esimerkkiteksti, josta halutaan poistaa ensimmäinen merkki"
 ```
 
-Tulostus olisi:
+## Syvemmälle pinnan alle
 
-```Java
-Tämä on esimerkki poistettavista numeroista!
-```
-
-## Syvällinen tutkimus
-
-`replaceAll()`-metodi perustuu säännöllisiin lausekkeisiin, jotka määrittelevät tietynlaisen kaavan merkkijonon poistamiseen. Tässä muutamia esimerkkejä säännöllisistä lausekkeista, joita voit käyttää `replaceAll()`-metodissa:
-
-- `[A-Z]` poistaa kaikki isot kirjaimet merkkijonosta
-- `[a-z]` poistaa kaikki pienet kirjaimet merkkijonosta
-- `[0-9]` poistaa kaikki numerot merkkijonosta
-- `[^\w\s]` poistaa kaikki erikoismerkit merkkijonosta
-- `is` poistaa kaikki esiintymät tekstin "is"
-
-Kun käytät säännöllisiä lausekkeita, voit myös käyttää `String[] split()`-metodia, joka pilkkoo merkkijonon kaavaa vastaavien merkkien kohdalta ja palauttaa taulukon merkkejä.
+Säännölliset lausekkeet ovat tehokas työkalu kaavojen määrittämiseen ja merkkien poistamiseen. Niiden käyttö voi vaatia hieman harjoittelua, mutta ne tarjoavat paljon enemmän mahdollisuuksia verrattuna yksittäisten merkkien poistoon. On myös huomioitava, että säännölliset lausekkeet voivat olla hidas suurilla tekstimäärillä, joten tarvittaessa kannattaa harkita muita vaihtoehtoja.
 
 ## Katso myös
 
-- [Säännölliset lausekkeet Java-ohjelmoinnissa](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
-- [Java String-luokan dokumentaatio](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [String.replaceAll() Java-ohjelmoinnissa](https://www.geeksforgeeks.org/string-replaceall-java-examples/)
+- Java String-luokan API: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+- Java StringBuilder-luokan API: https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
+- Säännölliset lausekkeet Java:ssa: https://docs.oracle.com/javase/tutorial/essential/regex/

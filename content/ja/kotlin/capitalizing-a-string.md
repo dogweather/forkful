@@ -1,49 +1,45 @@
 ---
-title:    "Kotlin: 文字列の先頭を大文字にする"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: 文字列の先頭を大文字にする"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を大文字化する理由は、よく見るテキストフォーマットの一つです。例えば、タイトルや見出しのスタイルを整えるために使用されます。Kotlinで文字列を大文字化する方法を学ぶことで、より効率的にコーディングできるようになります。
+文字列の大文字化に取り組む理由を説明します。私たちの日常生活では、多くの場面でテキストの大文字と小文字が重要な役割を果たしています。例えば、ウェブサイトのタイトルや文書の見出し、またはメールの件名などが挙げられます。このような場面で、大文字化された文字列を使用することは、より説得力を持ち、読みやすいテキストを作成するのに役立ちます。
 
 ## 方法
 
-文字列を大文字化するには、KotlinのStringクラスの「uppercase」メソッドを使用します。以下のコードを参考にしてください。
+文字列を大文字化するための具体的な方法を示します。Kotlinの標準ライブラリには、文字列を大文字化するための便利なメソッドが用意されています。```uppercase()```メソッドを使用することで、指定した文字列をすべて大文字に変換することができます。
 
 ```Kotlin
-// 文字列を定義
-var str = "hello world"
+val str = "hello world"
+val uppercaseStr = str.uppercase()
 
-// 大文字化する
-str = str.uppercase()
-
-// 出力結果
-println(str) // "HELLO WORLD"
+println(uppercaseStr)
 ```
-
-このように、変数に格納された文字列を大文字化するには、文字列に対して「uppercase」メソッドを呼び出して、その結果を再度変数に格納します。その後、出力することで大文字化された文字列を確認することができます。
+実行結果:
+```
+HELLO WORLD
+```
 
 ## ディープダイブ
 
-実際のKotlinソースコードを見ると、「uppercase」メソッドはStringクラス内で次のように定義されています。
+文字列の大文字化についてもっと深く掘り下げます。日本語の場合、大文字化するという概念が少し異なります。例えば、ひらがなの「あいうえお」をカタカナの「アイウエオ」に変換するのは一般的な大文字化の方法ではありません。そのような場合は、```ただのuppercase()```メソッドではなく、```utf8Upper()```メソッドを使用することで正しい大文字化が可能です。また、文字列の一部のみを大文字化したい場合は、```uppercase()```メソッドではなく、```uppercase()```メソッドの代わりに```replaceRange()```メソッドを使用することで実現できます。
 
-```Kotlin
-fun String.uppercase(): String {
-    val locale = Locale.getDefault()
-    return this.toUpperCase(locale)
-}
-```
+## もっと詳しくは
 
-ここで使用されている「Locale.getDefault()」は、端末の設定に基づいてデフォルトの言語および国を取得するメソッドです。これにより、文字列を言語に応じて大文字化することが可能になります。
+文字列を大文字化するためのより詳細な情報を知りたい方は、以下のリンクを参考にしてください。
 
-また、Kotlinでは「uppercase」メソッドの他にも、文字列を大文字化するための別の方法が用意されています。例えば、「toUpperCase(Locale.ENGLISH)」を使用することで英語の文字列を大文字化することができます。
+- [Kotlin Strings](https://kotlinlang.org/docs/strings.html)
+- [java.lang.String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Difference between uppercase() and utf8Upper() methods](https://plkotlin.com/difference-between-uppercase-and-utf8upper-methods-in-kotlin/)
 
-## See Also
+## 関連リンク
 
-- [Kotlin String Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Kotlin Locale Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-locale/index.html)
-- [Java Doc for toUpperCase() Method](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())
+- [Kotlin公式ウェブサイト](https://kotlinlang.org/)
+- [Kotlin日本語ドキュメンテーション](https://kotlinlang.org/docs/reference/)
+- [Kotlinフォーラム](https://kotlinlang.org/community/)

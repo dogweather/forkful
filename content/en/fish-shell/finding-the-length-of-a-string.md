@@ -1,48 +1,44 @@
 ---
-title:    "Fish Shell recipe: Finding the length of a string"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/finding-the-length-of-a-string.md"
+title:                "Fish Shell recipe: Finding the length of a string"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Finding the length of a string is a fundamental task in programming. Whether you are working with user input, manipulating text, or validating data, being able to accurately determine the length of a string is a valuable skill to have. In this blog post, we will explore how to use Fish Shell to easily find the length of a string and why it is important in programming.
+As a Fish Shell programmer, you may often need to manipulate strings in your code. One of the basic operations is finding the length of a string, which can be useful for tasks such as validating input or formatting output. In this blog post, we will guide you through the process of finding the length of a string in Fish Shell.
 
 ## How To
 
-Coding Example:
+To find the length of a string in Fish Shell, we will use the built-in `strlen` command. This command takes a string as input and returns the number of characters in the string. Let's take a look at an example:
 
 ```Fish Shell
-
-set string "Hello world"
-set length (echo -n $string | wc -m)
-echo $length
+set str "Hello, world!"
+strlen $str
 ```
 
-Sample Output:
+The output of this code block will be `13`, indicating that the string "Hello, world!" has 13 characters.
 
+You can also use the `string length` function to find the length of a string. Here's an example:
+
+```Fish Shell
+string length "Fish Shell"
 ```
-12
-```
 
-In this example, we first set a variable "string" to the value of "Hello world". Then, using the "wc" command with the "-m" flag, we are able to count the number of characters in the string and store it in a new variable "length". Finally, we echo the value of "length" to see the output, which is the total number of characters in the string.
-
-Fish Shell makes finding the length of a string simple and efficient. By using the "echo" and "wc" commands, we are able to accurately count the number of characters in a string without having to manually count them ourselves. This allows for more precise and error-free coding.
+The output will be `10`, as the string "Fish Shell" has 10 characters.
 
 ## Deep Dive
 
-There are a few things to keep in mind when using the "wc" command to find the length of a string in Fish Shell. Firstly, the "-m" flag is necessary to ensure that the count includes all characters, including spaces and special characters. Without this flag, the count may be inaccurate.
+Behind the scenes, the `strlen` command and `string length` function use different methods to find the length of a string. The `strlen` command uses the `bw` built-in, which is a bytecode interpreter that runs faster than regular Fish Shell code. On the other hand, the `string length` function uses a loop to iterate through the string and count the characters.
 
-Additionally, the "echo -n" command is used to prevent the line break from being counted as an extra character. This is important because adding a new line character can often change the results of the count.
-
-It is also worth noting that in Fish Shell, the "wc" command is included in the coreutils package. This means that it is readily available for use without needing to install any additional packages.
+It is also worth mentioning that the `string length` function allows you to specify a character set to consider when counting the length of a string. This can be useful when working with international or special characters.
 
 ## See Also
 
-For more information on using the "wc" command in Fish Shell, you can refer to the official Fish Shell documentation here: https://fishshell.com/docs/current/cmds/wc.html.
+- [Fish Shell documentation on `strlen`](https://fishshell.com/docs/current/cmds/strlen.html)
+- [Fish Shell documentation on `string length`](https://fishshell.com/docs/current/cmds/string-length.html)
 
-You may also be interested in learning more about other string manipulation techniques in Fish Shell, such as splitting and trimming strings. You can find more information and examples in the official documentation here: https://fishshell.com/docs/current/index.html.
-
-Happy coding!
+Now that you know how to find the length of a string in Fish Shell, you can use this knowledge to make your code more robust and efficient. Happy coding!

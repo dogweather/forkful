@@ -1,55 +1,54 @@
 ---
-title:    "Kotlin: Unione di stringhe"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/concatenating-strings.md"
+title:                "Kotlin: Unione di stringhe"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Concatenare le stringhe è una parte fondamentale della programmazione in Kotlin. Quando si lavora con stringhe, spesso è necessario combinare più stringhe per formare un'unica stringa. Questo è particolarmente utile quando si desidera creare un output personalizzato o dinamico, come un messaggio di benvenuto o un'interfaccia utente.
+La concatenazione di stringhe è un'operazione comune nella programmazione che consiste nell'unire diverse stringhe per formare una sola stringa. Questa tecnica è utile per la scrittura di codice più pulito e leggibile, oltre che per la manipolazione di dati e la creazione di output personalizzati.
 
-## Come
+## Come Fare
 
-Per concatenare le stringhe in Kotlin, è possibile utilizzare l'operatore "+" o il metodo "plus()". Vediamo un esempio pratico:
+La concatenazione di stringhe in Kotlin è possibile attraverso l'utilizzo dell'operatore "+" o del metodo "plus()". Vediamo un esempio pratico:
 
 ```Kotlin
 val nome = "Maria"
-val cognome = "Rossi"
-val nomeCompleto = nome + " " + cognome
-println(nomeCompleto)
-```
-
-L'output sarà "Maria Rossi". In alternativa, possiamo utilizzare il metodo "plus()" come mostrato di seguito:
-
-```Kotlin
-val nome = "Mario"
-val cognome = "Verdi"
-val nomeCompleto = nome.plus(" ").plus(cognome)
-println(nomeCompleto)
-```
-
-L'output sarà lo stesso di prima. È importante notare che il metodo "plus()" non modifica direttamente la stringa originale, ma ritorna una nuova stringa contenente la concatenazione delle due.
-
-## Deep Dive
-
-In Kotlin, le stringhe sono immutabili, il che significa che una volta create, non possono essere modificate. Quindi, quando si concatenano più stringhe, si stanno effettivamente creando nuove stringhe ogni volta. Ciò può ridurre le prestazioni del programma se eseguito molte volte. Per migliorare le prestazioni, Kotlin offre la classe "StringBuilder", che consente di modificare una stringa esistente senza crearne una nuova ogni volta.
-
-Vediamo un esempio di utilizzo di StringBuilder per concatenare tre stringhe:
-
-```Kotlin
 val saluto = "Ciao"
-val nome = "Giovanni"
-val messaggio = "benvenuto/a al nostro sito"
-val output = StringBuilder(saluto).append(", ").append(nome).append(", ").append(messaggio).toString()
-println(output)
+
+val messaggio = saluto + " " + nome + "!"
+println(messaggio)
+
+//Output: Ciao Maria!
 ```
 
-L'output sarà "Ciao, Giovanni, benvenuto/a al nostro sito". Notare come, invece di creare una nuova stringa ogni volta, si è semplicemente aggiunto il testo al StringBuilder e, alla fine, è stata convertita in una stringa utilizzando il metodo "toString()".
+È anche possibile utilizzare la sintassi string template di Kotlin, utilizzando il carattere "$" per indicare una variabile all'interno di una stringa. Vediamo come:
 
-## Vedi anche
+```Kotlin
+val nome = "Maria"
+val saluto = "Ciao"
 
-- Documentazione ufficiale di Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Tutorial su String Manipulation in Kotlin: https://www.programiz.com/kotlin-programming/string
-- Video tutorial su concatenazione di stringhe in Kotlin: https://www.youtube.com/watch?v=IA9-xwLVcu8
+val messaggio = "$saluto $nome!"
+println(messaggio)
+
+//Output: Ciao Maria!
+```
+
+In entrambi i casi, il risultato è lo stesso: la concatenazione delle due stringhe "Ciao" e "Maria" per formare la stringa "Ciao Maria!".
+
+## Approfondimento
+
+La concatenazione delle stringhe in Kotlin è spesso una delle prime operazioni che si impara nella programmazione, ma ci sono alcune cose da tenere in considerazione per evitare errori o problemi di performance.
+
+Innanzitutto, è importante ricordare che le stringhe sono immutabili in Kotlin, quindi ogni volta che viene eseguita un'operazione di concatenazione, viene creata una nuova stringa. Questo significa che se si utilizzano molte stringhe e operazioni di concatenazione in un ciclo, si possono verificare rallentamenti nell'esecuzione del programma. In questi casi, è consigliabile utilizzare la classe StringBuilder, che consente la modifica della stringa senza dover crearne di nuove ogni volta.
+
+Inoltre, è importante prestare attenzione all'ordine delle operazioni di concatenazione. Se nella stringa finale si desidera includere anche numeri, è consigliabile utilizzare il metodo toString() per convertire i numeri in stringhe, altrimenti verrebbero sommati ai valori invece di concatenarli.
+
+## Vedi Anche
+
+- Guida ufficiale di Kotlin sulla concatenazione di stringhe: https://kotlinlang.org/docs/basic-types.html#strings
+- Tutorial su come utilizzare la classe StringBuilder in Kotlin: https://www.geeksforgeeks.org/kotlin-stringbuilder-class/
+- Esempi pratici di concatenazione di stringhe in Kotlin: https://www.programiz.com/kotlin-programming/concatenate-strings

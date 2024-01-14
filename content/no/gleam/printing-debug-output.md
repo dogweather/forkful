@@ -1,63 +1,40 @@
 ---
-title:    "Gleam: Utskrift av feilrettingsoutput"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/printing-debug-output.md"
+title:                "Gleam: Utskrift av feilsøkingsdata"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å printe ut debug-utdata er et nyttig verktøy for å identifisere og feilsøke problemer i koden din. Dette kan spare deg for mye tid og frustrasjon i utviklingsprosessen.
+Det å skrive ut feilsøkingsutdata kan være en veldig nyttig måte å forstå hva som skjer i koden din. Det kan hjelpe deg med å finne feil og forbedre effektiviteten til programmet ditt.
 
-## Hvordan
+## Hvordan du gjør det
 
-For å printe ut debug-utdata i Gleam, bruker du funksjonen "io:format". Her er et enkelt eksempel:
-
-```Gleam
-let min_variabel = "Gleam"
-io:format("Variabelen min er: {}", [min_variabel])
-```
-
-Dette vil gi følgende utdata:
-
-```
-Variabelen min er: Gleam
-```
-
-Du kan også bruke "io:format" for å printe ut flere variabler og tekst ved å sette en kodesekvens for hver variabel i den andre argumentlisten, for eksempel:
+Du kan enkelt skrive ut feilsøkingsutdata i Gleam ved å bruke `log()` funksjonen. Denne funksjonen tar imot en hvilken som helst verdi og skriver den ut til konsollen. La oss se på et eksempel:
 
 ```Gleam
-let navn = "Maria"
-let alder = 28
-io:format("Hei, mitt navn er {} og jeg er {} år gammel.", [navn, alder])
+let navn = "Per"
+log(navn)
 ```
 
-Dette vil gi følgende utdata:
+Dette vil skrive ut "Per" i konsollen når programmet kjører. Du kan også skrive ut flere verdier ved å separere dem med komma, for eksempel `log(navn, alder)`.
 
-```
-Hei, mitt navn er Maria og jeg er 28 år gammel.
-```
+## Dykk dypere
 
-## Dypdykk
-
-Du kan også formatere utdataen ved å bruke spesifikke argumenter, for eksempel:
+For å utnytte fullt ut potensialet til å skrive ut feilsøkingsutdata, kan du også bruke `debug()` funksjonen. Denne funksjonen tar imot en funksjon som parameter, og vil kjøre den og skrive ut resultatet til konsollen. Dette er spesielt nyttig når du jobber med funksjonelle programmeringselementer som høyere ordens funksjoner. La oss se på et eksempel:
 
 ```Gleam
-let nummer = 5
-io:format("Tallet mitt er ~b og det dobbelte er ~b.", [nummer, nummer*2])
+let liste = [1, 2, 3, 4]
+let dobbel = fn(x) { x * 2 }
+let dobbeltListe = debug(map(dobbel, liste))
 ```
 
-Dette vil gi følgende utdata:
+Her vil `debug()` kjøre `map()` funksjonen og skrive ut resultatet av hvert element i listen. Dette kan hjelpe deg med å forstå hvordan funksjonen fungerer og om det er eventuelle feil i koden din.
 
-```
-Tallet mitt er 5 og det dobbelte er 10.
-```
+# Se også
 
-Du kan også bruke "io_lib:format" for å formatere utdata som en streng, og på den måten få mer kontroll over hvordan utdataen vises. Se dokumentasjonen for mer informasjon om hvordan du kan bruke disse funksjonene for å få ønsket utdata.
-
-## Se også
-
-- [Gleam dokumentasjon: Debugging](https://gleam.run/book/tutorials-and-guides/debugging.html)
-- [Gleam dokumentasjon: IO modulen](https://gleam.run/modules/io.html)
-- [Learn Gleam: Printing Debug Output](https://medium.com/learn-gleam/debugging-101-printing-debug-output-ea5c7f3b7cf9) (på engelsk)
+- [Gleam Feilsøking Dokumentasjon](https://gleam.run/book/tour/debugging.html)
+- [10 Tips for Effektiv Feilsøking i Gleam](https://medium.com/@user22829148/10-tips-for-effective-debugging-in-gleam-94f1fec099b)

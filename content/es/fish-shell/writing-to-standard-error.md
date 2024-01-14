@@ -1,40 +1,46 @@
 ---
-title:    "Fish Shell: Escribiendo en el error estándar"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/writing-to-standard-error.md"
+title:                "Fish Shell: Escribiendo en el error estándar"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en el shell de Fish?
+##Por qué
 
-Escribir en el shell de Fish puede ser una herramienta útil para los programadores que desean tener un mayor control sobre la terminal y los errores que se pueden presentar durante la ejecución de un programa. Al escribir en la salida de error estándar, se pueden detectar y solucionar más rápidamente posibles problemas en el código.
+Escribir a la salida estándar de error es una habilidad útil para programadores de Fish Shell. Permite identificar errores en el código y mejorar la depuración de scripts y programas.
 
-## Cómo escribir en la salida de error estándar
+##Cómo hacerlo
 
-```Fish Shell
-echo "Hola mundo" >&2
+Para escribir a la salida estándar de error en Fish Shell, se utiliza la función `echo`. Por ejemplo:
+
+```
+Fish Shell: echo "Este es un error" >&2
 ```
 
-Este simple comando enviará el mensaje "Hola mundo" a la salida de error estándar en lugar de la salida estándar. Esto garantiza que cualquier mensaje de error será visible para el programador, lo que puede ser especialmente útil en programas más complejos que generan múltiples tipos de salida.
+En el código anterior, el texto "Este es un error" se enviará a la salida estándar de error (stderr) en lugar de la salida estándar (stdout).
 
-## Profundizando en la escritura a la salida de error estándar
+##Deep Dive
 
-Al utilizar el operador `>&2`, el mensaje se redirige directamente a la salida de error estándar. Esto puede ser útil para controlar y gestionar cómo se manejan los errores en un programa. Además, al escribir en la salida de error estándar, se asegura que el mensaje será visible incluso si la salida estándar está siendo redirigida o silenciada.
+Además de la función `echo`, también es posible utilizar el operador `2>` para enviar mensajes a la salida estándar de error. Por ejemplo:
 
-Otra técnica útil es utilizar el comando `exit`, que permite salir del programa con un código de error específico. Por ejemplo:
-
-```Fish Shell
-if [ ! -f archivo.txt ]; then
-    echo "¡Error: archivo.txt no existe!" >&2
-    exit 1
-fi
+```
+Fish Shell: comando_que_genera_error 2> archivo_de_errores.txt
 ```
 
-En este ejemplo, el mensaje de error se envía a la salida de error estándar y el programa se detiene con un código de error 1. Esto permite identificar específicamente el tipo de error que ocurrió y tomar las medidas adecuadas para solucionarlo.
+Este comando redirigirá cualquier mensaje de error generado por el comando a un archivo llamado "archivo_de_errores.txt".
 
-## Ver también
+Otra técnica útil es utilizar el operador `|&` para redirigir tanto la salida estándar como la salida estándar de error a un mismo archivo. Por ejemplo:
 
-- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/index.html
-- Guía rápida de Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Preguntas frecuentes sobre Fish Shell: https://fishshell.com/docs/current/faq.html
+```
+Fish Shell: comando_a_ejecutar |& archivo_de_salida.txt
+```
+
+Este comando enviará tanto la salida estándar como la salida estándar de error del comando a un archivo llamado "archivo_de_salida.txt".
+
+##Ver también
+
+- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guía del usuario de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Ejemplos de uso de la función `echo` en Fish Shell](https://fishshell.com/docs/current/cmds/echo.html)

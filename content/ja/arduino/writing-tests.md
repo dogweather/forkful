@@ -1,50 +1,61 @@
 ---
-title:    "Arduino: テストを書く"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/writing-tests.md"
+title:                "Arduino: テストの書き方"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜArduinoプログラミングにテストを導入するか
+## なぜテストを書くのか
 
-Arduinoを使用すると、実際に物理的なものを制御することができますが、プログラムのバグは大きな問題を引き起こす可能性があります。そこで、テストを使用してプログラムの信頼性を確保することが重要です。
+プログラミングをする際に、テストを書くことは非常に重要です。テストを書くことで、自分のコードが意図通りに動作するかどうかを確認することができます。また、将来的にコードを変更したり、修正したりする際にも、テストがあることで安心して変更することができます。これにより、バグを防ぐことができます。
 
 ## テストの書き方
 
-Arduinoでは、ArduinoUnitと呼ばれるライブラリを使用してテストを書くことができます。以下のようにテストを開始することができます。
+テストを書くには、Arduinoのテストライブラリを使用します。テストライブラリを使うと、簡単にテストコードを書き始めることができます。以下のコードを参考にしてください。
 
 ```Arduino
-#include <ArduinoUnit.h>
+#include <ArduinoUnit.h> // テストライブラリをインポート
 
-// テストするコード
+// テスト対象の関数
+int addNumbers(int a, int b) {
+  return a + b;
+}
+
+// テストケース
+test(addNumbers) {
+  int result = addNumbers(3, 5);
+  assertEqual(result, 8); // 結果が予想通りの値かどうかをチェック
+}
+
 void setup() {
-  // 初期化のコード
+  // シリアルモニターを初期化
+  Serial.begin(9600);
+  // テストを実行
+  Test::run();
 }
 
-// テストするコード
 void loop() {
-  // 実際のコード
-}
-
-// ここからテストを開始する
-test(functionName) {
-  // 期待する結果を書く
-  // 実際の結果を比較する
-  assertEquals(expected, actual);
+  // 何もしない
 }
 ```
 
-テストを実行するには、シリアルモニターで"Test"と入力してEnterキーを押すだけです。
+上記のコードでは、テストライブラリをインポートし、テスト対象の関数を定義しました。その後、テストケースを作成し、テストライブラリの`assertEqual`関数を使用して、結果が予想通りの値かどうかをチェックしています。最後に、`Test::run()`関数を呼び出し、テストを実行しています。
 
-## テストの深堀り
+## テストの詳細
 
-ArduinoUnitでは、テストケースやテストスイートなど、様々な機能を使用することができます。また、デバイスやセンサーをシミュレーションするためのライブラリもあります。どのようにテストを構成するかは、プロジェクトの規模や目的によって異なりますが、テストの信頼性を高めるためにも、様々な機能を活用することをお勧めします。
+テストを書く際には、いくつかのポイントに気をつける必要があります。
 
-## 参考リンク
+- テストケースは、関数ごとに作成する。
+- `assertEqual`関数を使用して、結果が予想通りの値かどうかをチェックする。
+- テストケースの名称は、関数名と同じにする。
+- `Test::run()`関数を呼び出すことで、テストを実行する。
 
-[ArduinoUnit公式ドキュメント](https://github.com/mmurdoch/arduinounit)
+これらのポイントを守ることで、テストコードを効率的かつ正確に書くことができます。
 
-[Arduinoを使ったテスト駆動開発（TDD）についてのブログポスト](https://www.sigongtech.com/blog/2013/05/28/test-driven-development-for-arduino/)
+## 関連リンク
 
-[TDDを活用したArduinoプロジェクトの例](https://www.hackster.io/tddgreensboro/test-driven-development-for-arduino-7be3a7)
+- [Arduinoのテストライブラリ - 公式ドキュメント](https://www.arduino.cc/reference/en/libraries/arduinounit/)
+- [Arduinoユニットテストの例 - Hackster.io](https://www.hackster.io/eduinozero/arduino-unit-testing-examples-db657d)
+- [TDDとは - Wikipedia](https://ja.wikipedia.org/wiki/%E6%8E%A8%E6%93%8E%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA)

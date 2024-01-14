@@ -1,38 +1,40 @@
 ---
-title:    "Arduino: Lesen von Befehlszeilenargumenten"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/reading-command-line-arguments.md"
+title:                "Arduino: Lesen von Befehlszeilenargumenten"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Warum sollte man sich mit dem Lesen von Befehlszeilenargumenten beschäftigen? Nun, dieses Wissen ist sehr hilfreich, wenn man komplexe Programme schreibt, die auf externe Eingaben reagieren müssen. Es ermöglicht dem Programmierer, die Flexibilität und Interaktion mit dem Benutzer zu verbessern.
 
-## How To
-Das Lesen von Befehlszeilenargumenten in Arduino ist relativ einfach. Zuerst muss man ein Objekt der Klasse Serial beginnen, um die serielle Kommunikation zwischen dem Arduino und einem Computer oder einem anderen Gerät zu ermöglichen. Dann können die Befehlszeilenargumente mithilfe der Funktion `Serial.readStringUntil()` gelesen werden, die eine Zeichenkette bis zu einem angegebenen Trennzeichen zurückgibt.
+Das Lesen von Kommandozeilenargumenten ist eine wichtige Fähigkeit, die es ermöglicht, externe Eingaben in ein Arduino-Programm zu integrieren. Dies kann nützlich sein, um Parameter wie Geschwindigkeit oder Konfigurationen anzupassen, ohne den eigentlichen Code ändern zu müssen.
 
-Hier ist ein Beispielcode, der demonstriert, wie man Befehlszeilenargumente mit dem Arduino liest:
+## Wie funktioniert es
 
-```
-Arduino initialisieren .....
-Serial.begin(9600);     // Starten der seriellen Kommunikation
-String input = Serial.readStringUntil('\n');     // Lesen der Argumente bis zur Zeilenumbruch
-Serial.print("Die Eingabe war: ");
-Serial.println(input);    // Ausgabe der Eingabe über die serielle Schnittstelle
+Um Kommandozeilenargumente in einem Arduino-Programm zu lesen, gibt es mehrere Schritte. Zunächst müssen die Argumente beim Programmstart übergeben werden. Dies kann in der Arduino IDE unter "Tools" > "Serial Monitor" erfolgen. Anschließend müssen die Argumente im Programm mit dem Befehl "Serial.read()" eingelesen werden. Im unteren Beispiel wird der übergebene Wert ausgelesen und mittels "Serial.print()" ausgegeben.
+
+```Arduino
+int arg = Serial.read(); // Argument einlesen
+Serial.print("Das übergebene Argument ist: ");
+Serial.print(arg); // Argument ausgeben
 ```
 
-Wenn Sie nun "Hello World" über die serielle Schnittstelle senden, wird die Ausgabe "Die Eingabe war: Hello World" erscheinen.
+Die Ausgabe im Serial Monitor würde dann folgendermaßen aussehen:
 
-## Deep Dive
-Um tiefer in die Materie einzusteigen, ist es wichtig zu wissen, dass Befehlszeilenargumente meistens als Zeichenketten (Strings) gelesen werden müssen und dann entsprechend in andere Datentypen umgewandelt werden müssen, je nachdem, wie sie im Programm verwendet werden sollen.
+```Arduino
+Das übergebene Argument ist: 5
+```
 
-Es ist auch hilfreich, sicherzustellen, dass die eingegebenen Argumente gültig sind, um unerwartete Fehler zu vermeiden. Dies kann durch die Verwendung von Bedingungen und Vergleichen erreicht werden.
+## Tiefergehende Information
 
-Ein weiterer wichtiger Aspekt ist das Verständnis der Position der Befehlszeilenargumente im Programmablauf. Der Code muss so gestaltet sein, dass die Argumente im richtigen Moment gelesen und verarbeitet werden, um die gewünschten Ergebnisse zu erzielen.
+Neben dem Lesen von einfachen Argumenten können auch Strings und mehrere Argumente gleichzeitig eingelesen werden. Dafür müssen verschiedene Techniken wie die Verwendung von Arrays oder das Parsen von Strings angewendet werden. Es gibt auch verschiedene Libraries, die das Lesen und Verarbeiten von Kommandozeilenargumenten erleichtern.
 
 ## Siehe auch
-1. [Arduino Serial Communication](https://www.arduino.cc/en/Tutorial/SerialCommunication)
-2. [String Manipulation in Arduino](https://www.arduino.cc/en/Tutorial/String) 
-3. [Understanding Command Line Arguments](https://www.gnu.org/software/libc/manual/html_node/Command_002dLine-Arguments.html)
-4. [C++ String Library](https://www.cplusplus.com/reference/string/string/)
+
+Für weitere Informationen und Beispiele zum Lesen von Kommandozeilenargumenten empfehlen wir folgende Links:
+
+- [Arduino Dokumentation zum Lesen von Seriellen Daten](https://www.arduino.cc/reference/de/language/functions/communication/serial/read/)
+- [Tutorial zum Lesen von Kommandozeilenargumenten von Erik Bartmann](https://www.arduino-tutorial.de/arduino-tutorial-30-kommandozeilenparameter)
+- [Library "cmdparser" für die Verarbeitung von Kommandozeilenargumenten](https://github.com/majenkotech/cmdparser)

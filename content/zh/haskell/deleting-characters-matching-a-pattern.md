@@ -1,72 +1,42 @@
 ---
-title:    "Haskell: 删除匹配模式的字符。"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: 匹配模式删除字符"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
+以下是为了解释为什么我们会在Haskell中编写这篇博文的1-2句话。
+
 ## 为什么
 
-在编程中，我们经常会遇到需要删除特定模式字符的情况。这可能是因为我们需要清理数据，或者我们需要在字符串中删除特定的字符。无论是什么原因，删除匹配模式的字符是一个非常有用的编程技巧，可以帮助我们更有效地处理数据和字符串。
+在Haskell中，我们经常需要删除字符串中与某些模式匹配的字符。这可以帮助我们处理一些特定的数据，例如删除HTML标签或者过滤出特定的文本内容。
 
-## 如何做
+## 如何进行
 
-在 Haskell 中，我们可以使用 `filter` 和 `notElem` 函数来删除匹配模式的字符。首先，我们创建一个函数 `deleteMatching` 来接收一个模式和一个字符串作为参数。然后，我们使用 `filter` 函数来筛选出不满足模式的字符，并使用 `notElem` 函数来判断字符是否不等于模式。最后，我们返回经过筛选的字符列表。
-
-```Haskell
-deleteMatching :: Eq a => a -> [a] -> [a]
-deleteMatching pattern string = filter (`notElem` [pattern]) string
-```
-
-让我们来尝试一下使用这个函数：
+首先，我们需要使用Haskell语言中提供的函数`filter`和`not`来对字符串进行筛选并删除符合模式的字符。下面是一个简单的示例代码：
 
 ```Haskell
-deleteMatching 'a' "apple"
+filter (not . (`elem` "aeiou")) "haskell"
 ```
 
-输出结果为：
-
-```
-"pple"
-```
-
-我们也可以将这个函数用于字符串列表：
+这个代码的输出结果将会是`"hskll"`，因为它删除了字符串中所有的元音字母。我们也可以使用正则表达式来进行更复杂的模式匹配：
 
 ```Haskell
-deleteMatching 'o' ["hello", "world", "how", "are", "you"]
+import Text.Regex.Posix
+
+filter (=~ "[0-9]+") "abc123def"
 ```
 
-输出结果为：
-
-```
-["hell", "wrld", "hw", "are", "yu"]
-```
+这个示例代码的输出结果将会是`"123"`，因为它筛选出了字符串中所有的数字字符。
 
 ## 深入探讨
 
-尽管我们可以使用 `filter` 和 `notElem` 函数来删除匹配模式的字符，但有时候我们可能需要更复杂的模式匹配方法。在这种情况下，我们可以使用正则表达式库 `regex-tdfa` 来帮助我们。
+在Haskell中，`String`类型实际上是一个由字符组成的列表。因此，我们可以使用列表操作符来对字符串进行处理，例如`map`函数来对每个字符进行操作。此外，Haskell还提供了许多强大的字符串处理函数，如`splitOn`、`takeWhile`和`dropWhile`，它们可以帮助我们更灵活地处理字符串。
 
-首先，我们需要导入 `regex-tdfa` 库：
+## 参考链接
 
-```Haskell
-import Text.Regex.TDFA
-```
-
-然后，我们使用 `subRegex` 函数来替换正则表达式匹配的字符。让我们尝试将字符串中所有的数字替换为空字符：
-
-```Haskell
-subRegex (mkRegex "[0-9]") "abc123xyz" ""
-```
-
-输出结果为：
-
-```
-"abcxyz"
-```
-
-## 参考阅读
-
-- [Haskell Wiki: filter](https://wiki.haskell.org/Filter)
-- [Haskell Wiki: notElem](https://wiki.haskell.org/NotElem)
-- [Hackage: regex-tdfa](https://hackage.haskell.org/package/regex-tdfa)
+- [Haskell字符串操作指南](https://wiki.haskell.org/Strings)
+- [Haskell文档 - filter函数](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:filter)
+- [Haskell文档 - Text.Regex.Posix模块](https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regex-Posix.html)

@@ -1,51 +1,56 @@
 ---
-title:    "Swift: Extraindo subcadeias de caracteres"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/extracting-substrings.md"
+title:                "Swift: Extraindo subtrings"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que extrair substrings em Swift?
+## Porque
 
-Extracting substrings ou, em português, extrair substrings é uma técnica importante no desenvolvimento de aplicativos em Swift. Ela permite que você pegue apenas uma parte específica de uma string ou texto e a utilize em seu código. Isso pode ser útil em muitas situações, como por exemplo formatar um número de telefone ou obter as iniciais de um nome.
+A extração de substrings é uma ferramenta útil na linguagem de programação Swift que permite aos desenvolvedores obter partes específicas de uma string. Isso pode ser útil para manipular dados ou criar interfaces de usuário dinâmicas.
 
-# Como fazer isso em Swift?
+## Como Fazer
 
-Para extrair uma substring em Swift, é necessário utilizar o método .substring (ou .prefix para pegar os primeiros caracteres) e indicar o índice inicial e final desejados, dentro de colchetes [ ].
+Aqui estão alguns exemplos de como extrair substrings em Swift:
 
-```
-// exemplo de substring em Swift
-let str = "Olá, meu nome é Maria!"
-let nome = str.substring(with: 15..<20)
-print(nome) // saída: Maria
-```
+```Swift
+// Criando uma string para ser manipulada
+let frase = "A programação é emocionante!"
 
-No exemplo acima, criamos uma string com o nome "Maria" e utilizamos o método .substring para extrair apenas essa parte do texto, indicando os índices 15 e 20 (o primeiro caracter começa com o índice 0). O resultado é impresso no console.
+// Obtendo a primeira letra da string
+let primeiraLetra = frase.prefix(1)
 
-# Mais detalhes sobre extrair substrings em Swift
+// Obtendo a última letra da string
+let ultimaLetra = frase.suffix(1)
 
-Além de indicar os índices inicial e final, é possível utilizar outras opções ao extrair substrings em Swift. Por exemplo, é possível obter um determinado número de caracteres a partir de um índice, utilizando o método .prefix.
+// Obtendo as três primeiras letras da string
+let tresPrimeirasLetras = frase[..<frase.index(frase.startIndex, offsetBy: 3)]
 
-```
-// exemplo de substring com .prefix
-let str = "1234567890"
-let numeros = str.prefix(5)
-print(numeros) // saída: 12345
+// Obtendo as três últimas letras da string
+let tresUltimasLetras = frase.suffix(3)
 ```
 
-Outra opção é utilizar o método .suffix para extrair uma determinada quantidade de caracteres contando a partir do final da string.
+Ao executar esse código, a saída será:
 
 ```
-// exemplo de substring com .suffix
-let str = "ABCDE"
-let letras = str.suffix(3)
-print(letras) // saída: CDE
+primeiraLetra = "A"
+ultimaLetra = "!"
+tresPrimeirasLetras = "A p"
+tresUltimasLetras = "te!"
 ```
 
-# Veja também
+Esses são apenas alguns exemplos básicos de como extrair substrings em Swift. Mas existem muitas outras funções e métodos disponíveis que permitem uma maior flexibilidade na manipulação de strings.
 
-- [Documentação oficial do Swift sobre substring](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#)
-- [Tutorial em português sobre extração de substrings em Swift](https://www.betacode.net/blog/extraindo-partes-de-uma-string-no-swift/)
+## Deep Dive
 
-Agora que você aprendeu como extrair substrings em Swift, pode utilizá-las em suas próximas aplicações para deixar o seu código mais eficiente e fácil de usar. Experimente e veja os resultados por si mesmo!
+A extração de substrings é possível graças à estrutura de dados String, que armazena uma sequência de caracteres em Swift. Essa estrutura é indexada, o que significa que cada caractere da string tem uma posição específica. Isso permite que os desenvolvedores acessem caracteres individuais ou um intervalo de caracteres a partir dessa posição.
+
+Além disso, a linguagem Swift possui muitas funções e métodos úteis para manipulação de strings, incluindo as mencionadas nos exemplos acima, bem como outras como `prefix(upTo:)` e `dropFirst(_:)`. Com essas ferramentas, os desenvolvedores podem extrair substrings com base em critérios específicos, facilitando a manipulação de dados e a criação de interfaces de usuário dinâmicas.
+
+## Veja Também
+
+- [Documentação oficial do Swift sobre strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Tutorial da Ray Wenderlich sobre manipulação de strings em Swift](https://www.raywenderlich.com/263380/strings-in-swift-a-tutorial)
+- [Artigo do Medium sobre extração de substrings em Swift](https://medium.com/@abhimuralidharan/how-to-use-substring-with-a-string-in-swift-4e6791d02f93)

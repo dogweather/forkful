@@ -1,43 +1,35 @@
 ---
-title:    "Javascript: 生成随机数"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/generating-random-numbers.md"
+title:                "Javascript: 产生随机数"
+programming_language: "Javascript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么会生成随机数
+为什么：生成随机数在编程中的重要性
+生成随机数在许多编程任务中都非常有用。它们可以帮助我们模拟真实的现实情况，测试我们的代码以及为游戏或随机选择做出决策。
 
-在编程中，随机数是一个非常有用的工具。它可以被用来模拟随机事件，或者帮助生成唯一的标识符。使用随机数也可以增加程序的安全性，防止被恶意攻击。
+## 如何：
+在Javascript中生成随机数非常简单。我们可以使用Math对象的random()方法来生成一个从0到1之间的随机数。然而，如果我们想要生成一个特定范围内的随机整数，我们可以结合使用random()方法和Math.floor()方法。下面是一个例子：
 
-# 如何生成随机数
-
-在Javascript中，可以通过`Math.random()`函数来生成一个0到1之间的随机数。如果需要生成指定范围内的随机数，可以使用以下公式：
-
-```
-Math.floor(Math.random() * (max - min + 1) + min);
-```
-
-其中`max`和`min`分别为所需要的随机数范围的最大值和最小值。例如，如果我们需要生成1到10之间的随机整数，可以使用以下代码：
-
-```
-let randomNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
-console.log(randomNumber);
+```Javascript
+// 生成0到10之间的随机整数
+let randomNum = Math.floor(Math.random() * 11);
+console.log(randomNum);
+// 输出：在0到10之间的随机整数，例如7
 ```
 
-以上代码的输出可能为`7`、`2`、`10`等随机整数。
+## 深入探讨：
+在生成随机数时，我们应该注意一些潜在的隐患。随机数并不是真正的“随机”，它们实际上是由一个算法生成的伪随机数。因此，在某些情况下，我们可能会得到相同的随机数。为了避免这种情况，我们可以使用一个种子值来初始化随机数生成器，这样我们每次都可以得到不同的随机数序列。
 
-# 深入了解随机数生成
+此外，当生成随机数时，我们应该尽量避免在循环中使用随机数，因为它们会导致性能下降。我们应该在循环外部生成随机数，并在循环内部使用变量来存储它们。
 
-在计算机中，真正的随机数是不存在的，因为计算机是通过算法来生成随机数的。 `Math.random()`函数其实是基于一个伪随机数算法来实现的，所以它生成的随机数在一定程度上是有规律的。如果要生成更加随机的数，可以使用外部的随机数生成器来获取随机种子，然后再进行计算。
+## 参考链接：
 
-# 参考链接
+- [Javascript中的随机数生成器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [掘金：随机数生成器的深入探讨](https://juejin.im/post/5de095a1e51d451aec1576e2)
+- [掘金：如何正确地生成随机数](https://juejin.im/post/5d581f40f265da03c7219f89)
 
-- [了解Javascript中的随机数生成](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Javascript生成指定范围内随机数的方法](https://www.cnblogs.com/ldp2016/p/6066837.html)
-- [计算机生成随机数的原理](https://www.eecis.udel.edu/~boothe/eleg601/randomnumgen.pdf)
-
-## 参见
-
-- [Markdown语法参考](https://www.markdownguide.org/basic-syntax/)
-- [Javascript官方文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+## 参见：
+参考链接和其他有关随机数生成的文章。

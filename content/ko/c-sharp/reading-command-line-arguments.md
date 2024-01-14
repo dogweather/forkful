@@ -1,96 +1,48 @@
 ---
-title:    "C#: 컴퓨터 프로그래밍에서의 커맨드 라인 인수 읽기"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/reading-command-line-arguments.md"
+title:                "C#: 컴퓨터 프로그래밍에서 명령줄 인자 읽기"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
+안녕하세요 여러분! 오늘은 C# 프로그래밍 블로그 글을 써 보려고 합니다. 이 글은 한국어 사용자를 위한 것으로, 우리는 모두 프로그래밍에 대해 배우고 싶을 수도 있고 이를 자신의 프로젝트에 적용하고 싶을 것입니다. 오늘은 C#에서 커맨드 라인 인수를 읽는 방법에 대해 이야기하고 싶습니다.
+
 ## 왜
 
-커맨드 라인 인수를 읽는 것은 C# 프로그래머에게 매우 중요합니다. 이 기술은 프로그램이 외부로부터 입력을 받아들일 수 있게 하여 상호작용성을 제공하고, 다양한 실행 옵션을 적용할 수 있게 해줍니다. 따라서 더 유연하고 다양한 사용자의 요구를 충족하는 프로그램을 만들 수 있습니다. 이러한 이유때문에 커맨드 라인 인수를 읽는 방법을 배우는 것은 모든 C# 프로그래머에게 도움이 될 것입니다.
+왜 커맨드 라인 인수를 읽는 방법을 공부하고 싶을까요? 간단하게 말하면, 우리는 모두 다른 프로그램을 실행 시킬 때 커맨드 라인 인수를 사용할 수 있습니다. 예를 들어, Windows에서 Control Panel을 실행시키기 위해 'control'을 입력하고 엔터를 누른다면 "control"이라는 인수가 전달됩니다. 이러한 커맨드 라인 인수를 잘 이해하고 다루는 것은 우리가 프로그램을 더 효율적으로 사용할 수 있게 해 줍니다.
 
-## 어떻게
+## 방법
 
-커맨드 라인 인수를 읽기 위해 아래와 같은 코드를 사용할 수 있습니다.
+우리는 C#에서 커맨드 라인 인수를 읽기 위해 어떻게 해야 할까요? 아래의 코드 블럭을 참고해 주세요.
 
 ```C#
 using System;
-
-namespace CommandLineArguments
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        foreach (string arg in args)
         {
-            foreach(string arg in args)
-            {
-                Console.WriteLine(arg);
-            }
+            Console.WriteLine(arg);
         }
     }
 }
 ```
 
-위 예제는 `args` 배열의 각 인자를 `foreach`문을 사용해 하나씩 출력합니다. 이를 실행해보면, 프로그램을 실행할 때 커맨드 라인에 입력한 인수들이 모두 출력된 것을 볼 수 있습니다.
+위의 코드는 입력된 모든 커맨드 라인 인수를 출력하는 프로그램입니다. 만약 우리가 코드를 컴파일하고 실행하면, 우리가 입력한 커맨드 라인 인수가 모두 화면에 출력될 것입니다.
 
-```
-CommandLineArguments.exe 인수1 인수2
-```
+이것은 아주 간단한 예제지만, 우리는 이를 수정해 커맨드 라인 인수를 다양한 방법으로 처리할 수 있습니다. 예를 들어, 우리는 특정 인수가 주어졌을 때 다른 작업을 수행하도록 프로그램을 작성할 수 있습니다. 이는 우리가 여러분의 프로젝트에 정말 유용한 기능이 될 수 있습니다.
 
-```
-인수1
-인수2
-```
+## 심층 분석
 
-매우 간단한 예제이지만, 이를 바탕으로 더 복잡한 동작을 구현할 수 있습니다. 또한 `args` 배열의 각 인자에 대해 조건문을 사용해서 원하는 동작을 수행할 수도 있습니다. 예를 들어, 다음과 같이 `-i` 옵션을 사용하면 입력받은 문자열을 대문자로 변환하는 프로그램을 만들 수 있습니다.
+커맨드 라인 인수를 심층적으로 이해하고 싶다면 어떻게 해야 할까요? 이는 여러분이 사용하고 있는 운영 체제와 프로그래밍 언어에 따라 다를 수 있습니다. 예를 들어, Windows에선 이전 버전의 운영 체제보다 좀 더 복잡한 커맨드 라인 인수를 제공합니다. 또한, 여러분은 커맨드 라인 인수를 읽는 방법 외에도 여러분의 프로그램이 인식할 수 있는 다른 유형의 입력도 배워야 할 수도 있습니다.
 
-```C#
-using System;
-
-namespace CommandLineArguments
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            foreach(string arg in args)
-            {
-                if(arg == "-i")
-                {
-                    Console.WriteLine("대문자로 출력합니다.");
-                }
-                else
-                {
-                    Console.WriteLine(arg.ToUpper());
-                }
-            }
-        }
-    }
-}
-```
-
-이제 다음과 같이 실행해보면, `-i` 옵션을 사용할 때는 문자열이 대문자로 출력되고, 다른 인수를 입력할 때는 해당 문자열이 대문자로 변환되어 출력됩니다.
-
-```
-CommandLineArguments.exe -i hello world
-```
-
-```
-대문자로 출력합니다.
-HELLO
-WORLD
-```
-
-이렇게 커맨드 라인 인수를 읽는 것은 프로그램에 더 많은 유용한 기능을 추가할 수 있게 해줍니다.
-
-## 딥 다이브
-
-`Main` 메소드에서 사용한 `args` 배열 외에도, `Environment.GetCommandLineArgs()` 메소드를 사용하여 커맨드 라인 인수를 가져올 수 있습니다. 이 메소드는 `string[]` 타입의 결과를 반환하며, 첫 번째 인수는 프로그램의 경로를 나타냅니다.
-
-또한 커맨드 라인 인수를 처리하기 전에 유효성을 검사하는 것이 중요합니다. 예를 들어, 사용자가 정해진 형식과 다른 형식의 입력을 넣었을 때 문제가 발생할 수 있으며, 이를 해결해주는 코드를 작성해야 합니다.
+하지만 걱정하지 마세요! 우리는 여러분이 필요한 모든 정보를 포함하도록 노력할 것입니다. 일단 여러분이 기본적인 커맨드 라인 인수를 읽는 방법을 이해하면, 여러분은 비슷한 기술을 다른 언어나 운영 체제에서도 적용할 수 있게 될 것입니다.
 
 ## 참고
 
-- [C# 공식 문서: 명령줄 인수](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [C# 커맨드 라인 인수 처리 방법](https://www.c-sharpcorner.com/uploadfile/mahesh/command-line-
+그리고 마지막으로, 여러분이 더 많은 정보를 찾고 싶다면 아래의 링크들을 확인해 보세요!
+
+[Microsoft Docs - Command-Line Arguments](https://docs.microsoft.com

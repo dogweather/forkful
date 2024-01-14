@@ -1,41 +1,58 @@
 ---
-title:    "Kotlin recipe: Getting the current date"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/getting-the-current-date.md"
+title:                "Kotlin recipe: Getting the current date"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-As a programmer, it's important to be able to retrieve the current date in order to track and organize data, perform time-based calculations, or simply display the current date to the user. In Kotlin, obtaining the current date is a simple and straightforward process.
+# Why
+As a programmer, you may often need to obtain the current date in your code. This could be for purposes such as displaying the current date on a website, or for accessing time-sensitive data. In Kotlin, there are multiple ways to get the current date, making it a convenient and versatile option for any project.
 
-## How To
-To get the current date in Kotlin, we can use the `LocalDate.now()` function. This function returns the current date as a `LocalDate` object, which represents a date without a time or timezone. Let's see an example:
+# How To
+Getting the current date in Kotlin is a simple and straightforward process. There are various methods available, depending on your specific needs.
 
+### Using built-in functions
+The most common way to get the current date in Kotlin is by using the `Date()` and `Calendar()` functions. These functions are part of the Java Date/Time API, which can be easily accessed in Kotlin.
+
+```Kotlin
+val currentDate = Date()
+println(currentDate) // Output: Mon Jul 05 14:42:14 GMT 2021
+val calendar: Calendar = Calendar.getInstance()
+println(calendar) // Output: java.util.GregorianCalendar[time=1625504554830,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo
 ```
-Kotlin
+
+### Using LocalDate
+Kotlin also provides a more modern option for getting the current date through the `LocalDate` class. This class is part of the Java 8 Date/Time API and offers a simplified way to obtain the current date without having to use the `Date()` or `Calendar()` functions.
+
+```Kotlin
 val currentDate = LocalDate.now()
-println(currentDate)
+println(currentDate) // Output: 2021-07-05
 ```
 
-In this code block, we declared a variable `currentDate` and assigned it the value returned by `LocalDate.now()`, which is the current date. We then used `println()` to print the value of `currentDate` to the console. The output would be in the format `YYYY-MM-DD`, for example `2021-03-25`.
+### Using SimpleDateFormat
+If you need to format the current date in a specific way, you can use the `SimpleDateFormat` class. This class allows you to specify a pattern for the output and gives you more control over how the date is displayed.
 
-We can also get the current date with a specific timezone using the `ZonedDateTime.now()` function. This function returns a `ZonedDateTime` object, which represents a date and time with a specific timezone. Let's see an example:
-
+```Kotlin
+val currentDate = Date()
+val dateFormat = SimpleDateFormat("dd-MMM-yyyy")
+val formattedDate = dateFormat.format(currentDate)
+println(formattedDate) // Output: 05-Jul-2021
 ```
-Kotlin
-val currentDate = ZonedDateTime.now(ZoneId.of("America/New_York"))
-println(currentDate)
+
+# Deep Dive
+Now that you know how to obtain the current date in Kotlin, let's take a deeper dive into the `LocalDate` class. This class is a part of the Java 8 Date/Time API and provides various methods for manipulating dates such as adding or subtracting days, months, or years. It also offers methods for checking if a date falls on a leap year, or for comparing two dates.
+
+```Kotlin
+val currentDate = LocalDate.now()
+println(currentDate.plusDays(5)) // Output: 2021-07-10 (adds 5 days to current date)
+println(currentDate.isLeapYear()) // Output: false (checks if current year is a leap year)
 ```
 
-In this code block, we used the `now()` function with a specified timezone, in this case, "America/New_York". The output would be in the format `YYYY-MM-DDThh:mm:ssTZ`, for example `2021-03-25T19:30:15-04:00`.
+It's also worth mentioning that Kotlin has a built-in `DateTime` library, called `kotlinx-datetime`, which offers a more modern and optimized alternative to the Java Date/Time API.
 
-## Deep Dive
-Under the hood, the `LocalDate.now()` and `ZonedDateTime.now()` functions use the `Clock` class to obtain the current date and time. This class uses the system's default time-zone and clock to retrieve the current date and time. However, we can also pass a specific `Clock` object as a parameter to these functions to get the current date and time with a custom clock. This can be useful for testing purposes.
-
-Additionally, the `LocalDateTime.now()` function can be used to obtain the current date and time as a `LocalDateTime` object, which represents a date and time without a timezone.
-
-## See Also
-- [Java 8 Time API](https://www.baeldung.com/java-8-date-time-intro)
-- [Kotlin Standard Library Functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-functions/index.html)
-- [Clock class documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Clock.html)
+# See Also
+- [Kotlin Official Documentation on Date/Time manipulation](https://kotlinlang.org/docs/datetime/)
+- [Java Date and Time API](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+- [kotlinx-datetime Library](https://github.com/Kotlin/kotlinx-datetime)

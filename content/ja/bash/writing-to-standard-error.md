@@ -1,41 +1,48 @@
 ---
-title:    "Bash: 「標準エラーに書き込む」"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/writing-to-standard-error.md"
+title:                "Bash: 標準エラーへの書き込み"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
+標準エラーに書き込むことについて、なぜそうするのかを説明します。
 
-プログラミングを学ぶときに、標準エラー出力に書き込む方法を知ることは非常に重要です。デバッグのためにエラーメッセージを取得したり、プログラムの実行状況を把握するために必要になるからです。
+デバッグやトラブルシューティングの際に、標準エラーに出力を書き込むことで、プログラムの実行結果を把握することができます。これにより、エラーの原因やプログラムの実行状況をより詳しく確認することができます。
 
-## 方法
-
-標準エラー出力に書き込むには、次のようにコードを記述します。
-
-```Bash
-echo "Error message" >&2
-```
-
-このように、`>&2`を追加することで、エラーメッセージを標準エラー出力に書き込むことができます。また、コマンドの実行結果を標準エラー出力に書き込むこともできます。
+## 使い方
+標準エラーに書き込む方法について、簡単なコーディング例と出力を表示します。
 
 ```Bash
-ls -l file1 file2 2>&1 | grep -i 'Permission denied'
+#! /bin/bash
+ls
+echo "This is a test" >&2
 ```
 
-上記の例では、`ls`コマンドの実行結果が標準エラー出力に書き込まれ、そこから`Permission denied`というエラーメッセージを検索します。
+上記のコードを実行すると、標準エラーに "This is a test" というメッセージが表示されます。エラーが発生した場合でも、標準出力ではなく標準エラーにメッセージが書き込まれることが確認できます。
 
-## 深堀り
+## 深く掘り下げる
+標準エラーへの書き込みは、プログラミングにおいて非常に重要です。特に、大規模なプログラムのデバッグや、ログファイルの作成に役立ちます。また、リダイレクトやパイプを使用することで、標準エラーの出力を他のプログラムに渡すことができます。
 
-標準エラー出力に書き込むことで、プログラムの実行状況を把握することができます。また、エラーメッセージを出力することで、バグの原因を特定しやすくなります。さらに、リダイレクト演算子(`>&`や`|`)を使用することで、標準エラー出力を標準出力と同じように扱うことができます。
+さらに、標準エラーにはパイプラインの迂回が可能な "2>" 演算子があります。これにより、標準エラーをファイルに書き込むことができます。例えば、以下のようにコマンドを実行すると、標準エラーの出力を "error.log" ファイルに保存することができます。
 
-## 参考リンク
+```Bash
+command 2> error.log
+```
 
-- [Bashの標準エラー出力について](https://www.shellscript.sh/errormessages.html)
-- [リダイレクト演算子の使用方法](https://www.linuxjournal.com/article/7383)
-- [Unixコマンドの標準入出力について](https://linux.academicinfo.net/unix-command-io.html)
+これにより、実行中のエラーを後で確認することができます。
 
-## 参考
+## ぜひ参考にしてください
+- [Linuxコマンドラインの標準出力と標準エラーについて](https://techacademy.jp/magazine/8180)
+- [Bashの基礎知識～標準出力と標準エラーの使い分けについて～](https://qiita.com/t_nakayama0714/items/e0bbf6dac1ba29cf5f2e)
+- [シェルスクリプトβ: 5.3. リダイレクション](https://shellscript.sunone.me/redirection.html#stderr)
+- [リダイレクションとパイプ](https://www.atmarkit.co.jp/ait/articles/1405/22/news041.html)
 
-[Bashのリダイレクト演算子](https://www.tutorialspoint.com/unix/unix-io-redirections.htm)
+# 参考
+
+## 関連リンク
+- [Markdown入門](https://www.markdown.jp/)
+- [Bash入門](https://qiita.com/RyochanUedasan/items/53a9070a708ead53e529)
+- [演算子一覧](https://www.atmarkit.co.jp/ait/articles/1410/31/news072.html)

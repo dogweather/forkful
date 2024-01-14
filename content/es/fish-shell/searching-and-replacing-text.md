@@ -1,43 +1,39 @@
 ---
-title:    "Fish Shell: Buscando y reemplazando texto"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/searching-and-replacing-text.md"
+title:                "Fish Shell: Buscando y reemplazando texto"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Es muy común en la programación tener que buscar y reemplazar rápidamente ciertos textos en nuestros archivos. Ya sea para corregir un error, cambiar un valor o simplemente para actualizar un conjunto de datos, la funcionalidad de búsqueda y reemplazo es una herramienta muy útil y eficiente. Aprender a utilizarla en Fish Shell puede agilizar y mejorar nuestro flujo de trabajo.
+## ¿Por qué buscar y reemplazar texto en Fish Shell?
 
-## Cómo hacerlo
-Para realizar una búsqueda y reemplazo en Fish Shell, utilizaremos el comando `sed`, que viene incluido por defecto en la mayoría de distribuciones de Linux y en Mac OS. Este comando nos permite buscar y reemplazar texto a través de expresiones regulares. Veamos un ejemplo:
+La búsqueda y reemplazo de texto es una tarea común en la programación. Puede ser útil cuando se quiere cambiar una parte específica de un código o cuando se necesita realizar cambios en un gran número de archivos. Con Fish Shell, este proceso se puede realizar de manera rápida y eficiente.
 
-```Fish Shell
-sed -i 's/hola/adios/g' archivo.txt
-```
-
-En este ejemplo, estamos buscando y reemplazando la palabra "hola" por "adios" en el archivo "archivo.txt". La opción `-i` nos permite hacer el reemplazo directamente en el archivo, en lugar de imprimirlo en la pantalla.
-
-También podemos utilizar el comando `sed` para realizar reemplazos en varios archivos a la vez. Por ejemplo:
+## Cómo hacerlo: Ejemplos de código y resultados
 
 ```Fish Shell
-sed -i 's/hola/adios/g' *.txt
+# Reemplazar "hola" por "adiós" en un solo archivo
+sed -i 's/hola/adiós/' archivo.txt 
+
+# Reemplazar "nombre: Juan" por "nombre: Pedro" en todos los archivos del directorio actual
+sed -i 's/nombre: Juan/nombre: Pedro/g' * 
+
+# Reemplazar "border: 1px" por "border: none" en todos los archivos que contienen la palabra "estilo"
+sed -i .bak '/estilo/s/border: 1px/border: none/g' * 
 ```
 
-Este comando buscará y reemplazará "hola" por "adios" en todos los archivos con extensión ".txt" en la carpeta actual.
+Todos estos comandos utilizan el comando `sed` para realizar la búsqueda y reemplazo de texto en un solo archivo, en todos los archivos de un directorio o en archivos que contengan cierta palabra. El uso de la opción `-i` permite realizar los cambios directamente en los archivos, sin necesidad de crear un archivo temporal. También se pueden utilizar expresiones regulares para buscar patrones específicos en lugar de texto exacto.
 
-Otra forma de realizar un reemplazo en Fish Shell es utilizando el operador `=~`, que nos permite utilizar expresiones regulares directamente en la línea de comandos. Veamos un ejemplo:
+## Un vistazo más profundo
 
-```Fish Shell
-echo "hola mundo" | sed 's/[aeiou]/0/g'
-```
+La herramienta `sed` se basa en expresiones regulares, que son patrones utilizados para buscar y manipular texto. Al utilizar el argumento `s` seguido por dos patrones separados por una barra, se puede indicar qué texto buscar y qué texto reemplazar.
 
-En este caso, estamos utilizando el comando `echo` para imprimir la frase "hola mundo" y luego, con `sed`, estamos reemplazando todas las vocales por "0".
-
-## Profundizando
-El comando `sed` es realmente poderoso y ofrece muchas más funcionalidades. Podemos utilizarlo para reemplazar un texto específico en una línea específica de un archivo, para reemplazar solo la primera aparición de un texto, para buscar y reemplazar en otro directorio distinto al actual, entre muchas otras opciones. Para conocer más en detalle todas las posibilidades de `sed`, te recomendamos revisar su página de manual con el comando `man sed` o buscar tutoriales dedicados a esta herramienta.
+Además de `sed`, también se pueden utilizar otras herramientas de búsqueda y reemplazo de texto en Fish Shell, como `awk` y `perl`.
 
 ## Ver también
-- [Página de manual de sed](https://linux.die.net/man/1/sed)
-- [Introducción a búsqueda y reemplazo en Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_search_replace)
-- [Tutoriales de expresiones regulares en Fish Shell](https://fishshell.com/docs/current/index.html#regex)
+
+- [Documentación oficial de Fish Shell sobre búsqueda y reemplazo de texto](https://fishshell.com/docs/current/cmds/sed.html)
+- [Tutorial de búsqueda y reemplazo de texto en Fish Shell](https://medium.com/@shtev/efficiently-search-and-replace-text-in-fish-shell-linux-5a23c17ec7a3)
+- [Guía de expresiones regulares en Fish Shell](https://github.com/fish-shell/fish-shell/wiki/Tutorial-Regex)

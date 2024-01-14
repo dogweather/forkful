@@ -1,43 +1,44 @@
 ---
-title:    "Gleam: Excluindo caracteres que correspondem a um padrão"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/deleting-characters-matching-a-pattern.md"
+title:                "Gleam: Excluindo caracteres que correspondem a um padrão."
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que usar a exclusão de caracteres em um padrão?
 
-Às vezes, em nosso código Gleam, podemos nos deparar com caracteres indesejados que não fazem parte do padrão que estamos buscando. Talvez seja um espaço em branco ou um caractere especial que não deveria estar lá. Nesses casos, podemos usar a função `delete_chars_matching` para remover esses caracteres e manter apenas o que precisamos.
+Você já se deparou com uma situação em que precisa excluir vários caracteres de um texto que seguem um determinado padrão? Com o Gleam, isso pode ser feito de forma rápida e eficiente usando a função "delete_matching" da biblioteca "String". Neste post, vamos te mostrar como fazer isso e aprofundar na função para que você possa entendê-la melhor.
 
-## Como Fazer
+## Como fazer?
 
-Para usar a função `delete_chars_matching`, precisamos passar dois argumentos: a string que queremos verificar e o padrão de caracteres que queremos remover. Por exemplo, se quisermos remover todos os espaços em branco de uma string, podemos fazer o seguinte:
-
-```Gleam
-let string = "Este é um exemplo de string com espaços em branco."
-let nova_string = delete_chars_matching(string, " ")
-```
-
-O resultado será a nova string sem os espaços em branco: "Esteéumexemplodestringcomespaçosembranco."
-
-Podemos também usar expressões regulares para especificar padrões mais complexos. Por exemplo, se quisermos remover todos os dígitos de uma string, podemos fazer o seguinte:
+Para excluir caracteres de uma string que sigam um padrão, basta usar a função "delete_matching" e passar o texto original e o padrão desejado como argumentos. Vamos ver um exemplo prático:
 
 ```Gleam
-let string = "12345abcde"
-let nova_string = delete_chars_matching(string, "[0-9]+")
+import String
+
+// Definindo a string original
+let texto = "Meu número de telefone é 345-678-910"
+
+// Excluindo os números e o traço
+let texto_atualizado = String.delete_matching(texto, "[0-9-]")
+
+IO.print(texto_atualizado) // Saída: "Meu número de telefone é "
+
 ```
 
-Neste caso, a nova string será "abcde", pois todos os dígitos foram removidos.
+No exemplo acima, usamos a expressão regular "[0-9-]", que engloba todos os números e o traço. Portanto, todos os caracteres que correspondem a esse padrão foram excluídos da string original. Você pode adaptar a expressão regular de acordo com o seu padrão específico.
 
-## Profundidade
+## Profundidade da função "delete_matching"
 
-Por trás dos bastidores, a função `delete_chars_matching` faz uso da função `delete_chars_at_indices`, que recebe uma string e uma lista de índices e remove os caracteres correspondentes aos índices da string. A função `delete_chars_matching` simplesmente usa expressões regulares para gerar a lista de índices a serem removidos.
+A função "delete_matching" é parte da biblioteca "String" do Gleam, que oferece uma ampla gama de funções úteis para lidar com strings. Ela usa a biblioteca "version" do Gleam para lidar com expressões regulares, o que torna sua aplicação ainda mais flexível.
 
-Além disso, é importante notar que a função `delete_chars_matching` retorna uma nova string e não altera a string original. Isso significa que precisamos armazenar o resultado em uma nova variável para usá-lo posteriormente.
+Além disso, a função "delete_matching" é pura, o que significa que ela não altera a string original, mas sim retorna uma nova string com as alterações aplicadas. Isso é importante para evitar efeitos colaterais indesejados em seu código.
 
-## Veja Também
+## Veja também
 
-- [Documentação oficial do Gleam sobre `delete_chars_matching`](https://gleam.run/std/delete_chars_matching.html)
-- [Tutorial sobre expressões regulares em Gleam](https://dev.to/gleam-lang/regular-expressions-in-gleam-3p3g)
-- [Mais recursos sobre o padrão](https://www.gleam.run/learn/patterns.html)
+- [Documentação da biblioteca String](https://gleam.run/documentation/stdlib/string.html)
+- [Documentação da biblioteca Version](https://gleam.run/documentation/stdlib/version.html)
+
+A exclusão de caracteres em um padrão pode ser uma tarefa comum em programação, por isso é importante entender como fazê-la de forma simples e eficaz. Com a função "delete_matching" do Gleam, você pode facilmente excluir caracteres que seguem um padrão específico em suas strings. Não hesite em experimentar e explorar mais as funcionalidades dessa função e da biblioteca "String" do Gleam.

@@ -1,60 +1,64 @@
 ---
-title:    "C: पैटर्न से मिलते हुए अक्षरों को हटाना"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/deleting-characters-matching-a-pattern.md"
+title:                "C: पैटर्न को मिलाने वाले अक्षरों को हटाना"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-एक निश्चित पैटर्न से मैच करने वाले अक्षरों को हटाने में काम लेने का *क्यों* कोई रुझान होगा जहां उपयोगकर्ता को केवल निश्चित अक्षरों को हटाने की आवश्यकता होगी।
+इस ब्लॉग पोस्ट में हम आपको बताएंगे कि C प्रोग्रामिंग में पैटर्न को मैच करने वाले अक्षरों को हटाने क्यों जरूरी है।
 
-# कैसे करें
+## कैसे करें
+
+इस काम को करने के लिए हमें एक स्ट्रिंग (चर) और पैटर्न स्ट्रिंग (मात्रा) की आवश्यकता होती है। फिर हम प्रोग्राम लिखते हैं जो दी गई पैटर्न स्ट्रिंग के आधार पर स्ट्रिंग से उसी पैटर्न को मैच करने वाले अक्षरों को हटा देता है। नीचे दिए गए कोड ब्लॉक में आप इसका संकलन देख सकते हैं।
 
 ```C
-#include<stdio.h>
+// पैटर्न को मैच करने वाले अक्षरों को हटाएं
+#include <stdio.h>
+#include <string.h>
 
-void deletePattern(char *str, char *pattern) {
-  int i, j, k, n, m;
-  n = strlen(str);
-  m = strlen(pattern);
-  
-  for (i = 0; i <= n - m; i++) {
-    for (j = i, k = 0; k < m; j++, k++) {
-      if (str[j] != pattern[k]) {
-        break;
-      }
+void deleteMatchingPattern(char *str, char *pattern) {
+    int i, j, index = 0;
+    int len = strlen(pattern);
+
+    // स्ट्रिंग से पैटर्न को मैच करने वाले अक्षरों को हटाएं
+    for (i = 0; str[i] != '\0'; i++) {
+        for (j = 0; j < len; j++) {
+            if (str[i+j] != pattern[j]) {
+                break;
+            }
+        }
+
+        if (j == len) { // पैटर्न मिल गया है
+            i += len - 1; // पुनरावृत्ति: पैटर्न लंबाई - 1
+        } else { // पैटर्न मिल नहीं जाता है
+            str[index] = str[i];
+            index++;
+        }
     }
-    if (k == m) {
-      for (j = i, k = k - 1; k >= 0; j++, k--) {
-        str[j] = ' ';
-      }
-    }
-  }
+    str[index] = '\0';
 }
 
 int main() {
-  char str[] = "यह पाठ कुछ गलत अक्षरों के साथ है।";
-  char pattern[] = "कुछ";
-  
-  printf("पूर्व मैसेज: %s\n", str);
-  deletePattern(str, pattern);
-  printf("नया मैसेज: %s", str);
-  
-  return 0;
+    char str[100], pattern[100];
+
+    // स्ट्रिंग और पैटर्न स्ट्रिंग प्राप्त करें
+    printf("कृपया स्ट्रिंग दर्ज करें: ");
+    gets(str);
+    printf("कृपया पैटर्न स्ट्रिंग दर्ज करें: ");
+    gets(pattern);
+
+    deleteMatchingPattern(str, pattern); // स्ट्रिंग से पैटर्न मिलेंगे
+    printf("परिणाम स्ट्रिंग: %s\n", str);
+
+    return 0;
 }
-```
 
-आउटपुट:
+##### उपयोगकर्ता आउटपुट:
 
-पूर्व मैसेज: यह पाठ कुछ गलत अक्षरों के साथ है।
-नया मैसेज: यह पाठ        गलत अक्षरों के साथ है।
-
-# गहराई में
-
-प्रोग्रामिंग में अक्षरों को प्रोसेस करने का सबसे सामान्य तरीका `char` टाइप का उपयोग करना है। हालांकि, वैध स्ट्रिंग प्रोसेसिंग `char` अरे के साथ नहीं हो सकती है क्योंकि `char` केवल एक ही अक्षर को संग्रहीत कर सकता है। इसलिए, अक्षरों को हटाने के लिए हमें उन्हें एक स्ट्रिंग के रूप में संग्रहीत करने की आवश्यकता होती है ताकि हम उन्हें प्रोसेस कर सकें। इस लेख में हमने स्पेशल तरीके से `char` अरे की संख्या पायी गई है जो हमें पैटर्न के आधार पर स्ट्रिंग प्रोसेसिंग करने की अनुमति देती है।
-
-# इसे भी देखें
-
-[Hindi Programming Tutorial: C Strings and String Functions](https://www
+कृपया स्ट्रिंग दर्ज करें: Hello World
+कृपया पैटर्न स्ट्रिंग दर्ज करें: lo
+परिणाम स्ट

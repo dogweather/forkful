@@ -1,43 +1,72 @@
 ---
-title:    "Java: Escrevendo testes"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-tests.md"
+title:                "Java: Escrevendo testes"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante
+## Por que escrever testes é importante para programadores?
 
-Escrever testes em um código de programação é necessário para garantir a qualidade e a funcionalidade do seu código. Eles ajudam a identificar e corrigir erros e bugs antes que eles afetem o seu produto final. Além disso, eles permitem que você faça modificações no seu código com mais confiança, sabendo que os testes irão detectar qualquer eventual problema.
+Como programadores, nosso trabalho é criar códigos funcionais e eficientes. Porém, muitas vezes, acabamos deixando de lado uma parte fundamental do processo de desenvolvimento: os testes. Neste artigo, vamos entender o porquê de escrever testes ser tão importante para nós.
 
 ## Como escrever testes em Java
 
-Existem diversas ferramentas e frameworks disponíveis para escrever testes em Java, mas neste post vamos nos concentrar no uso do JUnit. Primeiro, é necessário importar a biblioteca do JUnit no seu projeto. Em seguida, escreva uma classe de teste contendo o método que irá validar o código. Dentro desse método, utilize as asserções do JUnit para verificar se o resultado esperado é igual ao resultado obtido. Aqui está um exemplo:
+A forma mais comum de escrever testes em Java é utilizando a biblioteca de testes JUnit. Para começar, devemos importar a biblioteca para nosso projeto e criar uma classe para nossos testes. Dentro dessa classe, devemos utilizar a anotação "@Test" antes de cada método de teste. Veja um exemplo abaixo:
+
+```Java
+import org.junit.Test;
+
+public class MinhaClasseTeste {
+
+    @Test
+    public void testeMetodo1() {
+        // código para testar o método 1
+    }
+
+    @Test
+    public void testeMetodo2() {
+        // código para testar o método 2
+    }
+}
+```
+
+Dentro dos métodos de teste, podemos utilizar asserções para verificar se o resultado esperado é igual ao resultado obtido. Por exemplo:
 
 ```Java
 import static org.junit.Assert.assertEquals;
 
-public class ExemploTeste {
+public class MinhaClasseTeste {
 
-  @Test
-  public void testarSoma() {
-    int resultado = Funcoes.soma(2, 4);
-    assertEquals(6, resultado);
-  }
+    @Test
+    public void testeMetodo1() {
+        int resultado = minhaClass.metodo1();
+        assertEquals(5, resultado);
+    }
+
+    @Test
+    public void testeMetodo2() {
+        String resultado = minhaClass.metodo2();
+        assertEquals("Olá mundo!", resultado);
+    }
 }
 ```
 
-Neste exemplo, estamos testando o método `soma` da classe `Funcoes`, que deveria retornar a soma dos dois números passados como parâmetro. Utilizamos a asserção `assertEquals` para verificar se o resultado retornado é igual ao esperado, que neste caso é 6.
+Após escrevermos nossos testes, podemos executá-los clicando com o botão direito na classe de testes e escolhendo a opção "Run as JUnit Test". Isso irá rodar todos os testes e mostrará o resultado no console. Se algum teste falhar, saberemos que há algum problema em nosso código e poderemos corrigi-lo antes de enviá-lo para produção.
 
-Existem também outras asserções disponíveis no JUnit, como `assertTrue` e `assertFalse`, que podem ser utilizadas para testar condições booleanas. É importante ter uma classe de teste para cada classe do seu projeto que tenha métodos que precisam ser testados.
+## Mergulhando mais a fundo nos testes em Java
 
-## Mergulhando mais fundo
+Os testes são importantes não apenas para garantirmos que nosso código esteja funcionando corretamente, mas também para facilitar a manutenção do mesmo no futuro. Ao escrevermos testes, estamos documentando nosso código e criando uma espécie de "rede de segurança" contra possíveis problemas. Além disso, ao escrevermos testes antes de implementar novas funcionalidades, podemos ter uma noção melhor de como nosso código deverá funcionar e evitamos possíveis erros de lógica.
 
-Além de utilizar as asserções do JUnit, é importante entender os conceitos de teste de unidade e teste de integração. No teste de unidade, cada método e função do seu código é testado individualmente para garantir sua corretude. Já no teste de integração, diferentes partes do código são testadas juntas para verificar se elas funcionam bem em conjunto.
+Outra vantagem de escrever testes é que podemos facilmente refatorar nosso código sem medo de quebrá-lo. Como já temos os testes garantindo que o código está funcionando, podemos fazer alterações sem medo de causar algum problema. Isso também nos traz mais confiança e segurança em nosso trabalho.
 
-Também é importante criar testes para diferentes casos de uso e condições extremas, para garantir que o seu código seja robusto e possa lidar com diversas situações. Um bom código deve ter uma ampla cobertura de testes para garantir sua qualidade.
+Por fim, se você é um desenvolvedor que busca sempre a excelência em seu código, escrever testes é essencial. Os testes garantem que nosso código está seguindo boas práticas e padrões de qualidade, além de facilitarem a identificação de possíveis problemas em nossos projetos.
 
 ## Veja também
-- [JUnit](https://junit.org/junit5/)
-- [Testes de unidade e integração](https://www.devmedia.com.br/testes-de-unidade-e-integracao/33557)
-- [Cobertura de testes em Java](https://www.baeldung.com/jacoco)
+
+Para saber mais sobre a importância dos testes em Java, recomendamos as leituras abaixo:
+
+- [Introdução aos testes em Java com JUnit](https://blog.caelum.com.br/introducao-aos-testes-em-java-com-junit/)
+- [Test Driven Development (TDD) em Java](https://www.devmedia.com.br/tdd-em-java/32546)
+- [Documentando o seu código com testes](https://www.arquiteturadesoftware.com.br/documentando-o-seu-codigo-com-testes-em-java/)

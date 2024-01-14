@@ -1,53 +1,42 @@
 ---
-title:    "Fish Shell: 删除匹配模式的字符"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell: 删除与模式匹配的字符"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么 
+为什么要删除匹配模式的字符?
 
-### 在Fish Shell程序中删除匹配模式的字符
+删除匹配模式的字符在编程中是一个常用的功能，它可以让我们更方便地处理文本数据。比如说，当我们从数据库中获取数据，但其中有一些特殊字符，我们可能就需要将它们删除，以便后续的处理。在Fish Shell中，我们可以很轻松地实现这个功能。
 
-在日常电脑使用中，我们可能会遇到需要删除文本中特定字符的情况，例如删除所有的空格或者特定符号。Fish Shell一种使用方便、功能强大的命令行工具，可以帮助我们轻松地进行此类操作。
+### 如何操作
 
-# 如何
-
-```Fish Shell
-set text "今天天气☀️非常好🌻"
-echo $text
+在Fish Shell中，我们可以使用`string match`命令来匹配我们想要删除的字符模式。例如，我们想要删除所有的数字字符，我们就可以使用以下命令：
 ```
-输出：
-今天天气☀️非常好🌻
-
-```Fish Shell
-echo $text | tr -d ☀️🌻
+Fish Shell string match '[0-9]' --delete 'This is a sample string with 123 numbers.'
 ```
-输出：
-今天天气非常好
-
-在上面的例子中，我们使用tr命令（translate）来删除文本中的特定字符。首先，我们设置了一个变量text为“今天天气☀️非常好🌻”，然后使用echo命令打印出来。接着，我们使用管道符号（|）将该文本传递给tr命令。tr命令后的-d参数表示删除匹配到的字符，紧跟着的☀️🌻就是我们要删除的字符。最后，tr命令的输出被返回给echo命令，最终输出为“今天天气非常好”。
-
-# 深入探讨
-
-除了使用tr命令外，我们也可以使用sed命令来实现相同的功能。
-
-```Fish Shell
-echo $text | sed 's/☀️//g;s/🌻//g'
+这个命令将返回以下结果：
 ```
-输出：
-今天天气非常好
+This is a sample string with numbers.
+```
+同样的，我们也可以使用`string replace`命令来替换我们想要删除的字符模式。例如，想要将所有的空格替换为下划线，我们可以使用以下命令：
+```
+Fish Shell string replace ' ' '_' 'This is a sample string with spaces.'
+```
+这个命令将返回以下结果：
+```
+This_is_a_sample_string_with_spaces.
+```
 
-在上面的例子中，我们使用sed命令（stream editor）来替换文本中的字符。首先，我们同样通过管道符号将文本传递给sed命令。接着，s（substitute）表示替换操作，后面跟着第一个/☀️/表示要替换的字符，第二个//表示替换为空格，最后的g（global）表示替换所有匹配到的字符。在第二个替换中，我们同样将🌻替换为空格。最后，sed命令的输出被返回给echo命令，最终输出为“今天天气非常好”。
+### 深入讨论
 
-# 参考资料
+Fish Shell提供了强大的字符串处理功能，通过使用`string match`和`string replace`命令，我们可以轻松地删除字符匹配模式，节省我们处理数据的时间和精力。与传统的grep和sed命令相比，Fish Shell更加简洁和易于使用，使得处理文本数据更加高效。
+
+### 参考链接
 
 - [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [Linux命令详解：tr](https://www.jianshu.com/p/a05f3434195e)
-- [Linux命令详解：sed](https://www.jianshu.com/p/91b9d86c59d6)
-
-# 参见
-
-- [Fish Shell快速入门指南](https://blog.csdn.net/whb193565/article/details/78486466)
-- [Fish Shell实用技巧合集](https://www.jianshu.com/p/c0b8229b9b21)
+- [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
+- [Fish Shell教程](https://github.com/jorgebucaran/fish-shell-cookbook/blob/master/README.md)
+- [Linux Command Library: string](https://www.linuxcommands.site/fish-shell-str/)

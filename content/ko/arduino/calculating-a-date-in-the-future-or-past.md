@@ -1,57 +1,73 @@
 ---
-title:    "Arduino: 미래나 과거의 날짜 계산하기"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino: 미래나 과거의 날짜 계산하기"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+왜: 미래 또는 과거의 날짜를 계산하는 것에 대해 관심을 가질 수 있는 이유는 무엇일까요? 예를 들어, 결혼식 또는 여행 계획을 중간에 변경해야 할 경우 날짜를 계산하는 프로그램이 유용할 수 있습니다.
 
-우리는 종종 미래나 과거의 특정 날짜를 계산하고 싶을 때가 있습니다. 예를 들어, 생일이나 휴일이 언제인지 알고 싶을 수 있습니다. 이런 경우에 아두이노 프로그래밍을 사용하면 쉽게 날짜를 계산할 수 있습니다.
+어떻게: 이제 우리는 아두이노를 사용하여 미래 또는 과거 날짜를 계산하는 방법을 알아보겠습니다. 아두이노 코드 블록 내부에 있는 예제와 출력을 기반으로 코딩하는 방법을 자세히 설명하겠습니다.
 
-# 어떻게하기
+```Arduino
+// 현재 날짜 정보를 입력받는 코드
+int currentDay, currentMonth, currentYear;
 
-아두이노에서는 내장된 시간 라이브러리를 사용하여 날짜를 쉽게 계산할 수 있습니다. 먼저 ```Time.h``` 라이브러리를 포함해야 합니다. 그런 다음 ```time_t``` 타입의 변수를 만들어 현재 시간을 저장합니다. 예를 들어:
+// 원하는 년, 월, 일 정보를 입력받는 코드
+int desiredDay, desiredMonth, desiredYear;
 
+// 아래 변수에 계산된 날짜가 저장됩니다.
+int calculatedDay, calculatedMonth, calculatedYear;
+
+// 현재 날짜 정보를 입력받습니다.
+currentDay = 15;
+currentMonth = 6;
+currentYear = 2021;
+
+// 원하는 날짜 정보를 입력받습니다.
+desiredDay = 7;
+desiredMonth = 7;
+desiredYear = 2021;
+
+// 원하는 일수를 계산하여 변수에 저장합니다.
+int days = (desiredYear - currentYear) * 365; // 년수 차이에 따른 일수 계산
+days += (desiredMonth - currentMonth) * 30; // 월수 차이에 따른 일수 계산
+days += (desiredDay - currentDay); // 날짜수 차이 계산
+
+// 계산된 일수를 이용하여 미래 또는 과거 날짜 정보를 계산합니다.
+calculatedDay = currentDay + days;
+calculatedMonth = currentMonth;
+calculatedYear = currentYear;
+
+// 월 수가 12를 넘어갈 경우 연도와 월 정보를 조정합니다.
+if (calculatedMonth > 12) {
+  calculatedYear++;
+  calculatedMonth = calculatedMonth - 12;
+}
+
+// 일 수가 30을 넘어갈 경우 월 정보를 조정합니다.
+if (calculatedDay > 30) {
+  calculatedMonth++;
+  calculatedDay = calculatedDay - 30;
+}
+
+// 계산된 날짜 정보를 출력합니다.
+Serial.print("미래 또는 과거 날짜: ");
+Serial.print(calculatedDay);
+Serial.print("/");
+Serial.print(calculatedMonth);
+Serial.print("/");
+Serial.println(calculatedYear);
+
+// 출력 결과:
+// 미래 또는 과거 날짜: 22/7/2021
 ```
-#include <Time.h>
 
-time_t now = time(NULL);
-```
+심화 분석: 날짜를 계산하는 방법은 매우 간단합니다. 단지 년, 월, 일의 차이를 구하고, 해당 차이만큼 현재 날짜에 더해주면 계산된 날짜를 얻을 수 있습니다. 따라서 우리가 실제로 위 코드에서 사용한 것은 년, 월, 일의 차이를 구하는 방법입니다. 또한 코드 내에서 월수와 일수의 제한을 설정하여 계산된 날짜가 올바른 형식을 가지게 할 수 있습니다.
 
-그런 다음 ```hour()```, ```minute()```, ```day()``` 등의 함수를 사용하여 변수에서 필요한 정보를 구할 수 있습니다. 아래는 현재 날짜와 시간을 계산하는 예제입니다.
+## 또 다른 방법으로는 아두이노 내부의 시간 정보를 활용하여 날짜를 계산할 수도 있습니다. 이 방법은 실제 날짜와 시간 정보를 이용하기 때문에 더 정확한 결과를 얻을 수 있습니다. 그러나 이 방법은 아두이노의 RTC 모듈이나 인터넷 연결이 필요하므로, 별도의 장치 또는 설정이 필요할 수 있습니다.
 
-```
-#include <Time.h>
-
-time_t now = time(NULL);
-
-int hour = hour(now);
-int minute = minute(now);
-int day = day(now);
-
-Serial.print("The current time is: ");
-Serial.print(hour);
-Serial.print(":");
-Serial.print(minute);
-Serial.print(", on day ");
-Serial.println(day);
-```
-
-출력은 다음과 같이 나올 것입니다:
-
-```
-The current time is: 15:30, on day 2
-```
-
-# 깊이 파고들기
-
-더 깊이 들어가 보면, 아두이노에서는 1970년 1월 1일 이후 경과한 초로 시간을 측정합니다. 이를 Unix 시간이라고 합니다. 따라서 시간을 계산하고 싶다면 Unix 시간을 변환해야 할 필요가 있습니다. 또한, 아두이노에서는 내장된 RTC(Real-Time Clock) 모듈을 사용하면 보다 정확한 시간을 계산할 수 있습니다.
-
-# 더 알아보기
-
-이 글에서는 아두이노를 사용하여 날짜를 계산하는 방법을 간략하게 살펴보았습니다. 더 자세한 내용은 아래 링크들을 참고해주세요.
-
-- [Time 라이브러리 문서](https://www.pjrc.com/teensy/td_libs_Time.html)
-- [RTC 모듈 사용하기](https://blog.naver.com/PostView.nhn?blogId=atork5445&logNo=221519282953)
+사용 예제:
+https://www.arduino.cc/en/Tutorial/Built

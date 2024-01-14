@@ -1,46 +1,61 @@
 ---
-title:    "Clojure: Utvinna delsträngar"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/extracting-substrings.md"
+title:                "Clojure: Extrahera substrängar"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att extrahera substrängar är en användbar teknik inom Clojure-programmering eftersom det gör det möjligt att manipulera textsträngar på ett mer effektivt sätt. Genom att extrahera substrängar kan du också få tillgång till specifika delar av en textsträng, vilket kan vara användbart för olika programmeringsuppgifter.
+I många programmeringsprojekt finns det behov av att hämta ut delar av en sträng, istället för att bara använda hela strängen som den är. Detta kan till exempel vara för att manipulera data eller för att skapa mer dynamiska applikationer. I Clojure finns det enkla sätt att extrahera substrings från en sträng, vilket kan vara mycket användbart i många olika scenarion.
 
-## Så här gör du
+## Hur man gör
 
-Extrahera en del av en textsträng genom att använda ```subs``` funktionen. Till exempel, om du vill extrahera de första fyra tecknen från en textsträng, kan du använda följande kod:
-
-```Clojure
-(def text "Hej världen!")
-(subs text 0 4)
-```
-Detta kommer att producera outputen "Hej ", eftersom strängen "Hej världen!" börjar på index 0 och slutar på index 3 (eftersom det fjärde tecknet inte är inkluderat).
-
-Om du vill extrahera en del av strängen baserat på ett visst tecken kan du använda ```subs``` funktionen tillsammans med ```clojure.string/index-of``` funktionen. Till exempel, om du vill extrahera allt efter tecknet "världen!" från en sträng, kan du använda följande kod:
+För att extrahera en substring från en sträng i Clojure, kan man använda funktionen `subs`. Den tar in två parametrar - den ursprungliga strängen och vilka index som substringen ska hämtas från. Till exempel:
 
 ```Clojure
-(def text "Hej världen!")
-(subs text (+ (clojure.string/index-of text "världen!") 1))
+(def sträng "Hej, det här är en teststräng.")
+
+(subs sträng 4 10)
 ```
-Detta kommer att producera outputen "!", eftersom det är allt som finns kvar av strängen efter "världen!".
+
+Resultatet av detta skulle bli "det här", eftersom vi hämtar ut alla tecken från index 4 till index 10 (exklusive det sista tecknet). Detta fungerar även med negativa index, där den räknar bakifrån. Till exempel:
+
+```Clojure
+(subs sträng -9 -1)
+```
+
+Skulle resultera i "sträng" eftersom vi här hämtar ut de sista nio tecknen i strängen.
+
+För att bara hämta en del av en sträng, kan man använda funktionen `subs` tillsammans med funktionen `str/split`. Detta skulle till exempel kunna se ut såhär:
+
+```Clojure
+(def sträng "Hejsan, detta är en annan teststräng.")
+
+(-> sträng
+    (str/split #",")
+    first
+    (subs 3))
+```
+
+Det här skulle returnera "s", eftersom vi först delar upp strängen vid kommatecknet, tar första delen av den uppdelade strängen och sedan hämtar ut den tredje bokstaven från den delen.
 
 ## Djupdykning
 
-När du extraherar substrängar kan du också använda dig av regular expressions (regex) för att matcha vissa mönster i strängar och extrahera dessa delar. Detta är särskilt användbart om du vill extrahera delar av en sträng som följer ett specifikt format eller mönster.
-
-Till exempel, om du vill extrahera texten mellan två parentheser från en sträng, kan du använda följande kod:
+När man extraherar substrings från en sträng, är det viktigt att vara medveten om hur Clojure behandlar unicode-tecken. Om man till exempel har en sträng med emoji, kan det vara lite knepigare att extrahera en del av den. Ett sätt att göra detta är att använda funktionen `seq` för att omvandla strängen till en sekvens av tecken och sedan ta ut delar av den. Till exempel:
 
 ```Clojure
-(def text "Jag älskar (att) programmera")
-(clojure.string/replace text #"\((.*)\)" "$1")
+(def sträng "Hej 😊, detta är en teststräng.")
+
+(subs (seq sträng) 4 10)
 ```
-Detta kommer att producera outputen "att", eftersom det är det som finns mellan parentheserna i strängen.
+
+Det här skulle resultera i "😊, det", eftersom Clojure här ser alla tecken som individuella element i sekvensen och behandlar dem som sådana.
 
 ## Se även
 
-- [Officiell Clojure dokumentation för ```subs``` funktionen](https://clojuredocs.org/clojure.core/subs)
-- [En guide till regex inom Clojure](https://www.martinhaye.dk/clojure/regex-tutorial/)
+* [Clojure Docs: subs](https://clojuredocs.org/clojure.core/subs)
+* [Clojure Docs: seq](https://clojuredocs.org/clojure.core/seq)
+* [Clojure Docs: split](https://clojuredocs.org/clojure.string/split)

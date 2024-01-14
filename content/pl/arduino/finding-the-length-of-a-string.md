@@ -1,36 +1,45 @@
 ---
-title:    "Arduino: Obliczanie długości ciągu znaków"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/finding-the-length-of-a-string.md"
+title:                "Arduino: Znajdowanie długości łańcucha znaków"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Dlaczego warto poznać długość łańcucha znaków w programowaniu Arduino? Długość łańcucha może być przydatna przy wyświetlaniu tekstu na wyświetlaczu LCD, sprawdzaniu poprawności danych wprowadzonych przez użytkownika lub przetwarzaniu danych tekstowych w ogólności.
+W Arduino znajdują się wiele przydatnych funkcji, które ułatwiają proces programowania mikrokontrolera. Jedną z nich jest funkcja findString(), która pozwala na znalezienie długości ciągu znaków. Jest to bardzo ważna umiejętność, ponieważ umożliwia efektywne przetwarzanie i manipulowanie tekstem.
 
 ## Jak to zrobić
 
-Aby poznać długość łańcucha znaków w Arduino, należy użyć funkcji `length()`. Poniżej przedstawiono przykładowy kod z wykorzystaniem tej funkcji:
+Aby znaleźć długość ciągu znaków w Arduino, należy wykonać następujące kroki:
+
+1. Zadeklaruj zmienną typu "String", która będzie przechowywać nasz ciąg znaków.
+2. Wykorzystując funkcję .length(), przypisz do innej zmiennej długość naszego ciągu.
+3. Wyświetl wynik za pomocą funkcji Serial.print().
 
 ```Arduino
-String myString = "Hello World";
-Serial.println(myString.length());
+String tekst = "Hello world";
+int dlugosc = tekst.length();
+Serial.print("Dlugosc ciagu to: ");
+Serial.println(dlugosc);
 ```
 
-W powyższym przykładzie, zmienna `myString` przechowuje łańcuch "Hello World". Następnie używamy funkcji `length()`, która zwraca długość tego łańcucha i wyświetlamy ją na monitorze szeregowym za pomocą funkcji `println()`.
-
-Output: `11`
+W tym przykładzie zmienna "tekst" przechowuje ciąg znaków "Hello world", a zmienna "dlugosc" zawiera jego długość, czyli 11. Wynik zostaje wyświetlony na monitorze szeregowym.
 
 ## Głębsza analiza
 
-W przypadku programowania mikrokontrolerów, takich jak Arduino, należy pamiętać o ograniczonej ilości pamięci. Dlatego też, podczas tworzenia łańcuchów znaków zaleca się wykorzystywanie typu `String` zamiast tradycyjnego typu `char`. Typ `String` automatycznie dostosowuje swoją długość do wprowadzanego tekstu, a typ `char` wymaga wcześniejszego określenia rozmiaru, co może prowadzić do problemów z pamięcią.
+Podczas korzystania z funkcji findString() w Arduino warto zwrócić uwagę na kilka istotnych rzeczy:
 
-Funkcja `length()` nie uwzględnia znaku końca `'\0'` w obliczaniu długości łańcucha. Oznacza to, że jeśli łańcuch zawiera 10 znaków, to jego długość zostanie zwrócona jako 10, a nie 11.
+- Funkcja ta zwraca wartość typu "int" i może przyjąć jako argument inne funkcje, np. find() lub concat().
+- Jeśli ciąg znaków jest pusty, funkcja zwróci wartość 0.
+- Jeśli ciąg znaków zawiera znaki specjalne, np. polskie litery, może nastąpić nieprawidłowe obliczenie długości.
 
-## Zobacz także
+Dzięki znajomości tych szczegółów, możesz skutecznie wykorzystać funkcję findString() w swoich projektach i ułatwić sobie pracę z tekstem.
 
-- [Dokumentacja funkcji length()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/)
-- [Porównanie typu String z typem char w Arduino](https://forum.arduino.cc/index.php?topic=3922.0)
-- [Podstawy programowania w C++ dla Arduino](https://roboticsbackend.com/arduino-c-plus-plus-programming/)
+## Zobacz również
+
+1. [Dokumentacja funkcji findString() w języku angielskim](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/)
+2. [Przykłady zastosowania funkcji findString()](https://randomnerdtutorials.com/arduino-string-length-examples/)
+3. [Inne przydatne funkcje w Arduino](https://blog.arduino.cc/2016/04/14/five-essential-arduino-functions-part-1-of-2/)

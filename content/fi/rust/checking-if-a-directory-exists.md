@@ -1,39 +1,52 @@
 ---
-title:    "Rust: Tarkistaako hakemisto on olemassa"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/checking-if-a-directory-exists.md"
+title:                "Rust: Tarkista onko hakemisto olemassa"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-
-Joskus ohjelmassasi voi olla tarve tarkistaa, onko tietty hakemisto olemassa. Tämä voi olla tarpeen esimerkiksi, kun haluat varmistaa, että tietty hakemisto on olemassa ennen kuin lisäät siihen tiedostoja tai suoritat muita toimintoja. Onneksi Rust-kielessä on helppo tapa tarkistaa hakemiston olemassaolo.
+## Miksi tarkistaa hakemisto löytyy
+On monia syitä, miksi haluat tarkistaa, onko tietty hakemisto olemassa Rust-ohjelmassasi. Esimerkiksi voit haluta varmistaa, että hakemisto on luotu ennen tiedostojen tallentamista sinne tai määrittää ohjelman käyttäytymisen, jos hakemisto puuttuu. Onneksi Rust tarjoaa helpon tavan tarkistaa, onko hakemisto olemassa.
 
 ## Miten tehdä se
+Rustissa voit käyttää `PathBuf`-luokkaa tarkistaaksesi, onko hakemisto olemassa. Ensinnäkin varmista, että tuot `std::path::PathBuf` luokan käyttöön:
 
-Rustilla on käytössä `std::fs` kirjasto, joka tarjoaa pääsyn tiedostojärjestelmään liittyviin toimintoihin. Tarkistaaksesi, onko hakemisto olemassa, voit käyttää `std::fs::metadata` -funktiota antamalla sille hakemiston polun parametrina. Funktio palauttaa `Result<Metadata>` -tyypin arvon, joka kertoo hakemiston tiedoista, kuten sen olemassaolosta.
+```rust
+use std::path::PathBuf;
+```
 
-```Rust
-use std::fs;
+Sitten voit luoda uuden `PathBuf` -olion antamalla sille polun:
 
-let directory_path = "polku/hakemistoon";
+```rust
+let polku = PathBuf::from("polku/hakemistoon");
+```
 
-if let metadata = fs::metadata(directory_path) {
+Nyt kun meillä on `PathBuf` -olio, voimme käyttää `exists` -metodia tarkistaaksemme, onko hakemisto olemassa:
+
+```rust
+if polku.exists() {
     println!("Hakemisto on olemassa!");
 } else {
-    println!("Hakemistoa ei ole olemassa");
+    println!("Hakemistoa ei löytynyt.");
 }
 ```
 
-Tässä esimerkissä käytetään `if let` -lauseketta, joka suorittaa koodin, jos `fs::metadata` palauttaa onnistuneen arvon. Voit myös käyttää `match` -lauseketta, jos haluat käsitellä sekä onnistuneen että virheilmoituksen tapaukset.
+## Syvällinen käsittely
+Vaikka `exists` -metodi onkin helppo käyttää, se ei välttämättä toimi odotetulla tavalla. Jos hakemisto ei ole luotu, mutta sillä on sama nimi kuin olemassa olevalla tiedostolla, `exists` -metodi palauttaa `true` -arvon, joka voi aiheuttaa ongelmia. Tämän välttämiseksi voit käyttää `is_dir` -metodia, joka palauttaa `true` vain, jos käsiteltävä polku on hakemisto.
 
-## Syvällisempi sukellus
+```rust
+if path.is_dir() {
+    println!("Hakemisto on olemassa!");
+} else {
+    println!("Hakemistoa ei löytynyt.");
+}
+```
 
-`std::fs::metadata` -funktion avulla voit myös saada tarkempia tietoja hakemistosta. Funktio palauttaa `Metadata` -tyypin rakenteen, joka sisältää esimerkiksi hakemiston luomisajan ja muokkausajan. Voit käyttää näitä tietoja esimerkiksi tiedostonjärjestelmissä, joissa tarvitaan tarkempaa käsittelyä hakemistojen suhteen.
+Voit myös käyttää `is_file` -metodia varmistaaksesi, että polku on tiedosto eikä esimerkiksi tunnelukon tiedosto.
 
 ## Katso myös
-
-- [Rustin `std::fs` kirjasto](https://doc.rust-lang.org/std/fs/index.html)
-- [Rustin `Result` tyyppi](https://doc.rust-lang.org/std/result/index.html)
-- [Rustin tiedostojärjestelmän käsittely](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
+- [Rustin virallinen dokumentaatio PathBuf-luokasta](https://doc.rust-lang.org/std/path/struct.PathBuf.html)
+- [Rustin virallinen dokumentaatio Path-luokasta](https://doc.rust-lang.org/std/path/struct.Path.html)
+- [Rustin opetusohjelma hakemistojen hallinnasta](https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html)

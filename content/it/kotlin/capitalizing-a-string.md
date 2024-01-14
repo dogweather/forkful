@@ -1,63 +1,47 @@
 ---
-title:    "Kotlin: Capitalizzare una stringa"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: Capitalizzare una stringa"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molti programmi richiedono l'utilizzo di stringhe capitalizzate per scopi di formattazione o di ordinamento dei dati. In Kotlin, esiste una funzione built-in per capitalizzare una stringa, che può semplificare il processo di programmazione.
+Capitalizzare una stringa è un'operazione comune quando si lavora con le applicazioni che gestiscono i dati dei clienti. Può essere utile per uniformare il formato dei nomi o dei dati inseriti dall'utente, o semplicemente per rendere più leggibili i dati durante la stampa.
 
-## Come fare
+## Come Fare
 
-Per capitalizzare una stringa in Kotlin, useremo la funzione `capitalize()`. Prendiamo ad esempio la seguente stringa:
+Per capitalizzare una stringa in Kotlin, possiamo utilizzare la funzione `capitalize()` che fa parte della classe String. Questa funzione prende la prima lettera della stringa e la trasforma in maiuscolo, mantenendo inalterate le altre lettere.
+
+```Kotlin
+val nome = "mario"
+val nomeCapitalizzato = nome.capitalize()
+println(nomeCapitalizzato) // Output: Mario
+```
+
+Possiamo anche capitalizzare solo la prima lettera di ogni parola all'interno di una stringa utilizzando la funzione `capitalizeEachWord()`.
 
 ```Kotlin
 val frase = "ciao a tutti"
+val fraseCapitalizzata = frase.capitalizeEachWord()
+println(fraseCapitalizzata) // Output: Ciao A Tutti
 ```
 
-Per capitalizzare la prima lettera di questa stringa, possiamo semplicemente chiamare la funzione `capitalize()` su di essa:
-
-```
-println(frase.capitalize())
-// Output: Ciao a tutti
-```
-
-Possiamo anche capitalizzare tutte le parole della stringa utilizzando la funzione `capitalizeWords()`:
-
-```Kotlin
-val frase = "ciao a tutti"
-println(frase.capitalizeWords())
-// Output: Ciao A Tutti
-```
-
-Se desideriamo capitalizzare la prima lettera di ogni parola, ignorando eventuali lettere già maiuscole, possiamo utilizzare la funzione `capitalizeEachWord()`:
-
-```Kotlin
-val frase = "HO UN GATTO NEL GIARDINO"
-println(frase.capitalizeEachWord())
-// Output: Ho Un Gatto Nel Giardino
-```
+Queste funzioni sono molto utili per la formattazione dei dati e possono essere applicate a qualsiasi stringa.
 
 ## Approfondimento
 
-Quando si utilizza la funzione `toLowerCase()` su una stringa, solo la prima lettera di quella stringa verrà capitalizzata. Tutti gli altri caratteri rimarranno invariati. Per capitalizzare l'intera stringa, è necessario utilizzare la funzione `capitalize()`.
+Se vogliamo comprendere meglio come funzionano le funzioni `capitalize()` e `capitalizeEachWord()`, possiamo dare un'occhiata all'implementazione all'interno della classe String.
 
-Inoltre, la funzione `capitalize()` non modifica la stringa originale, ma ne crea una nuova con la prima lettera in maiuscolo. Se si desidera modificare la stringa originale, si può assegnare il risultato della funzione ad essa:
+La funzione `capitalize()` utilizza il metodo `substring()` per prendere la prima lettera della stringa e il metodo `toUpperCase()` per trasformarla in maiuscolo. Dopodiché, utilizza il metodo `substring()` per aggiungere il resto della stringa.
 
-```Kotlin
-var frase = "ciao a tutti"
-frase = frase.capitalize()
-println(frase)
-// Output: Ciao a tutti
-```
+La funzione `capitalizeEachWord()` usa le stesse tecniche, ma con un ciclo `forEach()` per applicare il processo a ogni parola all'interno della stringa.
 
-È importante tenere presente che la funzione `capitalize()` considera solo il primo carattere della stringa e ignora gli eventuali caratteri speciali o numeri. Ad esempio, se la prima lettera della stringa è un numero o un carattere speciale, non verrà maiuscolato.
+Questo ci mostra che le funzioni `capitalize()` e `capitalizeEachWord()` sono solo alcune delle molte funzionalità utili che la classe String di Kotlin offre per manipolare le stringhe.
 
-## Vedi anche
+## Vedi Anche
 
-- [Documentazione ufficiale di Kotlin sulle operazioni di stringhe](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Tutorial di programmazione Kotlin su manipolazione di stringhe](https://kotlinlang.org/docs/basic-syntax.html#strings)
-- [Articolo su Medium sull'utilizzo di funzioni di stringhe in Kotlin](https://medium.com/android-things/a-b-c-you-would-probably-need-to-use-lowercase-uppercase-capitalize-5f84c2af2a2d)
+- Documentazione String Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/
+- Approfondimenti su metodi di manipolazione delle stringhe: https://kotlinexpertise.com/convert-string-to-int-kotlin/

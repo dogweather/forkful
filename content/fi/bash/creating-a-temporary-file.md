@@ -1,33 +1,41 @@
 ---
-title:    "Bash: Väliaikaisen tiedoston luominen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/creating-a-temporary-file.md"
+title:                "Bash: Väliaikaisen tiedoston luominen"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi luoda tilapäistiedosto?
+## Miksi sement tilapäistiedoston luominen kannattaa?
 
-Tilapäisten tiedostojen luominen on tärkeä osa Bash-ohjelmointia, sillä se antaa meille mahdollisuuden tallentaa ja käsitellä väliaikaista tietoa. Tämä on erityisen hyödyllistä silloin, kun haluamme luoda väliaikaisia tietokantoja tai tallentaa käyttäjän syötteitä. Kaiken kaikkiaan tilapäisten tiedostojen luominen tekee Bash-ohjelmoinnista tehokkaampaa ja helppokäyttöisempää.
+Sement tilapäistiedostojen luominen on tärkeä osa Bash-ohjelmointia monista syistä. Yksi syy voi olla, että tiedoston luominen on välttämätöntä ennen kuin siihen voidaan tallentaa tietoa, kuten tekstitiedosto tai loki-tiedosto.
 
-## Miten luoda tilapäistiedosto?
+## Miten sement tilapäistiedosto luodaan?
 
-Tilapäisen tiedoston luominen Bashilla on yksinkertaista. Voimme käyttää `mktemp`-komentoa luodaksemme uniikin tilapäistiedoston, joka poistetaan automaattisesti, kun Bash-ohjelma päättyy. Esimerkiksi, jos haluamme luoda tilapäistiedoston nimeltä "temp.txt", meidän tarvitsee vain kirjoittaa seuraava koodi:
+Seuraavassa esimerkissä luodaan sement tilapäistiedosto ```temp.txt``` ja lisätään siihen tiedot "Tämä on tilapäistiedosto" käyttämällä komentoa ```echo```:
 
 ```Bash
-tempfile=$(mktemp temp.txt)
+touch temp.txt
+echo "Tämä on tilapäistiedosto" > temp.txt
+cat temp.txt
 ```
 
-Voimme myös käyttää `mktemp`-komennon parametreja määrittelemään tilapäistiedoston sijainnin tai nimen. Tämä antaa meille enemmän joustavuutta tiedostonhallinnassa.
+Tämän tulisi antaa seuraava tulos:
 
-## Syvempi sukellus
+```
+Tämä on tilapäistiedosto
+```
 
-Tilapäisten tiedostojen luominen tapahtuu käyttämällä Unix-järjestelmien `tempnam()`-funktiota. Tämä funktio luo uniikin tiedostonimen ja palauttaa sen käyttäjälle. Bash käyttää tätä funktiota `mktemp`-komentonsa kautta.
+Nyt voit käyttää tätä tiedostoa esimerkiksi tallentamaan väliaikaisia ​​tietoja ohjelmassasi.
 
-Meidän pitää myös muistaa, että vaikka tilapäinen tiedosto poistetaan automaattisesti Bash-ohjelman päätyttyä, se ei takaa tiedoston välitöntä poistamista. Tämä tarkoittaa, että meidän pitää huolehtia tarvittaessa manuaalisesti tilapäisten tiedostojen poistamisesta.
+## Syvemmälle sement tilapäistiedostojen maailmaan
 
-# Katso myös
+Sement tilapäistiedoston luominen ei aina ole yksinkertaista, sillä tällaiset tiedostot ovat vain väliaikaisia. Tärkein asia, jonka sinun on pidettävä mielessä, on varmistaa, että sement tilapäistiedosto poistetaan ohjelman suorituksen jälkeen. Tämä voidaan tehdä käyttämällä ```trap``` komentoa, joka varmistaa, että tiedosto poistetaan suorituksen lopussa.
 
-- [Linux Foundationin Bash Scripting Guide](https://linuxcommand.org/lc3_wss0010.php)
-- [Bash-ohjelmoinnin perusteet](https://www.katacoda.com/courses/bash/introduction)
-- [Tilapäisten tiedostojen lopullinen poisto](https://linuxcommando.blogspot.com/2008/06/clean-up-temporary-files-in-linux.html)
+Toinen tärkeä kohta on luoda sement tilapäistiedosto turvallisessa sijainnissa. Bash tarjoaa oletusarvoisen kansiot tai tiedostot, kuten ```/tmp```, joka on tarkoitettu sement tilapäistiedostoille. Tämä on turvallisempi vaihtoehto kuin luoda sement tilapäistiedosto suoraan nykyisen hakemiston sisälle.
+
+## Katso myös
+
+- [GNU Bash manuaali](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Guide for Beginners (Englanniksi)](https://guide.bash.academy/)

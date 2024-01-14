@@ -1,63 +1,49 @@
 ---
-title:    "TypeScript: 임시 파일 만들기"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/creating-a-temporary-file.md"
+title:                "TypeScript: 임시 파일 만들기"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 Temporary File을 생성하는가?
+## 왜: 임시 파일을 생성하는 이유
 
-Temporary File을 생성하는 것은 파일을 일시적으로 만들고 사용한 후 삭제하는 것을 의미합니다. 이것은 메모리나 디스크 공간을 절약하는 데 도움이 됩니다. 예를 들어, 파일을 임시로 생성하여 작업을 수행하고 사용 후 삭제하면 더 이상 사용하지 않는 공간이 확보되기 때문에 메모리나 디스크 공간을 더 효율적으로 관리할 수 있습니다.
+임시 파일을 생성하는 것은 프로그래밍에서 중요한 부분입니다. 임시 파일은 일시적으로 사용되며, 주로 소프트웨어의 일부 기능을 수행하거나 데이터를 잠시 저장하는 용도로 사용됩니다.
 
-# 어떻게 하면 Temporary File을 생성할 수 있을까?
+## 작성방법
 
-Temporary File을 생성하는 것은 TypeScript에서 아주 간단한 작업입니다. `fs` 모듈의 `mkdtemp` 함수를 사용하면 됩니다. 아래의 예제를 참고해 보세요.
-
-```TypeScript
-import * as fs from 'fs';
-
-const tempDir = fs.mkdtempSync('./temp'); // temp 폴더에서 랜덤한 임시 디렉토리 생성
-
-fs.writeFileSync(`${tempDir}/temp.txt`, 'Hello, world!'); // 임시 디렉토리에 파일 생성
-
-console.log(fs.readdirSync(tempDir)); // 임시 디렉토리 내 파일 리스트 출력
-
-fs.rmdirSync(tempDir); // 임시 디렉토리 삭제
-```
-
-위 코드를 실행하면 아래와 같은 결과가 나옵니다.
-
-```
-[ 'temp.txt' ] // 임시 디렉토리에 생성된 파일 리스트
-```
-
-# Deep Dive
-
-`mkdtemp` 함수는 파라미터로 prefix를 받습니다. 이는 생성될 임시 디렉토리명의 접두사를 의미합니다. 또한 `fs` 모듈의 `mkdtemp` 함수는 비동기 함수이기 때문에 `fs.mkdtemp`를 사용하면 콜백 함수를 전달해야 합니다. 아래는 비동기 함수를 사용한 예제입니다.
+TypeScript에서 임시 파일을 생성하는 방법은 다음과 같습니다. 먼저, Node.js에 내장된 `fs` 모듈을 사용하여 파일 시스템 작업을 할 수 있도록 합니다.
 
 ```TypeScript
-import * as fs from 'fs';
+import { createWriteStream } from 'fs';
 
-const tempDir: string = '';
+const temporaryFile = createWriteStream('temp.txt');
+```
 
-fs.mkdtemp('./temp', (err, tempPath) => {
-  if (err) throw err; // 에러 처리
+위의 코드는 `createWriteStream` 함수를 사용하여 `temp.txt`라는 파일을 생성합니다. 생성된 파일의 경로는 프로젝트의 루트 디렉토리에 저장됩니다. 이제 생성된 임시 파일에 데이터를 입력하고 파일을 닫아 보겠습니다.
 
-  tempDir = tempPath; // 생성된 임시 디렉토리 경로 저장
-
-  fs.writeFileSync(`${tempDir}/temp.txt`, 'Hello, world!'); // 임시 디렉토리에 파일 생성
-
-  console.log(fs.readdirSync(tempDir)); // 임시 디렉토리 내 파일 리스트 출력
-
-  fs.rmdirSync(tempDir); // 임시 디렉토리 삭제
+```TypeScript
+temporaryFile.write('Hello, world!', (err) => {
+  if (err) throw err;
+  temporaryFile.end();
 });
 ```
 
-결과는 동일합니다.
+위의 코드에서는 `write` 함수를 사용하여 `Hello, world!`라는 데이터를 파일에 쓰고, 데이터 입력이 완료되면 `end` 함수를 호출하여 파일을 닫습니다. 이제 `temp.txt` 파일을 확인하면 `Hello, world!`라는 내용이 입력된 것을 확인할 수 있습니다.
 
-# See Also
+## 더 깊이 들어가보기
 
-- [Node.js File System 모듈](https://nodejs.org/api/fs.html)
-- [Node.js 파일 시스템 경로 지정](https://www.geeksforgeeks.org/node-js-path-module/)
-- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/)
+임시 파일을 생성할 때 중요한 점은 파일을 생성한 뒤 적절한 시점에 파일을 삭제하는 것입니다. 파일은 전체 프로그램 실행 중에 임시로만 사용되기 때문에, 불필요한 데이터 누적을 방지하기 위해 파일을 삭제하는 것이 중요합니다. 이를 위해 `fs` 모듈에 내장된 `unlink` 함수를 사용할 수 있습니다.
+
+또 다른 중요한 점은 임시 파일을 생성할 때 마련한 경로가 다른 파일과 충돌하지 않도록 하는 것입니다. 이를 방지하기 위해 Node.js에는 유용한 `mkdtemp` 함수가 있습니다. `mkdtemp` 함수는 임시 디렉토리를 생성하는 함수로, 실제로는 무작위 문자열을 추가하여 충돌을 방지합니다.
+
+## 관련 자료
+
+- [Node.js 공식 문서: fs.createWriteStream](https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options)
+- [TutorialsTeacher: Node.js 파일 시스템](https://www.tutorialsteacher.com/nodejs/nodejs-file-system) 
+
+## 참고 자료
+
+- [Node.js 공식 문서: fs.unlink](https://nodejs.org/api/fs.html#fs_fs_unlink_path_callback)
+- [Node.js 공식 문서: fs.mkdtemp](https://nodejs.org/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)

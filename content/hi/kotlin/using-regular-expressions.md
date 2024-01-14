@@ -1,40 +1,36 @@
 ---
-title:    "Kotlin: नियमित अभिव्यक्तियों का उपयोग"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/using-regular-expressions.md"
+title:                "Kotlin: नियमित अभिव्यक्तियों का प्रयोग करना"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-क्या आप कभी सोचा है कि कंप्यूटर को भाषा को समझने के लिए एक तरीका हो सकता है? यहां आते हैं रेगुलर एक्सप्रेशन्स! इन्हें आपने अपने प्रोग्रामिंग या डेटा मैनिंग के साथ बहुत से बार आजमाया होगा। लेकिन क्या आप जानते हैं कि क्यों रेगुलर एक्सप्रेशन्स इतने उपयोगी हो सकते हैं? इस आर्टिकल में, हम आपको समझाएंगे कि क्यों आपको रेगुलर एक्सप्रेशन्स को सीखने की आवश्यकता हो सकती है।
+यदि आप नियमित अभिव्यक्तियों का उपयोग करते हैं तो आपको अपने कोड को संकटमुक्त और साफ बनाने में मदद मिल सकती है। 
 
-## कैसे करे
-
-आइए अब एक नज़र डालें कि हम इस टॉपिक पर कोट्लिन में कोडिंग कैसे कर सकते हैं। हम यहां दो उदाहरणों के ज़रिए इसे समझेंगे। हर उदाहरण के बाद, हम आपको एक कोड ब्लॉक दिखाएंगे जहां आप रेगुलर एक्सप्रेशन्स को कोट्लिन में कैसे लिख सकते हैं।
-
-उदाहरण 1:
+## कैसे करें
 
 ```
-fun main() {
-    val inputString = "Hello World"
-    if (inputString.matches(Regex(".*World.*"))) {
-        println("Match found!")
-    } else {
-        println("Match not found")
-    }
+Kotlin
+val regex = Regex("^[A-Za-z0-9+_.-]+@(.+)\$")
+
+fun validateEmail(email: String): Boolean {
+    return regex.matches(email)
 }
+
+validateEmail("example@email.com") // true
+validateEmail("_invalid@address.com") // false
 ```
 
-उदाहरण 2:
+## गहराई से जानें
 
-```
-fun main() {
-    val inputString = "I love programming"
-    val outputString = inputString.replace(Regex("programming"), "coding")
-    println(outputString)
-}
-```
+नियमित अभिव्यक्तियों का उपयोग करना जांचने से पहले, आपको परिभाषा करनी होगी जो आपकी जरूरतों को समायोजित करने में मदद करती है। आप भिन्न तरीकों से अभिव्यक्तियों का उपयोग कर सकते हैं, जैसे कि वार्जिंग, अवस्था और समूह। आप इन अभिव्यक्तियों को जोड़कर भी उन्हें और अधिक शक्तिशाली और उपयोगी बना सकते हैं। इस लेख में हम उन अभिव्यक्तियों का समीक्षण करेंगे जो Kotlin में उपलब्ध हैं। 
 
-आप दोनों उदाहरणों में देख सकते हैं कि हमने कोट्लिन की फंक्शनलिटी का भी प्रयोग करके फिल्टरिंग और रीप्लेसिंग किया है। टॉपिक में ऑर्डर है, इसलिए हमें इसका प्रयोग करना होगा। रेगुलर एक्सप्रेशन्स को समझने में थोड़ी मेहनत लग सकती है, लेकिन जब आप इसे सीख लेते हैं तो इसका फायदा आपको थोड़े समय म
+## देखें भी
+
+- [Kotlin अभिव्यक्तियां क्या हैं](https://kotlinlang.org/docs/reference/keywords.html)
+- [Kotlin दस्तावेजीकरण - नियमित अभिव्यक्तियां](https://kotlinlang.org/docs/reference/regular-expressions.html)
+- [Kotlin नियमित अभिव्यक्तियों को उपयोग करना](https://www.programiz.com/kotlin-programming/regular-expression)

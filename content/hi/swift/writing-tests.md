@@ -1,44 +1,68 @@
 ---
-title:    "Swift: टेस्ट लिखना"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/writing-tests.md"
+title:                "Swift: प्रोग्रामिंग में लिखना"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyu
 
-टेस्ट लिखने का महत्व एक सवाल हो सकता है, लेकिन यह काम आपको अपने कोड के बग्स से बचाएगा और आपके कोड को एक बेहतर, ठीक व्याख्या न करने वाले निर्भर प्रोजेक्ट के रूप में स्थापित करेगा।
+Testing aapki Swift applications mein bahut zaroori hai kyuki ye aapko code ke bugs aur errors ko pehle se hi pata karne aur solve karne mein madad karta hai. Testing aapki application ki stability aur reliability ko bhi improve karta hai. 
 
-## कैसे करें
+## Kaise Karein
 
-वैसे तो, टेस्ट लिखने के कई तरीके हैं, लेकिन यहां हम Swift और XCTest का उपयोग करेंगे। पहले हम एक फ़ंक्शन बनाएंगे जो दो संख्याओं को जोड़ता है।
-
-```Swift
-func addNumbers(_ num1: Int, _ num2: Int) -> Int {
-    return num1 + num2
-}
-
-let result = addNumbers(3, 5)
-print(result) // Output: 8
-```
-
-यहां, हमने एक addNumbers फ़ंक्शन बनाया जो दो संख्याओं को लंबित करता है और एक फ़ंक्शनल टेस्ट बनाएंगे जो इसे चालू करेगा। यहां हमने `XCTAssertEqual` का उपयोग किया है जो चालू हो रही फ़ंक्शन का प्रत्याशी परीक्षण करता है।
+Testing ke liye aap XCTest framework ka istemaal kar sakte hain. Ismein aap apne code ko unit tests, UI tests aur performance tests ke liye alag-alag categories mein organize kar sakte hain. Neeche diye gaye code blocks mein aap dekh sakte hain ki kaise tests ko implement kiya jaata hai.
 
 ```Swift
-func testAddNumbers() {
-    XCTAssertEqual(addNumbers(3, 5), 8)
+import XCTest
+@testable import MyApp
+
+class MyTests: XCTestCase {
+
+    // Unit Test Example
+    func testMultiply() {
+        let calculator = Calculator()
+        XCTAssertEqual(calculator.multiply(2, 4), 8)
+    }
+
+    // UI Test Example
+    func testLogin() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.textFields["username"].tap()
+        app.textFields["username"].typeText("John")
+        
+        app.secureTextFields["password"].tap()
+        app.secureTextFields["password"].typeText("1234")
+        
+        app.buttons["login"].tap()
+        
+        XCTAssertTrue(app.staticTexts["Welcome John!"].exists)
+    }
+
+    // Performance Test Example
+    func testPerformanceExample() {
+        self.measure {
+            let array = [1, 2, 3, 4, 5]
+            for _ in 0...10000 {
+                array.append(array.sum())
+            }
+        }
+    }
 }
 
-testAddNumbers() // Output: Test Passed!
 ```
 
-आप और अधिक जानकारी के लिए [यहां](https://developer.apple.com/documentation/xctest) देख सकते हैं।
+## Deep Dive
 
-## गहराई में जाएं
+Unit tests aapke code ke alag alag parts ko test karta hai jaise functions, extensions, etc. UI tests aapki application ke UI elements ko test karta hai jaise buttons, text fields, etc. Performance tests aapki application ki performance ko measure karta hai aur potential bottlenecks ko identify karne mein madad karta hai. Ek achi testing strategy aapki application ko reliable aur bug-free banane mein bahut madad karta hai.
 
-यहां आपने एक बुनियादी तरीके से देखा कि टेस्ट कैसे लिखा जाता है और कैसे आप अपने कोड को चालू कर सकते हैं। इसके अलावा, आप अपने कोड के असंतुलन को देख सकते हैं और उन्हें ठीक करने के लिए टेस्ट कैसे लिख सकते हैं। इसके साथ ही, आप मॉक किए गए ऑब्जेक्ट्स का भी जाँच कर सकते हैं।
+## Dekhiye Bhi
 
-## और भी देखें
-
-आप अधिक जानकारी और साथ ही साथ इसके अन्य उपयोगो
+- [Introduction to XCTest Framework](https://www.raywenderlich.com/960290-ui-testing-with-xctest-tutorial-getting-started)
+- [Unit Testing in Swift](https://medium.com/flawless-app-stories/getting-started-with-unit-testing-in-swift-72ab0baea2d)
+- [UI Testing in Swift](https://blog.xmartlabs.com/2016/07/07/xcode-ui-testing/)
+- [Performance Testing in Swift](https://medium.com/expedia-group-tech/testing-performance-in-ios-62b81c27e622)

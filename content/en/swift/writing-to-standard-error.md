@@ -1,58 +1,37 @@
 ---
-title:    "Swift recipe: Writing to standard error"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-to-standard-error.md"
+title:                "Swift recipe: Writing to standard error"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-There are many reasons why a programmer may want to write to standard error in their Swift code. One common reason is to log error messages or debugging information to help troubleshoot issues during development. Another reason may be to display specific feedback or warnings to the user, such as in a command line application.
+When writing code in Swift, it is important to be aware of different methods of handling and displaying errors. One common way to do this is by writing to standard error, which allows for separate handling and formatting of errors compared to regular print statements.
 
 ## How To
 
-Writing to standard error in Swift is a simple process. First, you need to import the Foundation framework in your code:
+To write to standard error in Swift, we can use the `FileHandle.standardError` method. This method returns a `FileHandle` object that represents the standard error file descriptor. We can then use this object to write our error message using the `.write()` method, along with the `data(using:)` method to convert our string into `Data` format.
 
 ```Swift
-import Foundation
+let myErrorMessage = "Uh oh, something went wrong!"
+let data = myErrorMessage.data(using: .utf8)
+FileHandle.standardError.write(data!)
 ```
 
-Next, you can use the function `NSLog` to print a string to standard error. For example:
-
-```Swift
-NSLog("An error occurred during the execution of this function.")
-```
-
-The output of this code would be:
-
-```
-An error occurred during the execution of this function.
-```
-
-You can also include variables or other data in the string by using the `%@` placeholder. For example:
-
-```Swift
-let message = "This is a debug message."
-NSLog("Debug message: %@", message)
-```
-
-The output would be:
-
-```
-Debug message: This is a debug message.
-```
+The output of this code would be the `myErrorMessage` string being displayed in the console with a red font, indicating it is an error message.
 
 ## Deep Dive
 
-Behind the scenes, the `NSLog` function uses the `stderr` stream to write to standard error. This ensures that the output is directed to the correct location, separate from the standard output.
+Writing to standard error may seem like a small aspect of Swift programming, but it can be extremely useful when handling different types of errors. By using standard error, we are able to differentiate between regular print statements and error messages, making it easier to debug our code.
 
-One important thing to note is that the `NSLog` function includes a timestamp and the process ID in the output. This can be helpful when trying to track down specific errors or issues.
+Additionally, by writing to standard error, we are following best practices and adhering to established conventions in the Swift community. This helps to maintain consistency and readability in our code.
 
 ## See Also
 
 For more information on writing to standard error in Swift, check out these resources:
 
-- [Apple's documentation on NSLog](https://developer.apple.com/documentation/foundation/nslog)
-- [NSHipster's article on Error Handling in Swift](https://nshipster.com/error-handling-in-swift/)
-- [Stack Overflow thread on NSLog alternatives](https://stackoverflow.com/questions/9245716/nslog-alternative-in-swift)
+- [Swift Standard Library Documentation](https://developer.apple.com/documentation/swift/filehandle)
+- [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide#standard-library)

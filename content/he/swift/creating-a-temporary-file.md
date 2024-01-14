@@ -1,38 +1,36 @@
 ---
-title:    "Swift: יצירת קובץ זמני"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/creating-a-temporary-file.md"
+title:                "Swift: יצירת קובץ זמני"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## עבודה ב-Swift בשביל מתחילים: יצירת קובץ זמניים
+## על מי
 
-## Why:
-מתכנתים שמתחילים ללמוד Swift לעתים קרובות נתקלים בהצורך ליצור קבצים זמניים (temp files). אבל למה בעצם אפשר לצור קובץ זמני ומה יהיה השימוש שלו? קובץ זמני הוא קובץ שנוצר במטרה לפעול כדוגמאל מחזיק נתונים זמנית. כאשר הוא יוצר נדבק בקוד שלך ונמחק. השימוש התקין ב&amp; Swift בשביל קבצי זמןי היא כאשר אתה רוצה לבצע פעולה מסוימת על נתונים אך אין לך צורך לשמור אותם לתקופה ארוכה.
+יצירת קובץ זמני יכול להיות מועילה כאשר אנחנו צריכים ליצור ולשדרג קבצים במהלך תהליך מתפתח או כאשר אנחנו מבנהים מערכות פטנט.
 
-## How To:
+## איך לעשות
+
+כאשר אנחנו יוצרים קובץ זמני בעזרת פרוטוקול `NSTemporaryDirectory ()` ומתודה `URLByAppendingPathComponent`:
+
 ```Swift
-func createTempFile() {
-    let filePath = NSTemporaryDirectory().stringByAppendingPathComponent("file.txt") // נתיב לקובץ בספריית הזמניים
-    let fileContent = "תוכן פעמונים קטן 😊" // יצירת התוכן של הקובץ כמחרוזת
-    do {
-        try fileContent.writeToFile(filePath, atomically: true, encoding: NSUTF8StringEncoding) // כתיבת התוכן לתוך הקובץ
-    } catch {
-        // איזה אירוע יכול לגרום לכשלון ביצירת הקובץ?
-        print(error)
-    }
-}
+let tempDir = NSTemporaryDirectory()
+let tempURL = URL(fileURLWithPath: tempDir)
+    .appendingPathComponent("myTempFile")
+    .appendingPathExtension("txt")
+print(tempURL.path)
 ```
 
-כאשר תרצה לקרוא את תוכן הקובץ אתה יכול לעשות זאת כך:
-```Swift
-func readTempFile() {
-    let filePath = NSTemporaryDirectory().stringByAppendingPathComponent("file.txt") // נתיב לקובץ בספריית הזמניים
-    let fileContent = try? String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding) // קריאת התוכן מתוך הקובץ כמחרוזת
-    print(fileContent)
-}
-```
+כאשר נריץ קוד זה, יתווסף לנו קובץ זמני במחיצת /tmp עם שם הקובץ "myTempFile.txt" וכתובת URL מלאה לקובץ זה תופיע במסך.
 
-## Deep Dive:
-הוספתמייצבות ⌥ Opt במקרים של תקינה ריאלית, אלא אתה רוצה ליצור קובץ זמני זמני שבו אתה יכול לבדוק את התוכן שלו במהלך פיתוח האפליקציה שלך. אם אחר כך, אתה יכול להשתמש בקובץ זמני במטרה לבדוק ולבדוק תפוקת פיתוח שלך ולפר
+## העמקה
+
+כאשר אנחנו יוצרים קובץ זמני עם שם קובץ ייחודי, הקובץ יתווסף למחיצת /tmp עם השם שציינו. תוכלו גם לבחור לשנות את התוסף שצמחנו לקובץ זמני עם `appendingPathExtension` לתוסף אחר או לשנות את המיקום של הקובץ עם `appendingPathComponent`.
+
+## ראו גם
+
+[מדריך לברירת המחדל של קבצים שמוחקים עצמם שבמחיצת הזמן ב-iOS](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW23)
+
+[מדריך לשימוש במצב אמת ב-iOS שבו קבצים זמניים ישארו זמינים בכל המחיצות](https://www.hackingwithswift.com/example-code/foundation/how-to-create-a-temporary-file-the-right-way)

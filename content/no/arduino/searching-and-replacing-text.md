@@ -1,44 +1,37 @@
 ---
-title:    "Arduino: Søking og bytting av tekst"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/searching-and-replacing-text.md"
+title:                "Arduino: Søking og bytting av tekst"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Hvis du noen gang har programmert med Arduino, så har du sannsynligvis kommet over en uforutsett feil eller et problem som må løses. Kanskje du har skrevet den samme koden flere ganger, men med små endringer? Dette er hvor "søk og erstatt" funksjonen kommer inn i bildet - den kan hjelpe deg med å effektivt finne og bytte ut tekst i koden din.
+Alle som har programmert har sannsynligvis opplevd å måtte endre tekst i koden sin, enten for å rette feil eller for å gjøre koden mer effektiv. Å kunne søke og bytte ut tekst er en grunnleggende ferdighet som kan spare deg for mye tid og arbeid når du jobber med Arduino.
 
-## Hvordan
+# Hvordan
 
-La oss si at du vil endre alle forekomster av "LED" til "LYSDIODER" i koden din. Dette kan gjøres enkelt ved å bruke "Søk og erstatt" funksjonen i Arduino IDE. Følg disse trinnene:
+Å søke og bytte ut tekst i Arduino er en enkel prosess. Du kan bruke den innebygde "Find and Replace" -funksjonen i Arduino IDE, eller du kan bruke tekstredigeringsprogrammer som støtter søk og erstatt-funksjonalitet. La oss se på et eksempel der vi ønsker å endre alle forekomster av "ledPin" til "ledPin2" i koden vår.
 
-1. Åpne Arduino IDE og åpne koden du ønsker å søke og erstatte tekst i.
-2. Trykk på "Ctrl + F" eller gå til "Edit" menyen og velg "Søk og erstatt".
-3. Skriv inn "LED" i "Søk:" feltet og "LYSDIODER" i "Erstatt med:" feltet.
-4. Klikk på "Erstatt" eller "Erstatt alle" for å bytte ut alle forekomster av "LED" med "LYSDIODER".
-
-```
-Arduino kode:
-int ledPin = 13;
-digitalWrite(ledPin, HIGH);
-```
-```
-Arduino kode etter "Søk og erstatt":
-int lysdiodePin = 13;
-digitalWrite(lysdiodePin, HIGH);
+```Arduino
+int ledPin = 9;  // Definerer pin for LED-utgang
 ```
 
-Dette er en enkel måte å effektivt endre tekst i koden din uten å måtte gå gjennom hver linje manuelt.
+For å søke og erstatte tekst i Arduino IDE, går du til "Edit" -menyen og velger "Find and Replace" (Finn og erstatt). I søkefeltet skriver du inn "ledPin" og i erstatningsfeltet skriver du "ledPin2". Trykk på "Replace" (Erstatt) for å erstatte teksten eller "Replace All" (Erstatt alle) for å erstatte alle forekomster i koden.
 
-## Dykk dypere
+I en tekstredigerer kan du bruke tastatursnarveier som "Ctrl + F" for å åpne søkefunksjonen og "Ctrl + H" for å åpne søke og erstatt-funksjonen. Vær oppmerksom på at det å bruke tekstredigeringsprogrammer kan være mer risikabelt ettersom de ikke har kunnskap om syntaksen til Arduino-koden din.
 
-"Søk og erstatt" funksjonen i Arduino IDE gir også flere muligheter for mer avansert tekstbehandling. Du kan for eksempel bruke regulære uttrykk for å finne og endre tekst basert på bestemte mønstre, eller du kan raskt bytte ut tekst i flere filer samtidig.
+## Dypdykk
 
-En annen måte å finne og erstatte tekst på er å bruke biblioteker, som "String.replace()" funksjonen i String biblioteket. Dette kan være nyttig hvis du jobber med tekst lagret som en variabel i koden din.
+Når du bytter ut tekst i Arduino-koden din, er det viktig å være klar over at Arduino IDE bare tar hensyn til tegnene som er synlige i skjermbildet. Dette betyr at hvis du har koden på flere linjer, kan du ikke søke og erstatte et uttrykk som går over flere linjer. Du kan imidlertid bruke "Find" (Søk) -funksjonen til å finne forekomster av tekst og navigere til dem.
 
-## Se også
+En annen ting å merke seg er at søket er casesensitivt. Dette betyr at hvis du søker etter "ledpin" vil ikke "ledPin" bli funnet og erstattet. Hvis du vil søke uten å ta hensyn til store og små bokstaver, må du huke av for "Match case" (Match case) i Arduino IDE.
 
-- [ Arduino IDE brukerdokumentasjon ](https://www.arduino.cc/en/Guide/Environment)
-- [ Arduino "Søk og erstatt" dokumentasjon ](https://www.arduino.cc/en/Reference/EditReplace)
+# Se også
+
+- [Introduksjon til Arduino](https://www.arduino.cc/en/Guide/Introduction)
+- [Offisiell Arduino dokumentasjon](https://www.arduino.cc/reference/en/)
+- [Bruk av variabler i Arduino](https://create.arduino.cc/projecthub/infusionwest/tutorial-using-variables-in-arduino-part-1-interactive-modes-627adc)
+- [Feilsøking i Arduino-prosjekter](https://create.arduino.cc/projecthub/SavageCorona/arduino-troubleshooting-3a8abf)

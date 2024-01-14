@@ -1,62 +1,42 @@
 ---
-title:    "C: Generering av tilfeldige tall"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/generating-random-numbers.md"
+title:                "C: Generering av tilfeldige tall"
+programming_language: "C"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Generering av tilfeldige tall er en viktig del av programmering, spesielt når det kommer til spill, kryptografi og tilfeldige simuleringer. Ved å kunne generere tilfeldige tall kan vi skape variasjon og uforutsigbarhet i programmene våre, noe som kan være avgjørende for deres funksjonalitet.
 
-## Hvordan gjøre det
-I C kan vi bruke srand()-funksjonen for å sette en startverdi for genereringen av tilfeldige tall. Deretter kan vi bruke rand()-funksjonen for å generere et tilfeldig tall. Vi kan også bruke en for-løkke for å generere flere tilfeldige tall.
+Å generere tilfeldige tall er en nyttig ferdighet i programmering. Det tillater deg å lage dynamiske og varierte løsninger, enten det er for å simulere virkelige situasjoner eller for å sikre unike verdier i et spill. Uansett formål, er å kunne lage tilfeldige tall essensielt for enhver programmerer.
+
+## Hvordan
+
+Generering av tilfeldige tall i C er enkel takket være innebygde funksjoner i språket. Her er et eksempel på hvordan du kan generere en tilfeldig heltall mellom 1 og 100:
 
 ```C
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> // inkluderer standard input-output biblioteket
+#include <stdlib.h> // inkluderer standard biblioteket
 
 int main()
 {
-    // Setter en startverdi for tilfeldige tall
-    srand(1234);
-    
-    // Genererer 10 tilfeldige tall og skriver dem ut
-    for(int i=0; i<10; i++){
-        int num = rand();
-        printf("%d\n", num);
-    }
-    
+    int tilfeldig = rand() % 100 + 1; // genererer et tilfeldig heltall mellom 1 og 100
+    printf("Tilfeldig tall: %d\n", tilfeldig); // skriver ut det tilfeldige tallet
     return 0;
 }
 ```
 
-Eksempel på output:
-```C
-834214
-17304
-691114
-779934
-828538
-276056
-350430
-588265
-859189
-163970
-```
+Kjører dette programmet flere ganger vil gi forskjellige tilfeldige tall hver gang. Dette er fordi funksjonen `rand()` genererer tall basert på en intern algoritme og den tilfeldige verdien vil endre seg hver gang programmet kjøres.
 
-## Dypdykk
-Ved hjelp av srand() og rand() funksjonene, kan vi kun generere tall basert på algoritmer. For å få et enda mer tilfeldig resultat, kan vi også bruke systemtiden som en startverdi. Dette vil bidra til å gjøre genereringen av tilfeldige tall enda mer unik og uforutsigbar.
+## Dypere dykk
 
-Vi kan også avgrense området for de tilfeldige tallene ved å bruke modulusoperatoren (%). For eksempel, hvis vi kun ønsker tilfeldige tall mellom 1 og 100, kan vi bruke følgende kode:
+Dette er det grunnleggende for å generere tilfeldige tall, men det finnes flere funksjoner i C som kan hjelpe deg å kontrollere og tilpasse den tilfeldige prosessen. For eksempel kan du bruke `srand()` for å initialisere en startverdi for den interne algoritmen, noe som kan føre til mer forutsigbare tilfeldige tall.
 
-```C
-int num = rand() % 100 + 1; // Vil generere tilfeldige tall mellom 1 og 100
-```
-
-Det finnes også ulike algoritmer for å generere tilfeldige tall, som for eksempel "Mersenne Twister" eller "Park-Miller-algoritmen". Disse kan være mer effektive og gi et bedre tilfeldig resultat enn standard srand() og rand() funksjoner.
+En annen viktig ting å huske på er at tilfeldige tall generert på denne måten ikke er helt tilfeldige i matematisk forstand. De følger en bestemt distribusjon og kan ikke garantere fullstendig tilfeldighet. For å få virkelig tilfeldige tall, er det nødvendig å bruke eksterne enheter som en tilfeldighetsgenerator eller en fysisk hendelse som en radioaktiv desintegrering.
 
 ## Se også
-- [Hvordan generere tilfeldige tall i Python](https://www.w3schools.com/python/ref_random_randint.asp)
-- [Implementere en tilfeldig algoritme i C++](http://www.cplusplus.com/reference/cstdlib/rand/)
-- [Mer om tilfeldige tallgenererering i C](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+
+- [Generering av tilfeldige tall i C++](https://www.geeksforgeeks.org/generating-random-number-range-c/)
+- [Tilfeldighetsfunksjoner i C biblioteket](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [Matematisk konsept av tilfeldig](https://no.wikipedia.org/wiki/Tilfeldighet)

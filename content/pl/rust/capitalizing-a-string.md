@@ -1,40 +1,62 @@
 ---
-title:    "Rust: Konwersja na wielkie litery w ciągu znaków."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/capitalizing-a-string.md"
+title:                "Rust: Uppercasing ciągu znaków"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto użyć Rusta do zmiany wielkości liter w tekście?
 
-Zazwyczaj, gdy piszemy programy w Rust, chcemy mieć kontrolę nad naszymi danych. Czasami jednak potrzebujemy zmodyfikować pewne części danych. Na przykład, jeśli mamy ciąg znaków i chcemy zmienić jego pierwszą literę na wielką, możemy użyć funkcji do kapitalizacji. Bardzo przydatna jest więc umiejętność wykorzystania tej funkcji w naszych programach.
+Rust jest jednym z najpopularniejszych języków programowania, który charakteryzuje się wysoką wydajnością i bezpieczeństwem. Dzięki swojej składni i funkcjom, jest idealnym wyborem dla osób, które chcą zmienić wielkość liter w tekście. Nie tylko jest to zadanie często wykonywane w różnych aplikacjach, ale również dobrze pokazuje możliwości i zalety Rusta.
 
-## Jak To Zrobić
+## Jak to zrobić?
 
-Prosta metoda do obsługi capitalizacji w Rust to użycie funkcji `to_uppercase()` wraz z typem `String`. Oto prosty przykład kodu:
+Aby wykorzystać Rusta do zmiany wielkości liter w tekście, potrzebujemy zastosować kilka funkcji dostępnych w standardowej bibliotece języka. Najważniejsze z nich to `to_uppercase()` i `to_lowercase()`, które odpowiednio zwracają tekst z zamienionymi na wielkie lub małe litery.
 
 ```Rust
-let ciag_znakow = "witaj, jestem programem w języku Rust.";
-let zmieniony_ciag = ciag_znakow
-    .chars()
-    .next()
-    .map(|c| c.to_uppercase())
-    .map(|upper_c| upper_c.collect::<String>())
-    .map(|capitalized| capitalized + ciag_znakow[1..].to_string().as_str())
-    .unwrap_or_default();
-println!("Zmieniony ciąg: {}", zmieniony_ciag);
+let text = "to jest przykładowy tekst";
+let text_upper = text.to_uppercase();
+let text_lower = text.to_lowercase();
+
+println!("{}", text_upper);
+println!("{}", text_lower);
 ```
 
-W tym przykładzie korzystamy z kilku metod, aby skorzystać z `to_uppercase()`. Najpierw zamieniamy ciąg znaków na iterator za pomocą metody `chars()`, a następnie wybieramy pierwszy znak i używamy `to_uppercase()` do zamiany go na wielką literę. Następnie przekształcamy go na typ `String`, aby móc połączyć go z resztą ciągu znaków. Na końcu drukujemy zmieniony ciąg. 
+**Output:**
 
-Mając to na uwadze, niektóre ciągi znaków mogą zawierać znaki specjalne lub niektóre języki mogą wymagać użycia metod specyficznych dla tego języka. W takim przypadku najlepiej skorzystać ze specjalistycznych bibliotek, takich jak `unicase`, aby zapewnić poprawność capitalizacji.
+TO JEST PRZYKŁADOWY TEKST
+to jest przykładowy tekst
 
-## Deep Dive
+Kolejną ważną funkcją jest `chars()`, która pozwala na iterację przez poszczególne znaki w tekście. Dzięki niej, możemy zastosować warunek sprawdzający i zmodyfikować konkretne litery w zdaniu.
 
-Funkcja `to_uppercase()` jest przede wszystkim zdefiniowana dla typu `char`. Możemy więc również użyć jej w naszych programach do capitalizacji pojedynczych znaków. Jest to możliwe dzięki temu, że są one reprezentowane w Unicode, a w nim każdy znak ma odpowiednią wielkość. Jednak istnieją znaki, których wielkość nie może być zmieniona, takie jak tzw. diakrytyczne znaki. Wtedy funkcja `to_uppercase()` zwróci ten sam znak, z którym została wywołana.
+```Rust
+let mut text = String::from("to jest przykładowy tekst");
 
-## Zobacz też
+for (index, letter) in text.chars().enumerate() {
+    if index % 2 == 0 {
+        text.insert(index, letter.to_uppercase().next().unwrap());
+    }
+}
 
-- Dokumentacja Rust: [https://doc.rust-lang.org/std/primitive.char.html#method.to_uppercase](https://doc.rust-lang.org/std/primitive.char.html#method.to_uppercase)
-- Biblioteka `unicase`: [https://docs.rs/unicase/](https://docs.rs/unicase/)
+println!("{}", text);
+```
+
+**Output:**
+
+To JEsT pRzYkŁAdoWY tEkSt
+
+## Głębsze zagadnienia
+
+Aby pełniej zrozumieć, jak działają funkcje odpowiedzialne za zmianę wielkości liter w Rust, warto poznać kilka koncepcji związanych z typami danych oraz własnościami języka.
+
+Pierwszą ważną kwestią jest to, że zmienne w Rust są domyślnie niemutowalne, czyli nie można ich zmienić po ich zadeklarowaniu. Dlatego też, aby zmienić wielkość liter w tekście, musimy wykorzystać mutowalną wersję zmiennej lub stworzyć zupełnie nową.
+
+Kolejnym aspektem ważnym dla zmiany wielkości liter jest wykorzystanie mechanizmu własnych typów zwracanych. W przypadku funkcji `to_uppercase()` i `to_lowercase()` jest to po prostu typ `String`, ale w zależności od konkretnego problemu, warto wiedzieć, jakie są dostępne opcje i na co zwracać uwagę przy tworzeniu własnych funkcji.
+
+## Zobacz także
+
+- [Dokumentacja Rusta o typach danych](https://doc.rust-lang.org/book/ch03-02-data-types.html)
+- [Podręcznik programisty Rusta](https://doc.rust-lang.org/stable/rust-by-example/index.html)
+- [Społeczność języka Rust na Reddit](https://www.reddit.com/r/rust/)

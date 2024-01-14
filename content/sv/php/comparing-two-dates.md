@@ -1,53 +1,72 @@
 ---
-title:    "PHP: Jämföra två datum"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/comparing-two-dates.md"
+title:                "PHP: Jämförande av två datum"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-#Varför
+## Varför jämföra två datum i PHP?
 
-Att jämföra två datum är ett vanligt problem inom PHP-programmering och är viktigt för att kunna hantera och manipulera tidsdata effektivt. Genom att kunna jämföra två datum kan du till exempel sortera händelser i tidsordning eller visa information baserat på ett specifikt datum.
+Att jämföra två datum är en vanlig uppgift inom programmering och kan vara användbart av olika anledningar. Det kan exempelvis hjälpa till att visa data i en kronologisk ordning eller filtera ut gamla poster. I denna bloggpost kommer vi att visa dig hur du kan jämföra två datum i PHP.
 
-##Så här gör du
+## Så här gör du
 
-För att jämföra två datum i PHP kan du använda dig av funktionen `strtotime ()` som konverterar en sträng till en unix timestamp. Genom att göra detta kan du sedan enkelt jämföra två timestamps med varandra. Här är ett enkelt exempel på hur du kan jämföra två datum:
+Det finns flera sätt att jämföra datum i PHP, men det enklaste sättet är att använda inbyggda funktioner som `strtotime()` eller `DateTime` klassen.
+
+### `strtotime()`
+
+Med `strtotime()`-funktionen kan du omvandla en sträng med datum till ett Unix-timestamp, vilket är ett antal sekunder som gått sedan 1 januari 1970. Detta låter dig sedan jämföra två datum genom att helt enkelt jämföra timestampen för varje datum.
+
+Här är ett exempel på hur du kan använda `strtotime()` för att jämföra två datum:
 
 ```PHP
-$date1 = strtotime("2020-02-01");
-$date2 = strtotime("2020-03-01");
+$datum1 = '2019-06-20';
+$datum2 = '2019-06-25';
 
-if ($date1 > $date2) {
-  echo "Datum 1 är senare än datum 2";
-} elseif ($date1 < $date2) {
-  echo "Datum 1 är tidigare än datum 2";
+if (strtotime($datum1) < strtotime($datum2)) {
+    echo 'Datum 1 är före Datum 2';
+} elseif (strtotime($datum1) > strtotime($datum2)) {
+    echo 'Datum 1 är efter Datum 2';
 } else {
-  echo "Datum 1 är samma som datum 2";
+    echo 'Båda datumen är samma';
 }
-
-//Output: Datum 1 är tidigare än datum 2
 ```
 
-I koden ovan konverterar `strtotime()` funktionen `2020-02-01` och `2020-03-01` till timestamps och jämför sedan dem med hjälp av en `if`-sats.
+I detta exempel använder vi if-satser för att jämföra timestampen för varje datum. Resultatet kommer att vara antingen "Datum 1 är före Datum 2", "Datum 1 är efter Datum 2" eller "Båda datumen är samma", beroende på vilket datum som är före eller efter det andra.
 
-##Djupdykning
+### `DateTime` klassen
 
-Förutom att endast jämföra två datum kan du också utföra olika typer av manipulationer och beräkningar med hjälp av timestamps. Till exempel kan du lägga till eller subtrahera dagar, timmar eller minuter från ett datum. Här är ett exempel på hur du kan lägga till 7 dagar på ett datum:
+En annan vanlig metod för att jämföra datum i PHP är att använda `DateTime` klassen. Detta är en fördelaktig metod eftersom den låter dig jämföra datum med hjälp av flera olika metoder, som `diff()` för att räkna ut skillnaden mellan två datum och `format()` för att formatera datum på olika sätt.
+
+Här är ett exempel på hur du kan använda `DateTime` klassen för att jämföra två datum:
 
 ```PHP
-$date = strtotime("2020-02-01");
-$modified_date = strtotime("+7 days", $date);
+$datum1 = new DateTime('2019-06-20');
+$datum2 = new DateTime('2019-06-25');
 
-echo date("Y-m-d", $modified_date);
-
-//Output: 2020-02-08
+if ($datum1 < $datum2) {
+    echo 'Datum 1 är före Datum 2';
+} elseif ($datum1 > $datum2) {
+    echo 'Datum 1 är efter Datum 2';
+} else {
+    echo 'Båda datumen är samma';
+}
 ```
 
-Genom att lägga till 7 dagar får vi ett nytt datum som är en vecka senare. Du kan använda samma metod för att subtrahera eller utföra andra typer av manipulationer.
+I detta exempel skapar vi två nya instanser av `DateTime` klassen och använder sedan if-satser för att jämföra dem. Resultatet kommer att vara detsamma som med `strtotime()`-metoden.
 
-##Se även
+## Djupdykning
 
-* [PHP Date and Time functions](https://www.php.net/manual/en/ref.datetime.php)
-* [The strtotime() function](https://www.php.net/manual/en/function.strtotime.php)
-* [Sort dates in PHP](https://www.geeksforgeeks.org/sort-dates-in-php/)
+Nu när du vet hur du kan jämföra två datum i PHP är det även värt att nämna att det finns flera andra metoder för att jämföra datum, som `checkdate()` för att kontrollera om ett datum är giltigt och `time()` för att få den nuvarande tiden i form av en timestamp.
+
+Det kan även vara värt att undersöka hur PHP hanterar tidzoner när man arbetar med datum och tider.
+
+## Se även
+
+Här är några relaterade länkar som kan vara till hjälp:
+
+- [strtotime() dokumentation](https://www.php.net/manual/en/function.strtotime.php)
+- [DateTime klassen dokumentation](https://www.php.net/manual/en/class.datetime.php)
+- [PHP datumfunktioner](https://www.php.net/manual/en/ref.datetime.php)

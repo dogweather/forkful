@@ -1,37 +1,40 @@
 ---
-title:    "Fish Shell: 「現在の日付の取得」"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/getting-the-current-date.md"
+title:                "Fish Shell: 「現在の日付の取得」"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？ 
+## なぜ
+現在の日付を取得することの重要性を説明する1〜2文。
 
-現在の日付を取得するのには、プログラミングでよく使用されることがあります。例えば、ファイル名やログに日付を追加したい場合や、期限の設定など、様々なシナリオで日付情報が必要になるので、Fish Shellで現在の日付を取得する方法を学ぶことは重要です。 
+## 方法
+```Fish Shell```でのコーディング例と、サンプル出力を含む```コードブロック```を使用した説明。
 
-## 方法 
+### 日付の取得
+現在の日付を取得するには、```date```コマンドを使用します。以下のコードをターミナルに入力して実行すると、現在の日付が表示されます。
 
-Fish Shellでは、コマンド「`date`」を使用して簡単に現在の日付を取得することができます。下記のコード例を参考にしてください。 
-
-```Fish Shell
+```
 date
 ```
 
-これにより、コマンドを実行した時点の日付が表示されます。また、より詳細な日付情報が必要な場合は、`date`コマンドに引数を追加することで、任意のフォーマットで日付を取得することもできます。下記の例を参考にしてください。 
+出力： ```2021年 9月 24日 金曜日 23時33分30秒 JST```
 
-```Fish Shell
-date "+%Y-%m-%d %H:%M:%S"
+さらに、特定の書式を指定して日付を表示することもできます。例えば、年-月-日の形式で表示する場合は、以下のようにコマンドを変更します。
+
+```
+date +"%Y-%m-%d"
 ```
 
-この場合は、現在の年月日と時分秒の情報が表示されます。 
+出力： ```2021-09-24```
 
-## 深堀り 
+詳細な書式指定については、[manページ](https://fishshell.com/docs/current/cmds/date.html)を参照してください。
 
-`date`コマンドの引数にどのようなフォーマットを指定するかによって、表示される日付の情報が変わります。例えば、`%Y`は西暦での年、`%m`は月、`%d`は日を表します。また、`%H`は24時間表記の時、`%M`は分、`%S`は秒を表します。他にも様々なフォーマットが存在するので、調べてみると面白いかもしれません。 
+## 詳細を調べる
+日付を取得する方法についてさらに詳しく知りたい場合は、「```date```コマンド」や「```Fish Shell```の日付操作」に関するドキュメントを参照することをおすすめします。
 
-## See Also 
-
-- [Fish Shell公式サイト](https://fishshell.com)
-- [Fish Shellのドキュメンテーション](https://fishshell.com/docs/current/index.html)
-- [dateコマンドのマニュアルページ](https://manpages.debian.org/stretch/date/date.1.en.html)
+## 参考情報
+- [日付を操作するコマンド ```date```の使い方](https://techacademy.jp/magazine/18883)
+- [Fish Shell ドキュメンテーション - 日付操作](https://fishshell.com/docs/current/cmds/date.html)

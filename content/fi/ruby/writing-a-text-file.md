@@ -1,33 +1,44 @@
 ---
-title:    "Ruby: Tiedostotekstin kirjoittaminen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-a-text-file.md"
+title:                "Ruby: Tiedoston kirjoittaminen"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi 
-Tekstitiedoston kirjoittaminen on tärkeä osa Ruby-ohjelmointia, sillä se mahdollistaa tiedon tallentamisen ja käsittelyn. Kirjoittamalla tekstitiedostoja voit säilyttää tietoja pysyvästi ja tehdä tiedonkäsittelyn helpoksi ja tehokkaaksi. 
+## Miksi?
 
-## Miten 
-Aloittaaksesi tekstitiedoston kirjoittamisen, sinun tulee ensin luoda uusi tiedosto. Tämän voit tehdä komennolla ```File.new("tiedostonimi.txt", "w")```, jossa annetaan tiedostolle nimi ja määritellään, että se avataan kirjoitusmoodissa. Tämän jälkeen voit kirjoittaa haluamasi tekstin tiedostoon käyttämällä ```puts```-komennon avulla. Lopuksi muista sulkea tiedosto komennolla ```close```.
+Kirjoittamisen taidon kehittäminen on tärkeä osa jokaisen Ruby-ohjelmoijan työkalupakkia. Tekstieditorin avulla voit tallentaa koodisi pysyvästi ja jakaa sen muiden kanssa.
 
-Esimerkiksi, jos haluat kirjoittaa tekstiä tiedostoon nimeltä "tervetuloa.txt", koodisi voisi näyttää tältä:
+## Kuinka?
+
+Ruby-koodin tallentaminen tekstitiedostoon on helppoa. Aloita luomalla uusi tiedosto, joka päättyy .rb-tunnisteeseen, esimerkiksi "tiedosto.rb". Avaa tiedosto haluamallasi tekstieditorilla, kuten Notepadilla tai Sublimella. Kirjoita koodisi ja tallenna tiedosto.
 
 ```Ruby
-tiedosto = File.new("tervetuloa.txt", "w")
-puts "Tervetuloa Ruby-maailmaan!" 
-tiedosto.close
+puts "Tervetuloa Ruby-maailmaan!"
 ``` 
+Tämän jälkeen voit suorittaa tiedoston komennolla "ruby tiedosto.rb" ja näet tulosteen "Tervetuloa Ruby-maailmaan!" terminaalissasi.
 
-Tämän jälkeen voit avata tiedoston ja nähdä, että teksti on tallentunut siihen onnistuneesti. Voit myös käyttää muita komentoja, kuten ```print``` ja ```write```, tekstien lisäämiseksi tiedostoon.
+## Syvemmälle
 
-## Syventävä sukellus 
-Vaikka tekstitiedoston kirjoittaminen saattaa aluksi tuntua yksinkertaiselta, on hyvä ymmärtää muutamia tärkeitä asioita. Ensinnäkin, kun kirjoitat uuden tiedoston, sen sisältö korvataan kokonaan, jos et käytä lisäyskomentoja, kuten ```puts```. Voit myös määritellä tiedostolle erilaisia avausmoodit, kuten "r+" (lukeminen ja kirjoittaminen) ja "a" (lisääminen loppuun).
+Kirjoittamalla tekstitiedostoon voit myös hyödyntää sen ominaisuuksia, kuten tiedostojen sisältöjen lukemista ja muokkaamista sekä tietojen tallentamista ja lataamista. Voit esimerkiksi käyttää File-luokkaa tiedoston lukemiseen ja kirjoittamiseen.
 
-On myös tärkeää muistaa, että tiedostot tulisi sulkea aina kun olet valmis käyttämään niitä. Tämä varmistaa, että tiedostotietokone ei jää varatuksi ja sinulla on lopuksi puhdas ja toimiva koodi.
+```Ruby
+# Avaaminen ja lukeminen
+file = File.open("tiedosto.txt", "r")
+p file.read
 
-## Katso myös 
-- [Ruby Doc tiedostojen kirjoittamisesta](https://ruby-doc.org/core-2.7.0/File.html)
-- [Codecademy-opetusohjelma tiedostojen käsittelystä Rubylla](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-files/) 
-- [Ruby on Rails -tutoriaali tekstitiedoston kirjoittamisesta](https://www.tutorialspoint.com/ruby-on-rails/rails-file-operations.htm)
+# Kirjoittaminen
+file = File.open("tiedosto.txt", "w")
+file.write("Tervetuloa jälleen Ruby-maailmaan!")
+
+# Lopetetaan
+file.close
+```
+
+## Katso myös
+
+- [Ruby - virallinen kotisivu](https://www.ruby-lang.org/fi/)
+- [Sublime Text - tekstieditori](https://www.sublimetext.com/)
+- [Ruby-dokumentaatio](https://ruby-doc.org/core-2.7.1/)

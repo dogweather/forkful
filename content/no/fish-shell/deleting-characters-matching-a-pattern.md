@@ -1,49 +1,41 @@
 ---
-title:    "Fish Shell: Fjerning av tegn som samsvarer med et mønster"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell: Sletting av tegn som matcher et mønster"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvorfor ville du engasjere deg i å slette tegn som matcher et mønster? Vel, det kan være flere forskjellige grunner til dette. Kanskje du har en tekststreng som inneholder et uønsket tegn og du ønsker å fjerne det for å forbedre lesbarheten. Eller kanskje du jobber med regelmessige uttrykk og trenger å fjerne bestemte tegn for å matche et mønster. Uansett hva grunnen din måtte være, kan Fish Shell gjøre denne prosessen enkel og effektiv.
+Noen ganger kan det være nyttig å kunne slette visse tegn eller mønstre fra en tekststreng. Dette kan være nyttig når du for eksempel ønsker å fjerne ekstra mellomrom, spesialtegn eller et bestemt ord fra en tekst.
 
-## Hvordan
+## Slik gjør du det
 
-For å slette tegn som matcher et mønster i Fish Shell, kan du bruke kommandoen `string replace`. Denne kommandoen sletter alle forekomster av et bestemt tegn eller tegnrekke i en tekststreng.
+For å kunne slette tegn etter et spesifikt mønster i Fish Shell, kan du bruke kommandoen `sed`. Dette står for stream editor og kan brukes til å manipulere tekststrenger på en effektiv måte.
 
-For å bruke denne kommandoen, må du først skrive `string replace` etterfulgt av mønsteret du vil matche og hva du vil erstatte det med, separert med et mellomrom. For eksempel, hvis du ønsker å slette alle mellomrom i en tekststreng og erstatte dem med ingenting, kan du skrive `string replace " " ""` etterfulgt av tekststrengen du ønsker å endre. Her er et eksempel på hvordan dette kan se ut i Fish Shell:
-
-```Fish Shell
-string replace " " "" Dette er en tekststreng
-```
-
-Output:
-```Fish Shell
-Detteerentekststreng
-```
-
-Her er et annet eksempel, hvor vi sletter alle tall fra en tekststreng:
+En enkel måte å bruke `sed` på er å kombinere den med kommandoen `tr`, som står for translate. Dette lar deg erstatte tegnene som matcher mønsteret med et annet tegn, eller slette dem helt.
 
 ```Fish Shell
-string replace [0-9] "" Dette er en tekst med tall 123
+echo "Dette er en tekststreng" | sed 's/en//g' | tr -d " "
 ```
 
-Output:
+Dette eksempelet vil fjerne alle forekomster av "en" og slette alle mellomrom i teksten. Resultatet vil bli "Dtteistrk".
+
+En annen måte å slette tegn eller mønstre i en tekst på er å bruke kommandoen `grep`. Dette vil filtrere ut linjer som inneholder mønsteret du ønsker å slette, og deretter bruke kommandoen `tr` for å fjerne tegnene.
+
 ```Fish Shell
-Dette er en tekst med tall
+grep -v "tekst" < filnavn | tr -d " "
 ```
 
-## Dypdykk
+Her vil kommandoen først filtrere ut alle linjer som inneholder ordet "tekst" og deretter fjerne alle mellomrom fra resultatet.
 
-Nå som du har lært hvordan du kan slette tegn som matcher et mønster i Fish Shell, la oss ta en dypere titt på hva som faktisk skjer når du bruker `string replace` kommandoen. Når du sletter forekomster av et mønster i en tekststreng, blir disse tegnene erstattet med ingenting, slik at teksten din blir kortere.
+## Mer avansert
 
-Det er også verdt å merke seg at `string replace` kommandoen støtter bruk av regelmessige uttrykk. Dette betyr at du kan bruke mer komplekse mønstre for å matche og slette tegn i tekststrengen din.
+Dette er bare to enkle måter å slette tegn eller mønstre i Fish Shell, men det finnes flere muligheter og kombinasjoner du kan bruke for å oppnå ønsket resultat. For å lære mer om andre kommandoer og funksjoner du kan bruke, kan du lese dokumentasjonen for Fish Shell og prøve deg frem med forskjellige kombinasjoner.
 
 ## Se også
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Regulære uttrykk i Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_strings)
-- [Bruke `string replace` kommandoen](https://fishshell.com/docs/current/commands.html#string-replace)
+- Fish Shell dokumentasjon (https://fishshell.com/docs/current/index.html)
+- Sed og tr kommandoer (https://www.gnu.org/software/sed/manual/sed.html, https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)

@@ -1,54 +1,49 @@
 ---
-title:    "Arduino: Att Göra En Sträng Kapital"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/capitalizing-a-string.md"
+title:                "Arduino: Kapitalisering av en sträng"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att sätta versaler på en sträng kan vara användbart för att göra texten mer läsbar eller för att matcha en specifik formatering. Det kan också vara en nödvändig process för att i sin kod hantera olika typer av data.
+I den här bloggposten kommer vi att titta på hur du kan använda Arduino för att omvandla en sträng till versaler. Detta kan vara bra för många olika projekt, inklusive skyltar, namnbrickor eller andra liknande applikationer.
 
-## Så här gör du
+##Såhär gör du
 
-För att sätta versaler på en sträng i Arduino, kan du använda en inbyggd funktion som heter "toUpperCase ()". Denna funktion tar en sträng som inmatning och returnerar en ny sträng med alla versaler.
+Det finns flera olika sätt att omvandla en sträng till versaler med hjälp av Arduino. Ett enkelt sätt är att använda den inbyggda funktionen `toUpperCase()` som finns tillgänglig för strängar. Här är ett exempel på kod som visar hur du kan använda denna funktion:
 
 ```Arduino
-String str = "hej! detta är en sträng";
-
-// använd toUpperCase () för att sätta versaler på strängen
-String result = str.toUpperCase();
-
-// skriver ut det nya värdet
-Serial.println(result);
-
-// Output: HEJ! DETTA ÄR EN STRÄNG
+String str = "Hej Världen!";
+String strVersaler = str.toUpperCase();
+Serial.println(strVersaler);
 ```
 
-För att säkerställa att funktionen fungerar korrekt kan du också använda en loop för att loopa genom varje tecken i strängen och omvandla det till versaler.
+Detta kommer att skriva ut "HEJ VÄRLDEN!" på seriellmonitorn.
+
+En annan metod är att använda en loop för att gå igenom varje tecken i strängen och omvandla det till versaler. Här är ett exempel på kod som gör detta:
 
 ```Arduino
-String str = "hej! detta är en sträng";
+String str = "Hej Världen!";
+String strVersaler = "";
 
-// loopar igenom varje tecken i strängen
 for (int i = 0; i < str.length(); i++) {
-  // omvandlar tecknet till versal och skriver ut det
-  Serial.print(str.charAt(i).toUpperCase());
+  strVersaler += toupper(str.charAt(i));
 }
-
-// Output: HEJ! DETTA ÄR EN STRÄNG
+Serial.println(strVersaler);
 ```
 
-## Fördjupning
+Detta kommer att åstadkomma samma resultat som det första exemplet.
 
-Att sätta versaler på en sträng kan verka enkelt, men det finns vissa saker att tänka på för att säkerställa att din kod fungerar korrekt. En av de största utmaningarna är att hantera teckenkodning. Eftersom olika språk har olika bokstäver och symboler, är det viktigt att förstå vilken teckenkodning som används för att korrekt omvandla tecken till versaler.
+##Djupdykning 
 
-Du kan också använda andra inbyggda funktioner som "toLowerCase ()" för att omvandla strängen till gemener.
+För de som är intresserade av hur detta fungerar kan vi titta lite djupare på den inbyggda funktionen `toUpperCase()` som användes i det första exemplet. Funktionen är en del av objektet `String` och kallas med ett punkt mellanrum efter strängen som ska omvandlas. Funktionen använder sig av ASCII-koden för att identifiera och omvandla varje tecken till versaler.
 
-## Se även
+I det andra exemplet används en loop för att iterera genom varje tecken i strängen. Inuti loopen används `toupper()` som är en inbyggd funktion i Arduino som omvandlar ett tecken till versaler baserat på dess ASCII-värde. Detta läggs sedan till i en ny sträng och skrivs ut när loopen är klar.
 
-- [Arduino String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [toUpperCase ()](https://www.arduino.cc/reference/en/language/functions/string/bytecast/ascii/touppercase/)
-- [CharAt ()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/charat/)
-- [toLowerCase ()](https://www.arduino.cc/reference/en/language/functions/string/bytecast/ascii/tolowercase/)
+##Se även
+
+- [Arduino Reference: String toUpperCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
+- [ASCII Table](https://www.ascii-code.com/)

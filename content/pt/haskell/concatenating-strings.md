@@ -1,49 +1,62 @@
 ---
-title:    "Haskell: Concatenando strings"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/concatenating-strings.md"
+title:                "Haskell: Concatenando strings"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que 
+## Por que
+Concatenar strings é uma habilidade importante para qualquer programador, pois permite combinar várias cadeias de caracteres em uma única. Isso é útil para criar mensagens dinâmicas, gerar saídas formatadas e muito mais. Além disso, é uma habilidade comum e amplamente utilizada em linguagens de programação como Haskell.
 
-Concatenar strings é uma habilidade essencial para qualquer programador Haskell. Combinando diferentes strings, podemos criar mensagens personalizadas, formatar dados de maneira mais legível e construir novas funcionalidades para nossos programas.
+## Como fazer
+Para concatenar strings em Haskell, podemos usar o operador `++`. Este operador combina duas strings em uma nova string concatenada. Podemos ver o código abaixo para um exemplo simples:
 
-## Como Fazer
+```
+concatena :: String -> String -> String
+concatena str1 str2 = str1 ++ str2
 
-```Haskell
-concatenar :: String -> String -> String
-concatenar x y = x ++ y
+resultado = concatena "Olá " "mundo!"
 
-mensagem1 = "Olá, "
-mensagem2 = "mundo!"
-concatenar mensagem1 mensagem2
---Output: "Olá, mundo!"
-
---Também podemos concatenar mais de duas strings:
-mensagem3 = "Hoje é "
-mensagem4 = "um dia "
-mensagem5 = "ensolarado."
-concatenar (concatenar mensagem3 mensagem4) mensagem5
---Output: "Hoje é um dia ensolarado."
-
---Podemos até mesmo combinar strings com outros tipos de dados, desde que usemos a função "show":
-idade = 25
-concatenar "Eu tenho " (show idade) ++ " anos."
---Output: "Eu tenho 25 anos."
+print resultado
+-- saída: "Olá mundo!"
 ```
 
-## Mergulho Profundo
+No código acima, definimos a função `concatena` que recebe duas strings e retorna a concatenação delas usando o operador `++`. Em seguida, usamos essa função para criar a string "Olá mundo!" e imprimir o resultado.
 
-Em Haskell, a concatenação de strings é feita através do operador "++". Ele simplesmente combina duas strings em uma, sem adicionar nenhum espaço ou caractere especial entre elas. No entanto, se precisarmos adicionar algum caractere entre as strings (como um espaço), é possível utilizar a função "intercalate", que recebe um delimitador e uma lista de strings para serem unidas.
+Além do operador `++`, também podemos usar a função `concat` para concatenar uma lista de strings em uma única string. Veja o exemplo abaixo:
 
-Outra função útil para manipular strings é a "words", que divide uma string em uma lista de palavras. E a função "unwords" faz o contrário, unindo uma lista de palavras em uma única string, adicionando espaços entre elas.
+```
+concatenarLista :: [String] -> String
+concatenarLista lista = concat lista
 
-Existem ainda outras funções relacionadas à manipulação de strings que podem ser exploradas, como "lines", "unlines", "take" e "drop".
+valores = ["Olá", "Programação", "em", "Haskell"]
+
+print (concatenarLista valores)
+-- saída: "OláProgramaçãoemHaskell"
+```
+
+Neste código, definimos a função `concatenarLista` que recebe uma lista de strings e usa a função `concat` para concatená-las em uma única string. Em seguida, passamos uma lista de valores e imprimimos o resultado.
+
+## Deep Dive
+É importante ressaltar que, ao concatenar strings em Haskell, o compilador não irá otimizar o código automaticamente. Cada vez que uma concatenação é feita, uma nova string é criada e a memória alocada para a string anterior será liberada pelo garbage collector. Isso significa que a concatenação repetida de grandes strings pode levar a problemas de desempenho em seu programa.
+
+Para evitar esses problemas, é recomendável usar o tipo de dado `Text` da biblioteca `Data.Text` ao trabalhar com strings maiores. Ele tem uma estrutura interna otimizada que torna a concatenação mais eficiente e menos intensiva em memória.
+
+Outra alternativa é usar a função `concatMap` em vez da função `concat`. Esta função percorre a lista apenas uma vez e concatena as strings de forma mais eficiente. Segue um exemplo:
+
+```
+concatenarLista' :: [String] -> String
+concatenarLista' lista = concatMap id lista
+
+valores = ["Olá", "Programação", "em", "Haskell"]
+
+print (concatenarLista' valores)
+-- saída: "OláProgramaçãoemHaskell"
+```
 
 ## Veja Também
-
-- [Haskell Wiki: Concatenação de Strings](https://wiki.haskell.org/Strings)
-- [Learn You a Haskell for Great Good - Stringy Pattern Matching](http://learnyouahaskell.com/chapters#stringy-pattern-matching)
-- [Real World Haskell - Strings](http://book.realworldhaskell.org/read/strings.html)
+- [Documentação da biblioteca Data.Text](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Tutorial de Haskell no Wikibooks](https://pt.wikibooks.org/wiki/Haskell)
+- [Repositório de códigos em Haskell da Microsoft](https://github.com/microsoft/research/tree/master/examples/boogiehaskell/haskell)

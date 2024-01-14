@@ -1,37 +1,49 @@
 ---
-title:    "C++: Rozpoczynanie nowego projektu"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/starting-a-new-project.md"
+title:                "C++: Rozpoczynając nowy projekt"
+programming_language: "C++"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego warto zacząć nowy projekt w C++? Istnieje wiele powodów, dla których ludzie decydują się na rozpoczęcie nowego projektu w tym języku programowania. C++ jest językiem ogólnego przeznaczenia, co oznacza, że może być używany do tworzenia różnych typów aplikacji, od prostych programów do zaawansowanych systemów operacyjnych. Jest również szybki, wydajny i ma bogatą bibliotekę standardową, co sprawia, że jest popularnym wyborem wśród programistów.
+Programowanie w C ++ może być zarówno pasją, jak i pracą. Jeśli masz pomysł na nowy projekt lub chcesz rozwinąć swoje umiejętności programistyczne, warto zacząć nowy projekt w języku C++. Dzięki temu będziesz mógł rozwijać się jako programista i tworzyć aplikacje, które będą przydatne dla społeczności.
 
-## Jak to zrobić
+## Jak zacząć
 
-Jeśli chcesz rozpocząć nowy projekt w C++, musisz najpierw zainstalować odpowiedni kompilator dla swojego systemu operacyjnego. Następnie musisz wybrać odpowiednie narzędzia i środowisko programistyczne, które ułatwią ci pisanie i debugowanie kodu. Możesz również skorzystać z różnych tutoriali i podręczników, aby nauczyć się podstaw języka oraz dobrych praktyk programistycznych.
+Aby rozpocząć nowy projekt w C++, potrzebujesz odpowiednich narzędzi. Najważniejszym z nich jest kompilator, który przetwarza kod źródłowy na kod maszynowy, który jest wykonywany przez system operacyjny. Do kompilacji kodu w C++ możesz użyć darmowego kompilatora GCC lub komercyjnego kompilatora od firmy Microsoft - Visual Studio.
+
+Poniżej przedstawiamy przykładowy kod w C++, który wypisuje prosty napis "Witaj świecie" na ekranie:
 
 ```C++
 #include <iostream>
 
-int main()
-{
-    std::cout << "Witaj świecie!";
+using namespace std;
+
+int main() {
+    cout << "Witaj świecie" << endl;
     return 0;
 }
 ```
 
-Ten krótki kod pokazuje, jak w prosty sposób możesz użyć standardowego strumienia wyjścia, aby wyświetlić napis na konsoli. Stałe `std` odwołuje się do przestrzeni nazw, a `cout` jest obiektem, który może być używany do drukowania informacji na ekranie.
+Po skompilowaniu i uruchomieniu tego kodu, powinieneś zobaczyć w konsoli napis "Witaj świecie".
 
-## Głębsze zagłębianie
+Możesz również znaleźć wiele tutoriali i kursów online na temat programowania w C++, które będą przydatne w nauce tego języka i tworzeniu aplikacji.
 
-Aby zacząć nowy projekt w C++, musisz mieć jasno określony cel i plan działania. Następnie musisz zaprojektować i zaimplementować odpowiednią strukturę i algorytmy. Dodatkowo, musisz pamiętać o zagadnieniach takich jak zarządzanie pamięcią, obsługa wyjątków i optymalizacja kodu. To są tylko niektóre z wyzwań, które możesz napotkać podczas pracy nad projektem w C++.
+## Głębszy zanurzenie
+
+Jeśli chcesz pójść o krok dalej i napisać bardziej złożony projekt w C++, musisz dokładniej poznać ten język i jego różne funkcjonalności. Poniżej wymieniamy kilka ważnych elementów, które warto poznać podczas rozpoczynania nowego projektu w C++:
+
+- Struktury danych - C++ oferuje wiele różnych struktur danych, takich jak tablice, listy, czy mapy, które umożliwiają przechowywanie i manipulowanie dużą ilością danych.
+- Klasy i obiekty - obiektowość jest jedną z najważniejszych cech języka C++. Tworząc klasy i instancje obiektów, możesz zorganizować swój kod w bardziej modułowy i czytelny sposób.
+- Biblioteki standardowe - C++ oferuje wiele przydatnych bibliotek standardowych, które zawierają gotowe funkcje i klasy do wykorzystania w swoim kodzie.
+
+Pamiętaj, że podczas pisania projektu w C++ ważne jest również zachowanie dobrej praktyki programistycznej, takiej jak komentowanie kodu, używanie odpowiednich nazw zmiennych i funkcji oraz pisanie czytelnego i przemyślanego kodu.
 
 ## Zobacz również
 
-- [Poradniki C++](https://cppreference.com/)
-- [Kursy C++ na YouTube](https://www.youtube.com/watch?v=fCDQzjQZBWo)
-- [Strona główna języka C++](https://isocpp.org/)
+- [Kurs C++ dla początkujących](https://www.programiz.com/cpp-programming)
+- [Oficjalna dokumentacja języka C++](https://isocpp.org/)
+- [Visual Studio Community - darmowe narzędzie do programowania w C++](https://visualstudio.microsoft.com/pl/vs/community/)

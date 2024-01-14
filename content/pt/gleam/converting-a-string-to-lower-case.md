@@ -1,42 +1,64 @@
 ---
-title:    "Gleam: Convertendo uma string para minúsculas"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/converting-a-string-to-lower-case.md"
+title:                "Gleam: Convertendo uma string para letras minúsculas"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que?
 
-Se você está trabalhando com strings em Gleam, pode ser útil saber como converter uma string para letras minúsculas. Isso pode ser útil para fins de comparação ou formatação consistente.
+Seja por necessidade de comparação com outras strings ou para simplificar o processamento de dados, converter uma string para caracteres minúsculos é uma tarefa comum em qualquer linguagem de programação, incluindo Gleam.
 
-## Como Fazer
+## Como fazer
 
-Para converter uma string para letras minúsculas em Gleam, você pode usar a função `to_lower_case` do módulo `gleam/string`:
+Existem várias maneiras de converter uma string para minúsculas em Gleam. Vamos dar uma olhada em duas abordagens diferentes utilizando a função `to_lower_case()`.
 
-```Gleam
-import gleam/string
+### Usando uma biblioteca externa
 
-let nome = "GLEAM"
-let minusculo = string.to_lower_case(nome)
-
-/* output: "gleam" */
-```
-
-Você também pode usar a função `to_lower_case` diretamente em uma string:
+Para aqueles que preferem utilizar bibliotecas externas, a biblioteca `gleam_strings` possui uma função `to_lower_case()` que pode ser usada da seguinte forma:
 
 ```Gleam
-let nome_minusculo = "gleam" |> string.to_lower_case
+// Importar a biblioteca gleam_strings
+import gleam_strings
 
-/* output: "gleam" */
+// Definir uma string
+let string = "Gleam Programming Rocks!"
+
+// Converter para minúsculas
+let lower_case_string = gleam_strings.to_lower_case(string)
+
+// Imprimir o resultado
+io.println(lower_case_string)
+
+// Saída: "gleam programming rocks!"
 ```
 
-## Mergulho Profundo
+### Utilizando a função nativa da linguagem
 
-A função `to_lower_case` usa a biblioteca Unicode para converter todos os caracteres em letras minúsculas, incluindo caracteres especiais de vários idiomas. Além disso, essa função é imutável, o que significa que uma cópia da string original é retornada com todas as letras em minúsculo.
+Gleam também possui uma função nativa para conversão de strings para minúsculas, que pode ser utilizada da seguinte forma:
 
-## Veja Também
+```Gleam
+// Definir uma string
+let string = "Gleam Programming Rocks!"
 
-- [Gleam Documentation](https://gleam.run/documentation)
-- [Gleam Strings Module](https://gleam.run/documentation/stdlib/string.md)
-- [Unicode Character Database](https://unicode.org/ucd/)
+// Converter para minúsculas
+let lower_case_string = string.to_lower_case()
+
+// Imprimir o resultado
+io.println(lower_case_string)
+
+// Saída: "gleam programming rocks!"
+```
+
+## Aprofundando
+
+Ao converter uma string para minúsculas, é importante ter em mente que esse processo não é simplesmente substituir todos os caracteres maiúsculos pelos seus equivalentes minúsculos. Existem casos em que a conversão pode ser mais complexa, como, por exemplo, quando a string contém caracteres com acentos.
+
+Além disso, é sempre recomendável analisar a documentação da função que está sendo utilizada, como parâmetros opcionais que possam afetar o resultado final.
+
+## Veja também
+
+- Documentação da função `to_lower_case()`: https://gleam.run/documentation/stdlib/string#to_lower_case
+- Documentação da biblioteca `gleam_strings`: https://hexdocs.pm/gleam_strings/api-reference.html

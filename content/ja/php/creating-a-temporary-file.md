@@ -1,48 +1,56 @@
 ---
-title:    "PHP: 一時ファイルの作成"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/creating-a-temporary-file.md"
+title:                "PHP: 一時ファイルの作成"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜプログラムで一時ファイルを作成するのか？
+## なぜ作成するのか
 
-一時ファイルを作成することは、プログラムの実行中に一時的にデータを保存するための非常に便利な方法です。データを一時ファイルに保存することで、本当のファイルに書き込む前にプログラムをテストすることができます。また、一時ファイルを使用することで、不必要なデータの保持を防ぎ、プログラムのパフォーマンスを改善することができます。
+一時的なファイルを作成する理由はたくさんあります。データを一時的に保存する必要がある、あるいはファイル操作を行う上で一時的なファイルが必要になる場合などがあります。今回は、PHPで一時的なファイルを作成する方法をご紹介します。
 
-## 作り方
+## 作成方法
+
+まずは、どのようにして一時的なファイルを作成するかを見ていきましょう。PHPには `tempnam()` という関数が用意されており、これを使うことで一時的なファイルを作成することができます。以下のように書くと、一時的なファイルを作成してファイルパスを返してくれます。
 
 ```PHP
-// ランダムな一時ファイル名を生成
-$temp_filename = tempnam(sys_get_temp_dir(), "temp");
-
-// ファイルにデータを書き込む
-$data = "これは一時ファイルに書き込んだデータです。";
-file_put_contents($temp_filename, $data);
-
-// ファイルからデータを読み取り
-echo file_get_contents($temp_filename);
-
-// ファイルの削除
-unlink($temp_filename);
+$temp_file = tempnam(sys_get_temp_dir(), 'php_');
+echo $temp_file;
 ```
 
-### 出力結果：
+上記のコードを実行すると、例えば `/var/tmp/php_lno6H` のようなファイルパスが返ってきます。このファイルパスは一時的なファイルを作成するために利用されるものです。
 
+次に、作成した一時的なファイルに何かしらのデータを書き込んでみましょう。以下のように書くと、一時的なファイルを作成して「Hello World!」というテキストを書き込んでくれます。
+
+```PHP
+$temp_file = tempnam(sys_get_temp_dir(), 'php_');
+file_put_contents($temp_file, 'Hello World!');
+echo file_get_contents($temp_file); //出力結果：Hello World!
 ```
-これは一時ファイルに書き込んだデータです。
+
+一時的なファイルが作成できたかどうかを確認するためには、以下のようなコードを使うことができます。
+
+```PHP
+var_dump(file_exists($temp_file)); //出力結果：bool(true)
 ```
 
-## ディープダイブ
+以上のように、 `tempnam()` を使うことで簡単に一時的なファイルを作成することができます。
 
-プログラムで一時ファイルを作成する方法は様々ありますが、一番よく使用される方法は`tempnam()`関数を使用することです。この関数は、指定されたディレクトリにランダムなファイル名で一時ファイルを作成することができます。また、`sys_get_temp_dir()`という関数を使用することで、システムの一時ディレクトリを取得することができます。
+## 深堀り
 
-しかし、プログラムが終了すると作成した一時ファイルは自動的に削除されるため、一時ファイルを保持する場合には`unlink()`関数を使用して明示的に削除する必要があります。
+では、実際に`tempnam()` 関数の中身を見てみましょう。この関数はシステム上の一時ディレクトリと接頭辞を受け取って一時的なファイルを作成するものです。ファイル名は 接頭辞の後ろに `_` がついたものがファイル名となります。一時ディレクトリは `sys_get_temp_dir()` を使って取得することができます。
 
-## See Also
+また、 `tempnam()` は単に一時的なファイルを作成するのに使うこともできますが、ファイル名を指定しなければ自動的に取得したファイル名が返されます。そのため、ファイルを一時的に作成するだけでなく、ファイル名を取得したい場合にも使うことができます。
 
-- [PHP: `tempnam()`関数](https://www.php.net/manual/ja/function.tempnam.php)
-- [PHP: `sys_get_temp_dir()`関数](https://www.php.net/manual/ja/function.sys-get-temp-dir.php)
-- [PHP: `file_put_contents()`関数](https://www.php.net/manual/ja/function.file-put-contents.php)
-- [PHP: `file_get_contents()`関数](https://www.php.net/manual/ja/function.file-get-contents.php)
-- [PHP: `unlink()`関数](https://www.php.net/manual/ja/function.unlink.php)
+## 他に参考になる情報
+
+今回は `tempnam()` 関数を使った一時的なファイルの作成方法をご紹介しましたが、他にも一時的なファイルを扱う方法はたくさんあります。ぜひ以下のリンクを参考にしてみてください。
+
+- [PHP: tempnam - Manual](https://www.php.net/manual/en/function.tempnam.php)
+- [PHP: file_put_contents - Manual](https://www.php.net/manual/en/function.file-put-contents.php)
+
+## その他
+
+簡単ですが、一時的なファイルの作成方法についてご紹介しました。これから

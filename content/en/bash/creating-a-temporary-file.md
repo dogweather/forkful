@@ -1,59 +1,53 @@
 ---
-title:    "Bash recipe: Creating a temporary file"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/creating-a-temporary-file.md"
+title:                "Bash recipe: Creating a temporary file"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever needed to store and manipulate data temporarily in your Bash scripts? If so, then you may have come across the concept of temporary files. These are essential for storing intermediate data that needs to be used and discarded quickly. In this blog post, we will explore how to create temporary files in Bash and why they are useful.
+Creating temporary files is a common task in Bash programming. It allows you to store temporary data or results of a process without cluttering up your main system files. This can be especially useful when dealing with large amounts of data or when running multiple processes simultaneously.
 
 ## How To
 
-Creating a temporary file in Bash is a relatively simple process. We can use the `mktemp` command to generate a unique and secure temporary file. Let's take a look at an example:
+To create a temporary file in Bash, you can use the `mktemp` command. Simply type `mktemp` followed by a file name pattern, such as `tempfileXXX`. The `XXX` will be automatically replaced with a unique identifier, ensuring that each temporary file has a unique name.
 
 ```Bash
-#!/bin/bash
-temp_file=$(mktemp) # $() captures the output of the command
-echo "This is a temporary file created at $(date)" > $temp_file # redirect output to the temporary file
-cat $temp_file # print the contents of the temporary file
-rm $temp_file # delete the temporary file
+$ mktemp tempfileXXX
+/tmp/tempfileCo4
+```
+In the example above, the temporary file created is called "tempfileCo4". You can also specify a different directory for the temporary file to be created in by using the `-p` option.
+
+```Bash
+$ mktemp -p ~/Documents tempfileXXX
+/home/username/Documents/tempfileRer
 ```
 
-Running this script will create a temporary file with a random name and print its contents, which in this case will be the current date and time. After the script is finished, the temporary file is deleted. 
-
-We can also specify a prefix for the temporary file's name using the `-p` flag. This can be helpful for identifying which script or process created the temporary file. For example:
+Once you have created a temporary file, you can use it just like any other regular file in your script. For example, you can output data to the file using `echo` and then access the data later on.
 
 ```Bash
-#!/bin/bash
-temp_file=$(mktemp -p my_script) # temporary file name will be `my_script.XXXX`
-echo "This is a temporary file created at $(date)" > $temp_file
-cat $temp_file
-rm $temp_file
+$ echo "Hello World!" > tempfileXXX
+$ cat tempfileXXX
+Hello World!
 ```
 
-Another useful option is the `--suffix` flag, which allows us to add a custom suffix to the temporary file's name. For example:
+Once your script has finished running, you can use the `rm` command to delete the temporary file. This ensures that your system does not get cluttered with unnecessary files.
 
 ```Bash
-#!/bin/bash
-temp_file=$(mktemp --suffix .txt) # temporary file name will have `.txt` extension
-echo "This is a temporary file created at $(date)" > $temp_file
-cat $temp_file
-rm $temp_file
+$ rm tempfileXXX
 ```
 
 ## Deep Dive
 
-The `mktemp` command not only creates a temporary file but also ensures its security by assigning proper permissions to it. This ensures that the file can only be accessed by the user running the script. Additionally, the temporary file's name is random, making it difficult for an attacker to guess and access.
+Behind the scenes, the `mktemp` command uses the `mkstemp()` function from the C standard library. This function creates a unique temporary file with permissions only accessible by the user who created it. This helps to prevent accidental deletion or modification of the file by other users on the system.
 
-Furthermore, the `mktemp` command also creates the temporary file in the appropriate temporary directory for the system, making it easier to manage and clean up later. The temporary directory is typically `/tmp`, but this can vary depending on the system.
-
-It is worth noting that there is another command called `tempfile` that can also be used to create temporary files in Bash. However, unlike `mktemp`, `tempfile` creates the temporary file in the current directory and does not provide the same level of security.
+Additionally, the `mktemp` command provides options for specifying the file suffix, prefix, and even the directory to create the temporary file in. This allows for more customization and flexibility when creating temporary files in Bash.
 
 ## See Also
 
-- [More information on `mktemp` command](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)
-- [Creating and using temporary files in Bash](https://www.baeldung.com/linux/create-temporary-file-bash)
-- [Handling temporary files in Bash](https://linuxhint.com/handle_temporary_files_bash/)
+- [Bash scripting cheat sheet](https://devhints.io/bash)
+- [Introduction to Bash programming](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+- [Bash scripting tutorials](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

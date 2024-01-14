@@ -1,53 +1,50 @@
 ---
-title:    "C#: Sammanslagning av strängar"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/concatenating-strings.md"
+title:                "C#: Sammanslående av strängar"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att sammanfoga strängar är en vanlig uppgift inom programmering, oavsett vilket programmeringsspråk du arbetar med. Det är en användbar teknik för att slå samman flera ord eller fraser till en enda sträng, som kan användas exempelvis för att skriva ut text eller användas som inmatning för olika funktioner.
 
-## Hur man gör det
-För att sammanfoga strängar i C# används operatorn " + " eller metoden "Concat()" och följer syntaxen "sträng1 + sträng2" eller "Concat(sträng1, sträng2)". Här är ett enkelt exempel:
+Att konkatenera strängar kan verka som en enkel uppgift, men det kan ha betydande konsekvenser för prestanda och minnesanvändning i din kod. Det är viktigt att förstå varför du skulle vilja konkatenera strängar för att använda det effektivt i din C# programmering.
+
+## Hur man gör
+
+För att konkatenera strängar i C# använder du "+" operatorn eller string.Format metoden. Här är ett enkelt exempel på hur du kan slå samman två strängar och skriva ut resultatet:
 
 ```C#
-string förnamn = "Lisa";
-string efternamn = "Svensson";
+string förnamn = "Sofia";
+string efternamn = "Andersson";
+
 string fullständigtNamn = förnamn + " " + efternamn;
 Console.WriteLine(fullständigtNamn);
+
+//Resultatet blir "Sofia Andersson"
 ```
 
-Output: Lisa Svensson
-
-För mer komplexa scenarier, som att sammanfoga flera variabler till en enda sträng, kan man använda "String.Format()" metoden. Detta ger dig möjlighet att ange index för varje variabel som ska ersättas i strängen. Här är ett exempel:
+Som du kan se har vi använt "+" operatorn för att slå samman tre separata strängar. Det är också möjligt att använda string.Format metoden för att konkatenera strängar. Här är samma exempel fast med string.Format:
 
 ```C#
-string favoritBil = "Tesla";
-int antalÄgare = 3;
-string text = String.Format("Jag äger {1} {0} bilar.", favoritBil, antalÄgare);
-Console.WriteLine(text);
+string förnamn = "Sofia";
+string efternamn = "Andersson";
+
+string fullständigtNamn = string.Format("{0} {1}", förnamn, efternamn);
+Console.WriteLine(fullständigtNamn);
+
+//Resultatet blir "Sofia Andersson"
 ```
 
-Output: Jag äger 3 Tesla bilar.
-
-Man kan också använda "String.Join()" metoden för att lägga till ett skiljetecken mellan varje sträng i en samling. Se följande exempel:
-
-```C#
-string[] språk = { "C#", "Java", "Python", "Ruby" };
-string text = String.Join(", ", språk);
-Console.WriteLine(text);
-```
-
-Output: C#, Java, Python, Ruby
+Det här är bara två enkla exempel på hur du kan konkatenera strängar i C#. Det finns många andra sätt att göra det på, så det är viktigt att utforska och hitta den bästa lösningen för ditt specifika användningsfall.
 
 ## Djupdykning
-När man sammanfogar strängar i C#, är det viktigt att komma ihåg att strängar är oföränderliga. Detta innebär att när du väl har skapat en sträng, kan du inte ändra den utan måste skapa en helt ny sträng. Därför kan det vara ineffektivt att använda många operatorer eller metoder för att sammanfoga strängar som behöver ändras ofta.
 
-En annan viktig sak att tänka på är att strängar som innehåller siffror eller andra icke-text tecken kan orsaka problem när de ska sammanfogas. För att undvika detta kan man använda metoden "ToString()" för att konvertera siffror till strängar eller "Escape"-tecken för att hantera specialtecken.
+När du konkatenerar strängar i C#, är det viktigt att du är medveten om den underliggande processen och dess konsekvenser för prestanda. När du använder "+" operatorn blir varje enskild sträng kopierad till en ny plats i minnet, vilket kan orsaka onödig minnesanvändning och påverka din programs prestanda.
+
+För att undvika detta kan du använda StringBuilder klassen i C#. Det här objektet håller hela din strängkonkatenering i minnet och minimerar därmed antalet kopieringar och därmed minnesanvändning och prestandaproblem.
 
 ## Se även
-- [Official C# String Concatenation Documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/string-comparison)
-- [C# Documentation: String Format Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-5.0)
-- [C# Documentation: String Join Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.join?view=net-5.0)
+
+* [Microsoft dokumen

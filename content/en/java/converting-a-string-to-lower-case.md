@@ -1,40 +1,61 @@
 ---
-title:    "Java recipe: Converting a string to lower case"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/converting-a-string-to-lower-case.md"
+title:                "Java recipe: Converting a string to lower case"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Introduction: Why You Should Convert a String to Lower Case
-When working with strings in Java, you may encounter instances where the case of the characters matters. For example, when comparing two strings, you may want to ignore the case and only focus on the content. In these situations, converting a string to lower case can be beneficial. It allows for easier comparison and manipulation of strings. In this blog post, we will explore how to convert a string to lower case in Java and dive deeper into the details behind this process.
+## Why
 
-## How To: Converting a String to Lower Case in Java
-To convert a string to lower case in Java, we can use the `toLowerCase()` method from the `String` class. This method takes no parameters and returns a new string with all characters converted to lower case.
+Converting strings to lower case may seem like a trivial task, but it has its own significance in Java programming. It allows for easier comparison of strings, as case sensitivity can often lead to errors. In addition, lower case strings are sometimes required for certain operations and formatting.
 
-```Java
-String str = "Hello, World!";
-String lowerCaseStr = str.toLowerCase(); // lowerCaseStr = "hello, world!"
-```
+## How To
 
-We can also use this method in conjunction with a string comparison to ignore case sensitivity.
+To convert a string to lower case in Java, we can use the `toLowerCase()` method from the String class. This method takes no arguments and returns a new string with all characters converted to lower case. Let's see an example:
 
 ```Java
-String str1 = "Hello";
-String str2 = "hello";
-if (str1.toLowerCase().equals(str2.toLowerCase())) {
-    System.out.println("The strings are equal ignoring case.");
-}
+String name = "JOHN";
+String lowerCaseName = name.toLowerCase();
+System.out.println(lowerCaseName);
+```
+Output:
+```
+john
 ```
 
-The output would be: `The strings are equal ignoring case.`
+We can also use the `String.valueOf()` method to convert other data types, such as integers, to strings and then convert them to lower case. Here's an example:
 
-## Deep Dive: Understanding the Process of Converting a String to Lower Case
-Now, let's take a deeper look at what happens when we call the `toLowerCase()` method. When invoked, the method creates a new `char` array and loops through each character in the original string. For each character, it checks if it is an uppercase letter by using the `isUpperCase()` method from the `Character` class. If the character is uppercase, it is converted to lowercase using the `toLowerCase()` method from the `Character` class. The new lowercase character is then added to the new `char` array. Once the loop finishes, the method returns a new string created from the new `char` array.
+```Java
+int number = 123;
+String lowerCaseNumber = String.valueOf(number).toLowerCase();
+System.out.println(lowerCaseNumber);
+```
+Output:
+```
+123
+```
+
+It is important to note that the `toLowerCase()` method only converts characters to their lower case equivalents, and does not check for accent marks or other language-specific characters. To handle these cases, we can use the `Locale` parameter in the method. Here's an example:
+
+```Java
+String city = "München";
+String lowerCaseCity = name.toLowerCase(Locale.GERMAN);
+System.out.println(lowerCaseCity);
+```
+Output:
+```
+münchen
+```
+
+## Deep Dive
+
+Under the hood, the `toLowerCase()` method uses the `Character.toLowerCase()` method to convert each individual character. This method uses the Unicode standard to determine the lower case equivalent of a character. In addition, it also handles multi-character characters, such as ligatures, properly.
+
+One thing to keep in mind is that the `toLowerCase()` method returns a new string with the converted characters, but does not change the original string. So if you need to use the converted string multiple times, it is better to store it in a new variable rather than repeatedly calling the `toLowerCase()` method.
 
 ## See Also
-To learn more about string manipulation in Java, here are some helpful resources:
 
-- [Java String Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [GeeksforGeeks: String toLowerCase() Method in Java](https://www.geeksforgeeks.org/java-lang-string-tolowercase-method-in-java/)
-- [Javatpoint: String toLowerCase() Method in Java](https://www.javatpoint.com/java-string-tolowercase)
+- [Java String documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java Character documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)

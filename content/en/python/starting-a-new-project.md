@@ -1,58 +1,62 @@
 ---
-title:    "Python recipe: Starting a new project"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/starting-a-new-project.md"
+title:                "Python recipe: Starting a new project"
+programming_language: "Python"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+##Why
 
-Starting a new project in any programming language can be exciting, but also daunting. It gives you a chance to explore new ideas and techniques, and ultimately helps you improve your coding skills. In this blog post, we will focus specifically on starting a new project using Python and share some tips and tricks to make the process smoother.
+Are you looking to learn a new skill, expand your programming knowledge, or simply challenge yourself with a new project? Starting a new programming project is a great way to achieve all of these goals and more. Not only will you be able to sharpen your coding skills, but you will also have a tangible end product to show for your efforts. So if you're ready to take on a new challenge, keep reading to learn the basics of starting a new project in Python.
 
-## How To
+##How To
 
-To start a new project in Python, follow these simple steps:
+To get started on your project, you'll need to have Python installed on your computer. Once that's taken care of, open up your preferred code editor and follow these steps.
 
-1. Open your preferred integrated development environment (IDE). We recommend using Jupyter Notebook or PyCharm, as they both have great features for project organization and code development.
-2. Create a new project in your IDE and give it a name. This will create a project folder where you can store all your code and files related to your project.
-3. Create a new Python file within your project folder and name it `main.py`, or any name you prefer.
-4. Begin by importing any necessary modules or libraries. For example:
+### Step 1: Set Up Your Environment
 
-```Python
-import pandas as pd
-import numpy as np
-```
-5. Write your code and save the file. Here is an example of some code that generates a random number and prints it to the console:
+The first thing you'll want to do is create a virtual environment for your project. This will help you keep your project's dependencies separate from any other projects you may have. To do this, open up your terminal and enter the following command:
 
 ```Python
-import random
-x = random.randint(1,10)
-print("Here's a random number:", x)
+python -m venv venv
 ```
 
-Output:
+This will create a new virtual environment called "venv" in your project's directory.
 
+### Step 2: Install Dependencies
+
+Next, you'll want to install any necessary dependencies for your project. This can include libraries, packages, or modules that your project will use. To do this, activate your virtual environment by entering the following command:
+
+```Python
+venv\Scripts\activate
 ```
-Here's a random number: 7
+
+Then, use the Python package manager pip to install your dependencies. For example, if you wanted to install the popular library BeautifulSoup, you would use the command:
+
+```Python
+pip install beautifulsoup4
 ```
 
-6. Keep adding code to your `main.py` file as needed for your project. It's always a good idea to regularly save your work to avoid losing any progress.
+### Step 3: Write Your Code
 
-## Deep Dive
+Now comes the fun part - writing your code! In your code editor, create a new Python file and start coding. Remember to keep your code organized and comment as needed for clarity.
 
-Starting a new project can be overwhelming, so it's important to break it down into smaller, manageable tasks. Here are some tips to help you get started:
+### Step 4: Test Your Code
 
-- Have a clear understanding of your project goal and what you want to achieve.
-- Break down your project into smaller tasks and create a plan or roadmap.
-- Utilize the power of libraries and packages to make your coding process easier.
-- Use version control to track changes and collaborate with others.
-- Don't be afraid to ask for help or seek guidance from online communities and forums.
+Once your code is written, it's always a good idea to test it out before moving on. Use the command line to run your code and make sure everything is functioning as expected. If there are any errors, go back and troubleshoot until your code runs smoothly.
 
-It's also important to keep your code well-organized and documented. This not only makes it easier for others to understand and contribute to your project, but also helps you maintain and update your code in the future.
+##Deep Dive
 
-## See Also
+Starting a new project can seem daunting, but with the right mindset and tools, it can be a fun and rewarding experience. Some additional tips to keep in mind:
 
-- [Python Documentation](https://www.python.org/doc/)
-- [RealPython - How to start a new Python project](https://realpython.com/python-application-layouts/)
-- [Tuts+ - How to start a new Python project](https://code.tutsplus.com/tutorials/how-to-start-a-new-python-project--cms-33766)
+- Take time to plan and break down your project into smaller, achievable goals.
+- Utilize online resources and documentation to support your learning and problem-solving.
+- Don't be afraid to ask for help or collaborate with others - programming is a team effort!
+
+##See Also
+
+- [Python Official Documentation](https://docs.python.org/3/)
+- [Real Python - Getting Started with Python Programming](https://realpython.com/start/python-programming/)
+- [Python for Beginners: Learn Python Programming from Scratch](https://www.freecodecamp.org/news/python-programming-beginner-tutorial/)

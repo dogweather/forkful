@@ -1,43 +1,58 @@
 ---
-title:    "Clojure: Escribiendo a la salida de error estándar"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-to-standard-error.md"
+title:                "Clojure: Escribiendo en el error estándar"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué escribir al error estándar en Clojure
 
-Escribir a la salida estándar, también conocido como stderr, es una práctica común en la programación de Clojure. Esto permite a los desarrolladores imprimir mensajes de error o depuración en la consola durante la ejecución del programa. Aunque puede sonar simple, saber cómo escribir a stderr es una habilidad importante para los programadores de Clojure ya que les permite depurar y mejorar su código de manera efectiva.
+Escribir al error estándar es una práctica común en la programación en Clojure. Al hacerlo, podemos dejar mensajes de error o información de depuración en la consola, lo que nos ayuda a identificar y solucionar problemas en nuestro código.
 
 ## Cómo hacerlo
 
-Para escribir a stderr en Clojure, se utiliza la función `println!` seguida de la expresión que se desea imprimir. Por ejemplo:
+Para escribir al error estándar en Clojure, utilizamos la función `prn`, que imprimirá una línea de texto seguida de una nueva línea en la consola. Podemos pasar cualquier tipo de dato a esta función, desde un string hasta una lista. Por ejemplo:
 
-```Clojure
-(println! "¡Hola mundo!")
+```Clojure 
+(prn "Este es un mensaje de error")
+;; resultado: "Este es un mensaje de error"
+
+(prn [1 2 3 4])
+;; resultado: [1 2 3 4]
 ```
 
-Esto mostrará el mensaje "¡Hola mundo!" en la salida estándar.
-
-Si quieres escribir algo más específico, puedes utilizar la función `println!` junto con la función `str` para crear una cadena de caracteres que se imprimirá. Por ejemplo:
+También podemos utilizar la función `println` para escribir al error estándar, que funciona de manera similar a `prn`, pero agrega un espacio entre los elementos impresos.
 
 ```Clojure
-(println! (str "La suma de 2 + 2 es " (+ 2 2)))
+(println "Este es un mensaje" "de varias palabras")
+;; resultado: Este es un mensaje de varias palabras
 ```
-
-Esto imprimirá "La suma de 2 + 2 es 4" en la salida estándar.
 
 ## Profundizando
 
-Es importante tener en cuenta que las impresiones a stderr se realizan de manera sincrónica, lo que significa que el programa se detendrá hasta que el mensaje se imprima antes de continuar con la ejecución. También se pueden utilizar las funciones `prn!` y `pr-str` para imprimir valores específicos y obtener una representación en cadena de caracteres respectivamente.
+Además de `prn` y `println`, también podemos escribir al error estándar utilizando la función `eprintln`, que funciona igual que `println` pero agrega el prefijo "error" en la consola. Otra opción es utilizar la función `printf`, que nos permite formatear el texto que se imprime en la consola.
 
-Otro aspecto importante a tener en cuenta es que stderr no solo se limita a mensajes de error o depuración, sino que también se puede utilizar para mostrar información importante durante el funcionamiento del programa, como el progreso de una operación.
+```Clojure
+(eprintln "Este es un mensaje" "de error")
+;; resultado: error Este es un mensaje de error
 
-## Ver también
+(printf "Este es un número: %d" 5)
+;; resultado: Este es un número: 5
+```
 
-- Documentación oficial sobre la función `println!`: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println!
-- Más información sobre la función `str`: http://clojuredocs.org/clojure.core/str
-- Ejemplos prácticos de cómo escribir a stderr en Clojure: https://www.braveclojure.com/logging-and-exception-handling/
+También podemos usar `with-out-str` para capturar el texto impreso en la consola en una variable, en lugar de imprimirlo directamente.
 
-¡Ahora estás listo para utilizar la salida estándar en tus programas de Clojure de manera efectiva! Recuerda que es una herramienta útil para imprimir información y depurar tu código.
+```Clojure
+(def error (with-out-str (prn "Este es un mensaje de error")))
+;; resultado: nil
+
+(println error)
+;; resultado: Este es un mensaje de error
+```
+
+# Ver también
+
+- Documentación oficial de Clojure sobre `prn`: https://clojuredocs.org/clojure.core/prn
+- Información sobre `with-out-str`: https://clojuredocs.org/clojure.core/with-out-str

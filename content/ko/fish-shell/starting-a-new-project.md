@@ -1,53 +1,54 @@
 ---
-title:    "Fish Shell: 새로운 프로젝트 시작하기"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell: 새 프로젝트 시작하기"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 새 프로젝트를 시작해야 할까요?
 
-새로운 프로젝트를 시작하는 이유는 다양합니다. 이전 프로젝트에서 사용하지 않았던 기술을 배우고 싶거나, 자신의 능력을 발전시키기 위해서일 수도 있습니다. 어떤 이유든지 새로운 프로젝트는 항상 도전적이고 흥미로운 경험을 제공합니다.
+새로운 프로젝트를 시작하는 것은 프로그래밍을 즐기는 사람들에게는 무척 흥미로운 일일 수 있습니다. 새로운 아이디어를 구현하고 새로운 도구를 사용하여 프로그래밍 기술을 연마하는 것은 늘 즐거운 일입니다. 또한 새로운 프로젝트를 시작하면 이전에 없던 새로운 기술들을 배우고 새로운 문제들에 도전할 수 있게 됩니다.
 
-## 작성 방법
+## 시작하는 방법
 
-자, 이제 우리는 어떻게 새로운 프로젝트를 시작할 수 있는지 알아보겠습니다. 먼저, Fish Shell을 사용하여 적절한 환경을 설정해야 합니다. 물론 마음대로 설정해도 되지만, 일반적으로 다음과 같이 설정하는 것이 좋습니다.
-
-``` Fish Shell 
-set -Ux PROJECT_NAME "MyNewProject"
-set -Ux PROJECT_PATH "~/projects/MyNewProject"
-```
-
-이제 새로운 프로젝트 폴더를 만들고 원하는 패키지나 라이브러리를 설치하면 됩니다. 예를 들어, Python을 사용하고 있다면 다음과 같이 할 수 있습니다.
-
-``` Fish Shell
-mkdir $PROJECT_PATH
-pip install numpy
-pip install matplotlib
-```
-
-모든 작업이 끝나면 다음과 같이 프로젝트 폴더로 이동할 수 있습니다.
+새로운 프로젝트를 시작하는 첫 단계는 그 프로젝트를 실행할 수 있는 환경을 설정하는 것입니다. 우리는 Fish Shell을 사용하여 언어 간의 관용적인 명령어를 사용하는 것을 권장합니다. 이를 통해 보다 효율적이고 빠른 개발을 할 수 있습니다.
 
 ```Fish Shell
-cd $PROJECT_PATH
+
+set -U PROJECT_NAME myProject # 새 프로젝트의 이름 설정
+
+cd ~ # 홈 디렉토리로 이동
+
+mkdir $PROJECT_NAME # 프로젝트 디렉토리 생성
+
+cd $PROJECT_NAME # 프로젝트 디렉토리로 이동
+
 ```
 
-## 심층 분석
+이제 새로운 프로젝트 디렉토리에서 새 파일을 만들고 프로그래밍을 시작할 준비가 되었습니다. Fish Shell을 사용하면 자신만의 프로젝트 스크립트를 만들 수 있으며 이를 통해 간단한 작업도 쉽게 처리할 수 있습니다.
 
-새로운 프로젝트를 시작하는 것은 단순한 작업 같지만, 실제로는 매우 중요한 일입니다. 이를 통해 우리는 자신의 능력을 발전시킬 수 있고, 새로운 기술을 배울 수 있습니다. 또한 프로젝트를 통해 더 많은 사람들과 소통하고 협업할 수 있습니다.
+```Fish Shell
 
-새로운 프로젝트를 시작하는 것은 언제나 진정한 도전입니다. 하지만 이를 통해 우리는 더 많은 것을 배우고 성장할 수 있습니다. 따라서 자주 새로운 프로젝트를 시도하고 도전하는 것을 추천합니다.
+touch main.py # 빈 Python 파일 생성
 
-## 또 확인해보세요
+echo "print('Hello World')" > main.py # 파일에 코드 입력
 
-- [Fish Shell 공식 웹사이트](https://fishshell.com/)
-- [Fish Shell GitHub 페이지](https://github.com/fish-shell/fish-shell)
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/)
+python3 main.py # 코드 실행
 
-## 확인 세트
+```
 
-- 새로운 프로젝트를 시작하고 싶지만 어떻게 해야 할지 막막하다면 이 문서를 참고해보세요.
-- Fish Shell을 사용하여 더 효율적으로 개발하고 싶다면 이 문서를 읽어보세요.
-- 새로운 기술을 배우고 싶으면 새로운 프로젝트를 시작해보세요.
-- 자신의 능력을 발전시키고 싶다면 자주 새로운 프로젝트를 시도해보세요.
+## 딥 다이브
+
+새로운 프로젝트를 시작하는 것이 멋진 일이지만 실제로 개발을 시작하기 위해서는 몇 가지 고려해야 할 사항들이 있습니다. 첫째로, 프로젝트의 목적을 명확하게 정의해야 합니다. 무엇을 만들고자 하는지, 어떤 언어와 도구를 사용할 것인지 등을 명확하게 결정해야 합니다. 둘째로, 개발 프로세스를 계획해야 합니다. 프로젝트를 어떤 순서로 진행할 것인지, 어떤 기간 내에 완료할 것인지 등을 계획하는 것이 중요합니다. 마지막으로, 코드의 유지보수를 위해 좋은 코딩 습관을 가지고 프로젝트를 진행해야 합니다.
+
+# 관련 링크
+
+[Korean Fish Shell 사용자 가이드](https://medium.com/consolemorning/fish-shell-사용자-가이드-d03af6511305)
+
+[Fish Shell 공식 홈페이지](https://fishshell.com/)
+
+[새 프로젝트를 위한 핵심 고려사항](https://www.codeproject.com/articles/826299/things-to-consider-before-starting-a-new-project)
+
+# 더 보기

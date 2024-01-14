@@ -1,50 +1,39 @@
 ---
-title:    "Arduino: Wyszukiwanie i podmienianie tekstu"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/searching-and-replacing-text.md"
+title:                "Arduino: Wyszukiwanie i zastępowanie tekstu"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
+Na czym polega programowanie Arduino:
+
 ## Dlaczego
 
-Podczas programowania na Arduino często musimy zmieniać tekst w naszych programach. Jest to często uciążliwe, ale narzędzie do wyszukiwania i zastępowania tekstu (ang. search and replace) może znacznie ułatwić ten proces.
+Programowanie Arduino to fascynujący świat, który pozwala nam tworzyć różnego rodzaju projekty z wykorzystaniem mikrokontrolera. Jednym z najważniejszych aspektów programowania jest praca z tekstem. Dlatego dzisiaj skupimy się na temacie wyszukiwania i zastępowania tekstu w kodzie Arduino.
 
 ## Jak to zrobić
 
-Wystarczy użyć funkcji `replace` wraz z odpowiednimi parametrami, aby dokonać zmian w tekście. Przykładowy kod może wyglądać następująco:
+Wyszukiwanie i zastępowanie tekstu odgrywa ważną rolę przy pracy z kodem, ponieważ pozwala nam szybko i łatwo wprowadzać zmiany w naszym programie. Aby przeprowadzić tę operację w Arduino, musimy użyć funkcji `replace()` i `indexOf()`.
 
 ```Arduino
-// Przykładowy tekst
-String tekst = "Arduino jest super!";
-
-// Zamienia słowo "super" na "fantastyczny"
-tekst.replace("super", "fantastyczny");
-
-// Wyświetlenie zmienionego tekstu
-Serial.print("Tekst po zmianie: ");
-Serial.println(tekst);
-
-// Output: Tekst po zmianie: Arduino jest fantastyczny!
+String napis = "Witaj świecie!";
+int pozycja = napis.indexOf("świat");
+napis.replace(pozycja, 6, "nieznajomy");
+Serial.println(napis);
 ```
 
-## Deep Dive
+Powyższy kod najpierw znajduje indeks wystąpienia słowa "świat" w zmiennej `napis`, a następnie zmienia go na słowo "nieznajomy". W efekcie na naszym serial monitorze wyświetli się napis "Witaj nieznajomy!".
 
-Funkcja `replace` przyjmuje dwa parametry - szukaną frazę oraz jej zamienioną wersję. Możliwe jest również użycie trzeciego parametru, aby podać początkowy indeks, od którego ma się rozpocząć zmiana tekstu. Możemy także użyć tej funkcji z obiektami typu `String` lub `char`.
+Podobnie, jeśli chcielibyśmy zmienić wiele wystąpień słowa w tekście, możemy użyć pętli `while` lub `for` w połączeniu z funkcjami `indexOf()` i `replace()`.
 
-W przypadku gdy chcemy dopasować i zmienić wiele wystąpień danej frazy, można użyć opcji "global search" poprzez dodanie flagi `g` do parametrów funkcji. Przykładowo:
+## Wnikliwe omówienie
 
-```Arduino
-// Przykładowy tekst
-String tekst = "Super Arduino jest super!";
+Podczas wyszukiwania i zastępowania tekstu, ważne jest zwrócenie uwagi na przyjęty format danych. Funkcja `replace()` wymaga podania początkowej pozycji tekstu, który chcemy zmienić, długości tekst, który chcemy zmienić oraz nowego tekstu.
 
-// Zamienia wszystkie wystąpienia słowa "super" na "fantastyczny"
-tekst.replace("super", "fantastyczny", "g");
-
-// Output: Fantasticzny Arduino jest fantastyczny!
-```
+Dla zaawansowanych użytkowników Arduino, istnieje możliwość wykorzystania bibliotek do pracy z wyrażeniami regularnymi, które pozwalają na bardziej skomplikowane wyszukiwania i zastępowania tekstu. Jedną z takich bibliotek jest na przykład `Regex.h`.
 
 ## Zobacz także
 
-- [Dokumentacja funkcji replace na stronie Arduino](https://www.arduino.cc/en/Reference/StringReplace)
-- [Przykłady użycia funkcji replace w Arduino](https://www.programmingsimplified.com/arduino-replace-function)
+Jeśli chcesz dowiedzieć się więcej o programowaniu Arduino, polecamy przeczytać nasz wcześniejszy post na temat obsługi wejść i wyjść w Arduino. Możesz również zapoznać się z innymi artykułami ze strony `arduino.org` lub dołączyć do grupy dyskusyjnej na Facebooku, gdzie możesz wymieniać się pomysłami z innymi miłośnikami Arduino.

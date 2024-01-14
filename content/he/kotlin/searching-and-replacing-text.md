@@ -1,47 +1,61 @@
 ---
-title:    "Kotlin: חיפוש והחלפת טקסט"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/searching-and-replacing-text.md"
+title:                "Kotlin: חיפוש והחלפת טקסטים"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה:
+## מדוע
 
-מצוין יחתוב קוד בקובץ גדול שלא ברור לב. קריאה כבדה פרושה של רק עו"ה ובאופן כללי נכון העברה השפות עשו
+למה בכלל צריך להתעסק בחיפוש והחלפת טקסט? כי הם כלי עיקריים לעיבוד טקסט ומאפשרים לנו לבצע פעולות מסוימות על טקסטים בקלות ובמהירות.
 
-## איך לעשות:
+## כיצד לעשות זאת
 
-כדי לחלוף טקסט בסמן הקווים המכפול "==" על המילה `replace` הוא יחתובית הטקסט "ו" כך:
+כאשר אנו עובדים עם קוד, ייתכן שנתקל בצורך לחפש ולהחליף טקסט בכמה מקומות בקוד. בשפת קוטלין, ישנם מספר דרכים לבצע פעולת חיפוש והחלפה של טקסט.
 
-```Kotlin
-val originalText = "זהו רקפידה"
-val modifiedText = originalText.replace("רק", "שליטה")
-println(modifiedText)
-```
-
-פלט:
-
-שליטהפאנס זהו רקפידה
-
-עוד אפשרות לחלוף טקסט היא להשתמש בפעולת `replaceAll()` ולציין את המילה החדשה כדי לחלוף את כל המופעים של המילה המצוייה:
+תחילה, נצטרך להגדיר מחרוזת של הטקסט שנרצה לחפש ולהחליף. לדוגמה:
 
 ```Kotlin
-val originalText = "זהו רקפידה רקפידה רקפידה"
-val modifiedText = originalText.replaceAll("רק", "שליטה")
-println(modifiedText)
+val oldText = "Hello"
+val newText = "Bonjour"
 ```
 
-פלט:
+כעת, נוכל להשתמש בפעולת החיפוש והחלפה כדי לחלוף את הטקסט הישן בחדש בכל מקום בקוד. ניתן לעשות זאת באמצעות פיקוד ה-[replaceFirst] או ה-[replace] כפי שמסופק בדוגמה הבאה:
 
-שליטהפאנס זהו שליטהפאנס שליטהפאנס שליטהפאנס
+```Kotlin
+val myString = "Hello World!"
+val newString = myString.replaceFirst(oldText, newText)
+println(newString) // Bonjour World!
+```
 
-## חפירה עמוקה:
+בנוסף, ניתן להשתמש באופרטור [in] כדי לבדוק אם טקסט מסוים נמצא בתוך מחרוזת. לדוגמה:
 
-לחילוף טקסט ישנם מתודות נוספות כמו `replaceFirst()` שמאפשרת רק להחליף את המופע הראשון של המילה המצוייה בטקסט. ניתן גם להשתמש בפטרנים כדי לחפש את המילה המצוייה בטקסט. למדריך מפורט יותר על כיצד לחלוף טקסט עבור פטרנים, ראו [מדריך קודלבוג](https://www.codeleoblog.com/kotlin-string-methods-text-replacement-patterns).
+```Kotlin
+val myString = "Hello World!"
+if(oldText in myString) {
+    println("Old text found!")
+}
+else {
+    println("Old text not found.")
+}
+```
 
-## ראו גם:
+בתוך פונקציית ה-[replace] ניתן להשתמש בביטוי רגולרי כדי לחלוף את הטקסט בצורה יותר גמישה. לדוגמה:
 
-- [המדריך המלא של קודלבוג לחילוף טקסט בקוד Kotlin](https://www.codeleoblog.com/kotlin-string-methods-text-replacement-patterns)
-- [היכן ניתן להשתמש בחליפת טקסט בפרויקטי Kotlin שלכם](https://kotlinlang.org/docs/string.html#string-replacement)
-- [הצגת מתודות מובנות לשינוי טקסט ולחילוף בקוד Kotlin](https://www.tutorialkart.com/kotlin-strings/kotlin-string-replace-method-functions/)
+```Kotlin
+val myString = "Today is a sunny day."
+val newString = myString.replace(Regex("[Ss]unny"), "cloudy")
+println(newString) // Today is a cloudy day.
+```
+
+כדי לחלק את הטקסט לפי תבנית מסוימת, ניתן להשתמש בפונקציית [split] ולהגדיר את התבנית כמחרוזת או ביטוי רגולרי. לדוגמה:
+
+```Kotlin
+val myString = "One,Two,Three,Four,Five"
+val myList = myString.split(",")
+println(myList) // [One, Two, Three, Four, Five]
+```
+
+## ניר

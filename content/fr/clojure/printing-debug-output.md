@@ -1,80 +1,33 @@
 ---
-title:    "Clojure: Afficher la sortie de débogage"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/printing-debug-output.md"
+title:                "Clojure: Affichage de sortie de débogage"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La sortie de débogage est un outil essentiel pour tout programmeur. Elle permet de suivre l'exécution du code et de détecter les erreurs. Dans cet article, nous allons voir comment utiliser la sortie de débogage en Clojure pour faciliter le processus de débogage.
+Il arrive souvent qu'en tant que programmeurs, nous ayons besoin de comprendre comment notre code est en train d'être exécuté. Imprimer des sorties de débogage est un moyen simple et efficace de suivre le déroulement de notre code et de déceler toute erreur ou problème potentiel.
 
 ## Comment faire
 
-Pour imprimer la sortie de débogage en Clojure, vous pouvez utiliser la fonction `println`. Elle prend en paramètre une ou plusieurs valeurs à imprimer. Par exemple :
+Pour imprimer une sortie de débogage en Clojure, nous pouvons utiliser la fonction `println` et y passer en argument le message que nous souhaitons afficher. Par exemple:
 
-```clojure
-(println "Hello World!")
-(println "Le résultat de l'addition est:" (+ 5 6))
+```Clojure
+(defn somme [a b]
+  (println "Calcul de la somme...")
+  (+ a b))
 ```
+Cette fonction `somme` va imprimer "Calcul de la somme..." avant de calculer et renvoyer la somme des deux valeurs `a` et `b`.
 
-Cette fonction est particulièrement utile lorsque vous souhaitez suivre les valeurs de variables ou d'expressions à des points spécifiques de votre code. Elle peut également être combinée avec la fonction `str` pour imprimer des variables avec des chaînes de caractères pour plus de clarté :
+## Approfondissement
 
-```clojure
-(def nom "Pierre")
-(def age 20)
-(println (str "Bonjour, je m'appelle " nom " et j'ai " age " ans."))
-```
-
-Ce qui affichera dans la console :
-
-```
-Bonjour, je m'appelle Pierre et j'ai 20 ans.
-```
-
-Vous pouvez également utiliser la fonction `format` pour imprimer les valeurs avec un format spécifique :
-
-```clojure
-(def nombre 100)
-(println (format "Le nombre en binaire est %b" nombre))
-```
-
-Ce qui affichera :
-
-```
-Le nombre en binaire est 1100100
-```
-
-## Plongée profonde
-
-Il est également possible d'utiliser la macro `prn` en lieu et place de la fonction `println`. La différence principale est que `prn` imprimera la sortie avec des guillemets et `println` sans. Par exemple :
-
-```clojure
-(prn "Hello World!")
-```
-
-affichera :
-
-```
-"Hello World!"
-```
-
-Alors que la même instruction avec `println` :
-
-```clojure
-(println "Hello World!")
-```
-
-affichera simplement :
-
-```
-Hello World!
-```
-
-Enfin, il existe également les macros `pprint` et `pretty` qui permettent un affichage plus lisible et mieux formaté des données complexes telles que les listes et les maps.
+Imprimer des sorties de débogage peut également nous aider à comprendre le flux de données et les valeurs des variables à travers notre code. Par exemple, nous pouvons utiliser la méthode `prn` pour imprimer une représentation plus détaillée de ces valeurs. De plus, en utilisant la macro `with-out-str`, nous pouvons stocker ces sorties de débogage dans une chaîne de caractères pour un traitement ultérieur.
 
 ## Voir aussi
 
-- [Documentation officielle de Clojure pour la sortie de débogage](https://clojure.org/guides/debugging)
-- [Article sur la sortie de débogage en Clojure](https://purelyfunctional.tv/guide/functional-programming-tips/clojure-debugging/)
+- [Documentation officielle de Clojure sur l'impression de sorties de débogage](https://clojuredocs.org/clojure.core/println)
+- [Article de blog "Debugging Tools in Clojure"](https://half-countplus7.com/posts/clojure-debugging-tools/)
+- [Vidéo "Debugging in Clojure" par Eric Normand](https://www.youtube.com/watch?v=U5xHFlsGIZ0)

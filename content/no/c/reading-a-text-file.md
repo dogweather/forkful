@@ -1,45 +1,41 @@
 ---
-title:    "C: Å lese en tekstfil"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/reading-a-text-file.md"
+title:                "C: Å lese en tekstfil"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å lese og håndtere tekstfiler er en viktig del av programmering. Det er ofte nødvendig å kunne lese informasjon fra en tekstfil, enten det er for å behandle data eller for å vise resultatene til brukeren. I denne artikkelen vil vi forklare hvordan du kan lese en tekstfil i C-programmering, slik at du kan bruke denne kunnskapen i dine egne prosjekter.
+Å lese en tekstfil i et C-program kan være en nyttig og viktig ferdighet for enhver programmerer. Det lar deg hente data fra en fil og bruke den i ditt program, noe som kan bidra til å gjøre det mer dynamisk og interaktivt.
 
 ## Hvordan
 
-For å lese en tekstfil i C-programmering, trenger du først å åpne filen ved hjelp av fopen-funksjonen. Du må også spesifisere hvilken fil du ønsker å lese og hvilken modus du skal lese den i. Det finnes forskjellige moduser du kan åpne en fil i, som for eksempel "r" for å lese, "w" for å skrive og "a" for å legge til tekst i slutten av filen.
+Vi kan lese en tekstfil ved hjelp av den innebygde funksjonen `fopen()` og `fscanf()`. Først må vi åpne filen ved å gi navnet og modusen (for å lese) som parametere til `fopen()`. Så kan vi bruke `fscanf()` til å lese dataen fra filen og lagre den i ønskede variabler. For eksempel:
 
 ```C
-FILE *file = fopen("tekstfil.txt", "r");
+FILE *fil;
+char navn[20];
+int alder;
+
+fil = fopen("brukerinfo.txt", "r");
+fscanf(fil, "%s %d", &navn, &alder);
+printf("Hei, %s. Du er %d år gammel.", navn, alder);
 ```
 
-Når filen er åpnet, kan du lese linje for linje ved hjelp av fgets-funksjonen og lagre innholdet i en variabel. Du må også passe på å lukke filen ved hjelp av fclose-funksjonen når du er ferdig med å lese den.
+Dette vil åpne filen med navnet "brukerinfo.txt" og lese informasjonen fra den første linjen, som forventes å inneholde et navn og en alder, og skrive ut en personlig hilsen til terminalen.
 
-```C
-char line[100];
-while (fgets(line, 100, file) != NULL) {
-    // Gjør noe med linjen
-}
-fclose(file);
-```
+For å unngå potensielle feil må vi også huske å lukke filen med `fclose()` etter at vi er ferdig med å lese fra den.
 
-Det er viktig å huske på at lesing av en tekstfil kan være feilfølsomt, spesielt hvis filen inneholder forskjellige tegnsett som for eksempel æ, ø og å. Det er derfor viktig å konvertere teksten til riktig tegnkoding ved hjelp av f.eks. "setlocale" -funksjonen.
+## Dypdykk
 
-## Dykk dypere
+Det er viktig å merke seg at dataen som leses fra en tekstfil vil bli lagret som tekststrenger og må konverteres til riktig datatyper hvis de skal brukes som tall eller andre data. Dette kan gjøres ved hjelp av funksjoner som `atoi()` eller `atof()`.
 
-Å lese en tekstfil i C kan også gjøres ved hjelp av "fscanf" -funksjonen, som lar deg lese og tolke hver linje direkte. Dette kan være nyttig hvis filen inneholder strukturerte data som f.eks. tall eller strenger.
+I tillegg er det også viktig å sjekke om åpning av filen var vellykket ved å sjekke om `fopen()` returnerer en NULL-verdi. Hvis dette skjer, betyr det at filen ikke ble funnet eller at det var en annen feil under åpningen.
 
-En annen viktig funksjon i C for å håndtere tekstfiler er "fprintf" -funksjonen, som lar deg skrive tekst og variabler til en fil. Dette kan være nyttig for å lagre data eller resultater fra programmet ditt.
+## Se Også
 
-Husk også å sjekke for eventuelle feil underveis, og håndtere dem på en hensiktsmessig måte, for eksempel ved å gi en feilmelding eller lukke programmet.
-
-## Se også
-
-- [C-funksjoner for filbehandling](https://www.tutorialspoint.com/c_standard_library)
-- [Eksempler på å lese og skrive til en tekstfil i C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Hvordan lese data fra CSV-filer i C](https://www.geeksforgeeks.org/csv-files-in-c-syntax-working-with-csv-files/)
+- [fopen() documentation](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [fscanf() documentation](https://www.tutorialspoint.com/c_standard_library/c_function_fscanf.htm)

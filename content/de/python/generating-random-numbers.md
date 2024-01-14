@@ -1,53 +1,44 @@
 ---
-title:    "Python: Generieren von Zufallszahlen"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/generating-random-numbers.md"
+title:                "Python: Erzeugung von Zufallszahlen"
+programming_language: "Python"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Generieren von zufälligen Zahlen ist eine wichtige Funktion in der Programmierung. Es ermöglicht uns, verschiedene Szenarien zu simulieren und Tests durchzuführen, die auf zufällige Ereignisse basieren. Außerdem wird es oft verwendet, um Daten zu verschleiern oder um verschiedene Entscheidungen zu treffen.
+Das Generieren von Zufallszahlen ist ein wichtiges Konzept in der Programmierung. Es ermöglicht es uns, zufällige Ergebnisse für Spiele, Simulationen, Kryptographie und vieles mehr zu erzeugen. Es ist auch ein nützliches Werkzeug für Testing und Debugging von Code.
 
-## Wie funktioniert es
+## Wie geht man vor
 
-Die Generierung von zufälligen Zahlen in Python ist einfach und schnell. Wir können das `random`-Modul verwenden, das bereits in der Standardbibliothek enthalten ist.
-
-Zunächst müssen wir das `random`-Modul importieren:
+Um in Python Zufallszahlen zu generieren, können wir die eingebaute Funktion `random` verwenden. Hier ist ein Beispiel, um eine zufällige Ganzzahl zwischen 1 und 10 zu erstellen:
 
 ```Python
 import random
+x = random.randint(1,10)
+print(x)
 ```
 
-Dann können wir die `random`-Funktion verwenden, um eine zufällige Gleitkommazahl zwischen 0 und 1 zu erzeugen:
+Die Ausgabe könnte zum Beispiel `7` sein. Wir können auch Zufallszahlen in einer bestimmten Spanne generieren, indem wir die Funktion `randrange` verwenden. Hier ist ein Beispiel, um eine zufällige gerade Zahl zwischen 0 und 100 zu erstellen:
 
 ```Python
-randomNumber = random.random()
-print(randomNumber)
+import random
+x = random.randrange(0,101,2)
+print(x)
 ```
 
-Die Ausgabe könnte zum Beispiel `0.346982` sein.
+Die Ausgabe könnte zum Beispiel `54` sein, da es sich um eine gerade Zahl zwischen 0 und 100 handelt.
 
-Um eine ganze Zahl zu erhalten, können wir die `randint`-Funktion verwenden, die zwei Parameter annimmt, den Startwert und den Endwert (einschließlich). Zum Beispiel:
+## Tiefendurchgang
 
-```Python
-randomNumber = random.randint(1, 10)
-print(randomNumber)
-```
+Es gibt viele verschiedene Methoden, um Zufallszahlen in Python zu generieren. Die Funktionen `random` und `randrange` sind nur zwei Beispiele. Wir können auch Zufallszahlen mit einer bestimmten Verteilung erzeugen, wie zum Beispiel mit der Funktion `random.gauss` für eine Gaußverteilung. Es ist auch möglich, eine Liste mit Zufallszahlen zu erstellen, indem man die Funktion `random.shuffle` verwendet.
 
-Die Ausgabe könnte eine ganze Zahl zwischen 1 und 10 sein, zum Beispiel `7`.
-
-Es gibt auch viele weitere Funktionen im `random`-Modul, wie zum Beispiel `choice`, um zufällig Elemente aus einer Liste auszuwählen, oder `shuffle`, um die Reihenfolge von Elementen in einer Liste zu mischen. Eine vollständige Liste der Funktionen und ihre Verwendung finden Sie in der offiziellen Dokumentation des `random`-Moduls.
-
-## Tiefer Einblick
-
-Der Prozess der Generierung von zufälligen Zahlen basiert auf sogenannten Pseudorandom-Nummerngeneratoren oder PRNGs. Diese Algorithmen nutzen eine Menge von mathematischen Formeln oder Operationen, um vermeintlich zufällige Zahlen zu erzeugen, aber in Wirklichkeit laufen sie in einem vorhersagbaren Muster ab. Aus diesem Grund werden sie als "pseudo" bezeichnet.
-
-Es ist wichtig zu beachten, dass PRNGs nicht wirklich zufällig sind und nicht für kryptografische Zwecke verwendet werden sollten, da sie leicht durch Analyse des Algorithmus reproduziert werden können. Für die meisten Anwendungsfälle sind sie jedoch ausreichend.
+Es gibt auch spezialisierte Module wie `numpy` und `scipy`, die zusätzliche Funktionen für die Zufallszahlenerzeugung bieten. Es ist wichtig, zu verstehen, welche Art von Zufallszahlen man benötigt, um die passende Methode auszuwählen.
 
 ## Siehe auch
 
-- Die offizielle Dokumentation des `random`-Moduls: https://docs.python.org/3/library/random.html
-- Ein Tutorial zur Generierung von zufälligen Zahlen in Python: https://realpython.com/python-random/
-- Erklärung der Unterschiede zwischen Zufälligkeit und Unvorhersehbarkeit: https://www.cs.auckland.ac.nz/~pgut001/pubs/random.pdf
+- [Python Dokumentation: Zufallszahlen](https://docs.python.org/de/3/library/random.html)
+- [Tutorial: Random-Zahlen in Python](https://www.digitalocean.com/community/tutorials/how-to-use-the-python-random-number-generator)
+- [Numpy Dokumentation: Zufallszahlen](https://numpy.org/doc/stable/reference/random/index.html)

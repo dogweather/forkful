@@ -1,40 +1,40 @@
 ---
-title:    "Javascript: Encontrando la longitud de una cadena"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/finding-the-length-of-a-string.md"
+title:                "Javascript: Encontrando la longitud de una cadena"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-En la programación, es común encontrarse con la necesidad de conocer la longitud de una cadena de texto. Ya sea para validar la entrada del usuario o para realizar operaciones específicas, saber la cantidad de caracteres en una cadena puede ser muy útil.
+En la programación, a menudo nos encontramos con la necesidad de encontrar la longitud de una cadena (string en inglés). Esto puede ser útil para realizar operaciones como la validación de datos, la manipulación de textos y mucho más. Aunque puede parecer una tarea simple, es importante entender por qué es importante y cómo podemos hacerlo de manera eficiente en Javascript.
 
 ## Cómo hacerlo
 
-Hay diferentes formas de encontrar la longitud de una cadena en JavaScript. Una de las formas más sencillas es utilizando el método `length`. Este método se puede aplicar a cualquier cadena de texto y devuelve el número de caracteres que contiene. Veamos un ejemplo:
+Para encontrar la longitud de una cadena en Javascript, podemos usar el método integrado `length`. Este método devuelve la cantidad de caracteres en una cadena. Veamos un ejemplo de cómo usarlo:
 
 ```Javascript
-let miCadena = "¡Hola, mundo!";
-console.log(miCadena.length); // Output: 13
+let cadena = "¡Hola Mundo!";
+console.log(cadena.length); //Salida: 11
 ```
 
-También se puede utilizar la propiedad `length` de un objeto String. Por ejemplo:
+En este ejemplo, creamos una variable `cadena` que contiene la frase "¡Hola Mundo!". Luego, utilizamos el método `length` para obtener su longitud y la mostramos en la consola. Como pueden ver, la salida es 11, ya que hay 11 caracteres en la cadena incluyendo los espacios.
+
+También podemos usar este método en variables que contengan números, pero debemos tener en cuenta que solo nos dará la cantidad de dígitos, no la cantidad de números. Por ejemplo:
 
 ```Javascript
-let miOtraCadena = new String("¡Hola!");
-console.log(miOtraCadena.length); // Output: 5
+let numero = 12435;
+console.log(numero.length); //Salida: 5
 ```
-
-Es importante notar que tanto el método `length` como la propiedad `length` cuentan los espacios en blanco como caracteres, por lo que no es necesario realizar ningún tipo de manipulación adicional para obtener la longitud correcta de una cadena.
 
 ## Profundizando
 
-Al utilizar el método `length` o la propiedad `length`, se está accediendo al valor de una propiedad interna del objeto String. Esta propiedad se llama "length" y contiene el número de caracteres de la cadena. Es importante saber que esta propiedad es de solo lectura, lo que significa que no se puede asignar un valor a ella.
-
-Por otro lado, es importante tener en cuenta que existen diferencias entre caracteres y bytes. Mientras que en la mayoría de los casos un carácter se corresponde con un byte, hay ciertas excepciones en las que un carácter puede ocupar más de un byte, lo que afectará el valor de la propiedad `length` en estas situaciones.
+El método `length` es uno de los muchos métodos que existen en Javascript para trabajar con cadenas. Algunos otros métodos útiles son `indexOf`, `slice`, `substring`, entre otros. Es importante familiarizarse con ellos para poder manipular y obtener información de las cadenas de manera más efectiva. Además, también es importante considerar que la longitud devuelta por el método `length` no solo cuenta los caracteres visibles, sino también los espacios en blanco, tabulaciones y saltos de línea.
 
 ## Ver también
 
-- [Documentación de String.length en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [Método length en W3Schools](https://www.w3schools.com/jsref/jsref_length_string.asp)
+- [Método Length en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Manipulación de cadenas en Javascript](https://www.w3schools.com/js/js_string_methods.asp)
+- [Validación de datos en Javascript](https://www.geeksforgeeks.org/javascript-data-validation/)

@@ -1,46 +1,42 @@
 ---
-title:    "Haskell: Utilizzare le espressioni regolari"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/using-regular-expressions.md"
+title:                "Haskell: Utilizzare le espressioni regolari"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché usare le espressioni regolari in Haskell
+## Perchè Usare le Espressioni Regolari in Haskell
 
-Le espressioni regolari sono una potente e versatile tecnica utilizzata per trovare pattern in un testo. In Haskell, le espressioni regolari sono implementate attraverso il modulo Text.Regex.Posix. Questa libreria permette agli utenti di cercare, estrarre e manipolare dati basati su pattern in modo efficiente e flessibile. Se si vuole manipolare testo in modo rapido ed efficiente, le espressioni regolari possono essere uno strumento molto utile.
+Le espressioni regolari sono uno strumento fondamentale per il parsing dei dati in linguaggi di programmazione come Haskell. Grazie alla loro flessibilità e potenza, permettono di effettuare ricerche e manipolazioni di testo in maniera efficiente e precisa. Continua a leggere per scoprire come utilizzarle nella tua programmazione in Haskell!
 
-## Come utilizzare le espressioni regolari in Haskell
+## Come Utilizzare le Espressioni Regolari in Haskell
 
-Per utilizzare le espressioni regolari, è necessario importare il modulo Text.Regex.Posix:
+Per utilizzare le espressioni regolari in Haskell, è necessario importare il modulo "Text.Regex.Posix". Una volta importato, abbiamo a disposizione le funzioni fondamentali per manipolare le espressioni regolari, come ad esempio "match" per determinare se una stringa corrisponde alla regex specificata o "subRegex" per sostituire le occorrenze di una regex con un'altra stringa.
+
+Ecco un esempio di codice che utilizza l'espressione regolare "[0-9]+" per trovare tutte le cifre in una stringa:
 
 ```Haskell
 import Text.Regex.Posix
+
+main = do
+  let stringa = "Questa è una stringa con 123 numeri."
+  if (stringa =~ "[0-9]+") :: Bool
+    then putStrLn "La stringa contiene almeno un numero."
+    else putStrLn "La stringa non contiene numeri."
 ```
 
-Una volta importato il modulo, è possibile utilizzare la funzione `=~` per eseguire una ricerca in un testo. Ad esempio, se si vuole cercare la parola "cane" all'interno di una stringa, si può fare in questo modo:
+L'output di questo codice sarà "La stringa contiene almeno un numero." poiché la regex specificata trova la sequenza di cifre "123".
 
-```Haskell
-"Un cane corre nel parco" =~ "cane" :: Bool
-```
+## Approfondimento sulle Espressioni Regolari in Haskell
 
-Questo restituirà `True` se il pattern viene trovato nella stringa, altrimenti restituirà `False`.
+A differenza di altri linguaggi di programmazione, le regex in Haskell sono implementate utilizzando il linguaggio funzionale (in particolare tramite la libreria "regex-base"). Questo significa che possono essere manipolate come qualsiasi altro tipo di dato all'interno del linguaggio.
 
-È possibile utilizzare anche il simbolo `~=` per assegnare il risultato della ricerca a una variabile:
+Inoltre, le espressioni regolari in Haskell supportano anche alcune funzionalità avanzate, come la possibilità di utilizzare le funzioni di ordine superiore per costruire regex più complesse o l'utilizzo dei gruppi di cattura per estrarre parti specifiche delle stringhe corrispondenti.
 
-```Haskell
-let risultato = "cane" =~ "cane" :: Bool
-```
+## Vedi Anche (See Also)
 
-Inoltre, esistono varie combinazioni di caratteri che permettono di eseguire ricerche più precise. Ad esempio, il carattere `^` indica l'inizio della stringa e il carattere `$` indica la fine della stringa. Si possono anche utilizzare le parentesi per raggruppare caratteri e specificare quante volte un carattere deve ripetersi.
-
-## Approfondimento sull'utilizzo delle espressioni regolari
-
-Per imparare ad utilizzare le espressioni regolari in modo efficace, è necessario comprendere i diversi simboli e combinazioni di caratteri che possono essere utilizzati per creare pattern specifici. Inoltre, è importante studiare gli esempi di codice e sperimentare con essi per acquisire dimestichezza con questa tecnica.
-
-Si consiglia di consultare la documentazione ufficiale del modulo Text.Regex.Posix per fare ricerche più avanzate e approfondire la propria conoscenza delle espressioni regolari in Haskell.
-
-## Vedi anche
-
-- Documentazione del modulo Text.Regex.Posix: https://hackage.haskell.org/package/regex-posix-0.72.0.3/docs/Text-Regex-Posix.html
-- Tutorial sulle espressioni regolari in Haskell: http://andrew.gibiansky.com/blog/haskell/haskell-regex-tutorial/
+- [Documentazione ufficiale sul modulo Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html)
+- [Esempi pratici di utilizzo delle espressioni regolari in Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples%20of%20Regular%20Expressions%20in%20Haskell) (in inglese) 
+- [Un articolo dettagliato sul funzionamento delle espressioni regolari in Haskell](https://wiki.haskell.org/Regular_expressions) (in inglese)

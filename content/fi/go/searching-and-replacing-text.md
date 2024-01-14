@@ -1,46 +1,51 @@
 ---
-title:    "Go: Tekstin etsiminen ja korvaaminen"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/searching-and-replacing-text.md"
+title:                "Go: Tekstin haku ja korvaaminen"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Jos olet ohjelmoija Go-kielellä, saatat löytää itsesi usein etsimässä ja korvaamassa tekstiä koodistasi. Tämä on yleinen tehtävä kehitystyössä, joten on hyödyllistä tietää miten se tehdään tehokkaasti Go:n avulla.
+Suurimmaksi osaksi ohjelmoijien työ koostuu koodin kirjoittamisesta ja sen jatkuvaan muokkaamista. On monia tilanteita, jossa ohjelmakoodin sisältämä teksti kaipaa vaihtamista tai korvaamista toisella tekstillä. Tämä voi olla aikaa vievää ja työlästä, mutta Go-ohjelmointikielessä on onneksi helppo ja tehokas tapa tehdä tätä: tekstien etsiminen ja korvaaminen. 
 
-## Miten Tehdä
+## Miten tehdä
 
-Go-kielessä on erilaisia tapoja etsiä ja korvata tekstiä, riippuen siitä mitä tarkalleen haluat saavuttaa. Yksi yleisimmistä tavoista on käyttää **strings.Replace** -funktiota, joka korvaa kaikki esiintymät annetulla merkkijonolla annetulla uudella merkkijonolla. Tässä on esimerkkitilanne:
+Go-koodissa tekstien etsiminen ja korvaaminen voidaan tehdä käyttämällä "strings" -kirjastoa. Kirjasto tarjoaa monia toimintoja, joita voit hyödyntää erilaisten tekstinmuokkaustehtävien suorittamiseen.
+
+Esimerkiksi, voit käyttää "ReplaceAll" -toimintoa vaihtamalla tekstiä luomiasi muuttujia ja tulostaa uuden tekstin "fmt.Println" -toiminnolla. Katso alla oleva esimerkki:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    s := "Tervetuloa Go-ohjelmointimaailmaan"
-    newS := strings.Replace(s, "Tervetuloa", "Moi", -1)
-    fmt.Println(newS)
+	teksti := "Tervetuloa, maailma!"
+	uusiTeksti := strings.ReplaceAll(teksti, "maailma", "Go-koodaajat")
+	fmt.Println(uusiTeksti)
 }
-
-//Tulostaa "Moi Go-ohjelmointimaailmaan"
 ```
 
-Huomaa, että **-1** määrittää korvattavien esiintymien lukumäärää. Jos haluat korvata vain tietyn määrän esiintymiä, voit antaa sen korvaavan merkkijonon jälkeen.
+Tulostus:
 
-## Syväsukellus
+```Go
+Tervetuloa, Go-koodaajat!
+```
 
-On myös muita tapoja käsitellä tekstiä Go-kielellä. Voit esimerkiksi käyttää **strings.Contains** -funktiota tarkistaaksesi, onko merkkijonossa tiettyä tekstiä. Voit myös käyttää **strings.Index** -funktiota löytääksesi tietyn merkkijonon ensimmäisen esiintymän indeksin.
+## Syvällisempi sukellus
 
-On myös hyödyllistä tietää, että Go tarjoaa myös **regexp** -kirjaston, jolla voit suorittaa monimutkaisempia hakuja ja korvauksia säännöllisiä lausekkeita käyttäen.
+Go-ohjelmointikielen "strings" -kirjasto tarjoaa myös muita hyödyllisiä toimintoja kuten "LastIndex" ja "Repeat". Näitä toimintoja voidaan käyttää monimutkaisempiin tekstinmuokkaustehtäviin, kuten tietyn merkin etsimiseen täysin uudesta tekstistä tai tietyn tekstin toistamiseen useita kertoja.
+
+On myös tärkeää huomata, että "strings" -kirjasto tarjoaa myös toimintoja, jotka toimivat osittaisten merkkijonojen kanssa, kuten "HasPrefix" ja "HasSuffix". Nämä toiminnot ovat erittäin hyödyllisiä tekstin etsimisessä ja korvaamisessa tapauksissa, joissa haluat muokata vain osaa tekstistä.
 
 ## Katso myös
 
-- <a href="https://blog.golang.org/strings">Go:n blogikirjoitus merkkijonojen käsittelystä</a>
-- <a href="https://golang.org/pkg/strings/">Go:n virallinen dokumentaatio merkkijonofunktioista</a>
-- <a href="https://medium.com/golangspec/regular-expressions-in-go-1-12-1-1-1-29d13cd217dd">Säännöllisten lausekkeiden käyttö Go:ssa</a>
+- [Go-ohjelmointikielen virallinen sivusto](https://golang.org/)
+- [Go-ohjelmointikielen dokumentaatio](https://golang.org/doc/)
+- [Go-ohjelmointikielen "strings" -kirjaston dokumentaatio](https://golang.org/pkg/strings/)

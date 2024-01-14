@@ -1,47 +1,49 @@
 ---
-title:    "Kotlin recipe: Capitalizing a string"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/capitalizing-a-string.md"
+title:                "Kotlin recipe: Capitalizing a string"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Capitalize a String in Kotlin
 
-Capitalizing a string may seem like a simple task in programming, but it can make a big difference in the readability and presentation of your code. By capitalizing certain words or phrases, you can easily distinguish them from the rest of your code, making it easier to understand and modify in the future.
+Capitalizing a string is a common task in programming, especially when dealing with user input or manipulating data. By capitalizing a string, you can ensure consistency and improve readability in your code. In Kotlin, there are a few different ways to capitalize a string, and in this blog post, we will explore them.
 
-## How To
+## How To Capitalize a String in Kotlin
 
-To capitalize a string in Kotlin, you can use the `capitalize()` function. This function will capitalize just the first letter of a string, leaving the rest unchanged. Here's an example:
+There are a few different ways to capitalize a string in Kotlin. Let's take a look at each one and see some examples of their output.
 
-```Kotlin
-val str = "hello kotlin"
-println(str.capitalize())
-```
-
-The output of this code will be "Hello kotlin".
-
-If you want to capitalize every word in a string, you can use the `split()` function to split the string into a list of words, then use the `capitalize()` function on each word in the list. Then, you can join the list back into a string using the `joinToString()` function. Here's an example:
+First, we can use the `toUpperCase()` method on a string. This will convert all characters in the string to uppercase letters.
 
 ```Kotlin
-val str = "hello kotlin"
-val words = str.split(" ")
-val capitalized = words.map { it.capitalize() }
-println(capitalized.joinToString(" "))
+val name = "jane doe"
+println(name.toUpperCase()) // Output: JANE DOE
 ```
 
-The output of this code will be "Hello Kotlin".
+Next, we can use the `capitalize()` method on a string. This will capitalize only the first letter of the string, leaving the rest of the characters as is.
 
-## Deep Dive
+```Kotlin
+val city = "new york"
+println(city.capitalize()) // Output: New york
+```
 
-Behind the scenes, the `capitalize()` function uses `toUpperCase()` and `toLowerCase()` functions to capitalize the first letter and then convert the rest of the letters to lowercase. This ensures that the original casing of the letters is retained.
+We can also use the `replaceFirstChar()` method to capitalize the first letter of a string.
 
-However, it's important to note that the `capitalize()` function only works for ASCII characters. If your string contains any non-ASCII characters, they will not be affected by this function. In these cases, you may need to use a more specialized function depending on your specific needs.
+```Kotlin
+val country = "britain"
+println(country.replaceFirstChar { it.uppercase() }) // Output: Britain
+```
+
+## Deep Dive into Capitalizing a String
+
+In Kotlin, strings are immutable, meaning they cannot be changed. This means that when you capitalize a string, a new string is created with the capitalized letters. It is important to keep this in mind when working with strings in Kotlin.
+
+Additionally, depending on the language and locale settings, the output of the `capitalize()` and `toUpperCase()` methods may vary. For example, in German, the letter "ß" may be converted to "SS" when using `toUpperCase()`, but remain as "ß" when using `capitalize()`.
 
 ## See Also
 
-For more information on working with strings in Kotlin, check out these resources:
-
 - [Kotlin Strings](https://kotlinlang.org/docs/strings.html)
-- [Kotlin String Functions](https://www.geeksforgeeks.org/kotlin-string-functions/)
-- [Kotlin String Formatting](https://www.baeldung.com/kotlin/string-formatting)
+- [Kotlin Standard Functions](https://kotlinlang.org/docs/lambdas.html#standard-functions)
+- [MDN Web Docs: String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

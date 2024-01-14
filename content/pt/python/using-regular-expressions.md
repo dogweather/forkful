@@ -1,55 +1,57 @@
 ---
-title:    "Python: Utilizando expressões regulares"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/using-regular-expressions.md"
+title:                "Python: Utilizando expressões regulares"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares?
+## Por que
 
-Expressões regulares são uma das ferramentas mais poderosas do Python para processamento de texto. Com elas, você pode encontrar padrões em strings, fazer substituições e até mesmo validar entradas de usuários. Em resumo, é uma forma extremamente eficiente de lidar com texto em suas aplicações.
+Se você for um programador Python, provavelmente já ouviu falar sobre expressões regulares. Elas são uma ferramenta extremamente útil para encontrar padrões em strings e fazer manipulações complexas. Ao aprender a usar expressões regulares, você pode economizar tempo e tornar seu código mais eficiente.
 
-## Como usar expressões regulares no Python
+## Como fazer
 
-Usar expressões regulares no Python é fácil e simples. Primeiro, é necessário importar o módulo `re`:
+Usar expressões regulares em Python é relativamente simples. Primeiro, importe o módulo "re":
 
 ```Python
 import re
 ```
 
-Em seguida, podemos utilizar a função `search()` para encontrar um padrão específico em uma string:
+Em seguida, defina sua expressão regular usando a função "compile" do módulo "re":
 
 ```Python
-# Encontrar a palavra "expressão" em uma string
-texto = "Estudando expressões regulares no Python"
-padrao = re.search("expressão", texto)
-print(padrao.group()) # Saída: expressão
+expressao_regular = re.compile(r"padrao")
 ```
 
-Outra forma comum de utilizar expressões regulares é através da função `sub()`, que permite substituir um padrão por outro valor:
+Você pode, então, usar esse objeto para realizar várias operações em strings, como encontrar correspondências, substituir trechos e muito mais. Veja um exemplo de código:
 
 ```Python
-# Substituir todos os números em uma string por asteriscos
-texto = "12345 abc 67890"
-novo_texto = re.sub("[0-9]", "*", texto)
-print(novo_texto) # Saída: ***** abc *****
+# Encontrar correspondências
+cadeia_de_texto = "Este é um exemplo de uma cadeia de texto com uma correspondência."
+correspondencias = expressao_regular.finditer(cadeia_de_texto)
+
+# Iterar pelas correspondências encontradas
+for correspondencia in correspondencias:
+    print(correspondencia)
 ```
 
-## Aprofundando nas expressões regulares
+A saída desse código seria:
 
-As expressões regulares do Python são baseadas em uma linguagem chamada Regex, que possui uma sintaxe própria para encontrar e manipular padrões em uma string. Algumas das principais sequências especiais do Regex são:
+```Python
+<re.Match object; span=(32, 42), match='correspondência'> 
+```
 
-- `\d`: encontra qualquer dígito
-- `\w`: encontra qualquer caractere alfanumérico
-- `[a-z]`: encontra qualquer letra minúscula
-- `+`: encontra uma ou mais ocorrências
-- `*`: encontra zero ou mais ocorrências
-- `?`: encontra zero ou uma ocorrência
+## Exploração profunda
 
-Além disso, é possível utilizar parênteses para agrupar padrões e utilizar métodos como `split()` e `findall()` para manipular as strings encontradas.
+Embora a sintaxe básica das expressões regulares em Python seja simples, existem muitos recursos avançados que podem ser explorados para tornar suas expressões ainda mais poderosas. Alguns desses recursos incluem a utilização de metacaracteres, grupos, quantificadores e caracteres de escape.
+
+Por exemplo, você pode usar o metacaractere "^" para encontrar correspondências no início de uma linha, ou "$" para encontrar corresponências no final de uma linha. Também é possível agrupar partes de uma expressão usando parênteses, permitindo que você manipule essas partes separadamente. Além disso, quantificadores como "+" e "*" podem ser usados para especificar a quantidade de ocorrências de um determinado padrão.
+
+Uma das melhores maneiras de dominar as expressões regulares em Python é praticando. Experimente diferentes padrões e veja como eles se comportam em diferentes situações. A documentação oficial do módulo "re" também é uma ótima fonte de informação e exemplos.
 
 ## Veja também
 
-- [Documentação oficial do módulo `re`](https://docs.python.org/3/library/re.html)
-- [Tutorial de expressões regulares no Python](https://www.treinaweb.com.br/blog/o-que-sao-expressoes-regulares-e-como-usa-las-em-python/)
+- [Documentação oficial do módulo "re" do Python](https://docs.python.org/3/library/re.html)
+- [Tutorial interativo de Expressões Regulares em Python](https://regexone.com/references/python)

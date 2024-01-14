@@ -1,77 +1,66 @@
 ---
-title:    "Elm: コマンドライン引数の読み込み"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/reading-command-line-arguments.md"
+title:                "Elm: コマンドライン引数の読み取り"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜコマンドライン引数を読む必要があるのか
 
-コマンドライン引数を読み込むことの重要性は、プログラムの実行時に柔軟性を持たせることができるためです。例えば、異なるオプションを指定することで、プログラムの動作を変えることができます。これにより、同じプログラムでも様々な状況に対応できるようになります。
+コマンドライン引数を読むことで、プログラムの実行時にさまざまなオプションを指定することができます。これにより、プログラムをより柔軟に制御することができるため、プログラミングの効率性や機能性を向上させることができます。
 
-## 方法
+## どのようにコマンドライン引数を読むか
 
-Elmでは、`Command-line-args`モジュールを使用してコマンドライン引数を読み取ることができます。まずは、以下のコードを ```Elm elm - 代わりに ``` で使用できるようにファイルに保存します。
+Elmでは、コマンドライン引数を読み取るための「Cmd」モジュールが用意されています。ここでは、コマンドライン引数を読み取り、出力するサンプルコードをご紹介します。
 
 ```Elm
-import Platform exposing (..)
-import CommandlineArgs
+import Cmd exposing (run)
+import Platform.CmdLine exposing (args)
 
 main =
-    program
-        { init = init
-        , update = update
-        , view = view
-        , subscriptions = always Sub.none
-        }
+    run program
 
--- コマンドライン引数の取得
-init : () -> (Model, Cmd Msg)
-init _ =
-    (Model "default value", Cmd.none)
-
--- コマンドライン引数の更新
-type Msg = UpdateArgs CommandlineArgs.Result
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update (UpdateArgs result) _ =
-    case result of
-        Ok value ->
-            (Model value, Cmd.none)
-
-        Err error ->
-            -- エラー処理を行う
-            (Model "エラーが発生しました", Cmd.none)
-
--- ビューの表示
-type alias Model =
-    String
-
-view : Model -> Html Msg
-view model =
-    text model
+program =
+    args
+        |> List.map toString
+        |> String.join ", "
+        |> putStrLn
 ```
 
-コマンドライン引数は、次のような形で指定します。
+このコードをコンパイルして実行すると、コマンドライン引数がカンマ区切りで出力されます。例えば、プログラムを次のように実行した場合、
 
-```bash
-elm ファイル名 引数1 引数2 ...
+```
+elm make Main.elm --output=app.js --optimize
 ```
 
-上記のコードでは、`init`関数でデフォルト値として`"default value"`が設定されています。`update`関数では、指定された引数を取得して`Model`を更新しています。
+次のような出力が得られます。
 
-## 深堀り
+```
+--output, app.js, --optimize
+```
 
-`Command-line-args`モジュールでは、様々なオプションを使用することができます。例えば、デフォルト値や必須項目の指定、オプションの詳細な定義などができます。詳細な使い方は[公式ドキュメント](https://package.elm-lang.org/packages/tixxit/command-line-args/latest/)を参照してください。
+コマンドライン引数を読むことで、処理の流れや挙動を調整することができるため、プログラミングにおいて非常に重要な機能です。
 
-## 参考リンク
+## 深く掘り下げる
 
-- [公式ドキュメント](https://package.elm-lang.org/packages/tixxit/command-line-args/latest/)
-- [GitHubレポジトリ](https://github.com/tixxit/command-line-args)
-- [コマンドライン引数の解析方法について](https://qiita.com/bananaumai/items/f87ee226b0fba2c10a9e)
-- [Command Line Parsing in Elm](https://medium.com/hackervalleys/command-line-parsing-in-elm-13558a55d34e)
+コマンドライン引数には、オプションのほかにも、フラグや引数の種類を指定する方法など、さまざまな機能があります。詳しくは公式ドキュメントをご確認ください。
 
-## もっと知りたい場合は？
+# はじめてのコマンドライン引数
 
-Elmでは、コマンドライン引数だけでなく様々な機能を備えたモジュールが提供されています。興味がある方は、[Elmパッケージ一覧](https://package.elm-lang.org/)をチェックしてみてください。
+公式ドキュメント：https://guide.elm-lang.org/flag/
+
+# 一歩進んだコマンドライン引数の実装
+
+関数の型に制約をつける方法：https://elmprogramming.com/custom-types-for-command-line-in-elm.html
+
+# さらに深く掘り下げることのできるコマンドラインツール
+
+elm-spaやelm-spa-exampleを参考に：https://github.com/rtfeldman/elm-spa-example
+
+# 参考リンク
+
+- https://guide.elm-lang.org/flag/
+- https://elmprogramming.com/custom-types-for-command-line-in-elm.html
+- https://github.com/rtfeldman/elm-spa-example

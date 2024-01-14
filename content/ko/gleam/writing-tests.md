@@ -1,33 +1,32 @@
 ---
-title:    "Gleam: 프로그래밍 테스트 작성하기"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/writing-tests.md"
+title:                "Gleam: 테스트 작성하기"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 테스트를 작성할까요?
+# 왜 테스트를 작성해야 할까요?
+우리는 모든 소프트웨어를 개발하는 동안 항상 버그가 발생할 수 있음을 인지해야 합니다. 따라서 테스트를 작성하는 것은 우리가 개발한 코드가 정확하게 작동하는지 확인하는 중요한 부분입니다. 또한 테스트를 통해 우리는 코드를 쉽게 확장하고 수정할 수 있도록 안정성을 보장할 수 있습니다.
 
-일반적으로 모든 프로그래밍 언어와 프레임워크에서 코드를 작성할 때 테스트를 작성하는 것이 좋습니다. 테스트를 작성하면 코드를 변경할 때마다 그 작동 여부를 확인할 수 있고 실제 코드를 실행하기 전에 오류를 찾는 것이 가능합니다. 이는 시간과 노력을 절약하는 데에 도움이 되며 코드의 품질을 향상시킵니다.
-
-## 테스트 작성하는 법
+## 어떻게 하나요?
 ```Gleam
-  test "더하기 함수 테스트" {
-    let result = 더하기(2,3)
-    assert.equal(result, 5)
-  }
+test("덧셈 함수를 테스트합니다.", fn() {
+  expect(add(2, 3)).toBe(5)
+})
 
-  fn 더하기(x,y) {
-    x + y
-  }
+fn add(x, y) {
+  x + y
+}
 ```
-위의 코드 블록은 Gleam 언어로 작성된 간단한 더하기 함수 테스트 예시입니다. 사용하신 언어나 프레임워크에 따라 문법은 달라질 수 있지만 일반적인 형식은 유사합니다. 함수의 예상 결과가 실제 결과와 일치하는지를 확인하는 것이 중요합니다.
 
-## 깊게 들어가보기
+위의 코드를 보면, 우리는 `add` 함수를 정의하고 해당 함수를 테스트하고 있습니다. `test` 함수에는 테스트의 이름과 실행할 코드를 전달합니다. `expect` 함수는 우리가 예상하는 결과를 지정하고 `toBe` 함수를 통해 실제 결과와 비교합니다.
 
-테스트를 작성하는 것은 단순히 코드의 작동 여부를 확인하는 것 이상의 의미를 가지고 있습니다. 내부 구조를 테스트해보는 과정에서 코드의 결함을 발견하고 개선하는 데에도 도움이 됩니다. 또한, 테스트 코드를 작성하면 알고리즘을 이해하는 과정에서도 도움이 되며, 이는 다른 개발자들과의 협업에 중요한 요소가 됩니다. 깊이 있는 테스트를 작성함으로써 더 나은 코드를 작성할 수 있습니다.
+## 깊은 이해
+테스트는 우리가 개발한 소프트웨어의 안정성을 보장하는 중요한 부분입니다. 따라서, 우리는 코드를 작성할 때 테스트 가능하도록 구성하는 것이 중요합니다. 그리고 모든 가능한 케이스를 고려해서 테스트를 작성하는 것이 좋습니다.
 
-## 더 알아보기
-Markdown 문법: https://www.markdownguide.org/basic-syntax/
-Gleam 언어 공식 문서: https://gleam.run/
-테스트 코드 작성 팁: https://www.softwaretestinghelp.com/how-to-write-good-test-cases-sample-template-example/
+# 또 다른 정보들
+- [Gleam 공식 웹사이트](https://gleam.run/)
+- [Gleam 테스트 관련 문서](https://gleam.run/documentation/testing)
+- [Gleam 테스트 코드 예제](https://github.com/gleam-lang/gleam/blob/main/lib/gleam/test/examples.test)

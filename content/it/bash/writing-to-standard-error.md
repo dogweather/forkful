@@ -1,42 +1,43 @@
 ---
-title:    "Bash: Scrivere su standard error"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/writing-to-standard-error.md"
+title:                "Bash: Scrivere su errore standard."
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere su standard error può sembrare una piccola e insignificante parte della programmazione, ma in realtà può essere estremamente utile. Invece di stampare messaggi di errore sullo standard output, scrivendoli su standard error possiamo separare i messaggi di errore dal normale output del nostro programma. Ciò ci permette di visualizzare solo i messaggi di errore in caso di crash o problemi durante l'esecuzione del programma.
+Scrivere a standard error è una pratica comune nella programmazione Bash. Quando si scrive uno script, comunicare con l'utente è fondamentale per una corretta interazione. Utilizzando la standard error, possiamo fornire messaggi di errore istantanei e permettere all'utente di comprendere meglio ciò che sta accadendo nel programma.
 
-## Come
+## Come farlo
 
-Per scrivere su standard error in Bash, utilizziamo il comando `>&2` dopo il messaggio o l'output che vogliamo inviare. Ad esempio:
-
-```Bash
-echo "Errore: file non trovato" >&2
-```
-Questo comando invierà il messaggio "Errore: file non trovato" su standard error invece che sullo standard output.
-
-Possiamo anche utilizzare `&>file` per inviare sia lo standard output che lo standard error su un file specifico. Ad esempio:
+Per scrivere a standard error in Bash, utilizzeremo il comando `echo` insieme all'operatore `>&2`. Questo reindirizzerà l'output del comando echo verso il canale di errore standard invece del solito canale di output standard. Ecco un esempio di codice che mostra come utilizzare correttamente il comando `echo` per scrivere a standard error:
 
 ```Bash
-ls /directory/inventata &>log.txt
+echo "Ops! Questo è un messaggio di errore" >&2
 ```
 
-## Deep Dive
+L'output di questo comando verrà inviato a standard error invece di standard output come di norma. Nel caso in cui si desideri specificare un messaggio diverso dall'errore predefinito, è possibile utilizzare il codice di uscita di 2 come indicato di seguito:
 
-Scrivere su standard error non solo ci permette di separare i messaggi di errore dal normale output, ma ha anche altre utili applicazioni. Per esempio, possiamo utilizzarlo per loggare i messaggi di debug durante lo sviluppo di un programma. I messaggi di debug verranno inviati su standard error e così non interferiranno con l'output finale del programma.
+```Bash
+echo "Messaggio di errore personalizzato" >&2
+exit 2
+```
 
-Possiamo anche utilizzare un file di log specifico su cui scrivere i messaggi di errore, in modo da poterli controllare successivamente in caso di problemi durante l'esecuzione del programma.
+Utilizzare il codice di uscita di 2 indicherà all'utente che c'è stato un errore nel programma. Inoltre, è importante notare che è possibile utilizzare qualsiasi comando all'interno della parentesi `(&)` per inviare la sua output a standard error.
 
-## See Also
+## Approfondimento 
 
-Per ulteriori informazioni sul comando `>&2` e sulle sue applicazioni, consiglio di leggere la documentazione ufficiale di Bash: [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html#Redirections)
+Ora che abbiamo visto come scrivere a standard error, è importante capire il suo utilizzo in situazioni più complesse. Quando si lavora con script di grandi dimensioni, è fondamentale tenere sotto controllo gli errori e comunicare con l'utente in modo efficace. È possibile utilizzare la standard error per gestire gli errori in modo più specifico e fornire indicazioni all'utente su come risolverli.
 
-Altre risorse utili possono essere trovate su:
+Inoltre, quando si tratta di log di sistema, la standard error è molto utile per identificare rapidamente e correttamente gli errori di un programma. Invece di dover cercare tra l'output standard, è possibile controllare direttamente gli errori su standard error e risolverli più rapidamente.
 
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/bash)
-- [Bash-it](https://github.com/Bash-it/bash-it)
-- [Shell Scripting Tutorial](https://www.shellscript.sh/)
+## Vedi anche
+
+- [Guida completa ai comandi Bash](https://linux.die.net/Bash)
+- [Utilizzo di standard error in script Bash](https://www.linuxquestions.org/linux/answers/Programming/Using_the_standard_error_output_in_BASH_scripts) 
+- [Articolo su standard input, output e error in Bash](https://www.linuxjournal.com/content/bash-redirections-using-exec)
+
+Grazie per aver letto questo post! Spero che ora tu comprenda l'importanza di scrivere a standard error nei tuoi programmi Bash. Continua a sperimentare e utilizzare questa tecnica per migliorare la tua esperienza di programmazione. Buona fortuna!

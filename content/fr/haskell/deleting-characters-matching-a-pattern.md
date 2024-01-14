@@ -1,64 +1,45 @@
 ---
-title:    "Haskell: Suppression de caractères correspondant à un motif"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: Suppression de caractères correspondant à un motif"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
+Supprimer des caractères correspondant à un motif peut être utile pour nettoyer des données ou pour appliquer des transformations spécifiques sur une chaîne de caractères. Cela peut également être un exercice intéressant pour pratiquer vos compétences en programmation Haskell.
 
-Supprimer des caractères correspondant à un modèle peut être utile lorsque l'on souhaite nettoyer ou filtrer une chaîne de caractères. Cela peut également être nécessaire pour convertir une chaîne en un format spécifique.
-
-## Comment Faire
-
-Pour supprimer des caractères correspondant à un modèle en Haskell, on peut utiliser la fonction `filter`. Cette fonction prend en paramètre une fonction prédicat pour déterminer si un caractère doit être supprimé ou non, ainsi qu'une liste de caractères à traiter.
-
-Voici un exemple de code pour supprimer tous les nombres d'une chaîne de caractères :
+## Comment faire
+La première étape pour supprimer des caractères correspondant à un motif est d'importer le module "Data.Text" dans votre code Haskell. Ensuite, vous pouvez utiliser la fonction "Data.Text.replace" pour remplacer tous les caractères correspondant à un motif donné par une chaîne vide. Regardons un exemple concret:
 
 ```Haskell
--- Définition de la fonction prédicat
-estNombre :: Char -> Bool
-estNombre c = c >= '0' && c <= '9'
+import Data.Text
 
--- Utilisation de la fonction "filter" pour supprimer les nombres de la chaîne
-let result = filter (not . estNombre) "abc123" -- "abc"
+-- Définir une chaîne de caractères initiale
+let str = "Bonjour les programmeurs Haskell !"
 
--- Affichage du résultat
-print result -- "abc"
+-- Supprimer tous les espaces dans la chaîne
+let newStr = Data.Text.replace " " "" str
+
+-- Afficher la nouvelle chaîne de caractères
+putStrLn newStr
+
+-- Output: "BonjourlesprogrammeursHaskell!"
 ```
 
-Dans cet exemple, la fonction prédicat `estNombre` vérifie si un caractère est un nombre en vérifiant s'il se situe entre les caractères "0" et "9". La fonction `filter` renvoie ensuite une liste ne contenant que les caractères ne correspondant pas au prédicat.
+Vous remarquerez que toutes les occurrences de l'espace dans la chaîne initiale ont été supprimées. Vous pouvez également utiliser des expressions régulières pour définir des motifs plus complexes à supprimer.
 
-Il est également possible d'utiliser une fonction anonyme pour définir la fonction prédicat :
+## Plongée en profondeur
+La fonction "Data.Text.replace" que nous avons utilisée dans l'exemple ci-dessus est en fait définie comme suit:
 
 ```Haskell
-let result = filter (\c -> c /= '@' && c /= '$') "abc@123" -- "abc123"
+replace :: Text -> Text -> Text -> Text
 ```
 
-Dans cet exemple, la fonction anonyme vérifie si un caractère est différent de "@" ou de "$" avant de renvoyer une liste ne contenant que les caractères ne correspondant pas à ces deux caractères spécifiques.
+Elle prend trois arguments: un motif à rechercher, une chaîne de caractères de remplacement et la chaîne de caractères initiale. Cette fonction utilise le type "Text" de Haskell, qui est optimisé pour la manipulation de données textuelles. Vous pouvez également utiliser la fonction "Data.Text.filter" pour supprimer des caractères en fonction d'un prédicat donné. Pour en savoir plus sur les fonctions de manipulation de données textuelles en Haskell, consultez la documentation officielle.
 
-## Plongée en Profondeur
-
-En plus de la fonction `filter`, Haskell dispose également de la fonction `deleteBy` qui permet de supprimer les éléments d'une liste en utilisant une fonction d'équivalence. Cela peut être utile lorsque l'on souhaite supprimer des éléments en fonction d'un critère plus complexe qu'une simple égalité.
-
-Voici un exemple de code utilisant la fonction `deleteBy` :
-
-```Haskell
--- Définition de la fonction d'équivalence
-estMajuscule :: Char -> Char -> Bool
-estMajuscule c d = toUpper c == d
-
--- Utilisation de la fonction "deleteBy" pour supprimer toutes les lettres majuscules de la chaîne
-let result = deleteBy estMajuscule 'A' "Hello World" -- "ello World"
-
--- Affichage du résultat
-print result -- "ello World"
-```
-
-Dans cet exemple, la fonction d'équivalence `estMajuscule` compare deux caractères en les convertissant en majuscules avant de les comparer. La fonction `deleteBy` supprime ensuite toutes les occurrences du caractère spécifié en utilisant cette fonction d'équivalence.
-
-## Voir Aussi
-
-- Documentation officielle de Haskell : https://www.haskell.org/documentation/
-- Tutoriel sur les fonctions de manipulation de listes en Haskell : https://wiki.haskell.org/List_function_examples
+## Voir aussi
+- [Documentation officielle de Data.Text](https://hackage.haskell.org/package/text-1.2.3.2/docs/Data-Text.html)
+- [Tutoriel sur la manipulation de données textuelles en Haskell](https://wiki.haskell.org/Text_regex_examples)
+- [Article sur les expressions régulières en Haskell](https://mmhaskell.com/blog/2017/9/6/efficient-text-regex-searches-in-haskell-with-pcre)

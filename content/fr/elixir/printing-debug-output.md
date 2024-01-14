@@ -1,58 +1,47 @@
 ---
-title:    "Elixir: Impression de sortie de débogage"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/printing-debug-output.md"
+title:                "Elixir: Afficher la sortie de débogage"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-L'impression de sortie de débogage est une partie essentielle de la programmation Elixir. Cela vous permet de suivre le flux de votre code et de comprendre où les erreurs se produisent. Sans cela, il peut être difficile de résoudre les problèmes dans votre application.
+Nous avons tous été dans cette situation où quelque chose ne fonctionne pas dans notre code et nous ne pouvons pas comprendre pourquoi. La solution? Impression du débogage. Dans cet article, nous allons discuter de pourquoi il est important d'imprimer des sorties de débogage dans notre code Elixir.
 
 ## Comment faire
+Impression du débogage dans Elixir est très simple. Utilisez la fonction `IO.inspect()`, qui prend en paramètre la valeur que vous voulez inspecter. Voici un exemple de code:
 
-Pour imprimer une sortie de débogage en Elixir, vous pouvez utiliser la fonction `IO.inspect/2`. Cette fonction prend en paramètre la valeur que vous souhaitez inspecter et affiche le résultat dans la console. Par exemple :
-
-```elixir
-age = 25
-IO.inspect(age)
+```Elixir
+IO.inspect("Bonjour le monde")
 ```
 
-Cela affichera `25` dans la console. Vous pouvez également utiliser `IO.inspect/2` pour inspecter des variables dans une liste ou un tuple :
+Et voici la sortie que vous obtiendrez:
 
-```elixir
-names = ["Alice", "Bob", "Jane"]
-IO.inspect(names, label: "List of Names")
+```Elixir
+"Bonjour le monde"
 ```
 
-Cela affichera :
+Vous pouvez également imprimer plusieurs valeurs en les séparant par des virgules:
 
-```
-List of Names: ["Alice", "Bob", "Jane"]
-```
-
-Vous pouvez également utiliser `IO.inspect/2` pour inspecter des expressions :
-
-```elixir
-sum = 2 + 3
-IO.inspect(sum, label: "Result")
+```Elixir
+IO.inspect("Bonjour", "le monde")
 ```
 
-Cela affichera :
+La sortie sera:
 
-```
-Result: 5
+```Elixir
+"Bonjour"
+"le monde"
 ```
 
 ## Plongée en profondeur
+L'impression du débogage peut sembler simple, mais cela peut être d'une grande aide dans le processus de débogage de votre code. En imprimant les valeurs de variables à des points clés de votre code, vous pouvez voir comment ces valeurs changent et ainsi identifier où se situe le problème.
 
-Il existe plusieurs options que vous pouvez utiliser avec `IO.inspect/2` pour personnaliser votre sortie de débogage. Par exemple, vous pouvez utiliser le paramètre `pretty: true` pour formater votre sortie de manière plus agréable à lire. Vous pouvez également utiliser `color: [syntax: :dark]` pour colorer votre sortie dans la console.
-
-De plus, vous pouvez utiliser `IO.inspect/2` à l'intérieur de votre code pour suivre le flux de vos opérations et comprendre comment les données sont transformées. Cela peut être particulièrement utile lors de la résolution de bugs dans des fonctions complexes.
+De plus, en utilisant `IO.inspect()` avec des options supplémentaires, vous pouvez modifier la façon dont les valeurs sont imprimées. Par exemple, en utilisant `IO.inspect(value, label: "valeur")`, vous pouvez spécifier un label qui sera imprimé avant la valeur. De même, en utilisant `IO.inspect(value, pretty: true)`, vous obtiendrez une impression plus propre et plus facile à lire.
 
 ## Voir aussi
-
-- [Documentation IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Article sur l'utilisation de IO.inspect en Elixir](https://www.learnelixir.com/blog/elixir-tips-io-inspect/)
-- [Vidéo sur les techniques de débogage en Elixir](https://www.youtube.com/watch?v=MyHcKYkAh98)
+- [Documentation d'Elixir sur IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [Article sur l'impression du débogage en Elixir par Flatiron School](https://medium.com/@rachelisblue/debugging-in-elixir-with-io-inspect-goes-beyond-puts-8e98a5284502)
+- [Vidéo explicative sur l'impression du débogage en Elixir par ElixirSips](https://elixirsips.com/episodes/102-digging-in-with-ioputs)

@@ -1,33 +1,49 @@
 ---
-title:    "Javascript: Iniciando um novo projeto"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/starting-a-new-project.md"
+title:                "Javascript: Iniciando um novo projeto"
+programming_language: "Javascript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Porque começar um novo projeto de programação
+## Por que começar um novo projeto em Javascript
 
-Nos últimos anos, a programação se tornou uma das habilidades mais valorizadas no mercado de trabalho. Com o aumento da digitalização e do uso de tecnologia em diversas áreas, a demanda por programadores também tem crescido exponencialmente. Além disso, a habilidade de programar permite criar soluções inovadoras e impactar positivamente a sociedade. Começar um novo projeto de programação pode ser uma oportunidade de aprender e evoluir como profissional, além de contribuir para o desenvolvimento de novas tecnologias e ideias.
+Há muitos fatores que podem motivar alguém a iniciar um novo projeto em Javascript. Por exemplo, pode ser uma oportunidade de aprender uma nova linguagem, resolver um problema específico ou simplesmente explorar novas tecnologias.
 
-## Como começar um novo projeto em Javascript
+Independentemente da motivação, iniciar um novo projeto em Javascript pode ser um desafio emocionante e gratificante.
 
-Para começar um novo projeto em Javascript, é necessário seguir alguns passos básicos. Primeiramente, é importante ter um editor de código, como o Visual Studio Code ou o Sublime Text, instalado no seu computador. Em seguida, crie um novo arquivo e salve-o com a extensão ".js". Dentro do seu arquivo, comece com o seguinte código:
+## Como começar
+
+Para iniciar um novo projeto em Javascript, a primeira etapa é configurar o ambiente de desenvolvimento. Isso inclui instalar o Node.js, um ambiente de execução que permite rodar código Javascript fora do navegador.
+
+Em seguida, é recomendado escolher uma estrutura ou biblioteca para trabalhar. Alguns exemplos populares incluem React, Vue.js e Angular. Essas ferramentas fornecem funcionalidades e estruturas dinâmicas para facilitar o desenvolvimento e a manutenção do código.
+
+Após configurar o ambiente e escolher uma estrutura, é hora de começar a escrever código! Abaixo está um exemplo básico de um programa Javascript que imprime "Olá mundo!" no console:
 
 ```Javascript
 console.log("Olá mundo!");
 ```
 
-Esse código irá imprimir a mensagem "Olá mundo!" no console do seu navegador ou no terminal de comando, caso esteja usando o Node.js. A partir daí, você pode começar a escrever o seu projeto, importando bibliotecas, criando funções e construindo a lógica do seu programa.
+Ao rodar esse código, a saída seria "Olá mundo!" no console do navegador ou terminal.
 
-## Aprofundando-se no processo de começar um novo projeto
+## Mergulho profundo
 
-Além dos passos básicos mencionados anteriormente, é importante pensar em alguns pontos-chave para garantir o sucesso do seu novo projeto de programação. Primeiramente, é fundamental definir muito bem o objetivo do seu projeto e quais problemas ele irá resolver. Em seguida, é importante planejar e definir uma estrutura clara para o projeto, com suas funcionalidades principais e possíveis desafios a serem enfrentados.
+Para começar um projeto em Javascript, é importante entender alguns conceitos básicos da linguagem. Alguns desses conceitos incluem tipos de dados, funções, loops e estruturas de controle.
 
-Além disso, ao começar um novo projeto, é importante manter-se atualizado e buscar aprender novas habilidades e técnicas. A programação é uma área que está em constante evolução, e é essencial estar por dentro das tendências e novidades do mercado. Por fim, não tenha medo de errar e sempre busque por feedbacks e sugestões de melhorias, seja de colegas de trabalho ou da comunidade de programação em geral.
+Além disso, é fundamental ter uma compreensão sólida de programação orientada a objetos e manipulação de eventos no contexto de desenvolvimento web.
+
+Outro aspecto importante é o gerenciamento de dependências. Com o uso de bibliotecas e estruturas, é necessário entender como incluir e gerenciar essas dependências em um projeto.
 
 ## Veja também
 
-- [Guia para iniciantes em Javascript](https://www.hostinger.com.br/tutoriais/tutoriais-de-javascript/)
-- [10 projetos para começar a praticar Javascript](https://www.alura.com.br/artigos/10-projetos-praticar-javascript)
-- [Como se tornar um programador de sucesso](https://www.devmasterclass.com.br/como-se-tornar-um-programador-de-sucesso/)
+Aqui estão alguns recursos úteis para quem deseja começar um novo projeto em Javascript:
+
+- [Documentação do Node.js](https://nodejs.org/en/docs/)
+- [Documentação do React](https://reactjs.org/docs/getting-started.html)
+- [Documentação do Vue.js](https://vuejs.org/v2/guide/)
+- [Documentação do Angular](https://angular.io/docs)
+- [Curso de Javascript grátis](https://www.freecodecamp.org/)
+- [Guia completo de desenvolvimento web](https://developer.mozilla.org/pt-BR/docs/Web)
+
+Agora que você tem todas as ferramentas e recursos necessários, está pronto para começar seu novo projeto em Javascript! Lembre-se de se divertir e continuar aprendendo durante todo o processo. Boa sorte!

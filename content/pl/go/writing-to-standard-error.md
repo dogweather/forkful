@@ -1,76 +1,43 @@
 ---
-title:    "Go: Pisanie do standardowego błędu"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-to-standard-error.md"
+title:                "Go: Pisanie do standardowego błędu"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego pisać do standardowego wyjścia błędu w języku Go?
 
-Pisanie do standardowego błędu jest nieodłączną częścią procesu programowania w języku Go. Jest to ważne narzędzie, które pozwala programiście na raportowanie błędów, ostrzeżeń oraz innych wiadomości, które są krytyczne dla poprawnego działania aplikacji. W tym artykule dowiesz się, dlaczego warto pisać do standardowego błędu oraz jak to zrobić w prosty sposób.
+Jedną z najważniejszych części programowania jest odpowiednie obsługiwanie błędów. W języku Go istnieje standardowe wyjście błędu, które jest idealnym narzędziem do informowania użytkownika o błędach w trakcie działania programu. Pisanie do standardowego wyjścia błędu jest prostym i skutecznym sposobem na zarządzanie błędami, dlatego powinno być wykorzystywane przez każdego programistę w języku Go.
 
-## Jak to zrobić?
+## Jak pisać do standardowego wyjścia błędu w języku Go?
 
-Kodowanie w Go jest stosunkowo proste, a pisanie do standardowego błędu jest jedną z podstawowych funkcji dostępnych w języku. Poniżej znajduje się przykład kodu wraz z komentarzami, który pokazuje, jak można użyć standardowego błędu w swoim kodzie:
-
-```Go
-package main
-
-import (
-  "fmt"
-  "os"
-)
-
-func main() {
-  fmt.Fprintf(os.Stderr, "To jest wiadomość błędu\n") // wypisuje wiadomość do standardowego błędu
-}
-```
-
-Powyższy przykład używa funkcji `Fprintf` z pakietu `fmt`, aby wypisać wiadomość do standardowego błędu. Aby tego użyć, musimy najpierw zaimportować pakiet `os`.
-
-Zobaczmy teraz, jak powyższy kod wygląda w konsoli:
-
-```
-$ go run main.go
-To jest wiadomość błędu
-```
-
-Jak widzisz, wiadomość została wypisana do standardowego błędu w konsoli.
-
-## Deep Dive
-
-Pisanie do standardowego błędu jest szczególnie przydatne, gdy chcemy poinformować użytkownika o wystąpieniu błędu lub ostrzeżeniu. Jednak istnieje również możliwość przekierowania standardowego błędu do innych miejsc, takich jak pliki lub połączenie sieciowe.
-
-Aby przekierować standardowy błędu do pliku, można użyć funkcji `SetOutput` z pakietu `os`:
+Aby pisać do standardowego wyjścia błędu w języku Go, należy użyć funkcji `fmt.Fprintf`. Przykładowy kod wraz z wyjściem wygląda następująco:
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "os"
+    "fmt"
+    "os"
 )
 
 func main() {
-  outFile, err := os.OpenFile("błąd.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
-  if err != nil {
-    fmt.Fprintln(os.Stderr, "Nie można otworzyć pliku błąd.log:", err)
-    os.Exit(1)
-  }
-  defer outFile.Close()
-
-  fmt.Fprintln(os.Stderr, "Standardowy błąd został przekierowany do pliku błąd.log!")
-  fmt.SetOutput(outFile)
-  fmt.Fprintln(os.Stderr, "Ta wiadomość pojawi się w pliku błąd.log")
+    fmt.Fprintf(os.Stderr, "To jest błąd.\n")
 }
 ```
 
-W powyższym przykładzie tworzymy nowy plik `błąd.log` i następnie przekierowujemy do niego standardowy błąd. Oczywiście, możesz użyć dowolnej nazwy pliku lub ścieżki do przekierowania błędu.
+Wywołanie `fmt.Fprintf` z argumentem `os.Stderr` sprawia, że napis zostanie wypisany do standardowego wyjścia błędu zamiast do standardowego wyjścia. Dzięki temu, użytkownik będzie miał informację o wystąpionym błędzie. 
+
+## Deep Dive: Głębsze informacje o pisaniu do standardowego wyjścia błędu w języku Go
+
+W języku Go istnieje jeszcze jedna funkcja do pisania do standardowego wyjścia błędu - `fmt.Errorf`. Różnica między `fmt.Fprintf` a `fmt.Errorf` polega na tym, że `fmt.Errorf` zwraca `error`, a `fmt.Fprintf` tylko wypisuje napis do standardowego wyjścia błędu. Ponadto, `fmt.Errorf` przyjmuje argumenty w sposób podobny do funkcji `fmt.Sprintf`.
+
+Korzystanie z funkcji `fmt.Errorf` jest szczególnie przydatne w przypadkach, gdy potrzebujemy zwrócić błąd z funkcji, a jednocześnie poinformować o nim użytkownika.
 
 ## Zobacz również
 
-- Dokumentacja pakietu `fmt`: https://golang.org/pkg/fmt/
-- Dokumentacja pakietu `os`: https://golang.org/pkg/os/
-- Przekierowanie standardowego błędu do pliku: https://www.calhoun.io/how-to-get-rid-of-stdout-issues-in-golang/
-- Tworzenie własnego loggera w Go: https://medium.com/@triktron/writing-a-logger-in-golang-d78248953287
+- Dokumentacja języka Go na temat pisania do standardowego wyjścia błędu: https://golang.org/pkg/fmt/#Fprintf
+- Dalsze materiały na temat obsługi błędów w języku Go: https://blog.golang.org/error-handling-and-go
+- Przydatne porady na temat pisania czytelnej i efektywnej obsługi błędów w języku Go: https://blog.golang.org/errors-are-values

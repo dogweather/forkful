@@ -1,74 +1,40 @@
 ---
-title:    "Bash: Impresión de salida de depuración"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/printing-debug-output.md"
+title:                "Bash: Imprimiendo salida de depuración"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## Por qué
 
-¿Alguna vez te has encontrado con errores en tus scripts de Bash y no sabes dónde está el problema? ¡La solución podría ser imprimir un poco de salida de depuración! Al imprimir información durante la ejecución del código, puedes identificar rápidamente dónde se encuentra el error y solucionarlo más fácilmente.
+¿Te has encontrado alguna vez con un error difícil de depurar en tu código de Bash? ¿Tienes problemas para entender por qué tu programa no está funcionando como se supone? La impresión de salidas de depuración puede ser una herramienta útil para solucionar estos problemas. En esta publicación, exploraremos por qué es importante imprimir salidas de depuración en Bash y cómo hacerlo de manera eficiente.
 
 ## Cómo hacerlo
 
-Para imprimir salida de depuración en Bash, utilizamos el comando `echo` o `printf` seguido de la variable o mensaje que queremos imprimir. Veamos un ejemplo:
+Para imprimir salidas de depuración en Bash, puedes utilizar el comando `echo` seguido de la variable o mensaje que deseas imprimir. Por ejemplo:
 
 ```Bash
-# Crear una variable
-my_var="¡Hola, mundo!"
-
-# Imprimir la variable
-echo $my_var
+echo "El valor de mi_variable es: $mi_variable"
 ```
 
-En este ejemplo, creamos una variable llamada `my_var` con el mensaje "¡Hola, mundo!" y luego utilizamos el comando `echo` para imprimirlo en la pantalla. Esto nos dará la salida `¡Hola, mundo!`, lo que nos asegura que la variable se ha creado correctamente.
-
-También podemos imprimir varios valores o variables en la misma línea utilizando paréntesis y separando cada elemento con un espacio:
+Esta línea de código imprimirá el valor actual de la variable `mi_variable` en la consola cuando se ejecute el programa. También puedes utilizar el comando `printf` para imprimir salidas más complejas con formato específico. Por ejemplo:
 
 ```Bash
-# Crear dos variables
-first_name="John"
-last_name="Doe"
-
-# Imprimir ambas variables en una sola línea
-echo "Mi nombre es ${first_name} ${last_name}."
+printf "El resultado es %d y la suma de %d y %d es %d\n" $resultado $num1 $num2 $(($num1 + $num2))
 ```
 
-La salida será `Mi nombre es John Doe.`, lo que nos permite ver claramente cómo se han combinado ambas variables en la cadena de texto.
+Esto imprimirá en la consola un mensaje con el resultado de una operación matemática utilizando las variables `resultado`, `num1` y `num2`.
 
 ## Profundizando
 
-Además de imprimir variables y mensajes, también podemos imprimir el resultado de comandos y expresiones en Bash. Utilizamos la expansión de comandos `$()` para ejecutar un comando y luego imprimir su salida. Veamos un ejemplo:
+Aunque imprimir salidas de depuración puede parecer una tarea simple, puede ayudarte a identificar y solucionar errores más rápidamente. Es importante seleccionar cuidadosamente qué variables y mensajes imprimir para no sobrecargar la consola con información innecesaria. También puedes utilizar diferentes niveles de depuración, como `DEBUG`, `INFO` y `ERROR`, para imprimir salidas específicas según la importancia del mensaje.
 
-```Bash
-# Obtener el nombre de usuario actual
-current_user=$(whoami)
-
-# Imprimir un mensaje que incluye el nombre de usuario
-echo "El nombre de usuario actual es ${current_user}."
-```
-
-La salida será algo así como `El nombre de usuario actual es johndoe.` dependiendo de tu nombre de usuario.
-
-También podemos utilizar la expansión aritmética `$((expression))` para imprimir el resultado de expresiones matemáticas. Por ejemplo:
-
-```Bash
-# Calcular el resultado de una expresión
-result=$((5 + 3 * 2))
-
-# Imprimir el resultado
-echo "El resultado es ${result}."
-```
-
-La salida será `El resultado es 11.` ya que estamos calculando 5 más 3 veces 2.
-
-Recuerda que puedes utilizar el comando `unset` para eliminar una variable y así evitar que se imprima su valor en el futuro.
+Otra técnica útil es utilizar un archivo de registro (log) para guardar las salidas de depuración en lugar de imprimirlas en la consola. Esto puede ser especialmente útil si estás trabajando con scripts más largos o en entornos en producción, ya que puedes revisar el archivo de registro posteriormente para buscar cualquier problema.
 
 ## Ver también
 
-Ahora que sabes cómo imprimir salida de depuración en Bash, ¡puedes utilizar esta técnica para resolver problemas en tus scripts y ahorrar tiempo de depuración! Aquí tienes algunos enlaces que podrían ser útiles para seguir aprendiendo:
-
-- [¿Qué es Bash?](https://www.howtogeek.com/679666/what-is-bash-and-why-is-it-used-in-linux/)
-- [Guía de Bash para principiantes](https://linuxize.com/post/bash-scripting-quick-start/)
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Comandos de depuración de Bash](https://tldp.org/LDP/abs/html/debugging.html) - Una guía completa sobre cómo depurar programas en Bash.
+- [El manual de `echo`](https://linux.die.net/man/1/echo) - Documentación oficial sobre el comando `echo` en Linux.
+- [El manual de `printf`](https://linux.die.net/man/1/printf) - Documentación oficial sobre el comando `printf` en Linux.

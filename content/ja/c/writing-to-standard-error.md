@@ -1,31 +1,51 @@
 ---
-title:    "C: 標準エラーへの書き込み"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/writing-to-standard-error.md"
+title:                "C: 「標準エラーへの書き込み」"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ 
 
-プログラマーとして、私たちはコンソール上で出力されるすべての情報に注意を払う必要があります。自分のコードが正しく動作しているかどうかを確認し、バグを修正するために、標準エラー出力に出力することが重要です。
+標準エラー出力に書き込むことが重要なのでしょうか？プログラミングをする上で、標準エラー出力を理解することは重要なスキルです。標準エラー出力はエラーメッセージやデバッグ情報を表示するために使用されます。そのため、コードをデバッグしたい場合やエラーが発生した際に対処することができます。
 
-## 方法
+## 使い方
 
-標準エラー出力に書き込むには、C言語の「fprintf」関数を使用します。「fprintf」は、指定したフォーマットに従って文字列を書き込むことができます。
+標準エラー出力に書き込むには、```fprintf(stderr, "エラーメッセージ");```のようにコードを書きます。これは、標準エラー出力ストリームにエラーメッセージを書き込むことを意味します。また、エラーメッセージの中に変数の値を表示することもできます。例えば、```fprintf(stderr, "エラーが発生しました。エラーコードは%dです。", errorCode);```のように書けます。
+
+以下のコードを実行すると、エラーメッセージが標準エラー出力に表示されます。
 
 ```C
-fprintf(stderr, "エラーが発生しました。"); // 標準エラー出力に文字列を書き込む
+#include <stdio.h>
+
+int main() {
+    int num = 5;
+    fprintf(stderr, "エラー：数字%dは偶数です。", num);
+    return 0;
+}
 ```
 
-上記のコードでは、「stderr」はファイルポインタであり、この場合は標準エラー出力を指しています。「stderr」は、標準エラー出力を扱うためのグローバル変数です。
+上記のコードの出力結果は以下のようになります。
 
-## 詳細について
+```bash
+エラー：数字5は偶数です。
+```
 
-標準エラー出力に書き込むことで、コンソール上でエラーメッセージを表示することができます。このようにすることで、ユーザーにエラーが発生したことを通知することができます。また、デバッグの際にも役立ちます。プログラムが正しく動作している場合は、標準エラー出力は空になります。
+## ディープダイブ
 
-## 参考文献
+標準エラー出力についてさらに深く掘り下げてみましょう。通常、Cプログラムでは```printf()```を使用して標準出力にデータを表示しますが、```fprintf()```は標準エラー出力にデータを表示することができます。これは、標準出力と標準エラー出力はそれぞれ異なるストリームであるためです。標準出力の内容はコンソールに表示され、標準エラー出力の内容は通常、ログファイルに書き込まれます。
 
-- [C言語ポケットリファレンス](https://www.amazon.co.jp/dp/4822284857)
-- [標準入出力の規約](https://ja.wikibooks.org/wiki/C/%E6%A8%99%E6%BA%96%E5%85%A5%E5%87%BA%E5%8A%9B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
-- [デバッグのための標準エラー出力の使用](https://www.geeksforgeeks.org/using-stderr-as-logging-stream/)
+また、標準エラー出力はリダイレクトすることもできます。例えば、```./a.out 2> log.txt```のようにコマンドを実行すると、エラーメッセージは標準エラー出力のストリームからログファイルにリダイレクトされます。これにより、コンソールの出力が見やすくなります。
+
+## さらに読む
+
+- [標準エラー出力について](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/apis/con_stderr.htm)
+- [標準エラー出力を使ったデバッグ方法](https://www.cprogramming.com/debugging/errors.html)
+- [標準エラー出力のリダイレクトについての詳細](https://tldp.org/LDP/abs/html/io-redirection.html#SIMPLEERR)
+
+## 参考
+
+- [標準エラー出力を使ってデバッグしよう！](https://qiita.com/takubok/items/de8919c47f9f7b5fdbab)
+- [C言語で標準エラー出力を使おう](https://dev.classmethod.jp/articles/c-stderr/)

@@ -1,46 +1,42 @@
 ---
-title:    "C#: Att hämta aktuellt datum"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/getting-the-current-date.md"
+title:                "C#: Att få aktuellt datum"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att få den nuvarande datumen kan vara användbart för olika program och applikationer. Det kan användas för att visa den aktuella tidpunkten i en kalenderapplikation eller för att hålla reda på när en transaktion gjordes i ett ekonomisystem.
 
-Att kunna hämta den aktuella datumet är en vanlig funktion i många program. Det används ofta för att visa när en viss händelse inträffade, eller för att skapa dynamiska datumstämplar. I denna guide kommer vi att gå igenom hur man kan hämta det aktuella datumet i C#.
+## Hur man
+För att få den aktuella datumen i C#, kan du använda DateTime-objektet.
 
-## Hur man gör
-
-För att hämta det aktuella datumet i C# kan du använda klassen `DateTime`. Detta objekt har en mängd olika metoder och egenskaper som gör det enkelt att arbeta med datum och tid.
-
-Först måste du inkludera `System` namespace i början av ditt program för att kunna använda `DateTime`. Sedan kan du hämta det aktuella datumet genom att skapa ett nytt instans av `DateTime` klassen:
-
-``` C#
-DateTime nu = DateTime.Now;
+```C#
+DateTime currentDateTime = DateTime.Now;
+Console.WriteLine("Aktuellt datum: " + currentDateTime.ToString("dd/MM/yyyy"));
+Console.WriteLine("Aktuell tid: " + currentDateTime.ToString("HH:mm:ss"));
 ```
 
-Metoden `Now` returnerar ett DateTime-objekt som representerar det aktuella datumet och tiden.
-
-För att visa det aktuella datumet på ett visuellt sätt, kan du använda metoden `ToString()` tillsammans med en formateringssträng. Till exempel kan följande kod användas för att skriva ut det aktuella datumet i formatet "år-månad-dag":
-
-``` C#
-DateTime nu = DateTime.Now;
-Console.WriteLine(nu.ToString("yyyy-MM-dd"));
+Output:
 ```
-
-Detta kommer att skriva ut "2021-04-15" om det är den 15 april 2021.
+Aktuellt datum: 21/10/2020
+Aktuell tid: 09:00:00
+```
+Först skapar vi ett DateTime-objekt och tilldelar det den aktuella datumen med DateTime.Now. Sedan använder vi ToString-metoden för att formatera datumet och tiden enligt vår önskade format.
 
 ## Djupdykning
+DateTime-objektet i C# är mycket kraftfullt och innehåller många metoder och egenskaper för att hantera datum och tid. Du kan till exempel använda Add-metoden för att lägga till eller subtrahera en viss tid till det aktuella datumet eller använda Parse-metoden för att konvertera en sträng till ett DateTime-objekt.
 
-`DateTime` klassen innehåller även många andra metoder och egenskaper för att hantera datum och tid. Till exempel kan du använda `AddDays()` metoden för att lägga till ett visst antal dagar till ett datum, eller `Subtract()` metoden för att subtrahera en viss tidsperiod från ett datum.
+Nedan är några andra användbara metoder och egenskaper som finns tillgängliga:
 
-Du kan också använda `DateTime.TryParse()` metoden för att försöka konvertera en sträng till ett DateTime-objekt. Om konverteringen lyckas, kommer resultet att lagras i ett DateTime-objekt, annars kommer den att returnera `false`.
-
-Det finns också flera olika formateringssträngar som du kan använda med `ToString()` metoden för att visa datumet på olika sätt. Du kan hitta en lista över dessa formateringssträngar [här](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings).
+- `DateTime.Today`: Returnerar en DateTime-objekt som innehåller datumen för dagens datum.
+- `DateTime.IsLeapYear(year)`: Returnerar en boolesk värde som indikerar om det angivna året är ett skottår.
+- `DateTime.Compare(date1, date2)`: Jämför två DateTime-objekt och returnerar en positiv, negativ eller noll värde baserat på vilket datum som är senare.
+- `DateTime.TryParse(str, out date)`: Försöker tolka en sträng som ett DateTime-objekt och returnerar en boolesk värde som indikerar om tolkningen var framgångsrik eller inte.
 
 ## Se även
-
-- [DateTime-klass](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [DateTime-metoder och egenskaper](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0#methods)
-- [Formatsträngar för datum och tid](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [Microsoft Docs: DateTime Struct] (https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
+- [C# DateTime Example] (https://www.c-sharpcorner.com/article/c-sharp-datetime-examples/)
+- [DateTime vs DateTimeOffset] (https://www.c-sharpcorner.com/article/datetime-vs-datetimeoffset/)

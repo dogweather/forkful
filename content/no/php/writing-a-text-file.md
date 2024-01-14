@@ -1,41 +1,35 @@
 ---
-title:    "PHP: Å skrive en tekstfil"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-a-text-file.md"
+title:                "PHP: Skriving av tekstfil"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å kunne skrive en tekstfil er en viktig ferdighet for alle som driver med PHP-programmering. Tekstfiler lar deg lagre og organisere data eller informasjon på en enkel og strukturert måte. Det kan være alt fra konfigurasjonsfiler til logger eller brukerinnstillinger. Å kunne skrive og lese fra tekstfiler er en grunnleggende ferdighet som vil være nyttig i mange programmeringsscenarier.
+Å skrive en tekstfil ved hjelp av PHP kan være svært nyttig for å lagre og behandle data på en enkel måte. Ved å bruke PHP kan du enkelt lage og manipulere tekstfiler som kan være nyttige for alt fra logging av data til å lagre brukerinnstillinger.
 
-## Hvordan
+## Slik gjør du det
 
-For å kunne skrive en tekstfil i PHP, bruker du funksjonen `fopen()` for å opprette en ressursstyring for tekstfilen du ønsker å skrive til. Deretter bruker du `fwrite()` for å skrive ønsket informasjon til filen. Her er et eksempel på hvordan dette kan gjøres:
+For å skrive en tekstfil i PHP trenger du først å åpne en filstrøm ved hjelp av fopen() funksjonen. Deretter kan du bruke fwrite() funksjonen til å skrive ønsket tekst til filen. Til slutt må du huske å lukke filstrømmen ved hjelp av fclose() funksjonen. Under ser du et eksempel på hvordan dette kan gjøres:
 
 ```PHP
-// Opprette en tekstfil med navnet "mitt_prosjekt.txt"
-$file = fopen("mitt_prosjekt.txt", "w");
-
-// Skrive ønsket informasjon til filen
-$text = "Dette er innholdet i min tekstfil.";
-fwrite($file, $text);
-
-// Lukke filen og dermed fullføre skrivingen av tekstfilen
+$file = fopen("tekstfil.txt", "w") or die("Kan ikke åpne filen!");
+$txt = "Dette er en tekst som jeg ønsker å skrive til min tekstfil.";
+fwrite($file, $txt);
 fclose($file);
 ```
 
-Når du kjører dette koden, vil en fil med navnet "mitt_prosjekt.txt" bli opprettet, og setningen "Dette er innholdet i min tekstfil." vil bli skrevet til filen. Du kan også bruke funksjonen `fclose()` for å sørge for at filen blir lukket etter at du er ferdig med å skrive til den.
+Når du har kjørt koden over, vil du se at det har blitt opprettet en tekstfil med navnet "tekstfil.txt". Om du åpner denne filen vil du se at teksten du skrev inn i variabelen $txt nå ligger lagret der.
 
 ## Dypdykk
 
-Når du skriver til en tekstfil i PHP, er det viktig å være klar over at dette ikke er den eneste måten å skrive til filer på. Du kan også bruke funksjoner som `file_put_contents()` for å skrive til filer eller `file()` for å lese innholdet i en fil linje for linje. Det er også viktig å huske på å sikre at filen du skriver til har riktige tillatelser, ellers kan skrivingen til filen mislykkes.
+Det finnes flere parametere du kan bruke når du skriver en tekstfil i PHP, for eksempel for å skrive til forskjellige linjer i filen eller å legge til tekst i en allerede eksisterende fil. Det finnes også flere måter du kan åpne en filstrøm på, avhengig av hva slags informasjon du ønsker å skrive til filen. Det kan være lurt å utforske dette nærmere og lese mer om de ulike mulighetene som finnes.
 
-## Se Også
+## Se også
 
-For mer informasjon om skriving av filer i PHP, kan du sjekke ut følgende ressurser:
-
-- [PHP.net - fwrite()](https://www.php.net/manual/en/function.fwrite.php)
-- [PHP.net - file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
-- [PHP.net - file()](https://www.php.net/manual/en/function.file.php)
+- [PHP fopen() funksjonen](https://www.w3schools.com/php/func_filesystem_fopen.asp)
+- [PHP fwrite() funksjonen](https://www.w3schools.com/php/func_filesystem_fwrite.asp)
+- [PHP fclose() funksjonen](https://www.w3schools.com/php/func_filesystem_fclose.asp)

@@ -1,27 +1,50 @@
 ---
-title:    "Haskell: स्ट्रिंग की लंबाई का पता करना"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/finding-the-length-of-a-string.md"
+title:                "Haskell: स्ट्रिंग की लंबाई ढूंढना"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# Kyun
 
-गणित और डेटा प्रसंस्करण में, एक शब्द स्ट्रिंग का लंबाई पता लगाना बहुत महत्वपूर्ण है। हास्केल में, हम शब्द स्ट्रिंग के लंबाई को जाने से उस्ताद से उसके इंप्लीमेंटेशन और प्रोग्रामिंग के अलग-अलग तरीकों को समझ सकेंगे। इस ब्लॉग पोस्ट में, हम जानेंगे कि हस्केल में शब्द स्ट्रिंग की लंबाई कैसे निकाली जाती है।
+Kya aapne kabhi socha hai ki kaise hum ek string ki lambai ko pata kar sakte hain? Shayad aapke dimaag mein yeh sawal aaya ho, kyunki iska koi practical use toh hai nahi, lekin yeh ek important programming concept hai jo aapko samajhna chahiye. Is blog post mein hum aapko batayenge ki kyun aur kaise hum ek string ki lambai ko find kar sakte hain Haskell mein.
 
-## कैसे
+## Kaise
 
-हास्केल में शब्द स्ट्रिंग की लंबाई निकालने के लिए, हम `length` फ़ंक्शन का उपयोग करते हैं। इस फ़ंक्शन को दो तरीकों से उपयोग किया जा सकता है। पहला तरीका है, फ़ंक्शन को एक स्ट्रिंग या शब्द स्ट्रिंग के साथ लगाया जाता है और यह उस स्ट्रिंग की लंबाई को देगा। दूसरा तरीका है, फ़ंक्शन को एक लिस्ट या सूची साथ लगाया जाता है और यह सूची में होने वाले उपयोगकर्ता द्वारा या उसके फ़ूंकेशन द्वारा दिए गए अंशों की संख्या को देगा।
+Haskell mein, hum ek string ki lambai ko `length` function ka use karke pata kar sakte hain. Is function ko use karne ke liye, hume pehle ek string declare karna hoga aur fir `length` function ka use karke uski lambai find karni hogi. Neeche di gayi coding example mein aap dekh sakte hain ki kaise hum is function ko use kar sakte hain:
 
 ```Haskell
--- किसी शब्द स्ट्रिंग की लंबाई को निकालने के लिए
-length "हेलो" -- Output: 4
+import Data.List
 
--- किसी सूची में होने वाले अंशों की संख्या को निकालने के लिए
-length [1, 2, 3, 4] -- Output: 4
+main = do
+ let string = "Hello World!" -- string declare karna
+ print $ length string -- lambai find karna
 ```
 
-## गहराई से खोज करें
+Sample Output:
 
-यदि हम गहराई से जाएं तो हम देखेंगे कि `length` फ़ंक्शन हमें हर बार चाहिए लेकिन हम अपनी सूची में होने वाले अंशों की संख्या को दिखाने के
+```
+12
+```
+
+Jaise ki aap dekh sakte hain, humne pehle string `Hello World!` ko declare kiya aur fir uski lambai `length` function ka use karke pata ki. Is tarah se hum kisi bhi string ki lambai ko find kar sakte hain.
+
+## Deep Dive
+
+Ab jab humne `length` function ka use karke string ki lambai find kar li, toh kya humein iss function ke baare mein kuch aur jaanna jaruri hai? Ek baat jo humein samajhni chahiye ki yeh function humein `Data.List` module mein milta hai, toh agar hum iss module ko import nahi karte hain, toh hum `length` function ka use nahi kar sakte. 
+
+Iss function ko use karne ke liye, hume ek list ya array pass karna hota hai, jiski length hum find karna chahte hain. Iske baad, yeh function hume `Int` datatype ka output return karta hai, jiske through hum string ki lambai pata kar sakte hain. Yeh function bahut important hai, kyunki jab humein kisi bhi kaam mein strings ka use karna hota hai, toh humein unki lambai pata hona bahut zaroori hai.
+
+# Dekhte Hain
+
+Is blog post mein humne aapse share kiya ki kaise aap Haskell mein ek string ki lambai ko find kar sakte hain. Humne coding example aur sample output ke through aapko dikhaya ki kaise yeh kaam kiya ja sakta hai. Agar aapko aur bhi Haskell programming se related topics ke baare mein jaanna hai, toh neeche diye gaye links aapke kaam aa sakte hain:
+
+- [Haskell for Beginners (Hindi)](https://www.indiaprogramming.com/haskell/haskell-for-beginners-hindi/)
+- [Pattern Matching in Haskell (Hindi)](https://www.indiaprogramming.com/haskell/pattern-matching-haskell-hindi/)
+- [Understanding Lambda Functions in Haskell (Hindi)](https://www.indiaprogramming.com/haskell/lambda-functions-haskell-hindi/)
+
+# Dekhte Hain
+
+Humein ummeed hai ki aapko yeh blog post pasand aaya hoga aur aapne kuch naya sikh liya hoga. Agar aapko isse related koi bhi doubts ya suggestions hain, toh humare neeche diye gaye social media handles pe humse connect kar sakte hain. Happy coding!

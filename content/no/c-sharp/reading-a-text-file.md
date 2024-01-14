@@ -1,56 +1,74 @@
 ---
-title:    "C#: Lese en tekstfil"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/reading-a-text-file.md"
+title:                "C#: Lese en tekstfil"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å lese en tekstfil kan være en viktig del av å utvikle et program. Det kan gi oss tilgang til et stort antall data som kan hjelpe oss med å analysere og manipulere informasjon. Å kunne lese og behandle tekstfiler effektivt er en essensiell ferdighet for enhver programmerer.
+Hvis du noen gang har jobbet med datafiler i programmering, har du mest sannsynligvis måttet håndtere tekstfiler. Tekstfiler er en vanlig måte å lagre og håndtere data på, og derfor er det viktig å ha god kunnskap om hvordan man leser og behandler dem. Hvis du ønsker å lære å lese en tekstfil ved hjelp av C# programmeringsspråket, så er du på rett sted.
 
 ## Hvordan
 
-For å lese en tekstfil i C#, kan vi bruke klassen `StreamReader` og dens innebygde funksjoner. Først må vi åpne filen ved å gi filbanen som parameter til konstruktøren til `StreamReader`. Deretter kan vi bruke funksjonen `ReadLine()` til å lese en linje av teksten. Vi kan også bruke funksjoner som `Peek()` for å se på neste tegn i filen eller `ReadToEnd()` for å lese hele teksten på en gang. Her er et eksempel på hvordan dette kan se ut i praksis:
+Å lese en tekstfil ved hjelp av C# er en relativt enkel prosess som krever noen få linjer med kode. Før vi dykker inn i eksemplene, må vi først forstå noen få konsepter og begreper som er nødvendige for å lese en fil. 
+
+Først og fremst må du forstå at tekstfiler kan inneholde forskjellige typer data og formater, som for eksempel vanlig tekst, tall eller symboler. Derfor må du bestemme hvilken type data du forventer å finne i filen din før du begynner å lese den. 
+
+Et annet viktig konsept er filbanen, som er den unike plasseringen til filen din på datamaskinen din. Det er viktig å ha filbanen riktig formatert i C# koden din for å sikre at programmet finner og kan lese filen.
+
+Nå, la oss se på et eksempel på hvordan du kan lese en tekstfil og skrive ut innholdet til konsollen ved hjelp av C#-kode:
 
 ```C#
-using System;
-using System.IO;
+string filbane = @"C:\Users\Navn\Desktop\tekstfil.txt";
 
-class TextFileReader
+// Opprett et StreamReader-objekt for å lese filen
+using(StreamReader sr = new StreamReader(filbane))
 {
-    static void Main()
-    {
-        // Åpner filen og oppretter en StreamReader
-        StreamReader reader = new StreamReader(@"C:\eksempeltekstfil.txt");
-
-        // Leser og skriver ut hver linje i tekstfilen
-        while (!reader.EndOfStream)
-        {
-            string line = reader.ReadLine();
-            Console.WriteLine(line);
-        }
-
-        // Lukker StreamReader når vi er ferdige
-        reader.Close();
-    }
+	// Les hver linje av tekstfilen
+	string linje = "";
+	while((linje = sr.ReadLine()) != null)
+	{
+		// Skriv ut hver linje til konsollen
+		Console.WriteLine(linje);
+	}
 }
 ```
 
-### Output:
+I dette eksemplet bruker vi `StreamReader` -objektet og `ReadLine()` -metoden for å lese hver linje av tekstfilen og skrive dem ut til konsollen.
 
+Et annet nyttig eksempel er å lese en tekstfil og lagre innholdet til en `List` -samling. Dette gjør det enklere å behandle og manipulere teksten senere i koden din.
+
+```C#
+string filbane = @"C:\Users\Navn\Desktop\tekstfil.txt";
+
+// Opprett en tom List for å lagre tekstlinjene
+List<string> tekstlinjer = new List<string>();
+
+using(StreamReader sr = new StreamReader(filbane))
+{
+	string linje = "";
+	while((linje = sr.ReadLine()) != null)
+	{
+		// Legg til hver linje i List-samlingen
+		tekstlinjer.Add(linje);
+	}
+}
 ```
-Dette er en linje med tekst.
-Dette er en annen linje med tekst.
-```
+
+Som du kan se, er det enkelt å lese en tekstfil ved hjelp av C# - du trenger bare å vite hvilke objekter og metoder som er nødvendige for å utføre oppgaven.
 
 ## Dypdykk
 
-Mens `StreamReader` er en effektiv måte å lese tekstfiler på, er det også noen problemstillinger å være klar over. For eksempel kan det være lurt å bruke `using`-blokk når du arbeider med `StreamReader` for å sikre at den blir lukket på riktig måte. Det kan også være viktig å være forsiktig med tegnsettet til tekstfilen, da det kan føre til feil når du leser teksten. Derfor kan det være lurt å bruke `Encoding`-klassen for å spesifisere tegnsettet når du åpner filen.
+Som nevnt tidligere, er det viktig å ha riktig forståelse av filbanen og filformatet når du skal lese tekstfiler i C#. Sørg for at du har en grundig forståelse av disse begrepene før du går videre og manipulerer teksten i filen din. 
 
-## Se Også
+En annen viktig ting å huske på er at filen din kan inneholde forskjellige tegnsett, som for eksempel Unicode eller ASCII. Du må sørge for at du har riktig koding satt i koden din for å kunne lese og behandle disse forskjellige tegnsettene.
 
-- [MSDN - StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
-- [Tutorialspoint - C# Streams](https://www.tutorialspoint.com/csharp/csharp_streams.htm)
-- [C# File Handling](https://www.c-sharpcorner.com/UploadFile/mahesh/file-handling-in-C-Sharp/)
+Det er også viktig å ha en god feilhåndtering når du leser tekstfiler. Dette sikrer at programmet ditt håndterer eventuelle unntak eller problemer som kan oppstå under lesing av filen.
+
+## Se også
+
+- [Offisiell dokumentasjon for StreamReader klasse](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
+- [C# StreamReader Tutorial](https://www.c-sharpcor

@@ -1,57 +1,50 @@
 ---
-title:    "C#: Convirtiendo una cadena a minúsculas"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/converting-a-string-to-lower-case.md"
+title:                "C#: Convirtiendo un string a minúsculas"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una cadena a minúsculas?
+## Por qué
 
-Convertir una cadena de texto a minúsculas es una tarea común en la programación ya que permite estandarizar y manipular los datos de manera más eficiente. También puede ser útil para comparar cadenas de texto sin importar si están escritas en mayúsculas o minúsculas.
+El convertir una cadena de texto a minúsculas es una tarea común en la programación en C#. Al hacerlo, podemos asegurarnos de que los datos se almacenen y manejen de manera consistente, lo que facilita su posterior uso en comparaciones y búsquedas. Además, muchos componentes de la plataforma .NET, como bases de datos y servicios web, asumen que las cadenas están en minúsculas, por lo que es importante convertirlas correctamente para evitar problemas en nuestro código.
 
-## Cómo hacerlo en C#
+## Cómo hacerlo
 
-Para convertir una cadena de texto a minúsculas en C#, podemos utilizar el método `ToLower()` de la clase `String`. Este método toma la cadena original y devuelve una nueva cadena en minúsculas. Veamos un ejemplo:
-
-```C#
-string original = "Hola Mundo";
-string minusculas = original.ToLower();
-
-Console.WriteLine(minusculas);
-// Salida: hola mundo
-```
-
-En este ejemplo, utilizamos el método `ToLower()` para convertir la cadena `original` en una nueva cadena en minúsculas llamada `minusculas`. Luego, imprimimos la nueva cadena en la consola y obtenemos "hola mundo" como resultado.
-
-También podemos convertir una cadena a minúsculas utilizando el método `ToLowerInvariant()` de la clase `String`. La diferencia con el método anterior es que `ToLowerInvariant()` utiliza reglas de conversión invariantes al idioma y cultura, lo que puede ser útil en aplicaciones multilingües.
+La forma más simple de convertir una cadena a minúsculas en C# es utilizando el método `ToLower()` del objeto `string`. Este método devuelve una nueva cadena con todos los caracteres convertidos a minúsculas. Veamos un ejemplo:
 
 ```C#
-string original = "HELLO WORLD";
-string minusculas = original.ToLowerInvariant();
+string cadena = "ESTA ES UNA CADENA EN MAYÚSCULAS";
+string cadenaMinusculas = cadena.ToLower();
 
-Console.WriteLine(minusculas);
-// Salida: hello world
+Console.WriteLine(cadenaMinusculas);
 ```
+**Output:** esta es una cadena en mayúsculas
 
-Es importante tener en cuenta que tanto `ToLower()` como `ToLowerInvariant()` devuelven una nueva cadena en minúsculas y no modifican la cadena original. Si queremos guardar el resultado en la misma variable, podemos utilizar la asignación compuesta `+=`.
+Además de `ToLower()`, también podemos utilizar `ToLowerInvariant()`, que realiza la conversión de minúsculas utilizando reglas de cultura invariantes, lo que puede ser útil en aplicaciones multilingües.
+
+Existen otras formas de convertir cadenas a minúsculas, como utilizar la clase `TextInfo` del namespace `System.Globalization` o utilizar expresiones regulares. Sin embargo, `ToLower()` sigue siendo la forma más eficiente y fácil de realizar esta tarea.
+
+## Un paso más allá
+
+Ahora que conocemos la forma básica de convertir cadenas a minúsculas, podemos profundizar un poco más. ¿Qué pasa si solo queremos convertir la primera letra de una cadena a minúsculas y dejar el resto en su formato original? En ese caso, podemos utilizar el método `ToLower()` junto con `Substring()` para lograrlo.
+
+Supongamos que tenemos una cadena con el nombre de una persona en mayúsculas y queremos mostrarla en el formato adecuado de nombre propio, con la primera letra en minúsculas. Podríamos hacerlo de la siguiente manera:
 
 ```C#
-string cadena = "Hola a Todos";
+string nombre = "JUAN";
+string nombrePropio = nombre[0].ToString().ToLower() + nombre.Substring(1);
 
-cadena += cadena.ToLower();
-
-Console.WriteLine(cadena);
-// Salida: Hola a Todoshola a todos
+Console.WriteLine(nombrePropio);
 ```
+**Output:** Juan
 
-## Un poco más sobre la conversión de cadenas a minúsculas
-
-En C#, los métodos `ToLower()` y `ToLowerInvariant()` utilizan las reglas de conversión del idioma y cultura del sistema operativo. Esto significa que si ejecutamos nuestro código en un sistema con configuración de idioma y cultura diferente, los resultados pueden variar.
-
-Además, al convertir una cadena a minúsculas no solo se convierten las letras de la A a la Z, sino que también se convierten otros caracteres especiales como "ñ" o "á". También se convierten los caracteres Unicode a su equivalente en minúsculas, lo que puede ser importante en aplicaciones que trabajan con idiomas que utilizan caracteres especiales.
+También podemos utilizar esta técnica para convertir la primera letra de cada palabra en una cadena a minúsculas, por ejemplo, en una oración.
 
 ## Ver también
 
-- [Método ToLower() (Referencia de C#)](https://docs.microsoft.com/es-es/dotnet/api/system.string.tolower)
-- [Método ToLowerInvariant() (Referencia de C#)](https://docs.microsoft.com/es-es/dotnet/api/system.string.tolowerinvariant)
+- [Método ToLower() en Microsoft Docs](https://docs.microsoft.com/es-es/dotnet/api/system.string.tolower?view=net-5.0)
+- [Clase TextInfo en Microsoft Docs](https://docs.microsoft.com/es-es/dotnet/api/system.globalization.textinfo?view=net-5.0)
+- [Cadenas en C# en la Wikipedia](https://es.wikipedia.org/wiki/Cadena_de_caracteres_en_C_Sharp)

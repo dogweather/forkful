@@ -1,57 +1,54 @@
 ---
-title:    "Elixir: Comparer deux dates"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/comparing-two-dates.md"
+title:                "Elixir: Comparer deux dates"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'utilisation de dates dans la programmation est très courante, notamment lorsqu'il s'agit de suivre les événements dans un système ou de créer des fonctionnalités basées sur des dates spécifiques. Par conséquent, il est souvent nécessaire de comparer deux dates pour déterminer l'ordre chronologique ou pour vérifier si une date est plus récente qu'une autre. Dans cet article, nous allons explorer comment comparer efficacement deux dates en utilisant le langage de programmation Elixir.
+La comparaison de dates est une tâche courante en programmation et peut être utile pour de nombreuses raisons, telles que vérifier si une date est antérieure ou postérieure à une autre, calculer la durée entre deux dates, ou encore trier des données chronologiquement. C'est une compétence importante pour tout développeur Elixir et dans cet article, nous allons apprendre comment comparer deux dates en utilisant le langage Elixir.
 
 ## Comment faire
 
-Pour comparer facilement deux dates en Elixir, nous allons utiliser la fonction `Date.compare/2` de la librairie standard d'Elixir. Cette fonction prend deux dates en entrée et renvoie l'une des trois valeurs suivantes :
+Pour comparer deux dates en Elixir, nous allons utiliser la fonction `NaïveDateTime.compare/2`. Cette fonction prend deux paramètres de type `NaïveDateTime` et renvoie un entier négatif si la première date est antérieure à la seconde, zéro si les deux dates sont égales, et positif si la première date est postérieure à la seconde.
 
-- `:eq` (equal) si les deux dates sont égales
-- `:lt` (less than) si la première date est antérieure à la seconde
-- `:gt` (greater than) si la première date est postérieure à la seconde
-
-Regardons un exemple concret :
+Voici un exemple de code : 
 
 ```Elixir
-# Définition des deux dates à comparer
-date1 = ~D[2020-01-01]
-date2 = ~D[2020-05-15]
+defmodule DateComparer do
+  def compare_dates(date1, date2) do
+    diff = NaiveDateTime.compare(date1, date2)
+    
+    case diff do
+      -1 -> "#{date1} est antérieure à #{date2}"
+      0 -> "Les deux dates sont identiques"
+      1 -> "#{date1} est postérieure à #{date2}"
+    end
+  end
+end
 
-# Comparaison des deux dates
-Date.compare(date1, date2)
+date1 = NaiveDateTime.new(2021, 3, 15)
+date2 = NaiveDateTime.new(2020, 8, 21)
+
+DateComparer.compare_dates(date1, date2)
 ```
 
-La sortie de ce code sera `:lt`, car la date `date1` est antérieure à `date2`.
+Et voici le résultat :
 
-Nous pouvons également utiliser la fonction `Date.compare/2` avec des heures ou des dates et heures en ajoutant simplement un autre argument facultatif représentant l'heure, comme ceci :
+> 2021-03-15 est postérieure à 2020-08-21
 
-```Elixir
-# Définition des deux dates et heures à comparer
-datetime1 = ~U[2020-01-01 15:30:00]
-datetime2 = ~U[2020-01-01 20:45:00]
+Nous pouvons également utiliser la fonction `DateTime.compare/2` pour comparer des dates avec un fuseau horaire. Cette fonction fonctionne de la même manière que `NaiveDateTime.compare/2`, mais prend deux paramètres de type `DateTime` et renvoie une valeur de `:lt` (moins que), `:eq` (égal) ou `:gt` (plus que).
 
-# Comparaison des deux date-heures
-Date.compare(datetime1, datetime2, :time)
-```
+## Analyse approfondie
 
-La sortie de ce code sera également `:lt`, car `datetime1` se produit avant `datetime2`.
+Il est important de noter que la comparaison de dates en Elixir se fait en fonction de leur ordre chronologique et non de leur valeur numérique. Par exemple, la date `2021-03-15` est considérée comme postérieure à la date `2020-08-21` car elle vient chronologiquement après.
 
-## Plongée en profondeur
-
-Il est important de noter que la fonction `Date.compare/2` compare les dates de manière précise en prenant en compte le fuseau horaire. De plus, si un seul argument est une date et l'autre une date et heure, le comparateur enlève simplement la partie temps de la date et l'utilise pour la comparaison. Cela peut entraîner des résultats inattendus si vous ne faites pas attention aux types de données que vous utilisez.
-
-De plus, la comparaison des dates en utilisant `Date.compare/2` se fait en utilisant l'ordre chronologique naturel des dates. Cela signifie que les années sont comparées en premier, puis les mois et enfin les jours. Si deux dates ont le même jour mais des mois ou des années différents, la comparaison se fera en fonction des mois ou années.
+De plus, lors de la comparaison de dates avec un fuseau horaire, il est important de s'assurer que les deux dates ont le même fuseau horaire. Sinon, la comparaison peut renvoyer des résultats inattendus.
 
 ## Voir aussi
 
-- La documentation sur `Date.compare/2` : https://hexdocs.pm/elixir/Date.html#compare/2
-- Comment formater les dates en Elixir : https://hexdocs.pm/elixir/Date.html#module-formatting-and-parsing
-- Comparaison des dates en utilisant la fonction `Date.before?/2` : https://hexdocs.pm/elixir/Date.html#before?/2
+- [Documentation officielle d'Elixir sur les dates et heures](https://hexdocs.pm/elixir/DateTime.html)
+- [Article sur la manipulation des dates en Elixir](https://medium.com/@codelabs/working-with-dates-and-times-in-elixir-49c71a11156b) (en anglais)

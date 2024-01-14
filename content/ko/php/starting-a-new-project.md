@@ -1,32 +1,48 @@
 ---
-title:    "PHP: 새 프로젝트를 시작하기"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/starting-a-new-project.md"
+title:                "PHP: 새 프로젝트를 시작하는 방법"
+programming_language: "PHP"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 시작하는가?
+# 왜
 
-새 프로젝트를 시작하는 이유는 다양합니다. 몇 가지 이유 중 하나는 새로운 언어나 프로그래밍 기술을 배우는 것입니다. 또 다른 이유는 새로운 아이디어를 구현하기 위해서일 수 있으며, 더 배우려는 욕심이 있거나 새로운 도전에 도전하고 싶어서일 수도 있습니다.
+새로운 프로젝트를 시작하는 이유는 그것이 새로운 도전이 될 뿐만 아니라 새로운 기술을 배우고 기존의 경험을 적용할 수 있는 기회를 제공하기 때문입니다.
 
-## 어떻게 시작하나요?
+# 어떻게
 
 ```PHP
-<?php
-echo "안녕하세요, PHP 프로그래밍을 시작해보세요!";
-?>
+// 변수 정의
+$number = 5;
+$string = "Hello";
+
+// 변수 출력
+echo "Number is: " . $number . "<br>";
+echo "String is: " . $string . "<br>";
 ```
+**출력:**
 
-이 간단한 예제를 통해 PHP의 기본 구문을 배울 수 있습니다. 또한, 많은 커뮤니티와 자료가 있어 PHP를 배우기에 더욱 용이합니다. 시작하기 가장 좋은 방법 중 하나는 인터넷에서 무료로 제공되는 온라인 강좌를 찾는 것입니다.
+Number is: 5 <br>
+String is: Hello <br>
 
-## 깊이 파헤치기
+위 코드 예시에서 볼 수 있듯이, PHP는 간단한 변수 정의와 출력을 쉽게 할 수 있도록 해줍니다. 이외에도 조건문, 반복문, 함수 등 다양한 기능을 제공하기 때문에 프로젝트를 구현하는 데 유용합니다.
 
-새로운 프로젝트를 시작하는 것은 새로운 언어나 프로그래밍 기술을 배우는 것 이상의 의미를 가질 수 있습니다. 프로그래밍은 창의력과 문제 해결 능력을 향상시키며, 새로운 도전을 통해 더 많은 것을 배울 수 있습니다. 또한, 체계적으로 코드를 작성하고 조직하는 것도 중요한 스킬입니다. 이러한 습관을 가진 개발자는 더 효율적이고 보다 유지보수가 쉬운 코드를 작성할 수 있습니다.
+# 딥 다이브
 
-## 또 다른 자료들
+새로운 프로젝트를 시작할 때는 목표를 명확하게 정하는 것이 중요합니다. 이를 위해 다음과 같은 질문들을 고민해보세요.
 
-- [PHP 공식 사이트](https://www.php.net/)
-- [PHP 강좌](https://www.tutorialspoint.com/php/index.htm)
-- [PHP 소스 코드 예제](https://www.w3schools.com/php/)
-- [PHP 커뮤니티 포럼](https://forum.php.net/)
+1. 어떤 언어를 사용할 것인가?
+2. 어떤 기능을 구현할 것인가?
+3. 어떤 데이터베이스를 사용할 것인가?
+4. 어떤 디자인 패턴을 적용할 것인가?
+5. 어떤 보안 관련 조치를 취할 것인가?
+
+목표를 설정한 후에는 구현할 기능들을 나누고 일정을 계획하는 것이 좋습니다. 이를 통해 프로젝트를 조금씩 나누어 진행하고 완성할 수 있습니다.
+
+# 연관 보기
+
+* [PHP 공식 문서](https://www.php.net/)
+* [PHP 커뮤니티 포럼](https://forum.phpwel.com/)
+* [PHP 온라인 학습 자료](https://www.php.net/manual/en/)

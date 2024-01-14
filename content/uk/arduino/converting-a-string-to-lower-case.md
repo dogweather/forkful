@@ -1,30 +1,32 @@
 ---
-title:    "Arduino: Перетворення рядка у нижній регістр"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/converting-a-string-to-lower-case.md"
+title:                "Arduino: Перетворення рядка в нижній регістр"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Відображення тексту в нижньому регістрі є корисною функцією у багатьох додатках, таких як перевірка орфографії або порівняння рядків. Використання Arduino у цих додатках може додати функціональності та зробити їх управління більш зручним.
+Конвертування рядка в нижній регістр - це корисна техніка для обробки текстової інформації. Використовуючи це, ви можете легко порівнювати рядки та здійснювати інші операції з текстом.
 
 ## Як
 
-Для перетворення строки в нижній регістр у мові програмування Arduino можна використовувати функцію `toLowerCase()`. Наприклад, для перетворення рядка `HELLO WORLD` в нижній регістр, потрібно використати такий код:
-
 ```Arduino
-String upperCaseString = "HELLO WORLD";
-String lowerCaseString = upperCaseString.toLowerCase();
-Serial.println(lowerCaseString); // Output: hello world
+String original = "ТЕКСТ В ВЕРХНЬОМУ РЕГІСТРІ";
+String lowerCase = original.toLowerCase();
+
+Serial.print(lowerCase); // результат: текст в верхньому регистрі
 ```
 
-## Глибоке занурення
+В цьому прикладі ми використали функцію `toLowerCase()` для конвертування рядка `original` в нижній регістр. Результат був виведений на моніторі серійного порту за допомогою функції `Serial.print()`. Таким чином, ми отримали рядок `lowerCase`, який має значення `текст в верхньому регістрі`.
 
-Коли рядок перетворюється у нижній регістр, всі символи, які не є літерами англійського алфавіту, будуть залишені без змін. Також, використання функції `toLowerCase()` може зберігати оригінальний рядок і повертати новий рядок зі зміненим регістром, тому це не впливатиме на оригінальну змінну.
+## Глибокий занурення
 
-## Дивіться також
+Конвертація рядка в нижній регістр виконується за допомогою функції `toLowerCase()`, яка є частиною об'єкту `String`. Ця функція змінює кожен символ в рядку на його еквівалент в нижньому регістрі. На відміну від мови C, де пониження регістру виконується за допомогою функції`tolower()`, в Arduino це хибне ім'я функції.
 
-- [Мануал з офіційного сайту Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/tolowercase/)
-- [Приклад застосування функції toLowerCase()](https://www.tutorialspoint.com/arduino/arduino_string_tolowercase.htm)
+## Дивись також
+
+- [String.toLowerCase() reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
+- [String data type tutorial](https://www.arduino.cc/en/Tutorial/String)

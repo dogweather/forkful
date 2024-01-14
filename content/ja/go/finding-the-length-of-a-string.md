@@ -1,16 +1,19 @@
 ---
-title:    "Go: 文字列の長さを求める"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/finding-the-length-of-a-string.md"
+title:                "Go: 文字列の長さを見つける"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
-文字列の長さを求めることに熱中する理由は、Goプログラムにおける基本的なコーディング技術であり、様々なアプリケーションで必要とされるものだからです。
+# なぜ
 
-##やり方
-以下は、Goプログラムで文字列の長さを求める方法の例です。
+文字列の長さを調べることに巻き込まれる理由を説明します。
+
+## 方法
+
+文字列の長さを調べる方法について、Go言語のコーディング例と出力のサンプルをご紹介します。
 
 ```Go
 package main
@@ -18,27 +21,20 @@ package main
 import "fmt"
 
 func main() {
-	str := "こんにちは、世界"
-	fmt.Println("文字列の長さは", len(str), "です")
+  str := "こんにちは、世界！"
+  
+  fmt.Println(len(str))
 }
+
+// 出力: 9
 ```
 
-このコードを実行すると、次のような出力が得られます。
+## 深堀り
 
-```Go
-文字列の長さは 9 です
-```
+文字列の長さを確認する方法について、より詳細な情報をお伝えします。文字列の長さを調べる際に考慮すべきことや、その他の役立つ情報をご紹介します。
 
-##深堀り
-文字列の長さを求める方法は非常にシンプルですが、実際はどのように動作しているのでしょうか？Goでは、文字列はユニコード（Unicode）を使用してエンコードされています。つまり、文字列の長さを求める際には、実際の文字数と異なる場合があります。また、基本的なアルゴリズムやパフォーマンスについても考慮する必要があります。
+## 参考リンク
 
-##参考リンク
-この記事では、Goプログラムにおける文字列の長さの求め方について紹介しましたが、他にもGoで役立つ情報がたくさんあります。以下のリンクを参考にして、お好みのトピックを学習してみてください。
-
-- [A Tour of Go](https://tour.golang.org/welcome/1)：Go言語の公式チュートリアル
-- [プログラミングの基本 - 文字列の長さを求めよう（Go入門）](https://www.javadrive.jp/golang/string/index5.html)：文字列の長さを求める方法を解説しています
-- [Goとは？特徴や使い方を解説！](https://techacademy.jp/magazine/6235)：Go言語の概要や基本的な使い方について紹介しています
-
-##その他の参考リンク
-- [Go言語での文字列操作方法まとめ](https://qiita.com/yoskeoka/items/e3ba84c5574ad4dee01e)：Go言語での文字列操作のさまざまな方法を紹介しています
-- [The Go Programming Language Specification](https://golang.org/ref/spec)：Go言語の仕様書（英語）
+[Go言語ドキュメンテーション](https://golang.org/doc/)
+[Go言語チュートリアル](https://tour.golang.org/welcome/1)
+[Go言語の文字列操作方法](https://www.tutorialspoint.com/go/go_string_manipulation.htm)

@@ -1,52 +1,33 @@
 ---
-title:    "Elm: Tekstin etsiminen ja korvaaminen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/searching-and-replacing-text.md"
+title:                "Elm: Tekstin etsiminen ja korvaaminen"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi etsiä ja korvata tekstejä?
 
-Monilla ohjelmointikielillä on mahdollista suorittaa tekstien etsimistä ja korvaamista. Tässä artikkelissa käsitellään sitä, miten sama saavutetaan Elm-ohjelmointikielessä.
+Etsi ja korvaa -toiminnolla voi helposti ja nopeasti muokata useita tekstejä kerralla. Se säästää aikaa ja vaivaa, ja auttaa myös vähentämään virheiden määrää koodin kirjoittamisessa.
 
-## Miten tehdä
+## Miten tehdä se Elmilla?
 
-"```Elm
--- Etsi ja korvaa funktion avulla
-printText : String -> String
-printText input =
-  String.replace "vanha sana" "uusi sana" input 
+```Elm
+-- Etsi ja korvaa "Hei" --> "Moi"
+replaceHeiMoi : String -> String
+replaceHeiMoi text =
+    String.replace "Hei" "Moi" text
 ```
 
-"```Elm
--- Suorita etsintä ja korvaus tehtävä aktivoinnin yhteydessä
-main =
-  printText "Tämä on vanha sana"
-  
--- Output: "Tämä on uusi sana" 
-```
+Tässä yksinkertaisessa esimerkissä luodaan funktio nimeltä `replaceHeiMoi`, joka ottaa parametrina merkkijonon ja palauttaa uuden merkkijonon, jossa kaikki esiintymät sanasta "Hei" korvataan sanalla "Moi".
 
-Voit myös käyttää `String.replace`-toimintoa suoraan tehtävään, kuten seuraavassa esimerkissä:
+## Syvemmälle etsimisen ja korvaamisen maailmaan
 
-"```Elm
--- Vaihda kaikki isoille kirjaimille pienille kirjaimille
-text : String
-text = "TEKSTI tähän"
-
-String.replace "TEKSTI" "teksti" text 
-
--- Output: "teksti tähän"
-```
-
-## Syvempää tietoa
-
-Elm:ssä on valmis `String.replace`-funktio, joka löytyy `elm/core`-kirjastosta. Voit myös luoda oman funktion, joka suorittaa halutun etsinnän ja korvauksen, kuten ensimmäisessä esimerkissä.
-
-On myös hyvä huomata, että tekstien etsiminen ja korvaaminen on mahdollista myös monimutkaisemman pattern matchaamisen avulla.
+Etsi ja korvaa voidaan tehdä monilla eri tavoilla riippuen tarpeistasi. Voit esimerkiksi käyttää RegExp-kirjastoa, jonka avulla voit käyttää monimutkaisempia hakuja ja korvauksia. Voit myös käyttää `String.filter` -funktiota, joka poistaa halutut sanat kokonaan merkkijonosta.
 
 ## Katso myös
 
-- [Elm virallinen dokumentaatio](https://guide.elm-lang.org/)
-- [Elm Slack-yhteisö](https://elmlang.slack.com/)
-- [Elm konferenssit ja tapahtumat](https://elm-conf.com/)
+- [Elm String-dokumentaatio](https://elm-lang.org/docs/strings)
+- [RegExp-kirjasto Elmissä](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [String.filter -funktio Elmissa](https://package.elm-lang.org/packages/elm/bytes/latest/String#filter)

@@ -1,51 +1,52 @@
 ---
-title:    "Java: Extrahera subträngar"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/extracting-substrings.md"
+title:                "Java: Extrahering av substrängar"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför man ska använda substrings i Java
-Varför skulle någon välja att använda substrings i Java? Det finns faktiskt flera olika anledningar till varför det kan vara användbart. Kanske behöver du bara använda en del av en sträng istället för hela, eller så vill du bara extrahera en viss del för att jämföra med en annan sträng. Oavsett anledningen så är substring en viktig funktion att ha i din Java-verktygslåda.
+## Varför
 
-## Hur man använder substrings i Java
-Att extrahera en substräng från en befintlig sträng är enkelt i Java. Använd bara metoden `substring(int beginIndex, int endIndex)` där `beginIndex` är indexet för den första tecknet i substrängen och `endIndex` är indexet för det sista tecknet. Här är ett enkelt exempel:
+Att kunna extrahera substrängar, det vill säga en del av en större textsträng, är en viktig färdighet för alla Java-programmerare. Genom att kunna välja och manipulera specifika delar av en textsträng ger det oss möjlighet att hantera och behandla data mer effektivt.
 
-```Java
-String str = "Hej världen!";
-String sub = str.substring(4, 9);
-System.out.println(sub); // Output: värld
+## Hur man gör det
+
+För att extrahera en substräng i Java använder man sig av metoden `substring()`. Denna metod tar två parametrar – startindex och slutindex – och returnerar en del av den ursprungliga strängen baserat på dessa parametrar.
+
+Här är ett exempel på hur man kan använda `substring()`:
+
+```java
+String text = "Hej alla svenska läsare!";
+String substr = text.substring(4, 14);
+
+System.out.println(substr);
 ```
 
-Du kan också använda enbart `indexOf()` för att få indexet för ett visst tecken eller teckensekvens och sedan använda det med metoden `substring()` för att extrahera det du behöver. Här är ett exempel på det:
+Detta kommer att skriva ut "alla svenska" eftersom substrängen börjar vid index 4 och slutar vid index 14 (inklusive index 4 men exklusive index 14).
 
-```Java
-String str = "Jag älskar att koda!";
-int index = str.indexOf("älskar");
-String sub = str.substring(index);
-System.out.println(sub); // Output: älskar att koda!
+Man kan också använda metoden `length()` för att hämta längden på en textsträng, vilket kan vara användbart för att bestämma slutindexet. Tänk på att index i Java alltid börjar vid 0, så för att extrahera den sista delen av en textsträng kan man använda `length()`-metoden för att hämta den sista indexpositionen.
+
+```java
+String text = "Hej alla svenska läsare!";
+String lastPart = text.substring(18, text.length());
+
+System.out.println(lastPart);
 ```
 
-Du kan också använda `substring()` för att jämföra delar av olika strängar. Genom att använda `equals()` kan du kontrollera om två substrängar är identiska. Här är ett exempel:
+Detta kommer att skriva ut "läsare!" eftersom den sista indexpositionen av `text` är 23 och vi utgår från 18 för att extrahera den sista delen av strängen.
 
-```Java
-String str1 = "Hello world!";
-String str2 = "Hello";
-String sub = str1.substring(0, 5);
-if(sub.equals(str2)) {
-    System.out.println("They are the same!");
-} else {
-    System.out.println("Not the same.");
-}
-```
+## Djupdykning
 
-## Djupdykning i substrings
-Nu när du vet hur man använder `substring()` och dess olika applikationer kanske du undrar hur det egentligen fungerar under huven. När du anropar metoden `substring()` så skapas en ny sträng som innehåller den önskade biten av den ursprungliga strängen.
+Det är viktigt att vara medveten om att Java behandlar textsträngar och index på ett annat sätt än vissa andra programmeringsspråk, såsom C++. I Java är textsträngar objekt, vilket betyder att de har metoder som kan anropas på dem, till exempel `substring()`.
 
-En viktig sak att notera är att Java strängar är oföränderliga, vilket betyder att när en sträng väl är skapad kan den inte ändras. Därför skapas en ny sträng när du använder `substring()`.
+När det gäller index räknar Java alla tecken, inklusive mellanslag, i en textsträng. Detta är viktigt att komma ihåg eftersom det kan påverka vilka index som man behöver använda för att extrahera den önskade substängen.
 
-## Se även
-- [Java dokumentation för `String` klassen (på svenska)](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [Java tutorial för strängar (på svenska)](http://www.mojiasoft.com/java-tutorial/strangar-i-java/)
-- [Java substring på GeeksforGeeks (på engelska)](https://www.geeksforgeeks.org/java-substring-method-examples/)
+En annan viktig detalj är att `substring()`-metoden returnerar en ny sträng och påverkar inte den ursprungliga strängen. Detta gör det möjligt för oss att använda `substring()` flera gånger på samma sträng och få olika substrängar som resultat.
+
+## Se också
+
+- [Java officiell dokumentation för `substring()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
+- [Java video tutorial om `substring()`](https://www.youtube.com/watch?v=0HwQrf_JP6o)
+- [Mer information om index och textsträngar i Java](https://www.geeksforgeeks.org/java-string-substring-method/)

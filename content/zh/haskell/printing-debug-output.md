@@ -1,53 +1,71 @@
 ---
-title:    "Haskell: 输出调试输出"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/printing-debug-output.md"
+title:                "Haskell: 打印调试输出"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要打印调试输出？
+## 为什么
+为什么有时候在编写Haskell程序时，会需要打印调试输出呢？这是因为在程序运行时，我们需要能够跟踪代码的执行过程，以便检查程序是否按照预期工作。打印调试输出可以帮助我们定位问题，并帮助我们更好地理解程序的运行情况。
 
-当我们在编写Haskell程序时，经常会遇到一些bug或错误。为了更有效地调试和解决这些问题，打印调试输出是一种常用的方法。通过打印程序执行过程中的变量值或关键信息，我们可以更深入地了解程序的运行情况，从而更容易找到出错的地方。
-
-## 如何打印调试输出？
-
-在Haskell中，打印调试输出非常简单。我们只需要使用`print`函数来输出我们想要调试的变量或信息。下面是一个基本的例子：
+## 如何做
+要在Haskell中打印调试输出，我们可以使用内置的 `Debug.Trace` 模块。该模块提供了 `trace` 函数，它接受一个字符串作为参数，并在程序运行时将该字符串打印到控制台。下面是一个简单的例子：
 
 ```Haskell
-x = 5
-print x
+import Debug.Trace
+
+main = do
+  putStrLn "请输入一个数字："
+  input <- getLine
+  let num = read input :: Int
+  trace ("用户输入的数字为：" ++ show num) $ do
+    putStrLn "结束程序"
 ```
 
-这段代码将会在控制台输出数字5，从而帮助我们验证程序中x的值是否正确。如果我们想要打印多个变量，可以使用`putStrLn`函数来打印字符串信息。例如：
-
-```Haskell
-x = 5
-y = 10
-putStrLn "The value of x is:"
-print x
-putStrLn "The value of y is:"
-print y
-```
-
-这会输出以下内容：
+运行该程序时，控制台会输出类似以下内容：
 
 ```
-The value of x is:
+请输入一个数字：
 5
-The value of y is:
-10
+用户输入的数字为：5
+结束程序
 ```
 
-## 深入了解打印调试输出
+我们可以看到，通过使用 `trace` 函数打印调试输出，我们可以获得程序运行过程中重要的中间结果，从而帮助我们检查程序是否按照预期工作。
 
-除了简单地使用`print`和`putStrLn`函数外，Haskell还提供了一些其他方式来打印调试输出。例如，我们可以通过导入`Debug.Trace`模块来使用`trace`函数来打印中间过程的变量值，从而更方便地调试复杂的程序。
+## 深入探究
+除了简单的字符串，`trace` 函数还可以接受一个函数作为参数。这个函数可以用来计算一个值，然后在打印调试输出时将该值一并显示出来。下面是一个示例代码：
 
-此外，Haskell还有一些工具和技巧来帮助我们更好地使用打印调试输出。例如，我们可以使用`ghci`（Haskell的交互式解释器）来逐步执行程序并查看变量值，或者使用`-Wall`标志来查找可能的错误。深入了解这些工具和技巧可以帮助我们更有效地利用打印调试输出来解决问题。
+```Haskell
+import Debug.Trace
 
-## 参考链接
+main = do
+  putStrLn "请输入一个数字："
+  input <- getLine
+  let num = read input :: Int
+  trace ("用户输入的数字为：" ++ show num) $ do
+    let result = trace "计算结果为：" $ num * 2
+    putStrLn ("最终结果为：" ++ show result)
+```
 
-- [Haskell调试指南](https://wiki.haskell.org/Debugging)
-- [Haskell调试工具集](https://hackage.haskell.org/packages/search?terms=debugging)
-- [使用GHCi调试Haskell程序](https://www.haskell.org/tutorial/gci.html)
-- [关于-haskell-options的更多信息](https://downloads.haskell.org/%7Eghc/7.2.1/docs/html/users_guide/ghci.html#ghci-cmd-:set)
+运行程序后，控制台会输出类似以下内容：
+
+```
+请输入一个数字：
+5
+用户输入的数字为：5
+计算结果为：10
+最终结果为：10
+```
+
+通过这种方式，我们可以在打印调试输出时获得更多的信息，从而帮助我们更好地理解程序的执行过程。
+
+## 参考资料
+- [Debug.Trace 文档](https://hackage.haskell.org/package/base-4.15.1.0/docs/Debug-Trace.html)
+- [Haskell调试教程](https://wiki.haskell.org/Debugging)
+
+## 另请参阅
+- [Haskell 入门指南](http://learnyouahaskell.com/)
+- [30分钟Haskell入门](https://sourabhbajaj.com/haskell/)

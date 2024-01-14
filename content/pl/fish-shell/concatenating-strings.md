@@ -1,61 +1,55 @@
 ---
-title:    "Fish Shell: Łączenie ciągów znaków"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/concatenating-strings.md"
+title:                "Fish Shell: Łączenie łańcuchów znaków"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zarówno dla nowych, jak i doświadczonych programistów, operowanie na łańcuchach znaków jest nieodłączną częścią codziennej pracy. Jest to jedna z najważniejszych umiejętności, ponieważ pozwala na łączenie różnych fragmentów tekstu w jedną spójną całość. W tym artykule dowiesz się, dlaczego warto poznać technikę łączenia stringów w języku Fish Shell.
+Złączanie ciągów znaków jest powszechnym zadaniem w programowaniu. Pozwala na łączenie różnych elementów tekstu w jeden większy ciąg, co jest przydatne w wielu przypadkach. W tym artykule dowiesz się, jak to zrobić w środowisku Fish Shell.
 
-## Jak to zrobić
+## Jak
 
-Aby połączyć dwa lub więcej łańcuchów znaków w języku Fish Shell, wystarczy użyć operatora plus (+) lub polecenia string bult-in join. Poniżej znajdziesz przykładowy kod oraz wynik działania:
+Do złączania ciągów używamy komendy `string join`. Poniżej znajdują się przykładowe kody oraz wyniki wykorzystania tej komendy w środowisku Fish Shell. 
 
-```Fish Shell
-set first_name "Jan"
-set last_name "Kowalski"
-
-echo $first_name" "$last_name
 ```
-Wynik: "Jan Kowalski"
-
-```Fish Shell
-string join -s " " $first_name $last_name
+Fish Shell - połączone ciągi znaków przy użyciu "string join"
 ```
-Wynik: "Jan Kowalski"
 
-Jak widać, można łączyć nie tylko stałe ciągi znaków, ale także zmienne przechowujące tekst. W przypadku użycia operatora plus należy pamiętać o dodaniu spacji pomiędzy łańcuchami, aby połączone słowa nie tworzyły jednego wyrazu.
-
-## Głębsze zagadnienia
-
-Poza dodawaniem spacji, możliwe jest także wykorzystanie innych separatorów w poleceniu string join. Wystarczy zmienić wartość opcji -s, na przykład:
-
-```Fish Shell
-string join -s ", " "jabłka" "banany" "gruszki"
 ```
-Wynik: "jabłka, banany, gruszki"
-
-Dodatkowo, w języku Fish Shell można również łączyć łańcuchy znaków z innymi wartościami, takimi jak liczby czy listy. Połączone ciągi będą automatycznie konwertowane w odpowiedni sposób. Przykłady:
-
-```Fish Shell
-set age 25
-
-echo "Mam " $age " lat."
+string join ";" "Kot" "łapie" "myszy"   # Output: Kot;łapie;myszy
 ```
-Wynik: "Mam 25 lat."
 
-```Fish Shell
-set fruits (jabłka banany gruszki)
-
-echo "Lubię jeść: " (string join ", " $fruits)
 ```
-Wynik: "Lubię jeść: jabłka, banany, gruszki"
+string join " " "Witaj" "na" "świecie"   # Output: Witaj na świecie
+```
 
-## Zobacz także
+Możesz również używać zmiennej do złączania ciągów. Przykładowo:
 
-- Dokumentacja języka Fish Shell: https://fishshell.com/docs/current/index.html
-- Przewodnik po podstawowych operacjach na stringach: https://fishshell.com/docs/current/tutorial.html#tutorial-strings
-- Wprowadzenie do konstrukcji języka Fish Shell: https://medium.com/@eemeliheinonen/fish-is-a-strongly-typed-language-85c76cfbcb26
+```
+set kolor "niebieski"
+set predmiot "pióro"
+string join " " $kolor $predmiot   # Output: niebieski pióro
+```
+
+## Deep Dive
+
+Funkcja `string join` pozwala na łączenie ciągów znaków przy użyciu separatora. Można to zrobić poprzez podanie separatora jako pierwszego argumentu w komendzie. Jeśli nie zostanie on podany, domyślnym separatorem jest spacja.
+
+Innym sposobem złączania ciągów jest użycie pętli `for`. Przykładowo, jeśli mamy listę przedmiotów, możemy połączyć je w jeden dłuższy ciąg używając pętli oraz funkcji `string join`. Poniżej znajduje się kod oraz wynik wykorzystania tego sposobu:
+
+```
+set przedmioty "długopis" "zeszyt" "linijka"
+for przedmiot in $przedmioty
+    string join ", " $przedmiot  # Output: długopis, zeszyt, linijka
+end
+```
+
+## Zobacz również
+
+- Dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
+- Przykłady użycia funkcji `string join`: https://fishshell.com/docs/current/cmds/string.join.html
+- Inne przydatne komendy w środowisku Fish Shell: https://fishshell.com/docs/current/cmds/

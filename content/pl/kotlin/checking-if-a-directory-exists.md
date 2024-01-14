@@ -1,46 +1,38 @@
 ---
-title:    "Kotlin: Sprawdzanie istnienia katalogu"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/checking-if-a-directory-exists.md"
+title:                "Kotlin: Sprawdzanie, czy istnieje katalog."
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Sprawdzanie, czy istnieje katalog w programowaniu Kotlin może być nieuniknionym krokiem w niektórych projektach. Warto mieć tę umiejętność w swoim arsenału, aby móc skutecznie zarządzać plikami i katalogami w aplikacji.
+Jeśli jesteś programistą, w pewnym momencie możesz potrzebować sprawdzić, czy dany katalog istnieje w swoim kodzie. Niezależnie od tego, czy jest to wymóg Twojej aplikacji czy też potrzeba wykonania pewnych operacji związanych z danym katalogiem, poradnik ten pomoże Ci w wykonywaniu tej prostej czynności.
 
 ## Jak to zrobić
 
+Sprawdzenie istnienia katalogu w języku Kotlin jest bardzo proste. Wystarczy użyć funkcji `exists()` z klasy `File` i podać ścieżkę do katalogu jako parametr. Oto przykładowy kod:
+
 ```Kotlin
-val directory = File("nazwa_katalogu")
-if(!directory.exists()){
-    println("Katalog nie istnieje")
-}else{
-    println("Katalog istnieje")
+val dir = File("ścieżka/do/katalogu")
+if (dir.exists()){
+    println("Katalog istnieje!")
+} else {
+    println("Katalog nie istnieje.")
 }
 ```
 
-W powyższym przykładzie tworzymy obiekt typu File, który reprezentuje nasz katalog. Następnie sprawdzamy, czy istnieje przy użyciu metody `exists()`. Jeśli wynik jest fałszywy, oznacza to, że katalog nie istnieje, a jeśli jest prawdziwy, to katalog istnieje.
-
-Możemy także użyć wyrażenia zwracającego wartość logiczną w instrukcji if:
-
-```Kotlin
-if(File("nazwa_katalogu").exists()){
-    println("Katalog istnieje")
-}else{
-    println("Katalog nie istnieje")
-}
-```
+W powyższym przykładzie utworzono obiekt klasy `File` reprezentujący dany katalog, a następnie wywołano na nim funkcję `exists()`, która zwraca `true` lub `false` w zależności od tego, czy katalog istnieje. W zależności od wyniku, wypisywany jest odpowiedni komunikat.
 
 ## Deep Dive
 
-Sprawdzanie, czy istnieje dany katalog polega na tym, że program sprawdza system plików w poszukiwaniu nazwy katalogu. Jeśli znajdzie katalog o takiej samej nazwie, zwraca wartość prawdziwą, a jeśli nie, zwraca wartość fałszywą.
-
-Warto wiedzieć, że metoda `exists()` zwraca również wartość prawdziwą, jeśli podamy nazwę pliku, a nie katalogu. Dlatego ważne jest, aby wcześniej dokładnie sprawdzić typ obiektu i czy faktycznie sprawdzamy istnienie katalogu.
+Podczas wykonywania funkcji `exists()`, system operacyjny wykonuje operację sprawdzania istnienia pliku lub katalogu. Jeśli wynik jest pozytywny, zwracany jest `true`, w przeciwnym przypadku zwracane jest `false`. Jest to bardzo prosta, ale ważna operacja, ponieważ pozwala nam na podejmowanie odpowiednich działań w zależności od istnienia danego katalogu.
 
 ## Zobacz również
 
-- [Oficjalna dokumentacja Kotlin na temat klas File i Path](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
-- [Porównanie szybkości działania metod exists() i isDirectory() w Kotlin](https://stackabuse.com/kotlincheck-if-directory-exists/)
-- [Przykładowy projekt w Kotlin, w którym wykorzystano sprawdzanie istnienia katalogu](https://github.com/krzysztofkrystianowicz/spring-kotlin-files-upload)
+- Dokumentacja Kotlin: [File.exists](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/exists.html)
+- Poradnik: [Jak sprawdzić, czy plik istnieje w języku Kotlin](https://www.baeldung.com/java-kotlin-file-exists)
+
+Dziękujemy za przeczytanie tego krótkiego poradnika. Mamy nadzieję, że teraz wiesz, jak łatwo i szybko sprawdzić istnienie danego katalogu w języku Kotlin. Powodzenia w dalszym programowaniu!

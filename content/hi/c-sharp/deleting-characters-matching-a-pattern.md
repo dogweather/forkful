@@ -1,33 +1,25 @@
 ---
-title:    "C#: पैटर्न से मेल खाते अक्षरों को हटाना"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/deleting-characters-matching-a-pattern.md"
+title:                "C#: पैटर्न साँचा से अनुरूप अक्षरों को हटाना"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-"क्यों: आपको एक निश्चित पैटर्न से मेल खानेवाले अक्षरों को हटाने में रुचि हो सकती है।"
+## क्यों
+आप अक्सर अपने कोड में किसी भी निश्चित पैटर्न को मेच करने वाले अक्षरों को हटाने की जरूरत महसूस कर सकते हैं। यह अक्सर सभी से काम आता है, चाहे आप अपने स्ट्रिंग को साफ करने के लिए या सुनिश्चित करने के लिए कि क्या आपके कोड में किसी पैटर्न की टिप्पणियां हैं।
 
-आपके कोड में अक्षरों के साथ साथ सदियों से भी उपयोग किया जा सकता है। यह एक उदाहरण है:
-
-```C# 
-string text = "यह वाकय जो कि एक पाठक से सम्बंधित है समर्पित है।"; 
-string pattern = "एक"; 
-Console.WriteLine("प्रारंभिक पाठ: " + text); 
-string newText = text.Replace(pattern, ""); 
-Console.WriteLine("नया पाठ: " + newText); 
+## कैसे
+```C#
+string str = "This is a sample string.";
+string removedStr = Regex.Replace(str, "s[a-z]*", ""); // Output: Thi a ample tring.
 ```
- 
-बाहरवींज़र कोड का नतीजा प्रिंट होगा: 
+उपरोक्त कोड फ़ंक्शन `str` से `s` शुरू होने वाले किसी भी अक्षरों और उनके बाद के सभी अक्षरों को हटाएगा। यह आकर्षक हो सकता है कि इसमें कोई भी अन्य वर्ण भी हटाए जा सकते हैं, चाहे वे अक्षर हों या वर्णमाला के प्रत्येक अक्षर हों।
 
-प्रारंभिक पाठ: यह वाकय जो कि एक पाठक से सम्बंधित है समर्पित है। 
+## गहराई तक जाएं
+यदि आप `Regex` क्लास को गहराई से जानना चाहते हैं, तो आप `RegexOptions` पैरामीटर का उपयोग कर सकते हैं, जहां आप पैटर्न के साथ से कुछ अन्य विकल्प भी चुन सकते हैं। उदाहरण के लिए, जब संभव हो, आप `RegexOptions.IgnoreCase` का उपयोग कर सकते हैं जो अक्षर केस सन्निहित थे या नहीं, उससे प्रभावित होगा।
 
-नया पाठ: यह वाकय जो कि पाठक से सम्बंधित है समर्पित है। 
-
-गहराई में जाने के लिए: आप आखिरी चरण में हटाने के लिए पटर्न से मेल खाने वाले अक्षरों के बारे में अधिक जानकारी दे सकते हैं। यह में है कि प्रोग्रामिंग में इस तरह के रूप यूटिलिटियों की अनिवार्य गुण हैं।
-
-"See Also:"
-
-- https://www.geeksforgeeks.org/c-sharp-string-output/
-- https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
-- https://www.w3schools.in/csharp-tutorial/basic-syntax/
+## देखें भी
+[Regex फ़ंक्शन गाइड](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1) |
+[Regex.Replace फ़ंक्शन गाइड](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=netcore-3.1)

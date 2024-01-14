@@ -1,35 +1,38 @@
 ---
-title:    "Ruby: Musterübereinstimmende Zeichen löschen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/deleting-characters-matching-a-pattern.md"
+title:                "Ruby: Löschen von Zeichen, die einem Muster entsprechen"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Ruby-Programmierung sehr nützlich sein, um bestimmte Textabschnitte oder Zeichenketten zu entfernen. Dies kann zum Beispiel bei der Datenbereinigung oder bei der Manipulation von Textdateien hilfreich sein.
+Das Löschen von Zeichen in einem Text oder einer Zeichenfolge, die einem bestimmten Muster entsprechen, kann eine nützliche Fähigkeit in der Ruby-Programmierung sein. Es kann helfen, Textdaten zu bereinigen oder spezifische Teile des Textes zu entfernen, die nicht benötigt werden. In diesem Blog-Artikel werden wir uns ansehen, wie man Zeichen, die einem bestimmten Muster entsprechen, in Ruby löschen kann.
 
-## How To
+## Wie es geht
 
-Um in Ruby Zeichen zu löschen, die einer bestimmten Bedingung entsprechen, verwenden wir die "gsub" Methode zusammen mit einem regulären Ausdruck. Dieser reguläre Ausdruck definiert das Muster, nach dem wir suchen möchten. In folgendem Beispiel entfernen wir alle Leerzeichen aus einer Zeichenkette:
+Um Zeichen in Ruby zu löschen, die einem bestimmten Muster entsprechen, verwenden wir die `delete`-Methode. Diese Methode akzeptiert ein Argument, das die Zeichen enthält, die gelöscht werden sollen, sowie optional ein zweites Argument, das das Ersatzzeichen angibt, das anstelle der gelöschten Zeichen verwendet werden soll.
 
-```Ruby
-text = "Dies ist ein Beispieltext"
-text.gsub(/\s+/, "")
-#Output: "DiesisteinBeispieltext"
+Ein Beispiel könnte folgendermaßen aussehen:
+
+```
+text = "Hallo Welt!"
+puts text.delete("l") # Output: Hao We!
+puts text.delete("l", "LL") # Output: HaLLo WeLLt!
 ```
 
-Der reguläre Ausdruck `/\s+/` sucht nach einem oder mehreren aufeinanderfolgenden Leerzeichen und ersetzt diese durch einen leeren String. Wir können auch andere Zeichen oder Zeichenkombinationen löschen, indem wir den regulären Ausdruck entsprechend ändern.
+In diesem Beispiel löschen wir alle "l"-Zeichen aus dem Text und ersetzen sie mit "LL". Die `delete`-Methode kann auch mit regulären Ausdrücken verwendet werden, um komplexere Muster zu löschen.
 
-## Deep Dive
+## Ein tieferer Einblick
 
-Für diejenigen, die tiefer in die Welt der regulären Ausdrücke eintauchen möchten, gibt es zahlreiche Möglichkeiten, Zeichen zu löschen, die einem bestimmten Muster entsprechen. Zum Beispiel können wir den regulären Ausdruck mit Zeichenklassen wie `\d` für Zahlen oder `\w` für alphanumerische Zeichen kombinieren, um spezifischere Muster anzugeben. Wir können auch Optionen wie "global" oder "ignore case" verwenden, um das Verhalten des regulären Ausdrucks anzupassen.
+Um die `delete`-Methode besser zu verstehen, werfen wir einen Blick auf ihre Funktionsweise im Hintergrund. Diese Methode basiert auf der `tr`-Methode, die das Ersetzen von Zeichen durch andere Zeichen ermöglicht. Wenn wir also `delete` verwenden, führt Ruby im Grunde genommen dieselben Schritte aus wie bei der Verwendung von `tr`, mit dem Unterschied, dass wir die Ersatzzeichen nicht angeben, sondern sie einfach löschen.
 
-Ein hilfreiches Werkzeug zum Experimentieren und Testen von regulären Ausdrücken ist die Online-Plattform Rubular (https://rubular.com/). Hier können wir unsere regulären Ausdrücke eingeben und sofort sehen, welche Zeichen damit übereinstimmen und welche gelöscht werden würden.
+Ein weiteres wichtiges Detail ist, dass die `delete`-Methode nicht nur auf Strings, sondern auch auf Arrays angewendet werden kann. In diesem Fall werden alle Elemente gelöscht, die dem angegebenen Muster entsprechen.
 
 ## Siehe auch
 
-- Ruby Dokumentation zu regulären Ausdrücken: https://ruby-doc.org/core-2.7.1/Regexp.html
-- Einführung in reguläre Ausdrücke: https://www.rubyguides.com/2015/06/ruby-regex/
-- Weitere Anwendungsmöglichkeiten von regulären Ausdrücken in Ruby: https://medium.com/@rubylearning/ruby-regexes-739ce7d7f444
+* [Ruby String Dokumentation](https://ruby-doc.org/core-3.0.0/String.html)
+* [Reguläre Ausdrücke in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+* [Ruby Array Dokumentation](https://ruby-doc.org/core-3.0.0/Array.html)

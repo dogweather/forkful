@@ -1,36 +1,53 @@
 ---
-title:    "Gleam: ''컴퓨터 프로그래밍에서 명령 줄 인수 읽기''"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/reading-command-line-arguments.md"
+title:                "Gleam: 내용 cmdline 인수 읽기"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-이 기사를 읽는 이유는 단순합니다. 글림(Gleam) 프로그래밍 언어를 사용하여 커맨드 라인 인수를 읽는 방법을 배우고 싶기 때문입니다. 커맨드 라인 인수를 읽는 것은 프로그래머에게 유용한 기술이며 프로그램에 유연성을 제공할 수 있습니다.
+많은 프로그래밍 언어들은 프로그램을 실행할 때 커맨드 라인에 입력된 인자들을 읽어와서 실행을 조정할 수 있도록 해줍니다. 그렇기 때문에 이번 블로그는 Gleam에서 커맨드 라인 인자를 어떻게 읽어오는지 알려드릴 것입니다.
 
 ## 어떻게
 
-커맨드 라인 인수를 읽는 방법을 배우는 것은 간단합니다. 먼저 구글에서 Gleam을 다운로드하여 설치해야 합니다. 그런 다음 다음과 같이 코드를 작성합니다:
+아래 코드 블록은 Gleam에서 커맨드 라인 인자를 읽어오는 방법을 보여줍니다. 이 코드를 실행할 경우, 터미널에서 입력한 숫자만큼 "Hello Gleam!" 메시지를 출력할 것입니다.
 
 ```Gleam
-import gleam/arg
-main(args) {
-    greeting := arg.get(args, 0, "Hello")
-    name := arg.get(args, 1, "World")
-    print(greeting + ",", name + "!")
+fn main(args) {
+  // args의 타입은 [String],
+  // 커맨드 라인 인자들의 리스트를 뜻합니다.
+  let args_count = length(args)
+  let num = String.to_integer(list.hd(args))
+  for _ in 0..num {
+    // for문 안의 코드들은 num만큼 반복됩니다.
+    // args_count를 이용해서 프로그램이 몇 개의 인자를 받았는지 확인할 수 있습니다.
+    let message = "Hello Gleam!"
+    // println!는 Gleam에서 지원하는 출력 함수로,
+    // message 변수의 값을 터미널에 출력합니다.
+    println!(message)
+  }
 }
 ```
 
-위의 코드를 실행하면 예를 들어 "Hello, World!"라는 출력을 볼 수 있습니다.
+코드를 실행하기 전, 터미널에서 아래와 같이 커맨드 라인 인자를 추가해줘야 합니다.
 
-## 심층적으로 탐구하기
+```bash
+gleam run main.gleam 5
+```
 
-커맨드 라인 인수를 읽는 다른 방법도 있습니다. 예를 들어, `get_flag` 함수를 사용하여 특정 플래그를 읽을 수도 있습니다. 또는 `get_opt` 함수를 사용하여 선택적 인수를 읽을 수도 있습니다. 더 많은 정보는 [Gleam 공식 문서](https://gleam.run/book/stdlib.html#arg)에서 확인할 수 있습니다.
+위의 코드를 실행하면 "Hello Gleam!" 메시지가 5번 출력될 것입니다. 여러분도 위의 예제 코드를 바탕으로 커맨드 라인 인자를 읽어오는 방법을 익혀보세요!
 
-## 또 보기
+## 딥 다이브
 
-- [Gleam 공식 웹사이트](https://gleam.run)
-- [Gleam 공식 문서](https://gleam.run/book/)
-- [Gleam의 커뮤니티 드라이브](https://community.gleam.run/)
+Gleam에서 커맨드 라인 인자를 읽어오기 위해 사용할 수 있는 라이브러리가 정말 다양합니다. 각 라이브러리는 각자의 장단점을 가지고 있기 때문에, 프로젝트에 맞는 가장 적합한 라이브러리를 골라 사용하는 것이 중요합니다. 자세한 내용은 아래의 "관련 링크"를 참고해주세요!
+
+## 관련 링크
+
+- [Gleam 공식 문서 - Reading Command Line Arguments](https://gleam.run/getting-started/reading-command-line-arguments/)
+- [Gleam 라이브러리 - gleam/cli](https://github.com/gleam-lang/cli)
+- [Gleam 라이브러리 - gleam/inquisitor](https://github.com/gleam-lang/inquisitor)
+
+감사합니다!

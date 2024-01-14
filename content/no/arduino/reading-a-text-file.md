@@ -1,68 +1,67 @@
 ---
-title:    "Arduino: Lese en tekstfil"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/reading-a-text-file.md"
+title:                "Arduino: Lesing av en tekstfil"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Hvis du er en Arduino-entusiast og er interessert i å lese tekstfiler, så er dette blogginnlegget perfekt for deg. Her vil vi gå gjennom hvordan du enkelt kan lese tekstfiler ved hjelp av Arduino og gi deg en grundig forståelse av dette konseptet.
+Å kunne lese en tekstfil er en viktig del av programmering, spesielt for Arduino. Det lar deg lagre og hente data fra en ekstern fil, som kan være nyttig for å lagre konfigurasjonsinnstillinger eller annen statisk informasjon.
 
 ## Hvordan
-
-For å lese en tekstfil ved hjelp av Arduino, må du bruke funksjonene "open" og "read" i SD-biblioteket. Først må du initialisere SD-kortet ved hjelp av funksjonen "begin", og deretter åpner du filen ved hjelp av "open" funksjonen. Deretter kan du bruke "read" funksjonen til å lese hver linje av teksten og lagre den i en variabel.
+For å kunne lese en tekstfil på en Arduino må du først koble til en SD-kortleser. Deretter kan du bruke et bibliotek som f.eks. "SD.h" for å åpne og lese filen. Her er et eksempel på hvordan du kan lese en tekstfil og skrive ut innholdet til serielleskjermen:
 
 ```Arduino
+#include <SPI.h>
 #include <SD.h>
 
-void setup()
-{
-  Serial.begin(9600); // Initialiserer seriell kommunikasjon
-  Serial.print("Initializing SD card...");
+// Initialiserer SD-kortleseren
+#define SD_CS 10
+File myFile;
+
+void setup() {
+  // Åpner en serial tilkobling for å kunne skrive ut til serielleskjermen
+  Serial.begin(9600);
   
-  if(!SD.begin(10)) // Initialiserer SD-kortet på pin 10
-  {
-    Serial.println("Initialization failed!");
-    return;
+  // Sjekker om SD-kortleseren er tilkoblet
+  if (!SD.begin(SD_CS)) {
+    Serial.println("SD-kortet kunne ikke leses");
+    while (1);
   }
   
-  Serial.println("Initialization done.");
-
-  File myFile = SD.open("tekstfil.txt"); // Åpner tekstfilen "tekstfil.txt"
-
-  if(myFile) // Sjekker om filen er åpen
-  {
-    while(myFile.available()) // Leser hver linje i filen
-    {
-      Serial.write(myFile.read()); // Skriver ut linjen til seriell monitor
-    }
-    myFile.close(); // Lukker filen
+  // Åpner tekstfilen
+  myFile = SD.open("tekstfil.txt");
+  
+  // Leser og skriver ut innholdet til serielleskjermen linje for linje
+  while (myFile.available()) {
+    Serial.println(myFile.readStringUntil('\n'));
   }
-
-  else // Hvis filen ikke åpnet
-  {
-    Serial.println("Error opening file!");
-  }
+  
+  // Lukker filen
+  myFile.close();
 }
 
-void loop()
-{
-  // Ingenting her
+void loop() {
+  // Tomt, trenger ikke å gjenta lesingen av filen
 }
 ```
 
-Når du kjører koden og åpner seriell monitoren, vil du kunne se innholdet i tekstfilen "tekstfil.txt" skrevet ut.
+Dette eksempelet viser hvordan du kan åpne og lese en tekstfil på en Arduino ved hjelp av et SD-kort.
 
-## Deep Dive
+## Dypdykk
+Når du leser en tekstfil på en Arduino, er det viktig å ha i mente at mikrokontrolleren har begrenset med minne og prosesseringskraft. Derfor er det viktig å optimalisere koden for best mulig ytelse. Her er noen tips som kan hjelpe deg med å forbedre leseprosessen:
 
-Når du leser en tekstfil ved hjelp av Arduino, må du vite at hver linje i teksten blir lagret som en streng. Derfor må du bruke funksjonen "readString" hvis du ønsker å lese en hel linje om gangen. Du kan også bruke andre funksjoner som "readInt" eller "readLong" for å lese tall fra teksten.
+- Unngå å bruke for mange variabler. Hver variabel tar opp plass i minnet, derfor bør du begrense antallet variabler og sørge for å frigjøre minnet når du er ferdig med å bruke dem.
+- Bruk "readStringUntil()" i stedet for "readString()". "readStringUntil()" lar deg lese en tekst til et spesifikt tegn, som kan hjelpe deg å unngå å lese hele filen og spare prosesseringskraft.
+- Sørg for å lukke filen når du er ferdig med å lese den. Dette vil frigjøre ressurser og unngå potensielle problemer med å åpne den samme filen flere ganger.
 
-Det er også viktig å merke seg at når du leser en tekstfil, starter filpekeren på begynnelsen av filen for hver iterasjon. Dette betyr at hvis du vil lese en bestemt del av filen, må du først bruke funksjonen "seek" for å flytte filpekeren til riktig posisjon.
+Med disse tipsene kan du optimalisere koden din og forbedre ytelsen når du leser tekstfiler på din Arduino.
 
 ## Se også
-
-- [Arduino SD bibliotek](https://www.arduino.cc/en/Reference/SD)
-- [Eksempelkode for å lese tekstfiler](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadASCIIString)
-- [Forbundet API for å lese tekstfiler](https://www.arduino.cc/en/Reference/API)
+- ["SD.h" biblioteket](https://www.arduino.cc/en/Reference/SD)
+- [SD-kortleser tilkoblingsguide](https://www.arduino.cc/en/Guide/ArduinoSDCardShield)
+- [Eksempel på å lese og skrive til et SD-kort](https://www.arduino.cc/en/Tutorial/Files)
+- ["readStringUntil()" Arduino referanse](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/)
+- [Optimalisering av kode på en Arduino](https://www.arduino.cc/en/Reference/Optimize)

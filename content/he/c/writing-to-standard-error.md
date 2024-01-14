@@ -1,32 +1,38 @@
 ---
-title:    "C: כתיבה לתקליט התקן"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c/writing-to-standard-error.md"
+title:                "C: כתיבה לשגיאת סטנדרט"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כתיבה לפלט שגיאה (standard error) הוא חלק חשוב מתהליך התכנות בשפת C. יכול להיות שזו הדרך היחידה להתריע על שגיאות בזמן ריצה של התוכנית, ולכן כדאי לדעת כיצד לעשות זאת.
+כתיבה לפלט שגיאה תקני היא חלק חשוב מכתיבת קוד בשפת סי. העברת שגיאות לפלט יכולה לעזור למפתחים לזהות בעיות בקוד ולתקן אותם בקלות.
 
 ## איך לעשות זאת
 
-כדי לכתוב לפלט שגיאה, ניתן להשתמש בפונקציית `fprintf()` ולהגדיר את ה `stderr` כפרמטר. לדוגמה:
+על מנת לכתוב לפלט שגיאה בשפת סי, יש להשתמש בפונקציית fprintf ולציין את הגוף (stdout) שאליו תתבצע הכתיבה. ניתן להשתמש בתבנית הבאה:
 
 ```C
-fprintf(stderr, "הודעת שגיאה");
+fprintf(stdout, "הודעת שגיאה כאן");
 ```
 
-הפלט יופיע כאשר התוכנית תירתע עקב שגיאה.
+אם רוצים לכתוב לפלט שגיאה עם פרטי תקלה נוספים, ניתן להשתמש בפונקציית perror ולכתוב את השגיאה כפרמטר שלה:
 
-## חקירה מעמיקה
+```C
+perror("פרטי השגיאה כאן");
+```
 
-כדי להבין טוב יותר את כתיבה לפלט שגיאה, כדאי להתעמק במנגנונים של `stderr`. ה `stderr` מייצג את הפלט של השגיאות, בניגוד ל `stdout` שמייצג את הפלט הרגיל של התוכנית. כשתוכנית מטפלת בשגיאות, היא יכולה להשתמש ב `stderr` להדפסת הודעות עליהן.
+הפונקציות fprintf ו-perror מאפשרות להדפיס לפלט שגיאה בכל נקודה בקוד, לא משנה באיזה מצב התוכנית נמצאת.
 
-ה `stderr` גם מאפשר לנו להפנות את הפלט לקובץ אחר, במקרה שאנחנו רוצים לשמור את השגיאות לקובץ מיוחד. על מנת לעשות זאת, ניתן לשנות את הפרמטר השני של ה- `fprintf()` לשם הקובץ שנרצה.
+## העומק
 
-## ראו גם
+הוספת הכתיבה לפלט שגיאה שלך מוסיפה מרכיב חשוב למתמטיקה של תיקון שגיאות. חשוב לזכור שעל מנת שכתיבת השגיאה תהיה שימושית, עלינו לוודא שאנחנו משתמשים בה רק במקרים של באגים אמיתיים ולא בכל פעם שאנחנו עומדים בתנאי אחר.
 
-- https://www.programiz.com/c-programming/c-file-input-output
-- https://www.tutorialspoint.com/cprogramming/c_error_handling.htm
+## ראה גם
+
+- [כתיבה לפלט שגיאה בשפת סי](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [מדריך לכתיבת שגיאות כתובות במקצת (StackTrace)](https://www.geeksforgeeks.org/how-to-print-error-message-in-c/)
+- [דוגמאות נוספות לכתיבת שגיאות בשפת סי](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)

@@ -1,54 +1,42 @@
 ---
-title:    "Java: Å bruke regulære uttrykk"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/using-regular-expressions.md"
+title:                "Java: Å bruke regelmessige uttrykk"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å bruke regulære uttrykk (regular expressions) er en effektiv måte å søke og manipulere tekst på i Java-programmering. Med regulære uttrykk kan du finne og erstatte tekst basert på mønstre, slik at du kan få mer presise og fleksible resultater. Det er en viktig ferdighet for utviklere som trenger å håndtere store mengder tekst og data.
+Regular expressions (regex) er et svært kraftig verktøy for databehandling og mønstergjenkjenning i programmering. Ved å bruke regex kan du enkelt finne og manipulere tekst i et bestemt format, for eksempel e-postadresser eller telefonnumre. Dette sparer mye tid og krefter sammenlignet med manuell søking og parsing av tekst.
 
-## Hvordan
+# Hvordan
 
-Regulære uttrykk bruker et spesifikt syntaks for å definere et mønster som skal matches i en streng. I Java, brukes klassen `Pattern` for å representere et regulært uttrykk, som deretter kan matches mot en instans av strengklassen `String`.
-
-La oss si at vi ønsker å finne alle ord som starter med bokstaven "s" i en setning. Vi kan gjøre dette med følgende kode:
+For å bruke regular expressions i Java, må du importere java.util.regex-pakken. Her er et enkelt eksempel på hvordan du kan finne et ord i en tekst:
 
 ```Java
-// Lager et regulært uttrykk som matcher et ord som starter med "s"
-Pattern pattern = Pattern.compile("\\bs\\w*");
+import java.util.regex.*;
 
-// Lager en streng for å teste mot
-String sentence = "I søndags startet vi med en skiferie";
+String tekst = "Hei, dette er en tekst med ordet hallo.";
 
-// Bruker pattern og matcher det med strengen
-Matcher matcher = pattern.matcher(sentence);
+Pattern pattern = Pattern.compile("hallo"); // Her definerer vi mønsteret vi vil finne
+Matcher matcher = pattern.matcher(tekst); // Søker etter mønsteret i teksten
 
-// Looper gjennom matcherens resultater og skriver dem ut
-while (matcher.find()) {
-    System.out.println(matcher.group());
+if (matcher.find()) { // Hvis mønsteret blir funnet
+    System.out.println("Vi fant ordet hallo i teksten!"); // Skriver ut en melding
 }
 ```
 
-Dette vil gi følgende output:
+Dette vil skrive ut "Vi fant ordet hallo i teksten!" siden teksten inneholder ordet "hallo". Regex'ene er svært fleksible og har flere metoder for å finne og manipulere tekst, som for eksempel å erstatte en del av teksten med et annet mønster eller å ekstrahere deler av teksten basert på et mønster.
 
-```
-søndags
-skiferie
-```
+# Dypdykk
 
-Vi brukte `Pattern` for å definere et mønster som matcher et ord som starter med "s" og brukte så `Matcher` for å finne alle matchende ord i vår gitt setning. Det er viktig å merke seg at regulære uttrykk bruker spesialtegn, som `\` og `*` for å representere forskjellige mønstre. Det finnes en rekke andre spesialtegn som kan brukes for å lage mer komplekse uttrykk.
+Regular expressions kan være litt skremmende ved første øyekast på grunn av det store utvalget av metoder og spesielle tegn som kan brukes. Det finnes også mange vanlige feil som kan oppstå når man bruker regex, som å glemme å escape en spesiell karakter. Det er derfor viktig å øve seg og bli kjent med regex før man begynner å bruke det i større prosjekter.
 
-## Dypdykk
+En nyttig ressurs for å lære mer om regular expressions i Java er [Oracle sin dokumentasjon](https://docs.oracle.com/javase/tutorial/essential/regex/index.html). Du kan også finne mange gode øvingsoppgaver og eksempler på nettsteder som [regex101](https://regex101.com/).
 
-Regulære uttrykk kan bli mye mer komplekse og kraftige enn den enkle eksempelet ovenfor. Det finnes en rekke forskjellige funksjoner og metoder som kan brukes for å manipulere og søke i tekst basert på mønstre. Det er også viktig å ta hensyn til effektivitet når man bruker regulære uttrykk, da komplekse uttrykk kan føre til lengre prosesserings-tid.
+# Se også
 
-En annen viktig faktor å huske på er at forskjellige programmeringsspråk har forskjellige implementeringer av regulære uttrykk, så det er viktig å sjekke dokumentasjonen for å sikre at ens kode fungerer som ønsket. Det finnes også en rekke verktøy og online ressurser for å hjelpe med å lære og teste ut ulike regulære uttrykk.
-
-## Se også
-
-- [Java Pattern dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Regexr - online regex tester og debugger](https://regexr.com/)
+- [Java API-dokumentasjon for java.util.regex-pakken](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
+- [RegExr - et interaktivt regex-verktøy med mange muligheter](https://regexr.com/)

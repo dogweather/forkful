@@ -1,48 +1,47 @@
 ---
-title:    "Haskell: パターンに一致する文字を削除する"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: パターンにマッチする文字の削除"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+『なぜ』
 
-あるパターンにマッチする文字を削除することについて、なぜ誰かがそれに関わることになるのかを説明します。
+最近、私たちはHaskellのプログラムで文字パターンを削除することがよくあります。その理由は、ある文字や文字列を処理する際に、そのパターンに合致する文字は不要であり、邪魔になるからです。例えば、特定の言語の文章から数字を削除する際には、数字のパターンに合致する文字を除外した方が処理が簡単になります。
 
-パターンがマッチする文字を削除することは非常に便利であり、データのクリーニングや処理を行う際に非常に有用です。例えば、特定の文字列から特定の文字を取り除く場合などに使用することができます。
+## 方法
 
-## 試してみよう
-
-下のコードブロックにHaskellコードの例とサンプルの出力を示します。
+Haskellでは、文字パターンを削除する方法はとても簡単です。まずは、`Data.Text`モジュールを読み込みます。
 
 ```Haskell
--- 文字列から"abc"を削除する例
-deletePattern :: String -> String
-deletePattern [] = [] -- 空の文字列の場合はそのまま返す
-deletePattern (x:xs)
-    | x == 'a' = deletePattern xs -- 'a' が見つかったら再帰で削除
-    | x == 'b' = deletePattern xs
-    | x == 'c' = deletePattern xs
-    | otherwise = x:deletePattern xs -- マッチしない文字はそのまま追加
-
-main = do
-    putStrLn "文字列から'abc'を削除します。"
-    let str = "abcdef"
-    putStrLn $ "元の文字列: " ++ str
-    putStrLn $ "パターンを削除した結果: " ++ deletePattern str
-
--- 出力:
--- 元の文字列: abcdef
--- パターンを削除した結果: def
+import qualified Data.Text as T
 ```
 
-## 深く掘り下げる
+その後、`Data.Text`モジュールの`replace`関数を使って、指定したパターンに合致する文字を削除します。
 
-パターンマッチングや再帰などのHaskellの基本的な概念が理解されていることが、このような文字の削除に役立ちます。また、上記の例では単純な文字列だけを扱っていますが、リストやタプルなどの他のデータ型でも同様のアプローチが使えます。さらに、リスト内包表記や高階関数など、より洗練された方法でパターンにマッチする文字を削除することができます。
+```Haskell
+deletePattern :: T.Text -> T.Text
+deletePattern text = T.replace "パターン" "" text
+```
 
-## 関連リンクを見る
+さらに、`Data.Text`モジュールの`strip`関数を使うことで、文字列の先頭や末尾にある指定したパターンを一括で削除することもできます。
 
-[Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - Haskellの基礎から応用までを学べるオンライン教材  
-[Haskell Wiki](https://wiki.haskell.org/) - Haskellに関する情報が集まっているWikiwikiサイト  
-[Real World Haskell](http://book.realworldhaskell.org/) - 実際のプロジェクトでHaskellを使う方法が学べるオンラインブック
+```Haskell
+deletePatternEnd :: T.Text -> T.Text
+deletePatternEnd text = T.stripSuffix "パターン" text
+```
+
+これで、簡単に文字パターンを削除することができます。
+
+## 深い掘り下げ
+
+文字パターンの削除は、ユーザーインターフェースやデータの処理など、様々な場面で役立ちます。また、Haskellの強力な機能であるパターンマッチングを活用することで、より柔軟なパターン削除が可能になります。例えば、特定の文字列内の数字や記号を一括で削除するような処理が簡単に実装できます。
+
+## 参考リンク
+
+- [Haskell Data.Text Documentation](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Haskell Pattern Matching Tutorial](https://www.tutorialspoint.com/haskell/haskell_pattern_matching.htm)
+
+## 関連リンク

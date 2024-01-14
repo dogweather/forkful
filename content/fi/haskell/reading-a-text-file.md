@@ -1,52 +1,44 @@
 ---
-title:    "Haskell: Tekstitiedoston lukeminen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/reading-a-text-file.md"
+title:                "Haskell: Tiedoston lukeminen"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Lukea Tekstitiedosto?
 
-Useimmat meistä ovat luultavasti törmänneet tekstifileihin aikaisemmin työskennellessämme data-analyysin tai ohjelmoinnin parissa. Kyseessä on yksi yleisimmistä tiedostotyypeistä, joten on tärkeää tietää, kuinka niitä voidaan käsitellä tehokkaasti ja kätevästi. Tässä blogitekstissä opimme, kuinka lukea tekstifilejä Haskellilla ja miksi se voi olla hyödyllistä.
+Tekstitiedostoja käytetään laajasti tietojen tallentamiseen ja jakamiseen eri ohjelmien välillä. Tekstitiedoston lukeminen on tärkeä taito, joka mahdollistaa tietojen käsittelyn ja muokkaamisen ohjelmoinnin avulla.
 
-## Kuinka tehdä se
+## Miten Teet Sen?
 
-Lukeminen tekstifilejä Haskellilla on suhteellisen yksinkertaista. Siitä huolimatta se voi joskus olla hieman hämmentävää, etenkin jos olet juuri aloittamassa Haskell-ohjelmointia. Tässä on kuitenkin muutama esimerkki, joista voit ottaa mallia:
-
-```Haskell
-import System.IO
-
-main = do
-  file <- openFile "demo.txt" ReadMode  -- avataan tiedosto lukutilassa
-  contents <- hGetContents file         -- luetaan tiedoston sisältö
-  putStr contents                       -- tulostetaan sisältö konsoliin
-```
-
-Tässä esimerkissä käytämme `System.IO` -paketin `openFile` -funktiota avataksemme tiedoston nimeltä "demo.txt" lukutilassa. Avatessamme tiedoston käytämme `hGetContents` -funktiota lukemaan sen sisällön. Lopuksi käytämme `putStr` -funktiota tulostamaan tiedoston sisällön konsoliin.
-
-Voit myös halutessasi käyttää `withFile` -funktiota, joka avaa tiedoston, suorittaa annetun toiminnon ja sulkee tiedoston automaattisesti. Se näyttää tältä:
+Haskell tarjoaa helpon tavan lukea tekstitiedostoja käyttämällä funktiota nimeltä "readFile". Tämä funktio ottaa parametrina tiedoston polun ja palauttaa tekstitiedoston sisällön merkkijonona.
 
 ```Haskell
-import System.IO
-
-main = do
-  withFile "demo.txt" ReadMode (\handle -> do
-    contents <- hGetContents handle -- luetaan tiedoston sisältö
-    putStr contents                 -- tulostetaan sisältö konsoliin
-  )
+teksti <- readFile "tiedosto.txt"
+print teksti
 ```
 
-Molemmat esimerkit toimivat samalla tavalla ja antavat saman tulosteen. Voit kokeilla muuttaa koodia, esimerkiksi lukea tiedoston rivit ja käsitellä niitä erikseen.
+Tämä koodinpätkä lukee tiedoston nimeltä "tiedosto.txt" ja tallentaa sen sisällön muuttujaan "teksti". Sitten se tulostaa tekstin konsoliin.
 
 ## Syventävä sukellus
 
-Nyt kun olemme käsitelleet perusteet, haluan nostaa esille muutamia lisäaspekteja, jotka voivat auttaa sinua lukiessasi ja työskennellessäsi tekstifileiden kanssa Haskellilla.
+Tekstitiedostojen lukeminen ei rajoitu vain yksinkertaisiin merkkijonoihin, vaan Haskellilla on monipuolisia tapoja käsitellä monimutkaisempia tiedostoja. Esimerkiksi "Data.Text" -kirjasto tarjoaa tehokkaan tavan käsitellä tekstiä ja suorittaa erilaisia operaatioita tekstitiedostojen kanssa.
 
-Ensinnäkin, sinun tulisi aina sulkea tiedosto, kun olet saanut sen käsiteltyä loppuun. Tämä on tärkeää, sillä avoimet tiedostot voivat aiheuttaa muistiongelmia tai jopa hidastaa ohjelmaa. Voit sulkea tiedoston `hClose` -funktiolla.
+```Haskell
+import Data.Text as T
 
-Toiseksi, voit käyttää `hIsEOF` -funktiota tarkistaaksesi, oletko jo päässyt tiedoston loppuun. Tämä voi auttaa sinua käsittelyssä, esimerkiksi jos haluat käsitellä tiedostoa rivillä kerrallaan.
+tekstit <- T.readFile "tiedosto.txt"
+let rivit = T.lines tekstit
+let pituudet = T.length <$> rivit
+print pituudet
+```
 
-Lisäksi voit kokeilla tutkia `Text` -paketin tarjoamia työkaluja tekstien käsittelyyn, kuten `lines` ja `unlines` -funktioita, jotka jakavat tai yhdistävät tekstin rivien avulla.
+Tässä esimerkissä käytetään "Data.Text" -kirjastoa lukemaan tiedosto ja tallentamaan sen rivit listaan. Sitten käytetään "T.length" -funktiota laskemaan jokaisen rivin pituus ja tulostetaan lopuksi lista pituuksista.
 
-Lopuksi haluan muistuttaa, että muuttujien tyypin määrittäminen voi auttaa sinua lukiessasi tiedostoa, etenkin jos se sisältää monen tyyppistä dataa. Esimerkiksi jos haluat lukea tiedoston kokonaislukuja, voit käyttää
+## Katso myös
+
+- [Haskellin virallinen dokumentaatio tekstitiedostojen lukemisesta](https://www.haskell.org/documentation)
+- [Data.Text-kirjaston dokumentaatio](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+- [Haskell-oppaat ja tutoriaalit tekstitiedostojen käsittelyyn](https://github.com/pulled-muscle/pyshootout/wiki/Tutorials)

@@ -1,40 +1,54 @@
 ---
-title:    "Ruby: Standard errorin kirjoittaminen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-to-standard-error.md"
+title:                "Ruby: Kirjoittaminen standardivirheeseen."
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet ohjelmoijat ovat saattaneet törmätä termiin "standard error" Ruby-kielen yhteydessä. Mutta miksi se on tärkeä ja miksi sitä tulisi hyödyntää koodissa? Tässä kirjoituksessa käymme läpi syitä ja hyviä käytäntöjä, miten kirjoittaa standard erroriin Ruby-ohjelmoinnissa.
+Ohjelmointi ei aina mene suunnitellusti ja usein törmäämme virheisiin koodin suorituksen aikana. Kirjoittamalla virheviestejä standardivirheeseen voimme auttaa itseämme ja muita koodarinä hyödyntämään näitä virheviestejä ja selventämään ongelman syitä ja ratkaisuja.
 
-## Miten
+## Kuinka
 
-Kirjoittaminen standard erroriin on yksinkertaista Rubyssa. Käytä `STDERR.puts` tai `STDERR.print` -funktioita tulostamaan haluamasi viesti. Esimerkiksi:
-
-```Ruby
-STDERR.puts "Tämä on virheviesti"
-STDERR.print "Tämä on toinen virheviesti"
-```
-
-Tämä tulostaa "Tämä on virheviesti" ja "Tämä on toinen virheviesti" terminaaliin. On myös mahdollista ohjata virheviestit suoraan standard erroriin, esimerkiksi:
+Yksi tapa kirjoittaa standardivirheeseen on käyttämällä Rubyn sisäänrakennettua `warn`-metodia. Tämä metodi ottaa vastaan merkkijonon, joka tulostetaan standardivirheeseen. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluamme testata, mikä kohta koodissa aiheuttaa ongelman.
 
 ```Ruby
-2 / 0 # aiheuttaa jakojäännösvirheen
+5 / 0 # tulostaa virheen " ZeroDivisionError: divided by 0" standardilähtöön
+warn "Tarkista jakajaksi laittamasi luku!" # tulostaa viestin standardivirheeseen
 ```
 
-Tämä tulostaisi "ZeroDivisionError: divided by 0" standard erroriin.
+Voimme myös tallentaa virheviestin muuttujaan ja tulostaa sen standardivirheeseen, mikäli haluamme lisätä siihen enemmän tietoa ongelman syystä. Esimerkiksi:
+
+```Ruby
+begin
+  5 / 0
+rescue ZeroDivisionError => e
+  message = "Tarkista jakajaksi laittamasi luku! Virhe: #{ex.message}"
+  warn message # tulostaa virheen "Tarkista jakajaksi laittamasi luku! Virhe: divided by 0" standardilähtöön
+end
+```
 
 ## Syvemmälle
 
-Nyt kun tiedämme, miten kirjoittaa standard erroriin Rubyssa, on tärkeää ymmärtää, miksi se on hyvä käytäntö. Standard error on erillinen virheviestiloki, joka on erillinen standardilokista. Näin ollen, se erottaa selkeämmin virheviestit normaalista tulostamisesta ja helpottaa ohjelman virheiden löytämistä ja korjaamista.
+Virheiden kirjoittaminen standardivirheeseen voi auttaa myös debuggaamisessa eli ongelman etsimisessä. Voimme esimerkiksi tulostaa muuttujan arvon standardivirheeseen, jolloin näemme helpommin, missä vaiheessa koodissa on ongelma. Esimerkiksi:
 
-Kun ohjelmointiin sisältyy käyttäjän syötteen käsittely, käytävien virheiden käsittely on myös tärkeää. Kirjoittaminen standard erroriin mahdollistaa käyttäjän virheiden ohjaamisen selkeämmin ja välittämisen ohjelmoijalle selityksellä. Tämä auttaa myös käyttäjää ymmärtämään, miksi ohjelma ei toimi halutulla tavalla.
+```Ruby
+i = 10
+j = 0
+begin
+  result = i / j
+rescue ZeroDivisionError => e
+  message = "Jakojäännös on #{i % j}, ei voida jakaa #{i} luvulla #{j}."
+  warn message # tulostaa virheen "Jakojäännös on 0, ei voida jakaa 10 luvulla 0." standardilähtöön
+end
+```
+
+Virheiden kirjoittaminen standardivirheeseen voi myös auttaa meitä parantamaan koodin laatua ja estämään tulevia virheitä. Kun tiedostamme, millaisia virheitä koodissa voi ilmetä, voimme ennakoida niitä ja lisätä turvaehdotuksia tai virheviestejä, jotka auttavat meitä tai muita kehittäjiä ratkaisemaan ongelman nopeammin.
 
 ## Katso myös
 
-- [Ruby Standard Library Documentation: StandardError](https://ruby-doc.org/core-2.7.2/StandardError.html)
-- [How to Use Standard Error in Ruby](https://www.geeksforgeeks.org/how-to-use-standard-error-in-ruby/)
-- [Debugging Ruby Programs with Standard Error](https://www.redhat.com/sysadmin/debugging-ruby-standard-error)
+- Rubyn virheenkäsittelydokumentaatio: https://ruby-doc.org/core-2.7.1/Exception.html
+- Rubyn virheviestit standardivirheessä: https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-warn

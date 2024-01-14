@@ -1,33 +1,45 @@
 ---
-title:    "C#: Convertir une chaîne en minuscules"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/converting-a-string-to-lower-case.md"
+title:                "C#: Convertir une chaîne en minuscules."
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-La conversion d'une chaîne de caractères en minuscules peut être utile dans de nombreuses situations, notamment pour faciliter la comparaison de chaînes ou pour l'affichage de données dans un format plus lisible.
+## Pourquoi?
 
-## Comment faire
-Voici un exemple de code en C# pour convertir une chaîne de caractères en minuscules :
+Lorsqu'on travaille avec des chaînes de caractères en C#, il est souvent nécessaire de les convertir en minuscules dans le but de les comparer ou de les traiter de manière uniforme. La conversion en minuscules est également utile pour s'assurer que les entrées utilisateur soient valides et cohérentes. Dans cet article, nous allons explorer comment convertir une chaîne en minuscules en utilisant C#.
+
+## Comment faire?
+
+La première étape pour convertir une chaîne en minuscules en C# est d'utiliser la méthode de classe `ToLower()`. Cette méthode prend en paramètre une chaîne de caractères et retourne une copie de cette chaîne en minuscules. Voici un exemple de code:
 
 ```C#
-string originalString = "Bonjour tout le monde!";
-string lowerCaseString = originalString.ToLower();
-Console.WriteLine(lowerCaseString);
+string message = "HELLO WORLD";
+string lowerCaseMessage = message.ToLower();
+Console.WriteLine(lowerCaseMessage);
 ```
 
-La sortie de ce code sera "bonjour tout le monde!" car toutes les lettres ont été converties en minuscules.
+Lorsque vous exécutez ce code, la console affichera `hello world`, car la chaîne a été convertie en minuscules.
 
-## Plongée en profondeur
-Lorsque vous utilisez la méthode .ToLower() en C#, il y a quelques points à prendre en compte. Tout d'abord, cette méthode est sensible à la culture, ce qui signifie que la manière dont elle convertit les lettres dépendra de la culture du système sur lequel elle est exécutée. Par exemple, en français, la lettre "I" sera convertie en "i" alors qu'en turc, elle sera convertie en "ı".
+Mais que se passe-t-il si vous avez besoin de convertir une chaîne qui contient des caractères avec des accents ou d'autres caractères spéciaux? Dans ce cas, il est recommandé d'utiliser la méthode `ToLowerInvariant()`. Cette méthode effectue la conversion en minuscules tout en ignorant les règles de mises en forme définies par la culture de votre système d'exploitation. Cela garantit un résultat prévisible et cohérent, indépendamment de la localisation du système.
 
-De plus, la méthode .ToLower() ne convertira que les lettres et ignora les caractères spéciaux tels que les accents, les cédilles ou les trémas. Par exemple, la chaîne "École" sera convertie en "école".
+Voici un exemple de code utilisant `ToLowerInvariant()`:
 
-Enfin, il est important de noter que la méthode .ToLower() ne modifie pas la chaîne d'origine mais renvoie une nouvelle chaîne convertie en minuscules.
+```C#
+string message = "ÉLÉPHANT";
+string lowerCaseMessage = message.ToLowerInvariant();
+Console.WriteLine(lowerCaseMessage);
+```
+
+Lorsque vous exécutez ce code, la console affichera `éléphant`, en conservant l'accents sur la lettre "é".
+
+## Plongée plus profonde
+
+Le fait de convertir une chaîne en minuscules en C# utilise les règles définies par votre système d'exploitation. Cela peut être utile lorsque votre application a besoin de prendre en compte les règles de mise en forme de la langue et de la culture de l'utilisateur. Cependant, cela peut causer des problèmes si vous avez besoin d'une conversion en minuscules constante et prévisible, comme pour les tests unitaires. Dans ce cas, il est recommandé d'utiliser la méthode `ToLowerInvariant()` qui utilise simplement les règles ASCII pour la conversion en minuscules.
 
 ## Voir aussi
-- [Méthode String.ToLower() en C# (Microsoft Documentation)](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.tolower)
-- [Méthodes de comparaison de chaînes en C# (Blog BetterProgramming)](https://betterprogramming.pub/string-comparison-methods-in-c-77da3d5080b8)
-- [Guide complet pour les méthodes ToLower() et ToUpper() en C# (Blog DaedTech)](https://daedtech.com/string-case-comparison-methods-in-csharp/)
+
+- [Méthode `ToLower()` en C# (Microsoft Docs)](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.tolower?view=netcore-3.1)
+- [Méthode `ToLowerInvariant()` en C# (Microsoft Docs)](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.tolowerinvariant?view=netcore-3.1)

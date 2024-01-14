@@ -1,89 +1,46 @@
 ---
-title:    "Java: 命令行参数阅读"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/reading-command-line-arguments.md"
+title:                "Java: 读取命令行参数"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要读取命令行参数？
 
-我们在日常生活中经常使用电脑，但是有时候需要运行一些特定的程序，这时候就需要通过命令行来指定程序的运行参数。本文将介绍如何在Java中读取命令行参数，并提供一些实用的例子。
+当你开始学习Java编程时，你可能会想知道为什么要读取命令行参数。读取命令行参数可以让你的程序更加灵活，能够根据不同的输入做出不同的反应。这将有助于提高你的程序的可用性和用户体验。
 
-## 如何
+# 如何读取命令行参数？
 
-通过使用Java的命令行参数，我们可以轻松地向程序传递一些特定的信息，从而使程序执行不同的操作。下面是一个简单的示例，演示如何读取并打印出命令行参数：
-
-```Java
-public class CommandLineArgs {
-    public static void main(String[] args) {
-        for (String arg : args) {
-            System.out.println(arg);
-        }
-    }
-}
-```
-运行该程序时，我们可以通过在命令行中输入参数来看到不同的输出，例如：
-
-```
-$ java CommandLineArgs apples oranges bananas
-apples
-oranges
-bananas
-```
-
-我们也可以根据不同的参数来执行不同的操作，例如：
+要读取命令行参数，你需要使用Java中的`args`变量。这个变量是一个字符串数组，包含了程序运行时传入的所有命令行参数。以下是一个简单的示例：
 
 ```Java
 public class CommandLineArgs {
     public static void main(String[] args) {
-        String fruit = args[0];
-        switch (fruit) {
-            case "apples":
-                System.out.println("You have chosen apples!");
-                break;
-            case "oranges":
-                System.out.println("You have chosen oranges!");
-                break;
-            case "bananas":
-                System.out.println("You have chosen bananas!");
-                break;
-            default:
-                System.out.println("Sorry, we don't have that fruit.");
-                break;
-        }
+        System.out.println("你输入的参数是：" + args[0]);
     }
 }
 ```
 
-运行该程序时，我们可以根据输入的参数来看到不同的输出，例如：
+如果你输入`java CommandLineArgs hello`，程序会输出`你输入的参数是：hello`。你可以根据需要读取不同位置的参数，比如`args[1]`、`args[2]`等等。
 
-```
-$ java CommandLineArgs apples
-You have chosen apples!
+# 深入学习命令行参数的使用
 
-$ java CommandLineArgs peaches
-Sorry, we don't have that fruit.
-```
+除了基本的读取命令行参数外，你还可以使用一些Java中的库来简化读取参数的过程。比如，你可以使用Apache Commons CLI来处理不同类型的命令行参数，比如布尔值、数字等等。另外，你还可以使用JCommander来创建一个命令行工具，它能够自动生成帮助信息，并且支持嵌套命令等高级功能。
 
-通过利用命令行参数，我们可以让程序更具有灵活性和交互性，满足不同用户的需求。
+另外，你还可以通过使用命令行的帮助文档来深入了解如何更好地读取和处理命令行参数。一些常用的命令行帮助文档包括GNU Getopt和POSIX getopt。
 
-## 深入探讨
+# 参考资料
 
-在Java中，我们可以通过使用`args`数组来访问命令行参数。该数组的长度可以通过`args.length`来获取，通过`args[index]`可以访问特定位置的参数，其中`index`从0开始。
+- Apache Commons CLI: http://commons.apache.org/proper/commons-cli/
+- JCommander: http://jcommander.org/
+- GNU Getopt: https://www.gnu.org/software/libc/manual/html_node/Getopt.html
+- POSIX getopt: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/getopt.html
 
-除了使用命令行参数，我们也可以利用`Scanner`类来从用户输入中读取数据。这种方法可以让我们在程序运行过程中动态地获取用户输入，并根据输入来决定程序的行为。
+# 参见
 
-## 参考链接
-
-- [Java命令行参数教程](https://www.baeldung.com/java-command-line-arguments)
-- [Java Scanner类教程](https://www.w3schools.com/java/java_user_input.asp)
-- [Java命令行参数API文档](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-
-## 查看更多
-
-了解更多有关Java编程的知识，可以查看以下文章：
-
-- [Java基础教程](https://www.runoob.com/java/java-tutorial.html)
-- [Java入门指南](https://www.w3schools.com/java/default.asp)
-- [计算机编程语言排行榜](https://www.tiobe.com/tiobe-index/)
+- [Java命令行参数入门教程](https://www.jianshu.com/p/fd29791e3599)
+- [Java命令行参数进阶教程](https://www.jianshu.com/p/bb11f8939b27)
+- [使用Apache Commons CLI读取命令行参数](https://www.jianshu.com/p/820908615985)
+- [使用JCommander创建命令行工具](https://www.jianshu.com/p/d1abfb96c3de)

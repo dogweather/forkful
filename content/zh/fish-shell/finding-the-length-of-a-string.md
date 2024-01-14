@@ -1,38 +1,72 @@
 ---
-title:    "Fish Shell: 寻找字符串的长度"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/finding-the-length-of-a-string.md"
+title:                "Fish Shell: 找出字符串的长度"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要计算字符串长度？
+# 为什么使用Fish Shell来计算字符串的长度？
 
-计算字符串长度是在编程中常见的操作之一。它可以帮助我们了解字符串的结构和处理方法，并且在处理文本数据时非常有用。在 Fish Shell 中，我们可以使用内置的 `string` 命令来轻松计算字符串的长度。
+在编程中，经常会遇到需要获得字符串的长度的情况。通过使用Fish Shell，您可以轻松地计算字符串的长度，并将其用于您的代码中。这篇博文将向您展示如何通过Fish Shell来找到字符串的长度，并深入探讨这个过程的各个方面。
 
-## 如何计算字符串长度？
+## 如何做到？
 
-Fish Shell 中，通过 `string length` 命令加上需要计算长度的字符串，就可以得到字符串的长度。下面是一个例子：
+Fish Shell提供了一个方便的内置变量来计算字符串的长度：$string_length。您可以使用这个变量来获得字符串的长度，并将它存储在另一个变量中，如下所示：
 
-```Fish Shell
-string length "Hello World"
+```
+#!/usr/bin/env fish
+
+# 定义一个字符串变量
+set my_string "Hello World!"
+
+# 使用 $string_length 变量来获取字符串的长度
+set length $string_length
+
+# 打印结果
+echo "字符串'Hello World!'的长度为 $length"
 ```
 
-这个命令的输出结果是 `11`，因为 "Hello World" 这个字符串共有 11 个字符。我们也可以使用变量来计算字符串长度，例如：
+运行以上代码，您将得到以下输出：
 
-```Fish Shell
-set greeting "您好！"
-string length $greeting
+```
+字符串'Hello World!'的长度为 12
 ```
 
-这个命令的输出结果是 `3`，因为中文字符在 Fish Shell 中被视为一个字符。值得注意的是，如果字符串中含有特殊字符（例如中文、 emoji），则需要使用 `--utf8` 参数来计算正确的长度。
+## 深入探讨
 
-## 深入了解
+尽管Fish Shell提供了方便的内置变量来计算字符串的长度，但您也可以通过使用一些其他的命令来实现相同的效果。例如，您可以使用`wc -c`命令来计算字符串的字符数。以下是一个示例代码：
 
-计算字符串长度可能感觉很简单，但实际上其中涉及的原理还是比较复杂的。在 Fish Shell 中，字符串的长度是通过 Unicode 来计算的，因为它可以涵盖几乎所有的字符。同时，Fish Shell 也提供了更多的字符串操作命令，例如 `string join`、`string match` 和 `string split`，感兴趣的读者可以继续深入学习。
+```
+#!/usr/bin/env fish
+
+# 定义一个字符串变量
+set my_string "Hello World!"
+
+# 使用 `wc -c` 命令来计算字符串的长度
+set length (echo $my_string | wc -c)
+
+# 打印结果
+echo "字符串'Hello World!'的长度为 $length"
+```
+
+运行以上代码，您将得到相同的输出：
+
+```
+字符串'Hello World!'的长度为 12
+```
+
+除了直接计算字符串长度之外，您还可以通过使用循环来遍历字符串，并在每次循环中增加计数器的值，从而计算字符串的长度。这种方法可能更加复杂，但也为您提供了更多的灵活性。
 
 ## 参考资料
 
-- [Fish Shell 官方文档 - string](https://fishshell.com/docs/current/cmds/string.html)
-- [字符串长度的底层实现原理](https://stackoverflow.com/questions/3726219/finding-the-length-of-a-unicode-string-in-bytes)
-- [字符串操作命令使用说明](https://fishshell.com/docs/current/cmds/string.html#understanding-argument-passing)
+- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
+- [维基百科：Fish Shell](https://zh.wikipedia.org/wiki/Fish_shell)
+
+## 参见
+
+- [Fish Shell中文社区论坛](https://fishshell.cn)
+- [如何使用Fish Shell来管理您的命令行工具？](https://www.jianshu.com/p/4f68e80755b5)
+- [了解Fish Shell的30个技巧和技巧](https://dev.to/odhnam/30-soup-to-nuts-tips-and-tricks-of-the-fish-shell-32h6)

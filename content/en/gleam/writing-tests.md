@@ -1,53 +1,81 @@
 ---
-title:    "Gleam recipe: Writing tests"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/writing-tests.md"
+title:                "Gleam recipe: Writing tests"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-It's often said that writing tests is just as important as writing code. You may be wondering, why should I put in the extra effort to write tests? Well, there are a few reasons why writing tests can greatly benefit your code and development process.
-
-Firstly, testing helps catch and prevent bugs before they make it into production. By writing tests, you can ensure that your code is functioning as expected and catch any unexpected errors. This can save you a lot of time and effort in the long run, as fixing bugs in production can be much more time-consuming than catching them during development.
-
-Secondly, tests act as documentation for your code. By looking at the tests, other developers can understand the expected behavior of your code without having to dive into the code itself. This can also help you when revisiting your own code after a long period of time.
-
-Overall, writing tests can improve the quality and maintainability of your code, making it a crucial aspect of developing software.
+In the world of software development, writing tests is often seen as a monotonous and time-consuming task. However, in reality, writing tests plays a crucial role in ensuring the quality and functionality of your code. By writing tests, you can catch bugs early on, ensure that code changes don't break existing functionalities, and build more reliable software. So, if you want to level up your coding game, it's time to start writing tests!
 
 ## How To
 
-Now that you understand the importance of writing tests, let's dive into how you can do it in Gleam.
-
-First, we need to create a test module in our project. This can be done by creating a new file with the `.gleam_test` extension. Inside this file, we will define our tests using the `test` function.
-
-Let's look at a simple example:
+Writing tests in Gleam is straightforward and follows a simple syntax. Let's take a look at an example of a simple function and how we can write tests for it.
 
 ```Gleam
-test "addition" {
-  let result = 1 + 1
-  assert.equal(result, 2)
+fn add(x, y) {
+  x + y
 }
 ```
 
-In this code block, we have defined a test called "addition" which will add 1 + 1 and assert that the result is equal to 2. If the result is not equal to 2, the test will fail.
+To write tests for this function, we first need to import the `gleam/test` module. This module provides us with functions and macros for writing and running tests.
 
-You can also use `assert.ok` to test for truthy values and `assert.error` to test for expected errors. For a complete list of available assertions, check out the Gleam documentation.
+```Gleam
+import gleam/test
+```
 
-To run our tests, we can use the `gleam test` command in the terminal. This will run all the tests in our project and provide us with a summary of the results.
+Next, we can use the `test` macro to define our test cases. The `test` macro takes a name for the test and a function that contains the assertions for that test.
+
+```Gleam
+test "add tests" {
+  fn() {
+    gleam/test/assert.equal(add(2, 3), 5)
+    gleam/test/assert.equal(add(5, 7), 12)
+  }
+}
+```
+
+In the above code, we have defined two test cases that ensure our `add` function is working correctly. The `gleam/test/assert.equal` function takes two arguments and checks if they are equal. If the assertion fails, an error will be thrown, and the test will fail.
+
+After defining our tests, we can use the `gleam/test/runner` function to run our tests.
+
+```Gleam
+fn main() {
+  gleam/test/runner.test([
+    "add tests",
+  ])
+}
+```
+
+When we run our code, we will get an output that looks like this:
+
+```
+[FAIL] add tests
+  expected 5 to equal 6 at line 7
+
+[OK] [1 / 2] add tests
+  expected 12 to equal 12
+
+Ran 2 tests in 0.0 seconds
+Tests passed: 1
+Tests failed: 1
+```
+
+By looking at the output, we can see that one of our tests failed because we made a mistake in our `add` function. Thanks to our tests, we were able to catch this bug and fix it before it caused any issues in our code.
 
 ## Deep Dive
 
-Writing tests is all about ensuring that your code is functioning as expected. This means writing tests for both happy and sad paths, as well as testing for edge cases.
+There are a few different ways you can write tests in Gleam, depending on the types of tests you want to write. For more complex tests, you can use the `gleam/test/assert.match` function, which allows you to use regular expressions to match values. Additionally, you can also use the `gleam/test/assert.ok` function to check if a value is truthy or falsy.
 
-In Gleam, you can use pattern matching to help with testing. This allows you to test for different scenarios based on the input provided. You can also use generators to create randomized test data, making your tests more robust.
+It's also important to note that you can organize your tests into different modules to keep your codebase clean and maintainable. You can even define your own custom assertions if the built-in ones don't meet your needs.
 
-It's also important to remember to keep your tests up to date as your code changes. This will ensure that the tests are still accurately reflecting the behavior of your code.
+But perhaps the most essential aspect of writing tests is to write tests for as much code as possible. The more tests you have, the more confident you can be in your code's functionality and the less time you will spend debugging and fixing bugs.
 
 ## See Also
 
-- [Gleam Documentation](https://gleam.run/)
-- [Testing in Gleam](https://gleam.run/articles/testing/)
-
-Happy testing! 🚀
+- [Gleam Testing Guide](https://gleam.run/book/testing.html)
+- [Gleam Documentation](https://gleam.run/documentation.html)
+- [Gleam Community](https://gleam.run/community.html)

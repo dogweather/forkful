@@ -1,48 +1,74 @@
 ---
-title:    "C: Verificando se um diretório existe."
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/checking-if-a-directory-exists.md"
+title:                "C: Verificando se um diretório existe"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+## Por que checar se um diretório existe?
 
-Quando estamos escrevendo programas em C, muitas vezes precisamos acessar e manipular arquivos e diretórios. Saber se um determinado diretório existe é importante porque nos permite realizar ações específicas, como criar novos diretórios, copiar arquivos ou até mesmo evitar erros em nossos programas. Portanto, é essencial saber como verificar se um diretório existe em nossos programas em C.
+Ao programar em C, muitas vezes nos deparamos com cenários em que precisamos verificar a existência de um diretório. Isso pode ser útil em situações como garantir que o caminho especificado pelo usuário seja válido antes de prosseguir com a execução do programa. Portanto, é importante saber como verificar se um diretório existe em C.
 
-## Como Fazer
+## Como fazer
 
-Antes de tudo, precisamos incluir a biblioteca `stdio.h`, que contém funções de entrada e saída, e a biblioteca `stdbool.h`, que nos dá acesso ao tipo de dado `bool`. Em seguida, podemos utilizar a função `opendir` para abrir um diretório e armazenar seu ponteiro em uma variável.
+Para verificar se um diretório existe em C, podemos utilizar a função `opendir()` da biblioteca padrão `dirent.h`. Esta função retorna um ponteiro para o diretório especificado e, se o ponteiro for nulo, significa que o diretório não existe. Segue abaixo um exemplo de código que utiliza esta função:
 
 ```C
 #include <stdio.h>
-#include <stdbool.h>
+#include <dirent.h>
 
-int main() {
-    // Abre o diretório "exemplo"
-    DIR* dir = opendir("exemplo");
-    // Verifica se o diretório foi aberto com sucesso
-    if (dir) { 
-        printf("O diretório existe!");
-        // Fecha o diretório
-        closedir(dir);
+int main()
+{
+    DIR *dir = opendir("Caminho/para/diretorio");
+
+    if (dir == NULL) {
+        // Diretório não existe
+        printf("O diretório não existe!\n");
     } else {
-        printf("O diretório não existe!");
+        // Diretório existe
+        printf("O diretório existe!\n");
+        closedir(dir);
     }
+
     return 0;
 }
 ```
 
-O código acima verifica se o diretório "exemplo" existe e imprime uma mensagem correspondente. Se o diretório existir, seu ponteiro é armazenado na variável `dir`, caso contrário, a variável é nula.
+Ao executar este código, se o diretório especificado existir, a saída será `O diretório existe!`, caso contrário, a saída será `O diretório não existe!`.
 
-## Mergulho Profundo
+## Explorando mais a fundo
 
-Além da função `opendir`, existem outras maneiras de verificar se um diretório existe. Uma opção é utilizar a função `chdir`, que muda o diretório atual para um especificado e retorna 0 se for bem sucedida e -1 se falhar. Outra opção é usar a função `access`, que verifica se um certo caminho de arquivo é acessível e retorna 0 se for bem sucedida e -1 se falhar. Essas funções também podem ser úteis para verificar a existência de arquivos, não apenas diretórios.
+Além da função `opendir()`, também podemos utilizar a função `stat()` da biblioteca padrão `sys/stat.h` para verificar a existência de um diretório em C. Esta função retorna uma estrutura `struct stat` com informações sobre o arquivo ou diretório especificado. No entanto, no caso de um diretório, é necessário utilizar a macro `S_ISDIR()` para verificar se o arquivo é, de fato, um diretório. Segue abaixo um exemplo de código que utiliza esta função:
 
-## Veja Também
+```C
+#include <stdio.h>
+#include <sys/stat.h>
 
-- [Manual de Referência da Biblioteca `stdio.h`](https://pt.wikipedia.org/wiki/Stdio.h)
-- [Manual de Referência da Biblioteca `stdbool.h`](https://pt.wikipedia.org/wiki/Stdbool.h)
-- [Documentação da Função `opendir`](https://pubs.opengroup.org/onlinepubs/009695399/functions/opendir.html)
-- [Documentação da Função `chdir`](https://pubs.opengroup.org/onlinepubs/009695399/functions/chdir.html)
-- [Documentação da Função `access`](https://pubs.opengroup.org/onlinepubs/009695399/functions/access.html)
+int main()
+{
+    struct stat file;
+
+    if (stat("Caminho/para/diretorio", &file) == 0) {
+        // Diretório existe
+        if (S_ISDIR(file.st_mode)) {
+            printf("O arquivo especificado é um diretório!\n");
+        } else {
+            printf("O arquivo especificado não é um diretório!\n");
+        }
+    } else {
+        // Diretório não existe
+        printf("O diretório não existe!\n");
+    }
+
+    return 0;
+}
+```
+
+Ao executar este código, se o diretório especificado existir, a saída será `O arquivo especificado é um diretório!`, caso contrário, a saída será `O diretório não existe!`.
+
+## Veja também
+
+- [Documentação da função `opendir()` (em inglês)](https://pubs.opengroup.org/onlinepubs/009696699/functions/opendir.html)
+- [Documentação da função `stat()` (em inglês)](https://pubs.opengroup.org/onlinepubs/009696699/functions/stat.html)

@@ -1,47 +1,46 @@
 ---
-title:    "Javascript: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/calculating-a-date-in-the-future-or-past.md"
+title:                "Javascript: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Koska aikojen laskeminen tulevaisuuteen tai menneisyyteen voi olla tarpeellista monissa ohjelmointiprojekteissa, kuten aikaperusteisissa tapahtumissa tai deadlinen asettamisessa.
+On monia syitä, miksi joku saattaisi haluta laskea tietyn päivämäärän tulevaisuudessa tai menneisyydessä. Saattaa olla tarpeellista suunnitella tulevia tapahtumia tai muistaa menneitä tapahtumia. Matkustaessa saattaa myös olla hyödyllistä tietää, mikä päivä on tulevaisuudessa tai menneisyydessä.
 
-## Kuinka
+## Kuinka tehdä
 
-### Laske tulevaisuuden päivämäärä
+Matematiikkaa käyttämällä ja muutamalla yksinkertaisella Javascript-koodilla, voimme laskea halutun päivämäärän tulevaisuudessa tai menneisyydessä. Ensimmäisenä meille täytyy asettaa lähtöpäivämäärä ja sitten laskea montako päivää haluamme lisätä tai vähentää. Käytämme Date-objektia ja sen sisäänrakennettuja funktioita kuten getDate(), getMonth() ja getFullYear(), jotta voimme käsitellä päivämääriä helposti.
 
-Jos haluat laskea tietyn päivämäärän tulevaisuuteen, voit käyttää Javascriptin `Date`-oliota ja sen `setDate()`-metodia sekä `getFullYear()`-, `getMonth()`- ja `getDate()`-metodeja.
+```Javascript 
+//asetetaan lähtöpäivämäärä 
+var lahtoPaiva = new Date(2021, 7, 1); 
 
-```
-let tulevaisuus = new Date(); // Luo uuden päivämääräolion, joka sisältää nykyisen päivän ja ajan
-tulevaisuus.setDate(tulevaisuus.getDate() + 7); // Lisää 7 päivää nykyiseen päivämäärään
-let paivays = tulevaisuus.getFullYear() + "-" + (tulevaisuus.getMonth()+1) + "-" + tulevaisuus.getDate(); // Muotoile päivämäärä haluttuun muotoon
-console.log(paivays); // Tulostaa esimerkiksi "2021-09-23"
-```
+//lasketaan montako päivää etsimämme päivämäärä on lähtöpäivämäärästä
+var montakoPaivaa = 30; 
 
-### Laske menneisyyden päivämäärä
+//lasketaan tulevaan päivämäärän käyttämällä getDate(), getMonth() ja getFullYear()
+var tulevaPaiva = lahtoPaiva.getDate() + montakoPaivaa; 
+var tulevaKuukausi = lahtoPaiva.getMonth(); 
+var tulevaVuosi = lahtoPaiva.getFullYear(); 
 
-Menneisyyden päivämäärän laskeminen on samanlainen prosessi kuin tulevaisuuden päivämäärän laskeminen, mutta tällöin käytetään `setDate()`-metodin sijaan `getDate()`-metodin vastakohtaa `setDate()` ja vähennetään haluttu määrä päiviä nykyisestä päivämäärästä.
-
-```
-let menneisyys = new Date(); // Luo uuden päivämääräolion, joka sisältää nykyisen päivän ja ajan
-menneisyys.setDate(menneisyys.getDate() - 14); // Vähentää 14 päivää nykyisestä päivämäärästä
-let paivays = menneisyys.getFullYear() + "-" + (menneisyys.getMonth()+1) + "-" + menneisyys.getDate(); // Muotoile päivämäärä haluttuun muotoon
-console.log(paivays); // Tulostaa esimerkiksi "2021-09-09"
+//tulostetaan tuleva päivämäärä 
+console.log("Tuleva päivämäärä: " + tulevaPaiva + "." + tulevaKuukausi+ "." + tulevaVuosi); 
 ```
 
-## Syventävä tieto
+Tämä koodi tulostaisi "Tuleva päivämäärä: 31.7.2021". Vastaavasti voimme myös laskea menneen päivämäärän vähentämällä päiviä lähtöpäivämäärästä.
 
-Javascriptin `Date`-olio käyttää Unix-timestampia, joka tallentaa päivämäärät ja ajat millisekunteina kuluneesta ajasta 1. tammikuuta 1970 klo 00:00 UTC. Tämä mahdollistaa päivämäärien ja aikojen helpon laskemisen ja muokkaamisen eri aikavyöhykkeiden välillä.
+## Syventävä tieto 
 
-Voit myös hyödyntää lisäosia, kuten Moment.js, tehdäksesi päivämäärien käsittelystä ja muotoilusta helpompaa.
+Javascriptin Date-objektilla on monia muita sisäänrakennettuja funktioita, joita voimme käyttää tulevien tai menneiden päivämäärien laskemisessa. Voimme myös lisätä tai vähentää muita aikayksiköitä, kuten tunteja, minuutteja tai sekunteja.
+
+On myös hyödyllistä muistaa, että Javascript käyttää UTC (Universal Coordinated Time) aikavyöhykettä Date-objektissa. Voimme käyttää Javascriptin sisäänrakennettuja funktioita, kuten getTimezoneOffset(), muuttaaksemme UTC-aikaa paikalliseen aikaan.
 
 ## Katso myös
 
-- [Javascript Date API](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
-- [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time)
+- [Javascript Date-objektin dokumentaatio](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools: Javascript Date-objektin esimerkkejä](https://www.w3schools.com/js/tryit.asp?filename=tryjs_date)
+- [Javascriptin aikavyöhykkeiden hallinta](https://www.digitalocean.com/community/tutorials/how-to-handle-date-time-data-in-javascript)

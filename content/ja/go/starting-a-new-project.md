@@ -1,39 +1,47 @@
 ---
-title:    "Go: 新しいプロジェクトの開始"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/starting-a-new-project.md"
+title:                "Go: 新しいプロジェクトを始める"
+programming_language: "Go"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
 
-新しいプロジェクトを始める魅力的な理由があります。この記事では、Go言語でのプロジェクト開発のメリットを紹介します。
+新しいプロジェクトを始めるのに、なぜ誰かが参加するのか、その理由をご紹介します。
 
-## How To
+## はじめ方
 
-プロジェクトの始め方について、実際のコード例と出力を紹介します。Go言語の特徴や基本的な文法についても説明します。
+Goプログラミングを始めるためのコーディングの例やサンプル出力を、"```Go ... ```"コードブロック内にてご紹介します。
 
-```Go
+```
 package main
 
 import "fmt"
 
 func main() {
-  // プログラムの処理を記述する
-  fmt.Println("Hello, 世界!")
+  fmt.Println("こんにちは、世界！")
 }
 ```
 
-出力結果：`Hello, 世界!`
+出力：こんにちは、世界！
 
-## ディープダイブ
+## 詳細を深く
 
-新しいプロジェクトを始める際に考えるべきことや、実際の開発フローについて深く掘り下げます。Gitの使い方やテストコードの書き方など、より実践的な内容を紹介します。
+新しいプロジェクトを始める際のより詳細な情報についてご説明します。プロジェクトの目的や使用するツール、最新のトレンドなどを掘り下げて紹介します。
 
-## See Also
+## さらに参考に
 
-- [Go言語公式サイト](https://golang.org/)
-- [Effective Go](https://golang.org/doc/effective_go.html)
-- [Goプロジェクトを効率的に進めるためのTips](https://speakerdeck.com/kemsakurai/gomi-yahuafalsejian-yi-haiburimachinextepin)
-- [Go言語で始めるWebプログラミング](https://www.udemy.com/course/go-programming)
+その他の参考になるリンクをご紹介します。Goプログラミングに関する情報やコミュニティ、学習サイトなどのリソースをご紹介します。
+
+### 参考リンク：
+
+- [Goプログラミング言語公式サイト](https://golang.org/)
+- [Go言語ドキュメント](https://golang.org/doc/)
+- [Go言語の仕様書](https://golang.org/ref/spec)
+- [Go言語の規約とベストプラクティス](https://golang.org/doc/effective_go.html)
+- [Go言語を学ぶためのオンラインコース](https://www.coursera.org/courses?query=go%20programming)
+- [Go言語のコミュニティフォーラム](https://forum.golangbridge.org/)
+- [Go言語の最新トレンド情報](https://github.com/trending/go)
+- [Go言語で作られた有名なプロジェクト](https://github.com/avelino/awesome-go)

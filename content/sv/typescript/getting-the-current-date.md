@@ -1,64 +1,44 @@
 ---
-title:    "TypeScript: Att hämta aktuellt datum"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/getting-the-current-date.md"
+title:                "TypeScript: Att få dagens datum"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-I denna bloggpost kommer vi att utforska hur man kan få den aktuella datumen i TypeScript. Att kunna få den aktuella datumen är en viktig funktion för många programmerare eftersom det ger möjlighet att skapa dynamiska och relevanta funktioner i sina program.
 
-## Hur man gör
-För att få den aktuella datumen i TypeScript, behöver vi använda Date-objektet som är inbyggt i JavaScript. Vi deklarerar ett nytt Date-objekt och använder sedan de inbyggda funktionerna för att hämta aktuellt datum, tid, veckodag och månad.
+Att kunna få den nuvarande datumen är ett vanligt förekommande behov i många programmeringsprojekt. Det kan användas för att visa aktuell tid och datum på en webbsida, för att sortera och filtrera data baserat på datum eller för att skapa dynamiska tidsstämplar i en applikation.
 
-```TypeScript
-let aktuelltDatum = new Date();
+## Hur man
 
-console.log(aktuelltDatum); // Output: Wed Oct 13 2021 23:47:09 GMT+0200 (central europeisk sommartid)
-
-console.log(aktuelltDatum.getFullYear()); // Output: 2021
-
-console.log(aktuelltDatum.getMonth()); // Output: 9 (på grund av indexering börjar månaderna på 0)
-
-console.log(aktuelltDatum.getDate()); // Output: 13
-
-console.log(aktuelltDatum.getDay()); // Output: 3 (tisdag är index 0)
-
-console.log(aktuelltDatum.getHours()); // Output: 23
-
-console.log(aktuelltDatum.getMinutes()); // Output: 47
-```
-
-Det finns också möjlighet att ange specifika datum och tider i Date-objektet och få den aktuella datumen baserat på det.
+För att få den nuvarande datumen i TypeScript, kan man använda Date-objektet och dess metoder. Nedan är ett exempel på hur man enkelt kan få den nuvarande datumen och tidsstämpeln:
 
 ```TypeScript
-let specifiktDatum = new Date(2022, 0, 1); // 1 januari 2022
+let nu = new Date(); //Skapar ett nytt Date-objekt
+let dag = nu.getDate(); //Få dagens datum (1-31)
+let manad = nu.getMonth() + 1; //Få månadens nummer (0-11, därför lägger vi till 1)
+let ar = nu.getFullYear(); //Få årtal (ex. 2021)
+let tid = nu.getHours() + ":" + nu.getMinutes(); //Få aktuell tid (timmar:minuter)
 
-console.log(specifiktDatum); // Output: Sat Jan 01 2022 00:00:00 GMT+0100 (centraleuropeisk normaltid)
-
-console.log(specifiktDatum.getDay()); // Output: 6 (lördag är index 6)
+console.log("Idag är det " + dag + "/" + manad + "/" + ar + " och klockan är " + tid);
 ```
+
+Detta kodexempel kommer att ge utskriften "Idag är det 8/5/2021 och klockan är 13:30". Genom att använda olika metoder på Date-objektet, som getDate(), getMonth(), getFullYear() och getHours(), kan man få olika delar av den nuvarande datumen och tidsstämpeln.
 
 ## Djupdykning
-Det finns flera användbara funktioner i Date-objektet som kan hjälpa till att manipulera och formatera datumen på olika sätt. Till exempel kan man använda `.toLocaleDateString()` för att få en läsbar version av det aktuella datumet.
 
-```TypeScript
-console.log(aktuelltDatum.toLocaleDateString("sv-SE")); // Output: 13/10/2021
-```
+Date-objektet i JavaScript/TypeScript är baserat på det så kallade Unix-tiden eller Unix-epoken. Detta är ett system som räknar tiden från midnatt den 1 januari 1970 UTC (koordinerad universell tid). Varje millisekund sedan dess har ett unikt nummer, vilket är vad Date-objektet använder för att beräkna datum och tid.
 
-Man kan också använda `.valueOf()` för att få antalet millisekunder sedan 1 januari 1970, vilket är användbart för att jämföra olika datum.
+Det är också värt att notera att när man skapar ett Date-objekt utan några argument, kommer det att använda nuvarande locale (språk och tidszon) på användarens dator. Detta kan orsaka problem om man till exempel delar koden med någon från en annan del av världen som har en annan locale.
 
-```TypeScript
-let förstaJanuari1970 = new Date(1970, 0, 1);
+## Se också
 
-console.log(aktuelltDatum.valueOf()); // Output: 1634166429587
+Här är några andra resurser för att lära dig mer om att få den nuvarande datumen i TypeScript:
 
-console.log(förstaJanuari1970.valueOf()); // Output: 0
-```
+- [W3Schools - Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [MDN web docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) 
+- [TypeScript Handbook - Date](https://www.typescriptlang.org/docs/handbook/datetime.html#date-objects)
 
-Det finns många fler funktioner och metoder i Date-objektet som kan utforskas och användas för att få den aktuella datumen på olika sätt.
-
-## Se även
-- [Date-objektet i TypeScript dokumentationen](https://www.typescriptlang.org/docs/handbook/datetime.html)
-- [Komplett referens för Date-objektet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+Tack för att du läste!

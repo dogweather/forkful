@@ -1,63 +1,61 @@
 ---
-title:    "Elixir recipe: Comparing two dates"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/comparing-two-dates.md"
+title:                "Elixir recipe: Comparing two dates"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Comparing two dates may seem like a simple task at first, but it can actually be quite challenging depending on the programming language you are using. In Elixir, knowing how to effectively compare dates can save you time and headaches when working with date-related logic in your code.
+Comparing two dates is a common task in programming, especially in applications dealing with time and scheduling. It allows for determining the relationships between dates, such as if one date is before, after, or equal to another date. In Elixir, there are built-in functions that make date comparison quick and easy.
 
 ## How To
 
-To compare two dates in Elixir, we can use the `DateTime.compare/2` function. This function takes in two DateTime values and returns -1, 0, or 1, depending on whether the first date is earlier, equal, or later than the second date.
+To compare two dates in Elixir, we can use the `:calendar.compare` function. This function takes two dates as arguments and returns an atom representing the relationship between the dates. Let's take a look at some code examples to see how this works.
 
-Let's take a look at an example:
+```elixir
+# Comparing two dates using the `:calendar.compare` function
+date_1 = ~D[2021-01-01] # January 1st, 2021
+date_2 = ~D[2021-02-15] # February 15th, 2021
 
-```Elixir
-date1 = DateTime.from_iso8601("2021-01-01T00:00:00.000Z")
-date2 = DateTime.from_iso8601("2021-01-02T00:00:00.000Z")
-
-DateTime.compare(date1, date2)
-# Output: -1
+:calendar.compare(date_1, date_2) # returns :lt (less than)
 ```
 
-In this example, `date1` is earlier than `date2`, so the `DateTime.compare` function returns -1. But what if the two dates are the same? Let's see:
+In the above example, we have two dates, `date_1` and `date_2`, and we use the `:calendar.compare` function to compare them. The function returns the atom `:lt` which stands for "less than". This indicates that `date_1` comes before `date_2`.
 
-```Elixir
-date3 = DateTime.from_iso8601("2021-01-01T00:00:00.000Z")
+We can also use the `:calendar.compare` function to check if two dates are equal.
 
-DateTime.compare(date1, date3)
-# Output: 0
+```elixir
+# Comparing two equal dates using the `:calendar.compare` function
+date_1 = ~D[2020-12-25]
+date_2 = ~D[2020-12-25]
+
+:calendar.compare(date_1, date_2) # returns :eq (equal)
 ```
 
-Since both dates are the same, the `DateTime.compare` function returns 0. This can be useful in scenarios where you need to check if two dates are equal.
+As expected, the function returns the atom `:eq` indicating that the dates are equal.
 
-But what about comparing times within a date? For that, we can use the `DateTime.compare/3` function. This function takes in three arguments: the first date, the second date, and a unit of time (such as `:hours`, `:minutes`, etc.).
+If we want to check if one date comes after another, we can use the `:calendar.compare` function along with the `:gt` (greater than) atom.
 
-Let's see an example:
+```elixir
+# Comparing two dates where one is greater than the other
+date_1 = ~D[2021-03-01] # March 1st, 2021
+date_2 = ~D[2021-02-15] # February 15th, 2021
 
-```Elixir
-date4 = DateTime.from_iso8601("2021-01-01T12:00:00.000Z")
-
-DateTime.compare(date1, date4, :hours)
-# Output: -12
+:calendar.compare(date_1, date_2) # returns :gt (greater than)
 ```
 
-In this example, the `DateTime.compare` function is comparing the two dates by hours and returns -12, since `date1` is 12 hours earlier than `date4`.
+In the above example, the function returns the atom `:gt`, indicating that `date_1` comes after `date_2`.
 
 ## Deep Dive
 
-When it comes to comparing two dates in Elixir, there are a few important things to keep in mind.
+Behind the scenes, the `:calendar.compare` function uses the `:erlang.compare` function. This function takes two arguments and returns `-1` (if the first argument is less than the second), `0` (if the arguments are equal), or `1` (if the first argument is greater than the second).
 
-First, always make sure to use `DateTime` values for accurate comparisons. While Elixir does have a `Date` module, it only deals with dates and does not include time information.
-
-Secondly, when using the `DateTime.compare/3` function, be aware that it compares by the specified unit of time and not just the total time difference. In other words, comparing two dates by minutes will return a different result than comparing by hours, even if the total time difference is the same.
+Elixir converts the atoms returned by `:erlang.compare` into more meaningful atoms like `:lt`, `:eq`, and `:gt`. This makes the code more readable and easier to understand.
 
 ## See Also
 
-- Elixir `DateTime` module documentation: https://hexdocs.pm/elixir/DateTime.html
-- Elixir `Date` module documentation: https://hexdocs.pm/elixir/Date.html
-- Elixir `DateTime` built-in functions: https://hexdocs.pm/elixir/DateTime.html#functions
+- [Elixir Documentation on Date and Time](https://hexdocs.pm/elixir/Calendar.html)
+- [Elixir Documentation on Comparisons](https://hexdocs.pm/elixir/Kernel.html#==/2)

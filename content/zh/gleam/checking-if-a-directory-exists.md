@@ -1,56 +1,64 @@
 ---
-title:    "Gleam: 检查目录是否存在"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/checking-if-a-directory-exists.md"
+title:                "Gleam: 检查目录是否存在"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么？
+# 为什么要检查目录是否存在？
 
-在编程中，有时候我们需要检查某个目录是否存在。这可以帮助我们避免出现错误，并且确保程序按照我们的预期工作。在Gleam中，有一个方便的方法可以实现这一点。下面我们来学习如何做到这一点。
+当我们在进行文件操作时，有时候会需要检查某个目录是否存在。这样可以避免在处理文件时出现错误，保证脚本的平稳运行。
 
-## 如何实现？
+## 如何检查目录是否存在？
 
-首先，让我们来创建一个目录并检查它是否存在。我们将使用Gleam的`Dir.exists`函数，它接受一个路径作为参数并返回一个布尔值来表示目录是否存在。
+在Gleam中，我们可以使用`os.path.exists()`函数来检查目录是否存在，示例如下：
 
 ```Gleam
-dir_path = "example"
+import os
 
-if Dir.exists(dir_path) {
-  println("Direcotry exists!")
-} else {
-  println("Directory does not exist!")
+fn main() {
+    let directory = "/Users/Jane/Documents/"
+    if os.path.exists(directory) {
+        io.println("目录存在！")
+    } else {
+        io.println("目录不存在！")
+    }
 }
 ```
 
-输出：
+运行结果如下：
+
 ```
-Directory exists!
+目录存在！
 ```
 
-现在，让我们来尝试检查一个不存在的目录。
+## 深入了解检查目录是否存在
 
-```Gleam
-dir_path = "non-existent-directory"
+除了使用`os.path.exists()`函数，我们还可以使用`os.path.isdir()`函数来检查目录是否存在。不同的是，`os.path.exists()`函数会返回目录或文件存在时都为`true`，而`os.path.isdir()`函数只有在目录存在时才会返回`true`。示例如下：
 
-if Dir.exists(dir_path) {
-  println("Direcotry exists!")
-} else {
-  println("Directory does not exist!")
+```Gleam 
+import os
+
+fn main() {
+    let directory = "/Users/Jane/Documents/"
+    if os.path.isdir(directory) {
+        io.println("这是一个目录！")
+    } else {
+        io.println("这不是一个目录！")
+    }
 }
 ```
 
-输出：
+运行结果如下：
+
 ```
-Directory does not exist!
+这是一个目录！
 ```
 
-## 深入探讨
+# 参考链接
 
-在Gleam中，`Dir.exists`函数本质上是通过调用`IO.File.open_exists`函数来实现的。它会尝试打开给定的路径，如果打开成功，则表明该路径是一个已存在的目录。因此，除了检查目录是否存在外，还可以使用`Dir.exists`函数来检查文件是否存在。但是需要注意的是，如果目录或文件没有相应的权限，则会导致打开失败。
-
-## 另请参阅
-
-- [Gleam文档：Dir模块](https://gleam.run/zh/docs/stdlib/dir.html)
-- [Gleam文档：IO模块](https://gleam.run/zh/docs/stdlib/io.html)
+- [Gleam官方文档 - Path](https://gleam.run/core/path.html)
+- [Gleam官方文档 - IO](https://gleam.run/core/io.html)
+- [Python官方文档 - os.path](https://docs.python.org/3/library/os.path.html)

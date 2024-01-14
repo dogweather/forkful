@@ -1,33 +1,39 @@
 ---
-title:    "PHP: स्ट्रिंग कैपिटलाइज करना"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/php/capitalizing-a-string.md"
+title:                "PHP: स्ट्रिंग को बड़ी अक्षरों में लिखना"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-Capitalizing a string is a common task in PHP programming. It is useful for formatting names, titles, and other text to follow proper capitalization rules. It is also necessary when working with data from external sources, as it may not always be in the desired capitalization format. In this blog post, we will discuss how to capitalize a string in PHP and why it is an important skill for programmers to have.
+कोई भी व्यक्ति स्ट्रिंग को कैपिटलाइज करने के लिए क्यों उपयोग करे।
 
 ## कैसे करें
 
-बात करें स्ट्रिंग कैपिटलाइजेशन की, तो पीएचपी में यह काफी आसान है। हम आमतौर पर `ucwords()` फंक्शन का इस्तेमाल करते हैं जो दिए गए स्ट्रिंग की हर शब्द का पहला अक्षर कैपिटल बना देता है। हमारे पास एक स्ट्रिंग है `hello world` जो हम `ucwords()` फंक्शन का इस्तेमाल करके इस तरह से कैपिटलाइज कर सकते हैं:
+कोडिंग उदाहरण और " ```PHP ... ``` " कोड ब्लॉक के भीतर आउटपुट की दृश्यता।
 
 ```PHP
-$string = "hello world";
-echo ucwords($string);
+$str = "hello world";
+echo strtoupper($str);
 ```
 
-और इसका आउटपुट होगा `Hello World`। अगर हमारे पास एक स्ट्रिंग है जिसमें हाथ-होंठ करके केवल पहला शब्द ही कैपिटल होना चाहिए, तो हम इसके लिए `ucfirst()` फंक्शन का इस्तेमाल कर सकते हैं। उदाहरण के लिए, हमारे पास एक और स्ट्रिंग है `hOW are you` जो हम इस तरह से कैपिटलाइज कर सकते हैं:
+आउटपुट: HELLO WORLD
 
 ```PHP
-$string = "hOW are you";
-echo ucfirst($string);
+$str = "namaste";
+echo ucfirst($str);
 ```
 
-और इसका आउटपुट होगा `HOW are you`।
+आउटपुट: Namaste
 
-## डीप डाइव
+## गहराई तक जाएं
 
-अब जब हमने स्ट्रिंग कैपिटलाइजेशन की बुनियादी जानकारी हासिल कर ली है, हम इसे और गहराई से समझेंगे। पूरी दुनिया में, अलग-अलग भाषाएं और उनके नियम होते हैं जो स्ट्रिंग कैपिटलाइजेशन को लेकर अलग-अलग हो सकते हैं। पीएचपी में कैपिटलाइजेशन सम्बंधित फंक्शन भी भिन्न-भिन्न भाषाओं और उनके नियमों के लिए पूर्वनिर्धारित हैं। इसलिए शेष भाग
+स्ट्रिंग को कैपिटलाइज करने के लिए आप पिछले दो फ़ंक्शन का उपयोग कर सकते हैं - strtoupper() और ucfirst()। strtoupper() फ़ंक्शन स्ट्रिंग में सभी छोटे अक्षरों को बड़े में बदल देता है जबकि ucfirst() फ़ंक्शन स्ट्रिंग के पहले अक्षर को बड़े में बदलता है। आप इन फ़ंक्शन का उपयोग अपने प्रोग्राम में अलग-अलग स्थितियों में कर सकते हैं, जैसे कि उपयोगकर्ता के संदेशों को कैपिटलाइज करने के लिए या पासवर्ड को बड़े में बदलने के लिए।
+
+## इसे भी देखें
+
+- PHP strtoupper Function: https://www.php.net/manual/en/function.strtoupper.php
+- PHP ucfirst Function: https://www.php.net/manual/en/function.ucfirst.php

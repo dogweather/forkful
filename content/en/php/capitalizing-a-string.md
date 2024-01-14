@@ -1,51 +1,65 @@
 ---
-title:    "PHP recipe: Capitalizing a string"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/capitalizing-a-string.md"
+title:                "PHP recipe: Capitalizing a string"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
-Capitalizing strings is a common task in PHP programming that can be useful in various situations. It allows you to manipulate and format text in a specific way, such as making the first letter of a sentence uppercase or capitalizing proper nouns. In this blog post, we will explore how to capitalize strings in PHP and discuss the importance of this function.
+## Why Capitalize a String?
 
-##How To
-To capitalize a string in PHP, we can use the built-in function `ucfirst()`. This function takes a string as an argument and returns a new string with the first character capitalized. Let's see an example:
+Capitalizing a string is a common task in programming, especially in web development. It involves converting the first letter of a word or sentence into uppercase, while the rest of the letters remain lowercase. This can be useful when displaying data or for input validation purposes.
 
-```PHP
-$string = "hello world";
-$capitalized_string = ucfirst($string);
-echo $capitalized_string;
+## How To Do It
 
-//Output: Hello world
-```
-
-We can also use `ucwords()` function to capitalize the first letter of every word in a string.
+To capitalize a string in PHP, we can use the built-in function `ucfirst()`. This function takes a string as input and returns the same string with the first letter capitalized. For example:
 
 ```PHP
-$string = "it's a beautiful day";
-$capitalized_string = ucwords($string);
-echo $capitalized_string;
-
-//Output: It's A Beautiful Day
+$string = "programming is fun";
+echo ucfirst($string);
 ```
 
-Both `ucfirst()` and `ucwords()` only capitalize the first letter, so if you want to make the whole string uppercase, you can use `strtoupper()` function.
+The output of this code would be:
+
+```
+Programming is fun
+```
+
+We can also use the `ucwords()` function to capitalize the first letter of each word in a string. For example:
 
 ```PHP
-$string = "hello world";
-$uppercase_string = strtoupper($string);
-echo $uppercase_string;
-
-//Output: HELLO WORLD
+$string = "web development is important";
+echo ucwords($string);
 ```
 
-##Deep Dive
-Now that we know how to capitalize strings in PHP, let's take a deeper dive into its significance. Capitalizing strings is not just about making text look more visually appealing, it also has practical uses in programming. For example, when working with user input, it is common to capitalize the first letter to ensure consistency and standardization in your database. This also applies to commonly used words and phrases, such as names, titles, and addresses.
+The output of this code would be:
 
-Moreover, using `ucfirst()` or `ucwords()` functions in combination with string functions like `substr()` and `str_replace()` can give you more control over the formatting of your text. This can be especially helpful when dealing with large amounts of data.
+```
+Web Development Is Important
+```
 
-##See Also
-- [PHP Manual: ucfirst()](https://www.php.net/manual/en/function.ucfirst.php)
-- [PHP Manual: ucwords()](https://www.php.net/manual/en/function.ucwords.php)
-- [PHP Manual: strtoupper()](https://www.php.net/manual/en/function.strtoupper.php)
+Both of these functions are useful for formatting data before displaying it on a web page or for validating user input.
+
+## Deep Dive into Capitalization
+
+In PHP, we can also use the `mb_convert_case()` function to handle multi-byte characters, such as accented letters, when capitalizing strings. This function takes a third argument that specifies the encoding to be used. For example:
+
+```PHP
+$string = "résumé";
+echo mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+```
+
+The output of this code would be:
+
+```
+Résumé
+```
+
+It's important to note that the `ucfirst()` and `ucwords()` functions will only capitalize the first letter of the string, regardless of the number of words or accents. Whereas the `mb_convert_case()` function will take into account the special characters and capitalizes them correctly.
+
+## See Also
+
+- [PHP ucfirst() function](https://www.php.net/manual/en/function.ucfirst.php)
+- [PHP ucwords() function](https://www.php.net/manual/en/function.ucwords.php)
+- [PHP mb_convert_case() function](https://www.php.net/manual/en/function.mb-convert-case.php)

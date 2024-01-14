@@ -1,47 +1,38 @@
 ---
-title:    "Gleam: Ottenere la data corrente."
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/getting-the-current-date.md"
+title:                "Gleam: Ottenere la data corrente"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Solo 1-2 frasi per spiegare *perché* qualcuno dovrebbe voler ottenere la data corrente.
 
-Se sei un programmatore Gleam, probabilmente sai che la data è un'informazione importante in molti programmi. Può essere utile per registrare quando vengono eseguite determinate azioni o per creare rapporti in applicazioni di monitoraggio dei dati. In questo articolo, ti mostrerò come ottenere la data corrente utilizzando il linguaggio di programmazione Gleam.
+Ci sono molte ragioni per cui si potrebbe voler ottenere la data corrente in un programma Gleam. Ad esempio, potresti voler utilizzare la data per calcolare delle scadenze, creare dei log, o semplicemente mostrare la data nel formato desiderato.
 
-## Come Fare
-Per ottenere la data corrente, è necessario utilizzare un modulo predefinito di Gleam chiamato `Time`. Questo modulo contiene funzioni utili per la gestione del tempo e delle date. Per prima cosa, importa il modulo nel tuo file di codice Gleam:
+## Come
 
-```Gleam
-import Time
+Per ottenere la data corrente in Gleam, esistono due modi principali: utilizzando le funzioni `Date.now` o `Date.utc_now`.
+
+```
+Gleam
+import Date
+
+// Ottieni la data corrente come timestamp UTC
+let currentUtcTimestamp = Date.utc_now()
+
+// Oppure, ottieni la data corrente come un record con più informazioni utili
+let currentDate = Date.now()
 ```
 
-Successivamente, utilizza la funzione `now` del modulo per ottenere la data corrente:
+L'output di `currentUtcTimestamp` sarà un intero rappresentante il numero di millisecondi trascorsi dal 1 gennaio 1970, mentre `currentDate` sarà un record contenente il giorno, il mese, l'anno, l'ora, il minuto, il secondo e il millisecondo correnti.
 
-```Gleam
-let current_date = Time.now() 
-```
+## Deep Dive
 
-La funzione `now` restituisce un record con le seguenti informazioni: anno, mese, giorno, ora, minuto, secondo e millisecondo. Puoi accedere a queste informazioni utilizzando la dot notation. Ad esempio, per ottenere il mese corrente, puoi utilizzare `current_date.month`.
+Se vuoi saperne di più sul funzionamento interno delle funzioni `Date.now` e `Date.utc_now`, puoi consultarne la documentazione ufficiale di Gleam. Inoltre, è possibile utilizzare queste funzioni per ottenere la data in vari formati, utilizzando le funzioni di formattazione della libreria standard o scrivendone una personalizzata.
 
-```Gleam
-let current_month = current_date.month
-```
+## Vedi anche
 
-Puoi anche formattare la data secondo le tue esigenze utilizzando la funzione `format` del modulo `Time`. Questa funzione accetta una stringa di formato e restituisce la data formattata come una stringa.
-
-```Gleam
-let formatted_date = Time.format(current_date, "%d/%m/%Y") 
-```
-
-In questo esempio, abbiamo utilizzato la stringa di formato `%d/%m/%Y`, che rappresenta rispettivamente il giorno, il mese e l'anno. Puoi trovare una lista completa delle stringhe di formato disponibili nella documentazione di Gleam.
-
-## Approfondimento
-Ottenere la data corrente è un'operazione semplice, ma potrebbe essere più complessa se si vuole gestire fusi orari diversi o se si vuole ottenere una data storica. Per approfondire questo argomento, puoi consultare la documentazione ufficiale di Gleam sul modulo `Time`.
-
-## Vedi Anche
-- Documentazione ufficiale del modulo `Time`: https://gleam.run/documentation/stdlib/time
-- Guida completa a Gleam: https://gleam.run/book/introduction
-- Esempi di codice Gleam: https://github.com/gleam-lang/gleam/tree/main/examples
+- Documentazione ufficiale di Gleam per Date: https://gleam.run/documentation/stdlib/date
+- Funzioni di formattazione della libreria standard di Gleam: https://gleam.run/documentation/stdlib/format

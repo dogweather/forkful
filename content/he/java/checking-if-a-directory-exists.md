@@ -1,45 +1,60 @@
 ---
-title:    "Java: בדיקת קיום תיקייה במחשב"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/checking-if-a-directory-exists.md"
+title:                "Java: האם תיקייה קיימת"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
+למה לבדוק אם תיקייה קיימת - לפני כל פעולה שלנו עם תיקיות בתוך קוד ג'אווה, חשוב לוודא שהיא קיימת כדי לחסוך באגים ולהבטיח שהקוד ירוץ בצורה תקינה.
 
-למה כדאי לבדוק אם ספרייה קיימת: כאשר אנו מפתחים יישומי קוד מודולריים, חשוב לוודא שהספריות שאותן היישומים משתמשים בהן קיימות וזמינות. כמו כן, בדיקת קיות ספרייה גם תעזור למנוע תקלות והתעקשויות במהלך הריצה של האפליקציה.
-
-## איך לבדוק אם ספרייה קיימת:
-
-ב Java ישנם מספר דרכים לבדוק אם ספרייה קיימת במערכת הקבצים. אחת הדרכים היא להשתמש במחלקת `java.io.File` ובשיטת `exists()`. 
-
+## איך לעשות זאת
 ```Java
-File directory = new File("myDirectory");
-if (directory.exists()) {
-    System.out.println("הספרייה קיימת.");
-} else {
-    System.out.println("הספרייה אינה קיימת.");
+import java.io.File;
+
+public class CheckDirectoryExists {
+
+  public static void main(String[] args) {
+    // יצירת אובייקט תיקייה חדשה
+    File directory = new File("תיקייה חדשה");
+
+    // בדיקה אם התיקייה קיימת כבר
+    if (directory.exists()) {
+      System.out.println("התיקייה כבר קיימת!");
+    } else {
+      // אם התיקייה לא קיימת, ניתן ליצור אותה בצורה אוטומטית
+      if (directory.mkdir()) {
+        System.out.println("התיקייה נוצרה בהצלחה!");
+      } else {
+        System.out.println("לא ניתן ליצור את התיקייה.");
+      }
+    }
+  }
 }
 ```
 
-בנוסף, אפשר גם להשתמש בשיטת `isDirectory()` כדי לוודא שמדובר בספרייה ולא בקובץ רגיל.
+### פלט
+אם התיקייה כבר קיימת:
+```
+התיקייה כבר קיימת!
+```
 
-```Java
-File directory = new File("myDirectory");
-if (directory.isDirectory()) {
-    System.out.println("זוהי ספרייה.");
-} else {
-    System.out.println("אינה ספרייה.");
-}
+אם התיקייה לא קיימת וניתן ליצור אותה:
+```
+התיקייה נוצרה בהצלחה!
+```
+
+אם התיקייה לא קיימת ולא ניתן ליצור אותה:
+```
+לא ניתן ליצור את התיקייה.
 ```
 
 ## Deep Dive
-
-התמיכה בבדיקת קיות ספריות הוא חלק חשוב מתכנות היישומים ב-Java. העקרון העיקרי של בדיקת קיות המצוי בקוד הוא לוודא שהספרייה קיימת לפני שננסה לבצע כל פעולה נוספת על הספרייה. כמו כן, דבר חשוב לציין הוא שיש לוודא גם את ההרשאות המתאימות לכתיבה וקריאה לספרייה, על מנת למנוע שגיאות בזמן הריצה של האפליקציה.
+כדי לבדוק אם תיקייה קיימת בקוד ג'אווה, אנו משתמשים במחלקת File. למחלקה זו יש מספר שיטות שנועדו לבדוק אם תיקייה או קובץ קיים או לא. שיטת "exist()" מחזירה ערך בוליאני - true אם התיקייה קיימת וfalse אם היא לא קיימת. בנוסף, ניתן גם להשתמש בשיטת "isDirectory()", שמחזירה ערך בוליאני ומאמת אם האובייקט הם file הוא באמת תיקייה.
 
 ## See Also
-
-- [Java File Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [How to Check if a Directory Exists in Java](https://www.baeldung.com/java-check-directory-exists)
-- [Java Permissions and Runtime Exceptions](https://docs.oracle.com/javase/tutorial/essential/io/check.html)
+* מדריך לעבודה עם קבצים ותיקיות בג'אווה: https://www.w3schools.com/java/java_files.asp
+* המחלקה File ב-Java: https://www.geeksforgeeks.org/file-class-in-java/
+* בדיקת תיקיות וקבצים קיימים בג'אווה: https://www.callicoder.com/java-check

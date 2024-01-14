@@ -1,77 +1,40 @@
 ---
-title:    "Haskell: Å lese en tekstfil"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/reading-a-text-file.md"
+title:                "Haskell: Lesing av en tekstfil"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Haskell er et kraftig programmeringsspråk som er kjent for sin funksjonelle og elegante kode. En av de mange nyttige funksjonene er evnen til å lese tekstfiler, noe som kan være svært nyttig i mange programmeringsscenarier. Les videre for å lære hvordan du kan lese en tekstfil i Haskell.
+Å lese en tekstfil er en vanlig oppgave i programmering, og kan være nyttig for å hente informasjon fra en ekstern datakilde. I Haskell, kan dette gjøres enkelt ved å bruke innebygde funksjoner og metoder.
 
-## Hvordan
+## Slik gjør du det
 
-For å lese en tekstfil i Haskell, trenger du først å åpne filen ved hjelp av `openFile` -funksjonen. Denne funksjonen tar to argumenter, navnet på filen og modus for å åpne filen. Modusen kan være "ReadMode" for å lese en fil, "WriteMode" for å skrive til en fil eller "AppendMode" for å legge til i en eksisterende fil.
-
-```Haskell
-import System.IO
-
-main = do
-   fil <- openFile "tekstfil.txt" ReadMode
-```
-
-Etter at filen er åpnet, kan du bruke `hGetContents` -funksjonen for å få innholdet i filen. Denne funksjonen returnerer en streng som inneholder hele teksten i filen.
+For å lese en tekstfil i Haskell, må du først åpne filen ved hjelp av "openFile" funksjonen. Dette vil gi deg et "handle" objekt som representerer filen. Deretter kan du bruke funksjoner som "hGetLine" for å lese en linje av teksten om gangen, eller "hGetContents" for å lese hele teksten på én gang.
 
 ```Haskell
 import System.IO
 
 main = do
-   fil <- openFile "tekstfil.txt" ReadMode
-   innhold <- hGetContents fil
+  handle <- openFile "tekstfil.txt" ReadMode
+  tekst <- hGetContents handle
+  putStrLn tekst
+
 ```
 
-For å vise innholdet i filen, kan du bruk `putStrLn` -funksjonen.
+Koden over åpner en tekstfil ved navn "tekstfil.txt" i lesemodus, leser innholdet og skriver det ut i terminalen.
 
-```Haskell
-import System.IO
+## Dykk dypere
 
-main = do
-   fil <- openFile "tekstfil.txt" ReadMode
-   innhold <- hGetContents fil
-   putStrLn innhold
-```
+Haskell har mange innebygde funksjoner som gjør det enkelt å jobbe med tekstfiler. For eksempel kan du bruke "withFile" funksjonen for å sikre at filen lukkes etter at du er ferdig med å lese den. Du kan også bruke funksjoner som "hGetChar" for å lese et tegn om gangen, eller "hIsEOF" for å sjekke om du har nådd slutten av filen.
 
-## Dypdykk
-
-Når du har åpnet filen og fått innholdet, er det viktig å lukke filen igjen ved hjelp av `hClose` -funksjonen. Dette vil frigjøre eventuelle ressurser som ble brukt til å åpne filen.
-
-```Haskell
-import System.IO
-
-main = do
-   fil <- openFile "tekstfil.txt" ReadMode
-   innhold <- hGetContents fil
-   putStrLn innhold
-   hClose fil
-```
-
-Hvis du ønsker å lese en tekstfil linje for linje, kan du bruke `hGetLine` -funksjonen. Denne funksjonen returnerer en streng som inneholder en enkelt linje fra filen.
-
-```Haskell
-import System.IO
-
-main = do
-   fil <- openFile "tekstfil.txt" ReadMode
-   linje1 <- hGetLine fil
-   linje2 <- hGetLine fil
-   putStrLn linje1
-   putStrLn linje2
-   hClose fil
-```
+Men det er også mulig å lese tekstfiler på en mer avansert måte ved å bruke funksjoner som "lines" for å lese hver linje inn i en liste, eller "words" for å lese hvert ord inn i en annen liste. Dette kan være nyttig hvis du trenger å manipulere dataene før du skriver dem ut.
 
 ## Se også
 
-- [Lesing av tekstfiler i Haskell](https://www.tutorialspoint.com/haskell/haskell_input_output.htm)
-- [Offisiell dokumentasjon for System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Filbehandling i Haskell](https://wiki.haskell.org/Dealing_with_files)
+- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)
+- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell)
+- [Haskell Programmeringsspråk](https://www.haskell.org/)

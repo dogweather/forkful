@@ -1,42 +1,58 @@
 ---
-title:    "Java: Kahden päivämäärän vertailu"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/comparing-two-dates.md"
+title:                "Java: Kahden päivämäärän vertailu"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi verrata kahden päivämäärän välillä?
+# Miksi Vertailla Aikoja?
 
-On monia syitä, miksi saattaa haluta vertailla kahta päivämäärää Java-ohjelmassa. Yleisimpiä syitä ovat aikavälien laskeminen, päivämäärien järjestäminen tai tietyn päivämäärän löytäminen tiettyyn tehtävään. Tässä blogikirjoituksessa kerromme, miten voit helposti vertailla kahden päivämäärän välillä Java-ohjelmassa.
+Java on yksi suosituimmista ohjelmointikielistä maailmassa, ja yksi sen monista käyttökohteista on aikojen hallinta ja vertailu. Aikojen vertailulla on monia käyttötarkoituksia, kuten esimerkiksi tarkistaa, kumpi aika on tulevaisuudessa tai mikä on kahden tapahtuman välillä kuluneen ajan määrä. Tässä blogikirjoituksessa keskitymme tarkastelemaan, miten voit vertailla kahta päivämäärää Java-ohjelmoinnissa.
 
-## Kuinka tehdä se?
+## Miten Vertailla Aikoja?
 
-Vertaamme päivämääriä Java-ohjelmassa käyttäen `LocalDate`-luokkaa, joka edustaa yhden päivämäärän tietoja ilman aikatietoja. Voit luoda uuden `LocalDate`-olion antamalla sille vuoden, kuukauden ja päivän tiedot. Esimerkiksi:
-
-```Java
-LocalDate ensimmainenPaiva = LocalDate.of(2021, 9, 1);
-LocalDate toinenPaiva = LocalDate.of(2021, 9, 10);
-```
-
-Kun sinulla on kaksi `LocalDate`-oliota, voit käyttää niiden `compareTo()`-metodia vertailemaan niitä. Tämä metodi palauttaa positiivisen luvun, jos ensimmäinen päivämäärä tulee toisen jälkeen, negatiivisen luvun, jos toinen päivämäärä tulee ensimmäisen jälkeen, ja nollan, jos päivämäärät ovat samat. Esimerkiksi:
+Java sisältää valmiita luokkia, jotka helpottavat aikojen vertailua. Yksi näistä luokista on `LocalDate`, joka sisältää päivämäärän ilman aikatietoja. Voit luoda uuden päivämäärän `LocalDate.of()` -metodilla ja antamalla sille päivämäärän komponentit vuosi, kuukausi ja päivä.
 
 ```Java
-int vertailu = ensimmainenPaiva.compareTo(toinenPaiva);
-// vertailu = -1, koska ensimmainenPaiva on ennen toinenPaiva
+LocalDate date1 = LocalDate.of(2021, 10, 15);
+LocalDate date2 = LocalDate.of(2021, 10, 20);
 ```
 
-## Syvempää tietoa päivämäärien vertailusta
+Voit sitten verrata näitä kahta päivämäärää käyttämällä `isBefore()` ja `isAfter()` -metodeja. Esimerkiksi:
 
-Jos haluat tarkistaa, ovatko kaksi päivämäärää samassa kuussa tai vuodessa, voit käyttää `get()`-metodia `LocalDate`-oliota. Tämä metodi palauttaa tietyn elementin, kuten päivän tai vuoden. Voit myös käyttää `isAfter()` tai `isBefore()`-metodeita verrataksesi päivämääriä toisiinsa.
+```Java
+if (date1.isBefore(date2)) {
+  System.out.println(date1 + " on ennen " + date2);
+}
 
-Kun vertaat päivämääriä, muista myös, että `LocalDate`-luokkaan kuuluu myös `equals()`-metodi, joka vertaa päivämääriä tarkasti. Tämä tarkoittaa, että jos kaksi päivämäärää ovat samat, niiden `equals()`-metodi palauttaa `true`-arvon.
+if (date2.isAfter(date1)) {
+  System.out.println(date2 + " on jälkeen " + date1);
+}
+```
 
-## Katso myös
+Tämän koodin tulostus olisi:
 
-- [LocalDate-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java päivämäärien vertailu](https://www.baeldung.com/java-compare-dates)
+```
+2021-10-15 on ennen 2021-10-20
+2021-10-20 on jälkeen 2021-10-15
+```
 
-Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään paremmin päivämäärien vertailua Java-ohjelmassa. Tässä oli vain pintaraapaisu aiheeseen, joten jos haluat oppia lisää, suosittelemme tutustumaan lisämateriaaleihimme. Nähdään seuraavassa blogikirjoituksessa!
+Voit myös käyttää `isEqual()` -metodia tarkistaaksesi, ovatko päivämäärät samat. Lisäksi voit käyttää `compareTo()` - metodia, joka palauttaa negatiivisen, nollan tai positiivisen luvun riippuen siitä, onko ensimmäinen päivämäärä ennen, sama kuin vai jälkeen toisen päivämäärän.
 
-## Katso myös
+## Syvällisesti Aikojen Vertailusta
+
+Aikojen vertailu sisältää myös aikatietojen, kuten tuntien, minuuttien ja sekuntien huomioon ottamisen. Tätä varten Java tarjoaa `LocalDateTime` -luokan, joka sisältää myös aikatiedot. Voit luoda uuden ajan käyttämällä `LocalDateTime.of()` -metodia, joka hyväksyy myös aikatiedot parametreina.
+
+```Java
+LocalDateTime dateTime1 = LocalDateTime.of(2021, 10, 15, 12, 30, 45);
+LocalDateTime dateTime2 = LocalDateTime.of(2021, 10, 15, 13, 30, 45);
+```
+
+Voit sitten käyttää samoja metodeja ja vertailuja kuin `LocalDate` -luokan kanssa, mukaan lukien `isEqual()`, `isBefore()` ja `isAfter()`.
+
+## Katso Myös
+
+* [Java-tutoriaali: LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+* [Java-tutoriaali: LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)

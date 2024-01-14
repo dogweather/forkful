@@ -1,38 +1,19 @@
 ---
-title:    "C++: Znajdowanie długości ciągu znaków"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/finding-the-length-of-a-string.md"
+title:                "C++: Znajdowanie długości ciągu znaków"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Jednym z najważniejszych zadań programistów jest manipulacja i przetwarzanie danych. W przypadku pracy z tekstami, często musimy znać długość danego ciągu znaków. Właśnie dlatego znajomość sposobu obliczenia długości stringa jest niezbędna dla każdego programisty.
+## Dlaczego 
 
-## Jak to zrobić
-Obliczenie długości stringa w C++ jest bardzo proste. Wystarczy skorzystać z funkcji `length()` lub `size()`, które zwracają liczbę znaków w podanym stringu. Poniżej znajdują się przykłady kodu pokazujące wykorzystanie tych funkcji oraz ich wynik.
+Często w programowaniu spotykamy się z potrzebą sprawdzenia długości ciągu znaków. Może to być przydatne w różnych sytuacjach, na przykład podczas pracy z tekstem lub przy walidacji danych wprowadzonych przez użytkownika. W tym blogu dowiesz się, jak w łatwy sposób znaleźć długość stringa w języku C++.
 
-```C++
-#include <iostream>
-#include <string>
+## Jak to zrobić 
 
-using namespace std;
-
-int main() {
-    string tekst = "Cześć, to jest przykładowy tekst.";
-    cout << "Długość tekstu to: " << tekst.length() << endl;
-    cout << "Długość tekstu to: " << tekst.size() << endl;
-    
-    return 0;
-}
-
-/* Wynik:
-Długość tekstu to: 31
-Długość tekstu to: 31
-*/
-```
-
-Podobnie jak wiele innych funkcji, `length()` i `size()` mogą być także wywoływane na obiektach typu `std::string`, dlatego też możemy skrócić nasz kod do bardziej czytelnego zapisu:
+W C++ długość stringa możemy sprawdzić za pomocą funkcji `length()` lub `size()`. Poniżej przedstawiamy przykładowy kod, który wykorzystuje obie te funkcje:
 
 ```C++
 #include <iostream>
@@ -41,20 +22,36 @@ Podobnie jak wiele innych funkcji, `length()` i `size()` mogą być także wywo�
 using namespace std;
 
 int main() {
-    string tekst = "Cześć, to jest przykładowy tekst.";
-    cout << "Długość tekstu to: " << tekst.length() << endl;
+    // przykładowy string
+    string imie = "Anna";
+    
+    // wyświetlenie długości za pomocą funkcji 'length()'
+    cout << "Długość imienia: " << imie.length() << endl;
+    
+    // wyświetlenie długości za pomocą funkcji 'size()'
+    cout << "Długość imienia: " << imie.size() << endl;
     
     return 0;
 }
-
-/* Wynik:
-Długość tekstu to: 31
-*/
 ```
 
-## Wgląd w to jak to działa
-Aby zrozumieć w jaki sposób funkcje `length()` i `size()` działają, musimy zagłębić się w mechanizm stringa w C++. W przypadku typu `std::string`, mamy do czynienia z obiektem, który zawiera zarówno adres przechowujący dane, jak i informację o ich długości. W momencie wywołania funkcji `length()` lub `size()`, kompilator pobiera informację o długości zapisaną w obiekcie stringa i ją zwraca. Jest to bardzo wydajne i szybkie rozwiązanie, ponieważ funkcje te nie muszą przeliczać długości za każdym razem.
+Output:
+```
+Długość imienia: 4
+Długość imienia: 4
+```
 
-## Zobacz również
-- [Dokumentacja C++: std::string](https://en.cppreference.com/w/cpp/string/basic_string)
-- [Porównanie funkcji length() i size() w std::string](https://stackoverflow.com/questions/2848897/c-what-is-the-difference-between-size-and-length)
+Jak widać, obie funkcje zwracają tę samą wartość, ponieważ są to dokładnie to samo.
+
+## Głębszy zanurzenie 
+
+W języku C++, string jest reprezentowany jako obiekt klasy `string`. Dlatego możemy wykorzystać metody tej klasy do manipulowania i sprawdzania długości tekstu. Funkcje `length()` i `size()` są metodami tej klasy, które zwracają liczbę znaków w stringu. Można więc powiedzieć, że te metody to tak naprawdę skrócone wersje metody `size()`.
+
+Interesującym faktem jest również to, że w przeglądarce Google Chrome (opartej na języku C++) istnieje funkcja `strlen()` do sprawdzania długości ciągów znaków. Jest to implementacja funkcji `size()` i została dodana dla zgodności z językiem C. 
+
+Warto również wiedzieć, że w języku C++ ciągi znaków mogą mieć różną długość. Nie są one ograniczone jak w innych językach, gdzie trzeba określić dokładną ilość znaków przy tworzeniu zmiennej typu string.
+
+## Zobacz również 
+
+- [Dokumentacja funkcji `length()`](https://www.cplusplus.com/reference/string/string/length/)
+- [Dokumentacja funkcji `size()`](https://www.cplusplus.com/reference/string/string/size/)

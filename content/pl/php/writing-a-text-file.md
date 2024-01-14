@@ -1,42 +1,42 @@
 ---
-title:    "PHP: Pisanie pliku tekstowego"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/writing-a-text-file.md"
+title:                "PHP: Tworzenie pliku tekstowego"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie pliku tekstowego jest jedną z podstawowych czynności w programowaniu PHP. Jest to niezwykle przydatne przy tworzeniu stron internetowych, aplikacji internetowych czy skryptów. Poniżej przedstawiona jest praktyczna instrukcja, jak pisać pliki tekstowe w języku PHP.
+W dzisiejszych czasach programowanie jest nieodłączną częścią naszej codziennej rzeczywistości. Każdego dnia korzystamy z różnych aplikacji i stron internetowych, których podstawą jest kod. Język PHP jest jednym z najpopularniejszych języków programowania, a umiejętność jego znajomości może otworzyć wiele drzwi w świecie IT. Jednym z najważniejszych elementów nauki programowania jest umiejętność tworzenia i edytowania plików tekstowych. W tym artykule dowiesz się, dlaczego pisane są właśnie tekstowe pliki oraz jak możesz korzystać z nich w swoich projektach.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Najpierw otwórzmy plik tekstowy przy pomocy funkcji `fopen()` w celu utworzenia uchwytu pliku. Następnie możemy użyć funkcji `fwrite()`, aby wpisać tekst do pliku. Na koniec zamykamy plik przy użyciu funkcji `fclose()`. Pozwala to na zapisanie wprowadzonych zmian.
+Pierwszym krokiem w stworzeniu pliku tekstowego jest otwarcie go w swoim edytorze kodu. Następnie, wykorzystując język PHP, możesz użyć funkcji `fopen()` do utworzenia nowego pliku tekstowego. Wymaga ona dwóch argumentów: nazwy pliku, który chcesz utworzyć oraz trybu dostępu. Poniżej znajduje się przykładowy kod, który utworzy plik o nazwie "test.txt".
 
 ```PHP
-<?php
-
-// Otwieramy plik w trybie do odczytu i zapisu
-$file = fopen("tekst.txt", "w+");
-
-// Wpisujemy nasz przykładowy tekst do pliku
-fwrite($file, "Witaj, to jest przykładowy tekst dla bloga!");
-
-// Zamykamy plik
-fclose($file);
-
-// Wyświetlamy komunikat o zapisaniu tekstu do pliku
-echo "Pomyślnie zapisano tekst do pliku!";
-?>
+$file = fopen("test.txt", "w");
 ```
 
-## Głębszy zanurzenie
+Po utworzeniu pliku za pomocą `fopen()`, możesz użyć funkcji `fwrite()` do zapisania danych do pliku. Poniżej znajduje się przykładowy kod, który używa tej funkcji do zapisania tekstu "Witaj, świecie!" do pliku "test.txt".
 
-W celu bardziej szczegółowego wyjaśnienia, warto wspomnieć o różnych trybach otwierania plików w PHP oraz funkcjach, które pozwalają na dokładniejszą kontrolę nad zapisywanymi danymi (np. `fputs()` czy `fpassthru()`). Warto również zwrócić uwagę na możliwość ustawienia pozycji kursora w pliku przy pomocy funkcji `fseek()`, co pozwala na dodawanie tekstu do istniejącego pliku bez nadpisywania całej zawartości.
+```PHP
+fwrite($file, "Witaj, świecie!");
+```
+
+Możesz również użyć pętli `for` lub `foreach` do zapisania dużej ilości danych do pliku, w zależności od twoich potrzeb. Po zapisaniu danych, ważne jest, aby zamknąć plik za pomocą funkcji `fclose()`, aby uniknąć możliwych problemów z odczytem pliku.
+
+## Głębszy Wgląd
+
+Tworzenie plików tekstowych jest ważnym elementem programowania, ponieważ pozwala na przechowywanie danych w czytelnej formie. Pliki tekstowe mogą być również wykorzystane w różnych projektach, takich jak parsowanie danych lub tworzenie raportów z bazy danych.
+
+Kolejną przydatną funkcją przy pracy z plikami tekstowymi jest `fgets()`, która umożliwia odczytanie pojedynczej linii tekstu z pliku. Za pomocą funkcji `feof()` możesz sprawdzić, czy osiągnięto koniec pliku, co ułatwia odczyt wszystkich danych z pliku.
+
+Jedną z najczęstszych operacji na plikach tekstowych jest również ich usuwanie lub modyfikacja. Aby to zrobić, musisz wykorzystać funkcję `unlink()`, która usuwa całkowicie plik z systemu. Jeśli chcesz tylko zmienić zawartość pliku, możesz użyć funkcji `file_put_contents()` lub `file_get_contents()`, które pozwalają na zmianę lub odczyt danych bez usuwania pliku.
 
 ## Zobacz również
 
-- [Funkcja fopen() w dokumentacji PHP](https://www.php.net/manual/en/function.fopen.php)
-- [Przykłady zapisu danych do plików tekstowych w PHP](https://www.php.net/manual/en/function.fwrite.php)
-- [Funkcje związane z zapisywaniem danych do pliku](https://www.php.net/manual/en/ref.filesystem.php)
+- [Oficjalna dokumentacja PHP o operacjach na plikach](https://www.php.net/manual/en/book.filesystem.php)
+- [Wideo tutorial na temat tworzenia plików tekstowych w PHP](https://www.youtube.com/watch?v=WND3rgwTaT0)
+- [Przykładowy projekt wykorzystujący pliki tekstowe w PHP](https://github.com/username/project-name)

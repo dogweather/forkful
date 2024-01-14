@@ -1,64 +1,46 @@
 ---
-title:    "Fish Shell: Debug-Ausgabe drucken"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/printing-debug-output.md"
+title:                "Fish Shell: Ausgabe von Debug-Informationen"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Warum sollte man debug Output in seinem Fish Shell Programm ausgeben? Es gibt mehrere Gründe, warum dies eine nützliche Praxis ist. Einerseits kann es dabei helfen, Fehler in deinem Code zu finden und zu beheben. Andererseits kann es auch dazu dienen, Informationen über den Programmablauf zu erhalten und somit bei der Entwicklung zu unterstützen.
+## Warum
+Debug-Ausgaben sind ein wichtiges Werkzeug für jeden Programmierer, um Probleme in ihrem Code zu identifizieren und zu beheben. Sie ermöglichen es, den Programmfluss zu verfolgen und das Verhalten von Variablen und Funktionen zu überwachen, um Fehler zu finden.
 
-# Wie geht man vor
-Um debug Output in Fish Shell zu drucken, gibt es verschiedene Möglichkeiten. Eine davon ist die `echo` Funktion, die standardmäßig in Fish Shell verfügbar ist. Hier ein Beispiel, wie man sie benutzen kann:
+## Wie man es macht
+Um Debug-Ausgaben in Fish Shell zu generieren, können Sie den Befehl `echo` verwenden. Dieser Befehl gibt den Text, den Sie ihm übergeben, auf der Konsole aus. Sie können auch die spezielle Option `-p` nutzen, um die Ausgabe in einem formatierten JSON-Format auszugeben.
 
-```
-Fish Shell Beispiel
-echo "Dies ist ein debug Output"
-```
-
-Dieses einfache Beispiel gibt den Text "Dies ist ein debug Output" aus. Mit dieser Methode ist es möglich, verschiedene Variablen und Daten auszugeben, um den Programmablauf besser zu verstehen.
-
-Weitere Möglichkeiten um debug Output in Fish Shell zu drucken, sind die Verwendung von `printf` oder `debug` Befehlen. Ein Beispiel für `printf` wäre:
-
-```
-Fish Shell Beispiel
-set name "Peter"
-printf "Der Name ist: %s" $name
+```Fish Shell
+echo "Dies ist eine Debug-Ausgabe"
 ```
 
-Dieser Code würde den debug Output "Der Name ist: Peter" ausgeben. Als Alternative gibt es auch den `debug` Befehl, der speziell für Debugging Zwecke entwickelt wurde. Hier ein Beispiel:
-
-```
-Fish Shell Beispiel
-debug "Dies ist ein debug Output"
+```Fish Shell
+set variable "test"
+echo -p $variable
 ```
 
-Dieser Befehl gibt nicht nur die Nachricht aus, sondern auch zusätzliche Informationen wie die Zeile und die Datei, in der der Befehl ausgeführt wurde.
+Dies wird die Ausgabe `test="test"` erzeugen.
 
-# Deep Dive
-Wenn es darum geht, tiefere Informationen über den Programmablauf zu erhalten, ist es hilfreich, den `psub` Befehl zu verwenden. Dieser Befehl zeigt alle Funktionen an, die während der Ausführung des Codes aufgerufen wurden. Hier ein Beispiel:
+Sie können auch die Funktion `printf` nutzen, um formatierte Ausgaben zu generieren. Diese Funktion unterstützt Platzhalter, die durch Variablen ersetzt werden können.
 
-```
-Fish Shell Beispiel
-function hello
-  echo "Hallo"
-end
-
-hello
-psub
+```Fish Shell
+set variable "Hallo"
+printf "Dies ist ein Beispiel für eine formatierte Ausgabe: %s" $variable
 ```
 
-Die Ausgabe dieses Codes würde Folgendes anzeigen:
+Dies wird die Ausgabe `Dies ist ein Beispiel für eine formatierte Ausgabe: Hallo` erzeugen.
 
-```
-Hallo
-(hello)
-```
+## Tief eintauchen
+Bei der Verwendung von Debug-Ausgaben ist es wichtig, sich auf das Wesentliche zu konzentrieren und nicht zu viele Ausgaben zu generieren. Zu viele Debug-Ausgaben können den Programmfluss verlangsamen und unübersichtlich machen.
 
-Dies bedeutet, dass die Funktion "hello" aufgerufen wurde und der debug Output "Hallo" gedruckt wurde. Auf diese Weise kann man den genauen Ablauf des Codes nachvollziehen und eventuelle Fehler leichter finden.
+Außerdem sollten Sie darauf achten, Debug-Ausgaben in Produktionscode zu entfernen, da sie nicht für den Endbenutzer bestimmt sind.
 
-# Siehe auch
-- [Fish Shell Dokumentation über Debugging](https://fishshell.com/docs/current/commands.html#debug)
-- [Beispiel Code für das Drucken von debug Output in Fish Shell](https://github.com/fish-shell/fish-shell/blob/master/test/functions/debug.test)
-- [Tutorial zur Verwendung von `psub` in Fish Shell](https://medium.com/@yutang/psub-function-call-trace-in-fish-shell-debugging-af3577085be9)
+Eine gute Praxis ist es, direkt vor und nach kritischen Abschnitten des Codes Debug-Ausgaben zu platzieren, um das Verhalten zu überwachen und mögliche Fehler zu identifizieren.
+
+## Siehe auch
+- [Offizielle Fish Shell-Dokumentation](https://fishshell.com/docs/current/tutorial.html#debugging)
+- [Debugging-Techniken für Fish Shell](https://fishshell.com/docs/current/tutorial.html#debugging-techniques)
+- [Bearbeiten und Verwalten von Shell-Script-Debug-Ausgaben](https://linuxhint.com/debug-shell-script/)

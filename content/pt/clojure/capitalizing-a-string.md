@@ -1,41 +1,44 @@
 ---
-title:    "Clojure: Capitalizando uma string"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/capitalizing-a-string.md"
+title:                "Clojure: Capitalizando uma string"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string em Clojure?
+## Por que
 
-Quando trabalhamos com strings em Clojure, é comum querermos deixá-las em um formato específico. Nesse sentido, a função `capitalize` é uma opção útil para transformar a primeira letra de uma string em maiúscula. Isso é especialmente útil para manter a consistência em seu código ou para apresentar dados em um formato padronizado.
+Uma das tarefas fundamentais ao trabalhar com strings é capitalizá-las. Isso pode ser útil para deixar um texto mais legível ou para padronizar a formatação. Neste post, veremos como realizar essa tarefa usando a linguagem de programação Clojure.
 
-## Como capitalizar uma string em Clojure
+## Como Fazer
 
-Para capitalizar uma string em Clojure, podemos usar a função `capitalize` da seguinte maneira:
-
-```Clojure
-(capitalize "exemplo") ; saída: "Exemplo"
-(capitalize "uma string") ; saída: "Uma string"
-```
-
-Podemos até mesmo capitalizar cada palavra de uma frase usando a função `clojure.string/capitalize`. Para isso, precisamos importar o namespace `clojure.string` com a seguinte sintaxe:
+Existem algumas maneiras diferentes de capitalizar uma string em Clojure, mas a forma mais simples é usando a função `clojure.string/capitalize`. Esta função recebe uma string como argumento e retorna a mesma string com a primeira letra em maiúscula. Vejamos um exemplo:
 
 ```Clojure
-(require '[clojure.string :refer [capitalize]])
+(clojure.string/capitalize "olá mundo")
+```
+```
+"Olá mundo"
 ```
 
-Em seguida, podemos usar essa função da mesma forma que a `capitalize` comum:
+Podemos também usar essa função em conjunto com outras funções de manipulação de strings. Por exemplo, se quisermos capitalizar apenas a primeira palavra de uma frase, podemos usar a função `split-first` para separar a primeira palavra e então usar `capitalize` apenas nessa primeira palavra. Veja:
 
 ```Clojure
-(clojure.string/capitalize "capitalizar cada palavra") ; saída: "Capitalizar Cada Palavra"
+(clojure.string/join " " (cons (clojure.string/capitalize (first (clojure.string/split-first "olá mundo"))) (rest (clojure.string/split-first "olá mundo"))))
+```
+```
+"Olá mundo"
 ```
 
-## Mergulho profundo
+## Mergulho Profundo
 
-Além da função `capitalize`, Clojure também possui outras opções para lidar com strings. Algumas delas são `lower-case` e `upper-case`, que convertem todas as letras de uma string em minúsculas e maiúsculas, respectivamente. Além disso, temos a função `title-case`, que converte a primeira letra de cada palavra em maiúscula, mas mantém o restante em minúsculas.
+Agora que vimos como capitalizar uma string em Clojure, vamos dar uma olhada mais aprofundada no que está acontecendo por trás das cenas. A função `capitalize` usa o protocolo `StringProtocol` para manipular strings. Esse protocolo é implementado na biblioteca Java `java.lang.String`, o que significa que a função `capitalize` na verdade está utilizando a funcionalidade embutida do Java para realizar a capitalização da string.
 
-## Veja também
+Além disso, a função `capitalize` é apenas uma das muitas funções úteis disponíveis na biblioteca `clojure.string`. Vale a pena explorar essa biblioteca para conhecer outras formas de manipular strings em Clojure.
 
-- [Documentação oficial da função `capitalize`](https://clojuredocs.org/clojure.core/capitalize)
-- [Outras funções para trabalhar com strings em Clojure](https://clojuredocs.org/clojure.core#string_functions)
+## Veja Também
+
+- Documentação oficial de `clojure.string`: https://clojure.github.io/clojure/clojure.string-api.html
+- Exemplos de uso de `clojure.string`: https://clojure.github.io/clojure/clojure.string-examples.html
+- Outras funções úteis para manipular strings em Clojure: https://www.braveclojure.com/manipulating-strings/#Built%20in%20Toolkit

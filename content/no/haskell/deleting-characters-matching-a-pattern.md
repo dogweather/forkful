@@ -1,49 +1,42 @@
 ---
-title:    "Haskell: Slette tegn som matcher et mønster"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: Fjerning av tegn som matcher et mønster"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor slette tegn som matcher et mønster?
+## Hvorfor
 
-Sletting av tegn som matcher et bestemt mønster er nyttig i mange tilfeller, spesielt når man ønsker å rengjøre en tekst for uønskede tegn eller mønstre. Dette kan være spesielt viktig når man jobber med sensitiv informasjon eller ønsker å formatere tekst på en spesifikk måte.
+Å slette tegn som matcher et mønster kan være nyttig når du ønsker å filtrere ut uønskede tegn i en tekststreng. Dette kan for eksempel være nyttig når du jobber med dataanalyse eller tekstbehandling.
 
 ## Hvordan gjøre det
 
-For å slette tegn som matcher et mønster, kan man bruke funksjonen `deleteFirstsBy` fra `Data.List`-biblioteket i Haskell. Denne funksjonen tar inn en funksjon som definerer hvilke tegn som skal slettes, og en liste av tegn som skal søkes i.
-
-La oss se på et eksempel hvor vi ønsker å slette alle tall fra en tekststreng:
+Det finnes flere måter å slette tegn som matcher et mønster på i Haskell. Du kan bruke funksjonen `filter` til å filtrere ut tegn basert på et gitt kriterium. For eksempel, hvis du vil slette alle tall fra en tekststreng, kan du bruke følgende kode:
 
 ```Haskell
-import Data.List
-
-tekst = "Dette er en tekst med tall 123"
-
-slettTall :: Char -> Char -> Bool
-slettTall c1 c2 = c1 `elem` ['0'..'9']
-
-slettetTekst = deleteFirstsBy slettTall tekst
-
-print slettetTekst
+filter (\x -> not $ isDigit x) "He1llo Wor2ld!" -- output: "Hello World!"
 ```
 
-Output:
+Her bruker vi funksjonen `filter` sammen med en anonym funksjon som sjekker om hvert tegn ikke er et tall ved hjelp av funksjonen `isDigit` fra standardbiblioteket `Data.Char`. Vi bruker også funksjonen `not` for å invertere resultatet, slik at `filter` returnerer alle tegn som ikke er tall.
 
+En annen måte å gjøre det på er å bruke funksjonen `delete` fra `Data.List`-biblioteket. Denne funksjonen tar inn et tegn og en tekststreng, og sletter alle forekomster av det gitte tegnet fra teksten. For eksempel:
+
+```Haskell
+delete 'l' "Hello World!" -- output: "Heo Word!"
 ```
-Dette er en tekst med tall
-```
 
-Vi definerte først en funksjon `slettTall` som sjekker om et tegn er en tallverdi eller ikke. Deretter brukte vi `deleteFirstsBy`-funksjonen til å gå gjennom teksten og slette alle matchende tall.
+Husk at disse eksemplene kun er ment som illustrasjoner, og du kan tilpasse koden etter behov, avhengig av hvilke tegn du ønsker å slette og hvordan.
 
-## Dykk dypere
+## Dypdykk
 
-Hvis du ønsker en dypere forståelse av hvordan `deleteFirstsBy`-funksjonen fungerer, kan du se på dens implementasjon. Denne funksjonen tar inn en startliste, en liste av tegn som skal slettes, og returnerer en ny liste med de matchende tegnene slettet.
+For å forstå hvordan disse funksjonene fungerer, kan det være nyttig å se nærmere på hvordan de er implementert. `filter`-funksjonen bruker en teknikk som kalles rekursjon, som går ut på å bruke en funksjon på et mindre og mindre sett av data til den når et basistilfelle og returnerer et resultat. I tilfellet med å slette tegn som matcher et mønster, vil funksjonen kalle seg selv på hvert tegn i teksten og returnere en ny tekststreng uten de uønskede tegnene.
 
-Man kan også utforske andre måter å slette tegn som matcher et mønster på, for eksempel ved å bruke regulære uttrykk eller andre funksjoner fra `Data.List`-biblioteket.
+`delete`-funksjonen bruker en litt annen tilnærming og starter med å sjekke om det første tegnet i teksten matcher det gitte tegnet. Hvis det gjør det, returneres resten av teksten uten det første tegnet. Hvis det første tegnet ikke matcher, kaller funksjonen seg selv på resten av teksten og returnerer resultatet med det første tegnet lagt tilbake.
 
 ## Se også
 
-- [Dokumentasjon for `deleteFirstsBy`-funksjonen](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:deleteFirstsBy)
-- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation/)
+- [Filtering in Haskell](https://wiki.haskell.org/Filtering)
+- [Delete function in Haskell](https://www.geeksforgeeks.org/haskell-delete-function/)
+- [Data.List documentation](https://www.haskell.org/hoogle/?hoogle=Data.List#v:delete)

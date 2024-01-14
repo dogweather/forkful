@@ -1,49 +1,48 @@
 ---
-title:    "Gleam: 打印调试输出。"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/printing-debug-output.md"
+title:                "Gleam: 打印调试输出"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么会使用打印调试输出
+#为什么
+在编写和调试程序时，打印调试输出是非常有用的工具。它可以帮助程序员跟踪代码的执行过程，定位错误的位置并快速解决问题。通过打印调试输出，程序员可以更加直观地了解程序的运行情况，从而更有效地调试代码。
 
-当我们在编写代码时，经常会遇到一些问题，比如代码运行出错或者逻辑错误。这时，打印调试输出可以帮助我们快速定位问题所在，进而进行修复。它是一种简单有效的调试手段，帮助我们更快地开发和调试代码。
+##如何做
+在Gleam中，通过使用```print_debug()```函数来打印调试输出。该函数接受一个参数，可以是任意类型的变量或表达式。例如，我们想要打印一个字符串变量的内容，可以使用以下代码：
 
-## 如何使用Gleam打印调试输出
-
-在Gleam中，我们可以使用`debug.print`函数来打印调试输出。下面是一个示例代码：
-
-```
-Gleam let
-  message = "Hello, World!"
-in
-  debug.print("The message is:", message)
+```Gleam
+let message = "Hello world"
+print_debug(message)
 ```
 
-运行上面的代码，我们可以得到如下输出：
+以上代码的输出结果将是：
 
 ```
-The message is: Hello, World!
+"Hello world"
 ```
 
-这样，我们就可以看到变量`message`的值，帮助我们快速定位问题所在。同时，我们也可以在代码中使用多个`debug.print`语句来打印多个变量或者信息，以便更全面地了解代码执行过程。
+除了打印变量的值，我们还可以在```print_debug()```函数中使用表达式。例如，我们想要打印两个数的和，可以使用以下代码：
 
-## 深入讨论打印调试输出
+```Gleam
+let a = 3
+let b = 5
+print_debug(a + b)
+```
 
-除了简单打印变量的值，`debug.print`函数还具有一些高级用法。例如，我们可以打印一个记录数据类型的数据结构，并使用`{:depth 5}`参数来限制打印深度。这样可以避免打印过多信息，让输出更加清晰。
+输出结果将是：
 
-此外，我们还可以使用`{:prefix "INFO"}`参数来添加前缀，帮助我们更快地定位信息输出的类型。同时，`{:color :blue}`参数可以让输出信息以蓝色高亮显示，更加易于区分。
+```
+8
+```
 
-总的来说，打印调试输出是Gleam中非常常用而且强大的调试工具。通过灵活使用它的各种参数，我们可以更有效地检查和调试代码。
+##深入探讨
+除了基本的打印功能，```print_debug()```函数还有其他的选项可以使用。例如，我们可以使用```print_debug("Some text", debug_as_warning: true)```来打印一个警告信息，将内容显示为黄色。另外，我们也可以通过指定```debug_scope```参数来控制打印信息的范围，例如只在特定条件下才打印调试输出。
 
-## 参考文献
+值得注意的是，打印调试信息可能会影响程序的性能。因此，在调试结束后，记得将不必要的调试输出语句删除。
 
-- [Gleam官方文档：Printing Debug Output](https://gleam.run/book/tour/printing_debug_output.html)
-- [Gleam官方文档：Debugging](https://gleam.run/book/tour/debugging.html)
-- [Gleam官方文档：Data Types](https://gleam.run/book/core_types/data_types.html)
-
-## 另请参阅
-
-- [Blogging with Gleam: A Beginner's Guide](https://www.bawgyu.com/blogging-with-gleam-a-beginners-guide/)
-- [An Introduction to the Gleam Programming Language](https://www.plausiblethought.com/an-introduction-to-the-gleam-programming-language/)
+#相关阅读
+- [Gleam官方文档-打印调试输出](https://gleam.run/documentation/printing_debug_output)
+- [Gleam官方博客-调试代码的最佳实践](https://blog.gleam.run/coding-best-practices-debugging)

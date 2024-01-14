@@ -1,76 +1,34 @@
 ---
-title:    "Javascript: Pisanie do standardowego błędu"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-to-standard-error.md"
+title:                "Javascript: Pisanie do standardowego błędu"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać do standardowego błędu w języku Javascript
+## Dlaczego warto umieć pisać do standardowego błędu?
 
-Pisanie do standardowego błędu jest kluczowym elementem programowania w języku Javascript. Jest to przydatne narzędzie, które pozwala programistom wyświetlać błędy i ostrzeżenia w konsoli, co ułatwia debugowanie i poprawę kodu. W tym artykule dowiesz się, dlaczego warto pisać do standardowego błędu i jak to zrobić.
+Pisanie do standardowego błędu jest niezbędną umiejętnością dla każdego programisty. Pozwala ono na monitorowanie występujących błędów podczas uruchamiania kodu i szybkie ich naprawianie. Dzięki temu proces tworzenia oprogramowania jest bardziej efektywny i przyspiesza czas dostarczenia działającego produktu.
 
-## Jak pisać do standardowego błędu w języku Javascript
+## Jak to zrobić?
 
-W języku Javascript istnieją dwa sposoby na wypisywanie błędów do standardowego błędu - `console.error()` i `process.stderr.write()`. Pierwsza metoda jest częściej używana i jest dostępna we wszystkich przeglądarkach. Druga metoda jest dostępna tylko w środowisku Node.js. Poniżej przedstawiono przykładowy kod, który wykorzystuje obie metody.
-
-```Javascript
-// Wypisywanie błędu przy użyciu console.error()
-console.error("To jest jakiś błąd!");
-// Wypisywanie błędu przy użyciu process.stderr.write()
-process.stderr.write("To jest kolejny błąd!");
-```
-
-Przy użyciu `console.error()` możemy również przekazać wiele argumentów, a następnie wyświetlić je w standardowym błędzie. Na przykład:
+Aby pisać do standardowego błędu w języku Javascript, wystarczy użyć funkcji `console.error()`. Przykładowy kod wyglądałby następująco:
 
 ```Javascript
-let liczba = 5;
-console.error("Wartość liczby to", liczba);
+console.error("Błąd: Niedostępny plik");
 ```
 
-Wyjście z powyższego kodu będzie wyglądać następująco:
+Wywołanie tej funkcji spowoduje wyświetlenie wiadomości o błędzie w konsoli przeglądarki lub środowisku node.js. Można również przekazać więcej argumentów do funkcji, dzięki czemu błąd będzie zawierał szczegółowe informacje na temat jego przyczyny.
 
-```
-Wartość liczby to 5
-```
+## Wnikliwszy przegląd
 
-## Pogłębione zagadnienia dotyczące pisania do standardowego błędu
+Pisanie do standardowego błędu jest przydatne nie tylko podczas debugowania kodu, ale także do obsługi wyjątków. Można wykorzystać instrukcję `try...catch` do przechwytywania błędów i wyświetlania ich w konsoli przy użyciu funkcji `console.error()`.
 
-Pisanie do standardowego błędu może być bardzo przydatne w przypadku, gdy chcemy wyświetlić błąd lub ostrzeżenie w odpowiednim miejscu kodu. Może również pomóc nam zlokalizować problem i szybciej go naprawić. Poniżej przedstawiono przykłady użycia pisanie do standardowego błędu w różnych sytuacjach.
+Kolejną zaletą pisania do standardowego błędu jest możliwość przekierowania informacji o błędzie do pliku dziennika (ang. log file). Jest to szczególnie przydatne w przypadku aplikacji internetowych, gdzie dostęp do konsoli przeglądarki jest utrudniony.
 
-### Wyświetlanie błędu w przypadku błędnego argumentu funkcji
+## Zobacz także
 
-Jedną z częstych sytuacji, w których możemy wykorzystać pisanie do standardowego błędu, jest sprawdzenie poprawności argumentów funkcji. Możemy dodać warunek, który sprawdzi, czy argument jest prawidłowy, a jeśli nie, to wyświetli błąd przy użyciu `console.error()`.
-
-```Javascript
-function dodaj(a, b) {
-    // Sprawdzamy, czy argumenty są liczbami
-    if (typeof a !== "number" || typeof b !== "number") {
-        // Wyświetlamy błąd, jeśli argumenty nie są liczbami
-        console.error("Oba argumenty muszą być liczbami!");
-        return;
-    }
-    // Wykonujemy operację dodawania
-    return a + b;
-}
-
-// Wywołujemy funkcję z błędnym argumentem
-dodaj(2, "abc");
-```
-
-Wyjście w konsoli będzie wyglądać następująco:
-
-```
-Oba argumenty muszą być liczbami!
-```
-
-### Wyświetlanie błędu w przypadku nieobsłużonego wyjątku
-
-Wyjątki mogą być trudne do zlokalizowania, szczególnie w większym i bardziej złożonym kodzie. W takiej sytuacji przydatne jest wyświetlenie informacji o wyjątku w standardowym błędzie, abyśmy mogli go łatwiej znaleźć i naprawić.
-
-```Javascript
-try {
-    // Wywołanie funkcji, która nie istnieje
-    nieznanaFunkcja();
-} catch (err) {
-    // Wyświetlenie błę
+- [Dokumentacja funkcji console.error() w języku Javascript](https://developer.mozilla.org/pl/docs/Web/API/Console/error)
+- [Przewodnik po obsłudze błędów w języku Javascript](https://www.w3schools.com/js/js_errors.asp)
+- [Przykładowy kod z wykorzystaniem funkcji console.error()](https://www.geeksforgeeks.org/javascript-console-error-with-examples/)

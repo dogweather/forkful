@@ -1,88 +1,66 @@
 ---
-title:    "PHP: 检查目录是否存在。"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/checking-if-a-directory-exists.md"
+title:                "PHP: 判断目录是否存在"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要检查目录是否存在
+# 为什么要检查目录是否存在？
 
-当我们在进行编程时，有时候需要操作文件或者目录，但是在对文件或者目录进行操作之前，我们需要先确保它们存在。如果我们不先检查，可能会导致程序出错或者产生意想不到的结果。因此，检查目录是否存在是一种很重要的编程习惯。
+作为一名PHP程序员，你可能经常需要在代码中使用文件和目录来存储和管理数据。但在访问这些文件和目录之前，我们需要确认它们是否存在。这就是为什么检查目录是否存在如此重要的原因。如果我们不检查目录是否存在，可能会导致程序崩溃或无法正常工作。
 
-# 如何检查目录是否存在
+# 如何检查目录是否存在？
 
-我们可以使用PHP中的`is_dir()`函数来检查目录是否存在。下面是一个简单的代码示例：
+在PHP中，我们可以使用`file_exists()`函数来检查目录是否存在。让我们看一个简单的例子：
 
 ```PHP
 <?php
-// 检查当前目录是否存在
-if (is_dir('.')) {
-    echo "当前目录存在！";
+$directory = "my_directory";
+if (file_exists($directory)) {
+    echo "目录存在！";
 } else {
-    echo "当前目录不存在！";
+    echo "目录不存在！";
 }
 ```
 
-运行结果：
-
-```
-当前目录存在！
-```
-
-除了使用`is_dir()`函数，我们也可以使用`file_exists()`函数来检查文件是否存在，或者使用`mkdir()`函数来创建目录。这些函数都需要了解一下，因为在日常编程中可能会经常用到。
+如果`my_directory`目录存在，输出将是“目录存在！”。如果目录不存在，输出将是“目录不存在！”。通过这种方法，我们可以轻松检查目录是否存在，并根据情况采取相应的操作。
 
 # 深入了解检查目录是否存在
 
-在PHP中，我们可以使用`stat()`函数来获取目录的一些详细信息。这个函数会返回一个数组，包含了目录的权限、所有者信息、最后修改时间等等。
+有时候，我们可能需要检查目录是否为空。为了做到这一点，我们可以使用`scandir()`函数来获取目录中的所有文件和子目录，然后使用`count()`函数来计算数量。如果目录为空，计数将为0。让我们看一个例子：
 
 ```PHP
 <?php
-// 获取当前目录的详细信息
-$info = stat('.');
-// 打印数组
-print_r($info);
+$directory = "my_directory";
+$files = scandir($directory);
+if (count($files) == 0) {
+    echo "目录为空！";
+} else {
+    echo "目录不为空！";
+}
 ```
 
-运行结果：
+除了使用`file_exists()`和`scandir()`函数，我们还可以使用`is_dir()`函数来检查目录是否存在。这个函数会返回一个布尔值，如果目录存在则为`true`，不存在则为`false`。让我们看一个例子：
 
-```
-Array
-(
-    [0] => 106
-    [1] => 0
-    [2] => 16877
-    [3] => 1
-    [4] => root
-    [5] => root
-    [6] => 0
-    [7] => 0
-    [8] => 1618255648
-    [9] => 1618255648
-    [10] => 1618255648
-    [11] => 4096
-    [12] => 8
-    [dev] => 106
-    [ino] => 0
-    [mode] => 16877
-    [nlink] => 1
-    [uid] => 0
-    [gid] => 0
-    [rdev] => 0
-    [size] => 4096
-    [atime] => 1618255648
-    [mtime] => 1618255648
-    [ctime] => 1618255648
-    [blksize] => 4096
-    [blocks] => 8
-)
+```PHP
+<?php
+$directory = "my_directory";
+if (is_dir($directory)) {
+    echo "目录存在！";
+} else {
+    echo "目录不存在！";
+}
 ```
 
-通过深入了解目录的详细信息，我们可以更好地掌握和管理目录。
+# 参考阅读
 
-# 参考链接
+- `file_exists()`函数：https://www.php.net/manual/zh/function.file-exists.php
+- `scandir()`函数：https://www.php.net/manual/zh/function.scandir.php
+- `count()`函数：https://www.php.net/manual/zh/function.count.php
+- `is_dir()`函数：https://www.php.net/manual/zh/function.is-dir.php
 
-- [PHP文档：`is_dir()`函数](https://www.php.net/manual/zh/function.is-dir.php)
-- [PHP文档：`file_exists()`函数](https://www.php.net/manual/zh/function.file-exists.php)
-- [PHP文档：`mkdir()`函数](https://www.php.net/manual/zh/function.mkdir.php)
-- [PHP文档：`stat()`函数](https://www.php.net/manual/zh/function.stat.php)
+# 参见
+
+Simplified Chinese Markdown：https://docs.github.com/cn/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#task-lists

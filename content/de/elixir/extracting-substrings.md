@@ -1,71 +1,38 @@
 ---
-title:    "Elixir: Substrings extrahieren"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/extracting-substrings.md"
+title:                "Elixir: Auslesen von Unterzeichenketten"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Substrings sind Teilzeichenfolgen, die aus einer größeren Zeichenfolge extrahiert werden. Im Elixir-Programmieren gibt es mehrere Gründe, warum man Substrings extrahieren würde. Zum Beispiel für die Textmanipulation oder die Verarbeitung von Benutzereingaben. In diesem Blogbeitrag werden wir uns ansehen, wie man Substrings in Elixir extrahiert.
+Substring-Extraktion ist eine häufig verwendete Funktion in der Programmierung. Es ermöglicht uns, Teilstrings aus einem string zu extrahieren, die wir für spätere Berechnungen, Überprüfungen oder Anzeigen benötigen. In Elixir ist die substring-Funktion sehr effizient und einfach zu verwenden, was sie zu einem wertvollen Werkzeug in unserem Programmierarsenal macht.
 
-## Wie geht man vor
+## Wie man es macht
 
-Die Grundlage für die Extraktion von Substrings in Elixir ist die `String`-Funktion `slice/3`. Diese Funktion nimmt drei Argumente: die Zeichenfolge, aus der der Substring extrahiert werden soll, den Startindex und den Endindex. Der Startindex gibt an, an welcher Position in der Zeichenfolge der Substring beginnen soll, während der Endindex angibt, an welcher Position der Substring enden soll (ohne diesen Buchstaben einzuschließen). Hier ist ein Beispiel für die Verwendung von `slice/3`:
-
-```Elixir
-str1 = "Hallo, Welt!"
-substring = String.slice(str1, 7, 10)
-IO.puts(substring)
-```
-
-Dieser Code würde den Substring "Welt" extrahieren und ausgeben.
-
-Wenn der Endindex nicht angegeben wird, werden alle Zeichen ab dem Startindex bis zum Ende der Zeichenfolge extrahiert. Hier ist ein Beispiel:
+Um eine Substring aus einem Elixir string zu extrahieren, verwenden wir die `String.slice/3` Funktion. Diese Funktion nimmt drei Argumente an: der string, von dem wir eine Teilstring extrahieren möchten, der Anfangsindex und der Endindex. Wenn wir beispielsweise den string `"Elixir ist großartig"` haben und den Teilstring `"großartig"` extrahieren möchten, können wir folgenden Code schreiben:
 
 ```Elixir
-str2 = "Test123"
-substring = String.slice(str2, 4)
-IO.puts(substring)
+String.slice("Elixir ist großartig", 11, 19)
 ```
 
-Dieser Code würde die Zeichenfolge "123" extrahieren und ausgeben.
+Das Ergebnis wäre `"großartig"`, da der Anfangsindex 11 der Buchstabe "g" ist und der Endindex 19 das "i" am Ende des Wortes ist. Beachten Sie, dass der Endindex nicht Teil des resultierenden Teilstrings ist.
 
-Man kann auch Negative Werte für Start- und Endindex verwenden, um den Substring aus dem Ende der Zeichenfolge zu extrahieren. Zum Beispiel:
+Wir können auch negative Indizes verwenden, um von hinten zu zählen. Zum Beispiel würde `String.slice("Elixir ist großartig", -9, -1)` den Teilstring `"Elixir"` extrahieren.
 
-```Elixir
-str3 = "Hallo, Welt!"
-substring = String.slice(str3, -5, -1)
-IO.puts(substring)
-```
+Wenn wir einen Teilstring bis zum Ende des string extrahieren möchten, können wir den `String.length/1` Operator verwenden, um die Länge des strings zu erhalten. Zum Beispiel würde `String.slice("Elixir ist großartig", 0, String.length("Elixir ist großartig"))` den gesamten string zurückgeben.
 
-Dieser Code würde den Substring "Welt" extrahieren und ausgeben.
+## Tief eintauchen
 
-## Tiefeneintauchen
+Neben der `String.slice/3` Funktion, gibt es in Elixir auch die `String.split/2` Funktion, die uns ermöglicht, einen string in bestimmten Abschnitten aufzuteilen. Wir können einen Teilstring als Trennzeichen verwenden und erhalten dann eine Liste der aufgeteilten Abschnitte. Zum Beispiel würde `String.split("Elixir::ist::großartig", "::")` die Liste `["Elixir", "ist", "großartig"]` zurückgeben.
 
-Die Extraktion von Substrings in Elixir kann auch mithilfe regulärer Ausdrücke erfolgen. Hierfür wird die Funktion `Regex.run/3` verwendet, die eine Liste von Treffern zurückgibt. Hier ist ein Beispiel:
-
-```Elixir
-str4 = "1, 2, 3"
-substring = Regex.run(~r/\d/, str4)
-IO.inspect(substring)
-```
-
-Dieser Code würde eine Liste von Treffern zurückgeben, die aus den Zahlen in der Zeichenfolge besteht.
-
-Eine interessante Funktion der `slice/3`-Funktion ist, dass man sie auch auf Listen anwenden kann. In diesem Fall werden die Elemente der Liste ab dem angegebenen Index ausgewählt. Zum Beispiel:
-
-```Elixir
-list = [1, 2, 3, 4]
-substring = List.slice(list, 1)
-IO.puts(substring)
-```
-
-Dieser Code würde eine Liste der Elemente ab dem Index 1 zurückgeben, also [2, 3, 4].
+Eine andere nützliche Funktion ist `String.trim/1`, die uns ermöglicht, Leerzeichen oder Zeilenumbrüche am Anfang oder Ende eines strings zu entfernen. Dies ist besonders hilfreich, wenn wir mit Benutzereingaben arbeiten.
 
 ## Siehe auch
 
-- [Elixir-Dokumentation zu `String.slice/3`](https://hexdocs.pm/elixir/String.html#slice/3)
-- [Elixir-Dokumentation zu `Regex.run/3`](https://hexdocs.pm/elixir/Regex.html#run/3)
-- [Elixir-Dokumentation zu `List.slice/2`](https://hexdocs.pm/elixir/List.html#slice/2)
+- [Elixir-Dokumentation zu Strings](https://hexdocs.pm/elixir/String.html)
+- [Elixir School: Strings](https://elixirschool.com/de/lessons/basics/string/)
+- [ElixirForum: Substring extrahieren](https://elixirforum.com/t/getting-a-substring/1102)

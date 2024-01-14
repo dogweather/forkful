@@ -1,38 +1,52 @@
 ---
-title:    "Haskell: コンピュータ・プログラミングにおける「コマンドライン引数の読み取り」"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/reading-command-line-arguments.md"
+title:                "Haskell: コマンドライン引数の読み取り"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、Haskellプログラミングブログへようこそ！今日は、コマンドライン引数を読み取る方法についてお話しします。コマンドライン引数を読み取ることで、プログラムをより柔軟に動かすことができます。さっそく、始めましょう！
+## Why (なぜ)
 
-## なぜ
+コマンドライン引数を読み取ることは、Haskellプログラミングにおける重要なスキルです。コマンドライン引数は、プログラムに実行時に渡す情報を提供するために使用されます。この記事では、コマンドライン引数の読み取り方について学び、その重要性を理解します。
 
-コマンドライン引数を読み取ることの利点は、プログラムを実行する際に様々なパラメーターを指定できることです。例えば、ファイル名やオプションの値などを指定することができます。これにより、プログラムを実行する際に都合の良い設定を行うことができます。
+## How To (やり方)
 
-## 方法
-
-では、実際にコマンドライン引数を読み取る方法を見てみましょう。下のコードを参考にしてください。
+コマンドライン引数を読み取るには、getArgs関数を使用します。これは、コマンドライン引数を文字列のリストとして取得します。以下の例を参考にしてください。
 
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
+main :: IO ()
 main = do
-  args <- getArgs
-  print args
+    args <- getArgs
+    putStrLn "コマンドライン引数:"
+    traverse putStrLn args
 ```
 
-このコードは、`System.Environment`モジュールをインポートし、`getArgs`関数を使って引数を取得し、それを表示します。コマンドラインで`runhaskell arguments.hs hello world`と実行すると、`["hello", "world"]`という出力が得られます。
+上記の例では、`traverse`関数を使用して、リスト内のすべての要素を表示しています。以下のように実行することで、コマンドライン引数を読み取ることができます。
 
-## さらに深く
+```bash
+runhaskell myprogram.hs arg1 arg2 arg3
+```
 
-コマンドライン引数を取得する方法のほかにも、さらに高度な使い方があります。例えば、オプション引数を扱うためのオプションパーサーを作ることや、引数の妥当性をチェックすることができます。詳しい情報は、[Haskellの公式ドキュメント](https://www.haskell.org/documentation/)や[Real World Haskell](http://book.realworldhaskell.org/)などを参考にしてください。
+上記のコマンドを実行すると、以下のような出力が得られます。
 
-## 関連リンク
+```
+コマンドライン引数:
+arg1
+arg2
+arg3
+```
 
-- [Haskell公式ドキュメント](https://www.haskell.org/documentation/)
-- [Real World Haskell](http://book.realworldhaskell.org/)
-- [Haskell Wiki](https://wiki.haskell.org/)
-- [Haskell Reddit](https://www.reddit.com/r/haskell/)
+## Deep Dive (深入り)
+
+コマンドライン引数を扱う際に注意するべきことがあります。まず、リストの最初の要素は、プログラム自体のパスになります。また、特定のデータ型に変換して使用したい場合は、型変換関数を使用する必要があります。例えば、文字列を整数に変換するには、`read`関数を使用します。
+
+また、`putStrLn`関数を使用すると、改行コードが自動的に追加されるため、コマンドライン引数を1行に表示するには、`putStr`関数を使用する必要があります。
+
+## See Also (関連リンク)
+
+- [Haskellのコマンドライン引数の読み取り方](https://www.codementor.io/@julieoconnor/working-with-command-line-arguments-in-haskell-csuuydavh)
+- [Haskellドキュメント：Command Line Arguments](https://www.stackbuilders.com/tutorials/haskell/command-line-arguments/)

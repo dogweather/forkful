@@ -1,53 +1,46 @@
 ---
-title:    "Python: Utregning av datoer i fremtiden eller fortiden"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/calculating-a-date-in-the-future-or-past.md"
+title:                "Python: Beregning av en dato i fremtiden eller fortiden"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+### Hvorfor
+Det kan være mange grunner til at man ønsker å kunne beregne en dato i fremtiden eller fortiden i Python. Dette kan være nyttig for å planlegge fremtidige hendelser, beregne alder eller for å løse mer komplekse problemstillinger.
 
-Det er mange grunner til å ønske å beregne en dato i fremtiden eller fortiden i et Python-program. Kanskje du planlegger en hendelse og trenger å vite hvilken dato den vil falle på, eller kanskje du vil lage en funksjon som beregner alderen til en person basert på fødselsdatoen deres. Uansett hva årsaken er, kan å kunne beregne datoer i Python være en nyttig ferdighet å ha.
-
-## Hvordan gjøre det
-
-Det er enkelt å beregne datoer i fortiden eller fremtiden ved hjelp av Python sin `datetime` -modul. Først må du importere modulen ved å skrive `import datetime` øverst i programmet ditt. Deretter kan du bruke de forskjellige funksjonene og metodene i modulen for å beregne datoen.
-
-For å beregne en dato i fremtiden, kan du bruke `timedelta` -funksjonen. For eksempel, hvis du vil finne ut hvilken dato det vil være 100 dager fra i dag, kan du skrive følgende i Python:
+### Hvordan
+For å beregne en dato i Python, må man først importere datatypen datetime ved å skrive følgende kode:
 
 ```Python
-from datetime import datetime, timedelta
-
-days_in_future = 100
-today = datetime.today()
-future_date = today + timedelta(days=days_in_future)
-
-print(f"Datoen {days_in_future} dager fra i dag vil være: {future_date}")
+import datetime
 ```
-Dette vil gi følgende utdata:
 
-`Datoen 100 dager fra i dag vil være: 2021-05-17 17:36:10.044948`
-
-For å beregne en dato i fortiden, kan du bruke `replace` -metoden. Hvis du for eksempel vil finne ut hvilken dato det var for én måned siden, kan du bruke følgende kode:
+Deretter kan man initialisere en variabel med dagens dato ved å bruke datatypen datetime.date som vist under:
 
 ```Python
-from datetime import datetime
-
-today = datetime.today()
-past_date = today.replace(month=today.month-1)
-
-print(f"Datoen én måned tilbake fra i dag var: {past_date}")
+today = datetime.date.today()
 ```
-Dette vil gi følgende utdata:
 
-`Datoen én måned tilbake fra i dag var: 2021-03-17 17:45:49.944064`
+For å beregne en dato i fremtiden er det bare å legge til ønsket antall dager til variabelen today. For eksempel, hvis vi ønsker å finne datoen 30 dager frem i tid kan vi gjøre følgende:
 
-## Dypdykk
+```Python
+future_date = today + datetime.timedelta(days=30)
+```
 
-Det er mange flere funksjoner og metoder i `datetime` -modulen som kan hjelpe deg med å beregne datoer i fortiden eller fremtiden. Du kan også bruke `strftime` -metoden til å formatere datoen på den måten du ønsker det. Utforsk gjerne dokumentasjonen til Python sin `datetime` -modul for å lære mer om disse funksjonene og metodene.
+På samme måte kan man beregne en dato i fortiden ved å trekke fra ønsket antall dager. Her er et eksempel på å beregne datoen 30 dager tilbake i tid:
 
-## Se også
+```Python
+past_date = today - datetime.timedelta(days=30)
+```
 
-- [Dokumentasjon for datetime-modulen fra Python sin offisielle nettside](https://docs.python.org/3/library/datetime.html)
-- [En interaktiv guide til å beregne datoer i Python](https://www.programiz.com/python-programming/datetime)
+Det er også mulig å beregne datoer utifra andre enheter, som for eksempel uker, år eller timer. For å lære mer om dette kan man lese dokumentasjonen til datatypen datetime.
+
+### Dype dykk
+I tillegg til å kunne beregne en enkelt dato, kan man også gjøre mer avanserte beregninger i Python. Dette kan inkludere å finne ut hvilken dag en dato faller på, beregne forskjellen mellom to datoer eller manipulere datoer basert på spesifikke krav. Det finnes også flere biblioteker som kan hjelpe med mer komplekse beregninger, som for eksempel Arrow eller Pendulum.
+
+### Se også
+- [Dokumentasjon for datatypen datetime i Python](https://docs.python.org/3/library/datetime.html)
+- [Arrow biblioteket for dato og tid håndtering i Python](https://arrow.readthedocs.io/en/latest/)
+- [Pendulum biblioteket for enkel dato og tid håndtering i Python](https://pendulum.eustace.io/docs/)

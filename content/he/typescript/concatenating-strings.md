@@ -1,53 +1,37 @@
 ---
-title:    "TypeScript: חיבור מחרוזות"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/concatenating-strings.md"
+title:                "TypeScript: צירוף מחרוזות"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-שלום קוראים!
-
-היום נדבר על חיבור מחרוזות (string concatenation) בשפת TypeScript. למה לעסוק בחיבור מחרוזות בכלל? התשובה פשוטה - חיבור מחרוזות מאפשר לנו לשלב את המידע המאוחד בצורה יעילה ונוחה.
-
 ## למה
 
-פונקציות חיבור מחרוזות מאפשרות לנו להתחבר בין מחרוזות שונות כך שניתן ליצור מחרוזות חדשות. בזכות הפונקציות הללו ניתן ליצור מחרוזות חדשות שמכילות את המידע ממחרוזות שונות. בגלל זה, חיבור מחרוזות הוא יישום חשוב בתכנות.
+משולש משתנים? התאמץ ...
 
-## כיצד לכתוב פונקציה חיבור מחרוזות
-
-תחילה, נגדיר משתנה כדי לאחסן את המחרוזת הראשונה שנרצה לחבר:
+## איך לעשות
 
 ```TypeScript
-let firstString: string = "שלום לעולם!";
+let hello: string = "שלום";
+let name: string = "עולם";
+let greeting: string = hello + name;
+
+console.log(greeting);
 ```
 
-אחר כך, נגדיר את המחרוזת השנייה:
-
+פלט:
 ```TypeScript
-let secondString: string = "אני מתכנת TypeScript";
+שלוםעולם
 ```
 
-לבסוף, נשתמש באופרטור החיבור (`+`) כדי לחבר את שני המחרוזות יחד:
+## חקירה מעמיקה
 
-```TypeScript
-let fullString: string = firstString + secondString;
-```
+לשרשרת היא פשוט כדי לחבר מחרוזות יחד. מצד שני, ייתכן שתתקלו במצבים שבהם תצטרכו לחבר מחרוזות עם משתנים או לחבר מחרוזות עם תווים מיוחדים. בכדי לטפל בכל מצב, ניתן להשתמש בתווים פיענוח כדי לצייר את המחרוזת המבוקשת.
 
-הפקודות הללו יצרו את המחרוזת החדשה "שלום לעולם! אני מתכנת TypeScript".
+## ראה גם
 
-## חקירה עמוקה
-
-אם נבקש לחבר מחרוזות בחוזקה מבלי להשתמש באופרטור החיבור, אנחנו יכולים להשתמש בפונקציות המסופקות על ידי שפת TypeScript. לדוגמה, נוכל להשתמש בפונקציה `string.concat()` כדי לחבר את שתי המחרוזות בצורה יעילה יותר:
-
-```TypeScript
-let fullString: string = firstString.concat(secondString);
-```
-
-ניתן גם להשתמש בפונקציה `string.join()` כדי לחבר מחרוזות עם מפריד מסוים, כך שניתן להפריד בין המחרוזות השונות. לדוגמה:
-
-```TypeScript
-let fullString: string = firstString.concat(" - ", secondString);
-```
-
-כ
+- [תיעוד TypeScript רשמי על התאמות שרשרת](https://www.typescriptlang.org/docs/handbook/variable-declarations.html#string-concatenation)
+- [מדריך להשתמש במשבצת-לשרשורת ב-TypeScript](https://mariusschulz.com/blog/using-template-strings-in-typescript)
+- [הפרוטוקולים והמדריכים לשרשרת מחרוזות ב-TypeScript](https://ultimatecourses.com/blog/understanding-typescript-template-strings)

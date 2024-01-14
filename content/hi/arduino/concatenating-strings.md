@@ -1,33 +1,28 @@
 ---
-title:    "Arduino: स्ट्रिंग्स जोड़ना"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/concatenating-strings.md"
+title:                "Arduino: स्ट्रिंगों को संयोजित करना"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
+आपने अभी तक Arduino के कोडिंग में string concatenation शब्द सुने ही होंगे। इसका मतलब है कि आप कुछ अलग-अलग strings को एक साथ जोड़ना चाहते हैं। यह आमतौर पर वर्कशीट को अभिव्यक्त करने के लिए किया जाता है, जब आपको विशेष तारीके से संग्रहीत करना होता है।
 
-आर्डुइनो प्रोग्रामिंग में स्ट्रिंग्स को जोड़ना आमतौर पर काफी अधिक इस्तेमाल किया जाता है। इससे हम एक बड़ी स्ट्रिंग बना सकते हैं जो अन्य चीजों को शामिल करने के लिए उपयुक्त होती है।
-
-## कैसे करें
-
-जब हमें अलग-अलग स्ट्रिंग्स को जोड़कर एक बड़ी स्ट्रिंग बनानी होती है, हम इस तरह कोड कर सकते हैं:
-
+## कैसे
 ```Arduino
-String str1 = "Arduino";
-String str2 = " programming";
-String str3 = " is fun!";
-String result = str1 + str2 + str3;
-Serial.println(result);
+String str1 = "Hello";
+String str2 = "world";
+Serial.println(str1 + " " + str2); /*output: Hello world*/
 ```
 
-इस कोड में, हमने तीन अलग-अलग स्ट्रिंग्स को जोड़कर एक नई स्ट्रिंग बनाई है। "result" वेरिएबल में नई स्ट्रिंग को स्टोर किया गया है और सीरियल मॉनिटर पर हमें एक बड़ी स्ट्रिंग के साथ "Arduino programming is fun!" दिखाई देगा।
+आप देख सकते हैं कि यहां हमने दो strings को प्रिंट करने के लिए "+" ऑपरेटर का प्रयोग किया है। साथ ही हमने पढ़ा कि Arduino में strings को concatenate करने के लिए "+","+=" और "concat()" ऑपरेटर उपलब्ध है। आप जितनी चाहें उतने स्ट्रिंग्स को जोड़ सकते हैं।
 
-## गहराई में जाएं
+## गहराई में
+जब आप strings को "+" ऑपरेटर से जोड़ते हैं, तो यह वास्तव में उस strings को concatenate करता है जो उस वक्त में पहले से ही मौजूद होते हैं। अगर आप उस strings को इसके बाद बदलते हैं, तो यह उसको स्वतः आगे चलकर concatenate करता है। और अगर आप इस strings को किसी भी प्रकार से modify करते हैं, तो आपको इसे सामान्य सुम्मा की तरह ही concatenate करना होगा।
 
-स्ट्रिंग्स को जोड़ना काफी आसान है, लेकिन इसमें कुछ जटिलताएं भी हो सकती हैं। जब हम अलग-अलग डेटा टाइप की स्ट्रिंग्स को जोड़ते हैं, हमें स्पष्टता से सुनिश्चित करना होगा कि स्ट्रिंग्स को अपने सही डेटा टाइप में कन्वर्ट किया गया है। अन्यथा, गलत डेटा मिल सकता है।
-
-इसके अलावा, अगर हम स्ट्रिंग्स को जोड़ते समय उनमें स्पेशल कैरेक्टर्स वेरिएबल्स (जैसे इसके लिए "\" का उपयोग किया जाता है) को भी जोड़ते हैं, तो हमें ध्यान रखना होगा कि स्ट्रिंग्स में उनके सही रूप में प्रवेश कराया जाए।
-
-##
+## देखें भी
+- [String concatenation tutorial by Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
+- [String concatenation examples by Hackster](https://www.hackster.io/Arduino_Genuino/string-concatenation-using-arduino-9fc181)
+- [Tutorial on using the String library by GeeksforGeeks](https://www.geeksforgeeks.org/working-with-strings-using-string-library-in-arduino-ide/)

@@ -1,38 +1,46 @@
 ---
-title:    "Javascript: Päivämäärän hakeminen"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/getting-the-current-date.md"
+title:                "Javascript: Päivämäärän hakeminen"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Hakea Nykyinen Päivämäärä?
 
-Tervetuloa lukemaan tämän blogikirjoituksen, jossa puhumme Javascriptin päivämäärän hankinnasta. Monet ihmiset saattavat kysyä, miksi tarvitsemme päivämäärän hankintaa koodissa. Yksinkertaisesti sanottuna, päivämäärä on tärkeä tieto monissa ohjelmoinnin sovelluksissa, kuten laskupäivän määrittämisessä tai tapahtumien järjestämisessä aikajanalla. Joten, jos haluat oppia kuinka hakea ja käyttää nykyistä päivämäärää koodissa, jatka lukemista!
+Javascriptissä on monia tilanteita, joissa tarvitsemme tietoa nykyisestä päivämäärästä. Esimerkiksi voi olla tarpeen näyttää käyttäjälle ajankohtaista tietoa tai tallentaa jokin toimenpide tietokantaan tietyn päivämäärän mukaan. Tässä blogikirjoituksessa käymme läpi, miten voit helposti hakea nykyisen päivämäärän Javascriptillä.
 
-## Kuinka
+## Miten Tehdä Se?
 
-Päivämäärän hankinta Javascript-ohjelmointikielellä on melko helppoa. Ensinnäkin, meidän on käytettävä Date-oliota, joka sisältää päivämäärän ja ajan tiedot. Voimme luoda uuden Date-olion seuraavasti:
+Onneksi Javascriptillä on sisäänrakennettu Date-objekti, jolla voimme helposti hakea nykyisen päivämäärän. Voit luoda uuden Date-objektin joko pelkällä Date-sanaa käyttäen tai antamalla sille parametrina halutun vuoden, kuukauden ja päivän. Alla olevissa esimerkeissä näytämme molemmat vaihtoehdot.
+
 ```Javascript
-let date = new Date();
-```
-Tämä luo uuden Date-olion, joka sisältää nykyisen päivämäärän ja ajan. Voimme sitten käyttää erilaisia Date-olion metodeja saadaksemme tietoa siitä, kuten päivämäärän, kuukauden ja vuoden. Esimerkiksi saadaksemme nykyisen päivämäärän, voimme käyttää seuraavaa komentoa:
-```Javascript
-let day = date.getDate();
-```
-Tämä tallentaa nykyisen päivämäärän numeron muuttujaan 'day'. Voimme myös hakea kuukauden numeron käyttämällä ```getMonth()``` -metodia ja vuoden käyttämällä ```getFullYear()``` -metodia.
+// Hakee nykyisen päivämäärän
+var nykyinenPäivä = new Date();
+console.log(nykyinenPäivä); // Tulostaa esimerkiksi Wed Sep 29 2021 09:56:15 GMT+0300 (Eastern European Summer Time)
 
-Voit myös muokata ja tulostaa päivämäärän haluamassasi muodossa käyttämällä erilaisia metodeja. Esimerkiksi voit näyttää päivämäärän kirjoilleen seuraavasti:
-```Javascript
-console.log(`${day}. ${date.getMonth() + 1}. ${date.getFullYear()}`);
+// Hakee tietyn päivämäärän vuoden, kuukauden ja päivän mukaan
+var haluttuPäivä = new Date(2021, 8, 29); // Huomaa, että kuukaudet aloitetaan nollasta (tammikuu on 0, helmikuu 1 jne.)
+console.log(haluttuPäivä); // Tulostaa Wed Sep 29 2021 00:00:00 GMT+0300 (Eastern European Summer Time)
 ```
 
-## Syväsukellus
+Voit myös hakea tiettyjä osia päivämäärästä erikseen. Alla olevassa esimerkissä näytämme, miten voit hakea päivän, kuukauden ja vuoden erikseen.
 
-Date-oliossa on myös muita hyödyllisiä metodeja päivämäärän, kuten viikonpäivän ja kellonajan, hankkimiseksi. Voit myös luoda Date-olion tietystä päivämäärästä ja ajasta, mikä tekee siitä erittäin joustavan ja hyödyllisen työkalun. Muista kuitenkin, että Date-olion metodit käyttävät paikallista aikavyöhykettä. Tämä voi aiheuttaa ongelmia, jos sovelluksesi on tarkoitettu maailmanlaajuiseen käyttöön. Tähän ongelmaan voi ratkaisuja meillä on artikkeli "Syväsukellus Date-olioon" (englanniksi).
+```Javascript
+var nykyinenPäivä = new Date();
 
-## Katso myös
+console.log(nykyinenPäivä.getDate()); // Tulostaa nykyisen päivämäärän numerona (esimerkiksi 29)
+console.log(nykyinenPäivä.getMonth()); // Tulostaa nykyisen kuukauden numerona (tässä tapauksessa 8, koska kuukaudet aloitetaan nollasta)
+console.log(nykyinenPäivä.getFullYear()); // Tulostaa nykyisen vuoden numerona (esimerkiksi 2021)
+```
 
-- [MDN-ohjeet Date-olion käytöstä](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools-opetusohjelma Date-olion käytöstä](https://www.w3schools.com/js/js_dates.asp)
-- [Syväsukellus Date-olioon (englanniksi)](https://medium.com/javascript-in-plain-english/deep-dive-into-the-javascript-date-object-f971d3a40bf5)
+## Syvä Sukellus
+
+Date-objektilla on monia muitakin hyödyllisiä metodeja, jotka voivat auttaa sinua työskennellessäsi päivämäärien kanssa. Voit esimerkiksi hakea päivämäärän tietyn aikavälin päästä tai tarkastaa, onko vuosi karkausvuosi. Suosittelemme tutustumaan lisää Date-objektin dokumentaatioon, jotta voit käyttää sitä täysin hyödyksi.
+
+## Katso Myös
+
+- [Javascript Date - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Date Object - W3Schools](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [Päivämäärän Haku - Codecademy (englanniksi)](https://www.codecademy.com/blog/77-p%C3%A4iv%C3%A4m%C3%A4%C3%A4r%C3%A4n-haku-javascriptill%C3%A4)

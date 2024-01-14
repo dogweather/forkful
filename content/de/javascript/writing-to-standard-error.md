@@ -1,50 +1,81 @@
 ---
-title:    "Javascript: Schreiben auf den Standardfehler"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/writing-to-standard-error.md"
+title:                "Javascript: Schreiben auf den Standardfehler"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Schreiben von Nachrichten an den Standardfehler ist ein wichtiger Bestandteil der Entwicklung in JavaScript. Durch die Verwendung von "console.error" können Entwickler Fehler und Warnungen in ihrem Code schnell und effizient identifizieren und beheben. Dies hilft dabei, die Qualität des Codes zu verbessern und mögliche Fehler zu vermeiden.
+Schreiben von Standardfehlern oder Fehlerprotokollen ist ein wichtiger Aspekt der Javascript Programmierung, der oft übersehen wird. In diesem Blog-Beitrag werden wir uns genauer damit beschäftigen, warum es wichtig ist, auf Standardfehler zu schreiben und wie man es richtig macht.
 
-# Wie man es macht
+## Wie man auf Standardfehler schreibt
 
-Um eine Nachricht an den Standardfehler zu schreiben, verwenden wir die Methode "console.error" und übergeben ihr die Nachricht, die wir ausgeben möchten. Hier ist ein Beispiel:
+Die Verwendung von `console.log()` ist eine gängige Methode, um Nachrichten in der Konsole auszugeben. Aber was ist, wenn wir spezifische Fehlermeldungen ausgeben möchten? Dafür gibt es `console.error()`, das uns ermöglicht, Nachrichten als Fehler auszugeben und sie in einem separaten Fehlerprotokoll aufzuzeichnen.
 
-```Javascript
-console.error("Es ist ein Fehler aufgetreten!");
-// Output: Es ist ein Fehler aufgetreten!
-```
-
-Wir können auch mehrere Nachrichten gleichzeitig an den Standardfehler senden, indem wir sie durch Kommas trennen:
+Beispielcode:
 
 ```Javascript
-console.error("Fehler beim Laden der Seite:", url);
-// Output: Fehler beim Laden der Seite: www.example.com
+try {
+  // Versuche den Code auszuführen
+  let result = dividieren(10, 0);
+  console.log("Das Ergebnis ist: " + result);
+} catch (err) {
+  console.error("Es ist ein Fehler aufgetreten: " + err);
+}
 ```
 
-# Tieferer Einblick
+Ergebnis in der Konsole:
 
-Das Schreiben von Nachrichten an den Standardfehler ist ein wichtiger Bestandteil der Fehlerbehebung in JavaScript. Durch die Verwendung von "console.error" können wir nicht nur Fehler und Warnungen ausgeben, sondern auch Variablen und Objekte in einer lesbaren Form anzeigen lassen:
+```
+Es ist ein Fehler aufgetreten: Error: Versuch, durch Null zu teilen
+```
+
+Wie man sieht, können wir mithilfe von `console.error()` nicht nur Fehlermeldungen ausgeben, sondern auch die Ursache des Fehlers, in diesem Fall durch Null zu teilen.
+
+Ein weiteres nützliches Feature ist die Verwendung von `console.trace()`. Mit dieser Methode können wir den ursprünglichen Aufrufstapel der Funktion anzeigen, was uns bei der Fehlersuche in komplexen Programmen helfen kann.
+
+Beispielcode:
 
 ```Javascript
-const num1 = 10;
-const num2 = 5;
-console.error("Das Ergebnis von " + num1 + " geteilt durch " + num2 + " ist:", num1/num2);
-// Output: Das Ergebnis von 10 geteilt durch 5 ist: 2
+function doSomething() {
+  doSomethingElse();
+}
+
+function doSomethingElse() {
+  let result = dividieren(10, 0);
+  console.log("Das Ergebnis ist: " + result);
+}
+
+try {
+  doSomething();
+} catch (err) {
+  console.error("Es ist ein Fehler aufgetreten: " + err);
+  console.trace();
+}
 ```
 
-Außerdem können wir auch CSS-Styles auf die ausgegebenen Nachrichten anwenden, um wichtige Fehler hervorzuheben:
+Ergebnis in der Konsole:
 
-```Javascript
-console.error("%cFehler: Seite nicht gefunden!", "color: red; font-size: 20px;");
-// Output: Fehler: Seite nicht gefunden! (in rot und größerer Schrift)
+```
+Es ist ein Fehler aufgetreten: Error: Versuch, durch Null zu teilen
+Trace: doSomethingElse()
+    at doSomething (script.js:8)
+    at script.js:13
 ```
 
-# Siehe auch
+Wie man sieht, können wir mithilfe von `console.trace()` den kompletten Aufrufstapel des Fehlers verfolgen und so besser verstehen, wo der Fehler aufgetreten ist.
 
-- Die Dokumentation zu "console.error" von Mozilla Developer Network (https://developer.mozilla.org/de/docs/Web/API/Console/error)
-- Ein ausführliches Tutorial zum Schreiben von Nachrichten an den Standardfehler auf Codecademy (https://www.codecademy.com/en/forum_questions/53f505b2fb7721e6b600195c)
+## Tieferer Einblick
+
+Das Schreiben auf Standardfehler ist besonders hilfreich bei der Fehlersuche und -behebung in komplexen Programmen. Mit den verschiedenen Methoden von `console` können wir detaillierte Informationen über Fehler ausgeben und so schneller herausfinden, wo das Problem liegt.
+
+Es ist auch möglich, den Fehlerprotokollausgabestrom zu ändern, indem man den Standardfehler-Stream `STDERR` auf einen anderen Stream umleitet. So können wir beispielsweise Fehler in eine externe Datei schreiben, anstatt sie in der Konsole auszugeben.
+
+## Siehe auch
+
+- https://nodejs.org/api/console.html
+- https://developer.mozilla.org/de/docs/Web/API/Console
+- https://www.w3schools.com/js/js_errors.asp

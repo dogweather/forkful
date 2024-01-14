@@ -1,60 +1,40 @@
 ---
-title:    "C: Porównywanie dwóch dat"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/comparing-two-dates.md"
+title:                "C: Porównywanie dwóch dat"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Porównywanie dat jest częstym zadaniem w wielu programach, szczególnie w tych związanych z zarządzaniem czasem. Dzięki porównaniu dat możemy ustalić, która z nich jest wcześniejsza lub późniejsza, co pozwala nam na wykonywanie różnych operacji, takich jak sortowanie dat czy sprawdzanie poprawności danych. W tym artykule dowiesz się, jak porównywać daty w języku C.
+Porównywanie dat jest częstym zadaniem w programowaniu, szczególnie w przypadku tworzenia aplikacji, w których ważne jest śledzenie czasu i daty. Umiejętność porównywania dwóch dat jest niezbędna do przeprowadzenia różnych operacji, takich jak wyświetlanie informacji o wydarzeniach, sortowanie danych lub wyświetlanie rekordów w odpowiedniej kolejności. W tym artykule dowiesz się, jak porównywać daty za pomocą języka C.
 
 ## Jak to zrobić
 
-Poniżej znajdują się przykładowe funkcje w języku C, które umożliwiają porównywanie dwóch dat. Przedstawione zostały również przykładowe wyniki ich działania, aby lepiej zrozumieć działanie kodu. Należy pamiętać, że w celu poprawnego porównania dat, musimy dysponować obiektami typu `struct tm`, które reprezentują datę i czas.
+Aby porównać dwie daty w języku C, musimy najpierw zrozumieć, że daty są przechowywane w postaci struktury. Struktura ta składa się z pól takich jak dzień, miesiąc, rok itp. W celu porównania dat, musimy utworzyć dwie instancje tej struktury i przypisać do nich wartości, które chcemy porównać.
 
-```C
-#include <stdio.h>
-#include <time.h>
+Następnie możemy wykorzystać operator "==" do porównania dwóch dat. Na przykład, jeśli mamy dwie daty zapisane w strukturze data d1 i d2, możemy użyć poniższego warunku, aby sprawdzić, czy są one równe:
 
-int main() {
-
-    // Ustalenie dat do porównania
-    struct tm date1 = { .tm_year=2021, tm_mon=5, .tm_mday=12 };
-    struct tm date2 = { .tm_year=2021, tm_mon=5, .tm_mday=10 };
-
-    // Porównanie dat
-    if (difftime(mktime(&date1), mktime(&date2)) > 0) {
-        printf("Date 1 is later than date 2");
-    } else if (difftime(mktime(&date1), mktime(&date2)) < 0) {
-        printf("Date 2 is later than date 1");
-    } else {
-        printf("Both dates are equal");
-    }
-
-    return 0;
+```
+if (d1.dzien == d2.dzien && d1.miesiac == d2.miesiac && d1.rok == d2.rok) {
+	printf("Daty są równe");
 }
 ```
 
-**Output:**
+Uwaga: Pamiętaj, że w przypadku porównywania dat, musimy porównać wszystkie pola, a nie tylko jedno, ponieważ jedna data może mieć inny dzień, ale ten sam miesiąc i rok, co druga data.
 
-```
-Date 1 is later than date 2
-```
+Możemy również wykorzystać funkcję `strcmp()` do porównania dat. Ta funkcja porównuje dwa ciągi znaków i zwraca wartość 0, jeśli są one identyczne. W ten sposób można zmodyfikować warunek powyżej, aby wykorzystać funkcję `strcmp()` do porównywania dat.
 
-W powyższym przykładzie wykorzystujemy funkcję `mktime()`, która zamienia strukturę `struct tm` na liczbę sekund od 1 stycznia 1970 roku (tzw. "epoch time"). Następnie używamy funkcji `difftime()`, która porównuje te dwie liczby i zwraca różnicę w sekundach. Jeśli wynik jest większy od zera, oznacza to że pierwsza data jest późniejsza, jeśli mniejszy - druga data jest późniejsza, a jeśli równy zero, to obie daty są takie same.
+## Deep Dive
 
-## Głębszy wywód
+Zrozumienie zasad przechowywania dat w języku C jest ważne podczas porównywania dat, ponieważ wpływa to na sposób, w jaki musimy porównywać różne elementy daty, takie jak dzień, miesiąc czy rok. W przypadku daty, która jest przechowywana w postaci liczby całkowitej, należy pamiętać, że miesiące są liczone od zera, czyli styczeń to wartość 0, luty to 1 itd. Ponadto, rokiem 0 jest rok przed naszą erą, a nie rok 2000.
 
-Porównywanie dat może być trudniejsze, jeśli chcemy porównać tylko część daty, na przykład sam dzień, bez uwzględniania miesiąca i roku. W takim przypadku musimy wykorzystać funkcje dostępne w bibliotece C `time.h`, takie jak `gmtime()` czy `localtime()`, które pozwalają na pobieranie konkretnych informacji o dacie i czasie z obiektu `struct tm`.
+Ważne jest również unikanie błędów podczas wprowadzania dat do programu. Należy upewnić się, że data jest poprawna, a pola takie jak dzień czy miesiąc nie są przekraczane. W przeciwnym razie może to prowadzić do nieprawidłowych porównań i błędów w naszym programie.
 
-Możemy również porównywać daty pod kątem kalendarza, uwzględniając różnice między latami przestępnymi, dzięki wykorzystaniu funkcji `isleap()`.
+## Zobacz także
 
-## Zobacz również
-
-- [Dokumentacja C dla biblioteki time.h](https://www.gnu.org/software/libc/manual/html_node/Time_002dRelated-Types.html)
-- [Porównywanie dat w języku C++](https://thispointer.com/difference-between-two-dates-in-days-months-years-in-c/)
-- [Podstawy czasu w języku C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-
-Dziękujemy za przeczytanie naszego artykułu o porównywaniu dat w języku C. Mamy nadzieję, że teraz jesteś lepiej przygotowany do wykorzystania tej umiejętności w swoich projektach.
+- [Porównywanie dat w języku C na przykładzie funkcji `strcmp()`](https://www.tutorialsduniya.com/compare-dates-using-strcmp-function-in-c/)
+- [Porównywanie dat w różnych językach programowania](https://www.guru99.com/date-time-and-calendar.html#6)
+- [Przydatny przewodnik po porównywaniu dat w języku C++](https://www.cplusplus.com/reference/ctime/tm/)

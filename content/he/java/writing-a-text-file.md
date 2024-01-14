@@ -1,43 +1,63 @@
 ---
-title:    "Java: כתיבת קובץ טקסט"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/writing-a-text-file.md"
+title:                "Java: כתיבת קובץ טקסט"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why (למה): 
+##למה:
 
-במאמר זה נלמד כיצד לכתוב קובץ טקסט בשפת ג'אווה. הכיתוב הנתון יכול לשמש למטרות שונות, כגון יצירת קובץ הגדרות או שמירת נתונים בקובץ מרחק.
+כתיבת קובץ טקסט היא דבר שמוכר לרובנו - זהו הפעולה הגורפת במיוחד כאשר אנחנו משתמשים במחשבים ובתכנות. אנו פתוחים קבצי טקסט כדי לכתוב דואר אלקטרוני, לכתוב קובץ ממירוץ, לנהל רשימת מטלות, ועוד. כתיבת קובץ טקסט היא כלי נפלא המאפשר לנו ליצור, לשמור ולערוך נתונים בפורמט טקסט פשוט ונגיש. בכתבה זו נלמד כיצד ליצור קובץ טקסט עם קוד Java פשוט.
 
-## How To (כיצד לכתוב קובץ טקסט בשפת ג'אווה): 
+##איך לעשות זאת:
 
-כדי לכתוב קובץ טקסט בשפת ג'אווה, ניתן להשתמש בפקודת "BufferedWrite" ובקלט הנכון. הנה כמה דוגמאות קוד יחד עם הפלט המצורף:
+על מנת ליצור קובץ טקסט עם קוד Java, ניצור פרויקט חדש בסביבת פיתוח כלשהי ונשבץ אליו את הקוד הבא:
 
 ```Java
-try {
-  BufferedWriter writer = new BufferedWriter(new FileWriter("example.txt"));
-  writer.write("כתיבת נתונים לקובץ טקסט");
-  writer.newLine(); // הוספת שורה חדשה
-  writer.write("המשך כתיבת נתונים");
-  writer.close(); // סגירת הקובץ
-} catch (IOException e) {
-  System.out.println("אירעה שגיאה בכתיבת הקובץ");
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class TextFileWriter {
+    public static void main(String[] args) {
+
+        //כתיבת נתונים לקובץ טקסט
+        try {
+            FileWriter writer = new FileWriter("myTextFile.txt");
+            BufferedWriter buffer = new BufferedWriter(writer);
+            buffer.write("זוהי הכתבה שלנו על כתיבת קובץ טקסט עם קוד Java.");
+            buffer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-פלט הקוד המצורף ייראה כך:
+הקוד הנ"ל מייצר קובץ טקסט חדש בשם "myTextFile.txt" ומכתיב לתוכו את המחרוזת "זוהי הכתבה שלנו על כתיבת קובץ טקסט עם קוד Java." כדי להראות תוצאה נוסיפה, ניתן להדפיס את תוכן הקובץ בעזרת הקוד הבא:
 
-כתיבת נתונים לקובץ טקסט
-המשך כתיבת נתונים
+```Java
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-## Deep Dive (עומק נוסף על כתיבת קובץ טקסט): 
+public class TextFileReader {
+    public static void main(String[] args) {
 
-על מנת שהקובץ יוצר את הנתונים בצורה תקינה ומנומסת, ניתן להשתמש בפקודה "writer.newLine()" כדי להוסיף שורה חדשה בכתיבת הנתונים. כמו כן, חשוב לזכור לסגור את הקובץ באמצעות "writer.close()" כדי לוודא שכל המידע נשמר ולא ימחק על ידי שגיאות אפשריות.
+        //קריאת נתונים מקובץ טקסט
+        try {
+            FileReader reader = new FileReader("myTextFile.txt");
+            BufferedReader buffer = new BufferedReader(reader);
+            String line = buffer.readLine();
+            System.out.println(line);
+            buffer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
 
-כתיבת קובץ טקסט בשפת ג'אווה היא כלי חשוב ומאפשר מנגנון מסודר ובטוח לשמירת נתונים בקובץ נפרד.
-
-## ראה גם (See Also):
-
-- פקודת "BufferedWrite" במדריך הרשמי של ג'אווה 
-- דוגמאות נוספות לכתיבת קובץ טקסט בשפת ג'אווה במאמרים נ
+בקוד הנ"ל, אנו קוראים את הקובץ שנוצר בקוד הראשון ומדפיסים את תוכןו. התוצאה שתודפס

@@ -1,54 +1,54 @@
 ---
-title:    "Swift: デバッグ出力の印刷"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/printing-debug-output.md"
+title:                "Swift: デバッグの出力を印刷する"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+プログラムを書く際に、デバッグ用の出力を表示することが重要です。これにより、コードが期待どおりに動作しているかどうかを確認することができます。
 
-デバッグ出力を印刷することの利点を説明します。デバッグ出力を印刷することによって、コードの実行中に何が起こっているのかを確認することができ、問題の特定や修正に役立ちます。
-
-## 作り方
-
-デバッグ出力を印刷する方法を簡単なコーディング例と共に説明します。まず、`print()`関数を使用して文字列を印刷し、その後に任意の変数や定数を追加して出力の種類を変えることができます。以下のコードを試してみてください。
+## 方法
+デバッグ用の出力を表示するには、Swiftの ```print()``` 関数を使用します。以下の例を参考にしてください。
 
 ```Swift
-// 文字列の印刷
-let message = "こんにちは！"
-print(message)
+let number = 5
+print("変数numberの値は\(number)です。")
 
-// 変数の印刷
-let name = "太郎"
-print("おはよう！私の名前は\(name)です。")
-
-// 複数の変数を含む出力
-let score = 90
-let subject = "数学"
-print("\(subject)の成績は\(score)点です。")
+// 出力結果：変数numberの値は5です。
 ```
 
-上のコードを実行すると、以下のような出力が得られます。
+このように、```print()```関数を使うと、任意のデータを出力することができます。また、複数の値を出力する際には、コンマで区切ることもできます。
 
-```
-こんにちは！
-おはよう！私の名前は太郎です。
-数学の成績は90点です。
+```Swift
+let name = "田中"
+let age = 25
+print("私の名前は\(name)です。年齢は\(age)才です。")
+
+// 出力結果：私の名前は田中です。年齢は25才です。
 ```
 
 ## 深堀り
+デバッグ用の出力を表示する際に便利なのが、オプションの引数です。例えば、出力するときの区切りや改行を指定することができます。
 
-デバッグ出力を印刷する際には、以下の点に注意してください。
+```Swift
+print("Apple", "Banana", "Melon", separator: ", ", terminator: ".")
+// 出力結果：Apple, Banana, Melon.
+```
 
-- `print()`関数はコンソールやデバッガーに出力しますが、ビルドされたアプリには影響しません。
-- 一時的なデバッグ用のコードであるため、本番環境でコードを残さないようにしましょう。
-- `print()`関数は複雑なオブジェクトを印刷する際には、内部で`description`プロパティを使用しているため、カスタムオブジェクトを正しく印刷することができない場合があります。そのため、カスタムオブジェクトのプロパティを印刷する方法を別途調べる必要があります。
+また、デバッグ用の出力を表示しながら、実際にアプリが実行される時には出力されないようにすることもできます。
 
-## 参考
+```Swift
+// デバッグ用の出力を表示
+print("この部分のみデバッグモードでのみ出力されます。")
 
-[Apple公式ドキュメント - デバッグの読み取りや出力を行う](https://developer.apple.com/jp/documentation/DebuggingTips.pdf)
+// アプリ実行時には出力されない
+assertionFailure("このコードは実行されません。")
+```
 
-[Ray Wenderlich - How to Debug in Swift: Advanced Debugging and Custom Printing](https://www.raywenderlich.com/10463346-how-to-debug-in-swift-advanced-debugging-and-custom-printing)
-
-[Nomikomu Engineersブログ - デバッグプリントの書き方](https://blog.nomikomu-engineers.com/how-to-print-debug-output-in-swift-956dc63e15af)
+## 関連記事
+- [Swift公式ドキュメント - print(_:separator:terminator:)](https://developer.apple.com/documentation/swift/1541053-print)
+- [デバッグの基本 - Swiftスタートアップガイド](https://aktsk.hatenablog.com/entry/2014/06/29/215246)
+- [Swiftでassertを使う方法 - Qiita](https://qiita.com/SatoshiKawabata/items/811b2ecf79529ed24662)

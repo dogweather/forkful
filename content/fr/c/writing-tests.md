@@ -1,59 +1,52 @@
 ---
-title:    "C: Écrire des tests"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/writing-tests.md"
+title:                "C: Écriture de tests"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire des tests en C?
+## Pourquoi
 
-Écrire des tests dans un programme en C peut sembler fastidieux et chronophage, mais c'est en réalité une étape importante dans le processus de développement. Les tests permettent de vérifier le bon fonctionnement de votre code et de détecter d'éventuels bugs avant même que le programme ne soit déployé. Cela permet non seulement d'économiser du temps et des efforts, mais aussi de garantir un meilleur niveau de qualité pour votre code.
+Si vous êtes un développeur C, vous savez sûrement combien il est important de tester votre code. Les tests vous permettent de vérifier si votre code fonctionne correctement et de prévenir les erreurs avant qu'elles ne se produisent. Dans cet article, nous allons plonger dans le monde des tests en C et discuter de leur importance.
 
-## Comment procéder?
+## Comment
 
-Écrire des tests en C peut sembler intimidant pour les débutants, mais en réalité, il suffit de suivre quelques étapes simples. Tout d'abord, définissez les fonctionnalités que vous souhaitez tester. Ensuite, créez des conditions d'assertion pour chaque fonctionnalité, en vous assurant de couvrir tous les cas possibles. Enfin, exécutez vos tests et vérifiez leur validité en comparant les résultats avec ceux que vous attendez. Voici un exemple de code pour vous aider à comprendre le processus :
+Pour tester en C, il existe différentes bibliothèques telles que CUnit et Unity qui peuvent vous aider. Prenons par exemple l'utilisation de CUnit pour tester une fonction simple qui calcule la moyenne de deux nombres :
 
 ```C
 #include <stdio.h>
-#include <assert.h>
+#include "CUnit/Basic.h"
 
-// Fonction à tester
-int additionner(int a, int b)
-{
-    return a + b;
+float moyenne(float a, float b){
+  return (a + b) / 2;
 }
 
-// Fonction de test
-void test_additionner()
-{
-    // Vérifier si 2+2 est égal à 4
-    assert(additionner(2,2) == 4);
-    // Vérifier si 5+3 est égal à 8
-    assert(additionner(5,3) == 8);
-
-    // Ajoutez autant de tests que nécessaire pour couvrir tous les cas possibles
+void test_moyenne(){
+  CU_ASSERT_EQUAL(moyenne(4, 6), 5);
 }
 
-// Fonction principale
-int main()
-{
-    // Appeler la fonction de test
-    test_additionner();
-    printf("Tous les tests ont été validés avec succès!");
-    return 0;
+int main(){
+  CU_initialize_registry();
+  CU_pSuite suite = CU_add_suite("suite", NULL, NULL);
+  CU_add_test(suite, "test_moyenne", test_moyenne);
+  CU_basic_run_suite(suite);
+  CU_cleanup_registry();
+  return 0;
 }
 ```
 
-Dans cet exemple, nous définissons une fonction `additionner` et vérifions si elle retourne les résultats attendus grâce à la fonction `assert`. Vous pouvez ensuite ajouter autant de fonctions de test que vous le souhaitez pour couvrir toutes les fonctionnalités de votre programme.
+La partie ```C#include <stdio.h>``` vous permet d'utiliser la fonction ```CUnit/Basic.h```, qui contient toutes les fonctions nécessaires pour effectuer vos tests. Ensuite, nous définissons notre fonction moyenne et écrivons notre test dans ```Cvoid test_moyenne()```. Nous utilisons la fonction ```CCU_ASSERT_EQUAL``` pour comparer le résultat de notre fonction avec la valeur attendue de 5. Enfin, dans la fonction principale, nous initialisons notre registre de tests, ajoutons notre suite de tests, exécutons les tests et nettoyons le registre.
 
-## Approfondissement
+## Deep Dive
 
-Il existe également d'autres outils de test disponibles en C, tels que la bibliothèque `ctest` ou les framework de test unitaire comme `check` ou `CppUTest`. Ces outils peuvent faciliter le processus de test en vous permettant de créer des cas de test plus complexes et de générer des rapports détaillés sur les résultats. De plus, il est important de garder à l'esprit que les tests ne doivent pas être considérés comme une tâche secondaire, mais plutôt comme une partie intégrante du cycle de développement.
+Pour écrire des tests efficaces en C, il est important de comprendre certains concepts tels que le TDD (Test Driven Development) et les différentes méthodes de test telles que le test unitaire, le test d'intégration et le test fonctionnel. Le TDD consiste à écrire les tests avant d'écrire le code, ce qui peut vous aider à mieux structurer votre code et à l'améliorer. Les méthodes de test quant à elles sont différentes façons de tester votre code à différents niveaux, afin de garantir un fonctionnement correct.
+
+Lors de l'écriture de tests en C, il est également important d'utiliser des outils tels que Valgrind pour détecter les fuites de mémoire et les erreurs de segmentation dans votre code. Il est également recommandé de tester les bords et les cas extrêmes, afin de s'assurer que votre code fonctionne dans toutes les situations.
 
 ## Voir aussi
 
-- [Tutoriel sur les tests en C](https://www.tutorialspoint.com/cprogramming/cprogramming_unit_testing.htm)
-- [Documentation sur la bibliothèque ctest](https://libcest.sourceforge.io/)
-- [Framework de test unitaire check](https://libcheck.github.io/check/index.html)
-- [CppUTest framework](https://cpputest.github.io/)
+- [CUnit](https://sourceforge.net/projects/cunit/)
+- [Unity](https://github.com/ThrowTheSwitch/Unity)
+- [Valgrind](http://valgrind.org/)

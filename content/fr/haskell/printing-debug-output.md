@@ -1,74 +1,54 @@
 ---
-title:    "Haskell: Imprimer la sortie de débogage"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/printing-debug-output.md"
+title:                "Haskell: Afficher la sortie de débogage"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
+Les messages de débogage sont un outil précieux pour tout programmeur, surtout lorsqu'il s'agit de langages fonctionnels comme Haskell. Ils nous permettent de comprendre l'exécution de notre code et de détecter les erreurs plus rapidement. Dans cet article, nous allons explorer comment imprimer des messages de débogage en Haskell pour améliorer notre processus de développement.
 
-Imprimer des sorties de débogage est une pratique très utile lors du développement en Haskell. Cela permet de vérifier les valeurs des variables et de détecter les erreurs dans le code. Dans cet article, nous allons découvrir pourquoi utiliser cette technique, comment le faire et nous ferons une plongée plus profonde dans le sujet.
+## Comment
+Nous pouvons utiliser la fonction `Debug.Trace.trace` pour imprimer des messages de débogage dans notre code en Haskell. Voici un exemple de code qui imprime un message de débogage et retourne le résultat d'une opération :
 
-## Comment faire
+```Haskell
+-- importons le module Debug.Trace
+import Debug.Trace
 
-Pour imprimer des sorties de débogage en Haskell, il suffit d'utiliser la fonction `print`. Voici un exemple de code :
-
-```
-main = do
-  let x = 10
-  let y = 20
-  print x
-  print y
-```
-
-La sortie de ce code sera :
-
-```
-10
-20
+-- fonction pour additionner deux nombres et imprimer un message de débogage
+addition :: Int -> Int -> Int
+addition x y =
+  let
+    -- définissons notre message de débogage
+    message = "On ajoute " ++ show x ++ " et " ++ show y
+  in
+    -- imprimons le message de débogage avec trace et retournons le résultat de l'addition
+    trace message (x + y)
 ```
 
-Comme vous pouvez le voir, la fonction `print` affiche simplement la valeur de la variable passée en argument. Cela peut être très utile pour vérifier si les valeurs sont correctes à un certain point du programme.
+Si nous utilisons cette fonction dans notre code comme ceci :
 
-## Plongée profonde
-
-Il est également possible d'utiliser la fonction `putStrLn` pour imprimer des chaînes de caractères en plus des valeurs de variables. Voici un exemple :
-
-```
-main = do
-  let x = 10
-  putStrLn "La valeur de x est :"
-  print x
+```Haskell
+resultat = addition 2 3
 ```
 
-La sortie sera :
+Nous obtiendrons le résultat suivant :
 
 ```
-La valeur de x est :
-10
+On ajoute 2 et 3
+5
 ```
 
-De plus, il est possible de formater la sortie à l'aide de la fonction `printf` provenant du module `Text.Printf`. Voici un exemple :
+Nous pouvons voir que notre message de débogage a été imprimé avant le résultat de l'addition. Cela nous permet de suivre l'exécution de notre code et de comprendre ce qui se passe à chaque étape.
 
-```
-import Text.Printf
+## Plongée en profondeur
+La fonction `trace` prend deux arguments : le message de débogage et la valeur à retourner. Elle renvoie la valeur passée en argument en deuxième position, ce qui nous permet d'utiliser cette fonction dans n'importe quel contexte. Cela signifie que nous pouvons l'utiliser dans des fonctions récursives, des fonctions à haute ordre ou même dans des expressions lambda.
 
-main = do
-  let x = 10
-  let y = 20
-  printf "La somme de %d et %d est : %d" x y (x + y)
-```
-
-La sortie sera :
-
-```
-La somme de 10 et 20 est : 30
-```
-
-En utilisant ces différentes fonctions, vous pouvez facilement afficher des informations précises dans vos programmes et détecter les erreurs plus rapidement.
+Il est également important de noter que la fonction `trace` n'imprimera pas le message de débogage si notre programme est compilé avec l'option `-O` pour optimiser le code. Cela peut être utile si nous voulons éviter d'imprimer des messages de débogage dans notre code en production.
 
 ## Voir aussi
-
-- [Documentation officielle de Haskell](https://www.haskell.org/documentation/)
-- [Tutoriel de Haskell pour débutants](https://www.haskell.org/tutorial/)
+- [Documentation Haskell sur la fonction `Debug.Trace.trace`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html#v:trace)
+- [Article Medium "Debugging in Haskell with the Debug.Trace Module"](https://medium.com/swlh/debugging-in-haskell-with-the-debug-trace-module-1945665f55d0)
+- [Tutoriel vidéo "Debugging with Haskell"](https://www.youtube.com/watch?v=T18YvlEJW2s)

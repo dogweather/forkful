@@ -1,65 +1,55 @@
 ---
-title:    "Haskell recipe: Reading a text file"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/reading-a-text-file.md"
+title:                "Haskell recipe: Reading a text file"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-If you're new to Haskell programming or just looking to expand your knowledge, you may be wondering why you would even want to learn how to read a text file. After all, isn't that the job of a word processing program? However, being able to read and manipulate text files is an essential skill for any programmer. Whether it's for data analysis, file processing, or building a text-based application, knowing how to read text files in Haskell will open up a whole new world of possibilities.
+Text files are a common way to store and share simple data. Reading text files in Haskell allows us to access this data and use it in our programs. Whether you need to process user input, read in data from a file, or analyze a log file, knowing how to read text files in Haskell is a useful skill to have.
 
 ## How To
 
-Reading a text file in Haskell is a simple process that can be accomplished with just a few lines of code. First, we'll need to import the necessary module:
+Reading a text file in Haskell is a straightforward process. First, we need to import the necessary module, `System.IO`, which contains the `readFile` function. This function takes the file path as its argument and returns a *lazy* string, which we can then process as needed.
+
+Let's look at an example where we want to read a text file named `input.txt` and print its contents to the console:
 
 ```Haskell
 import System.IO
-```
 
-Next, we'll define a function that takes in a file name as an argument and returns the contents of the file as a string:
-
-```Haskell
-readFileContents :: FilePath -> IO String
-readFileContents filename = do
-    handle <- openFile filename ReadMode
-    contents <- hGetContents handle
-    hClose handle
-    return contents
-```
-
-In the above code, we use the `openFile` function to open the file in read mode and assign it to the `handle` variable. Then, we use the `hGetContents` function to read the contents of the file and assign it to the `contents` variable. Finally, we use the `hClose` function to close the file and return the contents.
-
-Now, let's test our function by reading the contents of a sample text file called "example.txt":
-
-```Haskell
 main :: IO ()
 main = do
-    contents <- readFileContents "example.txt"
-    putStrLn contents
+    file <- readFile "input.txt"
+    putStrLn file
 ```
 
-If we run this code, the output in our terminal will be the contents of our text file:
+In the above code, we use the `readFile` function to read the contents of the file into the `file` variable. After that, we use the `putStrLn` function to print the contents of the file to the console. By using a *lazy* string, the entire file is not read into memory at once, allowing us to process large files without any performance issues.
 
+We can also manipulate the contents of the file before printing it out. For example, if we wanted to count the number of words in the file, we could modify our code as follows:
+
+```Haskell
+import System.IO
+
+main :: IO ()
+main = do
+    file <- readFile "input.txt"
+    let wordCount = length $ words file
+    putStrLn $ "The file contains " ++ show wordCount ++ " words."
 ```
-This is an example text file.
-It contains multiple lines of text
-which we will be able to read and manipulate.
-```
+
+In this code, we use the `length` and `words` functions to count the number of words in the file. Using the `show` function, we can convert the result into a string and print it out along with a custom message.
 
 ## Deep Dive
 
-Reading a text file may seem like a simple task, but there are some important things to keep in mind when working with text files in Haskell. The first thing to note is that when reading a file, the contents are returned as a string. This means that any manipulation or processing we want to do on the contents will need to be done using string functions and operations.
+Behind the scenes, the `readFile` function in the `System.IO` module uses the `openFile` function from the same module to open the file and create a handle. This handle is used to read in the file's contents, which are then returned as a string.
 
-Another thing to consider is that reading a file can be dangerous if proper error handling is not implemented. For example, if we try to read a file that does not exist, our program will throw an error and crash. To prevent this, we can use the `catch` function from the `Control.Exception` module to catch any potential errors and handle them appropriately.
-
-Finally, it's important to remember to always close the file after reading its contents. If we leave a file open, it can lead to potential memory leaks and affect the performance of our program.
+It's worth noting that reading in a file using this method doesn't guarantee that the file will be closed after it's been read. It's advisable to use the `withFile` function, also in the `System.IO` module, which ensures that the file is closed after it's been used.
 
 ## See Also
 
-- [Haskell I/O documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
-- [Learn You a Haskell for Great Good! - I/O](http://learnyouahaskell.com/input-and-output)
-- [Haskell Crash Course - File I/O](https://www.codementor.io/@bjarkis/formatted-text-output-in-haskell-via-fprintf-n9q4fwnwz)
-
-Now that you know how to read a text file in Haskell, you can start exploring all the different ways you can use this skill in your coding projects. Happy coding!
+- [Haskell documentation on `System.IO` module](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Tutorial on reading and writing files in Haskell](https://www.tutorialspoint.com/haskell/haskell_file_io.htm)
+- [Haskell Wiki page on file I/O](https://wiki.haskell.org/File_manipulation)

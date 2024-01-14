@@ -1,57 +1,53 @@
 ---
-title:    "Elixir: Zwei Daten vergleichen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/comparing-two-dates.md"
+title:                "Elixir: Vergleich von zwei Datumangaben"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum 
 
-Datumvergleiche sind eine wichtige Funktion in jeder Programmiersprache, einschließlich Elixir. Sie ermöglichen es uns, schnell und einfach zu überprüfen, ob ein Datum früher, später oder gleich einem anderen Datum ist. In diesem Blog-Beitrag werden wir uns ansehen, wie man zwei Daten in Elixir vergleicht und tiefer in diese Funktionalität eintauchen.
+Vergleichen von zwei Daten in Elixir ist eine nützliche Fähigkeit, die jeder Programmierer beherrschen sollte. Es erlaubt uns, komplexe logische Bedingungen zu erstellen und zu überprüfen, ob ein Ereignis in der Zukunft oder Vergangenheit liegt. Lesen Sie weiter, um zu erfahren, wie Sie dies in Elixir tun können.
 
-## Wie geht es?
+## Wie geht das?
 
-``` Elixir
-  # Vergleich von zwei Datumsangaben
-  date1 = ~D[2020-06-01]
-  date2 = ~D[2020-06-05]
-  date3 = ~D[2020-06-03]
-  
-  # Überprüfen, ob date2 später als date1 ist
-  date2 > date1 # Ausgabe: true
-  
-  # Überprüfen, ob date3 vor oder gleich date1 ist
-  date3 <= date1 # Ausgabe: true
-  
-  # Überprüfen, ob date2 und date3 gleich sind
-  date2 == date3 # Ausgabe: false
+Um zwei Daten in Elixir zu vergleichen, können wir die `DateTime.compare/2` Funktion verwenden. Diese Funktion nimmt zwei `DateTime` Objekte als Argumente und gibt einen von drei Atomwerten zurück: `:gt` wenn das erste Datum größer als das zweite ist; `:eq` wenn beide Daten gleich sind; und `:lt` wenn das erste Datum kleiner als das zweite ist.
+
+Nehmen wir zum Beispiel die folgenden Daten an:
+
+```Elixir
+first_date = ~N[2020-01-01 13:00:00]
+second_date = ~N[2020-01-02 12:00:00]
 ```
-Wie man sehen kann, gibt es in Elixir Operatoren, die speziell für Datumsvergleiche verwendet werden können. Der `>` Operator gibt `true` zurück, wenn der linke Wert später als der rechte Wert ist. Der `<=` Operator gibt `true` zurück, wenn der linke Wert vor oder gleich dem rechten Wert ist. Und der `==` Operator gibt `true` zurück, wenn beide Werte gleich sind.
 
-## Tiefentauchen
+Mit der `DateTime.compare/2` Funktion können wir nun überprüfen, welches der beiden Daten größer ist:
 
-Während wir bereits einige grundlegende Vergleiche gesehen haben, können wir auch tiefer in die Funktionalität von Elixirs `Date` Modul eintauchen und mehr Möglichkeiten zum Vergleichen von Daten entdecken. Zum Beispiel können wir das `Date.compare/2` Funktion verwenden, um zu überprüfen, welches Datum früher oder später als das andere ist.
-
-``` Elixir
-  # Vergleich von zwei Datumsangaben
-  date1 = ~D[2020-06-01]
-  date2 = ~D[2020-06-05]
-  date3 = ~D[2020-06-03]
-  
-  # Überprüfen, ob date2 später als date1 ist
-  Date.compare(date2, date1) # Ausgabe: :gt
-  
-  # Überprüfen, ob date3 vor oder gleich date1 ist
-  Date.compare(date3, date1) # Ausgabe: :lt
-  
-  # Überprüfen, ob date2 und date3 gleich sind
-  Date.compare(date2, date3) # Ausgabe: :eq
+```Elixir
+DateTime.compare(first_date, second_date)
+# => :lt
 ```
-Wie man sieht, gibt die `Date.compare/2` Funktion einen von drei Atom-Attributen zurück: `:gt` für größer, `:lt` für kleiner und `:eq` für gleich. Dies kann besonders nützlich sein, wenn man die Vergleiche in anderen Funktionen oder Verzweigungen verwendet.
 
-## Siehe Auch
+Wir können diese Funktion auch verwenden, um zu überprüfen, ob ein Ereignis in der Zukunft oder Vergangenheit liegt, indem wir ein Datum als Argument und `DateTime.utc_now` als zweites Argument übergeben:
 
-- [Elixir Date Modul Dokumentation](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Datumsvergleich Tutorial](https://elixirschool.com/de/lessons/specifics/comparing-dates/) 
-- [Elixir Vergleichsoperatoren](https://elixirschool.com/de/lessons/basics/operators/)
+```Elixir
+DateTime.compare(~N[2020-03-01], DateTime.utc_now)
+# => :gt
+```
+
+Das heißt, das Ereignis liegt in der Zukunft, da das erste Datum größer als das aktuelle Datum ist.
+
+## Eintauchen
+
+Wenn wir genauer auf die `DateTime.compare/2` Funktion schauen, werden wir feststellen, dass sie auch auf der `DateTime.compare/4` Funktion basiert. Diese Funktion erlaubt es uns, ein Datum in verschiedenen Zeitzonen zu vergleichen.
+
+Eine weitere wichtige Funktion beim Vergleichen von Daten ist die `DateTime.diff/2` Funktion. Diese gibt die Differenz zwischen zwei Daten in Sekunden zurück. Dies kann nützlich sein, um zu überprüfen, wie lange ein Ereignis in der Vergangenheit oder Zukunft liegt.
+
+Es ist auch wichtig zu beachten, dass beide Funktionen die Ordnung von Datum und Uhrzeit berücksichtigen. Das heißt, dass ein Datum vor einer Uhrzeit steht.
+
+## Siehe auch
+
+- [Elixir Dokumentation über DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Einführung in die Datums- und Zeitfunktionen in Elixir](https://medium.com/@ellie_koola/introduction-to-date-and-time-functions-in-elixir-1bd7c961c69e)
+- [Die Macht der Mustererkennung in Elixir](https://elixir-lang.org/blog/2018/08/07/elixir-and-pattern-matching/)

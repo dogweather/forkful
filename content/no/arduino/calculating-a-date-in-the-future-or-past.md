@@ -1,52 +1,61 @@
 ---
-title:    "Arduino: Beregning av en dato i fremtiden eller fortiden"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino: Beregning av en fremtidig eller fortidig dato"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Hvis du noen ganger har lurt på hvilken dag det er om en uke eller om en måned, har du sannsynligvis vurdert å bruke en datokalkulator. Med Arduino kan du enkelt lage din egen datokalkulator, som kan være nyttig for å planlegge hendelser eller sette opp varsler.
+Mange Arduino-prosjekter innebærer å jobbe med tid og dato, enten det er å aktivere en handling på et bestemt tidspunkt eller å holde oversikt over tidsrammer. Derfor er det nyttig å kunne beregne datoer i fortiden eller fremtiden ved hjelp av Arduino-kodene dine.
 
-## Hvordan
+# Hvordan
 
-For å beregne en dato i fremtiden eller fortiden, trenger du følgende informasjon:
-- Datoen du ønsker å beregne fra
-- Antall dager som skal legges til eller trekkes fra
-- Om du vil beregne en fremtidig eller fortidig dato
-
-Først må du importere biblioteket "DateTime". Deretter må du opprette en variabel "startdate" som inneholder den aktuelle datoen. Deretter bruker du funksjonen "addDays()" for å legge til eller trekke fra det ønskede antallet dager. For å vise resultatet, bruker du funksjonen "toString()" og skriver ut variabelen "enddate" i en seriell monitor.
+Det første trinnet for å beregne en dato i fortiden eller fremtiden er å bestemme en referansedato. Det kan være dagens dato eller en annen vilkårlig dato. Deretter må du velge en hendelse eller handling som skal skje på en bestemt dato i fremtiden eller fortiden. Etter det er det bare å bruke enkle beregninger for å finne den ønskede datoen.
 
 ```Arduino
-#include <DateTime.h> // Importerer biblioteket "DateTime"
+#include <TimeLib.h> // importerer tidslibrary
 
-DateTime startdate(2021, 8, 2); // Oppretter variabel for startdato
+// Setter opp referansedato
+int day = 29;
+int month = 10;
+int year = 2020;
 
-DateTime enddate = startdate.addDays(14); // Beregner en fremtidig dato ved å legge til 14 dager
-Serial.println(enddate.toString()); // Skriver ut resultatet i seriell monitor
+// Velg hendelse på en bestemt dato
+int eventDay = 25;
+int eventMonth = 12;
+int eventYear = 2020;
+
+// Beregner antall dager mellom referansedato og hendelsesdato
+int daysBetween = (Date.daysTo( eventDay, eventMonth, eventYear ) );
 ```
 
-Output: 16-08-2021 (i "dd-mm-yyyy" format)
+Nå kan vi bruke variabelen "daysBetween" for å aktivere en handling på den valgte datoen. For eksempel kan det være å sende en melding om at det er jul på en bestemt dato.
 
-For å beregne en fortidig dato, bruker du samme kode, men erstatter "addDays()" med "subtractDays()".
+# Dypdykk
+
+For å utføre mer komplekse beregninger, kan du bruke funksjoner fra TimeLib-biblioteket. For eksempel kan du bruke "age" -funksjonen for å beregne alderen til en person basert på fødselsdatoen deres. Du kan også bruke "dayOfWeek" -funksjonen for å finne ut hvilken ukedag en bestemt dato faller på.
 
 ```Arduino
-DateTime enddate = startdate.subtractDays(30); // Beregner en fortidig dato ved å trekke fra 30 dager
-Serial.println(enddate.toString()); // Skriver ut resultatet i seriell monitor
+#include <TimeLib.h>  // importerer tidslibrary
+
+int birthDay = 25;
+int birthMonth = 12;
+int birthYear = 1995;
+
+// Beregner alderen til personen
+int age = (TimeLib.age( birthDay, birthMonth, birthYear ) );
+
+// Finner ut hvilken ukedag fødselsdagen faller på
+String dayOfWeek = (TimeLib.dayOfWeek( birthDay, birthMonth, birthYear ) );
 ```
 
-Output: 02-07-2021 (i "dd-mm-yyyy" format)
+Når du bruker disse funksjonene, er det viktig å sørge for at du har riktig format for datoene og variablene dine. Det kan gjøres ved å bruke konverteringsfunksjoner som "dateString" og "monthShortStr" fra TimeLib-biblioteket.
 
-## Dyp Dykk
+# Se også
 
-For å beregne en mer kompleks dato, som for eksempel neste mandag eller forrige tirsdag, kan du bruke funksjonen "dayOfWeek()", som returnerer en numerisk verdi (1-7) for hver ukedag. Deretter kan du bruke en switch statement for å legge til eller trekke fra dager basert på den ønskede ukedagen.
-
-Du kan også beregne en dato ut fra et gitt antall uker, måneder eller år ved å bruke funksjonene "addWeeks()", "addMonths()" eller "addYears()".
-
-## Se Også
-
-- Dokumentasjon for DateTime biblioteket: https://playground.arduino.cc/code/datetime/
-- Calculating Time and Date with Arduino: https://www.arduino.cc/en/Tutorial/BuiltInExamples/DateTimeCalculator
-- Arduino Forum: https://forum.arduino.cc/
+- TimeLib Library: https://www.arduino.cc/reference/en/libraries/timelib/
+- Arduino Date and Time Tutorial: https://www.arduino.cc/en/Tutorial/BuiltInExamples/DateTime
+- Calculate Age in Arduino: https://www.hackster.io/Naushad_UzZ/google-sheets-esp8266-timezone-pn532-weather-client-83ce87

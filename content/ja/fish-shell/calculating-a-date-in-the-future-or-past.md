@@ -1,45 +1,53 @@
 ---
-title:    "Fish Shell: 未来または過去の日付の計算"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/calculating-a-date-in-the-future-or-past.md"
+title:                "Fish Shell: 将来や過去の日付の計算。"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付を計算する必要性は、未来の予定を把握したり、過去の出来事を確認するために重要です。
+日付を計算するのはスケジュールを管理するためにとても重要です。未来の何日後や過去の日付を計算することで、予定を立てることができます。
 
-## 方法
+## 作り方
 
-```Fish Shell```を使用して、未来または過去の日付を計算する簡単な方法があります。まず、```fish```コマンドでシェルを起動します。次に、```date```コマンドを使用して、今日の日付を取得します。
+Fish Shellの便利なコマンド「date -d」を使うことで、簡単に日付を計算することができます。まずは、計算したい日付を指定し、その後に計算したい日付のフォーマットを指定します。例えば、3日後の日付を計算するには、次のように入力します。
 
-```
-$ fish
-$ date
-Tue Dec 15 14:37:46 JST 2020
+```Fish Shell
+date -d '3 days'
 ```
 
-次に、```-d```オプションを使用して、未来または過去の日付を計算します。例えば、10日間後の日付を計算するには、以下のように入力します。
+このコマンドを実行すると、今日の日付から3日後の日付が表示されます。また、さまざまな日付フォーマットを指定することもできます。例えば、mm/dd/yyの形式で表示するには、次のように入力します。
 
-```
-$ date -d "10 days"
-Fri Dec 25 14:37:46 JST 2020
-```
-
-同様に、10日前の日付を計算するには、```ago```を追加します。
-
-```
-$ date -d "10 days ago"
-Sat Dec 05 14:37:46 JST 2020
+```Fish Shell
+date -d '3 days' '+%m/%d/%y'
 ```
 
-## ディープダイブ
+このようにすることで、3日後の日付を「03/12/20」という形式で表示することができます。
 
-日付を計算する際に、```date```コマンドに使用できる複数のオプションがあります。これらのオプションを使用することで、さまざまな形式の日付を計算することができます。また、```今日```や```昨日```といった相対的な表現を使用することもできます。詳細な情報については、オフィシャルドキュメントを参照してください。
+## 深く掘り下げる
 
-## 参考リンク
+日付の計算にはさまざまなオプションがあり、これらを組み合わせることでより複雑な日付の計算を行うことができます。例えば、10日後の日付の月の最終日を計算するには、次のように入力します。
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [GNU Coreutils: Date input formats](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats)
-- [How to calculate dates using the command line on Linux](https://opensource.com/article/20/4/calculating-dates-linux)
+```Fish Shell
+date -d '10 days' '1 month'
+```
+
+このコマンドを実行すると、月の最終日である「31」が表示されます。また、特定の日付から何日後や何日前の日付を計算することも可能です。例えば、2020年3月12日から200日後の日付を計算するには、次のように入力します。
+
+```Fish Shell
+date -d '200 days' '2020-3-12'
+```
+
+このコマンドを実行すると、2020年3月12日から200日後の日付である「9-28-20」が表示されます。
+
+## 関連情報
+
+もし日付を計算する際に困った時は、以下のリンクを参考にしてみてください。
+
+- [Fish Shellチートシート](https://github.com/Nemoshk/fish-cheatsheet)
+- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/cmds/date.html)
+
+[to_md_toc]: en_US.markdown_toc

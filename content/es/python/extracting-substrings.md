@@ -1,50 +1,54 @@
 ---
-title:    "Python: Extrayendo subcadenas"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/extracting-substrings.md"
+title:                "Python: Extrayendo subcadenas"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué extraer subcadenas en Python
 
-Extraer subcadenas es una habilidad útil en la programación de Python ya que nos permite manipular y obtener información específica de una cadena de texto. Esto es especialmente útil en proyectos de procesamiento de lenguaje natural o manejo de grandes conjuntos de datos.
+Extraer subcadenas, también conocido como subconjuntos de una cadena más grande, es una habilidad esencial en la programación de Python. Esto permite a los usuarios manipular y manejar texto de manera más eficiente, lo que puede ser especialmente útil en tareas como el procesamiento de texto o la limpieza de datos.
 
 ## Cómo hacerlo
+Usando la función de corte de Python `string[start:end]`, podemos especificar qué subcadena queremos extraer de una cadena más grande. Por ejemplo, si tenemos la cadena "Hola Mundo", podemos extraer la subcadena "Mundo" usando `string[5:]`.
 
-Para extraer una subcadena de una cadena de texto en Python, podemos utilizar el método `substring()` o la sintaxis de rebanado `string[índice_inicio:índice_fin]`. Veamos un ejemplo de cada método:
+```Python
+cadena = "Hola Mundo"
+subcadena = cadena[5:]
+print(subcadena) # Output: Mundo
+```
 
-````Python
-# Método substring - Extraer los primeros 5 caracteres de una cadena
-cadena = "Hola mundo"
-subcadena = cadena.substring(0,5)
-print(subcadena) # Salida: Hola
+También podemos especificar el inicio y el fin de la subcadena utilizando índices. Por ejemplo, si queremos extraer solo la letra "a" de la palabra "Python", podemos hacerlo así:`string[4]`.
 
-# Sintaxis de rebanado - Extraer los últimos 5 caracteres de una cadena
-cadena = "Hola mundo"
-subcadena = cadena[7:12]
-print(subcadena) # Salida: mundo
-````
-
-También podemos usar expresiones regulares para extraer subcadenas que cumplan con un patrón específico. Por ejemplo, si queremos encontrar todas las palabras con más de 5 letras en una cadena, podemos usar la función `findall()` del módulo `re`:
-
-````Python
-import re
-
-cadena = "Bienvenidos al mundo de la programación"
-patron = r"\b\w{6,}\b" # Expresión regular para encontrar palabras con más de 5 letras
-subcadenas = re.findall(patron, cadena)
-print(subcadenas) # Salida: ['Bienvenidos', 'programación']
-````
+```Python
+cadena = "Python"
+subcadena = cadena[4]
+print(subcadena) # Output: a
+```
 
 ## Profundizando
+La función de corte de Python también nos permite especificar un tercer parámetro: el salto. Esto nos permite extraer subcadenas con un patrón específico. Por ejemplo, si queremos extraer solo las vocales de la palabra "Extraer", podemos hacerlo así: `string[::2]`.
 
-Al extraer subcadenas en Python, es importante tener en cuenta que los índices se cuentan desde 0 y que el índice final especificado en la sintaxis de rebanado no se incluirá en la subcadena resultante. También podemos utilizar números negativos en la sintaxis de rebanado para contar desde el final de la cadena.
+```Python
+cadena = "Extraer"
+subcadena = cadena[::2]
+print(subcadena) # Output: Erar
+```
 
-Además, si tratamos de acceder a un índice que está fuera del rango de la cadena, obtendremos un error `IndexError`.
+Además, también podemos usar números negativos en los parámetros de inicio y fin para especificar la subcadena desde el final de la cadena. Por ejemplo, si queremos extraer los últimos tres caracteres de la palabra "Python", podemos hacerlo así: `string[-3:]`.
+
+```Python
+cadena = "Python"
+subcadena = cadena[-3:]
+print(subcadena) # Output: hon
+```
 
 ## Ver también
+Si quieres seguir aprendiendo sobre la manipulación de cadenas en Python, estos enlaces pueden ser útiles:
 
-- Documentación oficial de Python sobre `str.substring()`: https://docs.python.org/es/3/library/stdtypes.html#str.substring
-- Tutorial de programación en Python por SoloLearn: https://www.sololearn.com/Course/Python/
-- Ejemplos de expresiones regulares para Python: https://regexone.com/references/python
+- [Tutorial de manipulación de cadenas de programiz](https://www.programiz.com/python-programming/string)
+- [Documentación oficial de Python sobre cadenas](https://docs.python.org/es/3/library/string.html)
+
+¡Sigue practicando y pronto te convertirás en un experto en la extracción de subcadenas en Python!

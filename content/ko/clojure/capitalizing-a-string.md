@@ -1,33 +1,50 @@
 ---
-title:    "Clojure: 문자열 대문자로 변환하기"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/capitalizing-a-string.md"
+title:                "Clojure: 문자열 대문자 변환"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
+Korean: 
+
+제목: Clojure 프로그래밍을 위한 초보자 가이드
+
 ## 왜
+자바 프로그래밍 언어를 새롭게 배우는 사람들은 종종 대소문자를 적절하게 구분하는 것에 어려움을 겪습니다. 그러므로 대소문자를 적절히 사용하기 위한 Clojure 함수를 배우기 전에 왜 이것이 중요한지 이해하는 것이 중요합니다.
 
-자바에서 string 값을 대문자로 변환하는 것은 프로그래머들에게 매우 중요합니다. 이 기능을 통해 문자열을 정렬하거나 비교하는 등 다양한 작업을 수행할 수 있습니다.
-
-## 사용 방법
-
-문자열을 대문자로 변환하는 방법은 매우 간단합니다. 먼저 `toUpperCase` 함수를 사용하여 문자열을 모두 대문자로 변환한 다음 출력합니다.
+## 대소문자 변환 방법
+Clojure에서는 대소문자를 구분하는 데 유용한 두 가지 함수가 있습니다.
 
 ```Clojure
-(def myString "hello world")
-(println (toUpperCase myString))
+(def str "clojure programming")
+(println (str/upper-case str))
+;; 출력: CLOJURE PROGRAMMING
+
+(println (str/lower-case str))
+;; 출력: clojure programming
 ```
 
-`toUpperCase` 함수를 사용해 `myString` 변수를 대문자로 변환하면 "HELLO WORLD"가 출력됩니다.
+위의 예시에서 볼 수 있듯이, `upper-case` 함수는 문자열을 대문자로 변환하고, `lower-case` 함수는 소문자로 변환합니다.
 
-## 깊이 파고들기
+## 깊이 파헤치기
+다음 예시를 통해 대소문자 변환 함수를 완벽하게 이해해보겠습니다.
 
-대문자로 변환하는 함수인 `toUpperCase`는 내부적으로 `Character/toUpperCase` 함수를 사용합니다. 이 함수는 유니코드 문자 값을 대문자로 변환해주는 역할을 합니다.
+```Clojure
+(def str "clojure is awesome")
+(println (str/upper-case-first str))
+;; 출력: Clojure is awesome
 
-대부분의 인코딩은 ASCII 문자에만 대소문자 구분이 적용되지만 유니코드는 대소문자 구분이 더 다양하게 적용됩니다. 따라서 문자열을 비교하거나 정렬할 때 항상 대소문자를 일치시켜줘야 합니다.
+(println (str/capitalize str))
+;; 출력: Clojure Is Awesome
+```
 
-## 관련 링크
+`upper-case-first` 함수는 첫 글자만 대문자로 변환합니다. `capitalize` 함수는 각 단어의 첫 글자를 대문자로 변환합니다.
 
-- 유니코드와 대소문자 변환에 대한 더 자세한 정보는 [이 문서](https://unicode.org/faq/casemap_charprop.html)를 참조하세요.
-- Clojure 공식 문서에서 [Character/toUpperCase 함수](https://clojuredocs.org/clojure.core/Character/toUpperCase)에 대한 정보를 확인할 수 있습니다.
+## 더 읽어보기
+Korean: 
+## 더 읽어보기
+- [Clojure Documentation](https://clojure.org/)
+- [Clojure Style Guide](https://guide.clojure.style/)
+- [Clojurian Slack](https://clojurians.slack.com/)에서 Clojure 커뮤니티와 교류해보세요.

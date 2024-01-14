@@ -1,45 +1,68 @@
 ---
-title:    "Go recipe: Searching and replacing text"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/searching-and-replacing-text.md"
+title:                "Go recipe: Searching and replacing text"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Have you ever found yourself manually replacing text in a large codebase? It can be tedious and time-consuming, not to mention prone to human error. Luckily, Go has a built-in function that can make this task much easier - the "strings" package.
+
+Searching and replacing text is a common task in programming, especially when working with large amounts of text data. It allows for efficient and automated changes to be made in a text file or codebase. Go language offers powerful tools and methods for text manipulation, making it a popular choice for tasks such as these.
 
 ## How To
-To use the "strings" package for searching and replacing text, we first need to import it into our program. In the below example, "?" represents the package path of your program.
+
+To perform a search and replace operation in Go, we can use the `strings.Replace()` function. It takes in three string parameters - the input string, the old substring to be replaced, and the new substring. Let's see an example:
 
 ```
-import "strings"
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	input := "Hello World"
+	result := strings.Replace(input, "World", "Universe", 1)
+	fmt.Println(result)
+}
 ```
 
-Next, we can use the "ReplaceAll" function from the "strings" package to search for a specific substring and replace it with a new value.
+The output of this code will be `Hello Universe`, as expected. The fourth parameter in `strings.Replace()` allows you to specify the number of replacements to be made. By default, it replaces all occurrences.
+
+We can also use regular expressions for more complex search and replace scenarios. Go provides a `regexp` package for this purpose. Let's take a look at a code example:
 
 ```
-str := "This is a sample string"
-newStr := strings.ReplaceAll(str, "sample", "replacement")
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
+
+func main() {
+	input := "Today is 09/01/2021"
+
+	re := regexp.MustCompile(`(\d{2})/(\d{2})/(\d{4})`)
+	result := re.ReplaceAllString(input, "${3}-${2}-${1}")
+
+	fmt.Println(result)
+}
 ```
 
-The above code will search for the substring "sample" within the string variable and replace it with the word "replacement". The output of "newStr" will be "This is a replacement string".
-
-We can also specify how many replacements we want to make by using the optional "n" parameter.
-
-```
-str := "This is a sample string"
-newStr := strings.ReplaceAll(str, "s", "S", 2)
-```
-
-In this code, the "s" in "sample" will be replaced with "S" but only for the first two occurrences. The output of "newStr" will be "ThiS iS a sample string".
+In this example, we use a regular expression to capture the date in the `MM/DD/YYYY` format and replace it with the `YYYY-MM-DD` format. The output of this code will be `Today is 2021-09-01`.
 
 ## Deep Dive
-The "ReplaceAll" function is just one of many functions within the "strings" package that can be used for searching and replacing text. Other useful functions include "Replace", "ReplaceAllString", and "ReplaceAllLiteral". 
 
-It's important to note that the "ReplaceAll" function is case-sensitive, meaning if you use "ABC" as the substring to search for, it will not replace "abc" or "Abc". However, if you want a case-insensitive search, you can use "ReplaceAllIgnoreCase" function instead.
+The `strings.Replace()` function internally uses an algorithm called Boyer-Moore-Horspool for efficient and fast string replacement. It also supports case-sensitivity and Unicode characters.
 
-## See Also
-- [Go strings package documentation](https://golang.org/pkg/strings/)
-- [Go by Example: String Functions](https://gobyexample.com/string-functions)
-- [Golang GFG - String Replace Function](https://www.geeksforgeeks.org/golang-gfg-string-replace-function/)
+The `regexp` package includes methods such as `FindString()` and `FindAllString()` which allow for more granular control over the search and replace operations. Additionally, it provides support for advanced regular expression features like lookarounds and backreferences.
+
+In more complex scenarios, we can also use the `bufio` package to perform line-by-line search and replace in a text file.
+
+See Also
+- [Go Strings Package](https://pkg.go.dev/strings)
+- [Go Regexp Package](https://pkg.go.dev/regexp)
+- [Go Bufio Package](https://pkg.go.dev/bufio)

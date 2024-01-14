@@ -1,46 +1,48 @@
 ---
-title:    "Swift: Отримання поточної дати"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/getting-the-current-date.md"
+title:                "Swift: Отримання поточної дати."
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Чому
+## Чому 
 
-Отримання поточної дати є важливим аспектом програмування для багатьох розробників. Це дозволяє зберігати та відстежувати дані із датами, що лежать у основі багатьох архітектурних рішень.  
+Отримання поточної дати є важливою функцією у програмуванні для великої кількості сценаріїв. Наприклад, ви можете використовувати поточну дату для показу часу створення, розміщення або сповіщення про подію. 
 
-# Як це зробити
+## Як
 
-Найпростіший спосіб отримати поточну дату в Swift - використання класу `Date`. Ось приклад коду та виведення: 
+Для отримання поточної дати використовуйте клас `Date`. Перш за все, необхідно імпортувати фреймворк `Foundation` у свою програму. Потім можна використовувати метод `Date()` для створення об'єкта `Date`, який буде містити поточну дату. Нижче наведено приклад коду та його вихідного результату: 
 
-```Swift
-let now = Date()
-print(now)
-```
+```Swift 
+import Foundation 
 
-Результат виведення:
+let currentDate = Date() 
+print(currentDate) 
+``` 
 
-`2021-05-12 18:30:00 +0000`
+Виведе: `2021-02-08 19:12:56 +0000` 
 
-Крім того, можна отримати дату у потрібному форматі за допомогою `DateFormatter`. Ось приклад коду та виведення у форматі дня, місяця, року:
+Також, можна використовувати клас `DateFormatter`, щоб отримати поточну дату у більш зручному для користувача форматі. Наприклад, можна вивести дату у зрозумілому форматі користувачу своєї країни. Нижче наведено приклад коду та його вихідного результату: 
 
-```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd.MM.yyyy"
-print(dateFormatter.string(from: now))
-```
+```Swift 
+import Foundation 
 
-Результат виведення:
+let dateFormatter = DateFormatter() 
+dateFormatter.dateFormat = "dd/MM/yyyy" 
 
-`12.05.2021`
+let currentDate = Date() 
+print(dateFormatter.string(from: currentDate)) 
+``` 
 
-# Глибше дослідження
+Виведе: `08/02/2021` 
 
-Хоча отримання поточної дати може здатися простою задачею, воно дещо складніше виконати. Наприклад, враховуючи часові зони та локалізацію. У Swift є гарні засоби для роботи з цими аспектами, такі як `TimeZone` та `Locale`. При необхідності, можна відобразити дату у потрібній часовій зоні та мові.
+## Глибока занурення 
 
-# Дивись також
+В класі `Date` також доступні методи для отримання специфічних значень, таких як день, місяць, рік та час. Наприклад, `dateComponents()` дозволяє отримати компоненти дати, такі як день тижня, місяць та рік. Для отримання більш детальної інформації про ці методи, можна переглянути [документацію](https://developer.apple.com/documentation/foundation/date) по класу `Date`.
 
-- [Офіційна документація Swift](https://swift.org/documentation/)
-- [Відеоуроки з основ Swift](https://www.youtube.com/playlist?list=PL2NJyRY6DNuWGYe5SqTfCx168gkZP7aWl)
-- [Стаття про роботу з датами в Swift](https://www.raywenderlich.com/718101-swift-date-cheat-sheet-getting-started-with-dates-in-swift)
+## Дивись також 
+
+- [Стаття про клас Date у мові Swift](https://www.ioscreator.com/tutorials/get-current-date)
+- [Документація Apple Developer про клас Date](https://developer.apple.com/documentation/foundation/date)

@@ -1,26 +1,38 @@
 ---
-title:    "Gleam: デバッグ出力を出力する"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/printing-debug-output.md"
+title:                "Gleam: デバッグ出力の印刷"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-デバッグ出力を行う理由は、コードの動作やエラーの原因を特定するためです。コンソールに出力された情報を確認することで、プログラムの実行を追跡し、問題を解決することができます。
+
+デバッグ出力をプリントする理由は、プログラムの特定の部分が期待通りに動作しているかどうかを確認するためです。
 
 ## 方法
-デバッグ出力を行うには、 `debug / 1` 関数を使用します。この関数には、出力したい値を渡す必要があります。下記の例では、変数 `name` の値を出力しています。
+
+デバッグ出力をプリントするには、Gleamのデバッガーを使用します。以下のような```Gleam ...```のコードブロックを使って、プログラムの特定の部分をデバッグ出力することができます。
 
 ```Gleam
-debug(name)
+fn main() {
+  let number = 42
+  debug_print("This is a debug message")
+}
 ```
+出力: `This is a debug message`
 
-このコードを実行すると、コンソールに `name` の値が表示されます。出力された情報を確認することで、 `name` の値を確認することができます。
+## 詳細を掘り下げる
 
-## ディープダイブ
-デバッグ出力を行う際には、出力する情報を選ぶことが重要です。不必要な情報を出力してしまうと、デバッグが困難になることがあります。また、デバッグ出力を行う際には、システムがパフォーマンスに影響を与えないよう注意が必要です。適切な箇所にデバッグ出力を配置することで、問題の特定と解決をより早く行うことができます。
+デバッグ出力をプリントすることは、より複雑なデバッグ作業において頻繁に使用される方法です。デバッグ出力を適切に使用することで、プログラムの実行中に特定の変数の値や条件を確認することができます。また、複数のデバッグメッセージを組み合わせることで、プログラムの特定の部分の動作を追跡することもできます。
+
+## その他の情報
+
+もしデバッグ出力を使用した際にエラーが発生した場合、下記のリンクを参考にして問題を解決してください。
 
 ## 参考リンク
-- https://gleam.run/documentation/
-- https://gleam.run/documentation/library/debug
+
+- Gleamのデバッガーについてのドキュメント: https://gleam.run/artefacts/gleam_stdlib/current/debugger.html
+- デバッグ出力のテクニック: https://gleam.run/posts/debugging/
+- Gleamの公式ドキュメント: https://gleam.run/docs/

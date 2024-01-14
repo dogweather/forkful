@@ -1,49 +1,45 @@
 ---
-title:    "Arduino: Komentoriviparametrien lukeminen"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/reading-command-line-arguments.md"
+title:                "Arduino: Komennoriviparametrien lukeminen"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi lukea komentoriviparametreja Arduino-ohjelmoinnissa?
 
-Miksi kukaan haluaisi lukea komentorivin argumentteja? Tämä on hyvä kysymys, ja vastaus voi yllättää sinut. Komentorivin argumentteja voidaan käyttää kommunikointiin Arduinon ja tietokoneen välillä, mikä mahdollistaa monia hyödyllisiä toimintoja. Jatka lukemista saadaksesi lisätietoja siitä, miten tämä toimii ja miten voit hyödyntää sitä omassa projektissasi.
+Komentoriviparametrit ovat hyödyllisiä työkaluja, jotka mahdollistavat käyttäjän antaa tarkempia ohjeita ja arvoja ohjelmalle. Tämä voi tehdä ohjelmoinnista joustavampaa ja dynaamisempaa, jolloin voit muokata ohjelmaa tarpeidesi mukaan. Esimerkiksi voit käyttää komentoriviparametreja määrittääksesi tiettyjä arvoja, kuten LED-valojen väriä tai moottorin nopeutta.
 
-## Miten
-
-Jos olet jo perehtynyt Arduinon ohjelmointiin, olet todennäköisesti käyttänyt `Serial`-kirjastoa viestintään tietokoneen kanssa. Mutta entä jos haluat lähettää pidemmän tai monimutkaisemman viestin? Tämä voi olla hankalaa käyttäen vain `Serial`-yhteyttä. Tähän tarvitaan komentorivin argumentteja.
-
-Kun yhdistät Arduinon tietokoneeseen, voit antaa sille komentorivin argumentteja, kuten näin:
+## Miten: Esimerkki kuinka lukea komentoriviparametreja Arduino-ohjelmassa
 
 ```Arduino
-C:\Users\Desktop>arduino_test.exe -p COM3 -s 9600
+// Alustetaan muuttujat
+int arvo1 = 0;
+int arvo2 = 0;
+// Luetaan komentoriviparametrit
+arvo1 = atoi(argv[1]); //Muuntaa ensimmäisen parametrin kokonaisluvuksi
+arvo2 = atoi(argv[2]); //Muuntaa toisen parametrin kokonaisluvuksi
+// Suoritetaan toimenpiteitä parametrien perusteella
+if(arvo1 == 1) {
+  // Sytytetään punainen LED-valo
+  digitalWrite(LED_PIN, HIGH);
+} else if (arvo1 == 2) {
+  // Sytytetään vihreä LED-valo
+  digitalWrite(LED_PIN, LOW);
+}
+// Asetetaan moottorin nopeus parametrin mukaan
+analogWrite(MOTOR_PIN, arvo2);
 ```
 
-Tässä esimerkissä käytetään `arduino_test.exe`-ohjelmaa, joka hyödyntää `Serial`-yhteyttä ja käyttää kahta argumenttia: porttinumeroa (`-p`) ja siirtonopeutta (`-s`). Huomaa, että näitä argumentteja käytetään ohjelman käynnistämiseen, eivätkä ne vaikuta ohjelman suorittamiseen.
+Käytämme esimerkissä ```atoi()```-funktiota, joka muuntaa merkkijonon kokonaisluvuksi. Tämä mahdollistaa komentoriviparametrien käytön vaihtelevien arvojen antamiseen ohjelmalle. Voit kokeilla muuttaa parametreja ja näet miten ne vaikuttavat ohjelmaan.
 
-Kun olet lähettänyt komentorivin argumentteja Arduinolle, voit lukea ne `Serial`-yhteyden kautta ja käyttää niitä esimerkiksi muuttujina. Tämä mahdollistaa monimutkaisemman viestinnän tietokoneen ja Arduinon välillä.
+## Syvemmälle: Lisätietoa komentoriviparametrien lukemisesta
 
-Mutta kuinka sitten kirjoitat ja luet komentorivin argumentteja itse Arduinolla? Tarvitset vain muutaman yksinkertaisen koodirivin, kuten tässä esimerkissä:
+Komentoriviparametrit syötetään ohjelmalle merkkijonoina ja niitä voidaan käyttää monipuolisesti ohjelmassa. Esimerkiksi voit lisätä useita parametreja ja käyttää niitä eri toimintoihin ohjelmassa. On myös hyvä huomioida, että komentoriviparametrit eivät ole vain Arduinolla käytettävä toiminto, vaan niitä voi käyttää monissa muissakin ohjelmointikielissä.
 
-```Arduino
-void setup() {
-  Serial.begin(9600);  // alustetaan Serial-yhteys
-}
+## Katso myös
 
-void loop() {
-  if (Serial.available()) {  // tarkistetaan, onko yhteyttä saatavilla
-    String input = Serial.readString(); // luetaan vastaanotettu viesti
-    Serial.print("Vastaanotit: "); // lähetetään vastaus
-    Serial.println(input);
-  }
-}
-```
-
-Tässä koodissa ensin alustetaan `Serial`-yhteys ja sitten ohjelma tarkistaa, onko yhteys saatavilla. Jos yhteys on saatavilla, ohjelma lukee vastaanotetun viestin ja lähettää sitten vastauksen takaisin. Tämän avulla voit kirjoittaa ja lukea komentorivin argumentteja Arduinolla.
-
-## Syvällinen sukellus
-
-Komentorivin argumentteja voi käyttää moniin eri tarkoituksiin Arduinon ohjelmoinnissa. Esimerkiksi voit käyttää niitä asettamaan tunnistimia, aloittamaan tietyt toiminnot tai muuttamaan Arduino-ohjelmasi parametreja. Voit myös hyödyntää komentorivin argumentteja luomaan käteviä käyttöliittymiä Arduinon ja tietokoneen välillä.
-
-On myös tärkeää huomata, että Arduinon `Serial`-yhteyttä voi käyttää vain yhteen suuntaan kerrallaan. Tämä tarkoittaa, että jos käytät komentorivin argumentteja lähettämään
+- [Atolic - Command line parameters in Arduino](https://atollic.blogspot.com/2011/09/command-line-parameters-in-arduino.html)
+- [Arduino Playground - Console Library](https://playground.arduino.cc/Main/console/)
+- [Arduino.cc - int()](https://www.arduino.cc/reference/en/language/functions/communication/serial/int/)

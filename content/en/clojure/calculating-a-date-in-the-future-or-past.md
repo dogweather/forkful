@@ -1,71 +1,60 @@
 ---
-title:    "Clojure recipe: Calculating a date in the future or past"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/calculating-a-date-in-the-future-or-past.md"
+title:                "Clojure recipe: Calculating a date in the future or past"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Calculating dates in the future or past is a common task in many programming projects. This can be useful for scheduling tasks, setting reminders, or simply managing time-based data. In this blog post, we will explore how to use Clojure to easily calculate dates in the future or past.
+Calculating dates in the future or past is a common task in many programming projects, and Clojure offers a simple yet powerful way to do so. Whether you need to schedule tasks, determine deadlines, or track historical events, being able to accurately calculate dates is an important skill for any Clojure programmer.
 
 ## How To
 
-To calculate a date in Clojure, we can use the `clj-time` library. First, we need to add the `clj-time` dependency to our project. In our `project.clj` file, we can add the following line under the `:dependencies` section:
+Calculating a date in the future or past involves using the `#inst` reader macro and the `days` and `+` functions. Let's look at some examples:
 
 ```
-[clj-time "0.15.2"]
-```
+(def today #inst "2021-01-01")
+=> #inst "2021-01-01"
 
-Next, we need to import the necessary namespace in our Clojure file:
+(+ today (days 7))
+=> #inst "2021-01-08"
 
-```
-(ns your-project-name
-  (:require [clj-time.core :as t]))
-```
-
-Now, let's explore how to calculate dates in the future or past using the following examples:
-
-### Calculate date in the future
-
-We can use the `t/plus` function to calculate a date in the future. This function takes in a time period and a starting date, and returns the calculated date.
+(+ today (days -14))
+=> #inst "2020-12-18"
 
 ```
-(t/plus (t/months 1) (t/today))
-;; Output: #object[org.joda.time.DateTime 0x149b8014 "2021-08-31T00:00:00.000Z"]
-```
 
-In this example, we are calculating the date one month from today.
+In the first example, we define the `today` variable as an `#inst` value representing January 1st, 2021. We then add 7 days to it using the `days` function and the `+` function, which results in the date for one week later, January 8th, 2021.
 
-### Calculate date in the past
+In the second example, we use a negative value for the `days` function to subtract 14 days from the `today` variable, resulting in a date for two weeks prior, December 18th, 2020.
 
-Similarly, we can use the `t/minus` function to calculate a date in the past. This function also takes in a time period and a starting date, and returns the calculated date.
+You can also use the `weeks`, `months`, and `years` functions in conjunction with the `days` function to calculate dates in larger increments. For example:
 
 ```
-(t/minus (t/days 7) (t/today))
-;; Output: #object[org.joda.time.DateTime 0x1c661cc "2021-07-25T00:00:00.000Z"]
-```
+(def today #inst "2021-01-01")
+=> #inst "2021-01-01"
 
-In this example, we are calculating the date seven days before today.
-
-### Calculate date with specific time
-
-If we want to calculate a date with a specific time, we can use the `t/with-time` function. This function takes in a time and a date, and returns a new date with the specified time.
+(+ today
+   (weeks 2)
+   (years -1))
+=> #inst "2020-01-15"
 
 ```
-(t/with-time (t/time 12 0) (t/today))
-;; Output: #object[org.joda.time.DateTime 0x6d6d805c "2021-07-31T12:00:00.000Z"]
-```
-
-In this example, we are calculating a date at 12PM today.
+This example uses the `+` function to add 2 weeks to `today` and then subtracts 1 year from that result, resulting in a date for January 15th, 2020.
 
 ## Deep Dive
 
-The `clj-time` library also provides functions for advanced date calculations such as daylight savings, leap years, and time zones. For a complete guide, please refer to the official documentation [here](https://github.com/clj-time/clj-time).
+Behind the scenes, Clojure uses Java's `java.util.Calendar` class to perform these date calculations. The `#inst` reader macro, when followed by a string in the format of "yyyy-mm-dd", creates an instance of `java.util.Date`, which is then converted to a `Calendar` object using the `calendar` function. This object is then used in conjunction with the `days`, `weeks`, `months`, and `years` functions to calculate dates.
 
-See Also
+It is important to note that the `days`, `weeks`, `months`, and `years` functions all take into account the varying number of days in each month and the leap year rule, ensuring accurate date calculations.
 
-- [Official `clj-time` documentation](https://github.com/clj-time/clj-time)
-- [ClojureDocs for `clj-time`](https://clojuredocs.org/clj-time)
-- [A basic introduction to calculating dates in Clojure](https://scotthaleen.github.io/blog/2013/10/06/calculating-dates-in-clojure/)
+## See Also
+
+To learn more about date calculations and manipulation in Clojure, check out these resources:
+
+- Official Clojure Documentation for `#inst`: https://clojure.org/reference/reader#inst
+- JavaDocs for `java.util.Calendar`: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
+- Clojure Date and Time Library: https://github.com/clj-time/clj-time

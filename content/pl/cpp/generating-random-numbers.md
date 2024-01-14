@@ -1,58 +1,59 @@
 ---
-title:    "C++: Generowanie losowych liczb"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/generating-random-numbers.md"
+title:                "C++: Generowanie losowych liczb."
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego generowanie liczb losowych jest ważne w programowaniu?
 
-Generowanie liczb losowych jest ważnym aspektem programowania w C++. Pozwala to na tworzenie dynamicznych i zróżnicowanych aplikacji, które nie są przewidywalne dla użytkowników. Zobaczmy, jak to zrobić!
+Generowanie liczb losowych jest istotnym elementem w świecie programowania. Pozwala ono na tworzenie różnorodnych i nieprzewidywalnych wartości, które mogą być wykorzystane w różnych algorytmach i aplikacjach. Dzięki temu możliwe jest symulowanie różnych scenariuszy i testowanie kodu w różnych warunkach. W tym artykule postaram się wyjaśnić, dlaczego generowanie liczb losowych jest ważne oraz jak z łatwością można to osiągnąć w języku C++.
 
-## Jak To Zrobić
+## Jak to zrobić?
 
-```c++
+Aby wygenerować losową liczbę w C++, potrzebujemy skorzystać z biblioteki <random>. Poniżej przedstawiam przykładowy kod, który wyświetla 10 liczb losowych z zakresu od 1 do 100:
+
+```C++
 #include <iostream>
-#include <cstdlib> // zawiera funkcję rand()
-#include <ctime> // zawiera funkcję srand()
-
-using namespace std;
+#include <random>
 
 int main() {
 
-    srand(time(NULL)); // inicjalizuje generator liczb losowych
+  // ustawienie generatora losowości
+  std::random_device rd;
+  // wykorzystanie generatora do wygenerowania ziarna
+  std::mt19937 generator(rd());
+  // ustalenie zakresu liczb
+  std::uniform_int_distribution<int> distribution(1, 100);
+  // wyświetlenie 10 liczb losowych
+  for(int i = 0; i < 10; i++) {
+    std::cout << distribution(generator) << " ";
+  }
 
-    // generowanie liczby całkowitej z zakresu od 0 do 99
-    int randomNumber = rand() % 100;
-
-    // generowanie liczby rzeczywistej od 0 do 1
-    double randomDouble = (double) rand() / RAND_MAX;
-
-    // wyświetlenie wygenerowanych liczb
-    cout << "Liczb losowa całkowita: " << randomNumber << endl;
-    cout << "Liczba losowa rzeczywista: " << randomDouble << endl;
-
-    return 0;
+  return 0;
 }
 ```
 
 Przykładowy wynik:
+
+```C++
+56 32 98 17 84 21 46 63 75 36
 ```
-Liczba losowa całkowita: 84
-Liczba losowa rzeczywista: 0.497103
-```
 
-## Głębsza Analiza
+W powyższym kodzie wykorzystano funkcję <random_device> do wygenerowania losowego ziarna oraz generatora liczb losowych <mt19937>. Następnie ustalono zakres liczb za pomocą funkcji <uniform_int_distribution> i przy użyciu pętli wypisano 10 losowych wartości.
 
-Generator liczb losowych w C++ opiera się na algorytmie o nazwie "Linear Congruential Generator". Polega on na wykorzystaniu pewnej formuły matematycznej, aby wygenerować liczbę pseudolosową. 
+## Głębszy zanurzenie
 
-Ważnym aspektem używania generatora liczb losowych w C++ jest inicjalizacja funkcji `srand()` za pomocą `time(NULL)`. Dzięki temu generator będzie korzystał z aktualnego czasu jako ziarna, co sprawi, że wygenerowane liczby będą zupełnie różne przy każdym uruchomieniu programu.
+W języku C++ istnieje wiele możliwości generowania liczb losowych, w zależności od potrzeb. Można wykorzystać różne rodzaje generatorów, jak również ustalać bardziej skomplikowane parametry, np. rozkłady normalne czy wykładnicze. Wiedza o dostępnych opcjach może być szczególnie przydatna przy tworzeniu złożonych programów i symulacji.
 
-Pamiętaj, że wykorzystanie generatora liczb losowych może być przydatne nie tylko w celach rozrywkowych, ale także w przypadku niektórych zadań programistycznych, takich jak sortowanie z wykorzystaniem algorytmu Quicksort.
+Warto również pamiętać, że pomimo wykorzystania funkcji <random>, generowane liczby mogą nie być w pełni losowe. W takim przypadku warto sięgnąć po inne źródła losowości, np. dane z czujników lub wpisy użytkownika.
 
-## Zobacz Również
+## Zobacz także
 
-- Dokumentacja C++ na temat generatora liczb losowych: [http://www.cplusplus.com/reference/cstdlib/rand/](http://www.cplusplus.com/reference/cstdlib/rand/)
-- Przykładowe zadania programistyczne wykorzystujące generowanie liczb losowych: [https://www.geeksforgeeks.org/generate-random-number-range-c/](https://www.geeksforgeeks.org/generate-random-number-range-c/)
-- Wprowadzenie do algorytmu Quicksort: [https://www.programiz.com/dsa/quick-sort](https://www.programiz.com/dsa/quick-sort)
+- [Dokumentacja biblioteki <random> dla języka C++](https://en.cppreference.com/w/cpp/numeric/random)
+- [Przewodnik po generowaniu liczb losowych w C++](https://www.learncpp.com/cpp-tutorial/59-random-number-generation/)
+- [Więcej o złożonych generowaniach w języku C++](https://www.geeksforgeeks.org/generating-random-number-range-c/)
+
+Dzięki wykorzystaniu odpowiednich narzędzi i wiedzy o generowaniu liczb losowych, programowanie staje się jeszcze ciekawsze i bardziej wszechstronne. Bawmy się i twórzmy różnorodne aplikacje wykorzystując potęgę losowości!

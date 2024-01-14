@@ -1,30 +1,34 @@
 ---
-title:    "TypeScript: टेक्स्ट फाइल को पढ़ना"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/reading-a-text-file.md"
+title:                "TypeScript: टेक्स्ट फ़ाइल को अधययन करना"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
- 
-टेक्स्ट फ़ाइल को पढ़ने का सबसे सरल तरीका है कोडिंग के माध्यम से है। अगर आप एक एन्जिनियर हैं या टेक्स्ट फ़ाइल से डेटा एक्सट्रैक्ट करने के लिए स्क्रिप्टिंग के माध्यम से काम करते हैं, तो यह आपके लिए एक उपयोगी पोस्ट हो सकती है। इस से आप टेक्स्ट फ़ाइल रीडिंग के बारे में बेहतर समझ सकते हैं और अपने कोड में इसे अपनाकर उपयोग कर सकते हैं।
 
-## कैसे
- 
-अगर आपने कभी टेक्स्ट फ़ाइल को पढ़ने का प्रयास किया है, तो आपने देखा होगा कि यह थोड़ा अजीब हो सकता है। आप शायद उम्मीद करेंगे कि यह सिंपल होगा, लेकिन अगर आप टेक्स्ट फ़ाइल को हेक्स फ़ाइल के रूप में भी पढ़ना चाहते हैं, तो आपको कुछ जटिल कोडिंग की आवश्यकता हो सकती है। इसलिए, हम आपको यहां टेक्स्ट फ़ाइल को पढ़ने के लिए टाइपस्क्रिप्ट कोड का सरल उदाहरण देंगे:
- 
+तोह आपने बनाया एक खास program, लेकिन अब आपको उसमें से पुराना data लेना है। इसके लिए आपके program को एक text file से दूसरे तक का data पढ़ने को प्रोग्रामिंग किये गुनगुनाने की जरूरत है। तोह यह article आपको teach करेगी की कैसे आप TypeScript में text file पढ़ सकते हैं।
+
+## कैसे करें
+
 ```TypeScript
-import fs from 'fs';
+import * as fs from "fs";
 
-// टेक्स्ट फ़ाइल को स्ट्रिंग के रूप में पढ़ें
-const data = fs.readFileSync('sample.txt', 'utf8');
-console.log(data);
+// file path
+const filePath: string = "test.txt";
 
-// हेक्स फ़ाइल को स्ट्रिंग के रूप में पढ़ें
-const hexData = fs.readFileSync('sample.txt', 'hex');
-console.log(hexData);
- 
+// read file
+fs.readFile(filePath, "utf8", (err: any, data: any) => {
+  if (err) throw err;
+  console.log(data);
+});
 ```
- 
-इस उदाहरण में, हमने फ़ाइल पढ़ने के लिए `fs` नामक मॉड्यूल को इंपोर्ट किया है। फिर हम `readFileSync` फ़ंक्शन का उपयोग करके फ़ाइल को स्ट्रिंग के रूप में पढ़ते हैं। हम दो तरीको
+यह सारा code हमने `fs` module से लिखा है। `fs` module आपको file system से interaction करने की सुविधा देता है। इसे import करने के बाद, हम एक `filePath` variable बनाते हैं जो हमारे text file का path होता है। उसके बाद, हम `fs.readFile()` method को use करके file को read करते हैं। इस method में हम 3 arguments पास करते हैं: file path, encoding और एक callback function। जब file read हो जाता है, callback function को call किया जाता है जिसमें `err` और `data` parameters होते हैं। `err` parameter में error message या `null` हो सकता है, जबकि `data` में file का data होता है। हमने `console.log()` का use करके data को print किया है। आप देख सकते हैं की file के सारे लाइन print हो रहे हैं।
+
+## गहराई में
+
+यदि आपको text file को line by line read करना है, फिर आप `fs.createReadline()` method का use कर सकते हैं। इसमें आपको line by line data को access करने के लिए `readline` object भी मिलता है। आप parameter के रूप में `line` नामक variable का use करके हर लाइन को प्रिंट कर सकते हैं।
+
+एक और interesting method है `fs.readFileSync()` जो मेंशन किया गया हैं। यह `fs.readFile()` की तरह ही काम करता है, लेकिन इसमें आप file को synchronous तरीके से read कर सकते हैं। इससे, program को file के data का इंतज़ार नहीं करना पड़ता और file read होने के बाद ही program आगे बढ़त

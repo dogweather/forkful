@@ -1,41 +1,73 @@
 ---
-title:    "Haskell: Läsning av kommandoradsargument"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/reading-command-line-arguments.md"
+title:                "Haskell: Läsning av kommandoradsargument"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att läsa in kommandoradsargument är en viktig del av att förstå hur man kan interagera med ett Haskell-program från terminalen. Genom att lära sig detta kan man skapa programs som är mer flexibla och anpassningsbara.
+Att läsa in kommandoradsargument är en vanlig och användbar funktion i många program. Genom att läsa in dessa argument kan du ge ditt program olika beteenden och parametrar beroende på hur det är kallat. Fortsätt läsa för att lära dig hur du kan implementera detta i ditt Haskell-program.
 
-## Hur man gör det
+## Hur man gör
 
-Först och främst behöver man importera `System.Environment` biblioteket för att kunna använda dess funktioner för att läsa in kommandoradsargument. Här är ett exempel på en funktion som tar emot en lista av strängar (kommandoradsargumenten) och sedan returnerar en sträng med endast det första argumentet:
+För att kunna läsa in kommandoradsargument måste du importera modulen `System.Environment` i ditt Haskell-program.
 
-```haskell
+```Haskell
+import System.Environment
+```
+
+Nästa steg är att använda funktionen `getArgs` från denna modul för att läsa in argumenten. Denna funktion returnerar en lista av strängar som representerar de olika argumenten som har skickats till ditt program. Här är ett enkelt exempel:
+
+```Haskell
 import System.Environment
 
 main = do
-    args <- getArgs
-    let firstArg = head args
-    putStrLn ("Första argumentet är: " ++ firstArg)
+  args <- getArgs
+  putStrLn ("Första kommandoradsargumentet är: " ++ head args)
 ```
 
-Om man nu kör detta program från terminalen med `runhaskell namn_av_fil.hs första andra tredje` så kommer outputen att bli:
+Om du kör detta program med argumentet `hello`, kommer du att få utskriften "Första kommandoradsargumentet är: hello". Du kan också använda funktionen `length` för att se hur många argument som har skickats till ditt program.
 
-```bash
-Första argumentet är: första
+```Haskell
+import System.Environment
+
+main = do
+  args <- getArgs
+  putStrLn ("Antal kommandoradsargument: " ++ show (length args))
 ```
+
+Om du till exempel kör detta program med argumenten `hello world`, kommer du att få utskriften "Antal kommandoradsargument: 2". Du kan också använda funktionen `map` för att utföra en operation på varje argument i listan.
+
+```Haskell
+import System.Environment
+
+main = do
+  args <- getArgs
+  putStrLn ("Alla kommandoradsargument: " ++ show (map (++"!") args))
+```
+
+Om du kör detta program med argumenten `hello world`, kommer du att få utskriften "Alla kommandoradsargument: ["hello!", "world!"]".
 
 ## Djupdykning
 
-För de som är intresserade av lite mer avancerade sätt att läsa in kommandoradsargument finns det också andra funktioner tillgängliga i `System.Environment` som kan vara användbara. Till exempel finns det `getProgName` för att få programmets namn, `getEnvironment` för att få en lista av miljövariabler, och `lookupEnv` för att leta efter en specifik miljövariabel.
+När du läser in kommandoradsargument, är det viktigt att komma ihåg att de alltid läses in som strängar. Detta innebär att om du behöver använda dem som andra datatyper, till exempel som heltal eller listor, måste du konvertera dem först. För att konvertera en sträng till ett heltal, kan du använda funktionen `read`. Om du till exempel vill konvertera det första kommandoradsargumentet till ett heltal, kan du göra det på följande sätt:
 
-För att lära dig mer om dessa och andra funktioner, se dokumentationen för `System.Environment` biblioteket.
+```Haskell
+import System.Environment
 
-## Se även
+main = do
+  args <- getArgs
+  let num = read (head args) :: Int
+  putStrLn ("Första argumentet som heltal: " ++ show num)
+```
 
-- [System.Environment dokumentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
-- [En handledning för att arbeta med Haskell i terminalen](https://www.fpcomplete.com/blog/2017/07/the-power-of-haskell-in-the-shell/)
+Om du kör detta program med argumentet `123`, kommer du att få utskriften "Första argumentet som heltal: 123". Kom också ihåg att du alltid behöver använda `::` för att specificera vilken typ du vill konvertera till.
+
+## Se också
+
+- [Haskell dokumentation för System.Environment modulen](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
+- [Haskell Forall Blogg: "Läsa in kommandoradsargument i Haskell"](https://www.haskellforall.com/2018/01/reading-command-line-arguments-in-haskell.html)
+- [WikiBooks: "Kommandoradsargument i Haskell"](https://en.wikibooks.org/wiki/Haskell/Command_line_arguments)

@@ -1,41 +1,69 @@
 ---
-title:    "Fish Shell: Drukowanie wyjścia debugowania"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/printing-debug-output.md"
+title:                "Fish Shell: Wydrukowanie wyników debugowania"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często podczas pisania kodu, napotykamy na błędy lub problemy, które utrudniają nam debugowanie. W takich sytuacjach, idealnym narzędziem może okazać się wypisywanie danych debugujących. Pozwala to na wyświetlenie aktualnych wartości zmiennych i sprawdzenie, w którym miejscu program może zawierać błąd.
+Drukowanie informacji debuggowania jest istotnym elementem programowania w języku Fish Shell. Pozwala ono na sprawdzanie aktualnego stanu programu oraz debugowanie potencjalnych błędów w kodzie. Jest to szczególnie przydatne przy tworzeniu skomplikowanych skryptów lub aplikacji.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Do wypisywania danych debugujących w języku Fish Shell możemy użyć polecenia `printf`. Przykładowe użycie wyglądałoby następująco:
-
-```Fish Shell
-set zmienna "wartość"
-printf "Wartość zmiennej to %s" $zmienna
-```
-
-W wyniku wykonania tego skryptu, otrzymalibyśmy informację: "Wartość zmiennej to wartość". Używając polecenia `echo` możemy również wypisywać wartości zmiennych, przykładowe użycie wyglądałoby tak:
+Aby wydrukować informacje debuggowania w języku Fish Shell, należy użyć funkcji `echo`. Przykładowy kod:
 
 ```Fish Shell
-set zmienna "wartość"
-echo "Zmienna ma wartość $zmienna"
+set name "Jan"
+echo "Witaj, $name!"
 ```
 
-Takie podejście jest szczególnie przydatne przy debugowaniu skryptów lub programów z wieloma zmiennymi.
+Output:
 
-## Deep Dive
+```
+Witaj, Jan!
+```
 
-Większość języków programowania posiada specjalne funkcje lub biblioteki do wypisywania danych debugujących. W języku Fish Shell, dodatkowo możemy skorzystać z polecenia `debug` do wyświetlenia zawartości tablic. Możemy również użyć opcji `-v` lub `--verbose`, aby otrzymać dodatkowe informacje i śledzić dokładnie przebieg naszego programu.
+Możemy również wykorzystać flagę `-d` do wyświetlenia informacji debuggowania w czasie wykonywania skryptu. Przykładowy kod:
 
-Warto również pamiętać o odpowiednim formatowaniu wyjścia. Używając specjalnych znaków, takich jak `\n` lub `\t` możemy kontrolować wygląd wyświetlanych danych. Dzięki temu, nasze wiadomości debugujące będą czytelniejsze i łatwiej będzie zlokalizować błąd.
+```Fish Shell
+set age 25
+set name "Anna"
+echo -d "Witaj, $name! Masz $age lat."
+```
+
+Output:
+
+```
+Job: echo -d Witaj, $name! Masz $age lat.
+    Spec variable bindings:
+        age=25
+        name=Anna
+Witaj, Anna! Masz 25 lat.
+```
+
+## Głębszy zanurkowanie
+
+W języku Fish Shell możemy również wykorzystać funkcję `printf` do drukowania informacji debuggowania w bardziej wyrafinowany sposób. Przykładowy kod:
+
+```Fish Shell
+set x 10
+set y 5
+printf "Wartość zmiennej x: %d, wartość zmiennej y: %d\n" $x $y
+```
+
+Output:
+
+```
+Wartość zmiennej x: 10, wartość zmiennej y: 5
+```
+
+Funkcja `printf` pozwala nam również na formatowanie wyjścia, co może być przydatne podczas debugowania bardziej złożonego kodu.
 
 ## Zobacz również
 
-- Oficjalna dokumentacja języka Fish Shell (https://fishshell.com/docs/current/index.html)
-- Komendy wypisujące dane debugujące (https://fishshell.com/docs/current/commands.html#debug)
-- Przydatne opcje polecenia `debug` (https://fishshell.com/docs/current/commands.html#debug-opt)
+- [Oficjalna dokumentacja języka Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Przewodnik po języku Fish Shell](https://devhints.io/fish)
+- [Bezpłatny kurs programowania w języku Fish Shell](https://fish-tutorial.com/)

@@ -1,63 +1,49 @@
 ---
-title:    "Haskell: Comenzando un nuevo proyecto"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/starting-a-new-project.md"
+title:                "Haskell: Comenzando un nuevo proyecto"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué empezar un nuevo proyecto en Haskell?
+## Por qué
+Empezar un nuevo proyecto en Haskell puede parecer abrumador al principio, pero en realidad ofrece muchos beneficios. La programación funcional en Haskell es altamente modular y permite una fácil refactorización del código, lo que ahorra tiempo y aumenta la calidad del software.
 
-Haskell es un lenguaje de programación funcional que ha ganado popularidad en los últimos años debido a su capacidad para manejar grandes y complejos proyectos de manera eficiente. Además de ser un lenguaje elegante y expresivo, Haskell también cuenta con una comunidad activa y un ecosistema de bibliotecas extenso. Por lo tanto, si estás buscando un lenguaje que te permita escribir código de alta calidad y escalable, Haskell es la opción ideal.
-
-## Cómo empezar un nuevo proyecto en Haskell?
-
-Lo primero que debes hacer es instalar el compilador GHC (Glasgow Haskell Compiler) en tu sistema. Luego, puedes usar alguna herramienta de construcción como Cabal o Stack para crear y gestionar tu proyecto. A continuación, te mostramos un ejemplo de cómo crear un nuevo proyecto en Haskell usando Stack:
+## Cómo hacerlo
+Empezar un nuevo proyecto en Haskell es sencillo. Primero, asegúrate de tener Haskell instalado en tu computadora. Luego, puedes crear un nuevo proyecto utilizando alguna herramienta como Stack o Cabal. Aquí hay un ejemplo utilizando Stack:
 
 ```Haskell
-stack new mi-proyecto
-cd mi-proyecto
-stack build
+stack new mi_proyecto simple
 ```
 
-Una vez que hayas creado tu proyecto, puedes empezar a escribir tu código Haskell en el directorio "src". Por ejemplo, puedes crear un archivo llamado "Main.hs" y escribir lo siguiente dentro de él:
+Esto creará una estructura básica para tu proyecto con un archivo de cabecera, un archivo de código fuente y un archivo de prueba. También puedes comenzar desde cero creando tus propios archivos y directorios.
+
+Una vez que tengas tu estructura de proyecto creada, es hora de empezar a escribir tu código. Aquí hay un ejemplo de una función que suma dos números en Haskell:
 
 ```Haskell
-module Main where
-
-main :: IO ()
-main = putStrLn "¡Hola mundo!"
+suma :: Int -> Int -> Int
+suma x y = x + y
 ```
 
-Después de guardar tu archivo, puedes compilarlo y ejecutarlo con el comando "stack run":
+Esta función toma dos números enteros como entrada y devuelve su suma como resultado. Puedes probarlo en la ventana de GHCi escribiendo:
 
 ```Haskell
-stack run
+> suma 3 5
+8
 ```
 
-Y verás la siguiente salida en tu terminal:
+Esto debería imprimir el resultado en la consola. ¡Ya estás en camino de empezar tu nuevo proyecto en Haskell!
 
-```
-¡Hola mundo!
-```
+## Profundizando
+Para profundizar en cómo empezar un nuevo proyecto en Haskell, es importante entender algunos de los conceptos fundamentales de la programación funcional. Esto incluye el uso de funciones puras, tipos fuertes y estáticos, y el uso de estructuras de datos inmutables. A medida que avances en tu proyecto, podrás explorar más a fondo estos conceptos y utilizarlos para escribir un código más conciso y robusto.
 
-¡Felicidades! Has creado y ejecutado exitosamente tu primer proyecto en Haskell.
-
-## Profundizando en la creación de un nuevo proyecto
-
-Empezar un nuevo proyecto en Haskell puede parecer intimidante al principio, pero con la práctica se vuelve más sencillo. Algunos consejos para facilitar este proceso son:
-
-- Familiarízate con las herramientas de construcción disponibles en Haskell, como Cabal y Stack. Estas herramientas pueden ayudarte a manejar fácilmente las dependencias y construir tu proyecto.
-- Investiga sobre las mejores prácticas de organización de código en Haskell. Por ejemplo, es una buena idea separar tu código en módulos y seguir la convención de nombrarlos con la letra mayúscula.
-- Aprovecha al máximo el sistema de tipos de Haskell para garantizar la seguridad y robustez de tu código.
-- No tengas miedo de consultar documentación y hacer preguntas en comunidades de Haskell si te encuentras con dificultades.
-
-Con un poco de práctica, podrás crear proyectos en Haskell de manera eficiente y eficaz.
+Además, hay una gran comunidad de programadores de Haskell a los que puedes unirte para obtener ayuda y obtener más información sobre cómo empezar proyectos en Haskell. También puedes consultar la documentación oficial y numerosos recursos en línea para seguir aprendiendo y mejorando en tu proyecto.
 
 ## Ver también
+- [Documentación oficial de Haskell] (https://www.haskell.org/documentation/)
+- [Documentación de Stack] (https://docs.haskellstack.org/en/stable/README/)
+- [Documentación de Cabal] (https://www.haskell.org/cabal/)
+- [Comunidad de programadores de Haskell] (https://www.reddit.com/r/haskell/)
 
-- [Documentación oficial de Haskell](https://www.haskell.org/documentation/)
-- [Comunidad de Haskell en Reddit](https://www.reddit.com/r/haskell/)
-- [Tutorial interactivo de Haskell](https://www.haskell.org/learn/)
-- [Documentación de Cabal](https://cabal.readthedocs.io/en/latest/)
-- [Documentación de Stack](https://docs.haskellstack.org/en/stable/README/)
+Con estos recursos, deberías estar bien preparado para empezar tu nuevo proyecto en Haskell. ¡Buena suerte y feliz programación!

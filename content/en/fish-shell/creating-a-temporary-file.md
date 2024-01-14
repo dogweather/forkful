@@ -1,62 +1,40 @@
 ---
-title:    "Fish Shell recipe: Creating a temporary file"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/creating-a-temporary-file.md"
+title:                "Fish Shell recipe: Creating a temporary file"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why
-Creating temporary files is a common task in programming, especially when dealing with large amounts of data or complex processes. Temporary files allow us to store and manipulate data temporarily before either discarding them or writing them to a more permanent location. In this blog post, we will explore how to create temporary files using the Fish Shell programming language.
+##Why
 
-# How To
-Fish Shell provides a convenient way to create temporary files using the `mktemp` command. This command creates a temporary file and returns the path to that file. Let's see an example of how to use it:
+Creating temporary files in programming is a common task that allows for efficient and organized data management. Temporary files are used to store data temporarily during the execution of a program, and they are automatically deleted once the program has finished running. This helps avoid clutter and frees up space on the system.
 
-```
-Fish Shell code block:
-```Fish Shell
-# Create a temporary file and store its path in a variable
-set temp_file (mktemp)
+##How To
 
-# Output the path to the file
-echo $temp_file
-```
-
-Output:
-```
-/var/folders/ty/dklqf3kd6bxfvsghwxdqq0fw0000gn/T/tmp.9ItiOgB3
+To create a temporary file in Fish Shell, we will be using the `mktemp` command. This command generates a unique and secure filename that can be used for our temporary file.
 
 ```
+Fish Shell
 
-As we can see in the output, the `mktemp` command has created a temporary file in the `/var/folders/ty/dklqf3kd6bxfvsghwxdqq0fw0000gn/T/` directory and the path to that file is stored in the `temp_file` variable.
-
-We can also specify a prefix for the temporary file name using the `-p` flag. For example:
-
-```
-Fish Shell code block:
-```Fish Shell
-# Create a temporary file with a custom prefix
-set temp_file (mktemp -p prefix_)
-
-# Output the path to the file
-echo $temp_file
+set TEMP_FILE (mktemp)
+echo "Hello world!" > $TEMP_FILE
+cat $TEMP_FILE 
 ```
 
-Output:
-```
-/var/folders/ty/dklqf3kd6bxfvsghwxdqq0fw0000gn/T/prefix_RivDC6J
+Running the above code will create a temporary file named "tmp.XXXXXX" and write the text "Hello world!" into it. The `TEMP_FILE` variable is set to the filename of the temporary file, and we can use it to perform operations on the file, such as reading or writing data.
 
-```
+##Deep Dive
 
-This will create a temporary file with the prefix "prefix_" followed by a randomly generated string.
+When creating a temporary file, it is important to consider security and preventing potential conflicts with other temporary files. The `mktemp` command in Fish Shell uses the `mkstemp()` function in C, which creates a file with a unique name and sets the appropriate permissions to ensure that only the user has access to the file.
 
-# Deep Dive
-Behind the scenes, the `mktemp` command uses the `mkstemp()` function from the C standard library. This function creates a temporary file with a unique name and returns a file descriptor for that file. Fish Shell then uses this file descriptor to create a symlink with the specified prefix and return its path.
+It is also possible to create a temporary file with a specific prefix or suffix, using the `-p` and `-s` options respectively. This can be helpful when organizing and identifying temporary files in a busy system.
 
-It is worth noting that temporary files are not automatically deleted after use in the Fish Shell. It is the responsibility of the programmer to manually delete them when they are no longer needed. This can be done using the `rm` command.
+Additionally, we can use the `trap` command in Fish Shell to automatically delete the temporary file once the program finishes running. This can be achieved by setting up a trap command with the `EXIT` signal, which will execute a given command when the program exits.
 
-# See Also
-- [Fish Shell official documentation on `mktemp`](https://fishshell.com/docs/current/cmds/mktemp.html)
-- [C Standard Library documentation on `mkstemp`](https://www.cplusplus.com/reference/cstdio/mkstemp/)
+##See Also
 
-Creating temporary files is a useful skill to have in your programming arsenal. Whether you are working with large datasets or performing complex operations, temporary files can help you manage and manipulate your data with ease. Give it a try in Fish Shell and see how it can improve your coding experience!
+- Fish Shell built-in commands: https://fishshell.com/docs/current/index.html#builtin-commands
+- `mktemp` command documentation: https://fishshell.com/docs/current/cmds/mktemp.html
+- `mkstemp()` function: https://linux.die.net/man/3/mkstemp

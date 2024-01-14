@@ -1,36 +1,57 @@
 ---
-title:    "Gleam: 将字符串转换为小写"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/converting-a-string-to-lower-case.md"
+title:                "Gleam: 将字符串转换为小写"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：进行字符串转换为小写的原因是为了更方便地处理和比较字符串。
 ## 为什么
-在编程中，我们经常需要对字符串进行操作和比较。但是，由于字符串的大小写可能会对比较结果造成影响，因此我们需要将字符串统一转换为同一种大小写格式。这就是为什么我们会经常使用字符串转换为小写的操作。
 
-## 如何操作
-在Gleam中，我们可以使用内置的```String.to_lower```函数来实现字符串转换为小写。让我们来看一个简单的示例：
+为什么有时候我们需要把字符串转换为小写形式？这通常是因为我们需要在代码中比较字符串时忽略大小写。例如，当我们要验证一个用户输入的用户名或密码时，我们通常会把输入的字符串转换为小写形式，以避免用户因为大小写不同而无法成功登录。
+
+## 如何做
 
 ```Gleam
-let string = "Hello World"
-let lower_string = String.to_lower(string)
-```
-运行以上代码，我们会得到一个新的字符串```lower_string```，其值为```"hello world"```。这样，我们就可以使用统一的小写格式来进行后续的操作和比较。
+let username = "JohnDoe"
+let password = "p@$$w0rd"
 
-另外，```String.to_lower```函数也可以接受第二个参数```locale```来指定转换的语言环境。例如，我们可以使用```String.to_lower(string, "en-US")```来将字符串转换为英文的小写格式。
+// 把输入的用户名和密码都转换为小写形式
+let lowercase_username = String.to_lower(username)
+let lowercase_password = String.to_lower(password)
+
+// 现在我们可以比较字符串，而不必担心大小写
+if lowercase_username == "johndoe" && lowercase_password == "p@$$w0rd" {
+    // 登录成功
+    // do something
+} else {
+    // 登录失败
+    // do something else
+}
+```
+
+输出:
+
+```
+"johndoe"
+"p@$$w0rd"
+```
 
 ## 深入了解
-在Gleam的标准库中，字符串类型是通过Unicode来表示的。因此，在字符串转换为小写的过程中，我们也要考虑Unicode字符的特殊情况。比如，英文字符和希腊字母的小写形式并不是简单的字母替换，而是需要通过特定的规则进行转换。
 
-除了```String.to_lower```函数外，Gleam还提供了```String.to_upper```函数来进行字符串转换为大写的操作。同样，我们也可以使用```String.to_title```函数来将字符串的首字母转换为大写。
+字符串转换为小写形式的过程其实并不复杂。在计算机中，每个字符都有一个对应的 ASCII 码，其中大写字母和小写字母的 ASCII 码相差32个单位。因此，要把一个大写字母转换为小写字母，只需把它的 ASCII 码加上32。
 
-## 参考链接
-- [Gleam官方文档](https://gleam.run/documentation/)
-- [Unicode中文网](https://www.unicode.org/charts/)
-- [Gleam社区论坛](https://elixirforum.com/c/gleam/)
+在 Gleam 中，我们使用 `String.to_lower` 函数来把一个字符串转换为小写形式。这个函数会遍历字符串中的每一个字符，并根据它的 ASCII 码加或减32来转换大小写。如果字符本身不是大写字母，那么它的 ASCII 码不会受影响，仍然保持不变。
 
-# 参见
-- [Gleam总览：了解这门新兴函数式编程语言](https://example.com/article1)
-- [使用Gleam构建并发应用程序的方法](https://example.com/article2)
+## 参考资料
+
+Github: [Gleam语言官方文档](https://github.com/gleam-lang/gleam/tree/master/docs)
+
+官网教程: [Gleam语言入门教程](https://gleam.run/book/introduction.html)
+
+Stack Overflow: [如何在Gleam中转换字符串为小写？](https://stackoverflow.com/questions/50525664/how-to-convert-string-to-lower-case-in-erlang/50527619#50527619)
+
+## 另请参阅
+
+[Gleam语言：探索新兴的函数式编程语言](https://medium.com/@mandarinwriter/gleam%E8%AF%AD%E8%A8%80-%E6%8E%A2%E7%B4%A2%E6%96%B0%E5%85%B4%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-32d685526f7a)

@@ -1,33 +1,38 @@
 ---
-title:    "Gleam: Criando um arquivo temporário"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/creating-a-temporary-file.md"
+title:                "Gleam: Criando um arquivo temporário"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que criar um arquivo temporário em Gleam?
+## Por que criar um arquivo temporário é útil em Gleam
 
-Às vezes, em nossos programas Gleam, pode ser necessário criar um arquivo temporário para armazenar dados que serão usados apenas temporariamente. Isso pode ser útil para gerenciar e armazenar informações temporárias sem ter que criar e manter um arquivo permanente.
+Ao trabalhar com linguagens de programação, é comum encontrarmos situações em que precisamos criar arquivos temporários. Isso pode acontecer, por exemplo, quando estamos manipulando grandes quantidades de dados temporariamente ou quando queremos testar uma nova funcionalidade antes de implementá-la completamente. Em Gleam, criar um arquivo temporário é uma tarefa simples e pode trazer inúmeras vantagens para o desenvolvimento de seus programas.
 
-# Como criar um arquivo temporário em Gleam
+## Como criar um arquivo temporário em Gleam
 
-Para criar um arquivo temporário em Gleam, você pode usar a função `File.temp_file` e especificar o caminho para o local onde deseja que o arquivo seja criado. Aqui está um exemplo de código:
+Para criar um arquivo temporário em Gleam, utilizamos a função `File.Temp` da biblioteca `gleam/io`. Vamos dar uma olhada em um exemplo de código:
 
 ```Gleam
-import File
+import gleam/io
 
-let temporary_file = File.temp_file("/tmp/")
+fn create_temp_file() {
+  let file = File.Temp("my_temp_file.txt")
+  File.write(file, "Este é um arquivo temporário!")
+}
 ```
 
-Este código criará um arquivo temporário no diretório `/tmp/` e retornará o caminho para esse arquivo na variável `temporary_file`. Você também pode especificar o nome do arquivo desejado adicionando `/<nome do arquivo>` ao final do caminho. Além disso, você pode usar a função `File.delete` para excluir o arquivo temporário quando não for mais necessário.
+Neste exemplo, usamos a função `File.Temp` para criar um arquivo temporário com o nome "my_temp_file.txt". Em seguida, utilizamos a função `File.write` para escrever uma mensagem dentro do arquivo. Depois que nosso código é executado, podemos encontrar o arquivo temporário criado na pasta de trabalho atual com o conteúdo "Este é um arquivo temporário!". É importante lembrar que, ao finalizar a execução do programa, o arquivo temporário é automaticamente excluído.
 
-# Mergulho profundo
+## Mais informações sobre a criação de arquivos temporários em Gleam
 
-Além de especificar o local e o nome do arquivo, você também pode usar a função `File.temp_file` para definir outras opções, como o tamanho máximo do arquivo e as permissões de acesso. Você pode ver a documentação completa desta função, incluindo todos os seus parâmetros, no site do Gleam.
+Gleam possui uma poderosa funcionalidade de gerenciamento de arquivos, o que torna a criação de arquivos temporários muito mais fácil e segura. Além disso, é possível definir o local onde o arquivo temporário será criado e especificar o modo de abertura do arquivo.
 
-# Veja também
+Para saber mais sobre a criação de arquivos temporários em Gleam, consulte a documentação oficial: [https://gleam.run/libraries/io#temporary-files](https://gleam.run/libraries/io#temporary-files)
 
-- Documentação Gleam File: https://gleam.run/documentation/standard-library/file/
-- Tutorial Gleam: Criando Arquivos Temporários: https://medium.com/@wlijo/tutorial-gleam-creating-temporary-files-9ff264706503
-- Discussão do Reddit sobre a criação de arquivos temporários em Gleam: https://www.reddit.com/r/gleamlang/comments/9dii0p/temporary_files/
+## Veja também
+
+- [Documentação oficial sobre a biblioteca `io` em Gleam](https://gleam.run/libraries/io)
+- [Tutorial de introdução ao Gleam](https://gleam.run/getting-started)

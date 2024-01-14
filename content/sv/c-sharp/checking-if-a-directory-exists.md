@@ -1,38 +1,62 @@
 ---
-title:    "C#: Kontrollera om en mapp finns"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/checking-if-a-directory-exists.md"
+title:                "C#: Kontrollera om en katalog finns"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+### Varför
+Att kontrollera om en katalog existerar är en viktig del av C# programmering, eftersom det låter dig se till att nödvändiga filer och resurser finns tillgängliga innan du fortsätter med din kod. Det kan också hjälpa till att undvika fel och undanröja potentiella hinder innan de uppstår.
 
-Att kontrollera om en katalog existerar kan vara en viktig del av programmering i C#. Det kan hjälpa till att säkerställa att din kod fungerar korrekt och undvika eventuella felmeddelanden. Det är också en bra praxis för att hantera filhantering i dina applikationer.
-
-## Så här gör du
-
-För att kontrollera om en katalog existerar i C#, kan du använda metoden `Directory.Exists()`. Detta är en inbyggd metod som tar en sträng som argument och returnerar en boolesk värde som indikerar om en katalog existerar eller inte. Låt oss titta på ett exempel:
+### Hur man gör
+För att kontrollera om en katalog existerar i C#, använder vi oss av metoden `Directory.Exists()` som ingår i `System.IO`-klassen. Nedan följer ett exempel på hur man kan implementera detta i sin kod:
 
 ```C#
-if(Directory.Exists("C:\\Users\\Example\\Documents"))
+using System;
+using System.IO;
+
+namespace DirectoryCheck
 {
-    Console.WriteLine("Katalogen existerar.");
-}
-else
-{
-    Console.WriteLine("Katalogen existerar inte.");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Skapa en variabel för sökvägen till katalogen vi vill kontrollera
+            string path = @"C:\Users\Example\User\Documents";
+
+            // Anropar Directory.Exists() och tilldelar resultatet till en bool-variabel
+            bool directoryExists = Directory.Exists(path);
+
+            // Kontrollerar om katalogen existerar eller inte
+            if(directoryExists)
+            {
+                Console.WriteLine("Katalogen finns tillgänglig.");
+            } 
+            else
+            {
+                Console.WriteLine("Katalogen finns inte tillgänglig.");
+            }
+
+            Console.ReadKey();
+        }
+    }
 }
 ```
 
-I detta exempel använder vi metoden `Directory.Exists()` för att kontrollera om katalogen "C:\Users\Example\Documents" existerar. Om den gör det skriver vi ut ett meddelande som bekräftar att katalogen existerar, annars skriver vi ut att den inte existerar. Om du vill kontrollera en relativ sökväg istället för en absolut sökväg, kan du använda `Path.Combine()` för att kombinera en befintlig sökväg med den sökväg du vill kontrollera.
+**Resultat:**
 
-## Djupdykning
+```
+Katalogen finns tillgänglig.
+```
 
-Metoden `Directory.Exists()` använder sig av objektet `FileSystemInfo` för att kontrollera om en katalog existerar. Detta objekt har en egenskap som heter `Exists` som returnerar sant om filen eller katalogen existerar. `Directory.Exists()` tar bara emot en sökväg som argument, men om du vill ha mer kontroll kan du använda `FileSystemInfo`-objektet direkt. Detta kan vara användbart om du vill använda mer avancerade sökningar eller filtreringar på dina filer och kataloger.
+### Djupdykning
+För att förstå hur `Directory.Exists()` fungerar är det viktigt att känna till att den returnerar `true` om katalogen finns och `false` om den inte finns. Detta gör det enkelt att implementera en if-sats eller en try-catch-block för att hantera existerande eller icke-existerande kataloger.
 
-## Se även
+Det är också värt att nämna att `Directory.Exists()` inte bara fungerar för lokala kataloger, utan också för nätverkskataloger. Detta gör det möjligt att enkelt kontrollera tillgängligheten av resurser på en server eller i ett delat nätverk.
 
-- [Microsoft Docs: Directory.Exists()](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
-- [Microsoft Docs: FileSystemInfo.Exists](https://docs.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo.exists?view=net-5.0)
-- [C# How to Check if a Directory Exists](https://www.c-sharpcorner.com/article/c-sharp-how-to-check-if-directory-exists/)
+### Se även
+- [Microsoft Docs - Directory.Exists Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- [C# File and Directory Operations](https://www.c-sharpcorner.com/article/c-sharp-file-and-directory-operations/)
+- [Checking Directory Existence in C#](https://www.c-sharpcorner.com/UploadFile/mahesh/checking-directory-existence-in-C-Sharp/)

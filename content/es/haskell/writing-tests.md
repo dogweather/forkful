@@ -1,70 +1,50 @@
 ---
-title:    "Haskell: Escribiendo pruebas"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/writing-tests.md"
+title:                "Haskell: Escribiendo pruebas"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-#¿Por qué deberías escribir pruebas en tus programas Haskell?
+## Por qué
 
-Escribir pruebas en tus programas Haskell puede ser un proceso tedioso y puede parecer una tarea innecesaria, pero en realidad es una práctica muy importante en el desarrollo de software. Las pruebas nos ayudan a detectar errores en nuestro código y garantizar que nuestras funciones y módulos funcionen correctamente. Además, nos permite tener una mejor comprensión de nuestro código y facilita su mantenimiento en el futuro.
+La escritura de pruebas es una práctica importante en cualquier lenguaje de programación, incluyendo Haskell. Al escribir pruebas, podemos tener una mayor confianza en nuestro código y asegurarnos de que funcione como lo esperado. Además, las pruebas nos ayudan a detectar errores y problemas en nuestro código antes de que lleguen a producción.
 
-##Cómo escribir pruebas en Haskell
+## Cómo hacerlo
 
-Para escribir pruebas en Haskell, primero debemos importar el módulo `Test.HUnit` en nuestro archivo de código. Este módulo nos proporciona las herramientas necesarias para escribir y ejecutar pruebas unitarias.
-
-Para crear una prueba, podemos utilizar la función `TestLabel` que nos permite nombrar nuestra prueba y la función `TestCase` para escribir la lógica de nuestra prueba. Por ejemplo:
+Para escribir pruebas en Haskell, utilizamos el módulo `Test.HUnit`, que proporciona funciones para crear y ejecutar pruebas unitarias. Primero, importamos el módulo en nuestro archivo de código:
 
 ```Haskell
 import Test.HUnit
-
--- Definimos una función para sumar dos números
-sumar :: Int -> Int -> Int
-sumar x y = x + y
-
--- Creamos nuestra prueba
-pruebaSuma :: Test
-pruebaSuma = TestLabel "Prueba de suma" $
-  TestCase $ assertEqual "Suma incorrecta" 35 (sumar 15 20)
 ```
 
-En este ejemplo, estamos probando la función `sumar` para asegurarnos de que suma correctamente dos números enteros. Utilizamos la función `assertEqual` para comparar el resultado esperado con el resultado real de nuestra función.
-
-Podemos ejecutar nuestras pruebas utilizando la función `runTestTT` y pasando nuestro conjunto de pruebas como argumento. Por ejemplo:
+Luego, podemos definir nuestras pruebas de la siguiente manera:
 
 ```Haskell
--- Ejecutamos nuestras pruebas
-main :: IO Counts
-main = runTestTT $ TestList [pruebaSuma]
+test1 = TestCase (assertEqual "1 + 1 is equal to 2" 2 (1+1))
+
+test2 = TestCase (assertEqual "3 * 5 is equal to 15" 15 (3*5))
+
+tests = TestList [TestLabel "Test 1" test1, TestLabel "Test 2" test2]
 ```
 
-Si ejecutamos nuestro programa, deberíamos obtener la siguiente salida:
+En estas pruebas, estamos verificando si nuestras operaciones matemáticas básicas son correctas. Para ejecutar las pruebas, podemos utilizar la función `runTestTT` y pasarle `tests` como argumento:
 
-```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-```
-
-Si cambiamos alguno de los valores en nuestra prueba para que falle, por ejemplo `sumar 15 25`, obtendríamos la siguiente salida:
-
-```
-Cases: 1  Tried: 1  Errors: 0  Failures: 1
-Failure:
-Suma incorrecta
-expected: 35
- but got: 40
+```Haskell
+main = runTestTT tests
 ```
 
-##Profundizando en la escritura de pruebas
+Esto generará una salida de prueba que nos informará si nuestras pruebas fueron exitosas o si se encontraron errores.
 
-Ahora que ya sabemos cómo escribir pruebas en Haskell, es importante profundizar y aprender más sobre esta práctica. Hay diferentes tipos de pruebas que podemos escribir en Haskell, como pruebas unitarias, pruebas de integración y pruebas de propiedades.
+## Profundizando
 
-También es importante aprender sobre técnicas de prueba como la cobertura de código y la generación de casos de prueba aleatorios para asegurarnos de que estamos probando todos los casos posibles y encontrando cualquier posible error en nuestro código.
+Al escribir pruebas en Haskell, es importante tener en cuenta que nuestro código debe ser lo más puro posible, es decir, sin efectos secundarios. Esto puede ser un desafío al principio, pero nos obliga a escribir código más modular y fácil de probar.
 
-La escritura de pruebas también puede ser una gran herramienta para el aprendizaje y la experimentación en Haskell. Al escribir pruebas, podemos explorar diferentes conceptos y funciones y asegurarnos de entenderlos correctamente. Además, al tener pruebas en nuestro código, podemos realizar cambios y refactorizaciones sin temor a introducir nuevos errores.
+También es importante recordar que las pruebas deben ser específicas y cubrir todos los casos posibles. De esta manera, podemos estar seguros de que nuestro código funciona no solo en un escenario ideal, sino también en situaciones más complejas.
 
-#Ver también
+## Ver también
 
-- [HUnit Tutorial en HaskellWiki](https://wiki.haskell.org/HUnit_Tutorial)
-- [Refactorizando con pruebas en Haskell por Kowainik](https://kowainik.github.io/posts/refactor-testing/)
-- [Hspec - Biblioteca para escribir pruebas en Haskell](https://hspec.github.io/)
+- [HUnit Tutorial](https://hackage.haskell.org/package/HUnit-1.6.0.0/docs/Test-HUnit-Tutorial.html)
+- [Pruebas unitarias en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple-Testing-in-Haskell)
+- [HUnitTest Documentación](https://hackage.haskell.org/package/HUnit-1.6.0.0/docs/Test-HUnit.html)

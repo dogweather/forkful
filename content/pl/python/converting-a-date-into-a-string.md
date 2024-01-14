@@ -1,41 +1,44 @@
 ---
-title:    "Python: Konwertowanie daty na ciąg znaków"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/converting-a-date-into-a-string.md"
+title:                "Python: Konwertowanie daty na ciąg znaków"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zamiana daty na ciąg znaków jest bardzo przydatną umiejętnością w programowaniu. Po pierwsze, pozwala nam wyświetlić datę w czytelny sposób dla użytkownika. Ponadto, może być niezbędna przy pracy z bazami danych lub zewnętrznymi API, które wymagają formatu daty jako ciągu znaków.
+Konwertowanie daty do ciągu znaków jest częstym zadaniem w programowaniu, szczególnie w przypadku tworzenia aplikacji internetowych i baz danych. Może to być przydatne do wyświetlania dat w łatwiejszy do odczytania przez ludzi sposób, lub do przechowywania dat w bazie danych w odpowiednim formacie. W tym artykule dowiesz się jak skutecznie konwertować datę do ciągu znaków przy użyciu języka Python.
 
 ## Jak to zrobić
 
+Aby skonwertować datę do ciągu znaków w języku Python, używamy metody `strftime()`. Ta metoda pochodzi z modułu `datetime` i pozwala nam na sformatowanie daty według wybranego wzorca.
+
 ```Python
-import datetime
+from datetime import datetime
 
-# przykładowa data
-data = datetime.date(2021, 2, 5)
+# Utworzenie obiektu datetime z wybranej daty
+dt = datetime(2021, 7, 21)
 
-# przekształcenie daty na ciąg znaków w formacie YYYY-MM-DD
-data_str = data.strftime("%Y-%m-%d")
+# Konwersja daty do ciągu znaków w formacie "Dzień miesiąca, Rok"
+print(dt.strftime("%d/%m/%Y")) # Output: 21/07/2021
 
-print(data_str) # output: "2021-02-05"
-
-# możemy również zmienić format daty, na przykład na DD-MM-YYYY
-data_str = data.strftime("%d-%m-%Y")
-print(data_str) # output: "05-02-2021"
+# Konwersja daty do ciągu znaków w formacie "Miesiąc Dzień, Rok"
+print(dt.strftime("%B %d, %Y")) # Output: July 21, 2021
 ```
 
-W powyższym przykładzie użyliśmy metody `strftime()` z modułu datetime. Pierwszy argument tej metody to format, według którego chcemy przekształcić datę na ciąg znaków. Oznaczenia, które możemy użyć w formacie, są dostępne w dokumentacji Pythona.
+Jak widać z powyższego przykładu, wystarczy użyć metody `strftime()` i określić wybrany przez nas format, aby skutecznie skonwertować datę do ciągu znaków.
 
-## Głębszy przegląd
+## Deep Dive
 
-Podczas przekształcania daty na ciąg znaków, ważne jest, aby pamiętać o używaniu odpowiednich oznaczeń, w przeciwnym razie format daty może być niepoprawny. Na przykład, jeśli chcemy wyświetlić miesiąc w formacie od `01` do `12`, należy użyć oznaczenia `%m`, a nie `%M`. Przekonwertowanie daty na ciąg znaków jest również dostępne z użyciem metody `str()`, jednak nie pozwala na dostosowanie formatu.
+Podczas konwersji daty do ciągu znaków, ważne jest, aby pamiętać o tym, że niektóre formaty mogą generować nieprawidłowe daty. Na przykład, jeśli użyjemy formatu `%d/%m/%Y` dla daty 9 lutego 2021, otrzymamy ciąg znaków "09/02/2021". Jednak jeśli użyjemy tego samego formatu dla daty 21 lutego 2021, otrzymamy ciąg znaków "21/02/2021". To może być mylące, ponieważ w niektórych krajach standardem jest format "DD/MM/YYYY", a w innych "MM/DD/YYYY". Aby uniknąć takich błędów, zawsze należy uważać na wybrane formaty i mieć na uwadze preferencje regionalne.
 
-## Zobacz także
+Innym ważnym aspektem jest szczegółowa znajomość dostępnych formatów w języku Python oraz dokumentacji dla modułu `datetime`. W tym celu można zapoznać się z listą dostępnych formatów na stronie dokumentacji Python: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
 
-- Dokumentacja Pythona: https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior
-- Przekształcanie daty i czasu w Pythonie: https://realpython.com/python-datetime/
-- Wykorzystanie dat w programowaniu: https://progracraft.com/how-to-do-dates-and-times-in-python-1-basic-date-time-operations/
+## Zobacz też
+
+- Dokumentacja Python dla modułu `datetime`: https://docs.python.org/3/library/datetime.html
+- Przewodnik po konwersji daty do ciągu znaków w języku Python: https://www.programiz.com/python-programming/datetime/strftime
+
+Dzięki temu artykułowi powinieneś już wiedzieć jak skutecznie konwertować datę do ciągu znaków za pomocą języka Python. Pamiętaj, aby uważać na wybrane formaty i dostosować je do swoich potrzeb.

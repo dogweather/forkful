@@ -1,51 +1,56 @@
 ---
-title:    "Haskell: Escribiendo en la salida de error estándar"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/writing-to-standard-error.md"
+title:                "Haskell: Escribiendo en el error estándar"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Qué
+## Por qué escribir a la salida de error estándar en Haskell
 
-Escribir a la salida de error estándar puede ser una herramienta útil para depurar y manejar errores en tus programas de Haskell. Al escribir a esta salida, puedes ver información detallada sobre lo que está sucediendo en tu código y cómo manejar posibles errores.
+Escribir a la salida de error estándar (STDERR) puede ser útil para mostrar mensajes de depuración o reportar errores en nuestros programas en Haskell. Esto nos permite tener un control más detallado y específico sobre la información que mostramos al usuario y puede ayudarnos a identificar y solucionar problemas más fácilmente.
 
-## Cómo
+## Cómo escribir a la salida de error estándar en Haskell
 
-Para escribir a la salida de error estándar en Haskell, puedes utilizar la función `hPutStrLn` del módulo `System.IO`. Esta función toma dos parámetros: un identificador de archivo y una cadena de texto. Aquí hay un ejemplo de cómo usarla:
+En Haskell, podemos imprimir mensajes a STDERR utilizando la función `hPutStrLn` del módulo `System.IO`. Esta función toma como argumento una cadena de texto y la imprime a la salida de error estándar. Por ejemplo:
 
 ```Haskell
 import System.IO
 
 main = do
-  hPutStrLn stderr "Este es un mensaje de error"
+    hPutStrLn stderr "¡Hola, mundo!"
+    hPutStrLn stderr "Este es un mensaje de error."
+
+-- Output:
+-- ¡Hola, mundo!
+-- Este es un mensaje de error.
 ```
 
-Este código escribirá "Este es un mensaje de error" en la salida de error estándar. Puedes cambiar la cadena de texto por cualquier mensaje que quieras mostrar.
-
-Aquí hay otro ejemplo más complejo que ilustra cómo puedes manejar errores mientras escribes a la salida de error estándar:
+Podemos utilizar esta función dentro de cualquier función `IO` y también podemos combinarla con otras funciones para formatear mensajes de error más complejos. Por ejemplo:
 
 ```Haskell
 import System.IO
-import Control.Exception
+
+printError :: String -> IO ()
+printError msg = do
+    progName <- getProgName
+    hPutStrLn stderr $ "[" ++ progName ++ "]: ERROR - " ++ msg
 
 main = do
-  let fileName = "mi_archivo.txt"
-  contents <- readFile fileName
-  putStr contents
-  `catch` \e -> do
-    let err = show (e :: IOException)
-    hPutStrLn stderr ("Error al abrir el archivo: " ++ fileName ++ "\n" ++ err)
+    printError "No se pudo conectar al servidor."
 ```
 
-En este ejemplo, tratamos de leer un archivo llamado "mi_archivo.txt" y mostrar su contenido por la salida estándar. Sin embargo, si el archivo no existe, se lanzará una excepción y nuestro código capturará ese error y lo imprimirá en la salida de error estándar. Esto puede ser útil para manejar errores inesperados en tus programas y mantener un código más robusto.
+Este código imprimirá un mensaje de error en el formato "[nombre de programa]: ERROR - mensaje de error" a la salida de error estándar.
 
-## Profundizando
+## Profundizando en la escritura a la salida de error estándar en Haskell
 
-Para una explicación más detallada sobre cómo escribir a la salida de error estándar en Haskell, puedes consultar la documentación oficial del módulo `System.IO` y la función `hPutStrLn`. También puedes investigar sobre el manejo de errores en Haskell y cómo puedes utilizarlo en tus programas.
+Además de la función `hPutStrLn`, también podemos utilizar otras funciones del módulo `System.IO` para manejar la salida de error estándar. Por ejemplo, `hPutStr` imprime una cadena sin agregar un salto de línea al final, mientras que `hPrint` puede imprimir cualquier tipo de dato que sea instancia de la clase `Show`.
+
+También podemos utilizar la función `withFile` para abrir un archivo y escribir a él específicamente a la salida de error estándar. De esta forma, podemos separar los mensajes de depuración de los mensajes de error y escribirlos en un archivo separado.
 
 ## Ver también
 
-- Documentación del módulo `System.IO`: [https://hackage.haskell.org/package/base/docs/System-IO.html](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- Documentación de la función `hPutStrLn`: [https://hackage.haskell.org/package/base/docs/System-IO.html#v:hPutStrLn](https://hackage.haskell.org/package/base/docs/System-IO.html#v:hPutStrLn)
-- Tutoriales sobre manejo de errores en Haskell: [https://www.tutorialspoint.com/haskell/haskell_error_handling.htm](https://www.tutorialspoint.com/haskell/haskell_error_handling.htm)
+- [Documentación de la función `hPutStrLn` en el módulo `System.IO`](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html#v:hPutStrLn)
+- [Tutorial de Haskell en Español](https://www.monografias.com/trabajos97/haskell/haskell.shtml)
+- [Ejemplos de código en Haskell](https://github.com/dbartondesign/learn-you-a-haskell-exercises)

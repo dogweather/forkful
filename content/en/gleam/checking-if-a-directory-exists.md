@@ -1,75 +1,49 @@
 ---
-title:    "Gleam recipe: Checking if a directory exists"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/checking-if-a-directory-exists.md"
+title:                "Gleam recipe: Checking if a directory exists"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever come across a situation where you needed to check if a specific directory exists before performing a task? In Gleam, there are various scenarios where this would be necessary, such as ensuring a file is in the correct location before reading it. In this blog post, we will explore how to check if a directory exists in Gleam.
+Checking if a directory exists is an important task in programming, especially if your program relies on accessing or creating files from a specific directory. It allows you to avoid errors and ensure the smooth execution of your program.
 
 ## How To
 
-To check if a directory exists in Gleam, we will use the standard library function `file.exists/1`. This function takes a string representing a file path and returns a boolean value indicating if the file exists or not. Let's try it out with a hypothetical path of `src/utils`:
+To check if a directory exists in Gleam, we can use the `os.exists` function. This function takes in a path as an argument and returns a boolean value indicating whether the directory at that path exists or not.
 
-```Gleam
-directory := "src/utils"
-
-if file.exists(directory) {
-    io.print("The directory exists!")
-} else {
-    io.print("The directory does not exist.")
+```
+Gleam
+match os.exists("path/to/directory") {
+  true -> "Directory exists"
+  false -> "Directory does not exist"
 }
 ```
 
-The`file.exists/1` function also works for nested directories, so you can check for `src/utils/models`, for example.
+If the directory exists, the output will be "Directory exists". Otherwise, it will be "Directory does not exist".
 
-```Gleam
-directory := "src/utils/models"
+For example, if we have a directory called "images" in our current working directory, our code will look like this:
 
-if file.exists(directory) {
-    io.print("The directory exists!")
-} else {
-    io.print("The directory does not exist.")
+```
+Gleam
+match os.exists("images") {
+  true -> "Directory exists"
+  false -> "Directory does not exist"
 }
 ```
 
-The output for both of these examples would be:
-
-```
-The directory exists!
-```
+And the output will be "Directory exists".
 
 ## Deep Dive
 
-Behind the scenes, the `file.exists/1` function uses the `file.metadata/1` function, which returns a `file_result` type. This type contains information about the file, including its existence. Through pattern matching, we can access this information and handle it accordingly.
+Under the hood, the `os.exists` function uses the `File` module from the standard library to determine if a given path exists or not. This module has a function called `exists` that checks if a file or directory exists at a specified path. The `os.exists` function simply calls this `exists` function and returns the result as a boolean value.
 
-For example, we can create a function that checks if a directory exists and returns a custom message depending on the result:
-
-```Gleam
-pub fn check_directory(directory) {
-    case file.metadata(directory) {
-        Ok(metadata) ->
-            case metadata {
-                File -> "This is a file, not a directory."
-                Directory -> "${directory} exists."
-            }
-        Err(err) -> "${directory} does not exist."
-    }
-}
-
-io.print(check_directory("src/utils"))
-```
-
-The output for this example would be:
-
-```
-src/utils exists.
-```
+It's also worth noting that `os.exists` will return `false` if the path is not a valid directory or file path, or if there are permission issues preventing it from accessing the directory.
 
 ## See Also
 
-- [Official Gleam Documentation: Working with Files and Directories](https://gleam.run/articles/files-and-directories)
-- [Gleam Standard Library: File module](https://github.com/gleam-lang/gleam_stdlib/blob/master/standard-library/file.md)
+- `os.create_dir` - Gleam standard library function for creating a new directory
+- `File.exists` - Standard library function for checking if a file exists at a specified path

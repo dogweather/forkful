@@ -1,51 +1,37 @@
 ---
-title:    "Gleam: Überprüfung der Existenz eines Ordners"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/checking-if-a-directory-exists.md"
+title:                "Gleam: Überprüfen, ob ein Verzeichnis existiert"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Aufgabe beim Programmieren. Es ermöglicht einem, sicherzustellen, dass alle erforderlichen Dateien und Ordner vorhanden sind, bevor eine Operation ausgeführt wird.
 
-Das Überprüfen, ob ein Verzeichnis existiert, kann in der Programmierung sehr nützlich sein, da es sicherstellt, dass das Programm auf die erforderlichen Dateien und Ordner zugreifen kann. Dadurch wird vermieden, dass das Programm abstürzt oder unerwünschte Ergebnisse liefert.
-
-## Wie geht das?
-
-Es gibt verschiedene Möglichkeiten, um in Gleam zu prüfen, ob ein Verzeichnis existiert. Hier sind einige Beispiele mithilfe von Codeblöcken:
-
+## Wie es funktioniert
 ```Gleam
+import gleam/io
 
-// Mit dem Befehl `os.dir_exists()` kann überprüft werden, ob das angegebene Verzeichnis vorhanden ist.
-let verzeichnis = os.dir_exists("/home/benutzer/dokumente/")
-
-if verzeichnis == Ok {
-  // Das Verzeichnis existiert.
-  io.print("Das Verzeichnis existiert.")
-} else if verzeichnis == Err {
-  // Das Verzeichnis existiert nicht.
-  io.print("Das Verzeichnis existiert nicht.")
+fn main() {
+    let dir = "/pfad/zum/verzeichnis"
+    let exists = io.exists(dir)
+    if exists {
+        io.print("Verzeichnis existiert")
+    } else {
+        io.print("Verzeichnis existiert nicht")
+    }
 }
-
-// Eine weitere Möglichkeit ist die Verwendung von Mustern. Hier wird auch ein Standardwert festgelegt, falls das Verzeichnis nicht gefunden wird.
-case os.dir_exists("/home/benutzer/fotos/") {
-  Ok -> { io.print("Das Verzeichnis existiert.") }
-  Err -> { io.print("Das Verzeichnis existiert nicht.") }
-  _ -> { io.print("Ein Fehler ist aufgetreten.") }
-}
-
 ```
 
-Die Ausgabe für beide Codebeispiele wäre: "Das Verzeichnis existiert."
+Das obige Beispiel zeigt, wie einfach es ist, mit Gleam auf die Existenz eines Verzeichnisses zu prüfen. Die `exists` Funktion aus dem `io` Modul gibt `true` zurück, wenn das angegebene Verzeichnis vorhanden ist, andernfalls `false`.
 
-## Tiefere Einblicke
+## Tiefer eintauchen
+Beim Überprüfen der Verzeichnisexistenz gibt es einige wichtige Dinge zu beachten. Zum Beispiel sollte man sicherstellen, dass man auf das richtige Verzeichnis zugreift, indem man absolute Pfade verwendet. Außerdem ist es wichtig, die Ausnahmebehandlung zu implementieren, falls das Verzeichnis nicht gefunden werden kann.
 
-Beim Überprüfen, ob ein Verzeichnis existiert, gibt es einige Dinge zu beachten. Zum einen muss das Verzeichnis richtig angegeben werden, damit das Programm es finden kann. Zum anderen ist es wichtig, sicherzustellen, dass das Programm entsprechende Berechtigungen hat, um auf das Verzeichnis zuzugreifen.
+Ein weiterer wichtiger Aspekt ist, dass Gleam standardmäßig nur auf lokale Dateisysteme zugreift. Falls man auf das Dateisystem eines anderen Computers oder Servers zugreifen möchte, empfiehlt es sich, einen Bibliothek wie z.B. `gleamfs` zu nutzen.
 
-Um eine bessere Fehlerbehandlung zu gewährleisten, kann auch eine Error-Struktur verwendet werden, um spezifische Fehlermeldungen zu erhalten. Außerdem kann die Funktion `os.is_dir()` verwendet werden, um zu überprüfen, ob es sich bei dem angegebenen Pfad tatsächlich um ein Verzeichnis und nicht um eine Datei handelt.
-
-# Siehe auch
-
-- [`os.dir_exists()` Dokumentation](https://gleam.run/modules/gleam/os/#dir_exists)
-- [Verzeichnisoperationen in Gleam](https://medium.com/@gleamlang/file-system-operations-f6275be4c1a3)
-- [Einführung in Gleam für Anfänger (auf Deutsch)](https://ria.evolveu.dashboard.education/learn/gleamlang-for-beginners/)
+## Siehe auch
+- [Gleam `io` Modul Dokumentation](https://gleam.run/modules/io)
+- [Gleam `gleamfs` Bibliothek](https://github.com/lpil/gleamfs)

@@ -1,59 +1,45 @@
 ---
-title:    "Python: Rédaction de tests"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-tests.md"
+title:                "Python: Ecrire des tests"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
-Les tests sont un élément essentiel de la programmation en Python, ils permettent de s'assurer que le code fonctionne correctement et de détecter rapidement les erreurs. Les tests garantissent également que les modifications apportées au code ne causent pas de régressions.
+# Pourquoi
 
-## Comment Faire 
-Pour écrire des tests en Python, il suffit d'utiliser le module intégré `unittest`, qui fournit des classes et des méthodes pour créer et exécuter des tests. Voici un exemple de code utilisant `unittest` pour tester une fonction qui calcule la moyenne d'une liste de nombres :
+Les tests sont un élément essentiel du développement logiciel. Ils permettent de vérifier si le code fonctionne correctement et s'il répond aux exigences attendues. En écrivant des tests, vous pouvez vous assurer que votre code est robuste, fiable et sans bugs.
+
+# Comment faire
+
+Pour écrire des tests en Python, vous pouvez utiliser le module intégré `unittest`. Voici un exemple simple de test unitaire qui vérifie si une fonction calcule correctement la moyenne d'une liste de nombres :
 
 ```Python
-import unittest 
+import unittest
 
-# Définir la fonction à tester 
 def moyenne(liste):
     return sum(liste) / len(liste)
 
-# Sous-classe de TestCase pour créer un test
 class TestMoyenne(unittest.TestCase):
-
-    # Définir un test avec une méthode nommée "test_<nom du test>"  
-    def test_moyenne(self):
-    
-        # Données d'entrée et résultat attendu
-        liste = [1, 2, 3, 4]
-        resultat = 2.5
-        
-        # Utiliser la méthode assertEqual pour vérifier le résultat
-        self.assertEqual(moyenne(liste), resultat)
-        
-# Exécuter les tests en utilisant la méthode main() du module unittest 
-if __name__ == '__main__':
-    unittest.main()
+    def test_calcule_moyenne(self):
+        resultat = moyenne([2, 4, 6, 8])
+        self.assertEqual(resultat, 5)
 ```
+La première ligne importe le module `unittest`, puis on définit une fonction `moyenne()` qui calcule la moyenne d'une liste. Ensuite, on crée une classe `TestMoyenne` qui hérite de la classe `unittest.TestCase`, ce qui nous permet de définir des méthodes de test. La méthode `test_calcule_moyenne()` fait appel à notre fonction `moyenne()` avec une liste de nombres et vérifie si le résultat est bien égal à 5 avec la méthode `assertEqual()`. 
 
-Lorsque vous exécutez ce code, vous devriez voir une sortie comme ceci :
+Vous pouvez ensuite exécuter votre test en utilisant la commande `python -m unittest` dans votre terminal. Si tout est correct, vous devriez voir un message indiquant que votre test a réussi.
 
-```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
+# Plongée en profondeur
 
-OK
-```
+Écrire des tests n'est pas seulement utile pour vérifier si votre code fonctionne, mais c'est également un moyen efficace de détecter d'éventuels bugs dans votre code. Les tests peuvent vous aider à identifier rapidement les problèmes et à les corriger avant qu'ils ne deviennent plus complexes et difficiles à résoudre.
 
-Ce qui signifie que le test a réussi. Si vous modifiez la fonction `moyenne` pour retourner un résultat incorrect, le test échouera et affichera un message d'erreur vous indiquant l'endroit où l'erreur s'est produite.
+Il est également important de faire des tests régulièrement. En utilisant des outils tels que `unittest` ou `pytest`, vous pouvez automatiser vos tests et les exécuter chaque fois que vous apportez des modifications à votre code. Cela vous permet de vous assurer que ces modifications n'ont pas affecté le comportement du code existant.
 
-## Plongée en Profondeur 
-Outre l'utilisation de `unittest`, il existe différentes méthodes pour écrire des tests en Python, telles que le module `pytest` ou encore le concept de TDD (Test Driven Development). Il est également important de suivre les bonnes pratiques pour écrire des tests efficaces, tels que les noms clairs et explicites pour les fonctions de test et l'utilisation de plusieurs cas de test pour couvrir toutes les situations possibles.
+De plus, les tests peuvent également améliorer la qualité de votre code en imposant des normes et des bonnes pratiques de programmation. En écrivant des tests, vous êtes obligés de penser de manière critique à votre code et à la manière dont il doit fonctionner, ce qui peut conduire à un code plus propre et plus bien conçu.
 
-## Voir Aussi 
-- [Documentation officielle de `unittest`](https://docs.python.org/fr/3/library/unittest.html)
-- [Guide sur les tests en Python](https://realpython.com/python-testing/)
-- [Tutoriel sur TDD en Python](https://www.testdriven.io/blog/tdd-in-python/)
-- [Documentation officielle de `pytest`](https://docs.pytest.org/en/6.2.x/)
+# Voir aussi
+
+- [Documentation du module unittest en français](https://docs.python.org/fr/3/library/unittest.html)
+- [Un guide complet pour écrire des tests en Python](https://realpython.com/python-testing/)
+- [Livre "Test Driven Development with Python" de Harry Percival](https://www.obeythetestinggoat.com/)

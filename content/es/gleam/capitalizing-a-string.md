@@ -1,51 +1,46 @@
 ---
-title:    "Gleam: Capitalizar una cadena de texto"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/capitalizing-a-string.md"
+title:                "Gleam: Capitalizando una cadena"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué capitalizar una cadena?
 
-Capitalizar una cadena de texto puede ser útil al momento de presentar información de manera más ordenada y legible, especialmente en casos donde se requiere que la primera letra de cada palabra esté en mayúscula.
+Si eres un desarrollador que trabaja con strings en Gleam, es posible que te hayas preguntado alguna vez cómo capitalizar una cadena de texto. Puede que estés buscando una forma de mejorar la legibilidad de tus datos o simplemente necesites formatear correctamente una salida de texto. Sea cual sea la razón, saber cómo capitalizar una cadena puede ser una herramienta útil en tu caja de herramientas de programación.
 
 ## Cómo hacerlo
 
-En Gleam, capitalizar una cadena de texto es muy sencillo. Primero, debemos importar la función `capitalize` del módulo `String`:
+Para capitalizar una cadena en Gleam, podemos utilizar la función `String.to_title()` que toma una cadena como argumento y devuelve la versión capitalizada de esa cadena.
 
 ```Gleam
-import String
-
+let nombre = "juan";
+let nombre_capitalizado = String.to_title(nombre);
 ```
 
-Luego, podemos utilizar la función `capitalize` en la cadena que deseamos capitalizar:
+La variable `nombre_capitalizado` ahora contiene la cadena "Juan" en lugar de "juan". Esto se debe a que la función `String.to_title()` convierte la primera letra de la cadena en mayúscula y el resto en minúsculas.
+
+También podemos utilizar `String.to_title()` para capitalizar palabras compuestas, como en el siguiente ejemplo:
 
 ```Gleam
-String.capitalize("hola mundo") // "Hola mundo"
-String.capitalize("hola GLEAM") // "Hola Gleam"
+let nombre_completo = "maria perez";
+let nombre_completo_capitalizado = String.to_title(nombre_completo);
 ```
 
-Podemos ver que la función `capitalize` convierte la primera letra de la cadena en mayúscula y mantiene el resto de las letras en minúscula.
-
-También podemos utilizar esta función en variables que contienen cadenas de texto:
-
-```Gleam
-let texto = "este es un ejemplo"
-let texto_capitalizado = String.capitalize(texto) // "Este es un ejemplo"
-```
+La variable `nombre_completo_capitalizado` ahora contendrá la cadena "Maria Perez", donde ambas palabras están capitalizadas correctamente.
 
 ## Profundizando
 
-La función `capitalize` en Gleam utiliza la librería `unicode`, lo que significa que también puede capitalizar caracteres especiales y acentos en diferentes idiomas.
+Mientras que la función `String.to_title()` es útil para casos simples de capitalización, no es adecuada para manejar todos los casos posibles. Por ejemplo, no funciona correctamente con nombres que contienen apóstrofes o guiones. En estos casos, es posible que necesites implementar tu propia función de capitalización personalizada utilizando patrones y combinadores de Gleam.
 
-Otra alternativa para capitalizar una cadena de texto es utilizar la función `title_case` del módulo `String`. Esta función convierte todas las palabras de la cadena en mayúscula, incluyendo la primera letra.
-
-```Gleam
-String.title_case("hola mundo") // "Hola Mundo"
-```
+También es importante tener en cuenta las diferencias entre los idiomas al capitalizar cadenas. En español, por ejemplo, se utilizan mayúsculas para los nombres de las personas y los lugares, pero no necesariamente en otros contextos. Por lo tanto, es importante tener una comprensión sólida de las reglas de capitalización en el idioma en el que estás trabajando.
 
 ## Ver también
 
-- [Documentación oficial de la función `capitalize`](https://gleam.run/core/String.html#fn-string.capitalize)
-- [Ejemplos de la función `capitalize` en Gleam Playground](https://play.gleam.run/?code=import%20String%20string%20let%20us%20%3D%20%0A%20%20String.capitalize%20(%22hola%20mundo%22)&config=gleam-project)
+- Documentación oficial de la función `String.to_title()`: https://gleam.run/modules/gleam_std.String.html#function.to_title
+
+- Ejemplos prácticos de capitalización de cadenas en diferentes lenguajes de programación: https://www.dotnetperls.com/capitalize
+
+- Cómo manejar casos especiales en la capitalización de cadenas en Gleam: https://medium.com/@thatjonathanchen/write-a-capitalizer-function-in-gleam-e6fd92c3a010

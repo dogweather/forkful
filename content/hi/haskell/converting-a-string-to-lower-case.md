@@ -1,27 +1,39 @@
 ---
-title:    "Haskell: स्ट्रिंग को निचले अक्षर में बदलना"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/converting-a-string-to-lower-case.md"
+title:                "Haskell: स्ट्रिंग को निचे अक्षर में बदलें"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun:
 
-कॉम्प्यूटर प्रोग्रामिंग में महत्वपूर्ण है कि हम अपने स्ट्रिंगयों को निचोड़ते हुए कोएंवर्ट कर सकते हैं। यह हमें प्रसंस्करण या डेटा क्लीनअप करने में मदद करता है और अक्सर कॉड की पढ़ाई करने और डेबग करने में भी लाभदायक होता है।
+Kabhi kabhi ham yeh zaroorat mehsoos karte hain ki kisi string ko lower case mein convert karna hai, jaise ki agar hamare paas ek user se input liya gaya hai aur usko sahi tarah se validate karna hai. Is tarah ke situations mein, string ko lower case mein convert karna bohot zaroori ho sakta hai.
 
-## कैसे करें
+## Kaise Karein:
 
-जब हम स्ट्रिंग को लोअर केस में कोन्वर्ट करते हैं तो हम एक नया स्ट्रिंग बनाते हैं जिसमें हम से उच्च अक्षरों द्वारा दिए गए जानकार अपने कम केस में बदलकर स्ट्रिंग को फिर से बनाते हैं। निम्न उदाहरण स्ट्रिंग को लोअर केस में कोन्वर्ट करने का एक सरल उदाहरण है।
+Is tarkib se string ko lower case mein convert karna bohot hi aasan hai:
+```
+Haskell
+-- Samayogion ke liye, hamko Data.Char module import karna padega
+import Data.Char
 
-```Haskell
-import Data.Char -- चाहे हम इस लाइन नहीं लिख सकते हैं भले ही हम GHCi या GHC में चला रहे हों
+-- String ko lower case mein convert karein
+toLower "HELLO WORLD"
 
-toLowerString :: String -> String
-toLowerString str = [toLower c | c <- str]
--- हम स्ट्रिंग में भरी हुई स्ट्रिंग दोबारा बनाते हैं
--- हम स्ट्रिंग की हर अक्षर को निचे केस में बदलते हैं और उस पर मैपिंग करते हैं
--- GHCi में किसी भी टेक्स्ट एडिटर पे ध्यान दें कि रिक्ट्रिक्ट और बैकटिक्स दोनों @} यह सक्षम हों
+-- Output: "hello world"
 ```
 
-इस सरल उदाहरण से हम समझ सकते हैं कि कैसे हम स्ट्रिंग को लोअर केस में कन्वर्ट कर सकते हैं। जैसा कि हमने देखा है, हम एक स्ट्रिंग बनाते हैं और उसमें हम अक्षरों की लिस्ट स्कैन करते हैं और मैपिंग के लिए आवश्यक फ़ंक्शन को प्रयोग करते हैं। य
+Yahan, hamne `Data.Char` module ko import kiya aur `toLower` function ka use kiya string ko lower case mein convert karne ke liye. Yeh function har ek character ko lower case mein convert karega aur naye string mein return karega.
+
+Aur kuch tarkibon se bhi string ko lower case mein convert kiya ja sakta hai jaise ki `map toLower` ya phir `foldl (\acc x -> acc ++ [toLower x]) ""`.
+
+## Gehri Jhaank:
+
+String ko lower case mein convert karne ki gehrai mein, yeh jaanke kaam aata hai ki Haskell kaise characters ke saath kaam karta hai. Har character ko ek ASCII code se represent kiya jaata hai, jis se input aur output ko manipulate kiya ja sakta hai. `toLower` function ASCII code ke saath kaam karta hai, is liye yeh sirf alpha characters ko lower case mein convert karega aur kisi aur character ko change nahi karega.
+
+## Dekhiye Bhi:
+
+- [Haskell Data.Char module](http://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [Learn You a Haskell - Strings](http://learnyouahaskell.com/starting-out#strings)

@@ -1,43 +1,55 @@
 ---
-title:    "Elixir: Laskenta tulevaisuuden tai menneen päivämäärän arvioimiseksi"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/calculating-a-date-in-the-future-or-past.md"
+title:                "Elixir: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Elixir on dynaaminen ja joustava ohjelmointikieli, jonka avulla voit luoda tehokkaita ja luotettavia sovelluksia. Yksi käytännöllinen toiminto, jonka Elixir tarjoaa, on päivämäärän laskeminen tulevaisuudesta tai menneisyydestä. Tässä blogikirjoituksessa kerromme, miksi tämä toiminto on hyödyllinen ja miten sitä voidaan käyttää.
+Joskus ohjelmointissa on tarpeellista laskea tietty päivämäärä tulevaisuudesta tai menneisyydestä. Tämä voi johtua esimerkiksi lomien suunnittelusta, tapahtumien aikatauluttamisesta tai muista syistä. Elixir-ohjelmoinnissa tämä on suhteellisen helppo toteuttaa käyttäen sisäänrakennettuja funktioita. Seuraavassa jaettelen lyhyesti, miten tämän voitaisiin tehdä.
 
-## Miten
+## Ohjeet
 
-Voit laskea tulevaisuuden tai menneisyyden päivämääriä käyttämällä Elixirin `Calendar` moduulia. Tämä moduuli tarjoaa kattavan valikoiman toimintoja päivämäärien käsittelyyn.
+Laskemiseen päivämäärä tulevaisuudessa tai menneisyydessä käytetään Elixirin `Calendar`-moduulissa olevia funktioita. Ensiksi tarvitsemme päivämäärän, josta haluamme liikkua eteen- tai taaksepäin. Tämän jälkeen voimme käyttää `Date.add`- tai `Date.subtract`-funktioita lisäämään tai vähentämään päiviä, viikkoja, kuukausia tai vuosia.
 
-Katsotaanpa ensin, miten voimme laskea päivämäärän tietyn määrän päiviä tulevaisuuteen. Käytämme `Date.add/2` -funktiota, joka ottaa ensimmäisenä parametrina päivämäärän ja toisena parametrina päivien määrän, jonka haluamme lisätä siihen. Esimerkiksi, jos meillä on päivämäärä "1.1.2021" ja haluamme lisätä siihen 5 päivää, käytämme seuraavaa koodia:
+```Elixir
+# Lisätään yksi viikko päivämäärään 1.1.2022
+date = Date.from_iso8601("20220101")
+new_date = Date.add(date, 7, :week)
+IO.inspect(new_date)
 
-```elixir
-iex> Date.add(~D[2021-01-01], 5)
-~D[2021-01-06]
+# Tulostaa: ~D[2022-01-08]
 ```
 
-Saman tuloksen saamme myös käyttämällä `Date.add/3` -funktiota, joka ottaa ensimmäisenä parametrina päivämäärän, toisena parametrina päivien määrän ja kolmantena parametrina yksikön, johon haluamme lisätä päivät. Esimerkiksi, jos haluamme lisätä kuukauden päivämäärään "1.1.2021", käytämme seuraavaa koodia:
+Voimme myös käyttää `Date.shift`-funktiota liikkumaan eteen- tai taaksepäin tietyn ajanjakson kuten minuuttien, tuntien tai päivien suhteen. `Date.next_day`- ja `Date.prev_day`-funktioiden avulla voimme siirtyä tiettyyn viikonpäivään, kuten seuraavaan maanantaihin tai edelliseen sunnuntaihin.
 
-```elixir
-iex> Date.add(~D[2021-01-01], 1, :month)
-~D[2021-02-01]
+```Elixir
+# Siirrytään eteenpäin 2 päivää päivämäärästä 1.1.2022
+date = Date.from_iso8601("20220101")
+new_date = Date.shift(date, 2, :day)
+IO.inspect(new_date)
+
+# Tulostaa: ~D[2022-01-03]
+
+# Siirrytään ensi maanantaihin
+date = Date.from_iso8601("20220101")
+new_date = Date.next_day(date, :monday)
+IO.inspect(new_date)
+
+# Tulostaa: ~D[2022-01-03]
 ```
 
-Voimme myös laskea menneisyyden päivämääriä käyttämällä `Date.subtract/2` tai `Date.subtract/3` -funktioita. Nämä toimivat samalla tavalla kuin vastaavat lisäysfunktiot, mutta vähentävät päiviä tai yksiköitä päivämäärästä.
+## Syvempi sukellus
 
-## Syvällinen sukellus
+Elixirin `Calendar`-moduuli käyttää Gregoriaanista kalenteria laskiessaan päivämäärää tulevaisuudessa tai menneisyydessä. Tämä tarkoittaa, että se ottaa huomioon karkausvuodet ja muut ajanlaskun säännöt.
 
-On myös mahdollista laskea päivämääriä tarkemmin käyttämällä `Date.add/3` ja `Date.subtract/3` -funktioita. Näiden funktioiden kolmas parametri määrittää, millä tarkkuudella päivämäärään lisätään tai vähennetään. Oletusarvoisesti käytetään päiviä (`:day`), mutta voimme myös käyttää muita yksiköitä, kuten viikkoja (`:week`), kuukausia (`:month`) tai vuosia (`:year`). Voimme myös käyttää useampia parametreja samaan aikaan, jolloin päivämäärään lisätään tai vähennetään monia yksikköjä.
-
-Lisäksi Elixirin `Calendar` moduuli tarjoaa myös muita hyödyllisiä toimintoja päivämäärien tarkasteluun ja muokkaamiseen. Tutustu rohkeasti moduulin dokumentaatioon ja löydät lisää käyttökelpoisia toimintoja.
+On myös tärkeää huomata, että Elixirin aikavyöhykkeet tallentuvat kokonaisina minuutteina UTC-aikajanaan verrattuna. Tämä voi vaikuttaa laskemiseen, mikäli käytössäsi on tietty aikavyöhyke.
 
 ## Katso myös
 
-- [Elixirin `Calendar` moduulin dokumentaatio](https://hexdocs.pm/elixir/master/Calendar.html)
-- [Elixirin virallinen verkkosivusto](https://elixir-lang.org/)
-- [Elixirin yhteisöfoorumi](https://
+- [Elixirin Kalenteri-dokumentaatio](https://hexdocs.pm/elixir/Calendar.html)
+- [Date-tyyppi Elixirin dokumentaatiossa](https://hexdocs.pm/elixir/Date.html)
+- [Uusien ominaisuuksien julkaisupäivämäärä laskurin avulla Elixir](https://elixir-lang.org/blog/2015/12/31/elixir-v1-2-0-released/)

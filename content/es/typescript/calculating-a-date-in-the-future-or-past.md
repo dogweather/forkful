@@ -1,45 +1,56 @@
 ---
-title:    "TypeScript: Calculando una fecha en el futuro o en el pasado"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/calculating-a-date-in-the-future-or-past.md"
+title:                "TypeScript: Calculando una fecha en el futuro o en el pasado."
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué calcular una fecha en el futuro o pasado en TypeScript
+## Por qué
 
-Muchas veces, al trabajar en proyectos de programación, nos encontramos con la necesidad de calcular una fecha en el futuro o pasado. Esto puede ser útil para implementar funcionalidades relacionadas con fechas en nuestras aplicaciones o para realizar operaciones con fechas en cálculos matemáticos. En este artículo, vamos a ver cómo hacer esto utilizando TypeScript.
+Calcular fechas en el futuro o pasado puede ser extremadamente útil en programación ya que permite automatizar tareas que dependen de fechas específicas. También es útil en situaciones donde se necesita predecir eventos futuros o hacer cálculos temporales.
 
 ## Cómo hacerlo
-Para calcular una fecha en el futuro o pasado en TypeScript, primero necesitaremos importar la librería `Date` de JavaScript. Luego, vamos a crear una nueva instancia de esta clase con la fecha actual y utilizaremos sus métodos `setDate()` y `getDate()` para realizar los cálculos necesarios. Veamos un ejemplo de esto:
 
-```TypeScript
-// Importamos la librería Date
-import { Date } from 'Date';
+La manera más sencilla de calcular una fecha en TypeScript es utilizando la clase `Date`. Esta clase nos permite crear objetos que representan una fecha y realizar operaciones con ellas. A continuación, se muestra un ejemplo de cómo obtener la fecha actual y sumarle un día:
 
-// Creamos una instancia con la fecha actual
+```
+TypeScript
 let fechaActual = new Date();
-
-// Sumamos 7 días a la fecha actual
-fechaActual.setDate(fechaActual.getDate() + 7);
-console.log(fechaActual); // Output: 2021-09-09T03:00:00.000Z
+fechaActual.setDate(fechaActual.getDate() + 1);
+console.log(fechaActual); // salida: Wed Nov 04 2020 15:54:41 GMT-0300 (hora del Pacífico de Sudamérica)
 ```
 
-En este ejemplo, hemos sumado 7 días a la fecha actual y utilizando el método `getDate()` para obtener el día del mes en formato numérico. Si queremos restar días o incluso meses o años, podemos utilizar los métodos `setDate()`, `setMonth()` y `setFullYear()` respectivamente. Ahora, veamos un ejemplo de cómo calcular una fecha en el pasado:
+En este ejemplo, primero creamos un objeto `Date` que representa la fecha actual y luego utilizamos el método `setDate()` para sumar un día a la fecha. Finalmente, imprimimos la nueva fecha en la consola.
 
-```TypeScript
-// Restamos 1 mes a la fecha actual
-fechaActual.setMonth(fechaActual.getMonth() - 1);
-console.log(fechaActual); // Output: 2021-07-09T03:00:00.000Z
+También podemos calcular fechas en el pasado utilizando valores negativos en los argumentos del método `setDate()`. Por ejemplo, para restar un año a la fecha actual:
+
+```
+TypeScript
+let fechaActual = new Date();
+fechaActual.setDate(fechaActual.getDate() - 365);
+console.log(fechaActual); // salida: Tue Oct 22 2019 15:59:47 GMT-0300 (hora del Pacífico de Sudamérica)
 ```
 
-Como podemos ver, utilizando los métodos mencionados podemos realizar cálculos con fechas en el futuro o pasado de una manera sencilla.
+Otra forma de calcular fechas en TypeScript es utilizando la librería `moment.js`. Esta librería nos brinda métodos más intuitivos para realizar operaciones con fechas. A continuación, se muestra un ejemplo utilizando `moment.js` para sumar un mes a la fecha actual:
 
-## Profundizando en el cálculo de fechas
-Para profundizar en el tema, es importante tener en cuenta algunos aspectos específicos de la clase `Date` en TypeScript. Por ejemplo, el mes en esta clase comienza en 0, por lo que para sumar o restar meses tendremos que tenerlo en cuenta y sumar o restar 1 al valor que queramos modificar. Además, la clase `Date` también tiene métodos para obtener el día de la semana en formato numérico (0 para domingo, 1 para lunes, etc.) y para obtener la hora, minutos y segundos de una fecha.
+```
+TypeScript
+import * as moment from 'moment'
+let fechaActual = moment();
+fechaActual.add(1, 'months');
+console.log(fechaActual.toDate()); // salida: Thu Dec 03 2020 16:07:58 GMT-0300 (hora del Pacífico de Sudamérica)
+```
 
-Otra opción para calcular fechas en el futuro o pasado es utilizar librerías externas como Moment.js, que nos brindan una variedad de métodos y funciones para trabajar con fechas de manera más fácil y precisa. Sin embargo, la clase `Date` de JavaScript y los métodos mencionados anteriormente suelen ser suficientes para la mayoría de los casos.
+## Profundizando
+
+Al calcular fechas en el futuro o pasado, es importante tener en cuenta que algunas fechas pueden ser "saltadas" o "duplicadas" debido a cambios en el horario de verano, por ejemplo. Por lo tanto, es recomendable utilizar métodos que tengan en cuenta estos cambios, como `moment.utc()` de la librería `moment.js`.
+
+Además, es importante tener en cuenta que las fechas en JavaScript comienzan en enero con el valor 0, por lo que febrero sería el mes 1 y diciembre el mes 11.
 
 ## Ver también
-- [Documentación oficial de la clase `Date` en TypeScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
+
+- [Documentación de la clase Date en TypeScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date)
+- [Documentación de moment.js en TypeScript](https://momentjs.com/docs/)
+- [Cómo manejar fechas y horarios en TypeScript](https://www.digitalocean.com/community/tutorials/manejo-de-fechas-y-horas-en-typescript-es)

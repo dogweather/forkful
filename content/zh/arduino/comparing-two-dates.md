@@ -1,51 +1,49 @@
 ---
-title:    "Arduino: 比较两个日期"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/comparing-two-dates.md"
+title:                "Arduino: 比较两个日期"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要比较两个日期
+为什么：在编程中，比较两个日期是非常常见的。它可以帮助我们判断事件发生的先后顺序，计算时间差等等。因此，学习如何比较两个日期是非常必要的。
 
-在Arduino编程中，经常会遇到需要比较两个日期的情况。比如检查一个事件是否在特定日期范围内发生，或者比较两个数据点的时间戳。比较日期可以帮助我们更有效地处理数据和控制系统的运行，因此具有重要的意义。
-
-## 如何进行比较
-
-在Arduino中，我们可以使用`millis()`函数来获取自系统启动以来经过的毫秒数，从而实现日期的比较。下面是一个简单的例子，比较两个日期是否相同：
+怎么做：要比较两个日期，我们需要使用Arduino中的日期库。首先，我们需要声明两个日期对象，并将它们分别赋值为要比较的日期。然后，我们可以使用比较运算符来比较这两个日期对象。例如：
 
 ```Arduino
-// 设置要比较的日期
-int year1 = 2021;
-int month1 = 3;
-int day1 = 18;
-int year2 = 2021;
-int month2 = 3;
-int day2 = 18;
+#include <DateTime.h>
 
-// 使用millis()函数获取当前时间
-long now = millis();
+DateTime date1 = DateTime(2021, 5, 10); //第一个日期对象
+DateTime date2 = DateTime(2021, 5, 12); //第二个日期对象
 
-// 计算日期对应的毫秒数
-long target1 = (((year1 - 1970) * 365 + (year1 - 1969) / 4) * 24 * 60 * 60 * 1000) + ((month1 - 1 + (day1 - 1) * 31) * 24 * 60 * 60 * 1000);
-long target2 = (((year2 - 1970) * 365 + (year2 - 1969) / 4) * 24 * 60 * 60 * 1000) + ((month2 - 1 + (day2 - 1) * 31) * 24 * 60 * 60 * 1000);
+if (date1 < date2) { //使用小于运算符比较两个日期
+  Serial.println("Date1 is before Date2.");
 
-// 比较日期是否相同
-if (target1 == target2) {
-  Serial.println("日期相同！");
-} else {
-  Serial.println("日期不同！");
+} else if (date1 > date2) { //使用大于运算符比较两个日期
+  Serial.println("Date1 is after Date2.");
+
+} else { //如果两个日期相同
+  Serial.println("Date1 is equal to Date2.");
 }
+
 ```
 
-运行这段代码，如果两个日期相同，会输出“日期相同！”的消息。
+输出：Date1 is before Date2.
 
-## 深入了解比较日期
+这里我们使用了DateTime库中的小于运算符“<”和大于运算符“>”来比较两个日期。同样，我们也可以使用等于运算符“==”来判断两个日期是否相同。除此之外，DateTime库还提供了其他一些方法来比较日期，比如比较年份、月份、日期等等。具体使用方法可以参考官方文档。
 
-在Arduino中，日期实际上是以毫秒数来表示的。使用`millis()`函数可以获取当前时间的毫秒数，而使用一些数学运算可以将日期转换成相应的毫秒数。因此，在比较两个日期时，实际上是在比较它们对应的毫秒数是否相等。此外，根据1年等于365天的假设，我们可以通过一些数学公式来计算出日期对应的毫秒数。
+深入了解：在Arduino中，日期是以Unix时间戳的形式表示的，它代表了从1970年1月1日起经过的秒数。因此，在比较日期时，本质上是在比较这两个日期对应的时间戳。同时，我们也可以通过日期对象的toString()方法来将日期格式化为特定的字符串格式，以便于输出和比较。
+
+另外，如果需要对日期进行加减运算，我们可以使用DateTime库中的add()和subtract()方法。比如，将某个日期加上一定的天数，或者计算两个日期之间相差的天数等等。
+
+最后，需要注意的是，Arduino的日期库并不支持闰年的判断，因此在使用时需要自行进行处理。
+
+参考链接：https://www.arduino.cc/en/Reference/DateTime
+
+参考代码：https://github.com/PaulStoffregen/DateTime
 
 ## 参考链接
 
-- [Arduino官方文档 - millis()函数](https://www.arduino.cc/reference/zh/language/functions/time/millis/)
-- [Wikipedia - Epoch (reference date)](https://en.wikipedia.org/wiki/Epoch_(reference_date))
-- [Stack Overflow - Arduino: Comparing two dates](https://stackoverflow.com/questions/49953155/arduino-comparing-two-dates)
+1. 官方文档：https://www.arduino.cc/en/Reference/DateTime
+2. 代码示例：https://github.com/PaulStoffregen/DateTime

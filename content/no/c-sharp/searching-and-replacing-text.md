@@ -1,56 +1,45 @@
 ---
-title:    "C#: Søking og erstatning av tekst"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/searching-and-replacing-text.md"
+title:                "C#: Søking og bytte av tekst"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-#### Hvorfor
+## Hvorfor
 
-Å søke og erstatte tekst er en vanlig oppgave for de som jobber med programmering. Det kan være en enkel og effektiv måte å endre tekst i store mengder med kode på, og kan spare deg for mye tid og frustrasjon. Derfor er det viktig å ha gode kunnskaper om hvordan man kan gjøre dette raskt og effektivt med C#.
+Å søke og erstatte tekst er en viktig del av enhver programmeringsoppgave. Enten du skal endre en enkelt linje i en fil eller erstatte tekst i flere filer samtidig, er det en effektiv måte å spare tid og sikre nøyaktighet i koden din.
 
-#### Hvordan
+## Slik gjør du det
 
-For å søke og erstatte tekst i C#, kan du bruke metoden "Replace" fra String-klassen. Denne metoden tar inn to parametere, tekst som skal erstattes, og ny tekst som skal plasseres. Her er et eksempel på hvordan du kan bruke Replace i en Console-applikasjon:
+Følg disse enkle trinnene for å søke og erstatte tekst i C#:
 
-```C#
-// Definerer en streng med tekst som vi vil endre
-string tekst = "Hei, jeg heter John og jeg elsker å programmere.";
-
-// Bruker Replace-metoden for å erstatte "John" med "Jane"
-string nyTekst = tekst.Replace("John", "Jane");
-
-// Skriver ut den nye teksten
-Console.WriteLine(nyTekst);
-
-// Output: Hei, jeg heter Jane og jeg elsker å programmere.
-```
-
-Som du kan se, er den originale teksten nå endret til "Jane" i stedet for "John".
-
-#### Deep Dive
-
-I tillegg til å kunne erstatte tekst, er det også mulig å bruke Replace-metoden til å fjerne tekst helt. Dette kan gjøres ved å sende inn en tom streng som erstattning. Her er et eksempel på hvordan du kan fjerne all tekst som inneholder tall fra en streng:
+1. Åpne Visual Studio og åpne prosjektet du ønsker å endre tekst i.
+2. Gå til "Edit" -menyen og velg "Find and Replace" (Søk og erstatt).
+3. I søkefeltet, skriv inn teksten du ønsker å erstatte.
+4. I erstatningsfeltet, skriv inn den nye teksten du ønsker å erstatte den gamle teksten med.
+5. Velg om du vil søke i hele prosjektet, gjeldende dokument eller en gruppe dokumenter.
+6. Klikk på "Replace" (Erstatt) for å erstatte teksten én gang, eller "Replace All" (Erstatt alt) for å erstatte all forekomst av teksten.
+7. Gjenta trinnene for å søke og erstatte mer tekst om nødvendig.
 
 ```C#
-// Definerer en streng med tall og tekst
-string tekst = "Det var en gang 123 en katt som hoppet over 456 månen.";
+// Eksempel på søke og erstatte tekst:
+string originalTekst = "Hei, verden!";
+string nyTekst = "Hallo, verden!";
+string endretTekst = originalTekst.Replace("Hei", "Hallo");
 
-// Bruker Replace til å fjerne tallene
-string nyTekst = tekst.Replace("123", "").Replace("456", "");
-
-// Skriver ut den nye teksten
-Console.WriteLine(nyTekst);
-
-// Output: Det var en gang  en katt som hoppet over  månen.
+Console.WriteLine(endretTekst);
+// Output: Hallo, verden!
 ```
 
-Som du kan se, har alle tallene blitt fjernet fra teksten.
+## Dykk dypere
 
-Det er også viktig å merke seg at Replace-metoden er casesensitiv, noe som betyr at store og små bokstaver vil bli behandlet forskjellig. Det er derfor lurt å dobbeltsjekke at du har riktig casing når du bruker Replace-metoden.
+Når du skal gjøre mer avanserte søk og erstatte-operasjoner, kan det være nyttig å bruke regulære uttrykk. Dette gjør det mulig å finne og erstatte tekst basert på spesifikke mønstre og ikke bare en enkelt streng.
 
-#### Se også
+For å bruke regulære uttrykk i C#, må du importere System.Text.RegularExpressions-namespace og bruke klassen Regex. Deretter kan du bruke metoder som Match og Replace for å finne og erstatte tekst basert på mønstre.
 
-- [C# Dokumentasjon for Replace-metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
-- [Tutorial: Søke og erstatte tekst i C#](https://www.tutorialspoint.com/csharp/manage_string_replace.htm)
+## Se også
+
+- [RegEx Tutorial – En guide til regulære uttrykk i C#](https://www.tutorialspoint.com/csharp/csharp_regular_expressions.htm)
+- [Søke og erstatte tekst i Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/quickstart-search-and-replace?view=vs-2019)

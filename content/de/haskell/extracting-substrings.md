@@ -1,67 +1,60 @@
 ---
-title:    "Haskell: Unterstrings extrahieren"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/extracting-substrings.md"
+title:                "Haskell: Extrahieren von Unterstrings"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Programmierung werden oft Zeichenketten (Strings) verarbeitet, die aus mehreren Wörtern oder Buchstaben bestehen. Manchmal möchten wir jedoch nur einen bestimmten Teil der Zeichenkette extrahieren und weiterverwenden. Dies ist der grundlegende Zweck einer Substring-Extraktion.
+Die Extraktion von Teilstrings ist eine nützliche Fähigkeit für jeden Programmierer, der mit Texten arbeitet. Mit dieser Technik können wir schnell und präzise bestimmte Teilbereiche von Zeichenketten extrahieren und weiterverarbeiten. In diesem Blog-Post werden wir uns ansehen, wie man diese Aufgabe in Haskell lösen kann.
 
-## Wie geht das?
+## Wie geht man vor
 
-Um Substrings in Haskell zu extrahieren, gibt es eine Funktion namens `take` und `drop`, die Teilstrings aus einer gegebenen Zeichenkette extrahiert. Die `take`-Funktion nimmt als Parameter die Anzahl der gewünschten Zeichen an und die `drop`-Funktion nimmt die Anzahl der am Anfang zu ignorierenden Zeichen an.
-
-```Haskell
--- Beispiel für take
-take 3 "Hallo Welt" -- gibt "Hal" zurück
-
--- Beispiel für drop
-drop 5 "Hallo Welt" -- gibt " Welt" zurück
-```
-
-Zusätzlich gibt es noch die Funktion `substring`, die einen Startindex und eine Länge als Parameter nimmt.
+Das `Data.Text` Modul bietet uns einige nützliche Funktionen für die Manipulation von Texten. Eine davon ist die `take` Funktion, die es uns ermöglicht, eine bestimmte Anzahl von Zeichen aus einem Text zu extrahieren. Schauen wir uns zunächst ein Beispiel an:
 
 ```Haskell
--- Beispiel für substring
-substring 3 5 "Hallo Welt" -- gibt "lo We" zurück
+import Data.Text
+
+myText = pack "Dies ist ein Beispieltext."
+extractedText = take 4 myText
 ```
 
-Für fortgeschrittene Anwendungen gibt es auch die Möglichkeit, reguläre Ausdrücke zu verwenden, um Substrings zu extrahieren. Hierfür steht die Funktion `=~` aus dem Paket `Text.Regex.Posix` zur Verfügung.
+Bei der Kompilierung sehen wir nun, dass der Wert für `extractedText` "Dies" lautet. Wir haben also erfolgreich die ersten 4 Zeichen aus unserem Text extrahiert. Aber was ist, wenn wir nicht nur die ersten 4 Zeichen, sondern die ersten 6 extrahieren wollen? Hier kommt die `take` Funktion ins Spiel, die uns die Länge des gewünschten Teiltexts angibt.
+
+Wie können wir jedoch die Zeichen an einem bestimmten Index extrahieren? Hier kommt die `index` Funktion ins Spiel. Schauen wir uns ein Beispiel an:
 
 ```Haskell
-import Text.Regex.Posix -- Paket importieren
-
--- Beispiel für =~
-"Hello World" =~ "[A-Z][a-z]+" :: String -- gibt "Hello" zurück
+myText = pack "Dies ist ein Beispieltext."
+extractedChar = index myText 5
 ```
 
-## Tiefergehende Informationen
+In diesem Fall würden wir das Zeichen "i" extrahieren, das an der 5. Stelle des Textes steht. Mit diesen zwei Funktionen haben wir bereits eine solide Grundlage, um Teilstrings zu extrahieren.
 
-Die Funktionen `take`, `drop` und `substring` sind Teil der Standardbibliothek von Haskell und können daher in jedem Programm verwendet werden. Sie sind jedoch nicht sehr flexibel und bieten keine Möglichkeit, zurückzugeben, welcher Teil der Zeichenkette tatsächlich extrahiert wurde.
+## Tiefere Einblicke
 
-Für diese anspruchsvolleren Anforderungen gibt es das Paket `text` mit der Funktion `splitAt`, die im Gegensatz zu `take` und `drop` sowohl den Teilstring als auch den Rest der ursprünglichen Zeichenkette zurückgibt.
+Die `take` und `index` Funktionen sind sehr nützlich, aber wir können noch weiter in die Tiefe gehen. Wenn wir zum Beispiel jemanden haben, der unseren Text überprüfen und mitteilen soll, ob ein bestimmter Teiltext darin enthalten ist, können wir die `isInfixOf` Funktion verwendet werden. Schauen wir uns ein Beispiel an:
 
 ```Haskell
-import Data.Text -- Paket importieren
-
--- Beispiel für splitAt
-splitAt 3 "Hallo Welt" -- gibt ("Hal", "lo Welt") zurück
+myText = pack "Dies ist ein Beispieltext."
+checkText = "ei"
+result = isInfixOf checkText myText
 ```
 
-Es ist auch möglich, mit Mustern zu arbeiten und Teilstrings basierend auf diesen zu extrahieren. Dafür ist das Paket `regex-base` mit der Funktion `splitRegex` geeignet.
+Bei der Kompilierung sehen wir, dass der Wert für `result` `True` lautet, da der Teiltext "ei" im Text enthalten ist.
+
+Das `Data.Text` Modul bietet uns auch die `breakOn` Funktion, mit der wir eine Zeichenkette in zwei Teilstrings aufteilen können. Schauen wir uns ein Beispiel an:
 
 ```Haskell
-import Text.Regex.Base -- Paket importieren
-
--- Beispiel für splitRegex
-splitRegex (mkRegex "a+") "abcadefahij" -- gibt ["", "bc", "defhij"] zurück
+myText = pack "Dies ist ein Beispieltext."
+slicedText = breakOn "ist" myText
 ```
+
+Wir erhalten nun als Ergebnis ein Tupel, in dem der erste Teilstring "Dies " und der zweite Teilstring "ist ein Beispieltext." sind.
 
 ## Siehe auch
 
-- Offizielle Dokumentation über `substring`: https://www.haskell.org/hoogle/?hoogle=substring
-- Paket `text` auf Hackage: https://hackage.haskell.org/package/text
-- Paket `regex-base` auf Hackage: https://hackage.haskell.org/package/regex-base
+- [Haskell-Dokumentation zum Data.Text-Modul] (https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+- [Haskell-Grundlagen für Anfänger] (https://www.haskell.org/tutorial/)

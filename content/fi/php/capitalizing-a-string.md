@@ -1,53 +1,47 @@
 ---
-title:    "PHP: Merkkijonon suurtaaminen"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/capitalizing-a-string.md"
+title:                "PHP: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää PHP:ssa merkkijonon suurta kirjainta
+## Miksi?
 
-On monia syitä, miksi haluat ehkä muuttaa merkkijonon ensimmäisen kirjaimen suureksi, esimerkiksi jos haluat muotoilla käyttäjän antaman nimen oikein tai jos haluat korostaa tiettyjä osia merkkijonosta.
+Miksi joku haluaisi muuttaa merkkijonon ensimmäisen kirjaimen isoksi? Tällainen toiminto voi olla hyödyllinen esimerkiksi tietokantaohjelmoinnissa tai käyttäjän antamien tietojen validoinnissa.
 
-## Miten tehdä se PHP:llä
+## Kuinka?
 
-Merkkijonon ensimmäisen kirjaimen suuren kirjaimen muuttaminen on helppoa PHP:llä. Voit käyttää `ucfirst()` -funktiota, joka muuttaa ensimmäisen kirjaimen suureksi ja palauttaa uuden merkkijonon. Alla on esimerkki koodista, joka käyttää tätä funktiota.
-
-```PHP
-<?php
-$string = "tämä on esimerkkilause.";
-echo ucfirst($string);
-```
-
-Tulostus:
+Haluamme käyttää PHP-komentoa "ucfirst" muuttaaksemme merkkijonon ensimmäisen kirjaimen isoksi. Tässä esimerkki:
 
 ```PHP
-Tämä on esimerkkilause.
+$input = "moi maailma!";
+echo ucfirst($input);
 ```
 
-Voit myös muuttaa kaikki merkkijonon kirjaimet suuriksi käyttämällä `strtoupper()` -funktiota. Katso esimerkki alla.
+Tulos olisi "Moi maailma!". Voit myös käyttää samaa toimintoa merkkijonon keskellä, esimerkiksi:
 
 ```PHP
-<?php
-$string = "tämä on esimerkkilause.";
-echo strtoupper($string);
+$input = "hyvää iltaa!";
+echo ucfirst($input);
 ```
 
-Tulostus:
+Tulos olisi "Hyvää iltaa!".
+
+## Syvemmällä tasolla
+
+"ucfirst" toiminto ei ole rajoitettu vain ensimmäisen kirjaimen muuttamiseen, vaan voit myös muuttaa merkkijonon toisen tai vaikka viimeisen kirjaimen isoksi käyttämällä toista PHP-komentoa, "ucwords". Esimerkiksi:
 
 ```PHP
-TÄMÄ ON ESIMERKKILAUSE.
+$input = "tämä on esimerkki!";
+echo ucwords($input);
 ```
 
-## Syvemmälle merkkijonon suurten kirjainten taakse
-
-Kuten näette, merkkijonon ensimmäisen kirjaimen suuren kirjaimen muuttaminen PHP:ssa on melko helppoa. Voit myös käyttää muita funktioita, kuten `lcfirst()` muuttaaksesi ensimmäisen kirjaimen pieneksi tai `strtolower()` muuttaaksesi kaikki kirjaimet pieniksi. On myös mahdollista muuttaa tiettyjä kirjaimia suuriksi tai pieniksi käyttämällä `str_replace()` -funktiota.
-
-Katso lisätietoja PHP:n virallisesta dokumentaatiosta merkkijonojen muokkaamisesta.
+Tulos olisi "Tämä On Esimerkki!". Tämän toiminnon avulla voit helposti muokata merkkijonoja haluamallasi tavalla.
 
 ## Katso myös
 
-- [PHP:n virallinen dokumentaatio merkkijonojen muokkaamisesta](https://www.php.net/manual/en/ref.strings.php)
-- [W3Schoolsin tutoriaali merkkijonojen muokkaamisesta PHP:ssa](https://www.w3schools.com/php/php_string.asp)
-- [Miten muokata merkkijonoja PHP:ssa - ohjevideo](https://www.youtube.com/watch?v=ul2njh7kqBM)
+- [PHP:n virallinen dokumentaatio](https://www.php.net/manual/en/function.ucfirst.php)
+- [PHP.net:n esimerkit](https://www.php.net/manual/en/function.ucfirst.php#example-454)
+- [W3Schoolsin opas](https://www.w3schools.com/php/func_string_ucfirst.asp)

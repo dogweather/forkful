@@ -1,63 +1,43 @@
 ---
-title:    "TypeScript: Kapitalizacja ciągu znaków"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/capitalizing-a-string.md"
+title:                "TypeScript: Zmiana pierwszej litery na wielką w ciągu znaków"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Witajcie, programiści! Czy zdarzyło Wam się kiedyś, że potrzebowaliście zmienić format tekstu i zastanawialiście się jak to zrobić w TypeScript? Jeden z najczęściej wykonywanych zadań to kapitalizacja tekstu, czyli zmiana wszystkich liter na wielkie.
+Jeśli jesteś programistą lub uczysz się TypeScript, na pewno spotkasz się z sytuacją, w której będziesz musiał zmienić wielkość liter w jakimś tekście. W tym artykule dowiesz się, dlaczego jest to ważne i jak możesz to zrobić w TypeScript.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-W tym przykładzie pokażemy Wam, jak łatwo i szybko zmienić wielkość liter w ciągu znaków w TypeScript. Wykorzystamy prostą metodę dostępną w większości języków programowania. Sprawdźmy!
+Sprawdzanie, czy jesteś programistą, często wiąże się z pisaniem kodu, który manipuluje tekstem. Ta umiejętność jest szczególnie przydatna, gdy na przykład otrzymujesz dane od użytkownika i musisz upewnić się, że są one w odpowiednim formacie.
 
-```TypeScript
-let text = "cześć, jestem tekstem"
-let uppercaseText = text.toUpperCase();
-console.log(uppercaseText);
-```
-
-### Wynik:
-
-```TypeScript 
-CZEŚĆ, JESTEM TEKSTEM
-```
-
-Jak widać, wystarczy użyć funkcji `toUpperCase()` na zmiennej tekstowej i wszystkie litery zostaną zmienione na wielkie. Proste, prawda? Dzięki temu funkcji możemy też zmienić wielkość liter w całym zdaniu lub w tekście z wczytanej zmiennej.
-
-## Głębsza analiza
-
-Jeśli chcesz się dowiedzieć więcej o kapitalizacji tekstu w TypeScript, możesz skorzystać z dodatkowych opcji, takich jak `charAt()` i `substr()`, aby uzyskać więcej kontroli nad tekstem. Jest to szczególnie przydatne, gdy potrzebujemy zmieniać wielkość liter w zależności od określonego warunku.
+Do zmienienia wielkości liter w tekście w TypeScript możesz użyć metody `toUpperCase()`. Przykładowy kod wygląda następująco:
 
 ```TypeScript
-function capitalizeFirstLetter(text: string) {
-    return text.charAt(0).toUpperCase() + text.substr(1);
-}
-
-let text = "cześć, jestem tekstem"
-
-console.log(capitalizeFirstLetter(text));
+let tekst = "witaj świecie!";
+console.log(tekst.toUpperCase());
 ```
 
-### Wynik:
+Po uruchomieniu tego kodu, powinieneś zobaczyć następujący wynik w konsoli:
 
-```TypeScript
-Cześć, jestem tekstem
+```
+WITAJ ŚWIECIE!
 ```
 
-Funkcja `capitalizeFirstLetter()` stworzona w tym przykładzie zamienia tylko pierwszą literę na wielką, a pozostałe pozostają niezmienione. Dzięki temu możemy uzyskać bardziej precyzyjną kapitalizację i uniknąć ewentualnych błędów.
+## Deep Dive
+
+To, co właśnie zobaczyłeś, jest tak naprawdę wywołaniem metody `toUpperCase()`. Jest to wbudowana metoda w JavaScript, z której możemy również skorzystać w TypeScript, ponieważ TypeScript jest nadzbiorem języka JavaScript.
+
+Jedną z cech tej metody jest to, że zwraca ona nowy ciąg tekstowy, a nie modyfikuje oryginalnego. Oznacza to, że możesz przydzielić zmienną z wynikowym tekstem do nowej zmiennej i używać jej w innych częściach kodu.
+
+Niektóre inne przydatne metody do zmiany wielkości liter to `toLowerCase()` i `toLocaleUpperCase()`. Pierwsza z nich zamienia wszystkie litery na małe, a druga uwzględnia lokalizację i zwraca wielkość liter odpowiadającą ustawieniom językowym użytkownika.
 
 ## Zobacz również
 
-Teraz już wiesz, jak łatwo zmienić wielkość liter w TypeScript! Spróbuj tego samodzielnie w swoich projektach. Jeśli chcesz się dowiedzieć więcej o pracy z tekstem w TypeScript, oto kilka przydatnych linków:
-
-- [Metody dostępne w typie String w TypeScript](https://www.typescriptlang.org/docs/handbook/2/strings.html)
-- [Tutorial na temat manipulacji tekstem w TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)
-- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [Funkcje dostępne w języku JavaScript do manipulacji tekstem](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String)
-
-Dziękujemy za przeczytanie naszego artykułu! Mam nadzieję, że było ono pomocne. Do zobaczenia!
-# Zobacz również
+- [Dokumentacja TypeScript - Metody string](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html)
+- [W3Schools - Metody string w TypeScript](https://www.w3schools.com/js/js_string_methods.asp)
+- [Mozilla Developer Network - Metody string w JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype)

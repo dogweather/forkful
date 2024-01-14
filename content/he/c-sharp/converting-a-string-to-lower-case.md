@@ -1,34 +1,43 @@
 ---
-title:    "C#: ממירים מחרוזת לאותיות קטנות"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/converting-a-string-to-lower-case.md"
+title:                "C#: המרת מחרוזת לאותיות קטנות"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-למה: רק משפט או שניים המסביר שלמהיטמן לבצע תבנית ההמרה של מחרוזת לאותיות קטנות.
+## מדוע
 
-המרת מחרוזת לאותיות קטנות היא תהליך חשוב בתכנות, שניתן להשתמש בו כדי לאחסן את המידע בפורמט אחיד ולאפשר השוואה נכונה של מחרוזות. בכתבה זו, אנו ניתן את הבסיס למה ההמרה של מחרוזת לאותיות קטנות חשובה וכיצד ניתן לבצע אותה בקלות בשפת תכנות C#.
+למה צריך להמיר מחרוזת לאותיות קטנות?
 
-## היא איך ל
-כיצד ל: דוגמאות קוד ופלט דוגמה לתוך גושי קוד "```C# ...```". 
+## איך לבצע את התהליך
 
-להמיר מחרוזת לאותיות קטנות ישנן שתי אפשרויות פשוטות בשפת תכנות C#: שימוש בפונקציה ToLower או שימוש במתודה ToLower. תנו קוד פשוט למשתנה string וכיצד תוכלו להשתמש בפונקציה או במתודה כדי להמיר את המחרוזת לאותיות קטנות.
+בכדי להמיר מחרוזת לאותיות קטנות בשפת סי שארפ, ניתן להשתמש בפעולת הפילוט המובנית ToString המאפשרת המרת נתונים לסוגים שונים. כדי להמיר מחרוזת לאותיות קטנות, נא להשתמש בפעולת הממשק ToLower הקיימת במחלקת String. נוכל להשתמש גם בפעולה ToLowerInvariant להמרת האותיות לתחתית מינוחית.
 
-```
-string myString = "THIS IS A STRING";
+```C#
+string myString = "HELLO WORLD";
+string newString = myString.ToLower();
 
-// Using the ToLower function:
-string lowerString = myString.ToLower();
-
-// Using the ToLower method:
-string lowerString = myString.ToLower();
+Console.WriteLine(newString); // Output: hello world
 ```
 
-בשתי המקרים, הפלט יהיה "this is a string" - המחרוזת המקורית באותיות קטנות. זה יכול להיות שימושי במיוחד בהשוואות, כאשר ברצוננו לוודא ששתי מחרוזות זהות, אלא שהנהיגה הנוכה לאותיות קטנות או הנוכויות.
+## לחקור עומק
 
-## Deep Dive
-יצירת חומר לימוד נישא אמש יעשה אם מ'תתן א ...GeeksforGeeks זשהי,,םcom,to to
+מה אם ברצוננו להמיר רק את חלק מהמחרוזת לאותיות קטנות? במקרה כזה, ניתן להשתמש בפעולת Substring כדי לחלק את המחרוזת לחלקים ולהמיר רק את החלק הרלוונטי לאותיות קטנות.
 
-עמידות הדעת למי שמעוניין לדעת עוד על המרת מחרוזת לאותיות קטנות, ניתן לעטוף את המחרוזת בפקודה CultureInfo לפני ההמרה. זה רלוונטי במיוחד כאשר מתכנתים יוצרים אפליקציות מורכבות המשתמשות בשפ
+```C#
+string myString = "HELLO WORLD";
+
+string firstPart = myString.Substring(0, 5); // "HELLO"
+string secondPart = myString.Substring(5); // " WORLD"
+
+string newString = firstPart + secondPart.ToLower();
+Console.WriteLine(newString); // Output: Hello world
+```
+
+## ראה גם
+
+- מדריך לתחביר הבסיסי של סי שארפ (https://www.codecademy.com/learn/learn-c-sharp)
+- הממשק String במסמך הרשמי של מייקרוסופט (https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1)
+- דוגמאות ופתרונות לתרגילים בנושא מחרוזות ב-C# (https://www.tutorialspoint.com/csharp/csharp_strings.htm)

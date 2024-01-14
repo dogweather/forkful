@@ -1,44 +1,70 @@
 ---
-title:    "C: Radera tecken som matchar ett mönster"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/deleting-characters-matching-a-pattern.md"
+title:                "C: Ta bort tecken som matchar ett mönster."
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I C-programmering finns det många gånger behov av att manipulera textsträngar för att uppfylla specifika krav eller för att rensa upp data. Att radera tecken som matchar ett mönster är en vanlig uppgift som kan utföras för att effektivisera och förbättra programkoden.
+Det finns många tillfällen där man behöver ta bort vissa tecken från en sträng baserat på ett visst mönster. Det kan vara för att förbättra datakvaliteten, för att uppfylla specifika syntaxregler eller bara för att göra bearbetningen enklare.
 
 ## Hur man gör det
 
-En av de vanligaste funktionerna för att ta bort tecken som matchar ett mönster i C-programmering är `strtok()`. Denna funktion kan användas för att separera en textsträng vid ett specifikt tecken eller mönster. Här är ett exempel på hur man kan använda `strtok()` för att ta bort alla mellanslag i en textsträng:
+Det finns flera sätt att ta bort tecken från en sträng i C-programmering, men det mest effektiva sättet är att använda en enkel loop. Här är ett exempel på hur du kan implementera det:
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
-int main() {
-    char str[] = "Detta är en textsträng";
-    char *ptr;
-
-    /* Här kommer vår kod att ta bort mellanslagen */
-    ptr = strtok(str, " ");
-    while (ptr != NULL) {
-        printf("%s", ptr);
-        ptr = strtok(NULL, " ");
+// Funktion för att ta bort tecken utifrån ett visst mönster
+void removeChars(char *str, char *pattern){
+    // Loopa igenom alla tecken i strängen
+    for(int i = 0; str[i] != '\0'; i++){
+        // Kolla om tecknet matchar mönstret
+        for(int j = 0; pattern[j] != '\0'; j++){
+            // Om matchning hittas, ta bort tecknet
+            if(str[i] == pattern[j]){
+                int k = i;
+                while(str[k] != '\0'){
+                    str[k] = str[k+1];
+                    k++;
+                }
+                i--;
+            }
+        }
     }
-    /* Utmatning: Denna är en textsträng */
+}
+
+int main(){
+    // Teststräng och mönster
+    char str[] = "Hej hej hej";
+    char pattern[] = "ej";
+
+    // Anropa funktionen för att ta bort tecken
+    removeChars(str, pattern);
+
+    // Skriv ut den uppdaterade strängen
+    printf("%s", str);
     return 0;
 }
 ```
 
+Output:
+
+```
+H h h
+```
+
 ## Fördjupning
 
-För den som är intresserad av att lära sig mer om att ta bort tecken som matchar ett mönster i C-programmering, finns det flera andra funktioner och metoder som kan användas. Bland dessa kan nämnas `sscanf()`, `regex` och `memmove()`. Det är också viktigt att ha kunskap om teckenuppsättningar och hur man jobbar med dem i sin kod.
+En viktig sak att tänka på när du tar bort tecken från en sträng är att du måste hantera minnesallokering. Genom att ta bort tecken flyttas resten av tecknen i strängen och det kan orsaka minnesläckor om du inte hanterar det på rätt sätt.
 
-## Se också
+En annan intressant aspekt är hur du kan anpassa funktionen för att ta bort flera förekomster av ett mönster, inte bara en. Det finns också andra tillvägagångssätt, till exempel att använda inbyggda funktioner som `strncpy()` och `strcat()`.
 
-- [Wikipedia: C stringhantering](https://sv.wikipedia.org/wiki/C_stringhantering)
-- [Stränghantering i C](https://www.studytonight.com/c/string-handling-functions.php)
-- [C-programmering för nybörjare](https://www.codingunit.com/c-tutorial-for-beginners)
+## Se även
+
+- [C String Header File](https://www.programiz.com/c-programming/library-function/string.h)
+- [String Manipulation in C](https://www.geeksforgeeks.org/string-manipulation-in-c/#standardFunction)
+- [Efficient String Operations in C](https://www.ibm.com/developerworks/aix/tutorials/au-efficientstringoperations/index.html)

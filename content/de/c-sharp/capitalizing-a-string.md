@@ -1,26 +1,43 @@
 ---
-title:    "C#: Einen String großschreiben"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/capitalizing-a-string.md"
+title:                "C#: Großschreibung eines Strings"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum: Warum jemand daran interessiert sein könnte, einen String zu kapitalisieren.
+## Warum
 
-Wie: Eine Möglichkeit, einen String in C# zu kapitalisieren, ist die Verwendung der "ToUpper()" Methode. Hier ist ein Beispiel dafür:
+Warum sollte man sich die Mühe machen, einen String in C# zu capitalisieren? Nun, es gibt viele Situationen, in denen man einen String in einer bestimmten Formatierung benötigt, sei es für die Benutzeroberfläche einer Anwendung oder für bestimmte Datenbank-Abfragen. Durch die Großschreibung kann man auch die Lesbarkeit und Verständlichkeit von Strings verbessern.
 
-```C# 
-string text = "hallo welt!";
-string capitalizedText = text.ToUpper();
+## Wie
+
+Das Capitalizing eines Strings in C# ist relativ einfach. Man kann dafür entweder die char-Array Methode oder die String-Format Methode verwenden.
+
+### Char-Array Methode
+
 ```
-Die Variable "capitalizedText" enthält nun den Wert "HALLO WELT!". Dies ist nützlich, wenn man sicherstellen möchte, dass Eingaben vom Benutzer einheitlich in Großbuchstaben behandelt werden.
+string myString = "Hallo Welt";
+char[] charArray = myString.ToCharArray(); 
+charArray[0] = char.ToUpper(charArray[0]);
+myString = new string(charArray);
+Console.WriteLine(myString); //Output: "Hallo Welt"
+```
 
-Deep Dive: Wenn man genauer betrachtet, was bei der Verwendung der "ToUpper()" Methode passiert, sieht man, dass sie alle Buchstaben im String in ihre jeweiligen Großbuchstaben umwandelt. Dabei werden auch spezielle Zeichen wie Umlaute korrekt behandelt.
+### String-Format Methode
 
-Für Entwickler, die mehr Kontrolle über die Groß- und Kleinschreibung haben möchten, bietet C# auch die Möglichkeit, den "CultureInfo" zu definieren, der bei der Umwandlung von Buchstaben berücksichtigt wird. Dadurch kann man zum Beispiel sicherstellen, dass auch spezifische deutsche Sonderzeichen korrekt umgewandelt werden.
+```
+string myString = "Hallo Welt";
+myString = string.Format("{0}{1}", myString[0].ToString().ToUpper(), myString.Substring(1));
+Console.WriteLine(myString); //Output: "Hallo Welt"
+```
 
-See Also:
+## Deep Dive
 
-- MSDN-Dokumentation zur "ToUpper()" Methode (https://docs.microsoft.com/de-de/dotnet/api/system.string.toupper)
-- Tutorial zur Kultur-spezifischen Groß- und Kleinschreibung in C# (https://www.c-sharpcorner.com/UploadFile/girish.nehte/working-with-string-comparisions-and-cultureinfo-in-C-Sharp/)
+Bei genauerem Hinsehen lässt sich feststellen, dass der Code für das Capitalizing eines Strings manchmal auch von der Sprache der Anwendung abhängig sein kann. In manchen Sprachen unterscheiden sich die Groß- und Kleinschreibung von Buchstaben sehr stark und es kann komplexere Logik benötigt werden, um den String richtig zu capitalisieren. Auch innerhalb der verschiedenen .NET Frameworks gibt es Unterschiede, wie das Capitalizing funktioniert. Daher ist es wichtig, den Kontext zu berücksichtigen, in dem der String verwendet wird.
+
+## Siehe auch
+
+- Wie man einen String in C# trimmt: https://www.c-sharpcorner.com/article/how-to-trim-a-string-in-c-sharp/
+- Die offizielle .NET Dokumentation zum String Capitalizing: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/capitalizing-a-string

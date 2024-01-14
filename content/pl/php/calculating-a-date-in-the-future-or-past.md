@@ -1,44 +1,49 @@
 ---
-title:    "PHP: Obliczanie daty w przyszłości lub przeszłości."
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/calculating-a-date-in-the-future-or-past.md"
+title:                "PHP: Obliczanie daty w przyszłości lub przeszłości"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-##Dlaczego
+## Dlaczego
 
-Czasem może być potrzebne obliczenie daty w przyszłości lub w przeszłości w celu rozwiązania problemów programistycznych lub w celach biznesowych.
+Obliczanie dat w przyszłości lub przeszłości może być niezbędne w wielu projektach programistycznych. Może to być potrzebne do wyświetlania ważnych wydarzeń lub terminów, planowania zadań lub wyliczania wieku. Dzięki PHP i jego funkcjom związanym z datami, obliczanie dat staje się łatwe i wygodne.
 
-##Jak to zrobić
+## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub w przeszłości w języku PHP, można wykorzystać funkcję `strtotime()`. Przyjmując jako pierwszy argument określoną datę oraz drugi argument w postaci "s" (sekund), "m" (minut), "h" (godzin), "d" (dni), można precyzyjnie określić, o ile chcemy przesunąć datę.
-
-Przykład:
+Aby obliczyć datę w przyszłości lub przeszłości, możemy skorzystać z funkcji "strtotime()" w PHP. Przykładowy kod wyglądałby następująco:
 
 ```PHP
-$date = strtotime('+3 days'); // Wartość domyślna dla drugiego argumentu to "s"
-echo date('Y-m-d', $date); // 2021-11-29
+$date = strtotime("+1 week"); // dodanie tygodnia do aktualnej daty
+echo date("Y-m-d", $date); // wyświetli 2021-10-14
 ```
 
-Można również określić datę startową poprzez przekazanie jej jako trzeciego argumentu w postaci timestampu.
-
-Przykład:
+Możemy również wykorzystać funkcję "mktime()" do utworzenia daty na podstawie podanych argumentów, takich jak rok, miesiąc i dzień.
 
 ```PHP
-$startDate = strtotime('2021-12-01');
-$date = strtotime('+2 weeks', $startDate); // Przesuwamy datę o 2 tygodnie od 2021-12-01
-echo date('Y-m-d', $date); // 2021-12-15
+$date = mktime(0, 0, 0, 12, 25, 2021); // utworzenie daty: 25 grudnia 2021
+echo date("l", $date); // wyświetli Saturday
 ```
 
-##Vertiefung
+Możemy także użyć funkcji "date_diff()", aby obliczyć różnicę między dwoma datami. Przykładowy kod wyglądałby tak:
 
-Funkcja `strtotime()` jest bardzo przydatna do obliczania dat w przyszłości lub w przeszłości w języku PHP, ale warto pamiętać o kilku rzeczach. Pierwszą z nich jest fakt, że przy niektórych kombinacjach daty i drugiego argumentu, wynik może być nieprecyzyjny lub w ogóle niepoprawny. W takim przypadku warto skorzystać z innej dostępnej funkcji, jak na przykład `DateTime` lub biblioteki Carbon.
+```PHP
+$firstDate = date_create("2021-01-01");
+$secondDate = date_create("2021-12-31");
+$diff = date_diff($firstDate, $secondDate);
+echo $diff->format("%R%a days"); // wyświetli +364 days
+```
 
-Kolejnym elementem jest fakt, że funkcja `strtotime()` bazuje na lokalnych ustawieniach czasowych, dlatego wynik może się różnić w zależności od strefy czasowej, w której działa skrypt. Dlatego ważne jest ustawienie odpowiedniej strefy czasowej przy użyciu funkcji `date_default_timezone_set()`.
+## Deep Dive
 
-##Zobacz również
+W PHP mamy do dyspozycji wiele funkcji związanych z datami, takich jak "strtotime()", "mktime()", "date()", "date_create()" czy "date_diff()". Są one bardzo przydatne w obliczaniu dat w przyszłości lub przeszłości, a także wyświetlaniu lub formatowaniu dat w różny sposób.
 
-- [Dokumentacja funkcji strtotime() w języku PHP](https://www.php.net/manual/en/function.strtotime.php)
-- [Poradnik dla programistów: jak wykorzystać funkcję strtotime() w języku PHP](https://www.php.net/manual/en/function.strtotime.php)
-- [Oficjalna strona biblioteki Carbon](https://carbon.nesbot.com/)
+Ważną rzeczą, na którą należy zwrócić uwagę, jest użycie odpowiednich formatów daty lub czasu. W przeciwnym razie mogą pojawić się nieoczekiwane rezultaty lub błędy w kodzie. Dobrą praktyką jest także użycie funkcji "setlocale()" do ustawienia odpowiedniej lokalizacji, szczególnie jeśli wyświetlamy daty w innym języku niż angielski.
+
+## Zobacz także
+
+- Oficjalna dokumentacja PHP dotycząca funkcji związanych z datami: [https://www.php.net/manual/en/ref.datetime.php](https://www.php.net/manual/en/ref.datetime.php)
+- Przewodnik po funkcjach związanych z datami w PHP: [https://www.w3schools.com/php/php_date.asp](https://www.w3schools.com/php/php_date.asp)
+- Przydatny poradnik dotyczący dat w PHP: [https://www.geeksforgeeks.org/dates-and-time-in-php/](https://www.geeksforgeeks.org/dates-and-time-in-php/)

@@ -1,80 +1,45 @@
 ---
-title:    "Arduino: Testien kirjoittaminen"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-tests.md"
+title:                "Arduino: Testien kirjoittaminen"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa testeja Arduino-ohjelmointiin?
+## Miksi
+Testien kirjoittaminen on tärkeä osa Arduino-ohjelmoinnin prosessia. Ne auttavat varmistamaan koodin toimivuuden ja vähentävät mahdollisten bugien määrää ohjelmassa.
 
-Testien kirjoittaminen Arduino-ohjelmointiin voi vaikuttaa turhalta ja aikaa vievältä askareelta, mutta se voi todella auttaa välttämään monia ongelmia ja virheitä ohjelmoinnissa. Testit voivat myös parantaa koodin luotettavuutta ja helpottaa sen ylläpitämistä.
-
-## Näin kirjoitat testeja - esimerkki
-
+## Miten
 ```Arduino
-// Testattavat funktiot
-int summa(int a, int b) {
-  int tulos = a + b;
-  return tulos;
+#include <Arduino.h>
+#include <unity.h>
+
+int add(int x, int y) {
+  return x + y;
 }
 
-int vahenna(int a, int b) {
-  int tulos = a - b;
-  return tulos;
+void test_add() {
+  TEST_ASSERT_EQUAL(5, add(2, 3));
 }
 
-// Testit
-void test_summa() {
-  int tulos = summa(2, 3);
-  if (tulos == 5) {
-    Serial.println("Summa-testi läpäisi!");
-  } else {
-    Serial.println("Summa-testi epäonnistui! Odotettiin 5, saatiin " + String(tulos));
-  }
-}
-
-void test_vahenna() {
-  int tulos = vahenna(5, 2);
-  if (tulos == 3) {
-    Serial.println("Vähennä-testi läpäisi!");
-  } else {
-    Serial.println("Vähennä-testi epäonnistui! Odotettiin 3, saatiin " + String(tulos));
-  }
-}
-
-// Aja testit setup-funktion sisällä
 void setup() {
-  Serial.begin(9600);
-  
-  test_summa();
-  test_vahenna();
+  UNITY_BEGIN();
+  RUN_TEST(test_add);
+  UNITY_END();
 }
 
-void loop() {
-
-}
+void loop() {}
 ```
 
-Kun koodi ajetaan, tulostuu Sarjaporttiin seuraava:
+### Selitys
+Ensimmäisessä rivissä tuodaan tarvittavat kirjastot testien käyttöä varten. Seuraavaksi luodaan funktio, joka toimii testattavana koodina. Tässä esimerkissä funktio `add` laskee kahden luvun summan ja palauttaa sen arvon. Sitten luodaan testifunktio, joka kutsuu `TEST_ASSERT_EQUAL` funktiota. Tämä funktio vertaa kahden parametrina annetun arvon samuutta ja tulostaa testeihin liittyvän informaation tarvittaessa. Lopuksi, setup funktiossa aloitetaan Unity-testiä kutsuen `UNITY_BEGIN()` funktiota, suoritetaan testifunktio kopkaamalla `RUN_TEST()` funktiota ja lopetetaan suoritus `UNITY_END()` funktion avulla.
 
-```
-Summa-testi läpäisi!
-Vähennä-testi läpäisi!
-```
-
-Tämä tarkoittaa, että molemmat testit suoritettiin oikein ja testattavat funktiot toimivat odotetulla tavalla.
-
-## Syvällisempi sukellus testien kirjoittamiseen
-
-Testien kirjoittamisen avulla voidaan varmistaa, että koodi toimii oikein eri tilanteissa ja erilaisten syötteiden kanssa. Se auttaa myös tarkistamaan, että koodi toimii myös muutosten jälkeen ja mahdollisesti aiheuttamatta uusia virheitä.
-
-Testien kirjoittamisen yhteydessä kannattaa miettiä, mitä kaikkia tapauksia halutaan testata ja mitä odotetaan jokaiselta testitulokselta. Testikattavuuden avulla voidaan varmistaa, että kaikki mahdolliset tapaukset on testattu ainakin kerran.
-
-Hyvä käytäntö on myös kirjoittaa testejä ennen varsinaisen koodin kirjoittamista. Tämä auttaa suunnittelemaan ja hahmottamaan koodia paremmin ja voi säästää aikaa ja vaivaa myöhemmin.
+## Syvemmälle
+Testien kirjoittaminen on hyödyllistä, kun halutaan tehdä kattavaa ja laadukasta koodia. Ne auttavat tekemään koodin toimivuudesta luotettavaa ja havaitsemaan mahdolliset virheet ennen kuin ne tulevat ongelmaksi käytettäessä oikeassa ympäristössä. Näiden etujen lisäksi testien kirjoittaminen voi nopeuttaa kehitysprosessia, sillä testien avulla voidaan nopeasti tarkistaa ohjelman toimivuus ja korjata mahdolliset ongelmat ennen kuin ne aiheuttavat suurempia ongelmia. Toisin sanoen, testien kirjoittaminen auttaa parantamaan ohjelman yleistä laatua ja vähentämään kehitykseen liittyviä riskejä.
 
 ## Katso myös
-
-* [Arduinon testaussivusto](https://www.arduino.cc/en/Guide/Arduinouno)
-* [Johdanto testiautomaatioon Arduino-ohjelmoinnissa](https://learn.sparkfun.com/tutorials/testing-arduino-code-in-the-arduino-ide/all)
-* [Testauskirjastot Arduinolle](https://github.com/Testato/Testing?_pjax=%23js-repo-pjax-container#unit-testing-libraries)
+- [Unity - Arduino ohjelmointi ja yksikkötestaus](https://docs.unity3d.com/560/Documentation/Manual/testing-arduino-artifacts.html)
+- [Arduino testiversio](https://github.com/adafruit/arduino-test-suite)
+- [Arduino yksikkötestaus - kattavat ohjeet](https://www.arduino.cc/en/Guide/UnitTesting)
+- [Junit - yksikkötestaus Java-sovelluksissa](https://junit.org/junit5/docs/current/user-guide/)

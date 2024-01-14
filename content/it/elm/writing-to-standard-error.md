@@ -1,38 +1,36 @@
 ---
-title:    "Elm: Scrivere su errore standard"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/writing-to-standard-error.md"
+title:                "Elm: Scrivere su standard error"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Una parte fondamentale della programmazione è la capacità di gestire gli errori in modo efficace. Scrivere su standard error è un modo per comunicare al programma quando qualcosa è andato storto. Questo può aiutare a comprendere e risolvere eventuali problemi nel codice.
+Scrive a standard error può essere utile quando si vuole gestire gli errori in modo specifico all'interno del proprio programma Elm.
 
-# Come Fare
+## Come Fare
 
-Per scrivere su standard error in Elm, è necessario utilizzare la funzione `Debug.crash` insieme alla funzione `Platform.sendToApp`. Di seguito è riportato un esempio di codice:
+Per scrivere a standard error in Elm, basta utilizzare la funzione `Debug.crash` passando come argomento una stringa di testo.
 
 ```Elm
+import Debug exposing (crash)
+
 main =
-  Html.program
-    { init = ...
-    , view = ...
-    , update = ...
-    , subscriptions = Sub.batch
-        [ Sub.map Action Debug.crash
-        ]
-    }
+  crash "Errore personalizzato"
 ```
 
-Questa funzione `Debug.crash` invierà un messaggio di errore al tuo programma, che verrà visualizzato su standard error. Ora puoi utilizzare questo strumento per identificare e risolvere eventuali errori nel tuo codice Elm.
+L'esempio sopra produrrà una riga di testo nell'output del browser che può essere utilizzata per individuare la posizione di un errore durante lo sviluppo.
 
-# Approfondimento
+Output: `-- ERROR ------------------------------------------------------- Errore personalizzato ------------------------------------------------------`
 
-Scrivere su standard error è solo uno dei modi per gestire gli errori in Elm. Ci sono anche altre tecniche come l'utilizzo di tipi di dati risultato o l'utilizzo delle conversioni di tipo per gestire gli errori. Per saperne di più su come gestire gli errori in Elm, consulta la documentazione ufficiale [qui](https://guide.elm-lang.org/error_handling/).
+## Approfondimento
 
-# Vedi Anche
+La funzione `Debug.crash` è utile per debugging e sviluppo, ma non dovrebbe essere utilizzata nella produzione finale in quanto interrompe l'esecuzione del programma. Invece, è consigliato utilizzare la gestione standard degli errori di Elm, come la funzione `Result.withDefault` per gestire i possibili errori all'interno del tuo programma.
 
-- [Documentazione ufficiale di Elm](https://elm-lang.org/docs)
-- [Gestione degli errori in Elm](https://guide.elm-lang.org/error_handling/)
+## Vedi Anche
+
+- [La guida ufficiale di Elm per la gestione degli errori](https://guide.elm-lang.org/error_handling/)
+- [Il repository ufficiale di Elm su Github](https://github.com/elm/)

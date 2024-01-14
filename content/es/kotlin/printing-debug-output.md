@@ -1,54 +1,38 @@
 ---
-title:    "Kotlin: Imprimiendo salida de depuración"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/printing-debug-output.md"
+title:                "Kotlin: Imprimiendo salida de depuración"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-##¿Por qué imprimir la salida de depuración en Kotlin?
+## Por qué
+A menudo, cuando estamos desarrollando una aplicación, encontramos errores o comportamientos inesperados en nuestro código. Para solucionar estos problemas, una herramienta muy útil es imprimir mensajes de debug en la consola. Esto nos permite ver lo que está sucediendo en cada paso de nuestro código y nos ayuda a identificar el origen del problema.
 
-Si eres un programador principiante o incluso si tienes experiencia en Kotlin, es común encontrarse con errores en tu código. A veces, estos errores pueden ser difíciles de encontrar y solucionar. Es por eso que imprimir la salida de depuración es una técnica útil para identificar y solucionar errores en tu código de una manera eficiente.
-
-##¿Cómo hacerlo?
-
-Imprimir la salida de depuración en Kotlin es bastante sencillo. Puedes utilizar la función "println()" para imprimir en la consola cualquier valor o variable que quieras verificar. Por ejemplo:
+## Cómo hacerlo
+En Kotlin, podemos imprimir mensajes de debug utilizando la función `println()` seguida del mensaje que deseamos imprimir. Por ejemplo:
 
 ```Kotlin
-var edad = 26
-println("Mi edad es: " + edad)
+println("Iniciando función foo")
 ```
 
-El resultado en la consola sería:
+Esto imprimirá en la consola el mensaje "Iniciando función foo". Además, también podemos utilizar la función `print()` para imprimir el mensaje sin agregar un salto de línea al final.
 
-```
-Mi edad es: 26
-```
-
-También puedes imprimir mensajes de depuración con formatos específicos utilizando la función "printf()" de la clase "System.out". Por ejemplo:
+Otra forma de imprimir mensajes de debug es utilizando la función `Log.d()` de la librería de Android. Esta función nos permite especificar etiquetas para nuestros mensajes y también nos da información sobre la clase, método y línea de código donde se realizó la impresión del mensaje. Un ejemplo de su uso sería:
 
 ```Kotlin
-var nombre = "Juan"
-var apellido = "Pérez"
-System.out.printf("Mi nombre es %s y mi apellido es %s", nombre, apellido)
+Log.d("MainActivity", "Iniciando función foo en la línea 10")
 ```
 
-El resultado en la consola sería:
+## Deep Dive
+Es importante tener en cuenta que imprimir demasiados mensajes de debug puede sobrecargar nuestra consola y dificultar la lectura de los resultados. Por eso, es recomendable utilizarlo de forma estratégica, enfocándonos en las partes del código que estamos tratando de solucionar.
 
-```
-Mi nombre es Juan y mi apellido es Pérez
-```
+También es importante tener en cuenta que los mensajes de debug solo deben utilizarse durante el desarrollo y no deben incluirse en la versión final de la aplicación.
 
-##Profundizando
+Una forma útil de realizar debugging en Kotlin es utilizar breakpoints en nuestro código y utilizar el modo de debugging en nuestro IDE. Esto nos permite pausar la ejecución del programa en un punto específico y examinar el estado de las variables en ese momento.
 
-Además de imprimir valores y variables, también puedes imprimir mensajes de depuración en diferentes puntos de tu código para seguir su ejecución y ver si se están cumpliendo las condiciones y operaciones que esperas. Esto puede ser muy útil para comprender cómo funciona tu código y detectar posibles errores.
-
-Otra técnica útil es utilizar la función "Log" de la biblioteca de Android para imprimir mensajes de depuración en dispositivos móviles. Esto es especialmente útil cuando estás desarrollando una aplicación para Android utilizando Kotlin.
-
-Recuerda que es importante no dejar mensajes de depuración en tu código una vez que hayas solucionado los errores, ya que pueden afectar el rendimiento de tu aplicación.
-
-##Ver también
-
-- [Documentación de Kotlin sobre salida de depuración](https://kotlinlang.org/docs/reference/control-flow.html#println-for-debugging)
-- [Tutorial de Kotlin para principiantes](https://developer.android.com/kotlin?hl=es)
-- [Preguntas frecuentes sobre Kotlin](https://kotlinlang.org/docs/reference/migrating-from-java.html#what-is-the-difference-between-kotlin-and-java)
+## Ver también
+- [Debugging en Kotlin](https://kotlinlang.org/docs/tutorials/command-line.html#debugging)
+- [Cómo mejorar tus habilidades de debugging en Kotlin](https://blog.kotlin-academy.com/https-medium-com-antonioleiva-how-to-improve-your-debugging-skills-using-kotlin-9d936c91c3f2)
+- [Cómo utilizar la función Log en Kotlin](https://developer.android.com/reference/android/util/Log.html)

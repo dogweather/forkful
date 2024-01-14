@@ -1,34 +1,34 @@
 ---
-title:    "Gleam: 新しいプロジェクトを始める"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/starting-a-new-project.md"
+title:                "Gleam: 新しいプロジェクトを始める"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-Japanese Translation:
+Gleamでプログラミングについての記事
 
 ## なぜ
 
-新しいプロジェクトを始める理由を説明するための1-2文。
+プロジェクトを始めることのメリットをご紹介します。新しい言語を学ぶことで、より多様なプログラミングスキルを習得し、将来のキャリアアップの可能性を広げることができます。
 
-## 方法
-
-コーディングの例と```Gleam ...```コードブロック内の出力を示します。
+## ハウツー
 
 ```Gleam
-import Gleam.Include.String
-
-// "Hello, world!"
-"こんにちは、世界！" |> String.to_upper
+pub fn main() {
+    io.println("こんにちは、世界！");
+}
 ```
 
-## 詳細情報
+上記のコードは、コンソールに「こんにちは、世界！」と表示するプログラムです。Gleamの基本的な構文と機能を紹介しています。
 
-新しいプロジェクトを始める方法についての詳細情報を提供します。
+## ディープダイブ
 
-## 参考リンク
+新しいプロジェクトを始める際には、まずGleamのコンセプトと基本的な構文を理解することが重要です。また、コードの構造やモジュールの作成方法、依存関係の管理など、より深いレベルでの知識も必要です。新しいプロジェクトを始める前に、しっかりと学習を進めましょう。
 
-- [Gleam公式サイト](https://gleam.run/)
-- [Gleamチュートリアル](https://gleam.run/tour/)
-- [Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)
+## 関連リンク
+
+- Gleam公式サイト: https://gleam.run/
+- GleamのGitHubリポジトリ: https://github.com/gleam-lang/gleam
+- Gleamのドキュメンテーション: https://gleam.run/book/introduction.html

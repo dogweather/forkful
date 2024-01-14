@@ -1,58 +1,44 @@
 ---
-title:    "Ruby: Imprimiendo salida de depuración"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/printing-debug-output.md"
+title:                "Ruby: Impresión de salida de depuración"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir el output de depuración?
-
-Imprimir el output de depuración es una técnica útil para encontrar errores en tu código de Ruby. Al imprimir mensajes de depuración, puedes ver qué valores están siendo asignados a tus variables y cómo fluye la ejecución de tu código, lo que te ayuda a identificar problemas y corregirlos más fácilmente.
+## Por qué
+¿Alguna vez te has preguntado por qué necesitamos imprimir el resultado de depuración en nuestros programas de Ruby? Aunque pueda parecer una tarea trivial, la impresión de resultados de depuración es una herramienta crucial para entender y solucionar errores en nuestro código.
 
 ## Cómo hacerlo
-
-Para imprimir el output de depuración en Ruby, puedes usar el método `puts()` seguido de la variable o valor que deseas imprimir. Por ejemplo:
+Para imprimir resultados de depuración en Ruby, utilizamos el método `puts`, que nos permite imprimir una cadena de texto hacia la consola. Por ejemplo:
 
 ```Ruby
-nombre = "María"
-puts(nombre)
+puts "¡Hola Mundo!"
+```
+El resultado de esta línea de código sería:
+```
+¡Hola Mundo!
 ```
 
-Esto imprimirá en la consola el valor asignado a la variable `nombre`, que en este caso sería "María". También puedes imprimir múltiples variables o valores separándolos con comas dentro de los paréntesis de `puts()`, como en el siguiente ejemplo:
-
+Ahora que sabemos cómo imprimir una cadena de texto, podemos utilizarlo para imprimir el contenido de variables y objetos en nuestro programa. Por ejemplo:
 ```Ruby
 nombre = "Juan"
-apellido = "García"
-puts(nombre, apellido)
+edad = 25
+puts "El nombre es #{nombre} y la edad es #{edad} años."
+```
+El resultado de este código sería:
+```
+El nombre es Juan y la edad es 25 años.
 ```
 
-Esto imprimiría "Juan García" en dos líneas consecutivas.
+## Profundizando
+La impresión de resultados de depuración puede ser útil para entender el flujo de nuestro programa y detectar posibles errores. Sin embargo, también es importante saber cuándo y cómo utilizarla de manera efectiva. Imprimir demasiados resultados de depuración puede sobrecargar la consola y dificultar la lectura del código. Por otro lado, no imprimir suficientes resultados podría ocultar errores potenciales que podrían ser detectados de manera más eficiente con la impresión de resultados de depuración.
 
-## Profundizando en la impresión de output de depuración
-
-La impresión de output de depuración también puede ser utilizada para mostrar información adicional sobre el estado de tu código en puntos específicos de tu programa. Por ejemplo, puedes imprimir un mensaje que muestre en qué punto del código se encuentra la ejecución, como en este ejemplo:
-
-```Ruby
-puts("Iniciando ejecución del programa...")
-```
-
-Esto imprimirá en la consola "Iniciando ejecución del programa..." antes de que se ejecute el resto de tu código.
-
-Otra opción es imprimir mensajes de depuración solo cuando se cumple una determinada condición en tu código. Esto puede ser útil para encontrar errores en secciones específicas de tu programa. Por ejemplo:
-
-```Ruby
-contador = 0
-while contador < 10 do
-  puts("La variable contador es igual a #{contador}.")
-  contador += 1
-end
-```
-
-En este caso, solo se imprimirá el mensaje cada vez que el contador sea menor a 10.
+Además, si necesitas imprimir resultados de depuración en varias partes de tu código, es posible que desees utilizar una librería o gem específica para ello, como `pry` o `byebug`.
 
 ## Ver también
-
-- [Guía de Ruby para principiantes](https://www.ruby-lang.org/es/documentation/quickstart/)
-- [Documentación oficial de la librería de Ruby](https://ruby-doc.org/)
-- [Ruby on Rails Tutorial en español](https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_ruby_on_rails/Ruby_on_Rails)
+- [Documentación de Ruby sobre el método `puts`](https://ruby-doc.org/core-3.0.0/IO.html#method-i-puts)
+- [Tutorial sobre cómo depurar programas en Ruby](https://www.rubyguides.com/2019/06/ruby-debug-environments/)
+- [Gem `pry` para imprimir resultados de depuración](https://github.com/pry/pry)
+- [Gem `byebug` para imprimir resultados de depuración y hacer debugging interactivo](https://github.com/deivid-rodriguez/byebug)

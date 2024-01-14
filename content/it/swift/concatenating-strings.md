@@ -1,54 +1,58 @@
 ---
-title:    "Swift: Unione di stringhe"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/concatenating-strings.md"
+title:                "Swift: Concatenazione di stringhe"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La concatenazione di stringhe è un'operazione comune nella programmazione Swift che consente di unire più stringhe in una singola stringa più lunga. Questo può essere utile per la creazione di messaggi dinamici, l'elaborazione di input dell'utente o la formattazione di output.
+Concatenare le stringhe è un'operazione comune nella programmazione Swift, che consente di unire più stringhe in una sola. Questo può essere utile per creare output leggibili, costruire URL o formattare correttamente i dati prima di inviarli a un server. In questa guida vedremo come farlo in modo semplice ed efficiente.
 
 ## Come fare
 
-Per concatenare due o più stringhe, è possibile utilizzare l'operatore "+" o il metodo `append` sull'oggetto `String`. Ad esempio:
+Per concatenare le stringhe in Swift, è possibile utilizzare l'operatore `+` o il metodo `append()` della classe `String`. Entrambi i metodi sono altrettanto validi, ma l'utilizzo di `append()` può essere più vantaggioso se si desidera concatenare un grande numero di stringhe.
+
+Un esempio di utilizzo dell'operatore `+` potrebbe essere il seguente:
 
 ```Swift
-let nome = "Paolo"
-let saluto = "Ciao " + nome + "!"
-print(saluto)
+var greeting = "Ciao"
+var name = "Maria"
+var message = greeting + ", " + name + "!"
+print(message)
 ```
 
-Questo produrrà l'output: `Ciao Paolo!`.
+Questo codice produrrà in output la stringa "Ciao, Maria!", unendo le variabili `greeting` e `name` alla stringa ", ".
 
-Il metodo `append` permette anche di aggiungere una stringa alla fine di un'altra stringa esistente:
+Per utilizzare il metodo `append()` invece, possiamo sfruttare i vantaggi di un ciclo `for-in` per concatenare un numero variabile di stringhe. Ad esempio:
 
 ```Swift
-var frase = "Mi piace il"
-frase.append(" gelato")
-print(frase)
+var names = ["Maria", "Luca", "Giovanni"]
+var message = "Ciao"
+for name in names {
+    message.append(", " + name)
+}
+print(message + "!")
 ```
 
-Questo produrrà l'output: `Mi piace il gelato`.
-
-È anche possibile utilizzare l'operatore di assegnazione `+=` per concatenare una stringa a una variabile già esistente:
-
-```Swift
-var numero = 42
-numero += " è il mio numero preferito"
-print(numero)
-```
-
-Questo produrrà l'output: `42 è il mio numero preferito`.
+In questo caso, il risultato in output sarà la stringa "Ciao, Maria, Luca, Giovanni!".
 
 ## Approfondimento
 
-Nella programmazione Swift, ogni stringa è in realtà un'istanza di una struttura chiamata `String`. Questa struttura implementa il protocollo `Collection` che fornisce il metodo `append` per aggiungere elementi alla fine della stringa.
+La classe `String` in Swift dispone di molti metodi utili per la manipolazione e la gestione delle stringhe. Ad esempio, il metodo `contains()` permette di verificare se una stringa contiene un'altra stringa specificata. Questo può essere utile per controllare se una stringa inserita dall'utente è presente in un certo elenco.
 
-Inoltre, il metodo `append` è definito come mutating, il che significa che modifica direttamente la stringa originale invece di crearne una nuova ogni volta che viene chiamato. Questo è importante da tenere a mente quando si lavora con stringhe più complesse.
+Un altro metodo utile è `replacingOccurrences()`, che consente di sostituire parte di una stringa con un'altra. Ad esempio, è possibile sostituire tutti gli spazi in una stringa con un carattere specifico utilizzando il seguente codice:
+
+```Swift
+var text = "Questo è un esempio di stringa."
+var replacedText = text.replacingOccurrences(of: " ", with: "-")
+print(replacedText)
+```
+
+Il risultato in output sarà "Questo-è-un-esempio-di-stringa.".
 
 ## Vedi anche
 
-- [Documentazione Apple su String](https://developer.apple.com/documentation/swift/string)
-- [Tutorial di concatenazione di stringhe in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-join-strings-to-make-a-single-string)
+Per ulteriori informazioni sulle stringhe in Swift, consulta la [documentazione ufficiale del linguaggio](https://developer.apple.com/documentation/swift/string) o [questo articolo](https://medium.com/@abhimuralidharan/ultimate-guide-to-string-manipulation-in-swift-c92172dc2ce9).

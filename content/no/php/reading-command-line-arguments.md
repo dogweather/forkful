@@ -1,59 +1,38 @@
 ---
-title:    "PHP: Lesing av kommandolinjeargumenter"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/reading-command-line-arguments.md"
+title:                "PHP: Lesing av kommandolinjeargumenter"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor 
-Hvorfor lese kommandolinje-argumenter i PHP? Det er viktig for å kunne interagere med brukere og skape dynamiske programmer.
+## Hvorfor
 
-# Hvordan Du Gjør Det
-For å lese kommandolinje-argumenter i PHP, må du bruke `$_SERVER['argv']` funksjonen. Denne funksjonen returnerer en array av alle argumentene gitt ved kjøring av PHP-skriptet. Her er et eksempel på en enkel måte å skrive ut argumentene og deres tilhørende indekser:
+Å kunne lese kommandolinje-argumenter er en svært nyttig ferdighet i PHP-programmering. Det lar deg lage mer dynamiske og interaktive skript, og kan spare tid og krefter ved å eliminere behovet for å stadig endre variabler i koden.
 
-```PHP
-<?php
-// Les argumentene og skriv dem ut
-foreach ($_SERVER['argv'] as $index => $argument) {
-    echo "Argument " . $index . ": " . $argument . "\n";
-}
-```
+## Hvordan
 
-Gitt at du kjører PHP-skriptet fra kommandolinjen med følgende argumenter:
-
-```sh
-php minprogram.php arg1 arg2 arg3
-```
-
-Vil outputen være:
-
-```
-Argument 0: minprogram.php
-Argument 1: arg1
-Argument 2: arg2
-Argument 3: arg3
-```
-
-Dette viser hvordan du kan få tilgang til og bruke argumentene i PHP-skriptet ditt.
-
-# Dypdykk
-
-I tillegg til å kunne få tilgang til argumentene, kan du også bruke `$_SERVER['argc']` funksjonen for å få antall argumenter som ble gitt ved kjøring av skriptet. Dette kan være nyttig hvis du ønsker å kjøre ulik logikk basert på antall argumenter. Her er et eksempel på hvordan du kan gjøre det:
+For å lese kommandolinje-argumenter i PHP, kan du bruke funksjonen `getopt()`. Denne funksjonen tar to argumenter - en streng med argumentalternativer og en array som lagrer de returnerte verdiene.
 
 ```PHP
-<?php
-// Sjekk antall argumenter
-if ($_SERVER['argc'] == 3) {
-    // Hvis det er tre argumenter kjører vi denne logikken
-    echo "Det er 3 argumenter gitt.";
-} else {
-    // Hvis ikke kjører vi denne
-    echo "Det er ikke 3 argumenter gitt.";
-}
+$options = getopt("a:b:c:");
 ```
 
-# Se Også
-- [PHP.net - $_SERVER['argv']](https://www.php.net/manual/en/reserved.variables.server.php)
-- [PHP.net - $_SERVER['argc']](https://www.php.net/manual/en/reserved.variables.server.php)
-- [PHP: Getopt - Bruke lange argumenter](https://secure.php.net/manual/en/function.getopt.php) (Engelsk)
+I dette eksempelet er `a`, `b` og `c` argumentalternativer som kan brukes i kommandolinjen. Hvis du for eksempel kjører skriptet ditt ved å legge til `--a=1 --b=2` som argumenter, blir verdiene `1` og `2` lagret i `$options`-arrayen.
+
+Det er også mulig å angi at et argument må ha en verdi ved å legge til kolon (`:`) etter argumentnavnet. For eksempel `getopt("f:")` vil kreve et argument som `--f=3` og lagre verdien `3` i `$options`-arrayen.
+
+## Dypdykk
+
+Ved å bruke `getopt()` i en løkke, kan du enkelt håndtere flere argumenter samtidig. Husk at hver gang `getopt()` kalles, vil den fjerne første argument i argumentlista. Derfor må du bruke en annen variabel for å lagre dine brukte argumenter for senere bruk.
+
+En annen nyttig funksjon når du jobber med kommandolinje-argumenter er `count()` som lar deg telle antall elementer i en array. Dette kan være nyttig når du vil sjekke om et obligatorisk argument ble sendt inn.
+
+For en fullstendig forståelse av hvordan `getopt()` fungerer og hvordan du kan bruke det i dine PHP-skript, sjekk ut PHPs dokumentasjon.
+
+## Se også
+
+- [PHPs dokumentasjon for `getopt()`](https://www.php.net/manual/en/function.getopt.php)
+- [Tutorial: How to Read Command Line Arguments in PHP](https://www.tutorialrepublic.com/php-tutorial/php-command-line-arguments.php)
+- [How to Use Command line Arguments in PHP](https://www.w3adda.com/php-tutorial/php-command-line-arguments)

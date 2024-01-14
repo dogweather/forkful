@@ -1,65 +1,49 @@
 ---
-title:    "Javascript: Att få den nuvarande datumet"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/getting-the-current-date.md"
+title:                "Javascript: Få den aktuella datuminformationen"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna hämta den aktuella datumet är av stor vikt för många Javascript programmerare. Det kan vara användbart för att visa datumet till användare, sortera data efter datum eller för att utföra specifika uppgifter baserat på aktuell dag. Oavsett vad ditt syfte är, är det viktigt att veta hur man hämtar och hanterar datum i Javascript.
+Det är vanligt att behöva få tag på dagens datum när man programmerar i JavaScript. Det kan till exempel vara för att visa dagens datum på en hemsida eller för att beräkna hur lång tid en viss process har tagit. Genom att lära sig hur man hämtar dagens datum i JavaScript kan du lägga till en användbar funktion till dina projekt.
 
-## Hur man gör det
+## Hur man gör
 
-För att hämta den aktuella datumet i Javascript kan du använda inbyggda objektet Date. Här är ett exempel på hur du kan skriva kod för att hämta dagens datum:
+För att få tag på dagens datum i JavaScript kan du använda dig av Date-objektet. Genom att anropa Date-konstruktorn utan några parametrar får du ett objekt som representerar dagens datum och tid. Du kan sedan använda olika metoder för att hämta specifika delar av datumet.
 
-```Javascript
-let nu = new Date();
-console.log(nu); // Output: Sat Jul 18 2020 11:30:00 GMT+0200 (Central European Summer Time)
-```
+```javascript
+let dagensDatum = new Date();
+console.log(dagensDatum);
+// Output: Sat Apr 24 2021 14:32:16 GMT+0200 (Central European Summer Time)
 
-För att få en mer läsbar format kan du använda olika inbyggda metoder som `.toDateString()` eller `.toLocaleDateString()`:
+// Hämta dagens datum
+let dag = dagensDatum.getDate();
+console.log(dag);
+// Output: 24
 
-```Javascript
-let nu = new Date();
-console.log(nu.toDateString()); // Output: Sat Jul 18 2020
-console.log(nu.toLocaleDateString()); // Output: 2020-07-18
-```
+// Hämta månad
+let månad = dagensDatum.getMonth() + 1; // Månader är index-baserade, därför lägger vi till 1
+console.log(månad);
+// Output: 4
 
-Du kan också hämta olika delar av datumet som månad, dag och år genom att använda inbyggda metoder som `.getDate()`, `.getMonth()` och `.getFullYear()`:
-
-```Javascript
-let nu = new Date();
-console.log(nu.getDate()); // Output: 18
-console.log(nu.getMonth() + 1); // Månaden är indexerad från 0 så vi lägger till 1 för att få rätt månad. Output: 7
-console.log(nu.getFullYear()); // Output: 2020
-```
-
-För att hämta tiden, kan du använda `.getHours()`, `.getMinutes()` och `.getSeconds()`:
-
-```Javascript
-let nu = new Date();
-console.log(nu.getHours()); // Output: 11
-console.log(nu.getMinutes()); // Output: 30
-console.log(nu.getSeconds()); // Output: 0
+// Hämta år
+let år = dagensDatum.getFullYear();
+console.log(år);
+// Output: 2021
 ```
 
 ## Djupdykning
 
-Det finns många olika sätt att hantera datum i Javascript. En intressant metod som är värd att nämna är `.getTime()`. Detta returnerar antalet millisekunder sedan 1 januari 1970, vilket ofta kallas "Unix-tiden". Detta värde är användbart om du behöver beräkna tiden som gått mellan två datum eller om du vill jämföra datum.
+Det finns många olika metoder och egenskaper som du kan använda för att hämta information om dagens datum i JavaScript. Förutom de som nämndes ovan finns det bland annat också metoder för att hämta dagens veckodag, timme och minut. Du kan också läsa på om hur man formaterar datumet på olika sätt beroende på dina behov.
 
-```Javascript
-let nu = new Date();
-let for_ett_ar_sen = new Date(nu.getFullYear() - 1, nu.getMonth(), nu.getDate()); // Skapar ett datum som är ett år bakåt i tiden
-console.log(nu.getTime()); // Output: 1595064600000
-console.log(for_ett_ar_sen.getTime()); // Output: 1563423000000
-```
-
-Som du kan se är Unix-tiden användbar när man jämför eller beräknar datum.
+Det är också viktigt att komma ihåg att datum skiljer sig åt beroende på vilken tidszon du befinner dig i. Därför kan det vara bra att använda sig av bibliotek som Moment.js för att få mer precisa resultat.
 
 ## Se även
 
-- [W3 Schools: Date Objects in Javascript](https://www.w3schools.com/js/js_date.asp)
-- [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [FreeCodeCamp: Working with Dates in Javascript](https://www.freecodecamp.org/news/javascript-tutorial-working-with-dates/)
+- [Date](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [Date Formatting in Javascript - Ultimate Guide](https://programmingwithmosh.com/javascript/date-formatting-javascript/)

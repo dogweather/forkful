@@ -1,41 +1,40 @@
 ---
-title:    "Swift: Rozpoczynanie nowego projektu"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/starting-a-new-project.md"
+title:                "Swift: Rozpoczynanie nowego projektu"
+programming_language: "Swift"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Rozpoczęcie nowego projektu w programowaniu może być nieco przerażające, zwłaszcza dla początkujących. Jednak jest to świetny sposób na rozwijanie umiejętności programistycznych i tworzenie niesamowitych aplikacji. W tym artykule opowiemy o tym, dlaczego warto zacząć nowy projekt i jak to zrobić w języku Swift.
+Tworzenie nowego projektu w programowaniu Swift może być ekscytującym i satysfakcjonującym wyzwaniem. Pozwala to na rozwijanie umiejętności programistycznych oraz tworzenie nowych, innowacyjnych rozwiązań. Dodatkowo, praca w Swift zapewnia szerokie możliwości zastosowań, od tworzenia aplikacji mobilnych po rozbudowane systemy webowe.
 
 ## Jak to zrobić
 
-Język Swift jest jednym z najbardziej popularnych języków programowania na świecie i jest wykorzystywany przez firmy takie jak Apple, Uber i LinkedIn. Zanim zaczniemy pisać kod, musimy mieć zainstalowane odpowiednie narzędzia, takie jak Xcode i Swift Compiler. Następnie możemy rozpocząć tworzenie naszego projektu.
+Tworzenie nowego projektu w Swift jest łatwe i przyjemne dzięki intuicyjnemu językowi oraz wszechstronnym narzędziom i frameworkom. Aby rozpocząć, wystarczy stworzyć nowy projekt w swoim ulubionym edytorze kodu lub wykorzystać środowisko programistyczne Xcode. Następnie, należy wybrać odpowiednie narzędzia i biblioteki oraz zacząć pisać kod.
 
 ```Swift
-let name = "Hello!"
-print(name)
-// Output: Hello!
+// Tworzenie funkcji, która wyświetli tekst "Witaj, świecie!"
+func helloWorld() {
+    print("Witaj, świecie!")
+}
+
+// Wywołanie funkcji
+helloWorld()
+
+// Output: Witaj, świecie!
 ```
 
-W powyższym przykładzie użyliśmy zmiennej "name", która przechowuje wartość "Hello!". Następnie wydrukowaliśmy tę wartość przy użyciu funkcji "print". To prosty przykład kodu Swift, ale pokazuje, jak łatwo możemy wykonywać operacje w tym języku.
+Krok po kroku, można tworzyć funkcje, klasy, struktury i wiele innych elementów, aby stworzyć funkcjonalny i efektywny projekt. Warto również wykorzystać dostępne materiały edukacyjne, takie jak poradniki i kursy online, aby lepiej poznać język Swift i jego możliwości.
 
-## Deep Dive
+## Głębsza analiza
 
-Podczas tworzenia nowego projektu bardzo ważne jest ułożenie planu i struktury. Musimy określić cel naszego projektu i zastanowić się, jakie funkcjonalności będą niezbędne. Dobrym sposobem na to jest stworzenie diagramu UML lub storyboardu, aby wizualnie przedstawić strukturę aplikacji.
+Tworzenie nowego projektu w programowaniu Swift wymaga nie tylko umiejętności pisania kodu, ale także odpowiedniego planowania i organizacji. Ważne jest, aby określić cel projektu i zidentyfikować potrzebne narzędzia i zasoby. Nie należy również bać się eksperymentować i wprowadzać zmian, ponieważ to właśnie dzięki nim można osiągnąć najlepsze wyniki.
 
-Kolejnym ważnym krokiem jest wybór odpowiednich narzędzi i bibliotek, które pomogą nam w tworzeniu naszego projektu. W języku Swift jest wiele dostępnych bibliotek, takich jak Alamofire czy Realm, które mogą przyspieszyć i ułatwić nam pracę.
+## Zobacz również
 
-Ważnym elementem jest również systematyczne testowanie naszej aplikacji, aby wykryć ewentualne błędy i poprawić je przed wypuszczeniem na rynek. Dzięki temu będziemy mieć pewność, że nasz projekt będzie działał w oczekiwany sposób.
-
-## See Also
-
-Jeśli chcesz dowiedzieć się więcej o programowaniu w języku Swift, przydatnymi źródłami informacji mogą być:
-
-- [Oficjalna dokumentacja Swift](https://developer.apple.com/documentation/swift)
-- [Kurs wideo na platformie Udemy](https://www.udemy.com/course/swift-zacznij-od-podstaw/)
-- [Forum dla programistów Swift](https://forums.swift.org/)
-
-Dziękujemy za przeczytanie naszego artykułu. Mamy nadzieję, że podzieliłeś się nim ze znajomymi i że stworzysz wspaniały projekt w języku Swift!
+- [Oficjalna dokumentacja języka Swift](https://docs.swift.org)
+- [Kurs programowania Swift dla początkujących](https://www.udemy.com/course/swift-do-felixa-udemy/)
+- [Poradniki na temat tworzenia aplikacji iOS w języku Swift](https://www.raywenderlich.com/category/ios)

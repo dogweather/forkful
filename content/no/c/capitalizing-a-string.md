@@ -1,57 +1,40 @@
 ---
-title:    "C: Stor bokstavering av en streng"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/capitalizing-a-string.md"
+title:                "C: Stor bokstavering av en streng"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Du har sannsynligvis sett mange programmer som tar en tekststreng og returnerer den samme strengen, men med de første bokstavene store (store bokstaver som vanligvis finnes i starten av en setning eller i navn). Men hvorfor ville noen egentlig ville gjøre dette? På overflaten kan det virke som en liten og ubetydelig funksjon, men det er faktisk et viktig konsept i programmering.
+##Hvorfor
+Hvorfor bry seg med å gjøre en setning med små bokstaver til en med store bokstaver? Vel, det kan være nyttig når du for eksempel må gjøre en tittel mer iøynefallende eller lage en streng som skal brukes som en variabel eller kanskje til og med en passordbekreftelse.
 
 ## Hvordan gjøre det
-En metode for å gjøre dette i C-programmering er ved å bruke en løkke for å iterere gjennom den opprinnelige strengen og endre store bokstaver til små bokstaver, mens bokstavene rundt (gitt at de er små bokstaver) blir endret til store bokstaver.
-
+For å gjøre en streng til store bokstaver i C, kan du bruke funksjonen `toupper()`. Her er et eksempel på hvordan den kan brukes:
 ```C
 #include <stdio.h>
-
-// Funksjonen for å gjøre bokstaver store
-void gjør_bokstaver_store(char *streng) {
+#include <ctype.h>
+int main()
+{
+    char str[] = "Hei alle sammen!";
     int i = 0;
-
-    // Gå gjennom strengen til enden
-    while (streng[i] != '\0') {
-        // Hvis bokstaven er en liten bokstav
-        if (streng[i] >= 'a' && streng[i] <= 'z') {
-            // Endre til å være en stor bokstav
-            streng[i] = streng[i] - 32;
-        }
+    while (str[i])
+    {
+        putchar(toupper(str[i]));
         i++;
     }
-    // Skriv ut den endrede strengen
-    printf("Den nye strengen er: %s\n", streng);
-}
-
-int main() {
-    // Definer en streng
-    char tekst[] = "dette er en testtekst";
-    // Kall funksjonen for å gjøre bokstaver store
-    gjør_bokstaver_store(tekst);
     return 0;
 }
 ```
-
-Dette vil gi følgende utskrift:
-
-```
-Den nye strengen er: DETTE ER EN TESTTEKST
-```
+Dette eksemplet vil skrive ut "HEI ALLE SAMMEN!".
 
 ## Dypdykk
-En ting å merke seg er at denne metoden kun fungerer på engelske bokstaver, da det kun endrer bokstaver mellom 'a' og 'z'. I tillegg, dette er kun en måte å gjøre bokstaver store på, det finnes flere måter å oppnå samme resultat på. For eksempel kan man bruke innebygde funksjoner som `toupper()` og `tolower()` i `ctype.h` biblioteket for å konvertere bokstaver.
+Selv om `toupper()` funksjonen er enkel og effektiv, er det viktig å merke seg at den kun fungerer for engelske alfabeter. Dersom du jobber med andre språk som har spesifikke store og små bokstavpar, så kan du bruke funksjonene `islower()` og `toupper()` i en kombinasjon for å håndtere disse tilfellene.
 
-En annen ting er at det finnes en forskjell mellom å endre strengen og å bare skrive ut den endrede strengen. I eksempelet ovenfor endrer vi den opprinnelige strengen, men man kan også lage en funksjon som lager en kopi av den opprinnelige strengen og endrer kopien mens den opprinnelige forblir uendret.
+Det er også verdt å merke seg at `toupper()` funksjonen ikke endrer den opprinnelige strengen, men returnerer en kopi med store bokstaver. Dersom du trenger å endre den opprinnelige strengen, må du enten bruke `strcpy()` eller manuelt endre bokstavene i strengen.
 
 ## Se også
-- [Konvertering av bokstaver i C](https://www.programiz.com/c-programming/library-function/ctype.h/toupper)
-- [Strenger i C](https://www.programiz.com/c-programming/c-strings)
+- [C library - cctype](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxbd00/toupper.htm)
+- [Tutorialspoint - C library function - toupper()](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
+- [JournalDev - C string library and its functions with examples](https://www.journaldev.com/31199/c-string-function-library-string-h)

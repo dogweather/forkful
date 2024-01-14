@@ -1,67 +1,39 @@
 ---
-title:    "Python: Substrings extrahieren"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/extracting-substrings.md"
+title:                "Python: Substrings extrahieren"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Extrahieren von Teilstrings ist eine nützliche Technik, die in vielen Fällen beim Programmieren nützlich sein kann. Zum Beispiel kann es hilfreich sein, bestimmte Teile eines Strings zu isolieren, um sie weiter zu manipulieren oder zu analysieren. In diesem Blog-Artikel werden wir uns ansehen, wie man diese Technik in Python anwenden kann.
+Das Extrahieren von Teilstrings, auch als Substrings bezeichnet, ist ein wichtiges Konzept in der Programmierung, das bei vielen Projekten nützlich sein kann. Mit dieser Technik können Sie bestimmte Teile eines Strings auswählen, die Ihren Bedürfnissen entsprechen, wie zum Beispiel bestimmte Wörter oder Zeichenfolgen.
 
-## Wie geht man vor?
+## Wie geht man vor
 
-Um Teilstrings in Python zu extrahieren, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung der Slice-Syntax, die es uns ermöglicht, einen Teil eines Strings basierend auf einer Start- und einer Endposition zu extrahieren.
-
-```Python
-# Beispiel 1: Extrahieren eines Teilstrings aus einem String
-text = "Dies ist ein Testtext"
-
-# Extrahieren des Teilstrings "Test"
-substring = text[11:15]
-
-# Ausgabe des Ergebnisses
-print(substring)
-```
-Ausgabe: `Test`
-
-Auch Teilstrings innerhalb einer bestimmten Länge können mit der Slice-Syntax extrahiert werden, indem wir die Endposition durch die Anzahl der Zeichen, die wir extrahieren möchten, ergänzen.
+Das Extrahieren von Substrings in Python ist relativ einfach mit der integrierten Funktion `substring()`. Um dies zu tun, geben Sie den ursprünglichen String und die gewünschten Indizes ein, die den Beginn und das Ende des Substrings angeben. Hier ist ein Beispiel:
 
 ```Python
-# Beispiel 2: Extrahieren eines Teilstrings mit fester Länge
-text = "Dies ist ein Testtext"
+string = "Hallo, mein Name ist Maria."
+sub = string[13:18]
 
-# Extrahieren des Teilstrings "ein"
-substring = text[9:12]
-
-# Ausgabe des Ergebnisses
-print(substring)
+print(sub)
 ```
-Ausgabe: `ein`
 
-## Deep Dive
+Dieser Code würde den Substring `Maria` aus dem ursprünglichen String extrahieren und ausgeben. Beachten Sie, dass die Indexierung in Python bei 0 beginnt, daher entspricht der Wert 13 dem ersten Zeichen des Substrings und 18 dem letzten Zeichen, das nicht mehr Teil des Substrings ist.
 
-Neben der Slice-Syntax gibt es auch die `find()`-Methode, mit der Teilstrings basierend auf einem bestimmten Muster extrahiert werden können. Diese Methode gibt die Position des ersten Vorkommens des Teilstrings zurück.
+Das Extrahieren von Substrings kann auch nützlich sein, um einen Teil eines größeren Strings zu ersetzen. Dazu können Sie den Substring durch einen anderen String mit der Funktion `replace()` ersetzen.
 
-```Python
-# Beispiel 3: Extrahieren eines Teilstrings mit find()
-text = "Dies ist ein Testtext"
+## Tiefere Einblicke
 
-# Extrahieren des Teilstrings "Test"
-substring = text[10:]
+Das Extrahieren von Substrings ist nicht nur in Python eine wichtige Fähigkeit, sondern wird auch in vielen anderen Programmiersprachen verwendet. Es ist auch möglich, mehrere Substrings aus einem String mit `split()` zu extrahieren, der den String in eine Liste von Teilstrings aufteilt. Darüber hinaus ist es auch möglich, eine bestimmte Anzahl von Zeichen aus einem String mit `ljust()` oder `rjust()` auszurichten.
 
-# Ausgabe des Ergebnisses
-print(substring)
-```
-Ausgabe: `Testtext`
-
-Es ist auch möglich, die `index()`-Methode zu verwenden, die ebenfalls die Position des ersten Vorkommens eines Teilstrings zurückgibt, jedoch einen Fehler wirft, wenn kein entsprechender Teilstring gefunden werden kann.
-
-Es gibt auch die Möglichkeit, Teilstrings anhand von regulären Ausdrücken zu extrahieren, wodurch die Suche nach komplexeren Mustern ermöglicht wird.
+Es ist wichtig zu beachten, dass Strings in Python unveränderlich (immutable) sind, was bedeutet, dass sie nach ihrer Erstellung nicht mehr geändert werden können. Bei der Extraktion eines Substrings aus einem String wird tatsächlich eine neue Kopie des Substrings erstellt.
 
 ## Siehe auch
 
-1. [Python-Dokumentation: Slice-Syntax](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str).
-2. [Python-Dokumentation: String-Methoden](https://docs.python.org/3/library/stdtypes.html#string-methods).
-3. [Real Python: Regular Expressions in Python](https://realpython.com/regex-python/).
+- [Python Strings](https://www.python.org/dev/peps/pep-0249/#python-strings)
+- [String Methods in Python](https://www.w3schools.com/python/python_ref_string.asp)
+- [Geeignete Python Kurse](https://www.udemy.com/topic/python-programming-language/)

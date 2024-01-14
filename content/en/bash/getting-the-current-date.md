@@ -1,38 +1,64 @@
 ---
-title:    "Bash recipe: Getting the current date"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/getting-the-current-date.md"
+title:                "Bash recipe: Getting the current date"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Have you ever needed to know the current date while working on a project in Bash programming? Maybe you want to include the date in a file name or use it for version control. Whatever the case may be, knowing how to retrieve the current date in Bash can be a useful skill to have.
+## Why
 
-## How To 
-To get the current date in Bash, we can use the `date` command. The general syntax for this command is as follows: 
-```Bash 
-date [OPTION]... [+FORMAT] 
+Have you ever needed to know the current date in your Bash script? Maybe you want to include it in a file name, or perhaps you need to keep track of when a certain task was executed. Whatever the reason may be, getting the current date in Bash is a useful skill to have. In this blog post, we will explore how to get the current date using simple Bash commands.
+
+## How To
+
+To get the current date in Bash, we can use the `date` command. This command is used to print or manipulate the current date and time. Let's take a look at some examples using this command.
+
+```Bash
+# To simply print the current date
+date
+# Output: Wed May 5 15:40:23 UTC 2021
+
+# To get only the current year
+date +"%Y"
+# Output: 2021
+
+# To get only the current month
+date +"%m"
+# Output: 05
+
+# To get only the current day
+date +"%d"
+# Output: 05
+
+# To get the current date in a specific format
+date +"%A, %B %d %Y"
+# Output: Wednesday, May 05 2021
+
+# To store the current date in a variable
+today=$(date +"%m-%d-%Y")
+echo "Today's date is $today"
+# Output: Today's date is 05-05-2021
 ```
-Some common options include `-d` for specifying a specific date and `-u` for displaying the date in UTC time. The `+FORMAT` option allows us to customize the output of the date. For example, if we want to display the date in the format of "Month Day, Year", we can use the following command: 
-```Bash 
-date +"%B %d, %Y" 
-```
-This will output something like "April 20, 2020". Alternatively, we can use the `+"%D"` format to display the date in the format of "MM/DD/YY". The possibilities are endless with the formatting options for the `date` command.
 
-For more advanced users, we can also combine the `date` command with other Bash commands to manipulate the date in different ways. For example, we can use command substitution to store the current date in a variable for later use. Consider the following example: 
-```Bash 
-current_date=$(date +"%m/%d/%y") 
-echo "The current date is $current_date" 
-``` 
-This will output something like "The current date is 04/20/20". 
+## Deep Dive
 
-## Deep Dive 
-The `date` command is a part of the GNU Core Utilities package, meaning that it is not specific to Bash and can be used on any Unix-based system. It uses the system's time and date settings, so if those settings are incorrect, the `date` command may produce incorrect results.
+The `date` command has many options that allow us to customize the output according to our needs. You can view the full list of options by typing `man date` in your terminal. Here are some common options that you might find useful:
 
-Additionally, the `date` command relies on the system's clock, which can sometimes be affected by time synchronization issues. If the system's clock is off, the output of the `date` command will also be off. It's important to regularly synchronize the system's time to avoid any discrepancies.
+- `%Y` : current year
+- `%m` : current month
+- `%d` : current day
+- `%A` : full day of the week
+- `%B` : full month name
+- `%H` : current hour (24-hour format)
+- `%M` : current minute
+- `%S` : current second
+
+Additionally, you can use the `date` command with the `-d` option to get the current date at a specific time. For example, to get the date and time 5 days from now, you can use `date -d "+5 days"`. This can be useful for scheduling tasks in your Bash script.
 
 ## See Also
-- [GNU Core Utilities](https://www.gnu.org/software/coreutils/)
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/)
-- [Bash Command Substitution](https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html)
+
+- [Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+- [Linuxize: How to Format Date and Time in Linux Using Date Command](https://linuxize.com/post/how-to-format-date-and-time-in-linux-using-date-command/)
+- [TecMint: How to Use ‘date’ Command in Linux for Time Reference](https://www.tecmint.com/linux-date-command-for-time-reference/)

@@ -1,49 +1,54 @@
 ---
-title:    "Elm: Creando un archivo temporal"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/creating-a-temporary-file.md"
+title:                "Elm: Creando un archivo temporal."
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué crear un archivo temporal en Elm
+## Por qué
 
-Crear archivos temporales puede ser una herramienta útil en la programación de Elm. Ya sea para trabajar con datos sensibles o para realizar una tarea específica, los archivos temporales pueden ser una solución efectiva. A continuación, te explicaremos cómo crear un archivo temporal en Elm.
+Muchos programadores usan archivos temporales en sus proyectos para almacenar datos temporales que no requieren ser guardados permanentemente en una base de datos. Algunos ejemplos comunes incluyen la generación de archivos CSV para exportar datos o la creación de imágenes temporales.
 
-## Cómo crear un archivo temporal en Elm
+## Cómo hacerlo
 
-Crear un archivo temporal en Elm es bastante simple. Todo lo que necesitas es importar el módulo `File` y utilizar la función `tempFile`.
+Crear un archivo temporal en Elm es muy sencillo gracias al paquete `elm/file`. Aquí hay un ejemplo de cómo crear y escribir en un archivo temporal en Elm:
 
-```Elm
-import File exposing (tempFile)
+```elm
+import File
+import Task exposing (Task)
 
-tempFile : String -> Cmd msg
+-- Función para crear un archivo temporal y escribir en él
+createTempFile : String -> Task File.Error File
+createTempFile content =
+    File.temp "ejemplo.csv" content
+
+-- Llamar a la función y ejecutar la tarea
+tempFileTask : Task File.Error File
+tempFileTask =
+    createTempFile "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+-- Manejar el resultado
+case Task.perform identity identity tempFileTask of
+    Ok file ->
+        file
+
+    Err err ->
+        Debug.log "Error" err
 ```
 
-La función `tempFile` toma como argumento una cadena de texto que será el nombre del archivo temporal a crear. También puedes proporcionar un segundo argumento opcional que especifica la ubicación del archivo. Si no se proporciona este argumento, el archivo se creará en la misma ubicación donde se ejecuta la aplicación Elm.
+Este código creará un archivo temporal llamado "ejemplo.csv" y escribirá el texto `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."` en él.
 
-Ahora que sabes cómo llamar a la función `tempFile`, aquí hay un ejemplo de cómo usarla:
+Para leer el archivo temporal creado, se puede usar la función `File.read` y para eliminarlo, se puede usar `File.delete`.
 
-```Elm
-import File exposing (tempFile)
-import Html
+## Profundizando
 
-main =
-    Html.div []
-        [ Html.text "Creando archivo temporal..."
-        , tempFile "datos_sensibles.txt"
-        ]
-```
+Crear un archivo temporal en Elm es relativamente simple, pero es importante tener en cuenta algunas cosas al trabajar con archivos temporales. Por ejemplo, siempre es una buena práctica asegurarse de que los archivos temporales sean eliminados después de su uso para no ocupar espacio innecesario en el sistema operativo.
 
-El código anterior creará un archivo temporal llamado "datos_sensibles.txt" en la misma ubicación donde se ejecuta la aplicación Elm. Si deseas especificar una ubicación diferente, puedes usar el segundo argumento de la función `tempFile` como se mencionó anteriormente.
+También se puede utilizar la función `File.name` para obtener la ruta completa del archivo temporal creado y así facilitar su uso en otras tareas.
 
-## Profundizando en la creación de archivos temporales
+## Ver también
 
-Para aquellos que quieran conocer más, aquí hay algunos detalles sobre cómo se crean los archivos temporales en Elm. La función `tempFile` utiliza una combinación de números aleatorios y la hora actual para generar un nombre único para el archivo temporal. Además, también se encarga de eliminar el archivo una vez que se cierra la aplicación o cuando se elimina manualmente mediante la función `File.delete` del módulo `File`.
-
-Una cosa importante a tener en cuenta es que los archivos temporales no son persistentes y se eliminan cada vez que se cierra la aplicación. Si necesitas que los datos contenidos en el archivo persistan, deberás guardarlos en una ubicación diferente.
-
-# Ver también
-- [Documentación de Elm sobre creación de archivos temporales](https://package.elm-lang.org/packages/elm/file/latest/File#tempFile)
-- [Tutorial de Elm: Trabajar con archivos](https://www.elm-tutorial.org/en/08-creating-projects/02-working-with-files.html)
-- [Ejemplo de creación de archivos temporales en Elm](https://gist.github.com/tusharmath/0b482601f8433d06ff2a7b4c4674f0a6)
+- [Documentación oficial de Elm sobre el paquete `elm/file`](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Tutorial de Creating an Elm App](https://ohanhi.github.io/base/index.html) con un ejemplo práctico de cómo crear y escribir en un archivo temporal en Elm.

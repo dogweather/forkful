@@ -1,60 +1,59 @@
 ---
-title:    "C++: Capitalizzare una stringa"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/capitalizing-a-string.md"
+title:                "C++: Capitalizzare una stringa"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché 
 
-Capitalizzare una stringa è un'operazione comune nel mondo della programmazione, soprattutto quando si lavora con stringhe di testo. Ciò consente di rendere uniforme l'aspetto di una stringa, rendendola più leggibile e più facile da manipolare. Inoltre, in alcuni casi, è necessario capitalizzare una stringa per farla corrispondere correttamente con altre stringhe o per soddisfare specifici requisiti di un programma.
+Capitalize una stringa è un'operazione comune nel programma di sviluppo. Ciò può essere utile quando si vuole dare enfasi a un titolo o a una parola importante. Inoltre, può essere necessario per avere uniformità nei dati, ad esempio quando si lavora con elenchi di nomi.
 
-## Come Fare
+## Come fare 
 
-Per capitalizzare una stringa in C++, è possibile utilizzare la funzione `toupper()` del linguaggio. Questa funzione converte ogni carattere della stringa in un carattere maiuscolo, mentre lascia invariati i caratteri non alfabetici. Di seguito è riportato un esempio di come utilizzare la funzione `toupper()` per capitalizzare una stringa:
+Per capitalizzare una stringa in C++, si può utilizzare la funzione `toupper()` che converte tutti i caratteri della stringa in maiuscolo. Oppure, si può utilizzare un semplice ciclo `for` per scorrere la stringa e convertire i caratteri desiderati in maiuscolo. Di seguito sono riportati due esempi di codice e relativi output:
 
 ```C++
-#include <iostream> 
-#include <cctype> 
+// Utilizzando la funzione toupper()
+#include <iostream>
+#include <string>
+using namespace std;
 
-using namespace std; 
-
-int main() 
-{ 
-  // Input della stringa 
-  string str = "ciao a tutti"; 
-  
-  cout << "Stringa non capitalizzata: " << str << endl; 
-  
-  // Loop per convertire ogni carattere in maiuscolo 
-  for (char& ch : str) { 
-    ch = toupper(ch); 
-  } 
-  
-  cout << "Stringa capitalizzata: " << str << endl; 
-  
-  return 0; 
+int main() {
+    string parola = "esempio";
+    transform(parola.begin(), parola.end(), parola.begin(), ::toupper);
+    cout << parola << endl;
+    return 0;
 }
+// Output: ESEMPIO
 ```
 
-**Output:**
+```C++
+// Utilizzando il ciclo for
+#include <iostream>
+#include <string>
+using namespace std;
 
-Stringa non capitalizzata: ciao a tutti
+int main() {
+    string parola = "esempio";
+    for (int i = 0; i < parola.length(); i++) {
+        parola[i] = toupper(parola[i]);
+    }
+    cout << parola << endl;
+    return 0;
+}
+// Output: ESEMPIO
+```
 
-Stringa capitalizzata: CIAO A TUTTI
+## Approfondimento 
 
-Nell'esempio sopra, abbiamo utilizzato un semplice loop per accedere a ogni carattere della stringa e applicare la funzione `toupper()` ad esso. Tuttavia, ci sono anche altre funzioni utili come `tolower()` per convertire una stringa in minuscolo o `toupper_l()` e `tolower_l()` per gestire la conversione dei caratteri in base alla lingua locale del sistema.
+Oltre alla funzione `toupper()`, esiste anche la funzione `tolower()` che converte tutti i caratteri di una stringa in minuscolo. Inoltre, è possibile utilizzare la libreria `<cctype>` che contiene vari metodi per manipolare i caratteri, come ad esempio `isupper()` per verificare se un carattere è maiuscolo e `islower()` per verificare se un carattere è minuscolo.
 
-## Approfondimento
+## Vedi anche 
 
-Una considerazione importante da tenere presente quando si capitalizza una stringa è il sistema operativo su cui verrà eseguito il programma. Infatti, il risultato della funzione `toupper()` può variare a seconda dell'ambiente in cui viene eseguito il programma. Ad esempio, su sistemi Windows, il carattere ß (es-zed tedesco) viene convertito in due caratteri, mentre su sistemi Linux viene convertito in un unico carattere.
-
-Un altro aspetto importante è la gestione delle stringhe di lunghezza variabile, come ad esempio quelle create utilizzando il tipo di dato `std::string` in C++. In questo caso, è necessario utilizzare funzioni come `std::transform()` per gestire correttamente la capitalizzazione della stringa, evitando possibili errori di memoria o di buffer overflow.
-
-Infine, è possibile personalizzare il comportamento della funzione `toupper()` creando una propria versione utilizzando la libreria `ctype.h` e definendo le regole di conversione dei caratteri desiderate.
-
-## Vedi Anche
-
-- [Documentazione ufficiale di toupper() in C++](https://www.cplusplus.com/reference/cctype/toupper/)
-- [Altre funzioni di gestione delle stringhe in C++](https://www.geeksforgeeks.org/string-handling-standard-cpp/?ref=lbp)
+- [Documentazione di toupper()](https://www.cplusplus.com/reference/cctype/toupper/)
+- [Tutorial su come manipolare le stringhe in C++](https://www.studytonight.com/cpp/string-manipulation-functions-in-cpp)
+- [Guida completa a C++](https://www.geeksforgeeks.org/c-plus-plus/)
+- [C++ per principianti](https://www.sololearn.com/Play/CPlusPlus/)

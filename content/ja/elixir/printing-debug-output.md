@@ -1,50 +1,45 @@
 ---
-title:    "Elixir: デバッグ出力の印刷"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/printing-debug-output.md"
+title:                "Elixir: デバッグ出力の印刷"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-Japanese translation: 
-
 ## なぜ
 
-デバッグ出力を表示することの利点を説明します。 
+デバッグ出力を行う理由を説明します。これは、コード内のエラーを特定し、修正するために非常に重要なツールです。デバッグ出力を使用することで、コードの実行中に発生した値や変数を確認することができ、プログラムの動作を理解するのに役立ちます。
 
-デバッグ出力は、アプリケーションの動作を理解し、問題を解決するために非常に有用です。コードを実行している間に起こった処理を把握し、プログラムの動きをトラックすることができます。さらに、デバッグ出力には、特定の変数の値や条件を確認することもできます。 
+## 方法
 
-## 使い方 
+Elixir では、`IO.inspect/2`関数を使用してデバッグ出力を行うことができます。以下のようにコード内に記述します。
 
-デバッグ出力を表示するには、Elixirの `IO.inspect` 関数を使用します。以下は、リストの要素を1つずつデバッグ出力する例です。 
-
-```Elixir 
-list = [1, 2, 3] 
-Enum.each(list, fn x -> 
-  IO.inspect(x) 
-end) 
+```Elixir
+def foo(x) do
+    IO.inspect(x)
+    x + 2
+end
 ```
 
-出力結果: 
+上記の例では、変数 `x` の値を出力し、その後に `x + 2` を返す関数 `foo` を定義しています。コードを実行すると、コンソールに変数 `x` の値が表示されます。
 
-```shell 
-1 
-2 
-3 
-``` 
+```Elixir
+iex> foo(5)
+5
+7
+```
 
-## ディープダイブ 
+このように、`IO.inspect/2` を使用することで、関数や変数の値を簡単に出力することができます。
 
-デバッグ出力をより効果的に使用するためには、いくつかのテクニックがあります。 
+## ディープダイブ
 
-- デバッグ出力をさまざまな階層で使用することで、プログラムの流れを把握しやすくなります。 
-- 特定の変数や条件の値のみをデバッグ出力することもできます。 
-- `IO.inspect(, label: "message")` を使用することで、メッセージを表示することができます。 
+デバッグ出力を行う際には、さまざまなオプションを設定することができます。例えば、`IO.inspect/2` の第2引数に `label` を指定することで、出力の前に任意のラベルを表示することができます。また、`IO.inspect/2` の第2引数に `pretty: true` を指定することで、出力を見やすい形式で表示することができます。
 
-## 参考リンク
+更に、`IO.inspect/2` をチェーンすることで、複数のデータを同時に出力することができます。また、`IO.inspect/2` では色付きの出力を行うこともでき、問題の特定に役立ちます。
 
-「[Elixirのデバッグ出力](https://elixirschool.com/jp/lessons/basics/io-and-the-stdout/)」 - Elixirスクールの基本レッスン 
+## See Also
 
-「[ElixirのIOモジュール](https://elixir-lang.org/getting-started/io-and-the-file-system.html)」 - 公式ドキュメント 
-
-「[コーディング中の5つのElixirデバッグテクニック](https://divante.com/blog/5-elixir-debugging-tools-to-use-when-the-code-goes-south/)」 - Divanteブログ記事
+- [Elixir 公式ドキュメント - IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [Elixir 入門 - デバッグの基礎](https://elixir.jp/learn/basic/debug.html)
+- [Deviac - Elixir を使用したデバッグの方法](https://deviac.me/articles/how-to-debug-your-elixir-code/)

@@ -1,34 +1,45 @@
 ---
-title:    "Arduino: Sletting av tegn som matcher et mønster"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/deleting-characters-matching-a-pattern.md"
+title:                "Arduino: Sletting av tegn som samsvarer med et mønster"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å slette tegn som matcher et mønster kan være nyttig når du jobber med å behandle og analysere tekst informasjon. Dette kan inkludere å fjerne uønsket eller ugyldig informasjon, eller å filtrere ut bestemte ord eller setninger.
 
-Noen ganger kan det være nødvendig å fjerne bestemte tegn fra en tekststreng i Arduino-programmering. Dette kan være for å rydde opp i unødvendig informasjon eller for å tilpasse strengen til et spesifikt format. Uansett årsak, er det nyttig å vite hvordan man kan slette tegn som matcher et bestemt mønster i en tekststreng. Les videre for å lære mer!
-
-## Hvordan gjøre det
-
-Å slette tegn som matcher et mønster i en tekststreng kan gjøres ved hjelp av funksjonen `removeIf()`. Denne funksjonen tar inn to parametere: et tegn (eller et sett med tegn) som skal slettes og tekststrengen som skal endres.
+## Hvordan
+Å slette tegn som matcher et mønster i Arduino er enkelt med innebygde funksjoner som `replace()` og `remove()`. Her er et eksempel på hvordan du kan bruke disse funksjonene for å fjerne alle siffer fra en tekststreng og deretter skrive ut resultatet:
 
 ```Arduino
-String tekststreng = "Hei! Du kan slette alle vokalene fra denne setningen.";
-tekststreng.removeIf("aeiou");
+String tekst = "Lorem ipsum 123 dolor 456 sit amet";
+tekst.replace("123", "");
+tekst.replace("456", "");
+Serial.println(tekst); // Utskrift: "Lorem ipsum dolor sit amet"
 ```
 
-Koden over vil slette alle vokalene fra tekststrengen, og resultatet blir "H! D kn sll tll vkl fr dnn stnnng."
+For å slette alle tegn som ikke er bokstaver, tall eller mellomrom, kan du bruke en if-setning og `remove()`-funksjonen:
+
+```Arduino
+String tekst = "Lorem ipsum 123? dolor 456! sit amet";
+for (int i = 0; i < tekst.length(); i++) {
+  if (!isAlphaNumeric(tekst.charAt(i)) && tekst.charAt(i) != ' ') {
+    tekst.remove(i);
+  }
+}
+Serial.println(tekst); // Utskrift: "Lorem ipsum 123 dolor 456 sit amet"
+```
+
+Det finnes også andre funksjoner som kan hjelpe deg med å slette tegn basert på bestemte kriterier, som for eksempel `substring()` og `trim()`. Det er viktig å merke seg at disse funksjonene vil endre den originale tekststrengen, så det kan være lurt å opprette en kopi av teksten før du begynner å slette tegn.
 
 ## Dypdykk
+Arduino har et stort utvalg av innebygde funksjoner som gjør det enkelt å manipulere tekststrenger. I tillegg kan du også bruke regex (regular expressions) for å definere mer komplekse mønstre som skal slettes. Dette åpner for flere muligheter når det kommer til å behandle og analysere tekstinformasjon.
 
-For å forstå hvordan `removeIf()` fungerer, må vi se på hvordan den er implementert. Funksjonen itererer gjennom hvert tegn i tekststrengen og sammenligner det med hvert tegn i det andre parameteret. Hvis tegnet matcher et tegn i det andre parameteret, blir det fjernet fra tekststrengen. Dette skjer for hvert tegn i tekststrengen.
-
-En ting å merke seg er at `removeIf()` fungerer forskjellig avhengig av hvilken versjon av Arduino du bruker. I nyere versjoner fungerer den som beskrevet ovenfor, men i eldre versjoner vil den bare fjerne det første forekomsten av tegnet og stoppe. Det kan også være begrensninger på hvor mange tegn som kan fjernes i en tekststreng, som er viktig å være klar over når du bruker denne funksjonen.
+Du kan også utforske forskjellige måter å slette tegn på ved å kombinere forskjellige funksjoner og metoder. Det er viktig å teste koden nøye for å sikre at den fungerer som ønsket og ikke endrer uønsket informasjon.
 
 ## Se også
-
-- [Mer informasjon om `removeIf()` funksjonen](https://www.arduino.cc/reference/en/language/variables/string/functions/removeif/)
-- [Eksempelkode for å fjerne tegn fra en tekststreng](https://www.arduino.cc/en/Tutorial/StringReplace)
-- [Mer informasjon om tekstbehandling i Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [`replace()`-dokumentasjon](https://www.arduino.cc/reference/en/language/variables/string/functions/replace/)
+- [`remove()`-dokumentasjon](https://www.arduino.cc/reference/en/language/variables/string/functions/remove/)
+- [Regex-tutorial på Norsk](https://www.regular-expressions.info/tutorial.html)

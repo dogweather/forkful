@@ -1,58 +1,36 @@
 ---
-title:    "Haskell: Schreiben auf Standardfehler"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/writing-to-standard-error.md"
+title:                "Haskell: Schreiben auf Standardfehler"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum 
+## Warum
 
-Das Schreiben von Programmen ist eine kreative und komplexe Aufgabe, die ständige Aufmerksamkeit und Verbesserung erfordern. Eine Möglichkeit, Ihren Code effektiver zu gestalten, ist die Verwendung von Standard Error. Durch das Schreiben von Code auf die Standard Error-Ausgabe werden Fehlermeldungen und Debugging-Informationen direkt in die Konsole geschrieben. Dies kann besonders nützlich sein, wenn Sie an komplexen Projekten arbeiten und Probleme schnell erkennen und lösen müssen.
+Das Schreiben an den Standardfehler ist eine wichtige Fähigkeit für jeden Haskell Programmierer. Es ermöglicht uns, wichtige Fehlermeldungen anzuzeigen, die uns bei der Fehlersuche und -behebung helfen können.
 
-## So geht's
+## Wie man
 
-Um Code auf die Standard Error-Ausgabe zu schreiben, müssen Sie die Funktion `hPutStrLn` aus dem Standardmodul `System.IO` importieren. Diese Funktion erwartet zwei Parameter: einen Handle und eine Zeichenkette. Der Handle gibt an, wohin die Zeichenkette geschrieben werden soll, und die Zeichenkette selbst ist der Inhalt, der geschrieben werden soll.
-
-Ein Beispiel für das Schreiben auf die Standard Error-Ausgabe könnte wie folgt aussehen:
+Das Schreiben an den Standardfehler in Haskell ist einfach. Man kann einfach die `hPutStrLn` Funktion aus dem `System.IO` Modul verwenden, um eine Zeichenfolge an den Standardfehler zu senden.
 
 ```Haskell
-import System.IO (hPutStrLn, stderr)
+import System.IO
 
 main = do
-    hPutStrLn stderr "Dies ist ein Beispiel für die Standard Error-Ausgabe."
+    hPutStrLn stderr "Dies ist eine Fehlermeldung"
 ```
 
-Die Ausgabe dieses Codes würde in der Konsole wie folgt aussehen:
+Dies wird die Zeichenfolge "Dies ist eine Fehlermeldung" an den Standardfehler senden. Beachten Sie, dass wir hier `stderr` statt `stdout` verwenden, um spezifisch den Standardfehler anstatt des Standardausgabestroms zu adressieren.
 
-```
-Dies ist ein Beispiel für die Standard Error-Ausgabe.
-```
+## Tiefgehender Einblick
 
-Sie können auch Variablen oder Ausdrücke anstelle der Zeichenkette in die Funktion `hPutStrLn` übergeben. Die Ausgabe wird dann entsprechend angepasst.
+Es gibt einige wichtige Dinge zu beachten, wenn man an den Standardfehler schreibt. Zum Beispiel bieten viele Bibliotheken wie `Control.Exception` Funktionen wie `throwIO` und `throw` an, die Fehler an den Standardfehler senden. Bei der Verwendung dieser Funktionen müssen wir jedoch vorsichtig sein, um nicht versehentlich wichtige Informationen zu verlieren.
 
-## Tiefere Einblicke 
+Eine weitere wichtige Sache ist, dass der Standardfehler im Allgemeinen nicht gepuffert wird, was bedeutet, dass jeder Aufruf von `hPutStrLn` sofort die Zeichenfolge an den Standardfehler sendet. Dies kann zu einer unübersichtlichen Ausgabe führen, insbesondere wenn mehrere Threads gleichzeitig auf den Standardfehler schreiben.
 
-Wenn Sie sich wirklich vertiefen möchten, gibt es noch weitere Dinge zu beachten, wenn Sie Code auf die Standard Error-Ausgabe schreiben. Ein wichtiger Punkt ist, dass die Standard Error-Ausgabe nicht dasselbe ist wie die Standardausgabe. Während die Standardausgabe normalerweise auf dem Bildschirm ausgegeben wird, ist die Standard Error-Ausgabe dafür gedacht, Fehlermeldungen und Debugging-Informationen auszugeben, die von anderen Programmen oder der Shell ausgewertet werden können.
+## Siehe auch
 
-Eine andere wichtige Überlegung ist die Reihenfolge, in der Ihre Ausgaben erscheinen. Da die Standard Error-Ausgabe für Fehlermeldungen und Debugging-Informationen vorgesehen ist, sollten Sie sicherstellen, dass diese Ausgaben vor allen anderen Ausgaben erscheinen, damit Sie schnell auf Probleme reagieren können.
-
-Um dies zu erreichen, können Sie das Modul `System.IO` verwenden, um ein Handle für die Standard Error-Ausgabe zu erstellen und dann den `stdout` durch den `stderr` zu ersetzen, bevor Sie Ihren Code schreiben:
-
-```Haskell
-import System.IO (hPutStrLn, stderr, stdout, hDuplicate)
-
-main = do
-    errHandle <- hDuplicate stderr
-    hDuplicateTo errHandle stdout
-    hPutStrLn stderr "Dieser Text erscheint als Standard Error!"
-    putStrLn "Dieser Text erscheint aber als Standardausgabe"
-```
-
-Diese Reihenfolge hilft Ihnen dabei, Fehler und andere wichtige Informationen sofort zu sehen, ohne dass sie von anderen Ausgaben überdeckt werden.
-
-# Siehe auch 
-
-- [Haskell Standardbibliothek: System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- [Haskell-Dokumentation: Standard Error-Ausgabe schreiben](https://www.haskell.org/onlinereport/io.html#hputstr)
-- [Blogpost: Debugging mit Haskell](https://bartoszmilewski.com/2015/03/25/debugging-with-haskell/)
+- [Haskell Dokumentation zu System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Fehlerbehandlung in Haskell](https://wiki.haskell.org/Error_handling)

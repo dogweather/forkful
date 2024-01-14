@@ -1,45 +1,68 @@
 ---
-title:    "PHP: 텍스트를 검색하고 교체하기"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/searching-and-replacing-text.md"
+title:                "PHP: 텍스트 검색과 교체"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-누군가가 텍스트를 검색하고 대체하는 것에 참여하는 이유는 코드를 유지하고 편집할 때 편리하고 빠르게 작업할 수 있기 때문입니다.
+## 왜
 
-## 방법
-PHP에서 텍스트를 검색하고 대체하는 방법은 다음과 같습니다. 먼저, `str_replace()` 함수를 사용하여 원하는 텍스트를 찾아 다른 텍스트로 대체합니다. 예를 들어, 다음과 같은 변수가 있다고 가정해봅시다.
-```PHP
-  $text = "안녕하세요, PHP를 배우는 건 어떠신가요?";
-  echo str_replace("배우는", "공부하는", $text);
+PHP 프로그래밍에는 많은 작업이 필요합니다. 그 중에서도 가장 흔한 작업 중 하나는 텍스트를 찾고 바꾸는 것입니다. 이 작업은 반복적이고 지루할 수 있지만, 당신이 원하는 대로 텍스트를 쉽게 바꿀 수 있도록 도와줍니다. 따라서 이번 포스트에서는 왜 이 문제를 해결해야 하는지 알아보겠습니다.
+
+## 어떻게
+
+텍스트 검색 및 교체는 기능이 강력한 PHP 문자열 함수를 사용하여 쉽게 수행할 수 있습니다. 다음은 몇 가지 예시입니다.
+
+```
+<?php
+// 원본 텍스트 설정
+$text = "안녕하세요, 오늘 날씨는 매우 좋습니다.";
+
+// 찾을 문자열 선택
+$search = "매우 좋습니다.";
+
+// 바꿀 문자열 선택
+$replace = "정말 멋집니다.";
+
+// 원본 텍스트에서 바꾸고자 하는 문자열을 찾아서 바꿔줍니다.
+$new_text = str_replace($search, $replace, $text);
+
+// 결과 출력
+echo $new_text; // 안녕하세요, 오늘 날씨는 정말 멋집니다.
+?>
 ```
 
-위의 코드는 `$text` 변수에서 "배우는"을 찾아 "공부하는"으로 대체하는 것을 보여줍니다. 아래의 출력을 볼 수 있습니다.
+위 예시에서는 `str_replace()` 함수를 사용하여 텍스트를 찾아서 바꿔줍니다. 이 함수는 원본 텍스트에서 원하는 문자열을 찾아서 새로운 문자열로 바꿔주는 기능을 합니다. 따라서 필요한 만큼 반복해서 사용할 수 있습니다. 또 다른 기능을 보여주는 예시를 살펴보겠습니다.
+
 ```
-안녕하세요, PHP를 공부하는 건 어떠신가요?
+<?php
+// 원본 텍스트 설정
+$text = "내 이름은 John Smith입니다.";
+
+// strpos 함수를 사용하여 "John"이라는 텍스트가 어디에 있는지 확인합니다.
+$position = strpos($text, "John");
+
+// 새로운 이름 설정
+$new_name = "Jane";
+
+// 원본 텍스트에서 John을 Jane으로 바꿔줍니다.
+$new_text = substr_replace($text, $new_name, $position, 4);
+
+// 결과 출력
+echo $new_text; // 내 이름은 Jane Smith입니다.
+?>
 ```
 
-또 다른 방법은 Regular Expressions(정규식)을 사용하는 것입니다. `preg_replace()` 함수를 사용하여 텍스트를 검색하고 대체할 수 있습니다. 예를 들어, 다음과 같은 코드를 사용할 수 있습니다.
-```PHP
-  $text = "오늘은 날씨가 맑고 햇살이 참 좋습니다.";
-  echo preg_replace("/맑고 (.*) 참/", "추위가 \1 지루해", $text);
-```
+위 예시에서는 `strpos()`와 `substr_replace()` 함수를 사용하여 특정 위치에 있는 문자열을 바꾸는 방법을 보여줍니다. 이 외에도 `str_replace()` 함수를 사용하여 특정 문자열을 모두 바꿀 수도 있고, 정규식을 사용하여 패턴에 맞는 텍스트를 바꿀 수도 있습니다.
 
-위의 코드는 "맑고"와 "참" 사이에 있는 어떤 단어에 대해서도 대체를 수행합니다. 따라서 아래의 출력을 볼 수 있습니다.
-```
-오늘은 날씨가 추위가 지루해 햇살이 참 좋습니다.
-```
+## 깊이 파고들기
 
-## 심층적으로 들어가기
-텍스트를 검색하고 대체하는 것은 간단한 작업처럼 보이지만, 정규식을 이해하고 다루는 것은 중요합니다. `()`를 사용하여 그룹으로 나누고 이후에 `\숫자`를 사용하여 순서대로 그룹을 참조할 수 있습니다.
+PHP에서 문자열 검색 및 교체 기능을 수행하는 함수는 다양합니다. 이번 포스트에서는 몇 가지만 간단히 소개할 수 있었지만, 더 많은 옵션이 있으니 관련 문서를 참고하시는 것을 추천합니다. 또한, 이 기능을 활용하여 좀 더 복잡한 작업을 수행하는 방법도 있으니 더 많은 실습을 통해 습득하는 것이 좋습니다.
 
-또한, 정규식에서는 `.`, `?`, `+`와 같은 특수 문자의 의미가 있으므로 주의해야 합니다. 또한, 대체할 텍스트에서 `(`나 `\`를 사용한다면 백슬래시(`\`)를 추가하여 escaping(이스케이핑)해야 합니다.
+## 관련 링크
 
-더 자세한 정보는 PHP 공식 문서를 참조하시기 바랍니다.
-
-# 또 다른 정보
-- PHP `str_replace()` 함수 공식 문서: https://www.php.net/manual/en/function.str-replace.php
-- PHP `preg_replace()` 함수 공식 문서: https://www.php.net/manual/en/function.preg-replace.php
-- 정규식 테스트 사이트: https://regex101.com/
+- [PHP 공식 문서 - 문자열 함수](https://www.php.net/manual/kr/ref.strings.php)
+- [W3Schools - PHP String Functions](https://www.w3schools.com/php/php_ref_string.asp)
+- [생활코딩 - PHP 문자열 함수 강좌](https://opentutorials.org/course/62)

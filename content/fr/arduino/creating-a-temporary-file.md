@@ -1,33 +1,82 @@
 ---
-title:    "Arduino: Création d'un fichier temporaire"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/creating-a-temporary-file.md"
+title:                "Arduino: Créer un fichier temporaire"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La création d'un fichier temporaire peut être utile dans de nombreuses situations lors de la programmation Arduino. Cela permet de stocker temporairement des données ou des informations, qui seront ensuite supprimées une fois qu'elles ne sont plus nécessaires. Cela peut également aider à économiser de l'espace de stockage et à optimiser les performances de votre projet.
+Si vous êtes passionné par la programmation et que vous aimez apprendre de nouvelles compétences, alors vous êtes au bon endroit ! Aujourd'hui, nous allons parler de la création de fichiers temporaires en utilisant Arduino.
 
 ## Comment faire
 
-La création d'un fichier temporaire en utilisant Arduino est un processus simple en quelques étapes. Tout d'abord, vous devrez inclure la bibliothèque "SD.h" dans votre code. Ensuite, vous pouvez créer le fichier temporaire en utilisant la fonction "File.createTempFile()". Vous pouvez spécifier un nom de fichier et une extension facultative pour le fichier temporaire. Enfin, vous pouvez écrire des données dans le fichier temporaire en utilisant la fonction "file.println()" ou toute autre fonction d'écriture.
+La création d'un fichier temporaire peut être utile dans de nombreuses situations, comme la sauvegarde de données temporaires ou l'utilisation de fonctions de débogage. Avec Arduino, il est facile de créer un fichier temporaire en utilisant la bibliothèque SD.
 
 ```Arduino
+#include <SPI.h>
 #include <SD.h>
-File tempFile = File.createTempFile("mon_fichier_temporaire", ".txt");
-tempFile.println("Ceci est un fichier temporaire créé avec Arduino!");
-tempFile.close();
+
+File dataFile; // Création de l'objet de fichier
+
+void setup() {
+  Serial.begin(9600); // Initialisation de la communication série
+  while (!Serial) {
+    ; // Attente de la connexion du moniteur série
+  }
+
+// Initialisation de la carte SD
+  Serial.print("Initialisation de la carte SD...");
+  if (!SD.begin(4)) {
+    Serial.println("ÉCHEC !");
+    return;
+  }
+  Serial.println("RÉUSSITE !");
+}
+
+void loop() {
+  // Ouverture du fichier temporaire
+  dataFile = SD.open("temp.txt", FILE_WRITE);
+  if (dataFile) {
+    Serial.println("Écriture dans le fichier temporaire...");
+    dataFile.println("Contenu temporaire"); // Écriture dans le fichier
+    dataFile.close(); // Fermeture du fichier
+    Serial.println("ÉCRITURE RÉUSSITE !");
+    
+  // Lecture du fichier pour vérifier le contenu
+    dataFile = SD.open("temp.txt");
+    
+    while (dataFile.available()) {
+      Serial.write(dataFile.read());
+    }
+    dataFile.close();
+    
+  // Suppression du fichier temporaire
+    if (SD.remove("temp.txt")) {
+      Serial.println("Fichier temporaire supprimé.");
+    } else {
+      Serial.println("Échec de la suppression du fichier temporaire.");
+    }
+    delay(1000); // Attente d'une seconde avant de recommencer
+  }
+}
+
 ```
-La sortie de cet exemple sera un fichier texte nommé "mon_fichier_temporaire.txt" avec le contenu "Ceci est un fichier temporaire créé avec Arduino!".
+Lorsque vous téléversez ce code sur votre carte Arduino ayant un module SD, vous verrez que le contenu du fichier temporaire sera affiché sur votre moniteur série avant qu'il ne soit supprimé.
 
-## Plongée en profondeur
+## Plongeon en profondeur
 
-Lors de la création d'un fichier temporaire avec Arduino, il est important de comprendre que le fichier sera stocké dans la mémoire SRAM de votre carte Arduino, et non sur une carte SD ou tout autre périphérique de stockage. Cela signifie que la taille du fichier temporaire sera limitée en fonction de la taille de la mémoire SRAM disponible. Il est donc important de veiller à ne pas créer de fichiers trop volumineux et de les supprimer une fois qu'ils ne sont plus nécessaires.
+Maintenant, jetons un coup d'œil à la ligne importante de code dans ce programme : `dataFile = SD.open("temp.txt", FILE_WRITE);`. Cette ligne ouvre le fichier temporaire avec le nom "temp.txt" en mode écriture. Le mode d'écriture permet d'écrire du contenu dans le fichier tandis que le mode lecture permet de lire le contenu du fichier.
+
+De plus, il est important de fermer le fichier après avoir terminé d'écrire ou de lire. Vous pouvez également utiliser la fonction `SD.remove()` pour supprimer le fichier temporaire après utilisation.
+
+Maintenant que vous comprenez comment créer un fichier temporaire en utilisant Arduino, vous pouvez l'implémenter dans vos futurs projets !
 
 ## Voir aussi
 
-- [Documentation officielle sur la création de fichiers temporaires avec Arduino](https://www.arduino.cc/en/Reference/FileCreateTempFile)
-- [Tutoriel sur l'utilisation de la bibliothèque SD pour stocker des données sur une carte SD avec Arduino](https://www.instructables.com/id/Save-Files-to-SD-Card-Using-Arduino/)
-- [Article sur la gestion de la mémoire SRAM avec Arduino](http://gammon.com.au/millis)
+Si vous souhaitez en savoir plus sur la création de fichiers temporaires en utilisant Arduino, vous pouvez consulter les ressources suivantes :
+
+- [Tutoriel sur l'utilisation de la bibliothèque SD avec Arduino](https://www.arduino.cc/en/Reference/SD)
+- [Exemples de projets utilisant des fichiers temporaires avec Arduino](https://create.arduino.cc/projecthub/search?q=temporary+file)

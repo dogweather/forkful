@@ -1,41 +1,44 @@
 ---
-title:    "Swift: 文字列の連結"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/concatenating-strings.md"
+title:                "Swift: 「文字列の連結」"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+＃＃なぜ
+Swiftで文字列を連結するのに人々が参加する理由をご紹介します。文字列を連結することで、より簡潔で読みやすいコードを書くことができます。
 
-今回の記事では、Swiftで文字列を連結する方法について説明します。文字列を連結すると、プログラムの柔軟性を高め、より読みやすいコードを書くことができます。
+＃＃方法
+まずは、concatenate（連結）メソッドを使う基本的な方法をご説明します。
 
-## 方法
+`` `Swift
+let firstName = "太郎"
+let lastName = "山田"
+let fullName = firstName + lastName // fullNameは "太郎山田"となります
+`` ```
 
-文字列を連結するには、以下のように`+`演算子を使用します。
+次に、文字列補間（String interpolation）を使って連結する方法をご紹介します。
 
-```Swift
-let string1 = "こんにちは"
-let string2 = "世界"
-let result = string1 + string2
-print(result)
-```
+`` `Swift
+let age = 20
+let message = "私の年齢は\(age)歳です。" // messageは "私の年齢は20歳です。"となります
+`` ```
 
-このコードを実行すると、`こんにちは世界`という出力が得られます。また、文字列の中に他の変数の値を挿入することもできます。
+また、文字列を連結する際に配列を使っても簡単にできます。
 
-```Swift
-let name = "太郎"
-let greeting = "こんにちは、\(name)さん"
-print(greeting)
-```
+`` `Swift
+let numbers = [1, 2, 3]
+let result = numbers.map { String($0) }.joined(separator: "、") // resultは "1、2、3"となります
+`` ```
 
-この場合、出力は`こんにちは、太郎さん`となります。
+＃＃深く掘り下げる
+Swiftでは、かつては加算演算子（+）を使って文字列を連結していましたが、Swift 5からは改良された連結メソッドを採用しています。これにより、文字列の連結のパフォーマンスが向上し、メモリーの節約にもつながります。
 
-## 詳しい情報
+また、文字列補間や配列を使って連結する方法も、拡張性や可読性の面でより優れていると言えます。しかし、大量の文字列を連結する処理では、性能面で影響が出てくる場合もあるので注意が必要です。
 
-文字列を連結するには、`+`演算子以外にも`append()`メソッドや`concat()`関数などがあります。また、文字列の中に数字や複数の変数を挿入する際には、フォーマット指定子を使用することもできます。詳しくは公式ドキュメントをご覧ください。
-
-## See Also
-
-- [Swift 公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [文字列を連結する方法](https://www.tutorialspoint.com/swift/swift_concatenation.htm)
+＃＃参考リンク
+- [Swift 公式ドキュメント - Concatenating Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID264)
+- [文字列を連結する方法 【Swift入門】](https://beyondcoach.net/post-3086)
+- [Apple Developer Forum - String Interpolation vs Concatenation](https://developer.apple.com/forums/thread/141178)

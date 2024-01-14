@@ -1,72 +1,51 @@
 ---
-title:    "Ruby recipe: Writing tests"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/writing-tests.md"
+title:                "Ruby recipe: Writing tests"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-When it comes to writing code, it's important to ensure that it works correctly and doesn't break unexpectedly. This is where testing comes in. Writing tests allows developers to check their code for errors and bugs, ensuring the quality and functionality of their code.
+Writing tests may seem like an extra step in the coding process, but it can actually be a valuable tool for any developer. By writing tests, you can ensure that your code is functioning correctly and prevent potential errors or bugs in the future.
 
 ## How To
-
-To write tests in Ruby, we will be using a popular testing framework called RSpec. First, we need to install RSpec using the following command:
-
-```Ruby
-gem install rspec
-```
-
-Next, we can create a new Ruby file for our tests. Let's name it `calculator_spec.rb`. In this file, we will require the `rspec` library and the file containing the code we want to test. Our `calculator_spec.rb` file should look like this:
+To write tests in Ruby, you can use the built-in testing library called "minitest". Let's take a look at an example of a simple test:
 
 ```Ruby
-require 'rspec'
-require_relative 'calculator'
+require "minitest/autorun"
 
-# tests will go here
-```
+# Define a class to be tested
+class Calculator
+  def add(a, b)
+    a + b
+  end
+end
 
-Now, let's write a simple test to make sure our `Calculator` class can add two numbers correctly. We will use the `describe` and `it` methods provided by RSpec to group and label our tests. Our test should look like this:
-
-```Ruby
-describe Calculator do
-  describe "add" do
-    it "correctly adds two numbers" do
-      # instantiate a new Calculator object
-      calculator = Calculator.new
-      # assign the result of the add method to a variable
-      result = calculator.add(2, 3)
-      # use the expect method to check if the result is equal to 5
-      expect(result).to eq(5)
-    end
+# Define a test class
+class TestCalculator < MiniTest::Test
+  # Define a test for the add method
+  def test_add
+    # Create an instance of the Calculator class
+    calculator = Calculator.new
+    
+    # Assert that the result of the add method is correct
+    assert_equal 4, calculator.add(2, 2)
   end
 end
 ```
 
-We can now run our tests by executing the `rspec` command in our terminal. If our test passes, we should see an output similar to the following:
+In this example, we first require the "minitest/autorun" library which allows us to use the MiniTest::Test class for writing tests. Next, we define a class called Calculator which contains a method called "add" that adds two numbers together. Then, we create a test class called TestCalculator which inherits from MiniTest::Test and contains a test method called "test_add". Within this test method, we create an instance of the Calculator class and use the "assert_equal" assertion to ensure that the result of the add method is correct. If the result is not equal to 4, the test will fail.
 
-```Ruby
-.
-
-Finished in 0.002 seconds (files took 0.24816 seconds to load)
-1 example, 0 failures
-```
-
-The `.` indicates that our test has passed successfully.
+To run this test, we can simply enter "ruby test_calculator.rb" in the terminal and it will output the test results. If all tests pass, you will see a dot for each test. If any tests fail, you will see an "F" and a failure message.
 
 ## Deep Dive
+In addition to using the "assert_equal" assertion, there are other assertions you can use in your tests such as "assert", "refute_equal", and "refute". You can also use setup and teardown methods to set up any necessary data before each test and clean up after each test. It's important to write tests that cover all possible scenarios and edge cases to ensure that your code is functioning correctly.
 
-Writing tests not only helps us catch and fix errors, but it also allows us to design our code in a more organized and logical manner. When writing tests, it's important to think about different scenarios and edge cases to ensure our code is robust and can handle various inputs.
-
-In addition, writing tests can also serve as documentation for our code. Tests act as live examples of how our code should be used and can help other developers understand our code more easily.
-
-In terms of best practices, it's recommended to write tests for every new feature or bug fix. Also, it's important to keep tests independent of each other to avoid any dependencies and to make sure each test can be run individually.
+Another helpful practice when writing tests is to use a code coverage tool, such as SimpleCov, to see which parts of your code are not being tested. This can help you identify any gaps in your test coverage and ensure that all of your code is being thoroughly tested.
 
 ## See Also
-
-For more information on RSpec and writing tests in Ruby, check out the following links:
-
-- [RSpec website](https://rspec.info/)
-- [RubyDocs: RSpec](https://rubydoc.info/gems/rspec/)
-- [Better Specs: A RSpec Style Guide](https://www.betterspecs.org/)
+- [Ruby Testing for Beginners](https://rubyplus.com/articles/3571-How-to-Test-Ruby-Methods)
+- [The Benefits of Test-Driven Development in Ruby](https://blog.testlodge.com/benefits-test-driven-development-ruby/)
+- [Minitest Documentation](https://github.com/seattlerb/minitest)

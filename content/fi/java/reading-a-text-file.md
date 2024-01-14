@@ -1,75 +1,49 @@
 ---
-title:    "Java: Tekstitiedoston lukeminen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/reading-a-text-file.md"
+title:                "Java: Tekstitiedoston lukeminen"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi lukea teksti tiedostoja Java-ohjelmoinnin yhteydessä?
 
-Monilla Java-ohjelmoijilla on tarve lukea tekstitiedostoja. Tämä voi olla osa tiedonkeruuprosessia tai tiedostonkirjoitusjärjestelmän osa. Riippumatta syystä, on tärkeää tuntea tekstitiedostojen lukemisen prosessi Java-ohjelmoinnissa. Tässä blogikirjoituksessa keskitymme siihen, miten voit lukea tekstitiedostoja Java-ohjelmassa.
+Teksti tiedostot ovat yleinen tapa tallentaa ja jakaa tietoa ohjelmoinnin maailmassa. Ne voivat sisältää tekstejä, lukuarvoja, merkkejä ja jopa muita tiedostoja. Java-ohjelmoijana, sinun on tärkeää olla tietoinen siitä, miten lukea teksti tiedostoja ja käsitellä niiden sisältöä koodissa.
 
-## Miten
+## Näin teet sen
 
-Java-ohjelmassa voidaan lukea tekstitiedostoja monin eri tavoin, mutta yksi näppärä tapa on käyttää Scanner-luokkaa. Se tarjoaa helpon tavan lukea tiedostoja ja tiedoston sisältöä voi käsitellä helposti.
-
-Aloitamme luomalla Scanner-olion ja liitämme siihen tiedoston käyttämällä koodia:
+Java-ohjelmointikielessä on sisäänrakennettuja toimintoja, joiden avulla voit lukea ja käsitellä teksti tiedostoja. Alla on esimerkki koodista, kuinka voit lukea tiedoston nimeltä "teksti.txt".
 
 ```Java
-Scanner lukija = new Scanner(new File(tiedostonimi));
-```
-Tämän jälkeen voimme käyttää lukija-oliota lukemaan tiedoston sisältöä käyttämällä metodia ```nextLine()```, joka lukee yhden rivin kerrallaan. Voimme myös käyttää muita metodeja, kuten ```nextInt()``` tai ```nextDouble()``` lukeaksemme erilaisia tietotyyppejä sisältäviä tiedostoja.
-
-Jokaisen tiedoston lopussa tulee muistaa sulkea Scanner-olio ```close()```-metodilla, jotta varmistetaan, että resurssit vapautetaan oikein.
-
-Näytetään esimerkki siitä, miten voit lukea ja tulostaa tekstitiedoston sisältöä Java-koodissa:
-
-```Java
+// Tuo tarvittavat kirjastot
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class TiedostonLuku {
-  public static void main(String[] args) throws FileNotFoundException {
-    // Luodaan Scanner-olio lukemaan tekstitiedostoa
-    Scanner lukija = new Scanner(new File("tiedosto.txt"));
+// Luo uusi tiedosto-olio ja avaa se lukemista varten
+File tiedosto = new File("teksti.txt");
+FileReader lukija = new FileReader(tiedosto);
 
-    // Luetaan ja tulostetaan tiedoston sisältöä rivi kerrallaan
-    while (lukija.hasNextLine()) {
-      String rivi = lukija.nextLine();
-      System.out.println(rivi);
-    }
-
-    // Suljetaan Scanner-olio lopuksi
-    lukija.close();
-  }
+// Luetaan kaikki teksti ja tallennetaan se javan omalla "char" tyyppisellä muuttujalla
+int merkki;
+while ((merkki = lukija.read()) != -1) {
+  char c = (char)merkki; // Muuta "int" tyyppinen merkki "char" tyyppiseksi
+  // Tee halutut toimenpiteet luetulle merkille
 }
+
+// Sulje tiedosto lukemisen jälkeen
+lukija.close();
 ```
 
-Esimerkkitiedoston "tiedosto.txt" sisältö voi olla esimerkiksi:
+Tämä koodi esimerkki luo ensin tarvittavat tulot (input) toiminnot ja tiedostoon viittaavat oliot. Sitten se lukee tiedoston sisällön merkki kerrallaan, tallentaa sen "char" muuttujaan ja suorittaa halutut toimenpiteet luetulle merkille. Lopuksi tiedosto suljetaan lukemisen jälkeen.
 
-```
-Tämä on ensimmäinen rivi
-Toinen rivi
-Viimeinen rivi
-```
+## Syvällisempi tarkastelu
 
-Tulostuksen pitäisi näyttää seuraavalta:
-
-```
-Tämä on ensimmäinen rivi
-Toinen rivi
-Viimeinen rivi
-```
-
-## Syvempi sukellus
-
-Scanner-luokka tarjoaa myös muita hyödyllisiä metodeja, jotka voit avulla voit käsitellä tiedoston sisältöä tehokkaasti. Voit esimerkiksi käyttää metodeja kuten ```hasNext()``` ja ```next()``` lukiessasi tiedoston eri tietotyyppejä. Lisäksi voit myös määrittää erilaisia erotimia, kuten välilyönnin tai rivinvaihdon, käyttämällä metodia ```useDelimiter()```.
-
-Lisätietoja Scanner-luokasta ja sen tarjoamista metodeista löydät Java:n virallisesta dokumentaatiosta.
+On tärkeää muistaa, että teksti tiedostot voivat sisältää monenlaisia merkkejä ja niiden lukeminen Java-ohjelmassa vaatii oikeanlaisen koodauksen. Tämä tarkoittaa, että sinun tulee huolehtia siitä, että tiedosto tallennetaan ja luetaan samassa koodauksessa. Voit myös tarvittaessa asettaa koodauksen manuaalisesti luku- tai kirjoitusprosessin yhteydessä.
 
 ## Katso myös
 
-- [Java Scanner-luokan dokumentaatio](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html)
-- [Lue tekstitiedosto Java Scanner-luokalla - opetusvideo (englanniksi)](https://www.youtube.com/watch?v=HBydRw1yezQ)
+- [Java-opas - Tiedostojen käsittely](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+- [Codecademy - Java tiedostojen lukeminen ja kirjoittaminen](https://www.codecademy.com/learn/learn-java/modules/learn-java-files)
+- [Baeldung - Tiedostojen lukeminen ja kirjoittaminen Javassa](https://www.baeldung.com/java-read-file)

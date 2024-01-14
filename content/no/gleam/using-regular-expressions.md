@@ -1,34 +1,52 @@
 ---
-title:    "Gleam: Å bruke regulære uttrykk"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/using-regular-expressions.md"
+title:                "Gleam: Å bruke regulære uttrykk"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke regulære uttrykk?
+##Hvorfor
 
-Regulære uttrykk er en nyttig verktøy for å håndtere tekst og data på en effektiv måte. De tillater deg å søke, erstatte og manipulere tekstbaserte data ved å bruke forhåndsdefinerte regler. Dette kan være spesielt nyttig når du jobber med store mengder tekst eller utfører repetitivt arbeid.
+Hvorfor bry seg med regulære uttrykk (Regular Expressions)? Regulære uttrykk er et kraftig verktøy for å håndtere strenger av tekst og lar deg finne, erstatte og manipulere tekst på en enkel måte. De er spesielt nyttige når du jobber med store mengder tekst eller når du trenger å filtrere og sortere data.
 
-# Slik bruker du regulære uttrykk i Gleam
+##Slik gjør du det
 
-For å bruke regulære uttrykk i Gleam, må du først importere modulen "re" og gi den et alias. Deretter kan du bruke funksjonen "match" for å søke etter et gitt mønster i en tekststreng. Her er et eksempel på en enkel søk-operasjon:
+Du kan bruke regulære uttrykk i Gleam ved å bruke `regex` biblioteket. La oss si at du har en liste over produktnumre som følger et bestemt mønster, for eksempel "GN-1234", "GN-5678", "BN-9012". Ved hjelp av regulære uttrykk kan du enkelt filtrere ut bare produktene som starter med "GN".
 
 ```Gleam
-let pattern = re.compile("Gleam")
-let text = "Jeg elsker å kode i Gleam"
-let match = re.match(pattern, text)
+import regex
+
+// Opprett et regulært uttrykk for å matche "GN" etterfulgt av 4 tall
+let pattern = regex.compile("^GN-\\d{4}$")
+
+// Opprett en liste av produktnummere
+let product_numbers = ["GN-1234", "GN-5678", "BN-9012"]
+
+// Fjern alle produktnummer som ikke passer med mønsteret
+let filtered_numbers = 
+    product_numbers
+    |> List.filter(fn(number) -> regex.match(pattern, number))
+
+// Resultatet blir ["GN-1234", "GN-5678"]
 ```
 
-I dette tilfellet vil variabelen "match" inneholde informasjon om hvor i teksten strengen "Gleam" ble funnet.
+##Dypdykk
 
-# Dypdykk i regulære uttrykk
+Regulære uttrykk kan virke kompliserte og forvirrende i starten, men når du skjønner hvordan de fungerer, vil du se hvor nyttige de kan være. Her er noen tips for å hjelpe deg med å komme i gang:
 
-Regulære uttrykk kan være svært kraftige verktøy når det kommer til tekstmanipulering. Du kan bruke ulike metakarakterer og uttrykk for å finne spesifikke typer tekst, som for eksempel tall, bokstaver eller spesialtegn. Du kan også bruke uttrykk for å søke og erstatte deler av en tekststreng, eller for å splitte en tekststreng inn i ulike deler.
+- `^` og `$` tegnene matcher begynnelsen og slutten av en streng.
+- `.` matcher hvilket som helst tegn.
+- `*` matcher 0 eller flere forekomster av det foregående uttrykket.
+- `+` matcher 1 eller flere forekomster av det foregående uttrykket.
+- `?` matcher 0 eller 1 forekomst av det foregående uttrykket.
+- `|` lar deg definere flere alternativer til et uttrykk.
 
-Det er viktig å merke seg at regulære uttrykk kan være komplekse og at det kan ta litt tid å lære seg hvordan de fungerer. Det er derfor alltid lurt å øve seg og eksperimentere for å bli mer komfortabel med dem.
+Det er bare noen få av mange nyttige tegn og kombinasjoner som kan brukes i regulære uttrykk. Husk at øvelse gjør mester, så fortsett å eksperimentere og utforsk mulighetene for å få mest mulig ut av dette verktøyet.
 
-# Se også
-- [Gleam offisiell dokumentasjon for regulære uttrykk](https://gleam.run/lib/re.html)
-- [Primer på regulære uttrykk i Gleam](https://gleam.run/articles/regex-primer.html)
-- [Interaktive øvelser for å lære regulære uttrykk](https://regexone.com)
+##Se også
+
+- [Gleam sin offisielle dokumentasjon om regex](https://gleam.run/book/tour/pattern_matching.html)
+- [En interaktiv tutorial for regulære uttrykk](https://regexone.com/)
+- [En online regex editor for Gleam](https://regexr.com/?language=gleam)

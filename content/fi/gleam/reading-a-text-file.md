@@ -1,37 +1,44 @@
 ---
-title:    "Gleam: Tiedostotiedoston lukeminen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/reading-a-text-file.md"
+title:                "Gleam: Tekstitiedoston lukeminen"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi lukea tekstitiedostoa Gleam-ohjelmoinnilla?
+## Miksi
 
-Jos olet Gleam-ohjelmoija ja haluat käsitellä andataa tekstimuodossa, luettaessa tekstitiedostoa voi olla erittäin hyödyllistä. Tämä blogikirjoitus opastaa sinua lukemaan tekstitiedostoja Gleam-ohjelmointikielen avulla ja antaa sinulle vinkkejä siitä, miten tämän teet.
+Tekstitiedoston lukeminen on yksi keskeisimmistä ohjelmoinnin taidoista, joka on välttämätön monissa sovelluksissa. Se on erityisen tärkeää, jos haluat käsitellä suuria määriä tiedonkäsittelyä ja tallennusta. Lue tämä artikkeli oppiaksesi, miten voit lukea tekstiä ja hyödyntää sitä Gleam-kielellä.
 
-## Miten lukea tekstitiedosto Gleam-ohjelmoinnilla?
+## Miten
 
-Lukeminen tekstiideltiedostoja Gleamilla on helppoa! Käytä vain ```File``` -moduulia ja sen ```open``` -funktiota avataksesi tiedoston ja ```read_line``` -funktiota lukemaan sen sisällön rivi kerrallaan. Tässä on esimerkki:
+```Gleam 
+import io
 
-```Gleam
-import File
+// Avaaminen ja lukeminen tiedostosta
+file := io.open!("tiedosto.txt", "r")
+contents := file.read()
 
-let file = File.open("tiedosto.txt")
-for line in File.read_line(file) {
-  io.println(line)
+// Tulostetaan tiedoston sisältö
+case contents {
+  Ok(text) -> io.println(text)
+  Error(error) -> io.println("Virhe: #(error)")
 }
-
 ```
 
-Tämä koodi avaa tiedoston nimeltä "tiedosto.txt" ja tulostaa sen sisällön konsoliin.
+Yllä olevassa koodiesimerkissä näet, miten voit avata ja lukea tiedoston Gleam-ohjelmointikielessä. Ensimmäisellä rivillä tuodaan io-moduuli, joka sisältää toimintoja tiedostojen käsittelyyn. Sitten avataan tiedosto käyttäen io.open!-funktiota, joka ottaa ensimmäisenä parametrina tiedoston nimen ja toisena parametrina avaamistilan ("r" tarkoittaa lukemista). Tämän jälkeen voit lukea sisällön kutsuen file.read() -funktiota.
 
-## Syväsukellus: miten tiedostot luetaan Gleamilla?
+Tulostamme sitten tiedoston sisällön case-lauseen avulla. Jos tiedoston lukeminen onnistuu, sisältö asetetaan muuttujaan "text" ja tulostetaan io.println-funktiolla. Muussa tapauksessa, jos tapahtuu virhe, tulostetaan virheilmoitus.
 
-Tiedostojen lukeminen tapahtuu useimmiten kahdessa vaiheessa: tiedoston avaaminen ja sen sisällön lukeminen. Avaa tiedosto käyttämällä ```File.open``` -funktiota ja anna sille tiedoston nimi kirjoitettuna lainausmerkeissä. Sitten voit lukea tiedoston sisällön käyttämällä ```read_line``` -funktiota, joka lukee tiedoston rivit yksi kerrallaan kunnes pääsee tiedoston loppuun. Voit myös käyttää muita funktioita, kuten ```read_all``` ja ```read_binary``` riippuen siitä, miten haluat käsitellä tiedoston sisältöä.
+## Syväluotaus
+
+Tiedostojen lukeminen Gleamilla voi olla hieman monimutkaista, jos haluat tehdä enemmän kuin yksinkertaisesti lukea tiedostoa ja tulostaa sen sisällön. Voit esimerkiksi käsitellä erilaisia formaatteja, kuten CSV- tai JSON-tiedostoja, tai lukea tiedostoa osissa tietyn koon mukaan.
+
+Tähän tarkoitukseen Gleam tarjoaa useita moduuleja, kuten csv, json ja binary, jotka auttavat käsittelemään erilaisia tiedostomuotoja ja datatyyppejä. Voit tutustua näihin moduuleihin Gleam-kirjastosta löytyvien dokumentaatioiden avulla.
 
 ## Katso myös
 
-- [Gleam-kielen virallinen verkkosivusto](https://gleam.run/)
-- [Gleam-kielen dokumentaatio](https://gleam.run/documentation/)
-- [Gleam-kielen Github-repositorio](https://github.com/gleam-lang/gleam)
+- [Gleam-kirjaston dokumentaatio](https://gleam.run/)
+- [Gleam-moduulit tiedostojen käsittelyyn](https://gleam.run/modules/file)
+- [Ohjeet teksti-tiedoston lukemiseen Gleamilla](https://gleam.run/articles/reading_text_files)

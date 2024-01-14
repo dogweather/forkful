@@ -1,51 +1,72 @@
 ---
-title:    "TypeScript: Zaczynając nowy projekt"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/starting-a-new-project.md"
+title:                "TypeScript: Rozpoczynając nowy projekt"
+programming_language: "TypeScript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto rozpocząć nowy projekt?
+## Dlaczego
 
-Rozpoczęcie nowego projektu może być ekscytującym wyzwaniem dla każdego programisty. Nie tylko daje możliwość używania nowych technologii i rozwiązań, ale także pozwala na rozwijanie swoich umiejętności. Ponadto, tworzenie nowego projektu może być świetną okazją do pokazania swoich umiejętności swoim potencjalnym pracodawcom lub klientom.
+Rozpoczęcie nowego projektu to wyjątkowo fascynujące przedsięwzięcie. Poza wymaganą wiedzą i umiejętnościami, budowa czegoś od podstaw daje niepowtarzalną satysfakcję i możliwość kreatywności. Jeśli masz pomysł na nowy projekt, którego realizacja wymaga użycia języka TypeScript, ten artykuł jest dla Ciebie!
 
-## Jak zacząć?
+## Jak to zrobić
 
-Pierwszym krokiem w rozpoczęciu nowego projektu w TypeScript jest oczywiście utworzenie nowego pliku projektu. Aby to zrobić, należy przejść do wybranego katalogu i wykonać następujące polecenia w terminalu:
+Pierwszym krokiem do rozpoczęcia nowego projektu w języku TypeScript jest pobranie i zainstalowanie odpowiedniego środowiska. Zalecamy korzystanie z popularnego narzędzia - npm (Node Package Manager), które pozwala na zarządzanie pakietami w projekcie.
 
-```TypeScript
-npm init
-```
-
-Następnie należy zainstalować TypeScript globalnie, aby móc korzystać z niego w dowolnym miejscu na komputerze:
+Po zainstalowaniu npm, możesz przejść do tworzenia pliku z kodem TypeScript. Stwórzmy na przykład proste funkcje, które będą dodawać dwa podane przez użytkownika parametry i zwracać ich sumę:
 
 ```TypeScript
-npm install -g typescript
+function suma(a: number, b: number) {
+  return a + b;
+}
+
+const liczba1: number = 5;
+const liczba2: number = 10;
+
+console.log(suma(liczba1, liczba2));
+// zwróci 15
 ```
 
-Teraz można utworzyć plik `tsconfig.json`, który będzie zawierał konfigurację dla naszego projektu. Wprowadzając polecenie `tsc --init`, zostanie wygenerowany domyślny plik konfiguracyjny. W tym pliku można określić ustawienia takie jak wersja TypeScript, docelowa wersja ECMAScript oraz ścieżki do plików źródłowych i wynikowych.
+W powyższym przykładzie użyliśmy typów zmiennych - `number` - co pozwala na bardziej precyzyjne określenie typów danych używanych w funkcji. W przypadku niewłaściwych typów argumentów, TypeScript wyświetli błąd kompilacji.
 
-Następnie należy utworzyć plik `index.ts`, który będzie zawierał nasz kod w TypeScript. Aby skompilować go na kod JavaScript, wystarczy użyć polecenia `tsc` w terminalu:
+Możemy również tworzyć klasy i interfejsy w naszych projektach TypeScript. Klasa to zbiór zmiennych i funkcji (metod), podczas gdy interfejs określa strukturę i typy danych, które muszą być implementowane przez klasę. Przykład:
 
 ```TypeScript
-tsc
+interface Figura {
+  nazwa: string;
+  pole: number;
+  obwod: number;
+}
+
+class Kwadrat implements Figura {
+  nazwa = 'Kwadrat';
+  pole: number;
+  obwod: number;
+
+  constructor(public bok: number) {
+    this.pole = bok * bok;
+    this.obwod = 4 * bok;
+  }
+}
+
+const nowyKwadrat = new Kwadrat(5);
+
+console.log(nowyKwadrat.nazwa);
+// zwróci 'Kwadrat'
+console.log(nowyKwadrat.pole);
+// zwróci 25
 ```
 
-Kod zostanie skompilowany do pliku `index.js`, który można uruchomić za pomocą polecenia `node index.js`.
+W przypadku utworzenia nowego obiektu klasy `Kwadrat`, musimy przekazać wartość dla zmiennej `bok` - inaczej TypeScript wyświetli błąd kompilacji.
 
-## Deep Dive
+## Głębsza analiza
 
-Podczas rozpoczynania nowego projektu warto pamiętać o kilku ważnych aspektach, aby projekt był dobrze zorganizowany i łatwy do rozwijania.
+Rozpoczęcie nowego projektu w języku TypeScript może być trochę przytłaczające dla osób początkujących, ze względu na dużą ilość dostępnej dokumentacji oraz różnorodność funkcji i możliwości języka. Dlatego ważne jest, aby znaleźć odpowiednie źródła informacji i korzystać z nich regularnie. Początkowe trudności z pewnością zrekompensują nam późniejsze korzyści z użytkowania języka TypeScript w naszych projektach.
 
-Po pierwsze, warto zacząć od określenia celów i wymagań projektu. Dobrze zdefiniowane cele umożliwią efektywniejsze planowanie i projektowanie kodu.
+## Zobacz też
 
-Kolejnym ważnym aspektem jest wybór odpowiednich narzędzi i technologii. W przypadku TypeScript, można rozważyć użycie narzędzi wspomagających jak np. `tslint` lub `ts-node`, które ułatwią pracę z tym językiem.
-
-Nie można również zapominać o testowaniu kodu. W TypeScript można korzystać z narzędzi takich jak `Jest` czy `Mocha` w celu automatycznego testowania aplikacji.
-
-## Zobacz również
-
-- [Dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
-- [TypeScript dla początkujących](https://mislavjuracic.com/typescript-for-newbies/)
-- [10 powodów dla których warto używać TypeScript](https://www.webdesigndevelopment.ca/10-reasons-use-typescript/)
+- https://www.typescriptlang.org/ - oficjalna strona TypeScript
+- https://www.npmjs.com/ - strona npm (Node Package Manager)
+- https://www.w3schools.com/typescript/ - interaktywny przewodnik po TypeScript na stronie W3Schools

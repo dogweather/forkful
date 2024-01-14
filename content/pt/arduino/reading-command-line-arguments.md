@@ -1,49 +1,51 @@
 ---
-title:    "Arduino: Lendo argumentos da linha de comando"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/reading-command-line-arguments.md"
+title:                "Arduino: Lendo argumentos da linha de comando"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## Por que ler argumentos da linha de comando no Arduino
 
-Se você está interessado em programação e no sistema Arduino, é importante entender como a leitura de argumentos da linha de comando pode ser útil. Ao saber como lidar com essa função, você pode criar aplicações mais dinâmicas e interativas, tornando seus projetos ainda mais interessantes.
+Ler argumentos da linha de comando no Arduino pode ser extremamente útil para uma melhor interação e controle de seu projeto. Com a capacidade de receber e interpretar esses argumentos, você pode adicionar mais funcionalidades ao seu código, tornando-o mais dinâmico e adaptável. Além disso, essa prática pode ajudar a simplificar o processo de comunicação entre diferentes dispositivos e sistemas.
 
 ## Como fazer
 
-Ler argumentos da linha de comando pode parecer intimidante no início, mas com a ajuda do Arduino, o processo se torna bem mais simples. Basta seguir os seguintes passos:
+Para começar a ler argumentos da linha de comando no Arduino, siga os seguintes passos:
 
-1. Verifique se a biblioteca "Serial" está incluída no seu código:
-```Arduino 
-#include <Serial.h>
-```
-2. Em seguida, defina uma variável para armazenar os argumentos da linha de comando:
+1. Declaração de variáveis:
+Antes de qualquer coisa, é necessário declarar uma variável do tipo "char" para armazenar o argumento recebido pela linha de comando. Por exemplo: "char argumento;".
+
+2. Inicialização da porta serial:
+Antes de utilizar a porta serial para receber os dados da linha de comando, é necessário inicializá-la com a função "Serial.begin(baudrate);", onde "baudrate" representa a velocidade de comunicação.
+
+3. Leitura de argumentos:
+Para receber os argumentos, é preciso utilizar a função "Serial.readStringUntil(caractere);" dentro da função "loop()" do seu código. O parâmetro "caractere" representa o delimitador que será utilizado para a leitura da string recebida. Por exemplo: "Serial.readStringUntil('\n');" para ler até que seja recebido o caractere de quebra de linha.
+
+4. Utilização dos argumentos:
+Posteriormente à leitura da string, você pode utilizar a variável declarada anteriormente para armazenar esse argumento e utilizá-lo em seu código como achar necessário.
+
 ```Arduino
-String argumento;
-```
-3. Dentro da função ```setup()```, inicialize a comunicação serial:
-```Arduino
-Serial.begin(9600);
-```
-4. Na função ```loop()```, adicione o seguinte código para ler os argumentos da linha de comando:
-```Arduino
-while (Serial.available()) {
-    argumento = Serial.readStringUntil('\n'); // lê até encontrar uma quebra de linha
-    // faça algo com o argumento lido
+char argumento; // declaração da variável
+Serial.begin(9600); // inicialização da porta serial
+void loop(){ // função loop
+  argumento = Serial.readStringUntil('\n'); // leitura do argumento
+  // utilizar o argumento recebido em seu código
 }
 ```
 
-Agora, sempre que enviar um argumento através da porta serial, ele será armazenado na variável ```argumento```. Você pode então usá-la para criar diferentes funcionalidades e interagir com seu projeto de forma criativa.
+## Aprofundando-se
 
-## Mergulho Profundo
+Além dos passos básicos descritos acima, é importante lembrar de algumas coisas ao lidar com argumentos da linha de comando no Arduino:
 
-Para uma compreensão mais profunda sobre como a leitura de argumentos da linha de comando funciona, é importante entender que, quando enviamos dados pela porta serial, eles são armazenados em um buffer. A função ```Serial.readStringUntil()``` lê esse buffer até encontrar o caractere especificado (neste caso, a quebra de linha) e retorna o conteúdo anterior a ele.
+- É necessário utilizar um delimitador para a leitura da string, caso contrário, o Arduino irá continuar lendo até que a memória esteja cheia ou o tempo limite da função expire. Isso pode causar erros ou travamentos no código.
 
-Outra função útil é a ```Serial.parseInt()```, que lê um número inteiro do buffer serial e o retorna como um valor numérico. Combinando essas funções com comandos condicionais e loops, as possibilidades de uso de argumentos da linha de comando são infinitas.
+- É importante estar atento à velocidade de comunicação ao utilizar a porta serial, pois se essa velocidade não estiver de acordo com a do dispositivo que está enviando os argumentos, a comunicação pode falhar.
 
 ## Veja também
 
-- [Tutorial: Usando a porta serial do Arduino](https://www.arduino.cc/en/Serial/Begin)
-- [Documentação da biblioteca Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Exemplos de uso de argumentos da linha de comando no Arduino](https://arduinobasics.blogspot.com/2011/09/command-line-arguments.html)
+- Documentação oficial sobre a função "Serial.readStringUntil()": https://www.arduino.cc/reference/pt/language/functions/communication/serial/readstringuntil/
+- Exemplo prático de como ler argumentos da linha de comando no Arduino: https://create.arduino.cc/projecthub/pcarvalho/read-serial-data-b209cd
+- Vídeo tutorial explicando como lidar com argumentos da linha de comando no Arduino: https://www.youtube.com/watch?v=xk-KcTCLLDg

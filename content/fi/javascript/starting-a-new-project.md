@@ -1,59 +1,48 @@
 ---
-title:    "Javascript: Uuden projektin aloittaminen"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/starting-a-new-project.md"
+title:                "Javascript: Uuden projektin aloittaminen"
+programming_language: "Javascript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Uuden ohjelman aloittaminen voi tuntua pelottavalta ja haastavalta, mutta se voi myös olla erittäin palkitsevaa. Uuden projektin aloittaminen antaa mahdollisuuden haastaa itseään ja oppia uusia taitoja, ja lopputuloksena voi olla jotain upeaa ja hyödyllistä.
+On monia syitä, miksi aloittaa uusi projekti ohjelmoinnin parissa. Se voi olla esimerkiksi intohimon kohteen tai uuden haasteen etsimistä. Riippumatta syystä, uuden projektin aloittaminen voi olla jännittävää ja palkitsevaa.
 
-## Miten aloittaa uusi projekti
+# Miten aloittaa
 
-Aloittaessasi uuden ohjelmointiprojektin, ensimmäinen askel on valita ohjelmointikieli ja kehitysympäristö, joka sopii sinulle parhaiten. Valitse kieli, joka on sinulle tuttu ja jolla olet mukava työskentelemään. Tässä blogikirjoituksessa keskitymme Javascriptiin ja käytämme Node.js-kehitysympäristöä.
+Ennen uuden projektin aloittamista on tärkeää suunnitella ja valmistautua hyvin. Tässä on muutama esimerkki askel askeleelta ohjeita, jotka auttavat sinut alkuun uuden projektin kanssa.
 
-Seuraavana sinun tulee luoda uusi projekti kansioon ja alustaa se Node.js-ympäristöä varten. Voit tehdä tämän kirjoittamalla seuraavat komennot komentoriville:
+1. Valitse ohjelmointikieli: Aloita valitsemalla ohjelmointikieli, joka sopii projektisi tarkoitukseen ja johon hallitset jo perusteet.
 
-```Javascript
-mkdir uusi_projekti
-cd uusi_projekti
-npm init
-```
+2. Kirjoita suunnitelma: Tee suunnitelma projektistasi, joka sisältää tavoitteesi, aikataulun ja resurssit.
 
-Tämän jälkeen sinulle esitetään joukko kysymyksiä projektin asetuksista. Voit vastata niihin haluamallasi tavalla tai vain painaa Enter hyväksyäksesi oletusasetukset.
+3. Asenna kehitysympäristö: Asenna ohjelmointiympäristö, joka sisältää tarvittavat työkalut ja kirjastot projektisi kehittämiseen.
 
-Seuraavaksi sinun tulee asentaa tarvittavat paketit projektiisi. Voit tehdä tämän komentamalla:
+4. Aloita koodaaminen: Kun olet suunnitellut ja asentanut tarvittavat työkalut, voit aloittaa koodaamisen projektisi ensimmäisessä vaiheessa.
+
+Seuraavassa esimerkissä on yksinkertainen koodinpätkä, joka tulostaa tervehdyksen selaimen konsoliin:
 
 ```Javascript
-npm install paketin_nimi
+console.log("Hei, maailma!");
 ```
 
-Voit myös luoda uuden tiedoston projektiisi ja aloittaa koodaamisen. Esimerkiksi voit luoda tiedoston nimeltä "index.js" ja kirjoittaa siihen seuraavan koodin:
+Suoritettaessa tämä koodi tulostaa "Hei, maailma!" konsoliin. Huomaa, että tämä on vain yksinkertainen esimerkki ja voit luoda paljon monimutkaisempia ohjelmia käyttämällä erilaisia ohjelmointikieliä ja työkaluja.
 
-```Javascript
-console.log("Tervetuloa uuteen ohjelmointiprojektiin!");
-```
+# Syvennystä
 
-Voit ajaa tämän tiedoston komentoriviltä kirjoittamalla:
+Uuden projektin aloittaminen vaatii paljon työtä ja ponnisteluja. On tärkeää pysyä motivoituneena ja uskoa omaan kykyynsä. Tässä muutama lisävinkki auttamaan sinua aloittamaan uuden projektin.
 
-```Javascript
-node index.js
-```
+1. Opiskele jatkuvasti: Ohjelmoinnin alalla on aina jotain uutta opittavaa. Pidä itsesi ajan tasalla uusimmista teknologioista ja työkaluista jatkuvasti oppimalla.
 
-Tämän pitäisi tulostaa teksti "Tervetuloa uuteen ohjelmointiprojektiin!" konsoliin.
+2. Löydä vertaistukea: Liity ohjelmointiyhteisöön tai löydä itsellesi ohjelmointikumppani, jonka kanssa voit työskennellä ja oppia toisiltasi.
 
-## Syvemmälle uuden projektin aloittamisessa
+3. Pidä taukoja: Muista levätä ja ottaa taukoja uuden projektin työskentelyn välissä. Tämä auttaa sinua pysymään energisenä ja vähentämään stressiä.
 
-Uuden ohjelmointiprojektin aloittamisessa on tärkeää pitää mielessä projektiin liittyvät tavoitteet ja tehdä suunnitelma siitä, mitä haluat saavuttaa. Muutaman minuutin ajan miettiminen ja suunnittelu voi säästää paljon aikaa ja vaivaa myöhemmin.
+# Katso myös
 
-Lisäksi on tärkeää käyttää versiohallintajärjestelmää, kuten Git, projektin hallintaan ja kehityksen seuraamiseen. Tämä auttaa pitämään projektin järjestyksessä ja mahdollistaa helpon paluun takaisin aikaisempiin versioihin, jos jotain menee pieleen.
-
-Lopuksi, muista pysyä motivoituneena ja nauttia matkasta uuden ohjelmointiprojektin parissa. Muista myös ottaa taukoja tarpeen mukaan ja kysyä apua, jos tarvitset sitä.
-
-## Katso myös
-
-- [Node.js-dokumentaatio](https://nodejs.org/en/docs/)
-- [Git-dokumentaatio](https://git-scm.com/doc)
-- [Javascript-opetusohjelma](https://www.w3schools.com/js/)
+- [Projektinhallinnan perusteet ohjelmoinnissa](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path/tracks/fscp-setting-up-your-dev-environment/modules/fecp-learn-the-command-line-portfolio/articles/setting-up-your-development-environment)
+- [Kuinka pysyä motivoituneena ohjelmoinnissa](https://medium.com/swlh/how-to-stay-motivated-while-learning-to-code-766a930d19ea)
+- [Mistä aloittaa uuden projektin suunnittelu](https://www.lifewire.com/ways-to-prepare-for-a-programming-project-2373475?t=121105)

@@ -1,49 +1,58 @@
 ---
-title:    "Elixir: Ein Datum in einen String umwandeln"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/converting-a-date-into-a-string.md"
+title:                "Elixir: Ein Datum in einen String umwandeln"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Bei der Programmierung in Elixir kann es manchmal notwendig sein, ein Datum in eine Zeichenfolge (String) umzuwandeln, um es leichter lesen und verarbeiten zu können.
+Das Konvertieren von Datumsangaben in Strings ist eine häufige Aufgabe beim Programmieren und kann für verschiedene Zwecke verwendet werden, z.B. für die Darstellung von Datumswerten in Benutzeroberflächen oder für die Speicherung von Datumswerten in Datenbanken. In diesem Blogbeitrag werden wir uns ansehen, wie man mit Elixir einfach Datumsangaben in Strings umwandeln kann.
 
-## Wie das geht
+## Wie geht man vor
 
-Um ein Datum in Elixir in einen String umzuwandeln, gibt es verschiedene Möglichkeiten. Eine einfache Methode ist die Verwendung der Funktion `to_string/1`. Diese Funktion akzeptiert als Argument ein Datum im Elixir-internen Format und gibt einen String zurück, der das Datum im üblichen Format anzeigt. Hier ist ein Beispiel:
+Um eine Datumsangabe in einen String umzuwandeln, gibt es einige Funktionen in Elixir, die wir verwenden können.
 
-```Elixir
-date = ~D[2020-12-25]
-result = to_string(date)
-IO.puts(result)
-```
+### Mit der Funktion `to_string/2`
 
-Die Ausgabe dieses Codes wird `2020-12-25` sein, da das Datum im Jahr-Monat-Tag-Format angezeigt wird.
+Die einfachste Möglichkeit besteht darin, die Funktion `to_string/2` zu verwenden, die uns erlaubt, ein Datum zusammen mit einem Formatierungsmuster zu übergeben und den entsprechenden String zurückzuerhalten.
 
-Eine weitere Möglichkeit ist die Verwendung der Funktion `Calendar.Format.format/2`, die es ermöglicht, das Datum in einem benutzerdefinierten Format anzuzeigen. Hier ist ein Beispiel:
+Beispiel:
 
 ```Elixir
-date = ~D[2020-12-31]
-result = Calendar.Format.format(date, "{1}/{2}/{3}")
-IO.puts(result)
+to_string(~D[2021-06-15], "{YYYY}-{MM}-{DD}")
+# Ausgabe: "2021-06-15"
 ```
 
-Die Ausgabe dieses Codes wird `12/31/2020` sein, da das Datum nun im Monat/Tag/Jahr-Format angezeigt wird.
+In diesem Beispiel haben wir ein Datum im Format `~D[YYYY-MM-DD]` übergeben und das Formatierungsmuster `"{YYYY}-{MM}-{DD}"`, das uns den String `2021-06-15` zurückgibt.
 
-## Tiefer einsteigen
+### Mit der Funktion `Calendar.ISO.format/2`
 
-Wenn wir uns die Funktion `to_string/1` genauer ansehen, können wir erkennen, dass sie eine Instanz der `%Elixir.Calendar.Date{}`-Struktur akzeptiert. Dies macht das Datum in Elixir sehr flexibel, da es nicht an ein bestimmtes Format gebunden ist. Wir können auch auf die einzelnen Komponenten des Datums zugreifen, indem wir die Funktionen `Calendar.Date.year/1`, `Calendar.Date.month/1` und `Calendar.Date.day/1` verwenden. Hier ist ein Beispiel:
+Eine andere Möglichkeit besteht darin, die Funktion `Calendar.ISO.format/2` zu verwenden, die eine breitere Palette von Formatierungsmustern unterstützt und die Konvertierung auch für andere Kalenderformate ermöglicht.
+
+Beispiel:
 
 ```Elixir
-date = ~D[2021-01-15]
-IO.puts("Das Jahr ist #{Calendar.Date.year(date)} und der Monat ist #{Calendar.Date.month(date)}.")
+Calendar.ISO.format(~D[2021-06-15], "{YYYY}-{M}-{D}")
+# Ausgabe: "2021-6-15"
 ```
 
-Die Ausgabe dieses Codes wird `Das Jahr ist 2021 und der Monat ist 1.` sein.
+Im Vergleich zur vorherigen Funktion erhalten wir in diesem Fall eine etwas andere Ausgabe, da wir das Formatierungsmuster `"{YYYY}-{M}-{D}"` verwendet haben, das die Monatsangabe als einfache Zahl (6 statt 06) darstellt.
 
-## Sieh auch
+### Weitere Optionen
 
-- [Elixir Dokumentation zu `to_string/1`](https://hexdocs.pm/elixir/Calendar.Date.html#to_string/1)
-- [Elixir Dokumentation zu `Calendar.Format.format/2`](https://hexdocs.pm/elixir/Calendar.Format.html#format/2)
+Es gibt noch weitere Funktionen und Optionen in Elixir, um Datumsangaben in Strings zu konvertieren, wie z.B. die Funktion `Timex.format/2` aus dem Timex Package oder die Module `Date` und `DateTime` aus der Elixir Standardbibliothek.
+
+## Tiefere Einblicke
+
+Bei der Konvertierung von Datumsangaben in Strings gibt es verschiedene Faktoren zu beachten, wie z.B. die unterschiedlichen Dateiformate (ISO, Amerikanisches Format, etc.) oder die Berücksichtigung von Zeit- und Zeitzone-Informationen.
+
+Wenn du mehr über die Konvertierung von Datumsangaben in Strings mit Elixir erfahren möchtest, empfehlen wir dir, dich mit den verschiedenen Funktionen und Optionen vertraut zu machen und dich auch mit den verschiedenen Kalenderformaten auseinanderzusetzen.
+
+## Siehe auch
+
+- [Elixir Date and Time](https://elixirschool.com/de/lessons/advanced/datetime/)
+- [Elixir Timex Package](https://hexdocs.pm/timex/Timex.html)
+- [Elixir Standardbibliothek - Date und DateTime Module](https://hexdocs.pm/elixir/Kernel.Date.html)

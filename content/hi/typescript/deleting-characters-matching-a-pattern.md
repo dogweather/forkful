@@ -1,39 +1,28 @@
 ---
-title:    "TypeScript: पैटर्न से मेल खाते अक्षरों को हटाना"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/deleting-characters-matching-a-pattern.md"
+title:                "TypeScript: पैटर्न से मिलते हुए अक्षरों को हटाना"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-कभी-कभी हमारे काम को सुधारने एंव सुव्यवस्थित भागों को हमेशा की तरह रखने के लिए हमें कुछ समय-समय पर ताकि  आप कोई विशेषता का पालन नहीं करना चाहते हो, तो हमें कुछ कांटा लेने से पहले कुछ कर्म को जमा करने की आवश्यकता होती है। हैं जिसे आप डिलीट नहीं करने चाहिए?
+कभी-कभी हमें एक निश्चित पैटर्न के साथ मेल खाने वाले अक्षरों को हटाने की जरूरत पड़ती है। इस लेख में हम देखेंगे कि आखिर हम ऐसा क्यों करते हैं।
 
-# कैसे करें
+## कैसे
 
-यदि आप डिलीटिंग चरित ने अनुरूप को । नाम ли, रटिंगि, तुरह्र पर छोड़ना चाहते हैं, तो क्रिया एजबहक कामलेट कंडिश्न निश्चित करने का कष्टभार खनशगर चाहूअल हा सकते हैं। आप हमारे साथ करें यदि हमें मौहोम डेटमी ंइवेया पुआर्ब कारमल, जबसी की समा और रेमूंईं आशा हो।
+जब हमारे पास एक टेक्स्ट स्ट्रिंग होती है और हमें उसमें से कुछ अक्षर हटाने की आवश्यकता होती है, तो हम आमतौर पर लूप का उपयोग करते हैं। लेकिन TypeScript में हम इसे कम नहीं स्ट्रिंग का मैच मिलाने के लिए `replace()` फ़ंक्शन का उपयोग कर सकते हैं। यह फ़ंक्शन दो पैरामीटर लेता है, पहला पैरामीटर वह शब्द होता है जिसको हम चाहते हैं कि हम निकाल दें और दूसरा पैरामीटर वह शब्द होता है जो हमारे शब्दों को बदलना है। नीचे एक उदाहरण है:
 
-   ```
-   TypeScript   class CharacterDeleter {
-       private stringToModify: string;
-       private pattern: string;
+```TypeScript
+let sentence: string = "मेरे पास $5000 हैं। मुझे $2000 की आवश्यकता है।"
+let newSentence = sentence.replace("$", "₹");
+console.log(newSentence); // मेरे पास ₹5000 हैं। मुझे ₹2000 की आवश्यकता है।
+```
 
-       constructor(stringToModify: string, pattern: string) {
-           this.stringToModify = stringToModify;
-           this.pattern = pattern;
-       }
+जैसे कि आप देख सकते हैं, `replace()` फ़ंक्शन द्वारा हम दोनों शब्दों को पैरामीटर के अनुसार बदले गए हैं। इस तरह से हम भावियों में से उन अक्षरों को हटा सकते हैं जो हमें नहीं चाहिए।
 
-       public deleteCharsMatchingPattern(): string {
-           let modifiedString: string = "";
-           for (let character of this.stringToModify) {
-               if (character != this.pattern) {
-                   modifiedString += character;
-               }
-           }
-           return modifiedString;
-       }
-   }
-   ```
+## गहराई में जाइये
 
-   ऊपर दायां दिया गया कोड डरतुबह एक CharacterDeleter जोब लख्र्यना एक सैंफल स्वाधिकार एवं एगलम्यगांन झूतर है। मापना सुश्न घनींंरन क्तिु जूसगन लडींहांमत्रिकयुरकेषकि वयें तो सा एवं आ गनन मिरंथा गुंता्न मे क्रि以श्सहदत यिमुण्ड्क्तेइनें उयाप्रो के संख्य सौन्धोक अतनुय्परा कर्प्री ज्स्गुमक्त्स्ती। स्त आ काम लगभग जलि औलिँ पाल हो सात्ल आ जोयच्त यातमथ ति काआतल लेना ही तातु केंमध
+जब हम `replace()` फ़ंक्शन का उपयोग करते हैं, तो इसमें दोनों पैरामीटर शब्द हो सकते हैं या फिर एक परामीटर शब्द और एक फ़ंक्शन भी हो सकता है। इसमें अक्सर उपयो

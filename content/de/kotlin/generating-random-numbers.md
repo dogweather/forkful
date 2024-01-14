@@ -1,63 +1,63 @@
 ---
-title:    "Kotlin: Zufallszahlen erzeugen"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/generating-random-numbers.md"
+title:                "Kotlin: Erzeugen von Zufallszahlen"
+programming_language: "Kotlin"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Generieren von zufälligen Zahlen ist ein wichtiger Aspekt in der Programmierung. Es ermöglicht die Erstellung von dynamischen und abwechslungsreichen Anwendungen und stellt sicher, dass jedes Mal, wenn das Programm ausgeführt wird, unterschiedliche Ergebnisse erzielt werden. In diesem Blog-Beitrag werden wir uns ansehen, wie wir in Kotlin zufällige Zahlen generieren können.
+In der Welt der Programmierung gibt es immer wieder Situationen, in denen wir zufällige Daten benötigen. Sei es für die Erstellung von Spielen, die Erzeugung von Testdaten oder die Implementierung von zufälligen Algorithmen. Das Generieren von Zufallszahlen ist dabei ein essentieller Bestandteil. Doch wie können wir in Kotlin solche Zufallszahlen erzeugen? In diesem Blogbeitrag zeige ich euch, wie einfach es ist, in Kotlin randomisierte Daten zu generieren.
 
-## Wie geht man vor
+# Wie man Zufallszahlen in Kotlin erzeugt
 
-Um in Kotlin zufällige Zahlen zu generieren, können wir die `Random` Klasse verwenden. Sie bietet verschiedene Methoden, um unterschiedliche Arten von zufälligen Werten zu erzeugen. Hier sind einige Beispiele:
+Die Generierung von Zufallszahlen in Kotlin basiert auf der Verwendung der Random-Klasse. Diese bietet verschiedene Methoden, um zufällige Daten in unterschiedlichen Datenstrukturen zu erzeugen. Schauen wir uns einige Beispiele an:
 
-```Kotlin
-val random = Random()
+```
+Kotlin
 
-// Zufällige Ganzzahl zwischen 0 und 100
-val randomNumber = random.nextInt(101)
+// Ganze Zahlen zwischen 1 und 100
+val randomNumber = Random.nextInt(1,100)
 
-// Zufälliger double-Wert zwischen 0.0 (inklusive) und 1.0 (exklusive)
-val randomDouble = random.nextDouble()
+// Dezimalzahlen zwischen 0 und 1
+val randomDouble = Random.nextDouble()
 
-// Zufälliger boolean-Wert
-val randomBoolean = random.nextBoolean()
+// Boolesche Werte
+val randomBoolean = Random.nextBoolean()
+
+// Element aus einer Liste wählen
+val fruits = listOf("Apfel", "Banane", "Orange")
+val randomFruit = fruits.random()
 ```
 
-Die `Random` Klasse verwendet die Systemzeit als "Seed", um die Zufälligkeit zu erzeugen. Wenn du jedoch den Seed selbst festlegen möchtest, kannst du auch den entsprechenden Konstruktor verwenden. Zum Beispiel:
+Die `Random`-Klasse bietet auch die Möglichkeit, eigene Datenstrukturen zu erstellen und diese zufällig zu befüllen. Dafür müssen wir einen Generator definieren, der angibt, wie die zufälligen Daten erzeugt werden sollen. Ein Beispiel dafür wäre folgendes:
 
-```Kotlin
-val random = Random(1234) // Seed = 1234
 ```
-
-Um mehrere zufällige Zahlen zu generieren, kannst du eine Schleife verwenden und die `nextInt()` oder `nextDouble()` Methode in jeder Iteration aufrufen. Hier ist ein Beispiel mit einer einfachen `for`-Schleife:
-
-```Kotlin
-for (i in 1..10) {
-    val randomNum = random.nextInt(101)
-    println(randomNum) // Zum Bildschirm ausgeben oder in eine Liste speichern
+Kotlin
+// Eigener Generator für die Erzeugung von Passwörtern
+val passwordLength = 8
+val generator = RandomGenerator(passwordLength) { charset ->
+    val password = StringBuilder()
+    repeat(passwordLength) {
+        password.append(charset.random())
+    }
+    password.toString()
 }
+
+// Verwendung des Generators
+val randomPassword = generator.generate()
 ```
 
-Ein weiterer interessanter Aspekt beim Generieren von zufälligen Zahlen ist, dass du die Verteilung des generierten Werts beeinflussen kannst. Dazu kannst du die `nextGaussian()` Methode verwenden, die eine normalverteilte Zufallszahl mit einer Mittelwert von 0 und einer Standardabweichung von 1 zurückgibt. Hier ist ein Beispiel:
+# Tiefere Einblicke in die Generierung von Zufallszahlen
 
-```Kotlin
-val randomNumber = random.nextGaussian() * 10 // Mittelwert von 0 und Standardabweichung von 10
-```
+Die Generierung von Zufallszahlen basiert auf mathematischen Algorithmen, die dafür sorgen, dass die erzeugten Daten als zufällig empfunden werden. Dabei ist es wichtig zu verstehen, dass diese Zahlen nicht wirklich zufällig sind, sondern nur aufgrund bestimmter Berechnungen so erscheinen. Aus diesem Grund ist es auch wichtig, die `Random`-Klasse richtig zu verwenden und keine eigenen Algorithmen zum Generieren von Zufallszahlen zu implementieren.
 
-Es gibt viele weitere Methoden in der `Random` Klasse, um zufällige Zahlen zu generieren. Du kannst die offizielle Dokumentation überprüfen, um mehr darüber zu erfahren.
+Ein weiterer wichtiger Punkt ist die sogenannte Seed-Initialisierung. Diese wird verwendet, um den Startwert für die Generierung von Zufallszahlen festzulegen. Wird für jeden Aufruf der `Random`-Klasse eine neue Seed-Initialisierung vorgenommen, so werden auch immer neue Zufallszahlen erzeugt. Wird jedoch für jeden Aufruf die gleiche Seed-Initialisierung verwendet, so werden auch immer die gleichen Zufallszahlen erzeugt.
 
-## Tiefer schürfen
+# Siehe auch
 
-Beim Generieren von zufälligen Zahlen ist es wichtig zu verstehen, dass diese Werte nicht wirklich "zufällig" sind, sondern durch einen Algorithmus berechnet werden. Dies bedeutet, dass es möglich ist, dass dieselben Werte wiederholt auftreten. Es ist auch wichtig zu beachten, dass die Qualität der Zufälligkeit von der verwendeten Methode abhängt.
-
-In Kotlin empfiehlt es sich, die `Random` Klasse zu verwenden, da sie optimiert wurde und in der Regel ausreichend gute Zufälligkeit bietet. Wenn du jedoch aus Gründen der Sicherheit oder für wissenschaftliche Zwecke höhere Anforderungen an die Zufälligkeit hast, gibt es auch spezielle Bibliotheken, die sich auf das Generieren von Krypto-zufälligen Zahlen spezialisiert haben.
-
-## Siehe auch
-
-- [Offizielle Kotlin Dokumentation zur Random Klasse](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-- [Stackoverflow-Beitrag zum Generieren von zufälligen Zahlen in Kotlin](https://stackoverflow.com/questions/45685074/creating-a-random-number-with-kotlin)
-- [Blog-Beitrag über Krypto-zufällige Zahlen in Kotlin](https://medium.com/@sidharth_reddy/generating-cryptographically-secured-random-values-in-android-kotlin-bb161bc3f8de)
+- [Kotlin Dokumentation zur Random-Klasse](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+- [Erzeugen von Passwörtern mit Kotlin](https://medium.com/@kevalpatel2106/generating-random-password-in-kotlin-99dccfdaf-9b15d0771bfc)
+- [Einsatz der Random-Klasse in Spielen](https://gamedevelopment.tutsplus.com/tutorials/randomness-in-games--gamedev-344)

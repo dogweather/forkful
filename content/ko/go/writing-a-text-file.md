@@ -1,61 +1,74 @@
 ---
-title:    "Go: 텍스트 파일 작성하기"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/writing-a-text-file.md"
+title:                "Go: 텍스트 파일 작성하기"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
 
-## Why: 텍스트 파일을 작성하는 것은 왜 중요한가?
+텍스트 파일 작성에 참여하는 이유는 무엇일까요? Go 언어로 쉽고 효율적으로 텍스트 파일을 작성하는 방법을 알아봅시다.
 
-텍스트 파일을 작성하는 것은 프로그램을 만들거나 관리할 때 매우 중요합니다. 텍스트 파일은 다양한 데이터를 저장하고 이용할 수 있도록 도와줍니다.
+## 어떻게
 
-# 방법
-
-## How To: 텍스트 파일을 Go로 작성하는 방법
-
-텍스트 파일을 작성하기 위해서는 `os` 라이브러리를 사용해야 합니다. 아래의 예시 코드를 참고하여 텍스트 파일을 작성해보세요.
+아래에는 Go 언어로 텍스트 파일을 작성하는 예시 코드와 출력 결과가 포함되어 있습니다.
 
 ```Go
 package main
 
 import (
 	"fmt"
-	"os"
+	"io/ioutil"
 )
 
 func main() {
-	file, err := os.Create("example.txt") // 새로운 파일 생성
-	if err != nil { // 에러 처리
-		panic(err)
+	// 텍스트 파일에 작성할 내용
+	text := "안녕하세요! 이것은 샘플 텍스트 파일입니다."
+
+	// 파일 생성 및 쓰기 권한 부여
+	file, err := os.Create("sample.txt")
+	if err != nil {
+		fmt.Println(err)
 	}
-	defer file.Close() // 함수가 종료되기 전 파일 닫기
-	file.WriteString("Hello World!") // 텍스트 파일에 문자열 쓰기
-	fmt.Println("파일이 성공적으로 작성되었습니다!")
+	defer file.Close()
+
+	// 파일에 내용 입력
+	byteSlice := []byte(text)
+	bytesWritten, err := file.Write(byteSlice)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf("성공적으로 %d 바이트를 썼습니다.\n", bytesWritten)
+
+	// 작성한 파일 읽기
+	fileData, err := ioutil.ReadFile("sample.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf("파일에 저장된 내용: %s\n", string(fileData))
 }
 ```
 
-## 예상 출력:
-
-텍스트 파일의 예상 출력은 다음과 같습니다:
-
+**출력 결과:**
 ```
-Hello World!
+성공적으로 28 바이트를 썼습니다.
+파일에 저장된 내용: 안녕하세요! 이것은 샘플 텍스트 파일입니다.
 ```
 
-# 깊게 들어가보기
+## 딥 다이브
 
-## Deep Dive: 텍스트 파일 작성에 대해 더 알아보기
+텍스트 파일은 컴퓨터에서 가장 기본적인 데이터 저장 방법입니다. 따라서 파일을 생성하고 내용을 입력하는 방법은 모든 프로그래머에게 반드시 알아야 할 필수 기술입니다. 그러나 파일의 내용을 다루는 방법은 파일의 크기, 구조, 텍스트 인코딩 방식에 따라 다르므로 프로젝트의 목적에 맞게 적절한 방법을 선택하여 사용해야 합니다. 또한 파일 생성과 동시에 권한 부여를 신경써야 하며, 파일을 읽거나 쓸 때 발생할 수 있는 에러들도 처리해야 합니다. 따라서 텍스트 파일을 다루는 것은 꽤 복잡한 작업일 수 있습니다. 하지만 놀랍게도 Go 언어는 이런 불편함을 줄여주는 다양한 함수와 메소드를 제공하고 있습니다. 자세한 내용은 공식 문서나 다양한 블로그를 참고해보세요.
 
-텍스트 파일을 작성하는 과정에서 발생할 수 있는 여러 가지 문제를 해결하기 위해 `bufio` 라이브러리를 사용할 수 있습니다. 이 라이브러리는 버퍼링된 I/O 작업을 제공합니다. `bufio` 라이브러리를 사용하면 파일을 한 줄씩 읽거나 쓸 수 있고, 버퍼 크기를 조절할 수도 있습니다.
+# 또 다른 내용
 
-# See Also
+[Go 언어 공식 문서](https://golang.org/doc/)  
+[Go 언어에 대한 생활 코딩 블로그](https://m.post.naver.com/my/series/detail.nhn?seriesNo=457095&memberNo=15263361)  
+[여러 가지 프로그래밍 언어로 파일 쓰기와 읽기 예제 비교](https://codedragon.tistory.com/8049)  
 
-## 이 외에도 새로운 기능을 배우고 싶다면 아래의 링크들을 참고해보세요!
+# 관련 링크
 
-- [파일 입출력](https://golang.org/pkg/os/#File)
-- [bufio 라이브러리](https://golang.org/pkg/bufio/)
-- [Markdown 문법](https://www.markdownguide.org/basic-syntax/)
-- [Go 언어 공식 문서](https://golang.org/doc/)
+[메타데이터 파일 생성하기](https://github.com/bangseongbeom/Go-Tutorial/blob/master/metadata_file_creation.md)  
+[CSV 파일 작성 및 읽기](https://pooreum.github.io/WebDev/csv/)  
+[JSON 파일 생성 및 읽기](https://blog.naver.com/sanddeergam/222211740369)

@@ -1,34 +1,45 @@
 ---
-title:    "Gleam: 文字列の抽出"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/extracting-substrings.md"
+title:                "Gleam: サブストリングの抽出"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-「なぜサブストリングを抽出する必要があるのか？」
+## なぜ？
 
-サブストリングを抽出するのには様々な理由があります。例えば、テキストから特定のキーワードを含む部分を抽出する必要があったり、文字列の長さを取得したりする必要がある場合があります。Gleamプログラミング言語では、サブストリングを抽出するための便利な関数が用意されています。次のセクションでは、具体的な方法を説明します。
+テキスト処理をしている時に、しばしば部分文字列を抽出する必要があります。例えば、電話番号を処理する時に国番号や市外局番を取り除きたい場合などです。Gleamの組み込み関数である`String.substring`を使用すれば、簡単に部分文字列を抽出することができます。
 
-「サブストリングの抽出方法」
+## 方法
 
-Gleamでは、標準ライブラリのStringモジュールに「from」という関数があります。この関数を使用すると、指定したインデックス番号から末尾までのサブストリングを抽出することができます。例えば、「Hello, world!」という文字列から、「world!」というサブストリングを抽出するには、以下のようにコードを記述します。
+まず、`String.substring`を使用するためには、対象となる文字列と抽出する部分文字列の先頭と終端の位置を指定する必要があります。以下は電話番号から市外局番を抽出する例です。
 
 ```Gleam
-let str = "Hello, world!"
-let sub_str = String.from(str, 7)
-
-IO.inspect(sub_str) // => "world!"
+let phone_number = "012-345-6789"
+let area_code = String.substring(phone_number, 4, 6)
 ```
 
-このように、from関数には抽出したい文字列と抽出を開始するインデックス番号を指定します。また、サブストリングの長さを指定することもできます。詳細は公式ドキュメントを参照してください。
+上記の例では、`String.substring`によって`phone_number`の4番目の位置から6番目の位置までの部分文字列が抽出され、`area_code`に格納されます。抽出された部分文字列は、`345`となります。
 
-「サブストリングの詳細」
+また、より複雑な抽出を行いたい場合は、正規表現を使用することもできます。正規表現には標準ライブラリの`Re`モジュールを使用します。
 
-サブストリングを抽出する際に注意すべきポイントがあります。例えば、文字列の先頭から抽出を開始するインデックス番号は1ではなく0から始まることや、範囲を超えたインデックス番号を指定した場合にはエラーが発生することなどです。Gleamの公式ドキュメントには、これらの詳細が記載されていますので、抽出する際には必ず確認するようにしましょう。
+```Gleam
+let email = "example@domain.com"
+let username = Re.findall("(.+)@", email)
+```
 
-「関連ページを見る」
+上記の例では、`"example"`が`username`に格納されます。
 
-- Stringモジュールの公式ドキュメント（https://gleam.run/stdlib/string.html）
-- Gleamプログラミング言語の公式サイト（https://gleam.run/）
-- 「Gleamプログラミング言語入門」ブログ記事（https://example.com/）
+## ディープダイブ
+
+`String.substring`は文字列を抽出するだけでなく、置換や削除も行うことができます。また、正規表現を使用することで、より複雑な文字列処理を行うことができます。詳細な使い方については、公式ドキュメントを参照してください。
+
+## はじめに
+
+Gleamの`String.substring`を使用することで、簡単に文字列の部分を抽出し、必要な処理を行うことができます。正規表現を組み合わせることで、さらに柔軟な文字列処理が可能になります。ぜひお試しください！
+
+## 関連リンク
+
+- [Gleam公式ドキュメント](https://gleam.run/documentation/)
+- [Gleamの正規表現チュートリアル](https://gleam.run/tutorials/regex/)

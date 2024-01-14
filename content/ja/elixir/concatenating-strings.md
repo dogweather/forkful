@@ -1,58 +1,82 @@
 ---
-title:    "Elixir: 文字列の連結"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/concatenating-strings.md"
+title:                "Elixir: 文字列の連結"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を連結することの理由は何でしょうか？文字列連結を行う理由について説明します。
+文字列を連結することの重要性について考えたことはありますか？プログラミング言語によっては、文字列の結合をするには複雑な手順が必要ですが、Elixirではとても簡単です。この記事では、なぜElixirを使って文字列の結合をするべきなのかについて説明します。
 
-文字列を連結することは、複数の文字列を一つの文字列にまとめることができるため、プログラミングでは非常に重要です。これにより、簡潔で効率的なコードを作成することができます。
+## 方法
 
-## 手順
-
-文字列を連結する方法はいくつかありますが、ここではElixirプログラミング言語を使用したコーディング例を紹介します。以下のコードブロック内にあるように、2つの文字列を連結する方法を示します。
+では、早速Elixirで文字列の結合をしてみましょう。下記のコードを見てください。
 
 ```Elixir
-str1 = "こんにちは、"
-str2 = " Elixirを学びましょう！"
-IO.puts str1 <> str2
+name = "太郎"
+greeting = "こんにちは、"
+full_greeting = greeting <> name
+IO.puts full_greeting
 ```
 
-上記のコードを実行すると、以下のような出力が得られます。
+このコードでは、`<>`演算子を使って`greeting`と`name`を連結することができます。`IO.puts`関数を使うことで、コンソールに連結された文字列が表示されます。
+
+下記の出力結果をご覧ください。
 
 ```
-こんにちは、Elixirを学びましょう！
+こんにちは、太郎
 ```
 
-また、複数の文字列を同時に連結することもできます。
+もう少し複雑な例を見てみましょう。下記のコードを見てください。
 
 ```Elixir
-str1 = "私は"
-str2 = " Elixirを"
-str3 = "学びます！"
-IO.puts "#{str1}#{str2}#{str3}"
+first_name = "太郎"
+last_name = "山田"
+greeting = "こんにちは、"
+full_name = first_name <> " " <> last_name
+full_greeting = greeting <> full_name
+IO.puts full_greeting
 ```
 
-上記のコードを実行すると、以下のような出力が得られます。
+この例では、`first_name`と`last_name`を先に結合し、`full_name`という新しい変数として保存してから、`greeting`と結合します。このように、2つ以上の文字列を連結することもできます。下記の出力結果をご覧ください。
 
 ```
-私はElixirを学びます！
+こんにちは、太郎 山田
 ```
 
 ## 深堀り
 
-文字列を連結する方法についてもう少し詳しく見てみましょう。文字列を連結する場合、様々な方法がありますが、いずれも基本的には同じことを行っています。つまり、複数の文字列を一つの文字列にまとめるということです。
+Elixirでは、2つ以上の文字列を連結する場合には、`<>`演算子を使う必要があります。また、`<>`演算子を使うことで、文字列以外のデータも連結することができます。例えば、下記のコードでは、`22`という整数を`"This is the number: "`という文字列に連結しています。
 
-また、Elixirでは単純な文字列だけでなく、変数や式も連結することができます。今回紹介した方法以外にも、`String.concat/2`や`List.to_string/1`などの便利な関数が用意されているため、必要に応じて活用することができます。
+```Elixir
+phrase = "This is the number: " <> 22
+IO.puts phrase
+```
+
+出力結果は次の通りです。
+
+```
+This is the number: 22
+```
+
+また、`String.length`関数を使うことで、連結された文字列の長さを確認することができます。
+
+```Elixir
+full_name = "太郎山田"
+IO.puts String.length(full_name)
+```
+
+出力結果は次の通りです。
+
+```
+4
+```
 
 ## 参考リンク
 
-ここでは文字列の連結について簡単に紹介しましたが、Elixirプログラミング言語についてもっと知りたい方は、以下のリンクを参考にしてください。
-
-- [Elixir公式サイト](https://elixir-lang.org/)
-- [Elixir School](https://elixirschool.com/ja/)
-- [Elixir入門](https://hiroki1117.github.io/elixir-book/)
+- [Elixir 公式サイト](https://elixir-lang.org/)
+- [連結演算子 `<>` のドキュメント](https://hexdocs.pm/elixir/Kernel.html#<>/2)
+- [IO.puts 関数のドキュメント](https://hexdocs.pm/elixir/IO.html#puts/1)

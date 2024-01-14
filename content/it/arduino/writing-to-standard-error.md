@@ -1,41 +1,50 @@
 ---
-title:    "Arduino: Scrivere su standard error"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/writing-to-standard-error.md"
+title:                "Arduino: Scrivere su standard error"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+##Perché
 
-Scrivere su standard error è un importante strumento per il debugging e il monitoraggio dei programmi su Arduino. È utile per visualizzare messaggi di errore e informazioni di sistema durante lo sviluppo del codice.
+Scrivere su standard error è un importante aspetto della programmazione su Arduino che può aiutare a identificare e risolvere errori nel codice. È un modo per visualizzare messaggi di errore specifici che possono aiutare a debuggare e ottimizzare il programma.
 
-## Come fare
+##Come Fare
 
-Per scrivere su standard error su Arduino, è necessario utilizzare il comando `Serial.print()` seguito dal messaggio o dalla variabile che si desidera stampare. Ad esempio:
+Per scrivere su standard error in Arduino, è necessario utilizzare la funzione `Serial.println()`. Questo comando invia un messaggio di testo alla porta seriale USB del microcontrollore, che può essere visualizzato in un terminale seriale sul computer.
 
+Ecco un esempio di codice che scrive un messaggio di errore alla fine del programma:
+
+```Arduino
+void setup() {
+  Serial.begin(9600);  // inizializza la comunicazione seriale
+}
+
+void loop() {
+  // codice del programma
+
+  // se si verifica un errore, scrivere il messaggio su standard error
+  Serial.println("Errore: variabile non definita");
+
+  // altri comandi del programma
+}
 ```
-Arduino Serial.print("Errore: Impossibile connettersi al modulo WiFi");
-```
 
-Questo stamperà il messaggio "Errore: Impossibile connettersi al modulo WiFi" su standard error. È anche possibile utilizzare il comando `Serial.println()` per stampare una nuova riga alla fine del messaggio.
+L'output di questo esempio verrà visualizzato nel terminale seriale come:
 
-```
-Serial.println("Messaggio importante");
-```
+`Errore: variabile non definita`
 
-Questo stamperà il messaggio "Messaggio importante" su una nuova riga in standard error.
+##Approfondimento
 
-Per ricevere l'output su un monitor seriale o su un terminale, è necessario utilizzare un adattatore USB-seriale o un modulo seriale Bluetooth.
+Per massimizzare l'utilità di scrivere su standard error, è importante comprendere come gestire i messaggi di errore nel tuo codice. Ecco alcune considerazioni:
 
-## Approfondimento
+- Utilizzare messaggi di errore chiari e descrittivi per aiutare a identificare il problema facilmente.
+- Aggiungere numeri di riga o altre informazioni nel messaggio di errore per individuare più facilmente il punto esatto in cui si è verificato l'errore.
+- Utilizzare la funzione `Serial.setTimeout()` per impostare un limite di tempo per leggere i messaggi di errore, in modo da non bloccare il programma in caso di errore.
 
-L'utilizzo di standard error è particolarmente utile quando si eseguono operazioni di debugging. Mentre `Serial.print()` stampa le informazioni sul monitor seriale, `Serial.println()` aggiunge una nuova riga ogni volta che viene chiamato, rendendo più facile la lettura dei messaggi. È anche possibile utilizzare il comando `Serial.write()` per inviare dati binari a standard error.
+##Vedi Anche
 
-Inoltre, è possibile collegare un display LCD al tuo Arduino e utilizzarlo come un monitor parallelo per stampare gli output di standard error. Ciò consente di monitorare il programma in tempo reale senza dover collegarlo a un computer.
-
-## Vedi anche
-
-- [Guida all'uso di standard error su Arduino] (link)
-- [Serial.print() documentazione ufficiale] (link)
-- [Moduli seriale per Arduino] (link)
+- [Documentazione Arduino su Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Tutorial su come scrivere messaggi di errore efficaci in Arduino](https://create.arduino.cc/projecthub/eduardoschneiders/arduino-tutorial-writing-effective-error-messages-e41d82)

@@ -1,50 +1,36 @@
 ---
-title:    "Bash: Uuden projektin aloittaminen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/starting-a-new-project.md"
+title:                "Bash: Uuden projektin aloittaminen"
+programming_language: "Bash"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti?
+## Miksi
+Uuden projektin aloittaminen Bash-ohjelmoinnilla antaa sinulle mahdollisuuden luoda tehokkaita ja monipuolisia työkaluja. Bash on kätevä ja suosittu ohjelmointikieli, joka toimii useissa ympäristöissä ja tarjoaa laajan valikoiman toimintoja ja työkaluja. 
 
-Aloittaminen uusi projekti Bashilla voi olla hyvä vaihtoehto, jos haluat oppia uutta ohjelmointikieltä, automatisoida tehtäviä tai luoda oman työkalun käyttöön. Bash on komentotulkkina äärimmäisen monipuolinen ja sitä käytetään laajasti eri käyttöjärjestelmissä ja ympäristöissä. Tämä tekee siitä erinomaisen vaihtoehdon aloittaa oma projekti, sillä sen avulla voit oppia monipuolisesti uusia taitoja ja luoda käyttöösi sopivan työkalun.
+## Kuinka aloittaa
+Bash-ohjelmoinnin aloittaminen on helppoa ja hauskaa! Ensimmäiseksi sinun tulee asentaa Bash-kieli tietokoneellesi. Tämä on yleensä osa käyttöjärjestelmääsi, mutta voit myös ladata sen erikseen. 
 
-## Miten aloittaa uusi projekti Bashilla
+Sitten voit aloittaa kirjoittamisen! Tässä on esimerkki yksinkertaisesta Bash-skriptistä, joka tulostaa "Hei maailma!".
 
-Voit aloittaa uuden projektin Bashilla helposti ja nopeasti muutamalla yksinkertaisella askeleella:
-
-1. Aloita kirjoittamalla tarvittavat komennot Bash-komentotulkkiohjelmalla, esimerkiksi "echo" tai "cd". Tällä tavalla opit samalla Bashin syntaksia ja käytännön käyttöä.
-
-2. Seuraavaksi voit kokeilla tehdä yksinkertaisia skriptejä käyttämällä "if-then-else" rakennetta ja erilaisia muuttujia. Tämä auttaa sinua ymmärtämään Bashin logiikkaa ja sen mahdollisuuksia.
-
-3. Kun olet tutustunut Bashin perusteisiin, voit edetä isompiin projekteihin. Voit esimerkiksi luoda oman käyttöliittymän tai automatisoida tiettyjä tehtäviä.
-
-Alla on esimerkki yksinkertaisesta Bash-skriptistä, joka tulostaa käyttäjän antaman nimen:
-
-```Bash
-#!/bin/bash
-echo "Hei, mikä on nimesi?"
-read nimi
-echo "Hauska tutustua, $nimi!"
+```Bash 
+#!/bin/bash 
+echo "Hei maailma!" 
 ```
 
-Tässä skriptissä "read" komento lukee käyttäjän antaman nimen ja "echo" tulostaa tervehdyksen käyttäjän nimellä varustettuna.
+Voit suorittaa tämän skriptin komennolla `./skriptinimi.sh` ja nähdä tulosteen "Hei maailma!" komentorivillä. Voit myös lisätä muita komentoja skriptiisi ja käyttää erilaisia muuttujia ja ehtolauseita. Bash-ohjelmointi tarjoaa paljon mahdollisuuksia luovaan koodaukseen!
 
-## Syvemmälle Bashin käyttöön uuden projektin alussa
+## Syventävä sukellus
+Aloittaessasi uutta Bash-projektia, on tärkeää suunnitella ennalta. Mieti, mitä haluat saavuttaa ja mitä toimintoja tarvitset. Voit myös tutkia jo olemassa olevia Bash-skriptejä ja oppia niistä uusia temppuja ja käytäntöjä.
 
-Aloittaessasi uutta projektia Bashilla, on hyvä muistaa muutama käytännön vinkki:
+Voit myös tutustua Bash-skriptien testaamiseen ja vianmääritykseen. Kun kehität isompia projekteja, testaaminen ja virheiden etsiminen on tärkeää pitää koodisi toimivana ja tehokkaana.
 
-- Tutustu Bashin käytännön hyötyihin ja muista mahdollisuuteen, kuten muuttujien käyttö ja komentojen yhdistely.
-
-- Käytä toimivia työkaluja ja resursseja, kuten Bash-skriptejä ja kirjastoja, jotka voivat helpottaa ja nopeuttaa projektin aloitusta.
-
-- Pidä huolta Bash-skripteistäsi ja tee niistä huolellisesti dokumentoituja. Näin ei tarvitse huolehtia tarpeettomasta koodin uudelleenkirjoittamisesta ja voit helposti palata takaisin koodin pariin myöhemmin.
+Lopuksi, älä unohda dokumentoida koodiasi ja lisätä kommentteja! Näin muutkin ymmärtävät koodisi ja voit helposti palata siihen myöhemmin.
 
 ## Katso myös
-
-- [Bashin ohjelmointiopas (suomeksi)](https://www.bash.ac/blogi/bashin-pieni-koodiopas)
-
-- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/)
-
-- [Bash-skriptien käytännön esimerkkejä](https://www.cyberciti.biz/tips/category/bash-shell-scripting)
+- [Kuinka asentaa Bash](https://linuxhint.com/install-bash-shell-on-ubuntu/)
+- [Bash-ohjelmoinnin perusteet](https://www.tutorialspoint.com/unix/unix-shell-loops.htm)
+- [Bash-skriptien testaaminen](https://opensource.com/article/19/1/write-bash-tests)
+- [Kommentointi ja dokumentointi Bashissa](https://www.linuxjournal.com/content/creating-simple-bash-scripting-help-system)

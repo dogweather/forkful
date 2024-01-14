@@ -1,69 +1,50 @@
 ---
-title:    "Ruby: Länka samman strängar"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/concatenating-strings.md"
+title:                "Ruby: Sammanslagning av strängar"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att sammanfoga, eller "concatenating", strängar är en praktisk funktion inom programmering som gör det möjligt att kombinera flera strängar till en enda. Detta kan vara användbart när vi behöver skapa dynamiska textsträngar eller när vi vill lägga till variabler i en sträng. Genom att lära sig hur man sammanfogar strängar kan man göra sina program mer flexibla och kraftfulla.
+Att lära sig hur man sammanfogar strängar i Ruby är ett viktigt koncept för att kunna skapa dynamiska och interaktiva program. Genom att kombinera flera strängar kan du skapa mer användbara och föränderliga meddelanden och utskrifter i ditt program.
 
-## Hur man gör
+## Så här gör du
 
-För att concatenating ska fungera måste vi använda ett operator som heter "plus", eller "+" på engelska. Om vi till exempel har två strängar, "Hej" och "världen", så kan vi använda "+" för att sammanfoga dem:
-
-```Ruby
-"Hej" + "världen" # output: "Hej världen"
-```
-
-Här kombinerar vi helt enkelt de två strängarna till en enda längre sträng. Det är viktigt att notera att strängarna måste vara omgivna av citattecken för att concatenating ska fungera. Om en av strängarna är en variabel så måste vi också använda återkallning inom citattecknen för att värdet ska ersättas i den slutliga strängen:
+För att sammanfoga strängar i Ruby kan du använda operatorn "+" eller metoden "concat". Här är ett enkelt exempel:
 
 ```Ruby
-name = "Sara"
+first_name = "Lisa"
+last_name = "Svensson"
 
-"Hej " + name # output: "Hej Sara"
+puts first_name + " " + last_name
 ```
 
-Vi kan också använda "+=" för att lägga till en sträng i en befintlig variabel:
+Output: Lisa Svensson
+
+För att undvika att behöva skriva "+" flera gånger, kan du använda metoden "concat" istället:
 
 ```Ruby
-greeting = "Hej"
-name = "Sara"
+first_name = "Lisa"
+last_name = "Svensson"
 
-greeting += name # output: "Hej Sara"
+puts first_name.concat(" ", last_name)
 ```
+
+Output: Lisa Svensson
+
+Det finns även andra sätt att sammanfoga strängar, som att använda "<<" eller interpolering med "#{}". Läs mer om dessa metoder och deras syntax i dokumentationen för Ruby.
 
 ## Deep Dive
 
-En viktig sak att notera är att när vi sammanfogar två strängar så skapas en helt ny sträng, och de ursprungliga strängarna påverkas inte. Detta är särskilt viktigt att komma ihåg när man arbetar med variabler och vill ändra ett värde utan att påverka det ursprungliga värdet. Till exempel:
+När vi sammanfogar strängar i Ruby skapar vi egentligen en ny sträng istället för att ändra på de befintliga strängarna. Detta beror på att strängar är oföränderliga, vilket betyder att de inte kan ändras efter att de har skapats. Därför är det viktigt att förstå skillnaden mellan att ändra en sträng och att skapa en ny.
 
-```Ruby
-greeting = "Hej"
-name = "Sara"
-
-new_greeting = greeting + name # output: "Hej Sara"
-
-puts new_greeting # output: "Hej Sara"
-puts greeting # output: "Hej"
-```
-
-Vi kan också använda specialtecknet "<<" för att sammanfoga strängar, vilket gör att den ursprungliga strängen påverkas:
-
-```Ruby
-greeting = "Hej"
-name = "Sara"
-
-greeting << name # output: "HejSara"
-
-puts greeting # output: "HejSara"
-```
-
-Det är också bra att känna till att när vi sammanfogar strängar så kan vi också använda variabler som innehåller andra datatyper, såsom siffror. I så fall kommer siffrorna att konverteras till strängar och sammanfogas som vanligt.
+En annan viktig sak att komma ihåg när det gäller sammanfogning av strängar är att många operationer i Ruby returnerar en ny sträng istället för att ändra på den befintliga. Detta gäller särskilt om du använder metoden "split" för att dela en sträng i flera delar.
 
 ## Se också
 
-- [Svensk Ruby-förening](https://www.ruby-lang.se/)
-- [Officiell Ruby-dokumentation för strängar](https://ruby-doc.org/core-2.7.1/String.html)
-- [Concatenating i andra programmeringsspråk](https://en.wikipedia.org/wiki/Concatenation_(programming))
+* Dokumentation för Ruby - https://www.ruby-lang.org/sv/documentation/
+* En guide till sammanfogning av strängar i Ruby - https://www.rubyguides.com/2017/01/ruby-string-concatenation/
+* Mer om oföränderliga objekt i Ruby - https://medium.com/rubyinside/the-surprising-and-quite-deliberate-things-you-should-know-about-ruby-swap-cd4682f7dede

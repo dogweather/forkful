@@ -1,75 +1,57 @@
 ---
-title:    "Ruby: Leyendo argumentos de línea de comandos."
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/reading-command-line-arguments.md"
+title:                "Ruby: Leyendo argumentos de línea de comando"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué leer argumentos de línea de comandos en Ruby
+# Por qué leer argumentos de línea de comando en Ruby
 
-Al escribir cualquier tipo de programa, es importante tener en cuenta la posibilidad de que el usuario desee proporcionar información al ejecutarlo. Los argumentos de línea de comandos son una forma útil de permitir que el usuario personalice la ejecución de un programa. A continuación, explicamos cómo implementarlo en Ruby.
+Antes de profundizar en cómo leer argumentos de línea de comando en Ruby, primero debemos discutir por qué es importante y útil hacerlo. 
+
+## Por qué
+La lectura de argumentos de línea de comando en un programa Ruby permite al usuario proporcionar información específica al programa en el momento de ejecución. Esto puede ser útil para personalizar la salida del programa o para realizar diferentes acciones basadas en la entrada del usuario.
 
 ## Cómo hacerlo
+Para leer argumentos de línea de comando en Ruby, utilizaremos el objeto `ARGV`, que contiene un array de todos los argumentos pasados en la línea de comando. Podemos acceder a estos argumentos utilizando índices, empezando por 0. Veamos un ejemplo:
 
-Para leer argumentos de línea de comandos en Ruby, utilizaremos la variable especial `ARGV`. Esta variable contiene un array con todos los argumentos proporcionados por el usuario al ejecutar el programa. Por ejemplo, si ejecutamos desde la terminal el comando `ruby programa.rb hola adiós`, la variable `ARGV` contendrá `["hola", "adiós"]`.
-
-Para acceder a los argumentos individuales, podemos usar el indexado del array (`ARGV[0]` para el primer argumento, `ARGV[1]` para el segundo, etc) o el método `fetch()` para manejar errores en caso de que el usuario no haya proporcionado suficientes argumentos.
-
-```ruby
-# programa.rb
-
-# Obtener el primer argumento
-primer_argumento = ARGV[0]
-
-# Obtener el segundo argumento con fetch()
-segundo_argumento = ARGV.fetch(1, 'default')
-
-# Imprimir los argumentos y su cantidad
-puts "Los argumentos proporcionados son: #{primer_argumento} y #{segundo_argumento}"
-puts "Cantidad de argumentos: #{ARGV.length}"
+```Ruby
+# Este programa imprimirá la palabra pasada como argumento en la línea de comando.
+puts "La palabra ingresada fue: #{ARGV[0]}"
 ```
 
-Al ejecutar este programa con `ruby programa.rb hola adiós`, el output sería:
+Si ejecutamos este programa con el comando `ruby argumentos.rb hola`, obtendremos la siguiente salida:
 
-```bash
-Los argumentos proporcionados son: hola y adiós
-Cantidad de argumentos: 2
+```
+La palabra ingresada fue: hola
+```
+
+También podemos utilizar un bucle `while` para imprimir todos los argumentos pasados en la línea de comando. Veamos otro ejemplo:
+
+```Ruby
+# Este programa imprimirá todos los argumentos ingresados en la línea de comando.
+i = 0
+while i < ARGV.length
+  puts "Argumento ##{i+1}: #{ARGV[i]}"
+  i += 1
+end
+```
+
+Si ejecutamos este programa con el comando `ruby argumentos.rb hola mundo`, obtendremos la siguiente salida:
+
+```
+Argumento #1: hola
+Argumento #2: mundo
 ```
 
 ## Profundizando
+Además de acceder a los argumentos de línea de comando utilizando índices, también podemos utilizar los métodos disponibles en el objeto `ARGV` para realizar diferentes acciones. Algunos de estos métodos incluyen `length`, `include?` y `pop`.
 
-Además de acceder a los argumentos de línea de comandos, también podemos validar su formato y realizar acciones en base a ellos. Por ejemplo, podríamos utilizar un bucle `each` para iterar sobre todos los argumentos y verificar si son números enteros, como en el siguiente ejemplo:
-
-```ruby
-# programa.rb
-
-# Método para verificar si un string es un número entero
-def es_entero?(string)
-  string.to_i.to_s == string
-end
-
-# Verificar si todos los argumentos son enteros
-ARGV.each do |argumento|
-  if es_entero?(argumento)
-    puts "#{argumento} es un número entero"
-  else
-    puts "#{argumento} no es un número entero"
-  end
-end
-```
-
-Al ejecutar este programa con `ruby programa.rb 1 2 hola`, el output sería:
-
-```bash
-1 es un número entero
-2 es un número entero
-hola no es un número entero
-```
-
-Con esta información, podemos personalizar aún más la ejecución de nuestros programas y hacerlos más interactivos y útiles para el usuario.
+También podemos utilizar la librería `optparse` para crear opciones y argumentos específicos para nuestro programa. Esta librería nos permite crear argumentos opcionales y requeridos, así como proporcionar un mensaje de ayuda para el usuario.
 
 ## Ver también
-
-- [Documentación oficial de Ruby sobre argumentos de línea de comandos](https://ruby-doc.org/docs/CommandLineArguments.html)
-- [Blog post (en inglés) sobre argumentos de línea de comandos en Ruby](https://www.rubyguides.com/2012/02/ruby-command-line-args/)
+- [Documentación oficial de Ruby sobre ARGV](https://docs.ruby-lang.org/en/2.6.0/ARGF.html)
+- [Tutorial de Ruby sobre cómo leer argumentos de línea de comando](https://www.rubyguides.com/2018/11/parameters-argv-gets/)
+- [Tutorial de Ruby sobre la librería optparse](https://www.rubyguides.com/2018/12/ruby-optionparser-tutorial/)

@@ -1,48 +1,48 @@
 ---
-title:    "Haskell: テキストファイルの読み込み"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/reading-a-text-file.md"
+title:                "Haskell: テキストファイルの読み込み"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## ホワイ
 
-テキストファイルを読むことの利点は、コンピューターから情報を取得する最も基本的で効率的な方法です。また、テキストファイルは読みやすく、他のプログラミング言語にも簡単に移植できるため、Haskellプログラマーにとって非常に便利です。
+テキストファイルを読み込むことは、プログラミングにおいて非常に重要です。そのため、Haskellを学ぶ上で基本的なスキルとなります。このブログ投稿では、Haskellでテキストファイルを読み込む方法について紹介します。
 
-## 方法
+## ハウトゥ
 
-以下のコードブロックには、Haskellでテキストファイルを読み取る方法の例が記載されています。コードの下には、実際の出力が表示されます。
+まずは、テキストファイルを読み込むための基本的なコードを見ていきましょう。
 
 ```Haskell
 import System.IO
 
 main = do
-    handle <- openFile "sample.txt" ReadMode  -- ファイルを開く
-    contents <- hGetContents handle  -- ファイルの内容を取得する
-    putStr contents  -- 内容を表示する
-    hClose handle  -- ファイルを閉じる
+    handle <- openFile "sample.txt" ReadMode
+    contents <- hGetContents handle
+    putStrLn contents
+    hClose handle
 ```
 
-実際の出力:
+まず、`System.IO`モジュールをインポートします。その後、`openFile`関数を使って、`sample.txt`という名前のファイルを読み込みモードで開きます。`hGetContents`関数はハンドルからテキストを読み込みます。そして、`putStrLn`関数を使って、読み込んだ内容をターミナルに出力します。最後に、`hClose`関数でハンドルを閉じて処理を終了します。
 
-```
-This is a sample text file.
-It contains some sample text.
-```
+## ディープダイブ
 
-## 深堀り
+テキストファイルを読み込む際に重要なのは、ファイルのエンコーディングについてです。Haskellの`hGetContents`関数は、デフォルトではUTF-8エンコーディングを使用してテキストを読み込みます。しかし、ファイルのエンコーディングが異なる場合は、`hSetEncoding`関数を使って明示的に指定する必要があります。
 
-テキストファイルを読み取る際に、いくつかの注意点があります。まず、ファイルを開く際には`openFile`関数を使用し、第二引数には読み取りモードを指定する必要があります。また、ファイルを閉じる際には`hClose`関数を使用することで、プログラムの最後にファイルが閉じられないように注意する必要があります。
+また、`hGetContents`関数は、ファイルを全て一度に読み込むのではなく、必要に応じて遅延評価を行います。これにより、大きなファイルをメモリに読み込まずに処理することができます。
 
-## 参考リンク
+さらに、テキストファイルを読み込む際に利用できる便利な関数やモジュールもあります。例えば、`readFile`関数や`Text.Encoding`モジュールなどが挙げられます。これらを活用することで、より柔軟なテキスト処理を行うことができます。
 
-- [Haskell: テキストファイルを読み込む方法](https://techacademy.jp/magazine/20893)
-- [Haskellの典型的なIOプログラム](https://qiita.com/nwtgck/items/217e3896709e0a683cbc)
-- [Haskellのファイル入出力について](https://qiita.com/yamamotoj/items/9c0b234737180b64ab97)
+## シーアルソーシリンク
+
+- [Haskellでテキストファイルを書き込む方法](https://www.haskell.org/tutorial/io.html#reading-and-writing-files)
+- [HaskellのIOモナドについて](https://wiki.haskell.org/IO_inside)
+- [Haskellでのファイル取得のさまざまな方法](https://lgo-tera.hatenablog.com/entry/20171120/1511172656)
 
 ## 関連リンク
 
-- [Markdownとは？メリットや書き方の基礎を解説](https://www.sejuku.net/blog/26114)
-- [Markdown記法チートシート](https://qiita.com/Qiita/items/c686397e4a0f4f11683d)
-- [Markdownの使い方～基本文法～](https://qiita.com/tbpgr/items/989c6badefff69377da7)
+- [Haskell.jp](https://haskell.jp/)
+- [Haskellの基本的な文法](https://qiita.com/7shi/items/145f1232a2c4ad3f9b96)
+- [Haskellのコードを読めるようになろう](https://qiita.com/tanakh/items/0ba42c7ca36cd29d0ac8)

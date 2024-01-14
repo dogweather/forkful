@@ -1,44 +1,35 @@
 ---
-title:    "Elixir: 「標準エラーへの書き込み」"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/writing-to-standard-error.md"
+title:                "Elixir: 「標準エラーに書き込む」"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-なぜ個人が標準エラーに書き込むのに参加する必要があるのでしょうか？
 
-Elixirプログラミングの世界には、様々なソフトウェアやアプリケーションがあります。それらの中で、製作者が意図しないエラーが発生することもあります。そのようなエラーを見逃さず、早期に発見して修正するためにも、標準エラーに書き込むことが重要な役割を果たします。
+プログラミングをするとき、時々私たちはエラーメッセージを受け取ります。しかし、それらのメッセージがどこから来たのか疑問に思ったことはありませんか？それは標準エラー出力（Standard Error）です。今回は、Elixirで標準エラー出力をどのように書くか、そしてなぜそれが重要なのかについてお話しします。
 
-## 方法
-実際にどのようにして標準エラーに書き込むのでしょうか？Elixirでは、`IO.puts/2`関数を使用して、標準エラーにメッセージを出力することができます。以下のように記述します。
+## どのように書くか
 
-```Elixir
-IO.puts(:stderr, "エラーメッセージ")
+```elixir
+IO.puts("このメッセージは標準出力に表示されます")
+IO.puts("このメッセージは標準エラー出力に表示されます", [:stderr])
 ```
 
-このようにすることで、標準エラーにメッセージが出力されます。また、`IO.inspect/2`関数を使用して、データ型や変数の内容を確認することもできます。例えば、以下のように記述します。
+上記のように、`IO.puts`関数を使用してメッセージを出力します。`[:stderr]`パラメータを渡すことで、メッセージを標準エラー出力に送ることができます。また、`IO.puts/2`のように、第二引数に`stderr`を明示的に渡すこともできます。
 
-```Elixir
-IO.inspect(:error, label: "エラー変数")
-```
-
-このコードを実行すると、エラー変数の内容が標準エラーに出力されます。
+もしも出力先を指定しない場合、デフォルトでは標準出力にメッセージが表示されます。
 
 ## 深堀り
-標準エラーに書き込むことの重要性を理解した上で、より深く知っておくべきことがあります。例えば、Elixirでは標準エラーに書き込まれたメッセージをリダイレクトすることができます。このように記述します。
 
-```Elixir
-elixir your_program.ex 2> error.log
-```
+なぜ私たちは標準エラー出力を使用するのでしょうか？その理由は、プログラムが何らかのエラーを検出した際、そのメッセージを確実にコンソールに表示するためです。標準出力は、実行結果や他の情報で埋め尽くされる可能性があり、重要なエラーメッセージを見逃してしまうことがあります。
 
-このコマンドを実行すると、エラーメッセージが`error.log`というファイルに書き込まれます。また、`IO.puts/2`関数の第二引数には、フォーマットを指定することもできます。例えば、`~p`を指定すると、メッセージをPrettyInspectの形式で出力することができます。
+また、標準エラー出力は、エラーログを保存するために使用することもできます。例えば、`File.write`関数を使用して、エラーメッセージをテキストファイルに保存することができます。
 
-## おわりに
-今回は、なぜ標準エラーに書き込むことが重要なのか、そして実際にどのようにして書き込むのか、さらに深く知っておくべき情報を紹介しました。エラーを見逃さず、早期に発見して修正するためにも、ぜひこれらの方法を活用してください。
+## 参考リンク
 
-## 関連リンク
-- [Elixirドキュメント](https://hexdocs.pm/elixir/)
-- [Elixirフォーラム](https://elixirforum.com/)
-- [Elixir入門ブログ](https://elixir-beginners.com/)
+- [Elixir公式ドキュメント - IO.puts/1](https://hexdocs.pm/elixir/IO.html#puts/1)
+- [Elixir公式ドキュメント - IO.puts/2](https://hexdocs.pm/elixir/IO.html#puts/2)
+- [The Power of Elixir’s standard_errors](https://hackernoon.com/the-power-of-elixirs-standard-errors-59c180f3ad60)

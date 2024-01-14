@@ -1,73 +1,49 @@
 ---
-title:    "C#: Uzyskiwanie bieżącej daty"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/getting-the-current-date.md"
+title:                "C#: Uzyskiwanie bieżącej daty"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto poznać aktualną datę w programowaniu?
+## Dlaczego
 
-Wiele aplikacji i systemów informatycznych wymaga dostępu do aktualnej daty i czasu. Jest to ważne nie tylko w celu wyświetlania bieżącej daty, ale także do obliczeń daty w przyszłości lub przeszłości. Dlatego też poznanie sposobu uzyskiwania aktualnej daty w programowaniu jest niezbędne dla każdego programisty.
+Jeśli programujesz w języku C#, prawdopodobnie często potrzebujesz aktualnej daty w swoim kodzie. Mogą być różne powody, na przykład potrzeba wyświetlenia aktualnego czasu w aplikacji lub sprawdzenia czy dany plik został ostatnio zmodyfikowany. Dlatego dzisiaj przyjrzymy się temu, jak pobrać aktualną datę w języku C#.
 
-## Jak to zrobić?
-
-W języku C# istnieje kilka sposóbów na uzyskanie aktualnej daty. Możemy skorzystać z klasy `DateTime` i jej metod, takich jak `Now()` czy `Today()`, aby uzyskać datę i czas w bieżącej strefie czasowej. Możemy również wykorzystać klasę `DateTimeOffset`, która pozwala nam na dostęp do daty i czasu w różnych strefach czasowych. Poniżej przedstawiamy przykładowy kod wraz z oczekiwanym wynikiem:
+## Jak To Zrobić
 
 ```C#
-// uzyskanie aktualnego czasu
-DateTime now = DateTime.Now;
-Console.WriteLine(now);
-
-// uzyskanie aktualnej daty
-DateTime today = DateTime.Today;
-Console.WriteLine(today);
-
-// uzyskanie daty z innego regionu czasowego
-DateTimeOffset date = new DateTimeOffset(2021, 01, 01, 12, 00, 00, new TimeSpan(2, 0, 0));
-Console.WriteLine(date);
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate);
 ```
 
-**Wynik:**
+Kod powyżej pokazuje najprostszy sposób na uzyskanie aktualnej daty w języku C#. Najpierw tworzymy obiekt typu `DateTime` o nazwie `currentDate` używając metody `DateTime.Now`, która zwraca bieżącą datę i czas. Następnie wyświetlamy tę datę na ekranie za pomocą `Console.WriteLine`.
 
-```
-3/15/2021 11:30:00 AM
-3/15/2021 12:00:00 AM
-1/1/2021 12:00:00 PM +02:00
-```
-
-Innym sposobem na uzyskanie aktualnej daty jest skorzystanie z klasy `DateTime.Now.ToString()`, która pozwala nam na formatowanie daty i czasu w różny sposób, na przykład:
+Jeśli chcemy wyświetlić jedynie datę bez czasu, możemy użyć metody `DateTime.Today`. Kod będzie wyglądał tak:
 
 ```C#
-// uzyskanie daty w formie długiej
-DateTime now = DateTime.Now;
-string longDate = now.ToString("D");
-Console.WriteLine(longDate);
-
-// uzyskanie daty w formie krótkiej
-string shortDate = now.ToString("d");
-Console.WriteLine(shortDate);
-
-// uzyskanie godziny
-string time = now.ToString("T");
-Console.WriteLine(time);
+DateTime currentDate = DateTime.Today;
+Console.WriteLine(currentDate);
 ```
 
-**Wynik:**
+W tym przypadku metoda `DateTime.Today` również zwraca obiekt typu `DateTime`, ale z ustawionym czasem na północ (00:00:00). Jeśli chcesz wyświetlić datę w innym formacie, możesz skorzystać z metody `ToString()` i podać odpowiedni format jako parametr. Na przykład:
 
+```C#
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate.ToString("dd/MM/yyyy"));
 ```
-Monday, March 15, 2021
-3/15/2021
-11:30:00 AM
-```
 
-## Głębsze spojrzenie
+Wynik powyższego kodu będzie wyświetlał datę w postaci "dd/MM/yyyy" (np. 26/08/2021).
 
-Klasy `DateTime` i `DateTimeOffset` oferują wiele różnych metod i właściwości, które możemy wykorzystać do manipulowania datami i czasem. Na przykład, możemy wykorzystać metodę `Add()` do dodawania lub odejmowania określonej ilości czasu do daty, takiej jak dni, godziny, minuty lub sekundy. Możemy również wykorzystać metodę `Parse()` lub `TryParse()` do konwersji daty w stringu na obiekt `DateTime`, co może być przydatne, gdy otrzymujemy dane z bazy danych lub zewnętrznego źródła.
+## Deep Dive
 
-# Zobacz również
+Pobieranie aktualnej daty w języku C# może być nieco bardziej skomplikowane, jeśli potrzebujesz wykonać jakieś operacje związane z czasem, na przykład sprawdzenia różnicy między dwoma datami. W takich przypadkach warto poznać pewne przydatne metody z klasy `DateTime`, takie jak `Add()`, `Subtract()` czy `Compare()`.
 
-- [Microsoft Docs: DateTime Struct (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [C# DateTime - GeeksforGeeks](https://www.geeksforgeeks.org/c-sharp-datetime-format-overview-with-examples/)
+Możesz też poszerzyć swoją wiedzę o datach i czasie w C#, korzystając z klasy `TimeSpan`, która reprezentuje określony interwał czasowy. W połączeniu z klasą `DateTime`, możesz wykonywać różnego rodzaju operacje na datach i czasach, na przykład obliczanie różnicy między nimi lub dodawanie/odejmowanie pewnej ilości czasu do danej daty.
 
-Nauka uzyskiwania aktualnej daty w programowaniu jest nie tylko przydatna, ale i niezbędna w wielu przypadkach. Dzięki zrozumieniu różnych metod i możliwości klasy `DateTime`, możemy lepiej manipulować datami i czasem w naszych aplikacjach. W ten sposób nasze programy będą jeszcze bardziej precyzyjne i użyteczne dla użytkowników.
+## Zobacz Również
+
+- [Dokumentacja Microsoft o klasie DateTime](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)
+- [Przykłady użycia klasy DateTime](https://www.c-sharpcorner.com/UploadFile/mahesh/datetimesamples11232005061825AM/datetimesamples.aspx)
+- [Wszystko o pracy z czasem w C#](https://www.tutorialsteacher.com/csharp/csharp-datetime)

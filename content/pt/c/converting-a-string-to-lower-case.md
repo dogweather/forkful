@@ -1,53 +1,45 @@
 ---
-title:    "C: Convertendo uma string para letras minúsculas"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/converting-a-string-to-lower-case.md"
+title:                "C: Convertendo uma string para minúsculas"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para letras minúsculas em C?
+## Por Que
 
-Muitas vezes, ao lidar com strings em um programa em C, pode ser necessário converter todas as letras em minúsculas. Isso é especialmente útil quando se trata de comparações de strings, pois torna a comparação mais precisa e evita erros devido a letras maiúsculas ou minúsculas diferentes. Além disso, converter uma string para minúsculas pode facilitar a manipulação de dados em seu programa.
+Quando se trabalha com programação, é comum lidar com strings, que são conjuntos de caracteres. Em algumas situações, pode ser necessário alterar o formato de uma string, como por exemplo, transformá-la em letras minúsculas. Neste artigo, vamos explorar como fazer essa conversão em C.
 
-## Como fazer isso em C
+## Como Fazer
 
-Felizmente, a linguagem C possui uma função embutida para converter uma string em minúsculas. A função é chamada de `tolower()` e está incluída na biblioteca padrão `<ctype.h>`. Para usá-la, primeiro é necessário declarar a string que deve ser convertida e, em seguida, chamar a função `tolower()` com essa string como parâmetro. Veja um exemplo de código abaixo:
+Para converter uma string para letras minúsculas em C, podemos utilizar a biblioteca string.h e a função strlwr(). Esta função recebe como parâmetro a string que será convertida e retorna a mesma string com todas as letras em minúsculo.
 
-```C
+```
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
-int main() {
-    char frase[50] = "Olá Mundo!";
-    int i = 0;
-
-    while (frase[i]) {
-        frase[i] = tolower(frase[i]);
-        i++;
-    }
-
-    printf("%s\n", frase);
+int main()
+{
+    char string[20] = "Olá MUNDO";
+    printf("String original: %s\n", string);
+    printf("String em minúsculo: %s\n", strlwr(string));
 
     return 0;
 }
-```
-
-Neste exemplo, a string "Olá Mundo!" é convertida para "olá mundo!". Note que um loop `while` é utilizado para percorrer todos os caracteres da string e a função `tolower()` é aplicada a cada um deles.
-
-O resultado da execução deste código é:
 
 ```
-olá mundo!
-```
 
-## Dando um mergulho mais profundo
+Neste exemplo, a string original é "Olá MUNDO" e a função strlwr() retorna "olá mundo". Podemos ver que todas as letras foram convertidas para minúsculo.
 
-Além da função `tolower()`, existem outras formas de converter uma string em C para minúsculas. Uma maneira é usando o operador ternário `?:` e aplicando aritmética bit a bit para alterar o valor ASCII de cada caractere. Isso é útil em situações onde não se quer utilizar a biblioteca `<ctype.h>`.
+## Mergulho Profundo
 
-Outra opção é utilizar a função `strlwr()` da biblioteca `<string.h>`, que é especificamente projetada para converter strings inteiras em minúsculas em uma única chamada. No entanto, essa função só está disponível em algumas versões da linguagem C.
+Por trás da função strlwr(), existe um processo de conversão que ocorre. Primeiramente, é importante saber que em C, as letras maiúsculas e minúsculas são representadas por valores diferentes na tabela ASCII. As minúsculas possuem valores mais altos do que as maiúsculas. Dessa forma, quando utilizamos a função strlwr(), ela percorre a string e altera o valor de cada letra para um valor mais alto, resultando em letras minúsculas.
 
-## Veja também
-- Tutorial sobre a função `tolower()` em C: https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm
-- Explicações detalhadas sobre operações bit a bit: https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/
-- Descrição da função `strlwr()` em C: https://www.geeksforgeeks.org/strlwr-function-in-c/
+No entanto, é importante lembrar que a função strlwr() não funciona com todos os idiomas. Ela funciona apenas com caracteres da língua inglesa. Para lidar com outros idiomas, é necessário utilizar outras funções e técnicas de programação.
+
+## Veja Também
+
+- [Documentação do strlwr() em C](https://www.tutorialspoint.com/c_standard_library/c_function_strlwr.htm)
+- [ASCII Table](https://www.asciitable.com/)
+- [Outras funções para lidar com strings em C](https://www.programiz.com/c-programming/c-strings)

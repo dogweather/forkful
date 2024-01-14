@@ -1,45 +1,54 @@
 ---
-title:    "Haskell: Confrontare due date"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/comparing-two-dates.md"
+title:                "Haskell: Confrontare due date"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Comparare due date può essere utile in molte situazioni, come ad esempio nel calcolo della differenza tra due date, nell'ordinamento di eventi cronologici o nella gestione di dati temporali. Inoltre, conoscere come comparare date in Haskell può aiutare a comprendere meglio il concetto di tipi di dati e di funzioni.
+Se sei un programmatore Haskell, sicuramente hai incontrato situazioni in cui hai dovuto confrontare due date. Potrebbe essere necessario determinare l'ordine cronologico tra due eventi o calcolare la differenza di tempo tra di essi. In questo articolo esploreremo come confrontare due date usando Haskell.
 
-## Come
+## Come Fare
 
-Per confrontare due date in Haskell, è necessario prima di tutto importare il modulo `Data.Time`, che fornisce funzioni per la gestione del tempo. Successivamente, definire le due date da confrontare utilizzando il tipo di dato `Day`.
+Il modo più semplice per confrontare due date in Haskell è utilizzare il modulo `Data.Time`. Per cominciare, importiamo il modulo nel nostro file di progetto:
 
 ```Haskell
 import Data.Time
-
--- Definizione di due date
-data1 = fromGregorian 2020 10 5
-data2 = fromGregorian 2020 10 10
-
--- Confronto delle due date
-compareDates data1 data2
 ```
 
-Il risultato del confronto sarà un valore di tipo `Ordering`, che può essere `LT` (lower than), `GT` (greater than) o `EQ` (equal). Per poter utilizzare direttamente il valore comparato, è possibile utilizzare la funzione `toEnum` per trasformarlo in un valore `Int`.
-
-## Deep Dive
-
-In Haskell, le date sono rappresentate come valori immutabili e sono gestite tramite funzioni specifiche del modulo `Data.Time`. È importante notare che il tipo di dato `Day` rappresenta solo una data e non un'ora specifica. Se si desidera confrontare date e orari, allora è necessario utilizzare il tipo di dato `UTCTime`.
-
-Un altro aspetto importante è la possibilità di formattare le date in diversi formati utilizzando la funzione `formatTime`, che richiede un formato di output e un valore di tipo `Day` come argomenti.
+Per confrontare due date, dobbiamo prima definirle come oggetti `UTCTime` usando la funzione `parseTimeM` del modulo `Data.Time.Format`. Ad esempio, se vogliamo confrontare il 1 ° gennaio 2021 alle 00:00 e il 1 ° febbraio 2021 alle 12:00, possiamo definirle come segue:
 
 ```Haskell
--- Formattazione di una data
-formattedDate = formatTime defaultTimeLocale "%d/%m/%Y" data1
+let primaData = parseTimeM True defaultTimeLocale "%Y-%m-%d %H:%M:%S" "2021-01-01 00:00:00" :: Maybe UTCTime
+let secondaData = parseTimeM True defaultTimeLocale "%Y-%m-%d %H:%M:%S" "2021-02-01 12:00:00" :: Maybe UTCTime
 ```
 
-## Vedi anche
+Una volta definite le date come oggetti `UTCTime`, possiamo utilizzare gli operatori `>` (maggiore), `<` (minore) e `==` (uguale) per confrontarle. Ad esempio:
 
-- [Documentazione di Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Tutorial su Data.Time](https://www.haskell.org/haskellwiki/Time)
-- [Guida sulle funzioni di confronto in Haskell](https://wiki.haskell.org/Comparison_functions)
+```Haskell
+primaData > secondaData
+-- Output: False
+primaData < secondaData
+-- Output: True
+primaData == secondaData
+-- Output: False
+```
+
+Possiamo anche utilizzare la funzione `diffUTCTime` per calcolare la differenza di tempo tra due date. Questa funzione restituisce un valore di tipo `NominalDiffTime`, che rappresenta la differenza in secondi tra le due date. Ad esempio:
+
+```Haskell
+diffUTCTime secondaData primaData
+-- Output: 2678400.0 (corrispondente a 31 giorni)
+```
+
+## Approfondimento
+
+È importante notare che le date sono sensibili al fuso orario. Quindi, quando si confrontano due date, è necessario assicurarsi che entrambe siano nella stessa zona oraria. Inoltre, la funzione `parseTimeM` restituirà un valore `Maybe` in caso di errore nella conversione. Quindi, è necessario gestire correttamente i possibili valori `Nothing` prima di confrontare le date.
+
+## Vedi Anche
+
+- [HSpec: Testing in Haskell (in Italiano)](https://www.valentinog.com/blog/haskell-hspec/)
+- [A Gentle Introduction to Haskell (in Italiano)](https://www.spazio-lab.it/articoli/44-programmazione/45-a-gentle-introduction-to-haskell)

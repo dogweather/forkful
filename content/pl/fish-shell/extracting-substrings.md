@@ -1,47 +1,53 @@
 ---
-title:    "Fish Shell: Pobieranie podciągów"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/extracting-substrings.md"
+title:                "Fish Shell: Wycinanie podciągów"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-W dzisiejszych czasach programowanie stało się nieodłączną częścią naszego życia. Wiele z nas codziennie korzysta z różnych narzędzi wykorzystujących języki programowania. Jedną z popularnych opcji jest Fish Shell, które pozwala nam na automatyzację wielu zadań. Jedną z przydatnych funkcji w Fish Shell jest możliwość wyciągania podciągów z tekstu. W tym artykule dowiesz się, dlaczego warto poznać tę funkcję oraz jak jej używać.
+Jeśli kiedykolwiek potrzebowałeś wyodrębnić fragment tekstu z większego ciągu znaków, wiesz, jak frustrujące może to być. Szczególnie, gdy jest to potrzebne w obrębie skryptu lub programu pisząc własne pisanie od podstaw.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby wyciągać podciągi w Fish Shell, używamy polecenia `string` oraz `cut`. Przykładowo, jeśli chcemy wyciągnąć pięć pierwszych znaków z tekstu "Programowanie jest fajne", używamy poniższego kodu:
+W Fish Shell istnieje wiele sposobów na wyodrębnienie fragmentów tekstu. Jednym z najprostszych sposobów jest użycie funkcji subst (substring) wraz ze znakiem podkreślenia, aby wskazać indeks początkowy i końcowy fragmentu, który chcesz wyodrębnić. Na przykład:
 
-```Fish Shell
-set tekst "Programowanie jest fajne"
-string sub -l 5 $tekst
+```
+set text "To jest przykładowy tekst"
+echo $text
+To jest przykładowy tekst
+
+echo $text[5..12]
+jest przykładowy
+```
+W pierwszej linii tworzymy zmienną zawierającą nasz tekst. Następnie wypisujemy cały tekst za pomocą polecenia echo. W ostatniej linii używamy funkcji subst (substring) i podajemy zakres indeksów od 5 do 12, co pozwala nam wyodrębnić fragment "jest przykładowy" z naszego tekstu.
+
+Możesz również używać funkcji subst do zastępowania ciągów znaków w tekście. Na przykład:
+
+```
+set text "Myślę, że lubię pisać"
+echo $text
+Myślę, że lubię pisać
+
+echo $text[13..-1]
+pisać
+
+set text $text[0..7]"kochać pisać"
+echo $text
+Myślę, że kochać pisać
 ```
 
-Wynik wyświetli się w terminalu jako "Progr".
+Oprócz tego, Fish Shell oferuje również inne funkcje pozwalające na wygodne manipulowanie fragmentami tekstu, takie jak contains (sprawdzanie czy tekst zawiera określony ciąg znaków) czy replace (zastępowanie pewnych fragmentów tekstu innymi).
 
-Możemy również wyciągać podciągi używając indeksów. Przykładowo, jeśli chcemy wyciągnąć pierwsze trzy znaki z tekstu, używamy poniższego kodu:
+## Głębszy zanurzenie
 
-```Fish Shell
-set tekst "Programowanie jest fajne"
-cut -c 1-3 $tekst
-```
+Wykorzystywanie funkcji subst w Fish Shell może być przydatne w wielu sytuacjach, szczególnie podczas pisania skryptów lub tworzenia własnych programów. Dzięki temu narzędziu możesz precyzyjnie wyodrębnić i manipulować fragmentami tekstu, co może znacznie ułatwić i przyspieszyć Twoją pracę.
 
-Wynik wyświetli się jako "Pro".
+## Zobacz także
 
-Możliwości wyciągania podciągów są nieograniczone. Możemy używać różnych funkcji, takich jak `substr` czy `find`, aby dopasować nasze potrzeby.
-
-## Głębsze zagłębienie
-
-Wyciąganie podciągów jest przydatne w różnych sytuacjach. Możemy wykorzystywać je do filtrowania danych, dzielenia tekstu na mniejsze części, czy też uzyskania tylko interesujących nas informacji. Jest to ważna umiejętność, którą warto poznać w celu ułatwienia sobie pracy z codziennymi zadaniami.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o funkcjach Fish Shell, polecamy zapoznanie się z poniższymi artykułami:
-
-- [Fish Shell – szybka i przyjazna powłoka dla programistów](https://geekblog.pl/post/fish-shell-szybka-i-przyjazna-powloka-dla-programistow/)
-- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/)
-- [5 przydatnych funkcji Fish Shell, które musisz poznać](https://www.nixtutor.com/linux/5-useful-fish-shell-features-you-should-know/)
-
-Sprawdź również naszą stronę, gdzie znajdziesz wiele ciekawych artykułów na temat programowania.
+- Oficjalna dokumentacja Fish Shell: https://fishshell.com/docs/current
+- Przewodnik po funkcjach Fish Shell: https://fishshell.com/docs/current/commands.html#commands
+- Przykłady użycia funkcji subst: https://stackoverflow.com/questions/31738169/how-to-extract-substring-in-fish-using-index

@@ -1,43 +1,38 @@
 ---
-title:    "Bash: Utilizando expressões regulares"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/using-regular-expressions.md"
+title:                "Bash: Utilizando expressões regulares"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Que Usar Expressões Regulares?
+## Por que usar expressões regulares?
 
-Expressões regulares são uma ferramenta poderosa para lidar com textos em Bash. Elas permitem que você procure por padrões específicos em um texto, tornando o processo de manipulação e extração de informações mais eficiente. Se você trabalha com Bash e precisa lidar com textos de forma constante, aprender sobre expressões regulares pode ser extremamente útil.
+Expressões regulares são uma forma eficiente e poderosa de fazer correspondências de padrões em textos. Elas são amplamente utilizadas em programação e podem ajudar a simplificar tarefas que envolvem processamento de texto. Além disso, são uma habilidade útil para quem trabalha com dados e precisa extrair informações específicas de grandes quantidades de informações.
 
-## Como Usar Expressões Regulares em Bash
+## Como usar expressões regulares em Bash
 
-Em Bash, as expressões regulares são escritas entre barras (/). Por exemplo, se você quiser encontrar a palavra "hello" em um texto, você pode usar a expressão regular ```/hello/```. Mas as expressões regulares vão muito além disso e podem incluir caracteres especiais, classes de caracteres e metacaracteres.
+Para usar expressões regulares no Bash, é necessário usar o comando `grep`. Ele é responsável por buscar padrões em textos e retornar as linhas que correspondem a esses padrões. 
 
-Vamos ver alguns exemplos:
+Por exemplo, se quisermos encontrar todas as palavras que terminam com "ção" em um arquivo de texto, podemos usar o seguinte comando:
 
-- Para encontrar todas as palavras que começam com a letra "h" em um texto, você pode usar a expressão regular ```/h[a-z]*/```. O caractere [] indica uma classe de caracteres, enquanto o * significa "0 ou mais ocorrências do caractere anterior". Então, essa expressão encontraria palavras como "hello", "house", "happy", etc.
+```bash 
+grep -E '\w+ção\b' texto.txt
+``` 
 
-- Para encontrar todas as ocorrências de números em um texto, você pode usar a expressão regular ```/[0-9]+/```. O + significa "1 ou mais ocorrências do caractere anterior", então essa expressão encontraria números como 123, 456, 789, etc.
+O `-E` indica que estamos usando expressões regulares estendidas e o `\b` representa um limite de palavra. O resultado será uma lista das palavras encontradas no arquivo que terminam com "ção".
 
-- Você também pode usar o metacaractere "." que representa qualquer caractere. Por exemplo, a expressão regular ```/h.ll./``` encontraria palavras como "hello", "hills", "hells", etc.
+## Aprofundando-se em expressões regulares
 
-Para testar as expressões regulares, você pode usar um editor de texto com suporte a expressões regulares, como o Visual Studio Code ou o Sublime Text. Ou, se você preferir, pode testá-las diretamente no seu terminal de Bash com o comando ```grep```. Por exemplo, para encontrar todas as linhas de um arquivo que contenham a palavra "hello", você pode usar o comando ```grep hello arquivo.txt```.
+Em Bash, é possível usar algumas opções para especificar o tipo de busca que queremos fazer com expressões regulares. Por exemplo, o `grep` possui opções como `-i` para ignorar maiúsculas e minúsculas, `-v` para encontrar linhas que não correspondem ao padrão e `-n` para mostrar o número da linha em que o padrão foi encontrado.
 
-## Mergulhando Mais Fundo em Expressões Regulares
+Além disso, é possível combinar expressões regulares com outros comandos no Bash, como usar pipes (`|`) com o `sort` para classificar os resultados encontrados pelo `grep`.
 
-Como mencionado anteriormente, existem vários caracteres especiais e classes de caracteres que podem ser usados em expressões regulares. Alguns exemplos incluem:
-
-- "\d" representa qualquer dígito, equivalente a [0-9].
-- "\w" representa qualquer caractere alfanumérico, equivalente a [a-zA-Z0-9].
-- "\s" representa um espaço em branco, incluindo espaços, tabs e quebras de linha.
-
-Além disso, você pode usar os operadores lógicos "|" (OR) e "?" (opcional) em suas expressões regulares.
-
-Para se aprofundar ainda mais, você pode consultar a documentação oficial do Bash ou ler artigos e tutoriais disponíveis na web. Praticar também é essencial para se familiarizar com as expressões regulares e aproveitar ao máximo seu uso em Bash.
+Para aprender mais sobre expressões regulares em Bash, recomenda-se a leitura da documentação oficial do `grep` e a prática de diferentes exemplos.
 
 ## Veja também
 
-- [Documentação do Bash sobre Expressões Regulares](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
-- [Artigo do Linuxize sobre Expressões Regulares em Bash](https://linuxize.com/post/how-to-use-regular-expressions-regex-in-bash/)
-- [Site Regex101 para testar e experimentar com expressões regulares](https://regex101.com/)
+- Documentação oficial do `grep` (https://www.gnu.org/software/grep/manual/grep.html)
+- Tutorial de expressões regulares em Bash (https://www.digitalocean.com/community/tutorials/using-grep-regularexpressions-to-search-for-text-patterns-in-linux)
+- Cheat sheet de expressões regulares (https://www.rexegg.com/regex-quickstart.html)

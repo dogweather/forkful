@@ -1,41 +1,68 @@
 ---
-title:    "Swift: Kahden päivämäärän vertailu"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/comparing-two-dates.md"
+title:                "Swift: Kahden päivämäärän vertailu"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+### Miksi vertailla kahta päivämäärää Swift-ohjelmointikielessä?
 
-Vertaamalla kahta päivämäärää voit helposti tarkastella ajanjaksoja ja löytää tiettyjen tapahtumien väliset erot.
+Joskus ohjelmoinnissa tarvitaan tietoa siitä, ovatko kaksi päivämäärää samanlaisia tai onko toinen päivämäärä suurempi kuin toinen. Tämä voi olla tarpeen esimerkiksi kalenteritoiminnallisuuksien toteuttamiseen tai tietokantojen kyselyjen tekemiseen. Swift-kielen Date-rakenne tarjoaa kätevät työkalut tämän vertailun tekemiseen ja seuraavaksi käyn läpi miten se tehdään.
 
-## Miten
+### Kuinka vertailla kahta päivämäärää Swift-kielen avulla?
 
-Date-luokassa on valmiina `compare(_ date: Date) -> ComparisonResult` -metodi, jolla voit verrata kahta päivämäärää. Se palauttaa `ComparisonResult` -enumeration, joka voi olla `.orderedAscending`, `.orderedSame` tai `.orderedDescending`.
+Vertailu tapahtuu Date-rakenteen compare-metodilla, joka palauttaa ComparisonResult-enumin arvon. Tämän Enumin arvo voi olla .orderedAscending, .orderedDescending tai .orderedSame riippuen siitä, onko ensimmäinen päivämäärä suurempi, pienempi tai yhtäsuuri kuin toinen. Alla näet esimerkkejä vertailuista ja niiden tuloksista.
+
+```Swift
+let date1 = Date() // nykyinen päivämäärä
+let date2 = Date(timeIntervalSinceNow: 3600) // nykyinen päivämäärä lisättynä yksi tunti
+
+let result = date1.compare(date2) // vertaillaan päivämääriä
+if result == .orderedAscending {
+    print("Ensimmäinen päivämäärä on pienempi kuin toinen.")
+} else if result == .orderedDescending {
+    print("Ensimmäinen päivämäärä on suurempi kuin toinen.")
+} else {
+    print("Päivämäärät ovat yhtä suuret.")
+}
+
+// Tulostaa: Ensimmäinen päivämäärä on pienempi kuin toinen.
+```
+
+Toinen tapa vertailla päivämääriä on käyttää < ja > operaattoreita, jotka vertailevat päivämäärän aikaleimoja (timestamp). Tämä tapahtuu luomalla uusi DateInterval-objekti, joka sisältää kaksi päivämäärää ja vertailemalla sen arvoa halutulla tavalla.
 
 ```Swift
 let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: -86400) //yksi päivä aikaisemmin
-let result = date1.compare(date2)
+let date2 = Date(timeIntervalSinceNow: 3600)
 
-switch result {
-case .orderedAscending:
-    print("Ensimmäinen päivämäärä on ennen toista.")
-case .orderedSame:
-    print("Päivämäärät ovat samat.")
-case .orderedDescending:
-    print("Ensimmäinen päivämäärä on jälkeen toisen.")
+if date1 < date2 {
+    print("Tämä tulostuu, koska ensimmäinen päivämäärä on pienempi.")
 }
+
+if date1 > date2 {
+    print("Tätä ei tulostu, koska ensimmäinen päivämäärä on pienempi.")
+}
+
+// Tulostaa: Tämä tulostuu, koska ensimmäinen päivämäärä on pienempi.
 ```
 
-Tässä esimerkissä verrataan kahta päivämäärää, `date1` ja `date2`. Koska `date1` on luotu myöhemmin, `result` tulostaessa `.orderedDescending`.
+### Syvempi sukellus päivämäärien vertailuun Swift-kielessä
 
-## Syvällinen sukellus
+Date-rakenne tarjoaa myös muita hyödyllisiä metodeja päivämäärien vertailuun, kuten isEqual(to:), isAfter(_:) ja isBefore(_:) jotka vertailevat päivämääräobjekteja toisiinsa. Tämä määritys perustuu päivämäärän alkuhetkeen, joten siltä osin, se tarkastelee vain vuosia, kuukausia ja päiviä ja jättää kellonajat ja muut tekijät huomiotta. Lisäksi Date-rakenteen kautta voi selvittää myös päivämäärien välisen eron eri yksiköissä, kuten päivissä, kuukausissa ja vuosissa.
 
-Vertaillessa kahta päivämäärää, voi olla tärkeää ottaa huomioon myös aikavyöhykkeet ja päivänvalon säästöaika, sillä ne voivat vaikuttaa vertailun lopputulokseen. Voit käyttää `Calendar.current.timeZone` -attribuuttia tarkastellaksesi haluatko ottaa nämä asiat huomioon vertailussa.
+#### Katkelma koodista:
+```Swift
+let date1 = Date()
+let date2 = Date(timeIntervalSinceNow: 3600)
 
-## Katso myös 
+if date1.isEqual(to: date2) {
+    print("Päivämäärät ovat samat.")
+}
 
-- [Swiftin virallinen dokumentaatio Date-luokasta](https://developer.apple.com/documentation/foundation/date)
-- [Kirjoittajan blogiartikkeli: Ajanjaksojen laskeminen Swiftissä](https://esimerkkiblogi.fi/swiftin-ajanjaksojen-laskeminen)
+if date1.isBefore(date2) {
+    print("Ensimmäinen päivämäärä on ennen toista.")
+}
+
+let difference = date2.timeIntervalSince(date1) // ero

@@ -1,50 +1,66 @@
 ---
-title:    "Javascript recipe: Searching and replacing text"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/searching-and-replacing-text.md"
+title:                "Javascript recipe: Searching and replacing text"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-When working with large amounts of text in a JavaScript program, you may come across the need to replace specific words or phrases. This could be for formatting purposes, data cleaning, or making dynamic changes to your text. By knowing how to effectively search and replace text in JavaScript, you can save time and streamline your workflow.
+Searching and replacing text is a common task in programming. It allows us to quickly make changes to a large amount of text without having to manually go through each line. By using Javascript, we can easily automate this process and save ourselves time and effort.
 
 ## How To
+To search and replace text in Javascript, we can use the `replace()` function. Let's say we have a string variable called `text` and we want to replace all occurrences of the word "hello" with "hi". We can do so by using the following code:
 
-In JavaScript, you can use the `.replace()` method to search and replace text in a string. This method takes two parameters: the string or regular expression to search for, and the replacement value. Let's look at an example:
-
-```javascript
-let message = "Hello, my name is John";
-let newMessage = message.replace("John", "Emily");
-console.log(newMessage);
+```Javascript
+var text = "Hello World!";
+var newText = text.replace(/hello/g, "hi");
+console.log(newText); // Output: hi world!
 ```
 
-This code would output "Hello, my name is Emily" as the newMessage, as "John" is replaced by "Emily". You can also use a regular expression as the first parameter to replace multiple occurrences of a word or phrase.
+In the above code, we use the `replace()` function and provide two parameters - the first one is the text we want to search for, and the second one is the text we want to replace it with. The `g` in `/hello/g` stands for global, which means it will search for all occurrences of "hello" in the string. Without the `g`, it would only replace the first occurrence.
 
-```javascript
-let sentence = "I have a dog and a cat and a fish";
-let newSentence = sentence.replace(/and/g, "&");
-console.log(newSentence);
+We can also use the `replace()` function to replace text based on a regular expression pattern. For example, if we want to replace all numbers in a string with "x", we can use the following code:
+
+```Javascript
+var text = "I have 5 apples and 3 oranges.";
+var newText = text.replace(/[0-9]/g, "x");
+console.log(newText); // Output: I have x apples and x oranges.
 ```
 
-In this example, the `g` flag is added to the end of the regular expression so that all instances of "and" are replaced with "&". The output would be "I have a dog & a cat & a fish". 
+In the above code, we use the regular expression pattern `[0-9]` to match any number and the `g` flag to replace all occurrences.
 
 ## Deep Dive
+The `replace()` function also has another useful feature - it can take a callback function as the second parameter. This allows us to have more control over the replacement process. Let's see an example:
 
-The `.replace()` method also allows for a second parameter to be a function, instead of a string. This function takes in the matched string and can manipulate it before returning it as the replacement value. For example:
-
-```javascript
-let sentence = "I have $5, but I want to buy a $10 book";
-let newSentence = sentence.replace(/\$\d+/g, (matched) => {
-  let num = parseInt(matched[1]);
-  return "$" + num * 2;
+```Javascript
+var text = "Hello World!";
+var newText = text.replace(/hello/g, function(match) {
+  return match.toUpperCase(); // Changes "hello" to "HELLO"
 });
-console.log(newSentence);
+console.log(newText); // Output: HELLO World!
 ```
 
-This code uses a regular expression to find any dollar amounts in the sentence and doubles them in the replacement value. The `\d+` matches any number of digits after the "$" and the `(matched)` parameter captures the matched string, which is then manipulated and returned as the replacement value. The output would be "I have $10, but I want to buy a $20 book".
+In the above code, we use a callback function and the `toUpperCase()` method to capitalize all occurrences of "hello" in the string.
+
+We can also use the callback function to access the index and the original string. This can be useful for making specific replacements based on certain conditions. Here's an example:
+
+```Javascript
+var text = "I have a red car and a blue car.";
+var newText = text.replace(/car/g, function(match, index, originalText) {
+  if(originalText[index-1] === "red"){
+    return "bike"; // Replaces "car" with "bike" only if it follows "red"
+  } else {
+    return match; // Leaves "car" as is
+  }
+});
+console.log(newText); // Output: I have a red bike and a blue car.
+```
+
+In the above code, we use the index and the original string to replace "car" with "bike" only if it follows the word "red".
 
 ## See Also
-
-If you want to dive deeper into the `.replace()` method, check out the official [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace). You can also learn more about regular expressions and how to use them in JavaScript from [Regular-Expressions.info](https://www.regular-expressions.info/javascript.html). Happy coding!
+- [MDN Web Docs: String replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [W3Schools: Javascript replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [Regular Expressions: MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

@@ -1,62 +1,51 @@
 ---
-title:    "Elixir: Alimerkkijonojen erottelu"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/extracting-substrings.md"
+title:                "Elixir: Alastringien irti ottaminen"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Miksi käyttäjän kannattaa käyttää alimerkkijonojen irrottamista Elixir-ohjelmoinnissa?
 
-Miksi meidän tulisi käyttää alimerkkijonojen erottamista Elixir-ohjelmoinnissa? Alimerkkijonot voivat olla hyödyllisiä esimerkiksi tekstin käsittelyssä tai merkkijonojen jäljittämisessä. Elixirissä on monia hyödyllisiä toimintoja, jotka helpottavat alimerkkijonojen erottamista, mikä tekee siitä loistavan valinnan ohjelmointikieleksi sille, joka haluaa työskennellä merkkijonodatan kanssa.
+Elixir on monipuolinen ohjelmointikieli, joka tarjoaa erilaisia työkaluja ja toimintoja kehittäjien käyttöön. Yksi näistä toiminnoista on alimerkkijonojen irrottaminen, joka voi olla hyödyllinen tietyissä tilanteissa. Mutta miksi sitä kannattaa käyttää?
 
-## Miten Teet
+Alimerkkijonojen irrottaminen voi olla hyödyllistä silloin, kun halutaan poimia tiettyä osaa merkkijonosta ja käsitellä sitä erikseen. Tämä voi esimerkiksi helpottaa tiedon analysointia tai tietokannasta hakemista. Se voi myös auttaa parantamaan koodin suorituskykyä ja vähentämään muistin käyttöä.
 
-Erityisesti Elixirillä on erittäin yksinkertainen tapa erottaa alimerkkijonoja. Voit käyttää `String.split/2` -funktiota, joka ottaa kaksi parametria, ensimmäisenä parametrina merkkijono ja toisena erottimena. Se palauttaa listan, jossa on alimerkkijonoja eroteltuna erottimella. Alla on esimerkki käytöstä:
-
-```Elixir
-string = "Tervetuloa maailmaan"
-String.split(string, " ")
-```
-
-Tämä palauttaa listan `["Tervetuloa", "maailmaan"]`.
-
-Voit myös käyttää `String.split/3` -funktiota, joka lisää kolmannen parametrin määräksi, minkä verran alimerkkijonoja haluat palauttaa:
+# Miten: Esimerkkejä alimerkkijonojen irrottamisesta käyttäen Elixir-ohjelmointikieltä
 
 ```Elixir
-string = "Hei, mitä kuuluu?"
-String.split(string, " ", 2)
+# Alimerkkijonon irrottaminen pelkän indeksin perusteella
+string = "Tervetuloa blogiin!"
+substr = String.slice(string, 8..13)
+IO.puts(substr)
+# Tulostaa "blogiin"
+
+# Alimerkkijonon irrottaminen tietyn merkin perusteella
+split_string = String.split(string, " ")
+IO.inspect(split_string)
+# Tulostaa ["Tervetuloa", "blogiin!"]
+
+# Alimerkkijonon irrottaminen regexin avulla
+pattern = ~r/[^aeiou]/ # eroaa kaikki vokaalit
+vowels = String.replace(string, pattern, "")
+IO.puts(vowels)
+# Tulostaa "eeuoao"
+
+# Alimerkkijonon irrottaminen alkuosasta
+IO.puts(String.trim_prefix(string, "Tervetuloa "))
+# Tulostaa "blogiin!"
 ```
 
-Tämä palauttaa listan `["Hei,", "mitä kuuluu?"]`.
+# Deep Dive: Syvempää tietoa alimerkkijonojen irrottamisesta Elixir-ohjelmoinnissa
 
-Voit myös käyttää `String.split_at/2` -funktiota, joka jakaa merkkijonon annetusta indeksistä alkaen. Tässä on esimerkki:
+Alimerkkijonojen irrottaminen Elixirissä perustuu pääasiassa String-moduulissa olevaan funktioon, joka tarjoaa useita erilaisia vaihtoehtoja irrottamiseen. String-moduuli tarjoaa myös muita hyödyllisiä toimintoja, kuten merkkijonojen yhdistämisen ja muuntamisen. Lisäksi Elixirissä voi käyttää regexiä helpottamaan alimerkkijonojen irrottamista tietynlaisen kaavan perusteella.
 
-```Elixir
-string = "Elixir on mahtava ohjelmointikieli"
-String.split_at(string, 6)
-```
+Alimerkkijonojen irrottaminen Elixirissä voi myös auttaa tekemään koodista helpommin luettavaa ja ymmärrettävää. Kun tietyt osat merkkijonosta irrotetaan omiin muuttujiinsa, koodista tulee modulaarisempaa ja sitä on helpompi muokata ja ylläpitää.
 
-Tämä palauttaa listan `["Elixir ", "on mahtava ohjelmointikieli"]`.
+# Katso myös:
 
-## Syvällinen Sukellus
-
-Merkkijonoja on mahdollista erottaa monilla eri tavoilla Elixirissä, mutta nämä esimerkit ovat vain muutamia yksinkertaisia tapoja. Voit myös käyttää säännöllisiä lausekkeita alimerkkijonojen erottamiseen tai käyttää erilaisia kirjastoja, jotka tarjoavat lisätoimintoja.
-
-Esimerkiksi `Poison` -kirjasto tarjoaa `Poison.split/3` -funktion, joka toimii samaan tapaan kuin `String.split/3`, mutta hyväksyy myös säännöllisen lausekkeen erottimena. Tämä voi olla hyödyllistä, jos haluat hienostuneemman tavan erottaa alimerkkijonoja.
-
-Voit myös käyttää `Regex` -moduulia ja sen `split/2` -funktiota, joka jakaa merkkijonon säännöllisen lausekkeen perusteella. Tässä on esimerkki:
-
-```Elixir
-string = "Tämä on esimerkkilause, josta haluat erottaa alimerkkijonot"
-Regex.split(~r/,|\s/, string)
-```
-
-Tämä palauttaa listan `["Tämä", "on", "esimerkkilause", "josta", "haluat", "erottaa", "alimerkkijonot"]`.
-
-Kuten näet, vaihtoehtoja on monia ja on tärkeää valita paras tapa erilaisten tarpeidesi perusteella.
-
-## Katso Myös
-
-- [Elixirin virallinen dokumentaatio merkkijonojen käsittelystä](https://hexdocs.pm/elixir/String.html)
-- [Poison-kirjaston dokumentaatio](https://hexdocs.pm/poison/P
+- [Elixir String-moduuli](https://hexdocs.pm/elixir/String.html)
+- [Regexien käyttö Elixirissä](https://medium.com/@brianflove/elixir-meets-regex-95b3449c7990)
+- [Miksi käyttää alimerkkijonojen irrottamista ohjelmoinnissa?](https://www.educative.io/edpresso/what-are-strings-used-for-in-programming)

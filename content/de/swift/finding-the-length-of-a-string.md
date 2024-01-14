@@ -1,44 +1,42 @@
 ---
-title:    "Swift: Die Länge eines Strings finden."
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/finding-the-length-of-a-string.md"
+title:                "Swift: Die Länge eines Strings finden"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Die Länge eines Strings zu finden, ist eine grundlegende Aufgabe beim Programmieren mit Swift. Es ist wichtig, diese Funktionalität zu verstehen, da sie in vielen Anwendungen verwendet wird, um Text zu analysieren und zu manipulieren.
+Möglicherweise fragen Sie sich, warum Sie sich überhaupt Gedanken darüber machen sollten, wie Sie die Länge einer Zeichenkette in Swift finden können. Nun, die Antwort ist einfach - jeder Programmierer, der schon einmal mit Zeichenketten gearbeitet hat, weiß, wie wichtig es ist, ihre Länge zu kennen. Indem Sie die Länge einer Zeichenkette finden, können Sie bestimmte Operationen wie das Überprüfen der Gültigkeit oder das Zählen von Zeichen durchführen.
 
-# Wie man es macht
+## Wie
 
-Es gibt verschiedene Möglichkeiten, die Länge eines Strings in Swift zu finden. Hier ist ein Beispiel, wie es mit der `count` Methode geht:
-
-```Swift
-let text = "Hallo Welt!"
-
-print(text.count)
-
-// Ausgabe: 11
-```
-
-Hier wird die `count` Methode auf den String `text` angewendet, um die Anzahl der Zeichen in dem String zu erhalten. Diese Methode gibt eine ganze Zahl zurück, die die Länge des Strings repräsentiert.
-
-# Tieferer Einblick
-
-Eine andere Methode, um die Länge eines Strings zu finden, ist die Verwendung der `characters` Eigenschaft. Diese gibt eine Sammlung von Zeichen im String zurück, die dann gezählt werden können.
+Um die Länge einer Zeichenkette in Swift zu finden, können Sie die Methode `count` verwenden. Schauen wir uns ein Beispiel an:
 
 ```Swift
-let text = "Apple"
-
-print(text.characters.count)
-
-// Ausgabe: 5
+let string = "Hallo Welt"
+print(string.count)
 ```
 
-Es ist auch wichtig zu beachten, dass die Länge eines Strings nicht unbedingt der Anzahl der sichtbaren Zeichen entspricht. In Swift können Unicode-Zeichen mit mehreren Codepoints repräsentiert werden, was bedeutet, dass die Länge eines Strings von der Anzahl der Zeichenpunkte abhängen kann, die zur Darstellung der Zeichen verwendet werden.
+Dies wird die Ausgabe `11` erzeugen, da die Zeichenkette "Hallo Welt" 11 Zeichen hat.
 
-# Siehe auch
+Sie können auch die `count` Methode auf Substrings anwenden, um die Länge eines Teils der Zeichenkette zu finden. Hier ist ein Beispiel:
 
-- Swift Dokumentation zu Strings: https://developer.apple.com/documentation/swift/string
-- SWIFT-Programmierhandbuch: https://swift.org/documentation/#the-swift-programming-language
+```Swift
+let string = "Hallo Welt"
+let substring = string[..<string.index(string.startIndex, offsetBy: 5)]
+print(substring.count)
+```
+
+Dies wird die Ausgabe `5` erzeugen, da der Substring "Hallo" 5 Zeichen hat.
+
+## Deep Dive
+
+Wenn Sie tiefer in das Konzept der Zeichenkettenlänge in Swift eintauchen möchten, können Sie sich mit den Unterschieden zwischen `count` und `length` auseinandersetzen. Während `count` die Anzahl der Unicode-Skalarwerte in einer Zeichenkette zählt, gibt `length` die Anzahl der UTF-16-Codewerte zurück. Dies kann zu unterschiedlichen Ergebnissen führen, wenn Sie nicht-ASCII-Zeichen in Ihrer Zeichenkette haben. Es ist wichtig zu wissen, welches dieser beiden Methoden für Ihre spezifische Anwendung relevant ist.
+
+## Siehe auch
+
+- [Die offizielle Swift-Dokumentation zu Zeichenketten](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Eine detaillierte Erklärung zu Zeichenkettenlängen in Swift](https://learnappmaking.com/string-length-swift-how-to/)

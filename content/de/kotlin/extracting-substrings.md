@@ -1,47 +1,54 @@
 ---
-title:    "Kotlin: Unterstrings extrahieren"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/extracting-substrings.md"
+title:                "Kotlin: Unterzeichenketten extrahieren"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum substrings in Kotlin extrahieren?
+## Warum
 
-Substrings sind Teilstrings eines größeren Strings, die anhand eines Index oder einer bestimmten Länge ausgewählt werden können. In der Programmierung können substrings sehr nützlich sein, insbesondere in der Textverarbeitung. Mit Kotlin können substrings einfach und effizient extrahiert werden, was die Arbeit mit Strings erleichtert.
+Das Extrahieren von Teilstrings ist eine wichtige Fähigkeit für jeden Kotlin-Programmierer. Es ermöglicht uns, spezifische Teile von Zeichenketten zu isolieren und gezielt damit zu arbeiten. In diesem Blog-Beitrag werde ich Ihnen zeigen, wie Sie Teilstrings in Kotlin extrahieren können und warum dies nützlich ist.
 
-## Wie man Substrings in Kotlin extrahiert
+## Ausführung
 
-Das Extrahieren von Substrings in Kotlin ist sehr einfach und erfordert nur wenige Zeilen Code. Hier ist ein Beispiel, wie man einen Substring anhand eines Index extrahiert:
-
-```Kotlin
-val text = "Hallo, Welt!"
-val substring = text.substring(7)
-println(substring)
-```
-
-Dieses Beispiel würde den Substring "Welt!" extrahieren und ausgeben.
-
-Ebenso kann man auch anhand einer bestimmten Länge einen Substring extrahieren, indem man einen zusätzlichen Parameter in die `substring()` Methode einfügt:
+Um einen Teilstring zu extrahieren, können wir die `substring()` Methode verwenden. Diese Methode erwartet zwei Parameter: Den Startindex und den Endindex des Teilstrings, den wir extrahieren möchten.
 
 ```Kotlin
-val text = "Der Schnellbrauebrauer braut an die Schnellbrauebraue"
-val substring = text.substring(4, 18)
-println(substring)
+val string = "Hallo Welt!"
+val substr = string.substring(6, 11)
+println(substr) // gibt "Welt" aus
 ```
 
-Dieser Code würde den Substring "Schnellbrauebrauer" ausgeben.
+Hier haben wir den Teilstring von Index 6 (inklusive) bis Index 11 (exklusive) extrahiert, was dem Wort "Welt" entspricht.
 
-## Tiefere Einblicke
+Wir können auch nur einen Startindex angeben, um den Teilstring ab diesem Index bis zum Ende der Zeichenkette zu extrahieren. Oder wir können die Länge des Teilstrings als zweiten Parameter angeben, um einen Teilstring mit einer bestimmten Länge zu erhalten.
 
-Die `substring()` Methode in Kotlin verwendet den Anfangsindex und den Endindex, um den Substring zu extrahieren. Es ist wichtig zu beachten, dass der Endindex nicht zum Substring gehört, sondern exklusiv ist. Das bedeutet, dass der Endindex nicht Teil des Substrings ist, sondern der Index direkt nach dem letzten Zeichen.
+```Kotlin
+val string = "Hello World!"
+val substr1 = string.substring(6) // gibt "World!" aus
+val substr2 = string.substring(9, 11) // gibt "ld" aus
+```
 
-Außerdem sollten Entwickler darauf achten, dass der Endindex innerhalb des Textes liegt, da sonst eine `IndexOutOfBoundsException` ausgelöst wird.
+Es ist auch möglich, eine Methode aufzurufen, die bereits einen Teilstring zurückgibt. Ein Beispiel dafür ist die `replace()` Methode.
+
+```Kotlin
+val string = "Hallo Welt!"
+val newString = string.replace("Hallo", "Hi")
+println(newString) // gibt "Hi Welt!" aus
+```
+
+## Tiefergehende Details
+
+Um Substrings zu extrahieren, verwendet Kotlin das Konzept des Indexierens, bei dem jeder einzelne Charakter einer Zeichenkette einer bestimmten Position entspricht. Diese Positionen werden als Indizes bezeichnet und beginnen bei 0.
+
+Um den Teilstring "Welt" aus der Zeichenkette "Hallo Welt!" zu extrahieren, müssen wir also die Indizes 6 bis 11 (exklusive) angeben. Es ist wichtig zu beachten, dass der Endindex nicht zum extrahierten Teilstring gehört und daher exklusive ist.
+
+Die `substring()` Methode gibt immer einen neuen Teilstring zurück, ohne die ursprüngliche Zeichenkette zu verändern. Dies liegt daran, dass Zeichenketten in Kotlin immutabel sind, was bedeutet, dass sie nicht geändert werden können.
 
 ## Siehe auch
 
-- [Kotlin Strings Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/kotlin.-string/index.html)
-- [Java String Methoden](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) (Kotlin basiert auf Java und verwendet viele ähnliche Methoden, einschließlich `substring()`)
-- [Tutorial: Textverarbeitung in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_string_processing.htm)
-
-Vielen Dank fürs Lesen! Wir hoffen, dieser Artikel hat Ihnen geholfen, mehr über die Extraktion von substrings in Kotlin zu erfahren. Happy Coding!
+- [Kotlin Strings - Dokumentation](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin Dev - Beispiele für das Extrahieren von Substrings](https://kotlindev.com/remove-characters-substring-kotlin/)
+- [Android Developers Blog - Tipps zur Verwendung von Zeichenketten in Kotlin](https://android-developers.googleblog.com/2019/02/ensure-your-kotlin-code-is-robust-and.html)

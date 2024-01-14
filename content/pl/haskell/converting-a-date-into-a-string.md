@@ -1,44 +1,44 @@
 ---
-title:    "Haskell: Konwertowanie daty na ciąg znaków"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/converting-a-date-into-a-string.md"
+title:                "Haskell: Konwertowanie daty na ciąg znaków."
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwersja daty na ciąg znaków jest częstym zadaniem w programowaniu. W tym artykule dowiesz się jak to zrobić w języku Haskell.
+W programowaniu często zdarza się potrzeba konwertowania daty na napis. Może to być potrzebne do wyświetlenia daty w czytelny sposób lub do przetwarzania danych. W tym artykule dowiecie się jak wykonać tę operację w języku Haskell.
 
-## Jak To Zrobić
+## Jak to zrobić
+
+Konwersja daty na napis w Haskell jest bardzo prosta dzięki modułowi Data.Time.Format. Wystarczy podać formatowanie, a następnie przekażemy datę do funkcji formatTime. Poniżej znajdują się przykładowy kod oraz jego wynik dla daty 1 lutego 2021 r.
 
 ```Haskell
-import Data.Time
-
-convertDateToString :: UTCTime -> String
-convertDateToString date = formatTime defaultTimeLocale "%Y-%m-%d" date
+import Data.Time.Format
 
 main = do
-    let date = fromGregorian 2021 10 31
-    let stringDate = convertDateToString date
-    putStrLn stringDate
+  let date = fromGregorian 2021 02 01 -- tworzymy datę
+  let format = "%d.%m.%Y" -- formatowanie, %d oznacza dzień, %m miesiąc, a %Y rok
+  let formatedDate = formatTime defaultTimeLocale format date -- wywołujemy funkcję formatTime
+  print formatedDate -- wyświetlamy wynik
+
 ```
 
-### Przykładowy wynik: "2021-10-31"
+```
+01.02.2021
+```
 
-W powyższym kodzie najpierw musimy zaimportować moduł Data.Time, który zawiera funkcje do obsługi daty i czasu w Haskellu. Następnie definiujemy funkcję convertDateToString, która przyjmuje jako argument datę w formacie UTCTime i zwraca ją w postaci ciągu znaków w formacie "rok-miesiąc-dzień".
+Możemy również wskazać strefę czasową lub usunąć znak "-" z daty, gdy używamy zewnętrznych danych w formacie ISO.
 
-W funkcji main tworzymy zmienną date, która będzie datą, którą chcemy przekonwertować. Następnie używamy funkcji convertDateToString, aby przekonwertować tę datę na string i wyświetlamy go za pomocą funkcji putStrLn.
+## Głębsze spojrzenie
 
-## Głębsze Wprowadzenie
+Warto zaznaczyć, że formatTime korzysta z typu TimeLocale, który zawiera informacje o tym, jak należy interpretować symbole w formacie. Domyślnie korzysta z lokalnej strefy czasowej, ale można ją zmienić, korzystając z funkcji newTimeLocale.
 
-W powyższym przykładzie użyliśmy formatu "%Y-%m-%d", jednak istnieje wiele innych możliwości formatowania daty za pomocą funkcji formatTime. Na przykład, możemy dodać informacje o godzinie i minucie, używając formatu "%Y-%m-%d %H:%M".
+Ponadto, jeśli potrzebujemy bardziej skomplikowanego formatu daty, możemy skorzystać z funkcji parseTimeM, która umożliwia przetworzenie napisu o określonym formacie na datę.
 
-Możemy również użyć funkcji getCurrentTime z modułu Data.Time, aby pobrać bieżącą datę i czas, a następnie przekonwertować go na string za pomocą naszej funkcji convertDateToString.
+## Zobacz również
 
-W przeciwieństwie do innych języków programowania, w Haskellu nie musimy martwić się o różnice w formatach daty w zależności od lokalizacji użytkownika. Dzięki funkcji defaultTimeLocale, w dowolnym miejscu na świecie nasz string zawsze będzie miał taki sam format.
-
-## Zobacz Również
-
-- [Dokumentacja Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Porównanie różnych funkcji konwertujących datę na string w Haskellu](https://stackoverflow.com/questions/22333351/converting-date-string-to-a-specific-format-in-haskell)
+- [Dokumentacja modułu Data.Time.Format](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
+- [List formatów dat w Haskell](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#t:TimeLocale)

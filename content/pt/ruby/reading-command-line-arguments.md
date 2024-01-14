@@ -1,73 +1,59 @@
 ---
-title:    "Ruby: Lendo argumentos da linha de comando"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/reading-command-line-arguments.md"
+title:                "Ruby: Lendo argumentos da linha de comando"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando é importante
+## Por que ler argumentos da linha de comando?
 
-Se você é um programador Ruby, provavelmente já ouviu falar sobre a leitura de argumentos da linha de comando. Mas por que isso é importante? A resposta é simples: ao usar argumentos da linha de comando, você pode fornecer entrada para o seu programa de forma dinâmica, sem precisar alterar o código fonte toda vez que quiser alterar os valores.
+Ler argumentos da linha de comando é uma habilidade importante para qualquer programador em Ruby. Com essa habilidade, é possível criar programas interativos e personalizáveis, permitindo que os usuários insiram informações diretamente no momento da execução do programa.
 
-## Como ler argumentos da linha de comando em Ruby
+## Como Ler Argumentos da Linha de Comando
 
-A leitura de argumentos da linha de comando em Ruby é bem simples e pode ser feita usando o objeto `ARGV`. Veja um exemplo abaixo:
+Em Ruby, ler argumentos da linha de comando é uma tarefa simples. Primeiro, precisamos definir uma variável para armazenar os argumentos. Isso pode ser feito usando o método `ARGV`, que retorna uma matriz com os argumentos passados para o programa.
 
-```ruby
-# salvando os argumentos em uma variável
+```
 args = ARGV
-
-# acessando o primeiro argumento
-primeiro_argumento = args[0]
-
-# acessando o segundo argumento
-segundo_argumento = args[1]
-
-puts "O primeiro argumento é #{primeiro_argumento} e o segundo é #{segundo_argumento}."
+puts "Seu primeiro argumento é #{args[0]}"
 ```
 
-Se executarmos esse código com `ruby argumentos.rb primeiro segundo`, a saída seria:
+Assim, se o usuário digitar `ruby programa.rb Olá`, o programa imprimirá `Seu primeiro argumento é Olá`.
+
+É importante notar que os argumentos da linha de comando são sempre lidos como strings. Portanto, se você precisar de um número inteiro ou float, será necessário convertê-lo usando o método `to_i` ou `to_f`, respectivamente.
+
+Você também pode definir argumentos padrão caso o usuário não forneça nenhum. Basta adicionar um argumento após uma vírgula no método `ARGV`. Por exemplo:
 
 ```
-O primeiro argumento é primeiro e o segundo é segundo.
+args = ARGV[0] || "Mundo"
+puts "Olá #{args}!"
 ```
 
-## Aprofundando na leitura de argumentos da linha de comando
+Se o usuário não fornecer nenhum argumento, o padrão "Mundo" será usado.
 
-Além do objeto `ARGV`, podemos usar a gem `optparse` para facilitar a leitura e o gerenciamento de argumentos da linha de comando. Com ela, podemos especificar opções e argumentos esperados, obter ajuda para o usuário e muito mais. Abaixo, segue um exemplo de uso:
+## Profundamente em Leitura de Argumentos da Linha de Comando
 
-```ruby
-require 'optparse'
+Além do método `ARGV`, há também o método `ARGV.getopts`, que permite que você especifique opções para seus argumentos. Por exemplo, imagine que seu programa precise de um argumento `-n` para executar alguma ação específica. Você pode usá-lo da seguinte maneira:
 
-# definindo as opções esperadas
+```
 options = {}
-OptionParser.new do |opts|
-  opts.banner = "Uso: exemplo.rb [opções]"
-
-  opts.on("-f", "--file FILE", "Nome do arquivo a ser processado") do |f|
-    options[:file] = f
+opt_parser = OptionParser.new do |opts|
+  opts.banner = "Uso: programa.rb [opções]"
+  opts.on("-n NOME", "--nome=NOME", "Define o nome") do |nome|
+    options[:nome] = nome
   end
+end
+opt_parser.parse!
 
-  opts.on("-n", "--number NUMBER", "Número a ser multiplicado") do |n|
-    options[:number] = n
-  end
-end.parse!
-
-# acessando as opções e exibindo informações para o usuário
-puts "Arquivo a ser processado: #{options[:file]}"
-puts "Número a ser multiplicado: #{options[:number]}"
+puts "Olá #{options[:nome]}!"
 ```
 
-Executando esse código com `ruby argumentos.rb -f arquivo.txt -n 5`, teríamos como saída:
+Agora, se o usuário executar `ruby programa.rb -n Maria`, o programa imprimirá `Olá Maria!`. Você pode especificar mais opções conforme necessário.
 
-```
-Arquivo a ser processado: arquivo.txt
-Número a ser multiplicado: 5
-```
+## See Also
 
-## Veja também
-
-- [Documentação oficial sobre a leitura de argumentos da linha de comando em Ruby](https://ruby-doc.org/core-2.7.1/classes/ARGV.html)
-- [Documentação da gem Optparse](https://github.com/ruby/optparse)
-- [Artigo sobre a leitura de argumentos em linha de comando com Ruby](https://www.simonecarletti.com/blog/2009/09/inside-the-ruby-runtime-reading-arguments-from-the-command-line/)
+- [Documentação Oficial do Ruby - ARGV](https://ruby-doc.org/core-2.7.3/ARGV.html)
+- [Documentação Oficial do Ruby - OptionParser](https://ruby-doc.org/stdlib-2.0.0/libdoc/optparse/rdoc/OptionParser.html)
+- [Tutorial do Ruby para Iniciantes - Leitura de Argumentos da Linha de Comando](https://ruby-doc.org/stdlib-2.7.3/libdoc/optparse/rdoc/index.html)

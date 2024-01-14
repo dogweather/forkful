@@ -1,51 +1,59 @@
 ---
-title:    "Haskell: Extrahering av delsträngar"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/extracting-substrings.md"
+title:                "Haskell: Extrahera delsträngar"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I Haskell-programmering finns det olika metoder för att hantera textsträngar. En av de vanligaste är att extrahera delsträngar, vilket innebär att ta en del av en befintlig sträng och använda den på olika sätt. Detta är användbart för att göra manipulationer eller sökningar i en textsträng. I denna bloggpost kommer vi att utforska hur man kan extrahera delsträngar i Haskell.
+I Haskell-programmering kommer du ofta stöta på behovet av att dela upp en sträng eller lista i mindre delar, kallade substrings. Detta kan vara till nytta när du behöver behandla data separat eller extrahera specifika delar för vidare bearbetning. Genom att lära dig att extrahera substrings kommer du kunna hantera data mer effektivt och skriva mer kompakt kod.
 
 ## Så här gör du
 
-För att extrahera delsträngar i Haskell använder vi funktionen "take" och "drop" från språkets standardbibliotek. Dessa funktioner tar in en integervariabel och en sträng som argument och returnerar antingen början eller slutet av strängen, beroende på vilken funktion som används.
-
-För att ta en del av en sträng kan vi använda funktionen "take" tillsammans med ett positivt tal som anger hur många tecken vi vill ta. Till exempel, om vi vill ta de första fyra tecknen i strängen "Hej" kan vi använda följande kod:
+Följande exempel visar hur du lätt kan extrahera en substring från en sträng i Haskell:
 
 ```Haskell
-take 4 "Hej"
+-- Deklarera en sträng
+let str = "Hello, world!"
+
+-- Extrahera en substring med hjälp av "drop" och "take" funktionerna
+let substring = take 5 (drop 7 str)
+
+-- Skriv ut substrings
+print substring
 ```
 
-Detta skulle resultera i en ny sträng "Hej".
+Resultatet av koden kommer att vara "world", vilket är de fem tecken som börjar på index 7 i strängen "Hello, world!". Som du kan se använder vi här de inbyggda "take" och "drop" funktionerna, som låter oss välja en del av strängen utifrån dess index. Genom att kombinera dessa funktioner kan du precisera vilka tecken du vill extrahera och på vilken position de befinner sig.
 
-På samma sätt kan vi använda funktionen "drop" för att ta bort en del av en sträng. Till exempel, om vi vill ta bort de två första tecknen i strängen "Hej" kan vi använda följande kod:
+Du kan också använda "splitAt" funktionen för att dela upp en sträng i två delar vid ett givet index. Exempelvis kan vi dela upp strängen "Hello, world!" i "Hello," och "world!" genom att använda funktionen på index 5:
 
 ```Haskell
-drop 2 "Hej"
+-- Deklarera en sträng
+let str = "Hello, world!"
+
+-- Dela strängen vid index 5
+let (first, second) = splitAt 6 str
+
+-- Skriv ut resultaten
+print first
+print second
 ```
 
-Detta skulle resultera i en ny sträng "j".
+Resultatet blir "Hello," för "first" och "world!" för "second". På detta sätt kan du dela upp strängen i precis de delar som du behöver, beroende på vilken behandling du vill göra.
 
-Vi kan också kombinera funktionerna "take" och "drop" för att få ett specifikt intervall av tecken från en sträng. Till exempel, om vi vill ta de tre mittersta tecknen i strängen "katten" kan vi använda följande kod:
-
-```Haskell
-(take 3 (drop 1 "katten"))
-```
-
-Detta skulle ge oss strängen "att".
+En annan användbar funktion för att extrahera substrings är "subsequences". Denna funktion returnerar alla möjliga delar av en sträng, vilket kan vara användbart i vissa applikationer.
 
 ## Djupdykning
 
-För mer komplicerade fall av extrahering av delsträngar i Haskell, kan vi använda funktionen "splitAt" som tar in två integervariabler och en sträng som argument. Den delar strängen på positionen som anges av det första talet och returnerar två nya strängar som resultat.
+När du extraherar substrings i Haskell är det viktigt att tänka på att alla inbyggda funktioner för strängmanipulering returnerar en ny sträng istället för att ändra den befintliga strängen. Detta gör att du behåller originalsträngen för vidare användning, samtidigt som du kan skapa nya delar av den. Dessutom är funktionerna "take" och "drop" överlagrade för olika datatyper, så du kan använda dem på både strängar och listor.
 
-Vi kan också använda funktionen "subSeq" från paketet "text", som tar in start- och slutindex och en sträng som argument och returnerar en delsträng mellan dessa index.
+Det finns också andra bibliotek och paket som erbjuder olika funktioner för att extrahera substrings mer specifikt, beroende på dina behov. Det kan vara värt att undersöka och utforska dessa alternativ för att hitta den bästa metoden för din specifika användning.
 
 ## Se även
 
-- [Haskell Wiki: Strings](https://wiki.haskell.org/Strings)
-- [Haskell String tutorial](https://thehaskelltutorial.com/string/)
-- [Learn You a Haskell for Great Good! - Strings](http://learnyouahaskell.com/starting-out#ready-set-go)
+- [Haskells dokumentation för strängmanipulering](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-String.html)
+- [Haskells dokumentation för listfunktioner](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html)
+- [Mer information om substrings i Haskell](https://www.tutorialspoint.com/haskell/haskell_string_manipulation.htm)

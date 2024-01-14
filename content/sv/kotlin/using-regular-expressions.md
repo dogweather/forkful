@@ -1,55 +1,39 @@
 ---
-title:    "Kotlin: Användning av reguljära uttryck"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/using-regular-expressions.md"
+title:                "Kotlin: Användning av reguljära uttryck"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför använda reguljära uttryck?
 
-Reguljära uttryck, eller "regular expressions", är ett kraftfullt verktyg inom programmering som kan hjälpa till att hitta och manipulera textsträngar på ett effektivt sätt. Genom att använda reguljära uttryck kan du spara tid och arbete när du arbetar med textbaserade data.
+Reguljära uttryck är ett kraftfullt verktyg inom programmering för att söka, matcha och modifiera textsträngar. Genom att använda reguljära uttryck kan du enkelt och effektivt hitta och manipulera data i dina program. Det är också ett vanligt förekommande koncept inom olika programmeringsspråk, inklusive Kotlin, så det är en viktig färdighet för alla utvecklare att ha.
 
-## Hur man gör det
+## Hur man använder reguljära uttryck i Kotlin
 
-För att använda reguljära uttryck i Kotlin, behöver du importera reguljära uttrycksbiblioteket med hjälp av `import java.util.regex.*`. Sedan kan du använda funktionen `Regex(pattern)` för att skapa ett reguljärt uttryck, där "pattern" är det mönster som du vill matcha. Se följande exempel:
-
-```Kotlin
-import java.util.regex.*
-
-val text = "Hej Bloggläsare!" // Vi söker efter "Blogg"
-val regex = Regex("Blogg")
-val match = regex.find(text) // "find" söker efter första matchningen i strängen
-print(match?.value) // Output: "Blogg"
-```
-
-För att söka efter flera matchningar, kan du använda funktionen `findAll(text)` istället för `find(text)`. Du kan också använda reguljära uttryck tillsammans med funktioner som `replace` och `split` för att manipulera strängar på olika sätt. Exempel:
+Det första steget för att använda reguljära uttryck i Kotlin är att importera den inbyggda klassen Regex. Därefter kan du använda dess metoder, som `matches()` och `find()`, för att söka igenom en sträng och fånga matchande mönster. Nedan följer ett exempel på hur man hittar alla siffror i en sträng:
 
 ```Kotlin
-val text = "123abc456def789ghi"
-val numbers = Regex("\\D+").replace(text, "") // Ta bort allt utom siffror
-val letters = Regex("\\d+").replace(text, "") // Ta bort alla siffror
-print(numbers) // Output: "123456789"
-print(letters) // Output: "abcdefghi"
+val sträng = "Jag har 10 äpplen"
+val regex = Regex("\\d+") // matcher alla siffror
+val resultat = regex.findAll(sträng).map { result -> result.value }
+println(resultat) // output: [10]
 ```
 
-## Fördjupning
+Som du kan se använde vi `\d+` som vårt sökmönster. Detta matchar alla förekomster av en eller flera siffror i strängen. Genom att använda metoden `findAll()` får vi en lista med alla matchande mönster som sedan kan användas för att göra olika operationer.
 
-Reguljära uttryck använder speciella tecken och strängar för att matcha olika mönster i text. Till exempel matchar `.` vilket tecken som helst, `+` matchar ett eller flera av föregående tecken och `\d` matchar en siffra. Det finns många fler specialtecken och kombinationer som du kan använda för att skapa mer avancerade reguljära uttryck. 
+## Djupdykning i reguljära uttryck
 
-En annan viktig aspekt av reguljära uttryck är så kallade "capturing groups". Dessa låter dig extrahera specifika delar av en matchning istället för hela matchningen. Du kan använda parenteser `()` för att skapa en "capturing group". Exempel:
+Reguljära uttryck kan vara ganska avancerade och det finns många olika tecken och regler att lära sig för att kunna utnyttja dess fulla potential. Men det finns också många online-resurser och programmeringsbibliotek som kan hjälpa dig att skapa och testa dina uttryck.
 
-```Kotlin
-val text = "Hej, mitt namn är Adam"
-val regex = Regex("Hej, mitt namn är (\\w+)")
-val match = regex.find(text)
-print(match?.groupValues?.get(1)) // Output: "Adam"
-```
+En annan viktig aspekt att ha i åtanke när man använder reguljära uttryck är dess prestanda. Eftersom uttrycken måste gå igenom hela strängen kan de bli långsamma om de inte är rätt utformade. Att använda mer specifika och strukturerade uttryck kan hjälpa till att förbättra prestandan.
 
-För att lära dig mer om reguljära uttryck och deras olika användningsområden, kan du kolla in nedanstående länkar:
+Det finns också vissa uttryck som är mer lämpliga för specifika uppgifter, till exempel att kontrollera e-postadresser eller telefonnummer. Så det är viktigt att hitta rätt uttryck för det specifika tillfället.
 
 ## Se även
 
-- [Kotlin dokumentation om reguljära uttryck](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Tutorial om reguljära uttryck på codecademy](https://www.codecademy.com/learn/learn-regex)
-- [RegExr - Interaktivt verktyg för att testa reguljära uttryck](https://regexr.com/)
+- [Kotlin Regex dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Online Regex tester](https://regex101.com/)
+- [RegExr - interaktiv reguljär uttrycksgenerator](https://regexr.com/)

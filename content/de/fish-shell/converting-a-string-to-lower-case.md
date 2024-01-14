@@ -1,39 +1,52 @@
 ---
-title:    "Fish Shell: Ein String in Kleinbuchstaben umwandeln"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/converting-a-string-to-lower-case.md"
+title:                "Fish Shell: Umwandeln eines Strings in Kleinbuchstaben"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Die Konvertierung von Zeichenketten in Kleinbuchstaben kann in der Programmierung oft nützlich sein, um zum Beispiel Vergleiche zwischen Zeichenketten zu erleichtern. In diesem Blog-Beitrag werden wir uns ansehen, wie dies mit der Fish Shell möglich ist.
+Wenn du jemals versucht hast, mit einem Computer zu kommunizieren, dann hast du auch schon mit Strings gearbeitet. Strings sind einfach nur eine Aneinanderreihung von Buchstaben, Zahlen oder Symbolen. Manchmal müssen wir aber diesen String in ein bestimmtes Format bringen, zum Beispiel in Kleinbuchstaben. Hier kommt die Funktion zur Konvertierung in lowercase ins Spiel.
 
-## Wie es geht
-
-Die Fish Shell bietet eine eingebaute Funktion namens "tolower", die eine Zeichenkette in Kleinbuchstaben konvertiert. Hier ist ein Beispiel, wie man diese Funktion verwenden kann:
+## Wie man dies in Fish Shell macht
 
 ```Fish Shell
-set string "HALLO WELT"
-echo $string | tolower
+# String definieren
+set text "Hallo, Welt!"
+
+# Konvertiere in lowercase
+echo $text | tr '[:upper:]' '[:lower:]'
 ```
 
-Dies wird die Ausgabe "hallo welt" erzeugen. Wie man sehen kann, wird die Funktion einfach an die Zeichenkette angehängt, die man konvertieren möchte.
+Das Ergebnis dieser Code-Beispiele wäre "hallo, welt!". Wie du siehst, verwenden wir hier die Funktion "tr", um alle Großbuchstaben in Kleinbuchstaben zu ändern. Dabei wird der gesamte String, der als Argument übergeben wird, in Kleinbuchstaben umgewandelt.
 
-## Tiefergehende Analyse
+## Tieferer Einblick
 
-Die Funktion "tolower" in der Fish Shell verwendet die Standardfunktion "tr" aus dem UNIX-Betriebssystem, um die Zeichenkettenkonvertierung durchzuführen. Der Funktionsaufruf sieht also in Wirklichkeit so aus:
+Die Funktion "tr" ist sehr nützlich, wenn man Strings manipulieren will. Es gibt jedoch noch andere Möglichkeiten, um einen String in Kleinbuchstaben zu konvertieren. Man kann zum Beispiel die "-l" Option in Kombination mit dem Befehl "echo" verwenden, um alle Buchstaben in Kleinbuchstaben auszugeben.
 
 ```Fish Shell
-set string "HALLO WELT"
-echo $string | tr '[:upper:]' '[:lower:]'
+# String definieren
+set text "Hallo, Welt!"
+
+# Alle Buchstaben ausgeben in Kleinbuchstaben
+echo -l $text
 ```
 
-In diesem Fall ist "[:upper:]" eine Klassenbezeichnung für alle Großbuchstaben und "[:lower:]" für alle Kleinbuchstaben. Diese Methode kann auch auf andere Zeichenketten angewendet werden, zum Beispiel zum Konvertieren von allen Buchstaben in Großbuchstaben mit "[:lower:]" und "[:upper:]".
+Ein weiterer weg, um alle Buchstaben in Kleinbuchstaben zu konvertieren ist die Verwendung der Funktion "string tolower". Diese Funktion hat dieselbe Funktionalität wie die oben erwähnten Methoden, ist jedoch spezifisch für die Konvertierung in Kleinbuchstaben.
+
+```Fish Shell
+# String definieren
+set text "Hallo, Welt!"
+
+# Konvertiere in lowercase
+string tolower $text
+```
 
 ## Siehe auch
 
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
-- [Fish Shell Github Repository](https://github.com/fish-shell/fish-shell)
-- [Tutorial zu Zeichenketten in der Programmierung](https://www.geeksforgeeks.org/string-manipulation-in-c-without-using-inbuilt-library-functions/)
+- [Offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Tutorial zur Verwendung von String-Funktionen in Fish Shell](https://dev.to/chrisschuld/string-functions-in-fish-shell-3mm4)
+- [Übersicht über die "tr" Funktion in Fish Shell](https://fishshell.com/docs/current/cmds/tr.html)

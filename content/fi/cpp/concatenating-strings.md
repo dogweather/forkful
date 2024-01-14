@@ -1,70 +1,48 @@
 ---
-title:    "C++: Stringien yhdistäminen"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/concatenating-strings.md"
+title:                "C++: Joustenavien merkkijonojen yhdistäminen"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit käyttää merkkijonojen yhdistämistä (concatenation) ohjelmoinnissa? Yksinkertaisesti sanottuna, se mahdollistaa useiden merkkijonojen yhdistämisen yhdeksi merkkijonoksi. Tämä voi olla hyödyllistä esimerkiksi tulostettaessa tekstiä tai luotaessa dynaamisia viestejä.
+Stringien yhdistäminen on tärkeä osa ohjelmointia, sillä se mahdollistaa eri palasien yhdistämisen yhdeksi kokonaisuudeksi. Tämä on erityisen hyödyllistä, kun halutaan luoda dynaamisia viestejä tai käsitellä muuttuvia tietoja.
 
-## Miten
+## Kuinka
 
-Merkkijonojen yhdistäminen C++:ssa on helppoa käyttämällä "+"-merkkiä. Alla olevassa esimerkissä käytämme kolmea merkkijonoa ja yhdistämme ne yhdeksi merkkijonoksi.
+Stringien yhdistäminen onnistuu C++ -ohjelmointikielellä käyttämällä + operaattoria. Esimerkiksi:
 
 ```C++
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-    string hello = "Hei";
-    string name = "Maailma";
-    string greeting = hello + " " + name;
-    
-    cout << greeting << endl;
-    
-    return 0;
-}
-
-// Tulostaa: Hei Maailma
+std::string nimi = "Matti";
+std:string tervehdys = "Hei " + nimi;
+std::cout << tervehdys; // tulostaa "Hei Matti"
 ```
 
-Kuten näette, voimme käyttää myös "+"-merkkiä yhdistääksemme merkkijonon ja muuttujan, kuten "hello + name" -rivillä.
+Tässä esimerkissä ensimmäisellä rivillä luodaan muuttuja nimelle ja annetaan sille arvoksi "Matti". Toisella rivillä luodaan muuttuja tervehdykselle ja yhdistetään siihen edellisellä rivillä luotu nimi käyttäen + operaattoria. Lopuksi tulostetaan tervehdys STDIN-rajapinnan avulla.
 
-## Syvällinen sukellus
-
-Merkkijonojen yhdistämisessä kannattaa olla varovainen, että käytät oikeaa yhdistämismenetelmää. Jos käytät "+"-merkkiä liittämiseen (append), jokainen yhdistetty merkkijono täytyy kopioida uuteen merkkijonoon. Tämä voi aiheuttaa suorituskykyongelmia jos käsittelet useita suuria merkkijonoja.
-
-Sen sijaan, voit käyttää "stringstream" -luokkaa, joka kerää merkkijonoja sisäisesti bufferiin ennen niiden yhdistämistä. Alla olevassa esimerkissä yhdistämme useita merkkijonoja käyttäen "stringstream"iä:
+Toinen tapa yhdistää stringejä on käyttää std::stringstream -luokkaa ja sen append() -funktiota. Esimerkiksi:
 
 ```C++
-#include <iostream>
 #include <sstream>
-
-using namespace std;
-
-int main()
-{
-    stringstream ss;
-    ss << "Tämä " << "on " << "yhdistetty " << "merkkijono";
-    string result = ss.str();
-    
-    cout << result << endl;
-    
-    return 0;
-}
-
-// Tulostaa: Tämä on yhdistetty merkkijono
+// ...
+std::stringstream ss;
+ss << "Tilisi numero on " << 123456789;
+std::string lopputulos = ss.str();
+std::cout << lopputulos; // tulostaa "Tilisi numero on 123456789"
 ```
 
-Lisätietoa erilaisista merkkijonojen yhdistämismenetelmistä löydät esimerkiksi täältä: [https://www.geeksforgeeks.org/string-manipulation-in-c-2/](https://www.geeksforgeeks.org/string-manipulation-in-c-2/)
+Tässä esimerkissä luodaan ensin stringstream objekti ja sen jälkeen käytetään sen append() -funktiota lisäämään halutut stringit siihen. Lopuksi stringstreamin sisältö muunnetaan string-muotoon ja tulostetaan STDIN-rajapinnan avulla.
+
+## Syvemmälle
+
+Stringien yhdistämisessä on hyvä huomioida muutamia asioita. Ensinnäkin, yhdistämiseen käytettävät stringit kannattaa tarkistaa ennen yhdistämistä, jotta vältyttäisiin mahdollisilta virheiltä. Lisäksi muista, että yhdistämisen jälkeen alkuperäiset stringit eivät muutu, vaan yhdistetty tulos tallennetaan uuteen muuttujaan.
+
+Myös muistinhallinta on tärkeää, sillä liian suurten stringien yhdistäminen saattaa aiheuttaa ohjelman kaatumisen. Tästä syystä on tärkeää tarkistaa tarvittaessa stringien kapasiteetti ja tehdä tarvittaessa muistiallokointi ennen yhdistämistä.
 
 ## Katso myös
 
-- [https://www.programiz.com/cpp-programming/string](https://www.programiz.com/cpp-programming/string)
-- [https://www.tutorialspoint.com/cplusplus/cpp_strings.htm](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
-- [https://www.learncpp.com/cpp-tutorial/78-working-with-strings/](https://www.learncpp.com/cpp-tutorial/78-working-with-strings/)
+- C++ -kielen virallisilta sivuilta löytyy lisätietoa stringien käsittelystä: https://isocpp.org/wiki/faq/strings
+- Stringien yhdistämiseen liittyviä vinkkejä löytyy myös Stack Overflow -sivustolta: https://stackoverflow.com/questions/1760045/c-stdstring-concatenation

@@ -1,30 +1,45 @@
 ---
-title:    "Kotlin: 新しいプロジェクトを始める"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/starting-a-new-project.md"
+title:                "Kotlin: 新しいプロジェクトの開始"
+programming_language: "Kotlin"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-新しいプロジェクトを始める理由について述べます。多くのKotlinプログラミング言語のメリットを享受できるため、Kotlinを使用することによってさまざまなプロジェクトに合わせたユーザーフレンドリーなアプリケーションを開発することができます。
+
+新しいプロジェクトを開始する理由は、自分のアイデアを実現するためです。新しいプロジェクトを始めることで、自分のアイデアを実現することができ、自分のスキルを向上させることができます。
 
 ## 作り方
+
+以下の```Kotlin ... ```コードブロックの例とサンプル出力を見て、新しいプロジェクトの作り方を学びましょう。
+
 ```Kotlin
+// サンプルコード
 fun main() {
-    val name = "John"
-    println("Hello, $name!") 
+    println("こんにちは、世界!")
 }
 ```
 
-この例では、main関数内に変数「name」を定義し、それを使用して出力を行っています。変数の値をJohnに設定し、文字列補間を使用してハローという出力を行います。このように、Kotlinでは変数の定義や文字列操作が簡単にできるため、新しいプロジェクトを始める際にも効率的なコーディングが可能です。
+出力：
 
-## ディープダイブ
-新しいプロジェクトを始める際の注意点やよくある問題点について深く掘り下げます。例えば、KotlinはJavaとの相互運用性が高く、既存のJavaプロジェクトにKotlinを導入することも可能です。しかし、その際にはいくつかの注意点があります。また、Kotlinにはクラスやメソッドの拡張機能があるため、適切に使用することでよりシンプルなコードを実現することができます。
+```
+こんにちは、世界!
+```
 
-## もっと詳しく知るには
-新しいプロジェクトを始める際に役立つKotlinのドキュメントやチュートリアルなどのリンクをまとめました。
+## 深堀り
 
-「Kotlin公式ドキュメント」：https://kotlinlang.org/docs/home.html
-「KotlinをJavaプロジェクトに導入する方法」：https://kotlinlang.org/docs/reference/java-to-kotlin-interop.html
-「Kotlinの拡張機能について」：https://kotlinlang.org/docs/reference/extensions.html
+新しいプロジェクトを始めるためには、最初にアイデアを明確にすることが重要です。アイデアを具体的に定義して、どのようなゴールを達成したいのかを明確にしましょう。また、プロジェクトの目的やターゲットユーザーを把握することも重要です。そして、しっかりと計画を立てて、一歩ずつ進めていきましょう。
+
+## その他の情報
+
+新しいプロジェクトを始めたら、次のリソースを参考にしてみてください。
+
+- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/home.html)
+- [Kotlinプログラミング入門](https://www.udemy.com/course/kotlin-bootcamp-for-programmers/)
+- [Kotlin基本レッスン](https://www.youtube.com/playlist?list=PL8gTURqZ_4rGrYwbs6SOFk85WaKZ5_DOl)
+
+ありがとう、プロジェクトを始める準備ができました！次は実際にコードを書いて、アイデアを形にしましょう。
+
+## 関連リンク

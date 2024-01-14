@@ -1,36 +1,46 @@
 ---
-title:    "Arduino: 난수 생성"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/generating-random-numbers.md"
+title:                "Arduino: 랜덤 숫자 생성"
+programming_language: "Arduino"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-아두이노를 사용하여 무작위 수를 생성하는 것이 유용한 이유는 다양한 프로젝트에서 무작위성이 필요할 때 입니다. 예를 들어, 무작위로 LED를 깜박이는 무드 램프를 만들거나 무작위로 선택된 음악을 재생하는 무작위 음악 재생기를 만들 수 있습니다.
+만약 당신이 아두이노 프로그래밍을 재미있게 하고 싶거나, 다양한 프로젝트를 시도하고 싶다면, 랜덤한 숫자를 생성하는 것은 흥미로운 방법입니다. 지금부터 우리는 왜 랜덤한 숫자를 생성하는지에 대해 알아보고, 그것을 어떻게 할 수 있는지 살펴보겠습니다. 그리고보다 깊이있는 정보를 알아보도록하겠습니다.
 
-# 어떻게
-무작위 수를 생성하는 방법은 여러 가지가 있지만, 가장 간단하고 효과적인 방법은 `random()` 함수를 사용하는 것입니다. 아래는 `random()` 함수를 이용하여 0부터 9까지의 무작위 정수를 생성하는 예제 코드입니다.
+## 왜
+
+컴퓨터 과학 분야에서 랜덤한 숫자는 매우 중요합니다. 예를 들어, 암호화, 검증, 무작위 관련 테스트 등 다양한 분야에서 우리는 랜덤한 숫자가 필요합니다. 랜덤한 숫자를 생성함으로서 우리는 예측할 수 없는 결과를 얻을 수 있고, 더 나은 보안을 제공할 수 있습니다.
+
+## 어떻게
+
+우리는 아두이노의 랜덤함수를 사용하여 랜덤한 숫자를 생성할 수 있습니다. 아래코드에서 우리는 "random"함수를 사용하여 0~255 사이의 숫자를 출력하는 예제입니다.
 
 ```Arduino
+
 void setup() {
-  Serial.begin(9600); // 시리얼 통신 설정
-  randomSeed(analogRead(0)); // 무작위성을 위한 초기값 설정
+  //시리얼 모니터 사용
+  Serial.begin(9600);
 }
 
 void loop() {
-  int randomNumber = random(10); // 0 ~ 9 사이의 무작위 정수 생성
-  Serial.println(randomNumber); // 무작위 수 시리얼 모니터에 출력
-  delay(1000); // 1초 딜레이
+  //랜덤한 숫자 생성
+  int num = random(256);
+  //숫자 출력
+  Serial.println(num);
+  delay(1000); //1초 대기
 }
+
 ```
 
-위 코드를 아두이노에 업로드하고 시리얼 모니터를 열어보면, 매순간 바뀌는 무작위 수를 볼 수 있습니다.
+위와 같이 코드를 작성하고 아두이노를 실행시키면, 매초마다 0~255 사이의 랜덤한 숫자가 출력될 것입니다. 이것은 아주 간단한 예제이며, 더 복잡한 로직을 추가하여 더 다양한 형태의 랜덤한 숫자를 출력할 수 있습니다.
 
-# 딥 다이브
-`random()` 함수는 아두이노 라이브러리에서 제공하는 함수이며, 0부터 지정한 범위의 무작위 정수를 생성합니다. 매우 큰 범위의 무작위 수가 필요하다면 `random()` 함수를 조합하여 사용하거나, 외부 라이브러리를 사용하는 것을 고려할 수 있습니다. 또한 아두이노 보드에는 아날로그 핀을 통해 외부 신호를 입력받아 무작위성을 더욱 증가시킬 수 있는 `randomSeed()` 함수도 존재합니다.
+## 딥 다이브
 
-# 같이 보기
-- [아두이노 공식 사이트](https://www.arduino.cc/)
-- [아두이노 무작위 수 예제 코드](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [외부 라이브러리인 RNG(랜덤 넘버 생성기) 라이브러리](https://playground.arduino.cc/Code/RNGLibrary/)
+위 예제에서는 언급되지 않았지만, 랜덤한 숫자를 생성하는 데는 다양한 알고리즘과 방법론이 있습니다. 이러한 알고리즘들은 더 큰 범위의 랜덤한 숫자를 생성하는 데 사용될 수 있습니다. 일반적으로 랜덤한 숫자를 생성하기 위해서는 컴퓨터 시스템에서 일어나는 다양한 물리적 이벤트들을 이용합니다.
+
+## 더 알아보기
+
+- [랜덤함수에 대한 아두이노 공식 문서](https://www.arduino.cc/reference/ko/language/functions/random-numbers/random/)
+- [랜덤숫자 생성의 더 복잡한 방법 (영문)](https://stackoverflow.com/questions/48053/what-is-the-best-way-to-generate-a-random-key-within-a-range-in-as3)

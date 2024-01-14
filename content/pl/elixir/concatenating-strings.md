@@ -1,56 +1,48 @@
 ---
-title:    "Elixir: Łączenie ciągów tekstowych"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/concatenating-strings.md"
+title:                "Elixir: Łączenie ciągów znaków"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Skonkatynowanie ciągów znaków jest powszechną czynnością w programowaniu. Jest to proces łączenia dwóch lub więcej ciągów znaków w jeden dłuższy ciąg. Może być to przydatne w różnych sytuacjach, na przykład przy tworzeniu wiadomości lub generowaniu dynamicznych zapytań do bazy danych. W Elixirze jest kilka sposobów na skonkatynowanie ciągów znaków, więc warto poznać je wszystkie.
+Często w programowaniu Elixirem będziesz potrzebował połączyć ciągi znaków w jedną zmienną. Może to być potrzebne do wyświetlenia wiadomości na ekranie lub tworzenia adresów URL. W artykule tym pokażę, jak prosto można to zrobić w Elixirze.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-### Używając operatora `<>`
+W Elixirze do konkatenacji stringów mamy dwa sposoby - operator `<>` i funkcję `String.concat/2`. Zobaczmy najpierw przykład z użyciem operatora:
 
-Najprostszym sposobem skonkatynowania ciągów w Elixirze jest użycie operatora `<>`. Przykładowy kod wyglądałby tak:
+```Elixir
+string1 = "Hello"
+string2 = "world!"
 
-```elixir
-"Hello " <> "world" 
+concatenated_string = string1 <> " " <> string2
 ```
 
-Wynikiem będzie ciąg znaków "Hello world". Wystarczy połączyć dwa ciągi znaków za pomocą tego operatora, a Elixir automatycznie je skonkatynuje.
+W rezultacie zmienna `concatenated_string` będzie zawierać tekst "Hello world!".
 
-### Używając funkcji `String.concat/1`
+Teraz przejdźmy do przykładu z użyciem funkcji `String.concat/2`:
 
-Elixir również dostarcza funkcję `String.concat/1`, która przyjmuje listę ciągów znaków i zwraca jedną połączoną wartość. Przykład:
+```Elixir
+string1 = "Witaj"
+string2 = "świecie!"
 
-```elixir
-String.concat(["Hello ", "world"])
+concatenated_string = String.concat([string1, " ", string2])
 ```
 
-Wynikiem będzie również ciąg znaków "Hello world".
+W obu przypadkach używamy znaku spacji jako separatora, ale może to być dowolny znak lub nawet pusty string.
 
-### Używając interpolacji
+## Głębsze Zanurzenie
 
-Jeśli chcemy połączyć ciągi wewnątrz innego ciągu, możemy skorzystać z interpolacji. Polega to na użyciu `#{}` wewnątrz ciągu i umieszczeniu w nim zmiennych lub wyrażeń, które chcemy połączyć. Przykład:
+W Elixirze konkatenacja stringów jest wydajniejsza niż w innych językach programowania, ponieważ jest wykonywana w czasie kompilacji, a nie wykonania. Oznacza to, że nie trzeba się martwić o wydajność, gdy używamy konkatenacji w pętlach lub w innych miejscach, gdzie wykonuje się wiele operacji na stringach.
 
-```elixir
-name = "John"
-"Hello #{name}!"
-```
+Warto również wiedzieć, że operator `<>` jest przeciążony dla większości typów danych, więc można go stosować nie tylko do stringów, ale także np. do list czy map.
 
-Wynikiem będzie ciąg "Hello John!". 
+## Zobacz Również
 
-## Zagłębienie
-
-Podczas skonkatynowania ciągów znaków należy pamiętać o kilku rzeczach. Po pierwsze, należy uważać na wydajność, zwłaszcza gdy trzeba połączyć wiele ciągów. Używanie operatora `<>` jest szybsze niż użycie funkcji `String.concat/1`, a interpolacja jest szybsza niż oba te sposoby. Po drugie, trzeba uważać na typy danych. Należy pamiętać, że podczas skonkatynowania również może dojść do konwersji typów, co może być niepożądane w niektórych sytuacjach.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o operacjach na ciągach w Elixirze, polecamy zapoznać się z poniższymi linkami:
-
-- [Oficjalna dokumentacja Elixir](https://hexdocs.pm/elixir/String.html)
-- [Blog Elixir School](https://elixirschool.com/pl/lessons/basics/strings/)
-- [Podstawy języka Elixir - konkatenacja](https://miroslawzelent.pl/kurs-elixir/podstawy/konkatenacja/)
+- Dokumentacja operatora `<>`: https://hexdocs.pm/elixir/operators.html#concatenation-operator-
+- Dokumentacja funkcji `String.concat/2`: https://hexdocs.pm/elixir/String.html#concat/2
+- Blog o Elixirze po polsku: https://elixir.pl/

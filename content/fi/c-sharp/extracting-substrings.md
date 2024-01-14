@@ -1,54 +1,41 @@
 ---
-title:    "C#: Alimerkkijonojen erottelu"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/extracting-substrings.md"
+title:                "C#: Irrottavien alimerkkijonojen hankkiminen"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi on hyödyllistä osata erottaa osajonot
+## Miksi
 
-Osajonon erottaminen on tärkeä taito ohjelmoinnin maailmassa. Se antaa sinulle mahdollisuuden käsitellä tekstiä tehokkaasti ja helposti, jolloin voit suorittaa monimutkaisia tehtäviä nopeasti. Tässä artikkelissa jaamme kanssasi, miksi osajonon erottaminen on tärkeää ja kuinka voit oppia tekemään sen.
+Substringien erottaminen on tärkeä osa C#-ohjelmointia, sillä se mahdollistaa tietyn osan merkkijonosta erottamisen ja tarkastelun. Tämä on erityisen hyödyllistä, kun halutaan käsitellä tilanteita, joissa tietyn merkkijonon osaa tarvitaan erillisenä.
 
-## Kuinka: Esimerkkejä koodista ja tulostuksista
+## Kuinka
 
-Osajonon erottamisen perusteet ovat helposti opittavissa, mutta ne voivat tuntua ylivoimaisilta aloittelijalle. Käytämme C# -kieltä esimerkkien esittämiseen, mutta pohjimmiltaan samat periaatteet pätevät useilla ohjelmointikielillä.
-
-### Esimerkki 1: Yksinkertainen osajonon erottaminen
-
-Seuraava koodinpätkä esittää yksinkertaisen osajonon erottamisen tekstin perusteella. Asetamme ensin tekstiä sisältävän muuttujan ja sitten tulostamme sen osajonot.
+Alla on esimerkki siitä, kuinka C#-ohjelmointikielessä voidaan erottaa merkkijonon osia käyttämällä substrings-toimintoa ja tulostaa ne konsolille.
 
 ```C#
-string teksti = "Tämä on esimerkki tekstistä.";
-Console.WriteLine(teksti.Substring(5, 2));
+// Luodaan merkkijono
+string teksti = "Tämä on esimerkki substringien erottamisesta";
+
+// Erotaan merkkijonon osa ja tulostetaan se konsolille
+string osa = teksti.Substring(16, 11);
+Console.WriteLine(osa);
+
+// Tulostaa: "substringien"
 ```
 
-Tämä tulostaa "on", koska tekstistä erotetaan kaksi merkkiä alkaen viidennestä merkistä.
+Tässä esimerkissä luomme ensin merkkijonon ja tallennamme sen muuttujaan nimeltä "teksti". Sitten käytämme "Substring()" -funktiota, joka ottaa kaksi parametria - aloituskohdan ja erottamisen pituuden - ja tallentaa erottamamme osan muuttujaan nimeltä "osa". Lopuksi tulostamme tämän osan konsolille.
 
-### Esimerkki 2: Osajonon erottaminen ehtolauseen avulla
+## Syvempi sukellus
 
-Voimme myös käyttää ehtolauseita osajonon erottamiseen. Seuraava esimerkki tarkistaa, onko tekstissä sana "tärkeää" ja jos on, tulostaa sen jälkeen tulevan osajonon.
+Substringien erottaminen osoittautuu erittäin hyödylliseksi, kun halutaan käsitellä isot sunkeet erilaista tietoa sisältävien merkkijonojen kanssa. C# tarjoaa myös muita vaihtoehtoja, kuten "Remove()", "Insert()" ja "Replace()", jotka voivat auttaa käsittelemään merkkijonoja ja niiden osia tehokkaasti.
 
-```C#
-string teksti = "Miksi on tärkeää oppia osajonon erottaminen?";
-if (teksti.Contains("tärkeää"))
-{
-    int index = teksti.IndexOf("tärkeää") + 8;
-    Console.WriteLine(teksti.Substring(index));
-}
-```
-
-Tämä tulostaisi "oppia osajonon erottaminen?", koska "tärkeää" on 8 merkkiä pitkä ja haluamme tulostaa kaiken sen jälkeen tulevan tekstin.
-
-## Syvempi sukellus: Lisätietoja osajonon erottamisesta
-
-Osajonon erottaminen on vain yksi osa tekstien käsittelyä ohjelmoinnissa. On tärkeää ymmärtää, että osajonojen erottaminen ei muuta itse tekstiä, vaan se vain palauttaa uuden osajonon. Tämä on tärkeää pitää mielessä, sillä se voi aiheuttaa haasteita monimutkaisemmissa koodinpätkissä.
-
-Tutki myös muita osajonon erottamiseen liittyviä toimintoja, kuten `Split()` ja `Replace()`. Näitä käyttämällä voit rakentaa monimutkaisempia tehtäviä, jotka käsittelevät suurempaa määrää tekstiä.
+On myös tärkeää huomata, että C#-ohjelmointikielen dynaamisten ominaisuuksien avulla voimme käsitellä merkkijonojen osia dynaamisesti, mikä lisää vielä enemmän joustavuutta koodiin.
 
 ## Katso myös
 
-- [C# ohjeet - Osajonon erottaminen](https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/operators/string-substring)
-- [Codecademy - String manipulation in C#](https://www.codecademy.com/learn/learn-c-sharp/modules/csharp-string-manipulation)
-
-Kiitos, kun luit artikkelimme osajonon erottamisesta! Toivottavasti löydät tästä hyödyllistä tietoa ja pystyt soveltamaan sitä omassa koodissasi. Muista harjoitella ja kokeilla erilaisia tapoja käyttää osajonon er
+- [C#-ohjelmointikielen dokumentaatio merkkijonojen käsittelystä](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/strings/)
+- [Merkkijonojen käsittelyn perusteet C#:ssä](https://www.tutlane.com/tutorial/csharp/csharp-strings)
+- [Substringien käyttöesimerkkejä C#:ssä](https://www.w3schools.com/cs/cs_ref_string.asp)

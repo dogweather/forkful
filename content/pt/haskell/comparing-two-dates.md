@@ -1,42 +1,39 @@
 ---
-title:    "Haskell: Comparando duas datas"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/comparing-two-dates.md"
+title:                "Haskell: Comparando duas datas"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em Haskell?
+## Por que Comparar Duas Datas Pode Ser Útil
 
-Comparar datas é uma tarefa comum em programação, especialmente quando se trabalha com informações relacionadas a horários e agendamentos. Em Haskell, uma linguagem funcional e puramente funcional, há várias maneiras de se comparar duas datas. Neste post, vamos explorar como fazer isso de maneira eficiente e elegante utilizando recursos da linguagem.
+Comparar duas datas é uma tarefa comum em muitos programas, especialmente aqueles que lidam com informações relacionadas ao tempo. Ao comparar duas datas, podemos determinar qual é mais recente, qual ocorreu primeiro ou se ambas são iguais. Isso pode ser útil em diversas situações, como no gerenciamento de eventos, no cálculo de duração de um período e na organização de dados temporais.
 
-## Como comparar duas datas em Haskell
+## Como Comparar Duas Datas em Haskell
 
-Para comparar duas datas em Haskell, podemos utilizar o módulo `Data.Time` que fornece funções e tipos para representar e manipular datas. Para este exemplo, vamos criar duas variáveis com datas diferentes e compará-las para determinar qual delas é maior.
+Para comparar duas datas em Haskell, podemos utilizar a função `compare` do módulo `Data.Time`. Essa função recebe dois valores do tipo `Day` e retorna um tipo `Ordering` que indica se a primeira data é menor, igual ou maior que a segunda data. Veja um exemplo de código abaixo:
 
 ```Haskell
 import Data.Time
 
-data1 :: Day
-data1 = fromGregorian 2020 2 15
-
-data2 :: Day
-data2 = fromGregorian 2020 4 20
-
-if data1 > data2 then putStrLn "A primeira data é maior"
-else putStrLn "A segunda data é maior"
+main = do
+  let data1 = fromGregorian 2021 07 15
+  let data2 = fromGregorian 2021 04 12
+  print $ compare data1 data2
 ```
 
-Neste código, utilizamos a função `fromGregorian` para criar uma data no formato ano-mês-dia. Em seguida, comparamos as duas datas utilizando o operador `>`, que verifica se a primeira data é maior que a segunda. No caso, a saída será "A segunda data é maior".
+A saída desse exemplo seria `GT`, indicando que a primeira data é maior que a segunda. É importante notar que a função `compare` só funciona com datas no formato `Day` do módulo `Data.Time`, portanto, é necessário converter as datas para esse formato antes de realizar a comparação.
 
-## Aprofundando na comparação de datas
+## Mergulho Profundo na Comparação de Datas
 
-É importante ressaltar que em Haskell, para comparar datas é necessário utilizar tipos específicos, como `Day` ou `UTCTime`, e não é possível utilizar o operador `==` para verificar igualdade. Além disso, também é possível utilizar funções como `diffDays`, que retorna a diferença em dias entre duas datas, ou `addDays` que adiciona uma determinada quantidade de dias a uma data.
+Para entender melhor como a função `compare` funciona, podemos nos aprofundar um pouco mais no conceito de ordenação em Haskell. A função `compare` utiliza o conceito de *ordem parcial* para realizar comparações entre valores. Isso significa que nem sempre é possível determinar de forma definitiva a ordem entre dois valores, pois eles podem ser igualmente importantes ou não possuem uma relação de precedência.
 
-Se precisarmos trabalhar com datas e horas mais precisas, podemos utilizar o módulo `Data.Time.Clock`, que fornece uma resolução maior do que o módulo `Data.Time`.
+No caso das datas, as comparações geralmente são feitas comparando primeiro os anos, depois os meses e finalmente os dias. Vale ressaltar que a função `compare` também pode ser utilizada para comparar outros tipos de dados, desde que eles sejam instâncias da classe `Ord`.
 
-## Veja também
+## Veja Também
 
-- [Documentação do módulo Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Função fromGregorian](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html#v:fromGregorian)
-- [Função addDays](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html#v:addDays)
+- [Documentação do módulo `Data.Time`](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Tutorial de Haskell do Livro Learn You a Haskell for Great Good!](http://learnyouahaskell.com/starting-out#comparison)
+- [Artigo sobre ordem parcial em Haskell](https://wiki.haskell.org/Ordering)

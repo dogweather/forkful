@@ -1,39 +1,41 @@
 ---
-title:    "Kotlin: Génération de nombres aléatoires"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/generating-random-numbers.md"
+title:                "Kotlin: Génération de nombres aléatoires"
+programming_language: "Kotlin"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi 
-Avez-vous déjà eu besoin de générer des nombres aléatoires dans vos programmes Kotlin ? Peut-être pour simuler un jeu de hasard ou pour générer des données aléatoires pour des tests. Dans cet article, nous allons explorer comment générer des nombres aléatoires en utilisant Kotlin.
+# Pourquoi
 
-# Comment faire 
-Générer des nombres aléatoires en Kotlin est assez facile grâce à la classe `Random` de Kotlin. Tout d'abord, vous devez l'importer dans votre code en utilisant `import kotlin.random.Random`.
+Générer des nombres aléatoires est une opération courante dans la programmation, utile pour simuler des situations aléatoires ou pour créer des jeux et des applications divertissantes. En utilisant Kotlin, nous pouvons facilement générer des nombres aléatoires et les incorporer dans nos projets.
 
-Ensuite, vous pouvez utiliser différentes méthodes pour générer les nombres aléatoires en fonction de vos besoins. Par exemple, pour générer un nombre entier aléatoire dans une certaine plage, vous pouvez utiliser `nextInt()` en spécifiant les bornes supérieure et inférieure comme paramètres : 
+## Comment faire
 
-```Kotlin 
-val randomNumber = Random.nextInt(1, 11)
+Tout d'abord, nous devons importer la classe Random de la bibliothèque standard de Kotlin pour pouvoir générer des nombres aléatoires. Ensuite, nous pouvons utiliser la méthode nextInt() pour générer un nombre entier aléatoire dans une plage donnée. Par exemple, si nous voulons générer un nombre entre 1 et 10 inclus, nous pouvons utiliser la syntaxe suivante :
 ```
-Cela générera un nombre aléatoire entre 1 et 10 inclus.
-
-Si vous avez besoin d'un nombre à virgule aléatoire, vous pouvez utiliser `nextDouble()` en spécifiant les bornes comme paramètres. Par exemple : 
-
-```Kotlin 
-val randomNumber = Random.nextDouble(0.0, 1.0)
+Kotlin
+val randomNumber = Random().nextInt(10) + 1
 ```
-Cela générera un nombre à virgule aléatoire entre 0.0 et 1.0.
+Nous pouvons également utiliser la méthode nextDouble() pour générer un nombre à virgule aléatoire entre 0 et 1. Par exemple :
+```
+Kotlin
+val randomDecimal = Random().nextDouble()
+```
+Enfin, pour générer des booléens aléatoires, nous pouvons utiliser la méthode nextBoolean(). Par exemple :
+```
+Kotlin
+val randomBoolean = Random().nextBoolean()
+```
 
-Vous pouvez également utiliser des méthodes telles que `nextBoolean()` pour générer des valeurs booléennes aléatoires et `nextBytes()` pour générer des tableaux de bytes aléatoires.
+## Plongée profonde
 
-# Plongée en profondeur 
-La classe `Random` utilise en fait un algorithme appelé PRNG (Pseudo-Random Number Generator) pour générer les nombres aléatoires. Cela signifie que les valeurs générées ne sont pas réellement aléatoires, mais elles semblent aléatoires en fonction des algorithmes utilisés.
+La classe Random de Kotlin utilise un algorithme appelé "Mersenne Twister" pour générer des nombres aléatoires. Cet algorithme a une période extrêmement longue, ce qui signifie qu'il peut générer une séquence apparemment aléatoire sans se répéter pendant un certain temps. Cependant, comme les nombres sont générés informatiquement, ils ne sont pas vraiment aléatoires, mais seulement pseudo-aléatoires.
 
-Il est important de noter que si vous utilisez la même instance de `Random` plusieurs fois, vous obtiendrez les mêmes valeurs aléatoires à chaque fois. C'est parce que l'algorithme est basé sur une "graine" qui est utilisée pour générer les nombres. Si vous voulez générer des valeurs différentes à chaque utilisation, vous pouvez créer une nouvelle instance `Random` à chaque fois.
+Pour garantir que les nombres générés sont aussi aléatoires que possible, il est important d'utiliser une graine (seed) différente à chaque fois que la classe Random est instanciée. Une mauvaise graine peut entraîner la génération de nombres prévisibles et donc une perte de la caractéristique aléatoire.
 
-# Voir aussi 
-- [Documentation officielle de Kotlin sur la classe `Random`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html)
-- [Article sur la génération de nombres aléatoires en Java](https://dzone.com/articles/random-number-generation-in-java)
-- [Documentation sur les PRNG](https://en.wikipedia.org/wiki/Pseudo-random_number_generator)
+## Voir aussi
+- [Documentation de la classe Random en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random)
+- [Article sur les nombres aléatoires en programmation](https://www.geeksforgeeks.org/random-number-generation-in-kotlin/) (en anglais)
+- [Exemples de jeux utilisant la génération de nombres aléatoires en Kotlin](https://github.com/tonkopetkov/KotlinRandomGameExamples) (en anglais)

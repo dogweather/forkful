@@ -1,68 +1,67 @@
 ---
-title:    "Bash: Lecture des arguments de la ligne de commande"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/reading-command-line-arguments.md"
+title:                "Bash: Lecture des arguments de ligne de commande"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-Bonjour chers lecteurs ! Aujourd'hui, nous allons explorer une fonctionnalité essentielle lors de la programmation en Bash : la lecture des arguments en ligne de commande. Si vous êtes un débutant en Bash ou si vous souhaitez rafraîchir vos connaissances sur le sujet, cet article est fait pour vous !
-
 ## Pourquoi
 
-Avant de plonger dans les détails techniques, il est important de comprendre pourquoi il est important de connaître la lecture des arguments en ligne de commande en Bash. Tout d'abord, il s'agit d'une compétence fondamentale pour tout développeur en Bash. En utilisant cette fonctionnalité, vous pourrez rendre vos scripts plus flexibles et personnalisables en fonction des différents paramètres fournis par l'utilisateur au moment de l'exécution. De plus, cela vous permettra également d'automatiser davantage vos tâches et de gagner du temps lors de l'exécution de vos scripts.
-
-Maintenant que vous comprenez l'importance de la lecture des arguments en ligne de commande, passons à la partie pratique.
+Si vous êtes un programmeur Bash ou que vous cherchez simplement à améliorer vos compétences en programmation, la lecture des arguments de ligne de commande peut être une compétence utile à apprendre. Cela peut vous permettre de créer des scripts plus dynamiques et personnalisables, ainsi que de mieux comprendre comment votre programme interagit avec les entrées de l'utilisateur.
 
 ## Comment faire
 
-Pour lire les arguments en ligne de commande en Bash, nous utiliserons la variable d'environnement `$@` qui contient tous les arguments fournis par l'utilisateur au moment de l'exécution du script. Voici un exemple de code :
+Pour lire les arguments de ligne de commande en Bash, vous devez utiliser la variable spéciale `$@` qui contient tous les arguments passés au script. Vous pouvez également utiliser les variables numérotées `$1, $2, $3`, etc. pour accéder à un argument spécifique.
+
+Voici un exemple simple de code qui affiche tous les arguments passés au script :
 
 ```Bash
 #!/bin/bash
-
-# stockage des arguments dans une variable
-arguments=$@
-
-# affichage du nombre d'arguments fournis
-echo "Nombre d'arguments : $#"
-
-# affichage de chaque argument
-for argument in $arguments; do
-  echo $argument
-done
+echo "Les arguments passés sont : $@"
 ```
 
-Voici un exemple d'exécution et de sortie :
+Lorsque vous exécutez ce script avec des arguments séparés par des espaces, comme `./script.sh argument1 argument2`, la sortie sera :
+
+```
+Les arguments passés sont : argument1 argument2
+```
+
+Vous pouvez également utiliser la commande `shift` pour parcourir tous les arguments passés et les utiliser dans des boucles ou des conditions.
+
+## Plongée en profondeur
+
+L'une des fonctionnalités les plus utiles de la lecture des arguments de ligne de commande est la possibilité de les valider et de les utiliser dans des conditions. Par exemple, vous pouvez vérifier si un certain argument a été passé et, si c'est le cas, effectuer une tâche spécifique.
+
+Voici un exemple de code qui utilise un argument pour vérifier si un fichier existe et l'affiche si c'est le cas :
 
 ```Bash
-$ ./read_args.sh foo bar baz
-Nombre d'arguments : 3
-foo
-bar
-baz
+#!/bin/bash
+if [ -f $1 ]
+then
+  echo "Le fichier $1 existe."
+else
+  echo "Le fichier $1 n'existe pas."
+fi
 ```
 
-Comme vous pouvez le voir, nous avons stocké les arguments dans une variable `$arguments` et nous avons utilisé un compteur `$#` pour afficher le nombre total d'arguments fournis. Ensuite, nous avons utilisé une boucle for pour parcourir chaque argument et l'afficher individuellement.
+Si vous exécutez ce script avec un argument correspondant à un fichier existant, comme `./script.sh fichier.txt`, la sortie sera :
 
-Il est également important de noter que vous pouvez également utiliser des options courtes (`-`) et longues (`--`) lors de la lecture des arguments en ligne de commande en utilisant la commande `getopts`. Cela peut être utile pour rendre vos scripts plus conviviaux pour les utilisateurs.
+```
+Le fichier fichier.txt existe.
+```
 
-## Approfondissement
+Sinon, si l'argument ne correspond pas à un fichier existant, la sortie sera :
 
-Maintenant que vous avez compris les bases de la lecture des arguments en ligne de commande en Bash, voici quelques conseils supplémentaires pour vous aider à aller plus loin :
+```
+Le fichier fichier.txt n'existe pas.
+```
 
-- Utilisez la commande `shift` pour supprimer le premier argument de la variable `$@` après l'avoir utilisé. Cela permettra de traiter les arguments un par un plutôt que de tous les traiter en une seule fois.
-- Vous pouvez également utiliser la commande `getopts` avec des drapeaux pour rendre votre script plus interactif et demander à l'utilisateur des informations supplémentaires en fonction des options choisies.
-- Prenez en compte la validation des arguments, c'est-à-dire vérifier si les arguments fournis sont valides avant de les utiliser dans votre script.
-
-Maintenant que vous avez une meilleure compréhension de la lecture des arguments en ligne de commande en Bash, vous pouvez l'appliquer à vos propres scripts et les rendre plus flexibles et puissants !
+En utilisant des arguments de ligne de commande, vous pouvez également rendre votre script plus interactif en demandant à l'utilisateur de saisir certaines valeurs au lieu de les définir directement dans le code.
 
 ## Voir aussi
 
-Pour en savoir plus sur la lecture des arguments en ligne de commande en Bash, voici quelques ressources utiles :
-
-- Le guide officiel de Bash sur les arguments en ligne de commande : https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#Bash-Variables
-- Un tutoriel vidéo de Codecademy sur les arguments en ligne de commande en Bash : https://www.youtube.com/watch?v=DamzjNwM-jI
-- Une liste de bonnes pratiques pour la lecture des arguments en ligne de commande en Bash : https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash/13359121#13359121
-
-Ceci conclut notre exploration de la lecture des arguments en ligne de commande en Bash. J'espère que cet article vous a été utile et que vous serez maintenant en mesure d'utiliser cette fonctionnalité dans vos propres scripts Bash. Bonne programmation !
+- [La documentation Bash officielle](https://www.gnu.org/software/bash/manual/bash.html)
+- [Un tutoriel interactif pour apprendre Bash](https://www.learnshell.org/)
+- [Un guide détaillé sur la lecture des arguments de ligne de commande en Bash](https://linuxize.com/post/bash-script-get-arguments/)

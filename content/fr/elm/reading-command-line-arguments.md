@@ -1,45 +1,70 @@
 ---
-title:    "Elm: Lecture des arguments de ligne de commande"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/reading-command-line-arguments.md"
+title:                "Elm: Lecture des arguments de ligne de commande"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
+Les arguments de la ligne de commande sont utilisés dans de nombreuses applications pour personnaliser le fonctionnement du programme. L'apprentissage de la lecture des arguments de ligne de commande en Elm peut être utile pour développer des applications plus flexibles et polyvalentes.
 
-Si vous êtes un développeur Elm, vous savez probablement que ce langage est connu pour sa forte typisation et sa sûreté de l'information. Cependant, saviez-vous qu'il est également possible de lire des arguments de ligne de commande en utilisant Elm ? Dans cet article, nous allons explorer pourquoi il peut être utile de lire les arguments de ligne de commande et comment le faire en utilisant Elm.
-
-## Comment Faire
-
-Pour lire les arguments de ligne de commande en Elm, nous allons utiliser la fonction `PlatformWorker.getCommandLineArgs`. Elle prend une fonction en argument qui sera appelée avec une liste d'arguments en chaîne de caractères. Voici un exemple de code pour imprimer la liste des arguments sur la console :
+## Comment faire
+Pour lire les arguments de ligne de commande en Elm, il suffit d'utiliser la fonction `CommandLine.arguments` qui renvoie une liste de `String` représentant les arguments passés au programme. Voici un exemple de code:
 
 ```Elm
-import PlatformWorker
-
+-- Lecture des arguments de la ligne de commande
 main =
-  PlatformWorker.getCommandLineArgs (\args -> 
-    --  Imprime la liste des arguments sur la console
-    List.map Debug.log args
-  )
+    CommandLine.arguments
+        |> List.map Console.log
 ```
 
-Si vous exécutez ce code avec les arguments `elm make src/Main.elm --output=dist/index.html`, vous verrez la sortie suivante sur la console :
+Si vous exécutez ce code avec les arguments `elm-make MyFile.elm`, la sortie sera une liste contenant `[ "elm-make", "MyFile.elm" ]`.
 
-`["src/Main.elm", "--output=dist/index.html"]`
+## En profondeur
+Outre la lecture des arguments de ligne de commande, il est également possible d'utiliser le module `CommandLine` pour définir des options avec des valeurs par défaut et des alias d'options. Cela peut être utile pour fournir des options de configuration à votre programme. Voici un exemple de code utilisant `CommandLine`.
 
-Vous pouvez ensuite utiliser ces arguments dans votre programme comme vous le souhaitez.
+```Elm
+import CommandLine exposing (Command)
 
-## Plongée en Profondeur
+type alias Config =
+    { verbose : Bool
+    , port : Int
+    }
 
-Maintenant, vous vous demandez peut-être comment cette fonction `getCommandLineArgs` fonctionne réellement. En réalité, elle utilise une API native qui n'est pas écrite en Elm. En fait, cela est possible grâce à un paquetage spécial appelé `platform-worker`. Ce paquetage utilise l'API native disponible sur chaque plateforme pour communiquer avec le système d'exploitation et récupérer les arguments de ligne de commande.
+-- Définition de l'option "--verbose" avec un alias "-v"
+verboseOption : Command Config
+verboseOption =
+  CommandLine.flagWithAliases
+    { aliases = [ "v" ]
+    , help = "Enable verbose mode."
+    , value = .verbose
+    , defaultValue = False
+    }
 
-Il est important de noter que cette fonctionnalité n'est pas disponible dans les navigateurs car les arguments de ligne de commande ne sont pas pertinents pour eux. Cependant, cela peut être très utile pour les applications de bureau écrites en Elm.
+-- Définition de l'option "--port" avec une valeur par défaut
+portOption : Command Config
+portOption =
+  CommandLine.option
+    { longName = "port"
+    , help = "Specify which port to run the server on."
+    , argument = CommandLine.int
+    , value = .port
+    , defaultValue = 8080
+    }
 
-## Voir Aussi
+-- Fonction principale utilisant les options définies
+main : CommandLine.ArgParser () Config
+main =
+    CommandLine.mapConfig Config
+        |> CommandLine.addOption portOption
+        |> CommandLine.addCommand verboseOption
 
-Pour plus d'informations sur la lecture des arguments de ligne de commande en Elm, voici quelques liens utiles :
+```
 
-- [Documentation officielle sur `PlatformWorker`](https://package.elm-lang.org/packages/elm/browser/latest/Browser#platform-worker)
-- [Article sur la communication entre Elm et le système d'exploitation](https://elmprogramming.com/elm-system-module-part1.html)
-- [Paquetage `platform-worker` sur GitHub](https://github.com/elm/core/tree/1.0.0)
+Avec cette définition, vous pouvez maintenant exécuter votre programme en fournissant des options telles que `./MyProgram --verbose --port 3000`. Les options seront automatiquement parsées et la configuration correspondante sera renvoyée.
+
+# Voir aussi
+- [Documentation Elm sur la lecture des arguments de ligne de commande](https://package.elm-lang.org/packages/elm/core/latest/CommandLine)
+- [Guide Elm sur la gestion des paramètres et des options de ligne de commande](https://guide.elm-lang.org/managing_program_arguments.html)

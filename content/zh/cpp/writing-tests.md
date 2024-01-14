@@ -1,70 +1,88 @@
 ---
-title:    "C++: 编写测试"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/writing-tests.md"
+title:                "C++: 编写测试"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么编写测试?
+## 为什么要写测试
+测试是软件开发过程中必不可少的一步。它可以帮助我们发现潜在的bug，确保代码的正确性，提高软件的质量。通过编写测试，我们可以更加自信地修改和添加代码，而不担心会引入新的问题。
 
-编写测试是软件开发过程中的重要组成部分。测试可以帮助我们发现代码中的错误，确保程序可以按照预期的方式运行。它可以提高代码的质量和可靠性，从而减少在开发过程中可能出现的问题。
+## 如何写测试
+编写测试的基本步骤如下：
+1. 确定被测试的功能或模块。
+2. 编写测试用例，即测试的输入和预期输出。
+3. 使用单元测试框架，如Google Test或Catch2。
+4. 编写测试函数，根据测试用例调用被测试的功能，并进行断言。
+5. 运行测试并检查输出是否符合预期。
 
-## 如何编写测试
+下面是一个简单的例子，在```C++ ```代码块中展示了如何使用Google Test框架进行断言：
 
 ```C++
-#include <iostream>
-#include <cassert>
+#include <gtest/gtest.h>
 
-using namespace std;
-
-// A function that reverses a string 
-string reverseString(string s) {
-    string reversed = "";
-    for(int i = s.length()-1; i >= 0; i--){
-        reversed += s[i];
-    }
-    return reversed;
+// 被测试的函数，计算两个数的和
+int add(int a, int b) {
+    return a + b;
 }
 
-int main() {
-    // Test case 1: single letter 
-    string s = "a";
-    assert(reverseString(s) == "a");
-    
-    // Test case 2: word with even number of letters
-    s = "hello";
-    assert(reverseString(s) == "olleh");
+TEST(AddFunction, Basic) {
+    // 断言：5加7应该等于12
+    EXPECT_EQ(12, add(5, 7));
+}
 
-    // Test case 3: word with odd number of letters
-    s = "software";
-    assert(reverseString(s) == "erawtfos");
+TEST(AddFunction, Zero) {
+    // 断言：任何数加0都应该等于自身
+    EXPECT_EQ(5, add(5, 0));
+    EXPECT_EQ(0, add(0, 0));
+    EXPECT_EQ(-3, add(-3, 0));
+}
 
-    // All tests passed 
-    cout << "All tests passed. Great job!" << endl;
+TEST(AddFunction, Negative) {
+    // 断言：负数相加应该等于两数相加的和的相反数
+    EXPECT_EQ(-8, add(-5, -3));
+    EXPECT_EQ(5, add(-10, 15));
+    EXPECT_EQ(0, add(-2, 2));
+}
 
-    return 0;
+int main(int argc, char* argv[]) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
 
-输出：
+运行该测试程序，输出结果如下：
 
 ```
-All tests passed. Great job!
+[==========] Running 3 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from AddFunction/Basic
+[ RUN      ] AddFunction/Basic
+[       OK ] AddFunction/Basic (0 ms)
+[----------] 1 test from AddFunction/Basic (0 ms total)
+
+[----------] 1 test from AddFunction/Zero
+[ RUN      ] AddFunction/Zero
+[       OK ] AddFunction/Zero (0 ms)
+[----------] 1 test from AddFunction/Zero (0 ms total)
+
+[----------] 1 test from AddFunction/Negative
+[ RUN      ] AddFunction/Negative
+[       OK ] AddFunction/Negative (0 ms)
+[----------] 1 test from AddFunction/Negative (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 3 test cases ran. (0 ms total)
+[  PASSED  ] 3 tests.
 ```
 
-编写测试的第一步是确定实现功能的代码。在这个例子中，我们有一个函数 `reverseString`，它接受一个字符串作为参数，并返回反转后的字符串。我们使用 `assert` 语句来验证函数的输出是否与我们期望的一致。
+输出中显示所有的测试用例均通过，说明被测试的函数的行为与预期相符合。
 
-为了编写全面的测试，我们可以模拟不同的输入情况，并验证函数的输出是否正确。在上面的代码示例中，我们测试了单个字母、偶数字母和奇数字母的情况。如果测试通过，我们会得到一个成功的输出，说明函数的逻辑是正确的。
+## 深入了解测试
+除了基本的断言外，测试还有很多其他的技巧和工具。例如，可以使用参数化测试来减少冗长重复的代码。还可以使用模拟框架来模拟一些外部依赖，从而方便测试。此外，测试覆盖率工具可以帮助我们确定哪些代码是未经测试的。
 
-## 深入学习编写测试
-
-除了上面提到的基本知识外，编写测试还有许多其他方面需要深入学习。例如，测试覆盖率是评估测试的有效性的重要指标，它可以帮助我们确定测试是否覆盖了代码的所有部分。另外，选择适当的测试框架也是很重要的，它可以简化测试的编写，并提供更多的功能。
-
-编写测试还可以帮助我们提高代码的可读性和可维护性。通过编写测试，我们可以更清晰地了解代码的功能和逻辑，从而在需要更改代码时更容易做出正确的修改。
-
-## 查看更多
-
-- [测试驱动开发（TDD）指南](https://zhuanlan.zhihu.com/p/69094325)
-- [Google Test: 一个C++测试框架](https://github.com/google/googletest)
-- [测试覆盖率和代码覆盖度的简单解释](https://zhuanlan.zhihu.com/p/170856439)
+## 参考资料
+- Google Test官方文档：https://github.com/google/googletest/blob/master/googletest/docs/Primer.md
+- Catch2官方文档：https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md

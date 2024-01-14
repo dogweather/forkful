@@ -1,57 +1,49 @@
 ---
-title:    "Elm: Odczytywanie pliku tekstowego"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/reading-a-text-file.md"
+title:                "Elm: Odczytywanie pliku tekstowego"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli chcesz nauczyć się programowania w języku Elm lub po prostu poszerzyć swoją wiedzę na ten temat, przeczytaj ten wpis! Dowiecie się, jak wczytywać pliki tekstowe i wykorzystać tę umiejętność w swoich programach. To ważna umiejętność dla każdego programisty!
+Czy kiedykolwiek zastanawiałeś się, jak czytać pliki tekstowe w Elm? W tym artykule dowiesz się, dlaczego jest to przydatne i jak to zrobić.
 
 ## Jak to zrobić
 
-Aby wczytać plik tekstowy w Elm, musisz użyć funkcji `Http.get` i `File.toText`. Pokażę Ci to na przykładzie. Załóżmy, że chcesz wczytać plik `hello.txt` z folderu `pliki_tekstowe`.
+Pierwszym krokiem jest otwarcie pliku tekstowego za pomocą funkcji `File.read` z modułu `File`. Następnie można odczytać zawartość pliku przy użyciu funkcji `Task.attempt`, która zwraca listę znaków reprezentujących zawartość pliku.
 
 ```Elm
-import Http
 import File
+import Task
 
-type Msg
-    = GotText (Result Http.Error String)
+readFile : Task x String
+readFile =
+    File.read "example.txt"
 
-getFile : Cmd Msg
-getFile =
-    File.toText "pliki_tekstowe/hello.txt"
-        |> Task.perform GotText
+fileContent : Task x String -> Cmd msg
+fileContent result =
+    Task.attempt FileRead fileContent
+
+FileRead result ->
+    case result of
+        Err _ ->
+            -- obsłuż błąd odczytu pliku
+            Cmd.none
+
+        Ok content ->
+            -- wykonaj dalsze operacje na zawartości pliku
+            Cmd.none
 ```
 
-Następnie, aby wyświetlić zawartość pliku, użyjemy funkcji `case` w funkcji `update`:
+## Dogłębna analiza
 
-```Elm
-update msg model =
-    case msg of
-        GotText result ->
-            case result of
-                Ok text ->
-                    ( { model | content = Just text }, Cmd.none )
+Podczas czytania pliku tekstowego w Elm istnieje wiele czynników, które muszą być wzięte pod uwagę, takich jak obsługa błędów, kodowanie znaków, a także dokładny sposób odczytu zawartości pliku. Istnieją również różne moduły, które mogą być użyte zamiast `File`, na przykład `Http` do pobierania plików z Internetu. Należy rozważyć wszystkie te elementy i dostosować kod odpowiednio.
 
-                Err error ->
-                    ( { model | content = Just "Błąd podczas wczytywania pliku" }, Cmd.none )
+## Zobacz również
 
-        _ ->
-            ( model, Cmd.none )
-```
-
-Teraz, gdy uruchomisz ten kod, powinien bez problemu wczytać zawartość pliku tekstowego i wyświetlić ją w modelu Twojej aplikacji.
-
-## Głębsze zanurzenie
-
-Wczytywanie plików tekstowych może być trochę bardziej skomplikowane, gdy funkcja `Http.get` wysyła żądanie do adresu URL zamiast lokalnego pliku. W takim przypadku musimy zastosować pewne triki i dostosować kod do naszych potrzeb. Więcej o tym znajdziesz w [oficjalnej dokumentacji Elm](https://package.elm-lang.org/packages/elm/file/latest/).
-
-## Zobacz także
-
-- [Oficjalna dokumentacja Elm](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Wczytywanie plików CSV w Elm](https://dev.to/refactorius/wczytywanie-plikow-csv-w-elm-3fe7) (artykuł w języku angielskim)
-- [Projekt Elm File Explorer](https://github.com/FreedomMan/univision-file-explo) (projekt na GitHubie)
+- [Dokumentacja modułu File w Elm](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Przykłady odczytu i zapisu plików tekstowych w Elm](https://elmprogramming.com/read-write-files-elm.html)
+- [Dyskusja na forum Elm dotycząca czytania plików tekstowych](https://discourse.elm-lang.org/t/how-to-read-file-as-string-from-disk/5804/2)

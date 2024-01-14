@@ -1,49 +1,78 @@
 ---
-title:    "Arduino: Uuden projektin aloittaminen"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/starting-a-new-project.md"
+title:                "Arduino: Uuden projektin aloittaminen"
+programming_language: "Arduino"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Arduino-ohjelmoinnin aloittaminen voi olla innostava ja palkitseva harrastus, jossa voit tuoda ideoitasi ja luovuuttasi konkreettiseen muotoon. Se haastaa sinua oppimaan uusia taitoja ja kehittämään projektisi edistymisen myötä.
 
-Oletko koskaan katsellut Arduino-projekteja verkossa ja ajatellut, että haluat kokeilla tehdä jotain samanlaista? Ehkä sinulla on jo ideoita, mutta et tiedä mistä aloittaa. Tässä blogikirjoituksessa jaamme joitain perusohjeita siitä, miten aloitat uuden Arduino-projektin.
+## Miten aloittaa
+Aloittaaksesi uuden projektin Arduino-ohjelmoinnissa, tarvitset ensin muutaman peruskomponentin, kuten Arduino-mikrokontrollerin, USB-kaapelin ja kytkentäkaavion. Sitten voit ladata Arduinon ohjelmointiympäristön ja aloittaa koodaamisen. Tässä on yksinkertainen esimerkkikoodi ja sen tulostus:
 
-## Kuinka aloittaa 
-
-Aloittaminen uuden Arduino-projektin kanssa voi tuntua hieman pelottavalta, mutta se on helpompaa kuin luuletkaan. Tässä on muutama askel, joita voit seurata saadaksesi projektisi alkuun: 
-
-1. Ennen kuin aloitat projektin, tutustu Arduinon perusteisiin ja varmista, että sinulla on tarvittavat laitteet ja komponentit.
-2. Aloita asentamalla Arduino IDE tietokoneellesi. Tämä on ohjelmisto, jota käytetään Arduinon ohjelmointiin ja jolla voit ladata koodin Arduino-piirilevylle.
-3. Liitä Arduino-piirilevy tietokoneeseesi USB-kaapelilla ja avaa Arduino IDE.
-4. Valitse IDE:stä oikea asetus tietokoneesi ja Arduino-piirilevysi välillä.
-5. Kirjoita koodisi IDE:hen ```Arduino...``` -lohkoon. Esimerkiksi voit kokeilla seuraavaa yksinkertaista koodia, joka saa LED-valon vilkkumaan:
-
-```
-Arduino void setup () {
-  pinMode (LED_BUILTIN, OUTPUT);
+```Arduino
+void setup() {
+  Serial.begin(9600); //Aseta sarjaportin nopeus
 }
 
-void loop () {
-  digitalWrite (LED_BUILTIN, HIGH);
-  delay (1000);
-  digitalWrite (LED_BUILTIN, LOW) ;
-  delay (1000);
+void loop() {
+  Serial.println("Hei maailma!"); //Tulosta "Hei maailma!" sarjaportille
+  delay(1000); //Odota 1 sekunti
 }
 ```
 
-6. Klikkaa "Upload" -painiketta ladataksesi koodin Arduino-piirilevyysi.
-7. Näet nyt, kuinka LED-valo vilkkuu yhteen tahtiin sekunnin välein.
+Tulostus:
 
-Tämä oli vain yksinkertainen esimerkki, mutta voit nyt alkaa kokeilla muita toimintoja ja komponentteja sekä kirjoittaa omaa koodia.
+```
+Hei maailma!
+Hei maailma!
+Hei maailma!
+...
+```
 
-## Syvemmälle aiheeseen
+Koodissa voidaan käyttää myös muita komponentteja, kuten LED-valoja, antureita tai moottoreita, ja näin luoda yksinkertaisia projekteja, kuten valojen vilkkuminen tai etäisyysmittari.
 
-Aloittaminen Arduinon kanssa on vain ensimmäinen askel. Kokeile rohkeasti erilaisia projekteja ja haasta itseäsi oppimaan uusia asioita. Muista myös, että internetistä löytyy runsaasti apua, jos takerrut johonkin ongelmaan. Arduinoyhteisö on suuri ja ystävällinen ja sieltä voi saada paljon neuvoja ja inspiraatiota uusiin projekteihin.
+## Syvemmälle
+Kun olet saanut hyvän otteen Arduinon ohjelmoinnista, voit lähteä syventymään monipuolisempiin projekteihin. Voit esimerkiksi hyödyntää ulkoisia kirjastoja ja toimintoja, kuten WiFi-yhteyksiä, Bluetooth-yhteyksiä ja GPS-paikannusta. Voit myös laajentaa projektiasi siten, että se kommunikoi tietokoneiden kanssa tai käyttää erilaisia visualisointityökaluja.
+
+### Esimerkki: Lämpötila- ja kosteusmittari
+Alla oleva esimerkkikoodi mittaa ympäristön lämpötilaa ja kosteutta DHT11-anturin avulla ja lähettää tiedot tietokoneelle sarjaportin kautta. Voit käyttää tietokoneen johonkin visualisointiohjelmaan, kuten Exceliin, luomaan kaavioita seurattavista tiedoista.
+
+```Arduino
+#include <DHT.h> //Lisää DHT-kirjasto
+#define DHTPIN 2 //Määritä DHT11-anturin näppäimistö liitäntä
+#define DHTTYPE DHT11 //Määritä käytetty anturityyppi
+DHT dht(DHTPIN, DHTTYPE); //Luo DHT objekti
+
+void setup() {
+  Serial.begin(9600); //Aseta sarjaportin nopeus
+  dht.begin() //Alusta DHT11-anturi
+}
+
+void loop() {
+  float temperature = dht.readTemperature(); //Lue ja tallenna lämpötila muuttujaan
+  float humidity = dht.readHumidity(); //Lue ja tallenna kosteus muuttujaan
+  Serial.print("Lämpötila: "); //Tulosta teksti
+  Serial.print(temperature); //Tulosta muuttujan arvo
+  Serial.println(" C"); //Tulosta loppuosa tiedosta
+  Serial.print("Kosteus: ");
+  Serial.print(humidity);
+  Serial.println(" %");
+  delay(1000); //Odota 1 sekunti
+}
+```
+
+Tulostus:
+
+```
+Lämpötila: 20.00 C
+Kosteus: 50.00 %
+```
 
 ## Katso myös
-
-- [Arduinon kotisivut](https://www.arduino.cc/) 
-- [Arduinon oppimateriaalit](https://www.arduino.cc/en/Tutorial/HomePage)
-- [Arduinoyhteisö](https://forum.arduino.cc/)
+- [Arduino:n virallinen sivusto](https://www.arduino.cc/)
+- [Arduino-projekteja aloittelijoille](https://create.arduino.cc/projecthub)
+- [Arduino-kirjastojen luettelo](https

@@ -1,35 +1,45 @@
 ---
-title:    "Clojure: 현재 날짜 받아오기"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/getting-the-current-date.md"
+title:                "Clojure: 현재 날짜 가져오기"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-현재 날짜를 얻는 것을 왜 해야할까요?
+## 왜
+현재 날짜를 얻는 것에 참여하는 이유는 다양합니다. 일반적으로 현재 날짜와 시간은 중요한 정보이며, 이 정보를 활용하여 신뢰성 있는 애플리케이션을 만들 수 있습니다.
 
-현재 날짜를 얻는 것은 우리가 다양한 프로그램에서 사용하는 중요한 기능입니다. 예를 들면, 만료일 계산, 날짜별 이벤트 제어, 그리고 보고서 작성 등 다양한 목적에 사용될 수 있습니다. 따라서 현재 날짜를 얻는 것은 매우 유용한 프로그래밍 기술입니다.
+## 어떻게
+Clojure에서 현재 날짜를 얻는 것은 매우 간단합니다.`java.util.Date` 클래스에 대한 참조를 가져와서 `now` 함수를 사용해 현재 시간을 가져올 수 있습니다. 여기에 예제 코드와 출력을 제공합니다.
 
-# 어떻게
 ```Clojure
-(require '[clojure.java-time :as time])
+; Clojure 코드
+(def now (java.util.Date.))
 
-(time/local-date)
-;=> #object[java.time.LocalDate 0x2b86173c "2020-09-20"]
-
-(time/local-date-time)
-;=> #object[java.time.LocalDateTime 0x2f4233f2 "2020-09-20T10:34:54.620"]
-
-(time/current-time)
-;=> #object[java.time.LocalTime 0x42b49c13 "10:34:54.620"]
+; 출력 예시
+#inst "2020-06-07T19:34:30.585-00:00"
 ```
 
-Clojure에서 현재 날짜를 얻는 가장 쉬운 방법은 `clojure.java-time` 라이브러리를 통해 `local-date`, `local-date-time`, `current-time` 함수를 사용하는 것입니다. 이러한 함수는 각각 현재 날짜, 현재 날짜와 시간, 현재 시간 객체를 반환하여 우리가 다양한 목적에 활용할 수 있도록 합니다.
+우리는 현재 날짜를 형식화 할 수도 있습니다. 다음 예시를 확인해보세요.
 
-# 깊게 파고들기
-Clojure에서 현재 날짜를 가져오는 함수들은 Java의 `java.time` 라이브러리를 기반으로 작성되었습니다. 이 라이브러리는 날짜와 시간을 다루는 다양한 기능을 제공하며, Clojure에서도 자유롭게 사용할 수 있습니다. `clojure.java-time` 라이브러리의 많은 기능을 자세히 알고 싶다면 [공식 문서](https://cljdoc.org/d/java-time/java-time/1.0.1/doc/readme)를 살펴보세요.
+```Clojure
+; Clojure 코드
+(require '[java.time :as time])
 
-# 관련 링크
-- [Java `java.time` 라이브러리](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Clojure `clojure.java-time` 라이브러리 공식 문서](https://cljdoc.org/d/java-time/java-time/1.0.1/doc/readme)
+(def date-time (time/local-date-time))
+
+(time/format date-time "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+
+; 출력 예시
+"2020-06-07T19:34:30.585Z"
+```
+
+## 깊이 살펴보기
+현재 날짜를 얻는 데는 다양한 방법이 있습니다. 위의 예제에서 우리는 `java.util.Date` 클래스와 `java.time` 네임스페이스를 사용했습니다. 또한 Clojure는 `clj-time` 라이브러리와 `clj-time.coerce` 네임스페이스도 제공합니다. 이를 사용하여 원하는 형식으로 날짜를 변환할 수 있습니다.
+
+## 참고
+- Clojure 공식 문서: https://clojure.org/
+- `java.util.Date` 레퍼런스: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
+- `java.time` 네임스페이스: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- `clj-time` 라이브러리: https://github.com/clj-time/clj-time

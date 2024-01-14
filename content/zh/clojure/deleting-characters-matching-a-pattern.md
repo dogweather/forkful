@@ -1,50 +1,41 @@
 ---
-title:    "Clojure: 删除匹配模式的字符"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/deleting-characters-matching-a-pattern.md"
+title:                "Clojure: 匹配模式的字符删除"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+为什么要删除符合模式的字符
+##为什么
+编写Clojure代码时，有时需要从字符串中删除符合特定模式的字符。这可以帮助我们清理和重构我们的代码，使其更加紧凑和易于理解。在本文中，我们将学习如何使用Clojure函数来实现这一目的，以及深入探讨删除字符匹配模式的原理。
 
-Clojure 是一种功能强大的编程语言，它的设计目标就是简洁、高效和具有表达力。在日常开发过程中，删除与特定模式匹配的字符是一个常见的操作。这样一来，可以根据需求来过滤字符串并提取想要的部分。接下来我们将一起探讨如何在 Clojure 中实现这样的功能。
-
-# 如何进行匹配
-
-要从字符串中删除特定模式的字符，我们可以使用 Clojure 的 `remove` 函数。这个函数接受两个参数，第一个是谓词函数，用于定义匹配条件；第二个是要进行匹配操作的字符串。让我们来看一个示例：
-
-```Clojure
-(remove #{\s} "Hello World")
-```
-
-上述代码将使用 `remove` 函数来删除字符串中的空格字符。我们可以在第一个参数中定义任何匹配条件，只要符合这个条件的字符都会被删除。让我们来看一下输出结果：
+##如何
+要删除字符串中符合特定模式的字符，我们可以使用Clojure中的`replace`函数。此函数接受三个参数：要替换的字符串，要匹配的模式，以及要替换的新字符。例如，我们想要将字符串中所有的空格替换为下划线，我们可以这样编写代码：
 
 ```Clojure
-("HelloWorld")
+(replace "Hello World" \space \_)
 ```
 
-如你所见，空格字符已经被成功删除了。值得注意的是，这里使用了 Clojure 的 `#{}` 语法来定义一个集合，其中包含要删除的字符。除了单个字符，我们也可以使用正则表达式来匹配更复杂的模式。
-
-# 深入探讨
-
-除了使用 `remove` 函数外，我们还可以使用 `filter` 函数来实现删除字符的功能。这个函数也接受一个谓词函数作为第一个参数，但它会返回匹配的字符，而不是删除不匹配的字符。因此，我们需要使用 `apply` 函数来组合 `filter` 函数和 `str` 函数来得到最终的结果。让我们看一个例子：
+此代码的输出将是`"Hello_World"`。我们可以在模式参数中使用正则表达式来匹配更复杂的模式。例如，我们想要从字符串中删除所有的数字，我们可以这样写：
 
 ```Clojure
-(apply str (filter #{\l \d} "Hello World 123"))
+(replace "abc123" #"[0-9]" "")
 ```
 
-上述代码中，我们先使用 `filter` 函数和一个包含 `l` 和 `d` 的集合来过滤字符串中的字符。然后再使用 `apply` 函数和 `str` 函数将过滤后的结果组合成一个字符串。让我们来看一下输出：
+这将输出`"abc"`，因为所有的数字都被替换为空字符。总的来说，`replace`函数可以让我们灵活地删除想要的字符。
 
-```Clojure
-("lloorld123")
-```
+##深入探讨
+当我们使用`replace`函数时，Clojure会创建一个新的字符串，其中被匹配的字符被替换为新字符。这意味着原始字符串是不可变的，即不能修改。因此，如果我们想要在原始字符串中删除字符，我们需要使用`clojure.string`命名空间中的`replace`函数。这个函数与`replace`的工作方式相同，但它直接在原始字符串上进行操作，而不是创建一个新的字符串对象。
 
-如你所见，除了匹配的字符，其他字符都被删除了。
+另外，我们可以使用`replace-first`函数来仅替换第一次出现的匹配模式。这对于只想删除字符串中的一部分内容的情况很有用。我们还可以使用`replace-last`函数来仅替换最后一次出现的匹配模式。
 
-# 参考链接
+##参考链接
+* [Clojure文档：replace函数](https://clojuredocs.org/clojure.core/replace)
+* [Clojure文档：clojure.string命名空间](https://clojuredocs.org/clojure.string)
+* [正则表达式基础教程](https://www.runoob.com/regexp/regexp-tutorial.html)
 
-- [Clojure Docs - remove](https://clojuredocs.org/clojure.core/remove)
-- [Clojure Docs - filter](https://clojuredocs.org/clojure.core/filter)
-- [Clojure Docs - apply](https://clojuredocs.org/clojure.core/apply)
-- [Regular Expressions in Clojure](https://clojure.org/guides/learn/regular_expressions)
+##另请参阅
+* [Clojure教程：从字符串中提取子字符串](https://example.com/clojure-substring-tutorial)
+* [Clojure实践：清理用户输入字符串](https://example.com/clojure-user-input-cleanup)

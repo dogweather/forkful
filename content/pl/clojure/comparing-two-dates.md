@@ -1,55 +1,44 @@
 ---
-title:    "Clojure: Porównywanie dwóch dat"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/comparing-two-dates.md"
+title:                "Clojure: Porównywanie dwóch dat."
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Porównywanie dwóch dat może być niezbędnym zadaniem w programowaniu, szczególnie jeśli pracujesz z różnymi zapisami dat lub potrzebujesz porównać datę z jakimś warunkiem, na przykład sprawdzając czy dany dzień jest przed lub po wskazanym dniem.
+Porównanie dwóch dat jest niezwykle ważne w programowaniu i może mieć wiele zastosowań. Może pomóc w sortowaniu danych, filtrowaniu wyników lub weryfikacji daty ważności. W tym wpisie dowiesz się, jak w języku Clojure porównać dwie daty i jak można użyć tej funkcji w swoim kodzie.
 
 ## Jak to zrobić
 
-Do porównywania dwóch dat w Clojure można skorzystać z kilku wbudowanych funkcji. Pierwszą z nich jest `compare`, która porównuje dwie daty i zwraca wartość całkowitą. Wynik jest równy 0, jeśli daty są równe, wartość ujemna jeśli pierwsza data jest wcześniejsza, a wartość dodatnia jeśli pierwsza data jest późniejsza.
+Porównywanie dat w Clojure jest dość proste dzięki bogatej bibliotece funkcji obsługujących operacje na datach. Aby porównać dwie daty, możemy użyć funkcji `before?`, `after?` lub `equal?`, w zależności od naszych potrzeb.
 
 ```Clojure
-(compare "2021-06-20" "2021-06-25")
-; wynik: -5
+(def first-date (java.util.Date. 2021 5 15))  ; ustawiamy pierwszą datę
+(def second-date (java.util.Date. 2021 8 20)) ; ustawiamy drugą datę
 
-(compare "2021-06-20" "2021-06-20")
-; wynik: 0
+(before? first-date second-date) ; sprawdzamy czy pierwsza data jest przed drugą
+; => true
 
-(compare "2021-06-30" "2021-06-25")
-; wynik: 5
+(after? first-date second-date) ; sprawdzamy czy pierwsza data jest po drugiej
+; => false
+
+(equal? first-date second-date) ; sprawdzamy czy pierwsza data jest taka sama jak druga
+; => false
 ```
 
-Inną przydatną funkcją jest `before?`, która zwraca `true`, jeśli pierwsza data jest wcześniejsza niż druga, lub `false` w przeciwnym przypadku.
+W powyższym przykładzie, używając funkcji `before?` i `after?` możemy sprawdzić, która data jest wcześniejsza lub późniejsza. Natomiast używając `equal?` porównujemy dokładne wartości dat, niezależnie od czasu.
 
-```Clojure
-(before? "2021-06-20" "2021-06-25")
-; wynik: true
+## Głębsza analiza
 
-(before? "2021-06-20" "2021-06-20")
-; wynik: false
-```
+Podczas porównywania dat w Clojure ważne jest, aby używać typu `java.util.Date` zamiast `java.sql.Date`. Typ `java.sql.Date` ma ograniczenia związane z czasową precyzją i może powodować błędy w porównaniach. Aby uniknąć tych błędów, możemy użyć funkcji `clj-time.core/from-sql-date`, która zamienia `java.sql.Date` na `java.util.Date`.
 
-Można również wykorzystać operatory porównawcze takie jak `<` i `>`, które również działają na datach.
+Ponadto, w przypadku porównywania dat, ważne jest również uwzględnienie strefy czasowej. W języku Clojure, możemy użyć biblioteki `clj-time` i jej funkcji `with-time-zone` do ustawienia właściwej strefy czasowej podczas porównywania dat.
 
-```Clojure
-(< "2021-06-20" "2021-06-25")
-; wynik: true
+## Zobacz także
 
-(> "2021-06-20" "2021-06-25")
-; wynik: false
-```
-
-## Pogłębiona analiza
-
-Jeśli chcesz dokładniej poznać jak działa porównywanie dat w Clojure, warto zapoznać się ze szczegółami dotyczącymi funkcji `compare` oraz sposobu, w jaki Clojure traktuje daty. Warto również pamiętać, że porównywanie dat może różnić się w zależności od użytego formatu daty, dlatego zawsze warto sprawdzić jaki format będzie odpowiedni dla potrzeb Twojego projektu.
-
-## Zobacz również
-
-- Oficjalna dokumentacja Clojure dotycząca funkcji `compare`: https://clojuredocs.org/clojure.core/compare
-- Wyjaśnienie działania dat w Clojure: https://www.baeldung.com/clojure-date-time
+- Dokumentacja Clojure: https://clojure.org/
+- Biblioteka clj-time: https://github.com/clj-time/clj-time
+- Przewodnik po podstawach Clojure: https://purelyfunctional.tv/guide/clojure-syntax/

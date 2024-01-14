@@ -1,38 +1,82 @@
 ---
-title:    "Swift: Comparando duas datas"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/comparing-two-dates.md"
+title:                "Swift: Comparando duas datas"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que comparar duas datas em Swift?
 
-Comparar duas datas é uma tarefa comum na programação, principalmente em aplicativos que lidam com eventos, agendamentos e prazos. Ao comparar duas datas, é possível determinar qual delas é mais recente ou se elas são iguais, o que pode ser útil em diversas situações.
+Comparar datas é uma tarefa comum em muitos aplicativos, seja para verificar se um evento já ocorreu ou para ordenar itens em uma lista. Em Swift, existem várias maneiras de comparar duas datas e é importante entender os diferentes métodos para escolher o mais adequado para sua aplicação.
 
 ## Como comparar duas datas em Swift
 
-Comparar duas datas em Swift é relativamente simples, pois a linguagem possui uma classe chamada `Date` que permite a manipulação de datas. Vamos ver um exemplo de como comparar duas datas usando a biblioteca padrão do Swift:
+Para comparar duas datas em Swift, existem três principais métodos: utilizando os operadores lógicos `>` e `<`, o método `compare()` da classe `Date` ou o método `compare(_:toGranularity:)` da classe `Calendar`.
+
+### Exemplo 1: Utilizando operadores lógicos
 
 ```
-let data1 = Date() // Data atual
-let data2 = Date(timeIntervalSinceNow: 86400) // Data com um dia de diferença
-if data1 < data2 {
-  print("data1 é mais antiga que data2")
-} else if data2 < data1 {
-  print("data2 é mais antiga que data1")
+let firstDate = Date()
+let secondDate = Date(timeIntervalSinceNow: -3600) // 1 hora atrás
+if firstDate > secondDate {
+    print("A primeira data é mais recente que a segunda data.")
 } else {
-  print("as datas são iguais")
+    print("A segunda data é mais recente que a primeira data.")
 }
 ```
+Saída:
+```
+A primeira data é mais recente que a segunda data.
+```
 
-Nesse exemplo, criamos duas datas: `data1`, que é a data atual, e `data2`, que é a data de amanhã. Usando o operador de comparação `<`, podemos verificar qual das duas datas é mais antiga. Se a condição for verdadeira, imprimimos uma mensagem indicando isso. Caso contrário, verificamos se `data2` é mais antiga que `data1` e imprimimos a mensagem correspondente. Se nenhuma das condições for verdadeira, quer dizer que as datas são iguais e imprimimos uma mensagem informando isso.
+### Exemplo 2: Utilizando o método compare()
 
-## Mergulho Profundo
+```
+let firstDate = Date()
+let secondDate = Date(timeIntervalSinceNow: -3600) // 1 hora atrás
+let result = firstDate.compare(secondDate)
+if result == .orderedDescending {
+    print("A primeira data é mais recente que a segunda data.")
+} else if result == .orderedAscending {
+    print("A segunda data é mais recente que a primeira data.")
+} else {
+    print("As datas são iguais.")
+}
+```
+Saída:
+```
+A primeira data é mais recente que a segunda data.
+```
 
-Além do operador de comparação `<`, a classe `Date` possui outros métodos que podem ser úteis para comparação de datas, como `isEqual(to:)` e `compare(to:)`. Além disso, é possível especificar com mais detalhes o tempo que está sendo comparado, como somente a data ou somente a hora. É importante lembrar também que datas são representadas em formato UTC no Swift, o que pode causar algumas diferenças em relação ao fuso horário local.
+### Exemplo 3: Utilizando o método compare(_:toGranularity:)
+
+```
+let firstDate = Date()
+let secondDate = Date(timeIntervalSinceNow: -3600) // 1 hora atrás
+let result = Calendar.current.compare(firstDate, to: secondDate, toGranularity: .day)
+if result == .orderedDescending {
+    print("A primeira data é mais recente que a segunda data.")
+} else if result == .orderedAscending {
+    print("A segunda data é mais recente que a primeira data.")
+} else {
+    print("As datas são iguais.")
+}
+```
+Saída:
+```
+A primeira data é mais recente que a segunda data.
+```
+
+## Aprofundando na comparação de datas
+
+Ao comparar datas, podemos considerar apenas a data ou também incluir a hora, minutos e segundos. O método `compare(_:toGranularity:)` nos permite especificar qual a granularidade desejada para a comparação: `.day` (dia), `.hour` (hora), `.minute` (minuto), `.second` (segundo) ou `.nanosecond` (nanossegundo).
+
+Além disso, é importante lembrar que o retorno do método `compare()` ou `compare(_:toGranularity:)` é do tipo `ComparisonResult`, que pode ser `.orderedSame` (datas iguais), `.orderedAscending` (primeira data é anterior à segunda) ou `.orderedDescending` (primeira data é posterior à segunda).
 
 ## Veja também
 
-- [Documentação oficial do Swift sobre data e tempo](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutorial de como trabalhar com datas em Swift](https://www.ralfebert.de/snippets/ios/swift-dates/)
+- [Documentação oficial da classe `Date'](https://developer.apple.com/documentation/foundation/date)
+- [Documentação oficial da classe `Calendar`](https://developer.apple.com/documentation/foundation/calendar)
+- [Tutorial da Ray Wenderlich sobre manipulação de datas em Swift](https://www.raywenderlich.com/511-swift-tutorial-part-1-expressions-variables-and-constants)

@@ -1,62 +1,54 @@
 ---
-title:    "Elixir: כתיבת מבחנים"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/writing-tests.md"
+title:                "Elixir: כתיבת בדיקות"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+# למה
 
-ניסיון בכתיבת בדיקות הוא אחד הכלים המרכזיים בתהליך כתיבת קוד יעיל ואיכותי ב-Elixir. בדיקות מאפשרות לנו לוודא שהקוד שאנחנו כותבים עובד בדיוק כפי שאנו מצפים, ומסייעות לנו למצוא ולתקן באופן מהיר אם יש באגים בקוד.
+ככל שקוד הופך יותר מורכב, השתתפות בכתיבת טסטים היא חובה. טסטים מאפשרים לנו לוודא שקודנו עובד בדיוק כפי שציפינו ומסייעים למנוע באגים נפוצים.
 
-## כיצד לכתוב בדיקות ב-Elixir
+# כיצד לכתוב טסטים באליקסיר
 
-לכתיבת בדיקות ב-Elixir יש ערך רב ויש מספר דרכים לעשות זאת. בהמשך נשתמש בקודים דוגמה ופלטות כדי להראות כיצד ניתן לבדוק קוד ב-Elixir.
+כדי לכתוב טסטים באליקסיר, אנחנו נשתמש בספריית הטסטים המובנית ExUnit. הבאתי כאן דוגמאות לטסטים לפונקציה בספרייה המובנית `List`.
 
-לדוגמה, נכתוב פונקציה פשוטה המחשבת סכום של שני מספרים ונבדוק את הפלט שלה:
-
-```Elixir
-defmodule Calculator do
-  def add(a, b) do
-    a + b
-  end
-end
-
-IO.puts Calculator.add(2, 3)
-
-# Output: 5
-```
-
-כעת ניצור מקרה קצה שבו ניתן יהיה לגרום לפונקציה שלנו להתקלקל ונצטרך להבטיח שהיא עדיין פועלת כראוי:
-
-```Elixir
-defmodule CalculatorTest do
+```elixir
+defmodule ListTest do
   use ExUnit.Case
 
-  test "adding two numbers" do
-    assert Calculator.add(2, 3) == 5
+  test "returns the length of a list" do
+    assert List.length([1,2,3]) == 3
   end
 
-  test "adding a string and a number" do
-    assert Calculator.add("2", 3) == 5
+  test "returns the first element" do
+    assert List.first([1,2,3]) == 1
   end
 end
 ```
 
-הרצת הבדיקות על ידי הרצת ```mix test``` תחזיר פלט שנראה כך:
+לאחר המכין את הטסטים, נוכל להריץ אותם באמצעות פקודת הטסט `mix test` ולקבל את התוצאות הבאות:
 
-```
-iex> mix test
-
-..
-
-Finished in 0.07 seconds
+```elixir
+Finished in 0.02 seconds
 2 tests, 0 failures
 ```
 
-צמצמת זה הדוגמה המובנית, אך ניתן לבדוק כמה מקרים גם בקודים גדולים ומורכבים רבים יותר.
+להלן דוגמאות נוספות לשימוש בפונקציות המובנות של ExUnit כדי לבדוק שוויון של ערכים ובחינת חריגות:
 
-## מעמקי הבדיקות
+```elixir
+assert 1 + 1 == 2
+assert_raise ArgumentError, fn -> String.to_integer("hello") end
+```
 
-כדי להפוך למומחה בכתיבת בדיקות ב-Elixir, חשוב להבין גם מעמקי הבדיקות. הבדיקות ב-Elixir מתבצעות באמצעות המודול ExUnit, המציג פונקציות מובנות כמו ```assert``` ו-```refute```, שמאפשרות לנו לבדוק מצבים שונים כדי לוודא שה
+# חקירה מעמיקה
+
+הטסטים מהווים חלק מרכזי בתהליך פיתוח התוכנה. הם מאפשרים לנו לוודא כי הקוד שלנו עומד בכל התנאים ומגלים באופן מועיל תקלות ובאגים. טסטים גם מאפשרים לפתחים לעבוד על פרויקטים גדולים יותר ולנהל את השינויים לקוד ללא פחד מתקלות לא צפויות.
+
+בנוסף, כאשר אנו מכתיבים טסטים, אנו יכולים להיות יצירתיים יותר עם הקוד שלנו ולנסות דברים חדשים בלי לפחד לפגוע בפונקציונליות שלו.
+
+# ראה גם
+
+- [מדריך

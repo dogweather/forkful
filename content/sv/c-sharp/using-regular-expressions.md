@@ -1,59 +1,44 @@
 ---
-title:    "C#: Att använda reguljära uttryck"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/using-regular-expressions.md"
+title:                "C#: Användning av reguljära uttryck"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Regular expressions, eller regex, är ett kraftfullt verktyg för att söka och manipulera strängar i ett program. Genom att använda regex kan du effektivt hitta mönster i texten och sedan utföra åtgärder baserat på dessa mönster. Detta sparar tid och minskar risken för felaktig kodning.
+Om du är en utvecklare som arbetar med C#-programmering har du förmodligen redan stött på det mycket användbara verktyget som kallas reguljära uttryck, eller "regular expressions" på engelska. Reguljära uttryck är en typ av syntax som används för att söka och matcha strängar i en text, och det kan vara otroligt kraftfullt när man arbetar med att hantera data eller göra komplexa sökningar. Låt oss titta närmare på varför det är värt att lära sig hur man använder reguljära uttryck i C#.
 
-## Så här gör du
+## Hur man använder reguljära uttryck i C#
 
-För att börja använda regular expressions i C# måste du först inkludera System.Text.RegularExpressions namespace i din kod.
+För att använda reguljära uttryck i C# behöver du först importera "System.Text.RegularExpressions" namespace. Sedan kan du använda klassen Regex och dess metoder för att hantera uttryck och sökningar. Nedan är ett enkelt exempel på hur man söker efter en viss text i en sträng med hjälp av reguljära uttryck:
 
 ```C#
+using System;
 using System.Text.RegularExpressions;
+
+class Program {
+    static void Main() {
+        string text = "Det här är en teststräng för att demonstrera hur man använder reguljära uttryck.";
+        string pattern = "teststräng";
+        Match match = Regex.Match(text, pattern);
+        if (match.Success) {
+            Console.WriteLine("Vi hittade ordet \"{0}\" i texten.", match.Value);
+        }
+    }
+}
 ```
 
-För att använda regex för att testa en sträng, använd Regex.Match metoden tillsammans med ett mönster som specificerar vad du söker efter. Till exempel, om du vill hitta alla förekomster av bokstaven "e" i en sträng, kan du använda följande kod:
+Detta kommer att skriva ut "Vi hittade ordet "teststräng" i texten." eftersom ordet "teststräng" matchar mönstret vi har specificerat. Det finns många fler metoder och möjligheter när det kommer till att använda reguljära uttryck, så det är värt att fördjupa sig i dokumentationen för att lära dig allt som är möjligt.
 
-```C#
-string text = "Hej, jag heter Lisa!";
-MatchCollection matchar = Regex.Matches(text, "e");
-```
+## Djupdykning in i reguljära uttryck
 
-Den här koden kommer att returnera en MatchCollection med alla förekomster av "e" i strängen. Du kan sedan använda denna MatchCollection för att utföra önskad handling, som att ersätta alla förekomster av "e" med en annan bokstav.
+Som nämnts tidigare i denna artikel är reguljära uttryck en typ av syntax som används för att söka och matcha strängar i en text. Det finns en mängd olika tecken och symboler som kan användas för att skapa mönster som kan matcha en eller flera tecken i en sträng. Till exempel kan man använda olika sorters parenteser, punkter och specialtecken för att skapa mer avancerade mönster. Det finns också olika modifierare som kan användas för att göra uttryck mer eller mindre strikta. Detta är bara en kort överblick av vad som är möjligt med reguljära uttryck, så det är definitivt värt att fördjupa sig mer om du vill bli en expert.
 
-För att använda vanliga uttryck för att ersätta en viss del av en sträng, använd Regex.Replace metoden. Till exempel, om du vill byta ut alla siffror i en sträng med stjärnor, kan du använda följande kod:
+## Se också
 
-```C#
-string text = "Jag är 26 år gammal.";
-string nyText = Regex.Replace(text, "[0-9]", "*");
-```
-
-Den här koden kommer att ersätta alla siffror i strängen med "*". Det finns många olika möjligheter med hjälp av regex och du kan skapa avancerade mönster för att matcha specifika strängar.
-
-## Djupdykning
-
-En viktig aspekt av att använda regular expressions är att förstå syntaxen för att skapa mönster. Det finns olika symboler och metakaraktärer som kan hjälpa dig att bygga avancerade mönster. Här är några av de vanligaste symbolerna och deras betydelser:
-
-- "." Matchar en enda bokstav eller siffra.
-- "?" Matchar en förekomst av den tidigare symbolen eller ingenting.
-- "*" Matchar noll eller flera förekomster av den tidigare symbolen.
-- "+" Matchar en eller flera förekomster av den tidigare symbolen.
-- "^" Matchar början av en sträng.
-- "$" Matchar slutet av en sträng.
-- "[]" Matchar en av flera olika tecken inom parentes.
-- "[^]" Matchar alla tecken som inte finns inom parentes.
-- "\" Escapar en specialtecken så att det kan matchas som en vanlig bokstav.
-
-Det är också viktigt att veta att regex är fallkänsliga, vilket innebär att bokstäver måste matcha exakt för att koden ska fungera som förväntat.
-
-## Se även
-
-- [Microsoft Dokumentation om regular expressions i C#](https://docs.microsoft.com/sv-se/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Regex Tutorial på svenska](https://regex-tutorial.net/regex-lab-swe/) 
-- [Regex Tester för att testa dina mönster](https://regex101.com/)
+- [C# RegEx Cheat Sheet](https://www.rapidtables.com/web/dev/regex-cheatsheet.html)
+- [Microsofts dokumentation för Regex-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8)
+- [Reguljära uttryckstester online](https://regex101.com/)

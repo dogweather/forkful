@@ -1,48 +1,47 @@
 ---
-title:    "PHP: 寻找字符串的长度"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/finding-the-length-of-a-string.md"
+title:                "PHP: 计算字符串的长度"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-在编写PHP程序时，经常会遇到需要计算字符串长度的情况。知道字符串的长度可以帮助我们更有效地处理和操作数据，因此掌握如何计算字符串长度是非常重要的。
+# 为什么要学习如何找出字符串的长度？
 
-## 如何
-计算字符串长度的最简单方法是使用内置函数`strlen()`。让我们来看一个简单的例子：
+在编程中，字符串是一种非常常见的数据类型，它由一系列的字符组成。在某些情况下，我们需要知道一个字符串的长度，比如判断一个字符串是否满足特定的条件，或者在处理字符串时需要限制其长度。因此，学习如何找出字符串的长度是非常重要的。
+
+## 如何找出字符串的长度？
+
+在PHP中，我们可以通过使用`strlen()`函数来找出一个字符串的长度。下面是一个简单的例子：
+
 ```PHP
-<?php
-$string = "Hello World";
-$length = strlen($string);
-echo $length; // 输出：11
-?>
+$string = "Hello World!";
+echo strlen($string); // 输出 12
 ```
-这里，我们首先定义一个字符串变量，然后使用`strlen()`函数来获取它的长度，并将长度存储在变量`$length`中，最后使用`echo`语句将长度输出到屏幕上。
 
-我们也可以使用循环来计算字符串长度，例如：
+另外，我们也可以通过遍历字符串的每一个字符来计算其长度。下面是使用`for`循环的例子：
+
 ```PHP
-<?php
-$string = "Hello World";
+$string = "Hello World!";
 $length = 0;
-for($i = 0; $string[$i] != NULL; $i++) {
+
+for ($i = 0; $i < strlen($string); $i++) {
     $length++;
 }
-echo $length; // 输出：11
-?>
+
+echo $length; // 输出 12
 ```
-在这个例子中，我们使用一个循环来遍历字符串中的每个字符，并通过计数器`$length`来记录字符的数量。当循环结束时，计数器的值就是字符串长度。
 
-## 深入探讨
-在PHP中，字符串的长度实际上是指字符串中包含的字节数。这也意味着，如果字符串中包含多字节字符（如中文），那么它的长度将大于实际字符数。
+## 深入了解字符串长度的计算方法
 
-另外，`strlen()`函数也适用于数组和对象。当传入数组时，它将返回数组元素的数量，当传入对象时，它将返回对象属性的数量。
+上面提到的`strlen()`函数是PHP内置的函数，用来计算字符串的长度。它实际上是通过遍历字符串中的每个字符，并统计出字符的数量来计算长度的。这也是为什么我们可以用`for`循环来手动计算字符串的长度的原因。
 
-## 参考链接
-- [PHP `strlen()`函数文档](https://www.php.net/manual/zh/function.strlen.php)
-- [PHP 字符串处理指南](https://www.php.net/manual/zh/book.strings.php)
-- [逐字符地检索字符串](https://www.php.net/manual/zh/function.mb-substr.php)
+另外，对于一些特殊的字符，比如中文字符，可能会导致`strlen()`函数计算出的长度和实际长度不符。在这种情况下，可以使用`mb_strlen()`函数来进行正确的计算。该函数需要指定字符编码，比如UTF-8，以便正确计算字符串长度。
 
-## 参见
-- [PHP 数组长度如何计算](https://www.example.com/p/array-length-php)
-- [如何处理多字节字符的字符串长度](https://www.example.com/p/string-length-multibyte-php)
+## 参考资料
+
+了解字符串长度相关函数的更多信息，请参考以下资料：
+
+- [PHP官方手册：strlen()函数](https://www.php.net/manual/en/function.strlen.php)
+- [PHP官方手册：mb_strlen()函数](https://www.php.net/manual/en/function.mb-strlen.php)

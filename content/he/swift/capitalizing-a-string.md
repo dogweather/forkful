@@ -1,46 +1,49 @@
 ---
-title:    "Swift: שימוש גדל במחרוזת"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/capitalizing-a-string.md"
+title:                "Swift: כתיב אותיות ראשיות במחרוזת"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-#למה
+יצירת כותרות באמצעות תכנות Swift
 
- כאשר אנו מתכנתים בשפת סוויפט, יתכן שנתקל במצבים שבהם נצטרך להפוך את הטקסט שהמשתמש הכניס למחרוזת לכתיב גדול. כדי לעזור לך להבין שלמה את הצורך לשנות את מחרוזת בכתיב גדול, אנו רוצים לחלק את המידע באמצעות מאמר זה. 
+## למה
 
-#כיצד לעשות זאת 
+במאמר זה נלמד כיצד ליצור כותרות מלל בתוך תוכניות שפת תכנות Swift. נצטרך את זה במקרים בהם נרצה להדגיש מלל מסוים בתוך אפליקציה או משחק. זה יתן לנו את היכולת לגרום למשתמשים שלנו לשים לב לנקודה חשובה ולשם.
 
-כדי להמיר מחרוזת לכתיב גדול בשפת סוויפט, ניתן להשתמש בפונקציה `uppercased()` . ניתן גם להשתמש בפונקציה `capitalized()` כדי להמיר את ראשות המילים במחרוזת לכתיב גדול. הנה כמה דוגמאות קוד כדי להבין איך להשתמש בפונקציות הללו:
+## לאנפול
 
-```Swift 
-let name = "דניאל"
+ליצור כותרת גדולה יותר בתוך תוכנית שפת תכנות Swift יכול להשתמש בפונקציה capitalize כדי להגדיל את האות הראשונה שמופיעה במחרוזת שיש לה את האות הראשונה בכיתה או אינו מבחין לא נופלים.
 
-print(name.uppercased())
-// Output: דניאל
-
-print(name.capitalized())
-// Output: דניאל
+```Swift
+print("swift".capitalize)
+output: Swift
 ```
 
-בנוסף, אם נרצה להמיר רק את האות הראשונה של המחרוזת לגדולה, ניתן להשתמש בפונקציה `prefix()` כך:
+כדי לכתוב את האות הראשונה עם אות גדולה בתוך כל מחרוזת נשתמש בפונקציה .uppercased().
 
-```Swift 
-let name = "daniel"
-
-let firstLetter = name.prefix(1).uppercased()
-let restOfName = name.dropFirst()
-let capitalized = firstLetter + restOfName
-
-print(capitalized)
-// Output: Daniel
+```Swift
+print("hello".uppercased())
+output: HELLO
 ```
 
-#עומק נעמד 
+אפשר להשתמש בשתי הפונקציות יחד כדי לכתוב את האות הראשונה וגם כל האותיות הנמצאות במחרוזת עם אות גדולה.
 
-בשפת סוויפט, יש כמה פונקציות שיכולות לעזור לנו להמיר מחרוזות לכתיב גדול. בנוסף, אנו ניתנים את האופציה להמיר את המחרוזת לכתיב גדול בצורה של כתיב גדול המחזיר מחרוזת חדשה, או לשנות את המחרוזת הקיימת בצורה ישירה ע"י שימוש בפונקציות `uppercased()` ו- `capitalized()` . עם זאת, חשוב לזכור שהפונקציות הללו אינן משנות את המחרוזת המקורית, אלא יוצרות מחרוזות חדשות.
+```Swift
+print("good bye".capitalize.uppercased())
+output: Good bye
+```
 
-#ראה גם 
+## התנסות עמוקה
 
-- [מדריך מלא על שתי הפונקציות `uppercased()` ו- `capitalized()` ](https://developer.apple.com/documentation/swift/string/
+הפונקציות capitalize ופונקציות .uppercased() בנויות על התכון הנמלצות לנו במאמר זה. תיכרסו כיצד לאחזר את המחרוזת שלנו בפורמט שבו אנחנו רוצים על ידי שימוש בפונקציות שללמדנו.
+
+שימוש בפונקציות capitalize או uppercased לא רק מאפשר לנו ליצור כותרות בתוך תוכניות שפת תכנות Swift, אלא גם כלי עזר רב לכתיבת תחביר הנוח לקריאה עבור המשתמשים שלנו.
+
+## ראו גם
+
+- [Apple - NSString](https://developer.apple.com/documentation/foundation/nsstring)
+- [Swift - String Methods](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID426)
+- [هيكوبارا by Hikobara (GitHub)](https://github.com/hikobara/hikobara.github.io)

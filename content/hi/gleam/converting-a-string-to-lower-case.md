@@ -1,33 +1,47 @@
 ---
-title:    "Gleam: लोअर केस में एक स्ट्रिंग कन्वर्शन"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/converting-a-string-to-lower-case.md"
+title:                "Gleam: स्ट्रिंग को लोअर केस में बदलना"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्यों
 
-कभी-कभी हमारे द्वारा दर्ज किए गए स्ट्रिंग में अक्षरों के स्थानांतरण के लिए स्पष्टता और संभावितता का उपयोग करना आवश्यक होता है। इसलिए, स्ट्रिंग को lowercase में रूपांतरित करना एक आवश्यक कार्य हो सकता है।
+क्या आप अपने Gleam कोड में स्ट्रिंग को लोअर केस में बदलने को जानना चाहते हैं? यह बहुत ही उपयोगी हो सकता है क्योंकि इससे आपको स्ट्रिंग को मानकीकृत करने में मदद हो सकती है और आपके कोड में संघटना को बढ़ावा दे सकती है।
 
-## कैसे करें
+# कैसे करें
 
-```Gleam
-string = "HELLO WORLD"
-new_string = string |> String.to_lower
-```
-
-आपको केवल ऊपर दिए गए उदाहरण के अनुसार `String.to_lower` फंक्शन को स्ट्रिंग पर लागू करना होगा। उपरोक्त उदाहरण के लिए आपको निम्न आउटपुट मिलेगा:
+आइए देखें कि स्ट्रिंग को लोअर केस में कैसे बदला जा सकता है ग्लीम में: 
 
 ```Gleam
-"hello world"
+let string = "Hello World"
+let lower_case = String.to_lower(string)
 ```
 
-## गहराई में जाएं
+यहां हमने `String.to_lower` फंक्शन का उपयोग किया है जो दिए गए स्ट्रिंग को लोअर केस में बदल देता है। अब हम `lower_case` वेरिएबल में इस बदलाव को स्टोर कर सकते हैं और उसे उपयोग कर सकते हैं। चलिए इसका आउटपुट देख लेते हैं: 
 
-स्ट्रिंग को lowercase में रूपांतरित करना एक सरल कार्य हो सकता है, लेकिन इसके पीछे का गुच्छ है कि स्ट्रिंग मैनिपुलेशन क्यों भी आपके लिए महत्वपूर्ण है। आपको अपने कोड में स्ट्रिंग मैनिपुलेशन के युक्तियों को जानना चाहिए ताकि आप अपने स्क्रिप्टों को और अधिक अनुकूलित बना सकें।
+```Gleam
+IO.print(lower_case)
+```
 
-## देखें भी
+आउटपुट: "hello world"
 
-- [गाइड: Gleam में उपलब्ध डेटा टाइप ](https://docs.gleam.run/types/)
-- [डॉक: Gleam में उपलब्ध String मोड्यूल](https://docs.gleam.run/std/string.html#to_lower)
+# गहराई में जाएं
+
+जबकि यह एक सरल प्रक्रिया है, आपको यह जानना भी जरूरी है कि स्ट्रिंग को कैसे लोअर केस में बदला जाता है। ग्लीम में, स्ट्रिंग डेटा टाइप `String` नहीं है, बल्कि `char_list` है। यहां हम दो चीज़ों को काम में लेना चाहेंगे: 
+
+- स्ट्रिंग को `char_list` में बदलना 
+- चर लिस्ट को स्ट्रिंग में बदलना 
+
+आइए परेशानी को शुरू करते हैं। यहां हम दो स्ट्रिंग को लोअर केस में बदलते हैं: 
+
+```Gleam
+let string1 = "Hello World"
+let string2 = "Gleam Programming"
+let lower_string1 = String.to_lower(string1)
+let lower_string2 = String.to_lower(string2)
+```
+
+अब हम दोनों स्ट्रिंग को दूसरे चर लिस्ट में बदलेंगे और फिर इसे स्ट्रिंग म

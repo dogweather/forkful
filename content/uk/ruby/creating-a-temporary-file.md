@@ -1,58 +1,48 @@
 ---
-title:    "Ruby: Створення тимчасового файлу"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/creating-a-temporary-file.md"
+title:                "Ruby: Створення тимчасового файлу"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Створення тимчасових файлів є важливою частиною розробки програмного забезпечення. Вони дозволяють нам зберігати та обробляти дані, які згодом будуть видалені. Це дуже корисно, коли ми не хочемо залишати постійні фактичні файли на нашому комп'ютері, або коли ми працюємо з конфіденційною інформацією, яка повинна бути видалена відразу ж після використання.
+Створення тимчасового файлу є важливою функцією для будь-якого програміста, який працює з розробкою програм на Ruby. Це допомагає зберегти місце для тимчасових даних та уникнути збоїв в роботі програми.
 
-## Як
+## Як це зробити
 
-Для створення тимчасових файлів у Ruby ми можемо використовувати метод `Tempfile` зі встановленим шляхом або іменем файлу:
+Створення тимчасового файлу на Ruby дуже просте. Використовуючи клас `Tempfile`, ви можете створити тимчасовий файл за допомогою всього декількох рядочків коду. Давайте подивимося на приклад:
 
-```ruby
-require ‘tempfile’
+```Ruby
+require 'tempfile'
 
-# Створення тимчасового файлу зі шляхом "/tmp/tempfile"
-tempfile = Tempfile.new("tempfile", "/tmp")
+# Створення тимчасового файлу
+temp_file = Tempfile.new('myfile')
 
-# Створення тимчасового файлу зі згенерованим іменем
-tempfile = Tempfile.new
+# Записуємо дані у файл
+temp_file.write('Це мій тимчасовий файл!')
 
-# Записати дані в файл
-tempfile.write("Це даний для тимчасового файлу.")
-# Зчитати дані з файлу
-puts tempfile.read # "Це дані для тимчасового файлу."
+# Читаємо дані з файлу
+puts temp_file.read
 
-# Видалити тимчасовий файл
-tempfile.close
+# Закриваємо файл
+temp_file.close
+
+# Видаляємо тимчасовий файл
+temp_file.unlink
 ```
 
-## Глибше
+Результатом виконання цього коду буде виведення рядка `Це мій тимчасовий файл!` в консоль.
 
-Окрім створення тимчасового файлу з встановленим шляхом або іменем, ми також можемо налаштувати його обмеження розміру та автоматичне видалення після закриття. Наприклад:
+## Глибоке дослідження
 
-```ruby
-require ‘tempfile’
+Клас `Tempfile` насправді використовується для створення запасного файлу, який автоматично видаляється після того, як програма закриває файл. Крім того, його можна використовувати для створення багатьох тимчасових файлів та для використання їх у циклах.
 
-# Створення тимчасового файлу з обмеженням розміру 10 МБ
-tempfile = Tempfile.new("tempfile", "/tmp", Encoding::UTF_8, 10 * 1024 * 1024)
-
-# Автоматичне видалення файлу після закриття
-tempfile.close!
-
-# Перевірка, чи файл був успішно видалений
-puts File.exist?(tempfile.path) # false
-```
-
-Також, ми можемо користуватися методами `unlink` або `delete` для видалення тимчасового файлу вручну.
+Щоб дізнатися більше про `Tempfile`, ви можете переглянути [документацію](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html) або почитати цю [статтю](https://medium.com/@aguynamedryan/creating-temporary-files-and-directories-in-ruby-5c3d5f87a88a), що детально розглядає різні способи використання тимчасових файлів у Ruby.
 
 ## Дивись також
 
-- [Офіційна документація Ruby про клас `Tempfile`](https://ruby-doc.org/stdlib-2.7.0/libdoc/tempfile/rdoc/Tempfile.html)
-- [Стаття про створення тимчасових файлів в Ruby](https://www.rubyguides.com/2020/03/temporary-files-in-ruby/)
-- [Простий підхід до роботи з тимчасовими файлами у Ruby](https://www.honeybadger.io/blog/a-simple-approach-to-temporary-files-in-ruby/)
+- [Документація класу Tempfile](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html)
+- [Стаття про використання тимчасових файлів у Ruby](https://medium.com/@aguynamedryan/creating-temporary-files-and-directories-in-ruby-5c3d5f87a88a)

@@ -1,52 +1,52 @@
 ---
-title:    "Ruby: Comenzando un nuevo proyecto"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/starting-a-new-project.md"
+title:                "Ruby: Comenzando un nuevo proyecto"
+programming_language: "Ruby"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-#Por qué empezar un nuevo proyecto en Ruby
+## Por qué
 
-Si está interesado en aprender un nuevo lenguaje de programación o quiere expandir sus habilidades existentes, Ruby es una excelente opción. Con una sintaxis fácil de leer y una amplia gama de librerías y herramientas disponibles, Ruby puede ser utilizado en diferentes tipos de proyectos, desde aplicaciones web hasta scripts de automatización.
+¡Bienvenidos a mi blog de programación en Ruby! Si estás leyendo esto, probablemente estés interesado en empezar un nuevo proyecto en Ruby y no estás seguro de por dónde empezar. Bueno, ¡has venido al lugar correcto! En este post, te explicaré por qué deberías considerar utilizar Ruby para tu próximo proyecto.
 
-#Cómo empezar un proyecto en Ruby
+## Cómo
 
-Primero, asegúrese de tener Ruby instalado en su computadora. Puede descargar la última versión en la página oficial de Ruby o utilizar un gestor de versiones como RVM o rbenv.
+Antes de sumergirnos en los detalles de cómo empezar un nuevo proyecto en Ruby, es importante entender los conceptos básicos de este lenguaje de programación. Ruby es un lenguaje interpretado y orientado a objetos, lo que significa que cada elemento en Ruby es un objeto con sus propios métodos y propiedades.
 
-Una vez que tenga Ruby instalado, puede crear un nuevo proyecto con el comando `mkdir` seguido del nombre de su proyecto. Luego, puede entrar al directorio del proyecto con `cd nombreDeProyecto` y crear un archivo `Gemfile` con el comando `bundle init`. Un Gemfile es un archivo que contiene las dependencias de su proyecto y le permite instalarlas y manejarlas fácilmente.
+Para empezar, necesitarás tener Ruby instalado en tu computadora. Puedes encontrar instrucciones de cómo hacerlo en la documentación oficial de Ruby. Una vez que tengas Ruby instalado, puedes crear un nuevo archivo con la extensión ".rb" y escribir tu código en él.
 
-A continuación, puede agregar las librerías que necesita a su Gemfile y luego ejecutar `bundle install` para instalarlas. Una vez que haya instalado todas sus dependencias, puede comenzar a escribir su código en un archivo `.rb` en el directorio de su proyecto. Puede usar el comando `ruby nombreDeArchivo.rb` para ejecutar su código.
-
-Veamos un ejemplo de un programa de bienvenida en Ruby:
+Aquí hay un ejemplo de un programa sencillo en Ruby que pide al usuario que ingrese su nombre y lo saluda:
 
 ```Ruby
-#Crea un nuevo objeto llamado "nombre" para obtener el nombre del usuario
-nombre = gets.chomp 
-
-#Saluda al usuario
-puts "¡Bienvenido #{nombre}! ¿Cómo estás?"
+puts "¿Cómo te llamas?"
+nombre = gets.chomp
+puts "¡Hola, #{nombre}! Bienvenido a mi blog de programación en Ruby."
 ```
 
-Si ejecutamos este código y escribimos nuestro nombre, veremos la siguiente salida:
+Cuando este programa se ejecuta, la salida será:
 
 ```
-> ruby bienvenida.rb
-Carlos
-¡Bienvenido Carlos! ¿Cómo estás?
+¿Cómo te llamas?
+John
+¡Hola, John! Bienvenido a mi blog de programación en Ruby.
 ```
 
-#Profundizando en la creación de un proyecto
+Hay muchos otros conceptos importantes que debes conocer al empezar un proyecto en Ruby, como variables, condicionales, bucles, y la sintaxis de los métodos. Te recomiendo que investigues más sobre ellos y practiques escribiendo código para familiarizarte con el lenguaje.
 
-Una vez que tenga un proyecto en Ruby en funcionamiento, puede continuar aprendiendo más sobre el lenguaje y sus características. Puede explorar diferentes librerías y herramientas disponibles, como Ruby on Rails para el desarrollo de aplicaciones web, y aprender cómo utilizarlas en su proyecto.
+## Profundizando
 
-También es importante escribir un código limpio y eficiente, por lo que familiarizarse con las convenciones de estilo de Ruby y practicar buenas prácticas de programación es esencial.
+Ahora, profundicemos un poco más en por qué Ruby es una gran opción para empezar un nuevo proyecto. En primer lugar, Ruby es un lenguaje extremadamente legible y fácil de aprender. Su sintaxis es sencilla y elegante, lo que hace que sea más rápido escribir código en comparación con otros lenguajes.
 
-Además, es útil aprender cómo utilizar herramientas de gestión de proyectos, control de versiones y pruebas, como Git, para mantener su proyecto organizado y funcional.
+Además, Ruby tiene una gran comunidad de programadores y un ecosistema robusto con muchas bibliotecas y frameworks disponibles para simplificar el desarrollo de aplicaciones. Por ejemplo, Ruby on Rails es un framework muy popular para el desarrollo web en Ruby.
 
-#Ver también
+## Ver también
 
-- [Página oficial de Ruby](https://www.ruby-lang.org/es/)
-- [Ruby on Rails - Tutorial de Rails para Principiantes](https://www.railstutorial.org/es/)
-- [Convenciones de estilo de Ruby](https://github.com/rubocop-hq/ruby-style-guide)
-- [Documentación de Git](https://git-scm.com/doc)
+- [Documentación oficial de Ruby](https://www.ruby-lang.org/es/documentation/)
+- [Ruby on Rails tutorial](https://www.railstutorial.org/)
+- [Ejemplos de código en Ruby](https://github.com/ruby/ruby/tree/trunk/sample)
+
+¡Gracias por leer mi post sobre cómo empezar un nuevo proyecto en Ruby! Espero que te haya inspirado para adentrarte en este lenguaje de programación y que disfrutes escribiendo código en él.
+
+¡Hasta la próxima!

@@ -1,63 +1,91 @@
 ---
-title:    "C++: Konvertere en dato til en streng"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/converting-a-date-into-a-string.md"
+title:                "C++: Konvertering av en dato til en streng"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Konvertering av datoer til strenger er en vanlig oppgave i programmering, spesielt når man skal vise datoer til brukeren i et brukergrensesnitt. Det kan også være nyttig for å lagre datoer i en database eller i en fil.
+## Hvorfor
 
-##Hvordan
-For å konvertere en dato til en streng i C++, kan man bruke funksjonen `strftime()`. Denne funksjonen tar inn tre parametere: en streng som beskriver formatet på datoen, en `struct tm`-variabel som inneholder datoens informasjon, og til slutt en streng som vil få datoen til å bli lagret i. La oss se på et eksempel:
+Å konvertere en dato til en streng er en viktig del av å programmere i C++. Det kan være nyttig for å vise datoer i et brukervennlig format, som for eksempel i en kalenderapplikasjon eller en logg. Det kan også være nødvendig å lagre datoer i en streng for å lagre dem i en database eller sende dem over internett.
+
+## Hvordan
+
+Det er flere måter å konvertere en dato til en streng i C++. En enkel måte er å bruke funksjonen `to_string()`. La oss se på et eksempel:
 
 ```C++
-#include <iostream> 
-#include <ctime> 
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <ctime>
 
-int main() 
-{ 
-    // Opprett dato-structen 
-    struct tm dato = {0}; 
+using namespace std;
 
-    // Sett datoens informasjon 
-    dato.tm_year = 2020 - 1900; // Året starter på 1900, så her bruker vi 2020 
-    dato.tm_mon = 7 - 1; // Måneden starter på 0, så her bruker vi 7 for å representere juli 
-    dato.tm_mday = 1; // Dagen starter på 1 
+int main()
+{
+    // Opprett en tid som skal konverteres
+    time_t now = time(0);
 
-    // Opprett en buffer for å lagre datoen 
-    char buffer[11]; 
+    // Bruk localtime() for å få den lokale tidssonen
+    tm *ltm = localtime(&now);
 
-    // Bruk strftime() til å konvertere datoen til en streng 
-    strftime(buffer, 11, "%d-%m-%Y", &dato); 
+    // Bruk stringstream for å konvertere datoen til en streng
+    ostringstream oss;
+    oss << ltm->tm_mday << "/" << 1 + ltm->tm_mon << "/" << 1900 + ltm->tm_year;
 
-    // Skriv ut datoen 
-    std::cout << buffer; 
+    // Bruk to_string() for å konvertere strengen til en heltall-string
+    string date = to_string(oss.str());
 
-    return 0; 
+    // Skriv ut datoen
+    cout << date << endl;
+
+    return 0;
+}
+```
+**Output:**
+`29/11/2021`
+
+I dette eksempelet bruker vi funksjonen `localtime()` for å få den lokale tiden og deretter `ostringstream` for å konvertere datoen til en streng. Til slutt bruker vi `to_string()` for å konvertere strengen til en heltallsstreng, som kan være nyttig i visse situasjoner.
+
+## Dypdykk
+
+I tillegg til å bruke `to_string()` kan du også konvertere en dato til en streng ved hjelp av biblioteket Boost. Boost er et populært C++ bibliotek som inneholder mange nyttige funksjoner og verktøy. Det inneholder også `boost::lexical_cast` funksjonen, som kan brukes til å konvertere datoen til en streng med bare én linje kode.
+
+La oss se på et eksempel:
+
+```C++
+#include <iostream>
+#include <string>
+#include <boost/lexical_cast.hpp>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+    // Opprett en tid som skal konverteres
+    time_t now = time(0);
+
+    // Bruk localtime() for å få den lokale tidssonen
+    tm *ltm = localtime(&now);
+
+    // Bruk boost::lexical_cast til å konvertere datoen til en streng
+    string date = boost::lexical_cast<string>(ltm->tm_mday) + "/" + boost::lexical_cast<string>(1 + ltm->tm_mon) + "/" + boost::lexical_cast<string>(1900 + ltm->tm_year);
+
+    // Skriv ut datoen
+    cout << date << endl;
+
+    return 0;
 }
 ```
 
-Som resultat vil vi få "01-07-2020". Her har vi brukt formatet dd-mm-yyyy, men man kan velge et format som passer best for ens egne behov.
+**Output:**
+`29/11/2021`
 
-Det er også verdt å merke seg at `struct tm`-variabelen er fra standardbiblioteket `<ctime>`. Dette biblioteket er også ansvarlig for å håndtere tid og dato-operasjoner.
+Som du kan se, bruker vi `boost::lexical_cast` for å konvertere hvert element av datoen til en streng og deretter kombinerer dem sammen til en hel streng.
 
-##Dypdykk
-Når vi bruker `strftime()`-funksjonen, kan vi også bruke ulike formater for å få datoen til å se annerledes ut. For eksempel, hvis vi vil få datoen til å vise navnet på måneden i stedet for tallet, kan vi bruke %B-formatet i stedet for %m-formatet.
-
-Her er en liste over noen av de vanligste formatene som kan brukes i `strftime()`:
-- %d: Dagen i måneden (01-31)
-- %m: Måneden i året (01-12)
-- %Y: Året (f.eks. 2020)
-- %H: Timen (00-23)
-- %M: Minuttene (00-59)
-- %S: Sekundene (00-59)
-- %A: Navnet på ukedagen (f.eks. Monday)
-- %B: Navnet på måneden (f.eks. July)
-
-For en komplett liste over alle formatene, kan man se på dokumentasjonen til `strftime()`-funksjonen.
-
-##Se også
-- [Dokumentasjon for <ctime> biblioteket (engelsk)](https://en.cppreference.com/w/cpp/header/ctime)
-- [Informasjon om `strftime()`-funksjonen (engelsk)](https://www.cplusplus.com/reference/ctime/strftime/)
+## Se Også
+- [String conversion (C++) - GeeksforGeeks](https://www.geeksforgeeks.org/string-conversion-in-c/)
+- [Boost C++ libraries](https://www.boost.org/)

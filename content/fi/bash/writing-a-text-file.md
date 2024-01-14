@@ -1,38 +1,40 @@
 ---
-title:    "Bash: Tekstitiedoston kirjoittaminen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-a-text-file.md"
+title:                "Bash: Tiedoston kirjoittaminen"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi kirjoittaa Bash-koodia?
 
-Bash-ohjelmoinnilla on monia käyttötarkoituksia, ja yksi niistä on tiedostojen luominen ja muokkaaminen. Tekstieditorit, kuten Vim tai Nano, vaativat usein hieman opettelua ja ovat hankalia käyttää automatisoiduissa tehtävissä. Bash-ohjelmoinnin avulla voit nopeasti ja tehokkaasti luoda ja muokata tiedostoja suoraan komentoriviltä.
+Bash on komentokehotteen ohjelmointikieli, jota käytetään usein Linux- ja Unix-järjestelmissä. Kirjoittamalla tekstitiedostoja Bashilla voit automatisoida tietokoneesi toimintoja ja tehdä monimutkaisistakin tehtävistä yksinkertaisempia. Tämä säästää aikaa ja vaivaa!
 
-## Miten?
+## Miten kirjoittaa tekstitiedostoja Bashilla?
 
-Aloittaaksesi tiedostojen luomisen Bashilla, sinun tarvitsee vain avata tekstieditori ja aloittaa kirjoittaminen. Käytä `touch`-komentoa luodaksesi uuden tiedoston ja `echo`-komennolla voit lisätä sisältöä tiedoston sisään. Voit myös käyttää `cat`-komentoa yhdistämään useita tiedostoja yhdeksi kokonaisuudeksi tai `> `-operaattoria ohjaamaan tulosteen suoraan uuteen tiedostoon.
+Bash-ohjelmointikielen kirjoittaminen on helppoa. Aloita kirjoittamalla "```Bash" ja jatka sen jälkeen koodin rivillä. Lopeta koodinpätkä kirjoittamalla "```". Esimerkiksi voit luoda uuden tiedoston Bashin avulla käyttämällä "```Bash touch uusi_tiedosto.txt ```". Tämän jälkeen voit listata uuden tiedoston sisällön käyttämällä "```Bash ls -l uusi_tiedosto.txt ```". Komento "ls" tarkoittaa listaa ja "l" flagi näyttää lisätiedot tiedostosta.
 
-Esimerkiksi, jos haluat luoda uuden tiedoston nimeltä "blogi.txt" ja lisätä siihen tekstin "Tervetuloa lukemaan Bash ohjelmoinnista!", voit käyttää seuraavaa koodia:
-
-```Bash
-touch blogi.txt
-echo "Tervetuloa lukemaan Bash ohjelmoinnista!" > blogi.txt
+Output:
+```
+-rw-r--r--  1 username groupname      0 Dec 31 12:00 uusi_tiedosto.txt
 ```
 
-Tämä luo uuden tiedoston ja lisää sisällön siihen. Voit myös käyttää `cat`-komentoa, jos haluat lisätä enemmän sisältöä tai `>>`-operaattoria lisätäksesi sisältöä tiedoston loppuun.
+Haluatko lisätä sisältöä uuteen tiedostoon? Voit tehdä sen käyttämällä "```Bash echo "Tämä on uuden tiedoston sisältö" >> uusi_tiedosto.txt ```". Tässä komennossa "echo" tulostaa halutun tekstin ja ">>" lisää sen uuden tiedoston loppuun.
 
-## Syvemmälle
+Output:
+```
+-rw-r--r--  1 username groupname     26 Jan  1 12:00 uusi_tiedosto.txt
+```
 
-Bash-ohjelmoinnilla voit luoda ja muokata tiedostoja monilla erilaisilla tavoilla. Voit käyttää komentoja kuten `rm` poistaaksesi tiedostoja, `mv` siirtääksesi tiedostoja tai `touch` päivittääksesi tiedostojen aikaleimoja. Lisäksi Bash-ohjelmointi tarjoaa mahdollisuuden automatisoida tiedostojen luonti ja muokkaus erilaisten skriptien avulla.
+## Syvenny Bash-tekstitiedostojen kirjoittamiseen
 
-Bash-ohjelmoinnin avulla voit myös käsitellä tekstiä ja tiedostojen sisältöä. Voit käyttää komentoja kuten `grep` löytääksesi tietyn merkkijonon tiedostosta, `sed` muuttaaksesi tiedoston sisältöä tai `awk` käsitelläksesi tiedostojen rivejä.
+Bash-koodin avulla voit tehdä paljon enemmän kuin vain luoda ja muokata tekstitiedostoja. Voit esimerkiksi kirjoittaa skriptejä, jotka ajavat useita komentoja peräkkäin tai jopa ajastaa tietyt toiminnot tietokoneellesi. Voit myös käyttää muuttujia Bashissa helpottaaksesi koodin uudelleenkäyttöä ja tehdä siitä joustavamman.
+
+Bash-kieltä käytettäessä on tärkeää muistaa, että se on herkkä välilyönneille ja erikoismerkeille. Jos esimerkiksi luot uuden tiedoston komennolla "```Bash touch uusi tiedosto.txt ```", komento ei toimi, koska siinä on välilyöntejä tiedoston nimen välissä. Sen sijaan voit käyttää alaviivoja tai sisäänrajauksia, kuten "uusi_tiedosto.txt" tai "uusi\ tiedosto.txt".
 
 ## Katso myös
 
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
-- [Bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash others commands](https://www.tutorialspoint.com/unix/unix-basic-utilities.htm)
-
-Kiitos lukemisesta ja hyvää ohjelmointia!
+- [Bashin perusteet](https://linuxjourney.com/lesson/bash-basics)
+- [Linuxin komentorivin käyttöohje](https://linux.die.net/man/)
+- [Bash-opasjaksoja](https://www.shellscript.sh/index.html)

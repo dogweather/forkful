@@ -1,40 +1,59 @@
 ---
-title:    "Fish Shell: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/calculating-a-date-in-the-future-or-past.md"
+title:                "Fish Shell: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Joskus on tarpeen laskea tuleva tai mennevä päivämäärä tietyn ajanjakson päästä tai eteenpäin. Tässä blogipostissa opimme kuinka voimme käyttää Fish Shellia helpottamaan tätä tehtävää. 
+Miksi laskisin tulevan tai menneen päivän Fish Shell ohjelmoinnilla? Päivämäärän laskeminen voi olla hyödyllistä esimerkiksi laskuissa, tapahtumien suunnittelussa tai muissa sovelluksissa, jotka tarvitsevat tietoa ajasta.
 
-## Kuinka Tee
+## Miten
 
-Käytämme Fish Shellin `date` komentoa laskeaksemme päivämäärän halutusta ajankohdasta tulevaisuudessa tai menneisyydessä. Esimerkiksi, jos haluamme laskea päivämäärän 10 päivän päästä tästä päivästä, kirjoitamme seuraavanlaisen komennon:
-
-```Fish Shell
-date -d '+10 days'
-```
-
-Tämä tulostaa päivämäärän muodossa `ma touko 03 2021`. Voimme myös käyttää muita aikayksiköitä, kuten viikkoja, kuukausia tai vuosia lisäämään tai vähentämään päivämäärää.
-
-Voimme myös määrittää tietyn päivämäärän ja laskea sitten päivien eron tuon päivämäärän ja nykyisen päivämäärän välillä. Esimerkiksi, jos haluamme tietää kuinka monta päivää on jäljellä seuraavaan syntymäpäiväämme, kirjoitamme seuraavanlaisen komennon:
+Fish Shell tarjoaa helpon tavan laskea tulevan tai menneen päivän käyttämällä `date` komentoa. Tässä esimerkissä lasketaan päivämäärä 7 päivää tulevaisuuteen ja tulostetaan se konsoliin:
 
 ```Fish Shell
-date -d '2022-05-01 - now'
+date -d "+7 days"
 ```
 
-Tämä tulostaa päivien lukumäärän muodossa `334 days`.
+Tulostus:
 
-## Syvällinen Sukellus
+```
+Fri Jan 10 17:41:10 EET 2020
+```
 
-Fish Shellin `date` komento tarjoaa monia vaihtoehtoja päivämäärän laskemiseen tulevaisuudessa tai menneisyydessä. Voimme esimerkiksi käyttää `-r` vaihtoehtoa nähdäksemme päivämäärän tietylle ajankohdalle unix timestampina. Voimme myös käyttää `-s` vaihtoehtoa asettaaksemme halutun päivämäärän tietylle ajankohdalle.
+Samalla tavalla voit laskea myös menneen päivän antamalla negatiivisen päivien määrän. Esimerkiksi, jos haluat tietää millainen päivä oli 100 päivää sitten, käytä tätä komentoa:
 
-Voit löytää lisätietoa Fish Shellin `date` komennosta kirjoittamalla komentoriville `man date`.
+```Fish Shell
+date -d "-100 days"
+```
+
+Tulostus:
+
+```
+Mon Sep 23 17:41:10 EEST 2019
+```
+
+Voit myös asettaa tietyn päivämäärän lähtökohdaksi laskuille antamalla päivämääräyksen muodossa `yyyy-mm-dd`. Esimerkiksi, jos haluat laskea päivämäärän 30 päivää 1.1.2020 jälkeen, käytä tätä komentoa:
+
+```Fish Shell
+date -d "2020-01-01 +30 days"
+```
+
+Tulostus:
+
+```
+Sat Feb 01 17:41:10 EET 2020
+```
+
+## Syvemmälle
+
+Fish Shellin `date` komento tukee myös muita vaihtoehtoja, kuten eri aikavyöhykkeiden ja kelloaikojen asettamista. Voit tutustua näihin vaihtoehtoihin käyttämällä komentoa `man date`.
 
 ## Katso myös
 
-- [Fish Shell Dokumentaatio - Date Komennon Käyttö] (https://fishshell.com/docs/current/cmds/date.html)
-- [Linux.fi - Aikaleimojen Käyttö] (https://linux.fi/wiki/Aikaleima)
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/cmds/date.html)
+- [30 päivää koodausta - Fish Shellin perusteet](https://30paivaa.koodiaapinen.fi/fish-shellin-perusteet/)

@@ -1,37 +1,34 @@
 ---
-title:    "Javascript: भविष्य या भूतकाल में एक तारीख की गणना"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/calculating-a-date-in-the-future-or-past.md"
+title:                "Javascript: भविष्य या भूतकाल में एक तारीख का गणना"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-क्या आपने कभी सोचा है कि किसी तिथि को भविष्य में या अतीत में कैसे निर्धारित किया जाता है? यह दिखाने के लिए, हमें एक तिथि की गणना करनी होती है। आप शायद एक नया प्रोग्रामर हो जो इस प्रक्रिया को समझना चाहता है या फिर आपको अपने प्रोजेक्ट में इस्तेमाल करने की जरूरत हो सकती है।
+यदि आपने कभी सेकंड्स, मिनट्स, घंटे, दिन या साल तक गणना है, तो आपको यह पता होगा कि यह गणना थोड़ी चुनौतीपूर्ण हो सकती है। इसलिए, हम कभी-कभी आगे और पीछे दिनांकों की गणना करने के लिए जावास्क्रिप्ट प्रोग्रामिंग का उपयोग करते हैं। इसके अलावा, कुछ ऐसे स्थितियां होती हैं जहां हमें किसी निश्चित दिनांक या समय के लिए गणना करने की आवश्यकता होती है। इस ब्लॉग पोस्ट में, हम आपको बताएंगे कि कैसे जावास्क्रिप्ट का उपयोग करके आप आसानी से आगे और पीछे दिनांकों की गणना कर सकते हैं।
 
-## कैसे
-
-```Javascript
-// आगामी दिनांक की गणना
-let today = new Date(); // वर्तमान दिनांक को लाएं
-let nextDate = new Date(today.getTime() + (24 * 60 * 60 * 1000)); // एक दिन के बाद की तिथि
-console.log(nextDate); // कोंसोल पर प्रिंट करें
-```
-
-उपरोक्त कोड आपको एक दिन के बाद की तिथि प्रिंट करेगा। ऐसे ही, आप इसके लिए 2 दिन, 3 दिन या कोई भी संख्या दिन चुन सकते हैं। आप वर्तमान दिनांक से अधिक भविष्य की तिथि भी गणना कर सकते हैं। आप पास की गई तिथि को परिवर्तित करके भी अपनी खुद की फंक्शन बना सकते हैं।
+## कैसे करें
+गणना की तारीख को प्राप्त करने के लिए, हम कुछ जावास्क्रिप्ट फंक्शन का इस्तेमाल करेंगे - `getDate()`, `getMonth()`, `getFullYear()` और `setDate()`. ये फंक्शन आपको दिनांक के संख्यात्मक मानों को प्राप्त करने और सेट करने में मदद करते हैं। नीचे कुछ कोड उदाहरण दिए गए हैं:
 
 ```Javascript
-// अधिक तिथि की गणना के लिए फंक्शन
-function calculateFutureDate(days) {
-  let today = new Date();
-  let futureDate = new Date(today.getTime() + (days * 24 * 60 * 60 * 1000));
-  // दिनों को मिलीसेकंड में बदलें
-  console.log(futureDate);
-}
-calculateFutureDate(7); // 7 दिनों बाद की तिथि
+// अगले महीने की तारीख प्राप्त करें
+const now = new Date();
+const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+// output: 'Sat Feb 01 2020 00:00:00 GMT+0530 (India Standard Time)'
+
+// 5 साल बाद की तारीख प्राप्त करें
+const now = new Date();
+const fiveYearsLater = new Date(now.getFullYear() + 5, now.getMonth(), now.getDate());
+// output: 'Mon Feb 26 2024 00:00:00 GMT+0530 (India Standard Time)'
+
+// 10 दिन पहले की तारीख सेट करें
+const now = new Date();
+now.setDate(now.getDate() - 10);
+// output: 'Tue Feb 26 2020 16:47:11 GMT+0530 (India Standard Time)'
 ```
 
-## गहराई में
-
-जब हम एक तिथि को भविष्य में या अतीत में गणना करते हैं, तो हम वर्तमान दिनांक को लाते हैं और उसे मिलीसेकंड में बदलते हैं। उसके बाद, हम चाहें तो दिनों, महीनों या सालों में से भी इसे बदल सकते हैं। हम उपयोग
+यहां `getDate()` तारीख को प्राप्त करने के लिए होता है, `getMonth()` महीने को प्राप्त करने के

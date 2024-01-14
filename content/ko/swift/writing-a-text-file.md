@@ -1,43 +1,39 @@
 ---
-title:    "Swift: 텍스트 파일 작성하기"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/writing-a-text-file.md"
+title:                "Swift: 텍스트 파일 작성하기"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+텍스트 파일 작성을 시작하는 것이 왜 중요한지 궁금하셨나요? 이번 포스트에서는 왜 텍스트 파일이 중요한지 알아보고 쉽게 작성하는 방법을 알려드릴게요.
 
-텍스트 파일을 작성하는 이유는 데이터를 저장하고 조작하는 데에 있어서 매우 유용하기 때문입니다.
-
-## 작성하는 방법
+## 만드는 방법
+텍스트 파일을 만드는 방법은 간단해요. 먼저 파일을 만들고, 파일 경로와 파일 이름을 지정합니다. 그리고 내용을 작성하고 파일을 닫으면 됩니다. 아래는 Swift 코드로 작성한 예시와 예상되는 결과입니다.
 
 ```Swift
-let text = "안녕하세요! Swift로 텍스트 파일을 작성하는 방법을 알아보겠습니다."
-let fileName = "welcome.txt"
+let fileName = "myFile.txt" // 파일 이름 지정
+let filePath = "/Users/username/Documents/" // 파일 경로 지정
+let fileContent = "안녕하세요, 이것은 텍스트 파일입니다!" // 파일 내용 작성
 
-//파일 경로 생성
-let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(fileName)
+let file = filePath + fileName // 파일 경로와 파일 이름을 합쳐 파일 객체 생성
 
-//파일에 텍스트 쓰기
 do {
-    try text.write(to: fileURL, atomically: true, encoding: .utf8)
-    print("파일이 성공적으로 작성되었습니다!")
+  try fileContent.write(toFile: file, atomically: true, encoding: .utf8) // 파일 작성하기
+  print("파일이 성공적으로 생성되었습니다!") // 성공 메세지 출력
 } catch {
-    print(error)
+  // 파일 생성 실패 시 에러 메세지 출력
+  print("파일 생성에 실패했습니다. 에러: \(error)")
 }
-
 ```
 
-위의 코드를 실행하면, "안녕하세요! Swift로 텍스트 파일을 작성하는 방법을 알아보겠습니다."라는 내용의 파일이 생성됩니다. 코드를 차례대로 살펴보면, 우선 파일 경로를 생성하고 그곳에 작성하고 싶은 내용과 파일명을 변수로 저장합니다. 그리고 파일 경로에 있는 파일에 내용을 쓰기 위해 `write` 메소드를 사용합니다. 이때 `atomically`를 `true`로 설정하면 파일을 안전하게 저장할 수 있습니다. 마지막으로 작성이 완료되면 성공 메시지가 출력됩니다.
+예상되는 파일 결과: myFile.txt 파일 안에 "안녕하세요, 이것은 텍스트 파일입니다!"라는 내용이 담겨 있을 것입니다.
 
-## 깊이 파해치기
+## 깊게 파헤치기
+텍스트 파일 작성에는 다양한 옵션이 있습니다. 예를 들어, 파일을 쓰기 전에 존재 여부를 확인하고 싶다면 `FileManager.default.fileExists(atPath: file)`를 사용하면 됩니다. 또한 파일을 읽어오는 기능을 추가하고 싶다면 `try String(contentsOfFile: file, encoding: .utf8)`로 파일 내용을 읽어올 수 있습니다.
 
-작성된 텍스트 파일을 다시 사용하기 위해서는 파일이 저장된 경로를 알아야 합니다. 위의 코드에서는 `fileURL` 변수에 경로를 저장했는데, 이 경로를 활용하면 파일을 불러오거나 수정할 수 있습니다. 또한, `FileManager` 클래스를 사용하여 파일을 생성하고 삭제하는 등 다양한 작업을 할 수도 있습니다.
-
-## 더 알아보기
-
-- [Swift official documentation](https://developer.apple.com/documentation/swift)
-- [How to Read and Write to a Text File in Swift](https://www.ioscreator.com/tutorials/read-and-write-text-file-swift)
-- [Working with Directories in Swift](https://www.hackingwithswift.com/example-code/system/how-to-create-a-directory-if-it-doesnt-already-exist)
-- [File Management in Swift with FileManager](https://medium.com/swift-programming/swift-filemanager-87c7e54d54ef)
+## See Also
+- [Swift의 문자열 다루기 관련 포스트](https://www.linktosomepost.com)
+- [Swift의 파일 관련 작업](https://www.linktoanotherpost.com)

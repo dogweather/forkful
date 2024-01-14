@@ -1,65 +1,83 @@
 ---
-title:    "C: 编写测试"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-tests.md"
+title:                "C: 编写测试"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么会编写测试？
+## 为什么
 
-在编程中，测试是非常重要的一步。它们可以帮助我们检查和验证自己编写的代码是否正确，并且可以在我们进行更改时提供反馈。编写测试也可以帮助我们节省时间和精力，因为它们可以帮助我们快速测试代码并发现潜在的问题。
+编写测试代码是软件开发过程中至关重要的一步。它可以帮助您发现潜在的错误和缺陷，并确保您的代码在各种情况下都能正常工作。写测试代码还可以提高代码的可读性和可维护性。
 
-## 如何编写测试
+## 如何做
 
-编写测试的第一步是确定我们要测试的功能或代码。然后，我们可以使用C语言中的断言(assertions)来编写测试代码。断言是一种用于验证某个条件是否满足的表达式。接下来，我们使用测试框架来运行我们编写的测试代码。一个常用的测试框架是Unity，它提供了一些方便的宏来帮助我们编写测试代码。
-
-下面是一个简单的测试例子，我们将测试一个名为`add`的函数，它可以将两个整数相加并返回结果：
+为了向大家展示如何编写测试代码，我们将使用 C 语言作为示例。假设我们有一个简单的程序，需要将两个整数相加并返回结果。
 
 ```C
 #include <stdio.h>
-#include <assert.h>
-#include "unity.h"
 
-/* 待测试的函数 */
-int add(int x, int y) {
-  return x + y;
+int add(int num1, int num2) {
+    return num1 + num2;
 }
 
-/* main函数，使用Unity测试框架来运行测试 */
 int main() {
-  /* 添加测试代码 */
-  printf("====== 测试add函数 ======\n");
-  /* 第一个参数为测试名称，第二个参数为预期结果 */
-  TEST_ASSERT_EQUAL(2, add(1, 1));
-  TEST_ASSERT_EQUAL(5, add(2, 3));
-  TEST_ASSERT_EQUAL(-4, add(0, -4));
-  /* 运行所有测试并显示结果 */
-  UNITY_END();
+    int result = add(5, 10);
+    printf("Result: %d\n", result);
+    return 0;
 }
 ```
 
-测试输出如下：
+输出应为: `Result: 15`
 
+现在，我们将为这个简单的程序编写测试代码来验证它是否按预期工作。
+
+```C
+#include <stdio.h>
+
+int add(int num1, int num2) {
+    return num1 + num2;
+}
+
+// 测试函数
+void test() {
+    int result = add(5, 10);
+    
+    // 断言
+    if (result == 15) {
+        printf("Test passed!\n");
+    } else {
+        printf("Test failed\n");
+    }
+}
+
+int main() {
+    test();
+    return 0;
+}
 ```
-====== 测试add函数 ======
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
 
-OK
-```
+输出应为: `Test passed!`
 
-如果所有测试都通过，我们会看到`OK`的提示，这意味着我们的代码可以正确地将两个整数相加并返回正确的结果。如果有一个或多个测试失败，我们将会在输出中看到相应的错误信息，从而可以定位并修复代码中的问题。
+从输出结果可以看出，我们的测试代码成功验证了 add() 函数的功能。
 
-## 深入了解编写测试
+## 深入探讨
 
-除了基本的使用方法，编写测试还有一些深层次的技巧和概念。首先，我们可以使用不同的断言来测试不同的条件，比如`TEST_ASSERT_LESS_THAN()`来测试某个值是否小于另一个值。其次，我们可以使用`TEST_IGNORE()`来忽略某个测试，比如当我们正在进行代码重构时，暂时忽略某个测试可能更方便。此外，我们还可以为我们的测试添加一些标签，比如`TEST_GROUP`和`TEST_SETUP`，来更好地组织我们的测试代码。
+编写测试代码可以帮助我们更早地发现问题，并且随着代码的增长，这种方法也更加高效。通过不断地添加测试代码，我们可以更有信心地修改和优化代码，而不用担心影响现有的功能。
 
-最后，编写测试也可以帮助我们更好地理解我们的代码。通过编写测试，我们可以深入了解代码的每一行都在做什么，以及它们是如何一起运行的。我们也可以使用测试来探索一些不常用的情况，从而发现并修复潜在的问题。
+此外，编写测试代码还可以帮助我们更好地理解代码和预期的结果。在撰写测试用例时，我们需要考虑各种可能的情况，这有助于增强我们对代码的理解。
 
-## 参考链接
+最后，编写测试代码还可以帮助我们避免不必要的重生错误。当我们在修改代码时，我们可以运行测试代码来确保我们的修改没有破坏原有的功能。
 
-* Unity测试框架：https://github.com/ThrowTheSwitch/Unity
-* C语言断言(assertions)：https://www.tutorialspoint.com/c_standard_library/assert_h.htm
-* 深入理解编写测试的意义：https://www.codementor.io/@nickmccullum/why-writing-tests-is-important-for-your-developer-career-xoh1lwxuo
+## 参考
+
+- [C语言教程](https://www.runoob.com/cprogramming/c-programming-tutorial.html)
+- [简单的C语言测试框架](https://github.com/alexei-led/pumba)
+- [单元测试入门教程](https://www.jianshu.com/p/328f3c6600b4)
+
+## 参见
+
+- [编写测试代码的重要性](https://techcrunch.com/2014/03/24/the-importance-of-writing-tests/)
+- [测试代码应该覆盖多少？](https://stackoverflow.com/questions/484265/how-much-code-coverage-is-enough)
+- [测试驱动开发简介](https://www.ibm.com/developerworks/cn/rational/bdd/)

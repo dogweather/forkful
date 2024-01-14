@@ -1,42 +1,43 @@
 ---
-title:    "Java: Uuden projektin aloittaminen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/starting-a-new-project.md"
+title:                "Java: Aloittaa uuden projektin"
+programming_language: "Java"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Aloitettavassa uudessa projektissa on mahdollisuus kehittää uusia taitoja ja ratkaista haastavia ongelmia. Se voi myös johtaa mielenkiintoisiin uusiin työmahdollisuuksiin ja mahdollistaa luovuuden ja omien ideoiden toteuttamisen.
+Jokainen ohjelmoija tuntee sen tunteen, kun ideasi pompsahtaa mieleen ja haluat vain päästä koodaamaan sitä. Tämä on yksi syy aloittaa uusi projekti. Toisinaan saatat myös tarvita uutta haastetta tai haluat kehittää taitojasi. Mikä tahansa syy sinulla onkaan, uuden projektin aloittaminen voi olla hyvin palkitsevaa.
 
-## Kuinka
+## Miten
 
-Aloittaminen projektin aloittaminen vaatii muutaman tärkeän askeleen suorittamisen. Ensimmäinen askel on määrittää projektin tavoite ja vaatimukset. Tämän jälkeen voit suunnitella käyttäen esimerkiksi UML-kaavioita ja luoda koodiraameja. Lopuksi voit aloittaa koodauksen käyttämällä alla olevia esimerkkejä.
+Uuden projektin aloittaminen voi tuntua ylivoimaiselta tehtävältä, mutta se ei ole niin vaikeaa kuin miltä se saattaa vaikuttaa. Seuraavassa on esimerkki, kuinka aloittaisit uuden projektin Java-ohjelmointikielellä.
 
 ```Java
 public class HelloWorld {
-   public static void main(String[] args) {
-      System.out.println("Hei maailma!");
-   }
+    public static void main(String[] args) {
+        System.out.println("Hei maailma!");
+    }
 }
 ```
 
-Tämä yksinkertainen koodiesimerkki tulostaa konsoliin "Hei maailma!". Voit myös luoda muuttujia ja käyttää niitä koodissa:
+Tämä yksinkertainen koodinpätkä tulostaa konsoliin "Hei maailma!" Tämä on yleensä ensimmäinen koodinpätkä, jonka opit kirjoittamaan Java-ohjelmointikielellä. Seuraavaksi sinun tulisi suunnitella projektisi tarkasti ja miettiä, mitä haluat sen saavuttavan. Tee luettelo tarvittavista toiminnoista ja aloita koodaamaan!
 
-```Java
-int number = 5;
-System.out.println(number);
-```
+## Syväsukellus
 
-Tämä esimerkki tulostaa numeron 5 konsoliin. Näiden esimerkkien avulla voit aloittaa oman projektisi koodaamisen.
+Uuden projektin aloittaminen voi olla haastavaa, mutta tämä on myös hyvä tilaisuus oppia uutta ja kehittää taitoja. Muutamia asioita, jotka kannattaa muistaa uuden projektin aloituksessa, ovat:
 
-## Syvällinen sukellus
+- Suunnittele tarkasti ja mieti, mitä haluat saavuttaa projektilla.
+- Käytä oikeita työkaluja, kuten integroitu kehitysympäristö (IDE) ja versiohallintajärjestelmä.
+- Näytä koodiasi muille saadaksesi palautetta ja oppiaksesi uutta.
+- Yritä pitää koodisi siistinä ja helposti luettavana.
 
-Ennen kuin aloitat uuden projektin, on hyvä tehdä syvällinen tutkimus ja perehtyä käytettävään teknologiaan ja työkaluihin. Voit myös tutkia jo olemassa olevia projekteja ja oppia niistä. On myös hyödyllistä tutustua parhaisiin käytäntöihin ja suunnittelumalleihin, jotka auttavat sinua luomaan laadukkaan ja kestävän projektin.
+Uuden projektin aloittaminen voi vaatia paljon työtä, mutta se on myös erittäin palkitsevaa. Muista pitää hauskaa ja älä pelkää kokeilla uutta!
 
 ## Katso myös
 
-- [Java-aloittelijoiden opas](https://www.hackerrank.com/blog/java-getting-started-guide)
-- [UML-kaavioiden perusteet](https://www.tutorialspoint.com/uml/index.htm)
-- [Parhaat käytännöt Java-projektien suunnittelussa](https://www.javatpoint.com/java-best-practices)
+- [Java-kielen virallinen verkkosivusto](https://www.java.com/fi/)
+- [Java: The Complete Reference -kirja](https://www.amazon.com/Java-Complete-Reference-Guide-Edition/dp/1260440230)
+- [Intellij IDEA -ohjelmointiympäristö](https://www.jetbrains.com/idea/)

@@ -1,39 +1,36 @@
 ---
-title:    "Elixir: Convertendo uma string para minúsculas"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/converting-a-string-to-lower-case.md"
+title:                "Elixir: Convertendo uma string para letras minúsculas"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
+O Elixir é uma linguagem de programação funcional que está ganhando cada vez mais popularidade entre os desenvolvedores. Uma das tarefas comuns na programação é converter uma string para letras minúsculas. Isso pode ser útil ao manipular dados de entrada ou ao validar informações do usuário. Neste post, vamos explorar como fazer isso em Elixir e mergulhar mais fundo nesse tópico.
 
-Há várias razões pelas quais alguém pode querer converter uma string para letras minúsculas em Elixir. Isso pode ser útil para padronizar a formatação de dados ou para comparar strings de maneira mais precisa.
-
-## Como Fazer
-
-A conversão de uma string para minúsculas em Elixir é bastante simples e pode ser feita de diferentes maneiras. A primeira opção é utilizar a função `String.downcase/1` que recebe uma string como argumento e retorna uma nova string com todas as letras em minúsculo. Veja o exemplo abaixo:
+## Como fazer
+A conversão de uma string para letras minúsculas em Elixir é fácil e direta usando a função `String.downcase/1`. Essa função recebe uma string como parâmetro e retorna uma string com todas as letras em minúsculo. Vamos ver alguns exemplos:
 
 ```Elixir
-string = "Olá, Elixir"
-String.downcase(string)
-```
+# Exemplo 1
+String.downcase("OLÁ MUNDO")
+# => "olá mundo"
 
-A saída desse código será `"olá, elixir"`. Além disso, também é possível utilizar o operador de pipe `|>` para encadear essa função com outras operações. Por exemplo:
+# Exemplo 2
+String.downcase("Elixir é uma linguagem incrível!")
+# => "elixir é uma linguagem incrível!"
+``` 
 
-```Elixir
-string = "Olá, Elixir"
-string |> String.downcase() |> String.trim()
-```
+Como você pode ver, a função `String.downcase/1` transforma todas as letras maiúsculas em minúsculas, independentemente da posição ou idioma.
 
-Nesse caso, a saída será `"olá, elixir"` pois a função `String.trim/1` é utilizada para remover espaços em branco no início e no final da string.
+## Mergulho profundo
+A função `String.downcase/1` funciona usando o módulo `:unicode`, que lida com strings unicode em Elixir. Isso significa que a conversão para minúsculas é feita de acordo com as regras da linguagem do sistema operacional em que o código está sendo executado.
 
-## Deep Dive
+Além disso, a função `String.downcase/1` também lida com casos especiais, como a conversão das letras 'İ' e 'I' na turquia, que não seguem o padrão inglês. Isso garante que sua aplicação seja capaz de lidar com diferentes idiomas e caracteres de forma correta.
 
-Ao utilizar a função `String.downcase/1`, é importante observar que ela apenas converte letras ASCII para minúsculas. Ou seja, caracteres especiais como acentos não serão convertidos. Caso seja necessário, é possível utilizar a função `String.downcase_utf8/1` que lida com caracteres Unicode. Além disso, é importante lembrar que as strings em Elixir são imutáveis, ou seja, sempre que uma alteração é feita, uma nova string é criada em memória, portanto é importante considerar o impacto dessa função em termos de performance em casos de manipulação de grandes volumes de dados.
-
-## Veja Também
-
-- [Documentação oficial de Strings](https://hexdocs.pm/elixir/String.html)
-- [Como manipular strings em Elixir](https://www.lalala.com.br/como-manipular-strings-em-elixir)
-- [Tutorial de Elixir do iniciante ao avançado](https://www.lalala.com.br/tutorial-elixir-iniciante-avancado)
+## Veja também
+- [Documentação da função String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [Elixir School - Strings](https://elixirschool.com/pt/lessons/basics/binary-and-strings/)
+- [Blog - A modernização da linguagem de programação Elixir](https://blog.saya.academy/a-modernizacao-da-linguagem-de-programacao-elixir/)

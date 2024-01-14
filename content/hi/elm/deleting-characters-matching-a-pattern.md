@@ -1,31 +1,33 @@
 ---
-title:    "Elm: पैटर्न के समान वर्णों को हटाना"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: पैटर्न से मेल खाते अक्षरों को हटाना"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्यों
 
-कभी-कभी हमारे प्रोग्राम में चरित्रों को हटाने की जरूरत होती है जो निश्चित पैटर्न से मेल खाते हैं। Elm में, हम ऐसे स्थितियों के लिए कुछ प्रभावी और सुगम तरीके प्रदान करते हैं जो हमारे कोड को क्लीन और स्वच्छ बनाने में मदद करते हैं। हम इस आलेख में इस विषय पर गहन बात करेंगे।
+किसी ने जब आप EDM प्रोग्रामिंग कर उसके लिए कॉड को हटाने में रूचि लेने के लिए कहे तो वह आपको समझने की आवश्यकता हो सकती है की वह कैसे काम करता है तथ्यों पर
 
-## कैसे करें
+# कैसे
 
 ```Elm
-"Harshvardhan".replace "r" ""
+import Text.Regex
+
+string = "Mera Naam Elm Hai"
+newString = Regex.replace (Regex.Regex "a") (always "") string
 ```
 
-यह Elm को बताता है कि "Harshvardhan" स्ट्रिंग से जो भी चरित्र "r" मैच होता है, उसे हटाना है। दूसरे शब्दों में, हमारे स्ट्रिंग "Harshvardhan" के सभी "r" हट जाएंगे। जैसे:
+उपरोक्त कोड उदाहरण से दिए गए कोड में आप देख सकते हैं की `Mera Naam Elm Hai`को `Mera Nm Elm Hi` में बदल दिया गया है। यहां होने वाला है कि एक नया स्ट्रिंग जैसे की `newString` में आप देख सकते हैं
 
-Harshivardhan
+# गहराई
 
-इस तरह से, हम ऐसे पैटर्न से मिलते-जुलते चरित्रों को हटाने के लिए इस स्पष्ट विधि का उपयोग कर सकते हैं।
+जब आप EDM में किसी पैटर्न के साथ मिलती है तो आप या नहीं है-कुछ से सौंटे है। यह एक आसानी है. `Regex`मॉड्युल, और इस मॉड्युल में उपलब्ध विधि और उपक्रमों का उपयोग है। आप किसी भी प्रकार के पैटर्न, जैसे की इस्तेमाल करते हैं`Regex.Regex` और दूसरी विधियों जैसे की `Regex.replace` आप संबंधित कोड सेक्शन क्लास में देख सकते हैं.
 
-## गहराई तक
+# उसे भी देखें
 
-हमें पैटर्न के साथ मिलते-जुलते और हटाए गए चरित्रों के हटाए जाने के बारे में अधिक जानने की आवश्यकता हो सकती है। इस समस्या को हल करने के लिए अन्य तरीकों में से एक निम्न में से एक को चुन सकते हैं:
-
-- स्ट्रिंग प्रोग्रामिंग के अधिक जानकारी के साथ पढ़ने के लिए, [मुटेबनी (Mutation)](https://guide.elm-lang.org/core_language.html#mutation) सेक्शन देखें।
-- [वहाँ](https://package.elm-lang.org/packages/elm/core/latest/String#contains) Elm चरित्रों के तुलना में, जहाँ आप ऐसे चरित्रों को पहचानते हैं जो आपने नहीं हटाने की कोशिश की है, आप `String.without` को उपयोग कर सकते हैं।
-- अन्य लोकप्रिय स्रोतों जैसे [Stack Overflow](https://stackoverflow.com/)
+[Kaiv Chhadva - Elm Language](https://medium.com/@kaichhadva/elm-language-5e1b2d433637) 
+[Elm in Production](https://www.humblebits.com/elm-in-production/) 
+[Official Elm Website](https://elm-lang.org/)

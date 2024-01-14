@@ -1,33 +1,34 @@
 ---
-title:    "Kotlin: 디버그 출력 출력"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/printing-debug-output.md"
+title:                "Kotlin: 디버그 출력 출력하기"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-디버그 출력을 프린팅하는 것이 왜 유용한지 궁금하셨나요? 디버깅은 개발자에게 있어서 중요한 과정입니다. 코드에서 발생하는 문제를 해결하기 위해서는 어떤 부분에서 문제가 발생하는지 알아야 합니다. 디버그 출력을 프린팅함으로써 이를 파악할 수 있습니다. 또한, 코드를 수정하고 재실행할 필요 없이 실행 중인 코드에서 문제를 파악할 수 있도록 도와줍니다.
+데이터 출력을 위해 디버그 출력을 사용하는 이유는 무엇일까요? 디버그 출력은 수정된 코드에서 어떤 값이나 실행되는 코드들을 확인하는 것이 가능하기 때문입니다. 이것은 디버깅 프로세스를 효과적으로 할 수 있도록 도와줍니다.
 
-## 방법
+# 사용하는 방법
 
- 디버그 출력을 프린팅하는 방법은 매우 간단합니다. 우선 코드에서 출력하고 싶은 변수나 메시지를 ```println()``` 함수를 사용하여 출력합니다. 예를 들어, 다음 코드와 같이 작성할 수 있습니다.
- 
- ```Kotlin
- val name = "Jane"
- println("Name: $name")
- ```
- 
- 위의 코드를 실행하면 콘솔에서 "Name: Jane"이라는 메시지를 볼 수 있습니다. 또한, 변수의 값을 확인하거나 현재 실행되고 있는 코드의 어떤 부분에서 문제가 발생하는지 알 수 있도록 원하는 위치에 디버그 출력을 추가할 수 있습니다.
+```Kotlin
+fun main() {
+    var name = "John"
+    println("Hello, $name!")
+}
+```
 
- ## 딥 다이브
+위의 코드는 "John"이라는 이름을 가진 사람에게 "Hello, John!"이라는 메시지를 출력하는 간단한 예제입니다. 코드를 실행하면 콘솔에 "Hello, John!"이 출력됩니다. 이 코드에서 $name은 변수의 값을 나타내는 코틀린의 문자열 템플릿을 의미합니다. 따라서 변수의 값을 확인할 수 있습니다. 이러한 방법으로 디버그 출력을 사용하여 코드에서 어떤 값이 사용되는지를 확인할 수 있습니다.
 
- 디버그 출력은 개발 과정에서 꼭 필요한 도구입니다. 그렇기 때문에 Kotlin에서는 여러 가지 방법으로 디버그 출력을 지원합니다. 예를 들어, ```Log``` 클래스를 사용하면 디버그 출력 메시지를 일종의 로그로 기록함으로써 나중에 참고할 수 있습니다. 또한, ```println()``` 함수 대신에 ```log()``` 함수를 사용하면 더 자세한 내용의 로그를 출력할 수 있습니다. 그리고 Kotlin에서는 문자열 보간이라는 편리한 기능을 제공하는데, 이를 활용하면 변수의 값을 문자열 안에 쉽게 삽입할 수 있습니다.
+# 깊게 파고들기
 
-## See Also
+디버그 출력은 프로그래머에게 많은 도움을 줍니다. 일반적으로 디버깅은 프로그래밍 작업에서 가장 어려운 부분 중 하나입니다. 디버그 출력을 통해 문제가 발생하는 지점을 확인하고 실제로 코드가 실행되는 방식을 이해하는데 도움이 됩니다.
 
-디버그 출력에 대해 더 알고 싶나요? 아래의 링크를 확인해보세요!
+또한, 디버그 출력은 코드를 이해하는데도 중요합니다. 코드를 작성하고 디버그 출력을 사용하여 코드가 어떻게 동작하는지 확인할 수 있습니다. 이는 다른 개발자들과 코드를 공유하고 효율적으로 협업하는데도 도움이 됩니다.
 
-- [Kotlin 공식 문서 - Logging](https://kotlinlang.org/docs/reference/logging.html)
-- [Baeldung - Debugging in Kotlin](https://www.baeldung.com/kotlin/debugging)
+# 참고 자료
+
+- [Kotlin 스터디 모임](https://www.meetup.com/topics/kotlin/ko/)
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/home.html)

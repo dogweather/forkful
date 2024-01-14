@@ -1,48 +1,44 @@
 ---
-title:    "Javascript: Generering av tilfeldige tall"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/generating-random-numbers.md"
+title:                "Javascript: Generering av tilfeldige tall"
+programming_language: "Javascript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I dagens digitale verden er bruk av tilfeldige tall en viktig del av mange programmeringsoppgaver. Enten det er for å velge en tilfeldig vinner i en konkurranse, simulere et terningkast eller generere unike koder, så er tilfeldig tallgenerering en svært nyttig funksjon å kunne. Så hvorfor burde du lære deg hvordan man lager tilfeldige tall i Javascript? Vel, svaret er enkelt - det å kunne generere tilfeldige tall gjør deg til en mer allsidig og kompetent programmerer, og åpner opp for en rekke muligheter for å løse ulike problemer.
+Å generere tilfeldige tall er en svært nyttig ferdighet som alle som jobber med programmering bør ha. Enten det er for å lage spill, utføre dataanalyse eller lage tilfeldige elementer i en nettside, kan tilfeldige tall være en viktig del av programmet ditt.
 
-## Slik gjør du det
+## Hvordan
 
-Heldigvis er det å lage tilfeldige tall i Javascript enkelt og intuitivt. Det første du trenger å gjøre er å inkludere Math biblioteket, som inneholder funksjoner for å utføre matematiske operasjoner. Deretter kan du bruke funksjonen Math.random() for å generere et tilfeldig tall mellom 0 og 1. For eksempel:
+For å generere tilfeldige tall i Javascript, kan vi bruke Math.random() funksjonen. Denne funksjonen returnerer et tilfeldig desimaltall mellom 0 og 1. Men hvis vi trenger et heltall, kan vi bruke Math.floor() for å runde av tallet nedover. La oss se på et eksempel:
 
-```Javascript
-var tilfeldigTall = Math.random();
-console.log(tilfeldigTall); // Output: 0.893265476
+```javascript
+// Først genererer vi et tilfeldig desimaltall mellom 0 og 1
+let randomDecimal = Math.random();
+console.log(randomDecimal);
+
+// Deretter bruker vi Math.floor() for å få et tilfeldig heltall mellom 0 og 10
+let randomInt = Math.floor(Math.random() * 11);
+console.log(randomInt);
+
+// Vi kan også generere et tilfeldig heltall mellom et annet intervall, som for eksempel 50 og 100
+let randomRange = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
+console.log(randomRange);
 ```
 
-Dette vil generere et tilfeldig desimaltall hver gang koden kjøres. Men hva om du vil ha et tilfeldig tall innenfor et spesifikt område? For eksempel mellom 1 og 10? Da kan du bruke følgende formel:
+Dette er bare noen eksempler på hvordan vi kan generere tilfeldige tall ved hjelp av Javascript. Det finnes også andre metoder og funksjoner som kan brukes, avhengig av hvilke type tall du ønsker å generere.
 
-```Javascript
-var tilfeldigTall = Math.random() * (10 - 1) + 1;
-console.log(tilfeldigTall); // Output: 7.648286529
-```
+## Deep Dive
 
-Denne koden vil generere et tilfeldig tall mellom 1 og 10. Hvis du ønsker å få et heltall istedenfor et desimaltall, kan du bruke Math.floor() funksjonen til å avrunde ned. For eksempel:
+Nå har vi sett på hvordan vi kan generere tilfeldige tall, men hvis du vil lære mer om tilfeldighet og tilfeldige tall i Javascript, er det flere ting du kan dykke dypere inn i. For eksempel kan du se på hvordan tilfeldighet spiller en rolle i algoritmer som skal velge ut tilfeldige elementer fra en liste. Du kan også undersøke hvordan tilfeldige tall kan brukes til å simulere ulike situasjoner og hvordan dette kan hjelpe i beslutningsprosesser.
 
-```Javascript
-var tilfeldigTall = Math.floor(Math.random() * (10 - 1) + 1);
-console.log(tilfeldigTall); // Output: 7
-```
-
-Det finnes også andre måter å lage tilfeldige tall på i Javascript, som for eksempel å bruke arrays og loops. Utforsk mulighetene og prøv deg frem!
-
-## Dypdykk
-
-Å lage tilfeldige tall i programmering kan virke enkelt, men faktisk er det en rekke algoritmer og teknikker som kan brukes for mer komplekse behov. For eksempel kan du bruke en seed-verdi for å "kontrollere" tilfeldigheten og sikre at de samme tilfeldige tallene genereres hver gang koden kjøres. Du kan også bruke tilfeldige tall for å simulere forskjellige spill og gambling situasjoner.
-
-Det er også viktig å merke seg at tilfeldige tall i Javascript ikke er helt tilfeldige, men heller "pseudo-tilfeldige" tall basert på en matematisk formel. I tillegg kan tilfeldige tallgenerering i forskjellige programmeringsspråk ha varierende nivåer av kompleksitet og nøyaktighet.
+Ved å dykke dypere inn i temaet kan du få en bedre forståelse av hvordan tilfeldighet fungerer og hvordan du kan utnytte det til å forbedre dine programmeringsferdigheter.
 
 ## Se også
 
-- [Tilfeldige tall i Javascript](https://www.w3schools.com/js/js_random.asp)
-- [Seed-verdi og tilfeldige tall](https://medium.com/@bongotilley/javascript-seeding-prngs-with-math-random-20de557e7619)
-- [Kompleks tilfeldig tallgenerering i programmering](https://medium.com/datadriveninvestor/a-comprehensive-guide-to-random-number-generation-10d254bba8b2)
+- [Mozillas dokumentasjon om Math.random()](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [En artikkel om tilfeldige tall i dataverden](https://medium.com/@seanadiputra/random-numbers-in-computer-world-4bcc4a2a3615)
+- [En veiledning for å forstå tilfeldighet i programmering](http://caternuson.github.io/2016/03/09/randomness-and-probability-for-programmers/)

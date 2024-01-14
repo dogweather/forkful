@@ -1,61 +1,57 @@
 ---
-title:    "Kotlin: Leyendo argumentos de la línea de comandos"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/reading-command-line-arguments.md"
+title:                "Kotlin: Leyendo argumentos de línea de comandos."
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías leer argumentos de línea de comandos?
+# ¿Por qué deberías aprender a leer argumentos de línea de comando?
 
-Si eres un programador de Kotlin, probablemente estés familiarizado con la forma en que tu programa interactúa con el usuario. Sin embargo, hay momentos en los que es posible que necesites que tu programa reciba información directamente desde la línea de comandos. Esto se puede lograr a través de argumentos de línea de comandos, lo que permite al usuario proporcionar información al programa durante su ejecución. Aprender a leer y utilizar estos argumentos de forma efectiva puede mejorar la usabilidad y la funcionalidad de tu programa.
+Si estás comenzando a aprender Kotlin o quieres mejorar tus habilidades de programación, es importante que sepas cómo leer argumentos de línea de comando. Esto te permitirá crear aplicaciones más dinámicas y versátiles, ya que podrás interactuar con el usuario y obtener información de entrada directamente desde la línea de comando.
 
-## Cómo leer argumentos de línea de comandos en Kotlin
+# Cómo hacerlo en Kotlin
 
-En Kotlin, existen varias formas de leer argumentos de línea de comandos. Una forma común es a través de la función `main()` y el parámetro `args` que se le pasa. Veamos un ejemplo:
+Para leer argumentos de línea de comando en Kotlin, utilizamos la función `args` que viene incorporada en la clase `Array`. Dentro de esta función, podemos acceder a los argumentos ingresados por el usuario utilizando la propiedad `get(index)`, donde `index` representa la posición del argumento en la línea de comando.
+
+Aquí hay un ejemplo de cómo leer un argumento de línea de comando que contiene un número:
 
 ```Kotlin
 fun main(args: Array<String>) {
-    for (argument in args) { //recorre cada argumento proporcionado
-        println(argument) //imprime el argumento en la consola
+    val num = args.get(0).toInt()
+    println("El número ingresado es: $num")
+}
+```
+
+En este ejemplo, estamos leyendo el primer argumento ingresado por el usuario y utilizando la función `toInt()` para convertirlo a un tipo de dato entero. Luego, imprimimos el número en la consola utilizando la función `println()`.
+
+Si ejecutamos este código con el siguiente comando: `kotlin MiPrograma.kt 10`, el resultado sería:
+
+`El número ingresado es: 10`
+
+También podemos utilizar un loop for para recorrer todos los argumentos ingresados por el usuario. Aquí hay un ejemplo:
+
+```Kotlin
+fun main(args: Array<String>) {
+    for (arg in args) {
+        println(arg)
     }
 }
 ```
 
-Si ejecutamos este programa con la siguiente línea de comandos:
+Este código imprimirá todos los argumentos ingresados por el usuario en líneas separadas.
 
-```
-$ kotlin MiPrograma.kt argumento1 argumento2
-```
+# Profundizando en la lectura de argumentos de línea de comando
 
-La salida sería:
+En casos más complejos, podemos utilizar librerías externas como `kotlinx-cli` para leer argumentos de línea de comando de manera más eficiente. Con esta librería, podemos definir argumentos opcionales, valores por defecto, funciones de ayuda, entre otras funciones útiles.
 
-```
-argumento1
-argumento2
-```
+Además, existen otras formas de acceder a argumentos de línea de comando, como utilizando la clase `Scanner` o utilizando la función `System.getenv()` para obtener variables de entorno.
 
-También puedes utilizar la clase `Scanner` para leer argumentos de línea de comandos, como se muestra en el siguiente ejemplo:
+En resumen, aprender a leer argumentos de línea de comando en Kotlin puede mejorar tus habilidades de programación y darte más herramientas para crear aplicaciones más interactivas y dinámicas.
 
-```Kotlin
-fun main() {
-    println("Ingresa tu nombre:")
-    val scanner = Scanner(System.`in`) //crea un objeto Scanner
-    val nombre = scanner.nextLine() //lee el nombre ingresado por el usuario
-    println("Hola, $nombre")
-}
-```
+# Ver también
 
-Si ejecutas este programa y escribes tu nombre en la línea de comandos, se imprimirá en la consola un saludo personalizado.
-
-## Profundizando en la lectura de argumentos de línea de comandos en Kotlin
-
-Para obtener una comprensión más profunda de cómo leer y utilizar argumentos de línea de comandos en Kotlin, es importante tener en cuenta que los argumentos se almacenan como cadenas. Esto significa que, si necesitas realizar operaciones matemáticas con los argumentos, primero deberás convertirlos a un tipo de datos numérico.
-
-Además, también puedes acceder a argumentos específicos utilizando su índice en la lista `args`. Por ejemplo, en el primer ejemplo, podríamos imprimir solo el segundo argumento con `println(args[1])`.
-
-## Ver también
-
-- [Documentación oficial de Kotlin sobre argumentos de línea de comandos](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [Tutorial de Kotlin en español](https://www.adictosaltrabajo.com/tutoriales/kotlin/)
-- [Documentación oficial de Kotlin](https://kotlinlang.org/docs/home.html)
+- [Documentación oficial de Kotlin sobre argumentos de línea de comando](https://kotlinlang.org/docs/command-line.html)
+- [Tutorial en español de Kotlin sobre lectura de argumentos de línea de comando](https://devexperto.com/lee-argumentos-de-linea-de-comandos-con-kotlin/)
+- [Librería kotlinx-cli para leer argumentos de línea de comando en Kotlin](https://github.com/Kotlin/kotlinx-cli)

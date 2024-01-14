@@ -1,53 +1,33 @@
 ---
-title:    "Javascript: Знаходження довжини рядка"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/finding-the-length-of-a-string.md"
+title:                "Javascript: Знаходження довжини рядка"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-У програмуванні іноді необхідно отримати довжину рядка, наприклад, для валидації даних або для перевірки коректності введення користувачем. Знання, як знайти довжину рядка в Javascript, є важливим навичкою для будь-якого програміста.
+Найперше, що приходить на думку, коли ми говоримо про програмування? Кожна мова програмування має свої унікальні риси і можливості, але є деякі загальні поняття, які можна використовувати в усіх мовах. Одним з таких понять є знаходження довжини рядка. Це дуже важлива операція, яка дозволяє розуміти та обробляти дані в рядках, і тому її важливо знати для будь-якого програміста.
 
-## Як
+## Як це зробити
 
-Щоб знайти довжину рядка в Javascript, використовуйте метод `length`. Наприклад:
+Пошук довжини рядка можна зробити дуже просто за допомогою вбудованої функції JavaScript ```length```. Для отримання довжини рядка потрібно просто викликати цю функцію та передати в неї рядок як аргумент.
 
-```Javascript
-let str = "Привіт, друзі!";
-console.log(str.length); // виведе 14
+```javascript
+let str = "Привіт, світ!";
+console.log(str.length);
 ```
 
-Також `length` можна використовувати для масивів:
+В результаті, у нас буде виведено число, яке відображає довжину рядка, в даному випадку, це буде 13. Цей метод також буде працювати з кирилицею та будь-якою іншою мовою програмування, оскільки він базується на кількості символів у рядку, а не на його кодуванні.
 
-```Javascript
-let arr = ["яблуко", "банан", "апельсин"];
-console.log(arr.length); // виведе 3
-```
+## Глибоке занурення
 
-## Глибокий аналіз
+Знаходження довжини рядка - це не просто справжня магія, але варто знати деякі деталі про його реалізацію. Наприклад, в JavaScript всі рядки мають властивість ```length```, тому ви можете отримати довжину будь-якого рядка, навіть якщо він є пустим. Однак, цей метод ігнорує пробіли, тобто вони також рахуються як символи. Також слід пам'ятати, що рядки є не змінними (immutable) у JavaScript, тобто методи, які міняють значення рядка, тобто застосовані до нього, повертатимуть новий рядок. Тому, якщо ви зміните довжину рядка, то це не вплине на його вихідне значення.
 
-Метод `length` повертає кількість елементів в рядку або масиві. Він доступний для будь-якого рядка чи масиву в Javascript. Цей метод є невластивим для чисел та буде повертати `undefined`.
+## Дивіться також
 
-Існують також деякі інтересні використання методу `length` в Javascript. Наприклад, ви можете використовувати його для перевірки, чи є рядок пустим:
-
-```Javascript
-let str = "";
-if (str.length === 0) {
-  console.log("Рядок пустий");
-}
-```
-
-Або для отримання останнього елементу з масиву:
-
-```Javascript
-let arr = ["яблуко", "банан", "апельсин"];
-let lastElement = arr[arr.length - 1]; // отримаємо "апельсин"
-```
-
-## Дивись також
-
-- [MDN документація про метод `length`](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [W3Schools - довжина рядка в Javascript](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [Стаття на іншій мові - як знайти довжину рядка в Javascript](https://www.toptal.com/javascript/javascript-string-length-property-cheatsheet)
+- [JavaScript для початківців](https://developer.mozilla.org/uk/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+- [Вбудовані функції в JavaScript](https://www.w3schools.com/js/js_string_methods.asp)
+- [Unicode та рядки в JavaScript](https://www.digitalocean.com/community/tutorials/understanding-unicode-and-unicode-encoding-in-javascript)

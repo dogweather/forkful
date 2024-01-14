@@ -1,52 +1,58 @@
 ---
-title:    "Bash: Å bruke regulære uttrykk"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/using-regular-expressions.md"
+title:                "Bash: Å bruke regulære uttrykk"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke regulære uttrykk?
+## Hvorfor
 
-Regulære uttrykk (også kjent som regex) er kraftige verktøy som brukes til å søke og manipulere tekststrenger. De kan være nyttige for å løse komplekse oppgaver innen bash-programmering, som å finne og erstatte data eller validere brukerinput. Å forstå hvordan man bruker regulære uttrykk kan gjøre det enklere å lage mer effektiv og pålitelig kode.
+Regular expressions er et kraftig verktøy for å finne og manipulere tekst basert på mønstre. Ved å bruke regular expressions kan du raskt og effektivt søke gjennom store mengder tekst og utføre handlinger basert på visse kriterier. Dette gjør det til et uunnværlig verktøy for å automatisere oppgaver, forenkle dataanalyse og forbedre programmeringsferdighetene dine.
 
-# Hvordan bruke regulære uttrykk i Bash
+## Hvordan bruke regular expressions i Bash
 
-For å bruke regulære uttrykk i Bash, kan du bruke kommandoen "grep". Denne kommandoen tar et mønster og en fil som argumenter, og returnerer alle linjene som samsvarer med mønsteret. Her er et eksempel som vil finne alle linjer som inneholder ordet "hund" i filen "dyr.txt":
+For å bruke regular expressions i Bash, må du først aktivere deres støtte ved å bruke flagget `-E` i kommandolinjen eller ved å inkludere `shopt -s` `extglob` i starten av skriptet ditt. Deretter kan du begynne å lage og bruke dine egne uttrykk ved hjelp av metategn og spesielle karakterer.
 
-```bash
-grep "hund" dyr.txt
+For eksempel, hvis du vil finne alle ord som starter med "b" i en tekstfil, kan du bruke følgende kommando:
+
+```Bash
+grep -E '\<b\w*' tekstfil.txt
+```
+Dette vil hente alle linjer som inneholder et ord som starter med "b". La oss se på noen andre eksempler på bruk av regular expressions i Bash.
+
+### Søk etter et spesifikt mønster
+
+Du kan bruke `.` for å matche ett enkelt tegn og `*` for å matche null eller flere forekomster av det forrige tegnet. Dette gjør det mulig å finne et mønster eller et bestemt ord uansett hva som kommer før eller etter det.
+
+```Bash
+grep -E 'h.*lo' tekstfil.txt # dette vil matche både "hello" og "hallo"
 ```
 
-Dette vil returnere alle linjene som inneholder ordet "hund" i filen "dyr.txt". Hvis du vil finne alle linjer som begynner med bokstaven "a", kan du bruke regex-mønsteret "^a". La oss se et eksempel på dette:
+### Søk etter flere alternativer
 
-```bash
-grep "^a" dyr.txt
+Du kan bruke `|` for å matche flere alternativer. Dette er nyttig når du vil finne forekomster av flere ord eller uttrykk.
+
+```Bash
+grep -E 'foo|bar|baz' tekstfil.txt # dette vil matche både "foo", "bar" og "baz"
 ```
 
-Dette vil returnere alle linjer i filen som starter med bokstaven "a". Du kan også bruke regulære uttrykk til å erstatte tekst. For eksempel, hvis du ønsker å erstatte alle forekomster av ordet "katt" med "hund" i filen "dyr.txt", kan du bruke følgende kommando:
+### Bruk av variabler og uttrykk
 
-```bash
-sed 's/katt/hund/g' dyr.txt
+Du kan også bruke variabler og uttrykk i regular expressions. For eksempel, hvis du vil finne alle linjer som inneholder et ord som starter med samme tegn som variabelen `$first_letter`, kan du bruke følgende kommando:
+
+```Bash
+first_letter="h"
+grep -E "\<$first_letter\w*" tekstfil.txt # dette vil matche både "hello" og "hei"
 ```
 
-Dette vil erstatte alle forekomster av ordet "katt" med "hund" i filen og vise resultatet i terminalen.
+## Dypdykk i regular expressions
 
-# En dypere dykk i regulære uttrykk
+Regular expressions kan være ganske komplekse og ha mange avanserte funksjoner og muligheter. Hvis du er interessert i å lære mer, kan du se på offisiell dokumentasjon for Bash's `grep` og `egrep` kommandoer, samt andre ressurser på nettet. Praksis gjør perfekt når det kommer til å mestre regular expressions, så ikke vær redd for å eksperimentere og prøve ut forskjellige ting.
 
-Regulære uttrykk kan være komplekse, men de kan også være svært nyttige når man jobber med tekstbehandling. Du kan bruke ulike spesialtegn og operatorer for å lage mer presise mønstre. Her er noen eksempler:
+## Se også
 
-- "." betyr hvilken som helst enkelt tegn
-- "+" betyr at forrige tegn må forekomme minst én gang
-- "*" betyr at forrige tegn kan forekomme null eller flere ganger
-- "{n}" betyr at forrige tegn må forekomme n nøyaktig ganger
-- "|" betyr "eller", som lar deg angi flere alternativer for et mønster
-- "()" lar deg gruppere mønstre for å utføre operasjoner på dem
-
-Det finnes også mange andre spesialtegn og operatorer som kan brukes til å lage avanserte regex-mønstre. Det kan være nyttig å eksperimentere og se hvordan forskjellige tegn påvirker søkeresultatene i ulike situasjoner.
-
-# Se også
-
-- [Bash Guide for nybegynnere](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Regex Tutorial av Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html)
-- [Grep manuell side](https://linux.die.net/man/1/grep)
+- [Bash Regular Expressions - Programmeringswiki](https://www.programmingwiki.com/Bash_Regular_Expressions)
+- [Grep - Offisiell dokumentasjon](https://www.gnu.org/software/grep/manual/grep.html)
+- [Viktige kommandoer i Bash - DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-useful-bash-commands)

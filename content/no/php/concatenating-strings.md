@@ -1,52 +1,56 @@
 ---
-title:    "PHP: Sammenføyning av strenger"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/concatenating-strings.md"
+title:                "PHP: Sammenstilling av strenger"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når du jobber med PHP-programmering, vil det ofte være nødvendig å kombinere eller legge sammen forskjellige tekststrenger. Dette kan være for å lage en komplett setning eller for å formatere data på en bestemt måte. Uansett årsaken, er kunnskap om hvordan man konkatinerer strenger viktig for å skrive effektiv og funksjonell kode.
+Å kombinere strenger i PHP kan være nyttig når du ønsker å lage dynamiske tekster eller meldinger. Ved å sette sammen to eller flere strenger, kan du skape en mer tilpasset og personlig utskrift.
 
 ## Hvordan
 
-En måte å konkatinere strenger i PHP er gjennom bruken av operatøren "." (punktsymbolet). Dette symbolet brukes til å legge sammen to strenger, og resultatet vil være en ny streng som inneholder den kombinerte teksten. La oss se på et enkelt eksempel:
+For å kombinere strenger i PHP, kan du bruke operatoren "." for å sette sammen to strenger. For eksempel:
 
 ```PHP
-$navn = "Maria";
-$beskjed = "Hei, mitt navn er " . $navn . "og jeg er fra Norge.";
-echo $beskjed;
+$message = "Hei";
+$message .= " verden!";
+echo $message;
+
+// Output: Hei verden!
 ```
 
-Dette vil gi følgende utskrift:
-
-Hei, mitt navn er Maria og jeg er fra Norge.
-
-I dette tilfellet ble variablene $navn og $beskjed sammenføyd ved hjelp av parten ".". Merk at mellomrom må være inkludert for å unngå å få sammenflettede ord.
-
-En annen måte å kombinere strenger på er gjennom bruken av PHP-funksjonen "sprintf()". Denne funksjonen tar imot en tekststreng og variabler som skal settes inn i strengen på spesifiserte plasseringer. La oss se på et eksempel:
+Du kan også kombinere variabler og strenger, for å få en enda mer dynamisk utskrift. For eksempel:
 
 ```PHP
-$navn = "Tobias";
-$trope = "Hawaier";
-$beskjed = sprintf("Hei, mitt navn er %s og jeg drømmer om å bli en ekte %s.", $navn, $trope);
-echo $beskjed;
+$name = "Kari";
+$message = "Hei " . $name . ", velkommen til vår side!";
+echo $message;
+
+// Output: Hei Kari, velkommen til vår side!
 ```
 
-Dette vil gi følgende utskrift:
+Det er også mulig å inkludere tallsverdier i en streng ved å bruke "string interpolation". Dette betyr at PHP vil erstatte variabler med deres verdier inni en streng. For eksempel:
 
-Hei, mitt navn er Tobias og jeg drømmer om å bli en ekte Hawaier.
+```PHP
+$age = 30;
+$message = "Jeg er $age år gammel.";
+echo $message;
 
-I dette tilfellet brukes "%s" som plassholdere for variablene $navn og $trope. Dette gjør det enklere å sette inn variabler i en tekststreng uten å måtte bekymre seg for å legge til ekstra mellomrom eller andre tegn.
+// Output: Jeg er 30 år gammel.
+```
 
-## Dypdykk
+## Dyp dykk
 
-Det finnes også andre måter å konkatinere strenger i PHP, som for eksempel gjennom bruken av "strcat()" eller "str_replace()" funksjonene. Disse har sine egne spesifikke bruksområder og kan være nyttige i ulike situasjoner. Det viktigste er å forstå grunnleggende om hvordan å koble sammen strenger, og deretter forstå og bruke de forskjellige metodene som passer best for ditt spesifikke kodebehov.
+Ved å kombinere strenger på riktig måte, kan du spare tid og gjøre koden din mer lesbar. Du kan også bruke forskjellige funksjoner som `str_replace()` eller `substr()` for å manipulere og kombinere strenger på en enda mer avansert måte.
 
-## Se Også
+Det er også viktig å huske på å bruke riktig syntaks når du kombinerer strenger, for å unngå feil. Dette inkluderer å bruke riktig plassering av hermetegn og punktuering.
 
-1. [PHP funksjoner for strenger](https://www.php.net/manual/en/ref.strings.php)
-2. [W3Schools - PHP konkatinering](https://www.w3schools.com/php/php_operators.asp)
-3. [Stack Overflow - Sammenføyning av strenger i PHP](https://stackoverflow.com/questions/368657/string-concatenation-in-php)
+## Se også
+
+- [PHP String Operators Documentation](https://www.php.net/manual/en/language.operators.string.php)
+- [PHP String Functions Documentation](https://www.php.net/manual/en/ref.strings.php)
+- [W3Schools PHP String Concatenation Tutorial](https://www.w3schools.com/php/php_string_concatenation.asp)

@@ -1,41 +1,39 @@
 ---
-title:    "Javascript: 표준 오류 쓰기"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-to-standard-error.md"
+title:                "Javascript: 표준 오류에 쓰는 방법"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-프로그래밍을 하는 데 있어서 디버깅은 항상 중요한 부분입니다. 특히 "standard error"라고 불리는 에러 출력을 다룰 때, 이를 적절히 다루는 것은 매우 중요합니다. 이 블로그 포스트에서는 "standard error"의 중요성과 이를 다루는 방법을 알아보겠습니다.
+표준 오류에 쓰는 일에 대해 궁금해하는 분들에게 이 포스팅을 써보려고 합니다.
 
-## 방법
+## 어떻게
 
-자바스크립트에서 "standard error"를 다루는 가장 기본적인 방법은 `console.error()`를 사용하는 것입니다. 아래의 예시 코드를 참고해보세요.
-
-```Javascript
-console.error("에러 메시지");
-```
-
-위 코드를 실행하면 콘솔에 "에러 메시지"가 출력됩니다. 이를 통해 우리는 가장 기본적인 방법으로 "standard error"를 다룰 수 있다는 것을 알 수 있습니다.
-
-## 깊게 파고들기
-
-`console.error()` 외에도 자바스크립트에서는 `process.stderr.write()`를 통해 "standard error"를 다룰 수 있습니다. 이 메소드는 첫 번째 매개변수로 에러 메시지를 전달받고, 해당 메시지를 "standard error"에 출력합니다. 아래의 예시 코드를 참고해보세요.
+보통 자바스크립트에서 콘솔에 출력할 때는 `console.log()`를 사용하게 됩니다. 하지만 때로는 콘솔이 아닌 다른 곳에서 에러 메시지나 로그를 출력해야 할 때가 있습니다. 이때 사용하는 것이 바로 `process.stderr.write()`입니다. 아래는 코드 예시와 함께 출력되는 결과입니다.
 
 ```Javascript
-process.stderr.write("에러 메시지");
+process.stderr.write("에러가 발생했습니다.");
 ```
 
-위 코드를 실행하면 콘솔에 "에러 메시지"가 출력됩니다. 이 메소드는 `console.error()`보다 좀 더 특수한 경우에 사용될 수 있습니다. 따라서 개발자는 상황에 맞게 적절한 방법을 선택하여 "standard error"를 다루어야 합니다.
+```
+에러가 발생했습니다.
+```
 
-## 더 많은 정보
+## 딥 다이브
 
-"standard error"를 다루는 것은 개발자에게 필수적인 기술 중 하나입니다. 따라서 자바스크립트에서 이를 제대로 다루고 익숙하게 사용하는 것은 중요합니다. 더 많은 정보는 아래의 링크들을 참고해보세요.
+`process.stderr.write()`는 `console.log()`와는 다르게 바로 콘솔에 출력되는 게 아니라, 버퍼에 기록된 다음에 한꺼번에 출력되는 것입니다. 이를 통해 성능을 개선할 수 있고, 아주 긴 출력 메시지도 일괄 처리할 수 있습니다.
 
-## 또 다른 참고 자료
+## 참고 자료
 
-- [MDN - console.error()](https://developer.mozilla.org/ko/docs/Web/API/Console/error)
-- [Node.js - process.stderr](https://nodejs.org/api/process.html#process_process_stderr)
-- [standard error로 디버깅하기](https://joshtronic.com/2016/02/29/debugging-with-stderr/) (영문)
+- [Node.js 공식 문서 - process.stderr.write()](https://nodejs.org/api/process.html#process_process_stderr_write_data_encoding_callback)
+- [Error Handling in Node.js](https://www.sitepoint.com/error-handling-in-node-js/)
+- [Node.js의 기본 개념과 개요](https://nodejs.dev/learn)
+- [Node.js 에러 핸들링 기초](https://www.freecodecamp.org/news/node-js-error-handling/)
+
+## 참고하실 링크
+
+(process.stderr.write() 사용법 번역 링크 여기) (딥 다이브에 대한 따로 번역된 내용 찾아 추가하면 좋을 것 같습니다)

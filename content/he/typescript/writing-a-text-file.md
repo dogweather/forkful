@@ -1,40 +1,36 @@
 ---
-title:    "TypeScript: כתיבת קובץ טקסט"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/writing-a-text-file.md"
+title:                "TypeScript: כתיבת קובץ טקסט"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה:
+## למה
+למה לכתוב תיקיית טקסט בסקריפט של TypeScript? כתיבת תיקיית טקסט היא פעולה חשובה ומשמעותית בעבודה עם קבצים ומידע, וכן משמשת כמנגנון לאחסון והעברת מידע.
 
-למה לכתוב קובץ טקסט בפורמט TypeScript? אין סיכוי פשוט! לא רק שזה יאפשר לכם לארגן כמות גדולה של קוד בצורה יעילה, אלא גם יעזור לכם להפוך אותו ליותר קריא ונייד. בנוסף, הכתיבה ב-TypeScript תעניק לכם הרבה יתרונות נוספים שנכתבים עליהם בכתבה הזו.
-
-# איך לעשות זאת:
-
-מה הסיסמא הכי חשובה שעליכם לשמור עליה בכתיבת קוד? נכון, "DRY" - נכון שאתם מבינים את הניסטוק של השם הזה, כאן המשמעות של "לא חוזר על עצמו". אותו דבר נכון גם לכתיבת קבצי טקסט. אם אתם רוצים להיות בטוחים שהקוד שאתם כותבים יהיה יעיל ובלתי חוזר על עצמו, אתם צריכים להשתמש בדגמים וקוד פתרון קוד כדי לאמת את הקוד שלכם.
-
+## איך לכתוב תיקיית טקסט בסקריפט של TypeScript
+אם אתם יודעים לכתוב קוד בסקריפט של TypeScript, אתם כבר יודעים איך לכתוב תיקיית טקסט. הנה דוגמא:
 ```TypeScript
-let textFile = "זהו קובץ טקסט שאני כותב ב-TypeScript";
-console.log(textFile);
+const myText = "זהו טקסט דוגמא לכתיבת תיקייה בסקריפט של TypeScript.";
+console.log(myText);
 ```
-
-הפלט של הקוד הנ"ל יהיה "זהו קובץ טקסט שאני כותב ב-TypeScript" בכונסות הקובץ הטקסט.
-
-אם אתם רוצים ליצור קובץ טקסט חדש, תוכלו להשתמש בפיקוד `fs.writeFile` בגירסתה של Node.js.
-
-```TypeScript
-import fs from "fs";
-
-let text = "זהו קובץ טקסט חדש שנכתב ב-TypeScript";
-fs.writeFile("new_text_file.txt", text, (err) => {
-  if (err) console.log(err);
-  else console.log("קובץ טקסט חדש נוצר בהצלחה!");
-});
+פלט:
 ```
+זהו טקסט דוגמא לכתיבת תיקייה בסקריפט של TypeScript.
+```
+כאשר אתם מכתבים תיקיית טקסט בסקריפט של TypeScript, כדאי לפתח קובץ נפרד עבור הטקסט ולהשתמש בתכונות של Typescript כדי להפוך את הנתונים שלכם לתיקיית טקסט.
 
-קובץ הטקסט החדש `new_text_file.txt` יכיל את הטקסט "זהו קובץ טקסט חדש שנכתב ב-TypeScript".
+## חפירה עמוקה
+כתיבת קוד בסקריפט של TypeScript לפני כל האחרים דורשת ידע נוסף על התיקיות וקבצים. לכן, לפני שתתחילו לכתוב תיקיית טקסט, כדאי ללמוד על הנושאים הבאים:
+1. מבנה של קובץ טקסט
+2. קריאה וכתיבה לקבצים בסקריפט של TypeScript
+3. טיפול בשגיאות של תיקיות וקבצים
 
-# הנסתר:
+ובכל זאת, כתיבת תיקיות טקסט היא חלק חשוב מעבודת המתכנתים וכדאי שתדעו איך לכתוב אותן בצורה נכונה.
 
-כעת, הגיע הזמן לעמוק קצת יותר לנושא כיצד לכתוב קבצי
+## ראה גם
+- [Documenting TypeScript Code](https://www.typescriptlang.org/docs/handbook/decorators.html)
+- [TypeScript Playground](https://www.typescriptlang.org/play)
+- [The Basics of Writing a Text File in TypeScript](https://alligator.io/nodejs/writing-files-with-nodejs/)

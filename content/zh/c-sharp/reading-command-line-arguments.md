@@ -1,45 +1,52 @@
 ---
-title:    "C#: 阅读命令行参数"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/reading-command-line-arguments.md"
+title:                "C#: 读取命令行参数"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要读取命令行参数
+为什么读取命令行参数？
 
-当我们使用命令行来运行程序，有时可能需要提供一些额外的信息来改变程序的行为。这些信息就是命令行参数。通过读取命令行参数，我们可以实现一个更加灵活和个性化的程序。
+读取命令行参数是一种非常有用的技能。它允许程序员在运行程序时通过命令行输入不同的参数，以改变程序的行为。这样，程序就可以在不同的情况下运行，提高了灵活性和可重复性。
 
-## 如何读取命令行参数
+## 如何
 
-在C#中，我们可以使用`args`数组来接收命令行参数。下面是一个示例代码：
+要读取命令行参数，首先需要在程序中引入`System`命名空间。然后，在`Main`方法中，使用`args`参数来读取命令行输入的参数。例如：
 
 ```C#
-static void Main(string[] args)
+using System;
+
+namespace CommandLineArguments
 {
-    if(args.Length < 2)
+    class Program
     {
-        Console.WriteLine("请输入至少2个参数");
-        return;
+        static void Main(string[] args)
+        {
+            // 在命令行输入 "C# Mandarin"
+            // args[0]为"C#"，args[1]为"Mandarin"
+            Console.WriteLine($"Hello {args[0]} readers!");
+            Console.WriteLine($"This article is written in {args[1]}. Enjoy!");
+        }
     }
-    // args[0]为程序名称，之后的参数依次存储在args数组中
-    Console.WriteLine("你的名字是：" + args[1]);
 }
 ```
 
-假设我们的程序名称为`HelloWorld.exe`，我们可以在命令行中使用以下命令来运行程序并传入参数：
+在命令行运行程序后，输出将会是：
 
 ```
-HelloWorld.exe John
+Hello C# readers!
+This article is written in Mandarin. Enjoy!
 ```
 
-这样，程序就会输出`你的名字是：John`。除了使用`args`数组，我们也可以使用`Environment.GetCommandLineArgs()`方法来获取参数。
+当然，这只是一个简单的例子。在实际应用中，我们还可以为命令行参数设置默认值，检查参数是否存在等。
 
-## 深入了解命令行参数
+## 深入了解
 
-在实际开发中，读取命令行参数并不仅限于上面提到的简单示例。我们还可以使用其他方法来解析参数，例如使用第三方库来提供更多的功能。同时，也需要注意对参数的正确处理，避免出现不必要的错误。
+在命令行中输入参数时，我们可以使用空格、逗号或其他字符来分隔不同的参数。如果某个参数本身包含空格，可以用双引号括起来。此外，我们还可以使用特殊字符来表示选项或标志，如`-h`表示帮助信息，`-v`表示程序版本等。在程序中，我们可以通过`args.Length`来获取输入的参数数量，通过`args[i]`来获取第`i`个参数。更多关于命令行参数的信息，可以在[MDC命令行参数](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netcore-3.1)和[命令行参数解析器](https://github.com/commandlineparser/commandline)中深入了解。
 
-## 同时参考
+## 参考资料
 
-- [Microsoft docs - Command-line arguments](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [C# Corner - Working with Command Line Arguments Using C#](https://www.c-sharpcorner.com/uploadfile/mahesh/working-with-command-line-arguments-in-C-Sharp/)
+- [MDC命令行参数](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netcore-3.1)
+- [命令行参数解析器](https://github.com/commandlineparser/commandline)

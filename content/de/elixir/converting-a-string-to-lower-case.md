@@ -1,41 +1,46 @@
 ---
-title:    "Elixir: Umwandeln einer Zeichenkette in Kleinbuchstaben"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/converting-a-string-to-lower-case.md"
+title:                "Elixir: Umwandlung eines Strings in Kleinbuchstaben"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie jemals mit Strings in Ihrer Elixir-Codebasis gearbeitet haben, haben Sie sich vielleicht gefragt, ob es möglich ist, einen String in Kleinbuchstaben zu konvertieren. In diesem Blogbeitrag werden wir genau das diskutieren - warum es sinnvoll ist, Strings in Kleinbuchstaben zu konvertieren und wie Sie dies in Elixir erreichen können.
+Wenn Sie regelmäßig mit Zeichenketten (Strings) in Ihrer Elixir-Programmierung arbeiten, könnte es nützlich sein, zu wissen, wie man eine Zeichenkette in Kleinbuchstaben umwandelt. Dies kann Ihnen dabei helfen, Eingaben von Benutzern zu vereinheitlichen oder Datenbankabfragen zu erleichtern.
 
-## Wie es geht
-
-Um einen String in Kleinbuchstaben zu konvertieren, können Sie die Funktion `String.downcase/1` verwenden. Diese Funktion akzeptiert einen String als Argument und gibt eine neue Version des Strings zurück, in der alle Buchstaben in Kleinbuchstaben geschrieben sind.
+# Wie Sie eine Zeichenkette in Kleinbuchstaben umwandeln
 
 ```Elixir
-iex> String.downcase("ELIXIR IST TOLL")
-"elixir ist toll"
-iex> String.downcase("1234")
-"1234"
+string = "HALLO WELT"
+IO.puts String.downcase(string)
 ```
+Output:
+"hallo welt"
 
-Wie Sie sehen können, funktioniert die Funktion auch mit Zahlen und gibt sie unverändert zurück. Es ist wichtig zu beachten, dass diese Funktion nur ASCII-Zeichen in Kleinbuchstaben umwandelt. Wenn Sie Sonderzeichen oder Umlaute haben, müssen Sie zuerst die Funktion `String.normalize/1` verwenden, um sie in ASCII umzuwandeln, bevor Sie `String.downcase/1` anwenden.
+In diesem Beispiel haben wir die Funktion `String.downcase/1` verwendet, um die Zeichenkette `string` in Kleinbuchstaben umzuwandeln. Diese Funktion akzeptiert eine Zeichenkette als Argument und gibt eine neue Zeichenkette zurück, die alle Großbuchstaben in Kleinbuchstaben umgewandelt hat.
 
-## Tiefergehende Informationen
-
-In Elixir verwenden Strings UTF-8-Kodierung, was bedeutet, dass sie Unicode-Zeichen unterstützen. Dies grenzt Elixir von anderen Programmiersprachen ab, die normalerweise ASCII oder UTF-16 verwenden. Wenn Sie also einen String in Kleinbuchstaben konvertieren, kann dies zu unerwarteten Ergebnissen führen, wenn Sie mit Nicht-ASCII-Zeichen arbeiten.
-
-Um dies zu vermeiden, sollten Sie `String.lowercase/1` verwenden, die speziell für Unicode-Zeichen ausgelegt ist und alle Zeichen ordnungsgemäß in Kleinbuchstaben konvertiert.
+Ein weiterer Weg, eine Zeichenkette in Kleinbuchstaben umzuwandeln, ist die Verwendung der `String.downcase/2` Funktion. Diese Funktion akzeptiert zwei Parameter, wobei der zweite optional ist. Hier ist ein Beispiel:
 
 ```Elixir
-iex> String.lowercase("ÄPFEL")
-"äpfel"
+string = "DIES IST EIN BEISPIEL"
+IO.puts String.downcase(string, "de")
 ```
 
-## Siehe auch
+Output:
+"dies ist ein beispiel"
 
-- Dokumentation zu [`String.downcase/1`](https://hexdocs.pm/elixir/String.html#downcase/1)
-- Dokumentation zu [`String.lowercase/1`](https://hexdocs.pm/elixir/String.html#lowercase/1)
-- Erlernung von Elixir: [Einführung in Elixir](https://elixir-lang.org/getting-started/introduction.html)
+In diesem Beispiel haben wir den optionalen Parameter `"de"` angegeben, um anzugeben, dass die Zeichenkette im deutschen Alphabet vorliegt. Dadurch werden beispielsweise Umlaute korrekt umgewandelt.
+
+# Tiefgehender Einblick
+
+Elixir verwendet intern Unicode, um Zeichenketten zu repräsentieren. Dies bedeutet, dass die Funktionen `String.downcase/1` und `String.downcase/2` nach denselben Regeln arbeiten, die auch für Unicode gelten. Dies bedeutet, dass zum Beispiel auch griechische oder kyrillische Buchstaben in Kleinbuchstaben umgewandelt werden können.
+
+Es ist auch wichtig, zu beachten, dass die Funktionen `String.downcase/1` und `String.downcase/2` keine Seiteneffekte haben. Dies bedeutet, dass sie die ursprüngliche Zeichenkette nicht ändern werden, sondern stattdessen eine neue umgewandelte Zeichenkette zurückgeben.
+
+# Siehe auch
+
+- [Elixir String-Dokumentation](https://hexdocs.pm/elixir/String.html)
+- [Erlang Unicode-Dokumentation](https://erlang.org/doc/man/unicode.html)

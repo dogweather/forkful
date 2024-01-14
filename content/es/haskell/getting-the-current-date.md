@@ -1,50 +1,52 @@
 ---
-title:    "Haskell: Obteniendo la fecha actual"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/getting-the-current-date.md"
+title:                "Haskell: Obteniendo la fecha actual."
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Todos los programadores saben lo importante que es mantener la precisión del tiempo en sus aplicaciones. Ya sea para registrar eventos, generar informes o simplemente mostrar la fecha actual en una interfaz de usuario, es crucial poder obtener la fecha y hora correctas. Afortunadamente, Haskell nos ofrece una forma sencilla y eficiente de hacerlo. En esta publicación, aprenderemos cómo obtener la fecha actual en Haskell.
+Muchas veces cuando estamos programando, necesitamos saber la fecha y hora actual. Ya sea para mostrarla en nuestra aplicación, para almacenarla en una base de datos o simplemente para usarla en alguna lógica de negocio. En Haskell, obtener la fecha actual es muy sencillo y en este post te explicaré cómo hacerlo.
 
 ## Cómo hacerlo
 
-Usando la biblioteca `time` de Haskell, podemos acceder fácilmente a la fecha y hora actual. Primero, importamos el módulo en la parte superior de nuestro archivo:
+Para obtener la fecha actual en Haskell, utilizamos la librería `time` y su módulo `Data.Time`. Primero, debemos importar este módulo en nuestro código:
 
 ```Haskell
 import Data.Time
 ```
 
-Luego, podemos utilizar la función `getCurrentTime` para obtener la fecha y hora actuales en un objeto `UTCTime`:
+Una vez que tenemos la librería importada, podemos usar la función `getCurrentTime` para obtener la fecha y hora actual en formato `UTCTime`. Con esta función, podemos crear un objeto `ZonedTime` que nos da la fecha y hora local en nuestra zona horaria. El código sería así:
 
 ```Haskell
-currentDateTime <- getCurrentTime
+currentDate <- getCurrentTime
+localDate <- utcToLocalTime <$> getTimeZone <*> pure currentDate
 ```
 
-Podemos imprimir el resultado utilizando la función `print` y formatear el objeto `UTCTime` utilizando la función `formatTime`:
+Para mostrar la fecha en un formato más legible, podemos usar la función `formatTime` con el formato deseado como primer argumento y el `ZonedTime` como segundo. Por ejemplo, si queremos mostrar la fecha en formato `día/mes/año`, el código sería:
 
 ```Haskell
-print (formatTime defaultTimeLocale "%Y-%m-%d %H:%M:%S" currentDateTime)
+dateString <- formatTime defaultTimeLocale "%d/%m/%Y" localDate
 ```
 
-Este código imprimirá la fecha y hora actual en el formato `AAAA-MM-DD HH:MM:SS` en la consola.
-
-También podemos obtener la fecha actual en diferentes zonas horarias utilizando la función `utcToLocalTime` y especificando la zona horaria deseada. Por ejemplo, para obtener la fecha actual en Nueva York, podemos hacer lo siguiente:
+Y si queremos mostrar también la hora, podemos usar el formato `día/mes/año %H:%M:%S`. Por último, podemos imprimir el resultado usando la función `putStrLn`:
 
 ```Haskell
-easternDateTime <- utcToLocalTime (hoursToTimeZone (-5)) currentDateTime
+putStrLn dateString
 ```
+
+La salida sería algo así: `10/04/2021 14:08:36`
 
 ## Profundizando
 
-Además de obtener la fecha actual, la biblioteca `time` también nos permite realizar operaciones con fechas, como sumar o restar un cierto número de días o meses. También podemos obtener diferentes componentes de la fecha, como el día, el mes y el año, utilizando las funciones `toGregorian`, `toOrdinalDate` y `toWeekDate`, entre otras.
+Ahora que sabemos cómo obtener la fecha actual en Haskell, es importante mencionar que cuando usamos la función `getCurrentTime`, estamos obteniendo la fecha y hora en formato `UTCTime`. Esto es una importante diferencia con otros lenguajes de programación como Java, donde obtenemos por defecto la fecha y hora en nuestra zona horaria local.
 
-Para obtener información más detallada sobre cómo trabajar con fechas en Haskell, se recomienda consultar la documentación de la biblioteca `time`.
+Si queremos trabajar con la fecha y hora en nuestra zona horaria local en Haskell, debemos usar la función `getCurrentLocaleTime`, que nos da directamente un objeto `ZonedTime` con la fecha y hora en nuestra zona horaria.
 
 ## Ver también
 
-- [Documentación de la biblioteca `time` de Haskell](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Guía de formatos de fecha y hora en Haskell](https://wiki.haskell.org/Date_formatting_and_parsing)
+- [Documentación de la librería Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Tutorial de Haskell: fechas y tiempo](http://dmalcolm.fedorapeople.org/presentations/HaskellDatesAndTimes.pdf)

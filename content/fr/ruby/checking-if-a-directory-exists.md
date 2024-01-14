@@ -1,49 +1,67 @@
 ---
-title:    "Ruby: Vérification de l'existence d'un répertoire"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/checking-if-a-directory-exists.md"
+title:                "Ruby: Vérifier l'existence d'un répertoire"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-La vérification de l'existence d'un répertoire est une tâche courante dans la programmation Ruby. Cette étape est importante car elle permet de s'assurer qu'un chemin de fichier est valide avant d'effectuer des opérations dessus. Dans cet article, nous allons explorer comment vérifier si un répertoire existe dans Ruby et pourquoi c'est crucial pour votre code.
+Vérifier si un répertoire existe est une tâche courante en programmation, notamment en Ruby. Cela permet de s'assurer que le code s'exécutera correctement et de gérer les erreurs potentielles.
 
-## Comment faire
+# Comment faire
 
-Pour vérifier si un répertoire existe dans Ruby, nous pouvons utiliser la méthode `Dir.exist?` en lui passant le chemin du répertoire en paramètre. Voici un exemple de code pour illustrer cela :
+Pour vérifier si un répertoire existe en Ruby, il suffit d'utiliser la méthode `File.exist?("chemin/vers/le/répertoire")`. Cette méthode renvoie un booléen, `true` si le répertoire existe et `false` s'il n'existe pas.
 
-```ruby
-if Dir.exist?("/chemin/dossier")
-    puts "Le dossier existe."
+```Ruby
+if File.exist?("/home/user/Documents")
+  puts "Le répertoire existe"
 else
-    puts "Le dossier n'existe pas."
+  puts "Le répertoire n'existe pas"
 end
+
+# Output:
+# Le répertoire existe
 ```
 
-Dans cet exemple, nous utilisons la méthode `Dir.exist?` pour vérifier si le dossier "/chemin/dossier" existe. Si c'est le cas, nous affichons un message indiquant que le dossier existe, sinon nous affichons un message indiquant qu'il n'existe pas. Voici ce que vous pouvez attendre comme résultat :
+On peut également utiliser la méthode `File.directory?` qui renvoie `true` si le chemin donné correspond à un répertoire ou `false` sinon.
 
-```ruby
-Le dossier existe.
+```Ruby
+if File.directory?("/home/user/Documents")
+  puts "C'est un répertoire"
+else
+  puts "Ce n'est pas un répertoire"
+end
+
+# Output:
+# C'est un répertoire
 ```
 
-## Plongée en profondeur
+# Plongeon en profondeur
 
-Pour mieux comprendre comment fonctionne la méthode `Dir.exist?` et pourquoi c'est si important, nous allons explorer quelques détails techniques.
+Il est important de noter que ces méthodes ne vérifient que si le chemin donné correspond à un répertoire physique sur le système de fichiers. Elles ne vérifient pas si le répertoire est accessible ou si l'utilisateur a les permissions nécessaires pour y accéder.
 
-Tout d'abord, cette méthode est une méthode de classe de la classe `Dir`. Cela signifie que nous pouvons l'appeler directement sans avoir besoin d'instancier un objet `Dir`. De plus, cette méthode renvoie une valeur booléenne, `true` si le dossier existe et `false` sinon.
+Pour vérifier ces éléments, on peut utiliser la méthode `File.readable?` pour vérifier si le répertoire est accessible en lecture, `File.writable?` pour vérifier s'il est accessible en écriture et `File.executable?` pour vérifier s'il est exécutable.
 
-En interne, la méthode `Dir.exist?` utilise la fonction système `File.exist?` pour effectuer la vérification. Cela signifie qu'elle peut également renvoyer `true` si un fichier portant le même nom que le dossier existe. C'est pourquoi il est important de s'assurer qu'il s'agit bien d'un dossier avant d'effectuer des opérations dessus.
+```Ruby
+if File.readable?("/home/user/Documents")
+  puts "Le répertoire est accessible en lecture"
+end
+if File.writable?("/home/user/Documents")
+  puts "Le répertoire est accessible en écriture"
+end
+if File.executable?("/home/user/Documents")
+  puts "Le répertoire est exécutable"
+end
 
-Enfin, il est également possible d'utiliser la méthode `Dir.exists?` qui est un alias de `Dir.exist?`, vous pouvez donc utiliser celle que vous préférez dans votre code.
+# Output:
+# Le répertoire est accessible en lecture
+```
 
-## Voir aussi
+# Voir aussi
 
-Voici quelques liens utiles pour en savoir plus sur la vérification de l'existence d'un répertoire en Ruby :
-
-- Documentation officielle de Ruby sur la méthode `Dir.exist?` : https://ruby-doc.org/core/Dir.html#method-c-exist-3F
-- Documentation officielle de Ruby sur la méthode `File.exist?` : https://ruby-doc.org/core/File.html#method-c-exist-3F
-- Un tutoriel pratique sur la vérification de l'existence d'un répertoire en Ruby : https://www.rubyguides.com/2016/09/check-if-file-exists/
-
-En utilisant la méthode `Dir.exist?` dans votre code, vous pourrez facilement vérifier si un répertoire existe et ainsi éviter des erreurs et des bogues potentiellement graves. N'hésitez pas à explorer d'autres options et méthodes pour manipuler les fichiers et les dossiers en Ruby !
+- [Ruby documentation officielle sur la classe File](https://ruby-doc.org/core-3.0.0/File.html)
+- [Tutoriel sur les opérations de base de fichiers en Ruby](https://codecademy.com/learn/learn-ruby/modules/learn-ruby-files/cheatsheet)
+- [Utiliser la gem `fileutils` pour manipuler des fichiers](https://dev.to/itsmohsen/how-to-manipulate-files-in-ruby-1d94)

@@ -1,35 +1,53 @@
 ---
-title:    "Javascript: 標準エラーに書き込むこと"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-to-standard-error.md"
+title:                "Javascript: 「標準エラーへの書き込み」"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-プログラムを書く際、標準エラー出力に書き込む理由は何でしょうか？ 
+# なぜ標準エラー出力を書き込むのか
 
-プログラムで何かが間違ったり、バグが発生した場合、エラーメッセージを標準エラー出力に書き込むことでユーザーに正しい情報を提供できます。また、標準出力と標準エラー出力を区別することでデバッグやログ出力が容易になります。 
+プログラミングをしていると、バグやエラーが発生することはよくあります。その際、標準エラー出力にメッセージを書き込むことで、エラーの原因を特定しやすくなります。例えば、デバッグのために変数の値を確認したいときに、標準出力ではなく標準エラー出力に変数の値を書き込むことができます。
 
-## 方法
-標準エラー出力に書き込む方法は、プログラミング言語によって異なりますが、大多数の言語で以下のように記述できます。 
+# どのように書き込むのか
 
-```Javascript
-console.error("エラーメッセージ");
-```
-
-上記の例では、JavaScriptでコンソールにエラーメッセージを出力する方法を示しています。実際にプログラムを実行してみると、以下のような出力が得られます。 
+まず、コンソールオブジェクトのメソッドである`console.error()`を使います。これにより、任意のメッセージを標準エラー出力に書き込むことができます。
 
 ```Javascript
->> console.error("エラーメッセージ");
-エラーメッセージ
+console.error("This is an error message.");
 ```
 
-## ディープダイブ
-標準エラー出力に書き込む際の注意点として、エラーメッセージを標準エラー出力に書き込む際には適切なエスケープ処理を行う必要があります。これにより、プログラムが正しく動作しない場合でも意図せずセキュリティ上の問題を引き起こすことがなくなります。 
+上記のコードを実行すると、コンソールに赤色のエラーメッセージが表示されます。
 
-また、標準エラー出力は通常画面に出力されず、ログファイルなどに書き込まれるため、デバッグやバグ修正を行う際には重要な情報源となります。適切なエラーメッセージを書き込むことで、バグの原因を特定するのに役立ちます。 
+また、変数の値を書き込む場合は、文字列と結合して書き込むこともできます。
 
-## See Also
-- [console.error() - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/API/Console/error)
-- [標準エラー出力 - Wikipedia](https://ja.wikipedia.org/wiki/%E6%A8%99%E6%BA%96%E3%82%A8%E3%83%A9%E3%83%BC%E5%87%BA%E5%8A%9B)
+```Javascript
+const num = 5;
+console.error("The value of num is " + num);
+```
+
+このようにすることで、変数の値を確認することができます。
+
+# 深く掘り下げる
+
+標準エラー出力を使う際には、`console.error()`の他にも手法があります。例えば、例外処理で`throw`文を使うと、エラーが発生した際に標準エラー出力にメッセージを書き込むことができます。
+
+```Javascript
+try {
+  // 例外が発生する可能性のある処理
+} catch(err) {
+  console.error("An error occurred: " + err);
+}
+```
+
+また、Webサイトやアプリケーションを開発する際には、JavaScriptのデバッガーである`debugger`文を使うこともできます。この文を使うと、指定した箇所でプログラムの実行を一時停止し、標準エラー出力に変数の値を表示させることができます。
+
+以上が、標準エラー出力を活用するための基本的な情報です。頻繁にバグやエラーが発生するプログラミングでは、この機能を使って効率的にデバッグすることが重要です。
+
+# 参考リンク
+
+- [JavaScriptコンソール入門](https://developer.mozilla.org/ja/docs/Web/API/Console)
+- [例外処理の使い方](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/throw)
+- [デバッグのためのdebugger文](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/debugger)

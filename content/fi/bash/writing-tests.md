@@ -1,44 +1,45 @@
 ---
-title:    "Bash: Testien kirjoittaminen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-tests.md"
+title:                "Bash: Testien kirjoittaminen"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi kirjoittaa testeja?
 
-Testien kirjoittaminen on olennainen osa Bash-ohjelmointia, koska se auttaa varmistamaan koodisi toimivuuden ja vähentää virheiden riskiä. Testit voivat myös nopeuttaa koodin kehittämistä ja tehdä siitä helpommin ylläpidettävän.
+Testien kirjoittaminen on tärkeä osa Bash-ohjelmointia, sillä se auttaa varmistamaan, että koodi toimii odotetusti ja vähentää ohjelmistovirheiden riskiä. Se myös auttaa parantamaan koodin laatua ja ylläpidettävyyttä.
 
-## Miten
+## Miten kirjoittaa testeja Bashilla?
 
-Testien kirjoittaminen Bashissa on helppoa. Ensimmäinen askel on luoda testitiedosto, johon tallennat kaikki testitapaukset. Voit käyttää joko Bashin sisäänrakennettua "test" -komentoa tai suositeltua "bats" -komentoa testien kirjoittamiseen.
+Bashin version 4.0 jälkeen se sisältää sisäänrakennetun [[-operaattorin, joka mahdollistaa yksinkertaisten testien kirjoittamisen.
 
-```Bash
-# Sisällytetään "bats" -komento
-source /usr/local/bin/bats
+```
+#!/bin/bash
 
-# Testitiedosto
-@test "Testin nimi" {
-  # Testitapausten koodi
-  result="$(your_command)"
-  [ "$result" == "expected_output" ]
-}
-
-# Käynnistä testit
-bats your_test_file.bats
+# Testataan, muuttuuko muuttuja nimi oikein
+nimi="Matti"
+if [[ $nimi == "Matti" ]]; then
+  echo "Muuttuja nimi on Matti."
+else
+  echo "Muuttuja nimi ei ole Matti."
+fi
 ```
 
-Tässä esimerkissä käytämme "bats" -komentoa, joka suorittaa kaikki testit testitiedostosta ja antaa tuloksia. Voit myös käyttää Bashin sisäänrakennettua "test" -komentoa, mutta siinä tapauksessa sinun on huolehdittava itse tulosten näyttämisestä.
+Tässä esimerkissä [[-operaattori vertaa muuttujaa nimi merkkijonoon "Matti". Jos ehto on tosi, tulostetaan lauseke "Muuttuja nimi on Matti." Jos ehto ei ole tosi, tulostetaan lauseke "Muuttuja nimi ei ole Matti."
 
-## Syväsukellus
+Testien kirjoittaminen on erityisen hyödyllistä Bash-skriptejä varten, sillä se auttaa varmistamaan, että skripti toimii odotusten mukaisesti ja havaitsemaan mahdolliset virheet.
 
-Kun kirjoitat testejä Bash-ohjelmillesi, on tärkeää ottaa huomioon muutamia asioita. Ensinnäkin, testien tulisi kattaa mahdollisimman monta eri tilannetta ja antaa tarkkoja tuloksia. Toiseksi, käytä muuttujia testien luomiseen, jotta voit helposti muuttaa testattavia parametrejä. Lisäksi, käytä "set -e" -komentoa varmistaaksesi, että testit keskeytyvät välittömästi jos jokin niistä epäonnistuu.
+## Syvenny testien kirjoittamiseen
 
-On myös tärkeää muistaa, että testien kirjoittaminen on jatkuva prosessi. Muokkaa ja lisää testejä aina kun koodia muutetaan, jotta voit varmistaa sen toimivuuden.
+Testien kirjoittaminen Bashilla on melko yksinkertaista, mutta on myös mahdollista kirjoittaa monimutkaisempia testejä, jotka tarkistavat esimerkiksi kattavasti skriptin eri osa-alueita.
+
+Lisäksi Bashilla on saatavilla erilaisia testitoimintoja, kuten `test` ja `[` -komento, jotka antavat vielä lisää mahdollisuuksia testien kirjoittamiseen.
+
+On myös hyödyllistä kirjoittaa testejä, jotka testaavat skriptin mahdollisia virhetilanteita ja huonosti muotoiltuja syötteitä. Näin voit varmistaa, että skripti toimii luotettavasti myös näissä tapauksissa.
 
 ## Katso myös
 
-- [Bash-testien kirjoittaminen](https://www.linuxjournal.com/article/3587)
-- [Bats-dokumentaatio](https://github.com/bats-core/bats-core)
-- [Bash-opas aloittelijoille (suomeksi)](https://panerointi.github.io/bash-opas/)
+- [Bash-käsikirja](https://www.gnu.org/software/bash/manual/html_node/index.html)
+- [Bash Testien kirjoittaminen](https://askubuntu.com/questions/521191/how-to-write-a-bash-script-to-test-the-most-frequently-used-command)

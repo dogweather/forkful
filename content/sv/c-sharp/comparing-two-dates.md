@@ -1,40 +1,64 @@
 ---
-title:    "C#: Jämföra två datum"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/comparing-two-dates.md"
+title:                "C#: Jämförelse av två datum"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att jämföra två datum är en vanligt förekommande uppgift i programmering och det kan ha många olika syften. Det kan vara för att se vilket av två datum som är tidigare eller senare, för att filtrera data baserat på datum eller för att visa hur lång tid det har gått mellan två specifika datum. Oavsett syfte är det viktigt att ha en bra förståelse för hur man jämför datum i C#.
+Att jämföra två datum är en vanlig uppgift inom programmering, särskilt när man arbetar med datum- och tidsdata. Det kan vara användbart för att kontrollera om ett visst datum är före eller efter ett annat datum, eller för att beräkna skillnaden mellan två datum.
 
-## Hur man gör
+## Så här gör du
 
-I C# finns det olika sätt att jämföra två datum och det viktigaste att känna till är de inbyggda metoder som finns tillgängliga för detta ändamål. Här är ett exempel på hur man enkelt kan jämföra två datum:
+För att jämföra två datum i C# behöver vi först skapa två DateTime-objekt som innehåller de datum vi vill jämföra. Sedan kan vi använda olika metoder för att utföra olika jämförelser.
 
 ```C#
-DateTime date1 = new DateTime(2020, 10, 10);
-DateTime date2 = new DateTime(2020, 11, 11);
+DateTime date1 = new DateTime(2021, 10, 15);
+DateTime date2 = new DateTime(2021, 10, 20);
 
-// Jämför om date1 är äldre än date2
-if (date1 < date2)
+// Kontrollera om date1 är tidigare än date2
+if(date1 < date2)
 {
-    Console.WriteLine("Date1 är tidigare än date2");
+    Console.WriteLine("date1 är tidigare än date2");
 }
+
+// Kontrollera om date1 är senare än date2
+if(date1 > date2)
+{
+    Console.WriteLine("date1 är senare än date2");
+}
+
+// Kontrollera om date1 är samma som date2
+if(date1 == date2)
+{
+    Console.WriteLine("date1 är samma som date2");
+}
+
+// Beräkna antalet dagar mellan date1 och date2
+int dagar = (date2 - date1).Days;
+Console.WriteLine("Skillnaden mellan date1 och date2 är " + dagar + " dagar");
 ```
 
-I det ovanstående exemplet använder vi den inbyggda metoden "Compare" för att jämföra två datum. Det är också möjligt att använda andra metoder såsom "Equals" eller "CompareTo" beroende på vad som passar bäst för din specifika användning.
+#### Exempeloutput:
 
-## Djupdykning
+```
+date1 är tidigare än date2
+Skillnaden mellan date1 och date2 är 5 dagar
+```
 
-Det finns många saker att tänka på när man jämför datum i C#. En viktig aspekt är att ta hänsyn till tidszoner, vilket kan påverka resultatet av en jämförelse. Det är också viktigt att vara medveten om att en del datum objekt i C# är oföränderliga, vilket innebär att när ett datum har skapats så kan det inte ändras. Därför är det viktigt att noga tänka igenom vilka metoder som passar bäst för din specifika användning och vilka resultat du förväntar dig.
+## Fördjupning
 
-## Se även
+När vi jämför datum i C# jämförs inte bara de faktiska datumen, utan även tiden. Det betyder att om vi har två DateTime-objekt med samma datum, men olika tider, kommer de ändå att vara olika när vi jämför dem.
 
-Här är några länkar som kan vara användbara för att lära sig mer om hur man jämför datum i C#:
+För att undvika detta kan vi använda metoden `DateTime.Date` för att endast jämföra datumen och ignorera tiderna.
 
-- [Microsoft's guide för att jämföra datum i C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-compare-dates)
-- [Tutorialspoint's artikel om jämförelse av datum i C#](https://www.tutorialspoint.com/How-to-compare-dates-in-C-Sharp)
-- [Stack Overflow tråd med tips för att jämföra datum i C#](https://stackoverflow.com/questions/17344984/how-do-i-compare-dates-in-c-sharp)
+För mer avancerad hantering av datum och tider finns också klassen `TimeSpan` som kan användas för att beräkna skillnaden mellan två datum och tider med högre precision.
+
+## Se också
+
+- [DateTime-struktur (C#-programmeringsguide)](https://docs.microsoft.com/sv-se/dotnet/csharp/language-reference/builtin-types/struct)
+- [DateTime.Compare-metoden (C#-programmeringsguide)](https://docs.microsoft.com/sv-se/dotnet/api/system.datetime.compare)
+- [TimeSpan-struktur (C#-programmeringsguide)](https://docs.microsoft.com/sv-se/dotnet/api/system.timespan)

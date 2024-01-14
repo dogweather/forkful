@@ -1,61 +1,56 @@
 ---
-title:    "Go: テキストファイルの読み込み"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/reading-a-text-file.md"
+title:                "Go: テキストファイルを読み込む"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-テキストファイルを読み込むことは、プログラミングで非常に重要です。例えば、CSVファイルを読み込んでデータを処理するなど、さまざまな用途でテキストファイルが使用されます。この記事では、Go言語で簡単にテキストファイルを読み込む方法を紹介します。
+ファイルを読み込むことの重要性は何でしょうか？テキストファイルを読み取ることは、プログラマーにとって非常に役立ちます。例えば、データ処理や情報の抽出などに使用することができます。
 
-## 方法
+# 使い方
 
-まずは`os`パッケージをimportし、`Open()`関数を使って対象のテキストファイルを開きます。次に、`bufio`パッケージを使ってバッファリングし、`Scanner`を使ってテキストファイルを1行ずつ読み込みます。`Scan()`を使用して読み込んだデータを文字列として取得し、`Split()`を使ってスペースごとに分割します。最後に、必要な処理を行うことができます。以下にサンプルコードを示します。
+ファイルを読み込むためには、Go言語の標準パッケージである「os」を使用します。以下のコード例を参考にしてみてください。
 
 ```Go
-package main
+file, err := os.Open("sample.txt") // ファイルを開く
+if err != nil {
+    panic(err) // エラー発生時に処理を停止
+}
+defer file.Close() // 処理が終わったらファイルを閉じる
 
-import (
-    "bufio"
-    "fmt"
-    "os"
-)
+// 読み込んだデータをbyte配列に格納
+data := make([]byte, 100)
+count, err := file.Read(data) // ファイルを100バイト分読み込む
+if err != nil {
+    panic(err)
+}
+fmt.Printf("Read %d bytes: %s\n", count, data) // 読み込んだデータを出力
 
-func main() {
-    file, err := os.Open("sample.txt")
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    defer file.Close()
-
-    scanner := bufio.NewScanner(file)
-    for scanner.Scan() {
-        line := scanner.Text() // 1行ずつ読み込み
-        words := strings.Split(line, " ") // スペースごとに分割
-        // 必要な処理を行う
-        fmt.Println(words)
-    }
-
-    if err := scanner.Err(); err != nil {
-        fmt.Println(err)
-        return
-    }
+// 行単位でデータを読み込む例
+scanner := bufio.NewScanner(file)
+for scanner.Scan() {
+    fmt.Println(scanner.Text())
 }
 ```
 
-以上のコードを実行すると、テキストファイルの内容がスペースごとに分割され、出力されることがわかります。
+実行結果：
 
-## 深堀り
+```
+Read 100 bytes: Hello World! This is a sample text file.
+This is the second line.
+This is the third line.
+```
 
-テキストファイルを読み込む際には、ファイルのエンコーディングにも注意が必要です。`Scanner`はデフォルトでUTF-8のエンコーディングを使用するため、別のエンコーディングを使用しているファイルを読み込む場合は、`bufio.NewReader()`を使って`Reader`を作成し、`SetEncoding()`を使って適切なエンコーディングを指定する必要があります。
+# 深堀り
 
-また、テキストファイルの最後に改行があるかどうかも確認する必要があります。`bufio`パッケージの`ScanLines()`を使うことで、改行を無視することができます。
+ファイルを読み込む方法には、上記のように単純に一度にデータを読み込む方法や、行単位でデータを読み込む方法以外にも様々な方法があります。例えば、特定の文字列が含まれる行のみを読み込んだり、ファイル内のデータをパースして特定の形式で出力することもできます。また、ファイルを開いたまま内容を変更することもできます。詳細な使い方やコード例は、公式ドキュメントを参考にしてみてください。
 
-## 参考リンク
+# 関連情報を見る
 
-- [Go Documentation: os package](https://golang.org/pkg/os/)
-- [Go Documentation: bufio package](https://golang.org/pkg/bufio/)
-- [Go Documentation: strings package](https://golang.org/pkg/strings/)
+- [Go言語の標準パッケージ「os」のドキュメント](https://golang.org/pkg/os/)
+- [ファイルを読み込むための標準パッケージ「bufio」のドキュメント](https://golang.org/pkg/bufio/)
+- [ファイル操作を行うためのパッケージ「ioutil」のドキュメント](https://golang.org/pkg/io/ioutil/)

@@ -1,46 +1,65 @@
 ---
-title:    "Kotlin: Sammenslåing av tekststrenger"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/concatenating-strings.md"
+title:                "Kotlin: Sammenføying av strenger"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+## Hvorfor
 
-I dagens digitale verden er det viktigere enn noensinne å kunne behandle tekst og data effektivt. En måte å gjøre dette på er gjennom å lagre og kombinere tekststrenger (også kjent som concatenation) i programmering. Dette kan være nyttig for språkbehandling, skrive ut informasjon og mye mer.
+Å konkatenerere strenger, eller å kombinere flere strenger til en lengre streng, er en viktig del av å programmere i Kotlin. Dette er nyttig når du ønsker å lage dynamisk tekst, som for eksempel beskjeder til brukeren basert på inndata fra programmet. Å bruke konkatenering i Kotlin er en enkel, men kraftig måte å manipulere tekst på.
 
-## Slik gjør du det
+## Hvordan
 
-For å konkatenere strenger i Kotlin kan du bruke operator "+" mellom to strenger. Dette vil kombinere dem og lagre dem som én streng. For eksempel:
-
-```Kotlin
-
-val navn = "Sara"
-
-val velkomst = "Hei " + navn
-
-println(velkomst) // Resultat: "Hei Sara"
-```
-
-Du kan også bruke funksjonen "format()" for å bytte ut variabler inne i en streng. Her er et eksempel:
+Det er flere måter å konkatenererere strenger i Kotlin på, men en av de enkleste er å bruke plussoperatøren (+). Dette gjør at du kan legge til to strenger sammen. La oss se på et enkelt eksempel:
 
 ```Kotlin
-val vekt = 62
-
-val setning = "Jeg veier %d kg".format(vekt)
-
-println(setning) // Resultat: "Jeg veier 62 kg"
+val fornavn = "Marius"
+val etternavn = "Hansen"
+val fulltNavn = fornavn + " " + etternavn
+println(fulltNavn)
 ```
 
-## Dykk dypere 
+Dette vil gi følgende utskrift: `Marius Hansen`. Ved å bruke plussoperatøren, kan du også legge til tall og andre verdier til strenger, som i et eksempel:
 
-I tillegg til å kombinere strenger, kan du også bruke metoder for å endre og manipulere tekst. For eksempel kan du bruke metodene "toUpperCase()" eller "toLowerCase()" for å konvertere tekst til store eller små bokstaver. Du kan også bruke "replace(oldValue, newValue)" for å bytte ut deler av tekst med en annen.
+```Kotlin
+val alder = 25
+val beskjed = "Jeg er " + alder + " år gammel."
+println(beskjed)
+```
 
-En annen viktig ting å merke seg er at i Kotlin, siden tekst er uforanderlig, lages en ny streng hver gang en metode blir brukt. Dette kan føre til unødvendig arbeid og påvirke ytelsen til programmet ditt.
+Dette vil gi følgende utskrift: `Jeg er 25 år gammel.`
 
-## Se også 
+Du kan også bruke funksjonen `plus()` for å konkatenerere strenger. La oss se på et eksempel:
 
-- [Kotlin offisiell dokumentasjon] (https://kotlinlang.org/docs/strings.html) 
-- [Java Tutorial Network] (https://www.javatutorialnetwork.com/kotlin/string-tutorials) 
-- [W3Schools] (https://www.w3schools.com
+```Kotlin
+val språk = "Kotlin"
+val beskrivelse = " er et kult programmeringsspråk."
+val helsetning = språk.plus(beskrivelse)
+println(helsetning)
+```
+
+Dette vil gi følgende utskrift: `Kotlin er et kult programmeringsspråk.`
+
+## Dypdykk
+
+Når du bruker plussoperatøren i Kotlin, blir det konkatenerert strenger bak kulissene ved hjelp av `StringBuilder`-klassen. Denne klassen håndterer effektivt sammenslåingen av strenger og sørger for at det ikke oppstår unødvendige kopier av strengene. Dette gjør at det ikke påvirker ytelsen til programmet.
+
+Du kan også bruke formateringsstreng for å konkatenerere strenger og for å bytte ut verdier i en tekst. La oss se på et eksempel:
+
+```Kotlin
+val navn = "Anders"
+val beskjed = "Hei, mitt navn er %s."
+val helsetning = beskjed.format(navn)
+println(helsetning)
+```
+
+Dette vil gi følgende utskrift: `Hei, mitt navn er Anders.` Her erstattes `%s` med verdien av variabelen `navn`.
+
+## Se også
+
+- [Kotlin Dokumentasjon - Strenger og tegn](https://kotlinlang.org/docs/reference/basic-types.html#strings-and-characters)
+- [Kotlin i Action - Innebygde operasjoner for strenger](https://www.manning.com/books/kotlin-in-action#builtin-operations-for-strings)
+- [Offisiell nettside for Kotlin](https://kotlinlang.org/)

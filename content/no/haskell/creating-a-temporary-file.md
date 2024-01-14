@@ -1,44 +1,40 @@
 ---
-title:    "Haskell: Lage en midlertidig fil"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/creating-a-temporary-file.md"
+title:                "Haskell: Lage en midlertidig fil"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Mange ganger, i programmering, kan det være nødvendig å opprette midlertidige filer for å håndtere ulike data eller buffer. Dette kan være nyttig når du trenger å lagre data midlertidig mens du arbeider med et større prosjekt, eller når du trenger å skrive data til en fil før du sender den til en annen enhet. Opprettelse av midlertidige filer kan være en effektiv måte å organisere og håndtere data på, og i Haskell kan du gjøre dette ved hjelp av noen enkle funksjoner.
+
+Å opprette midlertidige filer er en vanlig oppgave for mange programmører. Det kan være nyttig når du trenger å lagre midlertidige data eller som en del av en større prosess. I Haskell, kan det være nyttig å lære hvordan man oppretter midlertidige filer for å håndtere disse situasjonene.
 
 ## Hvordan
-Å opprette en midlertidig fil i Haskell er enkelt. Du må først importere "System.IO.Temp" -modulen og bruke funksjonen "withSystemTempFile". Dette vil opprette en midlertidig fil i systemets midlertidige katalog og returnere filbanen og håndtaket til filen. Se et eksempel nedenfor:
+
+For å opprette en midlertidig fil i Haskell, kan du bruke funksjonen `withSystemTempFile` fra modulen `System.IO.Temp`. Her er et eksempel på hvordan du kan bruke den:
 
 ```Haskell
-import System.IO.Temp
+import System.IO.Temp (withSystemTempFile)
+import System.IO (hPutStrLn, Handle, hClose)
 
-main = withSystemTempFile "tempFile.txt" $ \filepath handle -> do
-  hPutStrLn handle "Dette er en midlertidig fil."
-  putStrLn $ "Filbanen er: " ++ filepath
+main :: IO ()
+main = withSystemTempFile "tempfile.txt" $ \tmpFile tmpHandle -> do 
+    hPutStrLn tmpHandle "Dette er en midlertidig fil."
+    hPutStrLn tmpHandle "Denne filen vil bli slettet når programmet avsluttes."
+    hClose tmpHandle
+    putStrLn $ "Filen ble opprettet på denne plassen: " ++ tmpFile
 ```
 
-Dette vil skrive teksten til filen og skrive ut filbanen til midlertidig fil. Når programmet er ferdig, vil filen automatisk bli slettet fra systemet.
-
-I tillegg kan du bruke funksjonen "withTempDirectory" for å opprette en midlertidig katalog i stedet for en fil. Dette kan være nyttig for å håndtere større mengder data eller filer.
-
-```Haskell
-import System.IO.Temp
-
-main = withTempDirectory "tempDir" $ \dirpath -> do
-  let filename = "tempFile.txt"
-  let filepath = dirpath ++ "/" ++ filename
-  writeFile filepath "Dette er en midlertidig fil i en midlertidig katalog."
-  putStrLn $ "Filbanen er: " ++ filepath
-```
+I dette eksempelet opprettes en midlertidig fil med navnet `tempfile.txt` ved hjelp av `withSystemTempFile`. Deretter blir filen brukt til å skrive ut to setninger ved hjelp av `hPutStrLn`. Til slutt lukkes fila og vi får en melding som viser hvor filen ble opprettet.
 
 ## Dypdykk
-Begge funksjonene "withSystemTempFile" og "withTempDirectory" tar også en "prefix"-parameter, som lar deg spesifisere et fornavn for filen eller katalogen som opprettes. Standardprefixen er "tmp", men du kan endre dette til noe som er mer meningsfullt for ditt program.
 
-I tillegg kan du bruke "withTempFile" og "withTempDirectory" i stedet for "withSystemTempFile" og "withTempDirectory" hvis du vil spesifisere en annen katalog enn systemets midlertidige katalog. Dette kan være nyttig når du jobber med flere operativsystemer eller ønsker større kontroll over hvor filen/katalogen blir opprettet.
+`withSystemTempFile` funksjonen returnerer en `IO` handling som tar en filbane og en `Handle` som argumenter. Den midlertidige filen vil bli opprettet på den gitte filbanen, og `Handle` vil bli brukt til å skrive data til filen.
+
+Når `withSystemTempFile` er ferdig, blir `Handle` lukket og filen blir automatisk slettet. Dette er nyttig for å unngå rotete filer som ikke lenger trengs.
 
 ## Se Også
-- Les mer om "System.IO.Temp" -modulen i Haskell-dokumentasjonen: https://hackage.haskell.org/package/temporary
-- Utforsk andre nyttige moduler i Haskell for å arbeide med filer: https://hackage.haskell.org/packages/search?terms=file
+- [Haskell Dokumentasjon - System.IO.Temp](https://hackage.haskell.org/package/base/docs/System-IO-Temp.html)
+- [Haskell Programmering fra Bunnen av - Kapittel 9: Filbehandling](https://www.ufundu.no/haskell-kap9.html)

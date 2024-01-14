@@ -1,57 +1,43 @@
 ---
-title:    "C: Extraction de sous-chaînes"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/extracting-substrings.md"
+title:                "C: Extraction de sous-chaines"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Dans la programmation, il est souvent nécessaire de travailler avec des chaînes de caractères. Cela peut inclure des opérations telles que la recherche, le remplacement et la suppression de parties spécifiques d'une chaîne. Pour cela, l'extraction de sous-chaînes est une technique cruciale à connaître.
+Extrayez des sous-chaînes de caractères pour améliorer l'efficacité et la précision de votre programme en utilisant une méthode simple et utile en C.
 
-# Comment faire
-
-L'extraction de sous-chaînes consiste à extraire une portion spécifique d'une chaîne de caractères existante. Pour cela, nous avons besoin de trois paramètres : la chaîne d'origine, l'indice de départ et la longueur de la sous-chaîne désirée.
-
-Voici un exemple de code en C montrant comment extraire une sous-chaîne :
+## Comment le faire
 
 ```C
-#include <stdio.h>
-#include <string.h>
+// Définition des variables pour la chaîne de caractères et la sous-chaîne
+char chaine[] = "Exemple de sous-chaîne";
+char sousChaine[7];
 
-int main() {
-    char str[] = "Bonjour le monde";
-    int index = 8;
-    int length = 5;
+// Utilisation de la fonction strncpy pour extraire la sous-chaîne
+strncpy(sousChaine, chaine + 8, 6); // copiera les 6 caractères de la chaîne à partir de la 8ème position dans la sous-chaîne
 
-    char subString[length + 1];
-
-    memcpy(subString, &str[index], length);
-    subString[length] = '\0';
-
-    printf("La sous-chaîne extraite est : %s\n", subString);
-
-    return 0;
-}
+// Affichage de la sous-chaîne extraite
+printf("La sous-chaîne extraite est : %s\n", sousChaine);
 ```
 
-Dans cet exemple, nous déclarons une chaîne de caractères initiale "Bonjour le monde", et nous spécifions l'indice à partir duquel extraire la sous-chaîne (dans ce cas, l'indice 8 correspondant à "le"). Nous spécifions également la longueur de la sous-chaîne souhaitée (5 caractères). Ensuite, nous utilisons la fonction "memcpy" pour copier la sous-chaîne à partir de l'indice spécifié, et nous terminons en ajoutant le caractère de fin de chaîne ('\0').
-
-Lorsque nous exécutons ce code, nous obtenons l'output suivant :
+Résultat :
 
 ```
-La sous-chaîne extraite est : le mo
+La sous-chaîne extraite est : sous-c
 ```
 
-# Plongée en profondeur
+## Plongée en profondeur
 
-Il existe d'autres façons de réaliser l'extraction de sous-chaînes en utilisant différentes fonctions de la bibliothèque standard de C, telles que "strncpy", "strndup" ou "sscanf". Chacune de ces fonctions a ses propres particularités et peut être utile en fonction du contexte.
+La fonction `strncpy` est utilisée pour copier une certaine quantité de caractères d'une chaîne de caractères source vers une chaîne de caractères destination. Cette fonction prend trois paramètres : la chaîne destination, la chaîne source et le nombre de caractères à copier. Elle est particulièrement utile pour extraire des sous-chaînes de chaînes de caractères plus grandes.
 
-Il est également important de noter que l'extraction de sous-chaînes fonctionne également avec des tableaux de caractères, pas seulement des chaînes de caractères. Cela peut être utile lorsqu'on travaille avec des données binaires.
+Il est important de noter que la sous-chaîne extraite sera toujours suivie d'un caractère de fin de chaîne `'\0'`, qui sera ajouté automatiquement par la fonction `strncpy`. Il est donc important de définir la taille de la sous-chaîne avec une marge suffisante pour inclure ce caractère.
 
-# Voir aussi
+## Voir aussi
 
-- [Tutoriel C : Chaînes de caractères](https://www.codingame.com/playgrounds/4186/le-langage-c-pour-les-zeroes/les-chaines-de-caracteres)
-- [Documentation sur les fonctions de string.h en C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Guide pratique de l'extraction et de la manipulation de sous-chaînes en C](https://www.andatsoft.fr/programmation/guide_pratique_extraction_sous_chaine_manipulation_en_c.php)
+- [Documentation de la fonction `strncpy` en français](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
+- [Guide de référence pour les fonctions de chaînes de caractères en C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

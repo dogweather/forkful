@@ -1,36 +1,51 @@
 ---
-title:    "Fish Shell: स्ट्रिंग को कैपिटलाइज़ करना"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell: स्ट्रिंग कैपिटलाइज़ करना"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-एक स्ट्रिंग को कैपिटलाइज करने का कारण स्ट्रिंग को अपशब्दों और गुणांकों में विभाजित करना है, जो कोड को स्पष्ट बनाता है और कॉन्सिस्टेंटी बनाता है।
+आपने शायद अपने कोड में स्ट्रिंग कैपिटलाइज़ करते हुए कोई ध्यान दिया है। यदि हाँ, तो आप जानते होंगे कि यहाँ जरूरत क्यों हो सकती है। लेकिन यदि आपने अभी तक इस प्रकार का कोड नहीं लिखा है, तो हम आपको बताएंगे कि यह बहुत ही उपयोगी हो सकता है।
 
 ## कैसे करें
 
-```Fish Shell कोड उदाहरण
-set my_string "hello world"
-echo $my_string | string to-caps
+पहले, हमें स्ट्रिंग को प्राप्त करना होगा जिसे हम कैपिटलाइज़ करना चाहते हैं। उसके बाद, हम ```string capitalize``` कमांड का उपयोग करके स्ट्रिंग को कैपिटलाइज़ कर सकते हैं। नीचे एक उदाहरण दिया गया है:
+
+```
+Fish Shell कमांड:
+
+set string Hello
+echo $string | string capitalize
+
+आउटपुट: Hello
 ```
 
-### आउटपुट:
+अगर स्ट्रिंग में अन्य चरित्रों को भी कैपिटलाइज़ करना हो जैसे कि ```HeLLo```, तो हम ```-a``` फ्लैग का उपयोग कर सकते हैं।
 
-```Hindi
-HELLO WORLD
+```
+Fish Shell कमांड:
+
+set string Hello
+echo $string | string capitalize -a
+
+आउटपुट: HElLo
 ```
 
-## डीप डाइव
+इसी तरह, हम एक स्ट्रिंग के पहले चरित्र को कैपिटलाइज़ करना चाहते हैं तो हम ```-f``` फ्लैग का भी उपयोग कर सकते हैं।
 
-स्ट्रिंग फ़ंक्शन स्ट्रिंग को प्रिंट, मुद्रित करने और सामान्य ओटियन में विभाजित करते हैं। string to-caps फ़ंक्शन को डिफ़ॉल्ट ऑप्शन के रूप में उपयोग किया जाना सुनिश्चित करेगा, जो स्ट्रिंग को ऊंचे केस में बदल देगा। आप सभी कोडिंग ओप्शन के बारे में अधिक जानने के लिए, "man" में मोड दिया गया है।
+```
+Fish Shell कमांड:
 
-## देखिये भी
+set string hello
+echo $string | string capitalize -f
 
-[Fish Shell की दस्तावेज़ीकरण] (https://fishshell.com/docs/current/index.html)
+आउटपुट: Hello
+```
 
-[स्ट्रिंग फ़ंक्शन का उपयोग करें] (https://fishshell.com/docs/current/cmds/string.html)
+## गहराई में जाएं
 
-[फिश शेल समुदाय] (https://fishshell.com/docs/current/guides.html)
+यह कमांड स्ट्रिंग के प्रथम चरित्र को ही कैपिटल बनाता है और बाकी स्ट्रिंग को ना तो बदलता है ना ही कैपिटल करता है। यदि आप स्ट्रिंग के अन्य चरित्रों को भी कैपिटलाइज़ करना चाहते हैं तो आपको अपना कोड थोड़ा और संशोधित करना होगा। आउटपुट में हमने इसके एक

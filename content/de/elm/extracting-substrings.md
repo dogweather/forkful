@@ -1,43 +1,66 @@
 ---
-title:    "Elm: Unterzeichenfolgen extrahieren"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/extracting-substrings.md"
+title:                "Elm: Substrings extrahieren"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Für das Verarbeiten von Texten in Elm gibt es oft die Notwendigkeit, bestimmte Teile eines Strings, auch Substrings genannt, zu extrahieren. Dies kann nützlich sein, um bestimmte Informationen aus einem längeren Text zu filtern oder um Text in kleinere Teile aufzuteilen. In diesem Beitrag werden wir uns genauer ansehen, wie man Substrings in Elm extrahieren kann.
+Das Extrahieren von Substrings ist eine nützliche Funktion in Elm, die es ermöglicht, Teile von Strings basierend auf bestimmten Kriterien zu extrahieren. Dies ist besonders hilfreich, wenn man mit großen Strings arbeitet und nur bestimmte Teile davon benötigt. In diesem Blog-Beitrag werden wir genauer untersuchen, warum und wie man Substrings in Elm extrahiert.
 
-## Wie man Substrings in Elm extrahiert
+## Anleitung
 
-Es gibt verschiedene Möglichkeiten, Substrings in Elm zu extrahieren. Eine davon ist die Verwendung der Funktion `String.slice` aus dem Modul `String`. Diese Funktion nimmt als Parameter den Startindex und den Endindex des Substrings und gibt den entsprechenden Teil des Strings zurück. Zum Beispiel:
+Um einen Substring in Elm zu extrahieren, können wir die `String.slice` Funktion verwenden. Diese Funktion erfordert drei Argumente: den Startindex, den Endindex und den String selbst. Der Startindex gibt an, an welcher Stelle der Substring beginnen soll, während der Endindex angibt, an welcher Stelle der Substring enden soll. Hier ist ein Beispielcode, der einen Substring von einem String extrahiert:
 
-```elm
-String.slice 3 6 "Elephant" == "eph"
+```Elm
+-- String mit dem Text "Hello World"
+let str = "Hello World"
+
+-- Extrahieren des Substrings "World"
+let substr = String.slice 6 11 str
+
+-- Ausgabe des Substrings
+-- "World"
 ```
 
-Der Substring, der hier extrahiert wird, hat einen Startindex von 3 (das "e" in "Elephant") und einen Endindex von 6 (das "h" in "Elephant"). Beachte, dass der Endindex nicht im Substring enthalten ist, daher wird "h" nicht zurückgegeben.
+Wie Sie sehen können, haben wir den Substring von Index 6 (inklusive) bis Index 11 (exklusive) extrahiert. Es ist wichtig zu beachten, dass der Endindex nicht Teil des extrahierten Substrings ist.
 
-Man kann auch negative Indices verwenden, um von hinten zu zählen. Zum Beispiel würde `String.slice -3 -1 "Elephant" == "an"` zurückgeben. 
+Wenn Sie möchten, können Sie auch negative Indizes verwenden, um Substrings zu extrahieren. Ein negativer Startindex gibt an, an welcher Stelle der letzte Zeichen des Strings als Start für den Substring verwendet werden soll, während ein negativer Endindex angibt, an welcher Stelle das vorletzte Zeichen des Strings als Ende für den Substring verwendet werden soll. Hier ist ein Beispielcode:
 
-Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken mit der Funktion `Regex.find` aus dem Modul `Regex`. Diese Funktion nimmt als Parameter eine Regex und einen String und gibt eine Liste mit allen gefundenen Substrings zurück. Hier ist ein Beispiel:
+```Elm
+-- String mit dem Text "Abcdefg"
+let str = "Abcdefg"
 
-```elm
-Regex.find (Regex.regex "lo+") "Hello World" == [ "lo", "loo" ]
+-- Extrahieren des Substrings "def"
+let substr = String.slice -5 -2 str
+
+-- Ausgabe des Substrings
+-- "def"
 ```
 
-Dieser Code wird den Substring "lo" und "loo" in "Hello World" finden und in einer Liste zurückgeben. Beachte, dass reguläre Ausdrücke eine etwas fortgeschrittenere Technik sind, aber sehr nützlich, wenn man komplexe Suchmuster benötigt.
+Ein weiteres nützliches Feature ist die Möglichkeit, den Endindex weglassen zu können. Dadurch wird automatisch der Rest des Strings vom angegebenen Startindex bis zum Ende als Substring extrahiert. Hier ist ein Beispielcode:
 
-## Tiefergehende Information
+```Elm
+-- String mit dem Text "123456789"
+let str = "123456789"
 
-Es gibt noch viele weitere Möglichkeiten, Substrings in Elm zu extrahieren. Zum Beispiel gibt es die Funktion `String.left` und `String.right`, die jeweils die ersten bzw. letzten n Zeichen eines Strings zurückgeben. Auch kann man den Startindex und Endindex in `String.slice` durch eine Funktion ersetzen, um dynamisch den zu extrahierenden Substring zu bestimmen.
+-- Extrahieren des Substrings "456789"
+let substr = String.slice 3 str
 
-Es ist wichtig, genau zu überlegen, welche Methode am besten für die jeweilige Aufgabe geeignet ist. Zum Beispiel ist es möglicherweise effizienter, `String.left` oder `String.right` zu verwenden, wenn man nur die ersten bzw. letzten n Zeichen eines Strings benötigt, anstatt die Funktion `String.slice` mit festen Indices zu nutzen.
+-- Ausgabe des Substrings
+-- "456789"
+```
+
+## Tiefergehende Informationen
+
+Es gibt noch weitere Funktionen, die beim Extrahieren von Substrings in Elm hilfreich sein können. Die `String.left` Funktion gibt eine bestimmte Anzahl von Zeichen vom Anfang des Strings zurück, während `String.right` eine bestimmte Anzahl von Zeichen vom Ende des Strings zurückgibt. Es ist auch möglich, einen bestimmten String als Trennzeichen zu verwenden, um den String in Unterstrings zu teilen, indem die Funktion `String.split` verwendet wird.
+
+Es ist wichtig zu beachten, dass das Extrahieren von Substrings nicht nur auf Strings beschränkt ist. Auch in Listen kann man Sublists extrahieren, indem man die `List.slice` Funktion verwendet.
 
 ## Siehe auch
 
-- [Elm Dokumentation zu Substrings](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
-- [Elm Dokumentation zu regulären Ausdrücken](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
-- [Elm Dokumentation zu String Funktionen](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [`String.slice` Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
+- ["Startseite" einer deutschen Elm-Community](https://elm-lang.de/)

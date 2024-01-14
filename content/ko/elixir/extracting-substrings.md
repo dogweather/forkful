@@ -1,58 +1,38 @@
 ---
-title:    "Elixir: 서브스트링 추출하기"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/extracting-substrings.md"
+title:                "Elixir: 부분 문자열 추출하기"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 substring을 추출해야 할까요?
 
-자바스크립트에서는 많은 경우 문자열에서 특정 부분을 추출해야 할 때가 있습니다. 예를 들어, 이메일 주소에서 사용자 이름을 추출하거나, URL에서 도메인 이름을 추출할 수 있습니다. 이러한 작업을 위해 Elixir에서는 `String.slice/3` 함수를 사용할 수 있습니다.
+substring 추출은 실제로 매우 유용한 프로그래밍 기능입니다. substring을 추출하는 것은 문자열을 조작하는 데 도움이 되며, 일련의 문자열 중 필요한 부분만 선택할 수 있게 해줍니다.
 
-## 방법
+## 방법: substring 추출하는 법
 
-우리가 추출하고자 하는 문자열과 추출하고자 하는 부분의 시작과 끝 인덱스를 지정하는 것으로 간단하게 부분 문자열을 추출할 수 있습니다. 이를 위해 `String.slice/3` 함수를 사용하며, 첫 번째 인자는 추출하고자 하는 문자열, 두 번째 인자는 시작 인덱스, 세 번째 인자는 끝 인덱스입니다.
+자바스크립트에서 substring을 추출하는 방법은 간단합니다. 코드 블록 내에서 문자열을 지정하여 `substring/3` 함수를 사용할 수 있습니다.
 
-```elixir
-full_name = "박지성"
-surname = String.slice(full_name, 0, 1) # "박"
+```Elixir
+str = "안녕하세요, 제 이름은 Elixir입니다."
+substring(str, 9, 11)
 ```
+출력은 `"제 이름은"`이 될 것입니다.
 
-위의 예시에서 `full_name` 변수에는 "박지성" 문자열이 저장되어 있으며, `String.slice/3` 함수를 사용해 첫 번째 글자만 추출하여 `surname` 변수에 저장하였습니다.
+## 깊이 탐구: substring 추출에 대해 더 알아보기
 
-추출하고자 하는 부분이 여러 글자인 경우, 시작과 끝 인덱스를 적절히 조절해준 후 `String.slice/3` 함수를 사용할 수 있습니다.
+substring은 문자열 뿐만 아니라 리스트에서도 작업할 수 있습니다. 따라서 Elixir에서는 문자열을 다루는 데 매우 유용한 기능입니다. 문자열의 한 부분만 선택하여 다른 작업에 사용할 수 있게 되므로 문자열을 더 효율적으로 관리할 수 있습니다.
 
-```elixir
-full_name = "박지성"
-last_name = String.slice(full_name, 1, 3) # "지성"
-```
+함수가 간단하게 작성되어 있기 때문에 Elixir에서 substring을 사용하는 것은 매우 쉽습니다. 또한, string manipulation을 위한 다양한 함수들과 함께 제공되기 때문에 substring 함수를 함께 사용하면 좋은 결과를 얻을 수 있습니다.
 
-위의 예시에서는 `String.slice/3` 함수를 사용해 두 번째 글자부터 세 번째 글자까지 추출하여 `last_name` 변수에 저장하였습니다.
+## 또 다른 참고 자료
 
-## 딥 다이브
+- [Elixir String API](https://hexdocs.pm/elixir/String.html)
+- [Learn Elixir in Y minutes](https://learnxinyminutes.com/docs/elixir/)
+- [Mastering Elixir Strings](https://medium.com/blackode/matering-elixir-strings-5f5e8cc5a5f8)
 
-이 밖에도 `String.slice/3` 함수를 사용할 때는 다양한 옵션을 제공할 수 있습니다. 예를 들어, 인덱스를 음수로 지정하면 문자열의 뒤에서부터 추출할 수도 있습니다.
+# 함께 보기
 
-```elixir
-full_name = "박지성"
-last_letter = String.slice(full_name, -1, -2) # "공"
-```
-
-위의 예시에서는 `last_letter` 변수에 "공"이 저장되어 있습니다.
-
-또한, 추출하고자 하는 부분이 문자열을 벗어날 경우 `String.slice/3` 함수는 자동으로 시작 인덱스를 최대값 또는 끝 인덱스를 최소값으로 설정해줍니다. 예를 들어, 인덱스가 -1과 같거나 클 경우 시작 인덱스는 0, 끝 인덱스는 문자열의 길이가 됩니다.
-
-```elixir
-full_name = "Harry Kane"
-first_name = String.slice(full_name, 0, 5) # "Harry"
-last_name = String.slice(full_name, 6, 20) # "Kane"
-```
-
-위의 예시에서는 `first_name` 변수에는 "Harry"가, `last_name` 변수에는 "Kane"이 저장되었습니다.
-
-## 참고 자료
-
-- Elixir 공식 문서: https://hexdocs.pm/elixir/String.html#slice/3
-- 분당 Elixir 모임: https://www.facebook.com/bundangelixir/
-- Elixir 스터디 그룹: https://www.facebook.com/groups/elixirstudy/
+[안녕하세요, 제 이름은 Elixir입니다.](https://helloelixir.com/)

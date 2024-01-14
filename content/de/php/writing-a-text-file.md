@@ -1,65 +1,51 @@
 ---
-title:    "PHP: Das Schreiben einer Textdatei"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-a-text-file.md"
+title:                "PHP: Das Schreiben einer Textdatei"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Schreiben von Textdateien ist eine grundlegende Fähigkeit, die jeder PHP-Programmierer beherrschen sollte. Ob Sie Daten von einer externen Quelle speichern oder einfach nur eine einfache Ausgabedatei erstellen möchten, das Schreiben von Textdateien ist eine wichtige Fähigkeit, die sowohl in kleinen als auch in großen Projekten nützlich sein kann.
+Das Schreiben von Textdateien ist ein wichtiger Teil der Programmierung, besonders in PHP. Durch das Schreiben von Textdateien können Daten gespeichert und später wieder abgerufen werden. Dies ist besonders nützlich, wenn es darum geht, große Datenmengen zu verarbeiten oder permanent zu speichern.
 
-## Wie geht das?
+## How To
 
-Das Schreiben von Textdateien in PHP ist relativ einfach. Alles, was Sie tun müssen, ist eine neue Datei zu erstellen und sie mit Text zu füllen. Hier ist ein Beispiel dafür, wie man eine Datei mit dem Namen "test.txt" erstellt und einen einfachen Text hineinschreibt:
-
-```PHP
-<?php
-    // Öffnen oder erstellen Sie eine Datei zum Schreiben
-    $datei = fopen("test.txt", "w") or die("Kann Datei nicht öffnen!");
-
-    // Schreiben Sie den Text in die Datei
-    $text = "Dies ist ein Beispieltext.";
-    fwrite($datei, $text);
-
-    // Schließen Sie die Datei
-    fclose($datei)
-?>
-```
-
-Wenn Sie nun die Datei öffnen, werden Sie den geschriebenen Text darin sehen.
-
-## Tiefentauchen
-
-Natürlich gibt es noch viele weitere Funktionen und Optionen zum Schreiben von Textdateien in PHP. Sie können beispielsweise auch mehrere Zeilen in eine Datei schreiben oder die Datei in verschiedenen Modi öffnen (z.B. zum Anhängen von Text an eine bestehende Datei). Hier ist ein Beispiel für das Schreiben von mehreren Zeilen in eine Datei:
+Um eine Textdatei in PHP zu schreiben, benötigt man zunächst einen Datei-Handle, der die Datei öffnet und schreibbereit macht. Dies kann mit der Funktion `fopen()` erreicht werden:
 
 ```PHP
-<?php
-    // Öffnen oder erstellen Sie eine Datei zum Schreiben
-    $datei = fopen("test.txt", "w") or die("Kann Datei nicht öffnen!");
-
-    // Definieren Sie den Text als Array von Zeilen
-    $text = array(
-        "Dies ist die erste Zeile.",
-        "Dies ist die zweite Zeile.",
-        "Und dies ist die dritte Zeile."
-    );
-
-    // Schreiben Sie jede Zeile in die Datei
-    foreach($text as $zeile){
-        fwrite($datei, $zeile . "\n");
-    }
-
-    // Schließen Sie die Datei
-    fclose($datei);
-?>
+$handle = fopen("filename.txt", "w") or die("Unable to open file!");
 ```
 
-Wenn Sie die Datei öffnen, werden Sie nun alle drei Zeilen sehen.
+In diesem Beispiel wird die Datei "filename.txt" zur Bearbeitung geöffnet und der Handle in der Variablen `$handle` gespeichert. Der zweite Parameter `"w"` steht für den Schreibmodus (write), was bedeutet, dass wir in die Datei schreiben können.
+
+Nun können wir den `$handle` verwenden, um Zeilen in die Textdatei zu schreiben, zum Beispiel:
+
+```PHP
+$txt = "Dies ist ein Beispieltext, der in unsere Datei geschrieben wird.";
+fwrite($handle, $txt);
+```
+
+Dieser Code schreibt den Inhalt der Variablen `$txt` in die geöffnete Datei. Es ist auch möglich, mehrere Zeilen nacheinander in die Datei zu schreiben, indem man die `fwrite()` Funktion entsprechend oft aufruft.
+
+Abschließend muss die Datei wieder geschlossen werden, um sie zu speichern und freizugeben. Dies kann mit der Funktion `fclose()` erreicht werden:
+
+```PHP
+fclose($handle);
+```
+
+Wenn alles erfolgreich war, wird nun eine neue Textdatei mit dem Namen "filename.txt" erstellt und der gewünschte Inhalt wird in die Datei geschrieben.
+
+## Deep Dive
+
+Bei der Verwendung der `fwrite()` Funktion ist es wichtig, die richtigen Parameter zu verwenden. Wenn man anstelle von `fwrite($handle, $txt)` die Parameter `fwrite($txt, $handle)` verwendet, wird PHP versuchen, den Inhalt der Datei `$txt` in den Handle `$handle` zu schreiben, was zu einem Fehler führen wird. 
+
+Außerdem ist es wichtig, zu überprüfen, ob die Datei erfolgreich geöffnet werden konnte, bevor man versucht, in sie zu schreiben, um Fehler zu vermeiden. Dies kann durch Hinzufügen des `or die("Unable to open file!")` Teils beim Öffnen des Handles erreicht werden.
 
 ## Siehe auch
 
-- Die PHP [fopen](https://www.php.net/manual/de/function.fopen.php) Funktion
-- Die PHP [fwrite](https://www.php.net/manual/de/function.fwrite.php) Funktion
-- Mehr zum Thema "Textdateien schreiben" finden Sie in der offiziellen PHP-Dokumentation unter [Writing to files](https://www.php.net/manual/en/function.fwrite.php)
+- [PHP fopen() Funktion](https://www.php.net/manual/de/function.fopen.php)
+- [PHP fwrite() Funktion](https://www.php.net/manual/de/function.fwrite.php)
+- [PHP fclose() Funktion](https://www.php.net/manual/de/function.fclose.php)

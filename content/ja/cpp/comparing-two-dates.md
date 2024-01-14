@@ -1,16 +1,19 @@
 ---
-title:    "C++: 「日付を比較する」"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/comparing-two-dates.md"
+title:                "C++: 2つの日付を比較する"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-日付の比較をする理由について説明します。日付の比較は、プログラミングで頻繁に行われるタスクの1つであり、特定の日付が前の日付よりも早いか遅いかを判断したり、2つの日付が同じかどうかを確認するために使用されます。
 
-## 方法
-日付の比較を行うための具体的な方法を説明します。下記のコードブロックは、日付を比較するために使用できる簡単なC++の例を示しています。この例では、2つの日付の差を求める方法を示しています。
+日常生活やビジネスで、私たちは日付を比較する必要があります。例えば、誕生日を祝うために誰かの年齢を計算したり、プロジェクトの期限日と今日の日付を比較することで、残りの日数を計算したりすることがあります。このような状況では、日付を比較するプログラムを書くことが非常に便利です。
+
+## 使い方
+
+日付を比較するためには、C++言語で組み込みの機能を使用することができます。以下のコードブロックを参考にしてください。
 
 ```C++
 #include <iostream>
@@ -19,37 +22,50 @@ editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/comp
 using namespace std;
 
 int main() {
-
-  // 2つの日付を設定
-  struct tm date1 = {0, 0, 0, 1, 1, 2020}; // 2020年1月1日
-  struct tm date2 = {0, 0, 0, 12, 12, 2020}; // 2020年12月12日
-
-  // 日付を秒数に変換
-  time_t time1 = mktime(&date1);
-  time_t time2 = mktime(&date2);
-
-  // 日付の差を計算
-  int difference = difftime(time2, time1); // 秒数での差を求める
-
-  // 結果を出力
-  cout << "日付の差は " << difference / (24 * 60 * 60) << " 日です。" << endl;
-
-  return 0;
+    // 今日の日付を取得
+    time_t t = time(NULL);
+    tm* now = localtime(&t);
+    int today = now->tm_mday;
+    int thisMonth = now->tm_mon + 1;    // 月は0から数えるため、1を足す
+    
+    // 比較する日付を入力
+    int inputDay, inputMonth;
+    cout << "日付を入力してください (例：12 7)：";
+    cin >> inputDay >> inputMonth;
+    
+    // 日付を比較
+    if(inputMonth < thisMonth) {
+        cout << "入力した日付は過去の日付です。" << endl;
+    } else if(inputMonth == thisMonth && inputDay < today) {
+        cout << "入力した日付は過去の日付です。" << endl;
+    } else if(inputDay == today && inputMonth == thisMonth) {
+        cout << "入力した日付は今日の日付です。" << endl;
+    } else {
+        cout << "入力した日付は未来の日付です。" << endl;
+    }
+    
+    return 0;
 }
 ```
 
-上記のコードを実行すると、日付の差が計算され、結果として「日付の差は 345 日です。」という出力が得られます。このように、日付を秒数に変換し差を求めることで、日付の比較を行うことができます。
+上記のコードでは、現在の日付を取得し、入力された日付と比較して、どのような関係にあるかを判定しています。実行結果は以下のようになります。
 
-## 詳細を深く掘り下げる
-日付の比較には様々な方法がありますが、最も一般的な方法は日付を秒数に変換し、その差を計算する方法です。しかし、この方法にはいくつかの注意点があります。
+```
+日付を入力してください (例：12 7)：15 7
+入力した日付は未来の日付です。
+```
 
-例えば、うるう年の影響を受ける場合や、タイムゾーンの違いによって日付の差が正しく計算されないことがあります。また、特定の日付形式やロケールによっても差の計算方法が異なる場合があります。
+このように、比較した日付に応じて適切なメッセージを出力することができます。
 
-以上のような問題を解決するために、日付の比較を行う場合はライブラリなどの既存のツールを使用することが推奨されます。例えば、BoostライブラリやChronoライブラリなどがあり、日付の比較を行う際に便利な関数やクラスを提供しています。
+## ディープダイブ
+
+日付を比較する際には、コンピューターの内部でどのように処理されるかを理解することが重要です。日付というのは数字で表現されていますが、それをコンピューターがどのように解釈するかは文化や歴史的背景によって異なります。そのため、プログラムで使用される日付のフォーマットにも注意する必要があります。
+
+また、日付を比較する際には、既存のライブラリや関数を使用することで、より効率的にプログラムを書くことができます。例えば、C++では`time.h`ライブラリを使用することで、現在の日付を取得したり、日付の計算を行ったりすることができます。
 
 ## 参考リンク
-- [Boost.Date_Time library](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
-- [C++ Primer第5版 日付と時刻に対する操作](https://www.amazon.co.jp/dp/4048678135)
-- [日付と時刻処理の国際化](https://www.ykaku.com/gengo/time_date_and_locale.html)
 
-## 関連記事を見る
+- https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm
+- https://www.cplusplus.com/reference/ctime/localtime/
+- https://ja.wikipedia.org/wiki/日付の表記方法
+- https://www.geeksforgeeks.org/comparisons-of-date-and-time-in-c/

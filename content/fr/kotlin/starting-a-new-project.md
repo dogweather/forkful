@@ -1,49 +1,35 @@
 ---
-title:    "Kotlin: Commencer un nouveau projet"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/starting-a-new-project.md"
+title:                "Kotlin: Commencer un nouveau projet"
+programming_language: "Kotlin"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
- 
-Vous vous demandez peut-être pourquoi vous devriez vous lancer dans un nouveau projet de programmation en Kotlin. Eh bien, la réponse est simple : Kotlin est un langage de programmation moderne et puissant, qui combine la concision et la sécurité de la compilation statique avec la flexibilité et l'expressivité de la programmation orientée objet. Cela en fait un choix idéal pour de nombreux projets, qu'il s'agisse de développement d'applications mobiles, de création de sites Web ou de programmation côté serveur.
- 
- ## Comment faire
- 
-Maintenant que vous êtes convaincu(e) de l'utilité de Kotlin, passons à la partie pratique. Voici quelques exemples de code et de résultats qui vous aideront à démarrer votre nouveau projet :
- 
+
+Beaucoup de gens se demandent pourquoi démarrer un nouveau projet en Kotlin. Voici la réponse : Kotlin est un langage de programmation moderne et puissant qui est de plus en plus populaire auprès des développeurs. Il offre de nombreuses fonctionnalités avancées qui permettent de créer des applications robustes et efficaces.
+
+## Comment faire
+
+Si vous êtes prêt à commencer un nouveau projet en Kotlin, il est important de comprendre les bases du langage. Voici quelques exemples de code pour vous aider à démarrer :
+
 ```Kotlin
-fun main(args: Array<String>) {
-    println("Bonjour le monde!")
+fun main() {
+    println("Bonjour !")
 }
 ```
  
-Cet exemple montre comment utiliser Kotlin pour afficher une simple phrase à l'écran. Comme vous pouvez le constater, la syntaxe est concise et facile à comprendre. Vous pouvez également utiliser des variables, des boucles, des fonctions et bien d'autres fonctionnalités pour créer des programmes plus complexes.
- 
-```Kotlin
-fun calculateArea(width: Int, height: Int): Int {
-    return width * height
-}
- 
-fun main(args: Array<String>) {
-    val width = 10
-    val height = 5
-    println(calculateArea(width, height))
-}
-```
- 
-Dans cet exemple, nous utilisons une fonction pour calculer l'aire d'un rectangle en utilisant des variables et une opération mathématique simple. Ensuite, nous appelons cette fonction dans notre fonction principale et affichons le résultat. En utilisant Kotlin, vous constaterez que vous pouvez écrire du code plus efficacement et plus proprement.
- 
- ## Plongée en profondeur
- 
-Si vous souhaitez vous plonger plus profondément dans la création d'un nouveau projet en Kotlin, il existe de nombreuses ressources disponibles pour vous aider. Vous pouvez consulter la documentation officielle de Kotlin pour en savoir plus sur la syntaxe et les fonctionnalités du langage. Vous pouvez également rejoindre des communautés de développeurs Kotlin pour poser des questions et discuter avec d'autres passionnés du langage.
- 
-Enfin, n'oubliez pas de consulter les autres ressources incluses dans la section "See Also" pour découvrir plus de conseils et de tutoriels ! Bon codage !
- 
-## Voir également
- 
-- [Documentation officielle de Kotlin](https://kotlinlang.org/docs/home.html)
-- [Communauté de développeurs Kotlin](https://kotlinlang.slack.com)
-- [Tutoriels Kotlin sur YouTube](https://www.youtube.com/playlist?list=PLS3KlXA0DwMpsJ3NgarFdnw4JS8rh9mTL)
+Cet exemple montre comment créer une fonction qui imprime simplement le message "Bonjour !" Une fois que vous avez compris comment écrire du code en Kotlin, vous pouvez commencer à explorer toutes les fonctionnalités avancées telles que les classes, les fonctions de haut niveau et les extensions de fonctions. Nous vous suggérons de commencer par les tutoriels officiels de Kotlin afin de vous familiariser avec le langage.
+
+## Plongeon en profondeur
+
+Lorsque vous démarrez un nouveau projet en Kotlin, il est important de décider quelle architecture vous souhaitez utiliser. Vous pouvez opter pour l'approche traditionnelle MVC ou expérimenter avec l'architecture MVVM qui est de plus en plus populaire parmi les développeurs Kotlin. Assurez-vous également de choisir les bonnes bibliothèques et frameworks pour votre projet, en gardant à l'esprit les performances et la maintenabilité.
+
+## Voir aussi
+
+- [Tutoriels officiels Kotlin](https://kotlinlang.org/docs/tutorials/)
+- [Architecture MVVM en Kotlin](https://medium.com/mindorks/mvvm-architecture-in-android-kotlin-foundation-data-binding-retrofit-for-beginners-cc6320a75e41)
+- [Bibliothèques et frameworks populaires en Kotlin](https://kotlin.link/)
+- [Guide de style officiel Kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html)

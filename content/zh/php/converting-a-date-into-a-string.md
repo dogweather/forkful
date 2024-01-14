@@ -1,70 +1,49 @@
 ---
-title:    "PHP: 将日期转换为字符串"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/converting-a-date-into-a-string.md"
+title:                "PHP: 将日期转换为字符串"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要将日期转换成字符串
+# 为什么要将日期转换成字符串
 
-在编程中，我们经常需要将日期转换成字符串的格式。这有助于我们将日期显示为想要的样式，也方便我们在处理日期数据时进行格式化。下面将介绍如何使用PHP将日期转换成字符串，并进行更深入的探讨。
+日期格式在编程中是非常常见的。当我们需要在网站或应用中显示日期时，通常会将其转换成字符串。这样可以更容易阅读，也可以选择不同的显示格式。接下来，我们将介绍如何用PHP将日期转换成字符串，并深入了解这个过程。
 
-## 如何实现日期转换成字符串
+## 如何操作
 
-使用PHP，我们可以使用date()函数将日期转换成字符串的格式。下面给出一个简单的例子：
+我们可以使用PHP内置的 ```date()``` 函数来将日期转换成字符串。下面是一个简单的示例：
 
 ```PHP
 $date = date("Y-m-d");
 echo $date;
 ```
 
-这段代码会将当前日期的年、月、日以“年-月-日”的形式输出。输出结果如下：
+在这个例子中，我们首先将今天的日期保存在变量 ```$date``` 中，然后使用 ```date()``` 函数来将其转换成字符串。在函数的参数中，我们指定了日期的格式，这里是年-月-日的格式。然后使用 ```echo``` 函数来显示字符串，这里的输出结果是：2020-11-17。
 
-```shell
-2021-10-11
-```
-
-我们也可以通过改变date()函数的参数来控制输出的日期格式，如下所示：
+除了指定日期的格式，我们还可以在函数的第二个参数中传入具体的日期，如下所示：
 
 ```PHP
-$date = date("l, F jS, Y");
+$date = date("l, F j, Y", strtotime("2021-01-01"));
 echo $date;
 ```
 
-这将输出星期几加上月份和日期的形式，如下：
+这里我们在第一个参数中指定了日期的格式，包括星期几、月份和日期等信息。然后使用 ```strtotime()``` 函数将字符串日期转换成时间戳。最后输出的结果是：Friday, January 1, 2021。
 
-```shell
-Monday, October 11th, 2021
-```
+## 深入了解
 
-其他可用的日期格式可以在PHP的官方文档中找到。
+在PHP中，日期和时间被表示为时间戳，即从1970年1月1日00:00:00 UTC起经过的秒数。 ```date()``` 函数可以将时间戳转换成指定格式的日期字符串。
 
-## 深入了解日期转换成字符串
+除了常用的格式如年-月-日和星期几、月份和日期等， ```date()``` 函数还有许多格式选项，如时钟格式、时区等。你可以在PHP官方文档中详细了解这些选项。
 
-除了使用date()函数，我们还可以使用strftime()函数来自定义日期的输出格式。这个函数接受两个参数，第一个是想要的日期格式，第二个是想要转换的日期。下面是一个例子：
+# 参考链接
 
-```PHP
-$date = strftime("%A, %B %d, %Y", strtotime("tomorrow"));
-echo $date;
-```
+- [PHP官方文档：date()函数](https://www.php.net/manual/zh/function.date.php)
+- [PHP官方文档：strtotime()函数](https://www.php.net/manual/zh/function.strtotime.php)
+- [PHP官方文档：日期和时间格式选项](https://www.php.net/manual/zh/datetime.formats.php)
 
-这将把明天的日期以“星期几, 月份 日, 年”的格式输出，如下所示：
+# 参见
 
-```shell
-Tuesday, October 12, 2021
-```
-
-使用strftime()函数可以更灵活地控制日期的显示格式，例如可以显示中文、英文缩写等。
-
-## 参考资料
-
-- [PHP官方文档-日期和时间](https://www.php.net/manual/en/datetime.format.php)
-- [W3School-PHP date() 函数](https://www.w3schools.com/php/func_date_date.asp)
-- [菜鸟教程-PHP strftime() 函数](https://www.runoob.com/php/func-date-strftime.html)
-
-## 参见
-
-- [PHP日期时间格式化指南](https://www.runoob.com/php/php-date-time.html)
-- [如何在PHP中比较日期](https://www.runoob.com/php/php-date-compare.html)
-- [PHP日期时间函数大全](https://www.runoob.com/php/php-date-time.html)
+- [PHP官方文档：日期和时间](https://www.php.net/manual/zh/datetime.php)
+- [PHP官方文档：日期和时间函数](https://www.php.net/manual/zh/ref.datetime.php)

@@ -1,36 +1,49 @@
 ---
-title:    "Elm: Å skrive en tekstfil"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/writing-a-text-file.md"
+title:                "Elm: Å skrive en tekstdokument"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å skrive en tekstfil er en viktig del av enhver programmeringsoppgave. Det tillater oss å lagre og manipulere data på en enkel og strukturert måte. I denne blogginnlegget skal vi se nærmere på hvordan du kan skrive tekstfiler ved hjelp av Elm programmeringsspråket.
 
-## Slik gjør du det
-For å skrive en tekstfil i Elm, må vi først importere File modulen. Deretter kan vi bruke funksjonen `writeFile` for å opprette og skrive til en tekstfil. Enkelt sagt tar denne funksjonen inn en liste med tekstlinjer, og skriver hver linje til filen etterfulgt av et linjeskift. La oss se på et eksempel:
+Hvorfor skulle noen engasjere seg i å skrive en tekstfil? Vel, en tekstfil er et viktig verktøy i programmering, spesielt i språket Elm. Det lar deg lagre og organisere data på en måte som er enkel å bruke og forstå.
+
+## Hvordan
+
+For å skrive en tekstfil i Elm, må du følge disse trinnene:
 
 ```
-import File exposing (..)
+Elm.Text.join "\n" ["Hei!", "Dette er en tekstfil.", "Du kan skrive så mye du vil her."]
 
--- Opprett og skriv til en tekstfil
-writeFile "minTekstfil.txt" ["Dette er en linje", "Dette er en annen linje"]
-
--- Resultatet vil være en tekstfil med innholdet:
--- Dette er en linje
--- Dette er en annen linje
 ```
 
-Vi kan også bruke funksjonen `appendFile` for å legge til tekst til en eksisterende fil. For å lese en tekstfil, kan vi bruke `readFile` som returnerer en linje om gangen som en `Maybe String` verdi.
+Dette vil skrive en tekstfil med tre linjer, der hver linje er en streng. Når du kjører koden, vil du få dette resultatet i tekstfilen:
 
-## Dykk ned
-Nå som vi har lært hvordan du kan skrive og lese tekstfiler, la oss se på noen mer avanserte funksjoner som File modulen tilbyr. Vi kan for eksempel bruke `directory` funksjonen til å få en liste over filer i en bestemt mappe. Eller `rename` funksjonen for å endre navnet på en fil.
+```
+Hei!
+Dette er en tekstfil.
+Du kan skrive så mye du vil her.
+```
 
-Vi kan også bruke Elm's Native modul for å få tilgang til mer avanserte funksjoner som å endre filrettigheter og slette filer. Men husk at disse funksjonene bare kan brukes i Elm's Native modul, og ikke i nettlesere hvor Elm vanligvis kjører.
+Som du kan se, er det veldig enkelt å lage en tekstfil i Elm. Du kan også legge til flere linjer og manipulere teksten på forskjellige måter, avhengig av dine behov og ønsker.
+
+## Deep Dive
+
+Nå som du vet hvordan du kan skrive en tekstfil i Elm, la oss gå litt dypere inn i emnet. En viktig ting å merke seg er at når du skriver en tekstfil, må du spesifisere filnavnet og hvor du vil at filen skal lagres. Dette gjøres ved å bruke funksjonen `File.write`, som ser slik ut:
+
+```
+File.write "minTekstfil.txt" "Dette er en tekstfil som inneholder noe viktig informasjon." 
+```
+
+I dette eksempelet vil koden opprette en tekstfil med navnet "minTekstfil.txt" og legge til teksten du har spesifisert som innholdet i filen. Du kan også spesifisere en sti til hvor du ønsker å lagre filen, for eksempel `File.write "/min/mappe/tekstfil.txt"`.
+
+Det er også viktig å merke seg at hvis du ønsker å legge til mer tekst i en tekstfil som allerede eksisterer, må du bruke funksjonen `File.append` i stedet for `File.write`. Dette vil legge til ny tekst i slutten av den eksisterende filen, i stedet for å overskrive alt som allerede er skrevet.
 
 ## Se også
-- Offisiell File modul dokumentasjon: https://package.elm-lang.org/packages/elm/file/latest/
-- Elm Native modul dokumentasjon: https://package.elm-lang.org/packages/elm/core/latest/Native
-- Enkel tekstfilbehandling i Elm: https://dev.to/evancz/text-file-handling-in-elm-2k6c
+
+- Offisiell dokumentasjon for filmanipulasjon i Elm: https://guide.elm-lang.org/effects/file_system.html
+- Introduction to Elm Programming: https://www.freecodecamp.org/news/a-beginners-introduction-to-elm-programming/
+- Building a simple todo list app in Elm: https://medium.com/@joomiguelcunha/building-a-simple-todo-app-with-elm-54e0a1ac2378

@@ -1,51 +1,50 @@
 ---
-title:    "Elm: Beräkna ett datum i framtiden eller förflutna"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: Beräkning av ett datum i framtiden eller i det förflutna"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
+Att kunna beräkna datum i framtiden eller förflutna är en nyttig färdighet för att hantera tidsbaserade data och uppdrag. Med hjälp av Elm, kan du enkelt utföra dessa beräkningar och optimera din programmering.
 
-Att kunna beräkna ett datum i framtiden eller förflutna kan vara användbart för att planera eller hålla koll på tidsbaserade händelser i din Elm-applikation. Det kan också vara en användbar funktion för att ge användare feedback baserat på ett specifikt datum.
+## Så här gör du
+För att beräkna ett datum i framtiden eller förflutna i Elm, kan du använda DateTime-modulen. För att beräkna ett datum i framtiden, använd funktionen `add` med antalet dagar, veckor eller månader du vill lägga till. Se exemplet nedan:
 
-# Så här gör du
+```elm
+import DateTime exposing (add, Days)
 
-För att kunna räkna ut ett datum i framtiden eller förflutna i din Elm-kod, behöver du först importera "Date" från biblioteket "Time". Sedan kan du använda funktionen "add" för att addera eller subtrahera antal dagar, månader eller år från ett given datum. Till exempel:
-
-```Elm
-import Date exposing (Date)
-import Time
-
-todaysDate : Date
-todaysDate = Time.now
-
-tomorrowsDate : Date
-tomorrowsDate = Date.add 1 Time.day todaysDate
-
-yesterdaysDate : Date
-yesterdaysDate = Date.sub 1 Time.day todaysDate
-
+futureDate = add 10 Days Today
 ```
 
-I detta exempel importeras "Date" och "Time" biblioteket och definieras sedan tre variabler: "todaysDate" som är dagens datum, "tomorrowsDate" som är morgondagens datum och "yesterdaysDate" som är gårdagens datum. Genom att använda funktionen "add" och "sub" kan vi enkelt lägga till eller ta bort en dag från det givna datumet.
+I detta exempel lägger vi till 10 dagar till dagens datum och lagrar det nya datumet i en variabel som heter `futureDate`. Du kan också lägga till andra tidsenheter som veckor eller månader genom att byta ut `Days` med motsvarande enhet.
 
-# Djupdykning
+Om du vill beräkna ett datum i förflutna, kan du använda funktionen `subtract` istället. Se exempel nedan:
 
-För att kunna räkna ut ett datum i förflutna eller framtiden på ett mer exakt sätt, kan du använda funktionen "fromCalendarDate". Denna funktion tar in år, månad och dag som argument och returnerar ett datum i form av en "Maybe Date". Detta gör det möjligt att hantera eventuella fel eller ogiltiga datum som kan uppstå. Till exempel:
+```elm
+import DateTime exposing (subtract, Days)
 
-```Elm
-import Date exposing (fromCalendarDate)
-
-myDate : Maybe Date
-myDate = fromCalendarDate 2020 8 30
-
+pastDate = subtract 5 Days Today
 ```
 
-Här definieras variabeln "myDate" som representerar 30 augusti 2020. Om detta datum är ogiltigt, till exempel om det inte finns en 30:e dag i augusti, kommer funktionen att returnera "Nothing". Annars kommer den att returnera "Just myDate" där "myDate" är ett giltigt datum i form av "Date".
+I detta exempel subtraherar vi 5 dagar från dagens datum och lagrar det nya datumet i en variabel som heter `pastDate`.
 
-# Se även
+## Djupdykning
+Du kan också använda funktionerna `add` och `subtract` med ett specifikt datum istället för dagens datum. Om du till exempel vill beräkna ett datum i förflutna med utgångspunkt från 1 januari 2021, kan du göra det genom att använda `add` eller `subtract` med detta datum som utgångspunkt.
 
-- [Official Elm Time library](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Elm Date documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
+För att göra detta, måste du först omvandla detta datum till en följd av millisekunder genom att använda funktionen `toMillis` från DateTime-modulen. Se exemplet nedan:
+
+```elm
+import DateTime exposing (toMillis, add)
+
+januaryFirst = January 1 2021
+
+milliseconds = toMillis januaryFirst
+```
+
+Vi omvandlar här 1 januari 2021 till millisekunder och sparar resultatet i en variabel som heter `milliseconds`. Sedan kan vi använda denna variabel tillsammans med `add` eller `subtract` för att beräkna datum i förflutna från detta specifika datum.
+
+## Se även
+- Elm officiell dokumentation för DateTime-modulen: https://package.elm-lang.org/packages/elm/core/latest/DateTime

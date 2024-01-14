@@ -1,45 +1,47 @@
 ---
-title:    "C++: टेस्ट लिखना"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/writing-tests.md"
+title:                "C++: टेस्ट लेखन"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्यों
+अगर आप सही समय पर अपने आप को बनाएं तो यह आपको कोड के लिए समय बचाएगा। इसलिए, टेस्ट लिखने का काम फायदेमंद हो सकता है।
 
-Teston ko likhne mein aapko kyun samay dena chahiye? Vyakti apane code ki quality aur functionality ko guarantee karne ke liye, code mein ki jane wali changes ka asar samajhne ke liye test likhte hain.
-
-## Kaise Karein
-
-Aap C++ programming language se familiar hain aur apne code mein changes karne ke liye uttejit hain. Lekin pareshan mat honein! Aapke paas tests likhne ke liye sampoorna control hai.
+## कैसे करें
 
 ```C++
-// Ye ek simple test hai jo check karta hai ki "sum" function sahi se kaam kar raha hai ya nahi.
-#include<iostream>
-#include<assert.h>
+#include <iostream>
 
-// Sum function ko declare aur define karein.
-int sum(int a, int b) {
-  return a + b;
+using namespace std;
+
+int multiply(int a, int b){
+    return a * b;
 }
 
-int main() {
-  assert(sum(2, 3) == 5);
-  return 0;
+int main(){
+    // नए कोड का परीक्षण करें
+    int result = multiply(5, 7);
+    
+    // परीक्षा का परिणाम मान के साथ तुलना करें
+    if(result == 35){
+        cout << "सफलतापूर्वक परीक्षण किया गया!";
+    }
+    else{
+        cout << "परीक्षण असफल हुआ।";
+    }
+    
+    return 0;
 }
 ```
+### उत्पाद
+```सफलतापूर्वक परीक्षण किया गया!```
 
-Agar aapne code ko compile kiya aur usme koi error nahi aaya, toh aapke test bhi sahi se chal rahe hain!
+## गहराई में जाएँ
+टेस्ट कोड प्रोजेक्ट में अत्यधिक महत्वपूर्ण होता है। यह आपको सुनिश्चित करता है कि आपके कोड में कोई त्रुटियां नहीं हैं और आपका कोड स्वस्थ है। इससे आपके उपभोक्ताओं को भी आपके सॉफ्टवेयर पर भरोसा बना रहता है।
 
-## Gahrayi Mein Jaayein
-
-Aap tests ko sirf apne code ki quality aur functionality ko guarantee karne ke liye nahi likhte hain, balki ye aapko code ke gahrayi mein bhi le jate hain. Jab aap tests likhte hain, aapko code ke har hisse ko samajhne aur usme ki jane wali changes ka asar samajhne ka mauka milta hai. Isse aapko apne code ko improve karne aur bugs ko fix karne ka pata chalta hai.
-
-## Dekhein Bhi
-
-Agar aapko test likhne ka yeh tarika samajhna hai toh aap ye links dekh sakte hain:
-- [C++ Unit Testing Tutorial](https://www.tutorialspoint.com/cpp/cpp_unit_testing.htm)
-- [C++ Testing Frameworks](https://www.oreilly.com/library/view/using-cpp-unit/9780735689524/)
-
-Bhi ki tarah aap apne coding skills aur knowledge ko improve karne ke liye [C++ tutorials](https://www.geeksforgeeks.org/c-plus-plus/) aur [practice problems](https://www.hackerrank.com/domains/cpp) dekh sakte hain.
+## देखें भी
+- [वीडियो: टेस्ट लिखने का कैसे](https://www.youtube.com/watch?v=9oJ5xBSDRek)
+- [लेख: सी++ में टेस्ट कैसे लिखें](https://www.geeksforgeeks.org/writing-test-cpp/)

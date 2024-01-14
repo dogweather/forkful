@@ -1,34 +1,37 @@
 ---
-title:    "Javascript: Hitta längden på en sträng"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/finding-the-length-of-a-string.md"
+title:                "Javascript: Att hitta längden på en sträng"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att hitta längden på en sträng är en grundläggande del av programmering och kan vara användbart för att lösa många olika problem.
+Att kunna hitta längden på en sträng är en viktig färdighet inom Javascript-programmering. Det kan hjälpa dig att effektivt behandla och manipulera textdata i dina program.
 
-## Hur man gör
+## Så här gör du
 
-För att hitta längden på en sträng i JavaScript kan man använda sig av metoden `length()`. Detta gör det möjligt att enkelt få reda på hur många tecken en sträng innehåller.
+För att hitta längden på en sträng använder vi den inbyggda metoden .length(). Denna metod kan tillämpas på en sträng-variabel och returnerar antalet tecken i strängen.
 
-``` Javascript
-let string = "Hej världen";
-console.log(string.length());
-// output: 11
+```Javascript
+// Skapa en variabel med en sträng
+var namn = "Kalle";
+
+// Använd .length() metoden för att få längden på strängen
+var längd = namn.length;
+
+console.log(längd); // Resultatet blir 5, eftersom "Kalle" består av 5 tecken
 ```
 
-Det spelar ingen roll om strängen innehåller bokstäver, tal eller specialtecken, `length()`-metoden räknar alla tecken som en del av strängen.
+## Dyk ned i detaljerna
 
-## Djupdykning
+Det finns några saker att tänka på när du använder .length() metoden för att hitta längden på en sträng. För det första är det viktigt att komma ihåg att denna metod returnerar antalet tecken i strängen, inte antalet ord. Detta betyder att om du har flera ord i strängen, inklusive mellanslag, kommer .length() att räkna dem som tecken i längden.
 
-I JavaScript är strängar en typ av data som kan lagras och manipuleras i variabler. När man använder `length()`-metoden så räknas alla tecken i strängen, inklusive mellanslag. Om man istället vill ta bort mellanslagen och bara räkna tecken som är bokstäver eller siffror, kan man använda metoden `trim()`. Detta är användbart när man vill kontrollera längden på strängar som kommer från användarinput.
-
-En annan intressant användning av `length()`-metoden är att kontrollera om en sträng är tom eller inte. Om `length()` returnerar 0 betyder det att strängen inte innehåller några tecken och därmed är tom.
+En annan viktig aspekt att tänka på är att specialtecken, som till exempel emotikon eller tecken med accenter, kan räknas som flera tecken i längden. Detta beror på hur ditt program tolkar och lagrar dessa tecken.
 
 ## Se även
 
-- [W3Schools - JavaScript String length() Method](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [MDN Web Docs - String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [MDN dokumentation om .length()](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Så här använder du .length() för att kontrollera inmatningslängd i en formulärbåda](https://codepen.io/havardfrom/pen/KKaNJeN)

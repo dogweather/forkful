@@ -1,39 +1,82 @@
 ---
-title:    "Clojure recipe: Writing to standard error"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/writing-to-standard-error.md"
+title:                "Clojure recipe: Writing to standard error"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing to standard error is a useful technique in Clojure for debugging and error handling. It allows developers to print out important messages or errors to the console, providing valuable information during the coding process.
+
+In Clojure, writing to standard error can be a useful tool for developers. It allows us to output information or error messages directly to the console, helping us to debug our code and identify issues quickly.
 
 ## How To
 
-To write to standard error in Clojure, we can use the `println` function with the `System/err` argument. This will print our message to the standard error stream instead of the standard output stream.
+To write to standard error in Clojure, we can use the built-in function `println` with the `System/err` parameter. Here's an example:
 
-```
-Clojure
+```Clojure
 (println "This is an error message" System/err)
 ```
 
-The output of the above code will be:
+This code will output the string "This is an error message" to the standard error stream. The `println` function automatically appends a new line character, so our error message will be on its own line in the console.
 
-```
-This is an error message
+To see this in action, let's create a simple function that will divide two numbers and print an error message if the second number is zero:
+
+```Clojure
+(defn divide [numerator denominator]
+  (if (= denominator 0)
+    (println "Error: Cannot divide by zero" System/err)
+    (/ numerator denominator)))
 ```
 
-By using `System/err` as an argument, we can easily distinguish our error messages from regular output, making it easier to identify and fix issues in our code.
+Now, when we try to use this function with a zero denominator, the error message will be written to the console:
+
+```Clojure
+(divide 10 0)
+```
+
+Output:
+```Clojure
+Error: Cannot divide by zero
+```
 
 ## Deep Dive
-In Clojure, standard error is represented by the `java.io.PrintWriter` class. This class allows us to write to the error stream using methods such as `println` or `printf`.
 
-We can also use `System/setErr` to change the default error stream to our own PrintWriter object. This gives us more control over how our error messages are displayed, allowing us to add formatting or additional information.
+Writing to standard error in Clojure is actually a wrapper around Java's `System.err` output stream. This means that we have access to all the methods defined in the Java API for writing to the standard error stream.
 
-It's worth noting that in Clojure, exceptions are also printed to the standard error stream by default. This provides important information about the location and cause of the error, making it easier to debug our code.
+For example, we can use the `print` and `println` methods to write strings or objects to standard error:
+
+```Clojure
+(.println System/err "This will be written to standard error")
+(.print System/err 5)
+```
+
+Output:
+```Clojure
+This will be written to standard error
+5
+```
+
+We can also use the `flush` method to ensure that all buffered data is written to the standard error stream:
+
+```Clojure
+(.flush System/err)
+```
+
+Additionally, we can use the `format` method to write formatted strings to standard error, just like we would with `println`:
+
+```Clojure
+(.format System/err "The answer is %d" 42)
+```
+
+Output:
+```Clojure
+The answer is 42
+```
 
 ## See Also
-- Official Clojure documentation on PrintWriter - https://clojuredocs.org/clojure/java.io/PrintWriter
-- Practical examples of writing to standard error in Clojure - https://www.baeldung.com/java-write-to-standard-error
-- An in-depth explanation of standard output and standard error streams in Clojure - https://clojuredocs.org/clojure.core/println#error_handling_and_debugging
+
+- [Clojure Documentation on Writing to Standard Error](https://clojure.org/guides/logging#error_logging)
+- [Java API for System.err](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
+- [Difference between standard output and standard error](https://www.geeksforgeeks.org/difference-between-standard-output-stream-and-standard-error-stream/)

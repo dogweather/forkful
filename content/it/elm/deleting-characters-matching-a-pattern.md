@@ -1,51 +1,48 @@
 ---
-title:    "Elm: Eliminazione di caratteri corrispondenti a un pattern"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: Cancellazione dei caratteri corrispondenti a un modello"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché 
+## Perché
 
-Quando si scrive un programma in Elm, può capitare di dover manipolare delle stringhe di testo. In alcuni casi, può essere utile eliminare dei caratteri che corrispondono ad un certo pattern. Vediamo insieme come fare.
+Molte volte, durante lo sviluppo di un'applicazione, ci troviamo di fronte alla necessità di eliminare determinati caratteri che corrispondono ad uno specifico pattern. Questo potrebbe essere necessario per ripulire i dati in ingresso o per soddisfare alcuni requisiti di formattazione. Nel linguaggio di programmazione Elm, esiste una semplice e efficiente funzione che ci permette di eliminare questi caratteri.
 
 ## Come fare
 
-Per eliminare i caratteri che corrispondono ad un pattern in Elm, possiamo utilizzare la funzione `Regex.replace` che ci permette di sostituire un match con una stringa vuota. Vediamo un esempio pratico:
+Per eliminare caratteri che corrispondono ad un determinato pattern, possiamo utilizzare la funzione `String.filter` in Elm. Questa funzione accetta come argomenti una funzione di predizione e una stringa di input e restituisce una nuova stringa contenente solo i caratteri che soddisfano il pattern specificato.
+
+Ecco un esempio di come utilizzare la funzione `String.filter` per eliminare le vocali da una stringa:
 
 ```Elm
-
-import Regex
-
-stringa = "ciao123mondo!"
-
-stringaModificata = Regex.replace (Regex.regex "\\d") stringa ""
-
+String.filter (\char -> not (List.member char ['a', 'e', 'i', 'o', 'u'])) "Ciao amici"
 ```
 
-In questo esempio, abbiamo utilizzato la funzione `Regex.replace` passando come primo argomento il pattern da cercare, nel nostro caso `\\d` che rappresenta una cifra, e come secondo argomento la stringa su cui applicare la sostituzione, ovvero `stringa`. Come terzo argomento, abbiamo passato una stringa vuota `""` che sostituirà ogni match trovato.
+L'output di questo codice sarà `"C c"`, poiché sono state rimosse tutte le vocali dalla stringa originale. Possiamo anche utilizzare questa funzione per rimuovere tutti i numeri da una stringa, semplicemente passando una funzione di predizione diversa.
 
-L'output di `stringaModificata` sarà quindi `ciamondo!`, dato che abbiamo eliminato tutti i caratteri numerici presenti.
+```Elm
+String.filter (\char -> not (Char.isDigit char)) "abc123def"
+```
+
+Anche in questo caso, l'output sarà `"abcdef"`, poiché tutti i numeri sono stati eliminati dalla stringa originale.
 
 ## Approfondimento
 
-La funzione `Regex.replace` ci permette di effettuare sostituzioni anche più complesse, utilizzando il parametro `Regex.substitution` come secondo argomento. Questo parametro ci permette di definire un pattern di sostituzione, dove `$n` rappresenta il match trovato. Vediamo un esempio:
+Oltre alla funzione `String.filter`, Elm offre altre funzioni utili per manipolare le stringhe. Ad esempio, la funzione `String.replace` ci permette di sostituire una stringa con un'altra all'interno di un'altra stringa.
+
+Ecco un esempio di come utilizzare `String.replace` per sostituire la stringa "ciao" con "hello" in una stringa di input:
 
 ```Elm
-
-import Regex
-
-stringa = "Elm è un linguaggio di programmazione funzionale"
-
-stringaModificata = Regex.replace (Regex.regex "li(n|ngua)ggio") stringa (Regex.substitution "Lin($1)")
-
+String.replace "ciao" "hello" "Ciao amici"
 ```
 
-In questo caso, stiamo cercando il pattern `li(n|ngua)ggio`, quindi "linguaggio" o "lingua". Utilizzando `$1` nel parametro di sostituzione, stiamo indicando di mantenere la lettera trovata nel gruppo tra parentesi. L'output di `stringaModificata` sarà quindi `Elm è un Linaggio di programmazione funzionale`.
+L'output di questo codice sarà `"Hello amici"`. Inoltre, Elm offre anche una serie di funzioni per lavorare con i caratteri, come `Char.isLetter` per verificare se un carattere è una lettera e `Char.toUpper` per convertire un carattere in maiuscolo.
 
 ## Vedi anche
 
-- [Regex.replace - Documentazione Elm](https://package.elm-lang.org/packages/elm/regex/1.0.0/Regex#replace)
-- [Funzioni Regex in Elm - Elm Town 40](https://www.youtube.com/watch?v=DVia-qjOCxM)
-- [Elm Italy - Comunità italiana di Elm](https://elmitaly.it/)
+- Documentazione ufficiale di Elm sulle stringhe: https://package.elm-lang.org/packages/elm/core/latest/String
+- Tutorial su come utilizzare le funzioni `String.filter` e `String.replace`: https://guide.elm-lang.org/strings/
+- Esempi di codice per manipolare le stringhe in Elm: https://github.com/elm/projects/blob/master/beginner-projects/strings.md

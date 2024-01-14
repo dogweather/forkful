@@ -1,48 +1,35 @@
 ---
-title:    "Elixir: חילוץ תת-מחרוזות"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/extracting-substrings.md"
+title:                "Elixir: חילוץ תת-מחרוזות"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-מדוע בכלל כדאי למישהו לעסוק בהוצאת תת-מחרוזות? התשובה היא בכלל לא מסובכת. הוצאת תת-מחרוזות היא כלי חשוב בתכנות ב-Elixir כי ניתן להשתמש בו כדי לעבוד עם מחרוזות מסובכות ולאפשר יכולות רבות יותר.
+אנחנו משתמשים בזיכרויות תת-מחרוזת כדי למצוא מידע מסוים במחרוזת גדולה יותר. למשל, אם אנחנו מנסים למצוא את כמה היום הופיע במחרוזת שתקבל ממשתמש, אנו יכולים לחלץ תת-מחרוזת שמייצגת את היום ולבדוק אם היא תואמת את הקלט. לכן, ייתכן שנצטרך לחלץ תת-מחרוזת כדי לפתור בעיות פשוטות או לעבוד עם מידע מסוים במחרוזת.
 
-## כיצד לעשות את זה
+## איך לעשות זאת
 
-כדי להשתמש בתת-מחרוזות ב-Elixir, ניתן להשתמש בפונקציות כמו `String.slice/2` ו- `String.slice/3`. להלן כמה דוגמאות של קוד ופלט, עם ההצהרות `import String` הנוספות כדי לפשל את הקוד:
+כדי לחלץ תת-מחרוזת ב- Elixir, אנחנו משתמשים בפונקציית `slice/2`. נעביר לה את המחרוזת המקורית ואת התחילת והסוף של התת-מחרוזת שאנחנו רוצים לחלץ. לדוגמה:
 
-```elixir
-iex> import String
-iex> input_string = "לפני כמה זמן צפינו סרט יפה"
-iex> String.slice(input_string, 8, 14)
-"כמה זמן"
+```Elixir
+message = "Hello, world!"
+greeting = slice(message, 0, 5)
+
+IO.puts greeting # "Hello"
 ```
 
-בנוסף, ניתן להשתמש גם באופרטור המובנה `..` כדי להרחיב על המחרוזות הפשוטות:
+ניתן גם להשתמש בפונקציות נוספות כמו `contains?` ו- `starts_with?` כדי לבדוק אם תת-מחרוזת מסוימת קיימת בתוך מחרוזת מסוימת.
 
-```elixir
-iex> input_string = "הספר הכי יפה שקראתי השנה"
-iex> input_string[4..-7]
-"יפה שקראתי"
-```
+## חקירה מעמיקה
 
-כדי להחיל תת-תבנית למחרוזת, ניתן להשתמש בפונקציות כמו `String.replace/4` ו- `String.replace_leading/4`, כמו בדוגמאות הבאות:
+בנוסף לחלץ תת-מחרוזות פשוטות, ישנן גם עולמיים שלמים שניתן לגלות באמצעות פונקציות כמו `split`, `trim`, ו- `replace`. אפילו ניתן למצוא תת-מחרוזות בעזרת פונקציות מתקדמות יותר כמו `regex`.
 
-```elixir
-iex> input_string = "שלום הוראת משתנה היא $HAMLET"
-iex> String.replace(input_string, "$HAMLET", "המלט")
-"שלום הוראת משתנה היא המלט"
-```
+## ראה גם
 
-```elixir
-iex> input_string = "פנטזיות עשוים עם מורה שליו"
-iex> String.replace_leading(input_string, "עשוים", "יוצרים")
-"פנטזיות יוצרים עם מורה שליו"
-```
-
-## חפירה עמוקה
-
-הוצאת תת-מחרוזות היא פעולה נפוצה יותר ממה שנראה. בכלל, כאשר מתכנתים עובדים עם מחרוזות ב-Elixir, הם משתמשים בתת-מחרוזות כדי לבצע ארגומנטים ולהעביר פרסומות מעניינות לקונסולת הפק
+- תיעוד רשמי של Elixir על פונקציות לעבוד עם מחרוזות: https://hexdocs.pm/elixir/String.html
+- מדריך לחלץ תת-מחרוזות בעזרת רגקס ב-Elixir: https://elixirschool.com/blog/thats-so-meta/
+- אמולטור מקוון לניסוח רגקס ב-Elixir: https://regex101.com/library/u5X8h1

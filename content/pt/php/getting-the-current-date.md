@@ -1,48 +1,43 @@
 ---
-title:    "PHP: Obtendo a data atual"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/getting-the-current-date.md"
+title:                "PHP: Obtendo a data atual"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual?
+##Por Que
 
-Se você é um programador iniciante ou até mesmo experiente, provavelmente já teve que lidar com a obtenção da data atual em seus projetos de programação. Mas você já se perguntou por que isso é importante ou necessário? Bem, vamos explorar um pouco mais esse assunto.
+A obtenção da data atual é uma tarefa comum e necessária em muitos projetos de programação. Conhecer a data atual pode ser útil para exibir informações em um formato legível, registrar atividades do usuário ou realizar cálculos de tempo em suas aplicações. Neste artigo, veremos como obter a data atual em PHP e algumas dicas para lidar com datas em seus projetos.
 
-## Como obter a data atual em PHP
+##Como Fazer
 
-Em PHP, obter a data atual é uma tarefa bastante simples. Para isso, utilizamos a função `date()` que aceita dois parâmetros: o formato da data que desejamos obter e um timestamp opcional. Por exemplo, se quisermos exibir a data atual no formato "dia/mês/ano", basta utilizar o seguinte código:
+Para obter a data atual em PHP, podemos utilizar a função `date()`. Esta função aceita dois parâmetros: o formato da data que desejamos obter e, opcionalmente, o timestamp da data desejada. Vamos dar uma olhada nesses parâmetros em detalhes:
 
-```php
-echo date("d/m/Y");
+```PHP
+$data_atual = date("d/m/Y"); // Retorna a data atual no formato "dia/mês/ano"
+echo $data_atual; // Saída: 17/08/2021
+
+$data_especifica = date("Y-m-d", strtotime("01/01/2022")); // Retorna a data especificada em "ano-mês-dia"
+echo $data_especifica; // Saída: 2022-01-01
 ```
 
-Isso irá imprimir a data atual no formato "dia/mês/ano", como por exemplo "02/08/2021". Mas e se quisermos exibir também a hora atual? Para isso, basta adicionar o formato de hora no primeiro parâmetro da função `date()`, ficando assim:
+Além disso, também é possível obter a data atual do servidor utilizando a função `getdate()`. Esta função retorna um array com informações detalhadas sobre a data atual, como dia, mês, ano, dia da semana, entre outros. Vamos ver um exemplo:
 
-```php
-echo date("d/m/Y H:i:s");
+```PHP
+$data_atual = getdate();
+echo "Hoje é ".$data_atual['mday']."/".$data_atual['mon']."/".$data_atual['year']; // Saída: Hoje é 17/08/2021
 ```
 
-Isso irá imprimir a data e hora atual no formato "dia/mês/ano hora:minuto:segundo", como por exemplo "02/08/2021 10:30:15". E se quisermos exibir a data e hora de uma determinada timezone? Podemos utilizar a função `date_default_timezone_set()` para definir a timezone desejada antes de chamar a função `date()`. Por exemplo:
+##Mergulho Profundo
 
-```php
-date_default_timezone_set("America/Sao_Paulo");
-echo date("d/m/Y H:i:s");
-```
+Ao lidar com datas em seus projetos, é importante ter atenção a alguns pontos. Primeiramente, é necessário ter certeza de que o fuso horário do servidor está corretamente configurado. Além disso, é sempre recomendado armazenar datas em formatos universais, como o timestamp, para facilitar conversões e cálculos de tempo.
 
-Isso irá imprimir a data e hora atual no formato da timezone definida, como por exemplo "02/08/2021 10:30:15" para a timezone de São Paulo.
+O PHP também possui funções para manipulação de datas, como `strtotime()` e `date_create()`, que podem ser úteis em determinadas situações. É importante conhecer essas funções e suas variações para utilizar as melhores abordagens em seus projetos.
 
-## Profundando mais na obtenção da data atual
+##Veja Também
 
-Além da função `date()`, o PHP também possui outras funções para obter a data atual, como por exemplo as funções `time()` e `strtotime()`. A função `time()` retorna um timestamp UNIX (o número de segundos desde 1 de janeiro de 1970 00:00:00 GMT), enquanto a função `strtotime()` converte uma representação de data e hora em timestamp UNIX.
-
-Outra possibilidade é utilizar a classe `DateTime` para manipular a data e hora de forma mais precisa, permitindo até mesmo fazer cálculos e comparações entre datas.
-
-Em resumo, obter a data atual em PHP é uma tarefa muito simples, mas é importante entender as diferentes formas de fazê-lo e escolher a que melhor se adapta ao seu projeto.
-
-## Veja também
-
-- [Documentação oficial do PHP sobre a função date()](https://www.php.net/manual/pt_BR/function.date.php)
-- [Documentação oficial do PHP sobre a classe DateTime](https://www.php.net/manual/pt_BR/class.datetime.php)
-- [Artigo sobre manipulação de datas e horas em PHP](https://blog.usedev.com.br/manipulando-datas-no-php/)
+- [Documentação do PHP sobre a função `date()`](https://www.php.net/manual/en/function.date.php)
+- [Guia completo sobre manipulação de datas em PHP](https://www.php.net/manual/en/datetime.formats.php)
+- [Dicas para evitar erros comuns ao lidar com datas em PHP](https://www.toptal.com/php/solving-the-php-datetime-frustration)

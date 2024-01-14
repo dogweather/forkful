@@ -1,30 +1,62 @@
 ---
-title:    "Gleam: Scrivere su standard error"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/writing-to-standard-error.md"
+title:                "Gleam: Scrivere su standard error"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere al flusso di errore standard (standard error) è una tecnica di debugging molto utile quando si sviluppa in Gleam. Questo è perché i messaggi di errore sono spesso più informativi e dettagliati rispetto ai meri messaggi di output. Inoltre, è possibile gestire questo tipo di output in modo diverso rispetto all'output standard, rendendo più facile identificare e risolvere eventuali problemi nel codice.
+Scrivere su standard error può essere utile per visualizzare errori o avvisi importanti durante l'esecuzione di un programma, così come per il debug e il testing del codice.
 
-## Come fare
+## Come
 
-Per scrivere al flusso di errore standard in Gleam, è sufficiente utilizzare la funzione `stderr.write/1` e passare come argomento la stringa o il valore che si desidera visualizzare. Ecco un esempio di codice:
+Per scrivere su standard error in Gleam, possiamo utilizzare la funzione `io.write_stderr` fornita dalla libreria standard. Vediamo un esempio di codice:
 
-```Gleam
-let message = "Questo è un messaggio di errore"
-stderr.write(message)
+```gleam
+import gleam/io
+
+// Scrive una stringa su standard error
+io.write_stderr("Questo è un messaggio di errore")
+
+// Possiamo anche formattare la stringa utilizzando il placeholder %s
+let name = "Carlo"
+io.write_stderr("Ciao %s, benvenuto su standard error!", [name])
 ```
-L'output di questo codice sarà "Questo è un messaggio di errore" stampato al flusso di errore standard. Oltre alle stringhe, è possibile passare anche altri tipi di dati come argomento alla funzione, come ad esempio record, tuple o liste.
 
-## Approfondimento
+L'output di questo codice sarà visualizzato su standard error:
 
-In Gleam, il flusso di errore standard è gestito dal modulo `stderr`, che offre una varietà di funzioni per scrivere e formattare l'output. È possibile utilizzare la funzione `stderr.format/2` per formattare l'output utilizzando il sintassi di interpolazione delle stringhe, o la funzione `stderr.write_line/1` per scrivere automaticamente una nuova riga dopo l'output. Inoltre, è possibile utilizzare la funzione `stderr.write_bytes/1` per scrivere dati binari direttamente al flusso di errore standard.
+```
+Errore: Questo è un messaggio di errore
+Ciao Carlo, benvenuto su standard error!
+```
 
-## Vedi anche
+Possiamo anche scrivere tipi personalizzati su standard error utilizzando `io.format`, come mostrato nell'esempio seguente:
 
-- [Documentazione di Gleam su stderr](https://gleam.run/book/stdlib.html#stderr)
-- [Esempi di utilizzo di stderr in Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/log/Log.gleam)
+```gleam
+import gleam/io
+import gleam/string
+
+pub struct Person(name: String, age: Int)
+
+// Scrive una istanza della struct Person su standard error
+let person = Person("Luca", 30)
+io.format_stderr_person("Benvenuto %s, hai %i anni", [person.name, person.age])
+```
+
+L'output di questo codice sarà:
+
+```
+Benvenuto Luca, hai 30 anni
+```
+
+## Deep Dive
+
+In Gleam, standard error è rappresentato dal tipo `io::StandardError`, che ci consente di scrivere su di esso utilizzando le funzioni `write` e `format`. Possiamo anche utilizzare i moduli `io::format` e `io::format_builder` per una formattazione più avanzata delle nostre stringhe. Inoltre, possiamo anche catturare gli errori scritti su standard error utilizzando il modulo `gleam/io/test`.
+
+## Vedi Anche
+
+- Documentazione ufficiale di Gleam su `io`
+- Tutorial su standard error in Gleam

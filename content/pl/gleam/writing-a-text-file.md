@@ -1,50 +1,53 @@
 ---
-title:    "Gleam: Tworzenie pliku tekstowego"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/writing-a-text-file.md"
+title:                "Gleam: Tworzenie pliku tekstowego"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto pisać pliki tekstowe w programowaniu Gleam
 
-Pisanie pliku tekstowego jest ważnym elementem każdego języka programowania. Pozwala ono na zapisywanie danych w czytelnej formie i jest niezbędne do wielu zadań, takich jak tworzenie plików konfiguracyjnych, zapisywanie danych użytkownika i wiele innych. W tym artykule dowiesz się, jak korzystać z języka programowania Gleam, aby pisać pliki tekstowe i jakie korzyści może to przynieść.
+Dzięki wykorzystaniu tekstowych plików, możesz przechowywać i przesyłać dane w łatwy sposób, co jest szczególnie przydatne w przypadku aplikacji internetowych. Pliki tekstowe są również łatwiejsze do odczytania i edycji przez człowieka niż inne formaty danych.
 
 ## Jak to zrobić
 
-Pisanie plików tekstowych w języku Gleam jest bardzo proste. Wystarczy użyć funkcji `File.write` i podać nazwę pliku oraz zawartość, którą chcesz zapisać. Poniżej znajduje się przykładowy kod, który zapisze tekst "Witaj świecie!" do pliku o nazwie "hello.txt":
+Poniżej znajdziesz kod w języku Gleam, który pokaże Ci, jak stworzyć i zapisać plik tekstowy:
 
 ```Gleam
-File.write("hello.txt", "Witaj świecie!")
+// Importowanie modułu "std/fs", odpowiedzialnego za obsługę systemu plików
+import std/fs
+
+// Napisz funkcję, która tworzy plik i zapisuje do niego tekst
+fn write_to_file() {
+  // Określ nazwę pliku
+  let file_name = "moj_plik.txt"
+
+  // Określ treść, którą chcesz zapisać
+  let content = "Witaj świecie!"
+
+  // Otwórz plik w trybie "zapisu"
+  let file = fs.open(file_name, fs.Write)
+
+  // Zapisz tekst do pliku
+  fs.write(file, content)
+
+  // Zamknij plik
+  fs.close(file)
+}
+
+// Wywołaj funkcję
+write_to_file()
 ```
 
-Po wykonaniu tego kodu, w katalogu, w którym znajduje się plik z programem, powinien pojawić się plik "hello.txt" zawierający tekst "Witaj świecie!".
+Po uruchomieniu powyższego kodu, w tym samym katalogu, w którym znajduje się Twój kod programu, zostanie utworzony plik o nazwie "moj_plik.txt", a w nim znajdzie się treść "Witaj świecie!".
 
-Możesz również użyć funkcji `File.append`, aby dopisywać zawartość do istniejącego już pliku, zamiast nadpisywać go w całości. Przykładowy kod będzie wyglądał tak:
+## Głębszy zanurzenie
 
-```Gleam
-File.append("hello.txt", "To jest kolejna linijka tekstu.")
-```
+Pisanie plików tekstowych może być również bardziej zaawansowane, gdy zaczynamy używać różnych funkcji i metod, takich jak odczytywanie i edycja istniejących plików, przechwytywanie błędów, czy obsługa różnych formatów tekstu. W celu uzyskania bardziej szczegółowych informacji na temat pisania plików tekstowych w Gleamie, warto zapoznać się z dokumentacją języka lub przeprowadzić dodatkowe eksperymenty i ćwiczenia.
 
-Teraz plik "hello.txt" będzie zawierał dwa wpisy tekstu.
+## Zobacz również
 
-## Deep Dive
-
-W języku Gleam istnieje wiele funkcji do tworzenia, odczytywania i modyfikowania plików tekstowych. Możesz zapisywać dane w różnych formatach, takich jak JSON czy CSV, a także używać różnych kodowań, na przykład UTF-8. Możesz również wczytywać dane z pliku i przetwarzać je w swoim programie.
-
-Jedną z przydatnych funkcji jest `File.read`, która pozwala na odczytywanie zawartości pliku tekstowego. Przykładowy kod będzie wyglądał tak:
-
-```Gleam
-// Odczytaj zawartość pliku "hello.txt"
-let zawartosc = File.read("hello.txt")
-
-// Wyświetl zawartość na ekranie
-IO.println(zawartosc)
-```
-
-Wynikiem będzie wyświetlenie zawartości pliku "hello.txt", czyli "Witaj świecie! To jest kolejna linijka tekstu.".
-
-## Zobacz też
-
-- Dokumentacja języka Gleam: https://gleam.run/documentation/
-- Przykładowe projekty w języku Gleam: https://github.com/gleam-lang/awesome-gleam
+- [Dokumentacja języka Gleam](https://gleam.run/)
+- [Przykładowy kod Gleam](https://github.com/gleam-lang/)

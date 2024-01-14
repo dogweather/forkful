@@ -1,53 +1,43 @@
 ---
-title:    "Elm: Kontrollera om en katalog finns"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/checking-if-a-directory-exists.md"
+title:                "Elm: Kontrollera om en mapp finns"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kontrollera om en katalog finns är en viktig uppgift för Elm programmerare. Det tillåter oss att skapa mer robusta program som kan hantera eventuella fel eller oförutsedda situationer.
+Att kolla om en mapp existerar kan vara användbart i många programmeringsscenarion. En vanlig orsak kan vara att förhindra duplicering av data eller undvika krascher.
 
-## Hur man gör det
+## Hur man gör
 
-För att kontrollera om en katalog finns i Elm, kan vi använda funktionen `Directory.doesExist` från modulen `Elm.System`, som returnerar en `Result` typ som antingen är `Err` eller `Ok`. Om katalogen finns kommer `Result` att vara `Ok`, annars kommer det att vara `Err`.
+Att kolla om en mapp existerar i Elm är en enkel process med hjälp av funktionen `Directory.exists`. Här är ett exempel på hur man använder den:
 
 ```Elm
-import Elm.System
+import Directory exposing (exists)
 
-checkDirectory : String -> Cmd msg
-checkDirectory directory =
-    case Elm.System.doesExist directory of
-        Ok ->
-            -- Katalogen finns och vi kan fortsätta med våra åtgärder
-        Err ->
-            -- Katalogen finns inte och vi behöver hantera detta
+main : Program ()
+main =
+    exists "mappens/namn"
+        |> Task.perform handleResult
 
+handleResult : Bool -> Cmd msg
+handleResult exists =
+    if exists then
+        -- Gör något om mappen existerar
+    else
+        -- Gör något annat om mappen inte existerar
 ```
+
+Ett annat sätt att använda `Directory.exists` är genom att använda den inuti en `Cmd` i en `update`-funktion och sedan hantera resultatet på liknande sätt.
 
 ## Djupdykning
 
-Vad händer om vi bara kollar efter en katalognamn som inte finns? Detta kan leda till att vårt program kraschar eller att vi inte kan hantera problemet på ett lämpligt sätt. För att undvika detta, kan vi använda funktionen `Directory.existsWithParents` som även kontrollerar om eventuella överordnade kataloger existerar.
-
-```Elm
-import Elm.System
-
-checkDirectory : String -> Cmd msg
-checkDirectory directory =
-    case Elm.System.existsWithParents directory of
-        Ok ->
-            -- Katalogen (och eventuella överordnade) finns och vi kan fortsätta med våra åtgärder
-        Err ->
-            -- Katalogen (eller någon överordnad katalog) finns inte och vi behöver hantera detta
-
-```
-
-Det är också viktigt att notera att funktionerna `doesExist` och `existsWithParents` bara kontrollerar om en specifik katalog finns, och inte andra objekt som kan ha samma namn (t.ex. filer).
+Det är viktigt att notera att `Directory.exists` enbart kollar om mappen existerar, inte om det är en verklig mapp eller en symbolisk länk. Om du behöver kontrollera detta, kan du använda funktionen `Directory.isFile` eller `Directory.isSymbolicLink` beroende på vad du letar efter.
 
 ## Se även
 
-- [Elm.System modul](https://package.elm-lang.org/packages/elm/core/latest/Elm-System)
-- [Resolving Errors in Elm](https://guide.elm-lang.org/error_handling/)
-- [Elm Community Packages](https://package.elm-lang.org/)
+[Hemsida för Elm](https://elm-lang.org/)\
+[Dokumentation för Directory-paketet](https://package.elm-lang.org/packages/elm/core/latest/Directory#exists)

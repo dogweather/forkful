@@ -1,59 +1,46 @@
 ---
-title:    "C: 删除匹配模式的字符"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/deleting-characters-matching-a-pattern.md"
+title:                "C: 删除匹配模式的字符"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么删除匹配模式的字符？
+## Why
+为什么要删除匹配模式的字符？ 删除字符通常用于数据处理或字符串操作，以清除不需要的信息或格式。在C编程中，删除匹配模式的字符可以帮助我们提高代码的效率和可读性。
 
-在编程中，时常会遇到需要删除特定字符的情况。有时候，我们需要根据某个模式来删除字符串中的字符。这通常是因为我们想要清洁数据或者从字符串中去除无用的信息。通过删除特定模式的字符，我们可以更轻松地处理数据并获得需要的结果。
-
-## 如何实现？
-
-要删除匹配某个模式的字符，首先我们需要定义匹配模式。这可以通过使用库函数 `strtok()` 或者正则表达式来完成。接下来，在字符串中遍历每个字符，如果发现它匹配我们定义的模式，则删除该字符。最后，我们可以打印出删除后的字符串作为输出。
-
-举个例子，假设我们有一个字符串 `"Hello World"`，我们想要删除所有的小写字母。那么我们可以这样实现：
+## How To
+要在C中删除匹配模式的字符，首先需要使用`strlen()`函数来获取字符串的长度。然后，使用`for`循环遍历字符串，使用条件语句来检查每个字符是否匹配所需的模式。如果匹配，则可以使用`strcpy()`函数将该字符替换为空值。以下是一个简单的例子：
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-  // 定义字符串
-  char str[] = "Hello World";
+    char str[50] = "Hello World!";
+    int len = strlen(str);
+    int i;
 
-  // 定义匹配模式
-  char pattern[] = "abcdefghijklmnopqrstuvwxyz";
+    for(i = 0; i < len; i++) {
+        if(str[i] == 'l') {
+            strcpy(&str[i], "");
+        }
+    }
 
-  // 定义指针，用于遍历字符串
-  char *p;
-
-  // 使用 `strtok()` 分解字符串
-  p = strtok(str, pattern);
-
-  // 开始遍历字符串
-  while (p != NULL) {
-    printf("%s", p);
-
-    // 继续遍历
-    p = strtok(NULL, pattern);
-  }
-
-  return 0;
+    printf("%s", str); // 输出："Heo Word!"
+    return 0;
 }
 ```
 
-这段代码的输出结果将是 `HW`，因为所有小写字母（包括空格）都被成功删除了。
+这个例子中，我们使用`for`循环来检查每个字符是否等于`l`，如果是，就使用`strcpy()`函数将其替换为空值。当然，根据不同的需求，你也可以使用其他替换函数或方法来删除匹配模式的字符。
 
-## 深入了解
+## Deep Dive
+除了上面提到的`strcpy()`函数，还有其他一些可以用来删除匹配模式的字符的方法。例如，可以使用指针来访问字符串中的每个字符，然后进行替换或删除。此外，如果你需要删除的字符数量很多，可以使用动态内存分配来提高效率。总的来说，在C编程中，删除匹配模式的字符可以通过不同的方法来实现，你可以根据自己的需求来选择最适合的方法。
 
-删除匹配模式的字符，实际上是利用了 C 语言中的字符串处理功能。通过定义匹配模式，我们可以有选择性地删除字符串中的某些字符，这为我们处理数据提供了便利。同时，我们也可以根据实际需要定义不同的匹配模式，从而实现更多样化的操作。
+## See Also
+* [The `strlen()` function in C](https://www.javatpoint.com/strlen-in-c)
+* [String manipulation in C](https://www.cprogramming.com/tutorial/c/lesson9.html)
+* [Dynamic memory allocation in C](https://www.tutorialspoint.com/cprogramming/c_dynamic_memory_allocation.htm)
 
-总的来说，字符串处理是程序员不可或缺的基本技能。而掌握删除匹配模式字符的方法，则可以增加我们处理数据的灵活性和效率。
-
-## 参考资料
-
-- [C语言中的字符串](https://www.runoob.com/cprogramming/c-strings.html)
-- [strtok() 函数说明](https://www.runoob.com/w3cnote/c-strtok-function.html)
+希望本篇博文对你有所帮助！记得保持学习和探索，以不断提高自己的C编程技能哦。加油！

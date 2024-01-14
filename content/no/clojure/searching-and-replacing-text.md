@@ -1,50 +1,41 @@
 ---
-title:    "Clojure: Søke og erstatte tekst"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/searching-and-replacing-text.md"
+title:                "Clojure: :Søking og utskifting av tekst"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Det er viktig å kunne søke og erstatte tekst når man jobber med programmering, spesielt i Clojure hvor funksjonell programmering er viktig. Dette gjør det enkelt å gjøre flere endringer samtidig og for å redusere manuelt arbeid.
+Å søke og erstatte tekst er en viktig del av programmering, enten du trenger å korrigere feil eller gjøre større endringer i koden din. Det kan også være nyttig når du skal oversette en kodebase til et annet språk. Uansett årsak, så vil du lære hvordan man gjør det i Clojure!
 
-# Hvordan
+## Slik gjør du det
 
-For å søke og erstatte tekst i Clojure, kan man bruke funksjonen "replace" og "re-pattern". Her er et enkelt eksempel på hvordan man kan erstatte alle forekomster av "he" med "she" i en liste av strenger:
-
-```Clojure
-(def strenger ["Han heter John" "Hun heter Jill" "Hei alle"])
-
-(map #(clojure.string/replace % #"(?i)he" "she") strenger)
-
-;; Output: ("She heter John" "Hun heter Jill" "Shei alle")
-```
-
-Her bruker vi "#"(?i)he"" for å ignorere store og små bokstaver. Vi kan også bruke regulære uttrykk for mer komplekse søk og erstattinger.
-
-# Dypdykk
-
-I Clojure kan man også bruke rekursive funksjoner for å gjøre søk og erstatting på dypere nivåer i datastrukturer. For eksempel, hvis vi har en liste med lister av tall, og vi ønsker å erstatte alle positive tall med deres negative motstykke, kan vi bruke en rekursiv funksjon slik:
+For å søke og erstatte tekst i Clojure, kan du bruke funksjonen `replace`. Denne funksjonen tar inn tre argumenter: en streng (string) eller regex som skal søker etter, en streng som skal erstatte den søkte teksten, og til slutt en sekvens hvor du ønsker å utføre søket på. La oss si at vi ønsker å erstatte alle forekomster av "hallo" med "hei" i en liste:
 
 ```Clojure
-(def tall [[1 -2 3] [4 -5 6]])
-
-(defn negativ-replace [x]
-  (if (list? x)
-      (map negativ-replace x)
-      (if (> x 0) (- x) x)))
-
-(negativ-replace tall)
-
-;; Output: [[-1 2 -3] [-4 5 -6]]
+(def liste ["hallo" "god morgen" "hallo" "hei" "hallo"])
+(replace #"hallo" "hei" liste)
 ```
 
-Her bruker vi funksjonen "negativ-replace" på hver enkelt verdi i strukturen og bruker "map" for å mappe funksjonen over alle elementene.
+Dette vil resultere i følgende output:
 
-# Se Også
+```Clojure
+["hei" "god morgen" "hei" "hei" "hei"]
+```
 
-- [Clojure API Dokumentasjon for replace](https://clojuredocs.org/clojure.core/replace)
-- [Clojure API Dokumentasjon for re-pattern](https://clojuredocs.org/clojure.core/re-pattern)
-- [RegExr - regex tester og viser forklaringer på regulære uttrykk](https://regexr.com/)
+Som vist i eksempelet, kan du bruke et regulært uttrykk (regex) i søket ditt ved å bruke `#""` rundt teksten du søker etter. Dette kan være nyttig hvis du ønsker å gjøre mer komplekse søk.
+
+## Dypdykk
+
+Det er verdt å merke seg at funksjonen `replace` ikke endrer på den opprinnelige sekvensen, men returnerer en ny sekvens med endringene. Hvis du ønsker å endre den opprinnelige sekvensen, kan du bruke funksjonen `replace!` i stedet.
+
+Det finnes også en annen funksjon kalt `replace-first` som, som navnet tilsier, kun erstatter den første forekomsten av teksten du søker etter. Den fungerer på samme måte som `replace` ellers.
+
+## Se også
+
+- [`replace` dokumentasjon](https://clojuredocs.org/clojure.core/replace)
+- [Regulære uttrykk i Clojure](https://clojure.org/api/cheatsheet#regex)
+- [Andre Clojure funksjoner for tekstmanipulering](https://clojuredocs.org/clojure.string)

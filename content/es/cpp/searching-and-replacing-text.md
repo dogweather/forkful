@@ -1,61 +1,44 @@
 ---
-title:    "C++: Buscando y reemplazando texto"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/searching-and-replacing-text.md"
+title:                "C++: Buscando y reemplazando texto"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+## Por qué
+La búsqueda y reemplazo de texto es una tarea esencial en la programación. Con esta herramienta, puedes encontrar y reemplazar cadenas de texto en tus programas, lo que te ayuda a corregir errores y mejorar la eficiencia de tu código.
 
-La búsqueda y reemplazo de texto es una tarea común en la programación. Ya sea que estés haciendo cambios en un archivo de texto o en un programa completo, la función de búsqueda y reemplazo te permitirá hacer cambios rápidos y eficientes. Además, es una habilidad útil para tener en tu arsenal de programación.
-
-##Cómo hacerlo
-
-La búsqueda y reemplazo en C++ se pueden realizar de diferentes formas, pero aquí te mostraremos una manera sencilla de hacerlo utilizando la función `find` y `replace` de la librería `string`.
-
-Primero, necesitaremos incluir la librería `string` en nuestro código:
+## Cómo hacerlo
+Para buscar y reemplazar texto en C++, necesitas utilizar la función `find()` y `replace()` de la librería estándar de C++. Ambas funciones toman como parámetros la cadena de texto que quieres buscar y la cadena de texto con la que deseas reemplazarla. Aquí hay un ejemplo de cómo puedes utilizar estas funciones en tu código:
 
 ```C++
+#include <iostream>
 #include <string>
+
+using namespace std;
+
+int main() {
+    string texto = "Hola, mundo!";
+    texto.replace(texto.find("mundo"), 5, "amigos");
+    cout << texto << endl;
+
+    return 0;
+}
 ```
 
-Luego, podemos utilizar la función `find` para buscar una cadena de texto dentro de otra. Por ejemplo, tenemos la siguiente cadena:
+En este ejemplo, primero creamos una cadena de texto llamada `texto` con el valor "Hola, mundo!". Luego utilizamos la función `find()` para encontrar la posición de "mundo" en la cadena de texto y la función `replace()` para reemplazar "mundo" por "amigos". Finalmente, imprimimos la cadena de texto resultante en la consola.
 
-```C++
-std::string texto = "¡Hola Mundo!";
-```
+El resultado de este código será "Hola, amigos!".
 
-Si queremos buscar y reemplazar la palabra "Mundo" por "Amigos", podemos hacerlo de la siguiente manera:
+## Profundizando
+Además de las funciones `find()` y `replace()`, existen otras formas de buscar y reemplazar texto en C++. Por ejemplo, puedes utilizar expresiones regulares con la librería de C++ `regex` para realizar búsquedas más complejas y flexibles. Además, también puedes utilizar la función `substr()` para extraer una subcadena de texto y reemplazarla con otra cadena de texto.
 
-```C++
-std::string palabra_buscar = "Mundo";
-std::string palabra_reemplazar = "Amigos";
+En general, la búsqueda y reemplazo de texto es una tarea muy útil en la programación. Te permite corregir rápidamente errores, realizar cambios masivos en tu código y mejorar su legibilidad. Asegúrate de practicar y experimentar con diferentes métodos para encontrar el enfoque que mejor se adapte a tus necesidades.
 
-size_t indice = texto.find(palabra_buscar);
-texto.replace(indice, palabra_buscar.length(), palabra_reemplazar);
-
-std::cout << texto << std::endl;
-```
-
-La función `find` nos devuelve el índice donde se encuentra la cadena buscada, y luego utilizamos la función `replace` para reemplazar la palabra en ese índice con la nueva palabra.
-
-El resultado final en la consola sería:
-
-```
-¡Hola Amigos!
-```
-
-##Profundizando
-
-Además de la función `find` y `replace`, la librería `string` también cuenta con otras funciones útiles para la búsqueda y reemplazo de texto, como por ejemplo `find_first_of`, `find_last_of` y `replace_if`.
-
-También puedes utilizar expresiones regulares para realizar búsquedas más complejas. La librería `regex` de C++ te permite utilizar patrones para buscar y reemplazar cadenas de texto.
-
-Para profundizar más en el tema, te recomendamos revisar la documentación oficial de C++ y explorar diferentes ejemplos en línea.
-
-##Ver también
-
-- [Documentación oficial de C++ (en español)](https://es.cppreference.com/w/)
-- [Tutorial de búsqueda y reemplazo en C++ (en inglés)](https://www.geeksforgeeks.org/search-replace-cpp/)
-- [Ejemplos de expresiones regulares en C++ (en inglés)](https://www.regular-expressions.info/examples.html)
+## Ver también
+- [Documentación de C++ sobre la función `find()`](https://www.cplusplus.com/reference/string/string/find/)
+- [Documentación de C++ sobre la función `replace()`](https://www.cplusplus.com/reference/string/string/replace/)
+- [Documentación de C++ sobre la librería `regex`](https://www.cplusplus.com/reference/regex/)
+- [Documentación de C++ sobre la función `substr()`](https://www.cplusplus.com/reference/string/string/substr/)

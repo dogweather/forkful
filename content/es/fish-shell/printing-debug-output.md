@@ -1,56 +1,60 @@
 ---
-title:    "Fish Shell: Imprimiendo resultado de depuración"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/printing-debug-output.md"
+title:                "Fish Shell: Impresión de salida de depuración"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué imprimir la salida de depuración es importante en Fish Shell
+## Por qué
 
-Imprimir la salida de depuración en Fish Shell puede ser muy útil para detectar errores y entender lo que está sucediendo en nuestro código. Nos permite ver los valores de las variables en diferentes puntos de nuestro programa y nos ayuda a identificar posibles fallos en la lógica.
+Imprimir la salida de depuración es una herramienta valiosa en la programación, ya que nos permite ver el flujo de nuestro código y detectar posibles errores. Además, puede ayudarnos a comprender mejor cómo funciona nuestro programa y a resolver problemas más rápido.
 
-## Cómo hacerlo en Fish Shell
+## Cómo hacerlo
 
-Para imprimir una salida de depuración en Fish Shell, podemos utilizar el comando `echo` seguido de la variable o texto que queremos imprimir. Por ejemplo:
+Para imprimir la salida de depuración en Fish Shell, podemos utilizar el comando `echo`. Por ejemplo, si queremos imprimir el valor de una variable llamada `numero`, podemos escribir lo siguiente en nuestra terminal:
 
-```
-echo "Hello world"
-```
-
-Esto imprimirá "Hello world" en nuestra terminal.
-
-También podemos utilizar `echo` junto con la opción `-e` para imprimir valores de variables con formato. Por ejemplo:
-
-```
-set name "John"
-set age 30
-echo -e "My name is $name and I am $age years old."
+```Fish Shell
+echo $numero
 ```
 
-Esto imprimirá "My name is John and I am 30 years old." en nuestra terminal.
+Esto imprimirá el valor actual de la variable `numero` en la terminal. También podemos agregar texto junto con la salida de depuración para hacerla más comprensible, por ejemplo:
 
-Otro método para imprimir salidas de depuración es utilizando la función `debug`. Esta función nos permite imprimir valores de variables y también mostrar información adicional, como el nombre de la variable y la línea de código en la que se está imprimiendo. Por ejemplo:
-
-```
-set num 5
-debug $num
+```Fish Shell
+echo "El valor de la variable numero es: $numero"
 ```
 
-Esto imprimirá "num=5 (line 2)" en nuestra terminal.
+Esta línea de código imprimirá "El valor de la variable numero es: " seguido del valor actual de `numero`.
 
-## Profundizando en la impresión de salidas de depuración
+## Profundizando
 
-La impresión de salidas de depuración en Fish Shell puede ser muy útil para entender cómo nuestro código se está ejecutando y para encontrar y resolver errores. Al imprimir valores de variables en diferentes puntos de nuestro programa, podemos identificar si los valores son los esperados y si algo está cambiando su valor de manera inesperada.
+Además del comando `echo`, también podemos utilizar otros métodos para imprimir la salida de depuración en Fish Shell. Uno de ellos es `printf`, que nos permite formatear la salida de una manera más precisa. Por ejemplo:
 
-También podemos utilizar la impresión de salidas de depuración para entender el flujo de nuestro programa y cómo diferentes partes del código interactúan entre sí.
+```Fish Shell
+printf "La suma de %d y %d es: %d" 3 5 (math 3+5)
+```
 
-Es importante recordar eliminar todas las impresiones de salidas de depuración una vez que hayamos resuelto los errores y nuestro código esté funcionando como esperamos. Dejar estas impresiones puede afectar el rendimiento de nuestro programa y hacer que sea más difícil de leer y de mantener.
+Esto imprimirá la siguiente salida:
+
+```
+La suma de 3 y 5 es: 8
+```
+
+También podemos utilizar el comando `debug` para imprimir la salida de depuración de manera más organizada y con colores para diferenciarla de otros mensajes en la terminal. Por ejemplo:
+
+```Fish Shell
+debug "El resultado de la operación es: %d" (math 5*3)
+```
+
+Esto imprimirá la siguiente salida con colores:
+
+```
+[debug] El resultado de la operación es: 15
+```
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/)
-
-- [Otros comandos útiles en Fish Shell](https://fishshell.com/docs/current/commands.html)
-
-- [Guía de depuración en Fish Shell](https://fishshell.com/docs/current/tutorial.html#debugging)
+- [Documentación de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Cómo imprimir la salida de depuración en Bash](https://www.ionos.com/community/server-cloud-infrastructure/linux/how-to-use-the-echo-command-in-linux/)
+- [5 métodos para imprimir la salida de depuración en diferentes lenguajes de programación](https://www.digitalocean.com/community/tutorials/5-common-debug-methods-in-almost-any-programming-language)

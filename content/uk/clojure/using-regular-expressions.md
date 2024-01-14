@@ -1,43 +1,43 @@
 ---
-title:    "Clojure: Використання регулярних виразів"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/using-regular-expressions.md"
+title:                "Clojure: Використання регулярних виразів."
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+## Тому, чому
 
-Додаток регулярних виразів може значно полегшити процес обробки тексту та даних. Він дозволяє швидко та точно знайти необхідну інформацію, використовуючи встановлені шаблони. Це особливо корисно для роботи з великими обсягами тексту, таких як логи, бази даних або веб-сторінки.
+Регулярні вирази є потужним інструментом для обробки інформації у коді. Вони дозволяють швидко та ефективно знаходити та замінювати текстові шаблони в рядках даних. Це дуже корисно для перевірки валідності введеного користувачем або для вибору певної інформації зі структурованих даних.
 
-## Як
+## Як використовувати
 
-Для початку використовувати регулярні вирази в Clojure, необхідно імпортувати модуль clojure.string. Далі можна використовувати функції з цього модулю для пошуку та обробки тексту за допомогою регулярних виразів.
+Щоб використовувати регулярні вирази в Clojure, вам потрібно імпортувати бібліотеку `clojure.string`, яка містить функцію `re-matches`. Вона приймає два аргументи: регулярний вираз та рядок, в якому треба його застосувати. Давайте подивимось на приклад:
 
 ```Clojure
 (require '[clojure.string :as str])
 
-(str/replace "Hello world!" #"\w+" "Goodbye") ; виведе "Goodbye Goodbye!"
-(str/split "John,Doe,30" #",") ; виведе ["John" "Doe" "30"]
+(def regex #"hello")
+(def str1 "Hello, world!")
+(def str2 "Hi there!")
+
+(str/re-matches regex str1)
+;; "Hello"
+(str/re-matches regex str2)
+;; nil (не знайдено відповідності)
 ```
 
-## Глибше
+Цей приклад показує, як `re-matches` повертає першу збігаючу частину рядка або `nil`, якщо збігів не знайдено.
 
-Регулярні вирази підтримують багато корисних опцій та функцій, що дозволяють робити пошук ще більш гнучким та потужним. Наприклад, можна використовувати шаблони для знаходження та заміни різних виразів регулярними виразами.
+## Глибші відомості
 
-```Clojure
-(str/replace "Hello 123" #"\d+" "world") ; виведе "Hello world"
-```
+Регулярні вирази в Clojure базуються на стандартних регулярних виразах Java, тому вони працюють з такими ж метасимволами, як `.*` (послідовність будь-яких символів) та `+` (один або більше входжень). Також є можливість застосовувати різні флаги, які змінюють поведінку виразу.
 
-Також, можна використовувати функції для визначення позиції та кількості збігів в тексті.
-
-```Clojure
-(str/index-of "Hello world" #"\w+") ; виведе 0
-(str/count "John,Wick" #",") ; виведе 1
-```
+Для отримання більш докладної інформації про регулярні вирази в Clojure рекомендується прочитати [офіційну документацію](https://clojure.org/reference/java_interop#_regular_expressions) на цю тему.
 
 ## Дивіться також
 
-- [Офіційна документація Clojure](https://clojure.org/)
-- [Теорія регулярних виразів](https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%B8%D0%B9_%D0%B2%D0%B8%D1%80%D0%B0%D0%B7)
-- [Туторіали по використанню регулярних виразів в Clojure](https://www.luminusweb.net/docs/tutorials/clojure-regex-tutorial.html)
+- [Офіційна документація з регулярних виразів у Clojure](https://clojure.org/reference/java_interop#_regular_expressions)
+- [Основи регулярних виразів в Clojure](https://stackabuse.com/regular-expressions-in-clojure/)
+- [Застосування регулярних виразів при роботі зі строками у Clojure](https://openclassrooms.com/fr/courses/2189416-manipulation-de-chaines-de-caracteres-en-clojure/2297647-appliquer-des-expressions-regulieres)

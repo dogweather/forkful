@@ -1,40 +1,38 @@
 ---
-title:    "Swift: Konwersja daty na ciąg znaków"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/converting-a-date-into-a-string.md"
+title:                "Swift: Konwersja daty do ciągu znaków."
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwersja daty na łańcuch znaków jest nieodzownym krokiem w wielu aplikacjach Swift. Może to pomóc w wyświetlaniu daty w określonym formacie lub późniejszym przetwarzaniu jej jako danych tekstowych. Dzięki temu procesowi możesz dostosować wygląd i wykorzystanie dat w swojej aplikacji.
+Czasami w naszym programowaniu potrzebujemy zamienić datę na napis, na przykład aby wyświetlić ją użytkownikowi lub zapisać w bazie danych. W tym artykule dowiesz się jak to zrobić w języku Swift.
 
 ## Jak to zrobić
 
-Aby przekonwertować datę na łańcuch znaków w Swift, używamy metody `string(from: Date)` w klasie `DateFormatter`. Najpierw tworzymy instancję `DateFormatter` i ustawiamy pożądany format daty za pomocą właściwości `dateFormat`. Następnie wywołujemy metodę `string(from: Date)` i przekazujemy jej obiekt `Date`, który chcemy przekonwertować. Oto przykładowy kod:
+Aby zamienić datę na napis (string) w Swift, używamy klasy DateFormatter. Poniżej znajdziesz przykładowy kod:
 
 ```Swift
+let date = Date()
+
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd MMMM yyyy" // format daty
-let date = Date() // aktualna data
+dateFormatter.dateFormat = "dd MMMM yyyy"
+
 let dateString = dateFormatter.string(from: date)
-print(dateString) // wyświetli "17 listopada 2021"
+print(dateString) // Output: 14 listopada 2020
 ```
 
-## Głębsze zagadnienia
+W tym przykładzie najpierw tworzymy obiekt Date, reprezentujący aktualną datę. Następnie tworzymy obiekt DateFormatter oraz ustawiamy odpowiedni format dla naszego napisu (w tym przypadku "dd MMMM yyyy" oznacza dzień miesiąca, nazwę miesiąca oraz rok). Na koniec, wywołujemy metodę string(from:) obiektu DateFormatter dla naszej daty, co zwróci nam napis w oczekiwanym formacie.
 
-Metoda `string(from: Date)` może być również przydatna, gdy chcemy przetworzyć datę z innego języka na format lokalny. W tym przypadku musimy ustawić odpowiedni locale w naszym `DateFormatter`. Na przykład, aby wyświetlić datę w języku polskim, możemy użyć:
+## Deep Dive
 
-```Swift
-dateFormatter.locale = Locale(identifier: "pl_PL")
-print(dateFormatter.string(from: date)) // wyświetli "17 listopada 2021"
-```
-
-Możesz również dostosować ustawienia dotyczące czasu, strefy czasowej i innych szczegółów dotyczących daty za pomocą odpowiednich właściwości w `DateFormatter`. Warto również przeczytać dokumentację dotyczącą tej klasy, aby poznać wszystkie dostępne opcje.
+Jeśli chcesz dowiedzieć się więcej o konwersji daty na napis w Swift, możesz zapoznać się z oficjalną dokumentacją języka oraz przeczytać o różnych formatowaniach, które można użyć w DateFormatter. Istnieje również możliwość ustawiania własnych, niestandardowych formatów.
 
 ## Zobacz także
 
-- [Dokumentacja Apple: Klasa DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift by Sundell: Working with dates in Swift](https://www.swiftbysundell.com/articles/working-with-dates-in-swift/)
-- [Medium: Date, DateFormatter, Locale, i DateFormatterStyle — szybki przegląd](https://medium.com/@tugger3/swift-date-dateformatter-locale-dateformatterstyle-a-quick-overview-1c20f328aa2d)
+- [Oficjalna dokumentacja języka Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Dokumentacja klasy DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Przykładowe formaty daty w Swift](https://nsdateformatter.com)

@@ -1,35 +1,52 @@
 ---
-title:    "Gleam: Écrire un fichier texte"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/writing-a-text-file.md"
+title:                "Gleam: Écrire un fichier texte"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire un fichier texte en Gleam?
+## Pourquoi
 
-Il y a de nombreuses raisons pour lesquelles vous pourriez vouloir écrire un fichier texte en utilisant le langage de programmation Gleam. Cela peut inclure la manipulation de données, la création de rapports ou la mise en forme de contenu pour une application Web. Quelle que soit la raison, écrire un fichier texte en Gleam peut vous aider à automatiser des tâches et à améliorer votre workflow.
+La création d'un fichier texte est un élément essentiel de la programmation en Gleam. Cela permet de stocker et de manipuler des données, ainsi que de les utiliser dans le code pour réaliser des tâches spécifiques.
 
-## Comment faire?
+## Comment faire
 
-Pour écrire un fichier texte en Gleam, vous pouvez utiliser la fonction `write_file` de la bibliothèque standard `std/fs`. Cette fonction prend deux arguments: le chemin vers le fichier à écrire et le contenu du fichier sous forme de chaîne de caractères. Voici un exemple de code pour écrire un fichier texte contenant le message "Bonjour, monde!" :
+Pour créer un fichier texte en Gleam, il faut utiliser le module `file`, qui fournit des fonctions pour créer, lire et écrire dans un fichier. Voici un exemple de code pour écrire dans un fichier texte :
 
+```Gleam
+import file.{write}
+
+let message = "Bonjour tout le monde!"
+file.write("message.txt", message)
 ```
-Gleam program
-pub fn main() {
-  let content = "Bonjour, monde!";
-  let _ = std/fs.write_file("hello.txt", content);
-}
+
+Cette fonction va créer un fichier texte appelé "message.txt" et y écrire le contenu de la variable `message`. Vous pouvez également écrire du contenu directement sans utiliser de variable :
+
+```Gleam
+import file.{write}
+
+file.write("intro.txt", "Bienvenue sur mon blog de programmation!")
 ```
 
-Une fois que vous avez exécuté ce code, vous devriez voir le fichier `hello.txt` créé dans le même répertoire que votre programme Gleam.
+Pour lire le contenu d'un fichier texte, vous pouvez utiliser la fonction `read` :
 
-## Plongez plus profondément
+```Gleam
+import file.{read}
 
-Outre l'utilisation de la fonction `write_file`, vous pouvez également utiliser d'autres bibliothèques ou fonctions pour manipuler le contenu de votre fichier texte. Par exemple, vous pouvez utiliser la bibliothèque `std/encoding` pour formater votre texte en utilisant différents encodages tels que UTF-8 ou ASCII. Vous pouvez également utiliser la fonction `append` de la bibliothèque `std/fs` pour ajouter du contenu à un fichier existant plutôt que de l'écraser complètement.
+let contenu = file.read("message.txt")
+```
+
+La variable `contenu` va contenir le contenu du fichier "message.txt". Vous pouvez ensuite l'utiliser dans d'autres parties de votre code.
+
+## Plongée en profondeur
+
+En plus des fonctions de base pour écrire et lire des fichiers, le module `file` offre également des fonctionnalités avancées pour la manipulation de fichiers. Par exemple, vous pouvez déplacer, copier ou supprimer des fichiers en utilisant les fonctions `move`, `copy` et `delete`.
+
+De plus, vous pouvez également travailler avec des fichiers compressés en utilisant les fonctions `zip` et `unzip` pour créer et extraire des fichiers zip.
 
 ## Voir aussi
 
-- Documentation officielle de Gleam: https://gleam.run/documentation/
-- Guide de démarrage rapide de Gleam: https://gleam.run/getting-started/
-- Exemples de code Gleam: https://github.com/gleam-lang/gleam/tree/master/examples
+- Documentation officielle de Gleam sur les fichiers : https://gleam.run/documentation/stdlib/file
+- Exemples de code pour la manipulation de fichiers en Gleam : https://github.com/gleam-lang/gleam/blob/master/lib/file/tests/file_test.gleam

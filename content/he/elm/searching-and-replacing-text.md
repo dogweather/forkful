@@ -1,52 +1,35 @@
 ---
-title:    "Elm: חיפוש והחלפת טקסט"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/searching-and-replacing-text.md"
+title:                "Elm: חיפוש והחלפת טקסט"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-למה ייתכן שמישהו ירצה להתעסק בחיפוש והחלפת טקסט בתוך קוד Elm? כי זה מאפשר לך לפתור בעיות טכניות ולשפר את הקוד שלך בצורה קלה ומהירה.
+למה לעסוק בחיפוש והחלפת טקסט במתכנתים יתרכזו בפעולות עיבוד ומוניפול על הטקסט בתוך קוד. חיפוש והחלפת טקסט הוא כלי חיוני במתכנות, שמשמש לשנות ולתקן פונקציות, להגדיר משתנים ועוד. למדע את כיצד לנהל ולהריץ חיפוש והחלפת טקסט עזובים את כל כיווני המתכנות שלך.
 
-## איך לעשות
+## כיצד לנהל
 
-הנה כמה דוגמאות לכיצד לחפש ולהחליף טקסט בתוך קוד Elm:
+כדי לבצע חיפוש והחלפת טקסט בתוך הקוד שלך, עדיף להשתמש בכלי עזר כגון שפת Elm. אתה יכול להשתמש פנטם של שפה שמאפשרת חיפוש והחלפת טקסט בקוד שלך. כדי לבצע זאת, תקיש את הפקודות הבאות בתוך הכתובת **```Elm lang```**:
 
-```Elm
--- נמצא את התווים "hello" ונחליפם בתווים "world"
-String.replace "hello" "world" "Hello, Elm!"
+```elm
+import Text
+import String
 
--- החלפה של מספרים באמצעות Regex
-Regex.replace Regex.all (Regex.regex "\d+") (\_ -> "5") "2 bottles of beer on the wall"
-
--- חיפוש והחלפה של טקסט בתוך רשימת מחרוזות
-List.map (\string -> String.replace "hello" "world" string) ["Hello, Elm!", "Hello, World!"]
-
--- חיפוש והחלפה של תווים בתוך מחרוזת באמצעות תנאים
-String.replaceIf (\char -> Char.isUpper char) "X" "hello world"
+searchAndReplace : String -> String -> String -> String
+searchAndReplace pattern replacement target =
+    Text.replace pattern replacement target
 ```
 
-בכל אחת מהדוגמאות, הפלט יהיה:
+כאשר הקלט הוא התבנית, ההחלפה, והטקסט היעד. בצע את תרגום על מנת לבצע חיפוש והחלפת טקסט.
 
-```
-"World, Elm!"
-"5 bottles of beer on the wall"
-["World, Elm!", "World, World!"]
-"hello Xorld"
-```
+## נתפוס עמוק
 
-## מקורות נוספים
+בתהליך התכנות, ניתן להשתמש בחיפוש והחלפה כדי ליישם שינויים על הקוד המקורי. יעוד חיפוש והחלפת טקסט הוא שינוי מפעיל - חיפוש והחלפה יכולים לכלול תבניות מרוכזות, דיפאזים, ותכניות שהם לא נמצאות בקוד המקורי. כאשר אתה מעביר את פקודת החיפוש והחלפת הטקסט, האלגוריתמים מונעים מכל הטקסט להיות שינוי במדויק.
 
-כדי ללמוד עוד על חיפוש והחלפה של טקסט בקוד Elm, כדאי לבדוק את המקורות הבאים:
+## ראה גם
 
-- [המדריך הרשמי של Elm לחיפוש והחלפה של טקסט](https://guide.elm-lang.org/appendix/syntax.html#string-manipulation)
-- [הקוד המקורי של פונקציית replace בספריית String של Elm](https://github.com/elm/compiler/blob/master/hints/Review.md#replace)
-- [מאמר על Regex באתר הרשמי של Elm](https://elm-lang.org/docs/regexp)
-
-## לראות גם
-
-- [מדריך מקיף לכתיבה ב-Elm](https://guide.elm-lang.org/)
-- [אתר המדריך של Elm למתחילים](https://elmprogramming.com/)
-- [הקהילה הרשמית של Elm](https://discourse.elm-lang.org/)
+- http://elmbridge.org/blog/elm-and-text-editors/ (עבודה עם עורך טקסט ברמה אטומית שנדרשת לחיפוש והחל

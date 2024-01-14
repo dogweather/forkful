@@ -1,39 +1,54 @@
 ---
-title:    "Javascript: Skriva tester"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-tests.md"
+title:                "Javascript: Skriva tester"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför skriva tester i Javascript?
+## Varför skriva tester för Javascript-programmering?
 
-Att skriva tester är en viktig del av utvecklingsprocessen i Javascript. Det hjälper till att förbättra kodens kvalitet, upptäcka potentiella buggar och underlätta felsökning. Det är också ett sätt att säkerställa att koden fungerar som den ska och bidrar till en stabil och pålitlig produkt.
+Att skriva tester är en viktig del av att utveckla säkra och pålitliga Javascript-program. Genom att skriva tester kan du upptäcka och åtgärda felaktig kod innan den når produktion, vilket minskar chanserna för att buggar upptäcks av användare.
 
-## Hur man skriver tester i Javascript
+## Så här skriver du tester i Javascript
 
-För att skriva tester i Javascript behöver du först välja ett lämpligt testningsramverk, såsom Jasmine, Mocha eller Jest. Dessa ramverk ger en strukturerad och enhetlig metod för att skriva tester. 
+För att skriva tester för ditt Javascript-program använder du ett testramverk som till exempel Mocha eller Jasmine. Dessa ramverk gör det enkelt att definiera testfall och köra dem. Här är ett exempel på en enkel testfunktion som testar en funktion som lägger till två nummer:
 
-Här är ett exempel på hur man skriver ett enkelt test i Jasmine:
+```javascript
+// Importera assert-funktionen från testramverket
+const assert = require('assert');
 
-```Javascript 
-describe('addition', function() {
-  it('should add two numbers together', function() {
-    expect(add(5, 10)).toBe(15);
+// Definiera testfunktionen
+describe('addNumbers()', () => {
+  it('should add two numbers correctly', () => {
+    // Deklarera testvariabler
+    const num1 = 4;
+    const num2 = 6;
+
+    // Kalla på den funktion du vill testa
+    const result = addNumbers(num1, num2);
+
+    // Kontrollera att resultatet är korrekt
+    assert.equal(result, 10);
   });
 });
+
+// Den här funktionen är den som testfunktionen ovan testar
+function addNumbers(a, b) {
+  return a + b;
+}
 ```
+Detta är bara ett enkelt exempel, men det visar grunderna för hur du kan skriva tester för din Javascript-kod.
 
-I detta exempel skapar vi en testsvit med namnet "addition" och en testfunktion som kallas "should add two numbers together". Inom funktionen använder vi en förväntningsmetod "expect" för att definiera vad resultatet av en funktion ska vara. I detta fall förväntar vi oss att funktionen "add" lägger ihop två tal och ger oss resultatet 15. 
+## Djupdykning i att skriva tester
 
-## Djupdykning i tester
-
-Att skriva tester handlar inte bara om att skriva enkla fall som vi testar mot. Det handlar också om att tänka på olika scenarier och förvänta sig ovanliga eller felaktiga indata. I vårt tidigare exempel skulle det till exempel vara en bra idé att testa vad som händer om vi ger funktionen "add" en sträng istället för tal som indata.
-
-Ett annat viktigt koncept inom tester är testdriven utveckling (TDD). Det innebär att man skriver tester innan man skriver koden, vilket hjälper till att fokusera på det önskade beteendet hos koden. Detta ger också en tydlig struktur och enklare underhåll av koden på lång sikt.
+När du väl har förstått det grundläggande kan du gå djupare in i hur du kan skriva effektiva tester för ditt Javascript-program. Det är viktigt att täcka alla delar av koden och testa olika scenarier för att säkerställa robusthet och korrekthet. Du kan även lägga till olika testverktyg som täcker fler aspekter av din kod, till exempel täckningsverktyg för att mäta hur mycket av din kod som täcks av tester.
 
 ## Se även
 
-- [Jasmine](https://jasmine.github.io/)
+Här är några länkar som kan hjälpa dig att lära dig mer om att skriva tester för Javascript-programmering:
+
 - [Mocha](https://mochajs.org/)
-- [Jest](https://jestjs.io/)
+- [Jasmine](https://jasmine.github.io/)
+- [Täckningsverktyg för Javascript](https://www.npmjs.com/package/istanbul)

@@ -1,64 +1,43 @@
 ---
-title:    "Gleam: Supprimer les caractères correspondant à un motif"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/deleting-characters-matching-a-pattern.md"
+title:                "Gleam: Suppression de caractères correspondant à un motif"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-### Pourquoi
+## Pourquoi
+Dans notre parcours en tant que programmeurs, il existe souvent des moments où nous devons supprimer des caractères dans une chaîne de texte qui correspondent à un certain modèle. Cela peut sembler une tâche simple, mais il est important de connaître les différentes façons de le faire efficacement et correctement. Dans cet article, je vais vous montrer comment supprimer des caractères correspondant à un modèle en utilisant le langage de programmation Gleam.
 
-Supprimer des caractères correspondant à un motif peut être une tâche courante dans la programmation. Cela peut être utile lors de la suppression de données obscures ou de caractères inutiles dans une chaîne de texte. Dans cet article, nous allons expliquer comment le faire en utilisant le langage de programmation Gleam.
+## Comment faire
+Pour supprimer des caractères correspondant à un modèle en utilisant Gleam, nous allons utiliser la fonction `remove_chars_matching` de la bibliothèque standard de Gleam. Voici un exemple de code :
 
-### Comment faire
+```Gleam
+import gleam/string
 
-Pour commencer, définissons un exemple de chaîne de texte avec laquelle nous allons travailler :
+let text = "Bonjour tout le monde"
 
-```
-let texte = "Bonjour, je suis un texte avec plusieurs caractères inutiles!"
-```
+let filtered_text = string.remove_chars_matching(text, "aeiou")
 
-Nous pouvons alors utiliser la fonction `remove` de Gleam pour supprimer les caractères qui correspondent à un motif spécifique. Par exemple, si nous voulons supprimer tous les caractères non alphabétiques de notre chaîne de texte, nous pouvons utiliser le motif `alpha` :
-
-```
-let nouveau_texte = Texte.remove(texte, "alpha")
-```
-
-Et voici notre résultat :
+io.print("Texte d'origine : " ++ text)
+io.print("Texte filtré : " ++ filtered_text)
 
 ```
-"Bonjourjeuntexteavecplusieurscaractèresinutiles"
-```
+Output:
+Texte d'origine : Bonjour tout le monde
+Texte filtré : Bnjr tt l mnd
 
-Nous pouvons également utiliser des expressions régulières pour définir un motif plus précis. Par exemple, si nous voulons supprimer tous les nombres de notre chaîne de texte, nous pouvons utiliser la regex `\\d` :
+Dans cet exemple, nous avons importé le module `gleam/string` et utilisé la fonction `remove_chars_matching` pour supprimer les voyelles de la chaîne de texte. Vous pouvez également utiliser n'importe quel autre modèle pour supprimer des caractères en utilisant cette fonction. N'oubliez pas que les caractères doivent être passés en tant que chaîne de texte, même s'il n'y en a qu'un.
 
-```
-let nouveau_texte = Texte.remove(texte, "\\d")
-```
+## Plongée en profondeur
+Maintenant que nous avons vu comment supprimer des caractères correspondant à un modèle en utilisant la fonction `remove_chars_matching`, il est intéressant de comprendre comment cette fonction fonctionne en interne. En réalité, cette fonction utilise la méthode `filter` de la bibliothèque standard de Gleam pour parcourir la chaîne de texte et supprimer les caractères correspondant au modèle donné. Ensuite, elle renvoie la chaîne de texte filtrée.
 
-Et voici notre résultat :
+Il est également possible d'utiliser des expressions régulières pour supprimer des caractères correspondant à un modèle en utilisant la fonction `remove_chars_matching_regex` de la bibliothèque standard de Gleam. Cela peut être utile si vous avez besoin de supprimer des modèles plus complexes de votre chaîne de texte.
 
-```
-"Bonjour, je suis un texte avec plusieurs caractères inutiles!"
-```
+## Voir aussi
+- Documentation officielle de la fonction remove_chars_matching : https://gleam.run/std/string.html#remove_chars_matching
+- Tutoriel sur l'utilisation des expressions régulières en Gleam : https://gleam.run/tutorials/regular-expressions.html
+- Exemple pratique d'utilisation de remove_chars_matching en Gleam : https://dev.to/lucaspvandermeer/removing-specific-characters-from-strings-in-gleam-386g
 
-Il est important de noter que la fonction `remove` ne modifie pas la chaîne de texte d'origine, elle renvoie plutôt une nouvelle chaîne de texte sans les caractères correspondant au motif.
-
-### Plongée profonde
-
-En plongeant plus en profondeur, nous pouvons également utiliser la fonction `remove` pour supprimer des caractères spécifiques d'une chaîne de texte. Par exemple, si nous voulons supprimer tous les "x" de notre chaîne de texte, nous pouvons utiliser la syntaxe `[x -]` :
-
-```
-let nouveau_texte = Texte.remove(texte, "[x -]")
-```
-
-Et voici notre résultat :
-
-```
-"Bonjourjjeuiun teet ecut plusieurs caractères iutiles!"
-```
-
-### Voir aussi
-
-- Documentation officielle de la fonction `remove` : https://gleam.run/modules/text#remove
-- Tutoriel sur les expressions régulières en Gleam : https://gleam.run/articles/regular-expressions
+Merci d'avoir lu cet article sur la suppression de caractères correspondant à un modèle en utilisant Gleam ! J'espère que cela vous a été utile dans votre parcours de programmation. N'hésitez pas à explorer d'autres fonctions de la bibliothèque standard de Gleam pour découvrir de nouvelles façons de manipuler des chaînes de texte. À bientôt !

@@ -1,98 +1,67 @@
 ---
-title:    "Java: Calcul de la date dans le futur ou le passé."
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/java/calculating-a-date-in-the-future-or-past.md"
+title:                "Java: Calculer une date dans le futur ou le pass"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi?
-Les dates sont un élément essentiel de la programmation Java, et il est souvent nécessaire de calculer une date dans un avenir ou un passé spécifique. Cela peut être utile dans des cas tels que la planification d'événements ou la création de rappels. Dans cet article, nous allons explorer comment calculer une date dans le futur ou le passé en utilisant Java.
+## Pourquoi
+
+Il est parfois nécessaire de calculer une date dans le futur ou dans le passé dans un programme Java. Cela peut être utile pour des tâches telles que la planification d'événements ou la gestion des alarmes.
 
 ## Comment faire
 
-Pour calculer une date dans le futur ou le passé en Java, nous allons utiliser la classe "Calendar". Commençons par importer cette classe dans notre programme :
-
-```Java
-import java.util.Calendar;
-```
-
-Ensuite, nous pouvons créer une instance de la classe "Calendar" en utilisant la méthode "getInstance()", qui nous donne un objet représentant la date et l'heure actuelles :
-
-```Java
-Calendar cal = Calendar.getInstance();
-```
-
-Maintenant, si nous voulons calculer une date dans le futur, nous pouvons utiliser la méthode "add()" de la classe "Calendar". Cette méthode prend deux paramètres, le premier étant le champ de la date que nous voulons modifier (tel que "Calendar.MONTH" pour le mois), et le second étant la valeur de l'ajout ou de la soustraction. Par exemple, si nous voulons ajouter 3 mois à la date actuelle, nous pouvons utiliser le code suivant :
-
-```Java
-cal.add(Calendar.MONTH, 3);
-```
-
-De même, si nous voulons calculer une date dans le passé, nous pouvons utiliser la méthode "add()" en passant une valeur négative. Par exemple, pour soustraire 2 semaines de la date actuelle, nous pouvons utiliser :
-
-```Java
-cal.add(Calendar.WEEK_OF_MONTH, -2);
-```
-
-Enfin, pour obtenir la date finale, nous pouvons utiliser la méthode "getTime()" de la classe "Calendar" et la stocker dans une variable de type "Date" :
-
-```Java
-Date date = cal.getTime();
-```
-
-Voici un exemple complet de calcul d'une date dans le futur de 6 mois à partir de la date actuelle :
-
-```Java
-import java.util.Calendar;
-import java.util.Date;
-
-public class DateCalculator {
-
-    public static void main(String[] args) {
-        Calendar cal = Calendar.getInstance();
-
-        // Ajoute 6 mois à la date actuelle
-        cal.add(Calendar.MONTH, 6);
-
-        // Stocke la date finale dans une variable
-        Date date = cal.getTime();
-
-        // Affiche la date calculée
-        System.out.println(date);
-    }
-}
-```
-
-La sortie de ce code sera la date dans 6 mois à partir de maintenant, au format "{jour de la semaine} {mois} {jour} {heure}:{minute}:{seconde} {fuseau horaire} {année}".
-
-## Deep Dive
-
-Même si la classe "Calendar" est utile pour calculer des dates, elle peut entraîner certaines incohérences et erreurs. Pour éviter cela, il est recommandé d'utiliser la bibliothèque "Java Time API" qui est disponible à partir de Java 8.
-
-Cette bibliothèque contient la classe "LocalDate" qui permet de représenter une date sans le temps, et la classe "LocalDateTime" pour représenter une date avec le temps. Voici un exemple de code utilisant ces classes pour calculer une date dans le futur :
+Voici un exemple de code Java pour calculer une date future en utilisant la classe `LocalDate` de la librairie standard :
 
 ```Java
 import java.time.LocalDate;
 
-public class DateCalculator {
+// Date actuelle
+LocalDate dateActuelle = LocalDate.now();
 
-    public static void main(String[] args) {
-        LocalDate currentDate = LocalDate.now();
+// Ajouter 10 jours à la date actuelle
+LocalDate dateFuture = dateActuelle.plusDays(10);
 
-        // Ajoute une année à la date actuelle
-        LocalDate futureDate = currentDate.plusYears(1);
-
-        // Affiche la date calculée
-        System.out.println(futureDate);
-    }
-}
+// Afficher la date future dans un format spécifique
+System.out.println("Dans 10 jours, ce sera le " + dateFuture.format(DateTimeFormatter.ofPattern("dd MMMM yyyy")));
 ```
 
-En utilisant ces classes, nous évitons les erreurs liées à la manipulation de dates et obtenons un code plus concis et lisible.
+Output :
 
-## Voir aussi
+```
+Dans 10 jours, ce sera le 23 septembre 2021
+```
 
-- Tutoriel Java Time API : https://mkyong.com/java8/java-8-date-and-time-api/
-- Documentation officielle de la classe "Calendar" : https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
-- Documentation officielle de "Java Time API" : https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+Pour calculer une date dans le passé, il suffit d'utiliser la méthode `minus` au lieu de `plus` :
+
+```Java
+// Date actuelle
+LocalDate dateActuelle = LocalDate.now();
+
+// Soustraire 1 mois à la date actuelle
+LocalDate datePassee = dateActuelle.minusMonths(1);
+
+// Afficher la date passée dans un format spécifique
+System.out.println("Il y a un mois, nous étions le " + datePassee.format(DateTimeFormatter.ofPattern("dd MMMM yyyy")));
+```
+
+Output :
+
+```
+Il y a un moins, nous étions le 28 août 2021
+```
+
+## Plongée profonde
+
+Bien que les exemples ci-dessus soient simples, la librairie de date et de temps de Java offre de nombreuses fonctionnalités pour calculer des dates dans le futur ou dans le passé. Par exemple, vous pouvez utiliser des périodes (`Period`) pour ajouter ou soustraire des jours, des mois et des années à une date, ou encore des intervalles (`Duration`) pour gérer des dates et heures précises.
+
+Il existe également des classes spécialisées pour la manipulation de dates selon différents calendriers, tels que le calendrier grégorien et le calendrier julien.
+
+Pour en savoir plus sur les différentes possibilités de la librairie de date et de temps de Java, vous pouvez consulter la documentation officielle : [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html).
+
+## À voir aussi
+- [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
+- [https://www.baeldung.com/java-8-date-time-intro](https://www.baeldung.com/java-8-date-time-intro)
+- [https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/26323-les-dates](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/26323-les-dates)

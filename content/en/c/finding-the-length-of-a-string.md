@@ -1,68 +1,55 @@
 ---
-title:    "C recipe: Finding the length of a string"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/finding-the-length-of-a-string.md"
+title:                "C recipe: Finding the length of a string"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-As a C programmer, you may often encounter situations where you need to find the length of a string. Whether you're creating a user input validation function or manipulating strings for data processing, knowing how to find the length of a string is a crucial skill to have. In this blog post, we will explore the concept of string length and learn how to calculate it efficiently in C.
+
+In the world of programming, there are certain tasks that seem simple but can be surprisingly complex. One of these tasks is finding the length of a string. While it may seem like a basic task, understanding how to properly find the length of a string is crucial for many programming tasks. In this blog post, we will explore the reasons why knowing how to find the length of a string is important, and how to do it in the C programming language.
 
 ## How To
-Finding the length of a string may seem like a simple task, but it requires a good understanding of C string functions. The most commonly used method is by using the `strlen()` function, which counts the number of characters in a string. Let's take a look at an example:
+
+When working with strings in C, it is often necessary to know the length of a particular string in order to manipulate it. In order to find the length of a string in C, we use the `strlen()` function. This function takes in a string as a parameter and returns the length of that string as an integer. Let's take a look at an example:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str[] = "Hello World";
-    int len = strlen(str);
-    printf("The length of the string is %d\n", len);
-    return 0;
-}
-
-```
-Output:
-```
-The length of the string is 11
-```
-In the above example, we first declared a string variable `str` and initialized it with the string "Hello World". Then, we used the `strlen()` function to calculate the length of the string and stored it in an `int` variable `len`. Finally, we printed the length using `printf()` function. 
-
-Another method of finding the length of a string is by using a loop and the `NULL` character. The `NULL` character marks the end of a string in C, so by looping through the string and incrementing a counter until `NULL` is encountered, we can find the length of the string. Take a look at the following code:
-
-```C
-#include <stdio.h>
-
-int main() {
-    char str[] = "Hello World";
-    int len = 0;
-    while (str[len] != '\0') {
-        len++;
-    }
-    printf("The length of the string is %d\n", len);
-    return 0;
+int main()
+{
+  char str[] = "Hello World";
+  int length = strlen(str);
+  
+  printf("The length of the string is %d", length);
+  
+  return 0;
 }
 ```
-Output:
-```
-The length of the string is 11
-```
-In this example, we first declared a string variable `str` and initialized it with the string "Hello World". Then, we used a `while` loop to iterate through the string and incremented the `len` variable until the `NULL` character was encountered. Finally, we printed the length using `printf()` function. 
+
+In this example, we first include the necessary header files for using the `strlen()` function. We then declare a char array/string called `str` and assign it the value of "Hello World". Next, we declare an integer variable `length` and use the `strlen()` function to assign it the length of the string `str`. Finally, we print out the length using the `printf()` function.
+
+The output of this code would be:
+
+`The length of the string is 11`
+
+As you can see, the `strlen()` function accurately calculates the length of the string.
 
 ## Deep Dive
-Now, let's take a deeper dive and understand how the `strlen()` function works under the hood. The `string.h` header file in C contains the declaration of `strlen()` function as:
 
-`size_t strlen(const char *str);`
+Now, let's take a deeper dive into how the `strlen()` function actually works. It is important to note that the length of a string in C is determined by the number of characters before the terminating null character `'\0'`. This character indicates the end of a string in C. When `strlen()` is called, it starts at the first character of the string and counts each character until it reaches the terminating null character. This number is then returned as the length of the string.
 
-The `size_t` type is an unsigned integer type used for storing the size of an object. The function takes a `const` pointer to a character as an argument and returns the length of the string. 
-
-The `strlen()` function uses a pointer to traverse the string and counts the number of characters until the `NULL` character is encountered. It is a simple and efficient way of calculating the length of a string.
+It is also worth mentioning that the `strlen()` function is part of the standard C library and therefore is a part of every C compiler. This makes it a widely available and reliable option for finding the length of a string.
 
 ## See Also
-For more information on string functions in C, check out these resources:
-- [C Strings and String Library Functions](https://www.geeksforgeeks.org/c-strings-and-string-library-functions/)
-- [The Standard Library - <string.h>](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html#index-strlen-1057)
 
-By now, you should have a good understanding of how to find the length of a string in C. Remember, having a good grasp of string functions is essential for efficient string manipulation, so keep practicing and exploring different methods. Happy coding!
+Now that you know how to use the `strlen()` function in C, here are some resources for further reading:
+
+- [C Documentation - String.h Library](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [C Programming Tutorial: String Length Function](https://www.programiz.com/c-programming/library-function/string.h/strlen)
+- [Learn C Programming - Strings](https://www.learn-c.org/en/Strings)
+
+By understanding the importance and proper implementation of the `strlen()` function, you can now confidently work with strings in your C programs. Happy coding!

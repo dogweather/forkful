@@ -1,55 +1,56 @@
 ---
-title:    "Gleam recipe: Comparing two dates"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/comparing-two-dates.md"
+title:                "Gleam recipe: Comparing two dates"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with dates in any programming language, it is important to be able to compare them. This allows us to check for things like past or future dates and to sort a list of dates in a particular order. In this blog post, we will learn how to compare two dates using the Gleam programming language.
+Comparing dates is a common task in programming, especially when working with data that involves time and date information. In Gleam, there are built-in functions that make it easy to compare two dates and determine the relationship between them. In this blog post, we will explore the different ways you can compare dates in Gleam and how it can be useful in your projects.
 
 ## How To
 
-To compare two dates in Gleam, we will use the `Date.compare` function. This function takes in two `Date` values and returns an `Order` type. This `Order` type is used to determine if the first date is less than, equal to, or greater than the second date.
-
-To illustrate this, let's create two dates and use the `Date.compare` function to compare them:
+To compare two dates in Gleam, we will use the `Date` module. This module provides various functions for creating, parsing, and comparing dates. Here's an example of how we can use the `Date` module to compare two dates:
 
 ```Gleam
-let date1 = Date.new(2021, 5, 1)
-let date2 = Date.new(2021, 6, 1)
-let order = Date.compare(date1, date2)
+import Date
+
+let january1st = Date.from_ymd(2021, 1, 1)
+let december31st = Date.from_ymd(2020, 12, 31)
+
+let result = Date.compare(january1st, december31st)
+
+// Output: GreaterThan
 ```
 
-In this example, `date1` is May 1st, 2021 and `date2` is June 1st, 2021. We then use the `Date.compare` function to compare these two dates. The `order` variable will now hold the `Order` type, which in this case will be `Greater`.
+In this code, we first import the `Date` module. Then, we create two variables with different dates using the `from_ymd` function and pass in the year, month, and day as arguments. Finally, we use the `compare` function to compare the two dates, which returns an enum with three possible values: `Equal`, `LessThan`, or `GreaterThan`. In this example, the output is `GreaterThan`, indicating that January 1st is a later date than December 31st.
 
-We can also use the `Date.compare` function to check for equality between two dates. If the two dates are equal, the `Order` type will be `Equal`. Let's see an example of this:
+We can also compare specific aspects of dates, such as the year, month, or day, by using the `get` function. Here's an example:
 
 ```Gleam
-let date1 = Date.new(2021, 1, 1)
-let date2 = Date.new(2021, 1, 1)
-let order = Date.compare(date1, date2)
+let january2021 = Date.from_ymd(2021, 1, 1)
+let january2020 = Date.from_ymd(2020, 1, 1)
+
+let yearComparison = Date.get(january2021, Date.Year) == Date.get(january2020, Date.Year)
+
+// Output: False
 ```
 
-In this case, `date1` and `date2` are both January 1st, 2021 and the `order` variable will hold the `Equal` type.
+In this code, we create two variables with dates in different years and use the `get` function to compare the year values. As you can see, the result is `False` since the year values are not equal.
 
 ## Deep Dive
 
-Internally, the `Date.compare` function uses the `Calendar.compare` function. This function takes in two `Data.Calendar.Date` values and compares them, returning either `OrderLess`, `OrderEqual`, or `OrderGreater`.
+Behind the scenes, Gleam uses the `Calendar` module for comparing dates. The `Calendar` module implements the Gregorian calendar, which is the most widely used calendar system worldwide. It takes into account factors such as leap years and time zones to accurately compare dates.
 
-The `Calendar.compare` function also takes into account the time component of the dates. This means that if two dates have different times, they can still be considered equal if they are on the same day. For example:
-
-```Gleam
-let date1 = DateTime.new(2021, 4, 1, Time.new(10, 0, 0))
-let date2 = DateTime.new(2021, 4, 1, Time.new(15, 0, 0))
-let order = Date.compare(date1, date2)
-```
-
-In this example, `date1` and `date2` have the same date, but different times. However, the `order` variable will hold the `Equal` type, since the time component is not taken into account when comparing dates.
+When using the `compare` function, the dates are first converted into their corresponding "day number" and then compared. The "day number" is a number representing the number of days since the start of the year 1 AD. This is a more efficient way of comparing dates compared to comparing each date component individually.
 
 ## See Also
 
-- Gleam Date Documentation: https://gleam.run/documentation/stdlib/date
-- Date.compare function source code: https://github.com/gleam-lang/gleam_stdlib/blob/master/src/date.gleam#L39-L46
-- Calendar.compare function source code: https://github.com/gleam-lang/gleam_stdlib/blob/master/src/calendar.gleam#L49-L57
+- [Gleam Date Module Documentation](https://gleam.run/modules/date.html)
+- [Gleam Calendar Module Documentation](https://gleam.run/modules/calendar.html)
+- [Gleam Language Documentation](https://gleam.run/documentation)
+
+Happy coding with Gleam!

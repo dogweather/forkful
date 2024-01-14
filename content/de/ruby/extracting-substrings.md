@@ -1,38 +1,31 @@
 ---
-title:    "Ruby: Unterstrings extrahieren"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/extracting-substrings.md"
+title:                "Ruby: Unterschneidungen extrahieren"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+In vielen Fällen müssen Ruby-Programmiererinnen und Programmierer Strings in kleinere Teile zerlegen. Ein häufiges Beispiel dafür ist die Extraktion von Teilstrings aus einer URL.
 
-Das Herausziehen von Teilbereichen aus Strings ist eine nützliche Funktion in der Ruby-Programmierung. Es ermöglicht uns, Teile eines Strings zu isolieren und spezifische Informationen zu extrahieren, die wir in unserem Code benötigen. In diesem Blogpost werde ich erklären, wie man dies in Ruby macht und warum es eine wichtige Fähigkeit ist, die jeder Ruby-Entwickler beherrschen sollte.
-
-## Wie man es macht
-
-Um Teilbereiche aus Strings zu extrahieren, verwenden wir die `[]`-Notation in Kombination mit dem Indexing-Operator `..`. Zum Beispiel könnten wir einen Teilbereich eines Strings mit dem folgenden Code isolieren:
+## Wie geht das?
+In Ruby gibt es eine Methode namens `slice`, die verwendet werden kann, um Teilstrings aus einer Zeichenkette auszuschneiden. Die Methode akzeptiert zwei Parameter: den Startindex und die Länge des Teilstrings.
 
 ```Ruby
-str = "Hallo, Welt!"
-puts str[0..4]
+url = "http://www.example.com/ruby-tutorial"
 ```
+```Ruby
+puts url.slice(11, 10)
+```
+Dieser Code würde den Teilstring "ruby-tutorial" aus dem ursprünglichen String ausschneiden und ausgeben. Beachten Sie, dass der Startindex bei 0 beginnt.
 
-Dies würde den Teilbereich "Hallo" des Strings ausgeben. Wir geben den Start- und Endindex des Teilbereichs an, den wir extrahieren möchten, und der Operator `..` zeigt an, dass wir ein offenes Ende haben. Dies bedeutet, dass der Endindex eingeschlossen ist. Beachten Sie, dass der erste Index eines Strings bei 0 beginnt.
+## Tieferer Einblick
+Die `slice`-Methode in Ruby ist sehr flexibel und kann auch mit anderen Datentypen wie Arrays und Hashes verwendet werden. Außerdem gibt es noch eine andere Methode namens `substring`, die ebenfalls Teilstrings extrahieren kann.
 
-Es gibt auch andere Möglichkeiten, Teile eines Strings zu extrahieren, wie zum Beispiel mit dem `slice`-Befehl oder dem `scan`-Befehl. Es gibt jedoch keine Notation wie `str[start, length]`, um einen Teilbereich von einer bestimmten Länge zu extrahieren.
-
-## Tiefere Einblicke
-
-Es gibt einige wichtige Dinge zu beachten, wenn wir Teilbereiche aus Strings extrahieren. Zum Beispiel ist es wichtig zu wissen, dass der Indexierungsvorgang von links nach rechts startet. Dies bedeutet, dass der Endindex immer größer oder gleich dem Startindex sein muss. Wenn wir versuchen, ein Bereich mit einem Endindex zu extrahieren, der kleiner als der Startindex ist, wird ein leerer String zurückgegeben.
-
-Ein weiteres wichtiges Konzept ist das von sogenannten "negative indices". Wir können Teilbereiche eines Strings auch von hinten aus extrahieren, indem wir negative Indices verwenden. Zum Beispiel würde `str[-3..-1]` den Teilbereich "elt" ausgeben, da der letzte Buchstabe des Strings dem Index -1 entspricht.
+Beachten Sie jedoch, dass bei `substring` der zweite Parameter die Endposition des Teilstrings anstelle der Länge ist.
 
 ## Siehe auch
-
-- [Ruby String-Dokumentation] (https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby `[]`-Notation] (https://medium.com/launch-school/ruby-numbered-reference-and-indexing-196ab7113a8d)
-- [Ruby `slice`-Befehl] (https://medium.com/launch-school/ruby-slicing-strings-3b3a390fbd7b)
-
-Ich hoffe, dass dieser Blogpost Ihnen geholfen hat, das Konzept der Unterstring-Extraktion in Ruby besser zu verstehen. Es ist ein sehr nützliches Werkzeug, das Ihnen helfen wird, effizientere und kontrolliertere Codes zu schreiben. Viel Spaß beim Programmieren!
+- Die offizielle Ruby-Dokumentation zur `slice`-Methode: https://ruby-doc.org/core-2.7.2/String.html#method-i-slice
+- Ein weiteres Tutorial zur Extraktion von Teilstrings in Ruby: https://www.rubyguides.com/2019/07/ruby-extract-substring/

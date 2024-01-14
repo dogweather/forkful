@@ -1,32 +1,49 @@
 ---
-title:    "Arduino: 将来または過去の日付の計算"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino: 未来や過去の日付を計算する"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ日付計算をするのか
-日付計算を行う理由はさまざまです。例えば、特定の日付を含むイベントを予定したい場合や、過去の日付を知りたい場合などがあります。Arduinoを使用することで、簡単かつ正確に日付を計算することができます。
+「なぜ」: 過去や未来の日付を計算することは、センサーの読み取りや制御に便利です。
 
-## 方法
-日付計算を行うためには、まず指定した日付からの経過日数を計算する必要があります。その後、指定した日数を加減算することで目的の日付を求めることができます。以下の例では、現在の日付から100日後の日付を計算する方法を示します。
+## Why
 
-```Arduino
+Arduinoマイクロコントローラーのプログラムを作成する際、時には日付を計算する必要があります。これは、例えば日付に基づいてあるタイミングで特定の操作を行う場合に便利です。また、センサーの読み取りや制御においても、過去や将来の日付を計算することが役立ちます。今回のブログでは、Arduinoプログラミングにおける日付の計算方法についてご紹介します。
+
+## How To
+
+日付を計算するためには、Arduinoのライブラリである「DateTime」を使用します。まず、ライブラリのインポートをします。
+
+```
 #include <DateTime.h>
+```
 
-DateTime today = DateTime.now();
-int daysToAdd = 100;
+次に、DateTimeオブジェクトを作成し、計算を行いたい年・月・日などの日付を指定します。ここでは、2022年10月1日を指定した例を示します。
 
-DateTime futureDate = today + TimeSpan(daysToAdd);
-Serial.println("Future date: " + futureDate.toStr());
-``` 
-上記のコードを実行すると、`今日の日付 + 100日`後の日付がシリアルモニターに表示されます。このように、DateTimeライブラリを使用することで簡単に日付計算が行えます。
+```
+DateTime futureDate(2022, 10, 1);
+```
 
-## 詳細を深く掘り下げる
-日付計算を行うときには、注意点がいくつかあります。まず、DateTimeオブジェクトを作成する際には、必ず現在の日付を基準とする必要があります。また、加減算する日数の値に負の値を設定することで過去の日付を計算できます。さらに、DateTimeオブジェクトは時刻を含んでいるため、必要ない場合は`.date()`関数を使用して日付のみを取得することができます。
+次に、「now()」関数を使用して現在の日付を取得し、今から将来の日付までの日数を計算します。
 
-## 参考リンク
-- ArduinoのDateTimeライブラリの公式ドキュメント: https://www.arduino.cc/reference/en/libraries/datetime/
-- 日付計算の方法について詳しく解説した記事（英語）: https://www.bcs.org/upload/pdf/does-it-add-up-cedward-theory.pdf
-- Arduinoで日付を扱うためのDateTimeライブラリについて分かりやすく説明したサイト（英語）: https://learn.sparkfun.com/tutorials/working-with-time/how-do-date--time-work
+```
+DateTime currentDate = now();
+int days = futureDate.daysTo(currentDate);
+```
+
+これで、現在の日付から2022年10月1日までの日数が計算されます。このように、未来の日付を計算することができます。同様に、過去の日付を計算する場合は「daysTo()」関数の順序を入れ替えることで求めることができます。
+
+また、DateTimeオブジェクトを作成した後、「year()」、「month()」、「day()」などの関数を使用することで、任意の日付の年・月・日を取得することもできます。
+
+## Deep Dive
+
+ArduinoのDateTimeライブラリには、時間や曜日などを取得するための様々な関数が用意されています。さらに、その他の日付の演算も可能です。詳しい情報は、公式ドキュメントをご確認ください。
+
+## See Also
+
+- The official Arduino DateTime library documentation: https://github.com/PaulStoffregen/DateTime
+- A tutorial on using DateTime in Arduino projects: https://www.instructables.com/DateTime-Library/
+- 日付の計算に便利なArduinoライブラリまとめ: https://qiita.com/nazrin/items/491a1f3e8e404aa8b2c4

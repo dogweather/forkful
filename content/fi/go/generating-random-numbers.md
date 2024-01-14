@@ -1,58 +1,60 @@
 ---
-title:    "Go: Satunnaislukujen generointi"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/generating-random-numbers.md"
+title:                "Go: Satunnaislukujen luominen"
+programming_language: "Go"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää satunnaislukugeneraattoria Go-koodauksessa?
+## Miksi?
 
-Satunnaislukujen generoiminen on usein välttämätöntä monissa ohjelmointitehtävissä, kuten pelien kehittämisessä tai tietokantojen täyttämisessä testausta varten. On tärkeää tietää, kuinka generoida satunnaislukuja oikein Go-kielellä, jotta voidaan varmistaa ohjelmiston luotettavuus ja suorituskyky.
+Monissa ohjelmointiprojekteissa on tarve käyttää satunnaislukuja, oli kyse sitten pelin pisteiden arpomisesta tai todennäköisyyksien laskemisesta. Go tarjoaa helpon ja tehokkaan tavan generoida satunnaislukuja, mikä tekee siitä suositun vaihtoehdon tässä asiassa.
 
-## Kuinka tehdä se?
+## Kuinka se tehdään?
 
-Go-kielellä satunnaislukujen generoiminen on helppoa. Alla on esimerkki koodista, joka generoi 5 satunnaislukua välillä 1-10 ja tulostaa ne näytölle:
+Go-kielellä satunnaislukujen luominen on yksinkertaista. Käytämme `rand`-pakettia, joka tarjoaa erilaisia toimintoja satunnaislukujen generoimiseen. Tässä esimerkissä luomme viisi satunnaislukua väliltä 1-100:
 
-```
+```Go
 package main
 
 import (
-	"fmt"
-	"math/rand"
-	"time"
+    "fmt"
+    "math/rand"
+    "time"
 )
 
 func main() {
-	// Aseta satunnaisgeneraattorin siemen millisekuntikellon nykyisen ajan mukaan
-	rand.Seed(time.Now().UnixNano())
+    // Asetetaan generoijan siemeneksi nykyisen ajan sekunnit
+    rand.Seed(time.Now().Unix())
 
-	// Generoi 5 satunnaislukua välillä 1-10 ja tulosta ne
-	for i := 0; i < 5; i++ {
-		fmt.Println(rand.Intn(10) + 1)
-	}
+    // Käytetään for-silmukkaa luomaan viisi satunnaislukua
+    for i := 0; i < 5; i++ {
+        // Kutsutaan rand.Intn() funktiota, joka palauttaa satunnaisen luvun väliltä 0-99
+        // Lisätään tähän 1, jotta saamme lukujen väliltä 1-100
+        fmt.Println(rand.Intn(100) + 1)
+    }
 }
 ```
 
-Esimerkkitulos:
+Esimerkin tulostus voisi näyttää tältä:
 
 ```
-8
-3
-10
-4
-6
+81
+12
+45
+23
+97
 ```
 
-## Syvemmälle satunnaislukujen generointiin
+Kuten näemme, saamme joka kerta ohjelman suorittaessa uuden satunnaisen luvun. Toistan: `rand.Seed()`-funktiolla asetetaan generoijan siemeneksi nykyisen ajan sekunnit, jotta saamme joka kerta erilaisen satunnaislukusarjan. Tämän vuoksi on tärkeää asettaa siemen ennen satunnaislukujen luomista.
 
-Satunnaislukugeneraattorit käyttävät matemaattisia algoritmeja tuottamaan pseudo-satunnaisia numeroita. Nämä algoritmit perustuvat yleensä johonkin muuttujaan, kuten ajanhetkeen tai ohjelman suorituskertojen määrään, jotta jokainen generoitu satunnaisluku olisi erilainen. Tämä varmistaa, että luvut eivät toista samaa kaavaa ja näin ollen ovat mahdollisimman satunnaisia.
+## Syvemmältä satunnaislukujen luomiseen
 
-On tärkeää huomata, että satunnaislukugeneraattorit eivät varmasti tuota täysin satunnaisia lukuja. Lopputuloksena on aina jonkinlainen kaava tai toistumisen mahdollisuus. Tästä syystä satunnaislukujen käyttöön tietoturvan kannalta kriittisissä sovelluksissa tulisi käyttää erikoistuneempia työkaluja.
+Jos haluat syvällisempää tietoa satunnaislukujen generoinnista Go-kielellä, voit tutustua Go:n `math/rand`-pakettiin ja sen tarjoamiin erilaisiin toimintoihin. Voit myös käyttää `time`-pakettia erilaisten siementen asettamiseen. Kannattaa myös tutustua pseudoruuhuisiin, jotka ovat algoritmeja satunnaisluvun luomiseen.
 
 ## Katso myös
 
-- [Go:n virallinen satunnaislukugeneraattori-paketti](https://golang.org/pkg/math/rand/)
-- [Satunnaislukujen käyttö tietoturvassa](https://www.schneier.com/academic/random.html)
-- [Satunnaislukugeneraattorien vertailu ja arviointi](https://csrc.nist.gov/Projects/Random-Bit-Generation/Documentation-and-Software)
-- [Avoimen lähdekoodin satunnaislukugeneraattori Go-kielelle](https://github.com/gofrs/uuid)
+- [Go:n rand-paketin dokumentaatio](https://golang.org/pkg/math/rand/)
+- [Go:n time-paketin dokumentaatio](https://golang.org/pkg/time/)
+- [Pseudoruhien vertailu Go:ssa](https://github.com/dgryski/go-pcg)

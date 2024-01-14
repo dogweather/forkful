@@ -1,56 +1,52 @@
 ---
-title:    "Javascript: Obtendo a data atual."
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/getting-the-current-date.md"
+title:                "Javascript: Obtendo a data atual"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar programação Javascript?
+## Por que usar Javascript para obter a data atual? 
 
-Se você é um programador ou está começando a aprender a linguagem, provavelmente já se deparou com a necessidade de obter a data atual em seus projetos. Isso pode ser útil para mostrar a data atual em seu site ou aplicativo, criar recursos que dependam da data ou até mesmo registrar as datas de atividades específicas. Felizmente, a programação em Javascript torna isso uma tarefa simples.
+Existem várias razões para usar Javascript para obter a data atual. 
+Primeiro, porque é uma linguagem de programação amplamente adotada e usada em muitas aplicações web. 
+Além disso, a obtenção da data atual é uma tarefa comum em muitos projetos, seja para fins de registro ou para exibir informações atualizadas para os usuários.
 
-## Como obter a data atual com Javascript
+## Como fazer isso: 
 
-Para obter a data atual em seu projeto Javascript, você pode usar o objeto `Date`. Com ele, você pode acessar vários métodos e propriedades relacionados à data. Vamos dar uma olhada em alguns exemplos de código:
+Usando a função integrada `Date()` em Javascript, podemos obter a data e hora atuais. 
+Veja um exemplo abaixo que retorna a data atual em formato de string: 
 
-```
-// Criando um objeto Date
-var today = new Date();
-
-// Obtendo a data atual em formato de string
-var currentDate = today.toDateString();
-console.log(currentDate); // Saída: Fri Mar 05 2021
-
-// Obtendo o dia da semana atual
-var currentDay = today.getDay();
-console.log(currentDay); // Saída: 5 (sendo 0 = domingo, 1 = segunda, ...)
+```Javascript
+const dataAtual = new Date();
+console.log(dataAtual.toDateString());
 ```
 
-Você também pode personalizar o formato da data utilizando os métodos `getMonth()` e `getFullYear()`. Por exemplo:
+O resultado no console seria algo como: 
 
-```
-// Obtendo o mês e ano atual em formato de string
-var currentMonth = today.getMonth() + 1; // Os meses começam em 0
-var currentYear = today.getFullYear();
-console.log(currentMonth + "/" + currentYear); // Saída: 3/2021
-```
+> "Fri Oct 08 2021"
 
-Além disso, você também pode adicionar ou subtrair dias, meses ou anos à data atual utilizando os métodos `setDate()`, `setMonth()` e `setFullYear()`. Por exemplo:
+Podemos obter a data em outros formatos também, como incluindo o ano: 
 
-```
-// Adicionando 10 dias à data atual
-today.setDate(today.getDate() + 10);
-console.log(today.toDateString()); // Saída: Mon Mar 15 2021
+```Javascript
+const dataAtual = new Date();
+console.log(dataAtual.getFullYear());
 ```
 
-## Aprofundando-se na obtenção da data atual
+Que resultaria em: 
 
-O objeto `Date` também possui métodos para obter a data e horário local, além de permitir definir o fuso horário. Além disso, é importante lembrar que a data atual é baseada no fuso horário configurado no dispositivo do usuário. Portanto, é sempre recomendável converter a data e hora para o fuso horário do servidor antes de armazená-las no banco de dados, por exemplo.
+> 2021
 
-Outra dica importante é que, quando comparar datas em Javascript, é necessário utilizar o método `getTime()` para converter as datas em milissegundos, caso contrário, a comparação será feita com base na diferença do fuso horário do dispositivo do usuário.
+## Mergulho Profundo: 
 
-## Veja também
+Embora a função `Date()` seja simples e eficaz para obter a data atual, é importante lembrar que ela utiliza o fuso horário do sistema em que está sendo executada. 
+Portanto, se você deseja ter um controle mais preciso sobre a data e hora, é recomendável utilizar uma biblioteca como o [Moment.js](https://momentjs.com/).
 
-- [Documentação do objeto Date em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Converter fuso horário em Javascript](https://www.w3schools.com/js/js_date_methods.asp)
+Outro aspecto importante a ser considerado ao obter a data atual é a perfomance. 
+Em casos em que a obtenção frequente da data é necessária, é importante estar atento ao impacto que isso pode ter no desempenho de sua aplicação.
+
+## Veja também: 
+- [Documentação MDN para a função Date()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [Artigo sobre melhorias no desempenho ao utilizar a função Date()](https://bocoup.com/blog/javascript-performance-getting-the-current-year)

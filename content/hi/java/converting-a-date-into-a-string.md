@@ -1,41 +1,39 @@
 ---
-title:    "Java: तारीख को स्ट्रिंग में रूपांतरण करना"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/converting-a-date-into-a-string.md"
+title:                "Java: एक तारीख को एक स्ट्रिंग में बदलना"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## यह क्यों?
 
-कभी-कभी हमें अपने जावा प्रोग्राम में तिथि को स्ट्रिंग में रूपांतरित करने की आवश्यकता हो सकती है। इसके लिए हमें `SimpleDateFormat` का उपयोग करना पड़ता है।
+कभी-कभी हमें अपने जावा प्रोग्राम में तारीखों के साथ काम करना पड़ता है। शायद हम इसे डेटा बेस के साथ दस्तावेज़ करना चाहते हैं या दिनांकों को संगठित ढंग से प्रदर्शित करना चाहते हैं। ऐसे मामलों में, हमें अपनी तारीख को एक स्ट्रिंग में रूपांतरित करने की आवश्यकता हो सकती है। इस आर्टिकल में, हम इस प्रक्रिया को कैसे करेंगे, इसे समझेंगे। 
 
-## कैसे करें
 
-यहां हम `SimpleDateFormat` का उपयोग करके एक तारीख स्ट्रिंग में रूपांतरित करने का एक छोटा सा उदाहरण दिखाएंगे:
+## कैसे करें?
 
-``` Java
+हम तारीख को स्ट्रिंग में रूपांतरित करने के लिए `SimpleDateFormat` क्लास का उपयोग कर सकते हैं। `SimpleDateFormat` काफी सारी मुख्य तारीख प्रारूपों को समर्थित करता है जैसे `dd/MM/yyyy` या `MM/dd/yyyy`। इसके अलावा आप `SimpleDateFormat` ऑब्जेक्ट को अपने इच्छानुसार ज़्यादा स्पष्ट प्रारूप भी सेट कर सकते हैं। यहां एक उदाहरण है।
+
+```Java
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateFormatExample {
+public class DateToString {
     public static void main(String[] args) {
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String dateString = formatter.format(date);
-        
-        System.out.println(dateString); // Output: 25/11/2021
+        Date today = new Date(); // वर्तमान समय और दिनांक प्राप्त करें
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); // जोड़ी सिर्फ़ उचित प्रारूप
+        String stringDate = formatter.format(today); // तारीख को स्ट्रिंग में रूपांतरित करें
+        System.out.println("आज की तारीख: " + stringDate);
     }
 }
 ```
 
-यहां हमने `SimpleDateFormat` का एक ऑब्जेक्ट बनाया और इसके उपयोग से वर्तमान तारीख को `dd/MM/yyyy` फॉर्मेट में स्ट्रिंग में रूपांतरित कर लिया है। आप चाहें तो अपनी इच्छानुसार इस फॉर्मेट को बदल सकते हैं। इसके अलावा आप अन्य फॉर्मेट भी लागू कर सकते हैं जैसे `yyyy-MM-dd` या `hh:mm:ss`। 
+आउटपुट:
+`आज की तारीख: 23/04/2021`
+
 
 ## गहराई में जाएं
 
-साल-महीने-दिन के अलावा आप `SimpleDateFormat` का उपयोग करके अन्य तारीख प्रकारों को भी स्ट्रिंग में रूपांतरित कर सकते हैं। जैसे कि समय (`hh:mm:ss`) या समय और तारीख दोनों का एक साथ (`dd/MM/yyyy hh:mm:ss`)। भी साथ ही आप `SimpleDateFormat` के साथ अपनी खुद की फॉर्मेट भी निर्दिष्ट कर सकते हैं। यहां आप `SimpleDateFormat` की डॉक्यूमेंटेशन पढ़ कर अधिक जानकारी प्राप्त कर सकते हैं। 
-
-## इससे जुड़े अन्य लेख
-
-- [Java में `SimpleDateFormat` का उपयोग कैसे करें?](https://www.geeksforgeeks.org/java-setting-date-format/)
-- [कैसे Java में तारीखों का समय निर्धारित करें](https://www.javatpoint
+तारीख और समय का एक स्ट्रिंग रूपांतरण करने से पहले, हमें एक `Date` ऑब्जेक्ट बनाना होगा जो वर्तमान दिनांक और समय को अभिव्यक्त करता है। इसके बाद, हम `SimpleDateFormat` क्लास के `format()` मेथड का उपयोग कर स

@@ -1,48 +1,38 @@
 ---
-title:    "Rust: Uuden projektin aloittaminen"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/starting-a-new-project.md"
+title:                "Rust: Uuden projektin aloittaminen"
+programming_language: "Rust"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi aloittaa uusi projekti Rust-ohjelmoinnilla?
+## Miksi
 
-Rust on suosittu ohjelmointikieli, joka on suunniteltu erityisesti turvallisuuden ja suorituskyvyn kannalta. Se on myös avoimen lähdekoodin ja kehittäjäyhteisönsä ansiosta saanut paljon huomiota viime vuosina. Joten, miksi aloittaa uusi projekti Rust-ohjelmoinnilla?
+Rust on innovatiivinen ja tehokas ohjelmointikieli, joka on suunniteltu erityisesti järjestelmätason ohjelmointiin. Sen käyttö on kasvanut huomattavasti viime vuosina, ja se on saanut paljon suosiota ympäri maailmaa. Jos olet harkitsemassa uuden projektin aloittamista, Rust voi olla oikea valinta sinulle. Se tarjoaa paljon hyödyllisiä ominaisuuksia, jotka auttavat sinua rakentamaan nopean, turvallisen ja käyttöjärjestelmätason sovelluksen. Tässä blogikirjoituksessa jaamme tietoa siitä, miten aloitat uuden projektin Rustin avulla.
 
-Voit luoda turvallisia ja nopeita ohjelmia - Rustilla on sisäänrakennettuja turvallisuustoimintoja ja sen suorituskyky on verrattavissa muihin matalan tason ohjelmointikieliin kuten C:hen. Näin voit välttää muistiongelmia ja optimoida ohjelmasi suorituskykyä.
+## Miten aloittaa
 
-# Miten aloittaa Rust-projekti?
+Voit aloittaa uuden Rust-projektin käyttämällä Cargo-työkalua. Se toimii projektinhallintajärjestelmänä ja pakettienhallintajärjestelmänä, ja se on sisäänrakennettu Rust-asennukseen. Voit luoda uuden projektin komennolla `cargo new` ja antamalla sille nimen. Se luo valmiin hakemiston, jossa on esimerkkikoodia ja Cargo.toml-tiedosto, joka sisältää projektin määrittelyt. Voit käyttää tätä tiedostoa määrittääksesi projektisi riippuvuudet ja muut asetukset.
 
-Ensinnäkin, varmista että Rust Compiler on asennettuna. Voit tarkistaa sen komennolla ```Rust --version```. Seuraavaksi, voit luoda uuden projektin komennolla ```cargo new projektin_nimi```.
+Rust-projektin koodi kirjoitetaan `.rs`-tiedostoihin, ja ne voidaan ajaa komennolla `cargo run`. Voit myös käyttää `cargo build`-komennon luodaksesi suoritettavan tiedoston, joka voidaan suorittaa ilman Cargoa. Tässä on esimerkki yksinkertaisesta "Hello world" -ohjelmasta:
 
-Tässä on esimerkkikoodi, joka tulostaa "Hei maailma!" Rustilla:
-
-```
+```rust
 fn main() {
     println!("Hei maailma!");
 }
 ```
 
-Suorita tämä koodi komennolla ```cargo run``` ja näet tuloksen: ```Hei maailma!```
+Kun ajat tämän komennolla `cargo run`, näet tulosteen "Hei maailma!".
 
-# Syvällisempi sukellus uuden projektin aloittamiseen
+## Syvempi sukellus
 
-Kun luot uuden projektin Rustilla, se luo automaattisesti muutaman tiedoston ja kansion projektin juurihakemiston sisään. Tässä on lyhyt selitys kustakin tiedostosta:
+Jos haluat oppia lisää Rustin rakenteesta ja ominaisuuksista, voit tutkia sen dokumentaatiota ja käydä läpi opetusohjelmia ja esimerkkikoodeja. Voit myös liittyä Rust-yhteisöön ja osallistua keskusteluihin, saadaksesi lisätietoja ja apua. Yksi Rustin parhaista ominaisuuksista on sen aktiivinen ja yhteisöllinen ympäristö, johon voit luottaa uuden kielen oppimisessa.
 
-- ```Cargo.toml``` - tässä määritellään projektin riippuvuudet ja muut asetukset.
-- ```src``` - kansio, johon voit luoda moduuleja ja kirjoittaa koodia.
-- ```src/main.rs``` - tiedosto, jossa on pääohjelma.
-- ```target``` - kansio, johon tallennetaan käännöksen lopputulos.
+Aloittaessa uutta projektia Rustilla, on tärkeää hahmottaa sen vaatimukset ja tavoitteet selvästi. Rustin avulla voit rakentaa nopeaa ja tehokasta ohjelmistoa, mutta se vaatii sitoutumista ja paneutumista sen käyttöön. On myös tärkeää opetella oikeita ohjelmointitapoja, joilla voit hyödyntää Rustin ominaisuuksia täysimääräisesti ja rakentaa turvallista ja luotettavaa koodia.
 
-Voit myös lisätä tarvittavia riippuvuuksia ```Cargo.toml```-tiedostoon ja kääntää projektin uudelleen komennolla ```cargo build```.
+## Katso myös
 
-Kehittäjäyhteisö on myös yksi Rustin vahvuuksista - siellä on saatavilla paljon dokumentaatiota, opetusmateriaaleja ja keskustelupalstoja, jossa voit kysyä apua ja jakaa tietoa muiden kanssa.
-
-# Katso myös
-
-- [Rustin viralliset kotisivut](https://www.rust-lang.org/)
-- [Rustin dokumentaatio](https://www.rust-lang.org/learn)
-- [Rust-ohjelmointikielen esittely (video, englanniksi)](https://www.youtube.com/watch?v=zF34dRivLOw)
-
-Kiitos lukemisesta ja onnea uuden Rust-projektin aloittamiseen!
+- [Rustin virallinen verkkosivusto](https://www.rust-lang.org/fi)
+- [Rust-oppaat ja opetusohjelmat](https://doc.rust-lang.org/stable/rust-by-example/)
+- [Rust-yhteisö](https://www.rust-lang.org/community)

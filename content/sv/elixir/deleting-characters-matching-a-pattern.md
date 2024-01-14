@@ -1,37 +1,41 @@
 ---
-title:    "Elixir: Radera tecken som matchar ett mönster."
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/deleting-characters-matching-a-pattern.md"
+title:                "Elixir: Radera tecken som matchar ett mönster"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför: 
+## Varför
+I Elixir-programmering kan det vara nödvändigt att ta bort tecken som matchar ett visst mönster, till exempel när man arbetar med strängar eller listor. Detta kan hjälpa till att rensa upp data eller förbereda det för vidare bearbetning. I denna bloggpost kommer vi att gå igenom hur man kan ta bort tecken som matchar ett visst mönster i Elixir-programmering.
 
-Det kan finnas många olika orsaker till varför man vill ta bort karaktärer som matchar ett mönster i sin Elixir-kod. Det kan vara för att rensa upp i en sträng, filtrera ut oönskade karaktärer eller för att bygga ett effektivt pattern-matching-system. Oavsett anledning är det viktigt att förstå hur man kan göra detta för att förbättra sin kod.
+## Hur man gör
+För att ta bort tecken som matchar ett mönster behöver vi använda oss av funktionen `String.replace/4` i Elixir. Denna funktion tar in fyra argument: den ursprungliga strängen, det mönster vi vill matcha, det mönster vi vill byta ut de matchande tecknen med, och slutligen en flagga som talar om huruvida matchning ska ske globalt eller inte.
 
-##Så här gör du:
-
-För att ta bort karaktärer som matchar ett mönster i Elixir kan man använda sig av funktionen `String.replace/4`. Första argumentet är strängen som ska bearbetas, andra argumentet är mönstret som man vill matcha, tredje argumentet är den ersättande strängen och det fjärde argumentet är antalet gånger som man vill ersätta mönstret (standardvärdet är alla förekomster). Nedan följer ett exempel på hur man kan använda denna funktion:
-
-```Elixir
-sträng = "Hej! Välkommen till min blogg!"
-mönster = ~r/!/
-ersätt_med = ""
-antal = 1 
-String.replace(sträng, mönster, ersätt_med, antal)
+```
+iex> String.replace("Hejsan på dig!", "a", "")
+=> "Hjsn på dig!"
 ```
 
-Detta kommer att ge utmatningen: `"Hej Välkommen till min blogg!"`. Vi har här ersatt första förekomsten av tecknet "!" med en tom sträng.
+Vi kan även använda reguljära uttryck i mönstret som en mer avancerad form av matchning. Till exempel kan vi ta bort alla siffror från en sträng genom att använda reguljära uttrycken `[:digit:]` i vårt mönster.
 
-##Djupdykning:
+```
+iex> String.replace("Det finns 10 kor på gården.",~r/[:digit:]/,"")
+=> "Det finns kor på gården."
+```
 
-När man arbetar med pattern-matching i Elixir är det viktigt att förstå hur regelbundna uttryck fungerar. Man kan använda sig av symbolen "~r/" för att skapa ett regelbundet uttryck och sedan ange ett mönster som ska matchas. I exemplet ovan använde vi oss av mönstret "~r/!/" för att matcha förekomsten av tecknet "!". Man kan också använda sig av modifierare som t.ex. "i" för att göra sökningen fall-ignorerande.
+## Djupdykning
+Förutom att ta bort tecken som enkelt matchar ett visst mönster, kan vi också använda oss av uttryck för att göra mer komplexa substitutioner. Till exempel kan vi använda uttryck för att ändra på ordningen av tecken eller ta bort ord från en sträng.
 
-Det finns även möjlighet att använda sig av `Regex.run/3` för att få tillbaka en lista med den matchade strängen och alla grupper som matchar. Detta kan vara användbart om man vill ha mer kontroll över hur man hanterar resultatet av sökningen.
+En annan användbar funktion för att hantera strängar i Elixir är `String.split/2`, som delar upp en sträng baserat på ett visst separator-tecken eller mönster.
 
-##Se även:
+```
+iex> String.split("hej,värld", ",")
+=> ["hej", "värld"]
+```
 
-- Elixir dokumentation för `String.replace/4`: https://hexdocs.pm/elixir/String.html#replace/4
-- Elixir dokumentation för regelbundnauttryck: https://hexdocs.pm/elixir/Regex.html 
-- Elixir dokumentation för `Regex.run/3`: https://hexdocs.pm/elixir/Regex.html#run/3
+## Se även
+- [Elixir dokumentation för String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
+- [Elixir dokumentation för reguljära uttryck](https://hexdocs.pm/elixir/Regex.html)
+- [Elixir dokumentation för String.split/2](https://hexdocs.pm/elixir/String.html#split/2)

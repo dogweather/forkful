@@ -1,32 +1,41 @@
 ---
-title:    "Elm: Zamienianie tekstu na wielkie litery"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/capitalizing-a-string.md"
+title:                "Elm: Zmiana tekstu na wielkie litery"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego: Inkrementacja tekstu w Elmie może być wygodną opcją dla programistów, którzy chcą szybko i łatwo zwiększyć wartość tekstu na stronie czy w aplikacji.
 
-W tym blogu omówimy jak zmieniać wielkość liter w ciągu znaków w języku Elm. Jest to przydatna umiejętność, która często jest wykorzystywana w programowaniu. Nauka tej techniki pozwoli Ci na jeszcze większą kontrolę nad swoimi programami.
-
-## Jak to zrobić
-
-Do zmiany wielkości liter w ciągu znaków w Elm możemy użyć funkcji `String.toUpper`. Przyjmujemy w niej jako argument nasz ciąg znaków a następnie zwraca ona ten sam ciąg, ale z zamienioną na wielkie litery. Poniżej przedstawiamy przykład użycia funkcji w kontekście programowania Elm.
+## Jak To Zrobić: 
+W Elmie można łatwo zwiększyć wartość tekstu używając funkcji `String.toUpper`, która zwraca kopię tekstu z tym samym formatowaniem, ale wszystkie litery zmienione na duże.
 
 ```Elm
-string = "cześć"
+stringToCapitalize = "witaj świecie"
+capitalizedString = String.toUpper stringToCapitalize
+```
+Wynik wyświetli "WITAJ ŚWIECIE".
 
-uppercaseString = String.toUpper(string)
+## Czego Dowiedzieć Się Dokładniej: 
+Istnieje również możliwość stworzenia własnej funkcji inkrementującej tekst, jeśli potrzebujemy bardziej złożonej logiki. W Elmie funkcje są pierwszej klasy, co oznacza, że mogą być przekazywane jako argumenty lub zwracane jako wartości. Możemy wykorzystać to, aby napisać funkcję `capitalize`, która działa podobnie jak `String.toUpper`:
 
--- W wyniku otrzymujemy "CZEŚĆ"
+```Elm
+capitalize string = 
+    String.toUpper string
 ```
 
-## Głębszy wgląd
+Funkcję możemy również rozszerzyć, aby uwzględnić różne formatowania tekstu, np. zamianę pierwszej litery na dużą, a pozostałych na małe. 
 
-W języku Elm nie ma wbudowanej funkcji do zmieniania tylko wybranej części ciągu znaków na wielkie litery. Jednak istnieją biblioteki takie jak `String.Extra` lub `String.Replace` które przydadzą się w takim przypadku. Możesz także użyć funkcji `String.map` aby samodzielnie zaimplementować taką funkcjonalność. 
+```Elm
+capitalize string = 
+    String.toUpper (String.left 1 string) ++ String.toLower (String.dropLeft 1 string)
+```
 
-## Zobacz także
+W powyższym przykładzie wykorzystujemy funkcje `String.left` i `String.dropLeft`, aby podzielić tekst na dwie części: pierwszą literę i resztę tekstu. Następnie za pomocą funkcji `++` łączymy kolejno: pierwszą literę powiększoną do wielkich liter oraz resztę tekstu zmniejszoną do małych liter.
 
-- [Dokumentacja Elm](https://guide.elm-lang.org/effects/string.html)
-- [Kurs Elm w języku Polskim](https://elmprogramming.com/pl/)
+## Zobacz także:
+- [Dokumentacja Elm: String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Podstawy programowania w Elmie](https://www.learnelm.org/)
+- [Inne funkcje związane z manipulacją tekstu w Elmie](https://package.elm-lang.org/packages/elm/core/latest/String#ascii)

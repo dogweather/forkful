@@ -1,45 +1,70 @@
 ---
-title:    "Kotlin: Tworzenie pliku tekstowego"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-a-text-file.md"
+title:                "Kotlin: Tworzenie pliku tekstowego"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
-
-Dlaczego warto pisać pliki tekstowe? Pisanie plików tekstowych jest ważną częścią programowania, ponieważ jest to metoda przechowywania danych w formacie czytelnym dla ludzi. Dzięki temu możemy łatwoedytować, odczytywać i udostępniać informacje. Pliki tekstowe są bardzo wygodnym sposobem na przechowywanie prostych danych, takich jak listy, informacje kontaktowe, ustawienia czy nawet proste bazy danych. W tym artykule dowiesz się, jak napisać plik tekstowy za pomocą języka Kotlin.
+## DlaczegoKotlin jest popularnym językiem programowania, ponieważ jest prosty w użyciu, bezpieczny i wydajny. Pisanie plików tekstowych jest zwykle potrzebnym elementem w wielu projektach programistycznych, zwłaszcza w celu przechowywania danych lub konfiguracji. W tym blogu dowiesz się, jak pisać pliki tekstowe w Kotlinie i jak może to ułatwić Twoją pracę.
 
 ## Jak to zrobić
 
-```Kotlin
-fun main() {
-    val file = File("moj_plik.txt") // Tworzy obiekt File dla pliku "moj_plik.txt"
-    file.writeText("To jest przykładowy tekst") // Zapisuje tekst do pliku
-    val text = file.readText() // Odczytuje tekst z pliku
-    println(text) // Wyświetla zawartość pliku
+Krok 1: Zaimportuj klasy potrzebne do pracy z plikami
+
+```
+import java.io.File
+import java.io.FileOutputStream
+```
+
+Krok 2: Utwórz obiekt File, który będzie reprezentować Twoją nazwę pliku, określając ścieżkę i nazwę pliku
+
+```
+val fileName = File("ścieżka/plik.txt")
+```
+
+Krok 3: Utwórz nowy obiekt FileOutputStream, który będzie używany do zapisywania danych do pliku
+
+```
+val fileOutputStream = FileOutputStream(fileName)
+```
+
+Krok 4: Stwórz tekst, który chcesz zapisać do pliku
+
+```
+val text = "To jest przykładowy tekst, który zostanie zapisany do pliku."
+```
+
+Krok 5: Użyj metody write na obiekcie FileOutputStream, aby zapisać tekst jako tablicę bajtów
+
+```
+fileOutputStream.write(text.toByteArray())
+```
+
+Krok 6: Zamknij obiekt FileOutputStream, aby zakończyć zapisywanie
+
+```
+fileOutputStream.close()
+```
+
+Krok 7: Sprawdź, czy plik został utworzony, wywołując metodę exists na obiekcie File
+
+```
+if (fileName.exists()) {
+    println("Plik został utworzony.")
+} else {
+    println("Nie udało się utworzyć pliku.")
 }
 ```
 
-Output:
-```
-To jest przykładowy tekst
-```
+## Bardziej szczegółowo
 
-W powyższym przykładzie najpierw tworzymy obiekt File dla pliku, którego chcemy użyć. Następnie, za pomocą funkcji `writeText()` zapisujemy wybrany przez nas tekst do pliku. W kolejnej linijce odczytujemy ten tekst z pliku i wypisujemy go na ekranie. Proste, prawda?
+W Kotlinie istnieją inne metody, które mogą ułatwić pisanie plików tekstowych. Możesz na przykład użyć funkcji writeText, która automatycznie tworzy obiekt File i obiekt FileOutputStream, a następnie zapisuje tekst w wyznaczonej ścieżce. Możesz również użyć funkcji appendText, aby dopisywać tekst do istniejącego pliku, zamiast tworzyć nowy.
 
-Warto również pamiętać, że pliki tekstowe można również czytać i zapisywać w różnych kodowaniach, co jest szczególnie ważne przy pracach z językami, które używają znaków spoza standardowego kodowania ASCII.
-
-## Głębsza analiza
-
-Pliki tekstowe są zapisywane w formacie ASCII, co oznacza, że można w nich przechowywać tylko znaki z podstawowego zestawu znaków. Aby przechowywać inne znaki, takie jak polskie litery, znaki diakrytyczne czy znaki specjalne, należy użyć odpowiedniego kodowania, na przykład UTF-8. 
-
-Istnieją różne metody zapisu i odczytu danych z plików tekstowych w języku Kotlin. Mogą to być między innymi funkcje `writeText()` i `readText()` jak pokazane powyżej, ale również inne metody, takie jak `bufferedWriter()` lub `inputStreamReader()`, które pozwalają na bardziej zaawansowane operacje na plikach.
-
-Podczas pisania plików tekstowych warto również pamiętać o bezpieczeństwie danych. Wrażliwe informacje należy zawsze szyfrować, aby uniemożliwić dostęp nieautoryzowanym osobom.
+Inną przydatną funkcją jest readText, która pozwala na wygodne odczytywanie danych z pliku tekstowego i zapisanie ich w zmiennej tekstowej. Możesz także użyć funkcji readLines, aby odczytać plik jako listę linii.
 
 ## Zobacz również
 
-- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/home.html)
-- [Kurs programowania w Kotlinie na Courserze](https://www.coursera.org/learn/kotlin-for-java-developers)
-- [Blog o języku Kotlin](https://blog.kotlin-academy.com/)
+- Dokumentacja Kotlin na temat pisanie plików: https://kotlinlang.org/docs/tutorials/kotlin-for-py/writing-files.html
+- Wprowadzenie do języka Kotlin: https://kotlinlang.org/docs/reference/basic-syntax.html

@@ -1,40 +1,54 @@
 ---
-title:    "Haskell: Sammenføyning av strenger"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/concatenating-strings.md"
+title:                "Haskell: Sammenslåing av strenger"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-Det å kombinere strenger er en grunnleggende, men likevel viktig del av Haskell-programmering. Ved å slå sammen to eller flere strenger, kan man lage nye, mer komplekse uttrykk som er nyttige i mange forskjellige programmeringsprosjekter.
-
 ## Hvorfor
 
-Man kan ha mange grunner til å engasjere seg i å kombinere strenger i Haskell. Kanskje ønsker man å lage et program som genererer tekstbaserte meldinger basert på ulike variabler, eller kanskje trenger man å sette sammen ulike deler av en URL. Uansett hva motivasjonen er, er kunnskap om hvordan man konkatenere strenger avgjørende for å kunne utnytte Haskell til sitt fulle potensial.
+Som programmerere har vi ofte behov for å kombinere tekststrenger for å skape nyttige utskrifter og meldinger. Dette prosessen, kjent som å "konkatenere" strenger, er en viktig del av å bygge funksjonelle programmer. I Haskell, er dette en enkel oppgave takket være funksjoner som `++` og `concat`.
 
-## Slik gjør du det
+## Hvordan
 
-I Haskell finnes det flere måter å konkatenere strenger på. Den mest grunnleggende metoden er å bruke operatora `++`, som lager en ny streng ved å sette sammen to eksisterende strenger. For eksempel:
-
-```Haskell
-"Hello " ++ "World"  -- Resultat: "Hello World"
-```
-
-Man kan også bruke funksjonen `concat` for å konkatenere en liste av strenger. Dette er nyttig hvis man ønsker å sette sammen flere strenger i en lang liste. Et annet alternativ er å bruke funksjonen `intercalate`, som tar en streng som argument og setter sammen en liste av strenger med denne som separator. Her er et eksempel på begge disse metodene:
+Før vi dykker inn i dybden av å konkatenere strenger i Haskell, la oss først se på et enkelt eksempel for å forstå konseptet:
 
 ```Haskell
-concat ["Hello ", "World"]  -- Resultat: "Hello World"
-intercalate ", " ["Hello", "World", "Haskell"]  -- Resultat: "Hello, World, Haskell"
+concat "Hei" "verden"
 ```
 
-Det finnes også egne funksjoner for å slå sammen strenger med mellomrom (`unwords`) og linjeskift (`unlines`).
+Dette vil resultere i utskriften `Hei verden`. Her er begge strengene kombinert ved hjelp av funksjonen `concat`, som tar to strenger som input og returnerer en kombinert streng som output. 
+
+For å konkatenerere mer enn to strenger, kan vi bruke `++` funksjonen som tar to lister av tegn som input og kombinerer dem til én. For eksempel:
+
+```Haskell
+"Hallo" ++ " " ++ "Norge"
+```
+
+Dette vil skrive ut `Hallo Norge`, da `++` kombinerer hver streng med et mellomrom imellom. Du kan også bruke `++` til å konkatenere en streng med en liste av tegn, som vist i dette eksempelet:
+
+```Haskell
+"Hallo" ++ [' ', 'V', 'e', 'r', 'd', 'e', 'n']
+```
+
+Dette vil gi samme resultat som forrige eksempel, altså `Hallo Verden`.
 
 ## Dykk dypere
 
-Når man konkatenere strenger i Haskell, er det viktig å være oppmerksom på at strenger håndteres på en litt annen måte enn andre datatype. Haskell bruker en strøm av laziness, som betyr at verdier ikke beregnes før de blir brukt. Dette gjelder også for strenger, som blir lagret som en liste av Unicode-tegn. Dette har konsekvenser når man kombinerer strenger, da dette kan føre til uventede resultat hvis man ikke er oppmerksom på hvordan Haskell håndterer strenger internt.
+Når vi bruker funksjonene `++` og `concat`, må vi være oppmerksomme på at de operer på lister av tegn og ikke bare på strenger. Dette betyr at for å konkatenere strenger, må vi konvertere dem til lister først. Dette kan gjøres ved hjelp av funksjonen `words`, som tar en streng som input og returnerer en liste av ord. For eksempel:
+
+```Haskell
+concat (words "Hei, verden!")
+```
+
+Dette vil skrive ut `Hei, verden!` siden `words` konverterer strengen til en liste av ord, og deretter konkatenere dem til én streng ved hjelp av `concat`.
+
+En annen viktig ting å være klar over er at begge funksjonene `++` og `concat` kun kan konkatenere lister av tegn og ikke andre datatyper som tall eller boolske verdier. For å konkatenere disse datatypene, må vi først konvertere dem til en streng og deretter bruke funksjonene som beskrevet over.
 
 ## Se også
 
-* [Offisiell dokumentasjon for strenger i Haskell](https://www.haskell.org/tutorial/strings.html)
-* [Leksjoner i Haskell fra Universitetet i Oslo](http://folk.uio.no/johangso/haskell/leksjoner/)
-* [Haskell-programmeringsmiljø i Norge](https://www.haskell.no/)
+- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)
+- [Haskell tutorials på norsk](http://haskell.no/tutorials/)
+- [Konkatenere strenger i Haskell - Stack Overflow spørsmål](https://stackoverflow.com/questions/20496811/konkatenere-strenger-i-haskell)

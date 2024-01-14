@@ -1,38 +1,39 @@
 ---
-title:    "C#: Å lage en midlertidig fil"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/creating-a-temporary-file.md"
+title:                "C#: Oppretting av midlertidig fil"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å opprette midlertidige filer er en vanlig del av C# programmering. Disse filene er nyttige for å lagre midlertidige data eller for å opprette midlertidige kopier av eksisterende filer. Å lage midlertidige filer kan også bidra til å organisere og administrere data på en mer effektiv måte.
+ Hvorfor opprette en midlertidig fil?
 
-## Hvordan
+Noen ganger i programmeringen kan det være nyttig å opprette midlertidige filer for å lagre informasjon underveis i en prosess. Dette kan for eksempel være i tilfeller der man trenger å lagre data som ikke er nødvendig å beholde etter at programmet er avsluttet.
 
-For å opprette en midlertidig fil i C#, kan du bruke klassen `Path` og metoden `GetTempFileName()`. Dette returnerer en streng med en unik bane til en midlertidig fil som kan brukes til å opprette og manipulere filen. Se et eksempel nedenfor:
+# Hvordan
+
+For å opprette en midlertidig fil i C#, kan man bruke "Path.GetTempFileName" metoden. Denne metoden vil automatisk generere en unik filnavn som kan brukes til å opprette en midlertidig fil. Her er et eksempel på hvordan man kan bruke denne metoden:
 
 ```C#
-string tempFile = Path.GetTempFileName();
-
-using (StreamWriter sw = File.AppendText(tempFile))
-{
-    sw.WriteLine("Dette er en midlertidig fil opprettet i C#!");
-}
-
-Console.WriteLine(File.ReadAllText(tempFile)); // Output: Dette er en midlertidig fil opprettet i C#!
+string tempFileName = Path.GetTempFileName();
+Console.WriteLine(tempFileName);
 ```
 
-## Dykk Dypere
+Eksempel på output: C: \Users\Brukernavn\AppData\Local\Temp\tmp9876.tmp
 
-Det er også mulig å spesifisere en bestemt mappe for å opprette midlertidige filer ved å bruke `Path` klassen og `GetTempPath()` metoden. Dette kan være nyttig hvis du vil organisere midlertidige filer på en bestemt måte, for eksempel å skille dem fra permanente filer.
+# Deep Dive
 
-Det er også viktig å slette midlertidige filer etter at de ikke lenger er nødvendige. Dette kan gjøres ved hjelp av `File.Delete()` metoden.
+Man kan også spesifisere et alternativt navn på den midlertidige filen ved å gi en parameter til "Path.GetTempFileName" metoden. Dette kan være nyttig hvis man ønsker et mer meningsfylt navn på filen istedenfor et generert navn.
 
-## Se også
+I tillegg kan man bruke "File.Create" metoden for å opprette den midlertidige filen og deretter jobbe med den som en vanlig fil. Det er viktig å huske på å slette den midlertidige filen etter at man er ferdig med å bruke den, for å ikke fylle opp maskinen med unødvendige filer.
 
-- [Microsoft Docs: Creating a Temporary File in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-create-a-temporary-file)
-- [C# File Handling Tutorials](https://www.c-sharpcorner.com/technologies/file-handling-in-c-sharp-programming-tutorial)
-- [DotNetPerls: Creating Temporary Files in C#](https://www.dotnetperls.com/tempfile)
+# Se også
+
+Her er noen nyttige ressurser for å lære mer om oppretting og håndtering av midlertidige filer i C#:
+
+- Dokumentasjon for Path.GetTempFileName metoden: https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=netframework-4.8
+- Tutorial om midlertidige filer på C# Tutorials-nettstedet: https://csharp.net-tutorials.com/files/temporary-files/
+- Forumtråd om oppretting og sletting av midlertidige filer i C#: https://stackoverflow.com/questions/986708/creating-and-deleting-temporary-files-in-c-sharp

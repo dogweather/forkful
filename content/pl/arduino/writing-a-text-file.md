@@ -1,67 +1,54 @@
 ---
-title:    "Arduino: Pisanie pliku tekstowego"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-a-text-file.md"
+title:                "Arduino: Pisanie pliku tekstowego"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Kodowanie jest nie tylko wspaniałym hobby, ale także użytecznym narzędziem do rozwiązywania codziennych problemów. Dzięki Arduino możesz tworzyć różnorodne projekty, a pisanie tekstowych plików może być bardzo przydatne w tym procesie. Poniżej dowiesz się, dlaczego warto nauczyć się tego prostego zadania.
+Pisanie pliku tekstowego jest kluczowym elementem w programowaniu Arduino, ponieważ umożliwia zapisywanie danych i ułatwia przechowywanie informacji. Może to być użyteczne przy korzystaniu z sensorów lub zapisywaniu wyników pomiarów. Dzięki temu procesowi możliwe jest również tworzenie prostych systemów zapisywania danych, takich jak dziennik temperatury lub pomiarów.
 
 ## Jak to zrobić
 
-Aby zapisać tekstowy plik za pomocą Arduino, wykonaj następujące kroki:
-
-1. Uruchom środowisko programistyczne Arduino IDE i otwórz projekt.
-2. Wybierz przykładowy kod poniżej i wklej go do swojego projektu:
+Pisanie pliku tekstowego w Arduino może wydawać się skomplikowane, ale jest to w rzeczywistości bardzo proste. W celu utworzenia nowego pliku tekstowego, należy skorzystać z funkcji `SD.open()` i podać nazwę pliku oraz określić tryb otwarcia (np. do odczytu lub zapisu). Gdy już stworzysz plik, możesz przystąpić do pisania danych za pomocą funkcji `println()` lub `print()`, a następnie zamknąć plik za pomocą `SD.close()`.
 
 ```Arduino
-#include <SPI.h> //biblioteka do komunikacji z kartą SD
-#include <SD.h>  //biblioteka pozwalająca na zapisywanie i odczytywanie danych z karty SD
+#include <SPI.h>
+#include <SD.h>
+
+File dataFile; // utworzenie obiektu pliku
 
 void setup() {
-  Serial.begin(9600); //inicjalizacja komunikacji szeregowej
-  while(!Serial); //czekaj na połączenie
-  Serial.print("Tworzenie nowego pliku...");
-  if (SD.begin(10)) { //sprawdzenie czy karta SD jest dostępna
-    Serial.println("Karta SD gotowa do użycia");
-    File dataFile = SD.open("dane.txt", FILE_WRITE); //utwórz plik o nazwie "dane.txt" i otwórz go do zapisu
-    if (dataFile) {
-      dataFile.println("To jest przykładowy tekst do zapisania w pliku.");
-      dataFile.close(); //zamknij plik
-      Serial.println("Plik został zapisany.");
-    }
-  }
-  else { //jeśli nie udało się uzyskać dostępu do karty SD
-    Serial.println("Błąd karty SD.");
-  }
+  // inicjalizacja karty SD
+  SD.begin(10); 
+
+  // utworzenie i otwarcie pliku DATA.TXT w trybie do zapisu
+  dataFile = SD.open("DATA.TXT", FILE_WRITE); 
 }
 
 void loop() {
-  //puste
+  // zapisanie danych do pliku
+  dataFile.println("Temperatura: 25 stopni Celsjusza");
+  // zamknięcie pliku
+  dataFile.close();
+
+  delay(1000);
 }
 ```
 
-3. Włóż kartę SD do czytnika i podłącz go do swojego Arduino.
-4. Skompiluj i wgraj kod na płytkę. Jeśli wszystko przebiegnie pomyślnie, na wyjściu szeregowym zobaczysz komunikat "Plik został zapisany".
-5. Podłącz kabel USB z Arduino do komputera i otwórz program do przeglądania plików. W folderze "arduino" powinien pojawić się plik "dane.txt".
+Po wykonaniu tego kodu, na karcie SD pojawi się plik `DATA.TXT` zawierający wpis "Temperatura: 25 stopni Celsjusza". Dzięki zastosowaniu pętli `loop()`, możliwe jest ciągłe zapisywanie danych do pliku, co czyni go idealnym rozwiązaniem do monitorowania zmieniających się parametrów.
 
-## Głębsze spojrzenie
+## Głębszy wgląd
 
-W powyższym przykładzie użyto biblioteki SD.h, która pozwala na komunikację z kartą SD. Aby skutecznie zapisać plik tekstowy, konieczne jest wykonanie kilku kroków:
-
-- Sprawdzenie dostępności karty SD i jej inicjalizacja.
-- Tworzenie nowego pliku o wybranej nazwie.
-- Otwarcie pliku do zapisu, w którym można wpisać wybrany tekst.
-- Zamknięcie pliku.
-
-Warto również zauważyć, że istnieje możliwość odczytu danych z pliku tekstowego, co daje dużo większe możliwości przy tworzeniu projektów z wykorzystaniem Arduino.
+W przypadku potrzeby dokonania więcej operacji na plikach, można skorzystać z funkcji `SD.open()` i podać dodatkowe parametry, takie jak `O_READ` (przeczytanie pliku) lub `O_CREAT` (utworzenie nowego pliku, jeśli nie istnieje). W celu zamiany liczby na tekst lub odwrotnie, można wykorzystać funkcje `itoa()` lub `atol()`, a także użyć funkcji `write()` do zapisywania pojedynczych znaków.
 
 ## Zobacz również
 
-1. [Tutorial na temat wprowadzenia do Arduino](https://pcm.pl/view_page.php?page_id=273)
-2. [Oficjalna strona Arduino](https://www.arduino.cc/)
-3. [Biblioteka SD.h](https://www.arduino.cc/en/reference/SD)
-4. [Inne przydatne biblioteki do komunikacji z urządzeniami peryferyjnymi](https://playground.arduino.cc/Main/LibraryList/)
+- [Biblioteka SD do Arduino](https://www.arduino.cc/en/Reference/SD)
+- [Przykładowy projekt zapisywania danych na karcie SD](https://randomnerdtutorials.com/guide-to-sd-card-module-with-arduino/)
+- [Poradnik o pamięci SD na Arduino](https://diyi0t.com/sd-card-module-arduin/)
+
+Pisanie pliku tekstowego w Arduino może mieć wiele zastosowań i być przydatne w wielu projektach. Dzięki temu procesowi można łatwo przechowywać i analizować dane, co czyni go nieodłączną częścią programowania w Arduino. Warto poświęcić trochę czasu na zapoznanie się z tym procesem, aby w przyszłości bez problemu wykorzystywać go w swoich projektach.

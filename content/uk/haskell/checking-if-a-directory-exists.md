@@ -1,43 +1,41 @@
 ---
-title:    "Haskell: Перевірка існування директорії."
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/checking-if-a-directory-exists.md"
+title:                "Haskell: Перевірка наявності каталогу"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-У цій статті ми дізнаємося, як перевірити існування директорії в мові програмування Haskell. Це корисна навичка, яка допоможе вам створювати додатки, що працюють з файловою системою.
+Перевірка існування каталогу є важливою задачею для розробників, оскільки це допомагає їм переконатися, що необхідний для роботи коду каталог існує та доступний.
 
-## Як це зробити
+## Як
 
 ```Haskell
 import System.Directory
 
--- Перевіряємо, чи існує директорія
 doesDirectoryExist :: FilePath -> IO Bool
 
--- Приклад використання
+main :: IO ()
 main = do
-    -- Вказуємо шлях до потрібної директорії
-    let dirPath = "C:/Users/username/Documents"
-    -- Перевіряємо, чи існує директорія
-    dirExist <- doesDirectoryExist dirPath
-    -- Виводимо результат перевірки
-    if dirExist
-        then putStrLn "Директорія існує"
-        else putStrLn "Директорія не існує"
+    let directory = "~/Documents"
+    exists <- doesDirectoryExist directory
+    if exists
+        then putStrLn $ directory ++ " існує!"
+        else putStrLn "Каталог не знайдено."
 ```
 
-В результаті ви отримаєте вивід "Директорія існує", якщо вказана директорія існує, або "Директорія не існує", якщо вона не існує.
+В цьому прикладі ми імпортуємо модуль `System.Directory`, який містить функцію `doesDirectoryExist`, що приймає шлях до каталогу та повертає значення типу `IO Bool` - `True`, якщо каталог існує, та `False` - якщо каталог не знайдено. Ми також використовуємо функцію `putStrLn` для виведення повідомлення користувачу про результат перевірки існування каталогу.
 
-## Глибинна аналітика
+## Глибше вдивимося
 
-При використанні функції `doesDirectoryExist`, слід звернути увагу на те, що вона перевіряє наявність самої директорії, а не шляху до неї. Також варто пам'ятати, що ця функція використовується для взаємодії з файловою системою, тому перед її використанням слід переконатися, що ви маєте необхідні дозволи на зміни в директорії.
+У функції `doesDirectoryExist` використовується функція `isDirectory`, яка перевіряє, чи існує файл за вказаним шляхом та чи є він каталогом. Це робиться шляхом перевірки додаткових деталей про файл, таких як його атрибути.
+
+Під капотом функції `doesDirectoryExist` використовується системна виклик `access`, який перевіряє права доступу до файлу та його існування в системі. Це дозволяє глибше перевірити, чи існує каталог за вказаним шляхом.
 
 ## Дивіться також
 
-- [Офіційна документація System.Directory](http://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Стаття про роботу з файлами в Haskell](https://www.fpcomplete.com/haskell/tutorial/haskell-files/)
-- [Стаття про роботу з файловою системою у мові Haskell](https://www.tutorialspoint.com/haskell/haskell_files_io.htm)
+- [Документація по модулю System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Чому потрібно перевіряти існування каталогу у Haskell](https://stackoverflow.com/questions/44514889/check-if-directory-exists-in-haskell)

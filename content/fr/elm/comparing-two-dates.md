@@ -1,53 +1,53 @@
 ---
-title:    "Elm: Comparaison de deux dates"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/comparing-two-dates.md"
+title:                "Elm: Comparer deux dates"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi: La comparaison de deux dates en Elm
+## Pourquoi
 
-La comparaison de dates est un outil utile qui peut être utilisé dans divers projets de programmation. En utilisant le langage fonctionnel Elm, vous pouvez facilement comparer les dates pour déterminer si elles sont égales, après ou avant une autre date. Dans cet article, nous explorerons comment utiliser Elm pour comparer deux dates.
+La comparaison de deux dates est une tâche courante en programmation. Cela peut être utile pour trier des données chronologiquement, vérifier si une date se situe avant ou après une autre, ou pour calculer la différence entre deux dates. Dans cet article, nous allons voir comment réaliser cette opération en utilisant le langage Elm.
 
-## Comment Faire
+## Comment faire
 
-Pour commencer, nous devons d'abord définir nos deux dates à comparer en tant que variables. Dans l'exemple ci-dessous, nous utiliserons les dates 10 Octobre 2021 et 10 Octobre 2022:
+Nous allons commencer par définir deux dates sous forme de variables. Dans cet exemple, nous allons utiliser le package `Date` de la bibliothèque standard d'Elm.
 
-```
-Elm
-import Time exposing (posixToMillis)
+```elm
+import Date exposing (Date)
 
-date1 : Int
-date1 = posixToMillis 1633814400000
+-- Définir la première date
+date1 : Date
+date1 = Date.fromIsoString "2020-01-01"
 
-date2 : Int
-date2 = posixToMillis 1665350400000
-```
-
-En utilisant la fonction `posixToMillis`, nous convertissons nos dates en millisecondes pour faciliter la comparaison. Ensuite, nous pouvons utiliser les opérateurs de comparaison tels que `==` pour vérifier si les dates sont égales, `<` pour vérifier si la première date est avant la seconde, ou `>` pour vérifier si la première date est après la seconde.
-
-```
-Elm
-date1 == date2 -- false
-date1 < date2 -- true
-date1 > date2 -- false
+-- Définir la deuxième date
+date2 : Date
+date2 = Date.fromIsoString "2021-01-01"
 ```
 
-Dans l'exemple ci-dessus, nous voyons que la première date est avant la seconde et donc `date1 < date2` renvoie `true`.
+Ensuite, nous pouvons utiliser les fonctions fournies par le package `Date` pour comparer ces deux dates. Par exemple, pour vérifier si `date1` se situe avant `date2`, nous pouvons utiliser la fonction `Date.before` qui renvoie une valeur booléenne.
 
-## Plongée en Profondeur
+```elm
+Date.before date1 date2     -- renverra True
+```
 
-En comparant les dates en Elm, il est important de comprendre que chaque date est en fait un nombre de millisecondes depuis le 1er Janvier 1970. Cela signifie que si vous avez besoin de comparer des dates avec précision, vous devez également prendre en compte les fuseaux horaires et les années bissextiles.
+Pour calculer la différence entre ces deux dates en termes de jours, nous pouvons utiliser la fonction `Date.diffInDays`.
 
-De plus, il est important de noter que la fonction `posixToMillis` utilisée dans notre exemple suppose que les dates sont dans le fuseau horaire UTC. Si vous avez des dates dans d'autres fuseaux horaires, vous devrez peut-être utiliser une autre fonction de conversion.
+```elm
+Date.diffInDays date1 date2  -- renverra 366 (une année bissextile)
+```
 
-## Voir Aussi
+Il existe également d'autres fonctions comme `Date.after` pour vérifier si une date se situe après une autre, `Date.isLeapYear` pour vérifier si une année est bissextile, etc. N'hésitez pas à explorer la documentation du package `Date` pour en savoir plus.
 
-- La documentation officielle sur la comparaison de dates en Elm: https://package.elm-lang.org/packages/elm/time/latest/Time#posixToMillis
-- Un tutoriel sur les opérateurs de comparaison en Elm: https://elmprogramming.com/conditionals.html
-- Un article sur la conversion de dates en Elm: https://medium.com/@jacobworrel/parse-format-and-manipulate-dates-in-elm-71a86d72b640
+## Approfondissement
 
----
+Lorsque vous comparez deux dates, il est important de prendre en compte les différences de fuseau horaire et les années bissextiles. En utilisant le package `Date`, vous n'aurez pas à vous soucier de ces problèmes, car il les gère automatiquement pour vous.
 
-# Voir Aussi
+De plus, vous pouvez également utiliser la fonction `Date.fromString` pour définir une date à partir d'une chaîne de caractères au format souhaité, ce qui peut être utile si vous obtenez les dates à partir d'une source externe.
+
+## Voir aussi
+
+- Documentation du package `Date` : https://package.elm-lang.org/packages/elm/time/latest/Date
+- Démo en ligne : https://ellie-app.com/3hmpQjt7WHqa1

@@ -1,37 +1,46 @@
 ---
-title:    "Swift: यादृच्छिक संख्याओं का उत्पादन"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/generating-random-numbers.md"
+title:                "Swift: यादृच्छिक संख्याएं उत्पन्न करना"
+programming_language: "Swift"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-यदि आप कभी सेही सेही आंकड़े या संख्याएं चाहते हों जिसमे स्पर्मिकता हो तो स्विफ्ट में यादृच्छिक संख्या जनरेशन आपको विशेष फायदे दे सकता है।
+अक्सर हमारे हस्ताक्षर या डेटाबेस में धार्मिक तरीके से बनाए गए नंबरों की आवश्यकता होती है, जैसे रोल ऑफ डाइस के लिए डाइस की आवश्यकता होती है। इसलिए, स्विफ्ट प्रोग्रामिंग में यादृच्छिक संख्याओं को उत्पन्न करना बहुत महत्वपूर्ण होता है।
 
 ## कैसे करें
 
-स्विफ्ट में यादृच्छिक संख्या जनरेशन के लिए दो मुख्य तरीके हैं - `Int.random(in:lowerBound...upperBound)` और `Double.random(in:lowerBound...upperBound)`। नीचे दिए गए कोड ब्लॉक में आप दोनों तरीकों का प्रयोग देख सकते हैं:
-
 ```Swift
-// Int आंकड़े 1 से 10 के बीच में यादृच्छिक रूप से उत्पन्न करें:
 let randomInt = Int.random(in: 1...10)
 print(randomInt)
-// उत्पाद: हर बार अलग-अलग - 2, 10, 8, 1, आदि.
-
-// Double आंकड़े 10.5 से 20.5 के बीच में यादृच्छिक रूप से उत्पन्न करें:
-let randomDouble = Double.random(in: 10.5...20.5)
-print(randomDouble)
-// उत्पाद: हर बार अलग-अलग - 14.235, 19.897, 20.01, आदि.
 ```
 
-## गहराई में जाएं
+यह से आप 1 से 10 के बीच में किसी भी यादृच्छिक पूर्णांक को प्रिंट कर सकते हैं। आप एक संख्या का चयन करने के लिए अन्य स्रोत जैसे रोल सिक्यूंस भी उपयोग कर सकते हैं।
 
-यादृच्छिक संख्या जनरेशन वास्तव में एक बहुत ही महत्वपूर्ण गुण है। इससे आप आपके प्रोग्राम में स्पर्मिकता ला सकते हैं जो कि बहुत ही उपयोगी हो सकता है, क्योंकि हर बार अलग-अलग संख्याएं उत्पन्न होंगी। समय-समय पर, आप अपने प्रोग्राम में इस्तेमाल किए गए यादृच्छिक संख्याओं को रखना और पुनः उपयोग करना भी सीख सकते हैं।
+```Swift
+let randomElement = myArray.randomElement()
+print(randomElement)
+```
 
-## देखें भी
+इस मिथुन कोड से आप अपनी बनाई गई एक एरे में से एक आइटम चुन सकते हैं। आप यादृच्छिक शब्द भी उत्पन्न कर सकते हैं।
 
-- [Random Number Generation in Swift](https://www.hackingwithswift.com/sixty/4/2/random-number-generation-in-swift)
-- [Generating Random Numbers in Swift](https://medium.com/ios-os-x-development/generating-random-numbers-in-swift-actodabe8f7b)
-- [Randomness in Swift](https://nshipster.com/random/)
+```Swift
+let randomNumber = UInt8.random(in: 0...255)
+print(randomNumber)
+```
+
+इस ऊर्जा और भाग्य सक्षमताओं के लिए, आप विभिन्न आकार के प्रकार के लिए यादृच्छिक नंबर प्राप्त कर सकते हैं।
+
+## गहराई में
+
+यादृच्छिक संख्याओं को उत्पन्न करने के लिए, स्विफ्ट प्रोग्रामिंग में हम बहुत सारे सेवाओं का उपयोग कर सकते हैं, जो हमारे लिए आसान और प्रभावी हो सकते हैं। इन सेवाओं में से कुछ शामिल हैं: 
+
+- `random(in:)`
+- `randomElement()`
+- `arc4random_uniform()`
+- `arc4random()`
+
+ये सभी सेवाएं अहम मान्याता द्वारा संचालित होती हैं और समय, आइपी एड्रेस या अन्य प्रकार के एक मूल्यांकन से यादृच्छिक सं

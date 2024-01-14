@@ -1,40 +1,60 @@
 ---
-title:    "Haskell: Excluindo caracteres que correspondem a um padrão"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: Excluindo caracteres que correspondem a um padrão."
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Muitas vezes, durante a programação em Haskell, podemos nos deparar com a necessidade de deletar caracteres que correspondem a um determinado padrão em uma string ou lista. Isso pode ser útil em várias situações, como por exemplo limpar os dados de entrada ou manipular textos de forma mais eficiente. Neste artigo, vamos explorar como podemos fazer isso de forma simples e eficaz em Haskell. 
+Ao trabalhar com programação em Haskell, é comum precisarmos manipular strings de texto. No entanto, muitas vezes nos deparamos com a necessidade de remover certos caracteres que seguem um determinado padrão. Mas por que isso é necessário? Isso pode acontecer, por exemplo, quando estamos realizando análise de dados e queremos remover caracteres especiais de um conjunto de strings. Ou ainda, quando trabalhamos com entrada de usuários e queremos garantir que apenas caracteres válidos sejam aceitos. Em resumo, a remoção de caracteres que correspondem a um padrão é importante para garantir a integridade dos dados e facilitar seu processamento.
 
 ## Como Fazer
 
-Em Haskell, podemos utilizar a função `filter` para filtrar elementos de uma lista ou string que atendam a um determinado critério. Vamos supor que queremos deletar todos os dígitos de uma string. Para isso, podemos utilizar a função `isDigit` da biblioteca `Data.Char`, que retorna `True` se o caractere é um dígito e `False` caso contrário. Podemos combinar essa função com a função `not`, que inverte o resultado booleano, para obter um filtro que retorna `True` apenas para caracteres não numéricos.
+O Haskell possui diversas funções para manipulação de strings, entre elas a `delete`. Esta função recebe como parâmetros um caractere e uma string e retorna uma nova string com todas as ocorrências do caractere removidas. Por exemplo, se quisermos remover todos os caracteres "a" de uma string, podemos usar a seguinte expressão:
 
 ```Haskell
-import Data.Char (isDigit)
-
-stringSemNumeros = filter (\c -> not (isDigit c)) "Abc123deFg456"
+delete 'a' "banana"
 ```
 
-O código acima irá retornar a string "AbcdeFg". O primeiro argumento da função `filter` é uma função lambda que verifica se o caractere não é um dígito, e o segundo é a string a ser filtrada. Assim, podemos usar essa técnica para deletar qualquer tipo de caractere que desejamos.
+O resultado será a string "bnan".
 
-## Deep Dive
-
-Em Haskell, podemos usar a notação de lista para representar strings, por exemplo, "ler" pode ser representado como `['l', 'e', 'r']`. Além disso, podemos utilizar operações como `++` para concatenar strings, `[x | x <- string, p x]` para aplicar um filtro `p` em uma string `string` e `[x | x <- string, not (p x)]` para aplicar o inverso do filtro. Todos esses recursos foram usados no exemplo anterior.
-
-Além disso, podemos usar funções de alta ordem para facilitar a criação de filtros mais complexos. Por exemplo, podemos utilizar a função `all` para verificar se todos os elementos da lista atendem a uma determinada condição. No nosso caso, podemos utilizar `all isDigit` para verificar se todos os caracteres da lista são dígitos. Combinando isso com a função `not`, podemos construir um filtro que retorna `True` apenas para strings que não contém dígitos.
+Para remover todos os caracteres que correspondem a um padrão, podemos usar a função `filter`. Esta função recebe como parâmetros uma função de teste e uma lista de elementos. Ela retorna uma nova lista com apenas os elementos que passam no teste da função. No caso de trabalharmos com strings, podemos usar a função `notElem` para verificar se um determinado caractere não faz parte de uma lista de caracteres. Por exemplo, se quisermos remover todas as vogais de uma string, podemos usar a seguinte expressão:
 
 ```Haskell
-stringSemNumeros = filter (\c -> not (all isDigit c)) ["Abc123" , "deFg456"]
+filter (`notElem` "aeiou") "banana"
 ```
 
-O código acima irá retornar a lista ["Abc", "deFg"]. Assim, podemos ver que as possibilidades de utilização da função `filter` para deletar caracteres em Haskell são bastante versáteis.
+O resultado será a string "bnn".
+
+## Mergulho Profundo
+
+Vale ressaltar que a função `delete` é uma função de ordem superior, ou seja, ela recebe como parâmetro outra função. Isso significa que podemos criar funções mais complexas passando-as como argumento para a função `delete`. Por exemplo, podemos criar uma função que remove todos os caracteres que não são números de uma string:
+
+```Haskell
+removeNaoNumeros xs = filter (`notElem` "1234567890") xs
+```
+
+Podemos usar essa função junto com a função `delete` para remover apenas os números de uma string:
+
+```Haskell
+delete (removeNaoNumeros) "abc123def456"
+```
+
+O resultado será a string "abcdef".
+
+Além disso, podemos usar a função `map` em conjunto com a função `delete` para aplicar uma transformação em cada elemento da string antes de removê-los. Por exemplo, se quisermos substituir todos os números por asteriscos, podemos usar a função `map` para substituir cada dígito por um asterisco e depois usar a função `delete` para remover todos os asteriscos da string resultante:
+
+```Haskell
+delete (map (\x -> '*') "abc123def456")
+```
+
+O resultado será a string "abcdef".
 
 ## Veja Também
 
-- [Documentação da função `filter` em Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:filter)
-- [Tutorial de Haskell no portal DevMedia](https://www.devmedia.com.br/aprendendo-haskell-com-ghci/25710)
+- [Documentação da função `delete` no Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:delete)
+- [Documentação da função `filter` no Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:filter)
+- [Documentação da função `map` no Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)

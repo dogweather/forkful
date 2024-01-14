@@ -1,66 +1,66 @@
 ---
-title:    "Ruby: 文字列の連結"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/concatenating-strings.md"
+title:                "Ruby: 文字列の連結"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+# なぜ文字列の連結をするのか
 
-文字列を連結するとは、複数の文字列を組み合わせて1つの文字列にすることです。これができると、より複雑な文字列や文を作成することができます。
+Rubyプログラミングを学ぶ上で、文字列の連結は非常に重要なスキルです。様々な理由がありますが、最も一般的な理由はデータの整形や出力のためです。例えば、ユーザーがフォームに入力した情報を受け取り、それを一つの文章として表示したいときなどに使われます。
 
-## 方法
+# 方法
 
-```Ruby
-first_name = "Satoshi"
-last_name = "Tanaka"
-
-full_name = first_name + " " + last_name
-puts full_name
-```
-
-この例では、`+`演算子を使用して`first_name`、スペース、`last_name`を連結することで、`full_name`を作成しています。コードを実行すると、全体の名前が`Satoshi Tanaka`と出力されます。
-
-## 深堀り
-
-Rubyでは、他にも文字列を連結する方法があります。例えば、`<<`演算子を使用することもできます。
+文字列の連結には、Rubyの組み込みメソッドである`+`を使用します。例えば、次のコードを見てみましょう。
 
 ```Ruby
-first_name = "Satoshi"
-last_name = "Tanaka"
+first_name = "太郎"
+last_name = "山田"
 
-full_name = first_name << " " << last_name
-puts full_name
+full_name = first_name + last_name
+
+p full_name
 ```
 
-このコードを実行しても同じ出力結果が得られますが、`<<`演算子はより効率的に文字列を連結することができます。また、`+=`演算子を使用すれば、元の変数を更新しながら文字列を連結することもできます。
+上のコードでは、`first_name`と`last_name`を連結して`full_name`という新しい変数を作成しています。そして、`p`メソッドを使って`full_name`を出力しています。結果は`太郎山田`と表示されます。
+
+また、文字列の連結には`<<`や`concat`というメソッドもあります。これらは`+`と同じく、文字列同士を連結するためのものです。
+
+# 深堀り
+
+文字列の連結を行う際には、注意点があります。例えば、次のコードを見てみましょう。
 
 ```Ruby
-first_name = "Satoshi"
-last_name = "Tanaka"
+a = "Hello"
+b = "World"
 
-first_name += " "
-first_name += last_name
-puts first_name
+a << b
 ```
 
-また、文字列内に変数を含めることもできます。
+このコードでは、`a`という変数に対して`<<`を使用して`b`を連結しています。しかし、この場合は`a`の値自体が変更されてしまいます。つまり、`a`は`HelloWorld`という文字列を持つことになります。
+
+これを避けるためには、`+`を使用して新しい変数を作成するか、`a`を複製する必要があります。例えば、次のように書くことで変数自身は変更せずに文字列を連結することができます。
 
 ```Ruby
-name = "Satoshi"
+a = "Hello"
+b = "World"
 
-puts "こんにちは、私の名前は#{name}です。"
+new_string = a + b
+
+p new_string # => "HelloWorld"
+p a # => "Hello"
 ```
 
-このように、文字列を連結する方法はさまざまですが、どの方法を選択しても同じ結果を得ることができます。
+# 参考リンク
 
-## 詳しくは
+- [Rubyドキュメンテーション: String](https://ruby-doc.org/core-2.7.0/String.html)
+- [Rubyの文字列を連結する方法](https://qiita.com/okamos/items/5437b69fee76006bce0a)
+- [Rubyの文字列の基本操作](https://www.sejuku.net/blog/19041)
 
-Rubyでは、文字列の連結についてさらに詳しく学ぶことができます。例えば、文字列を配列に変換してから連結する方法や、特殊文字を使用して文字列を整形する方法などがあります。究極的には、自分にとって最も理解しやすい方法で文字列を連結することが重要です。
+# 参考文献
 
-## 参考リンク
-
-- [Rubyの文字列操作](https://www.techscore.com/blog/2016/12/21/ruby%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E6%93%8D%E4%BD%9C/)
-- [Ruby Wing](https://rubywing.com/string/)
-- [Rubyリファレンスマニュアル](https://docs.ruby-lang.org/ja/latest/doc/spec=2fcall=3f.html#gseq2697)
+- [Rubyドキュメンテーション: String](https://ruby-doc.org/core-2.7.0/String.html)
+- [Rubyの文字列を連結する方法](https://qiita.com/okamos/items/5437b69fee76006bce0a)
+- [Rubyの文字列の基本操作](https://www.sejuku.net/blog/19041)

@@ -1,54 +1,65 @@
 ---
-title:    "Swift recipe: Concatenating strings"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/concatenating-strings.md"
+title:                "Swift recipe: Concatenating strings"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Concatenating Strings in Swift is Useful
+## Why
+Concatenating strings is a useful programming technique used to combine multiple strings into one. This comes in handy when you want to create dynamic messages, labels, or any type of text output in your program.
 
-Concatenating strings is a useful skill for any Swift programmer to have. It allows you to combine multiple strings into one, making it easier to manipulate and present data in your code. Whether you're building a simple app or a complex program, knowing how to concatenate strings can make your code more efficient and user-friendly.
-
-## How To Concatenate Strings in Swift
-
-To concatenate strings in Swift, you can simply use the "+" operator between two strings. Here's an example:
+## How To
+To begin concatenating strings in Swift, you first need to define two or more strings that you want to combine. This can be done using the `String` data type. For example, let's say we have two strings: 
 
 ```Swift
 let firstName = "John"
 let lastName = "Smith"
+```
 
+To concatenate these two strings, we simply use the `+` operator between them and assign the result to a new variable:
+
+```Swift 
+let fullName = firstName + lastName
+```
+
+This will result in a new string variable `fullName` with the value "JohnSmith". However, if we want to separate the first and last name with a space, we can do so by adding a space between the strings in the `+` operator:
+
+```Swift
 let fullName = firstName + " " + lastName
 ```
 
-The resulting string will be "John Smith". You can also concatenate strings with variables, making it dynamic and versatile. Here's another example:
+This will give us the desired output of "John Smith".
+
+We can also use concatenation with variables and constants of other data types, such as integers or booleans:
 
 ```Swift
-let greeting = "Hello"
-var name = "Sarah"
-
-let message = greeting + ", " + name + "!"
+let age = 30
+let message = "I am " + String(age) + " years old."
 ```
 
-The output will be "Hello, Sarah!". As you can see, concatenating strings allows you to create more personalized and natural messages in your code.
+This will output "I am 30 years old." by converting the integer value of `age` into a string.
 
-## Deep Dive into Concatenating Strings
-
-In Swift, you can not only concatenate variables and strings, but also other types such as integers and floating-point numbers. However, it's important to note that the result will be a string and not a numerical value. Concatenating strings can also be done using the `append()` method, which is useful for adding characters to the end of existing strings.
-
-Another important aspect to understand is the use of string interpolation, denoted by a backslash and parentheses. This allows you to insert variables or expressions directly into a string without concatenating. Here's an example:
+## Deep Dive
+In Swift, there are multiple ways to concatenate strings besides using the `+` operator. Another option is to use string interpolation, which allows us to insert the value of a variable or constant directly into a string. This is done by placing a backslash and open/close parentheses around the variable/constant inside the string, like so:
 
 ```Swift
-let age = 25
-let message = "I am \(age) years old."
+let message = "Hello, my name is \(fullName)."
 ```
 
-The output will be "I am 25 years old." Using string interpolation can save you time and make your code cleaner and more organized.
+This will result in the same output of "Hello, my name is John Smith."
+
+Additionally, Swift has a `+=` operator specifically for string concatenation. This allows us to add a string to the end of another string. For example:
+
+```Swift
+var greeting = "Welcome "
+greeting += name
+```
+
+This will output "Welcome John" if `name` is equal to "John".
 
 ## See Also
-
-To learn more about concatenating strings in Swift, check out these helpful resources:
-
-- [Apple's Official String Interpolation Documentation](https://developer.apple.com/documentation/swift/string_interpolation)
-- [How Concatenating Strings Works in Swift](https://www.hackingwithswift.com/sixty/3/3/how-we-use-operators-for-strings)
-- [Advanced String Concatenation Techniques in Swift](https://medium.com/swift-programming/advanced-string-concatenation-in-swift-cf0fe78c23db)
+- [Concatenation (Computer Science) - Wikipedia](https://en.wikipedia.org/wiki/Concatenation_(computer_science))
+- [String Interpolation in Swift](https://www.hackingwithswift.com/sixty/7/5/string-interpolation)
+- [The Basics of String Concatenation in Swift](https://betterprogramming.pub/the-basics-of-string-concatenation-in-swift-5f8a84af1d1a)

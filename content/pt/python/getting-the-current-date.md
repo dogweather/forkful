@@ -1,46 +1,73 @@
 ---
-title:    "Python: Obtendo a data atual"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/getting-the-current-date.md"
+title:                "Python: Obtendo a data atual"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual?
+## Por que?
 
-Obter a data atual é uma tarefa essencial em muitos projetos de programação. Ela pode ser utilizada para rastrear eventos importantes, armazenar dados em bancos de dados e até mesmo para exibir informações relevantes aos usuários. Além disso, entender como obter a data atual pode melhorar suas habilidades de programação em Python.
+Se você é iniciante em programação ou até mesmo um profissional experiente, provavelmente já se deparou com a necessidade de obter a data atual em seu código. Afinal, a data é uma informação crucial para muitas aplicações, desde controlar o tempo de criação de um arquivo até mostrar a data de postagem em um blog. Sabendo disso, neste artigo explicaremos como obter a data atual em Python e por que isso é tão importante.
 
-## Como fazer:
-
-Para obter a data atual em Python, usamos o módulo "datetime". Primeiro, importamos o módulo com o comando "import datetime". Em seguida, usamos a função "datetime.now()" para obter a data atual em formato de objeto. Por fim, podemos utilizar os métodos do objeto para formatar a data da maneira desejada.
-
-Segue abaixo um exemplo de código e a saída correspondente:
+## Como Fazer
+Para obter a data atual em Python, podemos utilizar o módulo built-in `datetime` e a função `date.today()`. Veja o exemplo abaixo:
 
 ```Python
-import datetime
-data_atual = datetime.now()
+from datetime import date
+
+data_atual = date.today()
 print(data_atual)
-# Output: 2021-08-03 14:32:05.786171
 ```
 
-Podemos também especificar o formato da data utilizando o método "strftime()", como no exemplo abaixo:
+Output:
+```
+2021-03-14
+```
+
+Neste código, importamos o módulo `datetime` que contém funções específicas para lidar com datas e horários. Em seguida, utilizamos a função `date.today()` para obter a data atual e atribuímos o resultado à variável `data_atual`. Por fim, imprimimos a variável para exibir a data atual no formato `ano-mês-dia`.
+
+Além disso, também é possível formatar a saída da data utilizando o método `strftime()` do módulo `datetime`. Veja o exemplo abaixo:
 
 ```Python
-import datetime
-data_atual = datetime.now()
+from datetime import date
+
+data_atual = date.today()
 data_formatada = data_atual.strftime('%d/%m/%Y')
 print(data_formatada)
-# Output: 03/08/2021
 ```
 
-## Mergulho profundo:
+Output:
+```
+14/03/2021
+```
 
-O módulo "datetime" oferece muitas outras funcionalidades para trabalhar com datas e horários, como calcular a diferença entre duas datas, adicionar ou subtrair dias, horas ou segundos, entre outras. Além disso, também é possível criar datas específicas utilizando o método "datetime()", passando os valores desejados para ano, mês, dia, hora, minuto e segundo.
+Neste caso, utilizamos `%d` para representar o dia, `%m` para o mês e `%Y` para o ano. Dessa forma, a saída será a data atual no formato `dia/mês/ano`.
 
-## Veja também:
+## Deep Dive
 
-- [Documentação do módulo datetime para Python](https://docs.python.org/3/library/datetime.html)
-- [Tutorial de Python para iniciantes](https://realpython.com/python-beginner-guide/)
-- [Outros módulos úteis para manipulação de datas em Python](https://medium.com/python-pandemonium/date-and-time-manipulation-in-python-29a5937c1104)
+A função `date.today()` retorna a data atual com base no fuso horário do sistema em que o código está sendo executado. No entanto, se precisarmos obter a data e hora em um fuso horário específico, podemos utilizar o objeto `datetime` e a função `now()` com o parâmetro `tz` (timezone). Veja o exemplo abaixo:
 
-Obrigado por ler este artigo e espero que tenha sido útil para você aprender um pouco mais sobre como obter a data atual em Python!
+```Python
+from datetime import datetime
+from pytz import timezone
+
+fuso_horario = timezone('America/Sao_Paulo')
+data_atual = datetime.now(tz=fuso_horario)
+print(data_atual)
+```
+
+Output:
+```
+2021-03-14 11:30:00.921820-03:00
+```
+
+Neste exemplo, importamos o módulo `datetime` e também o `pytz`, que permite trabalhar com fusos horários específicos. Em seguida, definimos o fuso horário desejado (`America/Sao_Paulo`) e utilizamos a função `now()` para obter a data e hora atual com base nesse fuso horário. O resultado é um objeto `datetime` com a data e hora juntamente com o fuso horário.
+
+## Veja também
+- [Documentação do módulo datetime do Python](https://docs.python.org/3/library/datetime.html)
+- [Lista de fusos horários suportados pelo pytz](https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568)
+- [Tutorial sobre datetime em Python](https://realpython.com/python-datetime/)
+
+Esperamos que este artigo tenha sido útil e que você possa facilmente obter a data atual em seus projetos em Python. Não deixe de conferir os links adicionais para aprofundar seus conhecimentos. Até a próxima!

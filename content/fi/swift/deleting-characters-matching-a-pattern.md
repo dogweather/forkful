@@ -1,37 +1,37 @@
 ---
-title:    "Swift: Kuviota vastaavien merkkien poistaminen"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/deleting-characters-matching-a-pattern.md"
+title:                "Swift: Mallia vastaavien merkkien poistaminen"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi poistaa nimikkeitä mallin mukaan?
 
-Miksi haluaisit poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Se voi olla hyödyllistä esimerkiksi silloin, kun käsitellään tekstiä tai merkkijonoja ja halutaan poistaa tiettyä tyyppisiä merkkejä.
+Nimikkeiden poistaminen, jotka vastaavat tiettyä mallia, voi olla hyödyllistä, jos haluat suodattaa tietyn tyyppisen sisällön tai löytää tietyntyyppisiä merkintöjä. Esimerkiksi, jos sinulla on tekstiä, jossa on sekä numeroita että kirjaimia ja haluat poistaa vain numerot, voit käyttää tätä toimintoa.
 
-## Kuinka
+## Miten se tehdään?
 
-Seuraavassa esimerkissä näytämme, miten voit poistaa kaikki välilyönnit, numerot ja erikoismerkit annetusta merkkijonosta.
+Voit käyttää Swiftin `replacingOccurrences(of:with:options:)` -funktiota poistaaksesi merkkejä, jotka vastaavat haluamaasi mallia. Esimerkiksi jos haluat poistaa kaikki numerot merkkijonosta, voit käyttää seuraavaa koodia:
 
 ```Swift
-//Luodaan aluksi merkkijono, josta haluamme poistaa merkkejä
-let teksti = "Hei! Tässä on esimerkkilause 1234."
-//Luodaan kaava, joka määrittelee minkä tyyppiset merkit haluamme poistaa
-let kaava = CharacterSet.alphanumerics.inverted
-//Suoritetaan poisto käyttäen kaavaa ja tallennetaan uuteen muuttujaan
-let uusiTeksti = teksti.components(separatedBy: kaava).joined()
-//Tulostetaan uusi muuttuja, jossa poistetut merkit eivät enää näy
-print(uusiTeksti)
-//Tulos: "HeiTässäonesimerkkilause"
+let teksti = "123abc456"
+let vainKirjaimet = teksti.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
+
+print(vainKirjaimet)
+
+// Output: "abc"
 ```
 
-## Syvempää tietoa
+Kuten näet, käytämme `[0-9]` mallia, joka vastaa kaikkia numeroita. Voit käyttää myös muita mallinpään tai säännöllisiä lausekkeita poistaaksesi tietyn tyyppisiä merkkejä.
 
-Yllä oleva esimerkki käytti CharacterSet-luokkaa, joka tarjoaa valmiita kaavoja eri merkkityyppien poistamiseen. Voit myös luoda omia kaavoja, esimerkiksi poistamaan tiettyjä erikoismerkkejä tai merkkijonoja. Voit myös käyttää for-silmukoita poistaaksesi tiettyjä merkkejä merkkijonosta.
+## Syvällisempi tarkastelu
+
+Swiftin `replacingOccurrences(of:with:options:)` -funktio toimii käyttämällä säännöllisiä lausekkeita. Tämä tarkoittaa, että voit käyttää monimutkaisempia malleja ja jopa luoda omia sääntöjä. Voit myös käyttää erilaisia ```options``` -arvoja määrittääksesi, miten poistaminen tapahtuu. Tarkempi kuvaus säännöllisistä lausekkeista ja `options` -arvoista löytyy [Swiftin dokumentaatiosta](https://developer.apple.com/documentation/swift/string/1786171-replacingoccurrences).
 
 ## Katso myös
 
-- [String - Swift Documentation](https://developer.apple.com/documentation/swift/string)
-- [CharacterSet - Swift Documentation](https://developer.apple.com/documentation/foundation/characterset)
-- [How to Remove Characters from String in Swift?](https://www.appcoda.com/swift-chars/)
+- [Swiftin dokumentaatio säännöllisistä lausekkeista](https://developer.apple.com/documentation/swift/string/2878330).
+- [NSHipsterin opas säännöllisiin lausekkeisiin Swiftissa](https://nshipster.com/swift-regular-expressions/).
+- [Apple:n esimerkkejä säännöllisistä lausekkeista Swiftissä](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/RegularExpressions.html).

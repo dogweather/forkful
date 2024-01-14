@@ -1,45 +1,42 @@
 ---
-title:    "Javascript: 「未来や過去の日付を計算する」"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/calculating-a-date-in-the-future-or-past.md"
+title:                "Javascript: 将来または過去の日付の計算"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ 未来や過去の日付を計算するか
 
-未来や過去の日付を計算することが重要なのか、わずか1〜2文で説明します。
+日付を計算する理由は様々です。例えば、テキストメッセージやメールの送信予約をしたい場合や、製品の発売日やイベントの日程を計画する際には、未来の日付を計算する必要があります。また、過去の日付を計算することで、何日前に出来事が起こったかを知ることができます。このように、日付を計算することは日常生活やビジネスにおいて重要な役割を果たしています。
 
-## 方法
+## 日付を計算する方法
 
-日付を未来や過去に移動するためのコードの例と、 ```Javascript ... ```のコードブロック内のサンプル出力を提供します。
+日付を計算する方法は様々ありますが、Javascriptを使用することで簡単に実装することができます。まずは、計算したい日付をDateオブジェクトとして宣言します。次に、未来の日付を計算する場合は、Dateオブジェクトの`setDate()`メソッドを使用し、引数に未来の日数を指定します。過去の日付を計算する場合は、同じように`setDate()`メソッドを使用しますが、引数に過去の日数のマイナス値を指定します。最後に、計算結果を`getFullYear()`、`getMonth()`、`getDate()`メソッドを使用して取得することができます。
 
-例えば、『2021年5月25日から2日後の日付を計算する』には、以下のようなコードが使用されます。
+```Javascript
+// 未来の日付を計算する例
+let today = new Date(); // 現在の日付を取得
+today.setDate(today.getDate() + 10); // 10日後の日付を計算
+console.log(today.getFullYear()); // 2021
+console.log(today.getMonth() + 1); // 8
+console.log(today.getDate()); // 24
 
-```Javascript 
-const today = new Date();
-const futureDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2);
-console.log(futureDate);
+// 過去の日付を計算する例
+let today = new Date(); // 現在の日付を取得
+today.setDate(today.getDate() - 5); // 5日間前の日付を計算
+console.log(today.getFullYear()); // 2021
+console.log(today.getMonth() + 1); // 7
+console.log(today.getDate()); // 19
 ```
 
-出力：
+## 日付を計算する上での深層掘り
 
-``` Javascript
-Wed Jun 09 2021 00:00:00 GMT+0900 (日本標準時)
-```
+日付を計算する際には、異なるタイムゾーンや夏時間などの考慮が必要になることがあります。その場合、Moment.jsなどのライブラリを使用すると、より正確な計算が可能になります。また、特定の基準日から数えた経過日数を計算する場合は、`getDate()`メソッドではなく`getTime()`メソッドを使用して、数値を取得することができます。
 
-## ディープダイブ
+## 参考になるリンク
 
-日付の計算は、時差や夏時間など、さまざまな要因によって影響を受けることがあります。未来や過去の日付を正確に計算するためには、それらの要因を考慮に入れる必要があります。また、JavascriptのDateオブジェクトには便利なメソッドがいくつかあり、それらを活用することで簡単に日付を計算することができます。
-
-## 詳しくは
-
-「JavascriptのDateオブジェクトを使用した日付の計算方法」: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date
-
-「夏時間を考慮した日付の計算方法」: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
-
-## 関連記事
-
-## もっと詳しく知りたい方は、以下の記事も参考にしてみてください。
-
-「Javascriptの日付処理について知る」: https://qiita.com/k-ikegami/items/786b48f20bcd09c86441
+- [Dateオブジェクト - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js - 公式サイト](https://momentjs.com/)
+- [日付計算の基礎知識 - Qiita](https://qiita.com/akey/items/5b93d33eb068eb26adfa)

@@ -1,33 +1,40 @@
 ---
-title:    "TypeScript: Generazione di numeri casuali"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/generating-random-numbers.md"
+title:                "TypeScript: Generazione di numeri casuali"
+programming_language: "TypeScript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Generare numeri casuali è una funzione utile in molti casi di programmazione. Può essere utilizzato per creare giochi, testare algoritmi o aggiungere variabilità a un programma.
 
-## Come Generare Numeri Casuali in TypeScript
-Per generare numeri casuali in TypeScript, possiamo utilizzare il metodo `Math.random()` che restituisce un numero compreso tra 0 e 1. Per ottenere un numero in un intervallo specifico, possiamo utilizzare la formula `Math.floor(Math.random() * (max - min + 1)) + min`, dove `max` e `min` sono rispettivamente il valore massimo e minimo dell'intervallo.
+Generare numeri casuali è un'abilità utile per molti programmatori. Può essere utilizzato in una varietà di progetti, come giochi, simulazioni, o anche solo per scopi di test.
+
+## Come
+
+Per generare numeri casuali in TypeScript, possiamo utilizzare la funzione `Math.random()` che restituisce un numero casuale compreso tra 0 (incluso) e 1 (escluso). Possiamo moltiplicare questo numero per il nostro intervallo di interesse, ad esempio 10 per ottenere un numero compreso tra 0 e 10. Per ottenere un numero intero invece, possiamo utilizzare la funzione `Math.floor()` per arrotondare il numero verso il basso.
 
 ```TypeScript
-// Genera un numero casuale tra 1 e 10
-let randomNum = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-console.log(randomNum); // Output: 7
+// Generare un numero casuale tra 0 e 10
+let randomNumber = Math.random() * 10;
+console.log(randomNumber);
 
-// Genera un numero casuale tra 20 e 50
-let randomNum2 = Math.floor(Math.random() * (50 - 20 + 1)) + 20;
-console.log(randomNum2); // Output: 32
+// Generare un numero intero tra 1 e 100
+let randomInteger = Math.floor(Math.random() * 100) + 1;
+console.log(randomInteger);
 ```
 
-## Approfondimento su Generazione di Numeri Casuali
-Il metodo `Math.random()` utilizza l'algoritmo di generazione di numeri pseudocasuali, che utilizza un seed o una "seme" per generare numeri. Ad ogni esecuzione, il seme viene modificato in modo prevedibile, quindi i numeri generati non sono veramente casuali, ma possono sembrare tali. Per ottenere numeri ancora più casuali, possiamo utilizzare un seed casuale come il timestamp attuale, usando il metodo `Date.now()`.
+L'output di questo codice potrebbe essere, ad esempio, `7.23545432` come numero casuale e `45` come numero intero.
 
-Un altro metodo per generare numeri casuali è utilizzare la libreria `random-js`, che offre funzionalità avanzate come la possibilità di scegliere tra differenti generatori di numeri pseudo-casuali e la possibilità di configurare il seed.
+## Approfondimento
 
-## Vedi Anche
-- [Documentazione di Math.random su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Documentazione di random-js](https://github.com/ckknight/random-js)
-- [Guida per Generare Numeri Casuali in TypeScript](https://www.freecodecamp.org/news/how-to-generate-random-numbers-in-typescript/)
+Mentre `Math.random()` è un modo semplice per generare numeri casuali in TypeScript, ci sono anche altre opzioni disponibili per controllare meglio la distribuzione dei numeri generati. Per esempio, la libreria `random-js` offre una maggiore varietà di funzioni e opzioni per la generazione di numeri casuali, come ad esempio la possibilità di specificare una distribuzione gaussiana o una distribuzione uniforme.
+
+Per una maggiore sicurezza e imprevedibilità dei numeri casuali, possiamo utilizzare anche il modulo `crypto` di Node.js che offre una funzione `randomBytes()` che restituisce una sequenza di byte casuale che può essere convertita in numeri.
+
+## Vedi anche
+
+- [Documentazione di Math.random()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Libreria random-js](https://www.npmjs.com/package/random-js)
+- [Documentazione di Node.js - Modulo crypto](https://nodejs.org/api/crypto.html)

@@ -1,44 +1,72 @@
 ---
-title:    "Fish Shell recipe: Deleting characters matching a pattern"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell recipe: Deleting characters matching a pattern"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Deleting characters matching a pattern is a common task in programming. This simple yet powerful action can help you clean up data, manipulate text, or remove unwanted characters from a string. With the help of Fish Shell, this process can be completed efficiently and effectively.
+Have you ever found yourself wanting to quickly delete certain characters in a file or string, but didn't want to manually delete them one by one? With the Fish Shell, you can easily remove characters that match a specific pattern. This can be especially useful when dealing with large amounts of data or when trying to reformat text.
 
-## How To
+## How To 
 
-To delete characters matching a pattern in Fish Shell, we will use the `sed` command. This command allows us to perform text transformations based on a specified pattern. Here is an example of how to use `sed` to delete all occurrences of the letter "a" in a string:
-
-```
-Fish Shell> echo "apple, banana, carrot" | sed 's/a//g'
-pple, bn, crt
-```
-
-In this command, we use the `echo` command to output a string, then pipe it (`|`) to the `sed` command. Inside the `sed` command, we specify the pattern we want to delete (`a`) and the replacement (`/g`). This tells `sed` to find all occurrences of "a" and replace them with nothing, effectively deleting them.
-
-We can also use regular expressions to specify a more complex pattern to delete. For example, we can delete all vowels in a string using the pattern `[aeiou]`:
+To delete characters matching a specific pattern, you will need to use the `string` command and the `-r` option. Here's an example:
 
 ```
-Fish Shell> echo "hello world" | sed 's/[aeiou]//g'
-hll wrld
+Fish Shell -r "pattern" string
 ```
 
-This command will delete all vowels from the string "hello world" and output "hll wrld".
+Let's say you have the following string:
 
-## Deep Dive
+```
+Hello,@@ World!@@
+```
 
-In the previous examples, we used the global (`g`) flag to delete all occurrences of the pattern in a string. However, we can also specify a specific occurrence or range using the `sed` command's address range feature.
+If you want to remove all the '@@' symbols from the string, you can use the `string` command like this:
 
-For example, `sed '1,3s/[aeiou]//g'` will only delete vowels in the first three lines of a file, while `sed '2,4s/a/1/g'` will replace all "a" in lines 2, 3, and 4 with "1". This allows for more precise control over which characters are deleted and where.
+```
+Fish Shell -r "@@" string
+```
 
-In addition to the `sed` command, Fish Shell also has a built-in `string` command that allows for more complex string manipulation. We can use the `string` command in combination with `sed` to perform even more powerful operations on our strings, such as deleting a specific word or character at a specific position.
+The output of this command will be:
 
-## See Also
+```
+Hello, World!
+```
 
-- Fish Shell documentation on `sed`: https://fishshell.com/docs/current/cmds/sed.html
-- Fish Shell documentation on `string`: https://fishshell.com/docs/current/cmds/string.html
+You can also use the wildcard `*` to match any number of characters. For example, if you want to remove all numbers from a string, you can use the following command:
+
+```
+Fish Shell -r "[0-9]*" string
+```
+
+The output for a string like `abc123def` would be:
+
+```
+abcdef
+```
+
+## Deep Dive 
+
+The `string` command in Fish Shell uses regular expressions to match patterns. Regular expressions, also known as regex, are a powerful tool for finding specific patterns in text. They are commonly used in programming languages and text editors to search, replace, and format text.
+
+When using the `string` command with the `-r` option, the pattern specified can include a combination of characters, symbols, and metacharacters. Metacharacters are special characters with a specific meaning in regex. Here are a few examples:
+
+- `*` matches any number of characters. For instance, `a*b` would match `ab`, `aaab`, or `aaaaab`.
+- `.` matches any single character. So, `a.c` would match `abc`, `adc`, or `axc`.
+- `\d` matches any digit from 0 to 9.
+- `\s` matches any whitespace character, such as a space or a tab.
+- `[ ]` defines a character set, and `-` can be used to specify a range of characters. For example, `[0-9]` would match any single digit.
+
+For more information about regular expressions, you can check out the [Fish Shell documentation](https://fishshell.com/docs/current/cmds/string.html#string).
+
+## See Also 
+
+- [Fish Shell documentation on regular expressions](https://fishshell.com/docs/current/cmds/string.html#string)
+- [A Beginner's Guide to Regular Expressions](https://www.digitalocean.com/community/tutorials/understanding-regular-expressions-beginner-tutorial)
+- [Online regex tester](https://regexr.com/)
+
+Happy coding!

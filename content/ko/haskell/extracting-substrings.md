@@ -1,47 +1,41 @@
 ---
-title:    "Haskell: 부분 문자열 추출하기"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/extracting-substrings.md"
+title:                "Haskell: 부분 문자열 추출하기"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-문자열에서 부분 문자열을 추출하는 것은 프로그래밍에서 자주 사용되는 작업입니다. 이를 통해 우리는 문자열의 특정 부분을 정확하게 가져올 수 있고, 이를 다른 작업에 사용할 수 있습니다.
+문자열에서 부분 문자열을 추출하는 방법은 많은 이유로 인해 도움이 될 수 있습니다. 예를 들어, 텍스트 처리나 데이터 마이닝을 할 때 유용합니다. 또한 문자열을 다루는 알고리즘에도 적용할 수 있습니다.
 
 ## 추출하는 방법
 
-Haskell에서 문자열에서 부분 문자열을 추출하는 것은 간단합니다. 예를 들어, 문자열 "안녕하세요"에서 "안녕"이라는 부분 문자열을 추출해 보겠습니다.
+Haskell에서 문자열에서 부분 문자열을 추출하는 방법은 간단합니다. `take` 함수를 사용하면 됩니다. 예를 들어, `"Hello, world!"` 문자열에서 `"Hello"` 부분 문자열을 추출하고 싶다면 다음과 같이 작성할 수 있습니다.
 
 ```Haskell
-substring :: Int -> Int -> [a] -> [a]
-substring start end xs = take (end - start) (drop start xs)
-
-main = do
-  print (substring 0 2 "안녕하세요")
+take 5 "Hello, world!"
+-- 출력: "Hello"
 ```
-이 코드는 "안녕"이라는 부분 문자열을 추출하고 출력하는 간단한 예제입니다. ```substring``` 함수는 시작 지점과 끝 지점을 매개변수로 받고, ```take``` 함수를 사용하여 해당 범위의 문자를 가져온 후, ```drop``` 함수를 사용하여 이전 문자를 제거하는 방식으로 부분 문자열을 추출합니다. 이 코드를 실행하면 "안녕"이라는 문자열이 출력됩니다.
+위의 예시에서 `take` 함수의 첫 번째 인자는 추출하고자 하는 문자열의 길이를 나타내며, 두 번째 인자는 추출하고자 하는 문자열입니다.
 
-## 깊이 들어가기
-
-보다 복잡한 예제를 살펴보겠습니다. 이번에는 문자열 "친구들이 재미있게 놀고 있었다"에서 "재미있게 놀고 있었다"라는 부분 문자열을 추출해 보겠습니다.
+또한 마지막 인덱스를 지정하여 원하는 위치부터 문자열을 추출할 수도 있습니다. 예를 들어, `"Hello, world!"` 문자열에서 `, world!` 부분 문자열을 추출하고 싶다면 다음과 같이 작성할 수 있습니다.
 
 ```Haskell
-substring :: Int -> Int -> [a] -> [a]
-substring start end xs = take (end - start) (drop start xs)
-
-main = do
-  let sentence = "친구들이 재미있게 놀고 있었다"
-  let start = 3
-  let end = 14
-  print (substring start end sentence)
+drop 6 "Hello, world!"
+-- 출력: ", world!"
 ```
 
-이번에는 시작 지점과 끝 지점을 변수로 지정하여 문자열을 추출하는 예제입니다. 이렇게 함으로써 우리는 같은 코드를 여러 번 사용하여 쉽게 부분 문자열을 추출할 수 있습니다.
+## 깊게 파고들기
 
-# 참고
+`take` 함수를 사용하면 부분 문자열을 쉽게 추출할 수 있지만, 더 복잡한 작업을 하려면 좀 더 깊게 파고들어야 합니다. 예를 들어, 다른 문자열 처리 함수들과 조합하여 원하는 부분 문자열을 추출할 수도 있습니다. 또한, 문자열의 길이나 인덱스 등을 활용하여 보다 정확하게 부분 문자열을 추출하는 방법도 있습니다.
 
-- [Haskell 문자열 추출하기](https://www.codewars.com/kata/576b9f21b59692368500006b)
-- [Haskell 함수 문서](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#g:12)
-- [Haskell 문자열 함수](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
+## 더 알아보기
+
+문자열에서 부분 문자열을 추출하는 방법에 대해 더 알아보려면 다음 링크들을 참고해보세요.
+
+- [Haskell 문자열 함수 공식 문서](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html)
+- [Haskell 문자열 처리 관련 예시 코드](https://wiki.haskell.org/Strings)
+- [Haskell 문자열 처리에 대한 블로그 포스트](https://mmhaskell.com/blog/2020/3/14/haskell-string-types-and-manipulation)

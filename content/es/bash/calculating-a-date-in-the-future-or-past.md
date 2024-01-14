@@ -1,63 +1,90 @@
 ---
-title:    "Bash: Calculando una fecha en el futuro o en el pasado."
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/calculating-a-date-in-the-future-or-past.md"
+title:                "Bash: Calculando una fecha en el futuro o pasado"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué calcular una fecha en el futuro o pasado?
 
-Muchas veces en la programación, necesitamos calcular una fecha en el futuro o en el pasado. Ya sea para programar una tarea o para hacer cálculos en una base de datos, saber cómo hacer esto es una habilidad valiosa para cualquier programador.
+Calcular una fecha en el futuro o pasado es útil para muchos escenarios, como planificar eventos o proyectos, programar tareas o simplemente por curiosidad. En este artículo, aprenderemos cómo calcular y manipular fechas en Bash.
 
 ## Cómo hacerlo
 
-En Bash, podemos utilizar la herramienta "date" para calcular una fecha en el futuro o en el pasado. La sintaxis básica de este comando es la siguiente:
-```
-date -d "fecha_baseoperaciondescripciónvalor"
+Para calcular una fecha en el futuro o pasado, primero necesitamos utilizar el comando `date`. Este comando nos permite mostrar o configurar la fecha y hora actuales del sistema.
+
+Por ejemplo, si queremos mostrar la fecha actual, podemos usar el siguiente comando:
+
+```Bash
+date
 ```
 
-Por ejemplo, si queremos saber la fecha que será dentro de 5 días, podemos utilizar el siguiente comando:
-```
-date -d "now + 5 days"
+Esto nos dará una salida similar a esta:
+
+```Bash
+Mié 05 May 2021 10:30:00 CEST
 ```
 
-Esta sintaxis también puede ser utilizada para calcular fechas en el pasado, simplemente cambiando el signo "+" por "-". A continuación, se muestran algunos ejemplos más:
+Si queremos calcular una fecha en el futuro o pasado, necesitaremos especificar la fecha deseada utilizando el parámetro `-d` seguido de la fecha en formato `MMDDyyyy`.
 
-Calcular la fecha de 1 mes atrás desde la fecha actual:
-```
-date -d "now - 1 month"
-```
+Por ejemplo, si queremos calcular la fecha que será en 10 días, podemos usar el siguiente comando:
 
-Calcular la fecha de 2 semanas en el futuro desde una fecha específica:
-```
-date -d "2021-10-01 + 2 weeks"
+```Bash
+date -d "10 days"
 ```
 
-Calcular la fecha actual a las 10 AM:
-```
-date -d "today 10 am"
+Esto nos dará una salida similar a esta:
+
+```Bash
+Sáb 15 May 2021 10:30:00 CEST
 ```
 
-Además, podemos utilizar valores como "seconds", "minutes", "hours" o "years" para calcular fechas en intervalos más pequeños o más grandes. Por ejemplo:
+También podemos realizar cálculos más complejos, como restar o sumar días, meses o años a la fecha actual. A continuación, algunos ejemplos:
+
+Calcular la fecha en 2 semanas:
+
+```Bash
+date -d "+2 weeks"
 ```
-date -d "now + 2 hours"
+
+Calcular la fecha de hace 1 mes:
+
+```Bash
+date -d "-1 month"
 ```
+
+Calcular la fecha dentro de 2 años:
+
+```Bash
+date -d "+2 years"
+```
+
+Es importante mencionar que el formato de fecha puede variar dependiendo del sistema operativo y la configuración regional.
 
 ## Profundizando
 
-La herramienta "date" tiene muchas más opciones que nos permiten personalizar aún más nuestros cálculos de fechas. Por ejemplo, podemos utilizar la opción "-u" para mostrar la fecha en formato UTC o la opción "-f" para utilizar una fecha específica en lugar de la actual.
+Para una mayor flexibilidad, también podemos especificar la fecha de manera más precisa utilizando el formato `MM/DD/YYYY` seguido de la hora en formato `HH:MM:SS`.
 
-También podemos utilizar la opción "-r" para mostrar la diferencia entre dos fechas en lugar de mostrar una fecha específica. Por ejemplo, si queremos saber cuántos días han pasado desde el 1 de enero de 2021 hasta hoy, podemos utilizar el siguiente comando:
-```
-date -d "$(date -d "2021-01-01") - today"
-```
+Por ejemplo, si queremos calcular la fecha que será dentro de 3 días y 2 horas, podemos usar el siguiente comando:
 
-Además, el comando "date" también nos permite convertir una fecha en otro formato utilizando la opción "-I". Por ejemplo, si queremos convertir una fecha del formato "dd-mm-aaaa" al formato "aaaa-mm-dd", podemos utilizar el siguiente comando:
-```
-date -d "4-10-2021" -I"new"
+```Bash
+date -d "3 days 2 hours"
 ```
 
-## Ver también 
-- [Documentación de GNU Coreutils para el comando date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Tutorial de Bash para principiantes](https://linuxize.com/post/bash-scripting-tutorial-for-beginners/)
+Esto nos dará una salida similar a esta:
+
+```Bash
+Sáb 08 May 2021 12:30:00 CEST
+```
+
+También podemos utilizar parámetros adicionales para especificar la zona horaria o el formato de salida deseado. Para más información, podemos consultar la documentación del comando `date`.
+
+¡Ahora que conocemos los conceptos básicos, podemos empezar a jugar y experimentar con diferentes fechas en Bash!
+
+## Ver también
+
+- Documentación oficial del comando `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Tutoriales adicionales sobre fechas en Bash: https://www.linuxjournal.com/content/working-date-and-time-0
+- Otras formas de manipular fechas en Bash utilizando otros comandos: https://www.tecmint.com/manipulate-filenames-date-time-linux/

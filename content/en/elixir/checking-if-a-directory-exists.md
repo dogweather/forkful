@@ -1,62 +1,56 @@
 ---
-title:    "Elixir recipe: Checking if a directory exists"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/checking-if-a-directory-exists.md"
+title:                "Elixir recipe: Checking if a directory exists"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why
+## Why
 
-As a developer, it is important to ensure that our code can handle all possibilities and scenarios. One of these possibilities is checking if a directory exists. This can help prevent unexpected errors and ensure smooth execution of our code.
+Checking if a directory exists is an important aspect of programming, especially in file management tasks. It allows for error handling and ensures that your code is robust and able to handle various scenarios.
 
-# How To
+## How To
 
-To check if a directory exists in Elixir, we can use the `File.exists?/1` function. This function takes in a file or directory path as its argument and returns a boolean value indicating whether the path exists or not.
+To check if a directory exists in Elixir, we can use the `File.exists?` function. This function returns a boolean value of `true` or `false` depending on whether the directory exists or not.
 
-```
-Elixir
-defmodule Directory do
-  def check_if_exists(path) do
-    if File.exists?(path) do
-      IO.puts "The directory exists"
-    else
-      IO.puts "The directory does not exist"
-    end
-  end
+Let's take a look at an example:
+
+```Elixir
+directory = "/path/to/directory"
+
+if File.exists?(directory) do
+  IO.puts("The directory exists!")
+else
+  IO.puts("The directory does not exist.")
 end
-
-Directory.check_if_exists("project/lib") #=> The directory exists
-Directory.check_if_exists("project/spec") #=> The directory does not exist
 ```
 
-We can also use the `Dir.exists?/1` function to specifically check if a directory exists. This function works in the same way as `File.exists?/` but is optimized for working with directories.
+If the directory exists, the output will be: `The directory exists!` Otherwise, the output will be: `The directory does not exist.`
 
-```
-Elixir
-defmodule Directory do
-  def check_if_exists(path) do
-    if Dir.exists?(path) do
-      IO.puts "The directory exists"
-    else
-      IO.puts "The directory does not exist"
-    end
-  end
+We can also use the `File.dir?` function to specifically check if a given path is a directory. It also returns a boolean value.
+
+```Elixir
+path = "/path/to/file.txt"
+
+if File.dir?(path) do
+  IO.puts("The path is a directory.")
+else
+  IO.puts("The path is not a directory.")
 end
-
-Directory.check_if_exists("project/lib") #=> The directory exists
-Directory.check_if_exists("project/spec") #=> The directory does not exist
 ```
 
-# Deep Dive
+In this case, if the path is a directory, the output will be: `The path is a directory.` Otherwise, the output will be: `The path is not a directory.`
 
-The `File.exists?/1` and `Dir.exists?/1` functions use the Erlang library `:file` under the hood to perform a system call. This means that the functions will give accurate results regardless of the file system used (e.g. Windows, Unix).
+## Deep Dive
 
-It is worth noting that these functions do not check for file permissions. They only check if the file or directory exists. Therefore, it is important to handle errors that may arise due to insufficient permissions.
+Behind the scenes, the `File.exists?` and `File.dir?` functions use the Erlang functions `:file.readable?` and `:file.is_dir?` respectively. These functions make system calls to the underlying OS to determine the existence and type of a given path.
 
-There is also the `File.regular?/1` function which can be used to specifically check if a given path is a regular file. This function will return `true` only if the path exists and is a regular file, otherwise it will return `false`.
+It is important to note that the `File.exists?` function may return a false negative if the path is a broken or inaccessible symbolic link. In this case, `File.exists?` will return `false` even if the directory does actually exist.
 
-# See Also
+## See Also
 
-- [Elixir File module documentation](https://hexdocs.pm/elixir/File.html)
-- [Elixir Dir module documentation](https://hexdocs.pm/elixir/Dir.html)
+- [Elixir File Module Documentation](https://hexdocs.pm/elixir/File.html)
+- [Erlang File Module Documentation](https://erlang.org/doc/man/file.html)
+- [Check if a Directory Exists in Elixir (Gist)](https://gist.github.com/jasongarrett/4c6cdcbfc7c6e6041f45d6a5cca7b6c6)

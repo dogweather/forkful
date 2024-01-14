@@ -1,47 +1,53 @@
 ---
-title:    "Ruby: Écriture de tests"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-tests.md"
+title:                "Ruby: Ecrire des tests"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire des tests en Ruby ?
+## Pourquoi
 
-La rédaction de tests unitaires est essentielle pour un code propre et fiable en Ruby. En écrivant des tests, vous vous assurez que votre code fonctionne correctement, vous permettant ainsi de détecter et de corriger les erreurs avant qu'elles ne deviennent de gros problèmes.
+Si vous êtes développeur, vous avez peut-être déjà entendu parler de tests unitaires, tests fonctionnels et autres formes de tests. Mais pourquoi les écrire en premier lieu ? Les tests sont essentiels pour s'assurer de la qualité et de la stabilité de votre code. Ils permettent également de détecter les erreurs plus rapidement et de les corriger avant qu'elles ne causent des problèmes pour les utilisateurs réels.
 
-## Comment écrire des tests en Ruby
+## Comment faire
 
-Il existe plusieurs frameworks pour écrire des tests en Ruby, tels que RSpec ou MiniTest. Voici un exemple de test en utilisant RSpec :
+Pour écrire des tests en utilisant Ruby, vous pouvez utiliser le framework de test intégré appelé MiniTest. Il suffit de créer un fichier avec l'extension ".rb" et d'utiliser le template suivant :
 
-```ruby
-require 'rspec'
+````Ruby
+# importer le framework de test
+require "minitest/autorun"
 
-# Définition de la méthode "add" pour ajouter deux nombres
-def add(a, b)
-  a + b
-end
+# définir une classe de test
+class TestCalculator < Minitest::Test
 
-# Spécifications pour la méthode "add"
-RSpec.describe 'add' do
-  it 'ajoute deux nombres' do
-    expect(add(3, 7)).to eq(10)
+  # une méthode de test doit commencer par "test_"
+  def test_addition
+    # tester la méthode d'addition en utilisant l'assertion "assert_equal"
+    assert_equal 5, 2 + 3
   end
-  
-  it 'retourne le bon résultat avec des nombres négatifs' do
-    expect(add(-5, 2)).to eq(-3)
-  end
+
 end
-```
+````
 
-Dans cet exemple, nous définissons une méthode "add" qui ajoute deux nombres. Puis, nous utilisons RSpec pour tester cette méthode en vérifiant si elle retourne le bon résultat pour différentes entrées. Avec ce genre de tests, nous pouvons être sûrs que notre code fonctionne correctement.
+Pour lancer les tests, il suffit d'exécuter le fichier avec la commande "ruby" suivie du nom du fichier.
 
-## Une plongée plus profonde
+Par exemple, si votre fichier s'appelle "calculator_test.rb", vous pouvez exécuter vos tests en tapant dans votre terminal :
 
-En écrivant des tests en Ruby, vous pouvez également utiliser des mocks et des stubs pour simuler des objets et des interactions avec d'autres parties de votre code. Cela permet de tester des parties spécifiques de votre code sans dépendre de systèmes externes. Les tests vous permettent également de documenter votre code et de faciliter sa maintenance en cas de modifications futures.
+````bash
+ruby calculator_test.rb
+````
 
-# Voir aussi
+Vous devriez voir une sortie qui indique si les tests ont réussi ou échoué.
 
-- [Documentation RSpec](https://rspec.info)
-- [Documentation MiniTest](https://github.com/seattlerb/minitest)
-- [Article sur l'importance des tests en Ruby](https://medium.com/@adrianstelmasik/why-testing-is-important-for-ruby-projects-8e83dac177a0)
+## Plongée en profondeur
+
+Il existe différents types de tests, chacun ayant un objectif spécifique. Les tests unitaires permettent de vérifier que chaque morceau de code fonctionne correctement de manière isolée. Les tests d'intégration sont utilisés pour vérifier que toutes les parties du code communiquent bien entre elles. Les tests fonctionnels sont conçus pour tester le code du point de vue de l'utilisateur. Avec tous ces différents types de tests, il est possible de s'assurer de la robustesse et de la cohérence de votre code.
+
+De plus, en utilisant des tests automatisés, vous pourrez économiser du temps et de l'énergie en évitant de devoir tester manuellement votre code à chaque modification.
+
+## Voir aussi
+
+- [Documentation officielle Ruby](https://www.ruby-lang.org/fr/documentation/)
+- [Tutoriel sur les tests en Ruby](https://bundler.io/guides/testing.html)

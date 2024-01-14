@@ -1,49 +1,36 @@
 ---
-title:    "Elm: Säännöllisten lausekkeiden käyttö"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/using-regular-expressions.md"
+title:                "Elm: Säännöllisten ilmaisujen käyttö"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Regular expressionit ovat tärkeä osa monen ohjelmointikielen työkalupakkia, myös Elm-kielellä. Niitä käytetään etsimään, korvaamaan ja muokkaamaan tekstiä helposti ja tehokkaasti.
+Säännölliset lausekkeet ovat tärkeä osa ohjelmoinnin maailmaa, sillä ne tarjoavat tehokkaan tavan hakea ja muokata tekstiä. Ne ovat erityisen hyödyllisiä silloin, kun tarvitsemme tarkkoja hakuja ja muokkauksia tekstissä. Elm-ohjelmointikielessä käytävät säännölliset lausekkeet ovat erittäin tehokkaita ja niitä kannattaa opetella käyttämään.
 
-## Kuinka käytät regular expressioneja Elm-ohjelmoinnissa
+## Kuinka käyttää säännöllisiä lausekkeita Elm-ohjelmoinnissa
 
-Regular expressioneja käytetään erilaisissa ohjelmointitehtävissä, kuten tekstin validoinnissa, hakemisessa ja korvaamisessa. Näitä tehtäviä varten Elm tarjoaa RegularExpressions-moduulin, jonka voit tuoda käyttöösi yläpuolella olevalla import-lauseella.
-
-```Elm
-import RegularExpressions exposing (..)
-```
-
-Seuraavaksi voit käyttää moduulin tarjoamia funktioita luodaksesi regular expressionin, etsiäksesi sitä tekstistä ja käsitelläksesi tuloksen. Alla on esimerkki tekstin validoinnista, jossa tarkistetaan, onko syötetty sähköpostiosoite oikeassa muodossa.
+Säännöllisten lausekkeiden käyttö Elm-ohjelmoinnissa tapahtuu Regex-moduulin avulla. Moduuli tarjoaa useita funktioita, jotka mahdollistavat säännöllisten lausekkeiden käytön. Seuraavan esimerkin avulla voit helposti ymmärtää, kuinka säännöllisiä lausekkeita käytetään Elm-ohjelmoinnissa:
 
 ```Elm
-validoiSähköposti : String -> Bool
-validoiSähköposti sähköposti =
-    let
-        regex = RegExp.fromString "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$"
-    in
-        case regex of
-            Ok r -> 
-                case RegExp.find r sähköposti of
-                    Just _ -> True
-                    Nothing -> False
-            Err _ -> False
+import Regex
+
+-- Etsitään sana "tervetuloa" tekstistä ja korvataan se sanalla "hei"
+teksti = "Tervetuloa Elm-maailmaan!"
+uusiTeksti = Regex.replace (Regex.regex "tervetuloa") (always "hei") teksti
+-- Tulos: "Hei Elm-maailmaan!"
 ```
 
-Yllä oleva koodi käyttää RegularExpressions-moduulin `find`-funktiota etsimään sähköpostiosoitetta vastaavan regular expressionin. Jos osoite löytyy, funktio palauttaa `Just`-arvon, muussa tapauksessa `Nothing`-arvon.
+Tässä esimerkissä tuodaan ensin Regex-moduuli ja määritellään sitten teksti, jossa haetaan ja korvataan sana. Käytämme Regex.replace-funktiota, joka ottaa ensimmäisenä parametrina etsittävän lausekkeen (Regex.regex) ja toisena parametrina muutoksen, joka halutaan tehdä (always "hei"). Lopuksi tallennamme uuden tekstin muuttujaan ja sen tuloksena saamme halutun lopputuloksen.
 
-## Syventävä sukellus
+## Syvemmälle säännöllisten lausekkeiden käyttöön
 
-Vaikka regular expressioneja voidaan käyttää moniin eri tehtäviin, niiden käyttö voi olla aluksi haastavaa ja hämmentävää. Onkin tärkeää ymmärtää perusteet, kuten mitä merkityksiä eri erikoismerkit ja metakarakterit kuten `^`, `$` ja `+` tarkoittavat.
-
-On myös hyvä huomata, että regular expressioneilla on erilaisia syntaksimuotoja eri ohjelmointikielissä. Siksi kannattaa tutustua tarkasti Elm-kielellä käytettyyn syntaksiin.
+Säännöllisten lausekkeiden syvemmän ymmärtämisen kannalta on hyödyllistä tutustua Regex-moduulin tarjoamiin eri funktioihin ja niiden käyttötapoihin. Voit esimerkiksi käyttää Regex.find-funktiota, joka hakee tietystä tekstistä ensimmäisen osuman halutulle säännölliselle lausekkeelle. Voit myös käyttää Regex.split-funktiota, joka jakaa tekstin säännöllisen lausekkeen perusteella osiin.
 
 ## Katso myös
 
-- [Elm RegularExpressions-moduuli](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Regular expressionien opas](https://www.regular-expressions.info/elm.html)
-- [Elm-ohjelmointikielen virallinen sivusto](https://elm-lang.org/)
+- Elm-kielessä käytettävät säännölliset lausekkeet: https://package.elm-lang.org/packages/elm/regex/latest/
+- Säännöllisten lausekkeiden opas: https://www.regular-expressions.info/

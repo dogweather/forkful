@@ -1,50 +1,56 @@
 ---
-title:    "C: 現在の日付を取得する"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/getting-the-current-date.md"
+title:                "C: 現在の日付を取得する"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-プログラマーにとって、現在の日付を取得することは重要なタスクの一つです。例えば、ファイル名やログファイルのタイムスタンプを自動的に付ける必要がある場合や、特定の日付に処理を制限する必要がある場合など、様々なシナリオで日付を取得することが必要になります。
+## なぜ日付を取得する必要があるのか
 
-## 方法
-C言語では、現在の日付を取得するためにtime.hヘッダーファイルを使用します。まずはこのヘッダーファイルをインクルードしましょう。
+日付を取得することは、プログラミングにおいて非常に重要です。特定の日付を取得したい場合や、プログラムの実行時の日付を取得したい場合など、さまざまな理由があります。また、日付を取得することで、日付を処理する必要があるデータベースやアプリケーションを作成することができます。
 
-```C
+## 使い方
+
+日付を取得する方法は、プログラミング言語によって異なりますが、C言語では標準ライブラリに含まれている「time.h」ライブラリを使用することができます。具体的なコーディング例を以下に示します。
+
+```
+#include <stdio.h>
 #include <time.h>
+
+int main()
+{
+    //現在の時刻を取得
+    time_t now = time(NULL);
+    //整形して出力
+    printf("%s", ctime(&now));
+    return 0;
+}
+
 ```
 
-次に、struct tmという構造体を使用して現在の日付を取得します。struct tmは時刻、月、日、年などの情報を保持するための構造体です。
+上記のコードを実行すると、次のような出力が得られます。
 
-```C
-struct tm current_date = *localtime(time(NULL));
+```
+Mon Jan 20 20:54:00 2020
 ```
 
-この方法では、現在の日付を取得し、current_date変数に格納しています。ただし、このままでは読みやすい形ではないため、strftime()関数を使用して現在の日付を任意の形式で出力することができます。
-
-```C
-strftime(date_str, 50, "%Y-%m-%d", &current_date); // date_strは現在の日付の文字列を格納するバッファ
-printf("現在の日付は%sです。", date_str); // 現在の日付は2021-10-20です。
-```
+これで、現在の日付を取得することができました。また、C言語では日付を取得する他にも、日付を比較するための関数や日付を計算するための関数なども提供されています。
 
 ## ディープダイブ
-現在の日付を取得するには、time()関数を使用します。time()関数はUTC時間からの経過秒数を返すため、そのままでは読みやすい形ではありません。そのため、localtime()関数を使用して、現在のローカルタイムを返すように修正します。
 
-また、time_t型の変数に経過秒数を格納することで、より詳細な情報を取得することもできます。例えば、tm_sec、tm_min、tm_hourなど、それぞれ時間、分、秒の情報を取得することができます。
+では、深く日付を取得する仕組みを見てみましょう。C言語では、日付や時間を表現するために「time_t」というデータ型を使用します。これは、1970年1月1日午前0時からの経過秒数を表現するもので、整数型の値です。また、プログラム内で日付を表現するためには、構造体「tm」を使用します。
 
-```C
-time_t current_time = time(NULL);
-struct tm *current_date = localtime(&current_time);
-int hour = current_date->tm_hour; // 現在の時を取得
-int minute = current_date->tm_min; // 現在の分を取得
-int second = current_date->tm_sec; // 現在の秒を取得
-```
+さらに、「time.h」ライブラリには、時間や日付の演算や比較を行うための関数が収められています。詳しくは、公式ドキュメントや参考文献を参照してください。
 
-## 同様に
+## 参考リンク
 
-[time.hの公式ドキュメント](https://www.ibm.com/docs/en/zos/2.2.0?topic=functions-time-time-date-and-time-type)、 [strftime()関数の使用方法](https://www.man7.org/linux/man-pages/man3/strftime.3.html)、 [ローカルタイムの取得方法](https://stackoverflow.com/questions/1442116/how-to-get-date-and-time-value-in-c-program/)を参考にしてください。
+- [time.h ドキュメント](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [C言語入門 - 日付を操作する](https://www.javadrive.jp/cstart/date/index6.html)
+- [日付・時間関連のライブラリ関数](https://www-asimov.eng.uab.edu/desk_proto/pubs/d_0013.html)
 
-## 同様に
-[time.hヘッダーファイルのチュートリアル](https://www.geeksforgeeks.org/time-h-header-file-in-c-with-examples/)、 [構造体の基本](https://www.tutorialspoint.com/cprogramming/c_structures.htm)、 [Markdownの基本](https://www.markdownguide.org/basic-syntax/)も参考にしてください。
+## 関連ページ
+
+- [time.h ライブラリの使用方法](https://www.javadrive.jp/c_start/time/index1.html)
+- [C言語のチュートリアル - 日付の演算と比較](https://www.youtube.com/watch?v=C11dJUUqgGQ)

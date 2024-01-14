@@ -1,18 +1,17 @@
 ---
-title:    "Go: 「日付を文字列に変換する」"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/converting-a-date-into-a-string.md"
+title:                "Go: 日付を文字列に変換する"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付を文字列に変換する理由は何でしょうか？Go言語での日付の扱い方や、日付を文字列に変換する方法を理解することは、より洗練されたプログラミングを行うために重要です。
+日付を文字列に変換する理由は何でしょうか？Go言語での日付の文字列への変換について説明します。
 
-## 使い方
-
-日付を文字列に変換するには、まずGo言語で日付を表すデータ型を理解する必要があります。日付を表すデータ型には、`time.Time`や`time.Duration`などがあります。以下のコード例を参考にして、日付を文字列に変換する方法を理解しましょう。
+##方法
 
 ```Go
 package main
@@ -23,32 +22,28 @@ import (
 )
 
 func main() {
-	// 現在の日付を取得
 	now := time.Now()
+	fmt.Println("現在の日付:", now)
 
-	// 日付を指定したフォーマットの文字列に変換
-	dateString := now.Format("2006/01/02")
-
-	// 結果を出力
-	fmt.Println(dateString)
-	// 出力結果： 2021/09/29
+	dateString := now.Format("2006年01月02日")
+	fmt.Println("文字列に変換した日付:", dateString)
 }
 ```
 
-このように、`time.Now()`で現在の日付を取得し、`Format()`メソッドを使用して指定したフォーマットの文字列に変換することができます。
+出力結果:
 
-## 深堀り
+```
+現在の日付: 2021-10-17 15:12:32.994306 +0900 KST m=+0.000072301
+文字列に変換した日付: 2021年10月17日
+```
 
-日付を文字列に変換する際には、フォーマットに注意する必要があります。フォーマットによっては、意図した結果が得られない場合があります。また、日付の時差やタイムゾーンの影響をうけることもあります。そのため、日付の取り扱いには注意が必要です。
+この例では、`time.Now()`関数で現在の日時を取得し、`Format()`関数で指定したフォーマットに従って日付を文字列に変換しています。Go言語では、`time`パッケージを利用して日付を扱うことができます。他にも、`Parse()`関数を使って文字列から日付を取得することもできます。
 
-さらに、Go言語では`time.Parse()`メソッドを使用することで、文字列を日付に変換することもできます。これを使用することで、外部から入力された文字列を日付に変換する場合などに便利です。
+## ディープダイブ
 
-## はじめに
+Go言語では、日付を表すデータ型として`time`パッケージの`Time`型があります。これは、タイムゾーン、年月日、時分秒、ナノ秒などの情報を持っています。`Format()`関数を使うことで、この情報を指定したフォーマットに基づいて文字列に変換することができます。また、`Parse()`関数を使うことで、逆に文字列から日付型に変換することもできます。
 
-日付を文字列に変換する方法やデータ型の扱い方を理解することで、より複雑なプログラムを開発することができます。しかし、日付の扱いには注意が必要なので、データ型やフォーマットの理解を深めることが重要です。
+## See Also
 
-## 参考リンク
-
-- [Go言語の日付の扱い方](https://golang.org/pkg/time/)
-- [日付を表すデータ型の一覧](https://golang.org/pkg/time/#Time)
-- [フォーマットについて詳しく学ぶ](https://yourbasic.org/golang/format-parse-string-time-date-example/)
+- [Go言語ドキュメント - timeパッケージ](https://golang.org/pkg/time/)
+- [A Tour of Go - パッケージ](https://go-tour-jp.appspot.com/basics/1)

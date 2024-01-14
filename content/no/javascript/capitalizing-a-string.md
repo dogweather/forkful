@@ -1,79 +1,56 @@
 ---
-title:    "Javascript: Stor bokstav i streng"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/capitalizing-a-string.md"
+title:                "Javascript: Store bokstaver i en streng"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å kunne manipulere strenger i programmering er en viktig ferdighet for enhver utvikler. En av de vanligste stringoperasjonene er å kapitalisere en streng. Dette betyr at alle små bokstaver blir gjort om til store bokstaver. Men hvorfor trenger vi å gjøre dette? Hva er fordelen med å kapitalisere en streng?
+Å skrive kode handler ikke bare om å få programmet til å fungere, men også om å gjøre den leselig og forståelig for andre utviklere. En måte å gjøre dette på er å formatere strenger i riktig form, som å gjøre den første bokstaven i et ord til en stor bokstav. Dette gir en bedre visuell struktur og gjør det enklere å lese koden.
 
-## Hvordan
+## Slik gjør du det
 
-For å kapitalisere en streng i Javascript, kan du bruke den innebygde metoden `.toUpperCase()`. Denne metoden tar ingen parametere og returnerer en kopi av den originale strengen, men med alle bokstavene gjort om til store bokstaver. La oss se på et eksempel:
-
-```Javascript
-let streng = "hei dette er en test";
-let nyStreng = streng.toUpperCase();
-console.log(nyStreng);
-```
-
-Dette vil gi følgende resultat i konsollen:
-```
-"HEI DETTE ER EN TEST"
-```
-
-Som du kan se, ble alle små bokstaver i den originale strengen gjort om til store bokstaver. Dette kan være nyttig når du ønsker å gjøre en streng mer lesbar eller når du ønsker at all input fra brukeren skal være i store bokstaver.
-
-En annen måte å kapitalisere en streng på er å bruke en JavaScript funksjon for å iterere gjennom hver bokstav i strengen og omforme den. La oss se på et eksempel på dette:
+For å kapitalisere en streng, kan du bruke metoden `.toUpperCase()` i kombinasjon med metoden `.charAt()` for å få tak i den første bokstaven i strengen. Deretter kan du kombinere denne bokstaven med resten av strengen ved hjelp av metoden `.substring()`. Her er et eksempel på hvordan dette kan gjøres i Javascript:
 
 ```Javascript
-function kapitaliserStreng(streng) {
-    let kapitalisertStreng = "";
-    for (let i = 0; i < streng.length; i++) {
-        if (streng[i] === " ") {
-            kapitalisertStreng += " ";
-        } else {
-            kapitalisertStreng += streng[i].toUpperCase();
-        }
-    }
-    return kapitalisertStreng;
-}
+let tekst = "dette er en tekst som skal kapitaliseres";
 
-let testStreng = "dette er en test";
-let resultat = kapitaliserStreng(testStreng);
-console.log(resultat);
+// Finner den første bokstaven og konverterer den til stor bokstav
+let førsteBokstav = tekst.charAt(0).toUpperCase();
+
+// Finner resten av strengen og konverterer den til små bokstaver
+let restenAvTekst = tekst.substring(1).toLowerCase();
+
+// Kombinerer den kapitaliserte bokstaven og resten av strengen
+let kapitalisertTekst = førsteBokstav + restenAvTekst;
+
+console.log(kapitalisertTekst); // Output: Dette er en tekst som skal kapitaliseres
 ```
 
-Dette vil gi følgende resultat i konsollen:
-```
-"DETTE ER EN TEST"
+Du kan også bruke en enklere metode som `.replace()` for å erstatte den første bokstaven i strengen med dens kapitaliserte versjon. Denne metoden tar imot en funksjon som parameter, hvor du kan manipulere og returnere den ønskede strengen etter å ha funnet den første bokstaven. Her er et eksempel på hvordan dette kan gjøres:
+
+```Javascript
+let tekst = "dette er en tekst som skal kapitaliseres";
+
+let kapitalisertTekst = tekst.replace(tekst.charAt(0), tekst.charAt(0).toUpperCase());
+
+console.log(kapitalisertTekst); // Output: Dette er en tekst som skal kapitaliseres
 ```
 
-Her har vi brukt en for-løkke for å iterere gjennom hver bokstav i strengen. Dersom bokstaven er et mellomrom, legger vi det til i den kapitaliserte strengen uten å gjøre noen endringer. Hvis bokstaven derimot er en liten bokstav, bruker vi metoden `toUpperCase()` for å gjøre den om til en stor bokstav og legge den til i den kapitaliserte strengen. Til slutt returnerer vi den kapitaliserte strengen.
+Det finnes også mange innebygde funksjoner og biblioteker som kan kapitalisere strenger på en enkel måte, avhengig av hvilket programmeringspråk eller bibliotek du bruker.
 
 ## Dypdykk
 
-Når vi skal kapitalisere en streng, kan vi også ta hensyn til språkgenerelle regler. For eksempel er det vanlig å ha små bokstaver i artikler og preposisjoner på norsk. Dersom vi ønsker å følge disse reglene, kan vi bruke en funksjon for å sjekke om bokstaven er en artikkel eller preposisjon før vi gjør den om til en stor bokstav. Her er et eksempel på en slik funksjon:
+I tillegg til å bruke kapitalisering for å gjøre koden mer lesevennlig, kan det også være nyttig i situasjoner der du ønsker å sammenligne to strenger. Ved å kapitalisere begge strengene, vil de bli behandlet som like hvis de inneholder samme ord med samme store og små bokstaver.
 
-```Javascript
-function kapitaliserStrengNorsk(streng) {
-    let artikler = ["den", "det", "en", "et", "de", "som", "til", "i", "på", "av"];
-    let kapitalisertStreng = "";
-    let ord = streng.split(" ");
-    for (let i = 0; i < ord.length; i++) {
-        let bokstaver = ord[i].toLowerCase();
-        if (artikler.includes(bokstaver)) {
-            kapitalisertStreng += bokstaver + " ";
-        } else {
-            kapitalisertStreng += bokstaver[0].toUpperCase() + bokstaver.slice(1) + " ";
-        }
-    }
-    return kapitalisertStreng.trim();
-}
+Det er også viktig å være oppmerksom på at kapitalisering er forskjellig fra å endre bokstaver til store eller små. For eksempel vil en streng som allerede er helt i stor bokstav, fortsatt være i stor bokstav selv etter å ha blitt kapitalisert.
 
-let testStreng = "jeg liker å lese på nynorsk";
-let resultat = kapitaliserStrengNorsk(testStreng);
-console
+## Se også
+
+- [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

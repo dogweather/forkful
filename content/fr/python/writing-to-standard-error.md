@@ -1,37 +1,43 @@
 ---
-title:    "Python: Écrire vers l'erreur standard"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-to-standard-error.md"
+title:                "Python: Écrire vers l'erreur standard"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Ecrire dans la sortie d'erreur standard peut sembler intimidant pour de nombreux programmeurs débutants, mais c'est une compétence importante à maîtriser. Ce processus vous permet d'afficher des messages d'erreur et de débogage dans votre code, ce qui peut vous aider à mieux comprendre et résoudre les problèmes dans vos programmes.
+Écrire vers la sortie d'erreur standard, également connu sous le nom de *stderr*, est une compétence importante à acquérir en tant que développeur Python. Cela peut sembler intimidant au début, mais cela peut rendre le débogage et la gestion des erreurs plus efficaces.
 
 ## Comment faire
 
-Voici un exemple simple qui montre comment écrire dans la sortie d'erreur standard en utilisant le module `sys` en Python :
+Pour écrire vers la sortie d'erreur standard en Python, vous pouvez utiliser la fonction `sys.stderr.write()` qui prend en paramètre une chaîne de caractères à écrire. Voici un exemple de code :
 
 ```Python
 import sys
 
-sys.stderr.write("Erreur: la valeur entrée n'est pas un nombre entier")
+sys.stderr.write("Oops, une erreur s'est produite !\n")
 ```
+La sortie de ce code sera :
 
-Lorsque vous exécutez ce code, vous remarquerez que le message d'erreur est affiché en rouge, séparé du reste de votre programme. Cela permet de le distinguer des autres sorties et de le rendre plus visible pour le débogage.
-
-Vous pouvez également utiliser la méthode `.flush()` pour forcer l'affichage immédiat des messages dans la sortie d'erreur standard, plutôt que d'attendre la fin de l'exécution du programme.
+```
+Oops, une erreur s'est produite !
+```
 
 ## Plongée en profondeur
 
-Lorsque vous écrivez dans la sortie d'erreur standard, il est important de noter que cela ne garantit pas que le programme s'arrêtera. En effet, les erreurs peuvent être ignorées ou gérées par des blocs `try/except` dans votre code.
+En écrivant vers la sortie d'erreur standard, vous pouvez ajouter des informations supplémentaires sur une erreur pour faciliter le processus de débogage. Vous pouvez également utiliser la fonction `sys.stderr.flush()` pour vider immédiatement le contenu de la mémoire tampon vers la sortie d'erreur standard.
 
-De plus, il est important de toujours fermer la sortie d'erreur standard `sys.stderr` après l'avoir utilisée, en utilisant la méthode `.close()`.
+De plus, il est possible d'utiliser la redirection de sortie pour enregistrer les erreurs dans un fichier plutôt que de les afficher à l'écran. Pour ce faire, vous pouvez utiliser `sys.stderr = open("erreurs.log", "w")` pour rediriger la sortie d'erreur standard vers un fichier nommé "erreurs.log".
 
 ## Voir aussi
 
-- [Documentation officielle Python - Manipulation de la sortie d'erreur standard](https://docs.python.org/fr/3/library/sys.html#sys.stderr)
-- [Article sur la gestion des erreurs en Python](https://realpython.com/python-exceptions/)
-- [Guide de débogage en Python](https://www.fullstackpython.com/debugging.html)
+Pour en savoir plus sur la gestion des erreurs en Python, vous pouvez consulter ces ressources :
+
+- [Didacticiel sur les erreurs et les exceptions en Python](https://realpython.com/python-exceptions/)
+- [Documentation officielle sur la sortie d'erreur standard en Python](https://docs.python.org/fr/3/library/sys.html#sys.stderr)
+- [Référence sur la gestion des erreurs en Python](https://docs.python.org/fr/3/tutorial/errors.html)
+
+Maintenant, vous êtes prêt à écrire vers la sortie d'erreur standard en Python ! Utilisez cette compétence pour améliorer votre code et faciliter le processus de débogage. Bon codage !

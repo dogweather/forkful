@@ -1,39 +1,66 @@
 ---
-title:    "Javascript: Capitaliser une chaîne de caractères"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/capitalizing-a-string.md"
+title:                "Javascript: Majuscule d'une chaîne de caractères"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Pourquoi
 
-Vous êtes probablement familier avec le concept de capitalisation de chaînes de caractères dans les langages de programmation. Mais pourquoi voudriez-vous le faire en premier lieu ? La réponse est simple : la capitalisation permet de rendre vos données plus cohérentes et plus lisibles dans vos scripts Javascript.
+Il est souvent nécessaire de capitaliser une chaîne de caractères en programmant en Javascript. Cela peut être utile pour mettre en évidence certains mots dans une phrase, pour uniformiser le style de texte ou pour de nombreuses autres raisons. Dans cet article, nous allons explorer comment capitaliser une chaîne de caractères en utilisant Javascript et pourquoi nous pourrions le faire.
 
-## Comment faire 
+## Comment faire
 
-Il existe plusieurs façons d'implémenter la capitalisation de chaînes de caractères en Javascript. Voici deux exemples basiques avec leurs résultats :
-
-```Javascript
-var nom = "julien";
-console.log(nom.toUpperCase()); // affichera "JULIEN"
-```
+Pour capitaliser une chaîne de caractères en Javascript, nous pouvons utiliser la méthode `toUpperCase()`. Cette méthode convertit tous les caractères d'une chaîne en lettres majuscules. Voyons un exemple concret :
 
 ```Javascript
-var titre = "javascript est fantastique";
-console.log(titre.charAt(0).toUpperCase() + titre.slice(1)); // affichera "Javascript est fantastique"
+let phrase = "programmation en javascript";
+
+let phraseCapitalize = phrase.toUpperCase();
+
+console.log(phraseCapitalize);
+// affiche "PROGRAMMATION EN JAVASCRIPT"
 ```
 
-Comme vous pouvez le voir, la première méthode utilise la méthode `toUpperCase()` pour convertir une chaîne de caractères entière en majuscules. La seconde méthode utilise une combinaison de méthodes pour convertir seulement la première lettre en majuscule tout en conservant le reste de la chaîne en minuscules.
+Dans cet exemple, nous créons une variable `phrase` avec la valeur "programmation en javascript". Ensuite, nous utilisons la méthode `toUpperCase()` pour capitaliser la chaîne et enfin nous affichons le résultat dans la console.
 
-## Plongée en profondeur 
+Vous pouvez également capitaliser uniquement le premier caractère d'une chaîne en utilisant la méthode `charAt()` et la concaténation de chaînes. Voici un exemple :
 
-Maintenant que vous savez comment capitaliser une chaîne de caractères en Javascript, plongeons un peu plus en profondeur pour comprendre ce qui se passe réellement. En Javascript, les chaînes de caractères sont des objets et ont donc accès à des méthodes, comme `toUpperCase()` et `charAt()`. En utilisant ces méthodes et en combinant avec d'autres outils comme `slice()`, vous pouvez manipuler vos chaînes de caractères selon vos besoins.
+```Javascript
+let str = "ma chaîne de caractères";
+let strCapitalize = str.charAt(0).toUpperCase() + str.slice(1);
 
-## Voir aussi 
+console.log(strCapitalize);
+// affiche "Ma chaîne de caractères"
+```
 
-Pour en savoir plus sur la manipulation de chaînes de caractères en Javascript, vous pouvez consulter les ressources suivantes :
+Dans cet exemple, nous utilisons la méthode `charAt()` pour extraire le premier caractère de la chaîne, puis nous utilisons la méthode `toUpperCase()` pour le convertir en majuscule. Enfin, nous concaténons cette lettre avec le reste de la chaîne en utilisant la méthode `slice()`.
 
-- [Documentation officielle de Javascript sur les méthodes de chaînes de caractères] (https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String).
-- [Les différentes façons de capitaliser une chaîne de caractères en Javascript] (https://dev.to/samanthaming/capitalize-the-first-letter-of-a-string-in-javascript-2bkf).
-- [Un guide complet sur les opérations de manipulation de chaînes de caractères en Javascript] (https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-javascript).
+## Plongée en profondeur
+
+Maintenant que nous savons comment capitaliser une chaîne de caractères en Javascript, voyons pourquoi cela peut être utile. Comme mentionné précédemment, la capitale peut être utilisée pour mettre en évidence certains mots dans une phrase, mais elle peut également être nécessaire pour des raisons de style ou de formatage.
+
+Un cas d'utilisation courant est lorsque nous souhaitons afficher le nom et le prénom d'une personne avec la première lettre de chaque mot en majuscule. Nous pouvons utiliser la méthode `split()` pour séparer le nom et le prénom en deux chaînes, puis capitaliser chacune d'entre elles avant de les concaténer à nouveau. Voyons un exemple :
+
+```Javascript
+let fullName = "jean dupont";
+let names = fullName.split(" ");
+let firstNameCapitalize = names[0].charAt(0).toUpperCase() + names[0].slice(1);
+let lastNameCapitalize = names[1].charAt(0).toUpperCase() + names[1].slice(1);
+let capitalizedFullName = firstNameCapitalize + " " + lastNameCapitalize;
+
+console.log(capitalizedFullName);
+// affiche "Jean Dupont"
+```
+
+Nous utilisons la méthode `split()` pour séparer la chaîne `fullName` en deux chaînes : "jean" et "dupont". Ensuite, nous appliquons la méthode `toUpperCase()` à la première lettre de chaque chaîne et concaténons les résultats pour obtenir "Jean Dupont".
+
+Vous pouvez également utiliser cette méthode pour capitaliser les initiales d'un acronyme ou pour mettre en forme une date en majuscules.
+
+## Voir aussi
+
+- [La méthode `toUpperCase()` sur MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/toUpperCase)
+- [La méthode `charAt()` sur MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/charAt)
+- [La méthode `slice()` sur MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/slice)

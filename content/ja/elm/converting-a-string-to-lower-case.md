@@ -1,58 +1,37 @@
 ---
-title:    "Elm: 文字列を小文字に変換する"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/converting-a-string-to-lower-case.md"
+title:                "Elm: 「文字列を小文字に変換する」"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-変数の値を小文字に変換する必要性について、1-2文で説明します。
+Stringを小文字に変換することに関心があるかもしれません。例えば、入力されたユーザー名やパスワードを小文字に変換して、大文字と小文字を区別せずに認証する必要がある場合があります。また、文字列を比較する際に、大文字と小文字を区別せずに処理したい場合もあります。
 
-コード内で扱う文字列を整理するときに、大文字と小文字の区別があると混乱を招くことがあります。そのため、文や単語をすべて小文字に変換することで、コードをより一貫性のあるものにすることができます。
+## 方法
 
-## やり方
-
-Elmプログラミング言語で文字列を小文字に変換する方法は簡単です。下記のコードブロックを参考にしてください。
+文字列を小文字に変換するには、Stringモジュールの`toLower`関数を使用します。下記の例では、文字列 "Elm Programming" を小文字に変換し、コンソールに出力しています。
 
 ```Elm
-import String
+import String exposing (toLower)
 
-String.toLower "HELLO" -- Output: "hello"
+main =
+    let
+        inputString = "Elm Programming"
+        convertedString = toLower inputString
+    in
+        convertedString
 ```
 
-ここでは、StringモジュールのtoLower関数を使用して、"HELLO"という文字列を小文字に変換しています。この関数は他のモジュールに比べると特に簡単なため、初心者でも簡単に使いこなすことができるでしょう。
-
-次に、変数として定義した文字列を小文字に変換する場合はどうなるでしょうか。
-
-```Elm
-import String
-
-myString = "WORLD"
-
-String.toLower myString -- Output: "world"
-```
-
-上記のコードでは、変数myStringに代入された"WORLD"をtoLower関数に渡して、文字列を小文字に変換しています。これでコード内での大文字・小文字の区別をなくすことができます。
+上記のコードを実行すると、"elm programming"という出力が得られます。文字列が小文字に変換されたことが確認できます。
 
 ## 深堀り
 
-文字列を小文字に変換する方法は単純に見えますが、内部的にはどのように処理されているのでしょうか。実際には、以下のようなアルゴリズムが使われています。
+Stringモジュールには、文字列を大文字・小文字を無視して比較するための`compareIgnoreCase`や、特定の文字列を検索してその位置を返す`indexes`といった便利な関数があります。また、文字列操作以外にも、日付や数値の操作など、さまざまな便利な関数が含まれています。詳細は公式ドキュメントを参照してください。
 
-1. 最初に変換する文字列をUTF-16に変換する。
-2. 変換後のUTF-16をUnicodeに変換する。
-3. 最後に、Unicodeを小文字に変換する。
-
-これにより、様々な言語や文字に対応した文字列の変換が可能になります。
-
-## 参考リンク
-
- - [Elm Official Documentation on Strings](https://package.elm-lang.org/packages/elm/core/latest/String)
- - [String.toLower source code on GitHub](https://github.com/elm/core/blob/1.0.5/src/String.elm#L149-L155)
- - [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](http://www.joelonsoftware.com/articles/Unicode.html)
-
-## 参考になる記事
-
- - [文字列操作について学ぼう！ - Qiita](https://qiita.com/nariaki3551/items/8f0d807d6d907b5f28f5) 
- - [Elmで文字列操作をマスターする！ - Qiita](https://qiita.com/corona/items/33c41a6552b249554171)
+## See Also
+- Elm公式ドキュメント: https://guide.elm-lang.org/
+- Stringモジュールのドキュメント: https://package.elm-lang.org/packages/elm/core/latest/String

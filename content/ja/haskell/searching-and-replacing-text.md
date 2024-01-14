@@ -1,53 +1,82 @@
 ---
-title:    "Haskell: テキストの検索と置換"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/searching-and-replacing-text.md"
+title:                "Haskell: テキストの検索と置換"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文章の検索と置換に取り組む理由を説明するための1-2文。
+テキストを検索して置換する作業を行う理由は様々です。例えば、大量のファイルの中から特定の単語を見つけて置き換える必要がある場合や、古いコードを新しいものに更新する必要がある場合などが挙げられます。
 
-文章の検索と置換は、大量のテキストを簡単に修正することができるため、プログラミング作業の効率性を高めることができます。
+## 使い方
 
-## 方法
-
-バージョン管理システムやIDEなどの機能を使用せずに、Haskellを使用してテキストの検索と置換を行う方法を示します。
+まず、Haskellのパッケージ管理ツールであるCabalを使用して、Textパッケージをインストールします。
 
 ```Haskell
--- テキスト内の特定の単語を置換する関数
-replaceWord :: String -> String -> String -> String
-replaceWord target replacement text = unwords [if word == target then replacement else word | word <- words text]
-
--- 実行例
-replaceWord "Hello" "Konichiwa" "Hello world!"
-
--- 出力結果
-"Konichiwa world!"
+cabal install text
 ```
 
-## ディープダイブ
+次に、置換を行いたいファイルを読み込みます。例として、ファイル名を「input.txt」とします。
 
-検索と置換は、HaskellのStringライブラリの多くの関数を使用して実装することができます。また、文字列のパターンマッチングや正規表現など、より高度なテキスト処理の手法を学ぶこともできます。
+```Haskell
+import Data.Text as T
 
-## おすすめ
+main = do
+    input <- readFile "input.txt"
+```
 
-Markdown形式で書かれた文書を検索と置換する方法を学ぶのに役立つリソースを紹介します。
+ファイルを読み込んだ後、置換を行います。以下の例では、文字列「hello」を「こんにちは」に置換しています。
 
-- [Haskellで文字列を処理する](https://qiita.com/henjiganai/items/f78d21415eb4b00ff61c)
-- [正規表現を使った文字列の検索と置換](https://qiita.com/satosystems/items/ee2015ca5afd4fcd0f0f)
-- [正規表現を使ったパターンマッチング](https://qiita.com/ywkt/items/5f3b9f92d2887f090c29)
-- [HaskellでMarkdownを処理する方法](https://stackoverflow.com/questions/9280426/how-to-work-with-markdown-in-haskell) 
+```Haskell
+let output = replace "hello" "こんにちは" input
+```
 
-## おわりに
+最後に、新しいファイルを作成して、置換を行った内容を書き込みます。
 
-今回は、Haskellを使用して文字列の検索と置換を行う方法を紹介しました。これからも、Haskellの強力な文字列操作機能を活用して、より効率的にプログラミングを行いましょう。
+```Haskell
+writeFile "output.txt" output
+```
 
-## 関連リンク
+以上のコードを実行すると、ファイル「output.txt」には置換されたテキストが書き込まれます。
 
-- [Haskellで文字列を処理する](https://qiita.com/henjiganai/items/f78d21415eb4b00ff61c)
-- [正規表現を使った文字列の検索と置換](https://qiita.com/satosystems/items/ee2015ca5afd4fcd0f0f)
-- [正規表現を使ったパターンマッチング](https://qiita.com/ywkt/items/5f3b9f92d2887f090c29)
-- [HaskellでMarkdownを処理する方法](https://stackoverflow.com/questions/9280426/how-to-work-with-markdown-in-haskell)
+## 深堀り
+
+Textパッケージを使用して、置換の他にも検索や編集などのテキスト処理を行うことができます。例えば、次のようにして文字列を検索することができます。
+
+```Haskell
+let search = T.isInfixOf "apple" input
+
+-- inputに「apple」が含まれていれば、searchはTrueを返す
+```
+
+また、テキストを分割してリストに格納することもできます。
+
+```Haskell
+let list = T.splitOn " " input
+
+-- 空白で区切られた単語をリストに格納する
+```
+
+さらに、正規表現を使用してテキストを操作することもできます。
+
+```Haskell
+let output = T.replaceRegex "\\d+" "number" input
+
+-- 数字を"number"に置換する
+```
+
+Textパッケージの詳細な使い方や、他の便利な関数については公式ドキュメントを参照してください。
+
+## 参考リンク
+
+- [Haskell 公式ドキュメント](https://www.haskell.org/documentation/)
+- [Haskell Textパッケージの使用方法](https://hackage.haskell.org/package/text-1.2.3.0/docs/Data-Text.html)
+- [正規表現についてのチュートリアル](https://www.rexegg.com/regex-quickstart.html)
+
+## 関連記事
+
+- [Haskellでファイルの読み書きを行う方法](https://example.com/article/haskell-file-io)
+- [正規表現を使用したテキスト処理の方法](https://example.com/article/regex-text-processing)

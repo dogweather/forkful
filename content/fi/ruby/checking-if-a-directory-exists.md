@@ -1,50 +1,50 @@
 ---
-title:    "Ruby: Tarkistetaan, onko hakemistoa olemassa"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/checking-if-a-directory-exists.md"
+title:                "Ruby: Tarkistaako hakemisto on olemassa"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Tarkista hakemiston olemassaolo
+## Miksi
 
-On monia syitä, miksi haluaisit tarkistaa, onko tietyllä hakemistolla olemassaoleva. Saattaa olla, että ohjelmasi tarvitsee tiettyä hakemistoa toimiakseen, tai ehkä haluat varmistaa, että hakemisto on olemassa ennen kuin tallennat sinne tiedostoja. Tämä on erittäin tärkeä osa ohjelmointia, ja siksi tarkistamme nyt, miten tämä tehdään Rubylla.
+On monia syitä miksi voit haluta tarkistaa, onko kansio olemassa. Yksi yleisin syy on, jos haluat varmistaa, että tietty kansio on luotu ennen kuin suoritat tietyn toiminnon.
 
-## Miten: Koodiesimerkkejä ja tulosteen esittelyä
+## Kuinka tarkistaa kansion olemassaolo
 
-```ruby
-# Tarkista, onko hakemisto olemassa
+Rubyssa voit helposti tarkistaa kansion olemassaolon käyttämällä `File.exist?` -metodia. Tämä metodi ottaa parametrina kansion polun ja palauttaa totuusarvon sen perusteella, löytyykö kyseinen kansio vai ei. Tässä on yksinkertainen esimerkki:
 
-if Dir.exist?("hakemisto_nimi")
-  puts "Hakemisto on olemassa!"
+```Ruby
+if File.exist?("kansio/nimi")
+  puts "Kansio on olemassa"
 else
-  puts "Hakemistoa ei löytynyt."
+  puts "Kansiota ei löydy"
 end
 ```
 
-Tässä yksinkertaisessa koodiesimerkissä käytämme Ruby-metodia `Dir.exist?`, joka tarkistaa parametrina annetun hakemiston olemassaolon. Sen jälkeen tulostetaan ilmoitus, riippuen siitä, onko hakemisto olemassa vai ei. Voit myös käyttää `Dir.exists?`-metodia, joka toimii samalla tavalla.
+Jos `File.exist?` palauttaa `true`, tulostetaan "Kansio on olemassa". Muussa tapauksessa tulostetaan "Kansiota ei löydy".
 
-```ruby
-# Luo uusi hakemisto ja tarkista sen olemassaolo
+## Syvempi sukellus
 
-Dir.mkdir("uusi_hakemisto")
-if Dir.exist?("uusi_hakemisto")
-  puts "Uusi hakemisto luotu ja se on olemassa."
-else
-  puts "Hakemistoa ei löytynyt."
+`File.exist?` -metodi todella tarkistaa, onko tiedosto tai kansio nimeltään samanlainen kuin argumentti. Jos haluat tarkistaa, että kansio on olemassa, mutta sinulla ei ole tarkkaa nimeä, voit käyttää `Dir.exist?` -metodia. Tämä metodi tarkistaa, onko olemassa olevat objektit kansiossa nimetty saman yleisen kaavan mukaan. Esimerkiksi: `Dir.exist?("kansio/*")` palauttaa `true` jos kansiossa on vähintään yksi tiedosto tai kansio.
+
+Kun tarkistat kansion olemassaolon, voit myös käyttää `begin/rescue` -rakennetta käsitelläksesi mahdollisia virheitä. Tämä auttaa välttämään ohjelman kaatumisen, jos esimerkiksi kansio on poistettu samalla kun yrität tarkistaa sen olemassaolon. Tässä on esimerkki:
+
+```Ruby
+begin
+  if Dir.exist?("kansio/*")
+    puts "Jokin kansiossa on olemassa"
+  else
+    puts "Kansiota ei löydy"
+  end
+rescue
+  puts "Virhe tarkistaessa kansion olemassaoloa"
 end
 ```
-
-Tässä toisessa esimerkissä luomme uuden hakemiston käyttämällä `Dir.mkdir`-metodia ja sitten tarkistamme sen olemassaolon `Dir.exist?`-metodilla. Voit kokeilla näitä esimerkkejä omassa Ruby-ympäristössäsi ja näet, miten ne toimivat.
-
-## Syventävä sukellus
-
-Rubyssa on myös muita tapoja tarkistaa hakemiston olemassaolo, kuten `FileTest.exist?(path)`-metodi, joka voi tarkistaa olemassaolon millä tahansa tiedostopolulla. Voit myös käyttää `File.directory?(path)`-metodia, joka tarkistaa, onko annettu polku hakemisto vai ei.
-
-On myös tärkeää huomata, että tarkistamalla hakemiston olemassaoloa, koodin suoritus voi hidastua, jos hakemisto on suuri tai jos tiedostojärjestelmä on hidas. Käytä siis harkintaa ja hienosäädä koodiasi, jos teet toistuvia tarkistuksia hakemiston olemassaololle.
 
 ## Katso myös
 
-- [Ruby Dir-luokka](https://ruby-doc.org/core-2.7.2/Dir.html)
-- [Ruby FileTest-moduuli](https://ruby-doc.org/core-2.7.2/FileTest.html)
-- [Ruby tiedostojärjestelmätoiminnot](https://www.rubyguides.com/ruby-tutorial/working-with-files/)
+- Rubyn `File`-luokan dokumentaatio: https://ruby-doc.org/core-2.7.2/File.html
+- Rubyn `Dir`-luokan dokumentaatio: https://ruby-doc.org/core-2.7.2/Dir.html
+- Rubyn virallinen opas: https://www.ruby-lang.org/fi/documentation/

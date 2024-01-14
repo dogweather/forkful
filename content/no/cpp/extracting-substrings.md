@@ -1,81 +1,63 @@
 ---
-title:    "C++: Uttrekking av undertekster"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/extracting-substrings.md"
+title:                "C++: Uttrekk av delstrenger"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Mange programmerere har støtt på behovet for å hente subtstrenger fra en større tekststreng. Dette kan være nyttig for å behandle data eller for å søke i en tekst etter en spesifikk informasjon. Det kan også være en del av en større algoritme eller funksjon. Uansett årsak, er evnen til å ekstrahere substrings viktig i programmering.
+Noen ganger i kodingen vår trenger vi bare en del av en streng. Dette kan være for å søke etter et bestemt ord eller uttrykk, eller for å behandle en del av en tekst på en annen måte enn resten. Å ekskludere substrings kan være en kraftig måte å manipulere data på i C++.
 
-## Slik gjør du det
+## Hvordan
 
-For å ekstrahere substrings i C++, må man bruke noen innebygde funksjoner som finnes i C++-biblioteket. Først må man inkludere "string" biblioteket ved å bruke #include kommandoen:
+For å ekstrahere en substring i C++, må vi bruke funksjonen `substr()`. Denne funksjonen tar to parametere: startposisjonen for substrings og lengden på substrings vi ønsker å ekskludere fra den opprinnelige strengen. La oss se på et eksempel:
 
 ```C++
+#include <iostream>
 #include <string>
+
+using namespace std;
+
+int main() {
+    string name = "Jonathan";
+    string last_name = name.substr(3, 3);
+    cout << last_name;
+
+    return 0;
+}
 ```
 
-Deretter kan man bruke funksjonen "substr()" som tar inn to parametere - startindeksen og lengden på substringen. Her er et eksempel:
+I dette tilfellet vil utgangen være "tha", siden vi starter på indeks 3 (som er bokstaven "t" i "Jonathan") og trekker ut tre tegn fra strengen.
+
+Vi kan også bruke funksjonen `find()` for å finne posisjonen til et bestemt tegn eller uttrykk i en streng. Dette kan være nyttig hvis vi ikke vet den nøyaktige startposisjonen for substrings. La oss se på et annet eksempel:
 
 ```C++
-// Opprett en tekststreng
-string tekst = "Dette er en tekststreng";
+#include <iostream>
+#include <string>
 
-// Ekstraher en substring fra startindeks 11 og lengde 5
-string substring = tekst.substr(11, 5);
+using namespace std;
 
-// Skriv ut resultatet
-cout << substring << endl;
+int main() {
+    string greeting = "God morgen, alle sammen!";
+    int pos = greeting.find(",");
+    string time = greeting.substr(pos + 2, 9);
+    cout << "Klokken er " << time << " om morgenen.";
 
-// Output: "tekst"
+    return 0;
+}
 ```
 
-Man kan også bruke funksjonen "find()" til å finne indeksen til en spesifikk substring, og deretter bruke "substr()" til å ekstrahere den. Her er et eksempel:
-
-```C++
-// Finn startindeksen til substringen "er"
-int indeks = tekst.find("er");
-
-// Ekstraher en substring fra startindeksen og lengden 6
-substring = tekst.substr(indeks, 6);
-
-// Skriv ut resultatet
-cout << substring << endl;
-
-// Output: "er en"
-```
+Her finner vi posisjonen til kommaet i strengen og bruker deretter `substr()` til å ekskludere tiden fra strengen.
 
 ## Dypdykk
 
-I tillegg til å bruke de innebygde funksjonene "substr()" og "find()", kan man også implementere sin egen substring-funksjon. Dette er nyttig dersom man ønsker å tilpasse funksjonen til et spesifikt formål eller ønsker å forbedre ytelsen. Om man bruker en "for loop" til å søke gjennom tekststrengen og hente ut karakterer i en gitt range, kan man lage en funksjon som dette:
-
-```C++
-string substring(string tekst, int start, int lengde){
-
-    // Opprett et objekt for den ekstraherte substringen
-    string substring = "";
-
-    // Gå gjennom hver karakter i teksten
-    for (int i = start; i < start + lengde; i++){
-        
-        // Legg til karakteren i substringen
-        substring += tekst[i];
-    }
-
-    // Returner den ekstraherte substringen
-    return substring;
-}
-
-// Eksempel på bruk
-string resultat = substring("Dette er en tekststreng", 11, 5);
-
-// Output: "tekst"
-```
+Når vi bruker `substr()` i en løkke, kan det være lurt å være oppmerksom på at `substr()` endrer startposisjonen for strenger. Dette kan føre til uventede resultater hvis vi ikke tar hensyn til det. For å unngå dette, kan vi bruke `substr()` sammen med funksjonen `erase()` som sletter en del av en streng uten å endre startposisjonen.
 
 ## Se også
 
-- [String-funksjoner i C++](https://www.geeksforgeeks.org/cpp-string-class-and-its-applications/)
-- [Hva er substrings](https://en.wikipedia.org/wiki/Substring)
+- [C++ string-funksjoner fra cplusplus.com](https://www.cplusplus.com/reference/string/string/)
+- [Offisiell C++ dokumentasjon for string-funksjoner](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [Et innblikk i C++ strenger fra learncpp.com](https://www.learncpp.com/cpp-tutorial/char-arrays-and-stdstrings/#substring)

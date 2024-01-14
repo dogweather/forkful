@@ -1,67 +1,62 @@
 ---
-title:    "Java: Obteniendo la fecha actual"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/getting-the-current-date.md"
+title:                "Java: Obteniendo la fecha actual"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué obtener la fecha actual? 
+## Por qué
+En la programación, es muy común necesitar la fecha actual para realizar diferentes tareas. Ya sea para llevar un registro de la última vez que se realizó una acción, para mostrar información actualizada a los usuarios o para crear un archivo con la fecha actual en su nombre, la obtención de la fecha actual es un paso importante en muchas aplicaciones.
 
-Obtener la fecha actual es una tarea común y necesaria en la programación en Java. Puede ser útil para mostrar la fecha y hora en una aplicación, para realizar cálculos con fechas o simplemente para registrar cuándo se realizó una acción. A continuación, te mostraré cómo obtener la fecha actual en Java.
-
-## Cómo obtener la fecha actual en Java 
-
-Para obtener la fecha actual en Java, utilizaremos la clase `java.util.Date` y `java.util.Calendar`. Ambas clases tienen métodos para obtener la fecha y hora actual en diferentes formatos. Veamos un ejemplo utilizando ambas clases y su salida en la consola.
+## Cómo
+La forma más sencilla de obtener la fecha actual en Java es utilizando la clase `java.util.Date`. A continuación se muestra un ejemplo de código que imprime la fecha y hora actuales:
 
 ```Java
 import java.util.Date;
-import java.util.Calendar;
 
 public class FechaActual {
     public static void main(String[] args) {
-
-        // Obtener la fecha actual utilizando Date
         Date fecha = new Date();
-        System.out.println("Fecha actual: " + fecha);
-
-        // Obtener la fecha actual utilizando Calendar
-        Calendar calendario = Calendar.getInstance();
-        System.out.println("Fecha actual: " + calendario.getTime());
+        System.out.println("La fecha y hora actuales son: " + fecha);
     }
 }
 ```
 
-Con este código, obtenemos la fecha actual en dos formatos diferentes. La salida en la consola será similar a la siguiente:
+Al ejecutar este código, se obtendrá una salida similar a la siguiente:
 
 ```
-Fecha actual: Mon Oct 18 12:20:36 CEST 2021
-Fecha actual: Mon Oct 18 12:20:36 CEST 2021
+La fecha y hora actuales son: Sun Jun 13 21:04:29 CEST 2021
 ```
 
-Como se puede ver, ambos métodos nos devuelven la fecha y hora actual en formato de `String`. Sin embargo, podemos personalizar el formato utilizando `SimpleDateFormat`, que nos permite especificar un patrón de formato para mostrar la fecha.
+Sin embargo, esta clase tiene algunas limitaciones, por lo que es recomendable utilizar la clase `java.time.LocalDateTime`, introducida en Java 8. Esta clase permite obtener una fecha y hora más precisa, así como realizar operaciones con ellas. A continuación se muestra un ejemplo de cómo imprimir la fecha y hora actuales utilizando esta clase:
 
 ```Java
-// Personalizar formato con SimpleDateFormat
-SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-System.out.println("Fecha actual: " + formato.format(fecha));
+import java.time.LocalDateTime;
+
+public class FechaActual {
+    public static void main(String[] args) {
+        LocalDateTime fecha = LocalDateTime.now();
+        System.out.println("La fecha y hora actuales son: " + fecha);
+    }
+}
 ```
 
-La salida ahora será similar a la siguiente:
+La salida de este código será similar a la siguiente:
 
 ```
-Fecha actual: 18/10/2021 12:20:36
+La fecha y hora actuales son: 2021-06-13T21:04:29.920
 ```
 
-## Profundizando en la obtención de la fecha actual
+## Deep Dive
+La clase `java.time.LocalDateTime` pertenece al paquete `java.time`, el cual ofrece una amplia gama de clases para manejar fechas, horas e incluso zonas horarias en Java. Estas clases son inmutables, lo que significa que no se pueden modificar una vez creadas. Además, también se pueden realizar operaciones matemáticas y de comparación con ellas, lo que las hace muy versátiles.
 
-Ambas clases, `Date` y `Calendar`, tienen métodos para obtener no solo la fecha actual, sino también la hora, la zona horaria, el día de la semana, el año y mucho más. También hay clases adicionales para trabajar con fechas, como `SimpleDateFormat` o `DateTimeFormatter` que nos permiten formatear y parsear fechas en diferentes formatos.
-
-También es importante tener en cuenta que a partir de Java 8, se introdujo la clase `LocalDate` en el paquete `java.time` que nos ofrece más opciones y una manipulación más sencilla de fechas.
+Algunos métodos útiles que ofrece la clase `LocalDateTime` son `now()` para obtener la fecha y hora actuales, `of()` para crear una fecha y hora específica, `plus()` y `minus()` para sumar o restar tiempo, y `isBefore()` e `isAfter()` para comparar fechas y horas. Puedes explorar más sobre estas clases y sus métodos en la documentación oficial de Java.
 
 ## Ver también
+- [Documentación oficial de Java sobre fechas y horas](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Tutorial de Java sobre fechas y horas](https://www.tutorialspoint.com/java8/java8_datetime_api.htm)
+- [Ejemplos prácticos de uso de fechas y horas en Java](https://examples.javacodegeeks.com/core-java/util/date/java-util-date-example/)
 
-- [Documentación de la clase Date en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Documentación de la clase Calendar en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Tutorial de Java SimpleDateFormat](https://www.programiz.com/java-programming/library/simpledateformat)
-- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
+¡Espero que este artículo te haya sido útil para entender cómo obtener la fecha actual en tus proyectos de Java! Recuerda que es importante manejar correctamente las fechas y horas en tus aplicaciones para evitar errores y confusiones. ¡Hasta la próxima!

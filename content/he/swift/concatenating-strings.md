@@ -1,43 +1,44 @@
 ---
-title:    "Swift: צירוף מחרוזות"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/concatenating-strings.md"
+title:                "Swift: ממזג מחרוזות"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
+מחשבות כיצד ניתן ליצור מחרוזות סדורות ואותן הרבה פעמים יש צורך לחבר כמה מחרוזות כדי ליצור מחרוזת אחת ארוכה יותר. מאחר שמחרוזות משמשות כדי להציג מידע למשתמש או לסדרת פעולות, ייתכן שתרצו ללמוד כיצד לחבר מחרוזות בשפת סוויפט.
 
-כתיבת קוד תכנותי ניתן המשימה של חיבור מחרוזות נראית פשוטה מבחינה טכנית, אבל מהם היתרונות האמיתיים של קישור מחרוזות? נדבר על כמה מבני השפה של Swift והפיתויים שהם מביאים ואת כמה דברים שייעזרו לך לקחת משימה זו בצורה חכמה יותר.
+## איך לעשות
+החיבור של שתי מחרוזות בשפת סוויפט יכול להתבצע בעזרת האופרטור "+" או באמצעות הפעולה "append". למשל:
 
-## איך לעשות זאת
+```Swift 
+var message = "שלום"
+var name = "דני"
+print(message + name) 
+// פלט: שלוםדני
 
-תחילה, בואו נתחיל עם פונקציית הפיתרון התדיר ביותר: חיבור של שתי מחרוזות פשוטות. נשתמש בסימן "+" כדי להוסיף את המחרוזות יחד. הנה דוגמה לכתיבת הקוד עם פלט:
-
-```Swift
-let firstString = "שלום,"
-let secondString = "עולם!"
-let resultString = firstString + " " + secondString
-
-print(resultString)
+var answer = "42"
+var explanation = "התשובה לשאלת החיים, היקר"
+answer.append(explanation) 
+print(answer)
+// פלט: 42התשובה לשאלת החיים, היקר
 ```
 
-פיתרון זה ישתמש באופרטור "+" כדי להוסיף פשוט את המחרוזות ביחד וליצור את המחרוזת החדשה שהמכילה גם את "שלום," וגם את "עולם!"
+כמו כן, ניתן לחבר מחרוזות אלפאנומריות כדי ליצור מחרוזות יותר מורכבות:
 
-ביחד עם זאת, אפשר להשתמש גם בפיתרון הקרוב ל-"Increment" לפוינקציות של מחרוזות ביישום של StringInterpolationProtocol. בזמן היישומים, אתה יכול ליצור מחזור ליסט ולכתוב בפיתרון זה מיד את הפונקציה, כמו פה:
-
-```Swift
-let firstString = "אני רוצה לתת דוגמה לתוכנית אימון  - Name= \(myNameValue)"
+```Swift 
+var welcome = "ברוכים הבאים ל"
+var location = "האתר המדהים שלנו"
+var website = welcome + location
+print(website)
+// פלט: ברוכים הבאים להאתר המדהים שלנו
 ```
 
-בדוגמה זו, אתה מבקש לקחת את המחרוזות "אני רוצה לתת דוגמה לתוכנית אימון - Name=" ו"Name Value" להניח ששמך הוא "khalid" ואתה מנגד קרי בסופרמן הפרתיון שיכול לקריא לשם זה ולחזקו זה יחד (אם יש לך כדי לגמור בלייבל שני):
+## מעמק
+התחברות של מחרוזות נחשבת לפעולה יסודית בשפת סוויפט וחשובה להבנת יישומים רבים. כאשר משתמשים בשפת סוויפט כדי ליצור אפליקציות, ניתן להשתמש בחיבור מחרוזות כדי לייצר תוויות או ליצור מחרוזות מורכבות שימושיות למשתמש.
 
-```Swift
-let firstString = "Hello"
-let secondString = "Khalid"
-let resultString = "\(firstString) \(secondString)"
-
-print(resultString)
-```
-
-יכול להיות מוצר ל "שלום כליד" אותו אנחנ
+## ראו גם
+- [מדריך קצר על פעולות מחרוזות בשפת סוויפט](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
+- [הוספת מחרוזות בשפת סוויפט](https://www.ios-blog.co.il/swift-how-to-concatenate-strings/)

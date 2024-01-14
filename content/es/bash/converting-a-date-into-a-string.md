@@ -1,49 +1,56 @@
 ---
-title:    "Bash: Convirtiendo una fecha en una cadena"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/converting-a-date-into-a-string.md"
+title:                "Bash: Convirtiendo una fecha en una cadena"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-¿Has encontrado alguna vez la necesidad de convertir una fecha en una cadena de texto en tus scripts de Bash? Aunque puede parecer un concepto simple, es una tarea común en la programación que puede ahorrar tiempo y mejorar la eficiencia. En este artículo te explicaremos cómo hacerlo y profundizaremos en el proceso detrás de la conversión.
+Convertir una fecha en una cadena de caracteres es una tarea común en la programación. Al convertir una fecha en una cadena, se puede personalizar el formato y presentación de la fecha según las necesidades del usuario.
 
 ## Cómo hacerlo
 
-La forma más sencilla de convertir una fecha en una cadena de texto en Bash es utilizando el comando `date`. Veamos un ejemplo:
+En Bash, se puede utilizar el comando `date` para obtener la fecha actual en diferentes formatos. Para convertir la fecha en una cadena de caracteres, se puede utilizar el siguiente código:
 
 ```Bash
-# Muestra la fecha actual en formato de cadena de texto
-fecha_actual=$(date +"%A, %d de %B de %Y")
-echo $fecha_actual
+fecha=$(date +"%d %b %Y") 
+echo "La fecha actual es: $fecha"
 ```
 
-La salida de este script sería algo como: "Lunes, 12 de Julio de 2021". Aquí, el código `%A` representa el día de la semana, `%d` el día del mes, `%B` el nombre del mes y `%Y` el año en formato de cuatro dígitos. Puedes personalizar el formato utilizando diferentes códigos y combinaciones, dependiendo de tus necesidades.
+Esto mostrará la fecha actual en formato día-mes-año ("dd mmm yyyy"). El código utiliza el parámetro `+"%d %b %Y"` para especificar el formato deseado, donde `%d` representa el día, `%b` el mes abreviado y `%Y` el año en cuatro dígitos. 
 
-Otra forma de realizar la conversión es utilizando la función `strftime` en un script de Bash:
+Pero ¿qué pasa si se quiere utilizar un formato diferente o incluir la hora en la cadena de caracteres? Para ello, se pueden utilizar los siguientes parámetros:
+
+- `%a` para el día abreviado de la semana
+- `%A` para el día completo de la semana
+- `%m` para el número del mes (con ceros iniciales)
+- `%M` para los minutos
+- `%H` para las horas en formato de 24 horas
+- `%I` para las horas en formato de 12 horas
+- `%p` para indicar si es AM o PM
+
+Por ejemplo, para obtener la fecha y hora actuales en formato día-mes-año, seguido de la hora en formato de 12 horas, se puede utilizar el siguiente código:
 
 ```Bash
-# Crea la fecha como un valor de tiempo
-fecha=$(date --date="2021-07-12" +%s)
-
-# Utiliza strftime para convertir la fecha en una cadena
-fecha_convertida=$(strftime "%A, %d de %B de %Y" "$fecha")
-echo $fecha_convertida
+fecha=$(date +"%d %b %Y, %I:%M:%S %p") 
+echo "La fecha y hora actuales son: $fecha"
 ```
 
-La salida sería la misma que en el ejemplo anterior, aunque esta forma te permite trabajar con fechas específicas en lugar de sólo la fecha actual.
+La salida sería algo como "24 Mar 2021, 09:15:02 AM". 
 
 ## Profundizando
 
-Cuando conviertes una fecha en una cadena de texto, en realidad estás realizando una operación de formato. En Bash, los comandos `date` y `strftime` utilizan un formato de fecha y hora conocido como Unix Time o Epoch Time. Este formato cuenta los segundos desde el 1 de enero de 1970, conocido como el "epoch". Al utilizar diferentes combinaciones de códigos en tu comando de conversión, estás extrayendo diferentes partes del tiempo almacenado en una variable Unix Time.
+Para una mayor personalización, se pueden consultar en la documentación de `date` los diferentes parámetros disponibles para formatear la fecha y hora. Además, se pueden utilizar otros comandos de Bash, como `cut` y `grep`, para extraer solo la parte de la fecha o la hora que se desee. 
 
-Además de las opciones que ya hemos mencionado, existen otros códigos que puedes utilizar para personalizar el formato de tu cadena de fecha, como `%H` para la hora en formato de 24 horas, `%M` para los minutos, o `%z` para la zona horaria, entre otros.
+También se pueden utilizar variables para almacenar la fecha y hora convertidas en cadenas y utilizarlas en diferentes partes de un script. Otra opción es utilizar la función `strftime` para convertir una fecha en un formato específico.
 
-En resumen, la conversión de una fecha a una cadena de texto en Bash es una tarea útil y común en la programación, que puede ser realizada rápidamente con los comandos `date` y `strftime`. Ahora que conoces el proceso detrás de la conversión, puedes personalizarla según tus necesidades y mejorar tus scripts de Bash.
+Convertir una fecha en una cadena de caracteres también puede ser útil en aplicaciones web, donde se pueden mostrar las fechas en diferentes idiomas y formatos según las preferencias del usuario. 
 
 ## Ver también
 
-- [Documentación de la función `date` en Linux](https://linux.die.net/man/1/date)
-- [Documentación de la función `strftime` en Linux](https://linux.die.net/man/3/strftime)
+- Documentación de `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation
+- Tutorial de Bash: https://www.hostinger.es/tutoriales/tutorial-bash/
+- Ejemplos de formatos de fecha y hora: https://linuxcommandlibrary.com/man/date.html

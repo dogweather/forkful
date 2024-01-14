@@ -1,39 +1,76 @@
 ---
-title:    "Go: Muuntaa päivämäärä merkkijonoksi"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/converting-a-date-into-a-string.md"
+title:                "Go: Päivämäärän muuntaminen merkkijonoksi"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Go-ohjelmointikielen yksi kätevä ominaisuus on kyky muuntaa päivämäärä tekstiksi. Tämä voi olla hyödyllistä esimerkiksi käyttäjien nähdessä päivämäärän selkeässä muodossa tai tiedot tallennettaessa tietokantaan.
+Monissa Go-ohjelmoinnin projekteissa saattaa joskus olla tarve muuttaa päivämäärä muotoon, joka on ymmärrettävämpi käyttäjälle tai tallennusta varten. Tässä blogikirjoituksessa tutustutaan kuinka tähän tehtävään voidaan lähteä käsiksi kannustamalla lähdekoodeihin ja ketteriin ohjelmistotyökaluihin.
 
-## Miten
+## Kuinka tehdä
 
-Ei ole yksinkertaista tapaa muuntaa Go-ohjelmassa päivämäärää merkkijonoksi, vaan se vaatii muutaman vaiheen suorittamista. Ensimmäinen askel on määritellä päivämäärämuuttuja ja sitten käyttää aikaisempaa pakettia Go-ohjelmassa, joka sisältää ylimääräisiä työkaluja ja toimintoja. Käytämme time-pakettia tähän esimerkkiin.
+Katsotaanpa ensin kuinka muuttaa päivämäärä päivämäärärajapinnan avulla. Voimme käyttää aikapakettia luodaksemme haluamamme ajanhetken ja käyttää sitten MarshalJSON-menetelmää muuttaaksemme sen merkkijonoksi. Tässä on yksinkertainen esimerkki:
 
-```
-Go func main() {
-    // Määritä päivämäärämuuttuja
-    date := time.Date(2021, time.June, 4, 12, 30, 0, 0, time.UTC)
+```Go
+package main
 
-    // Käytä format-metodia muuntaaksesi päivämäärä merkkijonoksi
-    fmt.Println(date.Format("Mon January 2, 2006"))
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    t := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
+    json, err := t.MarshalJSON()
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(string(json))
 }
 ```
 
-Tämä yksinkertainen esimerkki tulostaa "Fri June 4, 2021". Huomaa, että käytämme tiettyä formaattia "Mon January 2, 2006", joka vastaa tarkalleen päivämäärän näyttämistä. Voit vaihtaa tämän haluamasi formaattia vastaavaksi, kun valitset haluamasi tiedot.
+Tulostus:
 
-## Syvällinen sukellus
+```
+"2021-01-01T00:00:00Z"
+```
 
-Aikaisempi esimerkki on melko yksinkertainen, mutta Go tarjoaa myös muita käyttökelpoisia toimintoja päivämäärän muuntamiseen. Voit esimerkiksi muuttaa päivämäärän UNIX-aikaleimaksi käyttämällä Unix-metodia ja annettu päivämäärä muunnetaan desimaaliluvuksi, joka edustaa sekunteina kuluneita aikoja UNIX-ajan alusta.
+Voit myös muuttaa päivämäärän haluttuun muotoon käyttämällä aika- ja merkkijonopaketteja. Tässä on esimerkki tähän lähestymistapaan:
 
-Voit myös muuttaa päivämäärän eri aikavyöhykkeelle time-paketissa olevien toimintojen avulla. Tämä on erityisen hyödyllistä, jos työskentelet kansainvälisten käyttäjien kanssa tai haluat muuntaa ajan paikalliseen aikavyöhykkeeseen ennen tallennusta.
+```Go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    t := time.Date(2020, time.October, 10, 12, 0, 0, 0, time.UTC)
+    layout := "1-2-2006"
+    str := t.Format(layout)
+    fmt.Println(str)
+}
+```
+
+Tulostus:
+
+```
+10-10-2020
+```
+
+## Syvenny
+
+Syvemmälle mentäessä voimme huomata, että päivämäärämuunnos Go-kielessä on erittäin joustavaa. Aikapaketti tarjoaa lukuisia erilaisia toimintoja ja vaihtoehtoja, jotka voivat auttaa muuttamaan päivämäärän haluttuun muotoon.
+
+Esimerkiksi voit käyttää Add-funktiota lisätäksesi aikaa tiettyyn päivämäärään tai Sub-funktiota vähentääksesi sitä. Voit myös käyttää Truncate-menetelmää pyöristääksesi ajan haluttuun tarkkuuteen. Kaikilla näillä toiminnoilla on monia lisävaihtoehtoja, jotka voi löytää Go-ohjelmoinnin dokumentaatiosta.
 
 ## Katso myös
 
-- [Go:n aikapaketin dokumentaatio](https://pkg.go.dev/time)
-- [Unix-aikaleima Google Developer](https://developers.google.com/analytics/devguides/reporting/realtime/v3/reference/data/realtime/get#examples)
-- [Aikavyöhykkeen muuttaminen Go-ohjelmassa TutorialEdge] (https://tutorialedge.net/golang/manipulating-dates-go/)
+- Aikapaketin dokumentaatio: https://golang.org/pkg/time/
+- Larry Rice, "Aikapaketin käyttö Go-kielessä": https://medium.com/@larryrice/golang-time-package-notes-7ff3a57ab562
+- Go-kielen virallinen verkkosivusto: https://golang.org/

@@ -1,41 +1,61 @@
 ---
-title:    "C#: Lecture des arguments en ligne de commande"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/reading-command-line-arguments.md"
+title:                "C#: Lecture des arguments de ligne de commande"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
-Les arguments de ligne de commande sont un outil communément utilisé en programmation pour permettre aux utilisateurs d'interagir avec des programmes en leur fournissant des entrées spécifiques. Comprendre comment lire et utiliser ces arguments peut être utile dans de nombreux projets et langages de programmation, y compris C#. Dans cet article, nous allons explorer comment lire des arguments de ligne de commande en utilisant C#.
+## Pourquoi
 
-## Comment faire 
-Tout d'abord, il est important de noter que les arguments de ligne de commande sont des informations fournies par l'utilisateur lorsqu'il exécute un programme en utilisant la ligne de commande. Ces arguments peuvent être fournis en utilisant des balises spécifiques comme "-k" ou "/name", suivi de la valeur correspondante. Pour lire ces arguments en C#, nous allons utiliser la méthode "Main" de notre programme, qui est appelée lors de l'exécution du programme. Voici un exemple de code pour lire un argument de ligne de commande en C# :
+Si vous êtes un programmeur C# ou si vous êtes en train d'apprendre ce langage, vous pourriez vous demander pourquoi vous devriez accorder de l'importance à la lecture des arguments de ligne de commande. Après tout, il existe de nombreux moyens de fournir des données à un programme, pourquoi est-il important de savoir comment lire les arguments de la ligne de commande ? La réponse est simple : c'est un moyen efficace et pratique de fournir des données à votre programme lors de son exécution. Au lieu de modifier constamment votre code pour changer les valeurs des variables, vous pouvez simplement les passer en tant qu'arguments de la ligne de commande. Cela permet également à votre programme d'être utilisé de manière plus dynamique et polyvalente.
+
+## Comment faire
+
+Avant d'apprendre à lire les arguments de la ligne de commande, il est important de comprendre comment ils sont formatés. Les arguments de la ligne de commande sont généralement passés sous la forme d'une chaîne de caractères, avec chaque argument étant séparé par un espace. Par exemple : `monprogramme.exe argument1 argument2`.
+
+Maintenant, passons à la partie pratique. Pour lire les arguments de la ligne de commande, tout d'abord, nous devons importer l'espace de noms `System`, qui contient la classe `Environment`. Cette classe contient la méthode `GetCommandLineArgs` qui nous permet de récupérer les arguments de la ligne de commande sous forme d'un tableau de chaînes de caractères. Voici un exemple de code pour la lecture et l'affichage des arguments de la ligne de commande :
 
 ```C#
-static void Main(string[] args)
+using System;
+
+namespace LectureArgumentsLigneDeCommande
 {
-     // lecture d'un argument de ligne de commande
-     string argument = args[0];
-     Console.WriteLine(argument);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Récupère les arguments de la ligne de commande
+            string[] arguments = Environment.GetCommandLineArgs();
+
+            // Boucle à travers les arguments et les affiche
+            for (int i = 0; i < arguments.Length; i++)
+            {
+                Console.WriteLine($"Argument {i}: {arguments[i]}");
+            }
+        }
+    }
 }
 ```
 
-Dans cet exemple, nous utilisons la variable "args" pour stocker tous les arguments de ligne de commande fournis par l'utilisateur. En utilisant une indexation, nous pouvons accéder à des arguments spécifiques, dans cet exemple, nous récupérons le premier argument et le stockons dans une variable appelée "argument". Ensuite, nous l'affichons simplement à l'écran en utilisant la méthode "WriteLine" de la classe Console.
+Si nous exécutons ce programme avec les arguments `argument1 argument2`, nous obtiendrons la sortie suivante :
 
-## Plongée en profondeur 
-Maintenant que nous savons comment lire des arguments de ligne de commande en utilisant C#, plongeons un peu plus en détail dans cette fonctionnalité. Une chose à noter est que les arguments de ligne de commande peuvent également être passés sous forme de "chaînes de commande", qui sont simplement une chaîne de caractères contenant tous les arguments séparés par des espaces. Pour les manipuler, nous pouvons utiliser la méthode "Split" pour diviser cette chaîne en une collection d'arguments individuels. Voici un exemple :
-
-```C#
-string argumentsChaine = "/name John Doe -k true";
-string[] arguments = argumentsChaine.Split(' ');
-// arguments = ["/name", "John", "Doe", "-k", "true"]
+```
+Argument 0: Chemin du programme.exe
+Argument 1: argument1
+Argument 2: argument2
 ```
 
-Un autre point important à noter est que les arguments de ligne de commande sont généralement considérés comme des entrées utilisateur non fiables, il est donc important de valider et de nettoyer ces entrées avant de les utiliser dans votre programme.
+Comme vous pouvez le voir, le premier argument `argument0` est toujours le chemin d'accès vers le programme lui-même, tandis que les arguments suivants sont passés par l'utilisateur.
 
-##Voir aussi
-Pour plus d'informations sur la lecture des arguments de ligne de commande en C#, vous pouvez consulter les ressources suivantes :
-- [Documentation Microsoft sur la méthode Main en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/main-and-command-args/)
-- [Article sur la manipulation des arguments de ligne de commande en C#](https://www.c-sharpcorner.com/uploadfile/mahesh/working-with-command-line-argument-in-C-Sharp/)
-- [Vidéo tutoriel sur la lecture d'arguments de ligne de commande en C#](https://www.youtube.com/watch?v=wuTaSD1qwQo)
+## Plongée profonde
+
+Il est également important de noter que nous pouvons récupérer et utiliser les arguments de manière plus spécifique en utilisant la méthode `GetCommandLineArgs` de la classe `Environment`. Cette méthode renvoie un tableau de chaînes de caractères, mais nous pouvons utiliser la méthode `GetCommandLineArg` pour récupérer un argument spécifique en utilisant son index.
+
+En outre, si vous avez des arguments avec des espaces (par exemple, `monprogramme.exe "argument avec espace"`), vous pouvez utiliser la méthode `GetCommandLineArgs` pour récupérer l'argument entier, y compris les espaces.
+
+## Voir aussi
+
+- [Documentation officielle sur la classe `Environment.GetCommandLineArgs`](https://docs.microsoft.com/fr-fr/dotnet/api/system.environment.getcommandlineargs?view=net-5.0)
+- [Exemples de code pour lire les arguments de la ligne de commande en C#](https://www.c-sharpcorner.com/article/parsing-command-line-arguments-in-c-sharp/)

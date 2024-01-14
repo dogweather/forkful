@@ -1,41 +1,46 @@
 ---
-title:    "Arduino: Tests schreiben"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/writing-tests.md"
+title:                "Arduino: Test schreiben"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum sollten Sie beim Programmieren von Arduino Tests schreiben?
+# Warum
 
-Das Schreiben von Tests ist ein wichtiger Bestandteil der Programmierung, besonders für Arduino-Projekte. Durch das Testen Ihres Codes können Sie Fehler und Probleme frühzeitig erkennen und beheben. Dadurch sparen Sie Zeit und stellen sicher, dass Ihr Projekt reibungslos funktioniert.
+Das Schreiben von Tests ist ein wichtiger Bestandteil des Arduino-Programmierens. Durch das Schreiben von Tests können potenzielle Fehler im Code frühzeitig erkannt und behoben werden, bevor sie zu größeren Problemen führen. Außerdem hilft es dabei, die Funktionalität des Codes zu überprüfen und sicherzustellen, dass alle gewünschten Ergebnisse erzielt werden.
 
-## So schreiben Sie Tests für Arduino:
+# Wie geht es
 
-Um Tests für Ihren Arduino-Code zu schreiben, folgen Sie diesen einfachen Schritten:
+Das Schreiben von Tests in Arduino kann auf verschiedene Arten erfolgen. Eine häufig verwendete Methode ist die Verwendung von Bibliotheken wie "rttest" oder "Unity", die speziell für das Testen von Arduino-Code entwickelt wurden. Diese Bibliotheken bieten Funktionen zum Vergleichen von Werten, Überprüfen von Bedingungen und Ausgeben von Testergebnissen.
 
-1. Definieren Sie Ihre Testfälle: Überlegen Sie sich, welche Funktionen und Abläufe in Ihrem Code getestet werden müssen.
-2. Schreiben Sie Ihre Tests: Verwenden Sie die `assert()` Funktion, um zu überprüfen, ob die erwarteten Ergebnisse aus den Testfällen mit den tatsächlichen Ergebnissen übereinstimmen.
-3. Führen Sie die Tests durch: Laden Sie den Code auf Ihren Arduino und überprüfen Sie die Ergebnisse der Tests.
-4. Beheben Sie Fehler: Wenn ein Test fehlschlägt, überprüfen Sie Ihren Code und beheben Sie mögliche Fehler.
-
-Hier ist ein Beispiel für einen Test, der überprüft, ob die LED an Pin 13 eingeschaltet wird:
+Das folgende Beispiel zeigt, wie ein Test mit der Bibliothek "rttest" aussehen könnte:
 
 ```Arduino
-void test_led() {
-  LED led(13); // Erstellen Sie ein LED-Objekt an Pin 13
-  
-  led.on();    // Schalten Sie die LED ein
-  assert(led.getState() == HIGH); // Überprüfen Sie, ob LED eingeschaltet ist
+#include <rttest.h>
+
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+    int result = add(2, 3); // Funktion, die getestet werden soll
+    RTTest::AssertEqual(result, 5); // Vergleich des Ergebnisses mit erwartetem Wert
+    RTTest::PrintResult(); // Ausgabe des Testergebnisses
+    while (true) {} // Endlosschleife, um den Test nur einmal auszuführen
 }
 ```
 
-## Tiefergehende Informationen zu Tests für Arduino
-Beim Schreiben von Tests sollten Sie darauf achten, dass die Tests reproduzierbar sind und unabhängig voneinander ausgeführt werden können. Verwenden Sie auch verschiedene Eingabedaten, um sicherzustellen, dass Ihre Tests alle möglichen Szenarien abdecken.
+Die Ausgabe des Testergebnisses würde in diesem Fall "PASSED" sein, da die Funktion "add" den erwarteten Wert von 5 zurückliefert.
 
-Es ist auch eine gute Idee, Ihre Tests regelmäßig auszuführen, besonders wenn Sie größere Änderungen an Ihrem Code vornehmen. Dadurch können Sie mögliche Fehler frühzeitig erkennen und beheben.
+# Tief tauchen
 
-## Siehe auch
-- [Offizielle Arduino-Website](https://www.arduino.cc/)
-- [Arduino-Test-Framework](https://github.com/mmurdoch/arduinounit)
-- [Video-Tutorial zu Tests für Arduino](https://www.youtube.com/watch?v=qa_mmf-QdtE)
+Beim Schreiben von Tests ist es wichtig, alle möglichen Fälle und Randbedingungen zu berücksichtigen, um sicherzustellen, dass der Code robust und fehlerfrei ist. Auch das Debuggen von Tests kann dabei helfen, mögliche Fehler im Code aufzudecken.
+
+Außerdem ist es sinnvoll, Tests im Laufe der Entwicklung des Codes regelmäßig auszuführen, um sicherzustellen, dass keine neuen Fehler hinzugefügt wurden oder bestehende behoben wurden.
+
+# Siehe auch
+
+- [rttest Bibliothek](https://github.com/werktag/rttest)
+- [Unity Bibliothek](https://github.com/ThrowTheSwitch/Unity)

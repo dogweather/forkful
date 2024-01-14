@@ -1,80 +1,52 @@
 ---
-title:    "C: Ottenere la data corrente"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/getting-the-current-date.md"
+title:                "C: Ottenere la data corrente"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-### Perché
+## Perché
 
-A volte nei nostri programmi dobbiamo essere in grado di ottenere la data corrente. Potrebbe essere per registrare quando un'operazione è stata eseguita, per mostrare la data in un formato specifico o per altre finalità. In questo articolo vedremo come possiamo ottenere la data corrente in un programma C.
+Spesso, nei programmi che scriviamo, è importante avere accesso alla data corrente. Potremmo voler stamparla a schermo, utilizzarla per prendere decisioni all'interno del nostro codice o anche semplicemente utilizzarla come parte di un'operazione matematica. In questo post, impareremo come ottenere la data corrente utilizzando il linguaggio C.
 
-### Come
+## Come fare
 
-Per ottenere la data corrente in un programma C, dobbiamo utilizzare la libreria standard <time.h>. Questa libreria contiene funzioni utili per lavorare con il tempo e la data. Uno dei modi più semplici per ottenere la data corrente è utilizzare la funzione time(), che ci restituisce il numero di secondi trascorsi dal 1 gennaio 1970. Ecco un esempio di codice:
+Per ottenere la data corrente in C, possiamo utilizzare la funzione `time()` dalla libreria standard `time.h`. Questa funzione restituirà il numero di secondi trascorsi dal 1 gennaio 1970. Utilizzando la funzione `localtime()`, possiamo quindi convertire questo numero in una struttura `tm`, contenente informazioni sulla data e sull'ora. Qui di seguito un esempio di codice:
 
-```C
+ ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Otteniamo la data corrente
-    time_t current_time = time(NULL);
-
-    // La convertiamo in una stringa
-    char* date_string = ctime(&current_time);
-
-    // Stampiamo la data corrente
-    printf("Data corrente: %s\n", date_string);
-
+    // otteniamo il tempo corrente
+    time_t currentTime = time(NULL);
+    
+    // convertiamo il tempo in una struttura tm
+    struct tm* currentDateTime = localtime(&currentTime);
+    
+    // stampiamo la data
+    printf("Oggi è il %d/%d/%d\n", currentDateTime->tm_mday, currentDateTime->tm_mon+1, currentDateTime->tm_year+1900);
+    
     return 0;
 }
 ```
 
-L'output di questo programma sarà qualcosa del genere:
+L'output di questo codice sarà il seguente:
 
 ```
-Data corrente: Mon Nov 1 12:00:00 2021
+Oggi è il 25/02/2021
 ```
 
-Possiamo anche formattare la data in modi diversi utilizzando la funzione strftime() che ci permette di specificare il formato che vogliamo ottenere. Ecco un esempio modificato del codice precedente:
+Ci sono anche diverse altre funzioni disponibili nella libreria `time.h` che ci permettono di manipolare e formattare ulteriormente la data, come ad esempio `strftime()` per convertire la struttura `tm` in una stringa formattata. Per ulteriori informazioni, si consiglia di consultare la documentazione ufficiale di C.
 
-```C
-#include <stdio.h>
-#include <time.h>
+## Approfondimento
 
-int main() {
-    // Otteniamo la data corrente
-    time_t current_time = time(NULL);
+Sebbene l'uso della funzione `time()` sia semplice e funzionale per la maggior parte dei casi, è importante tenere presente che può anche essere soggetta ad alcuni errori. Ad esempio, se il sistema sperimenta un'interruzione di servizio nell'ora corrente, la funzione potrebbe restituire un valore non corretto. Inoltre, ci sono anche altri modi per ottenere la data corrente, come ad esempio utilizzando delle librerie esterne o richiamando comandi di shell.  
 
-    // Definiamo un buffer per la data formattata
-    char buffer[80];
+## Vedi anche
 
-    // Formattiamo la data
-    strftime(buffer, 80, "%A %d %B %Y", localtime(&current_time));
-
-    // Stampiamo la data formattata
-    printf("Data corrente: %s\n", buffer);
-
-    return 0;
-}
-```
-
-L'output di questo programma sarà qualcosa del genere:
-
-```
-Data corrente: lunedì 1 novembre 2021
-```
-
-### Deep Dive
-
-Oltre alle funzioni che abbiamo visto in precedenza, ci sono altre opzioni per ottenere la data corrente in un programma C. Ad esempio, possiamo utilizzare la struct tm che rappresenta il tempo e la data e ci permette di accedere a ogni componente (anno, mese, giorno, ora, ecc.). Inoltre, possiamo utilizzare la funzione localtime() per ottenere il tempo locale anziché quello UTC.
-
-Inoltre, è importante notare che la funzione time() restituisce un valore di tipo time_t, che è semplicemente un long int. Quindi, ci serve una qualche rappresentazione leggibile dalla data corrente. È qui che vengono in aiuto le funzioni ctime() e strftime() che convertono il valore time_t in una stringa leggibile.
-
-### Vedi anche
-
-- [Documentazione della libreria <time.h>](https://www.gnu.org/software/libc/manual/html_node/Time-and-Date-Basics.html)
-- [Spiegazione della funzione strftime()](https://en.wikipedia.org/wiki/Strftime)
-- [Esempi pratici di utilizzo delle funzioni per ottenere la data corrente in C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+- [Documentazione ufficiale di C](https://devdocs.io/c/)
+- [Tutorial su C su Programiz](https://www.programiz.com/c-programming)
+- [Libreria standard time.h](https://www.tutorialspoint.com/c_standard_library/time_h.htm)

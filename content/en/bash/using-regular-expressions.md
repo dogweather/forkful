@@ -1,50 +1,64 @@
 ---
-title:    "Bash recipe: Using regular expressions"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/using-regular-expressions.md"
+title:                "Bash recipe: Using regular expressions"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Regular Expressions Are Essential for Bash Programming
+## Why Regular Expressions Are Useful in Bash Programming
 
-Bash programming is a powerful tool for automating tasks and managing complex systems. However, it can often be challenging to manipulate and search for specific patterns within text files. This is where regular expressions come in handy. Regular expressions allow users to define search patterns in a flexible and efficient manner, making it a valuable tool for any Bash programmer.
+Regular expressions, also known as regex, are powerful tools that allow us to search, manipulate, and extract patterns from strings of text. They provide a concise and efficient way to handle complex text matching and parsing tasks in Bash programming. With regular expressions, we can easily perform string operations such as validation, substitution, and extraction, making our code more concise and maintainable.
 
 ## How To Use Regular Expressions in Bash
 
-To use regular expressions in Bash, we must first understand the basics. A regular expression is a sequence of characters that define a pattern to be searched for in a given string. The most commonly used characters are special symbols or metacharacters that represent a group of characters. Here are a few examples:
+To use regular expressions in bash, we first need to understand their basic syntax. Here are some examples of common regex patterns and their functionalities:
 
-- `.` : represents any single character
-- `*` : represents zero or more occurrences of the preceding character
-- `+`: represents one or more occurrences of the preceding character
-- `[]` : represents a range of characters
-- `|` : represents alternate matching
+- `^`: matches the beginning of a string.
+- `$`: matches the end of a string.
+- `.`: matches any single character.
+- `*`: matches zero or more occurrences of the previous character or group.
+- `?`: matches zero or one occurrence of the previous character or group.
+- `[]`: matches any character within the brackets.
+- `|`: matches either the expression before or after it.
+- `()` : creates a group of characters for capturing or referencing.
 
-To use these characters in a Bash script, we must first enclose them in single quotes to avoid Bash expansion. Let's look at some examples:
+Now, let's see some practical examples of using regular expressions in bash:
 
 ```
-#!/bin/bash
+re="^H.*o$"
+if [[ $input =~ $re ]]; then
+  echo "Input starts with 'H' and ends with 'o'"
+fi
 
-# search for any word that starts with "c" and ends with "t"
-grep 'c.*t' sample.txt
-
-# search for any word that starts with "a" or "b"
-grep 'a\|b' sample.txt
-
-# search for any word that contains the letters "cat"
-grep '.*cat.*' sample.txt
+output: Input starts with 'H' and ends with 'o'
 ```
 
-The `grep` command is used to search for patterns within a file. In these examples, we are searching for patterns within the `sample.txt` file. We can see that by using regular expressions, we can quickly specify complex patterns and search for them efficiently.
+In the above example, we use `^` to match the beginning of the string and `o$` to match the end. The `.*` in the middle matches any characters between "H" and "o". If the input string matches the specified regular expression, it will print the corresponding message.
 
-## Deep Dive into Regular Expressions in Bash
+Now, let's try another example of substituting a part of a string:
 
-Regular expressions are not limited to just the `grep` command; they can also be used with other Bash commands like `sed` and `awk`. Additionally, we can use regular expressions in scripts to perform tasks like text manipulation, data validation, and more.
+```
+sentence="I love to eat apples."
+echo $sentence | sed -E 's/apples/oranges/'
 
-One thing to note is that regular expressions may differ slightly across different programming languages and tools. Therefore, it is essential to understand the specific syntax and symbols used in the intended environment.
+output: I love to eat oranges.
+```
+
+Here, we use the `s` command in sed to substitute "apples" with "oranges". The `-E` option enables extended regular expressions, and the `g` option ensures that all occurrences of "apples" are substituted.
+
+## Deep Dive into Regular Expressions
+
+Regular expressions can get quite complex, and it takes some practice to become proficient in using them. Some tips to remember while working with regular expressions are:
+
+- Use anchors `^` and `$` sparingly.
+- Use character classes `[...]` as much as possible to match specific characters.
+- Use grouping `()` to separate and access different parts of a regular expression.
+- Understand the difference between greedy and lazy matching and use it accordingly.
+- Practice, practice, practice!
 
 ## See Also
-
-- Official Bash documentation on regular expressions: https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html
-- Regular expression cheat sheet: https://www.rexegg.com/regex-quickstart.html
-- Online regex tester: https://regex101.com/
+- [Bash Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html) 
+- [Linux Command Line Regular Expressions Tutorial](https://www.grymoire.com/Unix/Regular.html)
+- [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line/blob/master/README.md#regular-expressions)

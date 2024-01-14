@@ -1,33 +1,59 @@
 ---
-title:    "Fish Shell: Escrevendo testes"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/writing-tests.md"
+title:                "Fish Shell: Escrevendo testes"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+# Por que escrever testes em Fish Shell?
 
-Escrever testes é uma etapa fundamental no processo de desenvolvimento de software. Eles garantem que o código esteja funcionando corretamente e evitam possíveis bugs e falhas no futuro. Além disso, testes bem escritos podem ser reutilizados e ajudam a manter o código organizado.
+Testes são importantes para garantir que seu código funcione corretamente e minimize erros em seu programa. Além disso, eles ajudam a ter uma melhor compreensão do seu código e facilitam a manutenção no futuro.
 
-## Como escrever testes usando o Fish Shell?
+## Como escrever testes em Fish Shell
 
-Escrever testes utilizando o Fish Shell é uma forma simples e eficaz de garantir a qualidade do seu código. Primeiro, você precisará criar um diretório para armazenar seus testes. Em seguida, utilize o comando `fish_assert` para definir as condições que o teste deve atender. Por exemplo:
+Para começar, é necessário instalar o módulo de teste Fisherman:
 
+```Fish Shell
+fisher add fisherman/test
 ```
-fish_assert "[ 1 -eq 1 ]"
+
+Feito isso, é possível escrever seus próprios testes usando a função de teste integrada do Fish Shell. Por exemplo, vamos supor que temos uma função que realiza uma operação de soma:
+
+```Fish Shell
+function soma -a num1 -a num2
+    echo $(math "$num1 + $num2")
+end
 ```
 
-Este comando irá verificar se a expressão dentro das aspas é verdadeira. Se sim, o teste será aprovado. Você também pode utilizar a opção `-x` para especificar uma mensagem de erro caso o teste falhe.
+Para testar essa função, podemos usar a função de teste integrada da seguinte maneira:
 
-## Mais informações sobre a escrita de testes
+```Fish Shell
+function teste-soma
+    descreva "Teste para função soma"
+    test num1 = 2
+    test num2 = 3
+    test (soma $num1 $num2) -eq 5
+    resultado --erro no teste "A soma não está funcionando corretamente"
+end
+```
 
-Além do comando `fish_assert`, o Fish Shell também possui outras ferramentas para ajudar na escrita de testes, como o `fish_is_interactive` e o `fish_is_readable`. Além disso, é possível utilizar testes em conjuntos de comandos usando `fish_test`.
+Na função de teste, usamos o comando "test" para verificar se as condições desejadas estão sendo atendidas e, em seguida, usamos a função "resultado" para especificar a mensagem de erro caso algum teste falhe.
 
-É importante lembrar que os testes devem ser escritos de forma clara e concisa, cobrindo todas as possíveis situações e condições do código. Isso irá garantir que seu software funcione da maneira desejada e que possíveis erros sejam identificados e corrigidos rapidamente.
+## Mais informações sobre escrita de testes
 
-## Veja também
+Além do básico, existem outras funções e opções que podem ser usadas para escrever testes mais complexos e abrangentes. Alguns exemplos incluem:
 
-- Documentação oficial do Fish Shell: https://fishshell.com/docs/current/
-- Guia rápido de testes com Fish Shell: https://fishshell.com/docs/current/cmds/fish_assert.html
-- Artigo sobre melhores práticas de teste com Fish Shell: https://dev.to/jorgebucaran/writing-refined-bash-scripts-101--2g7a
+- A função "test-all" que executa todos os testes dentro de uma função de teste.
+- A função "esperando" que monitora uma variável e executa um teste quando ela atinge um determinado valor.
+- O comando "-e" para executar comandos antes de cada teste.
+- O comando "-s" para pular testes específicos.
+
+Para saber mais sobre todas as opções disponíveis, você pode conferir a documentação completa do módulo de teste Fisherman ou explorar outras referências online.
+
+# Veja também
+
+- Documentação do módulo de teste Fisherman (https://github.com/fisherman/test)
+- Tutorial em vídeo sobre testes em Fish Shell (https://www.youtube.com/watch?v=oKmPGCejvRM)
+- Fórum de discussão sobre testes em Fish Shell (https://www.reddit.com/r/fishshell/comments/lmz0jc/testing_in_fish/)

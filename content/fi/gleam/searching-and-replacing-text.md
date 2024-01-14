@@ -1,44 +1,43 @@
 ---
-title:    "Gleam: Tekstin etsiminen ja korvaaminen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/searching-and-replacing-text.md"
+title:                "Gleam: Tekstin etsiminen ja korvaaminen"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 # Miksi etsiä ja korvata tekstiä?
 
-Etsiä ja korvata tekstiä on erittäin hyödyllinen työkalu ohjelmointimaailmassa, joka säästää aikaa ja vaivaa. Sen avulla voit nopeasti löytää ja korvata haluamasi tekstin tiedostoista tai koodista, mikä tekee koodin muokkaamisesta ja päivittämisestä helpompaa.
+Etsi ja korvaa tekstiä -toiminto on tärkeä osa jokapäiväistä ohjelmointia. Se auttaa sinua nopeasti ja tehokkaasti korvaamaan tekstin tietystä tiedostosta tai koodista. Tämä säästää aikaa ja vaivaa manuaaliselta etsimiseltä ja korvaamiselta.
 
-# Miten?
+# Miten se tehdään?
 
-Etsiä ja korvata tekstiä Gleam-ohjelmointikielellä on helppoa. Voit käyttää sisäänrakennettua `String.replace()`-funktiota tai asentaa lisäosia, kuten `gleamix/search_replace`-lisäosan. Käytämme tässä esimerkkiä `gleamix/search_replace`-lisäosasta.
+Voit hyödyntää Gleam-ohjelmointikielen tarjoamaa helppoa ja tehokasta tekstinsyöttötoimintoa.
 
-Ensinnäkin, asennamme lisäosan Gleam-projektiimme käyttämällä `mix`-komennon `add`-parametria:
+```Gleam
+// Luo uusi muuttuja nimeltä "teksti" ja aseta siihen alkuarvo
+teksti = "Tämä on alkuperäinen teksti"
 
-```
-mix add gleamix/search_replace
-```
+// Etsi tekstistä sana "alkuperäinen" ja korvaa se sanalla "uusi"
+uusi_teksti = teksti |> String.replace("alkuperäinen", "uusi")
 
-Sitten tuomme `SearchReplace`-moduulin haluamallemme tiedostolle `using`-komennolla:
-
-```
-using SearchReplace
-```
-
-Seuraavaksi voimme käyttää `SearchReplace.replace()`-funktiota etsiäksemme ja korvataksemme haluamamme tekstin. Esimerkiksi, jos haluamme korvata kaikki merkkijonot "hello" merkkijonolla "hei", meidän tarvitsee vain kutsua `SearchReplace.replace()`-funktiota ja antaa molemmat merkkijonot parametreinä:
+// Tulostaa uuden tekstin
+IO.print(uusi_teksti)
+``` 
 
 ```
-let uusi_merkkijono = SearchReplace.replace("hello", "hei", vanha_merkkijono)
+Tämä on uusi teksti
 ```
 
-Tämän jälkeen `uusi_merkkijono` sisältää korvatun merkkijonon `vanhan_merkkijonon` sijaan.
+Gleam tarjoaa myös muita vaihtoehtoja haun ja korvauksen muuttamiseen, kuten säännölliset lausekkeet ja erilaiset vertailukriteerit. Voit löytää kaikki Gleam-tekstinmuokkaustoiminnot Gleamin virallisesta dokumentaatiosta.
 
-# Syventävä sukellus
+# Syvemmälle aiheeseen
 
-Gleam-ohjelmointikielen `String.replace()`-funktio ja `gleamix/search_replace`-lisäosa hyödyntävät erittäin suorituskykyistä algoritmia, joka käsittelee jopa suuria tiedostoja tehokkaasti. Voit myös käyttää säännöllisiä lausekkeita etsiäksesi monimutkaisempia tekstimuutoksia. Lisäksi, voit käyttää `SearchReplace.replace()`-funktiota myös muissa tiedostotyypeissä, kuten JSON-tiedostoissa.
+Etsi ja korvaa -toiminnossa on useita hienosäätömahdollisuuksia, kuten haun tarkentaminen tiettyihin osiin tekstistä ja erilaisten korvausten yhdistäminen toisiinsa. Lisäksi voit myös suorittaa tekstikäsittelytoimintoja useassa tiedostossa kerrallaan.
 
 # Katso myös
 
-- `gleamix/search_replace` -lisäosa: https://github.com/gleam-extras/search_replace
-- Gleam-dokumentaatio: https://gleam.run/documentation/
+- [Gleam-ohjelmointikielen viralliset sivut] (https://gleam.run/)
+- [Gleamin tekstinsyöttötoiminnon dokumentaatio] (https://gleam.run/documentation)
+- [Gleamin tekstinmuokkaustoimintojen esimerkkejä] (https://github.com/gleam-lang/gleam/blob/master/examples/strings)

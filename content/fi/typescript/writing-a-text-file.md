@@ -1,59 +1,43 @@
 ---
-title:    "TypeScript: Tekstitiedoston kirjoittaminen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/writing-a-text-file.md"
+title:                "TypeScript: Tiedoston kirjoittaminen"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kirjoittamalla tekstitiedoston.
-
-Tekstitiedoston kirjoittaminen on tärkeä osa ohjelmointia, sillä se mahdollistaa tiedon tallentamisen ja jakamisen ohjelman suorituksen välillä. Tekstitiedostoja voidaan käyttää monella eri tavalla, esimerkiksi tallentamaan asetuksia tai luomaan tietokantoja.
+Kirjoittamista käytetään usein tiedon tallentamiseen pysyvästi ja helppoon jakamiseen muiden kanssa.
 
 ## Miten
 
-Ohjelmointikieli TypeScript tarjoaa helpon ja tehokkaan tavan kirjoittaa tekstitiedostoja. Seuraavassa on muutamia esimerkkejä, miten voit kirjoittaa tekstitiedoston TypeScriptillä:
+Yksinkertaisin tapa kirjoittaa tekstitiedosto TypeScriptilla on käyttää `fs.writeFile()`-funktiota. Se ottaa ensimmäisenä parametrinaan halutun tiedoston nimen, toisena parametrinaan tekstisisältö ja kolmantena parametrina virheenkäsittelyfunktion.
 
 ```TypeScript
 import * as fs from 'fs';
 
-const tekstitiedosto = 'tiedosto.txt';
-const data = 'Tämä on esimerkki tekstistä.';
-
-fs.writeFileSync(tekstitiedosto, data);
+fs.writeFile('tekstitiedosto.txt', 'Tämä on tekstisisältöä.', (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Tekstitiedosto on kirjoitettu onnistuneesti.');
+  }
+});
 ```
 
-Tämä koodi luo tiedoston nimeltä "tiedosto.txt" ja tallentaa siihen annetun tekstin. Voit myös käyttää muita fs-moduulin metodeita, kuten `appendFileSync` lisätäksesi tekstiä jo olemassa olevaan tiedostoon.
+Tulostus koodin suorituksen jälkeen:
 
-```TypeScript
-import * as fs from 'fs';
+`Tekstitiedosto on kirjoitettu onnistuneesti.`
 
-const tekstitiedosto = 'tiedosto.txt';
-const data = 'Lisättyä tekstiä.';
+## Syventävä sukellus
 
-fs.appendFileSync(tekstitiedosto, data);
-```
+Voit myös käyttää `fs.writeFileSync()`-funktiota, joka toimii samalla tavalla kuin `writeFile()`-funktio, mutta se ei ota vastaan virheenkäsittelyfunktiota. Tämän sijaan se heittää virheen suoraan, jos sellainen tapahtuu.
 
-Voit myös lukea tekstitiedoston sisällön käyttämällä `readFileSync`-metodia.
-
-```TypeScript
-import * as fs from 'fs';
-
-const tekstitiedosto = 'tiedosto.txt';
-
-const data = fs.readFileSync(tekstitiedosto, 'utf8');
-console.log(data); // tulostaa: "Tämä on esimerkki tekstistä. Lisättyä tekstiä."
-```
-
-## Syvällisempi tarkastelu
-
-Tekstitiedoston kirjoittaminen TypeScriptillä ei vaadi paljoa koodia, mutta se on silti tärkeä taito ohjelmoinnissa. On myös hyvä huomata, että `fs`-moduulin käyttö voi vaihdella eri alustoilla, joten on tärkeää tutustua sen dokumentaatioon ennen käyttöä.
-
-Voit myös käyttää muita kirjastoja, kuten `fs-extra`, jotka tarjoavat käyttäjäystävällisempiä metodeja tekstitiedostojen käsittelyyn.
+Voit myös lisätä tekstisisällön kirjoittamisen lisäksi muita toimintoja, kuten esimerkiksi tiedoston lukemisen ja sisällön lisäämisen olemassa olevaan tiedostoon. Kannattaa tutustua Node.js:n `fs`-moduulin dokumentaatioon löytääksesi lisää mahdollisia toimintoja.
 
 ## Katso myös
 
-- [Node.js: fs-moduulin dokumentaatio](https://nodejs.org/api/fs.html)
-- [fs-extra: käyttäjäystävällisempi vaihtoehto fs-moduulille](https://github.com/jprichardson/node-fs-extra)
+- Node.js vakiomoduuli `fs`: https://nodejs.org/api/fs.html
+- `fs-extra`-moduuli: https://www.npmjs.com/package/fs-extra

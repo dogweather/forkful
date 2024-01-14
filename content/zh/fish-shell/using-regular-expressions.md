@@ -1,35 +1,47 @@
 ---
-title:    "Fish Shell: 使用正则表达式"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/using-regular-expressions.md"
+title:                "Fish Shell: 使用正则表达式"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
 
-在使用鱼壳（Fish Shell）编程时，正则表达式是一种非常有用的工具。它可以帮助我们在文本中快速搜索、匹配和替换特定的模式。通过学习如何使用正则表达式，您可以提高编程效率，并且在处理文本数据时更加灵活。
+为了更有效地处理文本数据，当我们需要搜索和匹配特定的模式时，我们可以使用正则表达式。它是一种强大的工具，可以帮助我们准确地提取我们所需的信息。
 
-## 如何使用
+# 如何使用Fish Shell中的正则表达式
 
-要在鱼壳中使用正则表达式，您首先需要在终端中输入命令 `fish_config` 来打开 Fish Shell 的配置页面。然后，选择 “Key Bindings” 选项，找到对应终端的快捷键，并将其修改为 `<Ctrl-R>`。这个快捷键将在 Fish Shell 中启用“历史命令”的功能。
-
-现在，您可以按下 `<Ctrl-R>` 来搜索最近使用过的命令。但是，如果您想要更进一步，以模糊的字符来搜索命令，可以使用正则表达式进行匹配。以下是一个简单的例子：
+要在Fish Shell中使用正则表达式，我们需要使用`grep`命令。它可以搜索并返回与我们提供的模式匹配的行。
 
 ```Fish Shell
-2-5
-grep -i "fish" ~/Documents/data.csv
-cat ~/.bash_profile
+# 例如，假设我们有一个包含电子邮件地址的文本文件：
+$ cat emails.txt
+jane@example.com
+john@example.com
+alice@example.com
+
+# 我们想要提取所有以"j"开头的邮件地址：
+$ grep '^j' emails.txt
+jane@example.com
+john@example.com
 ```
 
-输入 `<Ctrl-R>` 后，在输入栏中输入 `\d` 并按下回车键。这将匹配包含数字“2”、“3”、“4”或“5”的命令。您也可以使用其他字符来进行匹配，如 `.*` 表示任意字符。
+# 深入了解正则表达式
 
-## 深入探讨
+正则表达式由字符和特殊元字符组成，它们可以帮助我们精确地匹配模式。以下是几个常用的元字符：
 
-正则表达式有很多不同的字符和用法，以适应不同的匹配需求。例如，用括号 `()` 来表示一个组，用 `|` 来实现或逻辑，用 `[]` 来表示字符的范围，用 `{n,m}` 来表示字符的重复次数等等。如果您想要进一步了解如何使用这些字符来构建复杂的模式匹配，请参考正则表达式的官方文档或在线教程。
+- `^` 表示匹配行的开头
+- `$` 表示匹配行的结尾
+- `.` 表示匹配任意单个字符
+- `*` 表示匹配前面的字符0次或多次
+- `+` 表示匹配前面的字符1次或多次
 
-## 看看这些
+想要深入了解正则表达式，请参考[这篇文章](https://www.regular-expressions.info/tutorial.html)。
 
-- Fish Shell 官方文档：https://fishshell.com/docs/current/
-- 学习正则表达式：https://regexone.com/
-- 使用 Fish Shell 中的文本处理命令：https://fishshell.com/docs/current/index.html#fish-string
+# 参考链接
+
+- [Fish Shell文档](https://fishshell.com/docs/current/cmds/grep.html)
+- [正则表达式基础知识](https://www.regular-expressions.info/getstarted.html)
+- [在线正则表达式测试工具](https://regex101.com/)

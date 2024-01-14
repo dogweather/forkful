@@ -1,47 +1,41 @@
 ---
-title:    "Elixir: Écriture vers l'erreur standard"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/writing-to-standard-error.md"
+title:                "Elixir: Écriture vers l'erreur standard"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire vers la sortie d'erreur?
 
-L'écriture au flux d'erreur standard, également appelée stderr, est une tâche importante dans la programmation Elixir. Cela permet de recevoir des messages d'erreur ou de débogage lorsqu'un programme est en cours d'exécution. Sans cette pratique, il peut être plus difficile de comprendre et de résoudre les problèmes dans votre code.
+Écrire vers la sortie d'erreur est utile lors de la détection et de la gestion des erreurs dans un programme Elixir. Cela peut permettre de mieux comprendre l'origine et la nature des erreurs, et faciliter la résolution de problèmes.
 
-## Comment faire
+## Comment écrire vers la sortie d'erreur
 
-Voici un exemple simple de la syntaxe pour écrire au flux d'erreur standard en Elixir :
+Pour écrire vers la sortie d'erreur en Elixir, utilisez la fonction `IO.write` ou `IO.puts` en spécifiant `:stderr` comme deuxième argument. Par exemple :
 
-```Elixir
-IO.puts("Ceci est un message de débogage") |> IO.puts(:stderr)
-```
+```` elixir
+IO.write(:stderr, "Erreur: Le nombre entré doit être positif")
+````
+Dans cet exemple, le message d'erreur sera écrit vers la sortie d'erreur.
 
-Cela affichera le message "Ceci est un message de débogage" dans le flux d'erreur standard. Vous pouvez également utiliser des variables dans la fonction `IO.puts` pour afficher des informations spécifiques, comme ceci :
+Il est également possible d'écrire vers la sortie d'erreur avec des libellés de couleur en utilisant le module `IO.ANSI` et la fonction `IO.ANSI.format` :
 
-```Elixir
-age = 30
-IO.puts("Votre âge est #{age}") |> IO.puts(:stderr)
-```
+```` elixir
+IO.write(:stderr, IO.ANSI.format([:red, :bold], "Erreur critique"))
+````
 
-Cela affichera "Votre âge est 30" dans le flux d'erreur standard. En utilisant cette méthode, vous pouvez facilement suivre le déroulement de votre code pour détecter et résoudre les erreurs.
+Cela affichera "Erreur critique" en rouge et en gras dans la sortie d'erreur.
 
-## Plongée en profondeur
+## Plongez dans la sortie d'erreur
 
-En écrivant au flux d'erreur standard, il faut également prendre en compte le niveau de gravité des messages. Par défaut, Elixir utilise trois niveaux : `:debug`, `:info`, et `:error`. Selon le niveau que vous choisissez, le message sera affiché avec une couleur et un format différents. Par exemple, si vous utilisez `IO.inspect` pour afficher un message de débogage, il sera affiché en vert avec le niveau `:debug`.
+La sortie d'erreur en Elixir est gérée par le système d'exploitation, et peut donc varier selon la plateforme utilisée. Sur les systèmes basés sur Unix, tels que Linux ou macOS, `:stderr` est associé à un processus appelé "standard error file descriptor". Il est également possible d'utiliser `:stderr` avec des superviseurs et des processus de supervision en Elixir, pour gérer les erreurs de manière plus robuste.
 
-Vous pouvez également personnaliser le niveau de gravité en utilisant le module `Logger` :
-
-```Elixir
-Logger.debug("Message de débogage personnalisé") # Affiche en vert
-Logger.error("Erreur personnalisée") # Affiche en rouge
-```
-
-Il est important de choisir le bon niveau de gravité pour vos messages afin de faciliter le processus de débogage.
+Il est important de noter que lorsque l'exécution d'un programme génère des erreurs, elles ne seront pas toujours affichées automatiquement dans la sortie d'erreur. Il peut être nécessaire d'utiliser des outils tels que `logger` ou `sentry` pour capturer et gérer ces erreurs de manière plus efficace.
 
 ## Voir aussi
 
-- [Documentation Elixir : IO.puts](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [Documentation Elixir : Logger](https://hexdocs.pm/logger/Logger.html)
-- [Utiliser Elixir pour le débogage](https://learnxinyminutes.com/docs/elixir-fr/)
+- [Documentation sur la sortie d'erreur en Elixir](https://hexdocs.pm/elixir/IO.html#write/2)
+- [Guide sur la gestion des erreurs en Elixir](https://elixir-lang.org/getting-started/try-catch-and-rescue.html)
+- [Article sur les meilleures pratiques de gestion des erreurs en Elixir](https://blog.appsignal.com/2018/08/14/elixir-alchemy-best-practices-for-error-handling-and-rescue.html)

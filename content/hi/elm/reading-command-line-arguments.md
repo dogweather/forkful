@@ -1,61 +1,56 @@
 ---
-title:    "Elm: कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट पढ़ना।"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/elm/reading-command-line-arguments.md"
+title:                "Elm: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन तर्क पढ़ना"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-कई बार एक प्रोग्रामर को अपने एलम प्रोग्राम को त्वरित और आसान बनाने की जरूरत होती है, जो स्क्रिप्ट की स्थापना या अन्य उपयोगों के अनुसार गुणवत्ता को सुनिश्चित करता है। इसके लिए आमतौर पर, यह प्रोग्रामर के प्रोग्राम में सक्रिय तरीकों से डेटा प्रक्रिया और वितरण की जांच करने के लिए आवश्यक होता है।
+क्या आपने कभी सोचा है कि प्रोग्रामिंग का यह साधन क्यों महत्वपूर्ण हो सकता है? पूर्णांक तथा मान आदि को स्टोर करने के लिए अलग-अलग परामीटर को डालना अपने आप में एक चुनौतीपूर्ण काम हो सकता है। अतः डेस्कटॉप या वेब अनुप्रयोगों में ये कमांड लाइन आगठी महत्वपूर्ण हैं।
 
 ## कैसे करें
 
-एलम में कमांड लाइन तर्कों को पढ़ने के लिए बहुत सरल है। सबसे पहले, हम `Platform` और `Platform.Cmd` मॉड्यूल को आवश्यकतानुसार आवृत्त करेंगे। फिर, हम `Html.programWithFlags` के साथ आसानी से अपने काम को भक्तिभाव देने हेतु वर्ग संज्ञा को स्थापित कर सकते हैं।
+आपको प्रोग्रामिंग भाषा Elm में कमांड लाइन आगठी को पढ़ने के लिए निम्नलिखित चरणों का पालन करना होगा। पहले हम उन परामीटरों की डालन करते हैं जो हमें चाहिए, फिर हम उन्हें समझते हैं और अंत में आवश्यकतानुसार प्रिंट करते हैं।
 
-```Elm
+``` Elm
 import Platform
-import Platform.Cmd
 
+main : Program String
 main =
-    Html.programWithFlags
+    Platform.worker
         { init = init
-        , view = view
         , update = update
-        , subscriptions = subscriptions
+        , subscriptions = \_ -> Sub.none
         }
-```
-
-इसके बाद, हम `Browser.element` के साथ अपनी वेब पेज को संज्ञानात्मक और बंद कर सकते हैं।
-
-```Elm
-type alias Model =
-    {}
-
-init : (Model, Cmd msg)
-init =
-    ( {}, Cmd.none )
 
 type Msg
-    = ...
+    = Param String
+    | PrintOutput
 
-update : Msg -> Model -> (Model, Cmd msg)
+init : () -> ( Model, Cmd Msg )
+init _ =
+    let
+        args =
+            Platform.workerContext.cmdLineArgs
+    in
+        ( Model args, Cmd.none )
+
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        ...
+        Param value ->
+            ( Model value, Cmd.none )
 
-view : Model -> Html Msg
-view model =
-    ...
+        PrintOutput ->
+            ( model, Cmd.none )
 
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
 ```
 
-प्रोग्राम को पिनकोड करने पर कोड  `Browser.element` के साथ अपने लंबाई और चौड़ाई प्रदर्शित करेगा, ` init` स्थानापन्न के साथ बंद एक स्वचालित तरीके से अपने प्रोग्राम को स्वतंत्र नमूना संदूल और `update` मॉड्यूल के लिए `view` का प्रदर्शन करता है।
+इस उदाहरण में हमने तीन परामीटर डाले हैं और उन्हें संग्रहीत किया है। फिर हमने संग्रहीत परामीटर को print किया है जो प्रिंटर और प्रिंटर टिकानेर पहले से ही उपलब्ध हैं।
 
-## डीप डाइव
+## गहराई में जाएं
 
-अगर आपको उस स्थान पर एक आग की आँटि या एक अन्य प्रकार की बातान्यायन्ता के साथ एक प्रोग्राम के
+अगर आप अपने प्रोग्राम में कमांड लाइन आगठी को ज्यादा मूल्य देना चाहते हैं, तो आप और गहराई में जा सकते हैं। आप अन्य भाषाओं में भी कमांड लाइन आगठी को पढ़ सकते हैं, लेकिन अगर आप Elm में कर रहे हैं, तो आपको कुछ भ्रांतियों क

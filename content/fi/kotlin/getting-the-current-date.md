@@ -1,57 +1,55 @@
 ---
-title:    "Kotlin: Nykyisen päivämäärän saaminen"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/getting-the-current-date.md"
+title:                "Kotlin: Päivämäärän haku"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Ota selvää nykyisestä päivämäärästä
 
-Ehkä olet törmännyt olemassa olevaan koodiin, jossa tarvitaan nykyistä päivämäärää, tai ehkä sinulla on oma projekti, johon haluat lisätä toiminnon, jossa käyttäjälle näytetään nykyinen päivämäärä. Joka tapauksessa, koodaaminen nykyisen päivämäärän hakemiseksi voi olla kätevä taito, jonka avulla voit työskennellä päivämäärään liittyvien tehtävien parissa.
+Nykyisen päivämäärän hakeminen voi olla hyödyllistä monessa ohjelmoinnin tilanteessa. Se voi auttaa sinua esimerkiksi luomaan raportteja, seuraamaan projektien edistymistä tai näyttämään käyttäjälle viimeisen päivitysajan.
 
-## Kuinka tehdä
-
-Kotlinissa on useita erilaisia tapoja saada nykyinen päivämäärä. Yksi yksinkertainen tapa on käyttää standardia `Date`-luokkaa ja `Date()`-funktiota, joka antaa nykyisen ajan ja päivämäärän. Katso alla oleva koodiesimerkki:
+## Kuinka: Esimerkkejä koodista ja tulosteista
 
 ```Kotlin
-val nykyinenPaivamaara = Date()
-println("Nykyinen päivämäärä: $nykyinenPaivamaara")
-```
-Tämä tulostaa nykyisen päivämäärän ja ajan muodossa "Päivämäärä: Maanantai heinäkuu 19 12:20:49 JST 2021".
+// Hae nykyinen päivämäärä
+val currentDate = Date()
 
-Voit myös käyttää `Calendar`-luokkaa saadaksesi enemmän tietoa nykyisestä päivämäärästä, kuten päivän, kuukauden, vuoden jne. Katso alla oleva koodiesimerkki:
+// Tulosta nykyinen päivämäärä
+println(currentDate)
+
+// Hae nykyinen päivämäärä ja aika
+val currentDateTime = LocalDateTime.now()
+
+// Tulosta nykyinen päivämäärä ja aika
+println(currentDateTime)
+```
+
+Tässä esimerkissä käytämme Kotlinin `Date`-luokkaa nykyisen päivämäärän hakemiseen ja tulostamiseen. Voit myös käyttää `LocalDateTime`-luokkaa, joka sisältää myös tiedon ajasta.
+
+## Syvällinen sukellus
+
+Voit myös muokata nykyistä päivämäärää lisäämällä tai vähentämällä päiviä, kuukausia, vuosia tai sekunteja. Tätä varten voit käyttää `Calendar`-luokkaa ja sen metodeja, kuten `add` ja `roll`.
 
 ```Kotlin
-val cal = Calendar.getInstance()
-val vuosi = cal.get(Calendar.YEAR)
-val kuukausi = cal.get(Calendar.MONTH)
-val paiva = cal.get(Calendar.DAY_OF_MONTH)
+// Hae nykyinen päivämäärä
+val currentDate = Date()
 
-println("Vuosi: $vuosi")
-println("Kuukausi: $kuukausi")
-println("Päivä: $paiva")
+// Luo uusi Calendar-instanssi ja aseta siihen nykyinen päivämäärä
+val calendar = Calendar.getInstance()
+calendar.time = currentDate
+
+// Lisää yksi päivä
+calendar.add(Calendar.DATE, 1)
+
+// Tulosta tuleva päivämäärä
+println(calendar.time)
 ```
-
-Tämä tulostaa vuoden, kuukauden ja päivän numerot ja näyttää seuraavan tuloksen: "Vuosi: 2021", "Kuukausi: 6" (huomaa, että kuukaudet alkavat nollasta eli kesäkuu on 5.), "Päivä: 19".
-
-## Syvällisempi sukellus
-
-Halutessasi voit tarkentaa vielä enemmän nykyisen päivämäärän hakemiseen. Voit esimerkiksi käyttää seinäkellon aikaan tai muuttaa päivämäärän muotoa. Seuraava koodiesimerkki näyttää kuinka voit tehdä tämän:
-
-```Kotlin
-val formatter = DateTimeFormatter.ofPattern("MM/DD/YYYY HH:mm:ss")
-val nykyinenAika = LocalDateTime.now()
-val formaattattuAika = nykyinenAika.format(formatter)
-
-println("Seinäkellon aika: $nykyinenAika")
-println("Muotoiltu aika: $formaatattuAika")
-```
-
-Tulostus näyttää nykyisen ajan seinäkellossa ja formaatissa, joka olemme määritelleet. Lisäksi voit käyttää muita `DateTimeFormatter`-luokan metodeja, kuten `ofLocalizedDate` tai `ofLocalizedTime`, jotta voit muuttaa päivämäärän muotoa tavalla, joka vastaa paikallisia asetuksiasi.
 
 ## Katso myös
 
-- [Kotlindocs - Date](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date.html)
-- [Kotlin Tutorials - Working with Dates and Times in Kotlin](https://kotlinlang.org/docs/datetime.html)
-- [Baeldung - Working with Dates in Kotlin](https://www.baeldung.com/kotlin/dates)
+- [Kotlinin virallinen Dokumentaatio](https://kotlinlang.org/docs/reference/datetime.html)
+- [Java Calendar Dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [LocalDateTime Dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)

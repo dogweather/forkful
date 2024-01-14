@@ -1,43 +1,49 @@
 ---
-title:    "Fish Shell: 日付の比較"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/comparing-two-dates.md"
+title:                "Fish Shell: 「二つの日付を比較する」"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜこの記事を読むべきか
 
-プログラミングを学ぶと、日付を比較する必要がある場面があります。例えば、特定の日付のイベントを記録したい場合や、特定の日付以降の作業を実行したい場合などです。日付を比較することで、より効率的なコーディングが可能になります。
+日付を比較することは、プログラマーにとって非常に重要です。この記事では、Fish Shellを使用して、簡単な方法で日付を比較する方法を紹介します。
 
 ## 方法
 
-日付の比較には、Fish Shellの内部コマンドである`date`を使用します。以下の例を参考にしてください。
+Fish Shellの```fish_date```コマンドを使用して、2つの日付を比較することができます。まず、比較したい日付のフォーマットを設定します。
 
-```Fish Shell
-set start_date (date -f "%Y-%m-%d" "2021-01-01")
-set end_date (date -f "%Y-%m-%d" "2021-02-01")
-if test $start_date -lt $end_date
-    echo "Start date is before end date"
+```
+set date1 "2020-02-01"
+set date2 "2021-03-15"
+```
+
+次に、```fish_date```を使用して日付を比較します。
+
+```
+if test (fish_date <$date1 >$date2)
+echo"$date1 is earlier than $date2"
 end
 ```
 
-上記のコードでは、まず`date`コマンドを使用して、`%Y-%m-%d`の形式で日付を設定しています。そして、`if`文を使用して日付の比較を行い、`echo`コマンドで結果を出力しています。
+上記のコードでは、```<$```と```>$```を使用して、日付を比較し、結果を出力します。```<$```は左側の値が右側の値よりも小さい場合、```>$```は右側の値が左側の値よりも大きい場合に真となります。
 
 ## 詳細
 
-日付の比較では、`date`コマンドの他にも様々なオプションがあります。
+Fish Shellの```fish_date```コマンドは、GNU dateコマンドと同等の機能を持っています。したがって、様々なフォーマットで日付を比較することができます。
 
-例えば、`date -d`を使用することで、日付の計算を行うことができます。また、`date -s`を使用することで、日付を設定することも可能です。
+また、日付の比較に使用する演算子として、```<```、```<=```、```>```、```>=```、```==```、```!=```があります。これらの演算子は、日付を数値として比較することもできます。
 
-その他にも、`date`コマンドの詳細な使用方法については、公式ドキュメントを参考にしてください。
+## それでは
 
-## はてな
+今回紹介した方法以外にも、Fish Shellで日付を比較する方法はいくつかあります。以下のリンクを参考に、さまざまな方法を試してみてください。
 
-この記事では、Fish Shellを使用して日付を比較する方法を紹介しました。日付の比較には様々なケースがありますが、きちんと理解してコーディングすることで、より効率的なプログラミングが可能になります。
+- Fish Shell公式ドキュメント：https://fishshell.com/docs/current/index.html#selecting-dates
+- GNU dateコマンド公式ドキュメント：https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
 
-## 関連リンク
+## 関連記事
 
-- [Fish Shell 公式ドキュメント] (https://fishshell.com/docs/current/index.html)
-- [日付と時刻を操作する方法] (https://linuxacademy.com/blog/linux/the-linux-date-command-at-your-service/)
-- [Fish Shellの基本コマンドの使い方] (https://qiita.com/diskkid/items/9f86cdc0c6e7b82d5aae)
+- Fish Shellで変数を使って日付を操作する方法：https://example.blog/fishshell-dates-variables
+- 日付のフォーマットを変更する方法：https://example.blog/how-to-change-date-format-using-fishshell

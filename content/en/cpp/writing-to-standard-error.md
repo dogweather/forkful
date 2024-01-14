@@ -1,49 +1,67 @@
 ---
-title:    "C++ recipe: Writing to standard error"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/writing-to-standard-error.md"
+title:                "C++ recipe: Writing to standard error"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-As a programmer, you may have come across the term "standard error" while debugging your code. But have you ever wondered why we engage in writing to standard error? In this blog post, we will explore the importance of writing to standard error and how it can be useful for developers.
+
+Writing to standard error may not be a common practice in everyday programming, but it can be a useful tool for debugging and error handling. By writing to standard error, you can print out specific error messages that can help you identify and fix issues in your code.
 
 ## How To
-Writing to standard error in C++ is a standard way of displaying error messages or debugging information to the user. This is achieved by using the `std::cerr` object, which is specifically designed for error output. Let's take a look at an example:
+
+To write to standard error in C++, you can use the `std::cerr` stream. This stream is specifically designed for error output, so any message you write to it will be automatically displayed in the standard error stream.
+
+To use the `std::cerr` stream, you will need to include the `<iostream>` header in your code. Then, you can use the `<<` operator to send messages to the stream, just like you would with `std::cout`.
 
 ```C++
 #include <iostream>
 
 int main() {
-    int num = 0;
-    std::cout << "Enter a number: ";
-    std::cin >> num;
-    
-    if (num % 2 == 0) {
-        std::cerr << "Even number entered!" << std::endl;
-    }
-    
+    std::cerr << "This is an error message." << std::endl;
     return 0;
 }
 ```
 
-In this code, we are using `std::cerr` to output a message if the user enters an even number. This way, we can alert the user about any potential errors in our code. The output for this code would be:
+Running this code will produce the following output in the standard error stream:
 
 ```
-Enter a number: 4
-Even number entered!
+This is an error message.
 ```
 
-As you can see, the message was displayed on a separate line, indicating it was written to standard error. This is useful for distinguishing between regular output and error messages.
+You can also use the `std::cerr` stream to print out variable values or other important information during debugging.
+
+```C++
+#include <iostream>
+
+int main() {
+    int num = 42;
+    std::cerr << "The value of num is: " << num << std::endl;
+    return 0;
+}
+```
+
+This code will output the following in the standard error stream:
+
+```
+The value of num is: 42
+```
 
 ## Deep Dive
-So why do we use `std::cerr` instead of `std::cout`? The main difference between the two is that `std::cerr` is unbuffered while `std::cout` is buffered. This means that `std::cerr` immediately displays the output to the user, whereas `std::cout` may delay the display until a certain condition is met. In the case of error messages, we want them to be displayed immediately so that the user is aware of any issues with the program.
 
-It's also important to note that `std::cerr` is not limited to just error messages. You can use it to output any kind of debugging information or progress updates to the user. This makes it a useful tool for developers to track the execution of their code and identify any potential issues.
+The standard error stream, `std::cerr`, is actually a predefined object of the `std::ostream` class, just like `std::cout`. This means that you can use the same methods and operators on `std::cerr` as you would with `std::cout`.
+
+Additionally, the `<<` operator works differently for `std::cerr` than it does for `std::cout`. With `std::cerr`, the output is immediately flushed to the standard error stream, whereas with `std::cout`, the output is buffered and may not appear until the buffer is full or until you manually flush it.
+
+It's also worth noting that `std::cerr` is unbuffered by default, meaning that its output is not stored in a buffer before being sent to the standard error stream. This ensures that error messages will be immediately displayed, even if your program crashes.
 
 ## See Also
-- [C++ Standard Library](https://en.cppreference.com/w/cpp/header)
-- [Introduction to Standard Input and Output in C++](https://www.geeksforgeeks.org/introduction-input-output-header-files-c-cpp/)
 
-Writing to standard error may seem like a simple concept, but it is an essential aspect of programming that can greatly improve the debugging process. So the next time you encounter an error in your code, remember the `std::cerr` object and use it to your advantage.
+- [Printing Strings to standard error using fprintf() in C](https://www.includehelp.com/c-programming/write-to-standard-error-using-fprintf-in-c.aspx)
+- [Printing Error Messages to standard error in C++](https://www.tutorialspoint.com/printing-error-messages-to-standard-error-in-cplusplus)
+- [The standard streams in C++](https://www.learncpp.com/cpp-tutorial/the-standard-streams/)
+
+By using the `std::cerr` stream in your C++ programs, you can easily print out error messages and important information to the standard error stream. This can be incredibly helpful in debugging and troubleshooting your code. Give it a try in your next project!

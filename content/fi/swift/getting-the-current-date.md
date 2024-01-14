@@ -1,38 +1,72 @@
 ---
-title:    "Swift: Nykyisen päivämäärän saaminen"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/getting-the-current-date.md"
+title:                "Swift: Päivämäärän hankkiminen"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Oletko koskaan tarvinnut tietää nykyisen päivämäärän ja ajan? Esimerkiksi laskutusta tai aikaleimoja varten? Swift-ohjelmointikieli tarjoaa helpon tavan hakea nykyinen päivämäärä ja aika, ja tässä blogikirjoituksessa opit, miten se tehdään.
+On monia syitä miksi haluaisi saada näytön päivämäärän Swift-ohjelmoinnissa. Tämä voi olla hyödyllistä esimerkiksi tapahtumien aikaleimojen tallentamiseen tai suorituskyvyn mittaamiseen eri päivien välillä.
 
-## Miten
+## Kuinka
 
-Saadaksesi nykyisen päivämäärän Swiftillä, seuraavat koodirivit riittävät:
+Käyttämällä Swiftin ```Date()```-funktiota, voit helposti saada nykyisen päivämäärän ja ajan. Tämä palauttaa päivämäärän ja ajan nykyisestä aikavyöhykkeestäsi.
 
-```Swift
+```
 let currentDate = Date()
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
-let currentDateString = dateFormatter.string(from: currentDate)
-print(currentDateString)
+print(currentDate)
 ```
 
-Ensimmäisellä rivillä luodaan muuttuja `currentDate`, joka sisältää nykyisen päivämäärän ja ajan. Toisella rivillä luodaan DateFormatter-olio, joka auttaa muotoilemaan halutunlaisen merkkijonon päivämäärästä. Seuraavalla rivillä määritellään haluttu muotoilu käyttämällä `dateFormat`-ominaisuutta. Lopuksi `string(from:)`-metodilla muodostetaan halutun muotoinen merkkijono `currentDate`-muuttujasta ja tulostetaan se konsoliin.
+Tämä koodi tulostaa nykyisen päivämäärän ja ajan seuraavassa muodossa:
 
-Tässä esimerkissä päivämäärästä muodostetaan merkkijono muodossa "päivä.kuukausi.vuosi tunti:minuutti:sekunti", mutta käytännössä voit muotoilla sen haluamallasi tavalla. Esimerkiksi kirjoittamalla `dateFormatter.dateFormat = "HH:mm"` saat tulostettua vain nykyisen ajan muodossa "tunti:minuutti".
+```
+2019-09-10 18:28:30 +0000
+```
 
-## Syvemmälle
+Voit myös muuttaa päivämäärän muotoa käyttämällä ```DateFormatter```-luokkaa. Tässä esimerkissä päivämäärä muutetaan "dd/MM/yyyy" muotoon:
 
-Nykyisen päivämäärän saaminen Swiftillä perustuu käytännössä `Date`-rakenteeseen ja `DateFormatter`-luokkaan. `Date`-rakenne sisältää tiedon nykyisestä ajankohdasta ja `DateFormatter`-luokka auttaa muotoilemaan tuon tiedon halutun muotoiseksi merkkijonoksi.
+```
+let formatter = DateFormatter()
+formatter.dateFormat = "dd/MM/yyyy"
 
-On myös hyvä huomata, että `dateFormat`-ominaisuus sekä `string(from:)`-metodi käyttävät merkkejä merkkaamaan erilaisia osia päivämäärässä, kuten päivän, kuukauden ja vuoden. Voit lukea lisää näistä merkeistä [DateFormatterin dokumentaatiosta](https://developer.apple.com/documentation/foundation/dateformatter), jossa on myös esimerkkejä erilaisista formaattivaihtoehdoista.
+let currentDate = Date()
+print(formatter.string(from: currentDate))
+```
+
+Tämä tulostaa nykyisen päivämäärän muodossa:
+
+```
+10/09/2019
+```
+
+## Syvenny
+
+Päivämäärän saaminen voi joskus olla monimutkaisempaa, erityisesti jos tarvitset tarkempaa tietoa päivämäärästä, kuten vuoden, kuukauden tai päivän numeron. Tähän voit käyttää ```Calendar```-luokkaa, joka antaa sinulle lisätoiminnallisuutta päivämäärään liittyen.
+
+```
+let calendar = Calendar.current
+let year = calendar.component(.year, from: Date())
+let month = calendar.component(.month, from: Date())
+let day = calendar.component(.day, from: Date())
+
+print("Nykyinen vuosi: \(year)")
+print("Nykyinen kuukausi: \(month)")
+print("Nykyinen päivä: \(day)")
+```
+
+Tämä koodi palauttaa seuraavan tulosteen:
+
+```
+Nykyinen vuosi: 2019
+Nykyinen kuukausi: 9
+Nykyinen päivä: 10
+```
 
 ## Katso myös
 
-- [Apple Developer Documentation: Date](https://developer.apple.com/documentation/foundation/date)
-- [Apple Developer Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- Apple Developer Documentation: [Date Class](https://developer.apple.com/documentation/foundation/date)
+- Apple Developer Documentation: [DateFormatter Class](https://developer.apple.com/documentation/foundation/dateformatter)
+- Apple Developer Documentation: [Calendar Class](https://developer.apple.com/documentation/foundation/calendar)

@@ -1,46 +1,48 @@
 ---
-title:    "Python: दो तारीखों की तुलना करना"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/python/comparing-two-dates.md"
+title:                "Python: दो तिथियों का तुलना करना"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+**## Kyu**
+Date comparison ek important concept hai jo logon ko python programming mein master hona chahiye. Ye hamein do tareeko se madad karta hai - pehle, ye hamein tareekh ka difference calculate karne mein madad karta hai aur dusra, ye humein date ke sath related logic aur algorithms samajhne mein madad karta hai.
 
-कभी-कभी हमें अलग-अलग दिनांकों को तुलना करनी पड़ती है, जैसे हमारे जन्म दिन को अपने सालगिरह से तुलना करना चाहते हैं। ऐसे मामलों में, हमारे पास सही तारीख तुलना करने के लिए उपयुक्त कोड होना जरूरी है। इस लेख में, हम सीखेंगे दो तारीखों को कैसे तुलना किया जाए।
+**## Kaise Karein**
+Pehle humein do dates ko input lena hoga:
 
-## कैसे
-
-अब हम पाइथन में दो तारीखों को तुलना करने के लिए कॉडिंग सीखेंगे।
-
+```Python
+date1 = input("Enter first date in format dd/mm/yyyy: ")
+date2 = input("Enter second date in format dd/mm/yyyy: ")
 ```
-# आवश्यक मॉड्यूल इंपोर्ट करें
-import datetime
 
-# दो तारीखों की घोषणा करें
-date1 = datetime.date(2021, 1, 1)
-date2 = datetime.date(2022, 1, 1)
+Ab hum is input ko date format mein convert karenge aur phir ye dates ko compare karenge:
 
-# तारीखों की तुलना करें
+```Python
+from datetime import datetime
+
+date1 = datetime.strptime(date1, '%d/%m/%Y')
+date2 = datetime.strptime(date2, '%d/%m/%Y')
+
 if date1 > date2:
-    print("पहली तारीख बड़ी है")
+    print("{} is after {}".format(date1, date2))
 elif date1 < date2:
-    print("दूसरी तारीख बड़ी है")
+    print("{} is before {}".format(date1, date2))
 else:
-    print("दोनों तारीख बराबर हैं")
+    print("Both dates are same")
 ```
 
-आउटपुट:
-```
-दूसरी तारीख बड़ी है
-```
+**## Gehree Jankari**
 
-## डीप डाइव
+Date comparison mein kuch important chizon ka dhyan rakhna zaroori hai. Sabse pehle, input date strings ko sahi format mein convert karna zaroori hai. Iske liye, hum `strptime()` ka use karte hain jo input date ko datetime object mein convert karta hai.
 
-पाइथन में दो तारीखों को तुलना करने के लिए, हम दो तारीखों को `datetime` ऑब्जेक्ट में रूपांतरित करके उनका तुलना कर सकते हैं। `datetime` ऑब्जेक्ट, तारीख और समय को प्रदर्शित करता है और तारीखों को तुलना करने के लिए `>` और `<` ऑपरेटर का उपयोग करता है। हम इसके अलावा दो तारीखों को समय में भी तुलना कर सकते हैं।
+Dusri baat, hum `datetime` module ko import karte hain jis se hum date aur time ke sath related kaam kar sakte hain. Iske alawa, hum `strftime()` ko use kar sakte hain jo datetime object ko specify format mein convert karta hai.
 
-## देखें भी
+Date comparison mein "naive" aur "aware" dates ka concept bhi important hai. Naive date, timezone ke bina hota hai jabki aware date timezone ke sath hota hai. Iske alawa, leap years aur time zones ko bhi dhyan mein rakhna zaroori hai date comparison mein.
 
-- [पाइथन में तारीख कैसे बनाएं](https://www.geeksforgeeks.org/python-program-to-find-the-date-after-subtracting-days-from-a-given-date/)
-- [तारीख के साथ काम करने के लिए अतिरिक्त मोड्यूल](https://stackoverflow.com/questions/979006/how-to-parse-w3c
+**## Dekhiye Bhi**
+- [Python Dates and Times](https://www.w3schools.com/python/python_datetime.asp)
+- [Comparing dates in Python](https://pynative.com/python-check-if-two-dates-are-equal/)
+- [Python datetime module](https://docs.python.org/3/library/datetime.html)

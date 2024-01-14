@@ -1,51 +1,43 @@
 ---
-title:    "Gleam recipe: Writing to standard error"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/writing-to-standard-error.md"
+title:                "Gleam recipe: Writing to standard error"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Writing to standard error is an essential part of programming, as it allows us to handle and display error messages. This is especially important in debugging and troubleshooting our code, allowing us to identify and fix issues in our programs.
+Writing to standard error can be a useful tool for programmers in many situations. It allows for error messages and other important information to be displayed separately from the regular output, making debugging and troubleshooting much easier.
 
 ## How To
-
-To write to standard error in Gleam, we can use the `gleam_io.console.err()` function. Let's take a look at an example:
-
-```
-Gleam import gleam_io
-import gleam_result
-
-fn write_error() {
-  case gleam_io.console.err("Oops, something went wrong.") {
-    Ok(_) -> gleam_result.Ok("Error message successfully written to standard error.")
-    Error(err) -> gleam_result.Error(err)
-  }
-}
-```
-
-In this code, we are using the `gleam_io.console.err()` function to write the message "Oops, something went wrong." to the standard error output. We then use a case statement to handle the result of this function. If it returns an `Ok` value, we can display a success message. Otherwise, if it returns an `Error` value, we can handle the error by returning the `Error` value.
-
-Now, let's run this code and see the output:
+To write to standard error in Gleam, you can use the `io.error` function. This function takes a string as its argument, which will be displayed on the standard error output.
 
 ```
-$ gleam run write_error.gleam
-Oops, something went wrong.
+Gleam ...
+let error_message = "Something went wrong"
+io.error(error_message)
+...
 ```
 
-As we can see, our error message was successfully written to standard error.
+Running this code will produce the following output:
+
+```
+Something went wrong
+```
+
+As you can see, the error message is displayed separately from the regular output.
 
 ## Deep Dive
+One of the key benefits of writing to standard error is that it allows for error messages to be easily distinguished from regular output. This is especially useful when dealing with large amounts of data or complex programs, as it can be difficult to locate error messages in a sea of output.
 
-When writing to standard error, it is important to keep in mind the purpose of our error messages. These messages should provide useful information to help us identify and fix issues in our programs. They should be clear, concise, and specific, avoiding jargon and technical terms that may be difficult for non-technical users to understand.
+Additionally, writing to standard error can be helpful in cases where you need to differentiate between types of messages, such as warnings, errors, or informational messages. This can aid in quickly identifying and addressing issues within your code.
 
-Additionally, it is also important to handle errors properly and gracefully. This means using appropriate error handling techniques, such as `case` statements or `try` and `catch` blocks, to handle any potential errors that may occur.
-
-In Gleam, we can also use the `gleam_io.console.errn()` function to write an error message to standard error with a unique identifier. This can be helpful in situations where we need to track multiple error messages and identify them based on their unique identifiers.
+Another important aspect to note is that writing to standard error does not halt the execution of the program, unlike writing to standard output. This means that even if an error occurs, the program will continue to run and display output, making it easier to identify and troubleshoot issues.
 
 ## See Also
+Here are some helpful links for further reading on writing to standard error in Gleam:
 
-- [Gleam Documentation on Writing to Standard Error](https://gleam.run/book/tour/errors.html#standard-error)
-- [Gleam Console Module](https://gleam.run/modules/gleam_io#gleam_io.console)
+- [Gleam Documentation on Writing to Standard Error](https://gleam.run/articles/writing-to-standard-error)
+- [Gleam Language Reference on Standard I/O](https://gleam.run/reference/std/#standard-io)
+- [Gleam Blog on Debugging with Standard Error](https://gleam.run/articles/debugging-with-standard-error)

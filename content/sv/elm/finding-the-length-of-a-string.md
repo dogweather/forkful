@@ -1,47 +1,41 @@
 ---
-title:    "Elm: Att hitta längden på en sträng"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/finding-the-length-of-a-string.md"
+title:                "Elm: Att hitta längden av en sträng"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Hej alla läsare! I denna bloggpost kommer vi att prata om hur man hittar längden på en sträng med hjälp av programmeringsspråket Elm. Att kunna hitta längden på en sträng är en grundläggande funktion som kan vara användbar i många olika sammanhang. Låt oss dyka in i ämnet!
-
 ## Varför
 
-Du kanske undrar varför man ens skulle behöva hitta längden på en sträng. Svaret är enkelt - det finns många tillfällen där det kan vara användbart att veta hur många tecken en sträng innehåller. Det kan till exempel vara när man vill kontrollera om en sträng är för lång för att visas på en viss plats, eller när man vill göra en analys av data som är sparade som en sträng. 
+Att hitta längden av en sträng kan verka som en enkel uppgift, men det finns faktiskt flera olika sätt att göra det på. Att veta hur man hittar längden på en sträng kan vara användbart i många olika programmeringssituationer.
 
-## Hur man gör det
+## Hur Du Gör
 
-För att hitta längden på en sträng i Elm, behöver vi använda funktionen `String.length`. Låt oss titta på ett exempel:
+Att hitta längden på en sträng i Elm är ganska enkelt med hjälp av den inbyggda funktionen `String.length`. Denna funktion tar en sträng som argument och returnerar längden av strängen som ett heltal. Här är ett exempel på kod som visar hur man använder denna funktion:
 
 ```Elm
-mySträng = "Hej alla läsare!"
-
-length = String.length mySträng
-
-element.text "Längden på strängen är " ++ String.fromInt length
+stringLength = String.length "Hej, världen!"
 ```
 
-I det här exemplet skapar vi först en variabel `mySträng` med en sträng som innehåller ett meddelande till våra läsare. Sedan använder vi funktionen `String.length` för att hitta längden på strängen och spara den i variabeln `length`. Sedan skriver vi ut resultatet med `element.text` och `String.fromInt` för att konvertera längden till en sträng. När vi kör programmet kommer vi att se följande resultat:
+Detta resulterar i en längd av 13 eftersom det finns 13 tecken i strängen "Hej, världen!". Om man istället vill använda `String.length` för att hitta längden på en variabel sträng, kan man göra så här:
 
-> Längden på strängen är 17
+```Elm
+myString = "Detta är en variabel sträng."
+stringLength = String.length myString
+```
 
-Som du ser är det enkelt att hitta längden på en sträng med hjälp av Elm!
+Det är också möjligt att använda `String.length` för att hitta längden på en tom sträng. I detta fall kommer funktionen att returnera värdet 0.
 
 ## Djupdykning
 
-För att förstå hur funktionen `String.length` fungerar bakom kulisserna, kan vi titta på dess kod i Elm-källkoden. Detta är dock en djupdykning som är mer relevant för mer avancerade Elm-programmerare. Det viktiga är att du förstår hur man använder funktionen och dess syfte.
+När man använder `String.length` i Elm bör man vara medveten om att funktionen räknar antalet tecken och inte antalet ord. Detta innebär att tecknen "ä", "å", och "ö" kommer att räknas som ett enda tecken i strängen. Detta är viktigt att tänka på när man ska formatera utmatningen eller arbeta med strängar som innehåller specialtecken.
 
-Se även:
+Det är också värt att notera att `String.length` inte bara fungerar för vanliga strängar utan också för teckenlistor, vilket gör den användbar för olika typer av data.
 
-- [Elm dokumentation om strängar](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm-källkod för funktionen String.length](https://github.com/elm/core/blob/1.0.5/src/String.elm#L102)
+## Se Också
 
-Tack för att du läste denna bloggpost om att hitta längden på en sträng i Elm. Jag hoppas att du har lärt dig något nytt och att det kan vara till hjälp i dina framtida Elm-projekt. Ha det bra! 
-
-## Se även
-
-- [Elm dokumentation om strängar](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm-källkod för funktionen String.length](https://github.com/elm/core/blob/1.0.5/src/String.elm#L102)
+- Elm dokumentation för `String.length`: https://package.elm-lang.org/packages/elm/core/latest/String#length
+- En guide för att arbeta med strängar i Elm: https://guide.elm-lang.org/strings/
+- Exempel på hur man använder `String.length` i praktiken: https://www.techopedia.com/definition/17257/string-length

@@ -1,61 +1,52 @@
 ---
-title:    "Arduino: Obliczanie daty w przyszłości lub przeszłości"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino: Obliczanie daty w przyszłości lub przeszłości"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W dzisiejszych czasach, programowalne mikrokontrolery, takie jak Arduino, są niezwykle popularne wśród hobbystów i zawodowych programistów. Pozwalają one na tworzenie projektów z dowolnej dziedziny i dodawanie inteligentnych funkcji do różnego rodzaju urządzeń. Dzięki tym możliwościom, możliwe jest także obliczanie daty w przyszłości lub przeszłości, co może być niezwykle przydatne w różnego rodzaju projektach.
+Obliczanie daty w przeszłości lub przyszłości może być użyteczne w wielu projektach z użyciem Arduino. Na przykład, można wykorzystać je do zaprogramowania alarmu, który będzie działał tylko w wybranym czasie lub do kontrolowania czasu trwania projektu.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości, możemy wykorzystać bibliotekę "TimeLib.h" dostępną w Arduino IDE. Poniżej znajduje się przykładowy kod, który pokazuje, jak wykorzystać tę bibliotekę do przewidywania daty w przyszłości lub przeszłości:
+Aby obliczyć datę w przeszłości lub przyszłości za pomocą Arduino, wystarczy skorzystać z wbudowanej biblioteki "Time". Poniżej przedstawiony jest kod, który oblicza datę 10 dni w przyszłości od dzisiaj:
 
 ```Arduino
-#include <TimeLib.h>
-#include <TimeAlarms.h>
+#include <Time.h>
 
 void setup() {
-  // ustawienie początkowej daty
-  setTime(18, 30, 0, 1, 1, 2021);
+  // inicjuj czas
+  setTime(14, 0, 0, 1, 1, 2019);
   
-  // wyświetlenie aktualnej daty
+  // pobierz aktualny czas
+  time_t now = now();
+  
+  // dodać 10 dni do aktualnego czasu
+  time_t future = now + (10 * 24 * 60 * 60);
+  
+  // ustaw format i wyświetl przyszłą datę
   Serial.begin(9600);
-  Serial.print("Aktualna data: ");
-  Serial.println(now());
-
-  // obliczenie daty za 100 dni
-  Serial.print("Data za 100 dni: ");
-  Serial.println(now() + (86400 * 100)); // wartość w sekundach
-
-  // obliczenie daty przed 10 laty
-  Serial.print("Data przed 10 laty: ");
-  Serial.println(now() - (86400 * 365 * 10)); // wartość w sekundach
+  Serial.print(day(future));
+  Serial.print("/");
+  Serial.print(month(future));
+  Serial.print("/");
+  Serial.print(year(future));
 }
 
 void loop() {}
 ```
 
-Wyjście z powyższego kodu będzie wyglądać następująco:
+Wysłany zostanie następujący wynik: "11/1/2019", oznaczający datę 10 dni od dzisiaj.
 
-```
-Aktualna data: 1609530600
-Data za 100 dni: 1615746600
-Data przed 10 laty: 1101762600
-```
+## Pogłębione badanie
 
-W powyższym kodzie używamy funkcji `setTime ()`, aby ustawić datę na 1 stycznia 2021 r. o godzinie 18:30:00. Następnie wykorzystujemy funkcję `now ()`, która zwraca liczbę sekund od 1 stycznia 1970 r., aby obliczyć datę w przyszłości lub przeszłości. Aby obliczyć datę za 100 dni, dodajemy do bieżącej liczby sekund 86400 (ilość sekund w jednym dniu) razy 100 (ilość dni). Analogicznie, aby obliczyć datę przed 10 laty, od bieżącej liczby sekund odejmujemy 86400 razy 365 (ilość dni w roku) razy 10 (ilość lat).
+Aby lepiej zrozumieć, jak działa obliczanie daty w przeszłości lub przyszłości w Arduino, warto zapoznać się z kolekcją funkcji dostępnych w bibliotece "Time". Dzięki nim możemy uzyskać dostęp do różnych części daty, takich jak dzień, miesiąc czy rok. Ponadto, można także zmieniać ustawienia czasu, takie jak strefa czasowa czy format wyświetlania.
 
-## Głębszy wgląd
+## Zobacz też
 
-Biblioteka "TimeLib.h" oferuje również inne przydatne funkcje, takie jak `hour ()`, `minute ()`, `second ()`, `day ()`, `month ()` i `year ()`, które pozwalają na bardziej szczegółowe ustawienie bieżącej daty i czasu. Dzięki nim możliwe jest np. obliczenie daty za 24 godziny lub 30 minut od teraźniejszości.
-
-Warto także wspomnieć o bibliotece "TimeAlarms.h", która pozwala na ustawienie alarmów na wybrane daty i czasy. Jest to niezwykle przydatna funkcjonalność, gdy chcemy, aby nasz projekt wykonał jakieś zadanie w określonym dniu lub godzinie.
-
-## Zobacz także
-
-- Dokumentacja biblioteki TimeLib.h: https://playground.arduino.cc/Code/time/
-- Dokumentacja biblioteki TimeAlarms.h: https://www.pjrc.com/teensy/td_libs_TimeAlarms.html
+- [Dokumentacja biblioteki "Time" dla Arduino](https://www.arduino.cc/en/Reference/Time)
+- [Przykładowy projekt z użyciem obliczania daty w przeszłości i przyszłości](https://create.arduino.cc/projecthub/ninjaCoders/arduino-date-time-168b82)

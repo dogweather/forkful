@@ -1,37 +1,49 @@
 ---
-title:    "Rust: Generowanie losowych liczb"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/generating-random-numbers.md"
+title:                "Rust: Generowanie losowych liczb"
+programming_language: "Rust"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Generowanie liczb losowych jest ważnym aspektem wielu aplikacji, takich jak gry, symulacje czy kryptografia. W programowaniu w Rust, istnieje wiele sposobów na generowanie liczb losowych, więc jest to ważna umiejętność dla każdego programisty.
+Generowanie liczb losowych jest ważnym aspektem programowania, który może być wykorzystywany w różnych celach. Może to pomóc w tworzeniu symulacji, losowego wybierania elementów lub w testowaniu programów, które wymagają różnych przypadkowych danych. Dlatego w tym artykule przedstawimy w jaki sposób możemy w łatwy sposób generować liczby losowe w języku Rust.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-W Rust można wygenerować liczby losowe za pomocą różnych funkcji, takich jak `rand`, `thread_rng` czy `random`. Poniżej przedstawiamy przykładowy kod, który wykorzystuje najpopularniejszą funkcję - `rand`:
+Aby wygenerować losową liczbę w Rust, możemy wykorzystać bibliotekę standardową `rand`. Najpierw musimy dodać ją jako zależność w pliku `Cargo.toml`:
 
-```Rust
+```
+[dependencies]
+rand = "0.8.3"
+```
+
+Następnie w pliku `main.rs` możemy zacząć generować liczby losowe:
+
+```
 use rand::Rng;
 
 fn main() {
-    let mut rng = rand::thread_rng();
-    let random_number: u32 = rng.gen();
-    println!("Wygenerowana liczba losowa: {}", random_number);
+    // wygenerowanie liczby całkowitej z zakresu 1-100
+    let random_number = rand::thread_rng().gen_range(1..=100);
+    println!("Wylosowana liczba to: {}", random_number);
+
+    // wygenerowanie liczby zmiennoprzecinkowej z zakresu 0-1
+    let random_float = rand::thread_rng().gen_range(0.0..1.0);
+    println!("Wylosowana liczba to: {}", random_float);
 }
 ```
 
-Przypisaliśmy wynik funkcji `gen` do zmiennej `random_number` i wydrukowaliśmy go na konsoli. Oczywiście można również określić zakres generowanych liczb za pomocą funkcji `gen_range` lub dokonać wyboru z listy za pomocą funkcji `choose`.
+Po uruchomieniu programu kilka razy, zauważymy, że liczby są generowane w sposób losowy w podanym przez nas zakresie.
 
-## Głębsze zagadnienia
+## Zanurzenie w temat
 
-Istnieje wiele zalet korzystania z generowania liczb losowych w Rust, takich jak gwarancja odporności na błędy dzięki statycznemu typowaniu czy wydajność dzięki niskopoziomowej implementacji. Jednym z wartościowych modułów jest `rand_core`, który zawiera funkcje do generowania liczb losowych w czystej postaci, bez dodatkowych zależności bibliotek. Warto również zapoznać się z biblioteką `Rand` i jej wykorzystaniem w generowaniu liczb losowych z rozkładem normalnym czy wykorzystaniem ziarna dla zapewnienia powtarzalności wyników.
+Istnieją różne sposoby generowania liczb losowych w Rust, np. wykorzystując bibliotekę `rand` lub `rand_distr`, która pozwala na generowanie liczb według różnych rozkładów prawdopodobieństwa. Warto również pamiętać, że jeśli potrzebujemy wygenerować sekwencję liczb losowych, możemy użyć generatora `SeedableRng` z funkcją `seed_from_u64()` do ustawienia początkowego stanu generatora.
 
 ## Zobacz również
 
-- Dokumentacja biblioteki `rand` [https://docs.rs/rand/0.7.3/rand/](https://docs.rs/rand/0.7.3/rand/)
-- Rozbudowane przykłady wykorzystania biblioteki `rand` [https://rust-random.github.io/book/examples.html](https://rust-random.github.io/book/examples.html)
-- Szczegółowe informacje o generowaniu liczb losowych w Rust [https://doc.rust-lang.org/std/rand/](https://doc.rust-lang.org/std/rand/)
+- Dokumentacja biblioteki `rand`: https://docs.rs/rand/0.8.3/rand/
+- Dokumentacja biblioteki `rand_distr`: https://docs.rs/rand_distr/0.3.2/rand_distr/
+- Przykładowe kody wykorzystujące generowanie liczb losowych w Rust: https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=ca81f1016c2e171773a7cc4a33eb9a98

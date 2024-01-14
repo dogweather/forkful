@@ -1,48 +1,32 @@
 ---
-title:    "Clojure: Konvertere en dato til en streng"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/converting-a-date-into-a-string.md"
+title:                "Clojure: Konvertere en dato til en streng"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Mange programmerere kan trenge å konvertere datoer til strenger for å vise dem på en enklere og mer lesbar måte. Dette kan være nyttig for å presentere datoer i et brukergrensesnitt eller for å lagre dem i en database.
+# Hvorfor
+Konvertering av datoer til strenger er en vanlig oppgave i programmering, spesielt når man jobber med dato- og tidsbaserte applikasjoner. Dette kan være nyttig for å vise datoer i et mer leselig format eller for å sammenligne datoer med hverandre.
 
-## Hvordan
-Å konvertere datoer til strenger i Clojure er enkelt med bruk av funksjonen `(str ...)`. Dette er en innebygd funksjon som lar deg bygge en streng fra flere ulike datastrukturer, inkludert datoer.
-
+# Hvordan du gjør det
+For å konvertere en dato til en streng i Clojure, kan du bruke funksjonen `str` sammen med `clj-time` biblioteket. Først må du importere `clj-time` biblioteket ved å legge til følgende linje i toppen av filen din:
 ```Clojure
-(str 15 "April" 2020) ;;output: "15 April 2020"
+(ns din-prosjekt.navn (:require [clj-time.core :as time]))
 ```
-
-Du kan også bruke funksjonen `format` for å spesifisere formatet på datoen. For eksempel, hvis du ønsker å vise måneden som en forkortet streng, kan du skrive:
-
+Deretter kan du konvertere en dato ved å bruke `str` funksjonen og spesifisere ønsket format:
 ```Clojure
-(format "%d %b %Y" 15 :April 2020) ;;output: "15 Apr 2020"
+(str (time/local-date "2019-09-14") "dd.MM.yyyy")
 ```
+Dette vil konvertere datoen til en streng i formatet `14.09.2019`. Du kan også spesifisere andre formater, som for eksempel `yyyy-MM-dd` eller `MM/dd/yyyy`.
 
-Det er også mulig å konvertere datoer til andre formater, som ISO 8601-formatet, ved hjelp av biblioteket `clj-time`. Her er et eksempel på hvordan du kan gjøre det:
+# Dypdykk
+Videre kan du også bruke `clj-time` biblioteket til å utføre en rekke andre operasjoner på datoer, som for eksempel å legge til eller trekke fra dager, uker eller måneder. Du kan lese mer om dette i offisiell dokumentasjon for `clj-time` biblioteket.
 
-```Clojure
-(require '[clj-time.format :as time])
-(time/unparse (time/date-time 2020 4 15) "yyyy-MM-dd") ;;output: "2020-04-15"
-```
+Det er også viktig å være oppmerksom på at datotyper i Clojure er immutable, noe som betyr at de ikke kan endres. Derfor vil du alltid få en ny instans av datoen når du konverterer den til en streng.
 
-## Dypdykk
-Når du konverterer en dato til en streng, kan du også inkludere tid, tidssone og milliseconds hvis du ønsker det. Dette gjøres ved å bruke funksjonen `date-time`. Her er et eksempel på hvordan du kan legge til tid og milliseconds i en konvertert dato:
-
-```Clojure
-(str (time/date-time 2020 4 15 15 30 45 500)) ;;output: "2020-04-15T15:30:45.500"
-```
-
-Det er også mulig å konvertere en dato til en lokal tidssone ved hjelp av `zoned-date-time`-funksjonen. Dette kan være nyttig hvis du ønsker å vise datoer i forskjellige tidssoner, som for eksempel i et globalt applikasjonsmiljø.
-
-```Clojure
-(str (time/zoned-date-time (time/date-time 2020 4 15) "Europe/Oslo")) ;;output: "2020-04-15T00:00:00.000+02:00"
-```
-
-## Se også
-- [Clojure `str`-funksjonen dokumentasjon](https://clojuredocs.org/clojure.core/str)
-- [Clojure `format`-funksjonen dokumentasjon](https://clojuredocs.org/clojure.core/format)
-- [Clj-time bibliotek dokumentasjon](https://github.com/clj-time/clj-time)
+# Se også
+- [Offisiell dokumentasjon for `clj-time` biblioteket](https://clj-time.github.io/clj-time/)
+- [En bloggpost om arbeid med `clj-time` i Clojure](https://yogthos.net/posts/2014-01-27-Clojure-and-date-manipulation.html)
+- [En tutorial for å jobbe med datoer i Clojure](https://www.tutorialspoint.com/clojure/clojure_date_time.htm)

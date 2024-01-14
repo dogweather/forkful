@@ -1,45 +1,40 @@
 ---
-title:    "Javascript: Kontrollera om en katalog finns"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/checking-if-a-directory-exists.md"
+title:                "Javascript: Kontrollera om en mapp finns"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kontrollera om en katalog finns på din dator kan vara en viktig del av att skriva effektiv kod. Genom att kontrollera om en katalog existerar kan du till exempel undvika att skriva över viktig data eller skapa onödiga kataloger.
+När man programmerar är det viktigt att ha kontroll över filstrukturen i sitt projekt. Ibland kan det vara nödvändigt att kontrollera om en viss mapp eller katalog finns innan man fortsätter med sin kod.
 
-## Så här
+## Så här gör du
 
-För att kontrollera om en katalog finns på din dator kan du använda dig av följande kod i Javascript:
+För att kontrollera om en mapp finns i Javascript, kan du använda dig av den inbyggda funktionen `fs.existsSync()`. Detta kommer att returnera `true` om mappen finns och `false` om den inte finns. Nedan följer ett enkelt exempel på hur du kan använda denna funktion:
 
 ```Javascript
-const fs = require('fs');
-const path = 'Sökväg/till/din/katalog';
+var fs = require('fs'); // Importera file system modulen
 
-// Kontrollera om katalogen existerar
-fs.access(path, (error) => {
-    if (error) {
-        console.log("Katalogen existerar inte");
-    } else {
-        console.log("Katalogen existerar");
-    }
-});
+// Kontrollera om mappen "images" finns
+if (fs.existsSync('images')) {
+  console.log('Mappen finns!');
+} else {
+  console.log('Mappen finns inte.');
+}
 ```
 
-I det här  exempel används modulen "fs" för att läsa filesystemet och funktionen "access" för att kontrollera om den specifika sökvägen finns. Om katalogen inte existerar kommer en felmeddelande att visas, annars kommer ett meddelande som bekräftar att katalogen finns.
+Om mappen "images" finns kommer output att vara "Mappen finns!". Om mappen inte finns kommer output att vara "Mappen finns inte.".
 
 ## Djupdykning
 
-En vanligt användning av att kontrollera om en katalog finns är att undvika att råka skriva över viktig data. Till exempel om du skapar en mapp för att lagra användarens personliga dokument, kan du först kontrollera om katalogen redan existerar istället för att skriva över befintlig data. 
+Det finns flera tillvägagångssätt för att kontrollera om en mapp finns i Javascript, men `fs.existsSync()` är den enklaste och mest effektiva lösningen. Det finns också andra metoder som `fs.stat()` och `fs.access()`, men dessa är mer avancerade och kräver mer kod.
 
-En annan användning är att skapa en ny katalog om den inte redan finns. Till exempel, om du vill lagra användarens bilder i en specifik mapp, kan du först kontrollera om katalogen finns och om inte, skapa den.
-
-Att kontrollera om en katalog finns är också ett sätt att förbättra prestandan i din kod. Genom att undvika onödiga operationer, som att skapa en katalog som redan existerar, kan du spara tid och resurser. 
+Det är också viktigt att notera att `fs.existsSync()` endast fungerar för att kontrollera om en mapp finns, inte om en fil finns. För att kontrollera om en fil finns kan du använda `fs.existsSync()` i kombination med `fs.statSync()`, vilket ger dig mer detaljerad information om filen.
 
 ## Se även
 
-- [Modulen "fs" i Node.js dokumentation](https://nodejs.org/api/fs.html)
-- [Tutorial om "fs" modulen på W3Schools](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Användbar information om att jobba med filer och kataloger i Javascript](https://www.digitalocean.com/community/tutorials/how-to-use-the-node-js-file-system-module)
+- [Node.js File System Modulen](https://nodejs.org/api/fs.html)
+- [Tutorial: Vad är mappar och filer?](https://www.digitalocean.com/community/tutorials/what-is-a-directory-file-system-structure-in-computer-programming)

@@ -1,44 +1,46 @@
 ---
-title:    "Swift: Å få nåværende dato"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/getting-the-current-date.md"
+title:                "Swift: Å få den nåværende datoen"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Å kunne få tak i den nåværende datoen er en grunnleggende funksjon i mange programmeringsprosjekter. Enten det handler om å vise den aktuelle datoen på en nettside, lagre den i en database eller bare for å holde oversikt over tid, så er evnen til å få tak i den nåværende datoen essensiell. I denne bloggposten vil vi vise deg hvordan du enkelt kan få tak i den nåværende datoen ved hjelp av Swift.
+Det er en vanlig oppgave for programmerere å ønske å hente den nåværende datoen og klokkeslettet i en applikasjon. Dette kan være nyttig for å vise aktuell informasjon, lage tidsstempler eller generelt for å holde styr på tiden. Uansett hva målet ditt er, kan det være nyttig å ha kunnskap om hvordan man henter den nåværende datoen i Swift.
 
-## Hvordan gjøre det
+## Slik gjør du det
 
-For å kunne få tak i den nåværende datoen i Swift, kan du bruke klassen `Date`. Dette er en innebygd klasse i Swift som lar deg håndtere datoer og tider. For å få tak i den nåværende datoen, kan du bruke funksjonen `Date()`, som vil returnere et `Date` objekt med den nåværende datoen og tiden.
-
-La oss se på et eksempel på hvordan dette kan implementeres i praksis:
+For å få tilgang til den nåværende datoen i Swift, kan du bruke `Date`-strukturen og `DateFormatter`-klassen. Her er et lite eksempel på hvordan du kan få tak i den nåværende datoen og konvertere den til en lesbar streng:
 
 ```Swift
-let nåværendeDato = Date()
-print(nåværendeDato) // output: 2019-12-24 15:00:00 +0000
-```
+// Henter den nåværende datoen
+let nå = Date()
 
-Som du kan se, vil utskriften gi deg den nåværende datoen og tiden i GMT-format. Hvis du ønsker å konvertere datoen til din lokale tidssone, kan du bruke klassen `DateFormatter`. La oss se på hvordan du kan gjøre det:
-
-```Swift
-let nåværendeDato = Date()
+// Opprett formatteringsobjekt
 let formatter = DateFormatter()
-formatter.timeZone = TimeZone.current
+
+// Setter ønsket format
 formatter.dateFormat = "dd.MM.yyyy"
-let lokalDato = formatter.string(from: nåværendeDato)
-print(lokalDato) // output: 24.12.2019
+
+// Konverterer datoen til en streng
+let datoStreng = formatter.string(from: nå)
+
+// Skriver ut resultatet
+print(datoStreng)
+
+// Output: 21.08.2021
 ```
 
-Her oppretter vi en instans av `DateFormatter` og setter tidssonen til den lokale tidssonen. Deretter definerer vi et format for datoen, i dette tilfellet dag.måned.år. Til slutt konverterer vi datoen og skriver ut den resulterende strengen med den nåværende datoen i lokal tid.
+Dette er bare et grunnleggende eksempel, men det viser hvordan du kan bruke `Date` og `DateFormatter` til å få tak i den nåværende datoen og formatere den slik du ønsker.
 
 ## Dypdykk
 
-I tillegg til å få tak i den nåværende datoen, kan du også bruke `Date` klassen til å utføre mer avanserte operasjoner, som for eksempel å beregne forskjellen mellom to datoer. Du kan også bruke metoder som `addingTimeInterval` for å legge til eller trekke fra en viss tid fra en dato. For en mer grundig forståelse av `Date` klassen og dens funksjoner, kan du sjekke dokumentasjonen fra Apple.
+Hvis du ønsker å lære mer om hvordan `Date`-strukturen og `DateFormatter`-klassen fungerer, kan du se på dokumentasjonen fra Apple. Det er også verdt å merke seg at disse klassene støtter internasjonalisering, noe som betyr at du kan formatere datoen på forskjellige måter avhengig av hvilket språk eller land du er i.
 
 ## Se også
 
-- [Apple dokumentasjon om Date klassen](https://developer.apple.com/documentation/foundation/date)
-- [Pragmatic Programmers' guide til dato og tidshåndtering i Swift](https://pragprog.com/book/mrswift/learn-apple-s-swift-language-for-ios)
+- [Apple dokumentasjon for Date og DateFormatter](https://developer.apple.com/documentation/foundation/date)
+- [Om internasjonalisering i Swift](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/StringsdictFileFormat/StringsdictFileFormat.html)

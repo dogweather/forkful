@@ -1,42 +1,62 @@
 ---
-title:    "C++: 텍스트 검색 및 대체"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/searching-and-replacing-text.md"
+title:                "C++: 텍스트 검색 및 대체하기"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-텍스트를 검색하고 바꾸는 것에 참여하는 이유는 무엇일까요? 그것은 매우 유용한 도구입니다. 그것은 코드 작성을 효율적으로 만들고, 시간과 노력을 절약해줍니다. 특히 큰 프로젝트에서는 많은 양의 코드를 검색하고 바꾸는 것이 필수적이기 때문에 이 작업을 자동화하는 것은 더 중요합니다.
+텍스트를 검색하고 바꾸는 것에 참여하는 이유는 매우 간단합니다 - 우리가 프로그래밍하는 과정에서 문자열을 다루는 일이 매우 일반적이기 때문입니다. 우리는 종종 특정 문자열을 찾아서 다른 문자열로 바꾸고 싶을 때가 있습니다. 이를 위해서는 간단하면서도 강력한 검색 및 바꾸기 기능이 필요합니다.
 
 ## 방법
 
-검색과 바꾸기는 다양한 프로그래밍 언어에서 지원되는 기능입니다. 여기서는 C++을 예로 들겠습니다.
+이제 우리는 C++을 사용하여 텍스트 검색 및 바꾸기를 수행하는 방법을 알아보겠습니다. 먼저, ```std::string``` 클래스의 ```find()```와 ```replace()``` 함수를 사용하여 문자열을 검색하고 바꿀 수 있습니다.
 
-먼저, `string`이라는 클래스를 사용하여 텍스트를 저장해야 합니다. 예를 들어, "Hello, world!"라는 문자열을 저장하려면 다음과 같이 할 수 있습니다.
-
-```C++
-string text = "Hello, world!";
-```
-
-그런 다음 `find()`와 `replace()` 메소드를 사용하여 원하는 문자열을 검색하고 바꾸는 작업을 수행할 수 있습니다. 예를 들어, 위에서 만든 `text` 문자열에서 "world"라는 단어를 "universe"로 바꾸기를 원한다면 다음과 같이 할 수 있습니다.
+예를 들어, 다음과 같은 문자열을 가지고 있는 상황을 상상해보겠습니다:
 
 ```C++
-text.replace(text.find("world"), 5, "universe");
+std::string text = "안녕하세요, 내 이름은 Jake입니다.";
 ```
-위 코드에서 `find()` 메소드는 "world" 문자열이 시작되는 인덱스를 반환하고, 그 값을 `replace()` 메소드의 첫 번째 매개변수로 전달합니다. 두 번째 매개변수는 바꾸고자 하는 문자열의 길이를 나타내며, 세 번째 매개변수는 바꿀 문자열을 지정합니다.
 
-위 코드를 실행하면 `text` 변수의 값은 "Hello, universe!"로 바뀔 것입니다.
+우리는 이 문자열에서 "Jake"를 "John"으로 바꾸고 싶을 수 있습니다. 이를 위해서는 먼저 "Jake"가 어디에 위치하는지를 파악해야 합니다. 이를 위해 ```find()``` 함수를 사용할 수 있습니다.
 
-## 깊게 들어가기
+```C++
+int index = text.find("Jake");
+```
 
-검색과 바꾸기 작업은 단순한 예제로서 소개되었지만, 더 복잡한 경우에는 정규 표현식을 사용하여 패턴을 찾을 수도 있습니다. 또한 다중 파일에서 검색과 바꾸기 작업을 수행할 수도 있습니다.
+이제 우리는 "Jake"가 위치하는 인덱스를 변수에 저장할 수 있습니다. 이제 우리는 이 인덱스를 사용하여, ```replace()``` 함수를 이용해 바꿀 수 있습니다.
 
-또한, C++에서는 `ifstream`와 `ofstream` 클래스를 사용하여 파일에서 텍스트를 읽어오고 수정된 텍스트를 다시 저장할 수 있습니다. 이를 활용하면 대용량의 텍스트 파일에서도 효율적으로 검색과 바꾸기 작업을 수행할 수 있습니다.
+```C++
+text.replace(index, 4, "John");
+```
+
+여기서 첫 번째 매개변수는 문자열을 바꿀 시작 위치이며, 두 번째 매개변수는 바꿀 문자열의 길이입니다. 마지막 매개변수는 바꿀 문자열 자체입니다.
+
+위의 두 코드를 합치면, 다음과 같은 결과가 나옵니다:
+
+```
+안녕하세요, 내 이름은 John입니다.
+```
+
+## 딥 다이브
+
+위의 예시는 매우 간단한 경우입니다. 하지만 좀 더 깊이 들어가보면 더 많은 옵션이 있습니다. 예를 들어, ```replace()``` 함수의 매개변수 중 하나인 ```count```는 바꿀 횟수를 지정할 수 있습니다. 또한, 문자열을 검색할 때 패턴을 사용할 수도 있습니다. 이를 위해 정규 표현식(regular expressions)을 사용할 수 있습니다.
+
+더 많은 정보를 알고 싶다면 다음 링크들을 참고해보세요.
 
 ## 참고
 
-- [C++ string 클래스 문서](http://www.cplusplus.com/reference/string/string/)
-- [C++ file I/O 문서](http://www.cplusplus.com/doc/tutorial/files/) 
-- [정규 표현식 튜토리얼](https://www.regular-expressions.info/tutorial.html)
+- [C++ string 클래스 살펴보기](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+- [C++ 함수 검색 및 바꾸기 예제](https://www.programiz.com/cpp-programming/library-function/string/replace)
+- [C++ 정규 표현식 활용하기](https://www.geeksforgeeks.org/regular-expressions-in-c-with-examples/)
+
+더 많은 프로그래밍 관련 정보를 찾고 싶다면 아래 블로그를 방문해보세요!
+
+## 관련 사이트
+
+- [WernerTech (워너테크)](https://wernertech.com/)
+- [GoormIDE (구름아이디)](https://ide.goorm.io/)
+- [Naver D2 (네이버 디투)](https://d2.naver.com/home)

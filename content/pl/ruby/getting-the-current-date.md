@@ -1,52 +1,43 @@
 ---
-title:    "Ruby: Uzyskiwanie bieżącej daty"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/getting-the-current-date.md"
+title:                "Ruby: Pobieranie aktualnej daty"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+Znajomość: Dlaczego korzystać z aktualnej daty w Ruby?
 
-W dzisiejszych czasach programowanie jest bardzo powszechne i ważne w różnych dziedzinach. Może to być z powodów zawodowych, hobbystycznych lub edukacyjnych. Jednym z podstawowych zadań programowania jest pracowanie z datami i czasem. W tym wpisie dowiesz się, jak w prosty sposób uzyskać obecny dzień w języku Ruby.
+## Dlaczego
 
-## Jak to zrobić?
+Korzystanie z aktualnej daty w programowaniu może być niezwykle pomocne w różnych przypadkach. Gdy tworzysz aplikację, która zajmuje się zarządzaniem zadaniami czy przypomnieniami, ważne jest, aby wyświetlać dokładną datę i czas, aby użytkownik miał pełną kontrolę nad swoimi wydarzeniami. Ponadto, jedną z najważniejszych funkcji przy tworzeniu aplikacji internetowych jest możliwość wyświetlania daty ostatniego zalogowania lub daty ostatniej aktualizacji danych. Dzięki temu użytkownicy mogą śledzić, jaką datą i o której godzinie ostatnio korzystali z aplikacji, co jest niezwykle przydatne w przypadku problemów technicznych lub w celu przeciwdziałania potencjalnym atakom hakerskim.
 
-Aby uzyskać obecny dzień, musimy skorzystać z metody "Time.now". Następnie możemy wykorzystać metodę "strftime" do sformatowania daty w odpowiedni sposób. Oto przykładowy kod w języku Ruby:
+## Jak
 
-```Ruby
-dzisiaj = Time.now
-puts dzisiaj.strftime("%d-%m-%Y")
-```
-
-W powyższym przykładzie, wyświetli się bieżąca data w formacie "DD-MM-RRRR".
-
-Możemy także wyświetlić inną informację o bieżącym czasie, na przykład godzinę:
+Aby uzyskać aktualną datę w Ruby, możemy skorzystać z kilku różnych metod. W przypadku przechowywania daty w zmiennej, możemy użyć metody `Date.today` lub `Time.now`, aby przypisać do niej bieżącą datę. W celu wyświetlenia daty w konsoli, możemy wykorzystać metodę `puts`, która wyświetli nam bieżącą datę i czas.
 
 ```Ruby
-puts dzisiaj.strftime("%H:%M")
+today = Date.today
+puts today # 2021-08-11
+
+now = Time.now
+puts now # 2021-08-11 12:34:56 +0200
 ```
 
-Wynik tego kodu będzie wyglądał w następujący sposób: "14:30". Jak widać, możliwości są bardzo szerokie i możesz sformatować datę tak, jak chcesz.
+Możemy również sformatować wyświetlanie daty przy pomocy metody `strftime`, która pozwala nam ustawić odpowiedni format. Na przykład, jeśli chcemy wyświetlić datę w formacie `dd.mm.yyyy`, możemy wykorzystać poniższy kod:
 
-## Głębszy zanurzenie
+```Ruby
+today = Date.today
+puts today.strftime('%d.%m.%Y') # 11.08.2021
+```
 
-Metoda "strftime" jest bardzo przydatna, ale aby ją wykorzystać, musimy znać odpowiednie formaty. Oto kilka najczęściej wykorzystywanych formatów:
+## Głębsza analiza
 
-- %d - dzień miesiąca (np. 05)
-- %m - miesiąc (np. 05)
-- %Y - rok (np. 2020)
-- %H - godzina w formacie 24-godzinnym (np. 14)
-- %M - minuta (np. 30)
-- %S - sekunda (np. 45)
-- %A - dzień tygodnia (np. Poniedziałek)
-- %B - miesiąc w pełnej nazwie (np. Maj)
-- %w - dzień tygodnia w formacie numerycznym (0 dla niedzieli)
-
-Możesz także wykorzystać symbole specjalne, takie jak "/", "-", ":" do sformatowania daty w sposób, który jest dla ciebie czytelny.
+W Ruby istnieje również klasa `DateTime`, która jest połączeniem klasy `Date` i `Time` i pozwala nam zarówno na przechowywanie, jak i wyświetlanie aktualnej daty. Dodatkowo, w Ruby istnieje wiele innych metod, takich jak `prev_day`, `next_day`, `prev_month`, `next_month`, pozwalających na wygodne manipulowanie datami.
 
 ## Zobacz także
 
-- Dokumentacja języka Ruby: https://ruby-doc.org/core-2.7.1/Time.html
-- Poradnik dla początkujących: https://www.rubyguides.com/2015/05/working-with-dates-ruby/
-- Przykładowy kod z wykorzystaniem innych metod: https://www.rubyguides.com/2015/05/ruby-time/
+- Przewodnik po klasie Date w Ruby: https://docs.ruby-lang.org/en/2.0.0/Date.html
+- Klasa Time w Ruby: https://docs.ruby-lang.org/en/2.0.0/Time.html
+- Formatowanie daty w Ruby: https://www.techotopia.com/index.php/Ruby_Tutorial_-_Working_with_Dates_and_Times#Formatting_a_Date_and_Time_String

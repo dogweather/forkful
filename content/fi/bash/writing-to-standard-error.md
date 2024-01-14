@@ -1,38 +1,37 @@
 ---
-title:    "Bash: Kirjoittaminen standardivirheeseen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-to-standard-error.md"
+title:                "Bash: Kirjoittaminen standardivirheeseen"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Bash-ohjelmoinnilla on monia etuja, kuten helppokäyttöisyys ja tehokkuus. Suuntaamalla tulosteen standardivirheeseen, voit varmistaa, että virheilmoitukset näkyvät selkeästi ja helposti luettavassa muodossa, mikä helpottaa koodisi vianmääritystä.
+Kirjoittaminen standardivirheeseen (STDERR) on erittäin tärkeä taito Bash ohjelmoijalle. Se antaa mahdollisuuden ohjata virheilmoituksia ja poikkeuksia erilliseen kanavaan, joka ei sekoitu ohjelman normaaliin tulostukseen. Tämä tekee virheenkorjauksesta helpompaa ja auttaa löytämään ja korjaamaan ohjelmien ongelmia nopeammin.
 
 ## Miten
 
-Tulosteen suuntaaminen standardivirheeseen Bashissa on yksinkertaista käyttämällä ">&2" -merkintää. Tämä osoittaa kaiken tulosteen standardivirheelle sen sijaan, että se menisi standarditulosteeseen. Alla on esimerkki koodi, joka luo virheen ja suuntaa virheilmoituksen standardivirheeseen:
+Bash-koodissa, voit kirjoittaa standardivirheeseen käyttäen ">&2" operaattoria. Tämä ohjaa stdandardin tulosteen (STDOUT) standardivirheeseen, jolloin virheilmoitukset tulostuvat STDERR-kanavaan. Seuraavassa esimerkissä käytämme komentoa "ls" ja ohjaamme virheilmoitukset standardivirheeseen:
 
 ```Bash
-#!/bin/bash
-echo "Tämä on standardivirhe" >&2
+ls -d /home/user/non-existing-directory/ >&2
 ```
 
-Suorittaessa tämän koodin saat seuraavan tulosteen:
+Tämä komento tulostaa virheilmoituksen "ls: cannot access '/home/user/non-existing-directory/': No such file or directory" STDERR-kanavaan. Voit myös tulostaa omia virheilmoituksia käyttämällä "echo" komentoa ja ohjaamalla sen STDERR-kanavaan, kuten alla olevassa esimerkissä:
 
-`Tämä on standardivirhe`
+```Bash
+echo "Error! File not found." >&2
+```
 
-Kuten näet, virheilmoitus näkyy normaalissa tulostossa sen sijaan, että se piilottuisi muiden tulosteiden joukkoon. Tämä tekee ongelmien havaitsemisesta ja korjaamisesta paljon helpompaa.
+Tämä tulostaa "Error! File not found." virheilmoituksen STDERR-kanavaan. Muista, että oletusarvoisesti kaikki virheilmoitukset ja poikkeukset menevät STDOUT-kanavaan, joten jokaisen komennon jälkeen kannattaa käyttää ">&2" varmistaaksesi, että ne ohjataan oikeaan kanavaan.
 
-## Syvempi sukellus
+## Syvällinen tutustuminen
 
-Bashissa on myös muita tapoja hallita tulostetta, mukaan lukien ohjaaminen tiedostoon tai muuhun prosessiin. Voit myös ohjata tietyn tulosteen standardivirheeseen lisäämällä sen perään "2>&1", mikä ohjaa vain valitun tulosteen standardivirheeseen. Tämä voi olla hyödyllistä esimerkiksi tulosteen suodattamisessa.
-
-Bashissa on myös mahdollista ottaa vastaan standardivirheet ja käsitellä niitä eri tavalla. Tämä auttaa sinua rakentamaan vakaampia ja luotettavampia skriptejä, jotka pystyvät käsittelemään odottamattomia virhetilanteita.
+Kirjoittaminen standardivirheeseen on erittäin hyödyllinen tekniikka, kun halutaan säätää Bash-skriptejä ja ohjelmia. Se erottaa virheilmoitukset ja poikkeukset muusta tulostuksesta, jolloin analysointi ja korjaaminen on helpompaa. Lisäksi, STDOUT ja STDERR voidaan ohjata eri paikkoihin, joten voit tallentaa ne lokitiedostoon ja tutkia niitä myöhemmin.
 
 ## Katso myös
 
-- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/)
-- [Bash-virheet ja virheilmoitukset](https://www.bash-hackers.org/wiki/doku.php/scripting/basherrors)
-- [Kuinka ohjata tulostetta Bashissa](https://www.linux.com/tutorials/how-redirect-output-or-errors-bash/)
+- [BASH ohjelmointikieli](https://www.tldp.org/LDP/abs/html/)
+- [BASH ohjeet](https://www.gnu.org/software/bash/manual/bash.html)

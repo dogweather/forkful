@@ -1,44 +1,49 @@
 ---
-title:    "Clojure: Convertendo uma string em minúsculas"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/converting-a-string-to-lower-case.md"
+title:                "Clojure: Convertendo uma string para minúsculas"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que converter uma string para minúsculo?
+# Por que
+## Por que converter uma string para caixa baixa
 
-Mas antes de discutirmos como converter uma string para minúsculo em Clojure, vamos primeiro entender o motivo de se fazer isso. Converter uma string para minúsculo pode ser útil em situações onde é necessário comparar duas strings sem levar em conta a diferença entre maiúsculas e minúsculas. Também pode ser útil para padronizar a entrada de dados em um programa, garantindo que todas as strings estejam no mesmo formato.
+Converter uma string para caixa baixa pode ser útil ao trabalhar com dados de entrada que possuem inconsistências de capitalização, garantindo que o código trate todas as strings de forma uniforme.
 
-##Como fazer
-
-Em Clojure, existem várias formas de converter uma string para minúsculo. A maneira mais simples é utilizando a função `lower-case` do namespace `clojure.string`. Veja um exemplo:
+## Como fazer
+Para converter uma string para caixa baixa em Clojure, podemos usar a função "lower-case" da biblioteca padrão "clojure.string". Veja o exemplo abaixo:
 
 ```Clojure
+(ns exemplo)
+
 (require '[clojure.string :as str])
-(str/lower-case "Olá Mundo") ; output: "olá mundo"
+
+(def texto "Olá, MUndo!")
+
+(str/lower-case texto)
+
+;; Output: "olá, mundo!"
 ```
 
-Outra opção é utilizar a função `lower-case` do namespace `java.lang.String`. Esta função é mais rápida do que a função `clojure.string/lower-case`, mas é necessário converter a string para um objeto `java.lang.String` antes de chamá-la. Veja o exemplo:
+## Mergulho profundo
+Ao usar a função "lower-case", é importante ter em mente que ela não modifica a string original, apenas retorna uma nova string em caixa baixa. Além disso, a função usa as regras de caixa baixa definidas pelo idioma em que o código está sendo executado.
+
+Outra opção para converter uma string para caixa baixa é usar a função "lower-case*" da biblioteca "clojure/data.string". Essa função é mais flexível, pois permite especificar o idioma desejado. Veja o exemplo abaixo:
 
 ```Clojure
-(.toLowerCase "Olá Mundo") ; output: "olá mundo"
+(ns exemplo)
+
+(require '[clojure.data.string :as data-str])
+
+(def texto "Bonjour, Le Monde!")
+
+(data-str/lower-case* texto :locale "fr")
+
+;; Output: "bonjour, le monde!"
 ```
 
-Por fim, se você estiver trabalhando com strings muito grandes e não quiser alocar memória extra na conversão, pode utilizar a função `char-utils/lower-case-ascii` do namespace `org.apache.commons.lang3`. Esta função trabalha diretamente com os valores ASCII dos caracteres, evitando a criação de novas strings. Veja o exemplo:
-
-```Clojure
-(require '[clojure.core :as c]
-         '[org.apache.commons.lang3 :as utils])
-(utils/lower-case-ascii (c/str "Olá Mundo")) ; output: "olá mundo"
-```
-
-##Aprofundando-se
-
-Agora que vimos como converter uma string para minúsculo em Clojure, é importante entender que esta conversão é sensível ao idioma do sistema operacional em que o código está sendo executado. Isso significa que, se o sistema operacional estiver configurado para um idioma diferente do português, a conversão para minúsculo pode não funcionar corretamente. Nesses casos, é recomendado utilizar a função `Character.toLowerCase` da linguagem Java, que é independente do idioma do sistema operacional.
-
-##Veja também
-
-- Documentação da função `lower-case` do `clojure.string`: https://clojuredocs.org/clojure.string/lower-case
-- Documentação da função `.toLowerCase` do `java.lang.String`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--
-- Documentação da função `lower-case-ascii` do `org.apache.commons.lang3`: https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/CharUtils.html#lowerCase%EF%BC%88char%EF%BC%89
+# Veja também
+- Documentação da função "lower-case" da biblioteca padrão "clojure.string": https://clojuredocs.org/clojure.string/lower-case
+- Documentação da função "lower-case*" da biblioteca "clojure/data.string": https://clojuredocs.org/clojure.data/string/lower-case*

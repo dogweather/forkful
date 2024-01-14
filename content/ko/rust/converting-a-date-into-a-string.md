@@ -1,50 +1,40 @@
 ---
-title:    "Rust: 날짜를 문자열로 변환하기"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/converting-a-date-into-a-string.md"
+title:                "Rust: 날짜를 문자열로 변환하기"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+날짜를 문자열로 변환하는 것에 참여하는 이유는 효율적인 프로그래밍을 위해서입니다. 날짜는 많은 프로그램에서 자주 사용되기 때문에 문자열로 변환하기 위한 기술은 중요합니다.
 
-날짜를 문자열로 변환하는 것의 중요성은 프로그램에서 날짜를 다루는 일상적인 과정입니다. 따라서 이 과정을 효율적이고 정확하게 처리할 수 있는 언어인 Rust를 배우는 것은 큰 도움이 될 것입니다.
-
-## 하는 법
-
-가장 간단한 방법은 Rust 표준 라이브러리의 `format` 매크로를 사용하는 것입니다. 아래 코드 블록을 보면서 예시를 살펴보겠습니다.
+## 다루는 방법
+다음은 날짜를 문자열로 변환하는 방법을 보여주는 코드 예제입니다. 이 예제는 Rust 언어를 기준으로 작성되었습니다. 
 
 ```Rust
-use std::time::SystemTime;
-
-let time = SystemTime::now();
-let date = match time.duration_since(SystemTime::UNIX_EPOCH) {
-    Ok(duration) => duration.as_secs(),
-    Err(_) => panic!("An error occurred."),
-};
-
-println!("Current date: {}", date.format("%Y-%m-%d"));
+use chrono::{Utc, format::strftime};
+ 
+// 현재 날짜를 가져옵니다.
+let now = Utc::now();
+ 
+// 날짜를 원하는 형식의 문자열로 변환합니다.
+let date_string = now.format("%Y-%m-%d").to_string();
+ 
+println!("오늘의 날짜는 {}입니다.", date_string);
 ```
 
-위 코드에서 `SystemTime`을 이용해 현재 시간을 얻고 날짜를 계산하게 됩니다. 그리고 `format` 매크로를 사용하여 `date` 변수의 값을 문자열로 변환하고 출력합니다. 이때 `%Y-%m-%d` 형식 지정자를 사용하면 년-월-일 형식으로 날짜를 출력할 수 있습니다.
+위의 코드 예제를 실행하면 다음과 같은 결과가 출력됩니다.
 
-다른 형식으로 출력하고 싶다면 Rust 표준 라이브러리의 `chrono` 라이브러리를 사용하여 더 다양한 날짜 형식을 지정할 수 있습니다. 예를 들어 `%a, %b %e %Y` 형식을 사용하면 "Mon, Oct 21 2019"과 같이 날짜를 출력할 수 있습니다.
-
-## 깊게 파고들기
-
-날짜를 문자열로 변환하는 과정에서 주의해야 할 점은 날짜 형식 지정 중 지역 시간대를 반영하는 것입니다. 이 경우 `Local` 타입을 이용하여 날짜를 변환해야 지역 시간대를 정확하게 반영할 수 있습니다. `chrono` 라이브러리에서 제공하는 `Local` 타입을 사용하는 예시를 살펴보겠습니다.
-
-```Rust
-use chrono::prelude::*;
-
-let date = Local::now();
-println!("Local date: {}", date.format("%c"));
+```
+오늘의 날짜는 2021-11-01입니다.
 ```
 
-위 코드에서 `Local::now()`를 이용해 현재 시간과 날짜를 얻을 수 있습니다. 그리고 `%c` 형식 지정자를 사용하여 날짜와 시간을 함께 출력할 수 있습니다.
+## 깊이 파헤치기
+날짜를 문자열로 변환하는 방법은 다양한 형태로 존재합니다. 위의 예제에서는 `format()` 메소드를 사용하여 원하는 형식의 문자열을 생성하는 방법을 보여주었습니다. 그러나 Rust에서는 `serde`라는 라이브러리를 사용하여 날짜를 다양한 형식으로 직렬화할 수도 있습니다. 또한 `chrono` 라이브러리에서 제공하는 다양한 포맷 지정자를 사용하여 날짜를 원하는 형태로 변환할 수 있습니다.
 
-## 더 보기
-
-- [Rust 표준 라이브러리 공식 문서](https://doc.rust-lang.org/std/index.html)
-- [Chrono 라이브러리 공식 문서](https://docs.rs/chrono/0.4.9/chrono/)
-- [Rust 언어 공식 웹사이트](https://www.rust-lang.org/ko)
+## 관련 자료
+- [Rust Language 공식 문서](https://doc.rust-lang.org/book/ch03-02-data-types.html#structs)
+- [Serde 라이브러리 문서](https://serde.rs/)
+- [Chrono 라이브러리 문서](https://docs.rs/chrono/0.4.19/chrono/)

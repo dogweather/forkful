@@ -1,51 +1,49 @@
 ---
-title:    "Fish Shell: Omvandla en sträng till små bokstäver"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/converting-a-string-to-lower-case.md"
+title:                "Fish Shell: Att konvertera en sträng till små bokstäver"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
-Att omvandla en sträng till små bokstäver är en viktig och vanlig uppgift inom programmering. Det kan bidra till mer enhetliga och konsistenta resultat och underlätta jämförelse av olika strängar.
+## Varför
 
-##Så här gör du
-Det finns flera sätt att konvertera en sträng till små bokstäver i Fish Shell. Ett enkelt sätt är att använda kommandot `string tolower` tillsammans med strängen du vill konvertera inom ett `echo`-kommando. Till exempel:
+Att konvertera en sträng till gemener (lower case) är en vanlig uppgift inom programmering. Detta kan vara användbart när man hanterar användarinput, jämför strängar eller för att upprätthålla en enhetlig formatering i ett program. I denna bloggpost kommer jag att visa dig hur du enkelt kan göra detta med hjälp av Fish Shell.
 
-```
-Fish Shell
-echo (string tolower "FISH Shell")
-```
+## Så här gör du
 
-Detta kommer att producera följande utmatning:
+För att konvertera en sträng till gemener i Fish Shell använder vi kommandot `string tolower`. Vi kan antingen använda detta direkt i vår terminal eller lägga till det i ett skript.
 
-```
-fish shell
-```
+```Fish Shell
+# Konvertera en sträng direkt i terminalen
+string tolower "HEJ" 
+# Resultat: hej
 
-Som du kan se så har "FISH Shell" konverterats till små bokstäver.
+# I ett skript
+#!/usr/local/bin/fish
 
-Fish Shell erbjuder också möjligheten att använda kommandot `string lower` för att konvertera strängar. Detta kommando tar två parametrar: en sträng och ett index för den första positionen som ska konverteras. Till exempel:
-
-```
-Fish Shell
-echo (string lower "Fish Shell" 1)
+set str "VÄLKOMMEN"
+echo (string tolower $str) 
+# Resultat: välkommen
 ```
 
-Detta kommer att ge samma utmatning som det första exemplet.
+Som du kan se i exemplet ovan används `string tolower` tillsammans med variabeln `str` för att hämta och konvertera värdet. Det resulterande värdet skrivs ut med hjälp av kommandot `echo`.
 
-##Djupdykning
-När du konverterar en sträng till små bokstäver i Fish Shell så används det Unicode-teckenuppsättningen för alla tecken. Detta betyder att bokstäver från alla språk kan konverteras korrekt till små bokstäver.
+## Djupdykning 
 
-Om du behöver konvertera en sträng till små bokstäver i ett specifikt språk så kan du använda kommandot `set -l LC_CTYPE` för att ändra teckenuppsättningen. Till exempel, om du vill konvertera en sträng till små bokstäver i svenska, så kan du använda följande kommando:
+En intressant detalj med `string tolower` är att den inte bara funktionerar på bokstäver inom det latinska alfabetet, utan även på specialtecken och diakritiska tecken. Detta betyder att du kan konvertera en sträng till gemener, oavsett vilket språk den är skriven på. Därför är det ett mycket användbart verktyg för internationell programmering.
 
-```
-echo (set -lx LC_CTYPE 'sv_SE.UTF-8'; string tolower "Äpple")
-```
+### Hur fungerar det?
 
-Detta kommer att producera utmatningen "äpple".
+Vad som faktiskt händer bakom kulisserna är att `string tolower` använder sig av den inbyggda funktionen `string` tillsammans med `tolower` som parameter. Detta returnerar en modifierad version av strängen med alla bokstäver omvandlade till gemener.
 
-##Se också
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [Officiell Fish Shell GitHub-sida](https://github.com/fish-shell/fish-shell)
-- [Fish Shell forum](https://github.com/fish-shell/fish-shell)
+## Se också
+
+För mer information om Fish Shell och dess kommandon, kolla in följande länkar:
+
+- [Officiell hemsida för Fish Shell](https://fishshell.com/)
+- [Fiskkommandon och syntax](https://fishshell.com/docs/current/index.html#buitlinf)
+- [Fish Shell på GitHub](https://github.com/fish-shell/fish-shell)
+
+Tack för att du läste! Hoppas du har fått en bättre förståelse för hur man konverterar en sträng till gemener med hjälp av Fish Shell.

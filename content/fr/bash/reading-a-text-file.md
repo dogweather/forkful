@@ -1,57 +1,49 @@
 ---
-title:    "Bash: Lecture d'un fichier texte"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/reading-a-text-file.md"
+title:                "Bash: Lecture d'un fichier texte"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Lire un fichier texte peut sembler être une tâche simple et banale pour la plupart des programmeurs. Pourtant, il est important de comprendre comment le faire efficacement en utilisant Bash dans vos projets de programmation. Cela peut vous faire gagner du temps et améliorer la qualité de votre code.
+Lire et écrire des fichiers texte est une compétence fondamentale en programmation Bash. En comprenant comment lire des fichiers texte, vous pourrez manipuler et gérer des données de manière efficace dans vos scripts Bash.
 
-## Comment le faire
+## Comment faire
 
-Heureusement, lire un fichier texte en Bash est simple et ne nécessite que quelques lignes de code. Tout d'abord, vous devez ouvrir votre fichier avec la commande "cat" suivie du nom du fichier :
+Tout d'abord, vous devez vous assurer que vous avez les autorisations nécessaires pour lire le fichier texte en question. Vous pouvez vérifier cela en utilisant la commande `ls -l` dans votre terminal Bash.
 
-```Bash
-cat nom_du_fichier.txt
-```
-
-Cela affichera le contenu du fichier dans la console. Mais si vous souhaitez stocker le contenu dans une variable, vous pouvez utiliser la redirection ">" pour écrire le contenu dans une nouvelle variable :
+Ensuite, vous pouvez utiliser la commande `cat` pour afficher le contenu d'un fichier texte directement dans votre terminal. Par exemple, si votre fichier est nommé "monfichier.txt", vous pouvez utiliser la commande suivante:
 
 ```Bash
-contenu=$(cat nom_du_fichier.txt)
+cat monfichier.txt
 ```
 
-De plus, il est possible de lire ligne par ligne en utilisant la commande "read" :
+Vous pouvez également utiliser la commande `less` pour naviguer à travers le contenu d'un fichier texte. La commande `less` vous permet de faire défiler le fichier ligne par ligne avec les touches fléchées ou les touches "Page haut" et "Page bas". Pour quitter la vue de `less`, vous pouvez appuyer sur la touche "Q" de votre clavier.
 
 ```Bash
-while read ligne; do
-    echo $ligne
-done < nom_du_fichier.txt
+less monfichier.txt
 ```
 
-Cela vous permet de traiter chaque ligne du fichier individuellement. N'oubliez pas que les lignes sont séparées par des retours à la ligne.
+Pour plus de flexibilité, vous pouvez utiliser la commande `grep` pour rechercher des mots spécifiques dans un fichier texte. Par exemple, si vous souhaitez trouver toutes les occurrences du mot "Bonjour" dans votre fichier, vous pouvez utiliser la commande suivante:
+
+```Bash
+grep "Bonjour" monfichier.txt
+```
 
 ## Plongée en profondeur
 
-Il est important de noter que la commande "cat" peut également être utilisée pour concaténer plusieurs fichiers ensemble. Par exemple, si vous souhaitez combiner le contenu de deux fichiers dans un nouveau fichier :
+Maintenant que nous avons vu les commandes de base pour lire un fichier texte en utilisant Bash, il est également utile de comprendre comment ces commandes fonctionnent en interne.
 
-```Bash
-cat fichier_1.txt fichier_2.txt > nouveau_fichier.txt
-```
+Lorsque vous utilisez la commande `cat`, le contenu du fichier est simplement affiché à l'écran. Cependant, la commande `less` utilise un concept appelé "pagination" pour afficher correctement les informations. Elle utilise un tampon, un espace de stockage temporaire en mémoire, pour afficher le fichier ligne par ligne. Cela permet de ne pas afficher tout le contenu d'un fichier texte sur votre écran en même temps.
 
-De plus, la commande "grep" peut être utilisée pour rechercher un terme spécifique dans un fichier. Cela peut être utile si vous recherchez un mot clé ou une information précise.
-
-```Bash
-grep "mot_clé" nom_du_fichier.txt
-```
-
-N'hésitez pas à explorer d'autres commandes Bash pour lire et traiter des fichiers texte de différentes manières.
+Quant à la commande `grep`, elle utilise des expressions régulières pour rechercher des motifs spécifiques dans un fichier. Les expressions régulières peuvent être assez complexes, donc si vous êtes intéressé à en savoir plus, il serait utile de se familiariser avec celles-ci.
 
 ## Voir aussi
 
-- [Guide de référence Bash](https://www.gnu.org/software/bash/manual/)
-- [10 commandes Bash utiles pour les débutants](https://www.tutorialspoint.com/unix/unix-useful-commands.htm)
-- [Leçon interactive de commandes Bash](https://www.learnshell.org/)
+- [Introduction à la ligne de commande Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners#h4-1-introduction-to-bash-syntax)
+- [Documentation officielle de la commande `cat`](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html)
+- [Documentation officielle de la commande `less`](https://linux.die.net/man/1/less)
+- [Documentation officielle de la commande `grep`](https://www.gnu.org/software/grep/manual/grep.html)

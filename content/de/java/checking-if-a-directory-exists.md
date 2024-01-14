@@ -1,38 +1,36 @@
 ---
-title:    "Java: Überprüfen, ob ein Verzeichnis existiert"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/checking-if-a-directory-exists.md"
+title:                "Java: Überprüfung, ob ein Verzeichnis existiert"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollten wir uns überhaupt Gedanken darüber machen, ob ein Verzeichnis existiert? Nun, es gibt verschiedene Szenarien, in denen es wichtig sein könnte zu überprüfen, ob ein Verzeichnis vorhanden ist. Zum Beispiel wenn wir ein Programm haben, das Dateien in einem bestimmten Verzeichnis speichert oder liest, möchten wir sicherstellen, dass dieses Verzeichnis tatsächlich existiert, bevor wir versuchen, auf Dateien zuzugreifen.
 
-Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist eine wichtige Aufgabe in der Java-Programmierung. Es ermöglicht Ihnen, sicherzustellen, dass Ihr Code mit existierenden Verzeichnissen arbeitet und potenzielle Fehler zu vermeiden.
-
-## Wie
-
-Zur Überprüfung der Existenz eines Verzeichnisses in Java können Sie die Methode `exists()` der Klasse `File` verwenden. Hier ist ein Beispielcode, der ein Verzeichnis auf dem Desktop mit dem Namen "test" überprüft:
+## Wie geht das?
+In Java gibt es verschiedene Möglichkeiten, um zu überprüfen, ob ein Verzeichnis existiert. Die einfachste Methode besteht darin, die Methode `exists()` auf der `File`-Klasse aufzurufen und ihr den Pfad zum Verzeichnis zu übergeben. Hier ist ein Beispiel:
 
 ```Java
-File dir = new File(System.getProperty("user.home") + "/Desktop/test");
-if(dir.exists()){
-  System.out.println("Das Verzeichnis existiert.");
+File directory = new File("Pfad/zum/Verzeichnis");
+
+if (directory.exists()) {
+  System.out.println("Das Verzeichnis existiert!");
 } else {
   System.out.println("Das Verzeichnis existiert nicht.");
 }
 ```
 
-Wenn das Verzeichnis existiert, wird die Ausgabe "Das Verzeichnis existiert." sein, andernfalls wird "Das Verzeichnis existiert nicht." ausgegeben. Sie können auch die Methode `isDirectory()` verwenden, um sicherzustellen, dass das geprüfte Objekt tatsächlich ein Verzeichnis ist.
+Je nachdem, ob das Verzeichnis tatsächlich vorhanden ist oder nicht, wird eine entsprechende Meldung ausgegeben.
 
-## Deep Dive
+## Tiefergehende Informationen
+Wenn wir genauer verstehen möchten, wie die Methode `exists()` funktioniert, können wir uns den Quellcode der `File`-Klasse ansehen. Diese Methode verwendet intern die `AccessController`-Klasse, um die Rechte auf dem Dateisystem zu überprüfen. Sie gibt `true` zurück, wenn der Zugriff auf das Verzeichnis gewährt werden kann, oder `false`, wenn dies nicht der Fall ist.
 
-Um tiefer in das Thema einzutauchen, betrachten wir eine weitere Möglichkeit, die Existenz eines Verzeichnisses zu überprüfen. Statt die Methode `exists()` zu verwenden, können wir auch die `list()` oder `listFiles()` Methode verwenden, um eine Liste der Dateien und Verzeichnisse in einem bestimmten Pfad zu erhalten. Wenn das Verzeichnis nicht existiert, wird eine `NullPointerException` ausgelöst, was uns sagt, dass das Verzeichnis nicht vorhanden ist.
-
-Eine andere Sache, die es zu beachten gibt, ist, dass die `exists()` und `isDirectory()` Methoden keine Berechtigungsprüfung durchführen. Sie überprüfen lediglich, ob ein Objekt mit dem angegebenen Pfad vorhanden ist. Um sicherzustellen, dass wir auch Berechtigungen haben, um auf das Verzeichnis zuzugreifen, können wir die `canRead()` und `canWrite()` Methoden verwenden.
+Außerdem können wir auch die Methode `canRead()` oder `canWrite()` verwenden, um zu überprüfen, ob wir auf das Verzeichnis lesend oder schreibend zugreifen können.
 
 ## Siehe auch
-
-- [Oracle Java Dokumentation: File Klasse](https://docs.oracle.com/javase/10/docs/api/java/io/File.html)
-- [Java Tutorials: Working with Directories](https://docs.oracle.com/javase/tutorial/essential/io/dirs.html)
-- [Baeldung Tutorial: Check if File or Directory exists](https://www.baeldung.com/java-check-file-exists)
+- [Java Dokumentation - File Klasse](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Java Dokumentation - AccessController Klasse](https://docs.oracle.com/javase/8/docs/api/java/security/AccessController.html)
+- [Java Dokumentation - Verzeichniszugriff](https://docs.oracle.com/javase/tutorial/essential/io/dirs.html)

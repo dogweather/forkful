@@ -1,48 +1,52 @@
 ---
-title:    "Elixir: 写入标准错误"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-to-standard-error.md"
+title:                "Elixir: 标准错误输出编程"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么
+Elixir 编程博客：如何利用标准错误输出
 
-从事标准错误书写的原因可能是为了更好地进行调试和错误处理。通过将错误信息打印到标准错误流中，我们可以更方便地查看和分析程序的错误信息，从而更容易地修复代码中的错误。
+## 为什么？
+使用标准错误输出可以帮助开发人员诊断和调试代码中的错误。当代码遇到错误时，标准错误输出可以将错误信息打印到控制台，从而帮助开发人员快速发现并解决问题。因此，写入标准错误输出是一种重要的程序员技能。
 
-##如何使用
-
-在Elixir中，我们可以使用`IO.puts/2`函数向标准错误流（stderr）打印信息。下面是一个简单的例子：
-
-```Elixir
-IO.puts(:stderr, "这是一个错误信息")
-```
-
-运行该代码，我们可以在控制台中看到以下输出：
-
-```bash
-这是一个错误信息
-```
-
-##深入讲解
-
-除了使用`IO.puts/2`函数，我们还可以使用`IO.write/2`函数向标准错误流打印信息。不同之处在于，`puts`函数会在输出信息的结尾添加一个换行符，而`write`函数不会。下面是一个使用`write`函数的例子：
+## 如何做？
+看下面的示例代码，在Elixir中如何将内容写入标准错误输出：
 
 ```Elixir
-IO.write(:stderr, "这是第一行错误信息")
-IO.write(:stderr, "这是第二行错误信息")
+IO.puts(:stderr, "这是一个标准错误输出示例")
 ```
 
-运行该代码，我们可以得到以下输出：
+运行上述代码后，你将在控制台上看到以下输出：
 
-```bash
-这是第一行错误信息这是第二行错误信息
+```Elixir
+这是一个标准错误输出示例
 ```
 
-需要注意的是，`write`函数不会自动添加换行符，我们需要自己在需要添加换行符的地方加上`\n`符号。
+如上所示，使用 `IO.puts` 函数并指定 `:stderr` 值来将内容写入标准错误输出。同样，也可以使用 `IO.inspect` 函数在调试时打印变量值到标准错误输出。
 
-#查看也可以
+## 深入探讨
+除了打印简单的字符串，Elixir 还提供了 `Kernel.inspect/2` 函数来格式化输出。参考下面的示例代码：
 
-- [Elixir的标准库文档：IO模块](https://hexdocs.pm/elixir/IO.html)
-- [Elixir编程指南：错误处理](https://elixirschool.com/zh-hans/lessons/basics/errors/)
-- [了解Elixir的 STDERR 的用法](https://tipsofthecloud.blogspot.com/2019/11/understanding-elixir-stderr.html)
+```Elixir
+customer = %{"name" => "张三", "age" => 28}
+IO.puts(:stderr, "客户信息是： #{inspect customer}")
+```
+
+运行上述代码后，你将在控制台上看到以下输出：
+
+```Elixir
+客户信息是： %{"age" => 28, "name" => "张三"}
+```
+如上所示，使用 `Kernel.inspect/2` 函数可以打印出更复杂的数据结构，如 map 和列表。
+
+## 查看也可以
+想要了解更多关于 Elixir 中标准错误输出的内容，请阅读官方文档。以下是一些相关的链接： 
+
+- 官方文档：https://hexdocs.pm/elixir/IO.html#print/2 
+- Elixir 教程：https://elixir-lang.org/getting-started/io-and-the-file-system.html 
+- Elixir 论坛：https://elixirforum.com/t/how-to-write-to-stdout-or-stderr/383
+
+ 感谢阅读，希望本文对你有帮助！

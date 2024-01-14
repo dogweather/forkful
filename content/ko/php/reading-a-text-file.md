@@ -1,45 +1,44 @@
 ---
-title:    "PHP: 텍스트 파일 읽기"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/reading-a-text-file.md"
+title:                "PHP: 텍스트 파일 읽기"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-텍스트 파일을 읽는 것이 왜 중요한지 알고 싶으세요? PHP 프로그래밍 웹사이트에 오신 것을 환영합니다! 여러분은 자신이 작성한 프로그램이나 웹사이트에서 사용자가 입력한 데이터를 읽는 등 다양한 상황에서 텍스트 파일을 읽게 될 것입니다. 이 글을 통해 텍스트 파일을 읽는 방법을 배우고 깊이 파고들어보세요.
+텍스트 파일을 읽는 것의 이점은 필수적입니다. PHP언어를 사용하여 텍스트 파일을 읽는 방법을 배우는 것은 웹 개발에 있어서 매우 중요한 기술입니다. 따라서 이 글에서는 텍스트 파일을 읽는 방법을 자세히 알아보겠습니다.
 
-## 방법
+## 어떻게
 
-PHP에서 텍스트 파일을 읽는 방법은 간단합니다. "fopen" 함수를 사용하여 파일을 열고 "fgets" 함수를 사용하여 파일로부터 문자열을 읽습니다. 아래에 예시 코드와 출력 결과를 보여드립니다.
+여러분은 PHP의 file_get_contents() 함수를 사용하여 텍스트 파일을 읽을 수 있습니다. 다음은 이 함수의 예제입니다:
 
 ```PHP
-<?php
-$file = fopen("sample.txt", "r"); // "sample.txt" 파일을 읽기 모드로 열기
-while(!feof($file)){ // 파일의 끝까지 반복하는 while문 실행
-    $line = fgets($file); // 파일로부터 한 줄씩 읽기
-    echo $line; // 읽은 문자열 출력
+$file = file_get_contents('myfile.txt'); //파일 읽기
+echo $file; //파일 출력
+```
+
+위의 예제에서 file_get_contents() 함수는 myfile.txt 파일을 읽고, 파일의 내용을 $file 변수에 저장합니다. 그리고 echo를 사용하여 파일의 내용을 출력합니다. 이 예제를 실행하면 myfile.txt 파일의 내용이 출력됩니다.
+
+## 깊이 파헤치기
+
+PHP에서 파일을 읽는 또 다른 방법은 fopen() 함수를 사용하는 것입니다. 다음은 fopen() 함수의 예제입니다:
+
+```PHP
+$file = fopen('myfile.txt', 'r'); //파일 열기
+while (!feof($file)){ //파일의 끝까지 읽기
+    echo fgets($file) //파일 한 줄씩 읽기
 }
-fclose($file); // 파일 닫기
-?>
+fclose($file); //파일 닫기
 ```
 
-출력 결과:
+위의 예제에서 fopen() 함수는 myfile.txt 파일을 읽기 모드('r')로 열고, 파일의 끝까지 while 반복문을 사용하여 한 줄씩 파일을 읽습니다. 그리고 fgets() 함수를 사용하여 파일의 한 줄씩 읽은 후, echo를 사용하여 출력합니다. 마지막으로 fclose() 함수로 파일을 닫습니다.
 
-```
-Hello world!
-Welcome to my PHP blog.
-```
+## 또 다른 참고 자료
 
-직접 코드를 작성해보고 다양한 텍스트 파일을 읽어보세요. 또한 "fread" 함수를 사용하여 전체 파일을 한번에 읽어올 수 있습니다. 참고로 fopen 함수로 열기 전에 파일이 존재하는지 체크하는 것이 좋습니다.
+- PHP 공식 문서: [https://www.php.net/manual/en/function.file-get-contents.php]{.underline}
+- TutorialsPoint에서 PHP 파일 입출력에 관한 자세한 정보: [https://www.tutorialspoint.com/php/php_files.htm]{.underline}
 
-## 깊이 파고들기
-
-파일을 읽는 과정에서 에러가 발생할 수 있습니다. PHP에서는 "feof" 함수를 사용하여 파일의 끝인지를 체크하고, 파일의 끝에 도달한 경우 "false"를 반환합니다. 따라서 while문의 조건으로 사용할 수 있습니다. 또한 파일을 열기 전에 "file_exists" 함수를 사용하여 파일이 존재하는지를 체크하는 것이 좋습니다.
-
-## 참고 자료
-
-- PHP 공식 문서 (영문): https://www.php.net/manual/en/function.fopen.php
-- 고안 시스템즈 (한글): https://www.gisdeveloper.co.kr/?p=358
-- W3Schools (영문): https://www.w3schools.com/php/func_filesystem_fopen.asp
+## 참고 자료 보기

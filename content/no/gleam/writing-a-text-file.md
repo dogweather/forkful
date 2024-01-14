@@ -1,52 +1,34 @@
 ---
-title:    "Gleam: Å skrive en tekstfil"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/writing-a-text-file.md"
+title:                "Gleam: Å skrive en tekstfil"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å skrive en tekstfil er en viktig del av programmering, spesielt når man jobber med Gleam. Det lar deg lagre og organisere data på en strukturert måte, som deretter kan brukes av programmet ditt.
+Ved å skrive en tekstfil i Gleam programmeringsspråket, kan du enkelt lagre og organisere data og informasjon. Dette er nyttig for å holde orden på store mengder data, for eksempel brukerinformasjon eller produktlister.
 
 ## Hvordan
-
-For å skrive en tekstfil i Gleam, bruker du funksjonen `File.write`, som tar inn to parametere: stien til filen du vil skrive til og innholdet du vil inkludere i filen. For å sikre at filen blir lukket riktig etter skriving, kan man bruke `File.with_open`.
-
-La oss se på et eksempel hvor vi lagrer navn og aldre i en tekstfil:
+For å skrive en tekstfil i Gleam, kan du bruke følgende kodeblokk:
 
 ```Gleam
-import File
-
-let people = [("Jens", 28), ("Sarah", 33), ("Lisa", 24)]
-let file_path = "people.txt"
-
-File.with_open(file_path, fn(handle) ->
-  for person in people do
-    let (name, age) = person
-    let text = "Navn: " ++ name ++ ", Alder: " ++ String.to_int(age) ++ "\n"
-    File.write(handle, text)
-  end
-end)
+let fil = File.open("min_tekstfil.txt", write) // Åpner filen i "skrive" modus
+File.write(fil, "Dette er en tekst som skal lagres i filen")
+File.close(fil) // Lukker filen for å spare på ressurser
 ```
 
-Etter å ha kjørt dette programmet, vil du finne en fil som heter "people.txt" i samme mappe som programmet ditt. Denne filen vil inneholde følgende:
+Denne koden åpner først en fil kalt "min_tekstfil.txt" i skrivemodus. Deretter skrives teksten "Dette er en tekst som skal lagres i filen" inn i filen. Til slutt lukkes filen for å unngå å bruke unødvendige ressurser.
 
-```
-Navn: Jens, Alder: 28
-Navn: Sarah, Alder: 33
-Navn: Lisa, Alder: 24
-```
+Når du kjører dette programmet, vil det bli laget en tekstfil med navnet "min_tekstfil.txt". Denne filen vil inneholde teksten som ble skrevet inn i koden.
 
-## Deep Dive
+## Dypdykk
+Ved å benytte deg av Gleam-modulen "File" har du tilgang til mange flere funksjoner for å skrive, lese og manipulere tekstfiler. Det er også mulig å åpne filer i andre moduser, som for eksempel å legge til tekst i slutten av en eksisterende fil.
 
-Når du skal skrive en tekstfil, er det viktig å være oppmerksom på hvordan du formaterer teksten din. En vanlig måte å gjøre dette på er ved å bruke "escaped characters", som for eksempel `\n` for å lage en ny linje.
+Et viktig punkt å huske på når du skriver til tekstfiler er å håndtere eventuelle feil som kan oppstå, for eksempel hvis filen allerede eksisterer eller hvis det er problemer med tilgangen til filen.
 
-I tillegg er det viktig å sørge for at filen lukkes riktig etter skriving. Dette kan være en kilde til feil og problemer hvis det ikke gjøres riktig.
-
-## Se Også
-
-- Gleam sin offisielle dokumentasjon for `File`-modulen: https://gleam.run/packages/gleam_stdlib/File.html 
-- En grundig gjennomgang av filbehandling i Gleam: https://medium.com/@ardenrickel/how-to-handle-file-input-output-in-gleam-ecd1dcc6e829 
-- Et annet eksempel på å skrive en tekstfil i Gleam: https://gist.github.com/taylorwood/cd115a66aa8d3c3312e3c05cf5142fe3
+## Se også
+- [Gleam File Modul](https://gleam.run/modules/file.html)
+- [Gleam Dokumentasjon](https://gleam.run/docs/introduction.html)
+- [Gleam GitHub Repo](https://github.com/gleam-lang/gleam)

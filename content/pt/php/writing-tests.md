@@ -1,47 +1,39 @@
 ---
-title:    "PHP: Escrevendo testes."
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/writing-tests.md"
+title:                "PHP: Escrevendo testes"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em PHP?
+## Por que escrever testes é importante?
 
-Os testes são uma parte crucial da programação em PHP. Eles ajudam a garantir que o código esteja funcionando corretamente e a detectar erros antes que eles cheguem aos usuários. Além disso, eles também facilitam a manutenção e refatoração do código no futuro.
+Escrever testes é uma parte essencial de programação e pode trazer muitos benefícios para os desenvolvedores. Testes bem escritos podem fornecer uma maior confiabilidade do código, facilitando a identificação e correção de erros, além de tornar o processo de desenvolvimento mais eficiente e produtivo.
 
 ## Como escrever testes em PHP
 
-Para escrever testes em PHP, você pode usar a estrutura de teste integrada do PHP, conhecida como PHPUnit. Primeiro, crie um arquivo de teste separado para cada função ou método que deseja testar. Em seguida, use a assertiva `assertEquals()` para comparar o resultado esperado com o resultado real. Aqui está um exemplo:
+Incluir testes em nossos códigos PHP é uma tarefa relativamente simples. Podemos começar definindo uma função de teste usando o comando `assert()` e passando como parâmetro a expressão que desejamos testar. Vejamos um exemplo abaixo:
 
 ```PHP
-function adicionar($a, $b) {
-    return $a + $b;
-}
+$expected = 10;
+$result = soma(5, 5);
 
-class AdicionarTeste extends \PHPUnit\Framework\TestCase {
-    public function testeAdicionar() {
-        $resultado = adicionar(2, 3);
-        $this->assertEquals(5, $resultado);
-    }
-}
+assert($result == $expected);
 ```
 
-O resultado do teste será positivo se o valor esperado e o valor real forem iguais, caso contrário, o teste falhará.
+Neste exemplo, estamos testando a função `soma()` para garantir que ela retorne o valor esperado. Se a expressão passada no comando `assert()` for avaliada como falsa, o teste falhará e receberemos uma mensagem de erro indicando a linha e o arquivo onde o erro ocorreu.
 
-## Uma visão mais profunda sobre a escrita de testes
+## Aprofundando na escrita de testes
 
-Existem várias técnicas e práticas para escrever testes em PHP de forma eficaz. A seguir, estão algumas dicas que podem ajudá-lo:
+Além do `assert()`, o PHP também possui outros métodos de testes disponíveis, como `assertContains()` e `assertNotEquals()`. Também é possível criar nossos próprios métodos de testes personalizados, melhorando ainda mais a eficácia dos nossos testes.
 
-- Escreva testes para cada função ou método do seu código.
-- Seja específico e cobrir todos os possíveis cenários de entrada para uma determinada função.
-- Use a declaração `assert` adequada para cada tipo de teste (igualdade, identidade, exceção, etc.).
-- Utilize o conceito de "teste de unidade" para testar pequenas partes isoladas do código.
-- Considere o uso de mocks e stubs para simular cenários específicos durante os testes.
+Outro conceito importante na escrita de testes é o de "cobertura de código". Isso se refere à porcentagem do nosso código que é testada pelos testes. É importante ter uma alta cobertura de código para garantir que todas as partes do nosso código estejam funcionando corretamente.
 
-Com essas práticas em mente, você poderá criar testes confiáveis e abrangentes para o seu código PHP.
+Por fim, é importante lembrar de manter os testes atualizados conforme o código for sendo alterado, garantindo assim que todos os testes continuem funcionando e oferecendo a confiabilidade necessária ao nosso código.
 
 ## Veja também
 
-- [Documentação do PHPUnit](https://phpunit.de/manual/7.5/en/index.html)
-- [Laracasts - PHP Testing Crash course](https://laracasts.com/series/phpunit-testing-in-php)
+- [Documentação oficial do PHP sobre testes](https://www.php.net/manual/pt_BR/book.simplexml.php)
+- [Artigo sobre boas práticas para escrever testes em PHP](https://blog.locaweb.com.br/desenvolvimento/boas-praticas-para-escrever-testes-em-php/)
+- [Vídeo explicando conceitos avançados de testes em PHP](https://www.youtube.com/watch?v=aTR5TmACWWI)

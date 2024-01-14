@@ -1,65 +1,59 @@
 ---
-title:    "Python recipe: Comparing two dates"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/comparing-two-dates.md"
+title:                "Python recipe: Comparing two dates"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Comparing Dates in Python Can Be Useful
+## Why
 
-Comparing dates is a common task in many applications and can be especially useful in data analysis, financial calculations, and event scheduling. Being able to compare dates allows us to determine the difference between two dates, find the oldest or newest date, and more. In this blog post, we will explore how to compare dates in Python and delve deeper into the inner workings of this process.
+Have you ever wondered how to compare two dates in Python? Whether you're working on a project that requires handling time-sensitive data or simply want to learn more about date and time operations in Python, comparing dates is a useful skill to have.
 
-## How To Compare Dates in Python
+## How To
 
-To compare dates in Python, we will be using the built-in `datetime` module. This module provides various functions and classes for working with dates and times. Let's look at some examples of how to use the `datetime` module to compare dates:
+To compare two dates in Python, we can use the built-in `datetime` module. First, we need to import the module:
 
-```
-# Import the datetime module
+```Python 
 import datetime
-
-# Define two dates
-date1 = datetime.date(2020, 3, 15)
-date2 = datetime.date(2020, 5, 12)
-
-# Compare the two dates
-if date1 < date2:
-    print("Date 1 is before Date 2")
-elif date1 > date2:
-    print("Date 2 is before Date 1")
-else:
-    print("The two dates are equal")
 ```
 
-Here, we first import the `datetime` module to access its functions and classes. Then, we define two dates using the `datetime.date()` function, which takes in the year, month, and day as parameters. Finally, we use conditional statements to compare the two dates and print the appropriate message.
+Next, we can create two `datetime` objects with the dates we want to compare. For example, let's compare today's date with a specific date in the past:
 
-To find the difference between two dates in days, we can use the `timedelta` class from the `datetime` module:
-
-```
-# Import the datetime module
-import datetime
-
-# Define two dates
-date1 = datetime.date(2020, 3, 15)
-date2 = datetime.date(2020, 5, 12)
-
-# Calculate the difference in days
-days = (date2 - date1).days
-
-print("The difference between the two dates is", days, "days.")
+```Python 
+today = datetime.datetime.today() 
+past_date = datetime.datetime(2020, 1, 1)
 ```
 
-The `datetime` module also has other useful functions for comparing dates, such as `min()` and `max()` to find the oldest and newest dates, and `today()` to get the current date.
+We can then use comparison operators such as `>` (greater than), `<` (less than), `==` (equal to), etc. to compare the two dates. For example:
 
-## Deep Dive into Comparing Dates in Python
+```Python 
+print(today > past_date) 
+# Output: True 
+```
 
-Dates in Python are represented as objects and can be manipulated using various methods. When comparing dates, the `datetime` module converts them into numerical values and performs the comparison based on those values. For example, dates before 1970 are represented as negative values, while dates after 1970 are represented as positive values.
+We can also use the `date()` method to only compare the date portion and ignore the time. For example, let's compare the dates without considering the time:
 
-Additionally, when comparing dates, the `datetime` module takes leap years into account. This means that a date in a leap year will be considered larger than the same date in a non-leap year.
+```Python 
+today = datetime.datetime.today().date() 
+past_date = datetime.datetime(2020, 1, 1).date()
+print(today == past_date) 
+# Output: True
+```
+
+## Deep Dive
+
+When comparing dates, it's important to note that the `datetime` objects must be in the same format for the comparison to be accurate. This means that the year, month, day, hour, minute, and second must be in the same order for both dates.
+
+Additionally, the `datetime` module provides various methods that can be used to manipulate and format dates. These methods can be useful when working with dates and comparing them. Some examples include `strftime()` for formatting dates into strings, `timedelta()` for adding or subtracting time, and `replace()` for modifying specific date components.
+
+See the [official documentation](https://docs.python.org/3/library/datetime.html) for a full list of methods and their usage.
 
 ## See Also
 
-- [Python's official documentation for the datetime module](https://docs.python.org/3/library/datetime.html)
-- [Python's official tutorial on working with dates and times](https://docs.python.org/3/tutorial/stdlib2.html#dates-and-times)
+For more information on working with dates and times in Python, check out these resources:
 
-Comparing dates in Python may seem like a simple task, but understanding the inner workings and functions of the `datetime` module can greatly enhance your coding skills and productivity. So, the next time you need to compare dates in your Python code, you'll have all the tools and knowledge to do so efficiently. Happy coding!
+[Real Python: Working with Dates and Times in Python](https://realpython.com/python-datetime/)
+[Python for Beginners: Dates and Times Tutorial](https://www.pythonforbeginners.com/basics/python-datetime-time-examples)
+[Python Tutorial: Date and Time in Python](https://www.tutorialspoint.com/python/date_time.htm)

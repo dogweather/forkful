@@ -1,51 +1,78 @@
 ---
-title:    "Ruby: 读取文本文件"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/reading-a-text-file.md"
+title:                "Ruby: 读取文本文件"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-**<注解>**
+为什么：阅读文本文件的好处
 
+阅读文本文件是程序员必备的技能之一。它可以帮助我们处理大量的文本数据，并从中提取有用的信息。无论是从网络抓取数据，还是从本地文件读取数据，掌握文本文件的读取技巧都是至关重要的。
 
-## 为什么
-
-阅读文本文件是编程中非常常见的技巧。通过阅读文本文件，您可以轻松地从外部资源中加载数据并将其应用到您的程序中。阅读本文了解如何从Ruby程序中读取文本文件吧！
-
-## 如何做
-
-阅读文本文件的过程非常简单。首先，您需要使用Ruby的内置`File`类来打开文件。使用`File.open`方法，您可以打开一个文本文件，并将其赋值给一个变量。然后，您可以使用`readlines`方法读取文件中的每一行，并将其存储在一个数组中，供后续使用。最后，记得使用`close`方法关闭文件。下面是一个示例代码，展示了如何读取文件中的内容并打印输出：
+如何进行文本文件读取：
 
 ```Ruby
-file = File.open("example.txt") # example.txt是你想要读取的文本文件
-data = file.readlines # 将每一行存储在一个数组中
-file.close # 关闭文件
+# 打开文件
+file = File.open("textfile.txt")
 
-# 使用循环遍历数组，并打印每一行的内容
-data.each do |line|
-  puts line
+# 逐行读取文件，存储在数组中
+lines = file.readlines
+
+# 关闭文件
+file.close
+
+# 遍历数组，输出每一行文本
+lines.each do |line|
+    puts line
 end
 ```
 
-运行这段代码，您将会看到文件中的每一行被打印输出到控制台。
+输出示例：
+```
+Hello world
+This is a text file.
+It contains multiple lines.
+```
 
-## 深入讨论
+深入探讨：
 
-还有其他几种方法可以读取文本文件的内容。除了使用`File.open`和`readlines`方法外，您还可以使用`IO.readlines`方法来一次性读取文件的所有行，并返回一个数组。另外，您也可以使用`File.read`方法来将整个文本文件的内容读取为一个字符串。
+除了逐行读取，我们还可以使用 Ruby 内置的 `File` 类的 `read` 方法来直接读取整个文件内容。例如：
 
-除了读取文本文件之外，您还可以使用Ruby的`File`类来创建、写入和删除文件。通过查阅官方文档，您可以了解更多关于`File`类的用法和相关方法。
+```Ruby
+# 打开文件
+file = File.open("textfile.txt")
 
-## 参考
+# 读取文件内容
+content = file.read
 
-[官方Ruby文档](https://ruby-doc.org/core-3.0.1/File.html)
+# 关闭文件
+file.close
 
-[Ruby读取文本文件教程](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+# 输出文件内容
+puts content
+```
 
-[Ruby文本文件处理教程](https://www.digitalocean.com/community/tutorials/how-to-use-file-io-functionality-in-ruby)
+输出示例：
+```
+Hello world
+This is a text file.
+It contains multiple lines.
+```
 
-## 参见
+除了常规的文本文件，我们还可以使用 Ruby 的 `CSV` 模块来读取和处理 CSV 格式的文件。这可以大大简化我们的操作，同时也能提高程序的运行效率。关于 `CSV` 模块的更多详细信息，请参考官方文档。
 
-[为什么和如何在Ruby中写入文本文件？](https://github.com/Gamma-Software/techblog/blob/master/ruby-writing-to-text-file.md)
+## 参考链接：
 
-[如何在Ruby中处理CSV文件？](https://github.com/Gamma-Software/techblog/blob/master/ruby-csv-processing.md)
+- [Ruby 文档 - File 类](https://ruby-doc.org/core-2.7.2/File.html)
+- [Ruby 文档 - CSV 模块](https://ruby-doc.org/stdlib-2.7.2/libdoc/csv/rdoc/CSV.html)
+- [Ruby 教程 - 文件操作](https://ruby-china.org/wiki/file-operations-in-ruby)
+
+请参考上述链接了解更多有关文本文件读取的知识。
+
+## 参见：
+
+- [如何使用 Ruby 写入文本文件？](https://example.com/article)
+- [Ruby 中使用正则表达式提取文本信息](https://example.com/article)
+- [探索 Ruby 中的文件操作：删除、重命名和复制文件](https://example.com/article)

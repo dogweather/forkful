@@ -1,56 +1,40 @@
 ---
-title:    "C#: Ein neues Projekt beginnen"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/starting-a-new-project.md"
+title:                "C#: Ein neues Projekt beginnen"
+programming_language: "C#"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Wer C# lernt, erhält nicht nur eine mächtige Programmiersprache, sondern auch einen starken Partner für die Entwicklung eigener Projekte. Ob Sie ein Anfänger oder ein erfahrener Entwickler sind, es gibt viele gute Gründe, ein neues C# Projekt zu starten.
+Es gibt viele Gründe, warum man sich entscheidet, ein neues Programmierprojekt zu starten. Vielleicht möchtest du eine Idee in die Realität umsetzen, neue Fähigkeiten erlernen oder einfach nur Spaß haben. Unabhängig vom Grund, ein neues Projekt zu starten, gibt es einige wichtige Schritte zu beachten, um sicherzustellen, dass dein Projekt erfolgreich ist.
 
-## Wie geht's?
+## Wie man anfängt
 
-Um ein neues C# Projekt zu starten, benötigen Sie zunächst eine Entwicklungsumgebung wie Visual Studio oder Visual Studio Code. Öffnen Sie dann die IDE und folgen Sie diesen Schritten:
-
-1. Öffnen Sie das Menü "Datei" und wählen Sie "Neues Projekt".
-2. Wählen Sie unter "Vorlagen" die Option "Konsolenanwendung".
-3. Geben Sie einen Namen für Ihr Projekt ein und wählen Sie einen Speicherort aus.
-4. Klicken Sie auf "Erstellen" und die IDE erstellt eine leere C#-Konsolenanwendung für Sie.
-
-Nun können Sie mit dem Codieren beginnen! Hier ist ein Beispiel, wie Sie "Hello World!" in der Konsole ausgeben können:
+Der erste Schritt bei der Erstellung eines neuen C# Projekts besteht darin, eine leere Lösung in deiner bevorzugten Entwicklungsumgebung zu erstellen. In Visual Studio kannst du dies tun, indem du auf "Datei" klickst, dann auf "Neu" und schließlich auf "Projekt". Wähle "Leere Lösung" unter "Andere Projekttypen" aus und benenne sie. Nun musst du eine Klasse hinzufügen, um mit dem Codieren zu beginnen. Verwende dazu den folgenden Code-Block:
 
 ```C#
-using System;
-
-namespace MeineErsteAnwendung
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        //Hier kannst du deinen Code schreiben
     }
 }
 ```
 
-Beim Ausführen des Programms sollten Sie "Hello World!" in der Konsole sehen. Probieren Sie es selbst aus und experimentieren Sie mit verschiedenen Ausgaben.
+Dieser Code erstellt eine neue Klasse mit einer Main-Methode, die das Ausführungspunkt deines Programms ist. Jetzt kannst du deinen Code schreiben und ausführen, um zu sehen, wie dein Programm funktioniert.
 
-## Tiefer graben
+## Tiefergehende Informationen
 
-Wenn Sie tiefer in die Entwicklung von C# Projekten einsteigen wollen, gibt es viele Ressourcen im Internet, die Ihnen dabei helfen können. Hier sind einige beliebte Ressourcen, die Ihnen den Einstieg erleichtern können:
+Während es wichtig ist, dein Projekt mit einer leeren Lösung zu starten, gibt es weitere wichtige Aspekte zu beachten. Bevor du mit dem Codieren beginnst, solltest du überlegen, welche Ziele du mit deinem Projekt erreichen möchtest und welche Funktionalitäten es haben sollte. Eine sorgfältige Planung kann dir helfen, Fehler zu vermeiden und dein Projekt effizienter zu gestalten.
 
-- [Microsoft Dokumentation zu C#] (https://docs.microsoft.com/de-de/dotnet/csharp/)
-- [C# Tutorials auf YouTube] (https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWoazjhXQzBKMrFuArxpW80)
-- [C#-Kurse auf Udemy] (https://www.udemy.com/topic/c-sharp/)
-- [C#-Community auf Reddit] (https://www.reddit.com/r/csharp/)
-
-Diese Ressourcen bieten Ihnen eine Fülle an Informationen zu C#, von Grundlagen bis hin zu fortgeschrittenen Konzepten. Nehmen Sie sich Zeit, um sie zu erkunden und Ihr Verständnis für die Programmiersprache zu vertiefen.
+Außerdem ist es wichtig, effektive Codierungspraktiken zu verwenden, wie beispielsweise das Verwenden von Kommentaren, um deinen Code leichter lesbar zu machen, und das Testen deines Codes, um sicherzustellen, dass es wie erwartet funktioniert.
 
 ## Siehe auch
 
-- [Warum C# eine großartige Programmiersprache für Anfänger ist] (https://www.freecodecamp.org/news/why-c-sharp-is-a-great-programming-language-for-beginners/)
-- [C# vs. Java - Welche Sprache sollten Sie lernen?] (https://www.toptal.com/java/vs-c-sharp)
-- [Die besten C#-Frameworks und Bibliotheken für die Entwicklung von Desktop-Anwendungen] (https://www.slant.co/topics/609//best-c-frameworks-for-building-windows-desktop-apps)
+- [Visual Studio herunterladen](https://visualstudio.microsoft.com/de/downloads/)
+- [C# Tutorials auf YouTube](https://www.youtube.com/playlist?list=PLAEznvCEjdL1wRT0H1Wo5_OgC4Zo25g-1)
+- [Microsoft C# Dokumentation](https://docs.microsoft.com/de-de/dotnet/csharp/)

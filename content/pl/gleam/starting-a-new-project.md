@@ -1,61 +1,41 @@
 ---
-title:    "Gleam: Rozpoczęcie nowego projektu"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/starting-a-new-project.md"
+title:                "Gleam: Rozpoczęcie nowego projektu"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto zacząć nowy projekt z Gleam?
+## Dlaczego
 
-Gleam jest nowoczesnym językiem programowania, który pozwala na pisanie bezpiecznych i wydajnych aplikacji. Przez swoją unikalną składnię i wbudowane narzędzia, jest idealnym wyborem dla osób pragnących budować skalowalne i niezawodne systemy. 
+Zastanawiasz się, dlaczego warto zacząć nowy projekt w Gleam? Oto krótkie wyjaśnienie: Gleam to język programowania funkcyjnego, który ma prostą składnię i silnie typowany system, co pozwala na pisanie bezpiecznego i wydajnego kodu. Jego modułowość i wydajność sprawiają, że jest idealnym wyborem dla projektów o dużej skali.
 
-## Jak to zrobić?
+## Jak zacząć
 
-Gleam jest językiem funkcyjnym, co oznacza, że kod pisany w nim jest modułowy i łatwy w utrzymaniu. Poniżej przedstawiamy przykłady kodu wraz z wyjściem, które będą pomocne w zrozumieniu Gleam oraz jego podstawowych funkcji.
+Jeśli chcesz rozpocząć nowy projekt w Gleam, pierwszą rzeczą, którą musisz zrobić, to zainstalować język na swoim komputerze. Możesz to zrobić, korzystając z narzędzia Managera pakietów dla Gleam - Rebar3. Następnie, utwórz nowy katalog projektu i uruchom polecenie `gleam new <nazwa projektu>` aby utworzyć szablon projektu. Możesz także skorzystać z gotowego szablonu dostępnego w repozytorium Gleam, aby szybko rozpocząć pracę.
 
-```Gleam
-let person = {
-  name: "Kasia",
-  age: 28
-} 
-
-fun print_person(person) {
-  IO.print("Cześć, nazywam się {person.name} i mam {person.age} lat!")
-}
-
-print_person(person) 
-```
-Output:
-```
-Cześć, nazywam się Kasia i mam 28 lat!
-```
+Po utworzeniu projektu, możesz już zacząć pisać kod w języku Gleam. Przykładowe pliki o rozszerzeniu `.gleam` można znaleźć w katalogu `src` w utworzonym przez Ciebie projekcie. W poniższym przykładzie, utworzymy prosty `hello_world.gleam` i wydrukujemy na ekranie wiadomość "Witaj świecie" za pomocą funkcji `io.print`:
 
 ```Gleam
-fun calculate_average(numbers) {
-  let sum = List.fold_left(numbers, 0, fn(x, acc) {
-    x + acc
-  })
-  sum / List.length(numbers)
+import gleam/io
+
+pub fn main() {
+    io.print("Witaj świecie")
 }
-
-let scores = [86, 92, 78, 100, 95]
-let average = calculate_average(scores)
-IO.print("Srednia z ocen to {average}") 
-```
-Output:
-```
-Średnia z ocen to 90.2
 ```
 
-## Głębszy wgląd w rozpoczęcie nowego projektu
+## Deep Dive
 
-Aby zacząć nowy projekt z Gleam, należy najpierw zainstalować jego kompilator i narzędzia do zarządzania zależnościami. Następnie można tworzyć moduły kodu, korzystając z wbudowanych typów danych i funkcji. Bardzo ważne jest również testowanie kodu za pomocą frameworka gleam_test, który pozwala na sprawdzenie poprawności działania każdej funkcji.
+Po zainstalowaniu Gleam i utworzeniu szablonu projektu, możesz rozpocząć bardziej dogłębną naukę języka. Na stronie internetowej Gleam znajdziesz dokładną dokumentację, przykładowe projekty oraz linki do społeczności na Slacku i Discourse, gdzie możesz uzyskać pomoc i wymieniać się doświadczeniami z innymi programistami.
 
-W przypadku pytań lub problemów związanych z Gleam, warto zajrzeć na oficjalną stronę dokumentacji lub dołączyć do społeczności na Discordzie, gdzie można uzyskać pomoc od innych programistów.
+Istnieją również biblioteki dostępne dla języka Gleam, które można wykorzystać w swoim projekcie. W repozytorium Gleam znajdziesz listę dostępnych bibliotek oraz informacje o tym, jak je zainstalować i używać.
 
 ## Zobacz również
 
-- Oficjalna strona Gleam: https://gleam.run/
-- Dokumentacja Gleam: https://gleam.run/documentation/
-- Discord Gleam: https://discord.gg/Nn8WCzJ
+- Strona główna języka Gleam: https://gleam.run/
+- Repozytorium Gleam: https://github.com/gleam-lang/gleam
+- Dokumentacja języka Gleam: https://gleam.run/documentation/
+- Społeczność na Slacku: https://gleam-lang.slack.com/
+- Forum na Discourse: https://elixirforum.com/c/gleam/24
+- Lista dostępnych bibliotek: https://github.com/gleam-lang/gleam/wiki/Libraries

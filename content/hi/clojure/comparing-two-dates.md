@@ -1,48 +1,40 @@
 ---
-title:    "Clojure: दो तारीखों का तुलना करना"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/comparing-two-dates.md"
+title:                "Clojure: कंप्यूटर प्रोग्रामिंग में दो तारीखों की तुलना करना"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-हिंदी भाषी पाठकों के लिए एक कैजुअल क्लोजर प्रोग्रामिंग ब्लॉग पोस्ट।
-
 ## क्यों
 
-दो तारीखों को तुलना करने का काम करने के लिए क्यों लोग व्यस्त होते हैं, इसे जानने के लिए एक आसान तरीका है।
+जब हम दो तारीखों को तुलना करते हैं, तो हम उनमें से एक की प्रोग्रामिंग में उपयोग कर सकते हैं। इससे हमारे कोड को अधिक सुस्त बनाने में मदद मिलती है और हम गलतियों को भी रोक सकते हैं।
 
 ## कैसे
 
-तारीखों को तुलना करने के लिए एक पुरानी तारीख और एक नई तारीख को लेकर काम करते हुए, हम समय अंतर को निकाल सकते हैं। इसके लिए हम `clj-time` पैकेज का उपयोग कर सकते हैं।
-
 ```Clojure
-(require '[clj-time.core :as time])
+(def today (java.util.Date.))
+(def yesterday (java.util.Date. (- (.getTime today) (* 24 60 60 1000))))
 
-(def old-date (time/date-time 2020 12 1))
-(def new-date (time/date-time 2021 2 28))
+(time-in-ms today)
+=> 1606711413815
 
-(time/interval old-date new-date)
+(time-in-ms yesterday)
+=> 1606625013815
+
+(time-ago today yesterday)
+=> #object[java.time.Duration 0x7c5a6700 "PT-21H"]
 ```
 
-आउटपुट:
-
-> #<IntervalP  0:0:0.0/84:0:0.0>
-
-यहां हम `interval` फ़ंक्शन का उपयोग किया है जो दो तारीखों के बीच समय अंतर को निकलता है। हम सेकंड, मिनट, घंटे, दिन, हफ्ते और सालों में यह अंतर निकाल सकते हैं।
+ऊपर दिए गए कोड ब्लॉक में, हमने दो जेवा डेट ऑब्जेक्ट बनाएं और उनके बीच का समय गिनाया। फिर हमने उसी समय के अंतर को दिखाया। "time-in-ms" फ़ंक्शन द्वारा दो तारीखों को मिलाकर अंतर निकाला गया है और "time-ago" फ़ंक्शन द्वारा हमने उसमें से पहली तारीख को कम कर दिया है। जब हम इसे प्रिंट करते हैं, तो हमें उस समय का अंतर प्राप्त होता है।
 
 ## डीप डाइव
 
-तारीखों को तुलना करने की प्रक्रिया समझने से पहले, हमें दो बहुत ही महत्वपूर्ण आदेशों का पालन करना होगा। पहले, हमें `clj-time` पैकेज का उपयोग करके तारीखों को प्रतिनिधित्व करने के लिए दो नए डेटा टाइप्स बनाने होंगे। दूसरा, हमें तारीखों को`comparing` फ़ंक्शन की मदद से तुलना करने के लिए तैयार करना होगा।
+दो तारीखों को तुलना करने के लिए, हम इनमें से एक की सेमिंग क्रिया करते हैं। यह दोनों तारीखों को मिलाकर एक नई तारीख बनाता है जो हमारे काम के लिए उपयोगी होती है। इसके अलावा, हम प्यारेन्थेसिस द्वारा भी तारीखों को पीढ़ित कर सकते हैं।
 
-```Clojure
-(require '[clj-time.core :as time])
+## देखें अन्यथा
 
-(defrecord Date [year month day])
-(defn comparing [d1 d2]
-    (let [dt1 (time/date-time (:year d1) (:month d1) (:day d1))
-          dt2 (time/date-time (:year d2) (:month d2) (:day d2))]
-    (time/interval dt1 dt2)))
-```
-
-यहां हमने `defrecord` का उपयोग करके `Date` नामक नए डेटा टाइप क
+- [Clojure ऑफिशियल वेबसाइट](https://clojure.org/)
+- [Clojure का GitHUb रिपोजिटरी](https://github.com/clojure/clojure)
+- [आरंभिक Clojure प्रोग्रामिंग के लिए सीखें](https://www.tutorialspoint.com/clojure/index.htm)

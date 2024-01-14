@@ -1,45 +1,31 @@
 ---
-title:    "C#: 标准错误的编写"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/writing-to-standard-error.md"
+title:                "C#: 写入标准错误"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么人们会写标准错误日志?
+为什么：为什么有人会选择写入标准错误？可能是为了调试程序或者记录程序运行时的错误信息。无论是哪种情况，都需要使用C#中的标准错误输出功能。
 
-标准错误日志是一种记录程序运行错误信息的重要方法。它可以帮助开发人员快速定位程序中的bug，并提供更加有效的解决方案。因此，编写标准错误日志可以帮助开发人员提升程序的质量和稳定性，从而为用户提供更好的体验。
-
-如何写标准错误日志：
+如何：在C#中，可以使用“Console.Error.WriteLine()”来将信息写入标准错误。下面是一个简单的示例代码和输出：
 
 ```C#
-try
-{
-    // Code that may potentially throw an error
-    // ...
-}
-catch (Exception ex)
-{
-    // Write error message to standard error
-    Console.Error.WriteLine("Error Message: " + ex.Message);
-}
+string error = "发生了一个错误！";
+Console.Error.WriteLine(error);
 ```
 
-上面的代码段演示了在C#中如何使用标准错误流来写入错误信息。首先，我们将需要检查可能会出错的代码放在一个try块中，然后在catch块中使用Console.Error.WriteLine()方法来将错误信息打印到标准错误流中。
+输出：
+```
+发生了一个错误！
+```
 
-深入了解标准错误日志：
+更深入地了解：写入标准错误是一个重要的程序开发技巧，可以帮助我们更有效地调试和排查错误。通过写入标准错误，我们可以在程序运行时获取错误信息，并定位错误发生的位置。另外，我们还可以结合其他工具来处理和分析标准错误的信息，从而更好地优化程序。
 
-写入标准错误日志的方法与写入标准输出日志的方法有些类似，但是它们的用途和作用不同。标准错误流主要记录程序运行时的错误信息，而标准输出流则主要用于记录正常的程序输出信息。在一些情况下，我们也可以将标准错误日志重定向到文件中，以便后续分析和处理。
+还有什么：如果想要进一步了解如何使用C#中的标准错误输出功能，可以参考以下链接：
+- [C# Console类的使用方法](https://www.runoob.com/csharp/csharp-console-application.html)
+- [C#中的标准错误输出功能](https://docs.microsoft.com/zh-cn/dotnet/api/system.console.error?view=net-5.0)
+- [如何调试C#程序](https://www.cnblogs.com/loveis715/p/6480309.html)
 
-另外，一些程序开发框架也提供了更加高级的错误日志工具，可以帮助开发人员更加方便地记录和管理程序中的错误信息。因此，熟悉并理解如何有效地使用标准错误日志将有助于提升程序开发的效率和质量。
-
-## 参考资料
-
-- [C# 中的标准错误流文档](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/main-and-command-args/standard-error-stream)
-- [C# 异常处理教程](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/exceptions/)
-- [使用 NLog 记录错误日志](https://www.cnblogs.com/utopia/articles/7000970.html)
-
-## 参见
-
-- [标准输出流：如何记录程序输出信息](https://example.com/standard-output-mandarin)
-- [如何使用调试工具定位程序错误](https://example.com/debugging-errors-mandarin)
+另外，建议阅读Markdown语法的相关教程，以便更好地编写文档。加油！

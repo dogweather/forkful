@@ -1,46 +1,44 @@
 ---
-title:    "Ruby: Schreiben auf Standardfehler"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-to-standard-error.md"
+title:                "Ruby: Schreiben auf Standardfehler"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte jemand Zeit damit verbringen, in das standard error zu schreiben? Die einfache Antwort: um Fehlermeldungen und Debugging-Informationen zu verbessern.
+# Warum
 
-## Wie
-Es gibt verschiedene Möglichkeiten, in Ruby in das standard error zu schreiben. Eine Möglichkeit ist der Befehl `STDERR.puts`, der die angegebene Nachricht in das standard error ausgibt. Zum Beispiel:
+Das Schreiben auf den Standardfehler (Standard Error) ist ein wichtiger Teil der Programmierung in Ruby. Es ermöglicht uns, Fehlermeldungen und andere wichtige Informationen während der Ausführung unseres Codes zu überwachen und zu erfassen. In diesem Blogbeitrag werden wir uns genauer anschauen, warum es wichtig ist, auf den Standardfehler zu schreiben.
 
-```Ruby
-STDERR.puts "Dies ist eine Nachricht für das standard error"
+# So geht's
+
+Das Schreiben auf den Standardfehler ist in Ruby ganz einfach. Wir verwenden einfach den Befehl `STDERR.puts`. Lass uns ein Beispiel anschauen:
+
+```ruby
+STDERR.puts "Dies ist eine Fehlermeldung"
 ```
 
-Dies würde folgende Ausgabe erzeugen:
+Wenn wir diesen Code ausführen, wird die Ausgabe auf dem Standardfehler ausgegeben, anstatt auf dem Standardausgang wie üblich. Dies hilft uns, Fehlermeldungen und andere wichtige Informationen sofort zu erkennen.
 
-`Dies ist eine Nachricht für das standard error`
+Eine weitere Möglichkeit, auf den Standardfehler zu schreiben, ist die Verwendung des `raise`-Befehls. Wenn wir `raise` ohne einen Fehler übergeben, wird automatisch eine `RuntimeError` erzeugt und auf den Standardfehler geschrieben.
 
-Eine weitere Möglichkeit ist es, den Befehl `STDERR.write` zu nutzen, der die Nachricht, ähnlich wie `puts`, in das standard error ausgibt. Zum Beispiel:
-
-```Ruby
-STDERR.write "Dies ist eine andere Nachricht für das standard error"
+```ruby
+raise "Dies ist eine RuntimeError"
 ```
 
-Dies würde folgende Ausgabe erzeugen:
+Der Output wird ähnlich aussehen wie der Output vom `STDERR.puts`-Befehl.
 
-`Dies ist eine andere Nachricht für das standard error`
+# Tiefere Einblicke
 
-## Deep Dive
-Wenn wir in das standard error schreiben, können wir erweiterte Debugging-Informationen anzeigen oder gezielt auf bestimmte Fehler hinweisen. Zum Beispiel könnte man in einem Ruby-Programm eine Fehlermeldung zeigen, wenn eine bestimmte Bedingung nicht erfüllt wird. Dies könnte so aussehen:
+Das Schreiben auf den Standardfehler ermöglicht es uns, Fehlermeldungen zu erfassen und zu überwachen. Es ist besonders nützlich beim Debuggen von Code oder bei der Entwicklung von komplexen Anwendungen. Indem wir Fehlermeldungen auf den Standardfehler schreiben, können wir sicherstellen, dass sie von anderen Teilen unseres Codes erfasst und verarbeitet werden können.
 
-```Ruby
-if user_input != expected_input
-  STDERR.puts "Fehler: Das Benutzer-Input stimmt nicht mit dem erwarteten Input überein."
-end
-```
+Darüber hinaus ist es eine gute Praxis, auf den Standardfehler zu schreiben, wenn wir Ausnahmen (Exceptions) erfassen und behandeln. Indem wir die Ausnahme auf den Standardfehler schreiben, stellen wir sicher, dass sie nicht einfach verschluckt wird und wir sie untersuchen können.
 
-Durch das Schreiben in das standard error können wir also mehr Kontrolle über die Ausgabe von Fehlermeldungen und zusätzlichen Informationen haben.
+Insgesamt ist das Schreiben auf den Standardfehler eine wichtige Fähigkeit für jeden Ruby-Entwickler. Es ermöglicht uns, unseren Code besser zu verstehen und Probleme effektiver zu beheben.
 
-## Siehe Auch
-- [Ruby Dokumentation über STDERR](https://ruby-doc.org/core-2.7.1/IO.html#method-c-new-label-Standard+Streams)
-- [Artikel über das Schreiben in das standard error in Ruby](https://quickleft.com/blog/ruby-stdin-stdout-stderr/)
+# Siehe auch
+
+- [The Ruby Standard Library Documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/logger/rdoc/Logger.html)
+- [Ruby Exceptions and Exception Handling](https://www.rubyguides.com/2019/05/ruby-exception-handling/)
+- [Ruby for Beginners](https://ruby-for-beginners.rubymonstas.org/)

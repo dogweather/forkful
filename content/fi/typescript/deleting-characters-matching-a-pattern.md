@@ -1,44 +1,51 @@
 ---
-title:    "TypeScript: Mallia vastaavien merkkien poistaminen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/deleting-characters-matching-a-pattern.md"
+title:                "TypeScript: Mallia vastaavien merkkien poistaminen"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi poistaa merkkejä, jotka vastaavat kaavaa?
+## Miksi
 
-Merkkien poistaminen, jotka vastaavat tiettyä kaavaa, voi olla hyödyllistä, jos haluat puhdistaa tietoa tai tarkistaa sen tietyn muodon tai formaatin. Tämä voi auttaa sinua varmistamaan, että tiedot ovat oikein ja helposti käsiteltävissä myöhemmin.
+Joskus ohjelmoinnissa tarvitaan tietyn kaavan mukaisten merkkien poistamista tekstimuodosta. Tämä voi esimerkiksi olla tarpeellista käyttäjän antaman syötteen validoinnissa tai datan käsittelyssä.
 
-## Kuinka tehdä se TypeScriptillä?
+## Miten
 
-Voit käyttää TypeScriptiä poistaaksesi merkkejä, jotka vastaavat tiettyä kaavaa, käyttämällä `replace`-metodia ja säännöllisiä lausekkeita.
-
-Esimerkiksi, jos haluat poistaa kaikki välilyönnit merkkijonosta, voit käyttää seuraavaa koodia:
+Merkkien poistaminen halutun kaavan mukaan TypeScript-koodissa on helppoa. Käytämme siihen `replace()`-funktiota, joka ottaa vastaan kaksi parametria: ensimmäisenä kaava, joka kertoo mitkä merkit halutaan poistaa, ja toisena tyhjän merkkijonon, jolla nämä merkit korvataan. Katso esimerkki alla:
 
 ```TypeScript
-const merkkijono = "Tämä on esimerkki merkkijonosta.";
-console.log(merkkijono.replace(/\s/g, "")); // Output: Tämäonesimerkkimerkkijonosta.
+let teksti = "Tämä on esimerkki 123 tekstistä!";
+let kaava = /[0-9]/g; // poistetaan kaikki numerot
+teksti = teksti.replace(kaava, ""); // teksti muuttuu nyt "Tämä on esimerkki tekstistä!"
+console.log(teksti); // tulostaa: Tämä on esimerkki tekstistä!
 ```
 
-Lopullisessa koodissa `/ \s/g`-osa edustaa säännöllistä lauseketta, joka etsii kaikki välilyönnit ja korvaa ne tyhjällä merkkijonolla `""`.
+Tässä esimerkissä olemme käyttäneet säännöllistä lausetta `[0-9]`, joka vastaa kaikkia numeroita 0-9. Käytämme myös `g` ("globaali") -modifieria, jotta kaikki vastaavat merkit poistetaan eikä vain ensimmäinen. 
 
-Toinen esimerkki voisi olla uuden puhelinnumeron muotoilu oikeaan muotoon poistamalla väliviivat ja sulkumerkit:
+## Syvempi sukellus
+
+`replace()`-funktion lisäksi TypeScript tarjoaa muitakin tapoja poistaa merkkejä tekstistä. Jos haluat poistaa tiettyjä merkkejä alusta tai lopusta, voit käyttää `substring()`-metodia. Se ottaa vastaan kaksi parametria: ensimmäisenä indeksin, josta jäädään alkaen tekstiä, ja toisena indeksin, johon asti tekstiä poistetaan. Katso esimerkki alla:
 
 ```TypeScript
-const puhelinnumero = "(123) 456-7890";
-console.log(puhelinnumero.replace(/[\(\)\-\s]/g, "")); // Output: 1234567890
+let teksti = "Tämä on esimerkki tekstistä!";
+teksti = teksti.substring(5); // teksti muuttuu nyt "on esimerkki tekstistä!"
+console.log(teksti); // tulostaa: on esimerkki tekstistä!
+teksti = teksti.substring(0, 8); // teksti muuttuu nyt "on esime"
+console.log(teksti); // tulostaa: on esime
 ```
 
-Lopputuloksena säännöllisen lausekkeen `/[\(\)\-\s]/g` käyttämisestä on, että kaikki sulkumerkit, väliviivat ja välilyönnit poistetaan.
+Vaihtoehtoisesti voit myös käyttää `split()`-funktiota, joka jakaa tekstin annetun merkin kohdalta ja palauttaa siitä listan. Voit sitten yhdistää tämän listan takaisin yhdeksi merkkijonoksi `join()`-metodilla ja näin jättää tiettyjä merkkejä pois. Katso esimerkki alla:
 
-## Syvällinen sukellus
-
-Kun poistat merkkejä, jotka vastaavat tiettyä kaavaa, on tärkeää ymmärtää säännöllisten lausekkeiden erilaiset merkitykset ja käyttötavat. Voit muuttaa / korvata vaihtelevia merkkejä, sijoittaa säännöllisiä lausekkeita muihin lausekkeisiin ja paljon muuta.
-
-Joten, jos haluat hallita merkkien poistamista tietystä kaavasta, suosittelen tutustumaan säännöllisiin lausekkeisiin ja niiden erilaisiin mahdollisuuksiin.
+```TypeScript
+let teksti = "Tämä, on, esimerkki, tekstistä!";
+teksti = teksti.split(", ").join(" "); // teksti muuttuu nyt "Tämä on esimerkki tekstistä!"
+console.log(teksti); // tulostaa: Tämä on esimerkki tekstistä!
+```
 
 ## Katso myös
 
-- [Säännöllisten lausekkeiden opas (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Säännölliset lausekkeet TypeScriptissä (TypeScript-kirjasto)](https://github.com/microsoft/TypeScript/wiki/Regular-Expressions)
+- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs - String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN Web Docs - String.prototype.split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)

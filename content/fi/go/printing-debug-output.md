@@ -1,36 +1,37 @@
 ---
-title:    "Go: Virheenkorjaustulostuksen tulostaminen"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/printing-debug-output.md"
+title:                "Go: Tulostuksen virhelähdön tulostaminen"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Debuggaustiedostojen tulostaminen on tärkeä osa ohjelmoinnin prosessia, koska se auttaa kehittäjiä havaitsemaan ja korjaamaan ohjelmien virheitä ja ongelmia. Se voi myös auttaa ymmärtämään ohjelman suorituskykyä ja varmistamaan, että se toimii odotetulla tavalla.
+On monia syitä, miksi voisi hyödyntää debug-tulostuksen käyttöä Go-ohjelmoinnissa. Se voi auttaa ratkaisemaan virheitä ja vianmäärityksessä sekä parantaa ohjelman tehokkuutta. 
 
-## Kuinka
+## Ohjeet
 
-Go-kielessä debuggaustiedostojen tulostamiseen käytetään usein `fmt`-pakettia. Esimerkiksi, jos haluat tulostaa muuttujan arvon koodissa, voit käyttää seuraavaa koodia:
+Debug-tulostuksen käyttö on helppoa Go-koodissa. Se voidaan tehdä kahdella tavalla: 
 
-```
-Go fmt.Println(nimi)
-```
-
-Tämä tulostaa muuttujan "nimi" arvon konsoliin. Voit myös käyttää `fmt.Printf` funktiota, joka antaa sinun määrittää tarkemmin, miten haluat tulostaa tiedot. Esimerkiksi, jos haluat tulostaa muuttujan arvon numerona, voit käyttää seuraavaa koodia:
-
-```
-Go fmt.Printf("%d", numero)
+1. Käyttämällä "fmt" -pakettia: ```Go 
+fmt.Println("Debug-tulostus") 
 ```
 
-Tämä tulostaa numeron arvon konsolissa.
+2. Käyttämällä log-kirjastoa: ```Go 
+log.Println("Debug-tulostus") 
+```
 
-## Syvällinen sukellus
+Näiden kahden tavan välillä ei ole suurta eroa, joten voit valita oman mieltymyksesi mukaan. 
 
-On tärkeää huomata, että debuggaustiedostojen tulostaminen voi hidastaa ohjelman suorituskykyä. Siksi on tärkeää käyttää sitä vain tarvittaessa ja poistaa ylimääräiset tulostukset lopullisesta koodista. Lisäksi on hyvä käyttää loggausmekanismeja, kuten `log`-pakettia, joka tarjoaa enemmän hallintaa ja joustavuutta debuggaustiedostojen tulostamisessa.
+Debug-tulostuksen avulla voit tulostaa muuttujien, sisäisten funktioiden ja muiden tietojen arvoja, mikä auttaa sinua ymmärtämään, mitä koodisi tekee ja mikä aiheuttaa mahdollisia virheitä. 
 
-## Katso myös
+## Syväsukellus 
 
-- [Go:n fmt-paketti](https://pkg.go.dev/fmt)
-- [Go:n log-paketti](https://pkg.go.dev/log)
+Debug-tulostuksen käyttöön on monia syvällisiä tapoja, joista voit oppia lisää. Voit esimerkiksi käyttää log-kirjastoa erilaisten tasojen (esim. info, virhe, varoitus) asettamiseksi tai lisätä aikaleimat tulosteisiisi. Voit myös tutkia "reflect" -pakettia, joka mahdollistaa laajemman ja tarkemman tietojen tarkastelun debug-tulostuksen kautta. 
+
+## Katso myös 
+
+- (Go-pakettien käyttöönotto)[https://golang.org/doc/code.html]
+- (Go-opas ja virheenkorjaus)[https://learnxinyminutes.com/docs/fi-fi/go-fi/]

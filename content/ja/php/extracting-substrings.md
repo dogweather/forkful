@@ -1,63 +1,41 @@
 ---
-title:    "PHP: サブストリングの抽出"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/extracting-substrings.md"
+title:                "PHP: 「サブストリングの抽出」"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜサブストリングを抽出するか？
+## なぜ？
+抽出するためにサブ文字列を使用する理由は多岐にわたります。一般的な用途として、テキストから特定の部分を取り出したい場合や、文字列の比較や検索を行いたい場合などが挙げられます。
 
-あなたがプログラミングの世界に新しく入ったばかりであれば、サブストリングの概念はあまり聞き慣れないかもしれません。しかし、これは非常に便利な機能であり、プログラムをより効率的にするために必要なものです。サブストリングは、文字列から部分文字列を抽出することができるため、文字列をより簡単に操作することができます。では、具体的にどのようにサブストリングを抽出するのかを見ていきましょう。
-
-## サブストリングを抽出する方法
-
-サブストリングを抽出するには、PHPの組み込み関数である`substr()`を使用します。以下の例を見てみましょう。
-
-```PHP
-$string = "Hello, world!";
-// 文字列の5文字目から最後までのサブストリングを抽出する
-$substring = substr($string, 5);
-echo $substring; // "o, world!"
+## 方法
+```php
+// 文字列から特定の部分を抽出する例
+$str = "こんにちは、私の名前は太郎です。";
+$substr = substr($str, 4, 6); // "名前は太郎"
+echo $substr;
 ```
 
-上記の例では、`substr()`関数の第一引数に元の文字列を、第二引数に抽出を開始するインデックスを指定しています。また、第三引数には抽出する文字数を指定することもできます。次の例を見てみましょう。
-
-```PHP
-$string = "123456789";
-// 文字列の2文字目から5文字を抽出する
-$substring = substr($string, 2, 5);
-echo $substring; // "23456"
+```php
+// 文字列を比較する例
+$str1 = "apple";
+$str2 = "banana";
+$substr = substr($str1, 0, 3); // "app"
+if($substr == $str2) {
+  echo "同じ文字列です";
+} else {
+  echo "違う文字列です";
+}
 ```
 
-サブストリングを抽出する際には、注意点があります。文字列のインデックスは、0から始まることに注意しましょう。また、抽出する文字数がサブストリングよりも長い場合は、自動的に末尾まで抽出されます。
+抽出したい部分の始まりの位置と、その長さを指定することで、サブ文字列を取得することができます。
 
-## サブストリングの深堀り
+## ディープダイブ
+サブ文字列を抽出する際、重要な点は「始まりの位置」と「長さ」を正しく指定することです。始まりの位置は、文字列の先頭を0とし、その後に順番に1, 2, 3...と数を振っていきます。また、長さが指定されない場合は、文字列の最後までを抽出します。
 
-サブストリングを抽出する際には、第一引数に指定する元の文字列の扱いに注意が必要です。例えば、文字列の中にマルチバイト文字（日本語や中国語など）が含まれている場合は、`mb_substr()`関数を使用する必要があります。これは、マルチバイト文字を正しく扱うための関数です。以下の例を見てみましょう。
-
-```PHP
-$string = "こんにちは、世界！";
-// マルチバイト文字の扱いに注意してサブストリングを抽出する
-$substring = mb_substr($string, 3);
-echo $substring; // "は、世界！"
-```
-
-また、文字列を逆順に抽出するには、`strrev()`関数を使用してから`substr()`関数を実行する必要があります。次の例を見てみましょう。
-
-```PHP
-$string = "Hello, world!";
-// 文字列を逆順にする
-$reversed = strrev($string);
-// 逆順になった文字列から3文字目から最後までのサブストリングを抽出する
-$substring = substr($reversed, 3);
-echo $substring; // "dlrow!"
-```
-
-## さらに学ぶには
-
-サブストリングを抽出する方法は、プログラミングにおいて非常に重要なテクニックの一つです。さらに詳しく学びたい方は、PHPの公式ドキュメントやオンラインのチュートリアルをチェックしてみてください。
-
-# See Also
-
-- [PHPマニュアル： substr()関数](https://www.php
+## See Also
+- [PHP: substr](https://www.php.net/manual/en/function.substr.php)
+- [PHP: String Functions](https://www.php.net/manual/en/ref.strings.php)
+- [How to extract a substring in PHP](https://stackoverflow.com/questions/4468268/how-to-extract-a-substring-in-php)

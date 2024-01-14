@@ -1,37 +1,31 @@
 ---
-title:    "TypeScript: एक स्ट्रिंग कैपिटलाइज़ करना"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/capitalizing-a-string.md"
+title:                "TypeScript: स्ट्रिंग को बड़े अक्षरों में लिखना"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-व्यक्तियों को स्ट्रिंग को कैपिटलाइज़ करने में रुचि हो सकती है, जो उनके प्रोग्रामिंग उपकरणों को अधिक पढ़ने और समझने में मदद कर सकता है। इससे उनके प्रोग्राम को रोबोस्ट और आसान बनाने में मदद मिलती है।
+यदि आप एक विकसित प्रोग्रामर हैं और अपने कोड में शामिल एक इम्पचरिकल स्ट्रिंग का उपयोग कर रहे हैं, तो आपको उसे कैपिटलाइज़ करना पड़ सकता है। यह इसलिए जरूरी है कि कई बार हमें इम्पचरिकल स्ट्रिंग को लेख के प्रथम अक्षर के स्थान पर कैपिटल लेटर के साथ छोड़ना होता है। अगर आप इसे सही ढंग से नहीं चेंज करते हैं, तो यह आपके कोड को खराब भी कर सकता है।
 
 ## कैसे करें
 
-```
-टाइपस्क्रिप्ट द्वारा स्ट्रिंग कैपिटलाइज़ करने के लिए आप निम्नलिखित कोड उपयोग कर सकते हैं।
+यदि आप अपने टाइपस्क्रिप्ट कोड में स्ट्रिंग को कैपिटलाइज़ करना चाहते हैं, तो आप निम्नलिखित कदमों का पालन कर सकते हैं।
 
-const str = "hello, world!";
-const capitalizedStr = str.toUpperCase();
+आयात भाषा अगर प्रचलित : ```TypeScript Import``` 
 
-console.log(capitalizedStr); // output: HELLO, WORLD!
+फिर से कैपिटलाइज़ करें :```TypeScript string.toUpperCase ()``` 
 
-```
+सांकेतिक स्ट्रिंग कैपिटलाइज़ करें : ```TypeScript string.charAt (0). toUpperCase () + string.slice (1)```
 
-इस कोड में, हमने स्ट्रिंग वेरिएबल को बनाया है और उसे `toUpperCase()` फ़ंक्शन से लेकर उसे कैपिटलाइज़ किया है और फिर हमने कॉन्सोल में उसका आउटपुट प्रिंट किया है। इस तरह हम स्ट्रिंग को कैपिटलाइज़ कर सकते हैं।
+यदि आप कोड को अमरीकी इंग्रजी में लिख रहे हैं, तो आप निम्नलिखित कोड का उपयोग कर सकते हैं: ```TypeScript string.charAt (0). toUpperCase () + string.slice (1) ``` यह स्ट्रिंग का प्रथम अक्षर कैपिटलाइज़ करेगा और शेष स्ट्रिंग को अनुवाद करेगा क्योंकि इसे कैमेल केस में लिखा गया है।
 
-## गहराई में जाएं
+आप भी अपने कोड में मानचित्र की मदद से कैपिटलाइज़ को साधन संग्रह में जमा सकते हैं। निम्नलिखित कोड का उपयोग कैरॉक लिए किया है।
 
-स्ट्रिंग को कैपिटलाइज़ करने के लिए अन्य तरीके भी मौजूद हैं, जैसे अपने कार्यों को सुधारने के लिए सामान्य लूपिंग रिक्त्सा का उपयोग करना। अधिक गहराई से जानने के लिए, आप निम्नलिखित लिंकों पर जा सकते हैं:
+```TypeScript for (let i = 0; i <stringArray.length; i ++) 
+{ console.log (stringArray [i]. charAt (0) . toUpperCase () + stringArray [i] .slice (1)); } ```
 
-- [JavaScript स्ट्रिंग प्रोटोटाइप कैपिटलाइज़िशन मेथड](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [क्यों और कैसे करें: स्ट्रिंग को कैपिटलाइज़ करना](https://www.digitalocean.com/community/tutorials/how-and-why-to-capitalize-strings-in-javascript)
-- [TypeScript स्ट्रिंग मैनिपुलेशन के लिए स्पेशल टाइप्स और फ़ंक्शन समूह](https://pawelgrzybek.com/typescript-string-manipulation-types-and-functions/) 
-
-## देखें भी
-
-- अन्य टाइपस्क्रिप्ट प्रोग्रामिंग
+इस आउटपुट समूह का उपयोग कर

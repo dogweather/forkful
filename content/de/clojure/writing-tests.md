@@ -1,53 +1,44 @@
 ---
-title:    "Clojure: Tests schreiben"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-tests.md"
+title:                "Clojure: Das Schreiben von Tests"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Die Verwendung von Tests ist ein wichtiger Bestandteil des Programmierens in jeder Sprache, einschließlich Clojure. Durch das Schreiben von Tests können Sie sicherstellen, dass Ihr Code ordnungsgemäß funktioniert und auf bestimmte Eingaben reagiert. Außerdem können Tests dazu beitragen, Fehler frühzeitig zu erkennen und die Qualität Ihres Codes langfristig zu verbessern.
+Das Schreiben von Tests ist ein wichtiger Bestandteil beim Entwickeln von Clojure-Programmen. Tests ermöglichen es Entwicklern, ihre Codebasis zu überprüfen und sicherzustellen, dass alle Funktionen wie erwartet funktionieren. Dadurch wird die Qualität des Codes erhöht und Bugs können frühzeitig erkannt und behoben werden. Dies spart Zeit und Mühe in der späteren Entwicklungsphase.
 
-## Wie man Tests schreibt
+## Wie geht es?
 
-Um Tests in Clojure zu schreiben, verwenden Sie die Bibliothek "clojure.test". Um einen Testfall zu erstellen, definieren Sie eine Funktion mit dem Präfix "test-", die mit der Funktion "is" mindestens einen Vergleich durchführt. Zum Beispiel:
-
-```Clojure
-(defn test-addition
-  (is (= 4 (+ 2 2)))
-  (is (= 10 (+ 5 5))))
-```
-
-Um den Test auszuführen, verwenden Sie die Funktion "run-tests" und geben Sie den Namen der Testdatei als Argument an. Die Ausgabe wird Ihnen mitteilen, ob die Tests erfolgreich waren oder ob Fehler aufgetreten sind. Ein Beispiel dafür, wie die Ausgabe aussehen könnte, finden Sie hier:
+Zum Schreiben von Tests in Clojure gibt es verschiedene Möglichkeiten. Eine gängige Methode ist die Verwendung des integrierten Testframeworks von Clojure, clojure.test. Hier ist ein Beispiel, wie eine einfache Testfunktion in Clojure aussehen könnte:
 
 ```Clojure
-Testing tests.core
-Ran 2 tests containing 6 assertions.
-0 failures, 0 errors.
+(ns test-funktionen
+  (:require [clojure.test :refer :all]))
+
+(defn addieren [a b]
+  (+ a b))
+
+(deftest test-addieren
+  (is (= 4 (addieren 2 2)))
+  (is (= 10 (addieren 6 4))))
 ```
 
-Sie können auch Funktionen verwenden, um bestimmte Eingaben für Ihre Tests zu generieren, und dann mit der Funktion "are" mehrere Vergleiche gleichzeitig durchführen. Ein Beispiel sehen Sie hier:
+In diesem Beispiel wurde eine Funktion namens "addieren" definiert, die zwei Zahlen addiert. Dann wurde eine Testfunktion ("test-addieren") erstellt, die überprüft, ob die richtigen Ergebnisse zurückgegeben werden.
 
-```Clojure
-(defn add [x y]
-  (+ x y))
+Um diese Tests auszuführen, müssen wir in der Konsole in das Verzeichnis des Projekts wechseln und den Befehl "lein test" ausführen. Dies wird uns sagen, ob unsere Tests erfolgreich waren oder nicht. Wenn ein Test fehlschlägt, wird eine Fehlermeldung mit allen relevanten Informationen angezeigt, um das Problem zu beheben.
 
-(defn test-addition
-  (are [x y] (is (= x (+ y 0)))
-       1 1
-       2 2
-       3 3))
-```
+## Tiefer gehen
 
-## Tiefenbehandlung
+Obwohl das obige Beispiel eine einfache Einführung in das Testen in Clojure bietet, gibt es noch viel mehr zu entdecken. Zum Beispiel gibt es verschiedene assert-Funktionen, die in clojure.test verwendet werden können, um verschiedene Arten von Tests durchzuführen. Darüber hinaus gibt es auch andere Testframeworks, die spezifische Vorteile und Funktionen bieten.
 
-Beim Schreiben von Tests ist es wichtig, eine gute Abdeckung zu erreichen, um sicherzustellen, dass alle Bereiche Ihres Codes getestet werden. Sie sollten auch versuchen, fehlerhafte Bedingungen zu testen, um sicherzustellen, dass Ihr Code auch dann korrekt funktioniert, wenn unerwartete Eingaben auftreten.
-
-Es kann auch hilfreich sein, Ihre Tests in kleinere Einheiten aufzuteilen und jede Funktion separat zu testen. Auf diese Weise können Sie besser nachvollziehen, wo mögliche Fehler auftreten und diese gezielter beheben.
+Es ist auch wichtig zu beachten, dass das Testen nicht nur beim Schreiben von Funktionen stattfinden sollte, sondern auch beim Überprüfen von Schnittstellen und Integrationen mit anderen Teilen des Codes. Wenn mehrere Entwickler an einem Projekt arbeiten, sollten auch Continuous Integration-Tools verwendet werden, um sicherzustellen, dass Änderungen keine bestehenden Funktionen beeinträchtigen.
 
 ## Siehe auch
 
-- [Offizielle Clojure Dokumentation zu Tests](https://clojure.org/guides/testing)
-- [Eine Einführung in Clojure Tests von PurelyFunctional.tv](https://purelyfunctional.tv/guide/how-to-test-your-clojure-code/)
+- Offizielle Clojure-Testdokumentation: https://clojure.github.io/clojure/clojure.test-api.html
+- Ein Tutorium zum Schreiben von Tests in Clojure: https://www.braveclojure.com/testing/
+- Vorteile des Testens in Clojure: https://www.youtube.com/watch?v=P56JVpERsXc

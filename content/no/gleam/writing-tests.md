@@ -1,62 +1,44 @@
 ---
-title:    "Gleam: Skriving av tester"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/writing-tests.md"
+title:                "Gleam: Skrive tester"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Skal vi teste koden vår? Det er et spørsmål som ofte dukker opp når vi jobber med programmering. Noen ganger kan det virke som en unødvendig prosess, men i virkeligheten spiller testing en viktig rolle i å sikre at koden vår fungerer som den skal. Ved å skrive tester, kan vi oppdage og fikse feil tidligere, noe som sparer oss for tid og frustrasjon senere i utviklingsprosessen.
+Å skrive tester er en viktig del av enhver god programmeringspraksis. Testene dine er din første forsvarslinje mot feil og sikrer at koden din fungerer som den skal. Å engasjere seg i å skrive tester vil også kunne forbedre din kodestil og struktur, noe som kan være til stor hjelp når du jobber med større og mer komplekse prosjekter.
 
-# Hvordan
+## Hvordan
 
-Så hvordan skriver vi tester i Gleam? Det er faktisk ganske enkelt! La oss si at vi har en funksjon som legger sammen to tall:
+For å skrive tester i Gleam, kan du bruke modulen `gleam/test`. Først må du importere modulen slik at du kan få tilgang til testfunksjonene. Deretter kan du definere testene dine ved hjelp av `fn test/0`-funksjonen. Her er et enkelt eksempel på hvordan det kan se ut:
 
-```Gleam
-fn add(x, y) {
-  x + y
-}
+```
+  # Example.gleam
+  import gleam/test
+  import Example
+  
+  fn test/0 {
+    assert.equal("Hello World", Example.greeting())
+  }
 ```
 
-For å teste denne funksjonen, trenger vi en måte å kalle den og sjekke om returverdien er den vi forventer. Det er her `test`-funksjonen kommer inn i bildet. Vi kan bruke den til å definere en test og gi den en beskrivelse og forventet resultat:
+I dette eksempelet importerer vi `Example`-modulen, som vi vil skrive testene våre for. Så har vi definert en testfunksjon som kaller `greeting()`-funksjonen fra `Example` og bruker `assert.equal()` for å sjekke at outputen er lik "Hello World". Når du kjører testene, vil du få følgende resultat:
 
-```Gleam
-test "add function adds two numbers" {
-  expect(add(2, 3)).toBe(5)
-}
+```
+✓ Test passed: "Executing greeting() should return 'Hello World'"
 ```
 
-Vi kan også gjøre flere forventede resultater ved å bruke `expect.add`-funksjonen:
+## Dypdykk
 
-```Gleam
-test "add function calculates sum correctly" {
-  expect.add([
-    (add(2, 3), 5),
-    (add(10, 5), 15)
-  ])
-}
-```
+Når du skriver tester i Gleam, er det viktig å forstå konseptet bak assert-funksjoner. Disse funksjonene brukes til å sjekke at en verdi er lik forventet verdi. Det finnes flere ulike assert-funksjoner som du kan bruke avhengig av hva du vil sjekke. For eksempel kan du bruke `assert.equal()` for å sammenligne to verdier, `assert.true()` for å sjekke om en betingelse er sann eller `assert.error()` for å fange feil i koden din.
 
-Vi kan også teste for feil ved å bruke `expect.error`-funksjonen:
+Når du utvikler mer avanserte tester, kan du også dra nytte av konseptet med "mocking" og "stubbing" for å simulere ulike scenarier og verifisere at din kode reagerer riktig på disse scenariene. Modulen `gleam/mock` er tilgjengelig for å hjelpe deg med dette.
 
-```Gleam
-test "add function handles unexpected input" {
-  expect.error(add("hello", 5))
-}
-```
+## Se også
 
-Ved å kjøre disse testene, vil vi få en oversikt over hvorvidt funksjonen vår oppfører seg som den skal. Dette gjør det enklere å finne og fikse eventuelle feil.
-
-# Dykk dypere
-
-Å skrive tester er ikke bare nyttig for å kontrollere at koden vår fungerer, det er også en viktig del av å skrive ren og lesbar kode. Ved å skrive tester, tvinger vi oss til å tenke gjennom koden vår og sørge for at den er organisert og fungerer som den skal.
-
-I tillegg er det mulig å skrive mer komplekse tester i Gleam, for eksempel ved å samarbeide med moduler og mocke funksjoner. Ved å utforske disse mulighetene, kan vi styrke vår forståelse av Gleam og hvordan vi kan skrive mer pålitelig kode.
-
-# Se også
-
-- [Offisiell Gleam dokumentasjon for testing](https://gleam.run/book/testing.html)
-- [En guide til testdrevet utvikling i Gleam (på engelsk)](https://serokell.io/blog/introduction-to-tdd-in-gleam)
-- [Eksempler på hvordan man kan teste Gleam-kode (på engelsk)](https://gist.github.com/davidpelaez/45a254bc0471321d6a6c9ed1faa3d390)
+- [Gleam dokumentasjon: Testing modul](https://gleam.run/book/stdlib.html#testing-module)
+- [Enhetstesting med Gleam](https://blog.botreetechnologies.com/unit-testing-with-gleam-8f6f1b85f32c)
+- [Mocking and Stubbing in Gleam](https://blog.botreetechnologies.com/mocking-and-stubbing-in-gleam-3611a7262b2a)

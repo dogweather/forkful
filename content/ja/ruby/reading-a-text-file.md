@@ -1,32 +1,41 @@
 ---
-title:    "Ruby: テキストファイルを読む"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/reading-a-text-file.md"
+title:                "Ruby: 「テキストファイルの読み込み」"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストファイル読み書きは、プログラミングの基本的なスキルの一つです。テキストファイルを読み書きすることで、大量のデータを管理したり、プログラムの実行環境に依存しないデータのやりとりが可能になります。
+テキストファイルを読み込むことは、プログラミングの世界で非常に一般的な作業です。テキストファイルを読み込むことで、データを素早く処理し、より複雑なプログラムを作成することができます。
 
 ## 方法
 
-まず、読み込むテキストファイルが存在するディレクトリを特定します。次に、Rubyの `File` クラスを使用してファイルを開きます。その後、`readlines` メソッドを使ってファイルの中身を一行ずつ読み込み、必要な処理を行います。最後に、ファイルを閉じます。
+まずは、Rubyでファイルを開いて読み込む基本的な方法を紹介します。最初にファイルをオープンし、その後ファイルを1行ずつ読み込んで処理していきます。その際、「readline」メソッドを使用することで、ファイル内のデータを1行ずつ取得することができます。
 
 ```Ruby
-directory = "/Users/example/file.txt"
-file = File.open(directory, "r")
-lines = file.readlines
-# necessary processing
+file = File.open("sample.txt", "r")
+
+file.each do |line|
+  # ファイルの各行に対して処理を行う
+  puts line
+end
+
 file.close
 ```
 
-## 深堀
+上記の例では、ファイルを開く際、"r"という引数を指定しています。これは、ファイルを読み込みモードで開くことを意味します。また、ファイルを開いた後は、必ず「close」メソッドを使用してファイルを閉じるようにしましょう。
 
-テキストファイルの読み込みには、いくつかの異なる方法があります。上記の例では、一行ずつ読み込む方法を紹介しましたが、`read` メソッドを使うとファイルの全ての内容を一気に読み込むこともできます。また、読み込んだ内容を配列やハッシュに変換することも可能です。さらに、ファイルを書き込む方法もあります。
+## ディープダイブ
 
-## 参考リンク
+ファイルを読み込む際には、データをどのような形式で扱うかが重要です。Rubyでは、テキストファイル内のデータを配列やハッシュの形で処理することができます。また、正規表現を使用することで、特定のパターンに一致する行のみを抽出することができます。
 
-- [RubyのFileクラス公式ドキュメント](https://docs.ruby-lang.org/en/2.6.0/File.html)
-- [テキストファイルを読み書きする方法 - codezine](https://codezine.jp/article/detail/12431)
+さらに、ファイルの読み込み中にエラーが発生した場合は、例外処理を行うことも重要です。例外処理を使用することで、プログラムが予期しないエラーに対しても安全に対応することができます。
+
+## See Also
+
+- [Rubyでファイルを扱う方法](https://qiita.com/masky808/items/cf18427cd800ab1b6f11)
+- [Rubyの正規表現について](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)
+- [Rubyにおける例外処理の基本](https://qiita.com/shikichee/items/bba576cc73e7ae43fa41)

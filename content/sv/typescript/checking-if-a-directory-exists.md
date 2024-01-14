@@ -1,43 +1,49 @@
 ---
-title:    "TypeScript: Att kontrollera om en mapp finns"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript: Kontrollera om en katalog finns"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-När man utvecklar en applikation eller ett program, kan det vara viktigt att kontrollera om en viss mapp existerar. Detta kan till exempel vara användbart när man ska spara filer eller läsa innehållet i en mapp.
+Att kontrollera om en katalog finns kan vara en viktig del av din TypeScript-programmering. Genom att titta på om en katalog finns, kan du bestämma om du behöver skapa den eller hantera beroenden på rätt sätt.
 
 ## Så här gör du
-
-För att kontrollera om en mapp existerar i ditt program i TypeScript, använder du dig av funktionen "existsSync" från modulen "fs". Här är ett exempel på hur du kan använda denna funktion:
+Först och främst behöver du använda dig av `fs`-modulen för att arbeta med filsystemet i Node.js. För att kontrollera om en katalog finns använder vi oss av metoden `existSync()` och anger sökvägen till katalogen som ett argument. Här är ett exempel på funktionen för att kontrollera om en katalog med namnet "projekt" finns:
 
 ```TypeScript
-import { existsSync } from 'fs';
+import * as fs from 'fs';
 
-const directory = 'mapp1';
-
-if (existsSync(directory)) {
-  console.log('Mappen existerar.');
-} else {
-  console.log('Mappen existerar inte.');
+function checkDirectory(directory: string): boolean {
+  return fs.existsSync(directory);
 }
+
+console.log(checkDirectory('projekt')); // true
+console.log(checkDirectory('falskkatalog')); // false
 ```
 
-I detta exempel så kontrollerar vi om mappen "mapp1" existerar. Om så är fallet skriver vi ut "Mappen existerar." i konsolen, annars skriver vi ut "Mappen existerar inte.".
+Funktionen returnerar `true` om katalogen finns och `false` om den inte finns. Du kan sedan använda detta resultat för att utföra lämpliga åtgärder, som att skapa katalogen om den inte finns.
 
-## Djupdykning
+## Fördjupning
+Om du vill ha en mer detaljerad kontroll av katalogen kan du använda metoden `statSync()` från `fs`-modulen. Detta returnerar en instans av klassen `fs.Stats` som innehåller information om filen eller katalogen. Här är ett exempel på hur du kan använda detta:
 
-När man använder funktionen "existsSync" för att kontrollera om en mapp existerar, så returneras ett booleskt värde. Detta betyder att funktionen antingen returnerar "true" eller "false" beroende på om mappen existerar eller inte.
+```TypeScript
+import * as fs from 'fs';
 
-Det är också viktigt att notera att "existsSync" funktionen blockerar programmet tills kontrollen är klar. Detta kan påverka prestandan hos ditt program om du använder det på många olika mappar.
+function checkDirectoryStats(directory: string): boolean {
+  const stats = fs.statSync(directory);
+  return stats.isDirectory();
+}
+
+console.log(checkDirectoryStats('projekt')); // true
+console.log(checkDirectoryStats('index.js')); // false
+```
+
+Funktionen kontrollerar nu om sökvägen är en katalog genom `stats.isDirectory()` och returnerar `true` eller `false` beroende på resultatet.
 
 ## Se även
-
-För mer information och exempel på hur du kan använda "existsSync" funktionen, besök följande länkar:
-
-- [Node.js dokumentation för existsSync](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)
-- [Exempelkod för hur man kontrollerar om en mapp existerar](https://stackabuse.com/checking-if-a-file-or-directory-exists-using-node-js/)
-- [En djupare förståelse för hur "existsSync" fungerar](https://medium.com/@yoniweisbrod/understanding-node-js-39-s-fs-exists-ffffc741802f)
+- [TypeScript-dokumentation: fs module](https://www.typescriptlang.org/docs/handbook/nodejs-modules.html#fs)
+- [Node.js dokumentation: fs module](https://nodejs.org/api/fs.html)
+- [fs-extra: En utökad version av fs-modulen](https://www.npmjs.com/package/fs-extra)

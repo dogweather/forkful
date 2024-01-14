@@ -1,49 +1,64 @@
 ---
-title:    "C++: 문자열 대문자로 바꾸기"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/capitalizing-a-string.md"
+title:                "C++: 문자열 대문자로 변환하기"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-왜 누군가가 문자열을 대문자로 변환하는 작업에 참여하는지 이유는 다양합니다. 예를 들어, 사용자로부터 입력받은 문자열을 대문자로 변환해서 출력하는 프로그램을 만들고 싶은 경우가 있을 수 있습니다. 또는 대소문자를 구분하지 않는 검색 기능을 구현하거나, 문자열을 정렬하기 전에 대문자를 먼저 처리하는 등의 이유로 문자열을 대문자로 변환하는 작업이 필요할 수 있습니다.
+소문자 문자열의 첫 글자를 대문자로 바꾸는 일은 일상적인 프로그래밍 작업입니다. 예를 들어, 이름의 첫 번째 글자를 대문자로 바꾸어서 보기 좋게 출력하는 경우가 대표적인 예시입니다. 이를 위해 C++에서는 쉬운 방법을 제공하고 있습니다.
 
-## 사용 방법
+## 하는 방법
 
-씨++에서 문자열을 대문자로 변환하는 방법은 다소 복잡해 보일 수 있지만, 실제로는 간단합니다. 우선 문자열을 저장할 변수를 선언한 후, 해당 변수의 각 문자에 접근하여 아스키 코드를 활용해 대문자로 변환하는 방법을 사용합니다. 예를 들어, 아래 코드를 참고해 보세요.
+아래의 예시 코드를 참고하여 소문자 문자열의 첫 번째 글자를 대문자로 바꾸는 방법을 살펴보겠습니다. 
 
 ```C++
 #include <iostream>
+#include <cstring>
 using namespace std;
 
+// 문자열의 첫 번째 글자를 대문자로 바꾸는 함수
+string capitalize(string str) {
+    // 첫 번째 글자를 대문자로 변환
+    str[0] = toupper(str[0]);
+    
+    return str;
+}
+
 int main() {
-    string str = "Hello, world!"; // 변환할 문자열
-    for (int i = 0; i < str.length(); i++) { // 문자열의 길이만큼 반복
-        if (str[i] >= 97 && str[i] <= 122) { // 소문자일 경우
-            str[i] -= 32; // 대문자로 변환
-        }
-    }
-    cout << str; // 변환된 문자열 출력
+    // 소문자로 된 문자열 입력 받기
+    string input;
+    cout << "소문자로 된 문자열을 입력하세요: ";
+    cin >> input;
+    
+    // 함수를 사용하여 첫 번째 글자 대문자로 변환 후 출력
+    cout << capitalize(input) << endl;
+    
     return 0;
 }
-```
-
-위 코드의 출력 결과는 다음과 같습니다.
 
 ```
-HELLO, WORLD!
+
+### 출력:
+
+```bash
+소문자로 된 문자열을 입력하세요: blog
+Blog
 ```
 
-## 깊게 파고들기
+## 깊이 들어가보기
 
-문자열을 대문자로 변환하기 위해 사용된 아스키 코드는 대문자와 소문자 간의 차이가 32라는 것을 기억하고 있어야 합니다. 아스키 코드는 영문 알파벳의 대문자와 소문자, 그리고 특수 문자 등 각각에 대한 고유한 숫자를 할당해 놓은 것입니다. 따라서 대문자 소문자 간의 차이인 32를 더하거나 빼면 대소문자를 변환할 수 있습니다.
+위의 예시 코드에서 사용된 `toupper()` 함수는 C++에서 제공하는 라이브러리 함수 중 하나입니다. 이 함수는 매개변수로 받은 문자를 대문자로 변환하여 반환합니다. `toupper()` 함수 외에도 `tolower()` 함수를 사용하면 소문자를 대문자로 변환하는 것 외에도 대문자를 소문자로 바꾸는 것도 가능합니다. 또한, 문자열의 첫 번째 글자 뿐만 아니라 원하는 위치의 글자를 대소문자로 변환하는 것도 가능합니다.
 
-또한, 대문자와 소문자는 아스키 코드 뿐만 아니라 유니코드를 사용해도 변환이 가능합니다. 유니코드는 전 세계의 모든 문자를 컴퓨터에서 표현하기 위한 표준 코드 체계입니다.
+## 한 줄로 끝내기
 
-## 참고자료
+C++에서 제공하는 라이브러리 함수를 사용하면 손쉽게 소문자 문자열의 첫 번째 글자를 대문자로 바꿀 수 있습니다.
 
-- [C++ Strings](https://www.programiz.com/cpp-programming/strings)
-- [ASCII Table](https://www.asciitable.com/)
-- [Unicode official website](https://www.unicode.org/)
+## 관련 링크
+
+- [C++ Reference: toupper()](https://www.cplusplus.com/reference/cctype/toupper/)
+- [C++ Reference: tolower()](https://www.cplusplus.com/reference/cctype/tolower/)
+- [GeeksforGeeks: How to capitalize first letter of a string in C++?](https://www.geeksforgeeks.org/capitalize-first-letter-of-a-string-in-c/)

@@ -1,48 +1,42 @@
 ---
-title:    "Gleam: Wydobywanie podciągów"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/extracting-substrings.md"
+title:                "Gleam: Ekstrakcja podciągów"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W tym wpisie opowiemy o tym, jak wykorzystać funkcję w języku Gleam do ekstrakcji podciągów. Poznamy również dlaczego jest to przydatne narzędzie w programowaniu.
+W dzisiejszych czasach wiele aplikacji i narzędzi wymaga przetwarzania tekstów w celu wydobycia konkretnych fragmentów informacji. W tym przypadku bardzo przydatnym narzędziem jest ekstrakcja podciągów. W tym artykule dowiesz się, dlaczego jest to ważna umiejętność w programowaniu i jak jej używać w języku Gleam.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Ekstrakcja podciągów to proces wyodrębniania części tekstu z zadanego ciągu znaków. W języku Gleam, możemy tego dokonać za pomocą funkcji ```extract_substring```  która przyjmuje jako argumenty dwa indeksy określające pozycje początkową i końcową podciągu.
+Aby wykonać ekstrakcję podciągów w Gleam, użyjemy funkcji `substr`, która przyjmuje trzy argumenty: ciąg znaków, indeks początkowy i długość. Dzięki temu możemy łatwo wybrać interesujące nas fragmenty tekstu.
 
-Przykładowo, chcąc wyodrębnić podciąg "program" ze zdania "Lubię pisać programy w języku Gleam." użylibyśmy następującego kodu:
+Przykładowo, chcemy wydobyć słowo "programowanie" z ciągu znaków "Uczę się programowania w języku Gleam". W tym przypadku użylibyśmy funkcji `substr` z argumentami "Uczę się programowania w języku Gleam", 9 i 13 (początkowy indeks i długość słowa).
 
-```Gleam
-let zdanie = "Lubię pisać programy w języku Gleam."
-let podciag = extract_substring(zdanie, 10, 16)
-```
-
-Po wykonaniu tej funkcji, wartość zmiennej ```podciag``` zostanie ustawiona na "program", co można zweryfikować za pomocą funkcji ```show()```:
+Użycie tej funkcji może wyglądać następująco:
 
 ```Gleam
-show(podciag)
+substr("Uczę się programowania w języku Gleam", 9, 13)
 ```
 
-Powyższy kod wyświetli "program" w konsoli. Możemy również wyświetlić zadany podciąg wraz z pozostałymi fragmentami zdania, używając operatora konkatenacji (+) :
+Wynikiem będzie ciąg znaków "programowania", który możemy wykorzystać dalej w naszym kodzie.
 
-```Gleam
-show("Język " + podciag + "ingi w " + zdanie)
-```
+## Głębsza analiza
 
-Co wyświetli "Lubię pisać programingi w języku Gleam." w konsoli.
+Funkcja `substr` jest przydatna nie tylko do wyodrębniania słów z ciągów znaków, ale także do wycinania konkretnych fragmentów tekstu. Możemy zmienić wartość drugiego argumentu, aby zacząć ekstrakcję od innego miejsca w ciągu, lub zmienić trzeci argument, aby wyciąć dłuższy lub krótszy fragment. Funkcja ta jest również bezpieczna, ponieważ nie wywołuje błędów w przypadku przekroczenia długości ciągu znaków.
 
-## Deep Dive
+Pamiętaj, że w języku Gleam wszystkie ciągi znaków są niemutowalne, co oznacza, że ​​funkcja `substr` nie zmienia oryginalnego ciągu, ale zwraca nowy ciąg zawierający wybrany fragment.
 
-Funkcja ```extract_substring``` jest bardzo przydatna przy manipulacji tekstem w języku Gleam. Możemy wykorzystać ją na wiele sposobów, np. do filtrowania lub modyfikowania danych tekstowych.
+## Zobacz również
 
-Ponadto, możemy także określić ujemne wartości indeksów, co pozwala na wyodrębnienie podciągów od końca ciągu znaków. Przykładowo, użycie indeksów -5 i -1 w wyżej podanym kodzie spowoduje wyodrębnienie podciągu "Gleam" z oryginalnego zdania.
+Jeśli chcesz dowiedzieć się więcej o funkcji `substr` w języku Gleam, sprawdź poniższe linki:
 
-## Zobacz też
+- Dokumentacja funkcji `substr` w języku Gleam: [https://gleam.run/core/string.html#substr](https://gleam.run/core/string.html#substr)
+- Przykładowy projekt wykorzystujący ekstrakcję podciągów w Gleam: [https://github.com/username/example-gleam-project](https://github.com/username/example-gleam-project)
+- Artykuł o innych przydatnych narzędziach do przetwarzania ciągów znaków w języku Gleam: [https://medium.com/gleam-lang/string-manipulation-in-gleam-xxx](https://medium.com/gleam-lang/string-manipulation-in-gleam-xxx)
 
-1. Dokumentacja języka Gleam: https://gleam.run/
-2. Wideo-tutorial o ekstrakcji podciągów w języku Gleam: https://www.youtube.com/watch?v=09uRDfL1NK4
-3. Przykładowe zadania wykorzystujące funkcję ```extract_substring```: https://github.com/gleam-lang/gleam/issues/1298
+Dziękujemy za przeczytanie tego artykułu i mam nadzieję, że dowiedziałeś się czegoś nowego na temat ekstrakcji podciągów w języku Gleam. Do zobaczenia następnym razem!

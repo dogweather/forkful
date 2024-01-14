@@ -1,64 +1,42 @@
 ---
-title:    "Go: Zum Standardfehler schreiben"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/writing-to-standard-error.md"
+title:                "Go: Auf Standardfehler schreiben"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
 
-In der Go-Programmierung ist es oft nötig, Informationen oder Fehlermeldungen auszugeben. Eine gängige Methode dafür ist das Schreiben in die Standardfehlerausgabe (standard error). In diesem Blogbeitrag erfahrt ihr, warum und wie man in Go nach standard error schreibt.
+Das Schreiben von Fehlern auf die Standardausgabe, oder auch standard error genannt, ist eine wichtige Technik beim Programmieren in Go. Indem man Fehler auf die Standardausgabe schreibt, können Entwickler Informationen über mögliche Probleme im Code erhalten und diese schnell beheben. In diesem Beitrag werden wir diskutieren, warum das Schreiben auf die Standardausgabe unerlässlich ist und wie man es in Go implementiert.
 
-## Wie geht man vor?
+##So geht's
 
-Um Inhalt an die Standardfehlerausgabe zu schreiben, kann die Funktion `fmt.Fprintln()` verwendet werden, die einen Text und eine io.Writer-Schnittstelle erwartet. Standardmäßig wird die Standardfehlerausgabe jedoch automatisch verwendet, daher reicht es in der Regel aus, `fmt.Println()` zu benutzen. Hier ein Beispiel:
-
-```Go
-// Ein einfaches Beispiel, um eine Fehlermeldung auszugeben
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    fmt.Println("Dies ist eine Fehlermeldung")
-    os.Exit(1) // Beendet das Programm mit Exit-Code 1
-}
-```
-
-Die Ausgabe des obigen Beispiels wird auf der Konsole wie folgt aussehen:
-
-```
-Dies ist eine Fehlermeldung
-```
-
-## Tiefergehende Informationen
-
-In Go gibt es weitere Möglichkeiten, um an die Standardfehlerausgabe zu schreiben, wie zum Beispiel die Funktion `os.Stderr.Write()`, die eine Byte-Array und eine io.Writer-Schnittstelle erwartet. Diese Funktion gibt die Bytes direkt an die Standardfehlerausgabe weiter. Hier ein Beispiel:
+Um Fehler auf die Standardausgabe zu schreiben, verwenden wir in Go die Funktion `fmt.Fprintf()`. Diese Funktion akzeptiert als ersten Parameter einen `io.Writer` und als zweiten Parameter einen String. Der `io.Writer` ist der Stream, auf den die Nachricht geschrieben werden soll, in unserem Fall die Standardausgabe. Der String enthält die Nachricht oder den Fehler, den wir auf die Standardausgabe schreiben möchten. Es ist wichtig zu beachten, dass der String ein Formatierungsstring sein kann, ähnlich wie bei der `fmt.Printf()` Funktion.
 
 ```Go
-// Ein Beispiel, um ein Byte-Array an die Standardfehlerausgabe zu schreiben
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    errMsg := []byte("Dies ist eine Fehlermeldung")
-    os.Stderr.Write(errMsg)
-    os.Exit(1) // Beendet das Programm mit Exit-Code 1
-}
+fmt.Fprintf(os.Stderr, "Fehler aufgetreten: %s", err)
 ```
 
-Die Ausgabe wird auch hier wieder die gleiche sein wie oben gezeigt.
+In diesem Beispiel verwenden wir `os.Stderr` als Stream und geben die Fehlermeldung aus dem Variablenwert `err` aus. Am Ende des Strings geben wir `%s` an, um anzuzeigen, wo der Wert von `err` eingefügt werden soll. Das Interface `io.Writer` ist implementiert von `os.Stderr`, daher können wir es in `fmt.Fprintf()` verwenden.
 
-## Siehe auch
+Um benutzerdefinierte Fehlermeldungen auf die Standardausgabe zu schreiben, können wir auch den `errors.New()` Konstruktor verwenden:
 
-- [Go Doc: fmt.Fprintln()](https://golang.org/pkg/fmt/#Fprintln)
-- [Go Doc: os.Exit()](https://golang.org/pkg/os/#Exit)
-- [Go Doc: os.Stderr.Write()](https://golang.org/pkg/os/#Stderr.Write)
+```Go
+err := errors.New("Dies ist eine benutzerdefinierte Fehlermeldung")
+fmt.Fprintf(os.Stderr, "Fehler aufgetreten: %s", err)
+```
+
+In diesem Beispiel erstellen wir eine neue Fehlermeldung und geben sie mithilfe von `fmt.Fprintf()` auf die Standardausgabe aus.
+
+##Tiefen-Eintauchen
+
+Das Schreiben auf die Standardausgabe ist nicht nur auf Fehlermeldungen beschränkt. Es kann auch für andere Debugging-Zwecke verwendet werden, wie zum Beispiel das Protokollieren bestimmter Variablenwerte oder das Verfolgen der Programmablauf. Allerdings sollte man darauf achten, dass das Schreiben auf die Standardausgabe die Ausführungsgeschwindigkeit des Programms beeinflusst, daher sollte es nur für Debugging-Zwecke und nicht in der Produktionsumgebung verwendet werden.
+
+##Siehe auch
+
+- [Go Dokumentation über fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
+- [Go Dokumentation über io.Writer](https://golang.org/pkg/io/#Writer)
+- [Offizielle Go Fehlerbehandlungs-Tutorial](https://blog.golang.org/error-handling-and-go)
+- [Tutorial: Debugging in Go mit Visual Studio Code](https://www.calhoun.io/debugging-go-code-with-visual-studio-code/)

@@ -1,34 +1,35 @@
 ---
-title:    "Arduino: Zmiana wielkości liter w ciągu znaków"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/capitalizing-a-string.md"
+title:                "Arduino: Zapisywanie wiersza z wielkiej litery"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Niezależnie od tego, czy jesteś początkującym czy doświadczonym programistą Arduino, z pewnością wszyscy już spotkaliśmy się z problemem zmiany wielkości liter w tekście. Może to być potrzebne w celu poprawnego wyświetlenia danych lub po prostu dla estetyki wyglądu. W tym wpisie dowiesz się, jak w prosty sposób zastosować funkcję do zmiany wielkości liter na platformie Arduino.
 
-## Jak To Zrobić
-Do zmiany wielkości liter w tekście na platformie Arduino można użyć wbudowanej funkcji `toUpperCase()`. Należy jednak pamiętać, że funkcja ta działa tylko dla znaków ASCII i dotyczy tylko liter łacińskich. Poniżej przedstawiony jest przykład kodu, który używa tej funkcji:
+Często w programowaniu, mamy do czynienia z różnymi typami danych, takimi jak napisy (stringi). Czasami, w celu czytelniejszego wyświetlenia danych lub ze względów estetycznych, chcemy aby wybrane napisy były w formie zaczynającej się z dużej litery. W takim przypadku, przydatnym narzędziem jest funkcja "capitalize", która pozwala na zmianę pierwszej litery napisu na dużą.
 
-```Arduino
-String napis = "Cześć świat!";
-String napis_wielkie_litery = napis.toUpperCase();
+## Jak to zrobić
+
+Aby skorzystać z funkcji "capitalize" w Arduino, musimy najpierw zadeklarować zmienną typu "String" i przypisać do niej wybrany ciąg znaków. Następnie używamy funkcji "capitalize" do zmiany pierwszej litery napisu na dużą. Przykład zastosowania wygląda następująco:
+
+```Arduino 
+String napis = "arduino";
+napis.capitalize();
 ```
 
-Powyższy kod przypisuje zmiennej `napis_wielkie_litery` wartość napisu `CZEŚĆ ŚWIAT!`, ponieważ funkcja `toUpperCase()` zamienia wszystkie litery na wielkie. Można również wyświetlić ten napis na monitorze szeregowym Arduino, używając funkcji `Serial.println()`:
+Po wykonaniu powyższych instrukcji, zmienna "napis" będzie miała wartość "Arduino".
 
-```Arduino
-Serial.println(napis_wielkie_litery);
-```
+## Głębszy zanurzenie
 
-Output: `CZEŚĆ ŚWIAT!`
+Oprócz funkcji "capitalize", istnieje również inna metoda na zmianę pierwszej litery napisu na dużą, która wymagało by wykorzystania funkcji "charAt" do dostępu do poszczególnych liter w napisie. Jednak ta metoda jest bardziej skomplikowana i wymaga większej ilości kodu.
 
-## Głębszy Rzut Oka
-W przypadku, gdy używasz znaków spoza ASCII lub innych systemów kodowania, istnieją inne sposoby na zmianę wielkości liter. Możesz na przykład utworzyć tablicę znaków i używać pętli `for` w celu zmiany wielkości poszczególnych znaków. Możesz również poszukać gotowych bibliotek, które pomogą w szybszej i bardziej zaawansowanej zmianie wielkości liter.
+Warto również zaznaczyć, że funkcja "capitalize" jest dostępna tylko dla zmiennej typu "String", a nie dla typów prostych, takich jak "int" czy "float".
 
-## Zobacz Również
-- [Funkcja toUpperCase() na stronie Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
-- [Biblioteka TextReader](https://www.arduinolibraries.info/libraries/text-reader)
-- [ASCII – Wikipedia](https://pl.wikipedia.org/wiki/ASCII)
+## Zobacz również
+
+- Dokumentacja funkcji "capitalize": https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/capitalize/
+- Inne metody na manipulację napisami w Arduino: https://create.arduino.cc/projecthub/projects/tags/string
+- Dyskusja na forum Arduino na temat funkcji "capitalize":https://forum.arduino.cc/index.php?topic=548875.0

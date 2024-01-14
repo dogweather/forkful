@@ -1,57 +1,38 @@
 ---
-title:    "Python: Excluindo caracteres que correspondem a um padrão"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/deleting-characters-matching-a-pattern.md"
+title:                "Python: Removendo caracteres que correspondem a um padrão."
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que deletar caracteres que correspondem a um padrão?
+## Por que excluir caracteres correspondentes a um padrão?
 
-Imagine que você está trabalhando em um projeto que envolve a manipulação de strings em Python. Em determinado momento, você percebe que precisa remover todos os caracteres que correspondem a um determinado padrão. Isso pode ser bastante útil em diversas situações, como limpar dados de entrada ou formatar strings de acordo com uma determinada máscara. Para fazer isso de forma eficiente, é importante saber como deletar caracteres que seguem um determinado padrão em Python.
+Às vezes, ao trabalhar com dados de texto, pode ser necessário excluir caracteres que correspondem a um determinado padrão. Isso pode ser útil para limpar os dados ou para realizar alguma formatação específica. O Python tem uma função embutida para facilitar essa tarefa, a função "replace ()".
 
-## Como fazer?
+## Como fazer:
 
-Você pode usar o método `re.sub()` do módulo `re` para substituir caracteres que correspondem a uma expressão regular por uma string vazia. Veja um exemplo de código:
+Para excluir caracteres correspondentes a um padrão, precisamos usar a função "replace ()" com dois argumentos: o padrão que queremos substituir e a string vazia "". Por exemplo, se quisermos excluir todos os números de uma string, podemos usar o código:
 
+```Python
+string = "Olá, meu número de telefone é 1234567!"
+string = string.replace( '0-9', '' )
+print( string )
+
+# Output: Olá, meu número de telefone é !
 ```
-import re
+Neste exemplo, usamos uma expressão regular para identificar todos os números de 0 a 9 e substituí-los por uma string vazia, o que os exclui da string original.
 
-# String original
-string = "Oi, tudo bem?# Como vai você?"
+Além disso, podemos usar a função "replace ()" para excluir outros padrões, como espaços em branco ou caracteres especiais. É uma ferramenta útil para manipular dados de texto com facilidade.
 
-# Removendo caracteres que são dígitos 
-nova_string = re.sub(r'\d+', '', string)
+## Mergulho Profundo
 
-# Imprimindo resultado
-print(nova_string)
+A função "replace ()" é um método da classe str, o que significa que só pode ser usada com objetos de string. Além disso, ela só substitui o primeiro padrão que correspondeu. Porém, podemos usar expressões regulares para substituir todos os padrões correspondentes, como fizemos no exemplo acima.
 
-# Saída: Oi, tudo bem?# Como vai você?
-```
+No entanto, é importante notar que a função "replace ()" é sensível a maiúsculas e minúsculas, o que significa que ela não irá substituir caracteres se eles estiverem em uma capitalização diferente da especificada no argumento. Podemos contornar isso usando o módulo "re" para ignorar a sensibilidade de maiúsculas e minúsculas nas expressões regulares.
 
-Neste exemplo, usamos a expressão regular `\d+` para encontrar todos os dígitos na string e substituí-los por uma string vazia. É importante notar que o método `sub()` retorna uma nova string e não altera a string original.
-
-Você também pode usar a função `filter()` junto com a função `lambda` para filtrar os caracteres indesejados. Veja outro exemplo:
-
-```
-# Removendo caracteres maiúsculos da string
-nova_string = "".join(filter(lambda x: x.islower(), string))
-
-# Imprimindo resultado
-print(nova_string)
-
-# Saída: oi, tudo bem?# como vai você?
-```
-Neste caso, usamos a função `filter()` para filtrar apenas os caracteres minúsculos na string e depois usamos a função `join()` para juntá-los novamente em uma nova string.
-
-Existem também outras formas de realizar essa tarefa, como por exemplo o uso da função `translate()` ou a criação de uma função personalizada. O importante é entender os conceitos por trás dessas soluções para que você possa aplicá-las de acordo com suas necessidades.
-
-## Mergulho mais profundo
-
-Ao lidar com strings em Python, é importante conhecer as expressões regulares e como utilizá-las para manipular dados de forma mais eficiente. Além disso, é fundamental entender os métodos e funções disponíveis no módulo `re` e como aplicá-los em diferentes problemas. Investir um tempo para aprender esses conceitos pode poupar muito trabalho manual e garantir que suas strings estejam sempre no formato necessário.
-
-## Veja também
-
-- [Documentação oficial do módulo `re`](https://docs.python.org/3/library/re.html)
-- [Tutorial de expressões regulares em Python](https://docs.python.org/3/howto/regex.html)
-- [Funcionamento do método `sub()`](https://www.regular-expressions.info/python.html#sub)
+## Veja também:
+- [Documentação oficial do Python para a função "replace ()"](https://docs.python.org/3/library/stdtypes.html#str.replace)
+- [Tutorial do W3Schools sobre expressões regulares em Python](https://www.w3schools.com/python/python_regex.asp)
+- [Guia prático para usar a função "replace ()" com expressões regulares](https://realpython.com/regex-python/)

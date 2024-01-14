@@ -1,34 +1,51 @@
 ---
-title:    "Clojure recipe: Checking if a directory exists"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/checking-if-a-directory-exists.md"
+title:                "Clojure recipe: Checking if a directory exists"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-As a programmer, you may encounter situations where you need to check if a directory exists. This can be for several reasons such as verifying if a file can be saved to a specific location or ensuring that a file can be accessed before performing operations on it.
+
+As a programmer, there may be several reasons why you would need to check if a directory exists. One common scenario is when your code needs to access a specific directory in order to read or write files. In order to avoid errors and handle potential issues, it is important to first verify if the directory exists before proceeding with your code.
 
 ## How To
-Checking if a directory exists in Clojure is a simple process that can be accomplished using the `.isDirectory()` method from the `java.io.File` class. Here's an example of how you can do this:
 
-```Clojure
-(import '(java.io File))
+Checking if a directory exists in Clojure is a simple task. You can use the `exists?` function from the `java.io.File` namespace to check if a directory exists at a given path.
 
-(def directory (File. "/my/directory/path"))
+```
+Clojure
+(require '[clojure.java.io :as io])
 
-(println (.isDirectory directory))
+(def directory "/path/to/directory")
+
+(io/exists? directory)
 ```
 
-This code first imports the `File` class from the `java.io` package. Then, we define a variable `directory` to store the path of the directory we want to check. Finally, we use the `isDirectory` method to determine if the directory exists or not, and print the output.
+The `exists?` function will return `true` if the directory exists and `false` if it does not.
 
-If the directory exists, the output will be `true`, and if it doesn't exist, the output will be `false`.
+```
+true
+```
+
+You can also use the `exists?` function to check for subdirectories within a given directory path.
+
+```
+Clojure
+(io/exists? "/path/to/directory/subdirectory")
+```
+
+If the subdirectory exists, it will return `true`. Otherwise, it will return `false`.
 
 ## Deep Dive
-Behind the scenes, the `isDirectory` method in Clojure checks the file path and verifies if it exists and if it is indeed a directory. If the path does not exist or if it is a file instead of a directory, the method will return `false`.
 
-It's worth noting that this method only checks for the existence of the directory, it does not verify if you have access to it or not. Additionally, `isDirectory` can only check for directories within the local file system, not remote directories.
+Under the hood, the `exists?` function checks if the given path is a valid file or directory using the `java.io.File` class. If it exists, it will return `true`; otherwise, it will return `false`. 
+
+It is important to note that the `exists?` function will only check for the existence of the file or directory at the specific path given. It does not guarantee that the file or directory is accessible or that you have permission to read or write to it. For more advanced file operations, you can use Clojure's `clojure.java.io` library to check for file permissions and handle file operations.
 
 ## See Also
-- Official Clojure Documentation: https://clojuredocs.org/clojure.java.io/file.cp
-- Baeldung tutorial on checking if a file/directory exists: https://www.baeldung.com/java-check-directory-exists
+
+- Official Clojure `java.io.File` documentation: https://clojuredocs.org/clojure.java.io/file
+- Clojure `clojure.java.io` library: https://clojuredocs.org/clojure.java.io

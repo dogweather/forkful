@@ -1,37 +1,50 @@
 ---
-title:    "Fish Shell: 날짜를 문자열로 변환하기"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/converting-a-date-into-a-string.md"
+title:                "Fish Shell: 날짜를 문자열로 변환하기"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-#왜
+# 왜
 
-날짜를 문자열로 변환하는 작업을 수행하는 이유는 우리가 시간과 날짜를 적절하게 표시하고 다른 시스템과 통합하기 위해서입니다. 이는 많은 프로그래밍 작업에서 매우 중요하며 유용한 작업입니다.
+날짜를 문자열로 변환하는 데 관심이 있는 이유는 무엇일까요? 이 글에서는 Fish Shell을 사용하여 날짜를 문자열로 변환하는 방법을 알려드리겠습니다. 날짜를 문자열로 바꾸는 기능은 매우 유용하며 효율적인 프로그래밍에 큰 도움이 될 수 있습니다.
 
-##어떻게
-
-우리는 Fish Shell을 사용하여 일련의 프로그래밍 예제를 보여줄 것입니다. 이 예제들은 다양한 날짜와 시간 형식을 사용하며, 각각의 형식에 따라 결과가 어떻게 나오는지 보여줍니다. 코드 블록 내에서 ```Fish Shell ... ``` 사용으로 다양한 예제와 출력을 보여줄 것입니다.
+## 사용 방법
 
 ```Fish Shell
-# 현재 날짜와 시간을 출력합니다.
-date
-
-# 우리가 원하는 날짜와 시간 형식을 지정하여 출력합니다.
-date +"%Y년 %m월 %d일 %H시 %M분 %S초"
+set today (date +"%Y-%m-%d")
+echo $today
 ```
 
-위 예제들은 현재 날짜와 시간을 출력하고, 이를 우리가 지정한 형식으로 출력하는 것을 보여줍니다. 이렇게 함으로써 우리는 적절한 프로그래밍을 통해 원하는 형식으로 날짜를 표시할 수 있습니다.
+위의 코드를 실행하면 현재 날짜를 "연-월-일" 형식의 문자열로 반환합니다. 이렇게 반환된 문자열을 원하는 형식으로 변경해 사용할 수도 있습니다. 예를 들어, "월-일-연도" 형식으로 바꾸려면 다음과 같이 코드를 작성할 수 있습니다.
 
-##깊게 파고들기
+```Fish Shell
+set today (date +"%m-%d-%Y")
+echo $today
+```
 
-여러분은 아마도 이제까지 날짜와 시간의 형식을 쉽게 변경할 수 있는 옵션들을 보셨을 것입니다. 하지만 우리는 날짜와 시간을 숫자로 저장하는 것이 아니라 문자열로 변환하는 것에 대해 더 알아볼 필요가 있습니다. 이는 더 많은 자유도와 유연성을 제공하고 다른 시스템과의 통합을 더 간편하게 할 수 있습니다.
+출력 결과는 다음과 같이 나타납니다.
 
-우리가 ```date``` 명령어를 사용할 때, 날짜와 시간은 내부적으로 숫자 형식으로 저장됩니다. 하지만 ```date``` 명령어를 사용할 때 예제에서 보여준 것처럼, 우리가 지정한 형식으로 문자열로 출력됩니다. 이를 활용하여 다양한 시스템과 연동할 때 이용할 수 있습니다.
+```
+09-05-2020
+```
 
-##See Also
+이처럼 Fish Shell을 사용하면 매우 쉽게 날짜를 문자열로 변환할 수 있습니다.
 
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [날짜와 시간 형식 지정 옵션](https://www.gnu.org/software/coreutils/manual/html_node/Date-conversion-specifiers.html)
-- [Fish Shell 웹사이트](https://fishshell.com/)
+## 깊이 있는 알아보기
+
+Fish Shell에서 날짜를 문자열로 변환하는 과정은 날짜 값을 생성하는 date와 문자열을 반환하는 echo 명령어를 사용하는 것이 기본 원리입니다. 위에서 사용한 "%Y-%m-%d"와 "%m-%d-%Y"는 날짜 값을 년, 월, 일 형식으로 나타내는 지정자입니다. 더 많은 지정자를 사용할 수 있으며 해당하는 값을 자유롭게 조합하여 사용할 수 있습니다.
+
+## 더 알아보기
+
+- [Fish Shell 공식 홈페이지](https://fishshell.com/)
+- [Fish Shell Github 저장소](https://github.com/fish-shell/fish-shell)
+- [Fish Shell 설치 및 기본 사용법](https://blog.outsider.ne.kr/781)
+- [날짜와 다른 형식으로 바꾸기](https://blog.outsider.ne.kr/784)
+
+# 참고자료
+
+- [Fish Shell Date and Time Command](https://www.shellhacks.com/fish-get-current-date-time/)
+- [Fish Shell Date Formatting](https://fishshell.com/docs/current/cmds/date.html)

@@ -1,50 +1,43 @@
 ---
-title:    "C#: Å bruke regulære uttrykk"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/using-regular-expressions.md"
+title:                "C#: Å bruke regulære uttrykk"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvis du er en programmerer, har du sannsynligvis hørt om "regular expressions" før. Men hva er det egentlig, og hvorfor bør du bruke det i dine programmeringsprosjekter?
+Hvorfor bruke regulære uttrykk? I en verden hvor data og informasjon er kongen, er det viktig å kunne håndtere store mengder tekst på en effektiv måte. Regulære uttrykk er et nyttig verktøy for å søke, matche og manipulere tekst på en konsistent og presis måte.
 
-Regular expressions, også kjent som "regex", er en måte å søke og manipulere tekststrenger på. Dette kan være nyttig i mange tilfeller, som for eksempel når du vil finne eller erstatte bestemte mønstre i en tekst eller søke gjennom store mengder data på en effektiv måte.
+## Hvordan bruke regulære uttrykk i C#
 
-## Slik gjør du det
-
-For å bruke regex i C# trenger du bare å inkludere "System.Text.RegularExpressions" namespace i prosjektet ditt. Deretter kan du enkelt lage et regex-objekt og bruke forskjellige metoder som "Match" og "Replace" for å manipulere tekststrenger.
-
-Her er et eksempel på hvordan du kan bruke regex for å finne og erstatte spesifikke ord i en tekst:
+Å bruke regulære uttrykk i C# kan virke skremmende til å begynne med, men det er egentlig ganske enkelt når du får taket på det. Først må du inkludere System.Text.RegularExpressions namespace i C#-filen din. Deretter kan du bruke følgende syntax for å søke etter et mønster i en tekststreng:
 
 ```C#
-using System;
-using System.Text.RegularExpressions;
-
-string tekst = "Hei, jeg heter John og jeg elsker å kode. Koding er gøy!";
-
-Regex regex = new Regex("kode");
-string nyTekst = regex.Replace(tekst, "programmering");
-
-Console.WriteLine(nyTekst);
-
-// Output:
-// Hei, jeg heter John og jeg elsker å programmering. Programmering er gøy!
+Regex regex = new Regex("mønster");
+Match match = regex.Match("tekststreng");
 ```
 
-Som du kan se, bruker vi først "Regex" klassen til å lage et regex-objekt med søkeordet "kode". Deretter bruker vi "Replace" metoden til å erstatte alle forekomster av "kode" med "programmering" i teksten vår. Det er viktig å merke seg at regex er case sensitive, så "kode" og "Kode" vil ikke bli erstattet.
+Her vil "mønster" være ditt spesifikke søkemønster og "tekststreng" vil være teksten du ønsker å søke i. Du kan også bruke forskjellige metoder som Regex.Match(), Regex.Matches() og Regex.Replace() for å utføre forskjellige operasjoner på tekststrengen.
 
-## Dykk dypere
+La oss si at du ønsker å finne alle ord som starter med en stor bokstav i en tekststreng. Da kan du bruke følgende regex-uttrykk:
 
-Det er mange forskjellige måter å bruke regex på i C#, og det er umulig å dekke alt i en kort bloggpost. Men her er noen tips som kan hjelpe deg på veien til å mestre regular expressions:
+```C#
+Regex regex = new Regex(@"\b[A-Z]\w+");
+MatchCollection matches = regex.Matches("Dette er en Test");
+```
 
-- Regex kan også brukes til å validere input fra brukere, som for eksempel e-postadresser eller telefonnumre.
-- Det er forskjellige "spesielle tegn" som kan brukes i regex for å søke etter bestemte mønstre, som for eksempel "w" for å finne bokstaver og "d" for å finne tall.
-- Hvis du trenger å finne og erstatte mønstre i en tekst som inneholder spesielle tegn, kan du bruke escape-tegn "\" for å fortelle regex at disse tegnene skal behandles som vanlig tekst.
+Her vil matches variabelen inneholde en liste over ord som starter med en stor bokstav, i dette tilfellet "Dette" og "Test". Du kan også bruke spesielle metakarakterer som ., *, + og {} for å søke etter mønstre som inneholder bestemte tegn.
+
+## Dypdykk i regulære uttrykk
+
+Regulære uttrykk er et kraftig verktøy, og det er mye dypere og mer komplekst enn bare å søke etter et enkelt mønster. Du kan bruke grupper og underuttrykk for å matche spesifikke deler av teksten, og du kan også bruke alternativer og lookarounds for å gjøre søkene dine mer presise.
+
+Det finnes også en rekke nyttige verktøy og ressurser for å hjelpe deg med å lære og mestre regulære uttrykk, som for eksempel online regex-testingverktøy og bøker om emnet.
 
 ## Se også
 
-- [Offisiell dokumentasjon for regex i C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Regex Tutorial på W3Schools](https://www.w3schools.com/python/python_regex.asp)
-- [10 Essential Tips for Regular Expressions in C#](https://www.codeproject.com/Articles/9099/The-30-Minute-Regex-Tutorial) (engelsk)
+- [Regex Tutorial](https://regexone.com/)
+- [MSDN Documentation](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

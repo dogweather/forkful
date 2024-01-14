@@ -1,44 +1,50 @@
 ---
-title:    "Haskell: Obtendo a data atual"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/getting-the-current-date.md"
+title:                "Haskell: Obtendo a data atual"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que obter a data atual em Haskell?
 
-Hoje em dia, é comum lidar com datas em projetos de programação. Seja para exibir a data atual em uma página web ou para realizar cálculos com datas, é importante saber como obter a data atual em um programa. Felizmente, em Haskell, isso é muito simples de fazer e, neste post, vamos explorar como fazer isso.
+Pode parecer uma tarefa simples, mas obter a data atual em uma linguagem de programação pode ser muito útil em diferentes situações. Se você está desenvolvendo um aplicativo que requer informações de data e hora, ou precisa rastrear a duração de um processo, saber como obter a data atual em Haskell é essencial.
 
-## Como Fazer
+## Como fazer isso em Haskell
 
-Em Haskell, podemos obter a data atual usando a função `getCurrentTime` do módulo `Data.Time`. Para usá-la, primeiro precisamos importar o módulo:
+Em Haskell, existem diferentes maneiras de obter a data atual. A mais simples é usar a função `getCurrentTime` do módulo `Data.Time`, que retorna a data e hora atuais como valor do tipo `UTCTime`. Vamos ver um exemplo:
 
 ```Haskell
 import Data.Time
+import Data.Time.Format
+
+main = do
+    currentTime <- getCurrentTime
+    putStrLn $ formatTime defaultTimeLocale "%d/%m/%Y, %H:%M:%S" currentTime
 ```
 
-Em seguida, podemos chamar a função `getCurrentTime` para obter a data atual. Podemos armazenar esse valor em uma variável do tipo `UTCTime`, que representa um momento pontual sem fuso horário:
+Neste exemplo, importamos os módulos `Data.Time` e `Data.Time.Format` para podermos usar a função `getCurrentTime` e a função `formatTime` para formatar a data de acordo com o nosso desejo. O resultado será algo como `16/04/2021, 18:00:00`, dependendo da data e hora atuais.
+
+Outra forma de obter a data atual é usando o pacote `time`, que fornece funções mais avançadas para trabalhar com datas e horas. Vamos dar uma olhada em um exemplo usando o pacote `time`:
 
 ```Haskell
-currentDate <- getCurrentTime
+import Data.Time.Clock
+import System.Locale (defaultTimeLocale)
+
+main = do
+    currentTime <- getCurrentTime
+    putStrLn $ formatTime defaultTimeLocale "%d/%m/%Y, %H:%M:%S" currentTime
 ```
 
-Podemos então manipular essa data usando funções do módulo `Data.Time.Format`, como `formatTime`, para formatá-la de acordo com nossas necessidades. Por exemplo, podemos exibir a data no formato "dd/mm/aaaa":
+Como você pode ver, a diferença aqui é que importamos o módulo `Data.Time.Clock` e usamos a função `getCurrentTime` para obter a data atual.
 
-```Haskell
-let formattedDate = formatTime defaultTimeLocale "%d/%m/%Y" currentDate
-putStrLn formattedDate -- imprime "28/11/2021"
-```
+## Mergulho profundo
 
-## Deep Dive
+O pacote `time` também fornece funções úteis para trabalhar com diferentes fusos horários, bem como funções para cálculos de duração entre datas e conversão de valores de tempo. Essas funções podem ser encontradas no módulo `Data.Time.Clock.HT` e são bastante úteis em situações em que é necessário manipular informações de data e hora de forma mais complexa.
 
-Além de `getCurrentTime`, o módulo `Data.Time` também possui outras funções úteis para trabalhar com datas, como `addUTCTime` para adicionar um tempo especificado a uma data, `diffUTCTime` para calcular a diferença entre duas datas e `toGregorian` para converter uma data do formato `UTCTime` para o formato `Day`, que representa um dia específico.
+## Veja também
 
-Além disso, é importante lembrar que a função `getCurrentTime` depende da data e hora do sistema em que o programa está sendo executado. Portanto, se for necessário trabalhar com uma data específica, é aconselhável usar o módulo `Data.Time.Calendar` e suas funções, como `fromGregorian` para criar uma data personalizada.
-
-## Veja Também
-
-- [Documentação oficial do módulo Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Tutorial de manipulação de datas em Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20date%20manipulation%20in%20Haskell)
-- [Vídeo tutorial sobre manipulação de datas em Haskell](https://www.youtube.com/watch?v=Ei5e6kAkRfI)
+- [Haskell.org](https://www.haskell.org/)
+- [Documentação do módulo Data.Time](http://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Documentação do pacote time](http://hackage.haskell.org/package/time)

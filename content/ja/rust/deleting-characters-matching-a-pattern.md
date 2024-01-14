@@ -1,53 +1,35 @@
 ---
-title:    "Rust: パターンにマッチする文字を削除する"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/deleting-characters-matching-a-pattern.md"
+title:                "Rust: 「パターンにマッチする文字の削除」"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-Rustプログラミングの初心者の皆さん、こんにちは！今日は文字のパターンにマッチする文字を削除する方法についてお話ししましょう。この方法を使うことで、プログラムの効率性を上げることができます。また、データ分析やデータ処理のようなタスクを行う際にも役立ちます。
+# なぜ？（Why）
 
-## 方法
-まずは、パターンにマッチする文字を削除する簡単な方法から説明します。例として、「こんにちは、Rustプログラミングを始めましょう！」という文字列から「Rust」を削除するコードを書いてみましょう。
+あなたがプログラミングをしているときに、文字のパターンにマッチする文字を削除したいと思うことはよくあります。例えば、文字列からすべての数字を削除したい場合などがあります。そんなときに、Rustプログラミング言語でどのようにして文字を削除するかについて学びましょう。
 
-```
-Rust code
-let text = "こんにちは、Rustプログラミングを始めましょう！";
-let pattern = "Rust";
-let result = text.replace(pattern, "");
-println!("{}", result);
-```
+## 方法（How To）
 
-上記のコードを実行すると、「こんにちは、プログラミングを始めましょう！」という文字列が出力されるはずです。`replace`関数を使うことで、パターンにマッチする文字を削除することができます。ただし、この方法だとパターンにマッチする文字が一つしかない場合にしか使えません。
+Rustでは、特定のパターンにマッチする文字を削除するために`replace`メソッドを使用します。以下のコード例を参考にしてみてください。
 
-次に、パターンにマッチする文字を全て削除する方法を紹介します。これを行うには、`regex`ライブラリを使います。例として、文字列から英数字を全て削除するコードを書いてみましょう。
-
-```
-Rust code
-let text = "abc123@def456";
-let pattern = Regex::new(r"[A-Za-z0-9]+").unwrap();
-let result = pattern.replace_all(text, "");
-println!("{}", result);
+```Rust
+fn main() {
+    let word = "Hello,123World!";
+    let new_word = word.replace(char::is_numeric, ""); // 数字を含む文字をすべて削除
+    println!("{}", new_word); // => Hello,World!
+}
 ```
 
-上記のコードを実行すると、「@」だけを残した文字列が出力されるはずです。`Regex`構造体を使うことで、正規表現パターンを指定して文字を削除することができます。`unwrap`メソッドは、正規表現パターンにエラーがないことを保証するために使用します。
+このコードでは、`replace`メソッドを使用して文字列`Hello,123World!`から数字を含む文字をすべて削除し、新しい文字列`Hello,World!`を作成しています。このように、`replace`メソッドを使うことで簡単に文字を削除することができます。
 
-## 深堀り
-さらに詳しくパターンにマッチする文字を削除する方法について掘り下げてみましょう。この方法を使うことで、複雑なパターンにも対応することができます。
+## 詳細（Deep Dive）
 
-例として、文字列から全ての日本語文字を削除するコードを書いてみましょう。このような場合、一文字だけを指定して削除するのは難しいため、正規表現パターンを使います。
+`replace`メソッドは、文字列以外にも`char`や`&str`でも使用することができます。また、正規表現を使用して複雑なパターンにもマッチすることができます。さらに、`replace`メソッドは新しい文字列を返すだけでなく、元の文字列を変更することもできます。詳細については、公式ドキュメントを参考にしてください。
 
-```
-Rust code
-let text = "こんにちは、Rustプログラミングを始めましょう！";
-let pattern = Regex::new(r"[\p{Hiragana}\p{Katakana}ー　]+").unwrap();
-let result = pattern.replace_all(text, "");
-println!("{}", result);
-```
+## See Also
 
-上記のコードを実行すると、「、Rustプログラミングを始めましょう！」という文字列が出力されるはずです。`Regex::new`の引数に`"[\p{Hiragana}\p{Katakana}ー　]+"`という正規表現パターンを指定することで、「ひらがな、カタカナ、長音記号、全角スペース」のいずれかにマッチする文字を削除することができます。
-
-## 関連記事
-- [Rustの正規表
+- [Rust公式ドキュメント：`replace`メソッド]（https://doc.rust-lang.org/std/string/struct.String.html#method.replace）
+- [Rustでの正規表現の使用方法]（https://tech-blog.optim.co.jp/entry/2018/09/06/080000）

@@ -1,70 +1,52 @@
 ---
-title:    "Java: Stampa dell'output di debug"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/java/printing-debug-output.md"
+title:                "Java: Stampa dell'output di debug"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Nel mondo della programmazione, siamo costantemente alle prese con l'eliminazione di bug e la risoluzione di errori. In questi casi, la stampa di output di debug può essere uno strumento incredibilmente utile per comprendere il funzionamento del nostro codice e trovare le cause dei problemi.
+Stampare l'output di debug può sembrare un'operazione semplice e banale per molti programmatori, ma in realtà è un'attività fondamentale per risolvere bug e problemi nel codice. Con la corretta implementazione, la stampa degli output di debug può essere uno strumento potente per individuare e risolvere errori.
 
-# Come farlo
+## Come fare
 
-Per stampare output di debug in Java, possiamo utilizzare il metodo System.out.println(). Questo metodo accetta come argomento una stringa che verrà stampata a video. Vediamo un esempio:
+Ci sono diversi modi per stampare output di debug in Java, ma il più comune è utilizzare il metodo `System.out.println()`. Questo metodo prende in input una stringa o un oggetto e lo stampa sulla console. Ecco un esempio di codice che stampa una variabile di tipo `int`:
 
-```Java
-int x = 10;
-System.out.println("Il valore di x è: " + x);
-```
-
-Una volta eseguito il codice, vedremo l'output seguente nella nostra console:
-
-```
-Il valore di x è: 10
-```
-
-Possiamo anche usare il metodo System.out.print() per stampare senza andare a capo alla fine della stringa. Inoltre, possiamo anche utilizzare i caratteri di escape come "\n" per andare a capo e "\t" per aggiungere una tabulazione.
-
-```Java
-String nome = "Mario";
-System.out.print("Ciao,");
-System.out.print(nome);
-System.out.print("!");
+``` Java
+int numero = 5;
+System.out.println(numero);
 ```
 
 L'output di questo codice sarà:
 
 ```
-Ciao,Mario!
+5
 ```
 
-# Approfondimento
+Possiamo anche utilizzare il metodo `System.out.printf()` per stampare output di debug in modo più formattato. Questo metodo permette di specificare il tipo di dato e il formato di stampa. Ecco un esempio che stampa un numero decimale con due cifre dopo la virgola:
 
-Oltre a semplicemente stampare variabili e stringhe, possiamo anche sfruttare l'output di debug per capire il flusso del nostro codice e individuare eventuali errori. Ad esempio, possiamo stampare dei messaggi all'interno di condizioni if o cicli for per capire se determinate parti del nostro codice vengono eseguite o meno.
-
-```Java
-for (int i = 0; i < 5; i++) {
-    // stampiamo solo i numeri pari
-    if (i % 2 == 0) {
-        System.out.println("Il valore di i è: " + i);
-    }
-}
+``` Java
+double decimale = 3.1415;
+System.out.printf("%.2f", decimale);
 ```
 
 L'output di questo codice sarà:
 
 ```
-Il valore di i è: 0
-Il valore di i è: 2
-Il valore di i è: 4
+3.14
 ```
 
-In questo modo possiamo verificare se il nostro ciclo viene eseguito nel modo in cui ci aspettiamo e individuare eventuali errori di logica.
+## Approfondimento
 
-# Vedi anche
+Oltre ai due metodi sopra menzionati, ci sono anche altre opzioni per stampare output di debug in Java. Per esempio, possiamo utilizzare il logger della libreria `java.util.logging` per ottenere output più dettagliati e controllare il livello di log di ogni messaggio. Possiamo anche utilizzare il debugger integrato in una IDE per eseguire il codice passo dopo passo e vedere i valori delle variabili in ogni istante.
 
-- Documentazione di Java: https://docs.oracle.com/en/java/
-- Tutorial di output di debug in Java: https://www.baeldung.com/java-print-debug-statement
-- Debugging in Java: https://code.tutsplus.com/tutorials/how-to-debug-java-applications--cms-26809
+È importante ricordare che dopo aver risolto i bug, è buona pratica rimuovere o commentare gli output di debug dal codice finale in modo da non appesantirlo eccessivamente.
+
+## Vedi anche
+
+- [Documentazione ufficiale di Java per il metodo System.out.println](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#println-java.lang.String-)
+- [Tutorial su come utilizzare il logger in Java](https://www.vogella.com/tutorials/Logging/article.html)
+- [Guida all'utilizzo del debugger in Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2017/august/article1.php)

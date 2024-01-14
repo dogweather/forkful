@@ -1,54 +1,52 @@
 ---
-title:    "TypeScript: Lesen von Befehlszeilenargumenten"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/reading-command-line-arguments.md"
+title:                "TypeScript: Lesen von Befehlszeilenargumenten"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Lesen von Befehlszeilenargumemten ist ein wichtiger Bestandteil der TypeScript-Programmierung. Es ermöglicht es, Variablen und Einstellungen direkt beim Start des Programms anzugeben, anstatt sie zuvor im Code festzulegen. Dadurch wird das Programm flexibler und kann für verschiedene Zwecke verwendet werden.
+Das Lesen von Argumenten von der Befehlszeile ist ein wesentlicher Bestandteil der Programmierung in TypeScript. Es ermöglicht es Entwicklern, Benutzereingaben zu erfassen und diese in ihren Programmen zu verwenden. Ohne dieses Wissen könnte man keine interaktiven Programme erstellen.
 
-## Wie
+## So geht's
 
-Um Befehlszeilenargumente in TypeScript zu lesen, können wir das Argumentenarray `process.argv` verwenden. Dieses enthält alle vom Benutzer beim Start des Programms angegebenen Argumente. Zum Beispiel:
+Um Befehlszeilenargumente in TypeScript zu lesen, müssen wir die `process` Modul von Node.js verwenden. Zuerst müssen wir es in unserem Programm importieren:
 
 ```TypeScript
-const argument1 = process.argv[2];
-const argument2 = process.argv[3];
-
-console.log(argument1); // Ausgabe: Wert des ersten Arguments
-console.log(argument2); // Ausgabe: Wert des zweiten Arguments
+import * as process from 'process';
 ```
 
-Es ist jedoch zu beachten, dass das erste Element von `process.argv` immer der Pfad zum ausführbaren Programm ist und die Argumente erst ab dem zweiten Element starten. Um dies zu berücksichtigen, sollten wir das Array mit `slice(2)` verkleinern, um die tatsächlichen Argumente zu erhalten.
+Als nächstes können wir die `process.argv` Eigenschaft verwenden, um alle übergebenen Argumente zu erhalten. Diese Eigenschaft gibt ein Array mit Strings zurück, wobei das erste Element immer der Name des ausführbaren Programms ist. Zum Beispiel, wenn wir unser Programm mit `node main.ts argument1 argument2` aufrufen, würde `process.argv` folgendes zurückgeben:
 
 ```TypeScript
-const argumente = process.argv.slice(2);
+[
+  '/usr/local/bin/node',
+  '/Users/user/Documents/main.ts',
+  'argument1',
+  'argument2'
+]
 ```
 
-## Tiefergehende Informationen
+Um auf bestimmte Argumente zuzugreifen, können wir einfach die jeweilige Indexposition im Array angeben. Zum Beispiel, um auf `argument1` zuzugreifen, können wir `process.argv[2]` verwenden. Beachten Sie, dass die Indexposition `0` für den Programmnamen reserviert ist.
 
-Neben dem Lesen von einfachen Argumentenwerten, können wir auch mit komplexeren Argumenten umgehen, wie zum Beispiel mit Flaggen. Diese kennzeichnen bestimmte Eigenschaften oder Einstellungen des Programms und können als `true` oder `false` interpretiert werden.
+Wir können auch die `slice()` Methode verwenden, um nur die Argumente zu erhalten, die wir benötigen, ohne den Programmnamen. Zum Beispiel, `process.argv.slice(2)` würde ein Array mit den Argumenten `argument1` und `argument2` zurückgeben.
+
+## Tiefere Einblicke 
+
+Neben dem Lesen von Befehlszeilenargumenten können wir auch überprüfen, ob bestimmte Argumente vorhanden sind oder nicht. Dazu können wir die `includes()` Methode verwenden, die es seit ES2016 gibt. Zum Beispiel können wir überprüfen, ob unser Programm mit dem `--help` Argument aufgerufen wurde:
 
 ```TypeScript
-const flag = process.argv.includes("--flag");
-
-if (flag) {
-  // Flagge ist vorhanden
-  // Führe entsprechende Aktion aus
+if (process.argv.includes('--help')) {
+  console.log('Hilfe-Option wurde aufgerufen.');
 }
 ```
 
-Es ist auch möglich, optionale Argumente zu definieren, indem wir in unserem Programm verschiedene Fälle abfragen. Zum Beispiel könnten wir ein Argument definieren, welches eine Datei als Eingabe erwartet. Ist dieses Argument nicht vorhanden, könnten wir stattdessen eine Standarddatei verwenden.
-
-```TypeScript
-const eingabedatei = process.argv[2] || "standarddatei.txt";
-```
+Das Lesen von Befehlszeilenargumenten kann auch in Kombination mit anderen Modulen verwendet werden, um komplexe Programme zu erstellen. So könnte man zum Beispiel mit dem `yargs` Modul noch mehr Funktionalitäten und Möglichkeiten beim Lesen von Argumenten erhalten.
 
 ## Siehe auch
 
-- [Dokumentation zu process.argv von Node.js](https://nodejs.org/api/process.html#process_process_argv)
-- [Artikel über Befehlszeilenargumente in TypeScript](https://hackernoon.com/command-line-arguments-in-typescript-9db33c92bdc4)
-- [Einführung in die TypeScript-Programmierung auf Deutsch](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [Node.js `process` Dokumentation](https://nodejs.org/api/process.html)
+- [yargs Modul](https://github.com/yargs/yargs)

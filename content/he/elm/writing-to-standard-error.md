@@ -1,40 +1,34 @@
 ---
-title:    "Elm: כתיבה לשגיאת הסטנדרט"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/writing-to-standard-error.md"
+title:                "Elm: לכתוב לתקן שגיאות סטנדרטי"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-למה לכתוב לתקליטור שגיאות מתקנים יותר עדיף מלהדפיס שגיאות ישירות לטרמינל? כתיבה לתקליטור שגיאות עוזרת לבדוק ולמצוא בעיות בקוד יותר בקלות כיוון שהקלט הינו פתוח וברור.
+למה לכתוב לשגיאת מערכת: הכתיבה לשגיאת מערכת היא כלי חשוב בפיתוח תוכנה עם אמצעי נפרדים להדפסת הודעות. כתיבה לשגיאת מערכת מאפשרת למפתחים לזהות במה טעו וכיצד לתקן את הבעיה מהר יותר.
 
-## איך לעשות זאת:
+## איך לכתוב
 
-```elm
-import Debug
+בקטע הזה נראה כיצד לכתוב לשגיאת מערכת בשפת Elm. יש להמשיך קריאה בכדי ללמוד יותר על הכתיבה לשגיאות מערכת בפרויקטים שלכם.
 
-itemCount : Int
-itemCount = 5
-
-totalPrice : Int
-totalPrice = 10
-
-Debug.log "Something went wrong!" (totalPrice / itemCount)
+```Elm
+-- פונקציה לכתוב לשגיאת מערכת
+writeToStdErr : String -> Cmd msg
+writeToStdErr message =
+    Task.perform (always NoOp) (Debug.log message (Debug.crash "כתיבת שגיאה למערכת"))
 ```
 
-פלט:
-```
-Something went wrong!: 2
-```
+## דיבוג
 
-## חפירה עמוקה
+כדי להפעיל תרגיל זה, יש להכניס את הקוד לeditor של Elm וללחוץ על "Compile". אתם תקבלו שגיאת מערכת והודעה שמוצגת במסוגל Debug.log ואת ההודעה האמיתית שנכתבת. בכדי לגרום להודעת מערכת להופיע בשורת הפןוח המשתמשים יכולים להשתמש בפוסקת "Debug.log". יש להוסיף את הערכים בכדי שתוכלו לזהות במה טעו עם Debug.log.
 
-לכותבי קוד מקצועיים ייתכן שימשיכו לשכפל את הפלט והקלט, לעתים קרובות לקרוא קוד אחר שמתבטא בפלט כפול. למרבה המזל, כתיבה לטרימנל יעזור לך לזהות את השגיאות השונות ולעקוב אחרי התקליטור בקלות יותר. זה משמעותי יותר במיוחד כאשר מדובר בקוד עמוק יותר ומורכב, כאשר קשה יותר להבין את השגיאות השונות שמתנגשות.
+## רכיב נוסף
 
-## ראה גם
+המפתחים בכתיבת ערך למסך משתמשים וערך למערכת בשפת elm מסוג TBD. הערך TBD בא להפעיל את מודל השגיאות בכדי שהודעת השגיאה תוצאת המקומיות אליחת ללשמת את השגיאה שהתרחשה בה. בכדי לאספק התפנות למשתשדה אין כמעט נם מטרים למשתתפים שלא מטרו את הערכים. 
 
-- [Debug documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Using console.log in Elm](https://noredinktech.wordpress.com/2016/08/08/elm-console-log/)
-- [Learning to debug Elm](https://blog.janestreet.com/learning-to-debug-elm/)
+    Normalize error messages
+    Operation result

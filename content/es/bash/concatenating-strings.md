@@ -1,84 +1,70 @@
 ---
-title:    "Bash: Concatenando cadenas"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/concatenating-strings.md"
+title:                "Bash: Concatenando cadenas"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar concatenación de cadenas en Bash? 
+## Por qué
 
-La concatenación de cadenas es una técnica importante en la programación Bash que permite unir varias cadenas de texto en una sola. Esto puede ser útil en una gran variedad de situaciones, como la creación de nombres de archivos dinámicos, la generación de mensajes personalizados, o la construcción de una URL a partir de parámetros.
+La concatenación de cadenas es una técnica útil en la programación que permite combinar diferentes cadenas de texto en una sola cadena. Esta habilidad es especialmente útil cuando se trabaja con variables y se necesita mostrar un mensaje completo en la pantalla. Aprender a concatenar cadenas en Bash te ayudará a escribir scripts más dinámicos y eficientes.
 
 ## Cómo hacerlo
 
-La concatenación de cadenas en Bash es sencilla y se puede realizar de varias maneras. Una forma es utilizando el operador `+` dentro de una variable, como se muestra a continuación:
+La concatenación de cadenas en Bash se realiza usando el símbolo de punto (".") para unir dos o más cadenas. Por ejemplo:
 
 ```Bash
-nombre="Juan"
-edad=30
-echo "¡Hola, mi nombre es $nombre y tengo $edad años!"
+primera = "Hola"
+segunda = "mundo"
+echo $primera.$segunda
 ```
+Salida: Hola mundo
 
-El resultado de este código sería: 
+En este ejemplo, se ha creado una variable llamada "primera" con el valor "Hola" y otra variable llamada "segunda" con el valor "mundo". Luego, se utiliza el comando "echo" para imprimir en pantalla una combinación de ambas cadenas, unidas por el símbolo de punto.
 
-```
-¡Hola, mi nombre es Juan y tengo 30 años!
-```
-
-Otra forma es utilizando el comando `printf`, como se muestra a continuación:
+También es posible concatenar cadenas con variables ya existentes en lugar de escribir el texto directamente. Por ejemplo:
 
 ```Bash
-apellido="Pérez"
-direccion="Calle Mayor"
-printf "Mi nombre completo es %s y vivo en la %s." "$nombre $apellido" "$direccion"
+nombre = "María"
+apellido = "García"
+echo "¡Hola, mi nombre es $nombre $apellido!"
 ```
+Salida: ¡Hola, mi nombre es María García!
 
-El resultado de este código sería:
+Aquí, se han utilizado las variables "nombre" y "apellido" dentro de una cadena entre comillas. Al utilizar el símbolo de dólar y los corchetes, se puede acceder al valor de la variable al imprimir el mensaje.
 
-```
-Mi nombre completo es Juan Pérez y vivo en la Calle Mayor.
-```
+## Profundizando
 
-## Profundizando en la concatenación de cadenas 
-
-En Bash, las cadenas se pueden concatenar utilizando el operador `+`, pero también se puede utilizar el comando `concat` para unir varias cadenas. Además, es importante tener en cuenta que las variables deben estar entre comillas dobles para que se puedan expandir dentro de la cadena concatenada.
-
-También es posible concatenar más de dos cadenas utilizando el operador `+=`, como se muestra en el siguiente ejemplo:
+La concatenación de cadenas en Bash también nos permite utilizar comillas simples ('') y dobles ("") para tener un mayor control sobre cómo se muestran las cadenas y cómo se interpretan los caracteres especiales. Por ejemplo:
 
 ```Bash
-saludo="¡Hola"
-saludo+=" a todos!"
-echo $saludo
+pais = "España"
+echo '$pais es un país hermoso'
 ```
-
-El resultado de este código sería: 
-
-```
-¡Hola a todos!
-```
-
-Otra técnica útil es la de utilizar el comando `read` para obtener la entrada del usuario y concatenarla con una cadena, como se muestra a continuación:
+Salida: $pais es un país hermoso
 
 ```Bash
-echo "Por favor, ingresa tu nombre:"
-read nombre
-saludo="¡Hola, $nombre!"
-echo $saludo
+pais = "España"
+echo "$pais es un país hermoso"
 ```
+Salida: España es un país hermoso
 
-El resultado de este código sería:
+Aquí se nota que en la primera línea el carácter dólar y la variable no son interpretados, mientras que en la segunda línea sí lo son.
 
+También es posible concatenar cadenas con el resultado de un comando utilizando la expresión de subshell "$( )". Por ejemplo:
+
+```Bash
+fecha = $(date +%d/%m/%Y)
+echo "Hoy es $fecha"
 ```
-Por favor, ingresa tu nombre: 
-María
-¡Hola, María!
-```
+Salida: Hoy es 16/09/2021
 
-## Ver también 
+Esto puede ser especialmente útil al automatizar tareas y obtener información actualizada.
 
-Si deseas aprender más sobre la concatenación de cadenas en Bash, te recomiendo que consultes los siguientes recursos:
+## Ver también
 
-- https://linuxize.com/post/bash-concatenate-strings/
-- https://www.geeksforgeeks.org/bash-script-write/
-- https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash
+- [Tutorial de concatenación de cadenas en Bash](https://www.hostinger.es/tutoriales/bash-concatenar-cadenas/)
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
+- [Ejemplos prácticos de concatenación de cadenas en Bash](https://likegeeks.com/es/ejemplos-de-programacion-de-shell-scripting-en-bash/)

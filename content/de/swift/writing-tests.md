@@ -1,43 +1,40 @@
 ---
-title:    "Swift: Tests schreiben"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-tests.md"
+title:                "Swift: Testen schreiben"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum Tests schreiben?
+## Warum
 
-Tests sind ein unerlässliches Werkzeug für jeden Programmierer, der qualitativ hochwertigen Code schreiben möchte. Durch das Schreiben von Tests können Bugs frühzeitig erkannt und behoben werden, was Zeit und Geld sparen kann. Außerdem helfen Tests dabei, das Vertrauen in den Code zu stärken und die Wartbarkeit zu verbessern.
+Warum sollte man Tests in Swift schreiben? Tests garantieren eine höhere Codequalität und sorgen dafür, dass der Code zuverlässig funktioniert. Sie helfen auch dabei, Fehler frühzeitig zu erkennen und zu beheben, bevor sie zu großen Problemen werden.
 
-Wie geht das?
+## Wie man Tests in Swift schreibt
 
-Das Schreiben von Tests in Swift ist einfacher als man denkt. Zunächst muss ein neues Test Target erstellt werden, das den Code testen soll. Dann können Tests mit der XCTest-Bibliothek erstellt werden. Hier ist ein einfaches Beispiel für einen Testfall:
+Das Schreiben von Tests in Swift ist einfach und kann mit nur wenigen Zeilen Code erledigt werden. Hier ist ein Beispiel, wie man einen einfachen Testfall schreibt:
 
-```
-Swift
-class CalculatorTests: XCTestCase {
-    func testAddition() {
-        let result = Calculator.add(2, 2)
-        XCTAssertEqual(result, 4)
-    }
+```Swift
+func testAddition() {
+  let calculator = Calculator()
+  let result = calculator.add(2, 3)
+  XCTAssertEqual(result, 5)
 }
 ```
 
-In diesem Beispiel wird überprüft, ob der Additionsfunktion in unserem Calculator-Modul das korrekte Ergebnis zurückgegeben wird. Die `XCTAssertEqual`-Methode vergleicht den tatsächlichen Wert mit dem erwarteten Ergebnis und gibt bei einer Übereinstimmung grün (success) oder bei einer Abweichung rot (failure) aus.
+In diesem Beispiel wird die Funktion `testAddition` definiert, die einen Taschenrechner erstellt und die `add`-Funktion mit zwei Zahlen aufruft. Dann wird überprüft, ob das Ergebnis der Addition dem erwarteten Wert entspricht. Wenn ja, wird der Test bestanden.
 
-Tiefere Einblicke
+## Tiefergehende Informationen zum Schreiben von Tests
 
-Es gibt viele Möglichkeiten, wie Tests in Swift geschrieben werden können. Hier sind einige wichtige Punkte, die berücksichtigt werden sollten:
+Beim Schreiben von Tests gibt es einige wichtige Dinge zu beachten. Zum Beispiel sollte man sicherstellen, dass die Testfälle unabhängig voneinander sind und es keine Abhängigkeiten zwischen ihnen gibt. Außerdem sollte man sicherstellen, dass alle möglichen Fälle abgedeckt sind und auch Randfälle getestet werden. Eine gute Testabdeckung stellt sicher, dass der Code zuverlässig funktioniert.
 
-- Tests sollten so gestaltet sein, dass sie unabhängig voneinander ausgeführt werden können.
-- Das Mocken externer Abhängigkeiten kann dabei helfen, die Tests zu isolieren und unabhängig zu machen.
-- Es ist wichtig, Edge-Cases in den Tests abzudecken, um sicherzustellen, dass der Code in allen Szenarien korrekt funktioniert.
+Es gibt auch verschiedene Arten von Tests, wie zum Beispiel Unit-Tests, Integrationstests und UI-Tests. Jede Art hat ihre eigene Funktion und sollte je nach Bedarf verwendet werden.
 
-Siehe auch
+## Siehe auch
 
-- Offizielle Dokumentation zu XCTest: https://developer.apple.com/documentation/xctest
-- Ein Leitfaden für das Schreiben von Tests in Swift: https://www.swiftbysundell.com/articles/unit-testing-in-swift/
-- Eine Einführung in das Mocking mit Swift: https://medium.com/@joyceekimmocking-in-swift-the-basics-c4b4324bf00a
+- [Apple Dokumentation zu Unit-Tests](https://developer.apple.com/documentation/xctest)
 
-Mit diesen Informationen sollte es nun möglich sein, qualitativ hochwertige Tests in Swift zu schreiben und so die Qualität und Wartbarkeit des Codes zu verbessern. Viel Spaß beim Testen!
+- [Tutorial zum Schreiben von Tests in Swift](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
+
+- [Testing Guidelines von Apple](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/04-writing_tests.html)

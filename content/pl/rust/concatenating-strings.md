@@ -1,46 +1,36 @@
 ---
-title:    "Rust: Łączenie ciągów znaków"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/concatenating-strings.md"
+title:                "Rust: Łączenie ciągów znaków"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W programowaniu często musimy łączyć ciągi tekstu w jedną dłuższą jednostkę. Jest to szczególnie przydatne przy tworzeniu wyświetlania na ekranie lub przy tworzeniu plików tekstowych. W tym wpisie dowiesz się, dlaczego łączenie ciągów tekstu jest ważną umiejętnością i jak możesz to zrobić w języku Rust.
+Podczas pisania kodu w Rust, często zdarza się, że musimy łączyć ze sobą ciągi znaków (strings). Dzięki temu możemy tworzyć bardziej złożone i użyteczne aplikacje. W tym artykule dowiesz się, dlaczego jest to ważna umiejętność dla każdego programisty.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby połączyć dwa lub więcej ciągów tekstu w języku Rust, możesz użyć metody `concat` lub operatora `+`. Oto przykładowy kod z użyciem obu tych metod:
+Aby połączyć ze sobą dwa ciągi znaków w Rust, możemy skorzystać z metody `concat()`. Przykładowy kod wygląda następująco:
 
 ```Rust
-fn main() {
-    let string1 = "Cześć";
-    let string2 = "połączmy";
-    let string3 = "ciągi";
-    let result = string1.concat(string2).concat(string3);
-    let result2 = string1 + string2 + string3;
-    println!("{}", result);
-    println!("{}", result2);
-}
+let first_string = "Witaj, ";
+let second_string = "świecie!";
+let full_string = first_string.to_owned() + second_string;
+
+println!("Zawsze pamiętaj o łączeniu ciągów znaków: {}", full_string);
 ```
 
-Oczekiwany wynik:
+Po uruchomieniu tego kodu, powinniśmy zobaczyć na ekranie napis `Witaj, świecie!`. Zauważmy, że używając `to_owned()`, mamy dostęp do pełnej wersji pierwszego ciągu znaków, a nie tylko jego wersji wskazującej.
 
-```
-Cześćpołączmyciągi
-Cześćpołączmyciągi
-```
+## Głębsze zagadnienia
 
-Możesz również używać operatora `+=` do łączenia ciągów tekstu ze zmienną, a nawet stosować formatowanie do łączenia z innymi typami danych, takimi jak liczby.
+Istnieje również wiele innych sposobów na łączenie ciągów znaków w Rust. Na przykład, używając operatora `+` albo wykorzystując metodę `format!()`, która pozwala na bardziej złożone formatowanie tekstu. Warto poeksperymentować z różnymi możliwościami i wybrać tę, która najlepiej pasuje do danej sytuacji.
 
-## Deep Dive
+## Zobacz także
 
-Kiedy używasz operatora `+` do łączenia ciągów tekstu, język Rust automatycznie przekonwertuje je na typ `String` za pomocą metody `to_string()`. Jest to użyteczne, jeśli chcesz łączyć ciągi tekstu z innymi typami danych. Możesz również użyć metody `push_str()` na zmiennej typu `String`, aby dodać ciąg tekstu na samym końcu, zamiast tworzyć nowy obiekt `String`.
-
-## Zobacz też
-
-- Dokumentacja języka Rust: https://doc.rust-lang.org/book/
-- Przewodnik dla początkujących w Rust: https://github.com/rust-lang/rustlings
-- Funkcje string w języku Rust: https://doc.rust-lang.org/std/primitive.str.html
+- Dokumentacja Rust na temat "Strings": https://doc.rust-lang.org/std/string/struct.String.html
+- Przykłady użycia metody `concat()`: https://www.geeksforgeeks.org/rust-string-concatenation/
+- Poradnik na temat formatowania tekstu w Rust: https://www.techiedelight.com/formatting-strings-rust/

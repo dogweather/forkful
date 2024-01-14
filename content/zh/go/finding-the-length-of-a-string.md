@@ -1,37 +1,34 @@
 ---
-title:    "Go: 寻找字符串的长度"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/go/finding-the-length-of-a-string.md"
+title:                "Go: 查找字符串的长度"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么 ##
-在编程中，字符串是一种非常常用的数据类型。我们经常需要确定字符串的长度，特别是在处理用户输入或者文件操作时。因此，学习如何找到字符串的长度是很有必要的，这样我们就可以更好地操作和处理字符串。
+# 为什么要找到字符串的长度？
 
-## 如何做 ##
-在Go语言中，我们可以使用 `len()`函数来找到字符串的长度。以下是一个例子：
+在编程中，字符串是一种非常常见的数据类型，它可以存储文本信息。但是，在处理字符串的时候，我们经常会遇到需要知道它的长度的情况。例如，我们可能需要检查用户输入的字符串是否符合要求，或者需要将字符串的长度作为条件来进行判断。因此，了解如何找到字符串的长度是非常重要的。
+
+## 如何找到字符串的长度
+
+在Go语言中，我们可以使用`len()`函数来获取字符串的长度。下面是一个简单的例子，展示了如何使用该函数来找到字符串的长度并打印出来。
+
 ```Go
-// 定义一个字符串
-str := "你好，世界！"
-
-// 使用len()函数找到字符串的长度
-length := len(str)
-
-// 打印结果
-fmt.Println("字符串的长度为：", length)
-
-// 输出：字符串的长度为： 7
+str := "Hello World"
+len := len(str) // 使用len()函数获取字符串的长度
+println(len) // 打印出字符串的长度
 ```
 
-从上面的例子中，我们可以看到使用`len()`函数是非常简单的。我们只需要在函数中传入字符串，函数就会返回字符串的长度。同时，我们还可以使用`fmt`包来打印结果，方便我们查看。
+运行这段代码，我们会得到输出结果 11，说明字符串"Hello World"的长度为11个字符。
 
-## 深入了解 ##
-在Go语言中，字符串的长度指的是字符串包含的字节数。因此，如果我们的字符串中包含非ASCII字符（比如中文），那么每个字符会被转换成多个字节，从而影响字符串的长度。比如，上面的例子中，虽然字符串`"你好，世界！"`中有7个字符，但是由于每个中文字符占3个字节，所以字符串的长度为7*3=21个字节。
+## 深入了解
 
-如果我们想要获取字符串中真正的字符数，可以使用`utf8.RuneCountInString()`函数。这个函数会计算字符串中的Unicode字符数量，比如上述例子中，`utf8.RuneCountInString()`函数会返回7，而不是21。
+虽然在上面的例子中，我们已经成功找到了字符串的长度，但是你可能会好奇这个`len()`函数是如何工作的。其实，`len()`函数是Go语言的内置函数，它可以用来获取基础数据类型的长度，包括字符串、数组、切片、字典等。它的运行原理是遍历数据内部的元素，从而得到数据的长度。当然，Go语言内部也会对这些数据类型进行优化，使得`len()`函数可以更加高效地获取长度。
 
-## 查看相关文章 ##
-- [Go语言官方文档-字符串](https://golang.org/ref/spec#String_types)
-- [Go语言标准库文档-utf8包](https://golang.org/pkg/utf8/)
-- [Go语言中文网教程-字符串与字符](https://studygolang.com/articles/2968)
+# 参考链接
+
+- [Go语言中文网：字符串](https://studygolang.com/subject/2)
+- [Go语言标准库文档：len()函数](https://golang.org/pkg/builtin/#len)
+- [CSDN博客：关于Go语言字符串的长度](https://blog.csdn.net/u010947030/article/details/79331644)

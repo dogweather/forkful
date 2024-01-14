@@ -1,36 +1,42 @@
 ---
-title:    "Bash: Rozpoczęcie nowego projektu"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/starting-a-new-project.md"
+title:                "Bash: Rozpoczynając nowy projekt"
+programming_language: "Bash"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zaczęcie nowego projektu programistycznego może być nie tylko interesujące, ale także bardzo przydatne. Może stanowić wyzwanie dla Twoich umiejętności i kreatywności, a także może dać Ci szansę na poznanie nowych technologii i narzędzi. Ponadto, tworzenie własnego projektu może być świetnym sposobem na rozwijanie się jako programisty oraz udowodnienie swoich umiejętności.
+Jeśli jesteś zainteresowany tworzeniem projektów z wykorzystaniem języka Bash, ten artykuł jest dla Ciebie! Będziemy omawiać dlaczego warto zacząć nowy projekt i jak możesz to zrobić.
 
-## Jak to zrobić
+## Jak zacząć
 
-Aby zacząć nowy projekt w Bash, musisz mieć zainstalowany interpreter Bash na swoim komputerze. Następnie możesz otworzyć nowy plik z rozszerzeniem .sh i zacząć kodować. Oto przykładowy kod, który wyświetla powitanie:
+Aby zacząć projekt w języku Bash, potrzebujemy odpowiedniego środowiska i narzędzi. Najpierw upewnij się, że masz zainstalowaną najnowszą wersję Bash na swoim systemie operacyjnym. Następnie możesz użyć poniższego kodu, aby utworzyć plik `hello_world.sh` i dodać do niego prosty program wyświetlający "Hello World!" w terminalu:
 
 ```Bash
-#!/bin/bash
-echo "Witaj na moim blogu programistycznym!"
+touch hello_world.sh  # tworzy nowy plik
+echo "Hello World!"  # wyświetla komunikat
 ```
 
-Wynik działania powyższego kodu powinien wyświetlić w terminalu napis "Witaj na moim blogu programistycznym!". Jeśli potrzebujesz pomocy przy pisaniu skryptów w Bash, polecam przeczytać dokumentację lub skorzystać z dostępnych tutoriali online.
+Po uruchomieniu tego kodu w terminalu, powinieneś zobaczyć wyjście "Hello World!".
 
-## Wnikliwa analiza
+Możesz również użyć Bash do operacji na plikach i katalogach. Na przykład, poniższy kod listuje wszystkie pliki w bieżącym katalogu i wyświetla ich rozmiar w bajtach:
 
-Przed rozpoczęciem pracy nad nowym projektem warto przemyśleć kilka kroków. Po pierwsze, zdefiniuj cel swojego projektu - co chcesz osiągnąć? Następnie opracuj plan działania i zastanów się, jakie narzędzia i technologie będą potrzebne do jego wykonania. Pamiętaj także o prawidłowej organizacji kodu, aby ułatwić sobie późniejszą pracę.
+```Bash
+ls -l  # wyświetla listę plików
+wc -c *  # zlicza bajty w każdym pliku
+```
 
-Po ukończeniu projektu warto zadbać o jego dokumentację i udostępnić go innym użytkownikom. Możesz także przemyśleć jego rozwój, dodając nowe funkcjonalności lub udoskonalając istniejące. Pamiętaj, że tworzenie projektów w Bash może być również świetnym sposobem na naukę, więc nie bój się eksperymentować i ciągle rozwijać swoje umiejętności.
+## Tematy na głębszy research
+
+W języku Bash można wykonać wiele zadań, takich jak przenoszenie plików, tworzenie pętli czy parsowanie danych wejściowych. Możesz także użyć zmiennych, funkcji i warunków logicznych, aby rozszerzyć możliwości swojego projektu.
+
+Jeśli chcesz zgłębić swoją wiedzę o języku Bash, polecam przeczytać dokumentację oraz poszukać tutoriali i przykładów online. Możesz także spróbować rozwiązywać różnego rodzaju wyzwania związane z Bash, aby lepiej poznać jego funkcjonalności.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o programowaniu w Bash, polecam zapoznanie się z poniższymi linkami:
-
-- Oficjalna dokumentacja Bash: https://www.gnu.org/software/bash/
-- Wprowadzenie do Bash na platformie Codecademy: https://www.codecademy.com/learn/learn-bash
-- Przydatne skrypty w Bash na GitHubie: https://github.com/awesome-lists/awesome-bash
+- Oficjalna dokumentacja języka Bash (https://www.gnu.org/software/bash/)
+- Bash Tutorial na LinuxConfig.org (https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- 30 przykładów z języka Bash (https://www.thegeekstuff.com/2010/06/bash-script-examples/)

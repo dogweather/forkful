@@ -1,49 +1,43 @@
 ---
-title:    "Haskell: Umwandlung eines Zeichens in Kleinbuchstaben"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/converting-a-string-to-lower-case.md"
+title:                "Haskell: Umwandlung eines Strings in Kleinbuchstaben"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Konvertieren von Strings in Kleinbuchstaben ist ein häufiges Problem in der Programmierung. Es kann hilfreich sein, wenn man zum Beispiel Daten vergleichen oder auf bestimmte Muster in Texten prüfen möchte. In dieser Blogpost werden wir uns anschauen, wie man String in Haskell in Kleinbuchstaben umwandelt.
+Das Konvertieren von Strings in Kleinbuchstaben kann hilfreich sein, um die Vergleichbarkeit von Strings zu verbessern oder um sicherzustellen, dass sie in einem bestimmten Format vorliegen. In Haskell kann dies auf verschiedene Arten erreicht werden.
 
-## Wie es geht
+## Wie
 
-Um einen String in Kleinbuchstaben zu konvertieren, können wir die Funktion `toLower` aus dem Modul `Data.Char` verwenden. Diese Funktion benötigt einen einzelnen `Char` als Argument und gibt den entsprechenden Kleinbuchstaben als `Char` zurück. Wenn wir diese Funktion auf jeden einzelnen Buchstaben in einem String anwenden, erhalten wir einen neuen String, in dem jeder Buchstabe in Kleinbuchstaben geschrieben ist.
+Das Umwandeln von Strings in Kleinbuchstaben ist in Haskell mit der Funktion `toLower` aus dem Modul `Data.Char` möglich. Diese Funktion akzeptiert einen Charakter als Argument und gibt den entsprechenden Kleinbuchstaben zurück.
 
 ```Haskell
 import Data.Char
-
-toLower 'A' -- gibt 'a' zurück
-toLower 'H' -- gibt 'h' zurück
-toLower '!' -- gibt '!' zurück (sonderzeichen bleiben unverändert)
+toLower 'H'
+-- Ausgabe: 'h'
+toLower 'a'
+-- Ausgabe: 'a'
+toLower '7'
+-- Ausgabe: '7'
 ```
 
-Um einen vollständigen String in Kleinbuchstaben zu konvertieren, können wir die Funktion `map` verwenden, die eine Funktion auf jedes Element in einer Liste anwendet. In diesem Fall ist die Liste unser String, und die anzuwendende Funktion ist `toLower`.
+Eine andere Möglichkeit ist die Verwendung der Funktion `map`, um `toLower` auf jeden Charakter im String anzuwenden.
 
 ```Haskell
-map toLower "HALLO!" -- gibt "hallo!" zurück
+import Data.Char
+map toLower "HALLO"
+-- Ausgabe: "hallo"
 ```
 
-## Tiefer Einblick
+## Deep Dive
 
-Um zu verstehen, wie die Funktion `toLower` in Haskell funktioniert, können wir uns den Quellcode anschauen. In der offiziellen Dokumentation von Haskell können wir sehen, dass die Funktion wie folgt definiert ist:
-
-```Haskell
-toLower :: Char -> Char
-toLower c
-  | 'A' <= c && c <= 'Z' = chr (ord c - ord 'A' + ord 'a')
-  | otherwise = c
-```
-
-Die Funktion prüft zuerst, ob der übergebene `Char` ein Großbuchstabe ist. Wenn dies der Fall ist, wird mithilfe der Funktionen `chr` und `ord` der entsprechende Kleinbuchstabe bestimmt und zurückgegeben. Andernfalls bleibt der `Char` unverändert.
-
-Diese Implementierung zeigt auch, dass Haskell eine starke Unterstützung für funktionale Programmierung bietet, da wir hier eine Funktion haben, die sich nicht auf veränderbare Variablen oder Seiteneffekte verlassen muss.
+Die Funktion `toLower` verwendet die unterliegende [Unicode-Tabelle](https://unicode-table.com/en/) und berücksichtigt somit auch Sonderzeichen und Akzente. Dies ist besonders wichtig, wenn Strings aus verschiedenen Sprachen verarbeitet werden. Es ist auch möglich, eigene Funktionen zur Konvertierung von Groß- zu Kleinbuchstaben zu definieren, z.B. um bestimmte diakritische Zeichen zu berücksichtigen.
 
 ## Siehe auch
 
-- [offizielle Haskell Dokumentation für `Data.Char`](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html)
-- [Haskell Tutorial von LearnYouAHaskell.com](http://learnyouahaskell.com/chapters)
+- [Haskell Dokumentation zu toLower](https://www.haskell.org/onlinereport/standard-prelude.html#html-decimal)
+- [Blogpost zu Unicode und Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/type-safe-string-manipulation)

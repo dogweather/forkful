@@ -1,59 +1,48 @@
 ---
-title:    "Python: Comparaison de deux dates"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/comparing-two-dates.md"
+title:                "Python: Comparer deux dates"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La comparaison de deux dates est une tâche commune dans la programmation, qui peut être utile dans de nombreuses situations. Par exemple, il peut être nécessaire de vérifier si une date est antérieure ou postérieure à une autre, ou encore de calculer la différence entre deux dates. Dans cet article, nous allons découvrir comment comparer deux dates en utilisant Python.
+Comparer deux dates peut sembler être une tâche simple, mais c'est en réalité une compétence très utile pour les développeurs Python. Cela peut être particulièrement utile lorsque vous travaillez avec des données temporelles comme des statistiques ou des calendriers.
 
-# Comment faire
+## Comment faire
 
-Pour comparer deux dates en Python, nous pouvons utiliser le module intégré "datetime". Tout d'abord, nous devons importer ce module en utilisant la commande suivante :
-
-```Python
-import datetime
-```
-
-Ensuite, nous créons deux objets "datetime" en utilisant la fonction "datetime()" et en spécifiant les dates que nous voulons comparer. Par exemple :
+Pour comparer deux dates en Python, il existe plusieurs méthodes à utiliser en fonction de ce que vous souhaitez faire exactement. Voici deux façons courantes de le faire:
 
 ```Python
-first_date = datetime.datetime(2020, 5, 14)
-second_date = datetime.datetime(2021, 2, 17)
-```
-
-Maintenant, nous pouvons comparer ces deux dates en utilisant les opérateurs de comparaison standard de Python, tels que "==", "!=", "<" et ">". Par exemple :
-
-```Python
-# Comparaison avec ==
-if first_date == second_date:
-    print("Les dates sont identiques.")
+# Utilisation de l'opérateur de comparaison ">" (plus grand que) pour vérifier si la première date est après la deuxième date
+if date_1 > date_2:
+  print("La date 1 vient après la date 2")
+elif date_1 < date_2:
+  print("La date 1 vient avant la date 2")
 else:
-    print("Les dates sont différentes.")
+  print("Les deux dates sont identiques")
 
-# Comparaison avec <
-if first_date < second_date:
-    print("La première date est antérieure à la seconde.")
+# Utilisation de la méthode "compare" pour retourner un nombre négatif si la première date est avant la deuxième, un nombre positif si la première date est après la deuxième, et 0 si elles sont identiques
+if date_1.compare(date_2) < 0:
+  print("La date 1 vient avant la date 2")
+elif date_1.compare(date_2) > 0:
+  print("La date 1 vient après la date 2")
 else:
-    print("La première date est postérieure à la seconde.")
+  print("Les deux dates sont identiques")
 ```
 
-La sortie de cet exemple serait :
+L'exemple ci-dessus utilise des dates au format standard "année-mois-jour", mais il est possible d'utiliser d'autres formats de dates en utilisant des modules tels que "datetime" ou "calendar".
 
-```
-Les dates sont différentes.
-La première date est antérieure à la seconde.
-```
+## Deep Dive
 
-# Deep Dive
+Lorsque vous comparez des dates, il est important de prendre en compte les différents éléments de la date tels que l'année, le mois et le jour. Par exemple, si vous utilisez l'opérateur ">", cela signifie que la première date doit être strictement supérieure à la deuxième, donc elle doit avoir une année différente OU un mois différent OU un jour différent pour être considérée comme étant après la deuxième date. Si vous souhaitez simplement vérifier si la première date est après la deuxième sans tenir compte des éléments individuels, vous pouvez utiliser la méthode "date2 > date1".
 
-Il est important de noter que les dates doivent être au format "datetime" pour être comparées. Si vous avez des dates sous forme de chaînes de caractères, vous devrez d'abord les convertir en objets "datetime" en utilisant la fonction "strptime()". De plus, le module "datetime" possède également des méthodes pratiques telles que "date()" ou "time()" pour extraire uniquement la date ou l'heure d'un objet "datetime". Pour plus d'informations, vous pouvez consulter la documentation officielle de Python sur le module "datetime".
+Il peut également être utile de comparer des dates en utilisant des intervalles de temps plutôt que des dates spécifiques. Par exemple, vous pouvez utiliser la méthode "date.today()" pour obtenir la date actuelle, puis utiliser la méthode "timedelta" pour créer un intervalle de temps et comparer les dates en fonction de cet intervalle.
 
-# Voir aussi
+## Voir aussi
 
-- Documentation officielle de Python sur le module "datetime" : https://docs.python.org/fr/3.7/library/datetime.html
-- Tutoriel sur la manipulation des dates en Python : https://www.learnpython.org/fr/Dates
-- Vidéo explicative sur la comparaison de dates en Python : https://www.youtube.com/watch?v=Eyg4XDIGR0k
+- [Documentation Python sur les dates et heures](https://docs.python.org/fr/3/library/datetime.html)
+- [Article de programmation sur les opérateurs de comparaison en Python](https://realpython.com/python-operators-expressions/#comparison-operators)
+- [Tutoriel sur l'utilisation des dates en Python](https://www.geeksforgeeks.org/date-time-programs-python-set-2-date-class/)

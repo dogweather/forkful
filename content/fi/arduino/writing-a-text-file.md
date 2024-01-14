@@ -1,48 +1,32 @@
 ---
-title:    "Arduino: Tekstitiedoston kirjoittaminen"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-a-text-file.md"
+title:                "Arduino: Tiedostotiedoston kirjoittaminen"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kirjoittaminen voi olla hyödyllistä, kun haluat tallentaa tietoa tai viestejä ohjelman suorittamisen aikana. Tekstitiedosto on yksi tapa tallentaa tätä tietoa ja palauttaa se myöhemmin tarvittaessa.
+Bloggaaminen on suosittu tapa jakaa tietoa ja mielipiteitä. Tekstitiedostoja voidaan käyttää monella tavalla, kuten tallentamaan tärkeitä tietoja, luomaan tekstimuotoisia ohjeita tai tallentamaan muistiinpanoja. Arduino-ohjelmoinnin avulla voit myös käyttää tekstitiedostoja osana projektejasi.
 
-## Miten
+## Kuinka
 
-Kirjoittaminen teksti-tiedostoon Arduino-ohjelmassa on helppoa. Ensimmäinen vaihe on avata tiedosto, jonka avulla voit kirjoittaa tietoa. Voit tehdä tämän käyttämällä `SD.open()`-funktiota. Seuraavaksi voit käyttää `println()`-funktiota kirjoittaaksesi haluamasi tiedot.
+Aloittaaksesi tekstitiedoston kirjoittamisen Arduinoilla, sinun tulee ensin luoda uusi tiedosto projektisi hakemistoon. Käynnistä Arduino-ohjelmointiympäristö ja avaa tiedosto-valikko. Valitse "Uusi tiedosto" ja anna tiedostollesi nimi. Voit kirjoittaa tekstitiedoston sisällön käyttämällä Serial.print()-funktiota. Esimerkiksi:
 
 ```Arduino
-#include <SD.h>
-
-File tiedosto;
-
-void setup() {
-  tiedosto = SD.open("data.txt", FILE_WRITE);
-  if (tiedosto) {
-    tiedosto.println("Tämä on esimerkki tekstiä.");
-    tiedosto.println("Tässä on toinen esimerkki.");
-    tiedosto.close();
-  }
-}
-
-void loop() {
-
-}
+Serial.print("Tämä on tekstitiedoston sisältö!");
 ```
 
-Yllä olevassa esimerkissä avataan tiedosto nimeltä "data.txt" ja kirjoitetaan siihen kaksi riviä tekstiä. Muista myös sulkea tiedosto `close()`-funktiolla.
+Ohjelmoitu arduino laite tulostaisi nyt tekstitiedoston sisällön sarjaporttiin, joten voit tarkistaa sen toiminnan. Voit myös käyttää Serial.println()-funktiota luodaksesi uuden rivin tekstitiedostossa.
 
-## Syvemmälle
+## Syvempää tietoa
 
-Voit myös käyttää `print()`-funktiota kirjoittaaksesi merkkijonoja tai muuttujia ilman rivinvaihtoa. Voit sitten käyttää `println()`-funktiota lopuksi kirjoittaaksesi uuden rivin.
-
-Voit myös lukea tietoa teksti-tiedostosta käyttämällä `read()`-funktiota. Voit antaa sille parametrin, joka määrittelee kuinka monta merkkiä haluat lukea. Esimerkiksi `read(5)` lukee viisi ensimmäistä merkkiä tiedostosta.
+Arduinon Serial.print()-funktio ottaa vastaan useita parametreja, kuten tekstin lisäksi myös numeroita, muuttujia ja muita arvoja. Näiden avulla voit luoda monipuolisempia tekstitiedostoja. Voit myös käyttää muita tiedostojärjestelmään liittyviä funktioita, kuten open(), write() ja close(), luodaksesi ja manipuloidaksesi tekstitiedostoja projektissasi.
 
 ## Katso myös
 
-Tässä muutamia hyödyllisiä linkkejä lisätietoa varten:
-
-- Arduino SD-kirjaston dokumentaatio: https://www.arduino.cc/en/Reference/SD
+- [Arduino Reference - Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Arduino Reference - Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Arduino Reference - Files library](https://www.arduino.cc/en/Reference/Files)

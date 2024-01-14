@@ -1,70 +1,51 @@
 ---
-title:    "C: Att skriva en textfil"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-a-text-file.md"
+title:                "C: Skriva en textfil"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att skriva en textfil är ett viktigt koncept inom programmering och kan användas för många olika ändamål. Det kan vara till nytta för att spara data, skapa loggar eller för att kommunicera med andra program. I denna bloggpost kommer vi att utforska hur man skriver en textfil i C-programmering.
+Att kunna skriva en textfil i C-programmering är en viktig färdighet som kan användas i många olika applikationer. Genom att kunna läsa och skriva datafiler kan vi lagra och återanvända information på ett effektivt sätt.
 
-## Hur man gör det
+# Hur man gör
 
-Att skriva en textfil i C är en relativt enkel process. Det första steget är att deklarera en pekare till en fil. Det kan se ut så här:
+För att skriva en textfil i C-programmering måste vi använda några grundläggande funktioner. Först måste vi öppna en fil med `fopen()` funktionen och bestämma vilken typ av åtgärd vi vill utföra på den. Sedan kan vi använda `fprintf()` funktionen för att skriva data till filen i den formatering vi vill ha. Slutligen måste vi stänga filen med `fclose()` funktionen för att se till att all data har skrivits korrekt.
 
-```C
-FILE *fptr;
-```
-
-Sedan måste vi öppna filen i önskat läge, som i detta fall är "w" för att skriva till en fil.
+Låt oss se ett exempel på hur detta kan se ut i kod:
 
 ```C
-fptr = fopen("mitt_texter.txt", "w");
-```
-
-När filen är öppen och redo att skrivas till kan vi använda funktionen "fprintf" för att skriva texten till filen. Den tar in två parametrar - pekaren till filen och den text som ska skrivas. Se följande exempel:
-
-```C
-fprintf(fptr, "Hej, det här är en text som skrivs till filen\n");
-```
-
-När vi är klara med att skriva till filen måste vi stänga den för att säkerställa att allt sparas korrekt.
-
-```C
-fclose(fptr);
-```
-
-Nu har vi skapat en textfil med den text som vi ville skriva till den.
-
-## Djupdykning
-
-När vi skriver en textfil kan vi även använda variabler eller andra värden i vårt printf-statement. Till exempel:
-
-```C
-int nummer = 42;
-fprintf(fptr, "Detta är talet %d som är mitt favoritnummer\n", nummer);
-```
-
-Du kan även använda loopar för att skriva till en fil. Till exempel om vi vill skriva alla jämna tal från 1 till 10 kan vi göra så här:
-
-```C
-for(int i = 2; i <= 10; i+=2) {
-    fprintf(fptr, "%d\n", i);
+#include <stdio.h>
+int main() {
+  FILE *fil;
+  fil = fopen("exempel.txt", "w");
+  fprintf(fil, "Det här är en textfil skriven i C-programmering!\n");
+  fprintf(fil, "Hoppas den är till hjälp för er läsare.\n");
+  fclose(fil);
+  return 0;
 }
 ```
 
-Detta kommer att skriva följande in i vår fil:
+I koden ovan öppnar vi en fil för skrivning med hjälp av `fopen()` funktionen. Sedan använder vi `fprintf()` för att skriva två rader till filen. Notera att vi lägger till en ny rad `\n` efter varje uttryck för att få varje rad att skrivas på en egen rad i filen. Till sist stängs filen med `fclose()`.
+
+När vi kör programmet kommer vi att få en textfil med namnet "exempel.txt" som ser ut så här:
 
 ```
-2
-4
-6
-8
-10
+Det här är en textfil skriven i C-programmering!
+Hoppas den är till hjälp för er läsare.
 ```
 
-## Se även
+# Djupdykning
 
-- [C Standard Library - FILE](https://www.tutorialspoint.com/c_standard_library/c_function_fclose.htm)
+För att kunna skriva mer komplexa textfiler finns det flera andra funktioner som kan vara användbara. Till exempel kan `fprintf()` användas tillsammans med format specifierare som `%d` för att skriva ut heltal eller `%f` för att skriva ut flyttal. Det finns också möjligheter att strukturera data på ett mer organiserat sätt genom att använda `fgets()` och `fscanf()`.
+
+För att få en mer grundlig förståelse för att skriva textfiler i C-programmering är det viktigt att öva genom att använda olika funktioner och experiment med formatering av filer. Även om det kan verka som en enkel uppgift är det en viktig färdighet att ha och kan användas i många olika programmeringsprojekt.
+
+# Se även
+
+- [Dokumentation för fopen() funktionen](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [En guide till C-programmering för nybörjare](https://www.programiz.com/c-programming)
+- [En introduktion till Markdown](https://www.markdownguide.org/)

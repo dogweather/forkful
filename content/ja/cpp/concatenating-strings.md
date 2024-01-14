@@ -1,55 +1,52 @@
 ---
-title:    "C++: 文字列の連結"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/concatenating-strings.md"
+title:                "C++: 「文字列の連結」"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ、文字列の連結をするのか
+## なぜ
 
-プログラマーの皆さん、こんにちは！今日はC++で文字列の連結（concatenation）についてお話しします。文字列の連結とは、複数の文字列を結合して、1つの大きな文字列にすることを指します。例えば、"Hello"と" world"を連結すると、"Hello world"という1つの文字列になるわけです。
+文字列の結合をするのには、多くの理由があります。一つの理由は、複数の情報を一つの変数にまとめるために使われることです。また、同じメッセージを再利用したり、より複雑な文を作るためにも使われます。
 
-では、なぜ私たちは文字列の連結をするのでしょうか？それは、プログラムで扱うデータが必ずしも1つの塊であるとは限らないからです。例えば、ユーザーから入力された名前と姓を組み合わせて、フルネームを表示したい場合など、複数の文字列を結合する必要があります。また、プログラムで作成した文章をファイルに保存する際、連結された文字列を1つの行として扱うこともあります。
+## 使い方
 
-## どのようにして文字列を連結するのか
-
-それでは、実際にC++で文字列の連結を行う方法を見ていきましょう。以下のように、```+```演算子を使用することで複数の文字列を連結することができます。
+結合は、単純な代入演算子（+=）を使って実行することができます。文字列同士を直接結合することもできますが、変数を使っても結合することができます。以下の例を参考にしてください。
 
 ```C++
-// 文字列の連結の例
 #include <iostream>
 using namespace std;
 
 int main() {
-  string greeting = "Hello";
-  string name = " world";
-  string phrase = greeting + name;
-  cout << phrase; // Hello worldと出力される
+  // 文字列の結合
+  string greeting = "こんにちは";
+  string name = "太郎";
+  string message = greeting + "、" + name + "さん！";
+  cout << message << endl; // 出力： こんにちは、太郎さん！
+
+  // 単純代入演算子を使った結合
+  string sentence = "今日は";
+  sentence += "いい天気ですね。";
+  cout << sentence << endl; // 出力： 今日はいい天気ですね。
+
   return 0;
 }
 ```
 
-また、```+=```演算子でも文字列を連結することができます。例えば、上記のコードを以下のように書き換えることもできます。
+## 深堀り
 
-```C++
-string phrase = greeting;
-phrase += name;
-```
+C++では、文字列を扱う際に ```string``` というデータ型が使われます。このデータ型は、可変長の文字列を格納することができます。文字列の結合は、このデータ型が持つ ```+``` 演算子や ```+=``` 代入演算子を使って実行することができます。
 
-それぞれの方式によって、出力結果は同じになります。
+また、最新のC++17では、文字列の結合に ```std::string_view``` という新しいデータ型が使用されます。このデータ型を使うことで、メモリの節約やパフォーマンスの向上が可能になります。
 
-## ディープダイブ：文字列の連結についてさらに詳しく
+## 参考リンク
 
-文字列の連結には他にも様々な方法があります。例えば、```append()```関数や```insert()```関数を使用することで文字列を連結したり、挿入したりすることができます。また、文字列の長さを取得するための```length()```関数や、特定の文字から始まるかどうかを判定する```starts_with()```関数なども利用できます。
+- [C++ string concatenation](https://www.learncpp.com/cpp-tutorial/c-string-concatenation/)
+- [std::string](https://aoki2.si.gunma-u.ac.jp/CommandRef/C/string.html)
+- [C++17: The next great landing C++ standard](https://www.modernescpp.com/index.php/c-17-the-next-great-landing-c-standard)
 
-また、文字列の連結が何回も繰り返し行われる場合、効率的に処理を行うためには、```stringstream```クラスや```ostringstream```クラスなどを使用することもできます。
+## かも知れない
 
-文字列の連結に関するさらに詳しい情報は、C++のドキュメントを参照することをおすすめします。
-
-## See Also（関連リンク）
-
-- [C++における文字列の連結の方法](https://www.geeksforgeeks.org/concatenating-two-strings-in-cpp/)
-- [C++ドキュメント：文字列の操作](https://en.cppreference.com/w/cpp/string/basic_string)
-
-それでは、今日の記事が皆さんのC++プログラミングにお役立ちでありますように。ありがとうございました！
+GitHubでは、C++で書かれたプロジェクトやコードを多く見ることができます。是非、チェックしてみてください！

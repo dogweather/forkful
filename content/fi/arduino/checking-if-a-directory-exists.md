@@ -1,60 +1,67 @@
 ---
-title:    "Arduino: Tarkistetaan, onko hakemisto olemassa"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/checking-if-a-directory-exists.md"
+title:                "Arduino: Tarkistetaan, onko kansio olemassa."
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi tarkistaa kansio olemassaolo Arduino-ohjelmoinnissa?
 
-Tuntuuko joskus siltä, että rakentaessasi Arduino-projektia, joudut jatkuvasti tarkistamaan, onko tietty hakemisto olemassa? Kun tiedät, että hakemisto on olemassa, voit suunnitella koodisi sen mukaan. Tämä auttaa sinua estämään mahdollisia ongelmia ja vähentämään virhekoodin määrää.
+Kannattaa tarkistaa, onko kansio olemassa, jotta voidaan varmistaa ohjelman käyttöliittymän ja eri moduulien ongelmaton toiminta. 
 
-## Miten
+## Kuinka tarkistaa kansio olemassaolo Arduino-ohjelmoinnissa
+
+Arduino-ohjelmointiympäristössä on käytössä `File` -kirjasto, joka sisältää joukon funktioita tiedostojen ja kansioiden käsittelyyn. `File` -kirjaston `exists()` -funktio mahdollistaa meidän tarkistaa, onko kansio olemassa vai ei. Seuraavassa esimerkissä luodaan kansio nimeltä "uusi kansio" ja tarkistetaan sen olemassaolo:
 
 ```Arduino
 #include <SPI.h>
 #include <SD.h>
 
-File directory;
-
-void setup(){
+void setup() {
   Serial.begin(9600);
-
-  // Liitetään SD-kortti
-  if(!SD.begin(10)){
-    Serial.println("Error");
-  }
-
-  // Tarkistetaan hakemisto
-  if(SD.exists("/hakemisto")){
-    // Jos hakemisto on olemassa, luodaan uusi tiedosto hakemistoon
-    directory = SD.open("/hakemisto/uusi_tiedosto.txt", FILE_WRITE);
-    directory.println("Tämä on uusi tiedosto!");
-    directory.close();
-  }
-  else{
-    Serial.println("Hakemistoa ei löytynyt.");
-  }
 }
 
-void loop(){
-
+void loop() {
+  if (SD.exists("uusi kansio")) {
+    Serial.println("Kansio on olemassa!");
+  } else {
+    Serial.println("Kansiota ei ole olemassa.");
+  }
+  delay(1000);
 }
 ```
 
-### Selitys
+Ohjelma tulostaa joko "Kansio on olemassa!" tai "Kansiota ei ole olemassa." riippuen siitä, löytyykö kansio nimeltä "uusi kansio" SD-kortilta vai ei.
 
-Yllä olevassa esimerkkikoodissa olemme liittäneet SD-kortin (10-pin porttiin) ja avanneet tiedostojärjestelmän. Ensimmäisessä if-lausekkeessa tarkistamme, onko hakemistoa nimeltä "hakemisto" olemassa. Jos se on, avataan uusi tiedosto nimeltä "uusi_tiedosto.txt" hakemistoon FILE_WRITE -tilassa ja kirjoitetaan siihen tekstirivi. Lopuksi tiedosto suljetaan.
+## Syvällisempi tarkastelu kansio olemassaolon tarkistamisesta
 
-Jos hakemistoa ei löydy, tulostetaan virheilmoitus sarjaväylään.
+`exists()` -funktio tarkistaa, onko kansio olemassa juuri sillä hetkellä, kun sitä kutsutaan. Ohjelmakoodissa voi kuitenkin ilmetä tilanteita, joissa kansio olemassaolon tarkistamista on tarpeen toistaa useammin esimerkiksi erilaisten ehtojen perusteella. Tällöin on suositeltavaa tallentaa `File`-olio omaan muuttujaansa ja käyttää `File::exists()` -funktiota sen avulla. `File`-olio pysyy voimassa niin kauan kuin ohjelmassa pysytään saman sisäisen tai ulkoisen muistin alueella. Tarkastellaan seuraavassa esimerkissä tilannetta, jossa kansio olemassaolon tarkistaminen toistetaan:
 
-## Syväsukellus
+```Arduino
+#include <SPI.h>
+#include <SD.h>
 
-Hakemiston tarkistamisella on myös muita käyttötarkoituksia. Voit esimerkiksi yksinkertaisesti tarkistaa, onko tiedosto olemassa ennen sen avaamista tai jopa poistamista. Voit myös käyttää tätä toimintoa luodaksesi uusia hakemistoja tai saadaksesi tietoa hakemiston sisällöstä.
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  File kansio = SD.open("uusi kansio");
+  if (!kansio) {
+    Serial.println("Kansiota ei ole olemassa!");
+  } else {
+    Serial.println("Kansio on nyt olemassa!");
+  }
+  kansio.close();
+  delay(1000);
+}
+```
+
+Tässä tapauksessa `open()` -funktio avaa kansion ja antaa sen osoitteen `kansio` nimiselle `File`-oliolle. Sen jälkeen `exists()` -funktiota voidaan käyttää `kansio`-muuttujan avulla. Lopuksi vielä `kansio` suljetaan `close()` -funktiolla.
 
 ## Katso myös
 
-- [SD-kortti kirjanpitäjänä](https://www.arduino.cc/en/Reference/SDbegin)
-- [SD-hakemiston tarkistaminen](https://www.arduino.cc/en/Reference/SDexists)
-- [SD-kortin kirjoittaminen](https://www.arduino.cc/en/Reference/SDopen)
+- [SD-kortin ohjelmointi Arduino-ohjelmistolla](https://www.arduino.cc/en/Reference/SD/)
+- [File-kirjaston dokumentaatio](https://www.arduino.cc/en/Reference/File/)

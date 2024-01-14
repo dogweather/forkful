@@ -1,46 +1,51 @@
 ---
-title:    "Elixir: Criando um arquivo temporário"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/creating-a-temporary-file.md"
+title:                "Elixir: Criando um arquivo temporário"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário em Elixir?
+# Por que criar um arquivo temporário em Elixir?
 
-Criar arquivos temporários é uma prática comum em programação e pode ser útil por razões como armazenar dados temporariamente ou como parte de um processo de gerenciamento de arquivos. Em Elixir, criar um arquivo temporário também pode ser útil para tarefas como testes ou integração com bibliotecas externas.
+Muitas vezes, em nossos projetos de programação, precisamos armazenar informações temporariamente antes de processá-las ou enviá-las para outro lugar. Nesses casos, pode ser útil criar um arquivo temporário para armazenar esses dados de forma organizada e facilmente acessível. Neste artigo, vamos explorar como criar um arquivo temporário em Elixir e como ele pode ser útil em nossos projetos.
 
-## Como fazer isso em Elixir
+## Como fazer
 
-A seguir, veremos como criar um arquivo temporário em Elixir usando o módulo `File`.
+Para criar um arquivo temporário em Elixir, podemos usar a função `Tempfile.open/1` da biblioteca padrão `Tempfile`. Esta função recebe um argumento opcional, que é o nome de prefixo para o arquivo temporário. Se nenhum argumento for fornecido, um prefixo de "elixir_tempfile" será usado por padrão.
 
-```Elixir
-# Importar o módulo File
-import File
+Vamos dar uma olhada em um exemplo de código usando `Tempfile.open/1`:
 
-# Definir o nome do arquivo temporário
-file_name = "temp.txt"
-# Definir o conteúdo a ser escrito no arquivo
-content = "Este é um arquivo temporário criado em Elixir."
-
-# Usar a função open/2 do módulo File para criar o arquivo
-{:ok, file} = File.open(file_name, [:write])
-
-# Escrever o conteúdo no arquivo
-IO.write(file, content)
-# Fechar o arquivo
-File.close(file)
+```elixir
+file = Tempfile.open("my_tempfile")
+IO.puts "Nome do arquivo: #{file.path}"
+file.write("Este é um arquivo temporário criado em Elixir!")
+file.close()
 ```
 
-Ao executar este código, um novo arquivo temporário será criado no diretório atual com o nome "temp.txt" e o conteúdo definido será escrito nele.
+Neste exemplo, usamos o prefixo "my_tempfile" para nosso arquivo temporário e gravamos um texto nele usando a função `write/1`. Em seguida, fechamos o arquivo usando `close/0`. Agora, se quisermos ver o conteúdo do arquivo, podemos abri-lo novamente usando `file.open/2` e ler seu conteúdo.
 
-## Mergulhando mais fundo
+Se não especificarmos um nome de prefixo, podemos ainda usar a função `file.path` para obter o caminho do arquivo criado. Vamos ver um exemplo sem o argumento do prefixo:
 
-Em Elixir, também é possível utilizar o módulo `Tempfile` para criar arquivos temporários. Este módulo fornece funções úteis para lidar com arquivos temporários, como `open/2`, `write/2` e `close/1`.
+```elixir
+file = Tempfile.open()
+IO.puts "Nome do arquivo: #{file.path}"
+file.write("Este é um arquivo temporário criado em Elixir!")
+file.close()
+```
 
-Além disso, é importante lembrar de excluir os arquivos temporários após o uso, para evitar a acumulação desnecessária de arquivos em nosso sistema. Para isso, podemos usar a função `File.rm/1`, que exclui um arquivo específico.
+Neste caso, nosso arquivo terá um prefixo padrão "elixir_tempfile" e o restante do processo será o mesmo.
 
-## Veja também
+## Profundando no assunto
 
-- [Documentação do módulo File](https://hexdocs.pm/elixir/File.html)
-- [Documentação do módulo Tempfile](https://hexdocs.pm/tempfile/Tempfile.html)
+Ao criar um arquivo temporário em Elixir, é importante lembrar que ele é automaticamente excluído quando o processo é encerrado ou quando o arquivo é fechado. Isso pode ser útil, pois não precisamos nos preocupar em excluir manualmente o arquivo temporário. No entanto, se quisermos que o arquivo persista após o término do processo, podemos usar a função `unlink/0` antes de fechar o arquivo.
+
+Ainda na biblioteca padrão `Tempfile`, temos a função `stream!/2` que nos permite criar um arquivo temporário como um fluxo. Isso significa que podemos ler e gravar no arquivo como se fosse um módulo `IO.stream`. Isso pode ser especialmente útil quando precisamos de uma estrutura de dados dinâmica para armazenar nossa informação temporariamente.
+
+Existem também bibliotecas de terceiros que podem ser úteis ao trabalhar com arquivos temporários em Elixir, como [tempfilex](https://github.com/davidjairala/tempfilex), que fornece funções adicionais para gerenciar e manipular arquivos temporários.
+
+# Veja também
+
+- [Documentação oficial da biblioteca Tempfile em Elixir](https://hexdocs.pm/elixir/Tempfile.html)
+- [Tempfilex no GitHub](https://github.com/davidjairala/tempfilex)

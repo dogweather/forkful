@@ -1,57 +1,44 @@
 ---
-title:    "Bash: Jämförande av två datum"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/comparing-two-dates.md"
+title:                "Bash: Jämföra två datum"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför: Jämföra två datum i Bash-programmering
+Att kunna jämföra två datum är en viktig färdighet inom Bash-programmering när man behöver hantera datum och tid i olika script och program. Det kan vara användbart i många olika situationer, som att kontrollera om en fil är äldre än en annan eller planera automatiska uppdateringar baserat på datum.
 
-Att jämföra två datum kan vara användbart i många sammanhang, både som en del av automatiska skript och för att få en överblick över tidsramar i ett projekt. Med Bash-programmering kan du enkelt skapa en kod som kan jämföra två datum och ge dig den information du behöver.
-
-## Hur man gör
-
-För att jämföra två datum i Bash behöver du använda kommandot `date` som låter dig hämta dagens datum och tid. Du kan sedan använda olika kommandon och trick för att behandla dessa datum och jämföra dem.
-
-Här är ett enkelt exempel på hur du kan jämföra två datum:
+##Hur man gör det
+För att jämföra två datum i Bash behöver vi först konvertera dem till ett format som kan jämföras, som till exempel Unix-timestamp (antal sekunder sedan 1 januari 1970). Detta kan göras med hjälp av kommandot `date +%s`.
 
 ```Bash
-#!/bin/bash
+date_one="2021-06-01"
+date_two="2021-07-01"
 
-today=$(date +"%Y-%m-%d")
-birthday="1990-08-20"
+#konvertera till Unix-timestamp
+date_one_ts=$(date -d "$date_one" +%s)
+date_two_ts=$(date -d "$date_two" +%s)
 
-if [[ "$today" > "$birthday" ]]; then
-  echo "Grattis på födelsedagen!"
+#jämför med hjälp av en if-sats
+if [ "$date_one_ts" -lt "$date_two_ts" ]; then
+  echo "Date one is earlier than date two."
+elif [ "$date_one_ts" -gt "$date_two_ts" ]; then
+  echo "Date two is earlier than date one."
 else
-  echo "Hoppas du får en fin födelsedag!"
+  echo "The dates are the same."
 fi
 ```
 
-I det här exemplet börjar vi med att definiera variabeln `today` som innehåller dagens datum i formatet "åååå-mm-dd". Sedan definierar vi variabeln `birthday` med ett födelsedatum som vi vill jämföra med dagens datum. Sedan användar vi `if`-villkoret för att jämföra de två datumen.
+Det här är bara ett grundläggande exempel på hur man kan jämföra två datum i Bash. Det finns många olika sätt att göra det på och det beror ofta på vilken form av datum man har att göra med.
 
-Om dagens datum är senare än födelsedatumet, kommer vi att få utskriften "Grattis på födelsedagen!", annars får vi utskriften "Hoppas du får en fin födelsedag!". Detta enkla exempel kan användas som en grund för att bygga mer komplexa jämförelser av datum i dina Bash-skript.
+##Djupdykning
+För att kunna jämföra datum behöver vi förstå hur de är strukturerade och lagrade. Unix-timestamp är ett vanligt sätt att representera datum inom Bash, men det finns också andra format som till exempel ISO 8601 eller POSIX-tid. Det är viktigt att vara medveten om vilket format ens datum är i för att kunna konvertera till rätt format och jämföra korrekt.
 
-## Djupdykning
+Ett annat sätt att jämföra datum är med kommandot `test` eller `[ ]` som i tidigare exempel. Dessa kommandon kan användas för att jämföra inte bara datum utan också andra variabler, som till exempel strängar eller tal.
 
-Det finns en mängd olika kommandon och trick som kan användas för att hantera och jämföra datum i Bash. Här är några tips och exempel för att hjälpa dig på vägen:
-
-- Använd `date` kommandot för att hämta och formatera datum och tid enligt dina behov.
-- Använd `date -d` för att konvertera datum från ett format till ett annat, till exempel från "åååå-mm-dd" till "dd/mm/åååå".
-- Du kan använda `date +%s` för att få ut datum i Unix-timestamp format (sekunder sedan 1979-01-01 00:00:00) och sedan jämföra dessa för att se vilket datum som kommer först.
-- Om du behöver jämföra ett datum med dagens datum, kan du använda `$(date +%s -d "startdate")` istället för att använda en variabel för startdatumet.
-- Du kan också använda `date -d "start date" --date "+$(expr enddate - startdate) days"` för att få datumet som ligger x antal dagar efter startdatumet.
-
-Genom att experimentera med olika kommandon kan du skapa en mer robust kod för att jämföra datum i Bash.
-
-## Se även
-
-Här är några användbara resurser för att lära dig mer om att jämföra datum i Bash:
-
-- [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html) - en omfattande resurs för allt som har med Bash-programmering att göra, inklusive hur du hanterar datum.
-- [Stack Overflow](https://stackoverflow.com/questions/17309980/bash-compare-dates) - en samling av frågor och svar om att jämföra datum i Bash.
-- [GNU Date manual](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html) - en detaljerad guide om hur du använder `date` kommandot för att hantera datum.
-- [Bash-hjälp från GNU](https://www.gnu.org/software/bash/) - en resurs som innehåller allt du behöver veta för att bli en mästare på Bash-skript.
-
-Jämföra datum i Bash kan verka som en liten och enkel del av programmering, men det kan spara dig mycket tid och hålla din kod mer organiserad och effektiv
+##Se även
+- [The Linux Command Line: A Complete Introduction](https://linuxcommand.org/tlcl.php)
+- [GNU Bash manual: Shell Grammar](https://www.gnu.org/software/bash/manual/html_node/Shell-Grammar.html)
+- [Bash-hjälp på stackoverflow](https://stackoverflow.com/questions/tagged/bash)

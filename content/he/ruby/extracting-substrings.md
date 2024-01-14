@@ -1,43 +1,38 @@
 ---
-title:    "Ruby: ניצול תת־מחרוזות"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/ruby/extracting-substrings.md"
+title:                "Ruby: קיצור תת-מחרוזות"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-למה ייתכן שתרצו למצוא חתיכת מחרוזת בתוך חריגה? אחת הסיבות העיקריות היא כדי לעבור על המחרוזת הראשית ולהחזיר מידע מדויק מתחתיה. כך ניתן לבנות קוד מדויק ויעיל יותר.
+בפוסט הזה, אני רוצה לברר למה הוא חשוב לדייק מחרוזת באמצעות פרות.
 
 ## איך לעשות זאת
 
+אם אתה רק מתחיל לתכנת ברובי, הנה מספר דוגמאות קלות לאיך לדייק מחרוזת באמצעות פרות:
+
 ```Ruby
-# ניתן להשתמש בפונקצייה square brackets כדי למצוא תת-מחרוזת:
-"I love Ruby programming.".index("Ruby") # => 7
+# דוגמה 1: בחירת חלק מסוים של המחרוזת לפי מיקומם באמצעות שימוש בפרמטרים
+str = "ברוכים הבאים לרובי"
+puts str[3, 7] # פלט: "כים הבא"
+puts str[0, 6] # פלט: "ברוכים"
 
-# אם נרצה למצוא את המילה שלפני "programming":
-"I love Ruby programming.".index(" programming.") # => 12
-
-# אם נרצה לבדוק אם חתיכת המחרוזת קיימת בחריגה:
-"I love Ruby programming.".include?("programming") # => true
-
-# למצוא מילנים מתחילת החריגה:
-"I love Ruby programming.".scan(/[A-Z][a-z]*/)[2] # => "Ruby"
+# דוגמה 2: בחירת חלק מסוים של המחרוזת לפי תווים ספציפיים
+str = "אהלן וסבלנות"
+puts str[0, 4] # פלט: "אהל"
+puts str[7, 3] # פלט: "סבל"
 ```
 
-## טיפים מעמיקים
+## העומק המחייב של דיוק מחרוזת
 
-- אם אתם מחפשים לחתוך חריגה לפי אורך מסוים, ניתן להשתמש בפונקציית `slice` או `slice!`.
+לסיכום, דיוק מחרוזת יכול להיות מאוד שימושי בכתיבת קוד רובי. זה מאפשר לנו לטפל במחרוזות בצורה מדויקת ולהשתמש בפרות כדי לקבל חלקים של המחרוזת כפי שאנחנו צריכים. זה יכול להקל בהמון מצבים, כגון לנתח נתונים או לאתר תיקים של טקסט.
 
-- ניתן להשתמש בפונקציות נוספות כגון `start_with?` ו- `end_with?` כדי לבדוק את תחילת וסיום החריגה באופן מדויק.
+## ראה גם
 
-- כדי לבדוק את מיקום החריגה בתוך מחרוזת אחרת, ניתן להשתמש בפונקציית `match` ולהכניס את החריגה כברירת המחדל.
-
-## ראו גם
-
-- [תיעוד על פונקציית `index` ו-`include?`](https://ruby-doc.org/core-2.6.6/String.html#method-i-index)
-- [ויקיפדיה על חריגה](https://he.wikipedia.org/wiki/%D7%97%D7%A8%D7%99%D7%92%D7%94)
-- [תיעוד על פונקציות `slice` ו-`slice!`](https://ruby-doc.org/core-2.6.6/String.html#method-i-slice)
-- [תיעוד על פונקציות `start_with?` ו-`end_with?`](https://ruby-doc.org/core-2.6.6/String.html#method-i-start_with-3F)
-- [תיעוד על פונקציית `match`](https://ruby-doc.org/core-2.6.6/String.html#method-i-match)
+- [איך לעבוד עם מחרוזות ברובי](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-strings/cheatsheet)
+- [דיוק מחרוזת עם רובי](https://www.rubyguides.com/2015/05/ruby-string-methods/)
+- [דוגמאות נוספות לדיוק מחרוזת ברובי](https://www.linuxjournal.com/article/2029)

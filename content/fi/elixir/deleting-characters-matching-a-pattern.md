@@ -1,42 +1,33 @@
 ---
-title:    "Elixir: Kaavan mukaiset merkkien poistaminen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/deleting-characters-matching-a-pattern.md"
+title:                "Elixir: Kaavan mukaisten merkkien poistaminen"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+Miksi: 
+Koodin kirjoittaminen ja ylläpito voidaan helpottaa poistamalla merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi auttaa säilyttämään koodin selkeyden ja tehokkuuden.
 
-Monesti ohjelmointia tehdessä saattaa tulla tarve poistaa merkkejä tietyllä kaavalla. Tämä voi johtua esimerkiksi tietokannan käsittelyssä tai tekstinmuokkauksessa. Tässä blogikirjoituksessa käymme läpi, kuinka voit poistaa merkkejä Elixir-ohjelmointikielellä.
+Kuinka tehdä: 
+```Elixir
+def delete_pattern(pattern, text) do 
+  Regex.replace pattern, text, ""
+end
 
-## Kuinka
-
-Elixirillä on käytössä "String" moduuli, joka sisältää erilaisia toimintoja merkkijonojen käsittelyyn. Yksi niistä on "replace" funktio, jota voidaan käyttää poistamaan merkkejä kaavalla.
-
-```
-iex> String.replace("Tervetuloa", "e", "")
-"Trvtuloa"
-```
-
-Tässä esimerkissä käytämme "replace" funktiota poistamaan kaikki "e" kirjaimet merkkijonosta "Tervetuloa". Lopputuloksena saamme merkkijonon "Trvtuloa".
-
-Voimme myös käyttää "replace" funktiota RegExp regexp-moduulin kanssa, jotta voimme määrittää tarkemman kaavan poistolle. Esimerkiksi seuraavassa koodissa poistamme kaikki numerot merkkijonosta:
-
-```
-iex> String.replace_regex("1234 Elixir", ~r/[0-9]/, "")
-" Elixir"
+IO.puts delete_pattern ~r/[0-9]/, "Olen syntynyt vuonna 1995"
 ```
 
-## Syventävä tarkastelu
+Tulostus: "Olen syntynyt vuonna"
 
-Elixirillä on myös muita tapoja poistaa merkkejä. Voit käyttää esimerkiksi "String.trim" funktiota poistamaan merkkejä merkkijonon alusta ja lopusta. Voit myös muokata merkkijonoa käyttämällä "String.uppercase" ja "String.downcase" funktioita, jotka muuttavat merkistön kirjainten koon halutuksi.
+Vavvau! Tämä yksinkertainen koodinpätkä poistaa tekstistä kaikki numerot ja palauttaa vain sanallisen osan. Voit käyttää tätä toimintoa esimerkiksi silloin, kun sinun tarvitsee lukea käyttäjältä syötteitä ja haluat poistaa niistä kaikki mahdolliset numerot.
 
-Elixirillä on myös erillisiä kirjastoja, kuten "Stringex" ja "ExString", jotka tarjoavat lisää toimintoja merkkijonojen käsittelyyn.
+Syvällinen sukellus: 
+Tämä yksinkertainen esimerkki käyttää Regex-moduulia, joka on sisäänrakennettu Elixir-ohjelmointikieleen. Se mahdollistaa monimutkaisten kaavojen käytön koodin muokkauksessa ja poistaa tehokkaasti merkkejä. Lisäksi voit käyttää myös Regex.match -toimintoa, joka palauttaa tekstistä vastaavat kohdat kaavan perusteella.
 
-## Katso myös
-
-- [Elixir String moduuli](https://hexdocs.pm/elixir/String.html)
-- [Elixir RegExp moduuli](https://hexdocs.pm/elixir/RegExp.html)
-- [Stringex kirjasto](https://hexdocs.pm/stringex/)
-- [ExString kirjasto](https://github.com/devonestes/ex_string)
+Katso myös: 
+Voit oppia lisää Regexin käytöstä Elixirissä ja sen hyödyllisyydestä alla olevista linkeistä:
+- [Regex-moduulin dokumentaatio](https://hexdocs.pm/elixir/Regex.html)
+- [Vinkkejä Regexin käyttöön Elixirissä](https://dev.to/nagasirena/using-regex-matching-in-elixir-3m1n)
+- [Realistisen esimerkin Regexin käytöstä Elixirissä](https://www.poeticoding.com/2-simple-regex-examples-in-elixir-with-string-match/)

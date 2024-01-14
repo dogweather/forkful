@@ -1,62 +1,41 @@
 ---
-title:    "Java: Extraction de sous-chaînes"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/java/extracting-substrings.md"
+title:                "Java: Extraction de sous-chaînes"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Extraction de sous-chaînes en Java : pourquoi c'est utile ? 
-
-L'extraction de sous-chaînes est une fonctionnalité essentielle en programmation Java. Elle permet d'extraire une partie spécifique d'une chaîne de caractères en fonction de critères définis. Cela peut être utile dans de nombreuses situations, par exemple pour manipuler et traiter des données, ou pour vérifier si une chaîne correspond à un certain format.
+Extractions de sous-chaînes dans Java peuvent être très utiles lorsque vous avez une chaîne de caractères et que vous voulez en extraire une partie spécifique pour une utilisation ultérieure. Cela peut être particulièrement utile lorsque vous travaillez avec des données de texte et que vous avez besoin d'extraire des informations précises.
 
 ## Comment faire
+```Java
+// Création d'une chaîne de caractères
+String chaine = "Bienvenue au blog de programmation en Java !";
 
-```java
-// Exemple d'extraction de sous-chaîne en utilisant la méthode substring()
+// Extraction d'une sous-chaîne à partir de l'index 4
+String sousChaine = chaine.substring(4);
+System.out.println(sousChaine);
 
-// Déclaration de la chaîne de caractères initiale
-String str = "Bonjour tout le monde";
+// Sortie: venue au blog de programmation en Java !
 
-// Extraction d'une sous-chaîne à partir de l'index 8 inclus jusqu'à la fin
-String subStr1 = str.substring(8);
+// Extraction d'une sous-chaîne entre les index 11 et 22 inclus
+String sousChaine2 = chaine.substring(11, 22);
+System.out.println(sousChaine2);
 
-// Extraction d'une sous-chaîne à partir de l'index 8 jusqu'à l'index 14 inclus
-String subStr2 = str.substring(8, 15);
-
-// Affichage des résultats
-System.out.println(subStr1); // Affiche "tout le monde"
-System.out.println(subStr2); // Affiche "tout le"
+// Sortie: blog de prog
 ```
 
-Dans l'exemple ci-dessus, nous utilisons la méthode `substring()` pour extraire des sous-chaînes de différentes longueurs en utilisant des index. Cette méthode peut prendre un ou deux paramètres : le premier paramètre est l'index de départ de l'extraction, et le deuxième paramètre (facultatif) est l'index de fin. Si un seul paramètre est spécifié, la sous-chaîne est extraite à partir de cet index jusqu'à la fin de la chaîne. Si deux paramètres sont spécifiés, la sous-chaîne est extraite à partir de l'index de départ jusqu'à l'index de fin inclus.
+Avec la méthode `substring` en Java, vous pouvez également extraire une sous-chaîne en utilisant des indices négatifs, ce qui le rend encore plus flexible. Par exemple, vous pouvez utiliser `-5` pour extraire les 5 derniers caractères de la chaîne.
 
-```java
-// Exemple d'extraction de sous-chaîne en utilisant la méthode split()
+## Deep Dive
+La méthode `substring` en Java prend en compte l'index de début et l'index de fin de la sous-chaîne à extraire. L'index de début est inclus dans la sous-chaîne tandis que l'index de fin ne l'est pas. Cela signifie que la sous-chaîne extrait commence à l'index de début et va jusqu'à l'index de fin - 1.
 
-// Déclaration de la chaîne de caractères initiale
-String str = "Le saviez-vous ? Java est un langage de programmation objet.";
-
-// Extraction d'une sous-chaîne à partir du premier espace rencontré
-String subStr1 = str.split(" ")[0];
-
-// Extraction d'une sous-chaîne à partir du troisième mot
-String subStr2 = str.split(" ")[2];
-
-// Affichage des résultats
-System.out.println(subStr1); // Affiche "Le"
-System.out.println(subStr2); // Affiche "Java"
-```
-
-Dans cet exemple, nous utilisons la méthode `split()` pour séparer la chaîne en plusieurs sous-chaînes en utilisant un délimiteur (ici l'espace). Une fois la chaîne séparée, nous pouvons accéder à chaque sous-chaîne en utilisant son index dans le tableau de résultats.
-
-## Plongez plus profondément
-
-L'extraction de sous-chaînes peut être un sujet complexe, en particulier lorsqu'il s'agit de manipuler des chaînes en utilisant des expressions régulières. Pour plus d'informations sur les différentes méthodes d'extraction de sous-chaînes en Java, vous pouvez consulter la documentation officielle de Java ou des ressources en ligne telles que [ce tutoriel](https://www.baeldung.com/java-substring) (en anglais).
+De plus, avec la méthode `substring`, vous pouvez également spécifier uniquement l'index de début et la sous-chaîne sera extraite jusqu'à la fin de la chaîne d'origine.
 
 ## Voir aussi
-
-- [Documentation officielle de Java sur la classe String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Tutoriel sur l'utilisation des expressions régulières en Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+- [Méthode `substring` dans la documentation Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
+- [Tutoriel sur les chaînes de caractères en Java](https://www.javatpoint.com/java-string) 
+- [Guide des expressions régulières en Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

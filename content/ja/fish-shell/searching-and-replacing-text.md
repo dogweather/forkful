@@ -1,31 +1,42 @@
 ---
-title:    "Fish Shell: textを検索して置換する"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/searching-and-replacing-text.md"
+title:                "Fish Shell: テキストの検索と置換"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-テキストの検索と置換を行う理由は、大量のテキストを処理するときにとても便利です。これは特にプログラマーやデータ分析者にとって有用です。たとえば、特定のキーワードを持つファイルや行だけを抽出するために使用できます。
+# なぜ検索と置換をするのか
 
-## ハウツー
-Fishシェルでテキストを検索して置換する方法を示します。まず、検索するキーワードと置換するテキストを指定します。次に、`sed`コマンドを使用して置換を実行します。
+テキストの検索と置換は、コマンドラインでファイルを効率的に編集するための重要なスキルです。Fish Shellを使用する際には、これらの機能を上手く活用することで作業の効率を大きく向上させることができます。
 
-```Fish Shell
-# 検索するキーワードと置換するテキストを指定する
-set keyword "こんにちは"
-set replacement "Hello"
-# 置換を実行する
-cat example.txt | sed "s/$keyword/$replacement/g"
+# 方法
+
+例えば、特定の文字列を別の文字列に置換したい場合、以下のようなコマンドを使用します。
+
+```
+fish -c "sed -i 's/検索文字列/置換文字列/g' ファイル名"
 ```
 
-上記の例では、`example.txt`というファイルからキーワードが「こんにちは」の行を「Hello」に置換しています。`sed`コマンドの`g`オプションを使用することで、すべてのキーワードを同時に置換することができます。
+このコマンドでは、`sed`コマンドを使用し、`-i`オプションでファイルを直接編集し、`g`オプションでマッチしたすべての文字列を置換します。
 
-## ディープダイブ
-`sed`コマンドの機能をより深く掘り下げてみましょう。`s`コマンドを使用することで、キーワードを特定のパターンにマッチさせることができます。`&`という特殊なパラメータを使用することで、マッチしたテキスト全体を置換することができます。また、正規表現を使用したり、置換をファイルに保存することもできます。
+また、より複雑な置換を行う場合には、正規表現を使うこともできます。例えば、`[0-9]+`という正規表現を使用することで、数字のみを含む文字列を、別の数字に置換することができます。
 
-## 関連リンクを参照
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/cmds/sed.html)
-- [Sedとは？基本的な使い方を徹底解説！](https://it-bank.co.jp/adult/qa/systemadmin/sed-2481/)
-- [Fish Shellのチートシート](https://devhints.io/fish-shell)
+```
+fish -c "sed -i 's/[0-9]+/置換する数字/g' ファイル名"
+```
+
+ここで、`置換する数字`には、置換する数字に置き換えたい任意の数字を指定します。
+
+# 深堀り
+
+検索と置換にはさまざまなパターンやオプションが存在しますので、より詳細な使用方法を学ぶことも可能です。例えば、ファイル内の特定の行のみを対象としたり、大文字と小文字を区別するオプションを使ったりすることができます。
+
+また、Fish Shellには独自の検索と置換コマンドが存在するため、より柔軟性の高い編集が可能です。`builtin`コマンドを使用することで、Fishの検索と置換コマンドを呼び出すことができます。
+
+# See Also
+
+- [Fish Shellドキュメント：検索と置換コマンド](https://fishshell.com/docs/current/commands.html#substitute)
+- [sedコマンドのドキュメント](https://www.gnu.org/software/sed/manual/sed.html)
+- [正規表現のチートシート](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf)

@@ -1,40 +1,64 @@
 ---
-title:    "TypeScript: Обчислення дати в майбутньому або минулому"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/calculating-a-date-in-the-future-or-past.md"
+title:                "TypeScript: Розрахунок дати в майбутньому або минулому"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Розрахунок дати у майбутнє або в минуле може бути корисним для багатьох причин, наприклад, планування подій, встановлення термінів або пошуку історичних даних. Використання TypeScript для цього завдання може робити процес більш простим та ефективним.
+Обчислення дати в майбутньому або минулому є важливою задачею для багатьох програм. Це може бути корисно для створення звітів, відображення подій або просто для обчислення терміну завершення задачі. З нами Ви дізнаєтеся, як легко і швидко це можна зробити з допомогою TypeScript.
 
 ## Як
 
-Більшість програмістів вже знають про вбудовану JavaScript функцію `Date()` для отримання поточної дати. У TypeScript також є така сама функція, але для розрахунку дати в майбутньому або в минулому потрібно використовувати інші методи.
+Для початку, нам потрібно встановити бібліотеку moment.js, щоб мати можливість маніпулювати датами. Для цього використовуйте наступну команду в терміналі:
 
 ```TypeScript
-// Розрахунок дати у майбутнє
-let currDate = new Date();
-let futureDate = new Date(currDate.getFullYear(), currDate.getMonth() + 1, currDate.getDate()); 
-// Дата через 1 місяць
-console.log(futureDate.toDateString()); // Sun Jun 20 2021
-
-// Розрахунок дати в минулому
-let pastDate = new Date(currDate.getFullYear(), currDate.getMonth() - 1, currDate.getDate());
-// Дата минулого місяця
-console.log(pastDate.toDateString()); // Fri Apr 20 2021
+npm install moment
 ```
 
-Розглянутий приклад дозволяє отримувати потрібні дати, визначаючи кількість місяців, днів або років (або їх комбінації) до або після поточної дати.
+Після цього, імпортуємо бібліотеку в наш файл з TypeScript кодом:
 
-## Глибоке занурення
+```TypeScript
+import * as moment from 'moment';
+```
 
-При розрахунку дати у майбутнє або в минулому, важливо враховувати різницю у місяцях та роках - особливо при переході через межу року, наприклад, з грудня на січень. Також слід пам'ятати про властивості `year`, `month` та `date` об'єкту `Date`, які вказують на поточну дату, а не на майбутню або минулу. Використовуючи ці знання, можна більш точно розраховувати дати.
+Тепер ми можемо використовувати всі методи бібліотеки moment для роботи з датами. Для обчислення дати в майбутньому або минулому, ми можемо використати методи `add()` і `subtract()`. Наприклад, якщо нам потрібно обчислити дату, яка буде через 2 тижні, ми можемо використати наступний код:
 
-## Дивіться також
+```TypeScript
+let futureDate = moment().add(2, 'weeks');
+```
 
-- [Документація TypeScript про об'єкт Date](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-- [Stack Overflow: Код для розрахунку дати в майбутньому або в минулому](https://stackoverflow.com/questions/49786107/typescript-add-months-to-date)
-- [Цікаві факти про обчислення дат в програмуванні](https://dmitripavlutin.com/dates-add-remove-js/)
+Щоб отримати дату, яка була 2 тижні тому, використовуйте метод `subtract()`:
+
+```TypeScript
+let pastDate = moment().subtract(2, 'weeks');
+```
+
+Для отримання форматованої дати, використовуйте метод `format()`. Наприклад, ми можемо сформатувати нашу дату в форматі "DD-MM-YYYY":
+
+```TypeScript
+let formattedDate = moment().format('DD-MM-YYYY');
+```
+
+Повний код може виглядати так:
+
+```TypeScript
+import * as moment from 'moment';
+
+let futureDate = moment().add(2, 'weeks');
+let pastDate = moment().subtract(2, 'weeks');
+let formattedDate = moment().format('DD-MM-YYYY');
+
+console.log(futureDate); // виводить дату через 2 тижні
+console.log(pastDate); // виводить дату 2 тижні тому
+console.log(formattedDate); // виводить дату в форматі "DD-MM-YYYY"
+```
+
+## Глибше
+
+Бібліотека moment досить потужна і має багато інших методів для маніпулювання датами. Можна використовувати різні параметри, такі як `years`, `months`, `days` та інші, для обчислення дати в майбутньому або минулому. Крім того, у бібліотеці є функціонал для обчислення різниці між двома датами, перевірки на належність до певного періоду чи переведення дати в різні формати.
+
+Для детального ознайомлення з функціями бібліотеки moment, рекомендуємо прочитати офіційну документац

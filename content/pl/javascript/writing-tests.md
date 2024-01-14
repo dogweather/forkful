@@ -1,49 +1,60 @@
 ---
-title:    "Javascript: Pisanie testów"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-tests.md"
+title:                "Javascript: Tworzenie testów"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie testów jest ważne w programowaniu?
+## Dlaczego pisać testy?
 
-Pisanie kodu to nie tylko tworzenie nowych funkcjonalności, ale również dbanie o jego jakość i niezawodność. Testowanie jest nieodłączną częścią tego procesu, ponieważ pozwala nam zweryfikować poprawność działania naszego kodu i upewnić się, że wszelkie zmiany nie wpłynęły negatywnie na już istniejący kod. W artykule tym przedstawimy, dlaczego pisanie testów jest ważne oraz jak możemy to zrobić w języku Javascript.
+Pisanie testów jest kluczowym elementem tworzenia wysokiej jakości kodu w javascripcie. Testy pozwalają nam na sprawdzenie czy nasza aplikacja działa poprawnie, a także pomagają w wykrywaniu błędów i zapobieganiu ich występowaniu w przyszłości. Dzięki testom możemy mieć większą pewność co do działania naszego kodu i łatwiej odnaleźć ewentualne problemy.
 
-## Jak pisać testy w języku Javascript?
+## Jak pisać testy?
 
-Pisanie testów w języku Javascript jest bardzo proste i możliwe dzięki wykorzystaniu narzędzia o nazwie Jest. Jest to popularna biblioteka do testowania kodu, która umożliwia łatwe i efektywne pisanie testów.
+Aby móc pisać testy w javascripcie, musimy użyć odpowiedniego narzędzia do tego celu. Najpopularniejszymi narzędziami są **Jest** i **Mocha**, które wspierają testowanie w javascripcie. Poniżej przedstawione są przykłady kodu z wykorzystaniem obu narzędzi.
 
-Przed przystąpieniem do pisania testów, należy zainstalować bibliotekę Jest poprzez użycie polecenia `npm install --save-dev jest`. Następnie, aby uruchomić testy, wystarczy użyć komendy `jest` w terminalu.
+### Przykład użycia Jest:
 
-Poniżej znajduje się przykładowy kod funkcji obliczającej kwadrat danej liczby wraz z testami dla niej:
+```Javascript
+const add = require('./add'); // import funkcji którą chcemy przetestować
 
-```
-// Funkcja obliczająca kwadrat liczby
-function square(number) {
-  return number * number;
-}
-
-// Testy funkcji
-test("Kwadrat liczby 2 powinien wynosić 4", () => {
-  expect(square(2)).toBe(4);
-});
-
-test("Kwadrat liczby 5 powinien wynosić 25", () => {
-  expect(square(5)).toBe(25);
+test('dodaj 2 i 3 i wynik powinien być równy 5', () => {
+  expect(add(2, 3)).toBe(5); // oczekiwany wynik to 5
 });
 ```
+Output:
+```
+ PASS  test.js
+  ✓ dodaj 2 i 3 i wynik powinien być równy 5 (2ms)
+```
 
-W powyższym przykładzie użyto metody `expect` i metody `toBe`, która porównuje wyniki obliczeń. Dzięki temu możemy upewnić się, że nasza funkcja zwraca oczekiwane wartości.
+### Przykład użycia Mocha:
 
-## Wnikliwa analiza pisania testów
+```Javascript
+const assert = require('assert'); // import funkcji asercji
+const subtract = require('./subtract'); // import funkcji którą chcemy przetestować
 
-Pisanie testów to nie tylko sprawdzanie poprawności funkcjonalności. Warto także pamiętać o testowaniu wyjątkowych przypadków i błędów, aby zapewnić niezawodność naszego kodu. Jest pozwala na tworzenie testów jednostkowych, integracyjnych oraz funkcjonalnych, co pozwala nam na kompleksowe sprawdzenie naszej aplikacji.
+describe('Funkcja odejmowania', () => {
+  it('powinna odejmować poprawnie', () => {
+    assert.equal(subtract(5, 3), 2); // asercja sprawdzająca czy wynik jest poprawny
+    assert.equal(subtract(10, 2), 8);
+  });
+});
+```
+Output:
+```
+  Funkcja odejmowania
+    ✓ powinna odejmować poprawnie
+```
 
-Warto również pamiętać o pisaniu testów zanim zaczniemy pisać sam kod. Dzięki temu możemy przetestować projekt w sposób iteracyjny i szybciej znajdować ewentualne błędy. Dodatkowo, testy pozwalają nam na łatwiejsze refaktoryzowanie kodu bez obawy o wprowadzenie błędów.
+## Głębszy wgląd
+
+Pisanie testów jest skutecznym sposobem na zapewnienie wysokiej jakości kodu. Pozwala nam na szybkie wykrycie błędów i łatwiejszą możliwość refaktoryzacji. Warto także pamiętać o testowaniu różnych przypadków, aby nasze testy pokrywały jak najwięcej scenariuszy działania kodu.
 
 ## Zobacz także
 
-- [Dokumentacja Jest](https://jestjs.io/docs/en/getting-started)
-- [Tutorial: Pisząc testy z użyciem Jest](https://www.youtube.com/watch?v=7r4xVDI2vho)
-- [Blog JednakProgramista.pl: Pisząc testy jednostkowe w JavaScript](https://www.jednakprogramista.pl/piszac-testy-jednostkowe-w-javascript/)
+- [Jest](https://jestjs.io/pl/)
+- [Mocha](https://mochajs.org/)
+- [Asembler JavaScript: Wprowadzenie do testowania jednostkowego](https://assembler.pl/testowanie-jednostkowe-w-javascript)

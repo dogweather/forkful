@@ -1,37 +1,52 @@
 ---
-title:    "Gleam: 搜索和替换文本"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/searching-and-replacing-text.md"
+title:                "Gleam: 查找和替换文本"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么要在文本中搜索和替换？因为这是编程中一项重要的技能，可以帮助你快速地修改大量文本内容，提高工作效率。
+## 为什么
 
-如何：如果您正在学习Gleam编程语言，那么搜索和替换文本是一项必不可少的技能。下面是几个简单的示例，展示了如何在Gleam中进行搜索和替换。
+有时候，在编程过程中，我们需要对文本进行搜索和替换。这可以帮助我们在大量文本中快速找到并修改特定的内容。Gleam编程语言提供了一个简单而强大的方法来实现这一目的。让我们来看看如何使用它！
 
-```Gleam
-let text = "欢迎来到Gleam博客，这是一篇关于搜索和替换的文章。"
+## 如何进行搜索和替换
 
-{ok, updated} = gleam_text:replace("Gleam", "Mandarin", text)
-gleam_text:print(updated) // 欢迎来到Mandarin博客，这是一篇关于搜索和替换的文章。
-```
-
-您还可以使用正则表达式来进行更复杂的搜索和替换操作。下面是一个示例，将文本中的所有英文单词转换为大写。
+使用Gleam进行搜索和替换非常简单。首先，我们需要导入`std`模块中的`String`和`List`模块。这样我们就可以使用它们提供的函数来操作文本数据。接下来，我们可以使用`String.replace`函数来执行替换操作。以下是一个简单的示例：
 
 ```Gleam
-let text = "这是一篇关于编程的文章。"
+import gleam/string
+import gleam/list
 
-{ok, updated} = gleam_text:regex_replace("[a-z]+", fn(x) -> x |> string:to_uppercase end, text)
-gleam_text:print(updated) // 这是一篇关于编程的文章。
+let text = "Hello world!"
+let new_text = text |> String.replace("world", "Gleam")
+
+// Output: Hello Gleam!
 ```
 
-深入了解：搜索和替换文本的过程实际上涉及到了编译器中的模式匹配。通过使用Gleam提供的字符串函数和正则表达式，您可以灵活地控制对文本内容的修改。如果您想要更深入地了解搜索和替换的原理，可以阅读Gleam编程语言的官方文档或者查找相关教程。
+我们可以看到，`String.replace`函数的参数包括原始文本、要替换的内容以及要替换成的新内容。通过使用`|>`操作符，我们可以将原始文本传递给`String.replace`函数，并将替换后的结果赋值给`new_text`变量。
 
-此外，Gleam中还有许多其他有用的字符串处理函数，如截取、连接等。通过学习这些函数，您可以更好地处理文本内容，在编程中提高自己的效率。
+除了简单的文本替换，Gleam还提供了更多强大的功能来帮助我们进行搜索和替换。例如，`String.replace_all`函数可以将所有匹配的内容替换为同一个新内容。另外，我们还可以使用正则表达式来进行更灵活的文本匹配和替换。Gleam文档中还有更多关于字符串操作的详细介绍，让我们深入了解一下！
 
-参考资料：
+## 深入了解搜索和替换
+
+搜索和替换是程序中经常用到的功能。Gleam提供了多种方法来进行文本搜索和替换，可以帮助我们高效地处理大量文本数据。除了`String.replace`和`String.replace_all`函数，`String.replace_n`函数可以让我们指定替换的次数。此外，还有`String.replace_first`和`String.replace_last`函数可以分别替换第一次和最后一次匹配的内容。
+
+在某些情况下，我们可能需要同时替换多个不同的内容。Gleam通过将多个匹配项和对应替换项放入列表中，来实现这一功能。我们可以使用`List.zip`函数来创建一个匹配项和对应替换项的列表，然后将其传递给`String.replace_chars`函数来执行批量替换。以下是一个示例：
+
+```Gleam
+let text = "Gleam is a modern language!"
+let matches = ["Gleam", "modern"]
+let replacements = ["Swift", "innovative"]
+let new_text = text |> String.replace_chars(List.zip(matches, replacements))
+
+// Output: Swift is a innovative language!
+```
+
+通过使用列表和`String.replace_chars`函数，我们可以方便地执行多个文本替换操作。
+
+## 参考链接
 
 - [Gleam官方文档](https://gleam.run/documentation/)
-- [字符串处理函数](https://gleam.run/documentation/#strings)
-- [正则表达式教程](https://regexone.com/)
+- [Gleam GitHub仓库](https://github.com/gleam-lang/gleam)

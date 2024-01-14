@@ -1,47 +1,56 @@
 ---
-title:    "Elixir: Extraindo subtrings"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/extracting-substrings.md"
+title:                "Elixir: Extraindo Substrings"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em Elixir?
+## Por que extrair substrings em Elixir
 
-Extrair substrings é um conceito bastante útil na programação em Elixir. Isso permite que você selecione partes específicas de uma string, o que pode ser útil em várias situações, como formatação de dados ou manipulação de texto.
+Extrair substrings é uma ferramenta útil para programadores Elixir que desejam realizar operações específicas em partes específicas de uma string. Ao invés de usar a string inteira, extrair substrings permite que você selecione e manipule uma porção do texto de forma mais eficiente.
 
-## Como fazer em Elixir?
+## Como fazer
 
-Extrair substrings em Elixir é muito fácil. Tudo o que você precisa é da função `String.slice/2` e dos parâmetros da posição inicial e final da substring desejada.
-
-```Elixir
-#Exemplo 1: Extraindo uma substring de uma string
-string = "Olá mundo!"
-substring = String.slice(string, 4, 8)
-IO.puts(substring)
-
-#Saída: mundo
-```
-
-Você também pode usar índices negativos para contar a partir do final da string. E se quiser extrair uma substring até o final da string, basta deixar o segundo parâmetro em branco.
+Para extrair substrings em Elixir, utilize a função `String.slice/3`. O primeiro argumento é a string original, o segundo é o ponto de início da substring e o terceiro é o tamanho da substring. Aqui está um exemplo de código que extrai uma substring de tamanho 4 começando no índice 2:
 
 ```Elixir
-#Exemplo 2: Extraindo uma substring até o final da string
 string = "Olá mundo!"
-substring = String.slice(string, 4, "")
-IO.puts(substring)
+String.slice(string, 2, 4)
+# saída: "á"
 
-#Saída: mundo!
 ```
 
-## Aprofundando
+Você também pode fornecer um índice negativo como ponto de início, para contar a partir do final da string. Por exemplo:
 
-Além da função `String.slice/2`, Elixir também possui outras funções úteis para extrair substrings de uma string, como `String.split/2` e `String.replace/4`. Essas funções permitem que você selecione substrings com base em critérios específicos, como um caractere delimitador ou um padrão de regex.
+```Elixir
+string = "Olá mundo!"
+String.slice(string, -3, 2)
+# saída: "do"
+```
 
-Além disso, é importante notar que as strings em Elixir são imutáveis, o que significa que ao extrair uma substring, na verdade, você está criando uma nova string com a substring desejada. Portanto, tomar cuidado com a manipulação excessiva de strings pode afetar a eficiência do código.
+Além disso, você pode usar o operador `..` (chamado de "operador de intervalo") para especificar um intervalo de índices ao invés de um ponto de início e tamanho. Por exemplo:
+
+```Elixir
+string = "Hello world!"
+String.slice(string, 3..7)
+# saída: "lo wo"
+```
+
+## Mergulho profundo
+
+A função `String.slice/3` é bastante versátil e permite que você extraia substrings de forma flexível. Além disso, ela possui uma variedade de opções adicionais, como o uso de expressões regulares para encontrar padrões em uma string e extrair a correspondência desejada.
+
+Além disso, você também pode utilizar a função `String.split/2` para extrair uma lista de substrings em vez de uma única substring. Basta fornecer o caractere ou string que deseja usar como ponto de divisão para a string original. Por exemplo:
+
+```Elixir
+string = "Olá mundo!"
+String.split(string, " ")
+# saída: ["Olá", "mundo!"]
+```
 
 ## Veja também
 
-- Documentação oficial do Elixir: https://elixir-lang.org/getting-started/string-patterns-and-operations.html
-- Tutorial de Elixir: https://elixir-lang.org/getting-started/basic-types.html#binaries-and-strings-extracting-data-from-binaries
-- Exemplo de implementação: https://gist.github.com/vipulnsward/41824edbcbf62d780d42f86a27a82ed1
+- Documentação sobre a função `String.slice/3`: https://hexdocs.pm/elixir/String.html#slice/3
+- Mais informações sobre expressões regulares em Elixir: https://elixir-lang.org/getting-started/pattern-matching.html#regular-expressions

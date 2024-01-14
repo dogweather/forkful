@@ -1,49 +1,53 @@
 ---
-title:    "TypeScript: Extrahieren von Teilstrings"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/extracting-substrings.md"
+title:                "TypeScript: Unterstrings extrahieren."
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum substrings extrahiert werden sollten
+# Warum
 
-Substrings (Unterzeichenketten) sind ein wichtiges Konzept in der Programmierung und werden oft in der täglichen Arbeit mit TypeScript verwendet. Sie bestehen aus Teilen einer größeren Zeichenkette und können sehr nützlich sein, um spezifische Informationen aus längeren Daten zu extrahieren. In diesem Blogbeitrag werden wir uns genauer mit dem Extrahieren von Substrings in TypeScript beschäftigen und warum dies eine wichtige Fähigkeit für jeden TS-Entwickler ist.
+Das Extrahieren von Teilstrings ist eine nützliche Fähigkeit für jeden TypeScript-Programmierer. Es ermöglicht uns, Teilstrings aus einer längeren Zeichenkette zu extrahieren, um spezifische Informationen zu erhalten. Dies kann hilfreich sein, um z.B. Benutzernamen oder E-Mails aus einer Eingabe zu gewinnen.
 
-## Wie man Substrings in TypeScript extrahiert
-
-Um Substrings in TypeScript zu extrahieren, gibt es mehrere Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung der `substr()`-Methode, die auf einer Zeichenkette aufgerufen werden kann. Diese Methode nimmt zwei Argumente entgegen: den Startindex und die Anzahl der zu extrahierenden Zeichen.
+# Wie geht das?
 
 ```TypeScript
-let str: string = "Dies ist ein Beispieltext.";
-let substring: string = str.substr(5, 4); // substring enthält "ist "
+// Beispiel einer Zeichenkette
+let text = "Willkommen bei meinem TypeScript-Blog!"
+
+// Extrahieren des Teilstrings "TypeScript"
+let substr = text.substring(14, 23);
+
+console.log(substr); // Ausgabe: TypeScript
 ```
 
-Man kann auch die `substring()`-Methode verwenden, die ähnlich funktioniert, jedoch den Startindex und den Endindex anstelle der Anzahl der Zeichen als Argumente verwendet.
+In diesem Beispiel definieren wir eine Zeichenkette und verwenden dann die `substring()`-Funktion, um einen Teil von ihr zu extrahieren. Wir geben den Startindex (14) und die Länge des Teilstrings (9) an. Das Ergebnis wird in der Variablen `substr` gespeichert und anschließend ausgegeben.
+
+# Tiefentauchen
+
+Es gibt noch mehr, was wir mit der `substring()`-Funktion tun können. Wir können auch angeben, dass der Teilstring bis zum Ende der Zeichenkette extrahiert werden soll, indem wir nur den Startindex angeben. Außerdem können wir auch negative Zahlen verwenden, um von rechts zu zählen.
 
 ```TypeScript
-let str: string = "Dies ist ein Beispieltext.";
-let substring: string = str.substring(5, 7); // substring enthält "ist ein"
+// Beispiel einer Zeichenkette
+let text = "Das ist ein Beispieltext";
+
+// Extrahieren des Teilstrings "Beispieltext"
+let substr = text.substring(12); 
+
+console.log(substr); // Ausgabe: Beispieltext
+
+// Extrahieren des Teilstrings "ist ein Beispiel"
+let substr2 = text.substring(-7, 16); 
+
+console.log(substr2); // Ausgabe: ist ein Beispiel
 ```
 
-Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken, um spezifische Muster in einer Zeichenkette zu suchen und zu extrahieren.
+Es ist auch wichtig zu beachten, dass die Funktion `substring()` immer einen neuen Teilstring zurückgibt, ohne die ursprüngliche Zeichenkette zu ändern.
 
-```TypeScript
-let str: string = "Dies ist eine Beispielnummer: 12345.";
-let regex: RegExp = /\d{5}/; // sucht nach einer Folge von fünf Zahlen
-let substring: string = str.match(regex)[0]; // substring enthält "12345"
-```
+# Siehe auch
 
-Die Ausgabe der obigen Beispiele können je nach verwendeter Methode variieren, jedoch sollte sie immer ein Teil der ursprünglichen Zeichenkette sein.
-
-## Tiefer Einblick in das Extrahieren von Substrings
-
-Es gibt viele Situationen, in denen das Extrahieren von Substrings hilfreich sein kann. Zum Beispiel, wenn man Daten aus einer API-Antwort analysiert oder wenn man Benutzereingaben auf spezifische Muster überprüft. Reguläre Ausdrücke sind besonders nützlich, da sie es ermöglichen, komplexe Muster in einer Zeichenkette zu suchen und zu extrahieren.
-
-Ein wichtiger Aspekt beim Extrahieren von Substrings ist auch die Beachtung von unterschiedlichen Zeichenkodierungen, insbesondere bei der Verwendung von Sonderzeichen oder bei mehrsprachigen Anwendungen. Es ist wichtig sicherzustellen, dass die verwendeten Methoden korrekt die gewünschten Substrings extrahieren, unabhängig von der verwendeten Zeichenkodierung.
-
-## Siehe auch
-
-- Die [offizielle TypeScript-Dokumentation](https://www.typescriptlang.org/docs) für weitere Informationen zur Verwendung von Substrings und anderen Zeichenkettenfunktionen
-- Eine [Einführung in reguläre Ausdrücke in TypeScript](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-typescript) für weitere Details und Beispiele zur Verwendung von Regex mit Substrings
-- Ein [Codebeispiel auf StackOverflow](https://stackoverflow.com/questions/7936787/how-to-extract-a-substring-between-two-strings-in-javascript) zum Extrahieren eines Substrings zwischen zwei bestimmten Zeichen in JavaScript. Dieses kann leicht auf TypeScript angepasst werden.
+- [MDN Web Docs zu substring()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [W3Schools über substring()](https://www.w3schools.com/jsref/jsref_substring.asp)
+- [TypeScript Dokumentation zu Zeichenkettenmanipulation](https://www.typescriptlang.org/docs/handbook/strings.html)

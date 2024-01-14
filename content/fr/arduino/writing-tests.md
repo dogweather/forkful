@@ -1,45 +1,52 @@
 ---
-title:    "Arduino: Écrire des tests"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-tests.md"
+title:                "Arduino: Écrire des tests"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Ecrire des tests peut sembler fastidieux et prendre du temps, mais c'est en réalité une étape très importante dans le processus de développement avec Arduino. Non seulement cela garantit que votre code fonctionne correctement, mais cela vous aide également à détecter et à résoudre rapidement les erreurs potentielles.
+
+Ecrire des tests pour votre code Arduino peut sembler fastidieux et inutile, mais c'est en fait une étape cruciale pour s'assurer que votre projet fonctionne correctement. Les tests vous permettent de détecter et de corriger les erreurs avant même qu'elles ne se manifestent dans votre projet.
 
 ## Comment faire
-Ecrire des tests avec Arduino n'est pas aussi difficile qu'il n'y parait. Il vous suffit d'utiliser la fonction ```test()``` pour définir vos tests, puis d'utiliser ```assert()``` pour vérifier si les résultats correspondent à ceux que vous attendez. Voici un exemple simple de test pour une fonction qui multiplie deux nombres :
+
+Pour écrire des tests pour votre code Arduino, vous devrez utiliser une bibliothèque de test telle que ArduinoUnit ou Unity. Ces bibliothèques vous permettent de créer des cas de test et de vérifier les résultats attendus.
+
+Voici un exemple de code utilisant ArduinoUnit pour tester une fonction de calcul de la température :
 
 ```Arduino
-int multiplication(int a, int b) {
-  return a * b;
+#include <ArduinoUnit.h>
+
+int calculateTemperature(int rawVoltage) {
+  return ((rawVoltage * 5) / 1024) * 100;
 }
 
-void testMultiplication() {
-  assert(multiplication(2, 3) == 6); // Vérifie si le résultat est égal à 6
-  assert(multiplication(5, 5) == 25); // Vérifie si le résultat est égal à 25
+test(calculateTemperature) {
+  int expected = 400;
+  int actual = calculateTemperature(818);
+  assertEqual(expected, actual);
 }
 
-void setup() {
-  // Lancez votre test ici
-  testMultiplication();
-}
-
-void loop() {
-  // Code principal de votre programme
-}
+unittest_main()
 ```
 
-Lors de l'exécution de ce code, si l'un de vos tests échoue, vous saurez immédiatement quel test en question a échoué et pour quelles raisons.
+Dans cet exemple, nous créons une fonction de calcul de la température qui prend en paramètre une valeur brute de tension et renvoie la température en degrés Celsius. Dans notre cas de test, nous nous attendons à ce que la fonction renvoie 400 lorsque la valeur brute de tension est de 818. Nous utilisons ensuite la fonction "assertEqual" pour vérifier que la valeur renvoyée est bien de 400.
 
-## Deep Dive
-Pour écrire des tests plus complexes, vous pouvez utiliser des bibliothèques spécifiques telles que ```ArduinoUnit``` ou ```Unity``` pour tester des fonctions plus avancées telles que les fonctions temporisées ou les fonctions impliquant des composants externes. Ces bibliothèques offrent également une meilleure gestion des erreurs et des options de test plus avancées.
+En exécutant ce test, nous pouvons nous assurer que notre fonction de calcul de la température fonctionne correctement et qu'elle renvoie les résultats attendus.
 
-Il est également important de noter que les tests doivent être écrits régulièrement tout au long du processus de développement, en particulier lorsque vous ajoutez de nouvelles fonctionnalités à votre code. Cela garantit que votre code reste fonctionnel et facile à maintenir à mesure que vous ajoutez de nouvelles modifications.
+Vous pouvez également utiliser des bibliothèques de test pour vérifier le fonctionnement de vos composants physiques, tels que les capteurs ou les actionneurs. Cela peut vous aider à détecter rapidement les problèmes de connexion ou de compatibilité entre vos composants.
+
+## Plongeons plus profondément
+
+Pour écrire des tests de manière plus efficace, il est important de comprendre les principes du Test Driven Development (TDD). Ce concept consiste à écrire les tests avant même d'écrire le code, en se concentrant sur le résultat attendu plutôt que sur l'implémentation.
+
+En utilisant TDD, vous pouvez vous assurer que votre code est bien testable et que les tests que vous écrivez sont pertinents et efficaces. En plus de cela, TDD peut vous aider à maintenir un code plus propre et mieux structuré.
 
 ## Voir aussi
-- [Tutoriel d'Arduino sur l'écriture de tests] (https://www.arduino.cc/en/Guide/ArduinoUnitTesting)
-- [GitHub - ArduinoUnit] (https://github.com/mmurdoch/arduinounit)
-- [GitHub - Unity] (https://github.com/ThrowTheSwitch/Unity)
+
+- Inspecteur de code Arduino : <https://www.arduino.cc/en/pmwiki.php?n=Reference/CodeInspector>
+- ArduinoUnit : <https://github.com/mmurdoch/arduinounit>
+- Unity : <https://github.com/ThrowTheSwitch/Unity>

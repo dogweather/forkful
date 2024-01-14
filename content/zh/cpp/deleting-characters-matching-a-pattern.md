@@ -1,79 +1,78 @@
 ---
-title:    "C++: 删除匹配模式的字符"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/deleting-characters-matching-a-pattern.md"
+title:                "C++: 删除符合模式的字符"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要删除匹配模式的字符
+## 为什么
 
-在编程中，有时会遇到需要删除字符的情况。而有时，我们可能不想一个一个手动删除，而是想要用一种更高效的方式来删除特定的字符。这时候，我们可以使用删除匹配模式的字符的方法来完成这个任务。
+通常在编写程序时，我们可能需要从字符串中删除一些特定的字符，例如匹配某种模式的字符。这样可以提高程序的效率，并使得字符串的处理更加灵活。因此，学习如何删除匹配模式的字符是非常重要的，可以帮助我们编写更高效、更灵活的程序。
 
 ## 如何操作
 
-下面是一个使用C++来删除匹配模式字符的例子： 
+在C++中，我们可以使用标准库中的`string`类来操作字符串，其中包括删除字符的功能。下面是一个简单的示例代码，展示如何删除字符串中匹配特定模式的字符：
 
 ```C++
-#include <bits/stdc++.h> 
-#define MAX 100 
+#include <iostream>
+#include <string>
 
-using namespace std; 
+using namespace std;
 
-// 函数来删除给定的字符 
-int deleteCharacters(char str[], char to_be_deleted) 
-{ 
-	int count = 0; 
+int main()
+{
+    // 初始化一个字符串
+    string myString = "Hello World!";
 
-	// 遍历整个数组
-	for (int i = 0; str[i]; i++) { 
+    // 删除所有的&字符
+    myString.erase(remove(myString.begin(), myString.end(), '&'), myString.end());
 
-		// 如果遇到匹配的字符，就跳过
-		if (str[i] == to_be_deleted) 
-			continue; 
+    // 输出结果
+    cout << myString << endl;
 
-		// 否则，将字符复制到新的数组中
-		str[count++] = str[i]; 
-	} 
-	str[count] = '\0'; 
-
-	return count; 
-} 
-
-int main() 
-{ 
-	// 例子输入
-	char str[] = "Hello World!"; 
-	char to_be_deleted = 'l'; 
-	
-	// 调用函数来删除给定的字符
-	int num = deleteCharacters(str, to_be_deleted); 
-
-	// 输出结果
-	cout << "String after deleting " << num << " " << to_be_deleted << "'s: " << str; 
-
-	return 0; 
-} 
+    return 0;
+}
 ```
 
-输出结果应该为：
+运行该程序，输出结果为`Hello World!`，可以看到所有的`&`字符都被成功删除了。在上面的代码中，我们使用了`remove()`函数和`erase()`函数来实现删除字符的功能。首先，`remove()`函数将字符串中符合特定模式的字符移动到末尾，然后`erase()`函数将这些字符从字符串中删除。
 
-```
-String after deleting 2 l's: Heo Word!
-```
+除了上面的示例代码中的方法，我们还可以使用`replace()`函数来替换特定字符，从而达到删除的效果。`replace()`函数的用法与`erase()`函数类似。这些函数的详细用法可以通过阅读相关的C++文档来学习。
 
 ## 深入了解
 
-当我们删除匹配模式的字符时，需要考虑一些边界情况和特殊情况。例如，如果字符串中有多个匹配字符，我们应该删除所有匹配的字符，而不仅仅是第一个。另外，我们也需要注意被删除字符后面的字符是否需要移动，以保持字符串的连续性。
+除了上述简单的示例代码外，我们还可以通过使用正则表达式来删除匹配特定模式的字符。正则表达式是一种强大的工具，可以用来匹配复杂的字符串模式。在C++中，我们可以使用`<regex>`标准库来支持正则表达式的操作。
 
-此外，如果我们想要删除的字符不仅仅是一个字符，而是一个字符串，我们也可以使用类似的方法来删除。
+下面是一个使用正则表达式删除匹配模式字符的示例代码：
 
-## 查看更多
+```C++
+#include <iostream>
+#include <string>
+#include <regex>
 
-- [C++字符串函数参考](https://www.runoob.com/cplusplus/cpp-standard-library-string-functions.html)
-- [C++字符串与字符数组相关操作](https://blog.csdn.net/fengtao5557/article/details/79814002)
-- [C++指针与数组的深入理解](https://www.cnblogs.com/mirage003/p/9956716.html)
+using namespace std;
 
-## 参考来源
+int main()
+{
+    // 初始化一个字符串
+    string myString = "Hello World!";
 
-此文章主要参考自 [GeeksforGeeks](https://www.geeksforgeeks.org/remove-all-occurrences-of-a-character-in-a-string/)
+    // 删除所有的小写字母
+    regex pattern("[a-z]");
+    myString = regex_replace(myString, pattern, "");
+
+    // 输出结果
+    cout << myString << endl;
+
+    return 0;
+}
+```
+
+在上面的代码中，我们使用了`regex_replace()`函数来删除所有的小写字母。通过编写不同的正则表达式，我们可以实现更复杂的匹配模式，并删除相应的字符。
+
+## 参考资料
+
+- [C++标准库string类的文档](https://www.cplusplus.com/reference/string/string/)
+- [C++标准库regex类的文档](https://www.cplusplus.com/reference/regex/regex/)
+- [C++标准库algorithm类的文档](https://www.cplusplus.com/reference/algorithm/)

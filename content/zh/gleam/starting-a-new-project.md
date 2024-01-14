@@ -1,41 +1,58 @@
 ---
-title:    "Gleam: 开始一个新项目"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/starting-a-new-project.md"
+title:                "Gleam: 开始一个新项目"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
-在开始一个新项目之前，我们通常会问自己：为什么要做这个项目？最常见的原因是需要解决一个特定的问题或满足一个特定的需求。但除此之外，也有可能是想要学习新的编程语言或技术。不管是什么原因，开始一个新项目都是一个很棒的学习和成长的机会。
+## 为什么要开始一个新项目
+
+无论是为了个人兴趣还是为了商业目的，开始一个新项目都是非常令人兴奋的过程。通过使用Gleam编程语言，您可以轻松创建高性能和安全的软件，为您的项目增添更多乐趣。
 
 ## 如何开始
-要开始一个新的Gleam项目，你首先需要安装Gleam编程语言。在安装完成之后，你可以新建一个文件，命名为"main.gleam"。接下来，你可以按照下面的代码示例来编写你的代码。
 
 ```Gleam
-// 引入标准库中的io模块
-import gleam/io
-
-// 定义一个函数，打印"你好，世界！"
-fn greet() {
-    io.print("你好，世界！")
+// 创建一个简单的“Hello, World!”程序
+pub fn main() {
+  let greeting = "Hello, World!";
+  io.println(greeting);
 }
-
-// 调用函数
-greet()
 ```
 
-## 深入了解
-除了基本的代码编写，开始一个新项目还涉及到其他一些重要的方面。首先，你需要明确项目的目的和范围，确定需要用到的工具和技术。其次，你需要设计项目的架构和组织代码结构。最后，你需要制定一个合理的开发计划，以保证项目按时完成。
+此示例程序将打印出“Hello, World!”，这是一个简单但重要的开始。通过使用Gleam的强类型系统和模式匹配功能，您可以编写稳定且易于维护的代码。
 
-# 参考资料
-如果你想了解更多关于使用Gleam编程语言开始一个新项目的信息，请参考以下链接：
+```Gleam
+// 使用模式匹配输出不同的问候语
+pub fn greet(lang) {
+  case lang {
+    "English" => "Hello!";
+    "Spanish" => "¡Hola!";
+    "Mandarin" => "你好！";
+    _ => "Hello!";
+  }
+}
+```
 
-- 官方Gleam编程语言网站：https://gleam.run/
-- Github仓库：https://github.com/lpil/gleam
-- 官方文档：https://gleam.run/documentation/
-- 论坛：https://elixirforum.com/c/gleam
+使用Gleam，您可以轻松地编写多语言应用程序，让您的项目更加多样化和全球化。
 
-# 参见
-- [如何使用Gleam编程语言创建一个简单的Web服务器](https://example.com/gleam-web-server)
-- [Gleam编程语言 vs. 其他函数式编程语言比较](https://example.com/gleam-vs-functional-languages)
+## 深入了解如何开始新项目
+
+在开始一个新的Gleam项目之前，建议先学习其基本语法和概念。Gleam的官方网站提供了大量的教程和文档，帮助您快速入门。您也可以参考其他Gleam项目的代码，学习如何实现不同的功能。
+
+在开始编写代码之前，建议先思考项目的结构和架构。Gleam也提供了一些有用的工具，如构建工具和包管理器，帮助您更有效地管理项目。
+
+## 参考链接
+
+了解更多关于Gleam编程语言的信息，请访问官方网站：[https://gleam.run/](https://gleam.run/)
+
+浏览其他Gleam项目的代码：[https://github.com/search?q=gleam](https://github.com/search?q=gleam)
+
+查看更多有关如何开始一个新项目的指南：[https://www.wikihow.com/Start-a-New-Project](https://www.wikihow.com/Start-a-New-Project)
+
+## 请参阅
+
+[查看有关Gleam语法和概念的更多指南](https://gleam.run/getting-started/)
+
+[了解如何使用Gleam构建可扩展的应用程序](https://www.planningwithkids.com/2021/02/18/how-to-scale-an-app-with-gleam/)

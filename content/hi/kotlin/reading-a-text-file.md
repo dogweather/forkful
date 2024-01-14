@@ -1,29 +1,38 @@
 ---
-title:    "Kotlin: एक पाठ फ़ाइल पढ़ना"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/reading-a-text-file.md"
+title:                "Kotlin: एक टेक्स्ट फ़ाइल पढ़ना"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-
-आपको एक बार बात करना हुआ, आप हावी पढ़ते हैं कि एक पाठ फ़ाइल आमतौर पर किसी प्रोग्रामिंग कार्य का एक हिस्सा होता है। इसलिए, यह जानना कि आप भेद को थे कि आप सिख सकते हैं कि पाठ फ़ाइल को कैसे पढ़ा और इसकी सामग्री को प्रोग्रामिंग प्रक्रिया में कैसे प्रयोग किया जा सकता है बहुत महत्वपूर्ण है।
+एक टेक्स्ट फाइल को पढ़ना बहुत महत्वपूर्ण है क्योंकि यह सॉफ्टवेयर डेवलपमेंट और डेटा प्रोसेसिंग में आवश्यक है। इससे आप अपने सॉफ्टवेयर को डाटा कोडिंग के साथ बेहतर बना सकते हैं और यह भी देख सकते हैं कि आपका कोड सही से व्यवस्थित है या नहीं।
 
 ## कैसे करें
+टेक्स्ट फाइल पढ़ने के लिए कोट्लिन का उपयोग करने के लिए, आपको `FileReader` को इनपुट स्ट्रीम के साथ इनिशियलाइज करना होगा। उसके बाद, आप `readLines()` फंक्शन का उपयोग करके स्ट्रीम से लाईन एरे बना सकते हैं। अंत में, आप इस लाईन एरे के सदस्यों को `forEach` लूप में छाप सकते हैं।
 
 ```Kotlin
-val inputFile = File("sample.txt")
-val lines = inputFile.readLines()
-println(lines)
+val reader = FileReader("file.txt")
+val lines = reader.readLines()
+
+lines.forEach { println(it) }
 ```
 
-इस उदाहरण में, हमने स्ट्रिंग को कन्वर्ट करने के लिए `File` वर्ग का उपयोग किया है। कोड ब्लॉक के भीतर हमने `sample.txt` नाम की एक फ़ाइल बनाई है और `inputFile.readLines()` को उपयोग करके हमने इसे पढ़ा और उसे वस्तुओं की एक लिस्ट में संग्रहीत किया है। अंत में, हम उन लाइनों को प्रिंट करते हैं जो हमने फाइल से पढ़ा है।
+इसका उत्पादन निम्नांकित प्रकार हो सकता है:
 
-## गहराई में जाओ
+```commandline
+Hello
+नमस्ते
+Hola
+こんにちは
+```
 
-फ़ाइलों से वस्तुओं को पढ़ने के लिए, हम `java.io.File` वर्ग का उपयोग कर सकते हैं। इस वर्ग में `readText()` या `readLines()` जैसी कई उपयोगी फ़ंक्शन होते हैं जो हमें फ़ाइल से सामग्री पढ़ने और वस्तुओं को वस्तुओं में संग्रहीत करने में मदद करती हैं। कोड ब्लॉक के अंत में, हमें `println()` फ़ंक्शन का उपयोग कर चुके हैं जो फ़ाइल से पढ़े गए वस्तुओं को मान-में प्रिंट करता है।
+## गहराई में जाएं
+टेक्स्ट फाइल को पढ़ने के अतिरिक्त, कोटलिन में अन्य भी कई तरीके मौजूद हैं। आप `BufferedReader` का उपयोग करके स्ट्रीम से डेटा को पढ़ सकते हैं और आप `Scanner` का उपयोग करके इनपुट टोकन के साथ खेल सकते हैं। इसके साथ ही, आप `useLines()` फंक्शन का उपयोग करके भी स्ट्रीम से लाईनों को पढ़ सकते हैं और इसे प्रक्रिया को ज्यादा अन्यायरिक बना सकते हैं।
 
-## इसके अलावा देखें
-
-[फ़ाइल से सामग्री पढ़ने के लिए Kotlin वहीकल](https://www.geeksforgeeks.org/reading-a-file-line-by-line
+## देखें भी
+- [Kotlin File I/O Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/kotlin.-file/java.io.-file/read-lines.html)
+- [Kotlin Tutorial on Reading a File](https://kotlinlang.org/docs/tutorials/kotlin-for-py/reading-files.html)
+- [Kotlin File I/O Example](https://jurlabs.com/blog/reading-a-file-with-kotlin)

@@ -1,40 +1,78 @@
 ---
-title:    "Python: Die aktuelle Datum erhalten"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/getting-the-current-date.md"
+title:                "Python: Das aktuelle Datum abrufen"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Abrufen des aktuellen Datums ist eine häufige Aufgabe bei der Programmierung in Python. Es kann hilfreich sein, um zeitabhängige Funktionen oder Prozesse zu steuern oder einfach um das aktuelle Datum in einem bestimmten Format anzuzeigen.
+Das heutige Datum zu ermitteln kann in vielen Programmiersituationen nützlich sein, zum Beispiel für die Erstellung von Protokollen oder die Organisation von Dateien basierend auf dem Datum. Python bietet eine einfache Möglichkeit, das aktuelle Datum und die aktuelle Uhrzeit abzurufen.
 
-# Wie man es macht
+## Wie
 
-Die Python-Standardbibliothek bietet eine integrierte Funktion `date.today()`, die das heutige Datum in einem `date`-Objekt zurückgibt. Dieses Datum kann dann in verschiedenen Formaten angezeigt werden. Hier ist ein Beispiel, wie man das aktuelle Datum als String im Format "Tag/Monat/Jahr" ausgeben kann:
+Um das heutige Datum mit Python zu erhalten, können wir das Modul "datetime" importieren und die Funktion "today()" aufrufen. Wir können auch das Format des Datums mit der Funktion "strftime()" ändern. Schauen wir uns ein Beispiel an:
 
 ```Python
-from datetime import date
+import datetime
 
-heute = date.today()
-formatiertes_datum = heute.strftime("%d/%m/%y")
+heutiges_datum = datetime.date.today()
+print(heutiges_datum)
 
-print(formatiertes_datum)
+heutiges_datum_formatiert = heutiges_datum.strftime("%d-%m-%Y")
+print(heutiges_datum_formatiert)
+```
+Die Ausgabe dieses Codes wäre:
+
+```
+2021-08-09
+09-08-2021
 ```
 
-Das Ergebnis dieses Codes ist `21/05/21`, abhängig von dem Tag, an dem Sie es ausführen.
+Hier haben wir zuerst das heutige Datum ohne Formatierung erhalten und dann das Datum im gewünschten Format ausgegeben. Wir können auch die Uhrzeit mit der Funktion "now()" erhalten, indem wir das Modul "datetime" und die Funktion "strftime()" verwenden. Schauen wir uns dazu ein weiteres Beispiel an:
 
-# Tiefere Einblicke
+```Python
+import datetime
 
-Es gibt verschiedene Funktionen und Methoden in der `datetime`-Bibliothek, die es ermöglichen, das aktuelle Datum auf unterschiedliche Weise darzustellen und zu manipulieren. Zum Beispiel kann man mit `date.weekday()` den Wochentag des aktuellen Datums als Zahl (0 für Montag, 6 für Sonntag) oder als Namen (z.B. "Montag") abrufen. Mit der Funktion `date.fromisoformat()` kann man ein Datum aus einem String im ISO-Format erstellen.
+aktuelle_uhrzeit = datetime.datetime.now()
+print(aktuelle_uhrzeit)
 
-Es gibt auch Möglichkeiten, mit den Daten und Zeiten in Python zu rechnen. Zum Beispiel kann man mit `date.isleap()` überprüfen, ob das aktuelle Jahr ein Schaltjahr ist. Oder mit `date.replace()` ein Datum ändern, z.B. den Tag, den Monat oder das Jahr.
+aktuelle_uhrzeit_formatiert = aktuelle_uhrzeit.strftime("%H:%M:%S")
+print(aktuelle_uhrzeit_formatiert)
+```
+Die Ausgabe dieses Codes wäre:
 
-Es lohnt sich, sich in die Dokumentation der `datetime`-Bibliothek einzulesen, um alle Möglichkeiten kennen zu lernen.
+```
+2021-08-09 18:20:30.123456
+18:20:30
+```
 
-# Siehe auch
+## Deep Dive
 
-- [Offizielle Dokumentation zur datetime-Bibliothek](https://docs.python.org/3/library/datetime.html)
-- [Tutorial zum Arbeiten mit Datum und Zeit in Python](https://realpython.com/python-datetime/)
-- [Stack Overflow: Wie bekomme ich das aktuelle Datum in Python?](https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python)
+Wenn wir genauer in die Dokumentation von Python schauen, sehen wir, dass das Modul "datetime" eine Vielzahl von Funktionen bietet, um mit Datum und Uhrzeit zu arbeiten. Wir können zum Beispiel ein spezifisches Datum erstellen, indem wir die Funktion "date()" verwenden und ein Datum in Klammern übergeben. Schauen wir uns ein letztes Beispiel an:
+
+```Python
+import datetime
+
+mein_geburtstag = datetime.date(1990, 5, 15)
+print(mein_geburtstag)
+
+mein_geburtstag_anderes_format = mein_geburtstag.strftime("%A, der %d. %B %Y")
+print(mein_geburtstag_anderes_format)
+```
+Die Ausgabe dieses Codes wäre:
+
+```
+1990-05-15
+Dienstag, der 15. Mai 1990
+```
+
+Wie du sehen kannst, können wir mit dem Modul "datetime" das aktuelle Datum und die Uhrzeit in verschiedenen Formaten erhalten und sogar spezifische Datumsangaben erstellen. Insgesamt bietet Python eine einfache und flexible Möglichkeit, mit Datum und Uhrzeit zu arbeiten.
+
+## Siehe auch
+
+- Python-Dokumentation zu "datetime": https://docs.python.org/de/3/library/datetime.html
+- "How to Work with Dates in Python": https://realpython.com/python-datetime/
+- "Python's strftime directives": https://strftime.org/

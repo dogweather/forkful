@@ -1,50 +1,44 @@
 ---
-title:    "PHP: Skapa en temporär fil"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/creating-a-temporary-file.md"
+title:                "PHP: Skapa en temporär fil"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att skapa en tillfällig fil kan vara en viktig del av en programmerares arbetsflöde. Det kan hjälpa till att hantera temporära data och säkerställa att allt fungerar smidigt inom din applikation.
+Att skapa en temporär fil kan vara användbart i många olika situationer inom PHP-programmering. Det kan till exempel vara användbart när du vill ha en tillfällig plats att lagra data under en session eller när du behöver hämta en extern fil för behandling.
 
-## Så här
+## Så här gör du
 
-Skapa en tillfällig fil är relativt enkelt i PHP. Du kan använda funktionen `tmpfile()` för att skapa en fil som automatiskt hanteras av operativsystemet och raderas när den inte längre behövs. Här är ett exempel:
-
-```PHP
-<?php
-$file = tmpfile();
-fwrite($file, "Detta är en temporär fil.");
-echo ftell($file); // Output: 24 (antalet tecken som skrivits till filen)
-fclose($file); // Filen kommer automatiskt att raderas här
-?>
-```
-Om du vill ändra namnet på den temporära filen kan du använda funktionen `tempnam()`. Det här kan vara användbart om du behöver hänvisa till filen senare i din kod. Här är ett exempel:
+Här är ett enkelt exempel på hur du kan skapa en temporär fil i PHP:
 
 ```PHP
-<?php
-$tempfile = tempnam("/tmp", "TEMP_"); // Skapar en fil med namnet "TEMP_12345" i mappen "/tmp"
-$file = fopen($tempfile, "w"); // Öppnar filen i skrivläge
-fwrite($file, "Detta är en annan temporär fil.");
-fclose($file);
-echo file_get_contents($tempfile); // Output: "Detta är en annan temporär fil."
-unlink($tempfile); // Filen raderas manuellt här
-?>
+// Skapa en ny temporär fil
+$tempFile = tmpfile();
+
+// Skriv till filen
+fwrite($tempFile, "Det här är ett exempel på innehållet i den temporära filen.");
+
+// Visa sökvägen till den temporära filen
+echo "Sökvägen till den temporära filen är: " . stream_get_meta_data($tempFile)['uri'];
+
+// Stäng filen
+fclose($tempFile);
 ```
 
-## Djupdykning
+När du kör detta kodexempel bör du få ut en sökväg till den temporära filen, till exempel: "/tmp/phpBp1FVU". Det är viktigt att komma ihåg att den temporära filen automatiskt kommer att tas bort när scriptet avslutas eller när filen stängs. Om du vill behålla den temporära filen under en längre tid måste du använda `sys_get_temp_dir()`-funktionen för att få sökvägen till det temporära mappen och därefter ändra filnamnet till något unikt.
 
-Det finns flera anledningar till att man vill skapa en tillfällig fil. Att man behöver hantera temporär data är en vanlig anledning, till exempel när man arbetar med filer som är för stora för att lagras i minnet. Att skapa en tillfällig fil kan också användas för att testa viss funktionalitet utan att riskera att påverka befintliga filer.
+## På djupet
 
-När du skapar en tillfällig fil i PHP är den automatiskt skyddad mot att återgå till användaren. Detta innebär att andra användare på servern inte kommer att kunna komma åt din fil. Det är också viktigt att notera att det inte finns något garantier för hur länge en tillfällig fil kommer att finnas kvar. Det kan variera beroende på operativsystem och serverinställningar.
+När du använder `tmpfile()`-funktionen i PHP för att skapa en temporär fil, kommer filen att skapas i den temporära katalogen på servern. Detta kan variera beroende på vilket operativsystem och vilken server du använder. Om du vill ha mer kontroll över var filen ska skapas kan du istället använda `tmpnam()`-funktionen och ange en önskad sökväg.
 
-## Se också
+Det är också viktigt att komma ihåg att storleken på en temporär fil är begränsad av det tillgängliga utrymmet på servern. Om du behöver skapa en temporär fil som är större än detta, kan du använda `ftruncate()`-funktionen för att öka filens storlek.
 
-- [PHP-funktioner för tillfälliga filer](https://www.php.net/manual/en/ref.filesystem.php)
-- [Hur man hanterar filer i PHP](https://www.php.net/manual/en/function.file.php)
-- [Tips för effektiv PHP-programmering](https://www.php-fig.org/psr/psr-2/)
+## Se även
 
-Det är viktigt att förstå hur man effektivt kan hantera tillfälliga filer i PHP för att kunna skriva robust och smidig kod. Genom att använda de funktioner som finns tillgängliga kan du enkelt hantera dina temporära data och undvika onödig komplexitet.
+- [PHP: tmpfile() function](https://www.php.net/manual/en/function.tmpfile.php)
+- [PHP: tmpnam() function](https://www.php.net/manual/en/function.tmpnam.php)
+- [PHP: ftruncate() function](https://www.php.net/manual/en/function.ftruncate.php)

@@ -1,63 +1,62 @@
 ---
-title:    "Bash: Å starte et nytt prosjekt"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/starting-a-new-project.md"
+title:                "Bash: Å starte et nytt prosjekt"
+programming_language: "Bash"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor starte et nytt prosjekt med Bash?
 
-Å starte et nytt programmeringsprosjekt kan virke skremmende og overveldende, men det kan også være en spennende og givende opplevelse. Enten du er en erfaren programmerer eller en nybegynner, kan opprettelsen av et nytt prosjekt utforske nye ideer og utfordre deg til å forbedre dine ferdigheter. Det kan også være et flott verktøy for å organisere og strukturere koden din på en mer effektiv måte.
+Hvis du er interessert i å lære programmering eller har erfaring med andre språk, kan det være fristende å starte et nytt prosjekt med Bash. Bash er et programmeringsspråk som brukes hovedsakelig i Unix og Linux-operativsystemer, og det er enkelt å lære og bruke. Det kan være et nyttig verktøy for å automatisere oppgaver, håndtere store mengder data og utføre komplekse oppgaver. Les videre for å lære mer om hvordan du kan komme i gang med Bash-programmering.
 
-## Hvordan
+# Slik kommer du i gang med Bash-programmering
 
-For å starte et nytt prosjekt i Bash, må du følge noen enkle trinn:
+Først må du sørge for at du har Bash installert på datamaskinen din. Dette er vanligvis allerede tilgjengelig på Unix og Linux-systemer, men hvis du bruker Windows, kan du installere Bash via Windows Subsystem for Linux eller en virtuell maskin. Når du har Bash opp og kjører, kan du lage et nytt Bash-skript ved å opprette en ny fil med .sh-utvidelsen.
 
-1. Åpne terminalen eller kommandolinjen på datamaskinen din.
-2. Naviger til mappen der du ønsker å opprette prosjektet ditt.
-3. Skriv inn kommandoen "mkdir" etterfulgt av navnet du ønsker å gi prosjektet ditt. For eksempel "mkdir mittprosjekt".
-4. Gå inn i den nye mappen ved å skrive "cd mittprosjekt".
-5. Opprett en ny fil ved å skrive "touch nyfil.sh" (der "nyfil.sh" er navnet på filen din).
-6. Åpne filen ved å skrive "nano nyfil.sh" og begynn å kode.
+For å skrive enkel Bash-kode, trenger du bare å følge disse trinnene:
 
-Et enkelt eksempel kan være å skrive en hel "Hello World" -melding ved hjelp av Bash-kommandoen "echo". Du kan skrive følgende kode i filen din:
-
-```Bash
+```bash
 #!/bin/bash
-
-echo "Hei verden!"
-```
-Når du er ferdig med å koden, kan du lagre og lukke filen ved å trykke "Ctrl + X" og deretter "Y" for å bekrefte endringer.
-
-For å kjøre programmet, må du først gjøre filen din kjørbar ved å skrive "chmod +x nyfil.sh". Deretter kan du kjøre det ved å skrive "./nyfil.sh".
-
-Du bør se følgende utoutput:
-
-```
-Hei verden!
+# Dette er en kommentar
+echo "Velkommen til min første Bash-skript!"
 ```
 
-Gratulerer, du har opprettet ditt første Bash-prosjekt!
+Dette er et eksempel på et enkelt Bash-skript som bruker "echo" -kommandoen for å skrive ut en melding. For å kjøre dette skriptet, må du først gjøre det kjørbart ved å kjøre følgende kommando i terminalen:
 
-## Dypdykk
+```bash
+chmod +x min_første_bash_skript.sh
+```
 
-Før du starter et nytt prosjekt i Bash, bør du tenke på følgende:
+Deretter kan du kjøre skriptet ved å kjøre følgende kommando:
 
-- Hvilket formål har prosjektet ditt? Hva ønsker du å oppnå med det?
-- Hvilke verktøy og ressurser trenger du for å fullføre prosjektet?
-- Har du god forståelse av Bash-kommandoer og syntaks?
-- Hvordan kan du organisere og strukturere koden din for å gjøre den mer effektiv og lesbar?
+```bash
+./min_første_bash_skript.sh
+```
 
-Det er også viktig å huske å dokumentere koden din grundig og å følge god praksis for kodekommentarer og versjonskontroll.
+Outputet vil være følgende:
 
-## Se også
+```
+Velkommen til min første Bash-skript!
+```
 
-Her er noen nyttige ressurser for å hjelpe deg med å starte ditt nye Bash-prosjekt:
+Dette er bare et enkelt eksempel på hva Bash kan gjøre. Du kan også utføre mer komplekse oppgaver ved hjelp av variabler, løkker, if-statements og mye mer. Utforsk flere Bash-kommandoer og syntaks for å utvide dine programmeringsferdigheter.
 
-- [Bash Guide for nybegynnere (engelsk)](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
-- [Bash-skripting for profesjonelle (engelsk)](http://tldp.org/LDP/abs/html/index.html)
-- [Bash Reference Manual (engelsk)](https://www.gnu.org/software/bash/manual/bash.html)
-- [GitHub - Bash-prosjekter (engelsk)](https://github.com/topics/bash)
+# Dykk dypere inn i å starte et nytt prosjekt med Bash
 
-Lykke til med ditt nye Bash-prosjekt!
+Når du er komfortabel med de grunnleggende konseptene i Bash-programmering, kan du utforske mer avanserte funksjoner og brukstilfeller. Her er noen tips for å gå dypere inn i Bash-programmering:
+
+- Ta tiden til å lære mer om UNIX-kommandoer, da dette er kjernen i Bash-programmering.
+- Utforsk Bash-skriptingsteknikker som bruk av funksjoner og kommandolinjeargumenter.
+- Bruk verktøy som "sed", "grep" og "awk" for å manipulere tekstfiler.
+- Vurder å bruke Bash sammen med andre verktøy og programmeringsspråk for å få enda mer funksjonalitet og muligheter.
+
+# Se også
+
+- [Introduction to Bash Programming](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Bash Scripting Cheat Sheet](https://devhints.io/bash)
+- [Bash programming for beginners](https://www.howtogeek.com/67469/the-beginners-guide-to-shell-scripting-the-basics/)
+- [Bash scripting tutorials from Linuxize](https://linuxize.com/tags/bash/)
+
+Lykke til med å starte ditt nye Bash-prosjekt! Husk å være kreativ og ta deg tid til å utforske ulike muligheter for å få mest mulig ut av Bash-programmering.

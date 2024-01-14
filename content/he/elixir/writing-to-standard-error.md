@@ -1,39 +1,59 @@
 ---
-title:    "Elixir: כתיבה לסטנדרט שגיאה"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/writing-to-standard-error.md"
+title:                "Elixir: כתיבה לתקליטור המקוננטז (Standard Error)"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Hebrew Translation:
+## למה
 
-## מדוע
+כתיבת הודעות לפלט השגיאה הוא כלי חשוב בתכנות ב-Elixir והוא מאפשר לנו לזהות ולטפל בשגיאות באופן יעיל יותר. במאמר זה נלמד כיצד לכתוב לפלט השגיאה באמצעות Elixir.
 
-למה לחשוב על כתיבה לשגיאת סטנדרט?
+## איך לעשות זאת
 
-## כיצד לעשות זאת
-
-בתור מתכנתים, כתיבה לשגיאת סטנדרט היא כלי חשוב במהלך הפתרון של בעיות בתוכנית. להלן דוגמא קצרה כיצד לכתוב לשגיאת סטנדרט ב-Elixir:
+כדי לכתוב הודעות לפלט השגיאה, נשתמש בפונקציית IO.puts/2 כך:
 
 ```Elixir
-IO.puts "הודעה לשגיאת סטנדרט"
+IO.puts(:stderr, "הודעת שגיאה")
 ```
 
-פלט המסך יהיה:
+תוצאה:
 
 ```
-הודעה לשגיאת סטנדרט
+הודעת שגיאה
 ```
 
-שימו לב שהמלל מודפס תוך שימוש ב-fputs במקום ב-print כדי להבטיח כתיבה לסטנדרט שלמה ולא על חצי השורה הנוכחי.
+ניתן להשתמש גם בפונקציית IO.inspect/2 כדי לנתח ערך ולהדפיס את תוצאת הניתוח לפלט השגיאה, כך:
 
-## חפירה עמוקה
+```Elixir
+IO.inspect(:error, label: "סוג השגיאה:", io: :stderr)
+```
 
-כאשר שירותי האתר שלך מתבשמים למשתמשים, אתה רוצה להבטיח שכל מידע השגיאה נרשם ונמצא בנגישות לשירותי הסיונר העומדים בפניו. כתיבה לסטנדרט שלמה עוזרת גם למצביע בסוף תהליך האימות להבין מה קרה במהלך הריצה.
+תוצאה:
+
+```
+סוג השגיאה: :error
+```
+
+ניתן להשתמש גם במהדורת פונקציית IO.puts/2 המקוצרת, כך:
+
+```Elixir
+:stderr |> IO.puts("הודעת שגיאה")
+```
+
+תוצאה:
+
+```
+הודעת שגיאה
+```
+
+## חקירה עמוקה
+
+כתיבת הודעות לפלט השגיאה יכול לתרום לתהליך הדיבוג והמציאת באגים באופן יעיל יותר. בנוסף, זהו כלי שימושי בהמבחן ואיתור עיקולים. כדי להרחיב את הידע הלא רק על הפעולות הבסיסיות של כתיבת הודעות לפלט השגיאה, ניתן לחקור עוד על כתיבת דוחות השגיאות ב-Elixir ואיך לטפל בשגיאות על ידי יצירת בלוקי try-catch.
 
 ## ראה גם
 
-- [Elixir תיעוד רישמי: IO] (https://hexdocs.pm/elixir/IO.html)
-- [סילבוס: סילבוס הראשי של Elixir] (https://elixir-lang.org/getting-started/introduction.html)
-- [אתר אינטרנט: הדבר הבא בפלטפורמת Elixir] (https://www.freecodecamp.org/news/the-next-big-thing-in-the-elixir-platform/)
+- [כתיבת דוחות השגיאות ב-Elixir עם Exception](https://elixir-lang.org/getting-started/exceptions.html)
+- [בלוקי try-catch ב-Elixir](https://medium.com/@elvinyung/try-catch-in-elixir-fab7242e6512)

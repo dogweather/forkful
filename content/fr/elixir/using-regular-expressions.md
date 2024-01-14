@@ -1,44 +1,46 @@
 ---
-title:    "Elixir: Utilisation des expressions régulières"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/using-regular-expressions.md"
+title:                "Elixir: Utiliser des expressions régulières"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi Utiliser les Expressions Régulières en Elixir?
+"Pourquoi : Utiliser des expressions régulières en programmation Elixir
 
-Les expressions régulières sont un outil très puissant pour la manipulation de chaînes de caractères en Elixir. Elles permettent de trouver et de remplacer des motifs spécifiques dans une chaîne de caractères, ce qui peut être utile dans de nombreuses situations de programmation. Dans cet article, nous allons voir comment utiliser les expressions régulières en Elixir et plonger plus en profondeur dans leur fonctionnement.
+Les expressions régulières sont un outil puissant pour manipuler et traiter des données de manière efficace. En utilisant des expressions régulières en Elixir, vous pouvez rechercher, filtrer et modifier rapidement des chaînes de caractères selon des motifs spécifiques. Cela peut s'avérer très utile lors de la validation de données entrées par l'utilisateur, du traitement de fichiers ou de la mise en forme de données pour une sortie spécifique. Les expressions régulières peuvent également vous faire gagner du temps en automatisant des tâches fastidieuses liées à la manipulation de chaînes de caractères.
 
-## Comment Utiliser les Expressions Régulières en Elixir?
+Comment Faire :
 
-Pour utiliser les expressions régulières en Elixir, nous devons d'abord importer le module `Regex` en utilisant la directive `import`. Ensuite, nous pouvons utiliser la fonction `match?/2` du module `Regex` pour vérifier si une chaîne de caractères correspond à un motif spécifique. Voici un exemple de code utilisant les expressions régulières pour trouver si une chaîne de caractères contient des chiffres :
-
-```Elixir
-import Regex
-sample_string = "Abc123"
-match?(~r/\d+/, sample_string)
-```
-
-Ceci renverra `true` car la chaîne de caractères contient des chiffres. Nous pouvons également utiliser les expressions régulières pour extraire des parties spécifiques d'une chaîne de caractères en utilisant la fonction `scan/2` du module `Regex`. Voici un exemple de code qui extrait des adresses e-mail à partir d'une chaîne de caractères :
+Pour utiliser des expressions régulières en Elixir, vous pouvez utiliser la fonction `Regex.match?` ou `Regex.run`. Par exemple, si vous avez une chaîne de caractères contenant des numéros de téléphone au format international, vous pouvez utiliser une expression régulière pour extraire les numéros de téléphone à partir de cette chaîne.
 
 ```Elixir
-sample_string = "Mon adresse e-mail est test@test.com"
-scan(~r/[a-zA-Z0-9_]+@[a-zA-Z]+\.[a-zA-Z]+/, sample_string)
+texte = "Mon numéro de téléphone est +33 6 12 34 56 78."
+Regex.run(~r/[+]\d{2} \d{1} \d{2} \d{2} \d{2} \d{2}/, texte)
+
+# Output: [+33 6 12 34 56 78]
 ```
 
-Ceci renverra `["test@test.com"]` car la chaîne de caractères contient une adresse e-mail valide.
+Vous pouvez également utiliser des expressions régulières pour effectuer des remplacements de caractères dans une chaîne, par exemple pour supprimer tous les espaces dans un texte.
 
-## Plongée en Profondeur sur les Expressions Régulières en Elixir
+```Elixir
+texte = "Bonjour tout le monde!"
+Regex.replace(~r/\s/, texte, "")
 
-Les expressions régulières en Elixir utilisent la syntaxe PCRE (Perl Compatible Regular Expressions) et offrent de nombreuses fonctionnalités telles que les quantificateurs, les classes de caractères et les regroupements. Elles peuvent également être utilisées avec des options pour ignorer la casse ou prendre en compte des caractères multilignes.
+# Output: "Bonjourtoutlemonde!"
+```
 
-Il est important de noter que les expressions régulières en Elixir sont basées sur des chaînes de caractères Unicode, ce qui signifie qu'elles peuvent être utilisées pour traiter des caractères spéciaux tels que les accents ou les caractères non latins.
+En utilisant des caractères spéciaux et des quantificateurs, vous pouvez créer des motifs de recherche plus complexes. Vous pouvez également utiliser des groupes de capture pour récupérer des parties spécifiques d'une chaîne correspondant au motif.
 
-Enfin, il est à noter qu'il existe des alternatives aux expressions régulières en Elixir, telles que le module `String.Lexer` qui fournit des fonctions spécifiques pour la manipulation de chaînes de caractères en utilisant des règles définies par l'utilisateur.
+En fin de compte, l'utilisation de régulières peut paraître compliquée au début, mais une fois que vous vous familiarisez avec les différents caractères et quantificateurs, cela devient un outil extrêmement puissant pour manipuler vos chaînes de caractères en Elixir.
 
-## Voir Aussi
+Plongée dans les détails :
 
-- [Documentation officielle des Expressions Régulières en Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Article sur les Expressions Régulières en Français](https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re)
-- [Article sur les Alternatives aux Expressions Régulières en Elixir](https://www.petecorey.com/blog/2019/08/19/the-abcs-of-alternative-string-processing-in-elixir-with-string-lexer/)
+Si vous souhaitez en savoir plus sur les expressions régulières, il existe de nombreuses ressources en ligne pour approfondir vos connaissances. Vous pouvez également consulter la documentation officielle d'Elixir qui donne un aperçu détaillé des différents caractères et quantificateurs disponibles.
+
+Voir aussi :
+
+- [Documentation officielle d'Elixir sur les expressions régulières](https://hexdocs.pm/elixir/Regex.html)
+- [Site web de regex101 pour tester et expérimenter avec des expressions régulières](https://regex101.com/)
+- [Tutoriel d'expressions régulières d'OpenClassrooms (en français)](https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/913820-les-expressions-regulieres-1)

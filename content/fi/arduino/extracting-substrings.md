@@ -1,43 +1,57 @@
 ---
-title:    "Arduino: Alimerkkijonojen erottaminen"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/extracting-substrings.md"
+title:                "Arduino: Alimerkkijonojen erottaminen"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit erottaa osamerkkijonoja? Joskus on tarpeen käsitellä tekstiä osa kerrallaan ja tällöin osamerkkijonojen erottaminen on tarpeen. Tämä on erityisen hyödyllistä, jos haluat manipuloida tietyillä merkkijonoilla, kuten etsiä tiettyjä sanoja tai numeroita.
+Substringien erottamisella on monia hyödyllisiä sovelluksia Arduino-ohjelmoinnissa. Esimerkiksi voit käyttää substringeja käsittelemään tekstin syötteitä, kirjoittamaan parempaa käyttöliittymää ja muokkaamaan datan tallennusta. Jatka lukemista ja opi, kuinka voit hyötyä substringien käytöstä omassa projektissasi.
 
-## Ohjeet
+## Kuinka
 
-Kätevä tapa erottaa osamerkkijonoja Arduino-ohjelmointiympäristössä on käyttää string-luokan substring()-funktiota. Tämä funktio ottaa kaksi parametria: aloitusindeksin ja lopetusindeksin. Näiden avulla voit määrittää, mikä osamerkkijono sinua kiinnostaa. Esimerkissä käytämme string-muuttujaa, mutta voit käyttää myös char-muuttujia. Huomaa myös, että indeksit alkavat nollasta.
-
-```Arduino
-String teksti = "Tämä on esimerkkilause.";
-String osa = teksti.substring(5, 9);
-```
-
-Yllä olevassa koodissa etsimme osamerkkijonon "on" tekstin "esimerkkilause" sisältä ja tallennamme sen muuttujaan "osa". Voit myös käyttää negatiivisia indeksejä, jolloin tekstiä lasketaan takaa päin.
+Substringien erottaminen Arduino-ohjelmoinnissa on helppoa käyttämällä sisäistä `substring()` funktiota. Tämä funktio ottaa parametreina merkkijonon alkupaikan, loppupaikan ja tarvittaessa päämerkin. Tässä esimerkissä otamme toisen ja neljännen merkin 'Arduino' merkkijonosta ja tulostamme sen sarjaanliitetyssä muodossa.
 
 ```Arduino
-String teksti = "Tämä on esimerkkilause.";
-String osa = teksti.substring(-9, -5);
+String nimi = "Arduino";
+String alikirjain = nimi.substring(1,4);
+Serial.println(alikirjain);
 ```
 
-## Syväsukellus
+Tulostus: `rdu`
 
-Voit myös käyttää substring()-funktiota saadaksesi käyttöösi vain tietyn määrän merkkejä ilman, että sinun tarvitsee tietää indeksejä. Tässä käytämme funktiota, joka ottaa parametreiksi aloitusindeksin ja halutun merkkimäärän.
+On tärkeää huomata, että merkkijonon indeksointi alkaa aina nollasta. Joten ensimmäinen merkki on indeksillä 0 ja viimeinen merkki on pituuden vähennettynä yhdellä.
+
+Päämerkin asettaminen on valinnainen ja oletusarvoisesti se on tyhjä merkki. Tässä esimerkissä otamme kolmannen merkin 'Arduino' merkkijonosta ja käytämme pilkkua päämerkkinä.
 
 ```Arduino
-String teksti = "Tämä on esimerkkilause.";
-String osa = teksti.substring(5, 2);
+String nimi = "Arduino";
+String alikirjain = nimi.substring(2, ',');
+Serial.println(alikirjain);
 ```
 
-Tämä palauttaa merkkijonon "on", koska aloitusindeksistä alkaen otetaan kaksi merkkiä.
+Tulostus: `d`
+
+## Syvällinen sukellus
+
+Substringien avulla voit myös luoda uusia merkkijonoja ja tallentaa ne muuttujina. Tässä esimerkissä luomme uuden merkkijonon `nimi2` käyttämällä `substring()` funktiota yhdistämällä `nimi` ja `alikirjain` merkkijonot.
+
+```Arduino
+String nimi = "Arduino";
+String alikirjain = nimi.substring(1,4);
+String nimi2 = nimi + alikirjain;
+Serial.println(nimi2);
+```
+
+Tulostus: `Arduirdu`
+
+Myös `substring()` funktiolla voi käsitellä erilaisia syötteitä, kuten käyttäjän syöttämiä tietoja tai sarjaväylän lukemia arvoja. Voit myös yhdistää useita `substring()` funktioita luomaan monimutkaisempia merkkijonoja.
 
 ## Katso myös
 
-- Arduino string-luokan dokumentaatio: https://www.arduino.cc/reference/en/language/variables/data-types/string/
-- Ohjeita merkkijonojen käsittelyyn Arduinolla: https://www.arduino.cc/en/Tutorial/StringIndexOf
+- [String luokan dokumentaatio](https://www.arduino.cc/reference/en/language/variables/data-types/stringfunctions/substring/)
+- [Esimerkkikoodi String luokalle](https://www.arduino.cc/en/Tutorial/StringConstructors)
+- [Selitys merkkijonon indeksoinnista](https://www.arduino.cc/en/Reference/StringIndexof)

@@ -1,60 +1,46 @@
 ---
-title:    "Swift: Convertendo uma string para minúsculas"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/converting-a-string-to-lower-case.md"
+title:                "Swift: Convertendo uma string para minúsculas"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para letras minúsculas?
+## Porquê
 
-Em alguns casos, é necessário converter uma string para letras minúsculas para garantir que a mesma seja processada corretamente, independentemente de como ela foi digitada ou inserida. Por exemplo, em sistemas de login, é comum converter as senhas dos usuários para letras minúsculas antes de compará-las, para garantir que não haja erros de digitação.
+Muitas vezes, ao trabalhar com programação em Swift, precisamos lidar com strings de texto. E, às vezes, precisamos transformar essas strings em letras minúsculas. Converter uma string para letras minúsculas pode ser útil para facilitar a comparação de strings ou para garantir que a formatação do texto esteja uniforme.
 
-## Como fazer?
+## Como fazer
 
-Existem várias maneiras de converter uma string para letras minúsculas em Swift. A forma mais simples é utilizando o método `lowercased()` da classe `String`. Veja um exemplo:
+Para converter uma string para minúsculas, podemos usar o método `lowercased()` da classe `String` do Swift. Vamos dar uma olhada em um exemplo simples:
 
-```Swift
-let texto = "Exemplo de String"
-let textoMinisculo = texto.lowercased()
-print(textoMinisculo)
-// Saída: exemplo de string
+```
+let nome = "JOÃO"
+let nomeMinusc = nome.lowercased()
+print(nomeMinusc)
 ```
 
-Outra opção é utilizar o operador `+=` para adicionar um modificador de string `lowercased` ao final de uma string existente. Veja:
+Neste código, criamos uma variável `nome` com o valor "JOÃO". Em seguida, usamos o método `lowercased()` para convertê-la para minúsculas e armazená-la na variável `nomeMinusc`. Ao imprimir o valor da variável `nomeMinusc`, obteremos "joão".
 
-```Swift
-var texto = "Exemplo de String"
-texto += .lowercased
-print(texto)
-// Saída: exemplo de string
+Este método também funciona em strings com caracteres acentuados e especiais. Por exemplo:
+
+```
+let texto = "AÇÚCAR!"
+let textoMinusc = texto.lowercased()
+print(textoMinusc)
 ```
 
-Além disso, também é possível usar a função `map` para mapear cada caractere da string para sua versão em letras minúsculas. Veja:
+Nesse caso, o resultado impresso será "açúcar!".
 
-```Swift
-let texto = "Exemplo de String"
-let textoMinisculo = texto.map { $0.lowercased() }
-print(textoMinisculo)
-// Saída: exemplo de string
-```
+## Mergulho profundo
 
-## Profundando um pouco mais
+Ao converter uma string para minúsculas, o Swift usa as regras de maiúsculas e minúsculas da linguagem de programação Unicode. Isso significa que os caracteres acentuados e especiais serão convertidos para suas correspondentes letras minúsculas. Além disso, caracteres como o "i" turco (İ) também serão transformados em "i" minúsculo em vez de "ı".
 
-Ao converter uma string para letras minúsculas, é importante ter em mente que o resultado pode variar dependendo do idioma e do sistema de codificação utilizado. Por exemplo, em maioria dos idiomas, o caractere "I" maiúsculo é convertido para "i" minúsculo, mas em alguns idiomas, como o turco, isso não acontece. Portanto, é importante sempre testar e garantir que a conversão esteja correta para o seu caso específico.
-
-Outro ponto a ser considerado é que o método `lowercased()` não altera a string original, mas sim retorna uma nova string com as letras minúsculas. Se desejar alterar a string original, é preciso atribuir o resultado a ela mesma, como no exemplo a seguir:
-
-```Swift
-var texto = "Exemplo de String"
-texto = texto.lowercased()
-print(texto)
-// Saída: exemplo de string
-```
+Vale ressaltar que o método `lowercased()` não modifica a string original, mas sim retorna uma nova string com as letras minúsculas. Isso pode ser útil caso você precise manter a string original intacta.
 
 ## Veja também
 
-- [Documentação oficial da Apple sobre a classe String](https://developer.apple.com/documentation/foundation/string)
-- [Tutorial sobre strings em Swift no site Apple Developer](https://developer.apple.com/swift/blog/?id=34)
-- [Exemplo de conversão de um texto para letras minúsculas em Swift](https://www.hackingwithswift.com/example-code/strings/how-to-convert-a-string-to-lowercase)
-- [Discussão sobre a conversão de strings em diferentes idiomas em fórum da Apple Developer](https://developer.apple.com/forums/thread/21797)
+- [Documentação oficial do método lowercased()](https://developer.apple.com/documentation/swift/string/1786160-lowercased)
+- [Guia de introdução ao Swift](https://www.swiftbysundell.com/basics/introduction/)
+- [Como comparar strings em Swift](https://www.hackingwithswift.com/example-code/strings/how-to-compare-strings-in-swift)

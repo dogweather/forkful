@@ -1,45 +1,59 @@
 ---
-title:    "Arduino: Drukowanie informacji diagnostycznych"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/printing-debug-output.md"
+title:                "Arduino: Wydrukowanie wyników debugowania"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami, jako programista Arduino, potrzebujemy dodatkowej informacji na temat działania naszego kodu. Drukowanie danych debuggowania jest jednym ze sposobów, aby uzyskać wgląd w to, co dzieje się w trakcie wykonywania programu. Może to pomóc nam w identyfikacji błędów lub zapewnieniu, że nasza logika jest poprawna.
+Programowanie jest procesem często wymagającym wielu iteracji i testów, aby osiągnąć pożądane efekty. Jednym ze sposobów ułatwiających ten proces jest drukowanie debug outputów, czyli informacji wyświetlanych w konsoli, które pozwalają nam śledzić i analizować działanie naszego kodu. W tym artykule dowiesz się, dlaczego warto wykorzystywać drukowanie debug outputów w programowaniu na Arduino.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby wyświetlić dane debugowania w Arduino, możemy użyć funkcji `Serial.print()` lub `Serial.println()`. Poniższy przykład pokazuje, jak wyświetlić wartość zmiennej `x`:
-
-```Arduino
-int x = 5;
-Serial.print("Wartość x to: ");
-Serial.println(x);
-```
-
-Wyjście powyższego kodu będzie wyglądać następująco:
-
-```
-Wartość x to: 5
-```
-
-Możemy również użyć `Serial.print()` do wyświetlenia tekstu bezpośrednio, na przykład:
+Drukowanie debug outputów w programowaniu na Arduino jest bardzo proste i wymaga zaledwie kilku linii kodu. Najpierw musimy zdefiniować port szeregowy za pomocą funkcji `Serial.begin()`, która odpowiada za komunikację między Arduino a komputerem. Następnie możemy wykorzystać funkcję `Serial.print()` lub `Serial.println()` do wyświetlania informacji w konsoli. Przykładowy kod wyglądałby następująco:
 
 ```Arduino
-Serial.print("To jest tekst bez zmiennej.");
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.print("Witaj, świecie!");
+  delay(1000);
+}
 ```
 
-## Głębsza wiedza
+W powyższym przykładzie, co 1000 milisekund zostanie wyświetlony tekst `Witaj, świecie!` w konsoli. Możemy także wyświetlać wartości zmiennych, co jest bardzo przydatne podczas debugowania naszego kodu. Przykładowo:
 
-Funkcje `Serial.print()` i `Serial.println()` nie są jedynymi sposobami na wyświetlanie danych debugowania. Istnieją również inne funkcje, które mogą nam pomóc w analizie naszego kodu, takie jak `Serial.write()` lub `Serial.printf()`. Warto zapoznać się z dokumentacją Arduino, aby poznać wszystkie dostępne opcje.
+```Arduino
+int liczba = 10;
 
-Pamiętaj, aby nie pozostawiać danych debugowania w swoim kodzie, gdy już skończysz pracę nad projektem. Zbyt dużo wyświetlanych informacji może wpłynąć na wydajność programu i zajmować zbędne miejsce w pamięci Arduino.
+void setup() {
+  Serial.begin(9600);
+}
 
-## Zobacz również
+void loop() {
+  Serial.print("Wartość zmiennej liczba: ");
+  Serial.println(liczba);
+  delay(1000);
+}
+```
 
-- [Dokumentacja Arduino o drukowaniu danych debugowania](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Inne sposoby na debugowanie kodu Arduino](https://www.makerguides.com/debug-arduino-code/)
-- [10 porad dotyczących debugowania Arduino](https://www.arduino.cc/en/Guide/Troubleshooting)
+W konsoli będzie wyświetlany tekst `Wartość zmiennej liczba: 10` co 1000 milisekund. Dzięki temu możemy monitorować zmiany wartości naszych zmiennych i łatwiej identyfikować problemy w kodzie.
+
+## Głębsza Analiza
+
+Drukowanie debug outputów pozwala nam w prosty sposób analizować działanie naszego kodu, a także pomaga wychwycić potencjalne błędy. Możemy wyświetlać informacje o wykonywanych pętlach, wartościach zmiennych, czy aktualnym stanie czujników. Dzięki temu możemy śledzić, co dzieje się w naszym programie i zmieniać go w razie potrzeby.
+
+Warto także pamiętać, że drukowanie debug outputów może wpływać na wydajność naszego programu. Dlatego po zakończonej analizie i debugowaniu, należy wyłączyć lub usunąć niepotrzebne wydruki, aby nasz kod działał szybciej.
+
+## Zobacz Również
+
+* [Dokumentacja Arduino Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+* [Tutorial: Jak wykorzystywać drukowanie debug outputów w Arduino IDE](https://www.arduino.cc/en/Tutorial/SerialBegin)
+* [Tutorial: Wykorzystywanie drukowania debug outputów zewnętrznym programem](https://learn.sparkfun.com/tutorials/serial-debugging-with-the-arduino/using-a-serial-terminal)
+
+Dzięki drukowaniu debug outputów możemy skuteczniej analizować nasz kod i ułatwić sobie proces programowania na Arduino. Pamiętaj jednak, że najlepszym sposobem na unikanie błędów jest pisanie czytelnego i zrozumiałego kodu.

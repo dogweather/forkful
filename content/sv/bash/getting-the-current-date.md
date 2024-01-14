@@ -1,45 +1,42 @@
 ---
-title:    "Bash: Att få den nuvarande datumet"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/getting-the-current-date.md"
+title:                "Bash: Att få den nuvarande datumet"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna hämta och använda dagens datum är en användbar funktion i många olika sammanhang, oavsett om du använder Bash för personligt bruk eller i ett professionellt sammanhang. Det kan hjälpa dig hålla koll på deadlines, organisera dina filer eller visa relevanta datum för olika uppgifter.
+# Varför
+Det finns många anledningar till varför du skulle vilja få dagens datum i Bash-programmering. Det kan vara användbart för att spåra när ett program kördes eller för att skapa dynamiska filnamn baserade på datumet. Oavsett motivet, så är det ganska enkelt att få dagens datum i Bash.
 
-## Hur man gör
-Det finns flera olika sätt att hämta dagens datum i Bash. Ett vanligt sätt är att använda kommandot "date" följt av lämpliga flaggor för att få önskad formatering. Här är ett exempel på hur du kan få dagens datum i svensk format:
-
-```Bash
-date +"%d/%m/%Y"
-```
-
-Detta skulle ge utskriften "14/05/2021". Om du vill ha veckodagen med i utskriften kan du lägga till flaggan "+%A" för att få namnet på veckodagen (till exempel "fredag"). Här är ett annat exempel där vi kombinerar både datum och veckodag:
+# Hur man gör
+Det enklaste sättet att få dagens datum i Bash är genom att använda kommandot `date`. Det ger dig hela datumet, inklusive dag, månad och år, i det format som är inställt i ditt system. Om du vill ha ett specifikt format, kan du använda flaggor som `%m` för månad i numerisk form eller `%A` för veckodag i textform. Här är några exempel på `date` kommandot med olika flaggor:
 
 ```Bash
-date +"%A, %d %B, %Y"
+$ date
+Tis 30 Mar 2021
+
+$ date +"%d/%m/%y"
+30/03/21
+
+$ date +"Idag är det %A den %d:e %B"
+Idag är det tisdag den 30:e mars
 ```
 
-Som ger utskriften "fredag, 14 maj, 2021". Det finns också andra flaggor som du kan använda för att få ut mer exakt information, till exempel "+%Y" för att få utskriften av det aktuella året eller "+%j" för att få numret på dagen i det aktuella året. Du hittar en lista över alla tillgängliga flaggor genom att söka på "Bash date flags" på nätet.
+Som du kan se i det sista exemplet kan du även lägga till egen text i kommandot för att få ett mer anpassat resultat. Du kan även använda variabler, som till exempel `$(date +%H)` för att få timmen just nu.
 
-## Djupdykning
-Om du vill ha mer information och kontroll över hur du hämtar dagens datum kan du använda kommandot "cal" istället för "date". "cal" ger dig en kalender för det aktuella året och du kan sedan använda lämpliga flaggor för att få ut information om specifika datum. Här är ett exempel där vi använder flaggan "-y" för att få ut hela året:
+# Djupdykning
+`date` kommandot använder sig av systemets inställda tidszon och datumformat. Om du vill ändra något av dessa kan du göra det med flaggorna `-s` och `-R`. Flaggan `-s` låter dig ställa in tiden manuellt genom att ange år, månad, dag, timme, minut och sekund. Flaggan `-R` låter dig byta till ett annat format för att visa datumet. Du kan också använda kommandot `tzselect` för att välja önskad tidszon.
+
+Om du istället vill ha datumet i ett visst antal dagar framåt eller bakåt så kan du göra det med kommandot `date -d` och ett nummer efter det som representerar antalet dagar från idag. Här är ett exempel på hur du skulle få datumet 5 dagar framåt i tiden:
 
 ```Bash
-cal -y
+$ date -d "+5 days"
+Sön 04 Apr 2021
 ```
 
-Detta skulle ge utskriften av hela året med markeringar för aktuell månad och dag. Du kan också använda flaggan "-d" för att få information om ett specifikt datum, till exempel:
-
-```Bash
-cal -d "14 may"
-```
-
-Som skulle ge utskriften "14 maj" med markering för aktuell dag.
-
-## Se även
-- [Bash Reference Manual - Date and Time](https://www.gnu.org/software/bash/manual/html_node/Date-and-Time.html)
-- [Linuxize - How to Get Current Date and Time in Bash Script](https://linuxize.com/post/bash-get-current-date-time/)
-- [DigitalOcean - How To Use the `date` Command in Linux](https://www.digitalocean.com/community/tutorials/how-to-use-the-date-command-in-linux)
+# Se även
+- `man date` - för mer detaljerad information om `date` kommandot
+- [BashGuide - Datum och Tid](https://mywiki.wooledge.org/BashGuide/DatumOchTid) - en guide för att hantera datum och tid i Bash
+- [Bash Bash - Datum och Tid](https://tldp.org/HOWTO/Bash-Bash-prompt-HOWTO/x237.html) - en artikel om hur man ändrar datum och tid i Bash-prompten.

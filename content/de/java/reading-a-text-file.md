@@ -1,52 +1,53 @@
 ---
-title:    "Java: Einen Textordner lesen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/reading-a-text-file.md"
+title:                "Java: Eine Textdatei lesen"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Lesen von Textdateien ist eine grundlegende Fähigkeit in der Java-Programmierung. Mit dieser Fähigkeit können wir Daten von externen Quellen in unser Programm importieren und verarbeiten. Es ist daher wichtig zu wissen, wie man richtig Textdateien liest, um effiziente und leistungsstarke Programme zu schreiben.
+Das Lesen einer Textdatei ist ein grundlegendes Konzept beim Programmieren in Java, das jeder lernen sollte. Textdateien sind eine häufig verwendete Methode, um Daten zu speichern und zu übertragen. Durch das Erlernen dieses Konzepts können Sie in der Lage sein, komplexe Anwendungen zu schreiben und effizient mit großen Mengen von Daten umzugehen.
 
-## Wie geht man vor
+# How To
 
-Um mit Java eine Textdatei zu lesen, müssen wir zunächst eine Instanz der `File`-Klasse erstellen, die die Datei repräsentiert. Dann erstellen wir eine Instanz der `Scanner`-Klasse, die es uns ermöglicht, die Datei Zeile für Zeile zu durchlaufen und die Daten zu lesen. Wir nutzen die `File`-Instanz als Parameter für den Konstruktor der `Scanner`-Klasse, um die Datei zu öffnen. Anschließend können wir die `nextLine()`-Methode der `Scanner`-Klasse verwenden, um jede Zeile der Datei zu lesen und die Daten zu verarbeiten.
+Um eine Textdatei in Java zu lesen, gibt es mehrere Schritte, die befolgt werden müssen:
 
-```Java
-File file = new File("textdatei.txt"); // Dateipfad anpassen
-Scanner scanner = new Scanner(file);
-
-while (scanner.hasNextLine()) { // liest jede Zeile der Datei
-    String line = scanner.nextLine();
-    System.out.println(line); // gibt die Zeile auf der Konsole aus
-}
-
-scanner.close(); // schließen der Datei
-```
-
-Die obige Beispiel zeigt, wie wir eine Textdatei Zeile für Zeile lesen und die Daten auf der Konsole ausgeben können.
-
-## Tiefer Einblick
-
-Beim Lesen einer Textdatei ist es wichtig zu beachten, welche Codierung die Datei hat. Standardmäßig verwendet Java die Systemcodierung, um Textdateien zu lesen. Wenn die Datei jedoch eine andere Codierung hat, muss dies beim Öffnen der Datei durch die Verwendung des richtigen Konstruktors der `Scanner`-Klasse angegeben werden. Zum Beispiel, wenn die Datei im UTF-8-Format ist, müssen wir den `Scanner`-Konstruktor mit der Zeichenkette "UTF-8" als zweites Argument aufrufen.
+1. Öffnen Sie die Textdatei mit der `FileReader`-Klasse und geben Sie den Pfad zur Datei an.
+2. Verwenden Sie die `BufferedReader`-Klasse, um die Datei zeilenweise zu lesen.
+3. Verwenden Sie eine Schleife, um die Zeilen einzeln zu lesen und die Daten zu verarbeiten.
 
 ```Java
-File file = new File("textdatei.txt");
-Scanner scanner = new Scanner(file, "UTF-8"); // Angabe der Codierung
+FileReader fileReader = new FileReader("pfad/zur/datei.txt");
+BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-while (scanner.hasNextLine()) {
-    String line = scanner.nextLine();
+String line;
+while ((line = bufferedReader.readLine()) != null) {
+    // Verarbeiten Sie jede Zeile hier
     System.out.println(line);
 }
 
-scanner.close();
+bufferedReader.close();
 ```
 
-Außerdem ist zu beachten, dass wir während des Lesens der Datei möglicherweise auf Exceptions stoßen können, wie z.B. die `FileNotFoundException`. Daher ist es wichtig, diese Exceptions zu handhaben und entsprechende Fehlerbehandlung zu implementieren.
+Ausgabe:
 
-## Siehe auch
+```
+Dies ist eine Zeile.
+Dies ist eine andere Zeile.
+Und dies ist eine dritte Zeile.
+```
 
-- [Java File API Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java Scanner Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
+# Deep Dive
+
+Ein wichtiger Aspekt beim Lesen von Textdateien ist das Handling von Fehlern. Beispielsweise kann der Pfad zur Datei möglicherweise nicht existieren oder die Datei könnte beschädigt sein. In solchen Fällen wird eine `IOException` ausgelöst, die behandelt werden muss, um zu verhindern, dass die Anwendung abstürzt.
+
+Außerdem ist es wichtig zu beachten, dass Zeilenendungen in Textdateien je nach Betriebssystem unterschiedlich sein können. Während auf Windows-Systemen normalerweise `\r\n` als Zeilenende verwendet wird, wird auf Unix-Systemen `\n` verwendet. Um dies zu berücksichtigen, empfiehlt es sich, die `System.lineSeparator()`-Methode zu verwenden, die automatisch das richtige Zeilenende für das aktuelle System zurückgibt.
+
+# Siehe auch
+
+- [Java FileReader Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)
+- [Java BufferedReader Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
+- [Using Try-Catch Blocks in Java](https://www.geeksforgeeks.org/try-catch-block-java/) (Englisch)

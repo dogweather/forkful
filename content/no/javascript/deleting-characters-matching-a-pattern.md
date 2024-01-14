@@ -1,41 +1,38 @@
 ---
-title:    "Javascript: Slette tegn som matcher et mønster"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/deleting-characters-matching-a-pattern.md"
+title:                "Javascript: Slette tegn som matcher et mønster"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor: Sletting av tegn som matcher et mønster i Javascript
+## Hvorfor
 
-Å slette tegn som matcher et visst mønster kan være en nyttig funksjon i Javascript-programmering. Dette kan hjelpe i å rydde opp i tekststrenger eller filtrere ut uønskede tegn. For eksempel kan det være nyttig å slette alle tall fra en tekststreng for å bare beholde bokstaver. Å vite hvordan man kan utføre denne handlingen kan også bidra til å lære mer om tekstbehandling i Javascript.
+Mange ganger kan det hende at vi trenger å fjerne deler av en tekst som samsvarer med et bestemt mønster. Dette kan være nyttig når man ønsker å rense opp i en tekst, for eksempel når man jobber med input fra brukere. Å kunne slette karakterer som matcher et mønster i Javascript kan være en verdifull evne for enhver utvikler.
 
-# Hvordan: Eksempler på kode og forventet resultat
+## Hvordan gjøre det
 
-For å slette tegn som matcher et mønster, kan man bruke den innebygde metoden "replace()" i Javascript. Denne metoden tar inn to parametre, det første er mønsteret man ønsker å matche, og det andre er det nye tegnet man ønsker å erstatte den matchende teksten med. Denne metoden returnerer en ny streng med de ønskede endringene.
+For å slette karakterer som matcher et mømster i Javascript, kan vi bruke metoden `replace()` sammen med regulære uttrykk (regex). La oss se på et eksempel:
 
 ```Javascript
-// Eksempel:
-let tekst = "Jeg liker å spise frukt og grønnsaker";
-let nyTekst = tekst.replace(/[a-z]/gi, ""); 
-// Her vil nyTekst være "J S"
-
-// Eksempel med tall:
-let tall = "123456789";
-let nyTall = tall.replace(/[0-9]/g, ""); 
-// Her vil nyTall være en tom streng
+let tekst = "Hei, jeg heter Emma og jeg elsker Javascript";
+let nyTekst = tekst.replace(/e+/g, "");
+console.log(nyTekst);
 ```
 
-I dette eksempelet bruker vi "replace()" metoden og et regelmessig uttrykk (regular expression) for å matche alle små bokstaver (a-z) uavhengig av om de er store eller små (gi flagget). Det betyr at alle små og store bokstaver i teksten vil bli slettet og bare hovedbokstavene blir igjen.
+Her bruker vi `replace()`-metoden sammen med regex `/e+/g` for å slette alle forekomster av én eller flere bokstaver "e" i teksten. Outputen vil være "Hi, jg htr Emma og jg lskr Javasript".
 
-# Dypdykk: Mer informasjon om sletting av characters som matcher et mønster
+Det er også mulig å kombinere regex med andre string metoder, som for eksempel `match()` for å finne ut hvilke deler av teksten som matcher mønsteret.
 
-Å bruke regelmessige uttrykk (regular expressions) til å matche et mønster er en kraftig funksjon i Javascript. Dette åpner for forskjellige muligheter til å utføre avanserte manipulasjoner av tekststrenger. I det første eksempelet brukte vi "g" flagget i det regelmessige uttrykket, som står for global. Dette gjør at metoden vil søke etter alle forekomster av mønsteret i hele teksten. Hvis vi bare ønsker å slette det første treffet, kan vi bruke "i" flagget for å gjøre det case-insensitive, eller "m" flagget for å søke i flere linjer.
+## Dypdykk
 
-Et annet viktig konsept å forstå er escape-tegn (backslash) når man jobber med regelmessige uttrykk. Hvis tekststrengen inneholder spesielle tegn som også brukes i regelmessige uttrykk, må disse escapes for å unngå å endre funksjonaliteten. For eksempel, hvis vi vil matche parenteser ( ) i teksten, må vi bruke backslash foran dem: /\\(\\)/.
+Regex er en kraftig funksjon som kan brukes til å finne og manipulere tekst på en effektiv måte. Det finnes mange forskjellige mønstre som kan brukes i regex, og noen kan virke forvirrende og komplekse. Det er derfor viktig å øve seg og få en god forståelse av hvordan regex fungerer for å kunne utnytte det på best mulig måte.
 
-# Se også
+Et annet viktig poeng å huske på er at regex er case-sensitive, det vil si at store og små bokstaver skiller mellom mønstrene. For å unngå dette kan man bruke flagget `i` etter regex, som vil gjøre søket case-insensitive.
 
-- [MDN Web Docs: replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [W3Schools: Regular Expressions](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Eloquent JavaScript: Regular Expressions](https://eloquentjavascript.net/09_regexp.html)
+## Se også
+
+- [W3Schools - JavaScript Strings](https://www.w3schools.com/js/js_strings.asp)
+- [Regex Tutorial - A Quick Guide to Regular Expressions in Javascript](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
+- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

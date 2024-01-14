@@ -1,41 +1,48 @@
 ---
-title:    "C++: Utskrift av felsökningsresultat"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/printing-debug-output.md"
+title:                "C++: Utskrift av felsökningsutdata"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-Varför: Utskrift av debug-utdata är en viktig del av programmering eftersom den hjälper dig att felsöka och hitta fel i din kod.
+## Varför
 
-Så här: För att skriva ut debug-utdata i C++ kan du använda funktionen "cout" från standard biblioteket i programmet. Detta gör det enkelt att skriva ut variabler och värden som du vill undersöka. Se nedan för ett enkelt exempel:
+När du utvecklar program kan det vara användbart att ha utskrift av felsökning för att hålla koll på vad som händer i ditt program och för att enkelt hitta och åtgärda eventuella problem.
+
+## Hur man gör det
+
+För att skriva ut felsökningsutmatning i C++ använder vi funktionen `cout` från standard biblioteket `iostream`. Vi behöver även inkludera detta bibliotek i början av vårt program med hjälp av `#include <iostream>`. Här är ett exempel på hur man skriver ut en sträng:
 
 ```C++
+#include <iostream>
+
 int main() {
-  int num1 = 5;
-  int num2 = 10;
-  
-  // Skriv ut värdena av num1 och num2
-  cout << "Värdena av num1 och num2 är: " << num1 << " och " << num2 << endl;
-  
-  return 0;
+    std::cout << "Hej världen!" << std:endl;
+    return 0;
 }
 ```
 
-Utdata från programmet ovan kommer att vara:
+Detta kommer att skriva ut "Hej världen!" på skärmen. Vi kan även skriva ut variabler genom att inkludera dem i `cout`:
 
+```C++
+#include <iostream>
+
+int main() {
+    int tal = 100;
+    std::cout << "Mitt tal är " << tal << std::endl;
+    return 0;
+}
 ```
-Värdena av num1 och num2 är: 5 och 10
-```
 
-Detta är ett enkelt sätt att använda "cout" för att skriva ut värden i ditt program och undersöka dem för eventuella fel. Du kan också använda olika formateringsalternativ för att skriva ut värden mer lättläst, som att använda "setw" för att justera bredden på utdata.
+Detta kommer att skriva ut "Mitt tal är 100" på skärmen.
 
-Djupdykning: När du arbetar med mer komplexa program, kan det vara användbart att kunna skriva ut informationsmeddelanden för att hjälpa dig att spåra fel och hitta buggar. Du kan till exempel använda en kombination av "cout" och "cerr" för att skriva ut meddelanden till terminalen och felmeddelanden till felutdata. Du kan också använda "assert" för att skriva ut meddelanden och pausa programmet vid en viss punkt för att undersöka vad som händer i koden. Det är viktigt att använda debug-utskrifter på ett effektivt sätt och bara lämna dem kvar i din kod under utvecklingsfasen.
+## En djupdykning
 
-Se också: För mer information om debug-utdata i C++ och andra användbara verktyg för felsökning, kan du kolla in följande länkar:
+Att inkludera felsökningsutmatning i ditt program kan hjälpa dig att förstå vad som händer i ditt program och hitta eventuella fel. Det är en enkel och effektiv metod för felsökning och kan spara mycket tid i det långa loppet. Det är viktigt att komma ihåg att ta bort alla felsökningsutmatning när ditt program är färdigt för att undvika onödig kod och förbättra prestandan.
 
-- https://www.tutorialspoint.com/cplusplus/cpp_debugging_techniques.htm
-- https://www.geeksforgeeks.org/debugging-c-cpp-code-using-visual-studio/ 
-- https://www.learncpp.com/cpp-tutorial/using-debugging-tools/ 
+## Se även
 
-Se även dessa verktyg som kan hjälpa dig att förbättra din felsökningsprocess och utveckla bättre kod. Ha kul med att utforska och använda debug-utdata för att förbättra din programmeringsfärdighet!
+- [C++ - Standard bibliotek](https://www.cplusplus.com/reference/)
+- [Felsökningsutmatning i C++](https://www.learncpp.com/cpp-tutorial/15-introduction-to-debugging/)

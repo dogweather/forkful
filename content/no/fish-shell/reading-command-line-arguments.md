@@ -1,34 +1,44 @@
 ---
-title:    "Fish Shell: Lese inn kommandolinje argumenter"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-command-line-arguments.md"
+title:                "Fish Shell: Lesing av kommandolinje-argumenter"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Velkommen til vår blogg om Fish Shell programmering! Hvis du er en norsk bruker som ønsker å dykke inn i verden av kommandolinjemiljøer, har du kommet til rett sted. I dag skal vi diskutere hvordan man kan lese kommandolinjeargumenter ved hjelp av Fish Shell.
+
+Lurer du på hvorfor du bør lære deg å lese kommandolinje-argumenter i Fish Shell? Det kan være en svært nyttig ferdighet når du jobber med kommandolinje-programmer, og kan hjelpe deg med å automatisere og effektivisere oppgaver.
 
 ## Slik gjør du det
-For å lese kommandolinjeargumenter ved hjelp av Fish Shell, må du først forstå syntaxen for å lese argumentene. Dette gjøres ved å bruke spesialvariabelen `$argv`. La oss se på et eksempel:
 
+Det er enkelt å lese kommandolinje-argumenter i Fish Shell. Alt du trenger å gjøre er å bruke innebygde kommandoer som "argv" og "$argv". La oss se på et eksempel:
+
+```Fish Shell
+$ fish script.sh argument1 argument2
 ```
-Fish Shell 'set argumenter Eco'
+
+For å lese disse argumentene i Fish Shell, kan du bruke følgende kommandoer:
+
+```Fish Shell
+echo $argv[1]
+```
+
+Denne koden vil gi deg output av "argument1" i dette tilfellet. Hvis du ønsker å hente ut alle argumentene, kan du bruke følgende kode:
+
+```Fish Shell
 echo $argv
 ```
 
-Dette vil returnere en liste over alle argumentene du har gitt til kommandoen, i dette tilfellet `"Eco"`, og vil være nyttig for senere bruk i din programmering.
+Dette vil gi deg output av "argument1 argument2", som er alle kommandolinje-argumentene som ble gitt til scriptet ditt.
 
-## Dypdykk
-For å forstå hvordan Fish Shell leser kommandolinjeargumenter, er det viktig å forstå den underliggende mekanismen for å tolke argumentene. Fish Shell bruker en "lazy loading" strategi når det kommer til parsing av argumentene, noe som betyr at i motsetning til andre kommandolinjemiljøer, vil Fish Shell bare lese argumentene når de skal brukes istedenfor å laste dem alle inn i minnet hver gang kommandoen kjøres.
+## Dykk dypere
 
-Dette gir fordeler når det kommer til effektivitet og hastighet, men også noen ulemper, som for eksempel når argumentene trenger å bli filtrert eller transformert før kjøring av kommandoen. I slike tilfeller anbefales det å bruke Fish Shells innebygde funksjoner som `string split` for å håndtere argumentene på en mer kontrollert måte.
+Nå som vi har sett på det grunnleggende, kan vi ta en dypere titt på å lese kommandolinje-argumenter i Fish Shell. Det finnes flere måter å lese og behandle argumenter på, som for eksempel å bruke "for"-løkker og "switch"-kommandoer. Det er også viktig å huske på at kommandolinje-argumenter kan være nyttige for å gi input til skriptet ditt, for eksempel ved å angi en filsti som argument.
 
 ## Se også
-For mer informasjon om å lese kommandolinjeargumenter i Fish Shell, se følgende ressurser:
 
-- [Fish Shell dokumentasjon om kommandolinjeargumenter](https://fishshell.com/docs/current/commands.html#sub-shells) 
-- [En tutorial på å lese kommandolinjeargumenter i Fish Shell](https://scotch.io/tutorials/getting-started-with-fish-the-friendly-interactive-shell)
-- [Hvordan bruke Fish Shell som din daglige kommandolinje](https://opensource.com/article/18/6/using-fish-instead-bash)
-
-Vi håper du har funnet denne artikkelen nyttig og at du er inspirert til å utforske mer av Fish Shell programmering! Lykke til og ha det gøy på kommandolinjen!
+- [Offisiell dokumentasjon for Fish Shell](https://fishshell.com/docs/current/)
+- [En guide for grunnleggende Fish Shell kommandoer](https://fishshell.com/docs/current/tutorial.html)
+- [En introduksjon til kommandolinjen for nybegynnere](https://skillcrush.com/blog/command-line-basics/)

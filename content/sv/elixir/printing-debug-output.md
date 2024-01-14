@@ -1,47 +1,49 @@
 ---
-title:    "Elixir: Utmatning av felanalys"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/printing-debug-output.md"
+title:                "Elixir: Utskrift av felsökningsdata"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När vi programmerar är det ofta nödvändigt att felsöka vår kod och se hur den beter sig i olika situationer. En enkel och effektiv metod för att göra detta är att använda sig av debug output, eller utskrifter av information om variabler eller steg i ett program. Detta kan hjälpa oss att förstå vad som händer i koden och hitta eventuella felaktigheter.
+Att skriva ut debug-output är ett viktigt verktyg för utvecklare som vill förstå vad som händer i sina program. Det kan hjälpa dig att hitta och lösa felaktig kod, och det kan också ge dig förståelse för hur dina program fungerar internt.
 
-## Hur man gör det
+## Hur man gör
 
-För att skriva ut debug output i Elixir kan du använda dig av funktionen `IO.inspect/2`. Denna funktion tar två argument, det första är det du vill skriva ut och det andra är en lista av alternativa konfigurationer. Om du till exempel vill skriva ut värdet av en variabel `x` kan du använda följande syntax:
-
-```Elixir
-IO.inspect(x)
-```
-
-Du kan också skriva ut flera variabler samtidigt genom att separera dem med kommatecken:
+Det enklaste sättet att skriva ut debug-output i Elixir är att använda funktionen `IO.inspect/2`. Detta tar ett värde som argument och skriver ut det till terminalen.
 
 ```Elixir
-IO.inspect(variable1, variable2)
+IO.inspect("Hej världen")
 ```
 
-Om du vill ange ytterligare konfigurationer, som till exempel att skriva ut objektets klass eller visa stackspåret för en funktion, kan du göra det genom att lägga till det som en lista av argument efter den sista variabeln. Här är ett exempel på en mer avancerad `IO.inspect`:
+Detta kommer att skriva ut "Hej världen" till terminalen. Du kan också använda `IO.inspect/2` för att skriva ut variabler eller värden i dina program.
 
 ```Elixir
-IO.inspect(data, labels: [data_type: :element, pid: :self])
+namn = "Elixir"
+IO.inspect(namn)
 ```
 
-Detta kommer att skriva ut värdet av `data` samt dess klass och process-id.
+Detta kommer att skriva ut värdet av variabeln "namn" till terminalen.
 
-## Djupdykning
+Du kan också formatera utskriften med hjälp av formatsträngar, precis som i andra programmeringsspråk. Till exempel:
 
-För att göra debug output ännu mer användbart kan du också använda dig av funktionen `IO.puts/2`, som skriver ut en sträng till terminalen. Detta kan vara till hjälp för att markera specifika steg i koden eller skriva ut anpassade meddelanden. Du kan också använda `IO.inspect` för att skriva ut specifika delar av datastrukturer, som till exempel värden i en lista eller ett objekts attribut.
+```Elixir
+IO.inspect("Välkommen %s", "till Elixir") 
+```
 
-Det är också möjligt att använda sig av modulen `Logger` för att skriva ut debug information. Detta ger dig möjlighet att ange olika nivåer av loggning beroende på hur allvarligt felet är. Du kan använda `debug`-nivån för att skriva ut specifik information under utveckling och sedan byta till `error`-nivån för att bara skriva ut viktig information vid produktion.
+Denna kod kommer att skriva ut "Välkommen till Elixir" till terminalen.
 
-## Se även
+## Utforska djupare
 
-För mer information om andra användbara funktioner och moduler inom Elixir, kan du kolla in följande resurser:
+För mer avancerade debugging-scenarier kan du använda Elixirs inbyggda `:debugger` modul. Detta ger dig tillgång till en interaktiv debugger där du kan stega igenom din kod och undersöka variabler och uttryck.
 
-- [Elixir Language website](https://elixir-lang.org) (officiell Elixir-sida)
-- [Elixir School](https://elixirschool.com/sv/) (en interaktiv plattform för att lära sig Elixir)
-- [Learning Elixir](https://pragprog.com/book/cdc-elixir/learning-elixir) (en bok för att lära sig Elixir från grundläggande till avancerade koncept)
+Du kan också använda `Logger` modulen för att skriva ut debug-information till loggfiler. Detta är särskilt användbart för långsiktiga debugginsättningar eller för att spåra problem i produktion.
+
+## Se också
+
+- [Elixir Dokumentation om IO.inspect/2](https://hexdocs.pm/elixir/Kernel.html#inspect/2)
+- [Elixir Dokumentation om :debugger](https://hexdocs.pm/elixir/Debugger.html)
+- [Elixir Dokumentation om Logger-modulen](https://hexdocs.pm/logger/Logger.html)

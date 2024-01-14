@@ -1,46 +1,73 @@
 ---
-title:    "Ruby: Calculando una fecha en el futuro o pasado"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/calculating-a-date-in-the-future-or-past.md"
+title:                "Ruby: Calculando una fecha en el futuro o pasado"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porqué
+## Por qué
 
-Calcular fechas en el futuro o en el pasado es una tarea común en la programación. Desde la planificación de eventos hasta la gestión de citas, conocer cómo calcular una fecha específica puede ser muy útil en muchas aplicaciones.
+Calcular fechas en el futuro o en el pasado es una tarea común en la programación, especialmente cuando se trabaja con datos relacionados con el tiempo. Puede ser útil para predecir eventos futuros o realizar cálculos de duración.
 
 ## Cómo hacerlo
 
-En Ruby, hay varias formas de calcular una fecha en el futuro o en el pasado. Para empezar, podemos utilizar el método `Time.new` para crear una fecha y luego utilizar los métodos `+` o `-` para añadir o restar días, meses o años.
+Para calcular una fecha en el futuro o en el pasado en Ruby, se puede utilizar el método `+` o `-` junto con un objeto de clase `Date` o `Time`. Por ejemplo:
 
-Por ejemplo, para calcular una fecha 10 días en el futuro, podemos utilizar el siguiente código:
-
-```Ruby
-future_date = Time.new + (10 * 24 * 60 * 60)
-puts future_date
+``` Ruby
+fecha_actual = Date.today
+# => #<Date: 2021-08-28 ((2459461j,0s,0n),+0s,2299161j)>
+fecha_futura = fecha_actual + 7
+# => #<Date: 2021-09-04 ((2459468j,0s,0n),+0s,2299161j)>
+fecha_pasada = fecha_actual - 7
+# => #<Date: 2021-08-21 ((2459454j,0s,0n),+0s,2299161j)>
 ```
 
-Este código creará una nueva instancia de `Time` para la fecha y hora actual, y luego añadirá 10 días (10*24 horas * 60 minutos * 60 segundos) a esa fecha. Al imprimir `future_date`, deberíamos obtener la fecha exacta 10 días en el futuro.
+En este ejemplo, utilizamos el método `Date.today` para obtener la fecha actual y luego creamos una nueva fecha en el futuro sumando 7 días a la fecha actual con el método `+`. De manera similar, podemos obtener una fecha en el pasado restando días con el método `-`. 
 
-También podemos utilizar el método `strftime` para dar formato a la fecha de salida. Por ejemplo, si queremos imprimir la fecha en formato "DD/MM/YYYY", podemos hacerlo de la siguiente manera:
+También es posible especificar una fecha exacta utilizando el método `Date.new`, pasando los parámetros para año, mes y día. Por ejemplo:
 
-```Ruby
-puts future_date.strftime("%d/%m/%Y")
+``` Ruby
+nueva_fecha = Date.new(2021, 9, 5)
+# => #<Date: 2021-09-05 ((2459475j,0s,0n),+0s,2299161j)>
 ```
 
-Este método toma una cadena de formato como argumento y devuelve la fecha en el formato indicado. En este caso, "%d" representa el día, "%m" representa el mes y "%Y" representa el año en formato de cuatro dígitos.
+Una vez que tengamos una fecha específica, podemos utilizar los mismos métodos `+` y `-` para calcular fechas en el futuro o en el pasado con respecto a esa fecha.
 
 ## Profundizando
 
-En Ruby, el cálculo de fechas se basa en el número de segundos desde el 1 de enero de 1970, también conocido como la "época UNIX". Por lo tanto, al sumar o restar días, meses o años a una fecha, en realidad estamos añadiendo o restando un número determinado de segundos.
+Además de utilizar el método `+` y `-`, Ruby también proporciona otros métodos útiles para calcular fechas en el futuro o en el pasado. Algunos de ellos son:
 
-También es importante tener en cuenta que las fechas son objetos inmutables en Ruby, lo que significa que al manipular las fechas, en realidad estamos creando nuevas instancias en lugar de cambiar la fecha original.
+- `next_day`: devuelve la fecha del día siguiente
+- `prev_day`: devuelve la fecha del día anterior
+- `next_month`: devuelve la fecha del mes siguiente
+- `prev_month`: devuelve la fecha del mes anterior
+- `next_year`: devuelve la fecha del año siguiente
+- `prev_year`: devuelve la fecha del año anterior
 
-Otra forma útil de calcular fechas en Ruby es utilizando la gema `date`. Esta gema nos proporciona una clase `Date` con métodos más intuitivos para realizar cálculos de fecha. Por ejemplo, en lugar de utilizar el método `+` para sumar días, podemos utilizar el método `next_day` para obtener la fecha siguiente.
+Por ejemplo:
+
+``` Ruby
+fecha_actual = Date.today
+# => #<Date: 2021-08-28 ((2459461j,0s,0n),+0s,2299161j)>
+fecha_siguiente_mes = fecha_actual.next_month
+# => #<Date: 2021-09-28 ((2459491j,0s,0n),+0s,2299161j)>
+fecha_anterior_año = fecha_actual.prev_year
+# => #<Date: 2020-08-28 ((2459074j,0s,0n),+0s,2299161j)>
+```
+
+También es posible realizar cálculos de duración utilizando el método `difference` entre dos fechas. Este método devuelve la diferencia en días entre las dos fechas. Por ejemplo:
+
+``` Ruby
+fecha_inicio = Date.new(2021, 8, 20)
+fecha_final = Date.new(2021, 8, 30)
+duracion = fecha_final - fecha_inicio
+# => 10
+```
 
 ## Ver también
 
-- [Documentación oficial de Ruby sobre Time](https://ruby-doc.org/core-2.7.1/Time.html)
-- [Cálculos básicos de fechas en Ruby](https://www.rubyguides.com/2015/05/working-with-dates-ruby/)
-- [Calculando fechas con la gema Date en Ruby](https://medium.com/@alexvpopov/calculate-time-in-the-future-with-ruby-d32413fb4ab1)
+- Documentación oficial de Ruby sobre fechas y tiempo: https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/index.html
+- Un tutorial sobre cálculos de fechas en Ruby: https://www.rubyguides.com/2018/08/ruby-date-and-time/
+- Una guía detallada sobre el manejo de fechas y tiempo en Ruby: https://blog.appsignal.com/2020/06/24/ruby-magic-date-time-manipulation.html

@@ -1,63 +1,55 @@
 ---
-title:    "TypeScript: Aloittamassa uutta projektia"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/starting-a-new-project.md"
+title:                "TypeScript: Uuden projektin aloittaminen"
+programming_language: "TypeScript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Aloittaessasi uuden projektin TypeScriptilla, pystyt helpommin kirjoittamaan ja ylläpitämään suurta tietokoodipohjaa. TypeScript tarjoaa parempaa kirjoitus- ja virheenkorjaustyökaluja verrattuna perinteisiin Javascript-kieleen.
+Aloittamaan uuden projektin on yksi jännittävimmistä osista ohjelmistokehitystä. Se tarjoaa mahdollisuuden luoda jotain uutta ja mahdollistaa korkean luomisen tunteen. Uuden projektin aloittamisessa on myös hyödyllistä oppia uusia taitoja ja parantaa työkalupakettia.
 
-## Kuinka aloittaa
+## Kuinka
 
-Aloita asentamalla TypeScript-compiler NPM:n kautta. Seurauksen koodinpaloista näet miten TypeScript-koodi näyttää tavallisesti. 
+Uuden projektin aloittaminen TypeScriptillä on yksinkertaista ja se tarjoaa runsaasti ominaisuuksia parantaaksesi kehitysprosessiasi. Tässä on muutama esimerkki koodista ja tulostuksesta käyttäen markdown-koodia ``` TypeScript ... ```
 
 ```TypeScript
-npm install -g typescript
+console.log("Hei maailma");
 ```
 
-Seuraavaksi voit luoda uuden TypeScript-projektin nimeltä "example".
+Tulostus: Hei maailma
 
 ```TypeScript
-mkdir example
-cd example
-```
-
-Luo uusi TypeScript-tiedosto nimeltä "app.ts".
-
-```TypeScript
-touch app.ts
-```
-
-Kirjoita koodisi "app.ts" tiedostossasi.
-
-```TypeScript
-function greeting(name: string) {
-  console.log("Hei " + name + ", tervetuloa TypeScript-maailmaan!");
+interface Henkilö {
+  etunimi: string;
+  sukunimi: string;
+  ikä: number;
 }
 
-let name = "Finnish readers";
-greeting(name);
+let henkilö: Henkilö = {
+  etunimi: "Matti",
+  sukunimi: "Meikäläinen",
+  ikä: 25
+};
+
+console.log("Hei, olen " + henkilö.etunimi + " " + henkilö.sukunimi + " ja olen " + henkilö.ikä + " vuotta vanha.");
 ```
 
-Käännä koodisi TypeScriptista Javascriptiksi suorittamalla komento `tsc app.ts`. Tämä generoi uuden Javascript-tiedoston nimeltä "app.js".
+Tulostus: Hei, olen Matti Meikäläinen ja olen 25 vuotta vanha.
 
-Voit nyt ajaa Javascript-tiedostosi komentoriviltä käyttämällä komentoa `node app.js`. Näet seuraavanlaisen tulosteen:
+Koodiesimerkit ja -tulosteet auttavat sinua kokeilemaan ja oppimaan perusteet TypeScriptistä. Opi lisää erilaisista käsitteistä, kuten muuttujista, funktioista ja ehdoista, kehittääksesi taitojasi ja luodaksesi monimutkaisempia sovelluksia.
 
-```TypeScript
-Hei Finnish readers, tervetuloa TypeScript-maailmaan!
-```
+## Syväluotaus
 
-## Syväsukellus
+Ennen uuden projektin aloittamista on tärkeää käyttää aikaa suunnitellaksesi tarvittavat vaiheet ja hahmottaaksesi projektin tavoitteet. Voit myös päättää, mihin kehitysympäristöön ja työkaluihin haluat keskittyä. TypeScriptin avulla voit luoda sekä frontend- että backend-ratkaisuja, joten voit valita alustan, joka sopii projektillesi parhaiten.
 
-Jos haluat aloittaa suuremman TypeScript-projektin, voit harkita Typescriptin käyttämistä yhdessä monien suosittujen kehitysympäristöjen kanssa, kuten Visual Studio Code, WebStorm, Atom tai Sublime Text. Nämä kehitysympäristöt tarjoavat lisäominaisuuksia, kuten automaattisen koodin korjaamisen ja debuggerin, jotka voivat helpottaa koodin kirjoittamista ja virheenkorjausta.
-
-Voit myös lisätä muita paketteja ja kirjastoja TypeScript-projektiisi käyttämällä NPM-pakettienhallintaa ja `package.json` -tiedostoa.
+Lisäksi on hyödyllistä tehdä tutkimusta TypeScript-yhteisöstä ja löytää online-resursseja, jotka voivat auttaa sinua projektisi kehittämisessä. Muista myös dokumentoida koodiasi ja noudattaa parhaita käytäntöjä, jotta projekti pysyy järjestäytyneenä ja helppokäyttöisenä.
 
 ## Katso myös
 
-- TypeScriptin virallinen sivusto: https://www.typescriptlang.org/
-- NPM-pakettienhallinta: https://www.npmjs.com/
-- Visual Studio Code: https://code.visualstudio.com/
+- [TypeScriptin virallinen verkkosivusto](https://www.typescriptlang.org/)
+- [TypeScript-koodiesimerkit ja oppitunnit](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [TypeScript-yhteisöfoorumi](https://github.com/microsoft/TypeScript/issues)
+- [TypeScript-opetusohjelmat ja vinkit](https://github.com/accessToken19/typescript-tips-tricks-cheatsheet/blob/master/README-fi.md)

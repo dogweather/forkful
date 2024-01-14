@@ -1,52 +1,58 @@
 ---
-title:    "Rust: Beregning av en dato i fremtiden eller fortiden"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/calculating-a-date-in-the-future-or-past.md"
+title:                "Rust: Beregning av en dato i fremtiden eller fortiden"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvorfor kunne vi trenge å beregne en dato i fremtiden eller fortiden? Det kan være nyttig for å planlegge fremtidige hendelser eller for å gjenopprette informasjon om tidligere hendelser.
+Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge hendelser eller få oversikt over tidligere hendelser. Det kan også være en god måte å øve på å bruke Rust-programmeringsspråket på.
 
-## Hvordan
-For å beregne en dato i Rust, kan vi bruke biblioteket "chrono". Vi må starte med å legge til følgende linje i "Cargo.toml" filen:
-```Rust
+## Slik Gjør du Det
+For å beregne en dato i Rust, kan du bruke biblioteket "chrono". Først må du legge til dette biblioteket i prosjektet ditt ved å legge til følgende linje i "Cargo.toml" filen:
+
+```
 [dependencies]
 chrono = "0.4"
 ```
-Deretter kan vi importere biblioteket i koden vår:
-```Rust
-use chrono::{UTC, Duration, DateTime};
+
+Deretter kan du importere biblioteket i Rust-filen din ved å legge til følgende linje øverst i filen din:
+
 ```
-For å beregne en dato i fremtiden, kan vi bruke "UTC" funksjonen for å få dagens dato, og deretter legge til en "Duration" for å angi hvor langt frem i tid vi vil beregne:
-```Rust
-let now = UTC::now();
-let future_date = now + Duration::weeks(2);
-println!("Datoen to uker fra nå er {}", future_date);
+use chrono::{NaiveDate, Datelike, Timelike, Weekday, NaiveDateTime};
 ```
-Dette vil gi oss følgende output:
+
+La oss si at vi vil beregne datoen 100 dager fra i dag. Først må vi opprette en variabel som representerer i dag ved hjelp av "Local" funksjonen fra "chrono" biblioteket:
+
 ```
-Datoen to uker fra nå er 2020-08-31 14:30:00 UTC
+let today = Local::today();
 ```
-Vi kan også beregne en dato i fortiden ved å bruke "Duration" med et negativt tall:
-```Rust
-let now = UTC::now();
-let past_date = now + Duration::days(-7);
-println!("Datoen en uke tilbake var {}", past_date);
+
+Deretter kan vi bruke "checked_add_signed" funksjonen fra "Secs" strukturen for å legge til 100 dager på dagens dato:
+
 ```
-Dette vil gi oss følgende output:
+let future_date = today.checked_add_signed(chrono::Duration::days(100));
 ```
-Datoen en uke tilbake var 2020-08-10 14:30:00 UTC
+
+Til slutt kan du skrive ut datoen på et lesbart format ved å bruke "format" funksjonen:
+
 ```
+println!("100 dager fra i dag vil være {}", future_date.format("%A, %e %B %Y"));
+```
+
+Dette vil resultere i følgende utdat:
+
+```
+100 dager fra i dag vil være Saturday, 10 September 2022
+```
+
+Du kan også beregne en dato i fortiden ved å bruke "checked_sub_signed" funksjonen og trekke fra et antall dager i stedet for å legge til. Du kan leke rundt med bokstavene i "format" funksjonen for å få ønsket utdataformat.
 
 ## Dypdykk
-Her er noen ting å merke seg når vi beregner datoer i Rust:
-- "chrono" biblioteket bruker UTC-tid, så det er viktig å være oppmerksom på eventuelle lokale tidssoneforskjeller.
-- Vi kan også bruke "Duration" til å beregne tidsintervaller i timer, minutter, sekunder osv.
-- Det finnes andre nyttige funksjoner og metoder i "chrono" biblioteket, som for eksempel å konvertere datoer til forskjellige formater.
+For å forstå bedre hvordan "chrono" biblioteket fungerer, kan du utforske dokumentasjonen og se på koden til de forskjellige funksjonene. Du kan også se nærmere på hvordan datoer og tider representeres i "chrono" ved å bruke de forskjellige strukturene som "NaiveDate", "NaiveDateTime" og "Secs".
 
-## Se også
-- [Rust dokumentasjon for "chrono" biblioteket](https://docs.rs/chrono/0.4.19/chrono/)
-- [Offisielt Rust forum (på norsk)](https://users.rust-lang.org/c/internasjonalt-svorsk-forum/)
-- [Et annet blogginnlegg som utforsker "chrono" biblioteket](https://steveklabnik.github.io/chrono/chrono/)
+## Se Også
+- [chrono dokumentasjon](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rust programmeringsspråk](https://www.rust-lang.org/no)

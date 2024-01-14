@@ -1,51 +1,40 @@
 ---
-title:    "Bash: Användning av reguljära uttryck"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/using-regular-expressions.md"
+title:                "Bash: Användning av reguljära uttryck"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-Bash programmering: Användning av reguljära uttryck
-
 ## Varför
 
-Reguljära uttryck är ett kraftfullt verktyg inom Bash-programmering. Genom att använda reguljära uttryck kan man effektivt söka och manipulera textsträngar, vilket är en mycket användbar funktion inom skriptning. Reguljära uttryck kan också förbättra läsbarheten och effektiviteten i ens kod.
+Regular expressions är ett användbart verktyg för att förbättra effektiviteten och precisionen i din Bash-programmering. De tillåter dig att söka efter mönster i textsträngar och utföra olika åtgärder baserat på dessa mönster.
 
-## Hur man använder reguljära uttryck i Bash
+## Så här använder du det
 
-Det första steget för att använda reguljära uttryck är att förstå syntaxen. Ett reguljärt uttryck består av specialtecken och metatecken som tillsammans bildar en mall för att matcha eller ersätta text. Det finns många olika specialtecken och metatecken men några av de vanligaste är:
+För att använda regular expressions i Bash, behöver du först förstå syntaxen för att skriva dem. De kan innefatta specialtecken som * och +, som betyder "noll eller fler" respektive "en eller fler". För att söka efter ett visst mönster, kan du använda kommandot `grep` tillsammans med en regular expression.
 
-- `. `: Matchar ett enda tecken
-- `*`: Matchar 0 eller flera av de föregående tecknen
-- `+`: Matchar 1 eller flera av de föregående tecknen
-- `[]`: Definierar en möjlig karaktäruppsättning att välja från
-- `^`: Matchar början av en rad
-- `$`: Matchar slutet av en rad
-
-För att använda reguljära uttryck i Bash, måste man använda kommandot `grep`. Detta kommando söker igenom en textsträng efter en matchning till det angivna reguljära uttrycket och returnerar raderna som innehåller matchningen. Det finns också andra användbara kommandon som `sed` och `awk` för att manipulera text med hjälp av reguljära uttryck.
-
-Här är ett exempel på hur man kan använda reguljära uttryck för att hitta filer i en mapp som matchar ett visst mönster:
+Ett exempel på hur man kan använda en regular expression i Bash är att söka efter alla filer som slutar på ".txt" i en mapp. Detta kan göras med följande kommando:
 
 ```Bash
-ls | grep '^bild.*\.jpg$'
+ls | grep ‘\.txt$’
 ```
-Detta kommando listar alla filer i mappen som börjar med "bild" och slutar med ".jpg".
+
+Outputen från detta kommer att visa alla filer som slutar på .txt. Detta är ett användbart verktyg när du behöver arbeta med specifika filtyper i en mapp.
 
 ## Djupdykning
 
-Reguljära uttryck kan också användas för att ersätta text eller för att extrahera specifika delar av en textsträng. Detta finns i form av grupper, vilket är en del av uttrycket som är markerat med parenteser. Grupper kan sedan refereras till med hjälp av speciella variabler som `$1`, `$2`, etc.
+Det finns många olika mönster och syntaxer som kan användas i regular expressions. Det kan ta lite övning att bli bekväm med dem, men det är definitivt värt det i långa loppet. Till exempel, använda * för att söka efter flera olika mönster, eller använd räckviddstecken [a-z] för att hitta alla bokstäver i en viss intervall.
 
-Här är ett exempel på hur man kan använda reguljära uttryck för att extrahera ett telefonnummer från en textsträng:
-
-```Bash
-echo "Kontakta mig på 070-1234567!" | grep -o '[0-9]\{3\}-[0-9]\{7\}'
-```
-
-Detta kommer att returnera "070-1234567" som matchar mönstret för ett vanligt telefonnummer.
+Du kan också använda regular expressions för att matcha och extrahera specifika delar av en textsträng. Genom att använda parenteser runt de delar av mönstret som du vill extrahera, kan du sedan använda variabler för att komma åt dessa delar för att utföra olika åtgärder.
 
 ## Se även
 
-- [En introduktion till reguljära uttryck för Bash](https://ryanstutorials.net/regular-expressions-tutorial/)
-- [Grep man-sida](https://linux.die.net/man/1/grep)
-- [Sed och Awk introduktionsguide](https://www.tutorialspoint.com/unix_commands/sed.htm)
+Här är några användbara resurser för att lära dig mer om regular expressions och hur du kan använda dem i din Bash-programmering:
+
+- [En grundläggande guide till användning av regular expressions i Bash](https://www.linode.com/docs/development/regular-expressions-examples-bash/)
+- [En komplett guide till regular expressions på Linux](https://www.linuxjournal.com/content/bash-extended-globbing)
+- [RegExtract - ett praktiskt verktyg för att testa och experimentera med regular expressions](https://regex101.com/)
+
+Lycka till med att använda regular expressions i din Bash-programmering! Du kommer snart att upptäcka hur kraftfullt detta verktyg kan vara för att effektivisera ditt arbete och förbättra din kodningsförmåga.

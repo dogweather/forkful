@@ -1,48 +1,46 @@
 ---
-title:    "PHP: Ein Datum in einen String umwandeln"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/converting-a-date-into-a-string.md"
+title:                "PHP: Ein Datum in eine Zeichenkette konvertieren"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Programmierung ist es oft erforderlich, ein Datum in Form eines Strings darzustellen. Dies kann zum Beispiel für eine Benutzeroberfläche oder für das Speichern von Daten in einer Datenbank notwendig sein. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man ein Datum in PHP in einen String konvertieren kann und warum dies nützlich ist.
+In der Programmierung kann es häufig notwendig sein, ein Datum in eine Zeichenkette umzuwandeln, um es zu speichern oder anzuzeigen. Hier erfahren Sie, wie Sie dieses nützliche Feature in PHP nutzen können.
 
-## Wie geht das?
+## Wie geht man vor
 
-Die Konvertierung eines Datums in einen String kann mit der Funktion `date()` in Kombination mit einem Formatierungsstring durchgeführt werden. Hier ist ein Beispiel:
-
-```PHP
-$date = date('d.m.Y', time());
-echo $date;
-```
-
-In diesem Beispiel wird das aktuelle Datum in das gewünschte Format "Tag.Monat.Jahr" konvertiert und dann ausgegeben. Das Ergebnis würde beispielsweise "13.09.2021" lauten.
-
-Ein weiteres Beispiel ist die Nutzung des `DateTime`-Objekts, um ein Datum in einen String zu konvertieren:
+Das Konvertieren eines Datums in eine Zeichenkette kann mit der Funktion `date()` in PHP durchgeführt werden. Diese nimmt zwei Parameter an: das Dateiformat und das Datum, das in eine Zeichenkette umgewandelt werden soll. Hier ist ein Beispielcode:
 
 ```PHP
-$date = new DateTime();
-echo $date->format('M d, Y');
+$datum = time();
+$zeichenkette = date("d.m.Y", $datum);
+echo $zeichenkette;
 ```
 
-In diesem Fall wird das aktuelle Datum in das Format "Monat Tag, Jahr" konvertiert und ausgegeben. Das Ergebnis wäre zum Beispiel "Sep 13, 2021".
+Die Variable $datum kann entweder ein tatsächliches Datum in Form eines Zeitstempels oder das aktuelle Datum sein, das durch die Funktion `time()` erzeugt wird. Die Formatierungsoptionen für `date()`, wie im obigen Beispiel verwendet, entsprechen der Syntax von `strftime()`, einer Funktion, die das Formatieren von Zeichenketten basierend auf Datum und Uhrzeit ermöglicht.
 
-## Tiefergehende Analyse
+Im obigen Beispiel würde die Nummernkombination `d.m.Y` für das Datum "01.01.2021" die Zeichenkette "01.01.2021" erzeugen.
 
-Die `date()`-Funktion bietet eine Vielzahl von Möglichkeiten, um Datumsangaben in Strings zu formatieren. Es gibt verschiedene Formate für Tage, Monate, Jahre, Wochentage, Uhrzeiten und vieles mehr. Die vollständige Liste der möglichen Formatierungen kann in der offiziellen PHP-Dokumentation gefunden werden.
+## Tiefergehender Einblick
 
-Darüber hinaus ist es wichtig zu beachten, dass die Konvertierung eines Datums in einen String auch sprachabhängig sein kann. In PHP gibt es die Funktion `setlocale()`, mit der die Datumsformatierung an die Standardsprache des Systems angepasst werden kann.
+Die Funktion `date()` bietet viele weitere Formatierungsoptionen für die Konvertierung von Datum in eine Zeichenkette. Eine vollständige Liste dieser Optionen kann in der offiziellen PHP-Dokumentation gefunden werden.
 
-In einigen Fällen kann es auch erforderlich sein, die Zeitzone des Systems zu berücksichtigen. Dies kann mit der Funktion `date_default_timezone_set()` festgelegt werden.
+Einige der häufig verwendeten Optionen sind:
+
+- `d` für den Tag als zweistellige Zahl (01-31)
+- `m` für den Monat als zweistellige Zahl (01-12)
+- `Y` für das Jahr als vierstellige Zahl (z.B. 2021)
+- `l` für den Namen des Wochentags (z.B. Montag)
+- `F` für den vollen Namen des Monats (z.B. Januar)
+
+Es ist auch möglich, eigene Formate zu erstellen, indem man Zeichen wie Bindestriche oder Schrägstriche zwischen den verschiedenen Formatoptionen in die Zeichenkette einbaut.
 
 ## Siehe auch
 
-Weitere Informationen zur Konvertierung von Daten in Strings in PHP finden Sie unter den folgenden Links:
-
-- [PHP: Date() Funktion](https://www.php.net/manual/de/function.date.php)
-- [PHP: DateTime Objekt](https://www.php.net/manual/de/class.datetime.php)
-- [PHP: setlocale() Funktion](https://www.php.net/manual/de/function.setlocale.php)
-- [PHP: date_default_timezone_set() Funktion](https://www.php.net/manual/de/function.date-default-timezone-set.php)
+- [Offizielle PHP-Dokumentation zu `date()`](https://www.php.net/manual/de/function.date.php)
+- [Weitere Informationen zu `strftime()` und seinen Formatierungsoptionen](https://www.php.net/manual/de/function.strftime.php)
+- [Ein Praxisbeispiel für die Verwendung von `date()`](https://www.geeksforgeeks.org/how-to-convert-date-object-to-date-string-in-php/)

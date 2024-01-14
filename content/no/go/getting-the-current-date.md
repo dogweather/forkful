@@ -1,54 +1,58 @@
 ---
-title:    "Go: Få dagens dato"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/getting-the-current-date.md"
+title:                "Go: Å få nåværende dato"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å få den nåværende datoen i et programmeringsprosjekt kan virke som en enkel oppgave, men det er likevel viktig for å sikre nøyaktigheten og påliteligheten til applikasjonen din. Det kan også være nyttig for å registrere og spore aktiviteter eller hendelser i programmet ditt, som for eksempel når en fil ble opprettet eller når en transaksjon ble gjort. I denne blogginnlegget skal vi se nærmere på hvordan du kan hente den nåværende datoen i et Go-program.
+Å få tak i den gjeldende datoen er et vanlig behov for programmører uansett språk eller prosjekt. I denne bloggposten vil vi se nærmere på hvordan man kan få tak i datoen ved hjelp av Go-programmeringsspråket.
 
-## Hvordan
+## Slik Gjør Du
 
-Først må du importere «time»-pakken i Go ved å skrive følgende importsetning øverst i filen din:
-
-```Go
-import "time"
-```
-
-Deretter kan du få den nåværende datoen ved å bruke funksjonen «Now()» fra «time»-pakken, som returnerer en «time.Time»-verdi. Du kan deretter formatere denne verdien ved hjelp av funksjonen «Format()». Se eksempelet nedenfor:
+For å få tak i den gjeldende datoen i Go, bruker vi funksjonen "Now" fra tidsmodulen. Her er et enkelt eksempel:
 
 ```Go
-// Hent nåværende dato og konverter til ønsket format
-currentDate := time.Now()
-formattedDate := currentDate.Format("02.01.2006") // format: tt.mm.åååå
+func main() {
+   date := time.Now()
+   fmt.Println(date)
+}
 ```
-    
-Output av denne koden vil være datoen i ønsket format, for eksempel: 13.09.2021.
 
-Det er også mulig å få den nåværende datoen i en annen tidssone ved å bruke funksjonen «FixedZone()». Se eksempelet nedenfor:
+Kjører vi dette eksempelet, vil vi få følgende utskrift:
+
+```
+2021-07-10 12:00:00
+```
+
+I dette eksempelet brukte vi "fmt" pakken til å skrive ut datoen. Vi kan imidlertid også formatere datoen på forskjellige måter ved å bruke "Format" funksjonen, som vist i følgende eksempel:
 
 ```Go
-// Hent nåværende dato i en annen tidssone
-location, _ := time.LoadLocation("Europe/Oslo")
-currentDate := time.Now().In(location)
+func main() {
+   date := time.Now()
+   fmt.Println(date.Format("02/01/2006"))
+}
 ```
+
+Denne gangen vil utskriften være:
+
+```
+10/07/2021
+```
+
+Her brukte vi formatet "02/01/2006" som tilsvarer "dag/måned/år". Ved å endre på rekkefølgen av tallene, kan vi formatere datoen på ulike måter. Dette er bare noen få eksempler på hvordan man kan få tak i datoen ved hjelp av Go-programmeringsspråket.
 
 ## Dypdykk
 
-Når du bruker funksjonen «Now()» og «LoadLocation()», vil datoen bli hentet fra operativsystemets klokke. Dette kan føre til problemer hvis brukeren endrer klokkeslettet på datamaskinen sin. For å unngå dette, kan du bruke funksjonen «UTC()» som henter datoen fra koordinert universaltid (UTC).
+For å få en dypere forståelse av hvordan datoen blir hentet i Go, kan vi se nærmere på koden til "Now" funksjonen i tidsmodulen. Denne funksjonen bruker faktisk "Unixtimen", som er antallet sekunder som har gått siden 1. januar 1970. Go konverterer deretter dette til en lesbar dato og tid ved hjelp av ulike matematiske operasjoner.
 
-```Go
-// Hent nåværende dato fra UTC
-currentDate := time.Now().UTC()
-```
+Hvis du vil lære mer om hvordan datoen blir hentet i Go, kan du se på koden til "Now" funksjonen på offisielle dokumentasjonssiden til Go.
 
-Det er også verdt å merke seg at «Now()»-funksjonen tar hensyn til tiden i den vertsoperativsystemet, noe som kan føre til avvik hvis serveren din er satt til en annen tidssone enn der du kjører programmet ditt fra. I slike tilfeller er det bedre å bruke funksjonen «Now().UTC()» for å få en mer pålitelig dato.
+## Se Også
 
-## Se også
-
-* Offisiell Go-dokumentasjon for Time-pakken: https://golang.org/pkg/time/
-* Hvordan håndtere dato og tid i Go: https://golangbyexample.com/go-dato-tid/
-* Convert Timezone in Golang: https://www.geeksforgeeks.org/convert-timezone-in-golang/
+- Offisiell dokumentasjon for "Now" funksjonen i tidsmodulen: <https://golang.org/pkg/time/#Now>
+- En liste over lovlige formater til "Format" funksjonen: <https://golang.org/src/time/format.go>
+- En veiledning til Go programmeringsspråket: <https://golang.org/doc/>

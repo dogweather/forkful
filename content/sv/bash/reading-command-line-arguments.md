@@ -1,56 +1,49 @@
 ---
-title:    "Bash: Läsning av kommandoradsargument"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/reading-command-line-arguments.md"
+title:                "Bash: Läsa kommandoradsargument"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
-Om du är ny till programmering eller bara vill lära dig ett nytt språk, finns det många olika programmeringsspråk att utforska. Men ibland kan det vara bra att börja med ett enkelt och användbart språk, som till exempel Bash. Ett av de viktigaste koncepten i Bash-programmering är hantering av kommandoradsargument. Genom att kunna läsa och använda kommandoradsargument kan du göra dina Bash-skript mer interaktiva och anpassningsbara. I den här bloggposten kommer vi att gå igenom varför det är viktigt att kunna läsa kommandoradsargument och hur du kan göra det.
+## Varför
+I dagens digitala värld är kunskap om terminalkommandon viktigare än någonsin. Genom att lära sig att läsa kommandoradsargument kan du effektivisera ditt arbete och få ännu mer kontroll över din dator. Det gör det också möjligt att skriva skräddarsydda skript för att automatisera uppgifter.
 
 ## Så här gör du
-För att kunna läsa kommandoradsargument i Bash, måste vi först förstå hur de fungerar. När du kör ett Bash-skript från kommandoraden, kan du skicka med kommandoradsargument som parametrar till skriptet. Dessa argument kan sedan användas inuti skriptet för att manipulera eller visa olika resultat. 
+Att läsa kommandoradsargument i Bash är enkelt, det handlar bara om att känna till rätt syntax. Här är ett exempel på enkel syntax för att läsa in ett argument och skriva ut det i terminalen:
 
-En enkel kodexempel kan se ut så här:
-```Bash
-#!/bin/bash
-
-echo "Hej $1! Välkommen till min blogg!" 
+```Bash 
+echo "Det första argumentet är: $1"
 ```
-I det här exemplet kommer vi att hälsa användaren välkommen genom att använda det första kommandoradsargumentet som skickas in i skriptet. Om vi till exempel skriver ```bash script.sh Alice``` i kommandoraden, kommer skriptet att skriva ut "Hej Alice! Välkommen till min blogg!". 
 
-Om du vill ta emot flera kommandoradsargument, kan du använda variabeln $2, $3, osv. beroende på hur många argument du vill ta emot. Du kan också använda variabeln $@ för att få en lista över alla kommandoradsargument som skickats in. 
+Om du kör detta skript med `sh script.sh test`, kommer det att skriva ut `Det första argumentet är: test`.
 
-## Utforska Djupare 
-Det är också möjligt att läsa kommandoradsargument i en översättningsprocessning, där skriptet tar in flera flaggor och värden från kommandoraden. Detta kan vara speciellt användbart för skript som kräver olika inställningar beroende på vad användaren vill uppnå. En avancerad kodexempel kan se ut så här:
-```Bash
-#!/bin/bash
+För att läsa flera argument kan du använda dig av en `for`-loop och `$@` som representerar alla inmatade argument. Här är ett exempel:
 
-while getopts ":f:n:r:" option; do
-  case ${option} in
-    f ) file=$OPTARG;;
-    n ) name=$OPTARG;;
-    r ) remove=$OPTARG;;
-    \? ) echo "Felaktig flagga: $OPTARG" 1>&2; exit 1;;
-    : ) echo "Flaggan $OPTARG kräver ett argument." >&2; exit 1;;
-  esac
+```Bash 
+for argument in "$@"
+do
+	echo "Argumentet är: $argument"
 done
-
-echo "$name, välkommen till vår blogg!"
-echo "Vi kommer att arbeta med filen $file."
-
-if [ $remove -eq 1 ]; then
-  echo "Filen $file kommer att rensas."
-  # logik för att rensa filen
-else 
-  echo "Inga ändringar kommer att göras till filen."
-fi
 ```
 
-Här använder vi getopts för att ta emot flaggor och värden från kommandoraden och sedan utnyttja dessa för att göra olika åtgärder. I det här exemplet kan användaren välja att ange ett filnamn (-f), ett namn för hälsningsmeddelandet (-n) och en flagga för att rensa filen (-r). 
+Om du kör detta skript med `sh script.sh test1 test2 test3`, kommer det att skriva ut:
+
+```
+Argumentet är: test1
+Argumentet är: test2
+Argumentet är: test3
+```
+
+## Djupdykning
+Genom att känna till rätt syntax, kan du läsa och hantera kommandoradsargument på ett smidigt sätt. Här är några viktiga saker att tänka på:
+
+- `$0` representerar själva skriptet och `$1`, `$2` osv. representerar inmatade argument.
+- Du kan använda villkorsuttryck som `if`-satser för att hantera olika scenarier baserat på de inmatade argumenten.
+- Använd `shift`-kommandot för att flytta fram positionen på argumenten om du vill hoppa över det första eller flera argument.
 
 ## Se även
-- [En kort guide till Bash programmering](https://www.tecmint.com/beginners-guide-to-writing-bash-scripts/)
-- [En introduktion till kommandoradsargument i Bash](https://opensource.com/article/19/11/bash-command-line-arguments)
-- [Officiell dokumentation för Bash](https://www.gnu.org/software/bash/manual/)
+- [Bash: Command Line Arguments](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+- [Reading Command Line Arguments in Bash](https://linuxconfig.org/learning-linux-bash-scripting-syntax-reading-command-line-arguments)
+- [Using Bash Scripts to Automate Tasks](https://linuxhint.com/bash_script_task_automation/)

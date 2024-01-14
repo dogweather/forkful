@@ -1,48 +1,42 @@
 ---
-title:    "Javascript: 提取子字符串"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/extracting-substrings.md"
+title:                "Javascript: 提取子串"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要提取子字符串
+## 为什么要提取子字符串
 
-提取子字符串是一种常见的编程技术，它可以帮助我们从一个大的字符串中提取出需要的部分。这在处理文本和数据时非常有用，让我们更灵活地操作字符串。
+在编程过程中，经常需要从一个较长的字符串中提取出想要的一部分内容。这种操作被称为提取子字符串。提取子字符串可以让我们更有效地处理字符串，从而提高程序的运行效率和性能。
 
-# 如何提取子字符串
+## 如何实现提取子字符串
 
-提取子字符串最简单的方法是使用JavaScript中的 `substring()` 函数。我们需要传入两个参数，第一个参数是起始位置的索引，第二个参数是终止位置的索引（可选）。
+在Javascript中，提取子字符串可以通过使用 `substring()` 方法来实现。该方法接收两个参数，分别是起始位置和结束位置，可以提取出从起始位置到结束位置之间的子字符串。
 
-```Javascript
-let str = "Hello World!";
-let substring = str.substring(0, 5);
-console.log(substring); // Output: Hello
-```
-
-我们还可以使用 `slice()` 函数来提取子字符串，它的工作方式与 `substring()` 类似，但是它也可以接受负数作为参数来表示相对于字符串末尾的位置。
+例如，在下面的代码中，我们将使用 `substring()` 方法从一个字符串中提取出部分内容，并打印出来。
 
 ```Javascript
-let str = "Hello World!";
-let substring = str.slice(6, -1);
-console.log(substring); // Output: Worl
+const str = "这是一个长长的字符串";
+const subStr = str.substring(4, 8);
+console.log(subStr); // 输出结果为 "长长的"
 ```
 
-如果我们想要提取出字符串中的最后几个字符，我们可以使用 `substr()` 函数，它接受两个参数，第一个参数是起始位置的索引，第二个参数是要提取的字符数量。
+## 深入了解提取子字符串
 
-```Javascript
-let str = "Hello World!";
-let substring = str.substr(6, 3);
-console.log(substring); // Output: Wor
-```
+除了 `substring()` 方法，Javascript还提供了其他几种提取子字符串的方法，比如 `slice()`、`substr()`和 `charAt()`等。每种方法都有其独特的功能，可以根据具体的需求来选择使用。
 
-# 深入了解提取子字符串
+提取子字符串的操作涉及到对字符串的索引和长度的理解，所以在实现过程中，我们需要注意起始位置和结束位置的取值范围，以及子字符串的长度是否和预期一致。
 
-除了上面提到的三个函数之外，还有一些其他的JavaScript字符串函数可以用来提取子字符串，如 `split()` 函数可以根据指定的分隔符将字符串分割成一个数组，我们可以根据数组的索引来获取需要的子字符串。此外，还有一些正则表达式的方法也可以用来提取子字符串，这些方法将在后续的文章中进行介绍。
-
-# 参考链接
+## 参考资料
 
 - [MDN - substring()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [菜鸟教程 - JavaScript 子字符串提取函数](https://www.runoob.com/jsref/jsref-substring.html)
+- [猿人学 - Javascript 字符串的操作——substr、substring](https://www.yuanrenxue.com/javascript-substr-substring.html)
+
+## 参见
+
 - [MDN - slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 - [MDN - substr()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [MDN - split()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [MDN - charAt()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)

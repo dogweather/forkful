@@ -1,43 +1,41 @@
 ---
-title:    "Python: Börja ett nytt projekt"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/starting-a-new-project.md"
+title:                "Python: Att påbörja ett nytt projekt"
+programming_language: "Python"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför börja ett nytt projekt
+## Varför
 
-Att starta ett nytt programmeringsprojekt kan vara både spännande och utmanande. Det ger dig möjligheten att utveckla dina programmeringsfärdigheter och skapa någonting nytt och unikt. Genom att utforska nya idéer och utmaningar kan du ta dina kunskaper till nästa nivå och samtidigt ha roligt på vägen.
+Att starta ett nytt projekt kan verka som en skrämmande uppgift för många. Men det finns flera anledningar till varför man bör överväga att starta ett nytt Python-programmeringsprojekt. Ett nytt projekt kan hjälpa till att utveckla dina färdigheter, utforska nya koncept och språkfunktioner, och även bidra till att skapa något användbart och meningsfullt.
 
-# Så här gör du
+## Så här gör du
 
-Att starta ett nytt projekt i Python är inte så svårt som det kanske verkar. Här är några enkla steg för att komma igång:
+För att starta ett nytt Python-projekt behöver du först se till att du har den senaste versionen av Python installerad på din dator. Sedan kan du följa dessa steg för att komma igång:
 
-1. Börja med att bestämma vad du vill åstadkomma med ditt projekt. Är det en webbapplikation, ett dataspel eller kanske en automatisk e-posthanterare? Att ha en tydlig målbild kommer att hjälpa dig att fokusera och planera ditt projekt.
+```
+Python 3 är det senaste och rekommenderade språkvalet.
+Använd följande kommando i terminalen för att skapa en ny virtuell miljö för ditt projekt:
+```Python
+python3 -m venv min_env
+```
+För att aktivera den virtuella miljön, använd följande kommando:
+```Python
+source min_env/bin/activate
+```
+Nu är det dags att börja skriva ditt kod! Du kan använda en texteditor som VS Code eller PyCharm, eller en vanlig texteditor som Notepad. Se till att spara ditt kodfil med ett .py-filtillägg och kör det sedan genom att skriva följande kommando:
+```Python
+python filnamn.py
+```
 
-2. Välj en lämplig textredigerare eller utvecklingsmiljö. Det finns många olika alternativ att välja mellan, såsom Visual Studio Code, PyCharm eller Sublime Text. Se till att du har rätt verktyg för att skapa och köra Python-kod.
+## Djupdykning
 
-3. Skapa ett nytt Python-projekt. I din valda utvecklingsmiljö kan du vanligtvis skapa ett nytt projekt med några få klick. Du bör också överväga att använda ett versionshanteringssystem som Git för att spåra ändringar och samarbeta med andra utvecklare.
+Att starta ett nytt projekt innebär inte bara att skriva kod. Det finns också flera andra aspekter att ta hänsyn till, såsom att definiera en tydlig struktur för ditt projekt, använda versionhanteringssystem som Git, och använda pakethanterare som Pip för att installera och hantera externa moduler och bibliotek. Det är också viktigt att dokumentera din kod för att underlätta vidareutveckling och samarbete med andra utvecklare.
 
-4. Skriv din första kod. Nu är det dags att börja skapa! Du kan följa tutorials eller skriva din egen kod från grunden. Var inte rädd för att göra misstag, det är en del av lärprocessen.
+## Se även
 
-5. Testa och felsök din kod. När du har skrivit en del kod är det viktigt att testa den noggrant och leta efter eventuella fel. Genom att felsöka och lösa problem kommer du att lära dig mer och förbättra din kod.
-
-6. Fortsätt utveckla och förbättra ditt projekt. Ett projekt är aldrig helt "färdigt". Se till att fortsätta utveckla och förbättra det med nya funktioner och förfiningar.
-
-# Djupdykning
-
-Att starta ett nytt projekt handlar inte bara om att skriva kod. Det är också viktigt att planera och organisera ditt projekt på ett bra sätt. Här är några tips för hur du kan få ut mesta möjliga av ditt projekt:
-
-- Använd kommentarer för att dokumentera din kod och göra den mer läsbar för andra.
-- Dela upp din kod i mindre och återanvändbara funktioner för att göra den mer skalbar.
-- Utforska olika Python-moduler och bibliotek för att underlätta utvecklingen av din applikation.
-- Ta regelbundna pauser och sträck på dig för att undvika stressrelaterade skador när du sitter framför skärmen.
-
-# Se också
-
-- [Skapa ett enkelt Python-spel](https://realpython.com/beginners-guide-python-game-development/)
-- [Grundläggande principer för Python-programmering](https://www.w3schools.com/python/)
-- [Börja använda Git](https://www.atlassian.com/git/tutorials)
-- [Python-dokumentation](https://docs.python.org/3/)
+- [Python.org](https://www.python.org/) - Officiell hemsida för Python-programmeringsspråket.
+- [The Hitchhiker's Guide to Python](https://docs.python-guide.org/) - En omfattande guide som täcker allt från installation till utveckling av större projekt.
+- [Real Python](https://realpython.com/) - En resurs för Python-utbildning med massor av övningar och exempel.

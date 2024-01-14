@@ -1,87 +1,78 @@
 ---
-title:    "TypeScript: Läsning av kommandoradsargument"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/reading-command-line-arguments.md"
+title:                "TypeScript: Att läsa kommandoradsargument"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför Läsa Kommandoradsargument i TypeScript?
+## Varför
 
-Många programmerare stöter på situationer där de behöver interagera med sina program genom att tillhandahålla argument via kommandoraden. Detta kan vara användbart för att ge programmet olika instruktioner eller data för att kunna anpassa dess beteende. I denna bloggpost kommer vi att gå igenom hur man kan läsa kommandoradsargument i TypeScript och hur det kan användas i dina projekt.
+Att läsa kommandoradsargument är en vanlig praxis inom programmering för att kunna få input från användaren. Genom att kunna hantera kommandoradsargument kan du skriva mer användarvänliga program som kan anpassas baserat på användarens behov och preferenser.
 
-## Så här gör du:
+## Hur man gör det
 
-För att läsa kommandoradsargument i TypeScript behöver du använda Node.js inbyggda `process` objekt. Först måste du importera detta objekt i din kod genom att skriva `import process from 'process';`. Sedan kan du använda `process.argv` för att få en array av alla kommandoradsargument som tillhandahålls när du kör ditt program.
-
-Låt oss titta på ett enkelt exempel på hur man kan använda detta i praktiken:
+För att läsa kommandoradsargument i TypeScript behöver du använda dig av inbyggda Node.js API:et "process". Genom att använda process.argv kan du komma åt en array med alla kommandoradsargument som användaren anger vid körning av programmet.
 
 ```TypeScript
-// Importera process-objektet
-import process from 'process';
+// Exempelkod för att läsa in kommandoradsargument
+const argOne = process.argv[2];
+const argTwo = process.argv[3];
 
-// Hämta argumenten från process.argv
-const args = process.argv;
-
-// Ta ut första argumentet efter att ha ignorerat den första (vilket är sökvägen till din körafil)
-const arg1 = args[2];
-
-// Skriv ut argumentet
-console.log(arg1);
+console.log(`Första argumentet är: ${argOne}`);
+console.log(`Andra argumentet är: ${argTwo}`);
 ```
 
-Om vi nu kör detta program med argumentet "Hello" (`node index.ts Hello`), kommer outputen att bli "Hello".
+Om vi kör det här exemplet med följande kommandoradsargument:
 
-Vi kan även lägga till fler kommandoradsargument och hämta dem genom att använda det specifika indexet i arrayen. Till exempel:
-
-```TypeScript
-// Importera process-objektet
-import process from 'process';
-
-// Hämta argumenten från process.argv
-const args = process.argv;
-
-// Ta ut andra argumentet efter att ha ignorerat de två första (sökvägen till filen och första argumentet)
-const arg2 = args[3];
-
-// Skriv ut argumentet
-console.log(arg2);
+```bash
+node read-arguments.ts hello world
 ```
 
-Om vi nu kör detta program med argumenten "Hello" och "World" (`node index.ts Hello World`), kommer outputen att bli "World".
+Så kommer vi få följande output:
 
-## Djupdykning:
+```bash
+Första argumentet är: hello
+Andra argumentet är: world
+```
 
-I våra exempel har vi bara tagit ut och skrivit ut ett enkelt argument åt gången, men du kan också använda andra metoder och tekniker för att hantera kommandoradsargumenten. En vanlig metod är att använda alternativ (flags) som specificerar vissa handlingar eller parametrar för ditt program.
+Som du kan se så är process.argv en array där det första argumentet är node, det andra argumentet är filnamnet för vårt program och resterande argument är det som användaren anger.
 
-Till exempel kan vi lägga till en alternativ flagga `-g` som står för "greet" och skriver ut en personlig hälsning meddelande när den används i kommandoraden. Vi kan också lägga till ett värde för denna flagga som representerar vilken person som ska hälsas på. Detta kan se ut så här:
+## Djupdykning
+
+Det finns även möjlighet att använda ett tredje argument för att läsa in kommandoradsargument på ett mer avancerat sätt. Genom att använda flaggor, eller prefixes, kan du ange förväntade argument för ditt program.
 
 ```TypeScript
-// Importera process-objektet
-import process from 'process';
+// Exempelkod för att använda flaggor för kommandoradsargument
+const args = process.argv.slice(2);
 
-// Hämta argumenten från process.argv
-const args = process.argv;
-
-// Ta ut värdena för flaggan -g och -n
-const greetFlag = args.indexOf('-g'); // Indexet för flaggan
-const name = args[greetFlag + 1]; // Värdet som kommer efter flaggan
-
-// Om flaggan finns
-if (greetFlag !== -1) {
-  // Skriv ut personlig hälsning
-  console.log(`Hello ${name}! Welcome to our program.`);
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === "--input") {
+    console.log(`Förväntat argument för input: ${args[i + 1]}`);
+  }
+  if (args[i] === "--output") {
+    console.log(`Förväntat argument för output: ${args[i + 1]}`);
+  }
 }
 ```
 
-Nu kan vi köra programmet med flaggan och ett värde (`node index.ts -g John`) och outputen blir "Hello John! Welcome to our program."
+Om vi kör det här exemplet med följande kommandoradsargument:
 
-## Se även:
+```bash
+node read-arguments.ts --input input.txt --output output.txt
+```
 
-Här är några länkar för mer information om hur man kan läsa och hantera kommandoradsargument i TypeScript:
+Så kommer vi få följande output:
 
-- [Officiell dokumentation för processobjektet i Node.js](https://nodejs.org/api/process.html#process_process_argv)
-- [Bloggpost om interagera med kommandoradsargument i Typescript](https://www.grapecity.com/en/blogs/command-line-args-typescript)
-- [Youtube tutorial om kommandoradsargument i Node.js med TypeScript](https://www.youtube.com/watch?v=c828j0tceNE)
+```bash
+Förväntat argument för input: input.txt
+Förväntat argument för output: output.txt
+```
 
-Med kunskapen om hur man arbetar med kommand
+Genom att använda flaggor kan vi enkelt specificera förväntade argument för olika delar av vårt program.
+
+## Se även
+
+- Node.js process documentation: https://nodejs.org/api/process.html#process_process_argv
+- Läsa kommandoradsargument i Node.js: https://www.digitalocean.com/community/tutorials/nodejs-command-line-arguments-sv

@@ -1,47 +1,38 @@
 ---
-title:    "Javascript: Escribiendo a Error Estándar"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/writing-to-standard-error.md"
+title:                "Javascript: Escribiendo en el error estándar"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir a la salida de error estándar es importante en Javascript?
+##Por qué: Escribir a Standard Error en Javascript
 
-Escribir a la salida de error estándar es una práctica crucial en Javascript ya que nos permite mostrar información importante sobre los errores o fallos en nuestro código. A través de la salida de error estándar, podemos identificar y corregir rápidamente los errores en nuestro código, lo que nos ayuda a mejorar nuestra capacidad de programación y a crear aplicaciones más robustas y funcionales.
+Escribir a Standard Error en Javascript es una práctica común y útil para los programadores. Al usar esta técnica, podrás imprimir información de depuración y errores en la consola del navegador, lo que te permitirá detectar y solucionar problemas en tu código de manera más eficiente.
 
-## ¿Cómo escribir a la salida de error estándar en Javascript?
+##Cómo hacerlo:
 
-La forma más común de escribir a la salida de error estándar en Javascript es utilizando el método `console.error()`. Este método acepta uno o varios argumentos y los imprime en la salida de error estándar. Veamos un ejemplo:
-
-```Javascript
-let num = 5;
-
-if(num > 10) {
-  console.log("El número es mayor que 10");
-} else {
-  console.error("Error: El número es menor que 10");
-}
-```
-
-En este ejemplo, si el número es menor que 10, se imprimirá el mensaje de error en la consola. También es posible usar plantillas de cadena para imprimir información más detallada:
+Para escribir a Standard Error en Javascript, simplemente debes usar el método `console.error()` y pasar como parámetro el mensaje que deseas imprimir. Por ejemplo:
 
 ```Javascript
-let nombre = "Juan";
-let edad = 25;
-
-console.error(`Error: ${nombre} tiene ${edad} años y no cumple con la edad mínima requerida.`);
+console.error("Ha ocurrido un error en la función");
 ```
 
-En este caso, la salida de error sería "Error: Juan tiene 25 años y no cumple con la edad mínima requerida."
+Esto imprimirá el mensaje en rojo en la consola del navegador, lo que lo distinguirá de los demás mensajes de debug y facilitará su identificación.
 
-## Profundizando en la escritura a la salida de error estándar
+##Profundizando:
 
-Además de mostrar mensajes de error, también podemos utilizar la salida de error estándar para imprimir otra información útil durante el proceso de depuración de nuestro código. Por ejemplo, podemos imprimir el contenido de variables o el resultado de una operación para asegurarnos de que nuestro código se está ejecutando correctamente en cada paso. 
+Escribir a Standard Error no solo es útil para imprimir mensajes de error, también puede ser utilizado para imprimir información de depuración durante el desarrollo de una aplicación. Esto te permitirá rastrear el proceso del código y detectar posibles bugs o problemas en tu lógica.
 
-También podemos utilizar el método `console.trace()` para imprimir una pila de llamadas, lo que nos permite rastrear el flujo de nuestro código y identificar dónde se originó un determinado error. 
+Además, en lugar de solo imprimir un mensaje, también puedes pasar como parámetro objetos, arreglos o variables, lo que te permitirá visualizar de manera más detallada la información que necesitas en la consola.
 
-## Ver también
-- [Documentación de console.error() en MDN (en inglés)](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [Guía de depuración en Javascript (en español)](https://carlosazaustre.es/manos-a-la-consola-guia-de-depuracion/)
-- [Tutorial de Javascript para principiantes (en español)](https://codeburst.io/javascript-tutorial-espa%C3%B1ol-2f3f031ff01c)
+Otra técnica útil es utilizar `console.trace()`, que te mostrará la pila de llamadas que ha llevado al error o mensaje de debug, lo que puede ser muy útil para rastrear su origen.
+
+##Ver también:
+
+- Documentación de console.error() en MDN: https://developer.mozilla.org/es/docs/Web/API/Console/error
+- Tutorial en español sobre cómo usar console.error(): https://www.onlinecode.org/javascript-console-error/
+- Ejemplo práctico de uso de console.error() para detectar un error en Javascript: https://codeburst.io/error-handling-in-javascript-a6172ccdf9af
+
+¡Ahora que ya conoces cómo y por qué escribir a Standard Error en Javascript, inténtalo en tu próximo proyecto y haz tu proceso de depuración más eficiente!

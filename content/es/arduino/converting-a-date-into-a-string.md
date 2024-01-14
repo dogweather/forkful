@@ -1,51 +1,74 @@
 ---
-title:    "Arduino: Convirtiendo una fecha en una cadena"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/converting-a-date-into-a-string.md"
+title:                "Arduino: Convirtiendo una fecha en una cadena"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué
 
-Existen varias razones por las que es importante aprender a convertir una fecha en una cadena de texto en Arduino. Por ejemplo, puede ser útil para mostrar la fecha actual en un reloj digital o para guardar la fecha en una tarjeta SD para su posterior análisis.
+Convertir una fecha en una cadena de caracteres puede ser útil en muchas aplicaciones de Arduino. Por ejemplo, podrías querer mostrar la fecha actual en una pantalla LCD o utilizarla como parte de una cadena de texto en un proyecto.
 
-## Cómo hacerlo
+# Cómo hacerlo
 
-Para convertir una fecha en una cadena de texto en Arduino, podemos utilizar la función `sprintf()`. Esta función toma una serie de valores y los convierte en una cadena de texto según un formato especificado. Aquí hay un ejemplo de cómo convertir la fecha actual en una cadena de texto en formato DD/MM/AA:
+Para convertir una fecha en una cadena de caracteres, primero necesitas usar la librería "Time.h". Esta librería incluye una función llamada "timeString()", que convierte la fecha en una cadena en formato de 24 horas.
 
 ```Arduino
 #include <Time.h>
-#include <TimeLib.h>
 
 void setup() {
-  // Inicializar el reloj en tiempo real
-  setTime(12, 0, 0, 1, 1, 2020);
-  // Obtener la fecha actual en formato Unix
-  time_t t = now();
-  // Crear una variable para guardar la fecha en cadena de texto
-  char fecha[9];
-  // Utilizar sprintf() para convertir la fecha en una cadena de texto
-  sprintf(fecha, "%02d/%02d/%02d", day(t), month(t), year(t));
-  // Imprimir la cadena de texto en el monitor serial
-  Serial.println(fecha);
+  // Inicializa la comunicación con el reloj en tiempo real
+  setTime(15, 30, 0, 1, 1, 2020);
 }
 
 void loop() {
-  // Nada que hacer en el bucle principal
+  // Lee la fecha actual y conviértela en una cadena de caracteres
+  String fecha = timeString();
+
+  // Imprime la cadena en el monitor serial
+  Serial.println("La fecha actual es: " + fecha);
+  delay(1000);
 }
 ```
 
-Después de cargar este código en tu Arduino y abrir el monitor serial, deberías ver la fecha actual en formato DD/MM/AA cada vez que reinicies el Arduino.
+La salida de este código sería: "La fecha actual es: 15:30:00 1/1/2020". Puedes cambiar el formato de la fecha utilizando diferentes funciones de la librería, como "day()", "month()", "year()", etc.
 
-## Profundizando
+# Profundizando
 
-La función `sprintf()` toma una cadena de formato y una lista de valores. Los valores pueden ser variables, constantes o incluso expresiones matemáticas. La cadena de formato especifica cómo los valores deben ser convertidos en una cadena de texto. Por ejemplo, `%02d` indica que el valor debe tener dos dígitos y, de no ser así, se rellenará con ceros.
+La librería "Time.h" también te permite convertir una fecha en un objeto de tipo "time_t". Este objeto puede ser utilizado para realizar operaciones matemáticas con fechas, como sumar o restar días.
 
-Puedes encontrar más información sobre los formatos disponibles para `sprintf()` en la [documentación](https://www.cplusplus.com/reference/cstdio/sprintf/) de C++.
+Por ejemplo, si quisieras mostrar la fecha actual y la fecha de mañana en una pantalla LCD, podrías hacerlo de la siguiente manera:
 
-## Ver también
+```Arduino
+#include <Time.h>
 
-- [Cómo usar un reloj en tiempo real con Arduino](https://www.instructables.com/id/Real-Time-Clock-DS1307-With-Arduino-Using-LCD/)
-- [Cómo guardar datos en una tarjeta SD con Arduino](https://www.arduino.cc/en/tutorial/SimpleDataLogging)
-- [Documentación sobre la función sprintf()](https://www.cplusplus.com/reference/cstdio/sprintf/)
+void setup() {
+  // Inicializa la comunicación con el reloj en tiempo real
+  setTime(15, 30, 0, 1, 1, 2020);
+}
+
+void loop() {
+  // Lee la fecha actual y conviértela en un objeto time_t
+  time_t fechaActual = now();
+
+  // Suma un día al objeto y conviértelo en una cadena de caracteres
+  String fechaManana = timeString(fechaActual + SECS_PER_DAY);
+
+  // Imprime ambas fechas en la pantalla LCD
+  lcd.print("Fecha actual: ");
+  lcd.println(fechaActual);
+  lcd.print("Fecha de mañana: ");
+  lcd.println(fechaManana);
+
+  delay(1000);
+}
+```
+
+# Ver también
+
+- Documentación oficial de la librería "Time.h": [https://www.arduino.cc/reference/en/libraries/time/](https://www.arduino.cc/reference/en/libraries/time/)
+- Tutorial sobre cómo usar la librería "Time.h" en proyectos de Arduino: [https://create.arduino.cc/projecthub/g35ta/display-date-and-time-from-a-real-time-clock-rtc-0c0fd4](https://create.arduino.cc/projecthub/g35ta/display-date-and-time-from-a-real-time-clock-rtc-0c0fd4)
+
+¡Esperamos que este artículo te haya sido útil para aprender cómo convertir una fecha en una cadena de caracteres en Arduino! Con esta información, podrás añadir nuevas funcionalidades a tus proyectos y mostrar la fecha actual de forma precisa y detallada. ¡A seguir aprendiendo y creando con Arduino!

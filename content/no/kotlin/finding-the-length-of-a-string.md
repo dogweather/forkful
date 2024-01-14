@@ -1,48 +1,46 @@
 ---
-title:    "Kotlin: Å finne lengden av en streng"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/finding-the-length-of-a-string.md"
+title:                "Kotlin: Å finne lengden til en streng"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Når du jobber med Kotlin-programmering, vil du ofte støte på situasjoner der du trenger å finne lengden av en streng. Det kan være for å validere brukerinput, formatere utdata eller manipulere data. Uansett grunn, er det viktig å kunne finne lengden av en streng på en effektiv måte.
+Strenger er en viktig del av enhver programmeringsoppgave, og en av de enkleste, men likevel nyttige operasjonene på en streng er å finne lengden på den. Å vite lengden på en streng kan hjelpe deg med å håndtere input, formatere utdata og generelt effektivisere koden din. I denne artikkelen vil vi se på hvordan du enkelt kan finne lengden på en streng ved hjelp av Kotlin.
 
-# Hvordan
+## Hvordan
 
-Det er flere måter å finne lengden av en streng i Kotlin, avhengig av dine behov og preferanser. En enkel og vanlig metode er å bruke Kotlin sin innebygde funksjon `length()`, som returnerer lengden av strengen. Se eksemplet nedenfor:
+For å finne lengden på en streng i Kotlin, kan du bruke `length` metoden som er en del av `String` klassen. Her er et eksempel på hvordan du kan bruke denne metoden i koden din:
 
-```Kotlin
-val streng = "Hei, verden!"
-println(streng.length()) // Output: 12
+```Kotlin 
+val navn = "Ole"
+println(navn.length) 
+
+// Output: 3
 ```
 
-Dette fungerer godt for de fleste tilfeller, men det er også andre måter å finne strengens lengde på. Hvis du ønsker å ekskludere mellomrom fra tellingen, kan du bruke funksjonen `trim().length`, slik:
+Som du kan se, er koden enkel og kort. Vi oppretter en variabel `navn` som inneholder strengen "Ole", og deretter bruker vi `length` metoden til å finne lengden på denne strengen. Denne metoden returnerer et heltall som representerer antall tegn i strengen.
+
+Det er viktig å merke seg at `length` metoden teller hvert tegn, inkludert mellomrom og spesialtegn. Så hvis vi endrer strengen til "Ole Olsen", vil lengden være 9 i stedet for 7, fordi mellomrommet også blir talt med.
+
+## Deep Dive
+
+Nå som vi har sett på det grunnleggende for å finne lengden på en streng i Kotlin, la oss ta en dypere titt på hvordan denne metoden fungerer bak kulissene. Lengden på en streng blir bestemt ved å telle antall UTF-16-koder som kreves for å representere strengen. UTF-16-koder er numeriske verdier som representerer tegnene i en streng, og dette systemet brukes av Kotlin for å håndtere Unicode-tegn.
+
+En annen viktig ting å merke seg er at `length` metoden er en egenskap av en streng og ikke en funksjon. Dette betyr at du ikke trenger å bruke parentesene `()` når du bruker denne metoden. For eksempel er disse to kodesnuttene like:
 
 ```Kotlin
-val streng = " Hei, verden! "
-println(streng.trim().length) // Output: 12
+val navn = "Ole"
+println(navn.length)
+
+val navn = "Ole"
+println(navn.length())
 ```
 
-Hvis du ønsker å finne lengden av en streng i Unicode-tegn, kan du bruke funksjonen `codePointCount()` i stedet. Se eksemplet nedenfor:
+## Se også
 
-```Kotlin
-val streng = "Gårdsbruk 🚜"
-println(streng.codePointCount(0, streng.length)) // Output: 11
-```
-
-Som du kan se, er det flere måter å finne strengens lengde på i Kotlin, så det er viktig å velge den som passer best til ditt spesifikke behov.
-
-# Dykk dypere
-
-For å få en enda bedre forståelse av hvordan Kotlin håndterer strenglengde, kan det være nyttig å se nærmere på hvordan `length()`-funksjonen fungerer. I motsetning til Java, der `length()` utelukkende tar hensyn til antall tegn, tar Kotlin også hensyn til Unicode-tegn og multi-byte-tegn.
-
-I tillegg kan det være lurt å være oppmerksom på eventuelle forskjeller mellom `length()` og `codePointCount()`-funksjonen. `length()` returnerer antall tegn, mens `codePointCount()` returnerer antall Unicode-tegn, uavhengig av antall tegn.
-
-# Se også
-
-- [Offisiell Kotlin dokumentasjon om strenger](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Stack Overflow: Hvordan finne lengden av en streng i Kotlin](https://stackoverflow.com/questions/37695017/kotlin-find-length-of-string)
-- [Kotlin for Android-utviklere kurs](https://developer.android.com/kotlin/courses)
+- [Kotlin Dokumentasjon om strenger](https://kotlinlang.org/docs/basic-types.html#strings)
+- [Stack Overflow Diskusjon om å finne lengden på en streng i Kotlin](https://stackoverflow.com/questions/35243255/how-can-i-get-length-of-a-string-in-kotlin)

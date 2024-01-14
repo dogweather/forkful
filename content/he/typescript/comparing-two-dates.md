@@ -1,48 +1,42 @@
 ---
-title:    "TypeScript: השוואת שתי תאריכים"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/comparing-two-dates.md"
+title:                "TypeScript: השוואת שתי תאריכים"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+**מדוע:**
 
-מיכללה, כאשר אנו כותבים קוד, יש לנו לפעמים צורך להשוות בין שתי תאריכים. לדוגמה, אם אנו כותבים אפליקציה שמציגה את תאריך הלידה של המשתמש וסופרת כמה ימים נותרו עד ליום המולד, נצטרך להשתמש בשיטת השוואה של תאריכים. בפוסט זה נסביר כיצד לעשות זאת בצורה פשוטה ויעילה בשפת TypeScript.
+השוואת תאריכים היא כלי חשוב בתכנות של TypeScript, שמאפשר לנו לבדוק את היחס בין שני תאריכים ולהתאים לפי כך את התכנית שלנו. השוואת תאריכים יכולה לסייע לנו בהרבה מצבים, כגון בבדיקת תקינות של תאריכים או ביצירת תנאים לביצוע פעולות בתאריך מסוים.
 
-## איך לעשות
+**כיצד להשתמש:**
 
-תחילה, נצטרך ליצור שני אובייקטים של תאריך עם התאריכים שברצוננו להשוות. לדוגמה:
-
-```TypeScript
-let date1 = new Date(2021, 0, 1); // 1 בינואר 2021 
-let date2 = new Date(2021, 5, 15); // 15 ביוני 2021
-```
-
-כעת, נשתמש בשיטת השוואה כדי לבדוק את התאריכים. ישנם שלושה אופרטורים שונים שאנו יכולים להשתמש בהם: `>` (גדול מ), `=` (שווה ל) ו- `<` (קטן מ). לפי המקרה שלנו, כדי לבדוק אם `date1` קטן מ-`date2`, נכתוב:
+ניתן להשוות תאריכים באמצעות הפונקציה "compare" שמקבלת שני תאריכים כפרמטרים. לדוגמה, ננסה להשוות את התאריך הנוכחי לתאריך התפקיד שלנו:
 
 ```TypeScript
-if (date1 < date2) {
-  console.log("date1 קטן מ- date2");
-}
+let currentDate = new Date();
+let roleStartDate = new Date(2021, 0, 1); // 1 בינואר 2021
+
+let comparisonResult = compare(currentDate, roleStartDate);
+console.log(comparisonResult); // 1
 ```
 
-בפעם הראשונה שישואל למשתמש להשוות בין תאריכים במפתח הפתיחה של האפליקציה, לדוגמה, ניתן להשתמש בקוד הבא:
+במקרה זה, נקבל כתוצאה את המספר 1, המסמל שהתאריך הנוכחי הינו גדול יותר מתאריך התחילת התפקיד שלנו.
+
+ניתן להשתמש גם בפונקציות מובנות נוספות כמו "isBefore" ו-"isAfter" עבור השוואה מפורטת יותר של תאריכים. לדוגמה, נבדוק אם התאריך הנוכחי נמצא לפני תאריך ספציפי:
 
 ```TypeScript
-function compareDates() {
-  let date1 = new Date(prompt("הכנס תאריך ראשון"));
-  let date2 = new Date(prompt("הכנס תאריך שני"));
-  if (date1 > date2) {
-    console.log("date1 גדול מ- date2");
-  } else if (date1 === date2) {
-    console.log("date1 שווה ל- date2");
-  } else {
-    console.log("date1 קטן מ- date2");
-  }
-}
+let currentDate = new Date();
+let comparisonDate = new Date(2022, 6, 1); // 1 ביולי 2022
 
-compareDates();
+let isBeforeComparisonDate = isBefore(currentDate, comparisonDate);
+console.log(isBeforeComparisonDate); // true
 ```
 
-כלומר, אם המשתמש יכניס את התאריכים 1/1/2021 ו- 1/1/2020, הודעת הלוג יודפסת "date1 גדול מ- date2" בקונסול. ניתן לשחזר ולבדוק את הפונקציה עם תאריכים שונים
+**עומק הנסיעה:**
+
+בנוסף לפונקציות המובנות, ישנם גם חבילות חיצוניות שמתמחות בהשוואת תאריכים באופן מתקדם יותר. למשל, חבילת "date-fns" מציעה מגוון רחב של פונקציות להתייחסות ויצירת תאריכים, כולל השוואות ובדיקות תקינות.
+
+בנוסף, ישנם ספריות נוספות שניתן להשתמש בהן עבור השוואת תאריכים, תל

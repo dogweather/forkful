@@ -1,32 +1,40 @@
 ---
-title:    "Swift: Wycinanie podciągów"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/extracting-substrings.md"
+title:                "Swift: Wydobywanie podciągów"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto wyodrębniać podłańcuchy?
+## Dlaczego?
 
-Wyodrębnianie podłańcuchów jest nieodłączną częścią programowania w języku Swift, ponieważ pozwala nam na precyzyjne manipulowanie tekstem. Możesz wyodrębniać pojedyncze znaki, wyrazy lub nawet całe fragmenty tekstu w zależności od potrzeb. To nie tylko przydatne, ale także bardzo proste do zaimplementowania w Twoim kodzie.
+Podział ciągów znaków, zwany również rozdzielaniem substrings, jest podstawowym elementem programowania w języku Swift. Jest to przydatne narzędzie, które pozwala na wyodrębnienie określonych części tekstu, co może być niezbędne w wielu projektach.
 
 ## Jak to zrobić?
 
-Aby wyodrębnić podłańcuchy w Swift, wystarczy użyć metody `substring` na przykładzie zmiennej `text`, która zawiera nasz tekst:
+Aby wyodrębnić substring, należy skorzystać z metody ```Swift substring (from: )```. Poniżej znajduje się przykładowy kod, który wyjaśnia jak to zrobić w praktyce:
 
 ```Swift
-let text = "Witaj w świecie Swift!"
-let extractedSubstring = text.substring(from: 12)
+let message = "Witaj na moim blogu!"
+
+let start = message.index(message.startIndex, offsetBy: 6)
+let end = message.index(message.endIndex, offsetBy: -7)
+
+let substring = message.substring(from: start, to: end)
+print(substring) // wynik: "na moim blogu"
 ```
 
-W powyższym przykładzie wyodrębniamy podłańcuch zaczynający się od 12 znaku, czyli "Swift!". Zauważ, że liczymy znaki od 0, więc 12 odpowiada 13 znakowi w tekście. Istnieją również inne metody do wyodrębniania podłańcuchów, takie jak `substring(to:)` czy `substring(with:)`, ale te dwie są najbardziej popularne.
+## Deep Dive
 
-## Głębsza analiza
+Rozdzielanie substrings może być również użyteczne w przypadku pracy z tablicami i pętlami. Możemy na przykład wyodrębnić pewną część elementów z tablicy i przechowywać je w postaci substrings. Jest to szczególnie przydatne, gdy chcemy wykonać operacje na całych fragmentach tekstu bez konieczności przejmowania się pozostałymi częściami.
 
-Wyodrębnianie podłańcuchów jest możliwe dzięki temu, że w języku Swift stosowany jest typ `String.UTF16View`, a nie tradycyjny `String`. Dzięki temu, każdy znak w łańcuchu jest traktowany jako 16-bitowa jednostka kodowa. Jest to szczególnie przydatne, jeśli pracujesz z językami, które używają innych znaków niż ASCII.
+## Zobacz również
 
-## Zobacz też
+Jeśli chcesz dowiedzieć się więcej o podziale substrings, polecam przeczytać te artykuły:
 
-- [Dokumentacja Apple na temat wyodrębniania podłańcuchów w Swift](https://developer.apple.com/documentation/swift/string/1643045-substring)
-- [Poradnik na temat manipulowania tekstami w języku Swift](https://www.ralfebert.de/ios/tutorials/stringswift/)
-- [Przydatna porównywarka Swift String Manipulation](https://www.hackingwithswift.com/articles/112/7-useful-swift-string-examples)
+- [Podstawy języka Swift](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID292)
+- [Przykłady użycia metody substring w Swift](https://www.hackingwithswift.com/read/0/1/using-substrings-in-swift)
+- [Rozdzielanie substrings w praktyce](https://www.raywenderlich.com/163857/working-strings-swift-3-0#toc-anchor-001)
+
+Dziękujemy za przeczytanie naszego bloga! Do następnego razu!

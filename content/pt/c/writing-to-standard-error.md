@@ -1,47 +1,69 @@
 ---
-title:    "C: Escrevendo para a saída de erro padrão"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-to-standard-error.md"
+title:                "C: Escrevendo no erro padrão"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever em standard error em programação C?
+## Por que escrever no standard error?
 
-Escrever em standard error pode ser uma ferramenta útil em programação C quando se quer detectar e identificar possíveis erros durante a execução do código. Ao imprimir mensagens de erro em standard error, o programador pode facilmente identificar onde o problema ocorre e iniciar a resolução do mesmo com mais facilidade.
+Escrever no standard error é uma técnica fundamental na programação em C. Isso permite que mensagens de erro e depuração sejam impressas no terminal, ao invés de serem exibidas com o restante da saída normal do programa. Isso pode ajudar a identificar e corrigir erros com mais facilidade durante o processo de desenvolvimento.
 
 ## Como fazer?
 
-Usar a função "fprintf" é a forma mais comum de escrever em standard error. Vamos ver um exemplo de como essa função pode ser utilizada em um código:
+Para imprimir mensagens no standard error, é necessário utilizar a função `fprintf()`, passando o valor `stderr` como primeiro parâmetro. Por exemplo:
+
+```C
+fprintf(stderr, "Erro: o valor inserido é inválido.");
+```
+
+Isso irá imprimir a mensagem "Erro: o valor inserido é inválido." no terminal. É importante notar que a formatação utilizada em `fprintf()` é a mesma utilizada em `printf()`.
+
+Um exemplo mais prático seria o seguinte código, que pede ao usuário um número e imprime o dobro do número inserido no standard error:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    char* texto = "Hello World!";
-    fprintf(stderr, "Imprimindo uma mensagem de erro: %s\n", texto);
+    int num;
+    printf("Insira um número: ");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        fprintf(stderr, "O dobro do número inserido é %d.", num * 2);
+    } else {
+        fprintf(stderr, "Erro: o número inserido é inválido.");
+    }
+
     return 0;
 }
 ```
 
-Ao executar esse código, a mensagem de erro será impressa em standard error, com a formatação especificada na função "fprintf". O resultado será:
+A saída desse programa poderia ser:
 
-`Imprimindo uma mensagem de erro: Hello World!`
+```
+Insira um número: 5
+Erro: o número inserido é inválido.
+```
 
-Outra forma de escrever em standard error é utilizando o operador `>>` em conjunto com "2". Por exemplo:
+## Dando um mergulho mais profundo
 
-`./meu_programa 2>> log.txt`
+Além de simplesmente imprimir mensagens de erro, o standard error também possui outras funcionalidades importantes. Por exemplo, é possível utilizar `fprintf()` para direcionar a saída de um programa para um arquivo ao invés do terminal. Isso pode ser feito passando o nome do arquivo como primeiro parâmetro em vez de `stderr`.
 
-Isso irá redirecionar qualquer mensagem de erro que ocorra durante a execução do programa para um arquivo de texto chamado "log.txt". Isso pode ser útil para armazenar e analisar erros em um momento posterior.
+Outra funcionalidade útil é a possibilidade de colorir as mensagens de erro, facilitando a identificação visual de erros específicos. Isso pode ser feito utilizando as sequências de escape ANSI em conjunto com `fprintf()`.
 
-## Profundidade
+Veja um exemplo de como colorir a mensagem de erro em vermelho:
 
-Além da função "fprintf" e do redirecionamento para arquivo, existem outras formas de escrever em standard error em programação C, como por exemplo a função "perror" e o comando "stderr". Cada uma dessas opções pode ser mais adequada dependendo do contexto e do objetivo de uso.
+```C
+fprintf(stderr, "\033[0;31mErro\033[0m: o valor inserido é inválido.");
+```
 
-Outro ponto importante a mencionar é que é possível personalizar as mensagens de erro a serem impressas em standard error. Dessa forma, é possível criar mensagens mais específicas e úteis ao invés de apenas imprimir o nome e a linha do erro.
+Aqui, a sequência `\033[0;31m` irá mudar a cor da impressão seguinte para vermelho, e `\033[0m` irá restaurar a cor padrão, após a mensagem ser exibida.
 
 ## Veja também
-- [Documentação sobre a função fprintf](https://www.cplusplus.com/reference/cstdio/fprintf/)
-- [Guia sobre redirecionamento de saída em C](https://www.tutorialspoint.com/how-to-redirect-output-to-a-file-in-c)
-- [Artigo sobre a função perror](https://www.geeksforgeeks.org/perror-c-library-function/)
-- [Diferenças entre standard output e standard error](https://stackoverflow.com/questions/2342826/what-are-the-differences-between-stderr-and-stdout)
+
+- [Documentação oficial sobre o standard error em C](https://www.gnu.org/software/libc/manual/html_node/Standard-Error.html)
+- [Explicação detalhada sobre o uso de `fprintf()` e `stderr`](https://www.geeksforgeeks.org/generating-error-unknown-id-fprintf-stderr/)
+- [Exemplo de formatação de cores com sequências de escape ANSI](https://gist.github.com/rossdylan/0827c1e3baa149c1f667)

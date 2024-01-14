@@ -1,64 +1,45 @@
 ---
-title:    "Rust: Utskrift av felsökningsutdata"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/printing-debug-output.md"
+title:                "Rust: Utskrift av debuggutdata"
+programming_language: "Rust"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva ut debug-utdata är ett viktigt steg i utvecklingsprocessen för att hitta och fixa buggar i din Rust-kod. Genom att utskrift debug-utdata kan du få en bättre förståelse av hur din kod fungerar och var eventuella fel kan uppstå.
+Att skriva kod är inte alltid en enkel uppgift och ibland behöver vi hjälp för att hitta buggar och fel i vår kod. Ett bra sätt att göra detta är genom att skriva ut felsökningsmeddelanden, eller "debug output", i vår kod. Det kan hjälpa oss att förstå hur vår kod fungerar och hitta eventuella problem som behöver lösas.
 
-## Så här gör du
+## Hur man gör det
 
-För att skriva ut debug-utdata i Rust, används makron "println!" och "dbg!". Dessa tar in det du vill skriva ut och skriver sedan ut det till konsolen.
+För att skriva ut felsökningsmeddelanden behöver vi använda ett inbyggt makro i Rust som kallas "println!". Det fungerar på samma sätt som "print" eller "println" i andra programmeringsspråk, men har några extra funktioner som är specifika för Rust.
 
-```Rust
+Enklast är att använda detta makro inuti en "main" funktion, men det kan också användas på andra platser i koden. Här är ett exempel på hur du kan skriva ut ett meddelande:
+
+```
 fn main() {
-   let num: u32 = 5;
-   println!("Debug-utdata: {}", num); // Skriver ut "Debug-utdata: 5"
-   dbg!(num); // Skriver ut "num: 5" och returnerar värdet
+    let num = 5;
+    println!("Värdet på num är {}", num);
 }
 ```
 
-Du kan också skriva ut flera variabler samtidigt genom att separera dem med ett kommatecken inuti parantesen för "println!" och "dbg!".
+Körexemplet skulle ge följande output:
 
-```Rust
-fn main() {
-   let name = "Johan";
-   let age = 26;
-   println!("Namn: {}, Ålder: {}", name, age); // Skriver ut "Namn: Johan, Ålder: 26"
-   dbg!(name, age); // Skriver ut "name: "Johan", age: 26" och returnerar sista värdet (åldern)
-}
 ```
+Värdet på num är 5
+```
+
+"{}" fungerar som en platsmarkör där värdet av "num" kommer att ersätta platsmarkören när koden körs.
 
 ## Djupdykning
 
-För att få ännu mer detaljerad debug-utdata, kan du använda "dbg!" med en conditional statement. Då kommer det bara att skrivas ut om conditionen är sann.
+Det finns flera sätt att anpassa hur ett felsökningsmeddelande ser ut, till exempel genom att inkludera datatypen eller ändra formateringen av värdena. Detta kan vara användbart när vi behöver skriva ut mer komplex data.
 
-```Rust
-fn main() {
-   let num1 = 5;
-   let num2 = 10;
+En annan användbar funktion är "eprintln!" som kan användas för att skriva ut felmeddelanden. Detta gör det lättare att hitta och åtgärda eventuella fel i koden.
 
-   dbg!(num1, num2 == num1 * 2); // Skriver bara ut "num2 == num1 * 2" eftersom det är det enda som är sant
-}
-```
+## Se även
 
-En annan användbar funktion är att använda "dbg!" tillsammans med "assert!" för att kontrollera om dina variabler har rätt värde vid en viss punkt i kodens användning. Om värdet inte är rätt, kommer det att sluta programmet med ett felmeddelande.
-
-```Rust
-fn main() {
-   let age = 15;
-
-   dbg!(age);
-   assert!(age >= 18, "Åldern är inte rätt!"); // Om åldern är mindre än 18 kommer programmet att avslutas och skriva ut "Åldern är inte rätt!"
-}
-```
-
-## Se också
-
-- Rust dokumentation för [println!](https://doc.rust-lang.org/std/macro.println.html) and [dbg!](https://doc.rust-lang.org/std/macro.dbg.html)
--Rust programming bloggartikel: [Debugging med Rust](https://lindseybieda.com/rust/debugging-with-rust/)
-- Rust video tutorial: [Print Debug Data Using println! and dbg! in Rust](https://www.youtube.com/watch?v=UVmugGMxOdk)
+- [Rust makroer](https://doc.rust-lang.org/book/ch19-06-macros.html)
+- [Syntax Guide för println! Makrot](https://doc.rust-lang.org/std/macro.println.html)
+- [Rust felsökning](https://rust-lang.github.io/rustup/concepts/debugging.html)

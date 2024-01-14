@@ -1,76 +1,39 @@
 ---
-title:    "Bash: Satunnaislukujen luominen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/generating-random-numbers.md"
+title:                "Bash: Sattumanvaraisten numeroiden luominen"
+programming_language: "Bash"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Satunnaislukujen generoiminen
+## Miksi
+Sattumanvaraisten lukujen luominen voi olla hyödyllistä monissa tilanteissa, kuten koodin testauksessa tai pelien kehittämisessä.
 
-Satunnaislukujen generoiminen on tärkeä osa monia ohjelmointiprojekteja, kuten pelin kehittämistä tai datan analysointia. Satunnaislukujen avulla voidaan simuloida tiettyjä tilanteita ja testata ohjelmien toimivuutta erilaisilla syötteillä.
-
-## Kuinka: Esimerkkejä koodista ja tulosteista
-
-Satunnaislukujen generoiminen on helppoa Bash-ohjelmoinnissa käyttäen ```$RANDOM``` -muuttujaa. Tämä muuttuja sisältää satunnaisen numeron välillä 0 ja 32767. Alla olevassa koodiesimerkissä generoidaan 10 satunnaista kokonaislukua ja tulostetaan ne ruudulle.
+## Miten
+Bash-ohjelmointikielen avulla voimme helposti luoda satunnaisia lukuja. Käytämme siihen `shuf` -komentoa, joka ottaa parametrikseen halutun lukujen määrän ja välisen alueen. Alla on esimerkki, jossa luomme satunnaisen numeron väliltä 1-10.
 
 ```Bash
-for i in {1..10}
-do
-  echo $RANDOM
-done
+numero=$(shuf -i 1-10 -n 1)
+echo $numero
 ```
+Tulosteena saamme satunnaisen numeron, kuten esimerkiksi `7`.
 
-Tuloste:
+Voimme myös luoda satunnaisia merkkijonoja käyttämällä `shuf` -komentoa yhdessä `head` -komenton kanssa. Alla olevassa esimerkissä luomme satunnaisen salasanan, joka koostuu 8 merkistä.
 
 ```Bash
-16096
-26525
-10594
-28066
-16216
-1281
-22208
-24028
-23583
-3361
+salasana=$(shuf -zer -n 8 {A..Z} {a..z} {0..9})
+echo $salasana
 ```
 
-Käyttäjä voi myös itse määrittää haluamansa alku- ja loppuluvun käyttämällä ```$RANDOM``` -muuttujaa seuraavassa muodossa: ```$((min + $RANDOM % (max-min+1)))```. Alla olevassa esimerkissä käyttäjältä pyydetään syöttämään haluamansa väliluku, jonka jälkeen tulostetaan 5 satunnaista lukua tältä väliltä.
+Tulosteena saamme jotain tällaista: `P9aKg8L3`.
 
-```Bash
-echo "Anna alku- ja loppuluku:"
-read min max
+## Syväsukellus
+Bashilla sattumanvaraisia lukuja luotaessa käytetään yleensä `/dev/urandom` -laitetta, joka tuottaa suuria määriä sattumanvaraisia bittijonoja. Näitä bittejä käytetään lopulta muodostamaan haluttu satunnainen luku.
 
-for i in {1..5}
-do
-  echo $(($min + $RANDOM % ($max-$min+1)))
-done
-```
+Lisäksi Bashissa on myös muita komentoja, kuten `rand` ja `jot`, jotka voivat tuottaa satunnaisia lukuja.
 
-Esimerkkituloste:
-
-```Bash
-Anna alku- ja loppuluku:
-10 20
-14
-19
-13
-10
-18
-```
-
-## Syväsukellus: Lisätietoa satunnaislukujen generoimisesta
-
-Vaikka ```$RANDOM``` on kätevä tapa generoida satunnaisia lukuja Bash-ohjelmoinnissa, on hyvä ottaa huomioon muutamia seikkoja sen käytössä. Ensinnäkin, ```$RANDOM``` ei välttämättä ole täysin satunnainen, vaan sen sisäinen mekanismi kyseisen luvun generoimiseen perustuu tiettyyn algoritmiin. Tämä voi johtaa siihen, että samassa ohjelman suorituksessa generoidut luvut saattavat toistaa itseään.
-
-Toisekseen, ```$RANDOM``` -muuttuja on käyttäjäkohtainen, eli jokaisella käyttäjällä on oma satunnaislukunsa. Tämä tarkoittaa sitä, että jos useampi käyttäjä suorittaa samaa Bash-skriptiä samanaikaisesti, lukuja ei voida taata täysin satunnaisiksi.
-
-On myös mahdollista käyttää muita tapoja generoida satunnaislukuja Bash-ohjelmoinnissa, kuten käyttämällä OpenSSL-komentoa tai ulkoista satunnaislukugeneraattoria.
-
-## Katso myös:
-
-- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/)
-- [Bash Satunnaisluku Generaattori - GitHub-repositorio](https://github.com/robertsertic/bash-random)
-- [OpenSSL - virallinen dokumentaatio](https://www.openssl.org/docs/manmaster/man1/openssl.html)
-- [Random.org - ulkoinen satunnaislukugeneraattori](https://www.random.org/)
+## Katso myös
+- [DevDocs - Bash `shuf`](https://devdocs.io/bash/shuf)
+- [Bash Hackers Wiki - Generating random numbers](https://wiki.bash-hackers.org/commands/builtin/rand)
+- [GNU Coreutils `shuf` documentation](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)

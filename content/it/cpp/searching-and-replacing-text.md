@@ -1,98 +1,47 @@
 ---
-title:    "C++: Ricerca e sostituzione di testo"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/searching-and-replacing-text.md"
+title:                "C++: Ricerca e sostituzione del testo"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Cercare e Sostituire Testo in C++
-
 ## Perché
 
-La ricerca e la sostituzione di testo sono due operazioni comuni nei programmi informatici. Queste operazioni permettono di modificare rapidamente e facilmente grandi quantità di testo, risparmiando tempo e sforzo.
+La sostituzione dei testi è un'operazione comune nella programmazione, sia per apportare modifiche rapide ai file che per automatizzare la modifica di un grande numero di testi. Con l'utilizzo dei giusti strumenti e tecniche, è possibile risparmiare tempo e ridurre gli errori umani nella sostituzione dei testi.
 
-## Come Fare
+## Come fare
 
-Per effettuare la ricerca e la sostituzione di testo in C++, è possibile utilizzare le funzioni della libreria string come `find()` e `replace()`. Di seguito è riportato un esempio di come utilizzare queste funzioni:
+Per sostituire i testi in C++, esistono diverse opzioni a disposizione. Una di queste è l'utilizzo della funzione `replace()` che prende in input il testo originale, il testo da sostituire e il testo di sostituzione. Ad esempio:
 
+```C++
+string testo = "Ciao mondo!";
+testo.replace(5, 6, "amici");
+cout << testo << endl;
 ```
-#include <iostream>
-#include <string>
+Output: Ciao amici!
 
-using namespace std;
+In questo esempio, abbiamo sostituito le ultime sei lettere del testo originale con la parola "amici". L'utilizzo della funzione `replace()` è semplice ed efficace per sostituire parti specifiche di un testo.
 
-int main() {
-    // Dichiarazione di una stringa
-    string frase = "Ciao a tutti, benvenuti al mio blog!";
-    cout << "Frase originale: " << frase << endl;
-    
-    // Ricerca della parola "blog" all'interno della stringa 
-    size_t pos = frase.find("blog");
-    
-    // Sostituzione della parola con "sito web"
-    if (pos != string::npos) { // Controllo se la parola è stata trovata
-        frase.replace(pos, 4, "sito web");
-    }
-    
-    cout << "Frase modificata: " << frase << endl;
-    
-    return 0;
-}
+Un'altra opzione è l'utilizzo del comando `sed` dalla riga di comando. Questo comando prevede un pattern di ricerca e un testo di sostituzione e può essere utilizzato per sostituire stringhe in un file di testo. Ad esempio:
 
-```
-L'output di questo codice sarà:
-
-```
-Frase originale: Ciao a tutti, benvenuti al mio blog!
-Frase modificata: Ciao a tutti, benvenuti al mio sito web!
+```C++
+system("sed -i 's/prodotto/prodotti/g' testo.txt");
 ```
 
-## Approfondimenti
+In questo caso, il comando `sed` sostituisce tutte le occorrenze della parola "prodotto" con "prodotti" all'interno del file di testo "testo.txt".
 
-Per eseguire ricerche e sostituzioni più complesse, è possibile utilizzare espressioni regolari. Queste permettono di specificare un pattern che deve essere cercato all'interno del testo e di sostituirlo con un'altra stringa. Per utilizzare le espressioni regolari in C++, è necessario includere la libreria `<regex>` e utilizzare le funzioni `regex_search()` e `regex_replace()`. Di seguito è un esempio di questo approccio:
+## Approfondimento
 
-```
-#include <iostream>
-#include <string>
-#include <regex>
+La sostituzione dei testi può essere effettuata in modo molto più complesso e potente utilizzando espressioni regolari. Permettendo di specificare modelli di ricerca ancora più flessibili e precisi, le espressioni regolari sono uno strumento molto utile per la manipolazione dei testi.
 
-using namespace std;
+Un'altra opzione è l'utilizzo di programmi di elaborazione dei testi come AWK o Perl, che consentono di scrivere script più avanzati per la sostituzione dei testi.
 
-int main() {
-    // Dichiarazione di una stringa
-    string testo = "Il 15/03/2021 ho comprato un nuovo telefono.";
-    cout << "Testo originale: " << testo << endl;
-    
-    // Ricerca di una data all'interno del testo
-    regex data("([0-9]{2})/([0-9]{2})/([0-9]{4})");
-    smatch match;
-    
-    if (regex_search(testo, match, data)) { // Controllo se la data è stata trovata
-        string giorno = match[1];
-        string mese = match[2];
-        string anno = match[3];
-        
-        // Sostituzione con la data nel formato giorno-mese-anno
-        string nuovaData = match.format("$3-$2-$1");
-        testo = regex_replace(testo, data, nuovaData);
-    }
-    
-    cout << "Testo modificato: " << testo << endl;
-    
-    return 0;
-}
+## Vedi anche
 
-```
-L'output di questo codice sarà:
-
-```
-Testo originale: Il 15/03/2021 ho comprato un nuovo telefono.
-Testo modificato: Il ho comprato un nuovo telefono.
-```
-
-## Vedi Anche
-
-- ["C++ String replace()" - GeeksforGeeks](https://www.geeksforgeeks.org/cpp-string-replace/)
-- ["C++ Regex Tutorial" - CppReference](https://en.cppreference.com/w/cpp/regex)
-- ["C++ Regular Expression (regex)" - Programiz](https://www.programiz.com/cpp-programming/regex)
+- [Funzione `replace()` in C++](https://www.cplusplus.com/reference/string/string/replace/)
+- [Comando `sed` dalla riga di comando](https://www.gnu.org/software/sed/manual/sed.html)
+- [Espressioni regolari in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)
+- [AWK](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Perl](https://www.perl.org/)

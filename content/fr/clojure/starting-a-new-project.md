@@ -1,41 +1,37 @@
 ---
-title:    "Clojure: Commencer un nouveau projet"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/starting-a-new-project.md"
+title:                "Clojure: Lancer un nouveau projet"
+programming_language: "Clojure"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
+Nous avons tous été à un moment donné inspirés pour commencer un nouveau projet de programmation, que ce soit pour apprendre une nouvelle langue de programmation ou pour répondre à un besoin spécifique. Dans cet article, nous allons expliquer comment démarrer un nouveau projet Clojure afin que vous puissiez sauter dans l'action dès maintenant !
 
-Si vous êtes passionné de programmation et que vous recherchez un langage fonctionnel élégant et dynamique, alors Clojure pourrait être le choix parfait pour votre prochain projet. Avec son approche basée sur les collections et sa gestion efficace de la concurrence, Clojure est idéal pour les applications web, les outils d'automatisation et bien plus encore.
+# Comment Faire
+Pour commencer, vous avez besoin d'installer Clojure sur votre ordinateur. Si vous utilisez un système d'exploitation basé sur Unix, vous pouvez simplement utiliser le gestionnaire de paquets pour l'installer. Sinon, vous pouvez télécharger l'archive depuis le site officiel de Clojure.
 
-## Comment faire
+Une fois Clojure installé, ouvrez votre terminal et exécutez la commande `lein new` pour créer un nouveau projet. Donnez un nom à votre projet et vous voilà prêt à partir !
 
-Pour commencer, vous devrez installer le logiciel Leiningen qui vous permettra de gérer les dépendances et d'exécuter votre code Clojure. Une fois que vous avez installé Leiningen, créez un nouveau projet en utilisant la commande `lein new <nom-du-projet>`.
-
-Ensuite, ouvrez votre projet dans votre éditeur de code préféré et commencez à écrire votre code en utilisant la syntaxe simple et concise de Clojure. Par exemple, pour imprimer "Bonjour !" dans la console, vous pouvez utiliser la fonction `println` comme ceci :
-
-```Clojure
-(println "Bonjour !")
-```
-La sortie sera :
+Passons maintenant à un exemple de code pour créer une fonction simple qui calcule la somme de deux nombres :
 
 ```
-Bonjour !
+(defn sum [a b]
+  (+ a b))
+
+(println (sum 3 4))
 ```
 
-Vous pouvez également définir des variables, créer des fonctions et utiliser les nombreuses fonctions natives de Clojure pour manipuler les données.
+Cela devrait afficher `7` dans votre terminal en exécutant le fichier. Vous pouvez maintenant ajouter d'autres fonctions et commencer à écrire du code pour votre projet.
 
-## Plongée plus profonde
+# Plongée en Profondeur
+En démarrant un nouveau projet Clojure, il peut être utile de suivre quelques bonnes pratiques pour un développement efficace. Tout d'abord, il est recommandé d'utiliser un dépôt de contrôle de version comme Git pour enregistrer votre code et suivre son évolution. Deuxièmement, vous pouvez utiliser des outils de gestion de dépendances comme Leiningen pour faciliter l'installation et la mise à jour des bibliothèques utilisées par votre projet.
 
-Pour commencer un nouveau projet en Clojure, il est important de bien comprendre les bibliothèques et les outils disponibles pour vous. La communauté Clojure est très active et propose de nombreuses ressources telles que le site officiel, un livre en ligne gratuit, des forums de discussion et des conférences.
+Il est également important de suivre la convention de nommage des fonctions et des variables en Clojure. Les noms de fonctions devraient être verbes et les noms de variables des noms descriptifs de ce qu'ils représentent. Enfin, prenez le temps de documenter votre code pour vous et pour les autres développeurs qui pourraient travailler sur le projet à l'avenir.
 
-Il est également recommandé de lire le célèbre livre "Structure and Interpretation of Computer Programs" pour approfondir votre compréhension des concepts de programmation fonctionnelle.
-
-## Voir aussi
-
-- [Site officiel de Clojure](https://clojure.org/)
-- [Le livre en ligne gratuit de Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-- [Forums de discussion Clojure](https://ask.clojure.org/)
-- [Livres "Structure and Interpretation of Computer Programs"](https://web.mit.edu/alexmv/6.037/sicp.pdf)
+# Voir Aussi
+- Le site officiel de Clojure : https://clojure.org/
+- Un tutoriel pour démarrer avec Clojure : https://kleinschmidt.blog/primitive-web-technologies-in-clojure/
+- Un guide de style pour la programmation en Clojure : https://gist.github.com/bbatsov/3b4b7741c5f3ef0172e0

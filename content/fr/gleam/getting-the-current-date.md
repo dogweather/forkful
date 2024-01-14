@@ -1,45 +1,57 @@
 ---
-title:    "Gleam: Obtenir la date actuelle"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/getting-the-current-date.md"
+title:                "Gleam: Obtenir la date actuelle"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Saviez-vous qu'il est possible d'obtenir automatiquement la date actuelle dans vos programmes Gleam ? Cela peut sembler une petite fonctionnalité, mais elle peut être très utile pour de nombreuses raisons. Dans cet article, nous allons vous expliquer pourquoi vous devriez utiliser cette fonctionnalité et comment le faire de manière efficace.
+Obtenir la date actuelle peut sembler être une tâche simple et sans importance dans un langage de programmation. Cependant, il est crucial pour de nombreux cas d'utilisation, tels que l'enregistrement de données, la planification de tâches ou simplement pour donner à l'utilisateur une meilleure expérience avec des dates formatées correctement.
 
 ## Comment faire
 
-Pour obtenir la date actuelle en utilisant Gleam, nous allons utiliser la fonction `Date.now()` du module `Time` :
+Pour obtenir la date actuelle en utilisant Gleam, nous pouvons utiliser la fonction `Time.now()` qui renvoie un `Result` contenant les informations de date et d'heure actuelles. Voici un exemple de code:
 
 ```Gleam
-import Time
+let result = Time.now()
 
-let current_date = Time.Date.now()
+case result {
+  Ok(time) -> "Date actuelle: #{time}"
+  Error(err) -> "Erreur: #{err}"
+}
 ```
 
-Cette fonction renvoie un `Time.Date` avec les informations sur la date et l'heure actuelles. Voici à quoi ressemblera le résultat :
+Lors de l'exécution de ce code, nous obtiendrons une sortie qui ressemblera à cela:
+
+> Date actuelle: {year: 2021, month: 10, day: 20, hour: 14, minute: 30, second: 42}
+
+Nous pouvons également formater la sortie en utilisant la fonction `Time.to_utc()` qui prend en paramètre le résultat de `Time.now()` et un fuseau horaire en tant que `String`. Voici un exemple de code:
 
 ```Gleam
-{ year: 2020, month: July, month_day: 8, hour: 10, minute: 30, second: 59 }
+let result = Time.now()
+let timezone = "Europe/Paris"
+
+case result {
+  Ok(time) -> "Date actuelle en #{timezone}: #{Time.to_utc(time, timezone)}"
+  Error(err) -> "Erreur: #{err}"
+}
 ```
 
-Vous pouvez également modifier le fuseau horaire en utilisant le paramètre `utc_offset`, comme ceci :
+La sortie sera alors formatée en fonction du fuseau horaire spécifié, comme ceci:
 
-```Gleam
-let current_date = Time.Date.now(utc_offset = 3)
-```
+> Date actuelle en Europe/Paris: {year: 2021, month: 10, day: 20, hour: 12, minute: 30, second: 42}
 
 ## Plongée en profondeur
 
-La fonction `Date.now()` utilise le temps UNIX pour déterminer la date et l'heure actuelles. Cela signifie que le résultat sera différent selon le fuseau horaire de votre ordinateur, mais il sera toujours calculé en utilisant le temps UNIX, qui est le nombre de secondes écoulées depuis le 1er janvier 1970 à minuit UTC.
+En plongeant en profondeur dans la façon dont Gleam gère les informations de date et d'heure, nous pouvons voir qu'elle utilise le type `DateTime` pour stocker ces données. Ce type est basé sur des structures de données immuables, garantissant ainsi la sécurité et la précision des dates manipulées par le programme.
 
-De plus, vous pouvez également utiliser la fonction `Date.from_timestamp(timestamp)` pour créer une date à partir d'un timestamp UNIX spécifique. Cela peut être utile si vous devez convertir une date de votre système en utilisant Gleam.
+De plus, Gleam offre également des fonctions pour manipuler les dates, telles que `Time.add_days()` pour ajouter un certain nombre de jours à une date donnée, ou `Time.is_leap_year()` pour vérifier si une année est bissextile.
 
-# Voir aussi
+## Voir aussi
 
-- La documentation officielle de Gleam sur les dates et le temps : https://gleam.run/documentation/stdlib/time/
-- Un tutoriel sur les bases de la programmation avec Gleam : https://gleam.run/getting-started/
-- Un article sur la gestion des erreurs en utilisant le type `Result` en Gleam : https://gleam.run/documentation/the-basics/errors/
+- La documentation officielle sur la manipulation des dates en Gleam (https://gleam.run/docs/std/time/)
+- Un article sur la gestion des dates en Gleam (https://medium.com/@gleam_language/handling-dates-in-gleam-c3f255228566)
+- Un forum communautaire pour poser des questions ou partager des connaissances sur Gleam (https://github.com/gleam-lang/gleam/discussions)

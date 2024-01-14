@@ -1,42 +1,46 @@
 ---
-title:    "Elm: Usuwanie znaków pasujących do wzoru"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: Usuwanie znaków pasujących do wzoru"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego usuwanie znaków pasujących do wzoru jest ważne w programowaniu Elm?
+## Dlaczego?
 
-Usuwanie znaków pasujących do wzoru jest ważne, ponieważ pozwala nam na efektywne przetwarzanie i filtrację tekstu w naszym kodzie. Jest to użyteczne w wielu przypadkach, na przykład gdy chcemy usunąć niepożądane znaki lub tylko pozostawić część tekstu.
+Czasem w programowaniu może zdarzyć się sytuacja, gdzie musimy usunąć pewne znaki ze stringa, które pasują do określonego wzorca. Może to być potrzebne w celu uproszczenia tekstu lub przetworzenia danych. W tym artykule opowiecie o tym, jak w języku Elm można usunąć znaki odpowiadające pewnemu wzorcowi.
 
 ## Jak to zrobić?
 
-Aby usunąć znaki pasujące do wzoru w Elm, musimy użyć funkcji `String.filter`. Przykładowy kod wyglądałby następująco:
-
-```Elm 
-text = "To jest przykładowy tekst do przefiltrowania" 
-filteredText = String.filter (\c -> not (c == "i")) text 
-```
-
-W tym przykładzie, każdy znak "i" jest usuwany z tekstu, a wynikiem jest "To jest przykładowy tekst do przeflterowana".
-
-Możemy również użyć bardziej złożonych wzorów, przekazując funkcję warunkową do funkcji `filter`. Na przykład, jeśli chcielibyśmy usunąć wszystkie liczby z tekstu, możemy użyć następującego kodu:
+Zacznijmy od wyjaśnienia podstawowej składni języka Elm. Istnieje wiele różnych sposobów na obsługę stringów, ale my skupimy się na funkcji `replace` z biblioteki `String`. Oto przykładowy kod w Elm, który usuwa wszystkie wystąpienia małych liter "a":
 
 ```Elm
-text = "Tekst z liczbami: 1, 2, 3, 4" 
-filteredText = String.filter (\c -> not (String.isDigit c)) text
+import String
+
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+modifiedText = String.replace "a" "" text -- wynik: Lorem ipsum dolor sit met, consectetur discing elit.
 ```
 
-W rezultacie, otrzymamy "Tekst z liczbami:".
+Funkcja `replace` przyjmuje trzy argumenty: szukaną frazę, zastępowaną frazę i string, na którym ma być wykonywana operacja. W naszym przypadku zamieniamy "a" na pustego stringa, co skutkuje usunięciem wszystkich wystąpień. Można również użyć więcej niż jednej funkcji `replace`, aby usunąć więcej niż jeden znak.
 
-## Głębszy wgląd
+## Deep Dive
 
-Funkcja `String.filter` jest jedną z wielu przydatnych funkcji w modułach `String` w Elm. Inne przydatne funkcje do przetwarzania tekstu to `String.map` i `String.split`. Warto także wspomnieć, że te funkcje działają na zasadzie niezmienialności - zwracają kopię zmienionego tekstu, a nie zmieniają oryginalnego tekstu.
+Ale co jeśli chcemy usunąć nie tylko pojedynczy znak, ale całe wyrazy lub fragmenty tekstu? W takim przypadku możemy skorzystać z wyrażeń regularnych. Elm posiada wbudowaną bibliotekę `Regex`, która umożliwia obsługę wyrażeń regularnych. Przykładowy kod używający wyrażeń regularnych wyglądałby tak:
 
-Ponadto, warto pamiętać o wydajności przy używaniu funkcji `String.filter`, ponieważ każda iteracja przez znaki jest wykonywana osobno.
+```Elm
+import Regex
+
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+modifiedText = Regex.replace Regex.All (Regex.regex "\\w+") (\_ -> "") text -- wynik: , . 
+```
+
+W tym przypadku wyrażenie regularne `\\w+` oznacza, że szukamy każdego wyrazu w stringu. Następnie, przy użyciu funkcji `replace` z wyrażeniami regularnymi, zamieniamy każdy wyraz na pusty string. W ten sposób usuwamy cały tekst, pozostawiając tylko znaki interpunkcyjne.
 
 ## Zobacz także
 
-- Dokumentacja Elm o [modułach tekstowych](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Przekształcaj i filtrowaj tekst z [Elm Exercise](https://elm-exercises.github.io/transform-string/)
+Jeśli chcesz dowiedzieć się więcej o języku Elm i jego funkcjonalności, warto przejrzeć inne artykuły na ten temat:
+
+- Oficjalna dokumentacja języka Elm: https://guide.elm-lang.org/
+- Wprowadzenie do programowania funkcyjnego w Elm: https://medium.com/@jaskiratr/understanding-functional-programming-with-elm-5b9752c462b8
+- Przykłady wykorzystania Elm w praktyce: https://elmprogramming.com/

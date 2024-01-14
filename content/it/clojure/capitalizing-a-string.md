@@ -1,44 +1,57 @@
 ---
-title:    "Clojure: Maiuscolo di una stringa"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/capitalizing-a-string.md"
+title:                "Clojure: Capitalizzazione di una stringa"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Capitando una stringa può essere utile quando si desidera una visualizzazione più pulita dei dati o quando si vuole enfatizzare una particolare parola o frase. Inoltre, può essere necessario per adattarsi a determinati standard di formattazione.
+Molti sviluppatori si trovano spesso a dover manipolare le stringhe all'interno dei loro programmi. Talvolta è necessario trasformare una stringa in maiuscolo per questioni di formattazione o confronto con altre stringhe. In questo post vedremo come capitalizzare una stringa in Clojure e perché potrebbe essere utile farlo.
 
-## Come fare
+## Come Fare
 
-Per capitalizzare una stringa in Clojure, è possibile utilizzare la funzione ```capitalize``` del core library. Questa funzione prende come input una stringa e restituisce la stessa stringa con la prima lettera convertita in maiuscolo. Ad esempio:
-
-```Clojure
-(capitalize "ciao a tutti")
-;; output: "Ciao a tutti"
-```
-
-Se si vogliono capitalizzare tutte le parole di una stringa, si può utilizzare la funzione ```clojure.string/capitalize-words``` del namespace ```clojure.string```. Questa funzione prende in input una stringa e restituisce la stessa stringa con le prime lettere di ogni parola convertite in maiuscolo. Ad esempio:
+Per capitalizzare una stringa in Clojure, possiamo utilizzare la funzione `capitalize`. Prende in input una stringa e restituisce la stessa stringa con la prima lettera maiuscola.
 
 ```Clojure
-(clojure.string/capitalize-words "ciao a tutti")
-;; output: "Ciao A Tutti"
+(capitalize "ciao") ;; Output: "Ciao"
+(capitalize "ciao, come va?") ;; Output: "Ciao, come va?"
 ```
 
-Si può anche utilizzare la funzione ```clojure.string/upper-case``` per convertire tutte le lettere di una stringa in maiuscolo. Ad esempio:
+Se vogliamo capitalizzare tutte le parole all'interno di una stringa, possiamo usare la funzione `clojure.string/capitalize-words`.
 
 ```Clojure
-(clojure.string/upper-case "ciao a tutti")
-;; output: "CIAO A TUTTI"
+(require '[clojure.string :as str])
+(str/capitalize-words "ciao, come va?") ;; Output: "Ciao, Come Va?"
 ```
+
+Nonostante sia una funzione semplice, `capitalize` potrebbe risolvere problemi di formattazione o di confronto tra stringhe all'interno del nostro codice.
 
 ## Approfondimento
 
-La funzione ```capitalize``` utilizza la funzione ```character.toLowerCase``` del Java SDK per convertire la prima lettera in minuscolo. Ciò significa che la stringa deve essere inizializzata correttamente con le librerie Java per il funzionamento della funzione. Inoltre, la funzione ```capitalize-words``` utilizza la funzione ```capitalize``` per ogni parola nella stringa, quindi funziona solo con parole separate da spazi. 
+La funzione `capitalize` in realtà utilizza il protocollo `clojure.string/Capitalizable`. Questo protocollo viene implementato automaticamente da ogni tipo di dato che ha un'implementazione di `clojure.lang.Capitalizable`.
 
-## Vedi anche
+Questo significa che possiamo utilizzare `capitalize` anche su tipi di dato che non sono stringhe, come ad esempio numeri.
 
-- Documentazione ufficiale di Clojure su ```capitalize```: https://clojuredocs.org/clojure.core/capitalize
-- Documentazione ufficiale di Clojure sul namespace ```clojure.string```: https://clojuredocs.org/clojure.string
-- Documentazione ufficiale di Java su ```character.toLowerCase```: https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html#toLowerCase(char)
+```Clojure
+(capitalize 123) ;; Output: 123
+```
+
+Inoltre, il protocollo `clojure.string/Join` è stato implementato anche per essere utilizzato con `capitalize`. Questo ci permette di unire più stringhe e capitalizzarle tutte insieme.
+
+```Clojure
+(require '[clojure.string :as str])
+(str/join " " (capitalize "ciao" "come" "va?")) ;; Output: "Ciao Come Va?"
+```
+
+In generale, le stringhe sono delle strutture molto versatile e flessibile in Clojure e grazie a funzioni come `capitalize` possiamo manipolarle in modi molto interessanti.
+
+## Vedi Anche
+
+- Documentazione ufficiale di Clojure sulla funzione `capitalize`
+https://clojuredocs.org/clojure.string/capitalize
+
+- Overview dei protocolli in Clojure
+https://clojure.org/reference/protocols

@@ -1,62 +1,44 @@
 ---
-title:    "Elixir: Satunnaislukujen luominen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/generating-random-numbers.md"
+title:                "Elixir: Satunnaisten numeroiden luominen"
+programming_language: "Elixir"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi Käyttää Elixirin Satunnaisten Numeroiden Luontia?
+## Miksi
 
-On monia erilaisia syitä, miksi voisi olla tarpeellista luoda satunnaisia numeroita Elixirillä. Jotkut esimerkkejä voivat olla simulaatiot, tietokannan testaus tai yksinkertaisesti satunnaisen luvun generointi erilaisiin ohjelmointiharjoituksiin. Satunnaisten numeroiden luominen on myös hauska tapa tutustua Elixirin ominaisuuksiin ja toimintoihin.
+Joskus ohjelmissa tarvitaan satunnaisia lukuja. Tämä voi olla esimerkiksi pelisovelluksessa, missä halutaan arpoa erilaisia tilanteita pelaajalle. Elixirin avulla tämä onnistuu helposti ja nopeasti.
 
-## Kuinka Tehdä Satunnaisia Numeroita Elixirillä?
+## Miten
 
-Elixirillä satunnaisia numeroita voidaan luoda käyttämällä moduulia nimeltä `:rand`. Tämä moduuli sisältää useita funktioita, joilla voi luoda erilaisia satunnaisia numeroita.
+Random-moduuli tarjoaa valmiin toiminnon satunnaisien lukujen generoimiseksi. Se otetaan käyttöön yksinkertaisesti näin:
 
-### Satunnainen Kokonaisluku
+```Elixir
+import Random
 
-Aloita importoimalla `:rand` moduuli:
-
-```
-import :rand
-```
-
-Voit sitten käyttää `rand/0` funktiota luomaan satunnaisen kokonaisluvun:
-
-```
-random_number = rand()
+num = random(1..10)
+IO.puts(num) # Tulostaa satunnaisen luvun väliltä 1-10
 ```
 
-Seuraava koodi näyttää satunnaisen kokonaisluvun väliltä 1-100:
+Voit myös määrittää tarkan lukumäärän satunnaisia numeroita haluamaltasi väliltä:
 
-```
-1..100 |> Enum.random() #=> 58
-```
+```Elixir
+import Random
 
-### Satunnainen Liukuluku
-
-Satunnaisia liukulukuja varten, voit käyttää `float/1` funktiota ja antaa sille halutun desimaalien määrän:
-
-```
-random_float = float(3) #=> 0.278
+nums = Stream.repeatedly(fn() -> random(20..30) end) |> Enum.take(10)
+IO.inspect(nums) # Tulostaa listan, jossa on 10 satunnaista lukua väliltä 20-30
 ```
 
-### Satunnainen Merkkijono
+## Syventävä tarkastelu
 
-Jos haluat generoida satunnaisen merkkijonon, voit käyttää `string/1` funktiota ja antaa sille halutun merkkien määrän:
+Satunnaislukujen generointi perustuu seediin, eli "alkulukuun". Seediä voi vaihtaa tarpeen mukaan, jolloin samaa tulosta ei saada joka kerta. Tämä on hyödyllistä esimerkiksi testauksessa, missä tarvitaan erilaisia satunnaisia lukuja.
 
-```
-random_string = string(10) #=> "jDUmvHWp9u"
-```
+Random-moduuli tarjoaa myös muita toimintoja, kuten shuffle- ja coin_flip-funktiot. Lisäksi voit generoida satunnaisia merkkijonoja valitsemaltaan merkkialueelta. Lisätietoja löytyy Elixirin virallisesta dokumentaatiosta.
 
-## Syvällisempi Sukellus
+## Katso myös
 
-Satunnaisia numeroita luodessa Elixir käyttää Mersenne Twister -algoritmia, joka on yksi tunnetuimmista ja nopeimmista satunnaislukugeneraattoreista. Tämä algoritmi hyödyntää lohkoketjua, joka mahdollistaa suuren määrän erilaisia satunnaisia numeroita.
-
-Voit myös asettaa halutun alunumeron `rand/1` funktioon, joka mahdollistaa samojen satunnaisien numeroiden generoinnin uudelleen. Tämä on hyödyllistä esimerkiksi testimielessä.
-
-## Katso Myös
-
-- Elixirin virallinen dokumentaatio `:rand` moduulista: https://hexdocs.pm/elixir/1.12.1/Kernel.html#rand/0
-- Mersenne Twister -algoritmin selitys: https://en.wikipedia.org/wiki/Mersenne_Twister
+- [Elixirin virallinen dokumentaatio: Random](https://hexdocs.pm/elixir/Random.html)
+- [Ohjelmointikielet: Elixir (suomeksi)](https://finnprogs.github.io/elixir-suomeksi/)
+- [Kuinka käyttää Elixiria satunnaisien lukujen generoimiseen](https://www.keyandneedle.com/blog/random-numbers-using-elixir/)

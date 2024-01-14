@@ -1,42 +1,39 @@
 ---
-title:    "Gleam: Vergleich von zwei Daten"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/comparing-two-dates.md"
+title:                "Gleam: Vergleich zweier Daten"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-In der Programmierung ist es oft notwendig, verschiedene Daten zu vergleichen. Das gilt auch für Datumsangaben. Mit Gleam ist es möglich, auf einfache Art und Weise zwei Datumsangaben zu vergleichen.
+# Warum
 
-## Wie geht man vor?
-Um zwei Datumsangaben in Gleam zu vergleichen, benötigt man die Funktion `Datetime.diff`. Diese Funktion nimmt zwei Argumente entgegen und gibt das Ergebnis des Vergleichs in Sekunden zurück.
+Das Vergleichen von zwei Daten ist ein wichtiger Teil der Programmierung, der dabei hilft, zeitliche Abhängigkeiten zu erkennen und zu verarbeiten. Es ermöglicht auch die Durchführung von Aktionen basierend auf dem Vergleich von zwei Datumsangaben, wie zum Beispiel das Festlegen von Ablaufdaten oder das Sortieren von Daten in chronologischer Reihenfolge.
 
-```Gleam
-let start_date = Datetime.local(2021, 4, 20, 12, 00)
-let end_date = Datetime.local(2021, 5, 1, 18, 00)
+# Wie man es macht
 
-let difference = Datetime.diff(start_date, end_date)
-
-IO.println("Die Differenz beträgt: ${difference} Sekunden")
-```
-
-Die Ausgabe dieses Beispiels würde lauten: `Die Differenz beträgt: 950400 Sekunden`. Dies entspricht 11 Tagen, 6 Stunden und 0 Minuten.
-
-## Tief in die Materie eintauchen
-Es ist auch möglich, verschiedene Einheiten für die Differenz anzugeben, indem man ein drittes Argument an `Datetime.diff` übergibt. Mögliche Einheiten sind `Datetime.Year`, `Datetime.Month`, `Datetime.Day`, `Datetime.Hour`und `Datetime.Minute`.
+Um zwei Daten in Gleam zu vergleichen, können Sie die `date.compare()` Funktion verwenden. Diese Funktion nimmt zwei Datumswerte als Argumente und gibt entweder 0, 1 oder -1 zurück, je nachdem, ob das erste Datum gleich, größer oder kleiner als das zweite Datum ist. Hier ist ein Beispiel, das zeigt, wie Sie diese Funktion verwenden können:
 
 ```Gleam
-let start_date = Datetime.local(2021, 4, 20, 12, 00)
-let end_date = Datetime.local(2021, 5, 1, 18, 00)
+let date1 = date.new(2021, 1, 1)
+let date2 = date.new(2021, 2, 1)
 
-let difference = Datetime.diff(start_date, end_date, Datetime.Day)
-
-IO.println("Die Differenz beträgt: ${difference} Tage")
+let result = date.compare(date1, date2)
 ```
 
-Die Ausgabe dieses Beispiels würde lauten: `Die Differenz beträgt: 11 Tage`.
+In diesem Beispiel lautet die Ausgabe `result = -1`, da `date1` kleiner als `date2` ist.
 
-## Siehe auch
-- [Offizielle Dokumentation zu Datumsangaben in Gleam](https://gleam.run/core/datetime.html)
-- [Weitere nützliche Funktionen für Datumsangaben in Gleam](https://gleam.run/library/datetime.html)
+# Tiefer Einblick
+
+Beim Vergleichen von Daten gibt es einige wichtige Dinge zu beachten. Zum einen müssen die Daten im gleichen Format vorliegen, damit sie sinnvoll verglichen werden können. Gleam bietet verschiedene Funktionen, um Datumswerte in das gewünschte Format umzuwandeln, wie zum Beispiel die `date.from_string()` Funktion.
+
+Außerdem ist es wichtig, die Zeitzone zu berücksichtigen, wenn Sie Daten vergleichen. Wenn Sie zum Beispiel Daten von verschiedenen Orten vergleichen, kann dies zu unerwarteten Ergebnissen führen, da die Zeitzone unterschiedlich sein kann.
+
+In Gleam gibt es auch die Möglichkeit, benutzerdefinierte Vergleichsfunktionen zu erstellen, um spezifische Vergleiche durchzuführen, beispielsweise basierend auf spezifischen Kriterien für Zeit oder Datum.
+
+# Siehe auch
+
+- [Gleam Dokumentation zu Datumswerten](https://gleam.run/book/tour/dates)
+- [Formatierung von Daten in Gleam](https://gleam.run/book/core/date.html#format)
+- [Zeitzonenumrechnung in Gleam](https://gleam.run/book/library/chronos)

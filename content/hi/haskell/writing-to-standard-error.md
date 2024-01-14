@@ -1,37 +1,39 @@
 ---
-title:    "Haskell: स्टैंडर्ड त्रुटि में लिखना"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/writing-to-standard-error.md"
+title:                "Haskell: स्टैंडर्ड त्रुटि पर लिखना"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्यों 
 
-Haskell में कोडिंग करने के दौरान, बहुत बार हम देखते हैं कि हमारा कोड निराशाजनक या गलत हो जाता है। इससे हमारा प्रोग्राम ठीक से काम नहीं करता है और हमें बग्स का सामना करना पड़ता है। इसलिए हमें यह अहसास होना चाहिए कि हमारा कोड क्या हो रहा है और उसमें किसी गलती के कारण यह बुग आ रहा है। इसीलिए हमें standard error में लिखने की आवश्यकता होती है।
+वैसे तो हैस्केल में स्टैंडर्ड इरर पर लिखने का उपयोग दोस्ताना नहीं है, लेकिन कभी-कभी हमारे कोड में गलतियां आ सकती हैं जो कि हमारे एप्लिकेशन को डूबाने की बजाय हमेशा स्टैंडर्ड एरर पर लिखने के माध्यम से धीमा कर सकती हैं।
 
 ## कैसे करें
 
-हम standard error में कोड कैसे लिखें, इसका उदाहरण नीचे दिया गया है:
-
 ```Haskell
+import System.IO
+
 main :: IO ()
 main = do
-  putStrLn "Hello World!" -- stdout में लिखें
-  hPutStrLn stderr "This is an error." -- stderr में लिखें
+    hPutStrLn stderr "यह स्टैंडर्ड इरर पर लिखने का उदाहरण है"
+    hPutStrLn stderr "और यह कुछ गलत संदेश हैं |"
+    let a = 5 :: Int
+        b = 0 :: Int
+    if b /= 0
+        then do
+            let result = a `div` b
+            hPutStrLn stderr $ "विभाजन: " ++ show result
+        else hPutStrLn stderr "गलत: विभाजन 0 से हो रहा है |"
 ```
 
-जब हम यह कोड चलाएंगे तो हमें output में निम्नलिखित दिखाई देगा:
+## गहराई से जानें
 
-```
-Hello World!
-*** Exception: This is an error.
-```
+स्टैंडर्ड इरर दर्शाने वाले यूजर को गलतियों के बारे में जानकारी देने के लिए बहुत ही उपयोगी है। साथ ही, यह कोड को डीबग करने में भी महत्वपूर्ण भूमिका निभाता है। हास्कल में हम `hPutStrLn` फंक्शन का उपयोग करते हैं जो एक स्ट्रिंग को स्टैंडर्ड इरर पर लिखता है। हम भी डेटा टाइप ट्रैस की सहायता से अपने संदेश को स्लॉट करते हैं ताकि उसे लगभग किसी भी डेटा के साथ मिला सकें।
 
-हमारा पहला लाइन stdout में दिखाई देगा और दूसरा stderr में लिखा गया है, जो कि गलती को दिखाता है। इस तरह हम अपने कोड में गलती को पकड़ सकते हैं और उसे सही कर सकते हैं।
+## देखें भी
 
-## गहराई में जाएं
-
-standard error में लिखने के अलावा भी हमें कुछ महत्वपूर्ण बातें जाननी होती हैं। पहले, हमें यह जानना जरूरी है कि हमारे प्रोग्राम क्या कारण से fail हो रहा है। अगर हम अपने program को error के साथ खत्म करते हैं, तो यह हमेशा better होता है कि हम error के साथ message भी दें। इससे हम किसी भी issue को समझने में आसानी होती है।
-
-दूसरे, हमें यह भी जानना जरूरी है कि किस तरह के error हमें मिल रहे हैं। हमें यह जानना चाहिए कि क
+- [Haskell में एरर्स पर काम करने का सबसे सही तरीका](https://www.learnyouahaskell.com/for-a-few-monads-more#error)
+- [Haskell स्टैंडर्ड लाइब्रेरी: `System.IO`](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)

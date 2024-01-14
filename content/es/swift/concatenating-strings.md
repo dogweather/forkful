@@ -1,61 +1,63 @@
 ---
-title:    "Swift: Concatenando cadenas"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/concatenating-strings.md"
+title:                "Swift: Concatenando cadenas"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué concatenar cadenas en Swift?
 
-La concatenación de cadenas es una técnica fundamental en la programación que permite combinar dos o más cadenas de texto para formar una sola. Esta habilidad es esencial para poder crear aplicaciones y programas que muestren información de manera legible y coherente.
+Concatenar cadenas es una práctica común en la programación, especialmente en Swift. Permite combinar diferentes cadenas para crear una nueva y usarla en nuestras aplicaciones. Esta técnica es útil para crear títulos, mensajes de alerta o cualquier texto dinámico en nuestro código.
 
 ## Cómo hacerlo
 
-Hay varias formas de concatenar cadenas en Swift. Una de ellas es utilizando el operador `+`, que une dos cadenas para formar una nueva. Por ejemplo:
+En Swift, podemos concatenar cadenas de varias maneras. La forma más básica es usando el operador `+` para unir dos cadenas. Por ejemplo:
 
 ```Swift
-let nombre = "Carlos"
-let apellido = "García"
-let nombreCompleto = nombre + " " + apellido
-print(nombreCompleto)
+let firstName = "Juan"
+let lastName = "Pérez"
+let greeting = "¡Hola " + firstName + " " + lastName + "!"
+print(greeting)
+// Output: ¡Hola Juan Pérez!
 ```
 
-Este código producirá la salida "Carlos García" en la consola. También puedes utilizar el método `append()` para agregar una cadena al final de otra:
+También podemos utilizar la función `String(format:...)` para concatenar cadenas con formato. Esta función toma dos argumentos: la plantilla de formato y los valores a insertar en la cadena. Por ejemplo:
 
 ```Swift
-var mensaje = "Hola"
-mensaje.append(", ¿cómo estás?")
-print(mensaje)
+let num1 = 5
+let num2 = 10
+let result = String(format: "La suma de %d y %d es %d", num1, num2, num1+num2)
+print(result)
+// Output: La suma de 5 y 10 es 15
 ```
 
-La salida será "Hola, ¿cómo estás?". Otro método útil es `joined(separator:)`, que te permite unir múltiples cadenas con un separador específico:
+Otra forma de concatenar cadenas en Swift es utilizando la función `joined(separator:)` en un array de cadenas. Esta función nos permite unir todas las cadenas con un separador específico. Por ejemplo:
 
 ```Swift
-let palabras = ["Hola", "amigos", "!", "Bienvenidos"]
-let mensaje = palabras.joined(separator: " ")
-print(mensaje)
+let fruits = ["manzana", "naranja", "kiwi"]
+let fruitsString = fruits.joined(separator: ", ")
+print("Me gustan las frutas: " + fruitsString)
+// Output: Me gustan las frutas: manzana, naranja, kiwi
 ```
-
-Esta vez, la salida será "Hola amigos ! Bienvenidos".
 
 ## Profundizando
 
-Además de estas formas básicas de concatenar cadenas, también puedes utilizar el método `format()` para incluir variables dentro de una cadena. Este método utiliza marcadores de posición para indicar dónde se deben insertar las variables. Por ejemplo:
+Un aspecto importante al concatenar cadenas es el rendimiento. En Swift, se recomienda utilizar la estructura `String` en lugar de la clase `NSString` para mejorar el rendimiento de nuestro código. Además, también debemos tener en cuenta que el operador `+` crea una nueva cadena en la memoria cada vez que se usa, por lo que en casos de concatenar varias cadenas juntas, es más eficiente utilizar la función `appending(_:)` en una sola cadena. Por ejemplo:
 
 ```Swift
-let nombre = "Ana"
-let edad = 24
-let mensaje = "Hola, mi nombre es \(nombre) y tengo \(edad) años."
-print(mensaje)
+let city = "Barcelona"
+let country = "España"
+let address = city.appending(", " + country)
+print(address)
+// Output: Barcelona, España
 ```
-
-La salida será "Hola, mi nombre es Ana y tengo 24 años."
-
-Puedes utilizar diferentes tipos de datos para rellenar los marcadores de posición, como números enteros, decimales y booleans. También puedes formatear el resultado final utilizando patrones de formato.
 
 ## Ver también
 
-- Documentación oficial de Swift sobre concatenación de cadenas: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
-- Tutorial sobre concatenación de cadenas en Swift: https://www.hackingwithswift.com/syntax/2-string-basics
-- Ejemplos de concatenación de cadenas en diferentes escenarios: https://codewithchris.com/how-to-concatenate-strings-in-swift/
+Para más información sobre concatenar cadenas en Swift, puedes visitar los siguientes enlaces:
+
+- Documentación de Apple sobre la estructura `String`: https://developer.apple.com/documentation/swift/string
+- Tutorial de Hacking with Swift sobre la concatenación de cadenas: https://www.hackingwithswift.com/read/2/2/concatenating-strings
+- Artículo de Ray Wenderlich sobre el rendimiento de cadenas en Swift: https://www.raywenderlich.com/123907/swift-string-performance/

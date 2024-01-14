@@ -1,74 +1,46 @@
 ---
-title:    "Rust: Überprüfen, ob ein Verzeichnis vorhanden ist."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/checking-if-a-directory-exists.md"
+title:                "Rust: Prüfen, ob ein Verzeichnis existiert"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie man in Rust prüft, ob ein Verzeichnis existiert. Es ist wichtig zu wissen, wie man dies in Rust macht, da es eine häufige Aufgabe ist, wenn man mit Dateien und Verzeichnissen arbeitet. Außerdem ist es ein guter Weg, um das Konzept der Fehlerbehandlung in Rust zu verstehen.
+In der Programmierung gibt es viele Situationen, in denen es wichtig ist zu überprüfen, ob ein bestimmter Ordner existiert. Das kann zum Beispiel beim Speichern von Dateien oder beim Zugriff auf externe Verzeichnisse notwendig sein. In diesem Blogbeitrag lernst du, wie du mithilfe von Rust schnell und einfach herausfinden kannst, ob ein Ordner existiert oder nicht.
 
-# Wie  man überprüft, ob ein Verzeichnis existiert
+## Anleitung
 
-Es gibt verschiedene Möglichkeiten, um in Rust zu überprüfen, ob ein Verzeichnis existiert. Hier werden wir zwei der häufigsten Optionen vorstellen.
+Um in Rust zu überprüfen, ob ein bestimmter Ordner vorhanden ist, kannst du die Funktion `Path::exists()` aus der Standardbibliothek verwenden. Diese Funktion gibt einen `bool`-Wert zurück, der angibt, ob das angegebene Verzeichnis existiert oder nicht.
 
-## Option 1: Mit der `Path` Bibliothek
-
-Die einfachste Möglichkeit, um zu überprüfen, ob ein Verzeichnis existiert, ist die Verwendung der `Path` Bibliothek von Rust. Diese Bibliothek bietet einige nützliche Methoden, um mit Pfaden und Verzeichnissen umzugehen.
-
-Um dies zu nutzen, müssen wir zuerst die Bibliothek im entsprechenden Crate importieren:
-
-```
+```Rust
+// Importieren der Standardbibliothek
 use std::path::Path;
-```
 
-Anschließend können wir die Methode `exists()` von `Path` verwenden, um zu prüfen, ob das Verzeichnis existiert. Hier ist ein Beispielcode, der dies zeigt:
+fn main() {
+    // Definieren des Ordnerpfades
+    let path = Path::new("/pfad/zum/ordner");
 
-```
-let dir_path = Path::new("/home/me/documents");
-if dir_path.exists() {
-    println!("Das Verzeichnis existiert.");
-} else {
-    panic!("Das Verzeichnis existiert nicht.");
+    // Überprüfen, ob der Ordner existiert
+    if path.exists() {
+        println!("Der Ordner existiert!");
+    } else {
+        println!("Der Ordner existiert nicht!");
+    }
 }
 ```
 
-## Option 2: Mit der `std::fs` Bibliothek
+Wenn der Ordner existiert, gibt das Programm den Text "Der Ordner existiert!" aus, ansonsten wird "Der Ordner existiert nicht!" angezeigt. Das Beispiel oben verwendet einen absoluten Pfad, du kannst aber auch einen relativen Pfad verwenden, um den Ordner im aktuellen Arbeitsverzeichnis zu überprüfen.
 
-Eine weitere Möglichkeit, um zu überprüfen, ob ein Verzeichnis existiert, ist die Verwendung der `std::fs` Bibliothek. Diese Bibliothek bietet Funktionen für die Dateisystemoperationen.
+## Tiefgreifende Informationen
 
-Um dies zu nutzen, müssen wir ebenfalls zuerst die Bibliothek im Crate importieren:
+Wenn du noch tiefer in das Thema einsteigen möchtest, kannst du dich mit der Dokumentation der Standardbibliothek beschäftigen. Dort findest du weitere nützliche Funktionen und Möglichkeiten, um mit Verzeichnissen und Dateipfaden in Rust umzugehen.
 
-```
-use std::fs;
-```
-
-Anschließend können wir die Funktion `metadata()` verwenden, um Informationen über eine Datei oder ein Verzeichnis abzurufen. Der Rückgabewert ist ein `Result` Type, der Details über die Datei bzw. das Verzeichnis enthält. Wir können dann überprüfen, ob es sich um ein Verzeichnis handelt, indem wir `is_dir()` aufrufen. Hier ist ein Beispielcode:
-
-```
-let dir_path = "/home/me/documents";
-let metadata = match fs::metadata(dir_path) {
-    Ok(metadata) => metadata,
-    Err(_) => panic!("Das Verzeichnis existiert nicht.")
-};
-if metadata.is_dir() {
-    println!("Das Verzeichnis existiert.");
-} else {
-    panic!("Das Verzeichnis existiert nicht.");
-}
-```
-
-# Tieferer Einblick
-
-Wenn du tiefer in die Details einsteigen möchtest, wie Rust überprüft, ob ein Verzeichnis existiert, empfehlen wir dir, dich mit den verschiedenen Datentypen und Funktionen auseinanderzusetzen, die in der `std::path` und `std::fs` Bibliothek verwendet werden. Diese Artikel können dir dabei helfen:
-- [Das `Path` Struct in Rust](https://doc.rust-lang.org/std/path/struct.Path.html)
-- [Die `std::fs` Bibliothek in Rust](https://doc.rust-lang.org/std/fs/index.html)
+Eine wichtige Funktion ist zum Beispiel `is_dir()`, die überprüft, ob es sich bei dem Pfad um ein Verzeichnis handelt. Du kannst auch die Funktion `create_dir()` verwenden, um einen neuen Ordner zu erstellen, falls dieser noch nicht existiert.
 
 # Siehe auch
 
-Hier sind einige nützliche Ressourcen, die dir helfen können, mehr über die Arbeit mit Dateien und Verzeichnissen in Rust zu erfahren:
-- [Die offizielle Rust Dokumentation](https://doc.rust-lang.org/std/fs/index.html)
-- [Das Rust Buch - Kapitel über Dateizugriffe](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
-- [Eine Einführung in die Datei- und Verzeichnisoperationen in Rust](https://www.ncameron.org/blog/rust-file-and-directory-operations/)
+- [Dokumentation der Standardbibliothek](https://doc.rust-lang.org/std/path/index.html)
+- [Weitere nützliche Funktionen für die Arbeit mit Verzeichnissen in Rust](https://doc.rust-lang.org/std/fs/index.html)

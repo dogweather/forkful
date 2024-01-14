@@ -1,29 +1,36 @@
 ---
-title:    "Haskell: שימוש בביטויים רגילים"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/using-regular-expressions.md"
+title:                "Haskell: שימוש בביטויים רגילים"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
-בעולם התכנות קיימים מספר כלים הנועדים לסייע למפתחים לעבוד בצורה יעילה ומהירה יותר. אחד מהכלים האלה הוא השתמשות בביטויים רגולריים. בעזרתם, אנו יכולים למצוא ולהחליף טקסטים מתאימים בקוד בצורה יעילה ומהירה יותר.
+# למה
 
-## כיצד לעשות זאת
-בהמשך תמצא כמה דוגמאות קוד ופלט מצורפים להמחשה. כדי להשתמש בביטויים רגולריים בשפת Haskell, נשתמש בפונקציות נתמכות כמו `match` ו- `search`.
+כתיבת פתרונות בתסריטים רגילים או Regular Expressions היא כלי חזק ומועיל לפתירת בעיות במידע טקסטואלי. יישומים שונים משתמשים בביטויים אלה בכדי למצוא, להחליף או לאתחל מחרוזות מסוימות בתוך מידע גדול ומגוון.
+
+# איך לעשות זאת
+
+באמצעות שפת התכנות Haskell ניתן ליצור באופן פשטני ביטויים רגילים כדי לבצע חיפושים והחלפות בטקסט. למשל, ניתן להשתמש בפונקציות כמו `match` ו- `substitute` כדי למצוא או להחליף מחרוזות מסוימות בתוך מחרוזת אחת או יותר. הנה דוגמא להעברת המחרוזת "Hello" ל-"Goodbye" באמצעות Regular Expression:
 
 ```Haskell
-import Text.Regex
+import Text.Regex.Posix
 
--- דוגמה למציאת כל מופע של המילה "כלום"
-matches = match (mkRegex "כלום") "בתוך המחרוזת יש כל מיני כלום"
--- הפלט יהיה: Just (0,5,0,[],"כלום") - הפרמטרים כוללים את מספר השורה, כמות התווים ועוד
-
--- דוגמה לכיוון או העברת הכיפור לתרגום לשפת צי'נס
-matches2 = search (mkRegex "כיפור") "יש מספיק טובים עם כיפור - גם במשמר הרביעי"
--- הפלט יהיה: Just (11,17) - התוצאות מסמנות רק את המיקום של האותיות במחרוזת המקור
-
+main = do
+    let myString = "Hello, my friend!"
+    let newString = subRegex (mkRegex "Hello") myString "Goodbye"
+    putStrLn newString
 ```
+פלט: Goodbye, my friend!
 
-## העמקת מידע
-השתמשות בביטויים רגולריים בשפת Haskell יכולה להיות מורכבת לעתים, אך היא נותנת לנו כלים חזקים כדי לעבוד עם טקסטים. ישנם מספר פונקציות שיכולות לעזור לנו לחלץ ולמצוא מידע מתאים באמצעות ביטויים רגולריים, כגון `match`, `search`, `split` ו- `subRegex`. חשוב לשים לב להפרדת המקרים ולהגבלת התנאים במידה ומשתמשים בפונקציות אלה בצורה תק
+# מעמד עמוק
+
+השתמשו בכלי החזק הזה בקשר עם פתרונות ניתוח והחלפת תבניות על קבצי טקסט מורכבים יותר. באמצעות פתרונות שנכתבו בשפת Haskell, אפשר לפתור בעיות רבות בכתיבה וניתוח של נתונים טקסטואליים מגוונים. היכולת לבצע חיפושים והחלפות בקבצים גדולים מאפשרת עיבוד מהיר יותר ויעילות יותר של המידע.
+
+# ראו גם
+
+- [רקורסיה ב-Haskell](https://www.geeksforgeeks.org/recursion-in-haskell/)
+- [מדריך לכתיבת פתרונות בתסריטים רגילים בשפת Haskell](https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base.html)
+- [ניתוח טקסט בHaskell](https://www.stackbuilders.com/tutorials/haskell/parsing-numeric-expressions-using-parsing-combinators-in-haskell/)

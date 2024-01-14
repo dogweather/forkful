@@ -1,41 +1,41 @@
 ---
-title:    "Elm: パターンに一致する文字の削除"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: パターンにマッチする文字を削除する"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-「あるパターンにマッチする文字を削除する」という作業を行う理由は、テキストを処理する際に特定の文字を除外する必要があるからです。
+プログラミングの世界で、パターンにマッチする文字を削除することは非常によく行われます。この作業は、例えばテキストデータのクリーニングや特定の文字を置き換えるために使用されます。
 
 ## 方法
 
-まず、Elmの文字列操作機能を利用して、与えられた文字列から特定の文字パターンを検索し、その文字を削除する関数を作成する必要があります。
-
-例えば、以下のようなコードを使用して特定の文字パターンを削除することができます。
+この記事では、Elm言語を使用してパターンにマッチする文字を削除する方法を説明します。以下のコードブロックに、実際のコード例とそれを実行した際のサンプル出力を記載しています。
 
 ```Elm
-deletePattern : String -> String -> String
-deletePattern pattern string =
-    String.replace pattern "" string
+-- テキストデータから全ての数字を削除する例
+
+import Regex
+
+text = "Today's date is 12/31/2021."
+cleanText = Regex.replace (Regex.regex "\\d") (\_ -> "") text
+
+main = text ++ "Cleaned text: " ++ cleanText
+
+-- Output:
+-- Today's date is 12/31/2021. Cleaned text: Today's date is /.
 ```
 
-そして、以下のように呼び出すことで、特定の文字パターンを削除した結果が得られます。
+上記の例では、Regexモジュールを使用してテキスト中の数字を削除しています。まず、`Regex.regex`を使用して削除したいパターンを指定します。ここでは、`\d`を使用して数字を表しています。次に、`Regex.replace`を使用して、指定した文字を空文字列に置き換えています。これにより、テキスト中の数字が全て削除されることになります。
 
-```Elm
-deletePattern "a" "banana" -- => "bnana"
-```
+## 深層
 
-## ディープダイブ
-
-文字列操作を行う際には、様々な文字パターンを検索して削除することができます。例えば、正規表現を使用することで、複雑なパターンにもマッチする文字を削除することができます。
-
-また、Stringモジュールには、さまざまなメソッドが用意されており、より効率的に文字列操作を行うことができます。詳細については、公式ドキュメントを参照してください。
+この記事では、パターンマッチングと文字列操作の基本的な概念を学ぶことができます。しかし、Elmではより高度なパターンマッチングの方法や、より柔軟な文字列操作の手段があります。興味があれば、公式ドキュメントや他のチュートリアルを参考にして、より深い知識を身につけることができるでしょう。
 
 ## 参考リンク
 
-[Elm公式ドキュメント](https://guide.elm-lang.org/)  
-[正規表現を使用する場合の例](https://discourse.elm-lang.org/t/how-to-deleting-characters-matching-a-pattern/4633/2)  
-[stringモジュールの詳細](https://package.elm-lang.org/packages/elm/core/1.0.3/String)
+- [Elm公式ドキュメント](https://elm-lang.org/docs)
+- [Elmチュートリアル](https://elm-lang.org/learn)

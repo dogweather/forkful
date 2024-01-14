@@ -1,39 +1,24 @@
 ---
-title:    "Swift: מחיקת תווים התואמים לתבנית"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/deleting-characters-matching-a-pattern.md"
+title:                "Swift: מחיקת תווים התואמים לתבנית"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+"
+ 
 
-מחיקת תווים המתאימים לתבנית היא כלי שימושי לכותבי קוד שרוצים להסיר תווים מוותרים או מיותרים מטקסט. זה יכול לשפר את ביצועי התוכנית ולהפחית את גודל הקוד ולשמור על קוד נקי יותר.
+# למה:
 
-## איך לעשות זאת
+למדידה רק 1-2 משפטים שמסבירים *למה* מישהו ירצה למחוק תווים התואמים לתבנית.
 
-כדי למחוק תווים המתאימים לתבנית באמצעות Swift, ניתן להשתמש בפונקציה `replacingOccurrences(of:with:)`. פונקציה זו מקבלת שני מחרוזות כפרמטרים - התבנית שברצונך למחוק והמחרוזת שאתה רוצה להחליף בה. ניתן גם להוסיף פרמטר `options` כדי להתאים את ההתאמה לתנאים שונים. לדוגמה:
+התחבר לטיוטה (draft) שלכם: לשחק עם תווים באמצעות אחת מפונקציות המחרוזות של Swift עבור המחרוזת שלנו ו"
+מחק תווים התואמים לתבנית
 
-```Swift
-let originalString = "מחרוזת עם תווים מוותרים!!!"
-let modifiedString = originalString.replacingOccurrences(of: "[א-ת]", with: "", options: .regularExpression)
-print(modifiedString)
-```
-תוצאה:
-`מחרוזת עם תווים מוותרים`
+תמיד זמינים לאמצעים לסרוק ולתאר את מחרוזת בתבניות שונות. לצורך הזה, אנו צריכים ליצור פונקציה לשייד תווים התואמים לתבנית נתונה. נכתוב את הפונקציה כדי ליצור או להלן נתונים של מחרוזות כדי לשייך את הביטאב שלנו בפונקציה. ה framework נמצא בהמשך demover, ומכיוון שנלמד בסופר, אנחנו נמימון את המקור של התמונות לקריאה מהדרך של
 
-## מקורות נוספים
-
-כדי ללמוד עוד על כיצד למחוק תווים המתאימים לתבנית ב-Swift, ניתן לעיין במסמכים הבאים:
-
-- [מדריך לפונקצית replacingOccurrences באתר Apple](https://developer.apple.com/documentation/foundation/nsstring/1411940-replacingoccurrences)
-
-- [מדריך לתבניות ב-regular expressions באתר regex101](https://regex101.com/)
-
-- [וידאו הדרכה על מחיקת תווים בעזרת regular expressions בעזרת לשונית swift של Siraj Raval](https://www.youtube.com/watch?v=sgdH5sPx1TU)
-
-## ראה גם
-
-- [מדריך לפונקציית substring ב-Swift](https://github.com/sagishahar/swift-blog/blob/master/Blogs/substring/substring.md)
-
-- [מדריך לתבניות ב-Swift בעזרת `CharacterSet`](https://github.com/sagishahar/swift-blog/blob/master/Blogs/character-set/character-set.md)
+" ```Swift
+הופך את התבנית המתאימה לתוכנית להיות אלגנטית
+אתה יכול לציית לעצה שלנו כדי לשנות את התבנית בתפיסה הזאת. תוכל לחלוף על שימוש מקים לפתוח למסמך שלנו כדי לעתים עתים להלחץ את כל ההתאמות באמצעות הפונקציות. אתה יכול גם להתייעץ לפני כדי לגלות אם יש לך כמתיחה ואיפיון לפנות לשייכות הו atofreWWOобытий bruprePgtOfolAevFnOfFumeF

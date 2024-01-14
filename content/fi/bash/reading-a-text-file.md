@@ -1,36 +1,55 @@
 ---
-title:    "Bash: Tekstitiedoston lukeminen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/reading-a-text-file.md"
+title:                "Bash: Tiedoston lukeminen"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+Hei lukijat!
 
-On monia syitä, miksi haluat lukea teksti-tiedostoja Bash-ohjelmoinnissa. Ehkä haluat käyttää niitä luomaan dynaamisia skriptejä, joissa vaihtelevaa sisältöä käsitellään eri tavoin. Tai ehkä haluat tarkastella tai muuttaa tiedoston tietoja käytön jälkeen.
+Miksi lukisi tekstitiedostoa?
 
-## Miten
+On monia syitä, miksi voit haluta lukea tekstitiedostoa Bash-ohjelmoinnissa. Tekstitiedostoja käytetään usein tallentamaan tietoja tai tekemään muutoksia olemassa oleviin tiedostoihin. Niitä voidaan myös käyttää ohjelmien syötteiden lukemiseen tai tulostusten tallentamiseen. Lukemalla tekstitiedoston, voit tarkastella sen sisältöä ja käyttää sitä osana koodiasi.
 
-Voit lukea teksti-tiedostoja Bash-skripteissäsi käyttämällä `cat`-komennon yhdistelmää `while`-silmukalla. Katso seuraava esimerkki:
+Miten:
+
+Voit lukea tekstitiedoston Bash-ohjelmalla käyttämällä "cat" -komentoa. Tämä komento näyttää tiedoston sisällön suoraan komentorivillä. Voit myös tallentaa tiedoston sisällön muuttujaan käyttämällä "read" -komentoa ja määrittämällä tiedoston nimen. Sitten voit käyttää muuttujaa osana koodiasi.
+
+Esimerkiksi:
 
 ```Bash
-#!/bin/bash
-cat tiedosto.txt | while read line
-do
-	echo "Rivi sisältää: $line"
-done
+cat tiedosto.txt
+read sisalto < tiedosto.txt
+echo $sisalto
 ```
 
-Tässä esimerkissä käytämme `cat`-komennon avulla lukeaksemme tiedoston ja sitten `while`-silmukassa luomme toiminnon jokaiselle riville. Voit käyttää `read`-komentoa `while`-silmukassa lukeaksesi yhden rivin kerrallaan. Tämä mahdollistaa rivien käsittelyn haluamallasi tavalla, kuten tulostuksen tai tallennuksen muuttujaan.
+Tässä esimerkissä ensimmäinen komento tulostaa tiedoston sisällön suoraan komentoriville. Toinen komento tallentaa tiedoston sisällön muuttujaan nimeltä "sisalto" ja kolmas komento tulostaa muuttujan arvon, joka on tiedoston sisältö.
 
-## Syventävä sukellus
+Voit myös lukea tekstitiedoston käyttämällä while-silmukkaa yhdessä "read" -komennon kanssa. Tämä on hyödyllistä, jos haluat käsitellä tiedoston sisältöä rivi kerrallaan.
 
-Käytämme `cat`-komentoa lukemaan tiedoston sisällön ja `while`-silmukka `read`-komennolla lukemaan jokaisen rivin. On kuitenkin myös muita vaihtoehtoja. Voit käyttää `grep`-komennon avulla tietyt merkkijonot tai rivit tiedostosta, tai `sed`-komennon avulla muokata tiedoston sisältöä.
+Esimerkiksi:
 
-Lisäksi voit käyttää muita ohjelmia, kuten `awk` tai `cut`, jotta voit käsitellä tiettyjä sarake- tai kenttäarvoja tiedostosta. Voit myös käyttää `while`-silmukan sijaan `for`-silmukkaa tai `for`-silmukkaa, jos tiedät tarkalleen haluamasi rivien määrän, jota käsittelet tiedostossa.
+```Bash
+while read rivi; do
+echo $rivi
+done < tiedosto.txt
+```
 
-## Katso myös
+Tässä while-silmukassa jokainen tiedoston rivi tallennetaan muuttujaan nimeltä "rivi" ja tulostetaan sitten komentoriville.
 
-- [Bash Scripting Basics](https://www.tutorialspoint.com/unix/advanced_bash_scripting.htm)
-- [The Power of Bash's Built-in Commands](https://linuxacademy.com/blog/linux/the-power-of-bashs-built-in-commands/)
+Syväsukellus:
+
+Tekstitiedoston lukeminen voi olla hyödyllistä, kun haluat käyttää olemassa olevia tietoja ohjelmassasi. Voit myös käyttää muita komentoja, kuten "grep" tai "sed", etsiäksesi tiettyä dataa tiedostosta tai muokataksesi tiedoston sisältöä. Voit myös käyttää ehtolauseita, kuten if-lauseita tai case-lauseita, käsitelläksesi tiedoston sisältöä haluamallasi tavalla.
+
+Muista aina käsitellä tekstitiedostoja varovaisesti ja varmista, että tiedoston oikeudet ovat asetettu oikein suojataksesi tärkeitä tietoja.
+
+Nähdään pian:
+
+Katso myös näitä artikkeleita oppiaksesi lisää Bash-ohjelmoinnista ja tekstitiedoston lukemisesta:
+
+- [Bash-skriptaus oppaaseen](https://www.bash-skriptaus.fi/)
+- [Linuxin peruskomennot](https://www.linuxperuskomennot.fi/tiedoston_kayttaminen/)
+- [Bashin while-loop esimerkkejä](https://www.cyberciti.biz/faq/bash-while-loop/)
+- [Lisätietoja Bashin komentorivistä](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)

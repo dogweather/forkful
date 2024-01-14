@@ -1,32 +1,33 @@
 ---
-title:    "Clojure: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/converting-a-string-to-lower-case.md"
+title:                "Clojure: Merkkijonon muuntaminen pienaakkosiksi"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi:
+## Miksi: Miksi muuttaa merkkijono pienaakkosiksi? 
 
-Yksi yleinen ohjelmointitehtävä on muuntaa merkkijono pienaakkosiksi. Tämä on hyödyllistä esimerkiksi tietokantojen kanssa työskentelyssä, jossa vertailu tapahtuu usein pienaakkosittain.
+Converting a string to lower case can be useful for data cleaning, text processing, and ensuring consistency in your code. When working with strings, it is important to have a standardized format to avoid errors and make comparisons easier. 
 
-## Miten:
+## Kuinka: 
 
-```Clojure
-(def s "Tämä on TESTIMERKKIJONO")
+```Clojure 
+(println (lower-case "KISSA"))
+ ; tulostaa "kissa" 
+(println (lower-case "Hei, minkälaista päivää sinulla on?"))
+ ; tulostaa "hei, minkälaista päivää sinulla on?" 
+``` 
 
-(println (.toLowerCase s))
+Voit muuntaa merkkijonon pienaakkosiksi käyttämällä `lower-case` -funktiota ja antamalla haluamasi merkkijonon parametriksi. Tämä muuttaa kaikki merkkijonon kirjaimet pienaakkosiksi ja palauttaa uuden merkkijonon. Voit käyttää tätä muodostaaksesi tasalaatuisen vertailupohjan tai helpottamaan tietojen käsittelyä. 
 
-```
-Tulostus: "tämä on testimerkkijono"
+## Syvällinen sukellus: 
 
-## Syvempi sukellus:
+Pienaseksuksen muuttaminen on standardiksi monissa ohjelmointikielissä, joten on hyödynnällistä olla tutustunut tähän käsitteeseen. Voit myös halutessasi muokata tekstiä ennen sen passausta algoritmeille tai saadaksesi visuaalisesti yhtenäisen lopputuloksen. Huomioi, että tämä funktio toimii vain ascii-kirjanmerkeille, joten se ei välttämättä toimi tukemme kielelle. Voit kuitenkin koodaamalla omaa funktiota laajentaa näitä toiminnallisuuksia. 
 
-Merkkijonon muuntaminen pienaakkosiksi tapahtuu käyttämällä Clojuren '.toLowerCase' toimintoa, joka käyttää Java-kirjaston vastaavaa metodia. Tämä toiminto ottaa merkkijonon ja palauttaa uuden kopion, jossa kaikki merkit ovat pienaakkosina.
+## Katso myös: 
 
-On tärkeää huomata, että tämä toiminto ei muuta alkuperäistä merkkijonoa, vaan palauttaa aina uuden kopion. Tämä voi olla hyödyllistä, jos haluat säilyttää alkuperäisen merkkijonon muuttumattomana.
-
-## Katso myös:
-
-- Clojure '.toUpperCase' toiminto: https://clojuredocs.org/clojure.core/upper-case
-- Java String '.toLowerCase' metodi: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--
+- [Clojure Dokumentaatio](https://clojure.org/reference/strings) 
+- [Miten muunnetaan merkkijono pienaakkosiin Javassa](https://www.baeldung.com/java-string-lowercase) 
+- [Piena

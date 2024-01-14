@@ -1,34 +1,67 @@
 ---
-title:    "C: Att hitta längden på en sträng"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/finding-the-length-of-a-string.md"
+title:                "C: Att hitta längden av en sträng"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna hitta längden på en sträng är en grundläggande färdighet inom programmering. Det är viktigt att förstå hur man gör detta eftersom det är en viktig del av att hantera textinmatning och hantering av data.
+
+Att hitta längden på en sträng är en grundläggande del av C-programmering. Det är viktigt att förstå hur detta fungerar eftersom det är en vanlig uppgift inom programmering. Om du vill lära dig mer om C-programmering och förbättra dina färdigheter är det viktigt att ha en god förståelse för hur stränglängd beräknas.
 
 ## Hur man gör det
-För att hitta längden på en sträng i C-programmering kan du använda funktionen `strlen()`. Detta kan göras genom att inkludera biblioteket `<string.h>` i ditt program och sedan använda funktionen i ditt kodblock genom att skriva:
+
+För att räkna ut längden på en sträng i C använder vi funktionen `strlen()`. Den här inbyggda funktionen finns i string.h-biblioteket och kan användas genom att inkludera detta bibliotek i början av ditt program.
+
 ```C
+#include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str[] = "Hej! Det här är en sträng."; // Definiera en sträng som ska mätas
-    int length = strlen(str); // Använd strlen() för att hitta längden på strängen
-    printf("Längden på strängen är %d.", length); // Skriv ut längden på strängen
-    return 0;
+int main()
+{
+   char str[50];
+   
+   printf("Skriv in en sträng: ");
+   scanf("%s", str);
+   
+   int length = strlen(str);
+   
+   printf("Längden på strängen är %d tecken.", length);
+   
+   return 0;
 }
 ```
 
-Detta kommer att skriva ut "Längden på strängen är 26." eftersom det är antalet tecken i den givna strängen.
+### Exempel
+
+Låt oss säga att vi vill räkna längden på strängen "Hej C-programmerare!".
+
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   char str[50] = "Hej C-programmerare!";
+   
+   int length = strlen(str);
+   
+   printf("Längden på strängen är %d tecken.", length);
+   
+   return 0;
+}
+```
+
+Output: Längden på strängen är 19 tecken.
 
 ## Djupdykning
-En sträng i C-programmering är egentligen bara en array av tecken, med sista tecknet som är noll. Detta nolltecken kallas också för "nullterminering" och indikerar för datorn att detta är slutet på strängen. När `strlen()` funktionen kör, söker den igenom strängen tills den når detta nolltecken och räknar antalet tecken som kommer före det.
 
-Det är också värt att notera att när du mäter längden på en sträng, exkluderas inte nolltecknet från längden. Så i vårt exempel ovan kommer längden att vara 25, men när man skriver ut längden adderar vi 1 eftersom vi också vill inkludera nolltecknet som en del av strängen.
+För att förstå hur funktionen `strlen()` fungerar måste vi först förstå hur en sträng lagras i minnet. En sträng i C är en array av tecken som avslutas med ett nolltecken (`'\0'`). Detta nolltecken används för att indikera slutet på strängen. Så när `strlen()`-funktionen körs, räknar den enbart antalet tecken i arrayen tills den når nolltecknet, vilket markerar slutet på strängen. Därför är det viktigt att ha en tillräckligt stor array för att lagra hela strängen och ett extra utrymme för nolltecknet.
 
 ## Se även
-- [C-programmering på W3Schools (på svenska)](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [Mer information om `strlen()` funktionen från C Reference (på engelska)](https://www.codingunit.com/c-tutorial-the-functions-strcpy-and-strlen)
+
+- [C-programmering för nybörjare](https://www.programiz.com/c-programming)
+- [strlen() - C biblioteksreferens](https://www.programiz.com/c-programming/library-function/string.h/strlen) 
+- [C-programmering: Strängar](https://www.studytonight.com/c/strings-in-c.php)

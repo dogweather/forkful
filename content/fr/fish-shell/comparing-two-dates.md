@@ -1,48 +1,46 @@
 ---
-title:    "Fish Shell: Comparer deux dates"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/comparing-two-dates.md"
+title:                "Fish Shell: Comparer deux dates"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Dans le monde de la programmation, il est souvent nécessaire de comparer deux dates pour effectuer certaines actions. Peut-être que vous devez vérifier si une date est antérieure ou postérieure à une autre, ou peut-être que vous devez calculer la différence entre les deux dates. Quelle que soit la raison, la comparaison de deux dates est une tâche courante dans le développement de logiciels.
+La comparaison de deux dates est une tâche courante dans la programmation, qui peut être particulièrement utile lors de la gestion de données temporelles ou lors de la mise en place de fonctionnalités basées sur la date. Cet article vous montrera comment réaliser facilement cette comparaison en utilisant Fish Shell.
 
 ## Comment faire
 
-La comparaison de deux dates peut sembler compliquée, mais heureusement, il existe un moyen simple de le faire en utilisant Fish Shell. Voyons ensemble comment cela fonctionne en utilisant un exemple de code:
+Pour comparer deux dates en utilisant Fish Shell, nous devrons d'abord les convertir au format UNIX Epoch, qui est un nombre entier représentant le nombre de secondes écoulées depuis le 1er janvier 1970. Voici un exemple de code pour convertir une date en format Epoch :
 
-```Fish Shell
-function compare_dates -a first_date second_date
-    if [ $first_date = $second_date ]
-        echo "Les deux dates sont identiques"
-    else if [ $first_date -lt $second_date ]
-        echo "La première date est antérieure à la seconde"
-    else
-        echo "La première date est postérieure à la seconde"
-    end
+```
+# Définir la date à comparer
+set date_1 (date +%s)
+set date_2 "2020-01-01"
+
+# Convertir la date au format Epoch
+set epoch_date_2 (date -f "%Y-%m-%d" -i $date_2 +%s)
+
+# Comparer les deux dates
+if test $date_1 -gt $epoch_date_2
+    echo "Date 1 est plus récente que Date 2"
+else if test $date_1 -lt $epoch_date_2
+    echo "Date 1 est plus ancienne que Date 2"
+else 
+    echo "Les deux dates sont identiques"
 end
-
-compare_dates 2021-02-15 2021-02-17
 ```
 
-Ici, nous avons créé une fonction appelée "compare_dates" qui prend deux paramètres de date. En utilisant l'opérateur "-lt" (inférieur à), nous comparons les deux dates et affichons un message en conséquence. En exécutant cette fonction avec les dates "2021-02-15" et "2021-02-17", nous obtenons la sortie suivante:
+Dans cet exemple, nous utilisons la commande `date` pour obtenir la date du jour et nous la convertissons ensuite en format Epoch en utilisant l'option `-f` pour spécifier le format de la date et l'option `-i` pour spécifier la date à convertir. Enfin, nous comparons les deux dates en utilisant la commande `test` et affichons le résultat. 
 
-```
-La première date est antérieure à la seconde
-```
+## Deep Dive
 
-Maintenant, vous pouvez utiliser cette fonction pour comparer n'importe quelles dates dans vos scripts Fish Shell.
-
-## Plongée en profondeur
-
-Maintenant que vous savez comment comparer deux dates en utilisant Fish Shell, il est important de comprendre comment cela fonctionne réellement. Lorsque vous utilisez l'opérateur "-lt" pour comparer des chaînes de caractères, il utilise l'ordre alphabétique pour déterminer la comparaison. Cela signifie que "2021-02-15" sera considéré comme inférieur à "2021-02-17", car le "1" est avant le "7" dans l'ordre alphabétique.
-
-Cependant, si vous voulez comparer les dates en utilisant leur valeur numérique, vous devrez d'abord les convertir en nombres en utilisant une commande telle que "date -f %s $date". Cela convertira la date en format de timestamp, qui peut ensuite être comparé numériquement.
+L'utilisation de Fish Shell pour comparer des dates est simple et pratique, mais il y a également quelques astuces à connaître. Par exemple, si vous avez besoin de comparer des dates avec une précision supérieure à la seconde, vous pouvez utiliser la commande `strftime` pour formater les dates au format souhaité. De plus, en utilisant les variables d'environnement `BASE_DATE` et `BASE_TIME`, vous pouvez également définir une date et une heure de référence pour vos comparaisons de dates. Pour plus d'informations, vous pouvez consulter la documentation de Fish Shell sur les dates.
 
 ## Voir aussi
 
-- [Documentation Fish Shell sur les tableaux et les chaînes de caractères](https://fishshell.com/docs/current/index.html#usage-arrays-strings)
-- [Tutoriel permettant de comprendre les opérateurs de comparaison en Fish Shell](https://dev.to/chinchang/fish-shell-operators-cheatsheet-3jb9)
+- [Documentation Fish Shell sur les dates](https://fishshell.com/docs/current/commands.html#date)
+- [Guide des commandes Fish Shell](https://fishshell.com/docs/current/commands.html)
+- [Exemples de scripts Fish Shell](https://github.com/fish-shell/fish-shell/wiki/Scripts)

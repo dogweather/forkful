@@ -1,53 +1,51 @@
 ---
-title:    "Rust: 新しいプロジェクトの開始"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/starting-a-new-project.md"
+title:                "Rust: 新しいプロジェクトを開始する"
+programming_language: "Rust"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜRustを使うのか
+## なぜ始めるのか
 
-Rustは革新的なプログラミング言語です。その高速なパフォーマンスと堅牢さにより、様々な分野で利用されています。もし新しいプロジェクトを始めるなら、Rustを選択することで将来的な成功につながる可能性が高くなります。
+Rustは、高いパフォーマンスとメモリ安全性を備えたプログラミング言語です。あなたが新しいプロジェクトを始めるなら、Rustを使うことでエラーを減らし、より信頼性の高いソフトウェアを作ることができます。
 
-## 使い方
+## やり方
 
-Rustはローレベルな言語なので、初めて使う人にとっては少し難しいかもしれません。しかし、簡単なコード例を見てみると、その簡潔さと効率性が分かるでしょう。
+まずは、Rustのコードを取得するための環境を整えましょう。公式サイトから、Rustの最新のリリースをダウンロードします。ダウンロードが完了したら、インストールを行い、ターミナルを開きます。そして、次のコマンドを入力します。
+
+```Rust
+$ rustc --version
+```
+
+これにより、Rustのバージョンが表示されます。もしどのバージョンも表示されない場合は、インストールが正常に行われなかった可能性がありますので、再度行ってください。
+
+次に、新しいプロジェクトを作成します。Rustでは、Cargoと呼ばれるパッケージマネージャを使ってプロジェクトを作成することができます。ターミナルで次のコマンドを入力してください。
+
+```Rust
+$ cargo new my_project
+```
+
+すると、my_projectという名前の新しいフォルダが作成され、その中にプロジェクトのテンプレートが自動的に生成されます。
+
+最後に、コードを書いて実行してみましょう。my_projectフォルダの中にあるsrcフォルダ内のmain.rsファイルを開き、次のコードを入力してください。
 
 ```Rust
 fn main() {
-    println!("こんにちは、世界!");
+    println!("こんにちは！");
 }
 ```
 
-このコードは非常にシンプルです。``main``という関数を定義し、``println!``マクロを使ってメッセージを出力しています。しかし、この内容を実行すると、実際にはコンパイルエラーが発生します。なぜなら、日本語を使用しているために文字のエンコーディングが必要だからです。それを解決するためには、コードの冒頭に``# coding: utf-8``という行を追加する必要があります。
+このように、日本語を含むprintln!マクロを使うことで、コンソールに日本語が表示されることが確認できます。
 
-また、Rustでは変数を宣言する際に``let``キーワードを使用します。
+## 深いダイブ
 
-```Rust
-fn main() {
-    let message = "こんにちは、世界!";
-    println!("{}", message);
-}
-```
+Rustで新しいプロジェクトを始めるには、さまざまなツールや機能が用意されています。例えば、コードフォーマッタやテストフレームワークなど、開発をより便利にするための機能もあります。また、Rustの学習のためには、ドキュメントやコミュニティのサポートも充実しています。必要に応じて、これらの機能や情報を活用し、より良いプロジェクトを作り上げましょう。
 
-このようにコードを書くと、``message``という名前の変数を宣言し、それに"こんにちは、世界!"という値を割り当てています。そして、``println!``マクロの中に``{}``を使って、変数の値を出力しています。
+## 併せて見てね
 
-## 詳細を掘り下げる
-
-新しいプロジェクトを始める際には、まずはRustの公式ウェブサイトを訪れて、言語の基本的な文法や機能を学びましょう。また、コミュニティやフレームワークなどのリソースも利用することで、より効率的に学習を進めることができます。
-
-さらに、Rustの重要な特徴の一つである所有権システムについても理解することが必要です。このシステムは、メモリ管理を安全かつ高速に行うために導入されたもので、初めは少し理解が難しいかもしれませんが、慣れてくると効率的にコードを書くことができるようになります。
-
-## 参考文献
-
-- [Rust公式ウェブサイト](https://www.rust-lang.org/ja/)
+- [Rust公式サイト](https://www.rust-lang.org/)
 - [Rustコミュニティフォーラム](https://users.rust-lang.org/)
-- [Rustコード例集](https://doc.rust-lang.org/stable/rust-by-example/index.html)
-- [Rustの所有権について学ぶ](https://doc.rust-lang.org/book/second-edition/ch04-00-understanding-ownership.html)
-
-## 参考リンク
-
-- [Rustプログラミング言語入門](https://qiita.com/tatsuya6502/items/7dd106235d750d80d78b)
-- [はじめてのRust](https://zenn.dev/mebiusbox/books/learning_rust)
-- [Rustの所有権システムをマスターする](https://tech.playground-style.com/github/rust
+- [Rustパッケージクレート](https://crates.io/)
+- [Rustlings - はじめてのRust](https://github.com/rust-lang/rustlings)

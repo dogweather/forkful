@@ -1,66 +1,40 @@
 ---
-title:    "Ruby: Sjekke om en mappe eksisterer."
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/checking-if-a-directory-exists.md"
+title:                "Ruby: Sjekke om en mappe eksisterer"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det er viktig for en Ruby-programmerer å vite hvordan man sjekker om en mappe eksisterer. Denne kunnskapen kan hjelpe deg med å lage en mer pålitelig og robust programvare og unngå eventuelle feil som kan oppstå når mappen ikke eksisterer. Derfor er det viktig å ha denne ferdigheten i verktøykassen din.
+Når man programmerer i Ruby, kan man ofte møte på situasjoner der man må sjekke om en mappe eksisterer. Dette kan være nyttig for å unngå feil i koden, eller for å sikre at programmet fungerer som forventet.
 
-## Hvordan
+## Slik gjør du det
 
-Det er flere måter å sjekke om en mappe eksisterer i Ruby-programmering. En måte er å bruke `Dir.exist?` metoden, som vil returnere `true` hvis mappen eksisterer og `false` hvis den ikke gjør det.
+Sjekking av mapper i Ruby er enkelt og kan gjøres ved hjelp av følgende kode:
 
 ```Ruby
-if Dir.exist?("mappe_navn")
-  puts "Mappen eksisterer."
+if Dir.exist?('mappe_navn')
+  puts "Mappen eksisterer"
 else
-  puts "Mappen eksisterer ikke."
+  puts "Mappen eksisterer ikke"
 end
 ```
 
-En annen måte å sjekke på er å bruke `File.directory?` metoden, som også vil returnere `true` eller `false` basert på om mappen eksisterer eller ikke.
+Koden over sjekker om en mappe med navnet "mappe_navn" eksisterer. Dersom den gjør det, vil det bli printet ut en melding som sier "Mappen eksisterer". Hvis ikke, vil det bli printet ut en melding som sier "Mappen eksisterer ikke".
 
-```Ruby
-if File.directory?("mappe_navn")
-  puts "Mappen eksisterer."
-else
-  puts "Mappen eksisterer ikke."
-end
-```
-
-En tredje måte å gjøre dette på er ved å bruke `Dir.glob` metoden, som vil returnere en liste med filer og mapper som matcher angitt mønster. Hvis mappen eksisterer, vil mønsteret være lik mappens navn, og dermed vil det returnere et element i listen. Hvis mappen ikke eksisterer, vil listen være tom.
-
-```Ruby
-mappenavn = "mappe_navn"
-
-if Dir.glob(mappenavn) == [mappenavn]
-  puts "Mappen eksisterer."
-else
-  puts "Mappen eksisterer ikke."
-end
-```
-
-I alle disse eksemplene kan du også angi den absolutte banen til mappen i stedet for bare navnet, hvis det er nødvendig.
+Man kan også bruke denne koden til å sjekke om en fil eksisterer, ved å bytte ut "Dir.exist?" med "File.exist?".
 
 ## Dypdykk
 
-Hvis du vil unngå å få en feilmelding når du prøver å få tilgang til en mappe som ikke eksisterer, kan du også bruke `Dir.mkdir` metoden til å opprette mappen hvis den ikke eksisterer. Hvis mappen allerede eksisterer, vil metoden bare returnere `nil`.
+Når man sjekker om en mappe eksisterer, kan det være nyttig å vite hvordan man håndterer tilfeller der mappen ikke finnes. I tillegg kan man bruke andre metoder som "Dir.empty?" for å sjekke om mappen er tom.
 
-```Ruby
-mappenavn = "mappe_navn"
-
-Dir.mkdir(mappenavn) unless File.directory?(mappenavn) 
-# hvis mappenavn allerede eksisterer, vil den ikke bli opprettet igjen
-```
-
-Det kan også være nyttig å sjekke om en mappe eksisterer før du prøver å skrive filer til den, for å unngå feil og sikre at filskrivingen er vellykket.
+Det kan også være lurt å inkludere feilhåndtering i koden. Dersom man forventer at mappen skal være tilstede, kan man bruke "begin/rescue" for å håndtere eventuelle feil som kan oppstå.
 
 ## Se også
 
-- [Ruby dokumentasjon for Dir-klassen](https://ruby-doc.org/core/Dir.html)
-- [Ruby dokumentasjon for File-klassen](https://ruby-doc.org/core/File.html)
-- [Ruby globbing tutorial](https://www.rubyguides.com/2018/10/ruby-glob/)
+- [Ruby dokumentasjon for Dir](https://ruby-doc.org/core-2.7.2/Dir.html)
+- [Ruby dokumentasjon for File](https://ruby-doc.org/core-2.7.2/File.html)
+- [Enkel feilhåndtering i Ruby](https://www.rubyguides.com/2018/06/ruby-exceptions/)

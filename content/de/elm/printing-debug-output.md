@@ -1,40 +1,63 @@
 ---
-title:    "Elm: Debug-Ausgabe drucken"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/printing-debug-output.md"
+title:                "Elm: Ausgabe von Debug-Informationen drucken"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Ausgeben von Debug-Ausgaben ist ein wichtiger Teil der Programmierung, vor allem in einer funktionalen Sprache wie Elm. Mit der Möglichkeit, Code-Blöcke und spezifische Variablen auszugeben, ist es ein nützliches Werkzeug zur Fehlerbehebung und zum Verständnis des Programmablaufs.
+Das Ausgeben von Debug-Ausgaben kann ein nützliches Werkzeug sein, um Fehler in unserer Elm-Programmierung zu finden. Oftmals ist es schwierig, den genauen Grund für einen Fehler zu erkennen, aber durch das Ausgeben von Informationen können wir auf unsere Funktionen und Variablen zugreifen und sehen, was während der Ausführung tatsächlich passiert: Schritt für Schritt.
 
-## Wie man es macht
+## Wie man Debug-Ausgaben erstellt
 
-Die Syntax zum Ausgeben von Debug-Ausgaben in Elm ist relativ einfach. In einer beliebigen Funktion, in der Sie Debug-Ausgaben sehen möchten, müssen Sie ```debug``` mit dem zu überprüfenden Wert kombinieren. Zum Beispiel: 
+Um Debug-Ausgaben zu erstellen, können wir die "Debug.log" Funktion von Elm verwenden. Diese Funktion akzeptiert eine Beschreibung in Form eines Strings und eine beliebige Wert als Argument, den wir ausgeben möchten.
 
-```Elm
-someFunction : Int -> String
-someFunction number =
-    debug (toString number) ++ " ist eine Zahl"
-```
+````Elm
+import Debug
 
-Dieser Code wird die Zahl in eine Zeichenkette konvertieren und dann mit dem Text " ist eine Zahl" verbinden. Die Ausgabe sieht folgendermaßen aus:
+main =
+  model
+    |> Debug.log "Model vor dem Update" 
+    |> update msg 
+    |> Debug.log "Model nach dem Update" 
+````
 
-```
-1 ist eine Zahl
-```
+Die obige Beispielcode zeigt, wie wir die "Debug.log" Funktion verwenden, um Informationen über den Zustand unserer Modell vor und nach einem Update auszugeben.
 
-Sie können auch komplexere Debug-Ausgaben erstellen, indem Sie ganze Ausdrücke verwenden, z.B. ```(toString (number * 2))```. Wenn Sie mehrere Debug-Ausgaben in einer Funktion haben, wird jede Ausgabe in einer separaten Zeile angezeigt.
+Die Ausgabe wird im Browser-Entwicklertools-Konsolenfenster angezeigt und sieht folgendermaßen aus:
 
-## Tiefere Einblicke
+````Elm
+Model vor dem Update: { … }
+Model nach dem Update: { … }
+````
 
-Es gibt auch einige nützliche Funktionen im Modul ```Debug``` mit denen Sie noch spezifischere Informationen ausgeben können. Zum Beispiel können Sie mit ```watch``` bestimmte Variablen während des Programmablaufs überwachen, oder mit ```crash``` eine Fehlermeldung ausgeben und dadurch den Programmablauf unterbrechen. Sie können auch eine Liste von Werten mit ```list``` ausgeben, um die Elemente einer Datenstruktur zu überprüfen.
+## Tiefer Einblick
 
-Es ist auch wichtig zu beachten, dass Debug-Ausgaben in einer Produktionsumgebung nicht angezeigt werden, daher müssen Sie sich keine Sorgen machen, dass sie versehentlich vom Benutzer gesehen werden.
+Neben der einfachen Verwendung von "Debug.log" können wir auch komplexe Debug-Ausgaben erstellen, indem wir uns mit der "Debug.todo" Funktion beschäftigen. Diese Funktion ist in Elm integriert, um uns daran zu erinnern, dass bestimmte Teile unseres Codes noch nicht implementiert oder von uns noch nicht ausgefüllt sind.
+
+````Elm
+import Debug
+
+-- Alle Namen in diesem String durch einen Namen einer unserer Funktionen ersetzen
+main = Debug.todo "Function Name Here"
+````
+
+Wir können auch bestimmte Variablen oder Funktionen in unserer Debug-Meldung angeben, um ihnen einen genaueren Einblick zu geben. 
+
+````Elm
+import Debug
+
+-- Eine Debug-Ausgabe mit konkreter Information darüber, 
+-- was wir ausgeben möchten.
+main =
+  vonizioLog
+    |> Debug.log "Was die 'vonizioLog' hält: <<Hier Daten hier>>"
+````
 
 ## Siehe auch
-
-- [Elm Debug Module](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Debugging in Elm (auf Englisch)](https://www.elm-tutorial.org/en/04-debugging/00-introduction.html)
+- [Elm Debugging Guide: So finden wir den Debug Inhalt - ElmCast (EN)](https://elmcast.io # debugging # elm -how -to # per-der -debug -output) 
+- [Debug-Info für Ansichten, listen und Taste verfügbar (EN)](https://kitgui.com / blog/2015/09/17/debug -info -for -Views -Lists -and -Effects -Available /) 
+- [Debug Ausgabe machinem Beweis (EN)](https://www.youtube.com/watch?v=kP4zaOhSM4o )

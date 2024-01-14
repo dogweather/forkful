@@ -1,65 +1,67 @@
 ---
-title:    "Arduino: वर्तमान तारीख प्राप्त करना"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/getting-the-current-date.md"
+title:                "Arduino: तारीख को प्राप्त करना"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्यों
 
-आज की तारीख को प्राप्त करना आपके आर्डुइनो कोड में कई स्थानों पर उपयोगी हो सकता है, जैसे समय के साथ शुरुआत करने, लॉगिंग डेटा और समय पर आधारित निर्णय लेने में।
+क्या आपको अपने आर्डूइनो प्रोजेक्ट में वर्तमान तारीख की आवश्यकता है? शायद आप अपने प्रोजेक्ट में कोई टाइमस्टैम्प रिकॉर्ड करना चाहते हो या शायद आप अपने प्रोजेक्ट में एक टाइमर या कैलेंडर शामिल करना चाहते हो। यहां हम आपको बताएंगे कि आर्डूइनो प्रोग्रामिंग में वर्तमान तारीख को कैसे प्राप्त कर सकते हैं।
 
-## कैसे करें
+# कैसे करें
 
-आप आर्डुइनो कोड में ```Arduino``` लाइब्रेरी का उपयोग करके वर्तमान तारीख और समय प्राप्त कर सकते हैं। नीचे दिए गए उदाहरण को फॉलो करें:
+हमारे पास विभिन्न तरीके हैं जिनका उपयोग करके आप आर्डूइनो में वर्तमान तारीख को प्राप्त कर सकते हैं। यहां हम आपको दो उदाहरण दिखाएंगे। एक में हम आर्डूइनो बोर्ड के साथ एक डीएस3231 रीयल टाइम क्लॉक मॉड्यूल का उपयोग करेंगे और दूसरे में हम विशेष अंतराल गुणक RTClib लाइब्रेरी का उपयोग करेंगे। कोड ब्लॉक में सरल उदाहरण दिखाए गए हैं, ताकि आप आसानी से इन तरीकों का उपयोग कर सकें।
 
-```arduino
-#include <Arduino.h>
-#include <TimeLib.h>
+```Arduino
+// डीएस3231 मॉड्यूल का उपयोग करके वर्तमान तारीख को लेना
+#include <Wire.h>
+#include <RTClib.h>
 
-void setup() {
+RTC_DS3231 rtc;
+
+void setup () {
   Serial.begin(9600);
-  while(!Serial);
-  setTime(12, 0, 0, 1, 1, 2021); // सेट करें(hour, minute, second, day, month, year)
-  
-  // तारीख और समय प्राप्त करें
-  int currentHour = hour();
-  int currentMinute = minute();
-  int currentSecond = second();
-  int currentDay = day();
-  int currentMonth = month();
-  int currentYear = year();
-  
-  // सीरियल मॉनिटर में दिखाएं
-  Serial.print("वर्तमान समय: ");
-  Serial.print(currentHour);
-  Serial.print(":");
-  Serial.print(currentMinute);
-  Serial.print(":");
-  Serial.print(currentSecond);
+  Wire.begin();
+  rtc.begin();
+}
+
+void loop () {
+  DateTime now = rtc.now();
+  Serial.print(now.day(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.print(now.year(), DEC);
+  Serial.print(' ');
+  Serial.print(now.hour(), DEC);
+  Serial.print(':');
+  Serial.print(now.minute(), DEC);
+  Serial.print(':');
+  Serial.print(now.second(), DEC);
   Serial.println();
-  Serial.print("वर्तमान तारीख: ");
-  Serial.print(currentDay);
-  Serial.print("/");
-  Serial.print(currentMonth);
-  Serial.print("/");
-  Serial.print(currentYear);
-}
-
-void loop() {
+  delay(1000);
 }
 ```
 
-नीचे का सैंपल आउटपुट आपको मॉनिटर पर दिखेगा:
+```Arduino
+// RTClib लाइब्रेरी का उपयोग करके वर्तमान तारीख जानना
+#include <Wire.h>
+#include "RTClib.h"
 
-```
-वर्तमान समय: 12:0:0
-वर्तमान तारीख: 1/1/2021
-```
+RTC_DS1307 rtc;
 
-## गहराई में जाएं
+void setup () {
+  Serial.begin(9600);
+  Wire.begin();
+  rtc.begin();
+}
 
-```TimeLib.h``` लाइब्रेरी वर्तमान समय को माइक्रोसेकंड तक ही प्रकट कर सकती है, जो वास्तविक वर्तमान समय को सेकंड के हिसाब से प्रदर्शित करता है। इसके अतिरिक्त, यह आर्डुइनो कोड में सही समय को सेव करने और उसे बाद में उपयोग करने की भी सुविधा प्रदान करता है।
-
-समय को सेट करने के लिए ```setTime()``` फंक्शन को उसी तरह उपयोग किया जा सकता है जैसे ऊपर दिखाया गया है। ह
+void loop () {
+  DateTime now = rtc.now();
+  uint8_t second = now.second();
+  uint8_t minute = now.minute();
+  uint8_t hour = now.hour();
+  uint

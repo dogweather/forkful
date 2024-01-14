@@ -1,75 +1,60 @@
 ---
-title:    "C#: Imprimiendo salida de depuración"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/printing-debug-output.md"
+title:                "C#: Imprimiendo salida de depuración"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué imprimir la salida de depuración en C#?
 
-Si eres un desarrollador de software, probablemente te hayas encontrado con la necesidad de imprimir información de depuración en tu código. Esto puede ser útil para rastrear errores, verificar el estado de variables o simplemente comprender mejor cómo se está ejecutando tu programa. Aunque puede parecer una técnica simple, imprimir la salida de depuración puede ahorrar mucho tiempo y esfuerzo en el proceso de desarrollo.
+Imprimir la salida de depuración es una técnica muy útil para los programadores de C#, ya que les permite ver información específica y detallada sobre su código durante el proceso de depuración. Esto puede ayudar a encontrar y solucionar errores más rápidamente, lo que a su vez ahorra tiempo y esfuerzo en el desarrollo de software.
 
-## Cómo hacerlo
+## Cómo imprimir la salida de depuración en C#
 
-Para imprimir la salida de depuración en C#, puedes utilizar el método `Console.WriteLine()`. Este método toma una cadena como argumento y la imprime en la consola. Por ejemplo:
+Hay varias formas de imprimir la salida de depuración en C#, dependiendo de la situación y las preferencias personales del programador.
 
-```C#
-int numero = 10;
-string palabra = "hola";
-Console.WriteLine("El número es: " + numero);
-Console.WriteLine("La palabra es: " + palabra);
-```
-
-Este código imprimirá lo siguiente en la consola:
-
-```
-El número es: 10
-La palabra es: hola
-```
-
-También puedes imprimir el valor de una variable utilizando la notación de cadena de formato. Esto es especialmente útil si quieres imprimir varios valores en una sola línea. Por ejemplo:
+La forma más simple es utilizar el método "Console.WriteLine()", que imprimirá una línea de texto en la consola. Por ejemplo:
 
 ```C#
-int numero1 = 5;
-int numero2 = 10;
-Console.WriteLine("Los números son: {0} y {1}", numero1, numero2);
+Console.WriteLine("Este es un mensaje de depuración");
 ```
 
-La salida en la consola sería:
-
-```
-Los números son: 5 y 10
-```
-
-## Profundizando
-
-Además de imprimir valores básicos como números y cadenas, también puedes imprimir otros tipos de datos más complejos. Por ejemplo, puedes imprimir el contenido de un arreglo utilizando el método `Console.WriteLine()` en conjunto con `string.Join()`. También puedes imprimir el contenido de una lista utilizando un `foreach` loop. Aquí hay un ejemplo de cómo imprimir cada elemento de un arreglo y una lista:
+También se pueden imprimir valores de variables utilizando el símbolo "$" antes de las comillas en la función "Console.WriteLine()". Por ejemplo:
 
 ```C#
-int[] numeros = {1, 2, 3, 4, 5};
-Console.WriteLine("Los números son: " + string.Join(", ", numeros));
-
-List<string> palabras = new List<string>{"hola", "amigo", "adiós"};
-foreach(string palabra in palabras)
-{
-    Console.WriteLine(palabra);
-}
+int age = 25;
+Console.WriteLine($"La edad es: {age}");
 ```
 
-La salida en la consola sería:
+Esta técnica también puede ser utilizada en combinación con otros métodos de salida de depuración, como "Debug.WriteLine()" o "Trace.WriteLine()". Estos métodos pueden ser útiles cuando se trabaja con aplicaciones de consola o servicios de Windows.
 
-```
-Los números son: 1, 2, 3, 4, 5
-hola
-amigo
-adiós
+Además de imprimir mensajes y valores de variables, también es posible imprimir información del estado del programa utilizando la macro "DEBUG". Por ejemplo:
+
+```C#
+#if DEBUG
+Debug.WriteLine("El programa se encuentra en modo de depuración");
+#endif
 ```
 
-Recuerda que puedes utilizar la salida de depuración en cualquier lugar de tu código, incluso dentro de ciclos o condicionales. Esto te permitirá imprimir información en puntos específicos de tu programa y así analizar su funcionamiento.
+Esto imprimirá el mensaje solo cuando el programa se esté ejecutando en modo de depuración.
+
+## Profundizando en la impresión de la salida de depuración
+
+Imprimir la salida de depuración también puede ser útil para visualizar estructuras de datos complejas, como arrays o listas, durante la depuración. Por ejemplo:
+
+```C#
+int[] numbers = { 1, 2, 3, 4, 5 };
+Debug.WriteLine("El contenido del array es: {0}", string.Join(", ", numbers));
+```
+
+Esto imprimirá el contenido del array en una sola línea y separado por comas.
+
+Otra forma de imprimir la salida de depuración de manera más detallada es utilizando los atributos "DebuggerDisplay" y "DebuggerBrowsable". Estos atributos pueden ser agregados a las clases y propiedades para personalizar la información que se muestra durante la depuración.
 
 ## Ver también
 
-- [Documentación de Microsoft sobre `Console.WriteLine()`](https://docs.microsoft.com/es-es/dotnet/api/system.console.writeline)
-- [Tutorial de C# para principiantes](https://www.freecodecamp.org/news/aprende-c-sharp-todo-lo-que-necesitas-saber-como-principiante/) (en español)
-- [Guía de Depuración en C#](https://docs.microsoft.com/es-es/visualstudio/debugger/getting-started-with-the-debugger?view=vs-2019)
+- [Documentación de Microsoft sobre la impresión de la salida de depuración en C#](https://docs.microsoft.com/es-es/dotnet/standard/managed-code/debugging-with-the-debug-class)
+- [Artículo de CodeProject sobre técnicas avanzadas de impresión de salida de depuración en C#](https://www.codeproject.com/Tips/716504/Print-Debug-Output-the-NET-Framework-Way)
+- [Ejemplo de impresión de salida de depuración en C#](https://github.com/juancho11gm/CSharpDebugOutputExample)

@@ -1,36 +1,34 @@
 ---
-title:    "C#: Merkkijonon muuttaminen isoin kirjaimin"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/capitalizing-a-string.md"
+title:                "C#: Merkkijonon iso kirjoittaminen"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Capitalize?
 
-Miksi haluaisit ylipäänsä käyttää aikaa pienen tehtävän kuten merkkijonon muokkaamisen kokoamiseen? Yhtenä mahdollisuutena on, että haluat pitää koodisi selkeänä ja järjestelmällisenä. Joskus pienikin muutos voi tehdä koodistasi helpommin luettavan ja ymmärrettävän, mikä tekee sinun työskentelystäsi tehokkaampaa.
+Capitalizen käyttäminen on tärkeää, kun haluat muuttaa kirjainkoon merkkijonossa. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat varmistaa, että tietokannan tallentamat tiedot ovat yhtenäisessä muodossa tai kun haluat käyttäjän syöttämää tekstiä näyttämään siistimmältä ja helpommin luettavalta. Se on myös hyödyllistä, kun työskentelet käyttäjän kanssa ja haluat välttää mahdolliset virheet tapahtumasta, kuten nimien väärin kirjoittamisesta.
 
-## Kuinka
+## Kuinka käyttää Capitalizea?
 
-Onneksi C#:ssa on sisäänrakennettu metodi, joka muuttaa merkkijonon ensimmäiset kirjaimet isoiksi kirjaimiksi. Tämä tarkoittaa sitä, että voit helposti käyttää tätä metodia muokkaamalla merkkijonoa haluamallasi tavalla.
+Capitalizen käyttäminen on helppoa C#:ssa. Sinun tarvitsee vain käyttää String-luokan Capitalize-metodia ja antaa sille haluamasi merkkijono parametrina. Alla on esimerkki siitä, kuinka Capitalizea käytetään:
 
-```.
-C# 
-string s = "esimerkki merkkijonosta";
-s = s.ToUpper();
-Console.WriteLine(s);
+```C#
+string s = "tämä on esimerkki";
+string capitalized = s.Capitalize();
+Console.WriteLine(capitalized);
 ```
 
-Tämä koodi palauttaa "ESIMERKKI MERKKIJONOSTA" konsoliin. Kuten näet, metodin käyttäminen on hyvin yksinkertaista.
+Tämä tulostaisi "Tämä On Esimerkki" konsoliin. Huomaa, että alkuperäistä merkkijonoa ei muutettu, vaan Capitalize-metodi luo uuden merkkijonon, josta kaikki sanat on muutettu aloittamaan isolla kirjaimella.
 
-Yksi tärkeä asia huomioitavaksi on, että tämä metodi muuttaa ainoastaan ensimmäisen kirjaimen kooltaan, eli jos haluat muuttaa koko merkkijonon muotoa, sinun tulee käyttää muita metodeja tai kirjoittaa oma koodisi.
+## Syvällinen selitys Capitalizen toiminnasta
 
-## Syvällisempi sukellus
-
-Miksi haluaisit muuttaa merkkijonon kirjaimien kokoa? Yksi mahdollinen syy on, että saat tietoja käyttäjiltä, jotka eivät aina huomaa kirjoittaa kaikki kirjaimet isolla. Tällöin on helpompaa muuttaa merkkijonon ensimmäinen kirjain isoksi, jotta lopputulos olisi kaikilta osin yhtenäinen ja helposti luettava.
+Capitalizen toiminta perustuu siihen, että se käy läpi merkkijonon sanat, ja muuttaa jokaisen sanan ensimmäisen kirjaimen isoksi. Lisäksi se muuttaa kaikki muut kirjaimet pieniksi, joten kaikki sanat ovat yhtenäisessä muodossa. Tämä tehdään käyttämällä Char-tietotyyppiä, joka edustaa yhtä merkkiä ja sen sisältämää Unicode-tietokantaa.
 
 ## Katso myös
 
-- [Microsoftin virallinen dokumentaatio merkkijonon muokkaamiseen C#](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8)
-- [C# merkkijonojen perusteet](https://www.tutorialspoint.com/csharp/csharp_strings.htm)
-- [Vinkkejä koodin siistimiseen C#:ssa](https://www.codeproject.com/Articles/1117530/Tips-to-keep-your-csharp-code-clean)
+- [String-luokan dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.string?view=net-5.0)
+- [Char-tietotyypin dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.char?view=net-5.0)
+- [C# perusteet - kokoelmien käsittely](https://www.tutorialsteacher.com/csharp/csharp-string)

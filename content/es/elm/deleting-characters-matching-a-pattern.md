@@ -1,54 +1,51 @@
 ---
-title:    "Elm: Borrando caracteres que coinciden con un patrón"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: Borrando caracteres que coinciden con un patrón"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué borrar caracteres coincidentes con un patrón en Elm?
 
-Eliminar caracteres que coinciden con un patrón puede ser una tarea útil al trabajar con texto en Elm. Puede ayudar a limpiar datos o a filtrar información de manera más precisa.
+En programación, a menudo nos encontramos con la necesidad de manipular texto de alguna forma. Esto puede ser para formatearlo, filtrarlo o eliminar ciertos caracteres. Una forma útil de hacer esto en Elm es mediante la eliminación de caracteres que coinciden con un patrón específico. En esta publicación de blog, aprenderemos por qué y cómo hacerlo en Elm.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para eliminar caracteres que coinciden con un patrón en Elm, podemos utilizar la función `String.replace` y proporcionar el patrón y la cadena original. Por ejemplo:
-
-```Elm
-import String
-
-phrase = "¡Hola! ¡Hola! ¡Adios!"
-pattern = "¡Hola!"
-
-String.replace pattern "" phrase
-
--- output: " ¡Adios!"
-```
-
-En este ejemplo, reemplazamos todas las apariciones de "¡Hola!" con una cadena vacía, lo que resulta en la eliminación de esos caracteres del texto original.
-
-También podemos combinar `String.replace` con otras funciones, como `String.filter`, para eliminar solo ciertos caracteres que coinciden con un patrón. Por ejemplo:
+Para eliminar caracteres que coinciden con un patrón en Elm, podemos usar la función `String.delete` de la biblioteca `elm/string`. Esta función toma dos argumentos: el patrón que queremos eliminar y el string en el que queremos buscar. Por ejemplo, si queremos eliminar todas las letras "a" de un string, podemos hacerlo de la siguiente manera:
 
 ```Elm
 import String
 
-phrase = "¡Hola mundo!"
-
-pattern = "\\s"
-onlyLetters = String.filter (\c -> c /= " ") phrase
-withoutSpaces = String.replace pattern "" onlyLetters
-
--- output: "HOLAmundo!"
+String.delete "a" "hola" -- produce "hol"
 ```
 
-En este caso, primero filtramos los espacios en blanco utilizando el patrón "`\s`" que representa cualquier espacio en blanco. Luego, utilizamos `String.replace` para eliminar esos espacios del texto original.
+También podemos usar patrones más complejos, como expresiones regulares, utilizando la función `Regex.replace` de la biblioteca `elm/regex`. Esta función toma tres argumentos: el patrón que queremos reemplazar, el nuevo string que queremos insertar y el string en el que queremos buscar. Por ejemplo, si queremos reemplazar todos los números en un string con la palabra "número", podemos hacerlo de la siguiente manera:
 
-## Profundizando más
+```Elm
+import Regex
 
-Elm ofrece una variedad de funciones y métodos para trabajar con cadenas de texto y patrones. Algunas de ellas incluyen `String.split`, `String.startsWith`, `String.fromList`, entre otras. Estas funciones pueden ser útiles al crear algoritmos más complejos para eliminar caracteres que coinciden con un patrón específico. Es importante experimentar con estas funciones y encontrar la mejor manera de aplicarlas a nuestro código.
+Regex.replace (Regex.regex "\\d") "número" "123 hola" -- produce "número número número hola"
+```
+
+## Profundizando
+
+La función `String.delete` es útil para eliminar caracteres específicos de un string, pero a veces queremos ser más específicos sobre qué caracteres queremos eliminar. Para ello, podemos usar la función `String.filter` de la misma biblioteca. Esta función toma un predicado como argumento y elimina todos los caracteres del string que no cumplan con ese predicado. Por ejemplo, si solo queremos eliminar las letras minúsculas de un string, podemos hacerlo de la siguiente manera:
+
+```Elm
+import String
+
+onlyUpper : Char -> Bool
+onlyUpper char =
+    Char.isUpper char -- devuelve true si el carácter es una letra mayúscula
+
+String.filter onlyUpper "HeLLo" -- produce "HL"
+```
+
+¡También puedes combinar `String.filter` con `String.delete` para eliminar caracteres que cumplan cierta condición y luego eliminar específicamente otros caracteres!
 
 ## Ver también
 
-- [Documentación oficial de Elm sobre String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Tutorial de Elm por el canal de YouTube Fazt Code](https://www.youtube.com/watch?v=zFP4_ymEj14)
-- [Ejemplos prácticos de uso de `String.replace`](https://korban.net/posts/elm/2018-07-12-slicing-up-text-with-elm-string-replace/)
+- [Documentación de `elm/string`](https://package.elm-lang.org/packages/elm/string/latest/)
+- [Documentación de `elm/regex`](https://package.elm-lang.org/packages/elm/regex/latest/)

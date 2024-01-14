@@ -1,55 +1,63 @@
 ---
-title:    "Gleam: Читання текстового файлу"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/gleam/reading-a-text-file.md"
+title:                "Gleam: Читання текстового файлу"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Зачем:  Лише 1-2 речення, пояснюючи *чому* хтось міг би зацікавитися читанням текстового файлу.
-
-Як: Приклади коду та вихідні дані у блоках коду "```Gleam ... ```".
-
-Щоб глибоко зануритися: Більш детальна інформація про читання текстового файлу.
-
 ## Чому
-Читання текстового файлу може бути необхідною задачею для багатьох програм у мові програмування Gleam. Це може бути використано для отримання даних з бази даних, обробки великих файлів або навіть для зчитування конфігураційних файлів.
+
+Чому варто читати текстовий файл? Наприклад, ви може бажати отримати дані з файлу для подальшої обробки, або отримати статистику стосовно вмісту тексту.
 
 ## Як
-Простий спосіб прочитати текстовий файл у Gleam - використати функцію `read_lines` з модуля `gleam/io/file`. Наприклад, якщо у нас є файл з назвою `text.txt` з таким вмістом:
 
-```
-Hello, world!
-This is a sample text file.
-```
-
-Цей код може прочитати всі рядки файлу та вивести їх на екран:
+Зчитування текстового файлу в Gleam може бути досить простим завданням, якщо ви знаєте правильний спосіб це зробити. Будь ласка, перегляньте код нижче для прикладу:
 
 ```Gleam
-import gleam/io/file
-file_path = "text.txt"
-lines = file.read_lines(file_path)
-file.iter(lines, fn(line) {
-  io.print("Line: {}", [line])
-})
+import gleam/io
+
+let file = io.file.open("my_file.txt") // відкриваємо файл для читання
+
+let contents = io.file.read_all(file) // зчитуємо вміст файлу
+io.file.close(file) // закриваємо файл
+
+io.format("Вміст файлу: {}", [contents]) // друкуємо вміст файлу на екран
+
 ```
 
-Виведе на екран:
+Вивід на екрані виглядатиме так:
 
 ```
-Line: Hello, world!
-Line: This is a sample text file.
+Вміст файлу: Привіт, це мій перший текстовий файл!
 ```
 
-## Глибока занурення
-У Gleam також є потужні засоби для роботи з текстовими файлами. Наприклад, ви можете використовувати модуль `gleam/io/text` для обробки тексту за допомогою регулярних виразів, конвертування у кодування Unicode та інших операцій.
+## Глибокий погляд
 
-## Додатково
-Для отримання додаткової інформації про роботу з текстовими файлами в Gleam, перегляньте наступні документаційні ресурси:
+Для зчитування більших файлів може бути корисним використання ітераторів у Gleam. Наприклад, ми можемо використати ітератор `file.lines()` для зчитування кожного рядка тексту окремо. Перегляньте приклад нижче:
 
-- Документація модуля `gleam/io/file`: https://gleam.run/modules/gleam_io_file.html
-- Документація модуля `gleam/io/text`: https://gleam.run/modules/gleam_io_text.html
+```Gleam
+import gleam/io
+
+let file = io.file.open("my_file.txt") // відкриваємо файл для читання
+
+let lines = io.file.lines(file) // отримуємо ітератор рядків файлу
+
+for line in lines do // проходимося по кожному рядку і друкуємо його на екран
+  io.format("Рядок: {}", [line])
+end
+
+io.file.close(file) // закриваємо файл
+```
+
+Вивід на екрані буде наступним:
+
+```
+Рядок: Привіт, це мій перший текстовий файл!
+```
 
 ## Дивіться також
-- Робота з об'єктами JSON у мові Gleam: https://yourlinkhere.com
-- Робота з базою даних SQLite у мові Gleam: https://yourlinkhere.com
+
+- [Документація Gleam про роботу з файлами](https://gleam.run/books/standard-library/files.html)
+- [Приклади роботи з файлами у Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/files.gleam)

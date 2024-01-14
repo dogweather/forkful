@@ -1,44 +1,51 @@
 ---
-title:    "Fish Shell: Ein neues Projekt starten"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell: Eine neue Projekt beginnen"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Als begeisterter Programmierer weißt du wahrscheinlich, wie wichtig es ist, sauberen und effizienten Code zu schreiben. Aber wusstest du, dass die Wahl der richtigen Shell auch einen großen Einfluss auf die Qualität deines Codes haben kann? In diesem Blog-Beitrag werden wir über die Verwendung von Fish Shell sprechen und warum es eine großartige Wahl für dein nächstes Projekt sein könnte.
+Wenn Sie sich entscheiden, ein neues Projekt zu starten, gibt es viele Programmiersprachen und Tools zur Auswahl. In diesem Blogbeitrag werden wir uns mit der Fish Shell befassen und zeigen, wie sie Ihnen dabei helfen kann, effizientere und benutzerfreundlichere Skripte zu erstellen.
 
-## Wie geht's 
+## Wie 
 
-Fish Shell ist eine benutzerfreundliche, moderne Shell, die für ihre Benutzerfreundlichkeit und Leistung bekannt ist. Sie bietet eine umfassende Autovervollständigungsfunktion, die dir dabei hilft, deine Befehle schneller zu tippen und Fehler zu vermeiden. Lass uns einen kurzen Blick darauf werfen, wie du Fish Shell installieren und verwenden kannst:
-
-```Fish Shell
-brew install fish # Installiere Fish Shell mit Homebrew
-fish_config # Öffne die Konfigurationsdatei von Fish Shell
-```
-
-Nachdem du Fish Shell erfolgreich installiert hast, kannst du mit dem Befehl `fish_config` auf die Fish Shell-Konfiguration zugreifen. Hier kannst du das Design und die Einstellungen der Shell an deine Bedürfnisse anpassen.
-
-## Tiefentauchen
-
-Eine der besten Eigenschaften von Fish Shell ist seine umfassende Autovervollständigungsfunktion. Probieren wir mal aus, wie sie funktioniert:
+Die Fish Shell ist eine leistungsstarke, benutzerfreundliche und moderne UNIX-Shell. Sie verfügt über viele nützliche Funktionen, die das Schreiben von Shell-Skripten einfacher und schneller machen. Um ein neues Projekt mit Fish Shell zu starten, folgen Sie diesen Schritten:
 
 ```Fish Shell
-ec# # Drücke die Tab-Taste, um `echo` auszuführen
+# Erstellen Sie ein neues Verzeichnis für Ihr Projekt
+mkdir meinProjekt
+# Wechseln Sie in das Verzeichnis
+cd meinProjekt
+# Erstellen Sie eine neue Datei mit dem Namen "hallo.sh"
+touch hallo.sh
+# Öffnen Sie die Datei mit einem Texteditor Ihrer Wahl
+vim hallo.sh
 ```
 
-Fish Shell vervollständigt automatisch den Befehl `echo` für dich. Aber das ist nicht alles, Fish Shell vervollständigt auch die Argumente, die du in deinem Befehl verwenden möchtest. Lass uns das mit einem weiteren Beispiel demonstrieren:
+Nun können Sie Ihr Shell-Skript in der Datei "hallo.sh" schreiben und ausführen:
 
 ```Fish Shell
-e#f "Hallo" # Drücke die Tab-Taste, um `echo "Hallo"` auszuführen
+# Fügen Sie den folgenden Code in "hallo.sh" ein:
+echo "Hallo Welt!"
+
+# Speichern Sie die Datei und wechseln Sie zurück in die Shell
+# Führen Sie das Skript aus:
+./hallo.sh
+# Output: Hallo Welt!
 ```
 
-Wie du siehst, vervollständigt Fish Shell das Argument `"Hallo"` für dich. Dies macht das Schreiben von Befehlen viel einfacher und schneller.
+Und schon haben Sie erfolgreich Ihr erstes Fish Shell-Skript erstellt!
+
+## Deep Dive
+
+Um noch tiefer in die Fish Shell einzusteigen, können Sie die offizielle Dokumentation lesen oder mit dem Befehl `help` in der Shell Hilfe zu bestimmten Themen erhalten. Sie können auch benutzerdefinierte Funktionen erstellen, Alias-Befehle definieren und vieles mehr. Die Fish Shell hat eine große und aktive Community, die Ihnen bei Fragen und Problemen gerne zur Seite steht.
 
 ## Siehe auch
 
-- [Fish Shell offizielle Dokumentation] (https://fishshell.com/docs/current/index.html)
-- [Fish Shell Github-Repo] (https://github.com/fish-shell/fish-shell)
-- [Fish Shell Forum] (https://forum.fishshell.com/)
+- [Offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/)
+- [Fish Shell Tutorial auf Deutsch](https://fishshell.readthedocs.io/de/latest/tutorial.html)
+- [Fish Shell auf GitHub](https://github.com/fish-shell/fish-shell)

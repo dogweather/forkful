@@ -1,79 +1,56 @@
 ---
-title:    "PHP: 打印调试输出"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/printing-debug-output.md"
+title:                "PHP: 打印调试输出"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么打印调试输出很重要
+# 为什么要输出调试信息
 
-打印调试输出是程序员在开发和调试过程中经常采用的一种方法。它可以帮助我们更好地了解程序的执行过程，找出程序中可能存在的错误并解决它们。同时，它也可以提供宝贵的信息，帮助我们优化代码并增强程序的性能。因此，打印调试输出对于编写高质量的代码非常重要。
+输出调试信息是一个在编写PHP程序中非常有用的技巧。它可以帮助程序员快速定位问题并进行调试，节省大量的时间和精力。
 
-## 如何进行打印调试输出
+## 如何输出调试信息
 
-在PHP中，我们可以使用内置的函数`print_r()`来打印调试输出。这个函数可以打印出任何类型的数据，包括数组和对象。例如，我们有一个包含学生信息的数组，我们可以通过以下代码来打印它：
+要输出调试信息，可以使用PHP语言内置的函数`print_r()`或者`var_dump()`。这两个函数可以将变量的值以易于阅读的形式打印出来。
 
 ```PHP
-$students = [
-    ['name' => '张三', 'age' => 20, 'major' => '计算机科学'],
-    ['name' => '李四', 'age' => 21, 'major' => '数学'],
-    ['name' => '王五', 'age' => 19, 'major' => '经济学']
-];
+// 使用print_r()输出数组
+$array = ["苹果", "橘子", "香蕉"];
+print_r($array);
 
-print_r($students);
+// 使用var_dump()输出字符串
+$string = "这是一段字符串";
+var_dump($string);
 ```
 
-输出结果将会是一个格式化的数组，帮助我们更清晰地查看数据：
+运行以上代码，将得到如下输出：
 
-```PHP
+```
 Array
 (
-    [0] => Array
-        (
-            [name] => 张三
-            [age] => 20
-            [major] => 计算机科学
-        )
-
-    [1] => Array
-        (
-            [name] => 李四
-            [age] => 21
-            [major] => 数学
-        )
-
-    [2] => Array
-        (
-            [name] => 王五
-            [age] => 19
-            [major] => 经济学
-        )
-
+    [0] => 苹果
+    [1] => 橘子
+    [2] => 香蕉
 )
+string(15) "这是一段字符串"
 ```
 
-除了`print_r()`，我们也可以使用`var_dump()`来打印调试输出。这个函数可以显示变量的数据类型和长度，并且可以打印更深层次的数据结构。例如，我们想要查看某个变量中的所有信息，可以使用以下代码：
+除了这两个函数外，还可以使用`error_log()`函数将调试信息输出到服务器的错误日志中，方便在生产环境中进行调试。
 
-```PHP
-$var = 'Hello World!';
-var_dump($var);
-```
+## 深入探讨
 
-输出结果将会是：
+输出调试信息可以帮助程序员了解程序在执行过程中变量的具体值，从而分析程序运行过程中的错误。尤其在排查复杂的bug时，输出调试信息会起到至关重要的作用。
 
-```PHP
-string(12) "Hello World!"
-```
+不过，需要注意的是，输出调试信息时要小心使用，避免将敏感信息暴露给未授权的用户。因此，在生产环境中需要将调试信息关闭或者限制输出内容，避免造成安全漏洞。
 
-## 深入了解打印调试输出
+# 查看更多
 
-虽然`print_r()`和`var_dump()`是我们常用的打印调试输出的函数，但它们并不是唯一的选择。我们也可以使用`error_log()`函数将调试信息输出到日志文件中，或者使用Xdebug扩展来进行更加高级的调试。除此之外，我们还可以在代码中插入自定义的调试输出信息，帮助我们更有效地追踪程序的执行流程。
+想要了解更多关于PHP调试技巧的信息，请参考以下链接：
 
-综上所述，打印调试输出是一个非常实用的工具，它可以帮助我们快速定位和解决程序中的问题，并且可以提高我们的开发效率。我们应该养成良好的调试习惯，经常使用打印调试输出来帮助我们写出更好的代码。
+- [PHP官方文档](https://www.php.net/manual/en/function.print-r.php)
+- [调试PHP应用程序](https://www.sitepoint.com/debug-php-application-5-strategies/)
+- [PHP调试工具推荐](https://medium.com/@dkhd/mastering-php-debugging-tools-763a18c0e9a8)
 
-## 查看更多
-
-- [PHP官方文档 - 调试技术](https://www.php.net/manual/zh/debugger.php)
-- [使用Xdebug调试PHP程序](https://www.zhihu.com/question/20485311)
-- [PHP数组打印输出的几种方法](https://www.jianshu.com/p/485bfeb629ef)
+祝您编写愉快！

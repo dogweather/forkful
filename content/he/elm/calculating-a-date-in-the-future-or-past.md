@@ -1,54 +1,46 @@
 ---
-title:    "Elm: חישוב תאריך בעתיד או בעבר"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: חישוב תאריך בעתיד או בעבר"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-אלמנטי האלם הם כלי חזקים שנועדו לסייע לכם ליצור אפליקציות פתוחות קוד חדשניות ואטרקטיביות. אחת התכונות המעניינות ביותר של אלמנטם היא היכולת לחשב תאריכים בעתיד או בעבר. זה נחוץ כאשר אתם עובדים עם אפליקציות כמו לוח שנה או תזכורות, וגם עבור דרישות של פרויקטים מתנדבים כגון עמותות או מגמות.
+למה לעסוק בחישוב תאריך בעתיד או בעבר? החישוב של תאריך יכול לעזור לנו לתכנן את הופעה שלנו או לבדוק את הזמן שאנחנו ניצל את התאריך הנכון. זה יכול להיות שימושי במיוחד לכאלו שעובדים עם לוח שנה או מתכנני אירועים.
 
-## איך לעשות זאת
+## כיצד
 
-אם אתם מעוניינים לחשב תאריכים בעתיד או בעבר עם אלם, תישארו לשים! נדגים כמה דוגמאות קוד וכיצד תיצור את התוצאה הרצויה.
+ראשית, נצטרך לייבא את המודול `Date` מתוך חבילת Elm בעזרת הפקודה הבאה:
 
-\`\`\`Elm
-import Time exposing (..)
-import Time.Date exposing (..)
+```Elm
+import Date
+```
 
--- חישוב תאריך בעבור 3 ימים מהיום
-futureDate : Date
-futureDate = add (days 3) (round (posixToMillis (Time.now))) 
+לאחר מכן, נוכל להשתמש בפונקציה `add` שבתוך המודול כדי להוסיף או להחסיר ימים, שבועות, חודשים או שנים מתאריך מסוים. לדוגמה, נרצה לחשב את התאריך בעוד 7 ימים מהתאריך הנוכחי. הנה כיצד נוכל לעשות זאת:
 
--- חישוב תאריך בעבור 2 שבועות ו5 ימים לפני היום
-pastDate : Date
-pastDate = add (days (-5)) (add (weeks (-2)) (round (posixToMillis (Time.now))))
+```Elm
+Date.add Date.days 7 Date.today
+```
 
--- חישוב תאריך לתאריך מסוים בחודש הזה
-specificDate : Date
-specificDate = Date.fromYearMonthDate 2021 9 20
+יהיה לנו התאריך המעודכן בתאריך העתידי שנמצא 7 ימים מאתה נמצא בתאריך התחלתי.
 
--- הדפסת התאריכים
-main : Html msg
-main =
-    div []
-        [ text (toString futureDate)
-        , text (toString pastDate)
-        , text (toString specificDate)
-        ]
-        
--- תוצאות:
--- 2021-09-16
--- 2021-08-29
--- 2021-09-20
-\`\`\`
+אנחנו יכולים גם להשתמש בפונקציה `subtract` לצורך חילוץ תאריך בעבר:
 
-## טיול עמוק
+```Elm
+Date.subtract Date.weeks 2 Date.today
+```
 
-עכשיו שאתם מבינים איך לחשב תאריכים בעתיד או בעבר עם אלם, בואו נחקור קצת יותר עמוק. כתבתי כמה פונקציות במודול Time.Date שישמשו אתכם בכל מיני סיטואציות.
+זה יחזיר לנו את התאריך ששני שבועות מקדימה מתאריך הנוכחי.
 
-- add : מוסיף פונקציות זמן של ימים, שבועות, חודשים או שנים לתאריך קיים.
-- fromYearMonthDate : יוצר תאריך חדש משנה, חודש ויום.
-- DayOfWeek : מציג את היום בשבוע לפי נומר
+## חפירה עמוקה
+
+המודול `Date` מכיל גם פונקציות נוספות לעיבוד תאריכים, כמו `fromString` להמרת תאריך מתחריף לטקסט ו`toString` להמרת תאריך לתחריף. בנוסף, ניתן להשתמש בפונקציות נוספות כמו `toTime` ו- `fromTime` לעיבוד תאריכים בפורמט תאריך קוננוני.
+
+## ראה גם
+
+- [Documentation for Elm's `Date` module in English](https://package.elm-lang.org/packages/elm/core/latest/Date)
+- [חבילת Elm לגיבוב ועיבוד תאריכים](https://package.elm-lang.org/packages/elm/time/latest/)
+- [מדריך ללמידת Elm בעברית](https://github.com/jamiedixon/learn-elm-in-hebrew)

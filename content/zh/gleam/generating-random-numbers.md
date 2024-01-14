@@ -1,81 +1,52 @@
 ---
-title:    "Gleam: 生成随机数"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/generating-random-numbers.md"
+title:                "Gleam: 生成随机数"
+programming_language: "Gleam"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么: 随机数在编程中的应用
-有时，我们需要随机生成一些数字来模拟现实世界或测试我们的代码。Gleam编程语言提供了一种简单，可靠的方法来生成随机数，让我们一起来看看吧。
+# 为什么
 
-## 如何: 使用Gleam生成随机数
-我们可以使用内置的rand模块中的random函数来生成随机数。下面是一个简单的代码示例，它生成10个范围在1到100之间的随机数并打印出来。
+在编程世界中，生成随机数是一项非常重要的技能。无论是用于游戏、加密还是其他应用程序，生成随机数都是必不可少的。使用Gleam编程语言，我们可以轻松地生成高质量的随机数，让我们来看看如何做到这一点。
 
-```
-Gleam module Main
+## 如何做到
 
-import rand
-import array
-
-fn random_nums() {
-  let nums = array.new()
-  let size = 10
-  let min = 1
-  let max = 100
-  let count = 1
-  while count <= size {
-    let num = rand.random(min, max)
-    array.append(&nums, num)
-    count = count + 1
-  }
-  nums
-}
-
-fn main(_) {
-  let nums = random_nums()
-  list_iter(nums)
-    fn(x) {
-      IO.print("随机数: ")
-      IO.print(x)
-      IO.print("\n")
-    }
-  IO.print("生成了 ", array.len(nums), " 个随机数")
-}
-```
-
-运行这段代码，我们会得到类似下面的输出:
+要使用Gleam生成随机数，我们需要使用标准库中的Random模块。首先，我们需要在代码的开头导入Random模块：
 
 ```
-随机数: 25
-随机数: 56
-随机数: 9
-随机数: 78
-随机数: 13
-随机数: 91
-随机数: 40
-随机数: 90
-随机数: 44
-随机数: 73
-总共生成了 10 个随机数
+import gleam/random
 ```
 
-现在你已经知道如何使用Gleam生成随机数了，让我们深入了解一下其中的原理。
+接下来，我们可以使用Random模块中的函数来生成随机数，例如，我们可以使用`int`函数来生成一个随机的整数：
 
-## 深入: 生成随机数的原理
-Gleam中使用的随机数生成算法是[Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)，它是一种经过广泛测试和使用的伪随机数生成器。这意味着每次运行我们的程序时都会得到不同的结果，但是它们都是按照一定规律生成的，因此可以被认为是“伪随机数”。
+```
+let random_int = random.int(1, 100)
+```
 
-在使用Gleam生成随机数时，我们需要注意以下几点：
+以上代码将会生成一个1到100之间的随机整数，并将其赋值给`random_int`变量。
 
-- 确定好生成随机数的范围，即最小值和最大值
-- 使用循环语句来指定生成的随机数的数量
-- 将生成的随机数保存在一个数据结构中，比如数组
+我们也可以使用`float`函数来生成随机的浮点数：
 
-## 参考文章
-- [Gleam官方文档-随机数](https://gleam.run/book/core/random-numbers.html)
-- [Mersenne Twister算法详解](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/ARTICLES/mt.pdf)
-- [如何选择合适的随机数生成器](https://www.pcg-random.org/)
+```
+let random_float = random.float(0.0, 1.0)
+```
+
+以上代码将会生成一个0到1之间的随机浮点数，并将其赋值给`random_float`变量。
+
+Gleam还提供了其他几个函数来生成不同类型的随机数，例如`bool`用于生成随机的布尔值，`string`用于生成随机的字符串等等。现在，您已经知道如何在Gleam中生成随机数，让我们深入了解一下。
+
+## 深入了解
+
+Gleam的Random模块使用Mersenne Twister算法来生成随机数，这是一种广泛使用的随机数生成方法，它可以生成高质量的随机数序列。此外，Gleam还提供了伪随机数生成功能，这意味着每次执行程序都会生成相同的随机数序列，这在调试代码时非常方便。
+
+需要注意的是，在使用随机数时，我们需要遵循一些安全措施来防止被攻击。例如，在密码学应用中，我们应该使用密码学安全的随机数生成方法，而不是普通的随机数生成方法。详细的安全措施可以参考Gleam官方文档。
+
+## 参考资料
+
+- Gleam官方文档：https://gleam.run/documentation/standard-libraries
+- Mersenne Twister算法：https://en.wikipedia.org/wiki/Mersenne_Twister
+- 密码学安全的随机数生成方法：https://www.chosenplaintext.ca/articles/secure-random-in-crypto.html
 
 # 参见
-- [如何在Gleam中使用时间戳](https://www.example.com)
-- [如何使用rand模块中的其他函数生成随机数](https://www.example.com)

@@ -1,62 +1,48 @@
 ---
-title:    "Python: Finn lengden av en streng"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/finding-the-length-of-a-string.md"
+title:                "Python: Å finne lengden til en streng"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å finne lengden på en tekststreng er en grunnleggende og nyttig ferdighet for alle som lærer å programmere. Det å være i stand til å finne lengden på en streng kan hjelpe deg med å håndtere og bearbeide data på en mer effektiv måte.
+Hvorfor bry seg med å finne lengden på en streng i Python? Vel, det kan virke som en enkel oppgave, men å forstå hvordan dette fungerer kan hjelpe deg med å bli en bedre programmerer. Det er også en nyttig ferdighet å ha når du jobber med manipulering av tekstdata.
 
 ## Hvordan
-
-For å finne lengden på en streng i Python, bruker vi funksjonen "len()". Denne funksjonen tar en streng som argument og gir tilbake lengden på strengen.
-
-```Python
-streng = 'Hei, dette er en streng!'
-print(len(streng))
+For å finne lengden på en streng i Python, kan du bruke `len()` funksjonen. La oss si at vi har følgende streng:
 ```
-**Output**
+tekst = "Hei, verden!"
 ```
-24
+For å finne lengden på denne strengen, skriver vi følgende kode:
 ```
-Som du kan se, gir funksjonen "len()" oss lengden på strengen, som er 24 i dette tilfellet. Vi kan også bruke denne funksjonen på variabler som inneholder strenger.
+print(len(tekst))
+```
+Dette vil gi følgende output:
+```
+13
+```
 
-```Python
-navn = 'Johanna'
+Du kan også bruke `len()` funksjonen på andre datatyper, som for eksempel lister, tupler eller dictionaries. La oss si at vi har en liste med navn:
+```
+navn = ["Anna", "Per", "Sara", "Markus"]
+```
+Her kan vi bruke `len()` funksjonen til å finne antall elementer i listen:
+```
 print(len(navn))
 ```
-**Output**
+Dette vil gi følgende output:
 ```
-7
+4
 ```
-
-En annen måte å finne lengden på en streng på er ved å bruke en løkke og telle antall tegn i strengen, men dette er ikke like effektivt som å bruke funksjonen "len()".
 
 ## Dypdykk
+Nå lurer du kanskje på hvordan `len()` funksjonen faktisk fungerer. Det er en innebygd funksjon i Python som returnerer antall elementer i en gitt objekt. Det betyr at hvis du bruker `len()` på en streng, vil det returnere antall tegn i strengen. Hvis du bruker det på en liste, vil det returnere antall elementer i listen.
 
-Det kan være nyttig å vite at funksjonen "len()" ikke bare fungerer på strenger, men også på andre datatyper som lister og tupler. Den gir tilbake antall elementer i en liste eller tuple.
-
-```Python
-liste = [1, 2, 3, 4, 5]
-print(len(liste))
-
-tuple = (6, 7, 8, 9, 10)
-print(len(tuple))
-```
-**Output**
-```
-5
-5
-```
-
-I tillegg kan "len()" også brukes på mer komplekse objekter som dictionaries, der den gir tilbake antall nøkler i dictionaryet.
-
-Et viktig aspekt ved å finne lengden på en streng er å forstå at det er forskjell på antall tegn og antall bytes i en streng. Dette er spesielt viktig når man jobber med flerspråklige programmer, der forskjellige språk har ulike størrelser på bokstaver og tegn.
+Det er også verdt å nevne at `len()` funksjonen ikke bare fungerer på tekstdata, men også på numeriske og boolske verdier. For eksempel kan du bruke den til å finne antall sifre i et tall, eller antall elementer i en boolsk liste.
 
 ## Se Også
-
-- [Python dokumentasjon om `len()` funksjonen](https://docs.python.org/no/3/library/functions.html#len)
-- [En grundig guide om å finne lengden på en streng i Python](https://www.programiz.com/python-programming/methods/built-in/len)
+- [Offisiell Python Dokumentasjon for `len()`](https://docs.python.org/3/library/functions.html#len)
+- [GeeksforGeeks Tutorial: `len()` funksjonen i Python](https://www.geeksforgeeks.org/python-len-function/)
+- [Stack Overflow: "Hvordan finne lengden på en streng i Python?"](https://stackoverflow.com/questions/6706830/how-to-get-the-length-of-a-string)

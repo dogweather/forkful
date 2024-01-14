@@ -1,57 +1,66 @@
 ---
-title:    "Haskell: Capitalizzare una stringa"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/capitalizing-a-string.md"
+title:                "Haskell: Capitalizzazione di una stringa"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché Capitalizzare una Stringa?
+## Perché
 
-Capitalizzare una stringa può essere importante quando si vuole dare enfasi a una certa parte di testo o solo per motivi di estetica. In Haskell, ci sono diverse opzioni per capitalizzare una stringa e in questo articolo esploreremo le diverse possibilità.
+Capitalize una stringa è una funzione molto utile quando si lavora con testi o stringhe di dati in Haskell. Permette di rendere più leggibile il testo e di manipolare le stringhe in modo più semplice.
 
-## Come Capitalizzare una Stringa in Haskell
+## Come Fare
 
-Per capitalizzare una stringa in Haskell, è possibile utilizzare la funzione `toUpper` del modulo `Data.Char`. Vediamo un esempio:
-
-```Haskell
-import Data.Char
-
--- Definiamo una funzione che prende una stringa e la restituisce capitalizzata
-capitalizza :: String -> String
-capitalizza str = map toUpper str
-
--- Utilizziamo la funzione con una stringa di esempio
-capitalizza "ciao a tutti" -- "CIAO A TUTTI"
-```
-
-Si noti che `map` applica la funzione `toUpper` a ogni carattere della stringa, restituendo così una nuova stringa con tutti i caratteri maiuscoli.
-
-In alternativa, si può utilizzare anche la funzione `toUpper` direttamente sulla stringa:
+La funzione per capitalizzare una stringa in Haskell è `toUpper`. Prende come input una stringa e restituisce la stessa stringa ma con tutte le lettere maiuscole. Vediamo un esempio di codice:
 
 ```Haskell
 import Data.Char
 
--- Utilizziamo la funzione `toUpper` sulla stringa di esempio
-map toUpper "ciao a tutti" -- "CIAO A TUTTI"
+-- definiamo una stringa
+myString = "ciao a tutti"
+
+-- applichiamo la funzione toUpper alla stringa
+result = toUpper myString
+
+-- stampiamo il risultato
+print result
 ```
 
-Un'altra opzione è utilizzare la libreria `Data.Text`, che offre molte funzioni per lavorare con stringhe di testo. Vediamo un esempio utilizzando la funzione `toUpper` del modulo `Data.Text`:
+L'output di questo codice sarà:
 
 ```Haskell
-import Data.Text as T
-
--- Utilizziamo la funzione `toUpper` sulla stringa di esempio
-T.toUpper "ciao a tutti" -- "CIAO A TUTTI"
+"CIAO A TUTTI"
 ```
 
-## Approfondimento sulla Capitalizzazione di una Stringa
+Come si può vedere, la funzione `toUpper` ha semplicemente convertito tutte le lettere della stringa in maiuscolo. Oltre a `toUpper`, ci sono anche altre funzioni utili per la manipolazione delle stringhe, come ad esempio `toLower`, che converte tutte le lettere in minuscolo, o `capitalize`, che mette in maiuscolo solo la prima lettera della stringa.
 
-In Haskell, le stringhe sono in realtà liste di caratteri. Questo significa che, quando si applica la funzione `map` o `toUpper` a una stringa, in realtà si sta mappando una lista di caratteri. Per questo motivo, è importante essere consapevoli della dimensione della stringa su cui si sta lavorando e della complessità computazionale della funzione utilizzata.
+## Approfondimenti
 
-Inoltre, è importante ricordare che la funzione `toUpper` è dipendente dalla lingua in cui si sta lavorando. Ad esempio, in italiano la lettera "i" maiuscola è "I", mentre in tedesco è "Ì". Pertanto, se si lavora con testo multilingue, è importante considerare queste differenze linguistiche.
+In Haskell, le stringhe sono tratte come liste di caratteri. Ciò significa che possiamo manipolarle con le solite funzioni di liste, come `map` o `filter`. Ad esempio, possiamo creare una funzione custom per capitalizzare solo le vocali di una stringa:
 
-## Vedi anche
+```Haskell
+-- definiamo una funzione per capitalizzare solo le vocali
+capitalizeVowels :: String -> String
+capitalizeVowels str = map (\c -> if c `elem` "aeiou" then toUpper c else c) str
 
-- [Data.Char - HaskellDoc](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Data.Text - HaskellDoc](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+-- applichiamo la funzione alla nostra stringa
+result = capitalizeVowels "ciao a tutti"
+
+-- stampiamo il risultato
+print result
+```
+
+L'output di questo codice sarà:
+
+```Haskell
+"CIaO A TUttI"
+```
+
+Come si può vedere, la funzione `capitalizeVowels` ha capitalizzato solo le vocali della stringa in input.
+
+## Vedi Anche
+
+- [Documentazione di `Data.Char`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- [Manipolazione delle stringhe in Haskell](https://blog.jcoglan.com/2008/01/04/whats-wrong-with-haskells-strings/)

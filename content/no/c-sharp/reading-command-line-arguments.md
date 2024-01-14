@@ -1,52 +1,52 @@
 ---
-title:    "C#: Lesing av kommandolinjeargumenter"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/reading-command-line-arguments.md"
+title:                "C#: Lesing av kommandolinjeargumenter"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å lese kommandolinjeargumenter kan være en nyttig ferdighet å ha i C#-programmering. Det kan hjelpe deg med å lage mer fleksible og interaktive programmer, som kan være spesielt nyttig i konsoll-applikasjoner. Ved å kunne lese argumenter fra kommandolinjen, kan du også gi mer kontroll og tilpasning til brukeren av ditt program.
+Kommandolinjeargumenter er et viktig konsept innen programmering, spesielt innen C#. Det lar deg sende og motta informasjon når du kjører et program via kommandolinjen. Dette kan være nyttig for å gjøre programmet ditt mer fleksibelt og interaktivt, og å spare tid når du trenger å endre noen innstillinger. Derfor er det viktig å forstå hvordan man leser kommandolinjeargumenter i C#.
 
-## Hvordan
+# Hvordan
 
-Først må du definere din Main-metode med en `string[] args` parameter. Dette gjør at programmet ditt kan ta imot kommandolinjeargumenter når det blir startet. Deretter kan du bruke `args` arrayet til å lese argumentene og ta handling basert på dem.
+For å lese kommandolinjeargumenter i C#, trenger du å bruke "args" parameteret i metoden "Main". Dette parameteret inneholder en matrise av strenger som inneholder alle argumentene som er gitt via kommandolinjen. Her er et eksempel på hvordan du kan lese og skrive ut argumentene:
 
-For å demonstrere dette, la oss lage et enkelt program som sjekker om den første kommandolinje-argumentet er et tall eller en tekststreng. Vi kan gjøre dette ved å bruke `TryParse`-metoden til `int` og `string`-klassene. Se koden under for et eksempel:
-
-```C#
-using System;
-
-public class Program
+'``C#
+static void Main(string[] args)
 {
-    public static void Main (string[] args)
+    for(int i=0; i<args.Length; i++)
     {
-        if (int.TryParse(args[0], out int num))
-        {
-            Console.WriteLine($"{num} er et tall.");
-        }
-        else
-        {
-            Console.WriteLine($"{args[0]} er en tekststreng.");
-        }
+        Console.WriteLine("Argument {0}: {1}", i, args[i]);
     }
 }
 ```
 
-Hvis du kjører dette programmet med forskjellige argumenter, vil du se forskjellige resultater. For eksempel `program.exe 123` vil gi følgende output: `123 er et tall.`, mens `program.exe abc` vil gi: `abc er en tekststreng.`
+Kjør dette programmet fra kommandolinjen og gi noen argumenter som parametere, for eksempel "dotnet argumenter.exe hei verden". Output vil være:
 
-## Dypdykk
+```
+Argument 0: hei
+Argument 1: verden
+```
 
-I eksempelet ovenfor brukte vi `args`-arrayet og `TryParse`-metoden for å sjekke om det første argumentet er et tall. Men det er også andre nyttige metoder og egenskaper som kan brukes til å lese og håndtere kommandolinjeargumenter, som f.eks. `Environment.GetCommandLineArgs()`, `Environment.CommandLine` og `Environment.CurrentDirectory`.
+Det er også viktig å merke seg at argumentene blir behandlet som strenger, så hvis du for eksempel trenger å konvertere et argument til et tall, må du bruke konverteringsfunksjoner som "int.Parse ()" eller "double.Parse ()".
 
-Det er også mulig å sende inn kommandolinjeargumenter til et C#-program når du kjører det fra terminalen eller kommandolinjen. Dette kan gjøres ved å skrive programnavnet etterfulgt av argumentene dine, for eksempel: `program.exe arg1 arg2 arg3`.
+# Dypdykk
 
-Å lese og håndtere kommandolinjeargumenter kan øke funksjonaliteten og brukervennligheten til programmene dine. Det kan også være en nyttig ferdighet å ha når du jobber med konsoll-applikasjoner eller trenger å gi mer kontroll til brukerne dine.
+Et viktig konsept å forstå når man leser kommandolinjeargumenter i C# er å forstå rekkefølgen de er gitt i. Argumentene gis alltid i rekkefølgen de er angitt, og de kan heller ikke bli omorganisert når programmet er i gang. Hvis du for eksempel kjører programmet ditt med kommandolinjeargumentene "program.exe hei verden", og deretter bytter rekkefølgen til "program.exe verden hei", vil output fortsatt være:
 
-## Se også
+```
+Argument 0: hei
+Argument 1: verden
+```
 
-- [Microsoft Dokumentasjon om Environment.GetCommandLineArgs()](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netcore-3.1)
-- [C# Tutorial: Kommandolinjeargumenter](https://www.tutorialspoint.com/csharp/csharp_command_line_arguments.htm)
-- [Kommandolinjeargumenter i C#](https://www.c-sharpcorner.com/article/command-line-arguments-in-c-sharp/)
+Det er også mulig å inkludere flagg eller brytere som ekstra kommandolinjeargumenter. Disse er forhåndsdefinerte stringverdier som indikerer spesifikke handlinger eller innstillinger som programmet skal ta. For å lese disse flaggene, kan du bruke funksjoner som "args.Contains ()" eller "args.IndexOf ()" for å søke gjennom matrisen med argumenter.
+
+# Se også
+
+- [Microsoft documentasjon for å lese kommandolinjeargumenter i C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
+- [Tutorialspoint guide til å lese og behandle argumenter i C#](https://www.tutorialspoint.com/csharp/csharp_command_line_arguments.htm)
+- [Codeburst forklaring av kommandolinjeargumenter i C#](https://codeburst.io/command-line-arguments-in-c-b16c41586b4e)

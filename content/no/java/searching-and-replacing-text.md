@@ -1,70 +1,54 @@
 ---
-title:    "Java: Søke og erstatte tekst"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/searching-and-replacing-text.md"
+title:                "Java: Å søke og erstatte tekst"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Vi har alle vært der - du har skrevet en lang kodeblokk og innser plutselig at du har brukt feil variabelnavn overalt. Eller kanskje du vil endre på en spesifikk streng i en tekstfil. Å erstatte tekst i koden din kan være en tidkrevende oppgave, men heldigvis er det en enkel løsning - søk og erstatt! Ved å bruke Java, kan du enkelt finne og endre teksten du trenger, og spare deg selv for mye frustrasjon og tid.
+Enten du er en erfaren Java-programmerer eller en nybegynner, er det viktig å vite hvordan man effektivt søker og erstatter tekst i dine programmer. Dette kan hjelpe deg med å effektivisere koden din og spare tid i utviklingsprosessen.
 
-## Hvordan gjøre det
+## Hvordan 
 
-Først må du importere Java's `io` bibliotek, som vil tillate deg å lese og skrive til filer. Deretter kan du bruke `File` og `BufferedReader` klassene for å lese tekst fra en fil. For eksempel:
+For å søke og erstatte tekst i Java-programmer, kan du bruke metoden "replace" fra klassen String. Denne metoden tar to parametere, det gamle ordet du vil erstatte og det nye ordet du vil erstatte det gamle med.
 
 ```Java
-import java.io.*;
-
-public class SearchAndReplace {
-
-    public static void main(String[] args) {
-
-        // Åpne filen med BufferedReader
-        try (BufferedReader br = new BufferedReader(new FileReader("tekstfil.txt"))) {
-
-            // Les linje for linje
-            String line;
-            while ((line = br.readLine()) != null) {
-
-                // Søk etter teksten du vil endre og erstatt den med ønsket tekst
-                line = line.replaceAll("feil variabelnavn", "riktig variabelnavn");
-
-                // Skriv den endrede linjen til en ny fil
-                try (PrintWriter pw = new PrintWriter(new FileWriter("ny_tekstfil.txt", true))) {
-                    pw.println(line);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
+String tekst = "Hei, dette er en tekst som skal erstattes.";
+String nyTekst = tekst.replace("erstattes", "endres");
+System.out.println(nyTekst);
 ```
 
-Koden over vil lese fra filen "tekstfil.txt", finne alle forekomster av "feil variabelnavn" og erstatte dem med "riktig variabelnavn". Den nye teksten vil bli skrevet til en ny fil med navnet "ny_tekstfil.txt".
+Output: Hei, dette er en tekst som skal endres.
 
-## Dypdykk
+Det er også mulig å bruke regulære uttrykk for å søke og erstatte tekst i Java-programmer. Dette gir mer fleksibilitet og nøyaktighet i søket. Du kan bruke klassen Pattern fra Java.util-pakken og metoden replaceAll fra klassen String til å søke og erstatte tekst ved hjelp av regulære uttrykk.
 
-Java's `String` klasse har flere innebygde metoder som kan hjelpe deg med å finne og erstatte tekst. Noen eksempler inkluderer:
+```Java
+String tekst = "Dette er en tekst som inneholder tall 123";
+String nyTekst = tekst.replaceAll("[0-9]", "");
+System.out.println(nyTekst);
+```
 
-- `contains()` - returnerer en boolean verdi som indikerer om en spesifisert tekst finnes i en tekststreng.
-- `replace()` - erstatter eksisterende tekst med ny tekst.
-- `startsWith()` og `endsWith()` - sjekker om tekststrengen starter eller slutter med en spesifisert tekst.
+Output: Dette er en tekst som inneholder tall 
 
-Det finnes også ulike metoder for å utføre søk og erstatt i store tekstblokker, inkludert:
+## Dypdykk 
 
-- `replaceFirst()` - erstatter den første forekomsten av en tekst.
-- `replaceAll()` - erstatter alle forekomster av en tekst.
+Det er viktig å være oppmerksom på at metoden "replace" erstatter alle forekomster av det gamle ordet, mens metoden "replaceAll" erstatter alle forekomster av det gamle ordet som passer til regulært uttrykk. Dette kan være nyttig hvis du ønsker å endre deler av en tekst som opptrer flere ganger i koden din.
 
-Det er viktig å merke seg at disse metodene er case-sensitive, så du må være nøye med å skrive inn teksten nøyaktig slik den dukker opp i koden din.
+Det er også mulig å bruke metoden "replaceFirst" for å erstatte kun den første forekomsten av det gamle ordet. Denne metoden tar også to parametere, det gamle ordet og det nye ordet.
 
-## Se også
+```Java
+String tekst = "Hei, dette skal erstattes, hei!";
+String nyTekst = tekst.replaceFirst("hei", "hallo");
+System.out.println(nyTekst);
+```
 
-- [Java String klasse](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java BufferedReader klasse](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
-- [Java PrintWriter klasse](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html)
+Output: Hallo, dette skal erstattes, hei!
+
+## Se også 
+
+- [Java String documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [RegEx in Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+- [String Replace, ReplaceAll and ReplaceFirst in Java](https://www.baeldung.com/java-string-replace-replaceall-replacefirst)

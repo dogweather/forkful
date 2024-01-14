@@ -1,34 +1,58 @@
 ---
-title:    "Python: Konvertering av en streng til små bokstaver"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/converting-a-string-to-lower-case.md"
+title:                "Python: Konvertere en streng til små bokstaver"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Mange ganger i programmering må man jobbe med tekst og string-variabler. Noen ganger kan det være nødvendig å konvertere disse stringene til små bokstaver, eller "lower case" på engelsk. Dette kan være nyttig for å sammenligne tekst uten å ta hensyn til store eller små bokstaver, eller for å følge vanlige konvensjoner i programmeringsspråket ditt. I denne bloggposten skal vi se på hvordan man kan gjøre dette i Python.
 
-## Hvordan gjøre det
-Konvertering av en string til lower case i Python er en enkel prosess. I vårt eksempel skal vi bruke funksjonen `.lower()`, som tar inn en string og returnerer en ny kopi av stringen med alle bokstaver omgjort til små bokstaver.
+Å konvertere en streng til små bokstaver er en vanlig oppgave i Python-programmering. Dette kan være nyttig når du ønsker å sammenligne to strenger uten å ta hensyn til store og små bokstaver, eller for å sikre ensartethet i dataene dine. Ved å lære hvordan du gjør dette, kan du utvide kunnskapen din om grunnleggende strengmanipulasjon og forbedre programmene dine.
 
-```Python
-string = "Hei, denne STRINGen skal konverteres til lower case"
-print(string.lower())
+## Hvordan å gjøre det
+
+For å konvertere en streng til små bokstaver i Python, kan du bruke metoden `lower()`. Denne metoden konverterer alle store bokstaver i en streng til små bokstaver. La oss se på et eksempel:
+
+```python
+streng = "HEI PÅ DEG"
+print(streng.lower())
 ```
 
 Dette vil gi oss følgende output:
 
-```Python
-hei, denne stringen skal konverteres til lower case
+```python
+hei på deg
 ```
 
-Som du ser, er alle bokstavene nå i små bokstaver. Dette kan være nyttig hvis du for eksempel ønsker å sammenligne denne stringen med en annen string som allerede er i lower case, slik at du er sikker på at de er helt like.
+Som du kan se, har alle de store bokstavene i strengen blitt omgjort til små. Du kan også bruke metoden `casefold()`, som i tillegg til å konvertere store bokstaver, også håndterer spesielle tegn og diakritiske tegn. Denne metoden er nyttig når du ønsker å sammenligne to strenger, da den også tar hensyn til forskjeller i tegnsetting og diakritiske tegn.
 
-## Deep Dive
-Det finnes også andre måter å konvertere en string til lower case i Python på. Noen programmerere kan for eksempel velge å bruke `.casefold()`-funksjonen i stedet for `.lower()`, da denne håndterer spesielle karakterer og emojis bedre. Andre vil kanskje foretrekke å bruke `.swapcase()`-funksjonen, som bytter om på små og store bokstaver. Det viktigste er å finne en metode som fungerer best for deg og ditt prosjekt.
+```python
+streng1 = "Åge"
+streng2 = "Age"
+
+print(streng1.lower() == streng2.lower())
+print(streng1.casefold() == streng2.casefold())
+```
+
+Dette vil gi oss følgende output:
+
+```python
+False
+True
+```
+
+Som du kan se, er den første sammenligningen ikke sann, da forskjellen i diakritiske tegn gjør en forskjell. Men med `casefold()` blir begge sammenligningene sanne.
+
+## Dypdykk
+
+Nå som du har lært grunnleggende om å konvertere en streng til små bokstaver, la oss se på noen ting du bør være klar over når du bruker disse metodene. Først og fremst, husk at konverteringen er ikke-destruktiv, noe som betyr at den ikke endrer den originale strengen, men heller returnerer en kopi av strengen med de nye endringene.
+
+Du bør også være oppmerksom på at disse metodene bare fungerer for ASCII-tegn, og ikke for alle språk. For å kunne håndtere ikke-ASCII-tegn, må du bruke et annet bibliotek eller en annen metode. Videre, hvis du ønsker å konvertere en streng til store bokstaver, kan du bruke metoden `upper()` på samme måte som `lower()` ble brukt.
 
 ## Se også
-- [Dokumentasjon for .lower() i Python](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [Dokumentasjon for .casefold() i Python](https://docs.python.org/3/library/stdtypes.html#str.casefold)
-- [Dokumentasjon for .swapcase() i Python](https://docs.python.org/3/library/stdtypes.html#str.swapcase)
+
+- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
+- [Intro to Programming with Python](https://www.udacity.com/course/introduction-to-python--ud1110)
+- [Official Python Documentation](https://docs.python.org/3/library/stdtypes.html#sttring-methods)

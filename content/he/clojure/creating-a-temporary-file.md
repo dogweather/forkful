@@ -1,42 +1,58 @@
 ---
-title:    "Clojure: יצירת קובץ זמני"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/creating-a-temporary-file.md"
+title:                "Clojure: יצירת קובץ זמני"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה:
+## למה
 
-יצירת קובץ זמני היא פעולה חשובה לתכנותנים בכל שפת תכנות. באמצעות הפעולה הזו, אנו יכולים ליצור קובץ שימושי בזמן הרצת הקוד, אשר ניתן להשתמש בו כדי לאחסן נתונים או לבצע פעולות מסוימות.
+יתכן שכבר נתקלתם בצורך ליצור קובץ זמני בקלות תוך כדי תהליך התכנות שלכם. היות וקבצים זמניים משמשים בדרך כלל כחלק מהפתרונות לתרגילים ובדיקות מסוימות, יהיה מועיל לדעת כיצד ליצורם בקלות ובפשטות בשפת Clojure.
 
-## כיצד לעשות זאת:
+## איך ליצור קובץ זמני ב-Clojure
 
-למטרות הדוגמה, נשתמש בפונקציה "with-open" המאפשרת לנו ליצור ולנהל קובץ זמני בקלות:
+כדי ליצור קובץ זמני בשפת Clojure, נוכל להשתמש בפונקציה `with-open` ולהעביר לה את הכתובת של הקובץ שאנו רוצים ליצור. לדוגמה, ננסה ליצור קובץ זמני בשם "temp.txt":
 
 ```Clojure
-(with-open [temp-file (java.io.File/createTempFile "my-temp-file-" ".txt")]
-  (println "נוצר קובץ זמני בנתיב: " (.getAbsolutePath temp-file)))
+(with-open [temp-file (java.io.File/createTempFile "temp" ".txt")]
+  (println "קובץ זמני נוצר בהצלחה!"))
 ```
 
-פלט:
+כאשר נריץ את הקוד הזה, נקבל את הפלט הבא במסך:
 
-נוצר קובץ זמני בנתיב: /var/folders/mx/3qkmwzq11s51x1bz6nwrz4g80000gn/T/my-temp-file-3300242438988184509.txt
+```Clojure
+ >>>קובץ זמני נוצר בהצלחה!
+```
 
-## עומק:
+ניתן גם להשתמש בפונקציה `with-open` כדי לכתוב לקובץ זמני, כך שהקובץ יימחק אוטומטית כשהקוד ייגמר. נוכל לעשות זאת מכיוון שהפונקציה מבצעת את פעולת הסגירה של הקובץ אוטומטית בסוף הבלוק שבתוך הפונקציה.
 
-כאשר אנו יוצרים קובץ זמני ב- Clojure, הוא נמחק אוטומטית מכונת המחשב בסופו של דבר. גם אם התכנית שלנו נכשלת, יתרה הקובץ הולך לטיפול בסיום של התכנית, וזה אומר שאנו יכולים להשתמש בקובץ זמני את כל זמן הרצת הקוד הנתון.
+לדוגמה, ננסה לכתוב את הטקסט "היי עולם!" לקובץ זמני בשם "temp.txt":
 
-כמו כן, ניתן להתאים אישית את הקבצים הזמניים שנוצרים על ידי שימוש בתכונות מתקדמות של הפונקציה "createTempFile". לדוגמה, אפשר לקבוע את התיקייה בה יישמר הקובץ זמני, כדי להקל על הניתוב ואת גודל הקובץ הזמני.
+```Clojure
+(with-open [temp-file (java.io.File/createTempFile "temp" ".txt")]
+  (spit temp-file "היי עולם!"))
+```
 
-## ראה גם:
+כאשר נריץ את הקוד הזה, נקבל את הפלט הבא במסך:
 
-- פירוט של פונקציות Java API: http://clojure-doc.org/articles/language/java_interoperability.html
-- הסיוע במחברת של Clojure: https://clojure.org/guides/repl/introduction
-- דרכים לנהל קבצים ממוחשבים על ידי שימוש בכתבי מסמכים: https://clojure.github.io/core.matrix/latest/tutorial/documents_management.html
+```Clojure
+>>> nil
+```
 
-ראה גם:
+ניתן גם לקרוא את התוכן של הקובץ הזמני באמצעות הפונקציה `slurp`:
 
-## ראה גם:
+```Clojure
+(slurp temp-file)
+```
 
-- פירוט של פונקציות Java API: http://clojure-doc.org/articles/language/java_interoper
+והפלט שנקבל יהיה:
+
+```Clojure
+>>> "היי עולם!"
+```
+
+## חקירה מעמיקה
+
+לכתוב ולקרוא קבצ

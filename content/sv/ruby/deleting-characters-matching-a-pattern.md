@@ -1,44 +1,40 @@
 ---
-title:    "Ruby: Borttagning av tecken som matchar ett mönster"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/deleting-characters-matching-a-pattern.md"
+title:                "Ruby: Borttagning av tecken som matchar ett mönster"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att ta bort karaktärer som matchar ett mönster kan vara användbart för att rensa upp data eller filtrera ut oönskad information från en sträng eller lista. Detta är också en vanlig uppgift när man arbetar med textbaserade applikationer eller analyserar data.
+Ibland när du arbetar med textsträngar i Ruby kanske du vill ta bort vissa karaktärer som matchar ett mönster. Detta kan vara användbart för att rensa en text från oönskade tecken eller för att formatera strängar på ett specifikt sätt.
 
 ## Så här gör du
 
-För att ta bort karaktärer som matchar ett visst mönster i Ruby kan vi använda metoden `gsub` (global substitution). Metoden tar två argument: ett mönster att matcha och vad som ska ersätta mönstret.
-
-Här är ett exempel där vi tar bort alla siffror från en sträng:
+För att ta bort karaktärer som matchar ett visst mönster från en sträng i Ruby, kan du använda metoden `gsub!()`. Denna metod tar två argument - mönstret som du vill matcha och ersättningsvärdet för de matchande karaktärerna. Nedan är ett exempel på hur man skulle använda denna metod för att ta bort alla siffror från en sträng:
 
 ```Ruby
-sträng = "Det är 2021, och Ruby är fortfarande populärt!"
-puts sträng.gsub(/\d+/, '')
+sträng = "Det finns 123 äpplen i korgen."
+sträng.gsub!(/\d+/, "")
+puts sträng # Output: "Det finns  äpplen i korgen."
 ```
 
-Detta kommer att ge utmatningen: "Det är , och Ruby är fortfarande populärt!" Eftersom mönstret `\d+` matchar alla siffror i strängen och vi ersätter dem med en tom sträng.
+I exemplet ovan använde vi det reguljära uttrycket `/ \ d + /` för att matcha alla förekomster av siffror i strängen. Sedan ersatte vi dem med en tom sträng, vilket resulterade i att siffrorna togs bort från den ursprungliga strängen.
+
+`gsub!()`-metoden kan också användas för att ta bort andra karaktärer, till exempel skiljetecken eller andra symboler. Det viktiga är att det mönster som används matchar de karaktärer som du vill ta bort.
 
 ## Djupdykning
 
-När vi använder `gsub`, kan vi också utnyttja en väldigt kraftfull del av Ruby, nämligen reguljära uttryck (regular expressions). Reguljära uttryck är mönster vi kan använda för att söka igenom strängar och matcha specifika karaktärer eller mönster. I vårt exempel ovan använde vi redan ett reguljärt uttryck, `\d+`, som betyder "en eller flera siffror".
+För att förstå bättre hur `gsub!()`-metoden fungerar, låt oss titta på en mer detaljerad förklaring. För det första, vad betyder `gsub`? Det står för "global substitute", vilket betyder att det är en global ersättning för alla matchande mönster i strängen.
 
-Här är några fler exempel på hur vi kan ta bort karaktärer som matchar ett mönster med hjälp av reguljära uttryck:
+När det gäller `gsub!()`-metoden, är utropstecknet viktigt eftersom det innebär att den kommer att ändra den ursprungliga strängen istället för att bara returnera en kopia av den. Detta är användbart om du vill göra en permanent förändring i en sträng, istället för att bara ändra den tillfälligt.
 
-- `/\s+/` - här tar vi bort alla mellanslag från en sträng.
-- `/[a-z]+/` - detta kommer att ta bort alla bokstäver från en sträng.
-- `/.*/` - denna regex kommer att ta bort allt innehåll från en sträng.
+En annan viktig sak att notera är att `gsub!()`-metoden är en del av `String`-klassen i Ruby. Det betyder att du kan använda den på alla olika typer av strängar, inklusive strängar som du har skapat själv eller strängar som returneras av andra metoder.
 
-Reguljära uttryck kan verka överväldigande till en början, men de är väldigt användbara när man arbetar med textdata. Det finns många guider och kurser online för att lära sig mer om hur man skapar och använder reguljära uttryck i Ruby.
+## Se också
 
-## Se även
-
-- [Reguljära uttryck i Ruby](https://rubytutorial.io/ruby-regular-expressions/)
-- [Dokumentation om `gsub` metoden](https://ruby-doc.org/core-3.0.2/String.html#method-i-gsub)
-- [Online regex-testare för att experimentera med olika mönster](https://rubular.com/)
-
-Nu har du lärt dig hur du kan ta bort karaktärer som matchar ett visst mönster i Ruby. Detta kan vara användbart i många olika situationer, så fortsätt utforska och öva på att använda `gsub` och reguljära uttryck för att manipulera strängar och textdata. Lycka till!
+- [Reguljära uttryck i Ruby](https://www.rubyguides.com/ruby-tutorial/regexp/)
+- [Radering av strängar i Ruby](https://www.geeksforgeeks.org/ruby-string-gsub-method-with-examples/)
+- [Ruby String-klassen](https://ruby-doc.org/core-2.7.3/String.html)

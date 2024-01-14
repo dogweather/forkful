@@ -1,29 +1,44 @@
 ---
-title:    "TypeScript: חיפוש והחלפת טקסטים"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/searching-and-replacing-text.md"
+title:                "TypeScript: חיפוש והחלפת טקסט"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה
 
-כשמתכנתים עובדים עם קוד טקסט, לעיתים קרובות יש להחליף את הטקסט הקיים עם טקסט חדש. השינויים הללו עשויים להיות מסובכים וכוללים המון עבודה ידנית. עם הכלים הנכונים, אפשר לחסוך המון זמן ומאמץ ולעשות את הטקסט החדש לחלק בה היצירתיות של העבודה שלך.
+לחיפוש והחלפת טקסט הוא כלי חשוב בתכנות ומאפשר לכתוב קוד קריא ויעיל. הוא מאפשר למצוא ולהחליף יחד חלקים שונים בקוד שבתכנית נדרשת הישרדות.
 
-## איך לעשות
+## כיצד לעשות
 
-אתם יכולים לחדש את הטקסט הקיים באמצעות פונקציית השינוי `replace` של TypeScript. הנה דוגמה פשוטה:
+הנה כמה דוגמאות של חיפוש והחלפת טקסט בתכנון TypeScript עם פלט דוגמה:
 
 ```TypeScript
-let str = "שלום, עולם!";
-let newStr = str.replace("עולם", "גאון");
-console.log(newStr); // תדפיס: "שלום, גאון!"
+// קוד דוגמה עם אתחול מחרוזת
+let myString = "שלום עולם";
+console.log(myString.replace("עולם", "לילה"));
+
+// פלט: "שלום לילה"
 ```
 
-בדוגמה הזאת, השתמשנו בפונקציה `replace` להחלפת המילה "עולם" למילה "גאון" במשפט המקורי "שלום, עולם!" כך שתוכלו להמנע מלעבוד ידנית ולחלק את הטקסט החדש יותר מהר.
+```TypeScript
+// צור פונקציה קצרה לחיפוש והחלפת מחרוזת
+function replaceInString(searchString: string, replaceString: string, targetString: string) {
+  return targetString.replace(searchString, replaceString);
+}
 
-אם ברצונכם להחליף את כל המופעים של מילה מסוימת, תוכלו להשתמש בתפריט החיפוש וההחלפה של הטקסט המצורף. בכדי לטפל במצבים מורכבים יותר, אפשר גם להשתמש בביטויים רגולריים כדי להחליף מחרוזות מורכבות יותר.
+console.log(replaceInString("אדוני", "גבר", "האדון הוא אדון נפלא"));
 
-## Deep Dive
+// פלט: "הגבר הוא גבר נפלא"
+```
 
-בפונקציית השינוי `replace` קיים גם ארגומנט אופציונלי נוסף, `global`, שמציין אם על הפונקציה לחלוף על כל המופעים של הטקסט המבוקש או לתקן את המופע הראשון בלבד. הערכים האפשריים לארגומנט זה הם `true` ו-`false` ובאישור ברירת המחדל הוא `false`. אם תקועים בתפריט החיפוש וההחל
+## חקירה עמוקה
+
+חיפוש והחלפת טקסט הוא פעולה חשובה בתכנון כי זה מאפשר לכתוב קוד גמיש יותר ולתפוס מקרים מיוחדים כשהם מתכונסים. בכל פונקציה של TypeScript שלחיפוש והחלפתה של מחרוזת תוכלו למצוא אופציות להשתמש בפלט כאשר המחרוזת מתאימה לטקסט שהועבר.
+
+## ראה גם
+
+[התחלת תכנות TypeScript בקלות] (https://hebrew.codementor.io/@dannykoz/hebrew-typescript-tutorial-iyxkw2qu4)
+[Top 10 כלים לתכנות TypeScript] (https://blog.bitsrc.io/10-typescript-tools-to-level-up-your-app-development-ecada385fed3)

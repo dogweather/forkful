@@ -1,47 +1,54 @@
 ---
-title:    "Elm: Redacción de pruebas"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/writing-tests.md"
+title:                "Elm: Escribiendo pruebas"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en Elm
+¿Por qué escribir pruebas en Elm?
 
-Escribir pruebas en Elm puede parecer una tarea tediosa y repetitiva, pero en realidad es una práctica muy importante para garantizar un código confiable y libre de errores. Al escribir pruebas, podemos detectar y corregir problemas antes de que causen problemas en nuestro código en producción. Además, las pruebas también sirven como una documentación útil para otros desarrolladores que puedan trabajar en el mismo proyecto.
+Es muy importante escribir pruebas en Elm para garantizar la calidad y estabilidad de nuestro código. Las pruebas nos permiten identificar errores y problemas en nuestro programa antes de que se conviertan en problemas mayores.
 
-## Cómo escribir pruebas en Elm
+## Cómo hacerlo
 
-Para escribir pruebas en Elm, necesitamos usar el módulo `Test` incluido en la biblioteca de Elm. Este módulo proporciona funciones y tipos de datos para crear casos de prueba y comprobar si los resultados se ajustan a lo que esperamos.
+Para escribir pruebas en Elm, utilizamos el paquete `elm-explorations/test` que viene incluido en Elm por defecto. Primero, necesitamos importar este paquete en nuestro módulo de pruebas, de la siguiente manera:
 
-Por ejemplo, supongamos que tenemos una función `double` que simplemente duplica un número dado. Para probar esta función, podemos escribir un caso de prueba usando la función `test` de `Test` de la siguiente manera:
-
-```
-Elm:
-...
-double : Int -> Int
-double num =
-    num * 2
-
-test "Double function doubles the given number" <|
-    \_ ->
-        let
-            num = 5
-        in
-            Expect.equal (double num) 10
-
+```Elm
+import Test exposing (..)
 ```
 
-En este ejemplo, estamos creando un caso de prueba llamado "Double function doubles the given number" que comprueba si el resultado de `double 5` es igual a 10. Al ejecutar este caso de prueba, veremos si nuestra función `double` está funcionando correctamente. Si se produce algún error, la prueba fallará y nos dará una indicación de qué pudo haber salido mal.
+Luego, podemos comenzar a escribir nuestras pruebas utilizando las funciones proporcionadas por el paquete `elm-explorations/test`. Por ejemplo, si queremos probar una función que suma dos números, podríamos escribir una prueba de esta manera:
 
-## Profundizando en la escritura de pruebas en Elm
+```Elm
+additionTest : Test
+additionTest =
+  describe "addition"
+    [ test "sums two numbers" <|
+        \_ -> Expect.equal (addition 2 3) 5
+    ]
+```
 
-Además de la función `test`, el módulo `Test` proporciona otras funciones útiles para crear casos de prueba más complejos. Por ejemplo, podemos usar la función `testWith` para pasar valores personalizados a nuestras pruebas y probar diferentes escenarios. También podemos utilizar la función `expectation` para comprobar si una condición es verdadera o falsa.
+En este ejemplo, estamos utilizando la función `describe` para establecer el contexto de nuestra prueba y la función `test` para definir una prueba específica. Luego, utilizamos la función `Expect.equal` para definir la expectativa que debe cumplirse en nuestra prueba.
 
-Además, podemos escribir pruebas para nuestras funciones en un archivo separado para mantener nuestro código organizado y fácil de mantener. Como desarrolladores, también podemos aprovechar otras herramientas como `elm-test` para automatizar la ejecución de nuestras pruebas y recibir notificaciones cuando se producen cambios en nuestro código.
+Una vez que hayamos escrito todas nuestras pruebas, podemos ejecutarlas utilizando la herramienta de línea de comandos integrada en Elm, utilizando el siguiente comando:
+
+```
+elm-test
+```
+
+Esto nos mostrará los resultados de nuestras pruebas y nos indicará si han tenido éxito o no.
+
+## Profundizando
+
+Las pruebas en Elm se dividen en dos tipos: pruebas unitarias y pruebas de integración. Las pruebas unitarias se centran en probar funciones y módulos individuales, mientras que las pruebas de integración se enfocan en probar cómo se comunican diferentes componentes de nuestro programa.
+
+Es importante escribir tanto pruebas unitarias como de integración para garantizar que nuestro código funcione correctamente en todos los niveles.
+
+Además, también debemos escribir pruebas para casos límite y para validar nuestros errores y manejo de errores en nuestro código. Esto nos permitirá identificar y corregir problemas potenciales en nuestro programa.
 
 ## Ver también
 
-- [Documentación oficial de pruebas en Elm](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Cómo escribir pruebas en Elm: Ejemplo de implementación](https://medium.com/@afcastano/elm-testing-framework-86a6e47e2fb2)
-- [Guía para escribir pruebas efectivas en Elm](https://thoughtbot.com/blog/how-to-write-effective-tests-in-elm)
+- [Documentación oficial de Elm sobre pruebas](https://guide.elm-lang.org/testing/)
+- [Curso de Udemy de pruebas en Elm](https://www.udemy.com/course/testing-in-elm/?referralCode=DECC5136066F9A0701FA)

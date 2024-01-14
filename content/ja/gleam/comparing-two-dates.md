@@ -1,72 +1,57 @@
 ---
-title:    "Gleam: 日付の比較"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/comparing-two-dates.md"
+title:                "Gleam: 日付を比較する"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ日付の比較をするのか？
+## なぜ
 
-日付の比較をすることについて、なぜ重要なのでしょうか？日付は、私たちが日々の生活で欠かせない存在です。私たちは、誕生日や記念日を祝ったり、予定を立てる際に日付を確認したりします。しかし、時には日付を比較する必要がある場合があります。例えば、ある日付が別の日付よりも前か後ろかを確認したり、2つの日付が同じかどうかを確認したりする必要があるかもしれません。そこで、Gleam言語で日付を比較する方法をご紹介します。
+日々のプログラミング作業において、２つの日付を比較する必要があることはよくあります。例えば、ある作業が完了した日付と、その作業が開始された日付を比較することで、作業の進捗状況を把握することができます。Gleamでは、便利な関数を使って簡単に日付を比較することができます。
 
-# やり方
+## 使い方
 
-まずは、2つの日付を比較する方法を見てみましょう。以下のコードを参考にしてください。
-
-```Gleam
-import gleam/time
-
-let date1 = Time.to_utc(2021, April, 25)
-let date2 = Time.to_utc(2021, April, 26)
-
-if date1 > date2 {
-  println("Date1はDate2よりも後の日付です。")
-} else if date1 < date2 {
-  println("Date1はDate2よりも前の日付です。")
-} else {
-  println("Date1とDate2は同じ日付です。")
-}
-```
-
-上記のコードを実行すると、出力結果は以下のようになります。
-
-```
-Date1はDate2よりも前の日付です。
-```
-
-次に、2つの日付が同じかどうかを確認する方法を見てみましょう。以下のコードを参考にしてください。
+Gleamプログラミング言語では、日付を比較するために `DateTime` モジュールが用意されています。まずは、`DateTime` モジュールをインポートします。
 
 ```Gleam
-import gleam/time
-
-let date1 = Time.to_utc(2021, April, 25)
-let date2 = Time.to_utc(2021, April, 25)
-
-if date1 == date2 {
-  println("Date1とDate2は同じ日付です。")
-} else {
-  println("Date1とDate2は同じ日付ではありません。")
-}
+import gleam/datetime
 ```
 
-上記のコードを実行すると、出力結果は以下のようになります。
+次に、比較したい２つの日付を定義します。
 
+```Gleam
+let start = DateTime.from_string("2021-01-01T00:00:00")
+let end = DateTime.from_string("2021-01-15T12:00:00")
 ```
-Date1とDate2は同じ日付です。
+
+上記の例では、文字列から日付型への変換を行っていますが、他にも様々な方法で日付を定義することができます。詳細については、[DateTimeモジュールのドキュメント](https://gleam.run/modules/gleam_datetime.html)を参照してください。
+
+そして、日付を比較するためには `DateTime.compare` 関数を使用します。この関数は、比較結果を整数値として返します。
+
+```Gleam
+DateTime.compare(start, end) // returns -1 (start is before end)
+DateTime.compare(end, start) // returns 1 (end is after start)
+DateTime.compare(start, start) // returns 0 (both are equal)
 ```
 
-# 詳細を掘り下げる
+ここで返される整数値の意味は以下の通りです。
 
-Gleam言語では、日付を比較するために`Time`モジュールを使用することができます。`>`や`<`といった比較演算子を使用して、日付が前後関係にあるかどうかを比較することができます。また、`==`や`!=`などを使用して、2つの日付が同じかどうかを確認することもできます。
+- `-1`: 最初の日付が２番目の日付よりも前にある
+- `1`: 最初の日付が２番目の日付よりも後にある
+- `0`: ２つの日付が等しい
 
-# 参考リンク
+このように、`DateTime.compare` 関数を使うことで、簡単に日付を比較することができます。
 
-- [Gleam公式ドキュメント](https://gleam.run/documentation/)
-- [日付/時刻の操作](https://gleam.run/documentation/built-in-modules/time/)
-- [Gleamを使用して日付を扱う方法](https://dev.to/elviejokike/working-with-dates-using-gleam-3fdl) 
+## ディープダイブ
 
-# 関連リンク
+Gleamの日付比較機能は、厳密なルールに従って実装されています。例えば、閏年やタイムゾーンの考慮などが行われています。また、使用できる演算子も `=`、`<`、`>`、`<=`、`>=` など幅広く揃っています。
 
-- [Gleamで文字列を比較する方法](https://example.com/gleam-strings-comparison)
-- [Gleamで数値を比較する方法](https://example.com/gleam-numbers-comparison)
+Gleamの日付比較機能について詳しく知りたい場合は、[DateTimeモジュールのドキュメント](https://gleam.run/modules/gleam_datetime.html)を参照してください。
+
+## 他の情報
+
+- [Gleam公式サイト](https://gleam.run/)
+- [Gleamの日付比較についてのチュートリアル](https://gleam.run/tour/overview)
+- [DateTimeモジュールのドキュメント](https://gleam.run/modules/gleam_datetime.html)

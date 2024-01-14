@@ -1,43 +1,50 @@
 ---
-title:    "Fish Shell: Leser en tekstfil"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-a-text-file.md"
+title:                "Fish Shell: Lese en tekstfil"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Et typisk problem for programmerere er å lese og behandle store mengder tekstfiler. Enten det er loggfiler, konfigurasjonsfiler eller andre typer datafiler. En effektiv måte å håndtere disse filene på er å bruke et kommandolinjeverktøy som Fish Shell. I denne bloggposten vil vi se på hvordan du kan bruke Fish Shell for å lese tekstfiler og behandle dataene på en enkel måte.
+Hvis du er interessert i å forstå hvordan Fish Shell fungerer og ønsker å lære mer om hvordan du kan lese og manipulere tekstfiler, så er denne bloggposten for deg.
 
 ## Hvordan
 
-Fish Shell har flere innebygde funksjoner for å lese og behandle tekstfiler. La oss se på et eksempel hvor vi ønsker å finne antall ganger et bestemt ord forekommer i en tekstfil. Vi kan bruke kommandoen "count" sammen med "grep" for å oppnå dette. Det hele kan se slik ut:
+Du kan lese en tekstfil ved å bruke `cat`-kommandoen i Fish Shell, som står for "concatenate". Det betyr at filen vil bli skrevet ut på skjermen. For eksempel, hvis du vil lese filen "tekst.txt", skriv følgende i Fish Shell:
 
 ```Fish Shell
-grep -o "<ord>" <tekstfil> | count -l
+cat tekst.txt
 ```
 
-Dette vil returnere antall linjer som inneholder det spesifiserte ordet i tekstfilen. Hvis vi for eksempel ønsker å finne antall ganger ordet "Fish" forekommer i filen "tekst.txt", vil kommandoen se slik ut:
+Dette vil gi deg hele innholdet i tekstfilen på skjermen.
+
+Du kan også bruke `head`-kommandoen for å bare vise de første linjene i en tekstfil. For eksempel:
 
 ```Fish Shell
-grep -o "Fish" tekst.txt | count -l
+head -5 tekst.txt
 ```
 
-Vi kan også bruke Fish Shell for å sortere og filtrere dataene i en tekstfil. La oss si at vi har en tekstfil med navnene til ansatte i et firma. Vi ønsker å sortere navnene alfabetisk og kun vise de ansatte som har stilling som "leder". Dette kan gjøres ved å kombinere "sort" og "grep" kommandoene sammen, som vist nedenfor:
+Dette vil vise de første fem linjene i tekstfilen.
+
+For å søke etter et bestemt ord eller uttrykk i en tekstfil, kan du bruke `grep`-kommandoen. For eksempel, hvis du vil søke etter ordet "Fish" i tekstfilen, skriv følgende:
 
 ```Fish Shell
-sort <ansattliste.txt> | grep "leder"
+grep Fish tekst.txt
 ```
 
-Dette er bare noen enkle eksempler på hvordan Fish Shell kan hjelpe oss med å lese og behandle tekstfiler. Mulighetene er mange og avhenger av hva slags data vi ønsker å håndtere.
+Dette vil gi deg alle linjene som inneholder ordet "Fish".
 
-## Dypdykk
+## Deep Dive
 
-For de som ønsker å lære mer om å lese tekstfiler med Fish Shell, er det flere funksjoner og kommandoer man kan utforske. For eksempel har Fish Shell en "head" kommando som viser de første linjene i en tekstfil, og en "tail" kommando som viser de siste linjene. Det finnes også muligheter for å kombinere forskjellige kommandoer og lage komplekse skript for å håndtere tekstfiler.
+For å utforske mer avanserte måter å lese tekstfiler på, kan du også bruke forskjellige flagg og kombinere flere kommandoer i Fish Shell. For eksempel kan du bruke `awk`-kommandoen for å filtrere ut spesifikke deler av en tekstfil basert på et gitt mønster. Du kan også bruke `sed`-kommandoen for å manipulere og endre innholdet i en tekstfil.
+
+Det er også viktig å merke seg at Fish Shell har innebygde variabler som gjør det enklere å arbeide med tekstfiler. Du kan bruke `$argv` for å lese argumenter gitt til en kommando, og `$status` for å få tilbakemelding om statusen til den siste kommandoen som ble utført.
 
 ## Se også
 
-- [Fish Shell offisiell nettside](https://fishshell.com/)
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Kommandoer og funksjoner i Fish Shell](https://fishshell.com/docs/current/cmds.html)
+- [Official Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Unix Text Processing Commands](https://www.tutorialspoint.com/unix/unix-regular-expressions.htm)
+- [Bash vs Fish: Which is the Best Shell?](https://www.freecodecamp.org/news/bash-vs-fish-shell-which-is-the-best-shell-fd2cc0ba8b07/)

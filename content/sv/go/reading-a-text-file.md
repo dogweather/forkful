@@ -1,48 +1,67 @@
 ---
-title:    "Go: Läsa en textfil"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/reading-a-text-file.md"
+title:                "Go: Läsning av en textfil"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att läsa och bearbeta textfiler är en grundläggande uppgift inom programmering som kan vara användbar i många olika situationer. Genom att läsa en textfil med Go kan du hitta specifika data, analysera mönster eller till och med bygga en helt ny applikation.
+Att läsa en textfil kan vara ett användbart verktyg för att hantera data och information. Det kan också vara en viktig del av många Go-programmerares arbetsflöde. I denna bloggpost kommer vi att utforska hur man kan läsa en textfil med hjälp av Go-programmeringsspråket.
 
-##Hur man gör det
+## Hur man gör det
 
-För att läsa en textfil med Go kan du använda funktionen "os.Open" för att öppna filen och sedan skapa en "bufio.Scanner" för att läsa innehållet i filen. Här är ett exempel på hur du kan läsa en textfil rad för rad och skriva ut innehållet till konsolen:
+Först och främst behöver vi importera paketet "os" för att kunna hantera filer i Go. Sedan kan vi öppna en textfil med hjälp av "Open" funktionen från paketet "os", som tar två argument - filnamn och önskat läge.
 
 ```Go
-file, err := os.Open("textfil.txt")
-if err != nil {
-  panic(err)
-}
-defer file.Close()
+package main
 
-scanner := bufio.NewScanner(file)
+import (
+    "fmt"
+    "os"
+)
 
-for scanner.Scan() {
-  fmt.Println(scanner.Text())
-}
+func main() {
+    // öppna textfilen med läget "r" (för läsning)
+    file, err := os.Open("textfil.txt")
+    // kontrollera om det uppstod ett fel
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    // stäng filen vid slutet av funktionen
+    defer file.Close()
 
-if err := scanner.Err(); err != nil {
-  panic(err)
+    // läs innehållet i filen en rad i taget
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        // skriv ut varje rad i filen
+        fmt.Println(scanner.Text())
+    }
+
+    // kontrollera om det uppstod ett fel under skanningen
+    if err := scanner.Err(); err != nil {
+        fmt.Println(err)
+        return
+    }
 }
 ```
 
-Ovanstående kod använder funktionen "os.Open" för att öppna filen "textfil.txt" och sedan en "bufio.Scanner" för att läsa rad för rad. För varje rad som läses skriver den ut innehållet till konsolen. Vi använder också "defer" för att stänga filen efter att vi är klara med den.
+Om vi använder en textfil med innehållet "Hej världen!", kommer outputen att bli:
 
-##Djupdykning
+```
+Hej världen!
+```
 
-Förutom att läsa rad för rad kan vi också behandla innehållet i en textfil på andra sätt, som att separera strängar, hitta specifika ord eller tecken, och mycket mer. Genom att använda funktioner som "strings.Split" och "strings.Contains" kan vi bearbeta innehållet i filen på ett effektivt sätt.
+## Djupdykning
 
-En annan intressant funktion inom Go är "ioutil.ReadFile". Istället för att öppna och läsa filen manuellt, kan vi använda denna funktion för att läsa hela filinnehållet på en gång och sedan bearbeta det enligt våra behov.
+För att läsa en fil från en annan källa än filsystemet, som exempelvis en HTTP-förfrågan, kan vi använda "NewReader" funktionen från "bufio" paketet istället för "os.Open". Vi kan också använda "ReadAll" funktionen för att läsa in hela filen på en gång, istället för att läsa en rad i taget.
 
-##Se även
+För att hantera stora filer kan vi använda "Reader" och "Writer" från "io" paketet för att göra läsningen och skrivningen mer effektiv.
 
-- [Go Dokumentation: Paketet "os"](https://golang.org/pkg/os/)
-- [Go Dokumentation: Paketet "bufio"](https://golang.org/pkg/bufio/)
-- [Go Dokumentation: Paketet "strings"](https://golang.org/pkg/strings/)
-- [Go Dokumentation: Paketet "ioutil"](https://golang.org/pkg/ioutil/)
+## Se även
+
+- [Officiell Go-dokumentation för filhantering](https://golang.org/pkg/os/)
+- [Go By Example - Filhantering](https://gobyexample.com/reading-files)

@@ -1,50 +1,47 @@
 ---
-title:    "Kotlin: Utskrift av feilsøkningsutdata"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/printing-debug-output.md"
+title:                "Kotlin: Utskrift av feilsøkingsutdata"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Feilsøking er en viktig del av enhver programmerers arbeidsflyt. Å kunne skrive ut feilmeldinger og variabelverdier for å forstå hva som skjer i koden din er en nyttig ferdighet i Kotlin-programmering. 
+## Hvorfor
 
-# Slik gjør du det
-For å skrive ut feilmeldinger og variabelverdier, kan du bruke Kotlin sin innebygde funksjon 'println()'. Dette er en enkel måte å skrive ut ønsket informasjon på konsollen. 
+Noen ganger kan det være utfordrende å finne feil i koden din. Du kan tilbringe timer med å skrive og teste koden din, men likevel ikke være sikker på hvor feilen ligger. Det er her utskrift av feilsøkingsutdata kommer inn i bildet. Ved å skrive ut variabler, verdier og kodelinjer kan du enklere få oversikt over hva som skjer i koden din og finne feilen raskere.
 
-```Kotlin 
-fun main() {
-   val navn = "Sara"
-   println("Hei $navn, velkommen til Kotlin!")
-}
+## Hvordan
+
+Det er flere måter å skrive ut feilsøkingsutdata i Kotlin, men den enkleste er å bruke funksjonen `println()`. Denne funksjonen tar inn en hvilken som helst datatype som argument og skriver den ut på skjermen. Her er et eksempel på hvordan du kan skrive ut en variabel og en streng i Kotlin:
+
+```Kotlin
+var nummer = 42
+println("Verdien av variabelen nummer er: $nummer")
 ```
 
-Output: Hei Sara, velkommen til Kotlin! 
+Output: Verdien av variabelen nummer er: 42
 
-Du kan også bruke 'print()' hvis du bare vil skrive ut en enkel setning eller tekst uten å legge til en ny linje. 
+Du kan også bruke en tekstmaler for å lage en mer beskrivende melding:
 
-```Kotlin 
-fun main() {
-   print("Dette er et eksempel på debug output.")
-   print(" Dette vil bli skrevet ut på samme linje.")
-}
+```Kotlin
+var navn = "Kari"
+var alder = 30
+println("$navn er $alder år gammel.")
 ```
 
-Output: Dette er et eksempel på debug output. Dette vil bli skrevet ut på samme linje. 
+Output: Kari er 30 år gammel.
 
-# Dypdykk
-I tillegg til å skrive ut enkle verdier og tekst, kan du også skrive ut mer kompleks informasjon som liste- og mappelementer. For dette kan du bruke 'println()' kombinert med Kotlin sin 'joinToString()' funksjon. Denne funksjonen konverterer liste- og mappelementer til en streng og gir deg muligheten til å legge til spesifikke separatorer og prefikser. 
+Husk at du kan skrive ut så mange variabler og verdier du trenger for å få en god oversikt over koden din.
 
-```Kotlin 
-fun main() {
-   val mittFavorittall = listOf(3, 7, 9)
-   println("Mitt favorittall er: ${mittFavorittall.joinToString(separator = ", ", prefix = "[", postfix = "]")}")   
-}
-```
+## Dypdykk
 
-Output: Mitt favorittall er: [3, 7, 9] 
+Når du bruker `println()` for feilsøking, er det viktig å være klar over at denne funksjonen kun skal brukes midlertidig. Å ha mange utskrifter i koden din kan senke ytelsen og gjøre koden vanskeligere å lese. Derfor bør du fjerne utskriftene når du har funnet og løst feilen.
 
-# Se også
-* [Kotlin dokumentasjon om debugging](https://kotlinlang.org/docs/tutorials/debugging-ide.html)
-* [YouTube video om Kotlin feilsøking](https://www.youtube.com/watch?v=6D6yT456IfI)
-* [10 nyttige tips for feilsøking i Kotlin](https://medium.com/better-programming/10-tips-to-handle-bugs-in-kotlin-a1168c4be20d)
+En annen måte å skrive ut feilsøkingsutdata på er ved å bruke loggfunksjoner som `Log.d()` eller `Log.e()` i Android-utvikling. Disse funksjonene er nyttige i større prosjekter og gjør det mulig å filtrere utskriftene dine basert på nivå (debug, error, osv.) og komponent i koden.
+
+## Se Også
+
+- [Offisiell dokumentasjon om feilsøking i Kotlin] (https://kotlinlang.org/docs/reflection.html#debugging)
+- [En guide til feilsøking i Kotlin] (https://www.raywenderlich.com/6013-kotlin-debugging-on-android-for-beginners)
+- [Eksempelkode med utskrift av feilsøkingsutdata] (https://github.com/kotlin/kotlinx.serialozation/blob/master/docs/troubleshooting.md#printing-debug-output)

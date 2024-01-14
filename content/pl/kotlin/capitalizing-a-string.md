@@ -1,58 +1,34 @@
 ---
-title:    "Kotlin: Konwertowanie ciągu na wielkie litery"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: Zmiana wielkości liter w ciągu znaków"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jednym z często wykorzystywanych zadań w programowaniu jest konieczność zmiany wielkości liter w ciągu znaków. Dotyczy to szczególnie języków, gdzie obsługa polskich znaków jest istotna dla poprawnego wyświetlania tekstu. Dlatego warto poznać możliwości języka Kotlin w kwestii zmiany wielkości liter w ciągach znaków.
+Czy nigdy zdarzyło Ci się chcieć zmienić wielkość liter w tekście, ale nie wiedzieć jak? Dzięki tej prostyemu krokowi w Kotlinie, będziesz miał możliwość szybko i łatwo zmienić wielkość liter w swoim tekście. Nie musisz już się martwić, o tytuły w różnych formatach, bo teraz będziesz mógł szybko je zmienić dzięki niewielkiej funkcji w Kotlinie.
 
 ## Jak to zrobić
 
-W języku Kotlin istnieje kilka sposobów na konwertowanie ciągu znaków do dużych lub małych liter. Można wykorzystać metody dostępne w klasie String, a także skorzystać z funkcji zdefiniowanych w rozszerzeniach (ang. extensions). Poniżej przedstawione są przykłady kodów wraz z oczekiwanym wyjściem.
+Aby zmienić wielkość liter w tekście w Kotlinie, wystarczy użyć funkcji ```toUpperCase()``` lub ```toLowerCase()```. Oto przykładowy kod:
 
-```Kotlin
-// wykorzystanie metody toUpperCase()
-
-val text = "kotlin jest Fajny!"
-println(text.toUpperCase())
-
-// wyjście: KOTLIN JEST FAJNY!
+```Kotlin 
+val originalText = "To jest przykładowy tekst."
+val capitalizedText = originalText.toUpperCase()
 ```
 
-```Kotlin
-// wykorzystanie metody toLowerCase()
+Wynikiem powyższego kodu będzie zmodyfikowany tekst zapisany w zmiennej ```capitalizedText```, który wyglądał będzie następująco: "TO JEST PRZYKŁADOWY TEKST." W przypadku użycia funkcji ```toLowerCase()``` wynik byłby taki: "to jest przykładowy tekst." 
 
-val text = "TaK właśnie widczasz!"
-println(text.toLowerCase())
+## Głębsze zagadnienia
 
-// wyjście: tak właśnie widczasz!
-```
+Jeśli chcesz dokładniej poznać działanie funkcji ```toUpperCase()``` i ```toLowerCase()```, warto wiedzieć, że działają one na podstawie znaków Unicode. Oznacza to, że jeśli w Twoim tekście zawarte są znaki diakrytyczne, zostaną one odpowiednio zmienione z zachowaniem wielkości liter. 
 
-```Kotlin
-// wykorzystanie funkcji extenstion toTitleCase()
-
-fun String.toTitleCase(): String {
-    return this.split(" ").joinToString(" ") { it.toLowerCase().capitalize() }
-}
-
-val text = "kotlin jest naprawdę super!"
-println(text.toTitleCase())
-
-// wyjście: Kotlin Jest Naprawdę Super!
-```
-
-## Dogłębna analiza
-
-Powyższe przykłady pokazują podstawowe sposoby na zmianę wielkości liter w ciągu znaków. Istnieją jednak dodatkowe możliwości, na przykład wykorzystanie metody replace() w połączeniu z wyrażeniami regularnymi. Warto także pamiętać o uwzględnieniu polskich znaków i wykorzystywaniu odpowiednich kodowań.
+Na przykład, słowo "żółty" po użyciu funkcji ```toUpperCase()``` będzie wyglądało tak: "ŻÓŁTY", a po użyciu funkcji ```toLowerCase()``` będzie wyglądało tak: "żółty". Dzięki temu możesz mieć pewność, że nie ma znaczenia, czy w tekście znajdują się polskie, czy angielskie słowa, funkcja zadziała poprawnie.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o manipulacji ciągami znaków w języku Kotlin, warto sprawdzić poniższe linki:
-
-- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/strings.html
-- Blog o programowaniu w języku Kotlin: https://blog.jetbrains.com/kotlin/
-- Tutorial o manipulacji ciągami znaków w Kotlin: https://www.baeldung.com/kotlin-string-manipulation
+- Biblioteka funkcji standardowych w Kotlinie (https://kotlinlang.org/docs/reference/stdlib.html)
+- Podstawy Kotlin dla początkujących (https://kotlinlang.org/docs/reference/basic-syntax.html)

@@ -1,48 +1,53 @@
 ---
-title:    "Elixir recipe: Using regular expressions"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/using-regular-expressions.md"
+title:                "Elixir recipe: Using regular expressions"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Regular expressions are powerful tools for pattern matching and string manipulation in many programming languages, including Elixir. They allow you to refine your search criteria and perform complex string operations with just a few lines of code, making them a valuable skill for any programmer to have in their toolkit.
+Regular expressions, also known as regex, are an essential tool in any programmer's toolkit. They allow us to search for and manipulate text in a precise and efficient manner. In the world of Elixir, regex is particularly powerful due to its integration with pattern matching.
 
 ## How To
 
-Using regular expressions in Elixir is straightforward and follows a similar syntax to other languages. Let's take a look at an example of using a regular expression to match a URL.
+To use regex in Elixir, we first need to import the `Regex` module. We can then use the `=~` operator to match a string against a regular expression:
 
 ```Elixir
-url = "www.example.com/path/to/resource"
-regex = ~r/(https?:\/\/)?(www\.)?([a-z]+\.[a-z]+)(\/.*)?/
-matches = Regex.run(regex, url)
-IO.inspect matches
+import Regex
+
+"Hello world" =~ ~r/world/
+#=> true
 ```
 
-Here, we have a URL stored in a variable called `url` and a regular expression stored in a variable called `regex`. Notice the `~r` prefix, which indicates that we are using a regular expression. Next, we use the `run` function from the `Regex` module to match the regular expression against the URL. Finally, we use the `IO.inspect` function to print out the matches.
+In this example, we searched for the word "world" in the string "Hello world" and found a match. The `=~` operator returns `true` if there is a match and `false` if there isn't. 
 
-The output of the above code will be:
+We can also use regex to extract specific parts of the string using capture groups. For example, if we have a string with a phone number in the format `XXX-XXX-XXXX`, we can use regex to extract the area code:
 
+```Elixir
+phone_number = "555-123-4567"
+number_match = phone_number =~ ~r/(\d{3})-\d{3}-\d{4}/
+
+Regex.group(number_match, 1)
+#=> "555"
 ```
-["www.example.com/path/to/resource", nil, "www.", "example.com", "/path/to/resource"]
-```
 
-This array contains all of the matches from our regular expression. The first item is the full URL, while the subsequent items are the captured groups from our regex.
+In this case, we used `(\d{3})` as our capture group to extract the first three digits of the phone number. We can then use the `Regex.group` function to specify which group we want to return, in this case, the first group.
+
+There are many more ways to use regex in Elixir, and the syntax may take some time to get used to. However, with regular practice and experimentation, you'll become a regex pro in no time.
 
 ## Deep Dive
 
-Regular expressions in Elixir have many features and modifiers that allow you to customize your search criteria. Here are a few things to keep in mind:
+Elixir's regex module provides many helpful functions for working with regular expressions. Some notable ones include `Regex.replace`, which allows us to replace parts of a string that match a regex pattern, and `Regex.scan`, which returns all matches in a string.
 
-- The `~r` prefix can be used with the `sigil_r` notation for inline regular expressions, making it easier to write and read complex regexes.
-- Elixir also has a `Regex.replace` function for replacing portions of a string that match a given regular expression. This can be useful for tasks like sanitizing user input.
-- The `Regex.match?` function returns a boolean indicating whether or not a match was found, instead of returning an array of matches like the `Regex.run` function.
-- Elixir's regular expressions are case-sensitive by default, but this can be changed by using the `i` modifier at the end of the regex, such as `~r/regex/i`.
+One crucial concept to understand when working with regex in Elixir is greedy vs. non-greedy matching. Greedy matching means that the regex pattern will match as much as possible, while non-greedy matching will stop at the first match. For example, in the string "Hello <b>world</b>", the regex pattern `<.*>` would match the entire string because it is greedy, while the pattern `<.*?>` would only match `<b>` because it is non-greedy.
 
-See the [Elixir docs](https://hexdocs.pm/elixir/Regex.html) for more information and examples on using regular expressions in Elixir.
+For a more in-depth explanation of different regex concepts and how to use them in Elixir, check out the official documentation or online tutorials.
 
 ## See Also
 
-- [Regular Expressions 101](https://regex101.com/)
-- [Mastering Regular Expressions](https://regexone.com/)
+- [Elixir Regular Expressions Documentation](https://hexdocs.pm/elixir/Regex.html)
+- [Regular Expressions Tutorial - Learn to Use Regex](https://www.regular-expressions.info/tutorial.html)
+- [Mastering Regular Expressions - Book by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/9780596528126/)

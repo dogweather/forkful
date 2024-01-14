@@ -1,38 +1,56 @@
 ---
-title:    "Bash: Konvertere en dato til en streng"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/converting-a-date-into-a-string.md"
+title:                "Bash: Konvertere en dato til en streng"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å konvertere en dato til en streng er en vanlig oppgave i Bash programmering. Dette gjøres for å kunne presentere datoen på en mer lesbar og forståelig måte. Det kan også være nyttig for å formatere datoer i forbindelse med lagring eller bruk i andre programmer.
+Hvorfor: Hvorfor konvertere dato til streng? 
 
-## Slik gjør du det
-Å konvertere en dato til en streng i Bash er en enkel prosess som kan gjøres ved hjelp av innebygde funksjoner og variabler. Først må vi definere datoen vi ønsker å konvertere ved hjelp av kommandoen `date`. Deretter kan vi bruke formatet `%Y-%m-%d` for å få datoen som et tall. Til slutt kan vi bruke variabelen `BASHPID` for å konvertere datoen til en streng.
+Det kan være mange grunner til å konvertere en dato til en streng i Bash-programmering. Noen ganger trenger man å endre formateringen på en dato for å vise den på en annen måte, eller kanskje man ønsker å legge til en dato på slutten av en filnavn. Uansett årsak, er det viktig å vite hvordan man gjør det på riktig måte.
+
+Slik gjør du det:
+
+For å konvertere en datoen til en streng, kan man bruke kommandoen "date" i Bash. Her er en enkel syntaks for å konvertere datoen til et format med år-måned-dag:
 
 ```Bash
-# Definer datoen
-date="2021-01-01"
+dato=$(date +"%Y-%m-%d")
+echo $dato
+```
+Dette vil gi følgende utdata:
 
-# Konverter datoen til en streng
-date_string=$(date -d "$date" +"%Y-%m-%d")
-
-# Skriv ut resultatet
-echo "Datoen som streng: $date_string"
-
-# Output: Datoen som streng: 2021-01-01
+```Bash
+2021-08-30
 ```
 
-Datoen kan også konverteres til andre formater, som for eksempel måned og år eller dag og måned, ved å endre formatet i kommandoen `date`. Du kan lese mer om de ulike formateringsmulighetene ved å kjøre `man date` i Bash-terminalen.
+Man kan også legge til andre elementer, som for eksempel dag i uken eller tidspunkt, ved å justere uttrykket i "date" kommandoen. Her er noen eksempler:
 
-## En dypere forståelse
-For å forstå hvordan konverteringen fra en dato til en streng fungerer, er det nyttig å vite at datoen i Bash representeres som et tall på formatet `YYYYMMDD`, hvor Y står for år, M står for måned og D står for dag. Ved å bruke formatet `%Y-%m-%d` i `date`-kommandoen, omformes tallet til å bli på formatet `YYYY-MM-DD`, som er mer leselig for mennesker.
+```Bash
+dato_med_tid=$(date +"%Y-%m-%d %H:%M:%S")
+dag_i_uken=$(date +"%A")
+```
+For å bruke datoen som en del av et filnavn, kan man bruke den konverterte datoen i en variabel som er en del av filnavnet. Her er et eksempel:
 
-Det er også verdt å merke seg at `date`-kommandoen kan ha ulik funksjonalitet på ulike operativsystemer, så det kan være lurt å lese dokumentasjonen for din spesifikke versjon av Bash for mer detaljert informasjon.
+```Bash
+filnavn="logg_$(dato).txt"
+echo $filnavn
+```
+Dette vil gi følgende utdata:
 
-## Se også
-- [How to Use Bash Date and Time Commands](https://www.cyberciti.biz/faq/unix-linux-bash-get-time/)
-- [The `date` Command in Bash](https://www.baeldung.com/linux/use-date-command-bash)
-- [Bash Date Conversion and Formatting](https://tecadmin.net/working-with-date-in-bash-scripting/)
+```Bash
+logg_2021-08-30.txt
+```
+
+Dypdykk:
+
+Det finnes mange forskjellige formateringsmuligheter for å konvertere datoer til strenger i Bash. For å se en liste over alle de tilgjengelige formatene, kan man skrive "man date" i terminalen. Her vil man finne informasjon om flagg som kan legges til i "date" kommandoen for å få ønsket format på datoen.
+
+En annen måte å konvertere dato til streng på er å bruke funksjonen "strftime". Denne funksjonen gir også flere muligheter for hvordan man ønsker å formatere datoen.
+
+Se også:
+
+- [Bash dokumentasjon om "date"](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Mer informasjon om "strftime" funksjonen](https://www.tutorialspoint.com/strftime-function-in-bash-with-examples)
+- [En guide for å formatere datoer og tider i Bash](https://likegeeks.com/bash-date-format/)

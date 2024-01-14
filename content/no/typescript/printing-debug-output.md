@@ -1,39 +1,55 @@
 ---
-title:    "TypeScript: Utskrift av feilsøkingsutskrift"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/printing-debug-output.md"
+title:                "TypeScript: Utskrift av feilrettingsutdata"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å skrive kode kan være en utfordrende prosess, og det er ikke uvanlig å støte på feil underveis. En enkel og effektiv måte å finne og fikse disse feilene er å benytte seg av debugging og debug-utskrifter. Ved å legge inn print-utskrifter i koden, kan du se nøyaktig hvor programmet ditt "bryter sammen" og finne en løsning. Derfor er å inkludere debug-utskrifter i koden et viktig verktøy for å effektivisere utviklingsprosessen og forbedre kvaliteten på koden din.
+Skaffe seg informasjon og forstå hva som skjer i koden din er viktig i enhver programmeringsprosess. Det er her debugging kommer inn, og utskrift av feil og verdier er en viktig del av denne prosessen. Utskrift av debug output kan hjelpe deg med å identifisere og løse problemer i koden din.
 
 ## Hvordan
 
-For å inkludere debug-utskrifter i koden din i TypeScript, kan du bruke funksjonen `console.log()`. Dette er en innebygd funksjon som skriver ut en melding til konsollen.
+For å skrive ut debug output i TypeScript, kan du bruke funksjonen `console.log()`. Denne funksjonen tar inn en eller flere verdier som parametere, og skriver dem ut i konsollen. La oss se på et eksempel:
 
 ```TypeScript
-console.log("Hei, dette er en debug-utskrift");
+let navn: string = "Ole";
+let alder: number = 25;
+console.log("Hei, mitt navn er " + navn + " og jeg er " + alder + " år gammel.");
 ```
 
-Du kan også inkludere variabler i debug-utskriften ved å bruke såkalte templetsttrenger, som erstattes med verdien av variabelen når koden kjører.
+Dette vil skrive ut følgende i konsollen:
+
+```
+Hei, mitt navn er Ole og jeg er 25 år gammel.
+```
+
+Som du kan se, kan du bruke `+`-operatøren til å kombinere tekst og variabler i `console.log()`-funksjonen.
+
+En annen måte å skrive ut verdier på er ved å bruke såkalte template literals, som er omsluttede med backticks (`). Disse lar deg sette inn variabler direkte i en tekststreng ved hjelp av `${}`-syntax.
 
 ```TypeScript
-let navn = "Olav";
-console.log(`Hei, mitt navn er ${navn}`);
+console.log(`Hei, mitt navn er ${name} og jeg er ${age} år gammel.`);
 ```
 
-Når koden din kjører, vil du se disse meldingene i konsollen i utviklerverktøyet ditt, og du kan bruke dem til å finne og fikse eventuelle feil.
+## Deep Dive
 
-## Dykk dypere
+I tillegg til å skrive ut variabler og verdier, kan du også bruke `console.log()` for å se på ulike objekter eller matriser. For eksempel:
 
-Det er også mulig å legge til ytterligere informasjon i debug-utskrifter ved å bruke `console.debug()`, `console.warn()` og `console.error()` som gir ulike typer utskrifter. Du kan også bruke objekter og arrays i debug-utskrifter og formatere utskriften med spesielle tegn.
+```TypeScript
+let tallArray: number[] = [1, 2, 3, 4, 5];
+console.log(tallArray);
+```
 
-Se dokumentasjonen for `console` i TypeScript for å lære mer om mulighetene for debug-utskrifter.
+Dette vil skrive ut hele matrisen `tallArray` til konsollen. Du kan også bruke `console.dir()` for å få en mer detaljert utskrift av objekter.
 
-## Se også
-- [Dokumentasjon for `console` i TypeScript](https://www.typescriptlang.org/docs/handbook/console.html)
-- [En gjennomgang av debugging i TypeScript](https://dzone.com/articles/the-art-of-debugging-typescript)
-- [5 tips for effektiv debugging i TypeScript](https://codingsans.com/blog/debugging-typescript)
+En annen nyttig funksjon er `console.assert()`, som tar inn en betingelse og en feilmelding. Hvis betingelsen ikke er sann, vil feilmeldingen bli skrevet ut i konsollen. Dette kan være nyttig for å sjekke at variabler og verdier holder forventet verdi.
+
+## Se Også
+
+- [TypeScript Dokumentasjon](https://www.typescriptlang.org/docs/)
+- [Debugging Strategies for TypeScript](https://www.richardbultitude.com/blog/typescript-debugging#debuggingstrategiesfortypescript)
+- [10 måter å forbedre ditt TS debugging-fell](https://medium.com/javascript-in-plain-english/10-ways-to-improve-your-typescript-debugging-game-f45315a5c2d9)

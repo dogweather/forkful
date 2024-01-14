@@ -1,30 +1,33 @@
 ---
-title:    "Kotlin: स्ट्रिंग को मज़बूत करना"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: स्ट्रिंग को माज़बूत करना"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyu
 
-इस ब्लॉग पोस्ट में, हम आपको बताएंगे कि कैसे कोटलिन में स्ट्रिंग को कैपिटलाइज किया जाता है। यह एक चर्चा पर हमारे कॉड के साथ और भी शक्तिशाली बनाता है।
+Kotlin mein string ka capitalization karna aam baat hai kyunki ye bahut saari situations mein kaam aata hai jaise user input ko uniform banane ya fir strings ko visually alag dikhane ke liye.
 
-## कैसे करें
+## Kaise Kare
 
-कोटलिन में स्ट्रिंग को कैपिटलाइज करने के लिए, हम इस तरह से कोड लिख सकते हैं:
+Capitalization ek string ko modify karne ka ek tareeka hai. Kotlin mein iske liye ```capitalize()``` aur ```toUpperCase()``` functions hote hain. Neeche diye gaye code blocks mein inka istemal kaise kiya ja sakta hai:
 
 ```Kotlin
-val str = "hello world"
-val capitalizedStr = str.capitalize()
+val str = "hello, world!"
+
+println(str.capitalize()) // Output: Hello, world!
+println(str.toUpperCase()) // Output: HELLO, WORLD!
 ```
 
-इस कोड से, हमारे पास "hello world" स्ट्रिंग है। जब हम `capitalize ()` फंक्शन को इस स्ट्रिंग पर लागू करते हैं, तो उसका पहला अक्षर कैपिटल बन जाता है। तो अब हमारे पास "Hello world" है।
+## Gehraai mein Jaae
 
-## गहराई में बात करें
+Jab hum string ko uppercase karte hain, toh yeh function sabhi characters ko uppercase mein convert kar deta hai. Lekin capitalize function mein pehla character uppercase ban jata hai aur baaki characters as-is rehte hain. Isliye agar hum chahe toh capitalize ke saath dusre functions jaise ```toLowerCase()``` ka bhi istemal kar sakte hain.
 
-अब हम थोड़ी गहराई में स्ट्रिंग कैपिटलाइज के बारे में बात करेंगे। इसके पीछे की ये लॉजिक क्या है, और इसके कुछ महत्वपूर्ण पैरामीटर्स क्या हैं।
+## Dekhein Bhi
 
-सबसे पहले, `capitalize()` फंक्शन एक `toString()` मेथड को कॉल करता है। यह मेथड स्ट्रिंग को इंस्टेंसिएट करने के लिए इस्तेमाल होता है। यह इंस्टेंसिएटिंग स्ट्रिंग को उसी अक्षर के साथ रिटर्न करता है जो कैलिंग स्ट्रिंग के पहले अक्षर का ऊपरी मामला करता है। उदाहरण के लिए, अगर हमारे पास "hello world" है, तो इंस्टेंसिएटिंग स्ट्रिंग "h" होगा।
-
-दूसरे पैरामीटर के रूप में, `capitalize()` फंक्शन को स्ट्रिंग की पहचान तक स्पेसिफाई करने के लिए एक `Locale` पैरामीटर लेता है। यह उस भाषा और क्षेत्र को स्पेसिफाई करता है जिसमें स
+- Kotlin String Functions: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html
+- Capitalization in Kotlin: https://www.javatpoint.com/kotlin-string-function
+- String Manipulation in Hindi: https://www.geeksforgeeks.org/strings-in-kotlin/

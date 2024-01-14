@@ -1,61 +1,61 @@
 ---
-title:    "Arduino: Usando expressões regulares"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/using-regular-expressions.md"
+title:                "Arduino: Utilizando expressões regulares"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares em Programação Arduino?
+## Por que usar expressões regulares no Arduino?
 
-Em programação, muitas vezes precisamos procurar por padrões específicos em uma string de caracteres. Isso pode ser desde um endereço de email até um número de telefone. Usar expressões regulares em Arduino pode nos ajudar a encontrar e manipular esses padrões de forma eficiente e precisa.
+Quando se trata de programar no Arduino, é importante ter ferramentas úteis para manipular strings e dados. As expressões regulares são uma dessas ferramentas que podem tornar sua programação mais eficiente e eficaz. Com elas, você pode pesquisar, validar e extrair informações específicas de uma string, economizando tempo e simplificando seu código.
 
-## Como usar Expressões Regulares em Programação Arduino?
+## Como usar expressões regulares no Arduino?
 
-Para usar expressões regulares em Arduino, é necessário incluir a biblioteca "Regex.h". Em seguida, podemos usar a função "Regex.Match" para procurar um padrão específico em uma string. Veja um exemplo abaixo:
+Para utilizar expressões regulares no Arduino, é necessário importar a biblioteca <b>Regex</b>. Aqui está um exemplo de código que pesquisa um número de telefone em uma string:
 
 ```Arduino
+// Importar a biblioteca 'Regex'
 #include <Regex.h>
 
-String frase = "Meu endereço de email é exemplo@email.com";
+void setup() {
+  Serial.begin(9600); // Inicializar a comunicação serial
+  String texto = "Este é o meu número de telefone: 55 1234-5678"; // String fornecida para pesquisa
+  
+  // Criar um objeto de expressão regular para procurar por um número de telefone
+  Regex meuNumero("(\\d{2}\\s\\d{4}-\\d{4})"); 
 
-Regex padrao("([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4})");
-// O padrão acima procura por um endereço de email válido
-
-if (padrao.Match(frase)) {
-  Serial.println("Endereço de email válido encontrado!");
-} else {
-  Serial.println("Nenhum endereço de email válido encontrado!");
+  // Se o número for encontrado, imprimi-lo no monitor serial
+  if (meuNumero.find(texto)) {
+    Serial.println("Número encontrado: " + meuNumero.match()); 
+  } else {
+    Serial.println("Número não encontrado."); // Caso contrário, imprima uma mensagem de erro
+  }
 }
 
-// Saída:
-// Endereço de email válido encontrado!
+void loop() {
+  // Nada acontece no loop
+}
 ```
 
-Outra função útil é o "Regex.Replace", que permite substituir um padrão por outro. Veja um exemplo abaixo:
+A saída deste código seria: "Número encontrado: 55 1234-5678". Com a biblioteca Regex, você pode criar padrões de pesquisa mais complexos para extrair informações específicas de uma string.
 
-```Arduino
-#include <Regex.h>
+## Aprofundando nas expressões regulares
 
-String frase = "Bem-vindo ao meu website, onde você pode encontrar muitas informações.";
+As expressões regulares são uma linguagem poderosa para manipulação de strings. Elas são compostas por metacaracteres, que representam caracteres ou conjuntos de caracteres, e podem ser combinadas para criar padrões de pesquisa complexos. Alguns dos metacaracteres mais comuns são:
 
-Regex padrao("website");
-// O padrão acima procura pela palavra "website"
+- <b>\d</b>: Qualquer dígito numérico de 0 a 9
+- <b>\s</b>: Qualquer espaço em branco, incluindo tabulação e quebra de linha
+- <b>[ ]</b>: Qualquer caractere dentro dos colchetes
+- <b>{ }</b>: As chaves indicam quantos caracteres devem ser encontrados.
 
-String novaFrase = padrao.Replace(frase, "blog");
-// Agora "blog" substituiu "website" na string
+Por exemplo, o padrão "\d{2}\s\d{4}-\d{4}" utilizado no exemplo acima significa que a string deve começar com 2 dígitos seguidos de um espaço, seguido de 4 dígitos, um hífen e mais 4 dígitos. Isso corresponderá a qualquer número de telefone no formato "xx xxxx-xxxx".
 
-Serial.println(novaFrase);
-// Saída:
-// Bem-vindo ao meu blog, onde você pode encontrar muitas informações.
-```
+Existem muitas outras combinações possíveis de metacaracteres e você pode usar a criatividade para criar padrões de pesquisa que atendam às suas necessidades. No entanto, é importante lembrar que, quanto mais complexo o padrão, mais tempo o Arduino levará para avaliá-lo, o que pode afetar o desempenho de seu código.
 
-## Mergulhando mais fundo em Expressões Regulares
+## Veja também
 
-Para entender melhor como as expressões regulares funcionam, é importante aprender sobre seus diferentes componentes, como metacaracteres, quantificadores e grupos de captura. Além disso, é útil praticar com diferentes exemplos e padrões para ganhar familiaridade com a sintaxe.
-
-## Veja Também
-
-- [Documentação Oficial da Biblioteca Regex.h](https://www.arduino.cc/reference/en/libraries/regex/)
-- [Tutorial de Expressões Regulares para Arduino](https://create.arduino.cc/projecthub/Arnov_Sharma/regex-regular-expressions-tutorials-a24ddc)
-- [Guia Completo de Expressões Regulares](https://www.regular-expressions.info/tutorial.html)
+- [Documentação oficial da biblioteca Regex](https://www.arduino.cc/reference/en/libraries/regex/)
+- [Tutorial sobre expressões regulares no Arduino](http://www.circuitbasics.com/basics-of-regex-with-arduino/)
+- [Referência completa de metacaracteres](https://www.regular-expressions.info/quickstart.html)

@@ -1,70 +1,58 @@
 ---
-title:    "PHP: Vergleich zweier Daten"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/comparing-two-dates.md"
+title:                "PHP: Den Vergleich von zwei Datumsangaben"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-In der Programmierung muss oft das Datum verglichen werden, sei es um festzustellen, ob ein Termin bereits vorbei ist oder um zu überprüfen, ob ein bestimmtes Datum in der Zukunft liegt. In diesem Blogbeitrag werden wir uns ansehen, wie man auf einfache Weise zwei Daten in PHP vergleichen kann.
 
-## Wie
-Die einfachste Methode, um zwei Daten in PHP zu vergleichen, ist die Verwendung des Vergleichsoperators "==" oder "!=". Dieser Vergleichsoperator vergleicht den Wert der beiden Daten und gibt "true" zurück, wenn sie gleich sind, andernfalls "false". Hier ist ein Beispiel:
+Manchmal müssen wir in der Programmierung zwei verschiedene Daten miteinander vergleichen. Das kann zum Beispiel nützlich sein, um festzustellen, ob ein Ereignis in der Vergangenheit oder Zukunft liegt oder um eine sortierte Liste zu erstellen. In dieser Blog-Post werden wir uns ansehen, wie man mit PHP zwei Daten vergleichen kann.
+
+## Wie geht man vor?
+
+Man kann mit der `DateTime` Klasse in PHP Daten und Zeiten darstellen und vergleichen. Hier ist ein Beispiel, wie man zwei Daten miteinander vergleichen kann:
 
 ```PHP
-<?php
-$date1 = "2021-05-10";
-$date2 = "2021-05-15";
+$datum1 = new DateTime('2020-01-01');
+$datum2 = new DateTime('2020-01-15');
 
-if($date1 == $date2){
-  echo "Die Daten sind gleich.";
-} else{
-  echo "Die Daten sind nicht gleich.";
+if($datum1 < $datum2) {
+  echo 'Das erste Datum liegt vor dem zweiten Datum';
+} elseif($datum1 > $datum2) {
+  echo 'Das erste Datum liegt nach dem zweiten Datum';
+} else {
+  echo 'Beide Daten sind gleich';
 }
 ```
 
-Dieser Code würde "Die Daten sind nicht gleich." ausgeben, da $date1 und $date2 verschiedene Werte haben.
+Die Ausgabe würde dabei lauten: `Das erste Datum liegt vor dem zweiten Datum`.
 
-Um zu überprüfen, ob ein Datum vor oder nach einem anderen liegt, können wir auch den Vergleichsoperator "<" oder ">" verwenden. Hier ist ein Beispiel:
-
-```PHP
-<?php
-$date1 = "2021-05-10";
-$date2 = "2021-05-15";
-
-if($date1 < $date2){
-  echo "Das Datum 1 liegt vor Datum 2.";
-} else{
-  echo "Das Datum 2 liegt vor Datum 1.";
-}
-```
-
-Dieser Code würde "Das Datum 1 liegt vor Datum 2." ausgeben, da $date1 fünf Tage vor $date2 liegt.
-
-## Deep Dive
-Wenn wir Daten genauer vergleichen und auch die Uhrzeit berücksichtigen möchten, können wir die Funktion "strtotime()" in PHP verwenden. Diese Funktion wandelt ein Datum in einen Unix-Timestamp um, der dann leichter verglichen werden kann. Hier ist ein Beispiel:
+Man kann auch die `diff()` Funktion verwenden, um die Differenz zwischen zwei Daten in Tagen, Monaten oder Jahren zu erhalten. Hier ist ein Beispiel:
 
 ```PHP
-<?php
-$date1 = "2021-05-10 15:00:00";
-$date2 = "2021-05-10 18:00:00";
+$datum1 = new DateTime('2020-01-01');
+$datum2 = new DateTime('2020-01-15');
 
-// $timestamp1 enthält den Unix-Timestamp von $date1
-$timestamp1 = strtotime($date1);
+$differenz = $datum2->diff($datum1);
 
-// $timestamp2 enthält den Unix-Timestamp von $date2
-$timestamp2 = strtotime($date2);
-
-// Wir können nun die Timestamps vergleichen
-if($timestamp1 == $timestamp2){
-  echo "Die Daten und Uhrzeiten sind gleich.";
-}
+echo $differenz->format('%R%a Tage'); // gibt "+14 Tage" aus
 ```
 
-Mit der Funktion "strtotime()" können wir auch verschiedene Datumsformate akzeptieren, wie zum Beispiel "May 10 2021 3:00 PM" oder "2021/05/10 3pm".
+Weitere Beispiele und Informationen findest du in der offiziellen PHP Dokumentation zur [DateTime Klasse](https://www.php.net/manual/de/class.datetime.php).
+
+## Tiefere Einblicke
+
+Wenn man zwei Daten vergleicht, ist es wichtig zu beachten, dass es auch auf die Zeit ankommt. Das heißt, dass zwei Daten, die das gleiche Datum haben, aber verschiedene Zeiten, möglicherweise auch als ungleich betrachtet werden. Deshalb ist es sinnvoll, bei Vergleichen die gleiche Uhrzeit zu berücksichtigen oder die Zeitkomponente zu ignorieren.
+
+Eine andere Sache, die man beachten muss, ist die Zeitzonen. Wenn man zum Beispiel Daten aus verschiedenen Zeitzonen vergleicht, kann es zu unerwarteten Ergebnissen kommen. Es ist daher wichtig, sicherzustellen, dass alle Daten in der gleichen Zeitzone sind, bevor man sie vergleicht.
 
 ## Siehe auch
-- [PHP Dateien vergleichen](https://www.php.net/manual/de/function.file-compare.php)
-- [Datum und Uhrzeit in PHP formatieren](https://www.php.net/manual/de/function.date.php)
-- [Unix-Timestamp in PHP](https://www.php.net/manual/de/function.strtotime.php)
+
+Für weitere Informationen und Beispiele zum Vergleichen von Daten mit PHP empfehle ich folgende Links:
+
+- [Offizielle PHP Dokumentation](https://www.php.net/manual/de/class.datetime.php)
+- [Tutorial: Arbeiten mit Datum und Uhrzeit in PHP](https://www.php-einfach.de/php-tutorial/zeit-und-datum/)
+- [Video-Tutorial: Wie man mit Datum und Zeit in PHP arbeitet](https://www.youtube.com/watch?v=VEd1kpQDJ5c)

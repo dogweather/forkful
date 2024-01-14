@@ -1,46 +1,46 @@
 ---
-title:    "Bash: 컴퓨터 프로그래밍에서의 명령줄 인수 읽기"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/reading-command-line-arguments.md"
+title:                "Bash: 명령줄 인수 읽기"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-Bash 프로그래밍은 매우 강력하고 유용하며, 커맨드 라인 인자를 읽는 것은 프로그램을 더 유연하고 사용자 정의할 수 있게 만들어줍니다. 따라서 Bash 스크립트를 작성하는 모든 개발자는 커맨드 라인 인자를 어떻게 읽을 수 있는지 학습해야 합니다.
+리눅스와 유닉스 시스템에서 Bash 프로그래밍을 하기 위해서는 커맨드 라인 인자(argument)를 읽는 방법을 알아야 합니다. 이 기술은 프로그램을 실행할 때 사용자로부터 입력을 받는 방법을 제공하며, 실행시에 다른 옵션을 주거나 파라미터를 전달할 수 있도록 해줍니다. 커맨드 라인 인자를 읽는 기술은 여러분이 더 유연하고 고급 사용자들이 자주 사용하는 기능을 사용할 수 있도록 도와줍니다.
 
-## 어떻게
+## 방법
 
-커맨드 라인 인자를 읽는 가장 간단한 방법은 "read" 명령어를 사용하는 것입니다. 이 명령어는 사용자로부터 입력을 받아 변수에 저장할 수 있도록 해줍니다. 예를 들어, 아래의 코드는 사용자로부터 입력을 받아 "input" 변수에 저장합니다.
-
-```Bash
-echo "입력을 입력하세요: "
-read input
-```
-
-위의 예시에서, 사용자가 입력을 했을 때, 그 값은 "input" 변수에 저장되었고 이제 그 값을 사용할 수 있게 됩니다. 또 다른 방법으로는, "getopts"를 사용하는 것입니다. 이 명령어는 스크립트에 옵션을 넣어 인자를 읽을 수 있게 해줍니다. 예를 들어, 아래의 코드는 "a"와 "b"라는 두 가지 옵션을 가지고 있으며, 각각의 옵션에 해당하는 메시지를 출력합니다.
+커맨드 라인 인자를 읽는 방법은 매우 간단합니다. 이를 위해서는 프로그램에 입력되는 인자를 저장해주는 변수를 지정해주면 됩니다. 예를 들어, 스크립트 파일이 myscript.sh라고 한다면 아래 코드를 추가하여 커맨드 라인 인자를 저장할 수 있습니다. 
 
 ```Bash
-while getopts "ab" option; do
-case $option in
-a) echo "Option a가 선택되었습니다." ;;
-b) echo "Option b가 선택되었습니다." ;;
-esac
-done
+args=("$@")
 ```
 
-위의 예시에서는 "bash script.sh -a"를 실행했을 때 "Option a가 선택되었습니다."라는 메시지가 출력됩니다. "bash script.sh -b"를 실행하면 "Option b가 선택되었습니다."라는 메시지가 출력됩니다. "a"와 "b" 옵션을 동시에 사용하고 싶다면 "getopts" 옵션 뒤에 ":"를 추가하면 됩니다. 이렇게 하면 다양한 옵션을 가진 스크립트를 작성할 수 있게 됩니다.
+여러분은 이 변수를 이용하여 원하는 대로 커맨드 라인 인자에 접근할 수 있습니다. 아래는 간단한 코드 예제와 실행 결과입니다.
 
-## 깊이 파고들기
+```Bash
+$ bash myscript.sh 1 2 3
+$ echo ${args[0]}
+1 # 첫번째 인자
+$ echo ${args[2]}
+3 # 세번째 인자
+```
 
-커맨드 라인 인자를 읽는 가장 일반적인 방법은 "getopts" 명령어를 사용하는 것입니다. 이 명령어가 기본적으로 어떻게 작동하는지, 그리고 어떻게 변수와 함께 사용하는지 알아보겠습니다.
+## 깊게 들어가기
 
-"getopts" 명령어는 스크립트의 인자를 변수에 저장합니다. 첫 번째 인자를 $1, 두 번째 인자를 $2와 같이 순서대로 저장하며, 인자의 개수는 "$#" 변수에 저장됩니다. 그리고 "getopts"는 while 루프 안에서 사용되며 입력되는 옵션을 변수에 저장합니다. 해당 옵션이 존재하지 않으면 "?"를 리턴하며, 옵션이 ":"으로 시작하면 그 다음 옵션이 그 변수에 저장됩니다. 마지막으로 "shift" 명령어를 사용해서 처리된 인자를 지워주며 다음 인자로 이동합니다.
+왜 우리 프로그램에는 커맨드 라인 인자를 읽어야 할까요? 이는 여러분의 프로그램이 다양한 상황에서 유연하게 실행되고 다양한 설정을 할 수 있도록 하기 위함입니다. 예를 들어, 여러분이 자신의 스크립트를 실행할 때 다른 옵션들을 추가해서 실행하고 싶다고 가정해봅시다. 커맨드 라인 인자를 사용하면 이를 간단하게 해결할 수 있습니다.
 
-## 더 알아보기
+또한, 여러분이 자주 사용하는 명령어를 스크립트로 만들 때 커맨드 라인 인자를 사용하면 실행할 때마다 파라미터를 지정해주지 않아도 됩니다. 이는 여러분의 시스템에 더 많은 손실을 일으키지 않고 자신만의 강력한 도구를 만들 수 있도록 해줍니다.
 
-"getopts" 명령어 외에도 커맨드 라인 인자를 읽는 다른 방법들이 존재합니다. 이를 더 자세히 알고 싶다면 아래의 링크들을 참고해보세요.
+## 이어보기
 
-[Advanced Bash-Scripting Guide - Arguments](https://tldp.org/LDP/abs/html/explorequickref.html#COMMANDOPLINEARGS)
-[How to Read
+만약 여러분이 Bash 프로그래밍과 커맨드 라인 인자에 대해 더 자세히 알고 싶다면 아래 링크들을 참고해보세요.
+
+[The Bash Guide](https://wiki.bash-hackers.org/scripting)
+
+[Bash Shell Basics](https://www.howtogeek.com/140679/basics-of-bash-shell-scripting-for-beginners/)
+
+[Argument Parsing in Bash](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)

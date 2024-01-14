@@ -1,36 +1,85 @@
 ---
-title:    "Elm: 두 날짜 비교하기"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/comparing-two-dates.md"
+title:                "Elm: 두 날짜 비교하기"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
+두 날짜를 비교하는 것에 참여하는 이유는 무엇인가요? 
 
-Elm은 대부분의 프로그래밍 언어와 달리 타입 시스템과 정적 결정을 가지고 있습니다. 이것은 Elm이 더 안전하고 예측 가능한 프로그래밍을 할 수 있도록 도와줍니다. 그 중 하나가 두 개의 날짜를 비교하는 것입니다. 왜 두 개의 날짜를 비교해야 할까요? 이를 알아봅시다!
+두 날짜를 비교하는 것은 많은 프로그래밍 언어에서 자주 사용되는 공통적인 작업 중 하나입니다. 이는 특히 날짜와 시간 정보를 처리해야 하는 웹 애플리케이션을 개발할 때 매우 유용합니다. Elm에서는 간단하게 두 날짜 간의 차이를 계산하고 처리할 수 있으므로 이를 기준으로 다양한 예제를 살펴보겠습니다.
 
-## 어떻게 비교할까요?
+# 방법
 
-아래의 코드 블록을 보면, 두 개의 날짜를 비교하는 방법을 알 수 있습니다. 먼저 ```Date.fromString``` 함수를 사용하여 날짜를 문자열에서 변환하고, 다음으로, ```Html.text``` 함수를 사용하여 결과를 화면에 보여줍니다. 결과를 보면, 이전 날짜가 최신 날짜보다 이전이라는 것을 알 수 있습니다. 코드를 실행하면서 다른 날짜들을 비교해보세요!
+Elm에서 두 날짜를 비교하는 것은 매우 간단합니다. 먼저 `elm/time` 모듈을 가져와야 합니다.
 
-```elm
-Date.fromString "2020-01-01" |> Date.fromString "2021-01-01"
-|> Date.compare
-|> Html.text
+```Elm
+import Time
 ```
 
-**코드 출력:**
+그리고 비교할 두 날짜를 변수로 선언해야 합니다. 여기서는 `start`와 `end` 두 변수를 사용할 것입니다.
+
+```Elm
+start : Time.Posix
+start = Time.millisToPosix 1624656318 -- 2021년 6월 26일 오전 1시 58분 38초
+
+end : Time.Posix
+end = Time.millisToPosix 1624659951 -- 2021년 6월 26일 오전 3시 5분 51초
 ```
-LT
+
+이제 두 날짜 간의 차이를 계산하려면 `Time.diff` 함수를 사용하면 됩니다.
+
+```Elm
+diff : Time.Posix -> Time.Posix -> Time.Span
+diff start end = Time.diff start end
 ```
 
-## 깊게 파보자
+출력 결과는 다음과 같습니다.
 
-Elm에서 두 개의 날짜를 비교하는 더 많은 방법들이 있습니다. 예를 들어, ```Date.Compare``` 모듈에는 3개의 함수가 있습니다: ```Date.before```, ```Date.after```, 그리고 ```Date.between```. 각각 다른 비교 방법을 제공합니다. 또한, 날짜를 비교할 뿐만 아니라, 날짜가 유효한지 여부를 확인할 수도 있습니다. 이를 위해서는 ```Date.isValid``` 함수를 사용하면 됩니다. 더 많은 정보를 원한다면, Elm 공식 문서의 [날짜와 시간](https://guide.elm-lang.org/interop/dates.html) 부분을 참고해보세요.
+```
+Time.Days 0 <| Time.Hours 0 <| Time.Seconds 4023 <| 
+Time.Millis 0 <| Time.Micros 0 <| Time.Nanos 0
+```
 
-## 관련 자료
+위의 결과는 `Time.Span` 타입으로 반환되며, 기준 날짜의 단위로 두 날짜 간의 차이를 표시합니다. 위의 예제에서는 4023초 차이가 나는 것을 확인할 수 있습니다.
 
-- [Elm 공식 문서 - 날짜와 시간](https://guide.elm-lang.org/interop/dates.html)
-- [Elm 정적 타입 시스템에 대한 소개 (번역)](https://jjminsik.tistory.com/entry/Introduction-to-Elm-typing)
-- [JavaScript와의 상호 운용성을 위한 Elm 마법사 삽질기 (번역)](https://riiid-techblog.tistory.com/32)
+# 딥 다이브
+
+두 날짜를 비교할 때 더 자세한 비교 방법이 필요할 수 있습니다. Elm에서는 `Time.Comparable` 모듈을 사용하여 두 날짜를 비교할 수 있습니다.
+
+```Elm
+import Time.Comparable
+```
+
+먼저 두 날짜를 같은 타입으로 변환해야 합니다. 위의 예제에서 사용했던 `Time.Posix`를 `Time.Comparable` 모듈에서 제공하는 `Time.Zone` 타입으로 변환할 수 있습니다.
+
+```Elm
+startZone : Time.Zone
+startZone = Time.utc
+
+endZone : Time.Zone
+endZone = Time.zone startZone (-1 * 60 * 60 * 1000) -- 1시간 뒤
+```
+
+이제 `startZone`과 `endZone`을 사용하여 `Time.Comparable` 모듈에서 제공하는 `compare` 함수를 사용할 수 있습니다.
+
+```Elm
+compare : Time.Zone -> Time.Posix -> Time.Posix -> Time.Comparable.Order
+compare startZone start end =
+    Time.Comparable.compare startZone start end
+```
+
+출력 결과는 다음과 같습니다.
+
+```
+GT
+```
+
+위의 결과에서 `GT`는 두 날짜 중 뒤에 있는 `end` 변수가 더 크다는 것을 의미합니다. 이를 통해 두 날짜를 비교하는 더 많은 방법을 살펴볼 수 있습니다.
+
+# 더 알아보기
+
+위에서 소개한 내용외에도 Elm에서 날짜 비교에 사용할 수 있는 다른 함수들이 있습니다. `Time.Extra` 모듈에서는

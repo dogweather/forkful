@@ -1,73 +1,45 @@
 ---
-title:    "Javascript: Odczytywanie argumentów wiersza poleceń"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/reading-command-line-arguments.md"
+title:                "Javascript: Odczytywanie argumentów wiersza poleceń"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Programowanie w języku Javascript jest bardzo popularne, a znajomość tej umiejętności może otworzyć przed nami wiele możliwości zawodowych. Jednym z ważnych aspektów programowania jest umiejętność czytania argumentów linii poleceń. Pozwala to na dostosowanie zachowania programu w zależności od wprowadzonych parametrów. W tym artykule dowiecie się jak to zrobić!
+Jeśli jesteś programistą JavaScript i chcesz poznać sposoby na odczytywanie argumentów wiersza poleceń, ten artykuł jest dla Ciebie! Poznasz tutaj różne metody, jakie można zastosować, aby wykorzystać argumenty wiersza poleceń w swoim kodzie.
 
 ## Jak to zrobić
 
-Czytanie argumentów linii poleceń w języku Javascript jest bardzo proste. Wystarczy wykorzystać wbudowane obiekty process.argv, które przechowują wprowadzone przez użytkownika parametry. Poniżej znajduje się przykładowy kod pokazujący jak wygląda to w praktyce:
+Istnieje kilka sposobów odczytywania argumentów wiersza poleceń w JavaScript. Pierwszym z nich jest użycie wbudowanego obiektu process, który zawiera wszystkie informacje o aktualnym procesie, wraz z argumentami wiersza poleceń. Przykładowy kod wykorzystujący ten sposób wyglądałby tak:
+
 ```Javascript
-const args = process.argv;
-
-console.log("Pierwszy argument: ", args[2]);
-console.log("Drugi argument: ", args[3]);
+// Użycie process.argv do odczytania argumentów wiersza poleceń
+const args = process.argv.slice(2); // Pierwsze dwa elementy zwracanego tablicy to ścieżka do pliku uruchamiającego oraz ścieżka do interpretera
+console.log(args); // Wyświetli tablicę z wszystkimi argumentami wiersza poleceń przekazanymi podczas uruchamiania programu
 ```
 
-Przykładowe wywołanie: `node program.js argument1 argument2`
+Kolejną metodą jest użycie biblioteki yargs, która upraszcza odczytywanie argumentów i pozwala na definiowanie argumentów w bardziej intuicyjny sposób. Przykładowy kod z wykorzystaniem yargs mógłby wyglądać następująco:
 
-Przykładowy output:
-```
-Pierwszy argument: argument1
-Drugi argument: argument2
-```
-Jak widać, argumenty linii poleceń są przechowywane w tablicy args, a dostęp do nich odbywa się przez indeksy. Pamiętajcie, że pierwsze dwa argumenty to ścieżka do pliku i nazwa programu, dlatego najpierw pobieramy wartość args[2].
-
-## Deep Dive
-
-Teraz przejdźmy do większego wyzwania - jak czytać argumenty linii poleceń w bardziej złożonym przypadku, gdzie mamy wiele parametrów. W takiej sytuacji przydatne może być wykorzystanie biblioteki yargs, która ułatwia parsowanie argumentów linii poleceń. Poniżej znajduje się przykładowy kod, który pokazuje jak to zrobić:
 ```Javascript
-const yargs = require('yargs');
+// Użycie biblioteki yargs do odczytania argumentów wiersza poleceń
+const argv = require('yargs').argv; // Import biblioteki
 
-const argv = yargs
-    .options({
-        'first': {
-            alias: 'f',
-            demandOption: true,
-            describe: "Pierwszy argument",
-            type: 'string'
-        },
-        'second': {
-            alias: 's',
-            demandOption: true,
-            describe: "Drugi argument",
-            type: 'string'
-        }
-    })
-    .argv;
+console.log(argv); // W tym przypadku pierwsze dwa elementy nie są wyświetlane, tylko właściwe argumenty
 
-console.log("Pierwszy argument: ", argv.first);
-console.log("Drugi argument: ", argv.second);
-
+// Definicja argumentów przy użyciu yargs
+// Użycie --option=value lub --option wartość
+argv.option1 // pierwszy sposób przekazania argumentu
+argv.option2 // drugi sposób przekazania argumentu
 ```
 
-Przykładowe wywołanie: `node program.js -f argument1 -s argument2`
+## Głębszy zanurzenie
 
-Przykładowy output:
-```
-Pierwszy argument: argument1
-Drugi argument: argument2
-```
-
-Warto zwrócić uwagę na to, że biblioteka yargs pozwala na bardziej zaawansowane konfiguracje, jak na przykład wykorzystanie aliasów, wymuszenie obecności parametru czy też sprawdzenie jego typu.
+Za pomocą obu metod możesz odczytywać argumenty wiersza poleceń w swoim kodzie JavaScript. Jednak warto zauważyć pewne różnice między tymi sposobami. Użycie process.argv wymaga samodzielnej analizy tablicy zwracanej przez ten obiekt, co może być bardziej czasochłonne. Natomiast yargs pozwala na prostszą i bardziej czytelną definicję argumentów, jednak wymaga dodatkowej biblioteki. Możesz wybrać odpowiedni sposób w zależności od swoich preferencji i potrzeb.
 
 ## Zobacz także
 
-- Dokumentacja wbudowanego obiektu process w języku Javascript: https://nodejs.org/dist/latest-v14.x/docs/api/process.html
-- Oficjalna strona biblioteki yargs: https://yargs.js.org/
+- [Dokumentacja process.argv](https://nodejs.org/api/process.html#process_process_argv)
+- [Dokumentacja yargs](https://yargs.js.org/)

@@ -1,46 +1,46 @@
 ---
-title:    "Haskell: Buscando y reemplazando texto"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/searching-and-replacing-text.md"
+title:                "Haskell: Buscando y reemplazando texto"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
+¿Alguna vez te has encontrado en la situación en la que tienes un gran bloque de texto y necesitas reemplazar una palabra o frase en todo él? Ya sea que estés escribiendo un ensayo, un código de programación o simplemente revisando un documento, reemplazar manualmente puede ser un proceso tedioso y propenso a errores. ¡Afortunadamente, hay una solución más eficiente utilizando Haskell!
 
-La búsqueda y reemplazo de texto es una habilidad fundamental en la programación, especialmente en lenguajes funcionales como Haskell. Con esta habilidad, puedes modificar grandes cantidades de texto con rapidez y precisión, ahorrándote tiempo y esfuerzo manual. Además, es una técnica útil para realizar cambios en proyectos más grandes y complejos.
-
-## Cómo hacerlo
-
-Para realizar una búsqueda y reemplazo de texto en Haskell, necesitarás importar el módulo `Text.Regex.Posix` y definir una expresión regular. A continuación, puedes utilizar la función `subRegex` para realizar el reemplazo en una cadena de texto:
+## Cómo
+La búsqueda y reemplazo de texto en Haskell puede ser fácilmente lograda a través de la función `replace` en el módulo `Data.Text`. Esta función toma tres argumentos: la palabra o frase a reemplazar, la palabra o frase de reemplazo y el texto en el que se realizará la búsqueda y reemplazo. Aquí hay un ejemplo simple:
 
 ```Haskell
-import Text.Regex.Posix
+import Data.Text
 
--- Definir la expresión regular y el patrón a reemplazar
-regex :: String
-regex = "\\d+" -- Encuentra cualquier número en la cadena de texto
+texto = "Me encanta programar en Haskell. Es un lenguaje elegante y poderoso."
+nuevoTexto = replace "Haskell" "Python" texto
 
--- Realizar el reemplazo
-subRegex regex "¡Hola 123 mundo!" "adiós" -- Salida: "¡Hola adiós mundo!"
+main = putStrLn nuevoTexto
 ```
 
-También puedes usar la función `subRegexAll` para reemplazar todas las ocurrencias en una cadena de texto:
+En este caso, la salida será: "Me encanta programar en Python. Es un lenguaje elegante y poderoso."
+
+Para realizar una búsqueda y reemplazo en un archivo específico, podemos utilizar las funciones `readFile` y `writeFile` en conjunto con `replace`. Aquí hay un ejemplo:
 
 ```Haskell
-subRegexAll regex "123 ejemplo de 456 texto" "testing" -- Salida: "testing ejemplo de testing texto"
+import Data.Text
+import System.IO
+
+main = do
+    texto <- readFile "texto.txt"
+    let nuevoTexto = replace "programación" "codificación" texto
+    writeFile "nuevoTexto.txt" nuevoTexto
+    putStrLn "¡Reemplazo de texto completado!"
 ```
 
-## Inmersión profunda
-
-En Haskell, hay varias funciones disponibles para trabajar con expresiones regulares y realizar búsqueda y reemplazo de texto. Algunas de estas funciones incluyen `matchRegex`, `matchRegexAll` y `getAllMatches`, que permiten obtener información más detallada sobre las coincidencias encontradas en una cadena de texto.
-
-Además, el módulo `Text.Regex.Posix.ByteString` contiene versiones de estas funciones para trabajar con cadenas de bytes en lugar de cadenas de texto, lo que puede ser útil para proyectos que requieren una mayor eficiencia en el manejo de grandes cantidades de datos.
-
-En conclusión, la búsqueda y reemplazo de texto en Haskell puede parecer abrumadora al principio, pero una vez que entiendas cómo funciona y qué funciones están disponibles, puede ser una herramienta muy poderosa y útil en tu caja de herramientas de programación.
+## Deep Dive
+Además de la función `replace`, hay otras opciones disponibles en Haskell para realizar búsquedas y reemplazos más complejas. Por ejemplo, si queremos reemplazar solo la primera aparición de una palabra o frase, podemos utilizar la función `replaceFirst`. También podemos utilizar expresiones regulares para realizar búsquedas y reemplazos más avanzados a través de funciones del módulo `Text.Regex`.
 
 ## Ver también
-
-- [Documentación de Haskell sobre expresiones regulares](https://www.haskell.org/onlinereport/standard-prelude.html#regexps)
-- [Tutorial de búsqueda y reemplazo de texto en Haskell](https://wiki.haskell.org/Haskell_Regular_expressions)
-- [Ejemplos de búsqueda y reemplazo en Haskell en Rosetta Code](https://rosettacode.org/wiki/Search_and_replace)
+- [Documentación oficial de Haskell](https://www.haskell.org/documentation/)
+- [Tutorial de búsqueda y reemplazo en Haskell](https://wiki.haskell.org/Regular_expressions)
+- [Ejemplos de código en Haskell](https://www.haskell.org/onlinereport/io.html)

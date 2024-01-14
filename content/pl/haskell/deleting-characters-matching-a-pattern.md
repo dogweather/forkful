@@ -1,49 +1,36 @@
 ---
-title:    "Haskell: Usuwanie znaków pasujących do wzoru"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: Usuwanie znaków odpowiadających wzorcowi"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Z pewnością nie jest to często wykorzystywane narzędzie w programowaniu, ale czasami może się przydać usunięcie znaków pasujących do wzoru. Może to być przydatne, gdy chcemy pozbyć się pewnych danych lub przygotować je do dalszej obróbki.
+Czasami w programowaniu musimy usuwać niechciane znaki w tekście, które pasują do pewnego wzorca. Może to być ważne, gdy tworzymy aplikację, która wymaga czystego i dokładnego tekstu, takiego jak przetwarzanie danych czy generowanie raportów. W takich przypadkach usuwanie znaków musi być dokładne i efektywne.
 
 ## Jak to zrobić
 
-Aby usunąć znaki pasujące do wzoru w Haskellu, można skorzystać z funkcji `deleteBy` z biblioteki `Data.List`. Musimy podać jako argumenty funkcję, która będzie sprawdzać, czy dany znak pasuje do wzoru oraz listę, z której chcemy usunąć znaki. Przykładowe użycie wyglądałoby następująco:
+Język Haskell zapewnia prosty i wydajny sposób na usuwanie znaków z tekstu. Wystarczy skorzystać z funkcji `filter`, która pozwala na filtrowanie listy elementów według określonego warunku. W naszym przypadku warunkiem będzie funkcja `notElem`, która sprawdza czy dany znak nie należy do podanego zbioru. W ten sposób możemy wybrać tylko te znaki, które nie pasują do naszego wzorca i usunąć je z tekstu. Niech przykład poniżej pokaże, jak łatwo i szybko można to zrobić:
 
 ```Haskell
-import Data.List
+string = "To jest przykładowy tekst z niechcianymi znakami #$%^&*"
+pattern = "#$%^&*"
 
-deleteMatching :: Char -> Bool
-deleteMatching c = c == 'a' || c == 'b' -- przykładowa funkcja przeprowadzająca porównanie znaku z wzorem
+cleanedString = filter (`notElem` pattern) string
 
-inputList :: [Char]
-inputList = "abcdefg"
-
-outputList :: [Char]
-outputList = deleteBy deleteMatching inputList -- usunięcie znaków 'a' i 'b' z listy
-
-main :: IO ()
-main = do
-    putStrLn $ "Input: " ++ inputList
-    putStrLn $ "Output: " ++ outputList
-
--- Output: Input: abcdefg
---         Output: cdefg
+-- Output:
+-- "To jest przykładowy tekst z niechcianymi znakami "
 ```
 
-Możemy zmienić wzór oraz listę wejściową, aby dostosować funkcję do swoich potrzeb. Pamiętajmy, że funkcja `deleteBy` może przyjmować więcej niż jeden argument, co daje nam większe możliwości manipulacji danymi.
+## Dogłębna analiza
 
-## Głębsza analiza
+Funkcja `filter` i `notElem` wykorzystują wbudowaną w Haskell "lista składana". Polega ona na tworzeniu listy wynikowej poprzez przetwarzanie każdego elementu z listy początkowej za pomocą odpowiedniej funkcji. W przypadku `filter`, funkcja ta zwraca `True`, jeśli element nie spełnia określonego warunku, co wyklucza go z listy wynikowej. W ten sposób możemy usunąć wszystkie niechciane znaki z tekstu przez przejrzenie i wybranie tylko tych, które nie pasują do naszego wzorca.
 
-Funkcja `deleteBy` jest jedną z wielu funkcji z biblioteki `Data.List`, które pozwalają na manipulowanie danymi typu `List`. Znajdują się tam także inne funkcje, które mogą być przydatne w podobnych sytuacjach, np. `delete`, `deleteFirstsBy`, `deleteList`. Dzięki nim mamy większą elastyczność w operowaniu na liście.
+## Zobacz też
 
-Warto również zwrócić uwagę na to, że funkcja `deleteBy` działa na `List` w sposób rekurencyjny, co oznacza, że przetwarza elementy pojedynczo, aż do końca listy. Jest to ważna koncepcja w programowaniu funkcyjnym i dobrze ją zrozumieć, aby móc pisać bardziej efektywny i czytelny kod.
-
-## Zobacz także
-
-- Dokumentacja funkcji `deleteBy`: https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:deleteBy
-- Inne funkcje do manipulacji listami w Haskellu: https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#g:18
+1. Dokumentacja Haskell - https://www.haskell.org/documentation/
+2. Tutoriale Haskell - https://github.com/turboMaCk/awesome-haskell
+3. Wprowadzenie do funkcyjnego programowania - https://pl.wikibooks.org/wiki/Haskell/Wprowadzenie_do_funkcyjnego_programowania

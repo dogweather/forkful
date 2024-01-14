@@ -1,64 +1,85 @@
 ---
-title:    "Swift: Ecrire un fichier texte"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/writing-a-text-file.md"
+title:                "Swift: Écrire un fichier texte"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire un fichier texte en Swift ?
+## Pourquoi
 
-L'écriture de fichiers texte est une compétence essentielle pour tout programmeur Swift. Cela permet de stocker des données importantes dans un format lisible et facile à manipuler. Que vous souhaitiez enregistrer des paramètres, des résultats ou des entrées d'utilisateur, écrire un fichier texte peut être la solution parfaite pour garder vos données organisées. Dans cet article, nous allons vous montrer comment écrire un fichier texte en utilisant Swift.
+Si vous êtes un développeur Swift, vous connaissez probablement déjà l'importance de savoir comment écrire un fichier texte en programmation. Que ce soit pour stocker des données, générer des rapports ou simplement pour des besoins de débogage, il est essentiel de savoir comment écrire dans un fichier texte. Dans cet article, nous allons explorer les différentes façons de le faire en Swift et comment cela peut être bénéfique dans vos projets.
 
-## Comment faire ?
+## Comment faire
 
-Pour écrire un fichier texte en Swift, nous devons utiliser la classe `FileHandle`. Voici un exemple de code qui écrit une chaîne de caractères dans un fichier texte :
+Il existe plusieurs façons d'écrire dans un fichier texte en programmation Swift, nous allons en couvrir trois principales dans cet article.
 
-```
-let fileManager = FileManager.default
-let path = fileManager.currentDirectoryPath // obtient le chemin du dossier courant
-let myText = "Bonjour, le monde !" // le texte que nous voulons écrire dans le fichier
-let fileName = "monfichier.txt" // nom du fichier texte que nous allons créer
+**1. Utiliser la méthode de base**
 
-// Création du fichier et écriture de la chaîne de caractères
-if let file = FileHandle(forWritingAtPath: path + "/" + fileName) {
-  file.write(myText.data(using: .utf8)) // convertit la chaîne de caractères en données avant de l'écrire dans le fichier
-}
+La première méthode consiste à utiliser la méthode de base de la classe `FileManager`. Cette méthode est utilisée pour créer un fichier et écrire dedans. Voici un exemple de code pour écrire "Bonjour tout le monde" dans un fichier texte nommé `message.txt` :
 
-print("Le fichier texte a été créé et le texte a été écrit avec succès.")
-```
+```Swift
+let message = "Bonjour tout le monde"
 
-Avec ce code, nous pouvons créer un fichier texte appelé "monfichier.txt" dans le dossier courant et y écrire la chaîne de caractères "Bonjour, le monde !". En utilisant la classe `FileHandle`, nous pouvons facilement écrire des données dans un fichier texte en utilisant le codage de caractères UTF-8.
-
-## Plongée en profondeur
-
-Il est également possible de créer un fichier texte en utilisant la classe `OutputStream`. Cette méthode offre plus de flexibilité en termes de manipulation et de formatage des données avant de les écrire dans le fichier. Voici un exemple de code pour créer un fichier texte en utilisant `OutputStream` :
-
-```
-let fileManager = FileManager.default
-let path = fileManager.currentDirectoryPath
-let fileName = "monfichier.txt"
-
-// Création et ouverture du flux de sortie
-if let outputStream = OutputStream(toFileAtPath: path + "/" + fileName, append: false) {
-  outputStream.open()
-  let line = "Bonjour, le monde !"
-  let data = line.data(using: .utf8) // convertit la chaîne de caractères en données
-  let bytes = data!.withUnsafeBytes {
-      [UInt8](UnsafeBufferPointer(start: $0, count: data!.count))
-  }
-  outputStream.write(bytes, maxLength: bytes.count) // écrit les données dans le fichier en utilisant le flux de sortie
+if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+    let fileURL = docDir.appendingPathComponent("message.txt")
+    do {
+        try message.write(to: fileURL, atomically: true, encoding: .utf8)
+    } catch {
+        print("Erreur lors de l'écriture dans le fichier : \(error)")
+    }
 }
 ```
 
-En utilisant `OutputStream`, nous pouvons écrire des données dans le fichier en utilisant différentes méthodes telles que `write()` et `write(_:maxLength:)`. Cela nous donne un contrôle plus précis sur la façon dont les données sont écrites dans le fichier texte.
+Vous pouvez ensuite vérifier que le fichier a bien été créé et que le message a bien été écrit en utilisant `print` pour lire son contenu.
+
+**2. Utiliser `NSFileHandle`**
+
+Une autre façon d'écrire dans un fichier texte en Swift est d'utiliser la classe `NSFileHandle`. Avec cette méthode, vous devez d'abord ouvrir le fichier, puis écrire dedans. Voici un exemple de code pour écrire "Bonjour tout le monde" dans un fichier texte nommé `message.txt` :
+
+```Swift
+let message = "Bonjour tout le monde"
+
+if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+    let fileURL = docDir.appendingPathComponent("message.txt")
+    do {
+        let fileHandle = try FileHandle(forWritingTo: fileURL)
+        fileHandle.seekToEndOfFile()
+        fileHandle.write(message.data(using: .utf8)!)
+        fileHandle.closeFile()
+        print("Ecriture dans le fichier réussie !")
+    } catch {
+        print("Erreur lors de l'écriture dans le fichier : \(error)")
+    }
+}
+```
+
+**3. Utiliser `write(to:atomically:encoding:)`**
+
+Enfin, la troisième façon d'écrire dans un fichier texte en Swift est d'utiliser la méthode `write(to:atomically:encoding:)` disponible pour les chaînes de caractères. Cette méthode est similaire à la méthode de base, mais elle simplifie le code en combinant les étapes de création du fichier et d'écriture. Voici un exemple de code pour écrire "Bonjour tout le monde" dans un fichier texte nommé `message.txt` :
+
+```Swift
+let message = "Bonjour tout le monde"
+
+if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+    let fileURL = docDir.appendingPathComponent("message.txt")
+    do {
+        try message.write(to: fileURL, atomically: true, encoding: .utf8)
+    } catch {
+        print("Erreur lors de l'écriture dans le fichier : \(error)")
+    }
+}
+```
+
+Il est important de noter que dans chacune de ces méthodes, le contenu du fichier précédent sera remplacé si le fichier existe déjà. Pour ajouter du contenu à un fichier existant, vous devrez utiliser la méthode `append(path:)` de la classe `NSFileHandle`.
+
+## Deep Dive
+
+Maintenant que nous avons vu comment écrire dans un fichier texte en Swift, il est important de mentionner que cette technique peut également être utile pour d'autres tâches telles que la lecture d'un fichier texte ou la suppression d'un fichier. Il est également important de noter que les méthodes de base que nous avons explorées sont également utilisées pour écrire dans d'autres types de fichiers, tels que les fichiers CSV ou JSON.
 
 ## Voir aussi
 
-Pour en savoir plus sur l'écriture de fichiers texte en Swift, consultez les ressources suivantes :
-
-- [Documentation officielle sur FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [Documentation officielle sur OutputStream](https://developer.apple.com/documentation/foundation/outputstream)
-- [Tutoriel vidéo sur l'écriture de fichiers texte en Swift](https://www.youtube.com/watch?v=wA3pw-2hyGw)
-
-Avec ces ressources, vous devriez être en mesure d'écrire des fichiers texte en utilisant Swift et de les manipuler selon vos besoins. Merci d'avoir lu cet article !
+- [Utilisation de FileManager pour écrire des données dans des fichiers texte](https://developer.apple.com/documentation/uikit/view_controllers/adding_a_second_scene)
+- [Documentation sur la classe `FileManager`](https://developer.apple.com/documentation/foundation/filemanager)
+- [Documentation sur

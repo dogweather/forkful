@@ -1,43 +1,45 @@
 ---
-title:    "PHP: Łączenie ciągów tekstowych"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/concatenating-strings.md"
+title:                "PHP: Konkatenacja ciągów znaków"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Concatenacja, czyli łączenie kilku ciągów znaków w jeden, jest niezbędnym elementem w programowaniu PHP. Używamy jej do tworzenia dynamicznych treści, takich jak wyświetlanie komunikatów lub tworzenie adresów URL. Dzięki niej nasz kod staje się bardziej wydajny i czytelny.
+
+Ciągła konkatenacja ciągów znaków jest niezbędna w programowaniu PHP, ponieważ pozwala nam na łączenie różnych informacji w jedno, spójne wyrażenie. Dzięki temu możemy wyświetlać użytkownikom bardziej złożone i czytelne komunikaty, a także budować dynamiczne zapytania do bazy danych.
 
 ## Jak to zrobić
-```PHP
-// Przykład 1
-$greeting = "Cześć";
-$name = "Jan";
-$message = $greeting . ", " . $name . "! Witaj w naszej aplikacji!";
-echo $message;
-```
-```
-// Wynik przykładu 1:
-Cześć, Jan! Witaj w naszej aplikacji!
-```
+
+Do konkatenacji ciągów znaków w PHP wykorzystujemy operator kropki (".") oraz znaki cudzysłowia (" "), aby oddzielać poszczególne wyrażenia. Przykładowy kod wyglądałby następująco:
 
 ```PHP
-// Przykład 2
-$first_name = "Anna";
-$last_name = "Nowak";
-$email = $first_name . "." . $last_name . "@example.com";
-echo $email
-```
-```
-// Wynik przykładu 2:
-anna.nowak@example.com
+$imie = "Jan";
+$nazwisko = "Kowalski";
+
+echo "Witaj, " . $imie . " " . $nazwisko . "!"; 
+// wyświetli "Witaj, Jan Kowalski!"
 ```
 
-## Głębsze spojrzenie
-Concatenacja może być wykorzystana również do budowania złożonych zapytań SQL, gdzie musimy połączyć różne elementy, takie jak nazwa tabeli i warunki. Może również być używana do wyświetlania danych z bazy danych, gdzie musimy połączyć kilka wartości w jednym wyświetlanym ciągu. W przypadku bardziej skomplikowanych operacji, warto wykorzystać funkcję `implode()` lub `sprintf()`, aby uniknąć błędów w kodzie i ułatwić późniejsze modyfikacje.
+Możemy również łączyć więcej niż dwie zmienne w jednym wyrażeniu, korzystając z operatora kropki. Pamiętajmy, że w przypadku konkatenacji liczb, PHP automatycznie przekonwertuje je na ciąg znaków.
 
-## Zobacz także
-- [PHP Manual - Concatenation Operator](https://www.php.net/manual/en/language.operators.string.php)
-- [Concatenation vs Interpolation in PHP](https://www.codecademy.com/articles/concatenation-vs-interpolation)
-- [PHP Concatenation Tutorial](https://www.w3schools.com/php/php_operators.asp)
+## Głębszy zanurzenie
+
+Podczas konkatenacji ciągów znaków w PHP możemy również wykorzystać funkcję `implode()`, która pozwala nam na łączenie tablic w jeden string. Przykładowy kod wykorzystujący tę funkcję wyglądałby w ten sposób:
+
+```PHP
+$imiona = array("Jan", "Kasia", "Tomek");
+
+echo "Nasi goście to: " . implode(", ", $imiona) . "."; 
+// wyświetli "Nasi goście to: Jan, Kasia, Tomek."
+```
+
+Miejmy również na uwadze, że operator kropki może być wykorzystany również w innych kontekstach, na przykład do łączenia wartości w zapytaniach SQL.
+
+## Zobacz również
+
+- Dokumentacja PHP na temat konkatenacji: https://www.php.net/manual/en/language.operators.string.php
+- Przykładowe kody konkatenacji w PHP: https://www.w3schools.com/php/php_string_concatenation.asp
+- Wyjaśnienie funkcji implode(): https://www.php.net/manual/en/function.implode.php

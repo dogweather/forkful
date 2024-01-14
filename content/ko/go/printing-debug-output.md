@@ -1,70 +1,93 @@
 ---
-title:    "Go: 디버그 출력하기"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/printing-debug-output.md"
+title:                "Go: 디버그 출력 프린트"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 디버그 출력을 사용하는가?
+## 왜
 
-프로그래밍을 할 때, 버그를 찾고 해결하기 위해 디버그 출력은 매우 유용합니다. 코드의 실행 중간에 변수의 값을 확인하거나 코드의 특정 부분이 실행되는지 확인할 수 있기 때문입니다. 이를 통해 코드를 더 간단하게 디버깅할 수 있습니다.
+디버그 출력을 출력하는 이유는, 프로그래밍 오류를 찾는 데 도움이 됩니다.
 
-## 디버그 출력하는 방법
+## 어떻게 할까?
 
-디버그 출력은 Go에서 매우 쉽게 할 수 있습니다. 메시지를 출력하고 싶은 부분에서 `fmt.Println()`을 사용하면 됩니다. `fmt` 패키지에서 제공하는 출력 함수는 다양한 데이터 타입을 지원합니다. 예를 들어, 숫자를 출력하려면 `%d`를 사용하고, 문자열을 출력하려면 `%s`를 사용하면 됩니다.
-
-```Go
-// 정수 출력 예시
-age := 28
-fmt.Println("나의 나이는 %d살입니다.", age)
-
-// 문자열 출력 예시
-name := "John"
-fmt.Println("내 이름은 %s입니다.", name)
-```
-
-코드를 실행하면 다음과 같은 출력 결과가 나옵니다.
-
-```
-나의 나이는 28살입니다.
-내 이름은 John입니다.
-```
-
-## 딥 다이브
-
-Go에서는 디버그 출력을 위해 `fmt` 패키지 이외에도 `log` 패키지를 제공합니다. `log` 패키지를 사용하면 메시지 이외에도 시간, 모듈 정보 등의 추가 정보를 출력할 수 있습니다. 또한, `log` 패키지는 로그의 레벨을 지정할 수 있어서 중요도에 따라 다른 메시지를 출력할 수도 있습니다.
+디버그 출력을 생성하는 가장 간단한 방법은 코드의 특정 지점에 `fmt.Println()` 함수를 호출하는 것입니다. 예를 들어:
 
 ```Go
-// 로그 레벨 설정 예시
-log.SetPrefix("MyApp: ")
-log.SetFlags(log.Ldate | log.Lmicroseconds)
-log.SetOutput(os.Stdout)
-log.Println("앱이 시작되었습니다.")
-
-// 로그 출력 예시
-log.Println("정보 로그")
-log.Println("경고 로그")
-log.Println("오류 로그")
+fmt.Println("이것은 디버그 출력입니다.")
 ```
 
-출력 결과는 다음과 같습니다.
+실행 결과는 다음과 같습니다:
 
 ```
-MyApp: 2021/01/01 01:23:45.678910 앱이 시작되었습니다.
-MyApp: 2021/01/01 01:23:45.678910 정보 로그
-MyApp: 2021/01/01 01:23:45.678910 경고 로그
-MyApp: 2021/01/01 01:23:45.678910 오류 로그
+이것은 디버그 출력입니다.
 ```
 
-## 관련 자료
+더 많은 정보를 포함할 수도 있습니다. 예를 들어 변수의 값을 출력하거나, 현재 시간을 출력할 수도 있습니다.
 
-- [Go 디버깅을 위한 디버그 출력의 사용 예시](https://pkg.go.dev/log#example-Println)
-- [fmt 패키지 문서](https://pkg.go.dev/fmt)
-- [log 패키지 문서](https://pkg.go.dev/log)
+```Go
+name := "Jane"
+age := 24
 
-## 더 많은 자료
+fmt.Println("안녕하세요,", name, "나이는", age, "살입니다.")
+fmt.Println("현재 시간은", time.Now(), "입니다.")
+```
 
-- [Go 언어 공식 문서 (한국어)](https://go-tour-kr.appspot.com/list)
-- [Go 언어 공식 GitHub 저장소](https://github.com/golang/go)
-- [Go 언어로 만든 유용한 패키지들 모음](https://awesome-go.com/)
+실행 결과는 다음과 같습니다:
+
+```
+안녕하세요, Jane 나이는 24 살입니다.
+현재 시간은 2022-01-01 12:00:00.000000000 +0900 KST m=+0.000000001 입니다.
+```
+
+## 더 깊이 들어가보기
+
+디버그 출력을 더 복잡하게 만들 수도 있습니다. 예를 들어, `if` 문을 사용하여 특정 조건에서만 출력하는 것이 가능합니다.
+
+```Go
+num := 10
+
+if num > 5 {
+  fmt.Println("숫자가 5보다 큽니다!")
+}
+```
+
+실행 결과는 다음과 같습니다:
+
+```
+숫자가 5보다 큽니다!
+```
+
+또한, `for` 루프를 사용하여 여러 줄의 디버그 출력을 만들 수도 있습니다.
+
+```Go
+for i := 1; i <= 5; i++ {
+  fmt.Println("카운트다운:", i)
+}
+```
+
+실행 결과는 다음과 같습니다:
+
+```
+카운트다운: 1
+카운트다운: 2
+카운트다운: 3
+카운트다운: 4
+카운트다운: 5
+```
+
+더 복잡한 디버그 출력을 생성하는 방법은 다양하지만, 중요한 점은 디버그 출력을 사용하여 더 효율적으로 프로그래밍 오류를 찾을 수 있다는 점입니다.
+
+## 참조하기
+
+- [https://golang.org/pkg/fmt/](https://golang.org/pkg/fmt/)
+- [https://www.geeksforgeeks.org/golang-debugging-with-print-functions/](https://www.geeksforgeeks.org/golang-debugging-with-print-functions/)
+- [https://medium.com/code-brewing-company/debugging-using-print-statements-go-lang-b35de29a0105](https://medium.com/code-brewing-company/debugging-using-print-statements-go-lang-b35de29a0105)
+
+## 참고자료
+
+- [https://golang.org/pkg/fmt/](https://golang.org/pkg/fmt/)
+- [https://www.geeksforgeeks.org/golang-debugging-with-print-functions/](https://www.geeksforgeeks.org/golang-debugging-with-print-functions/)
+- [https://medium.com/code-brewing-company/debugging-using-print-statements-go-lang-b35de29a0105](https://medium.com/code-brewing-company/debugging-using-print-statements-go-lang-b35de29a0105)

@@ -1,60 +1,48 @@
 ---
-title:    "Haskell: 将字符串转换为小写"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/converting-a-string-to-lower-case.md"
+title:                "Haskell: 将字符串转换为小写"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么转换字符串为小写
+## 为什么
 
-转换字符串为小写是一种常见的操作，它可以让我们处理字符串时更加方便和灵活。比如，我们可以将用户输入的字符串统一转换成小写，这样就不会因为大小写的不同而造成误匹配。
+在使用Haskell编程时，有时我们需要将字符串转换成小写。这可以帮助我们更容易地比较字符串或者进行其他操作。在这篇博文中，我们将探讨如何使用Haskell来将字符串转换成小写，并提供详细的代码示例和说明。
 
-## 如何实现
+## 如何操作
 
-在Haskell中，我们可以使用 `map` 函数来实现字符串的小写转换。 `map` 函数接受一个函数和一个列表作为参数，它将会将列表中的每个元素都应用到函数上，并返回一个新的列表。
+为了将一个字符串转换成小写，我们可以使用内置的函数`map`和`toLower`。首先，我们需要将字符串转换成一个字符列表，然后使用`map`函数将每个字符都转换成小写。最后，我们使用`concat`函数将字符列表转换回一个字符串。下面是一个示例代码：
 
-``` Haskell
-import Data.Char (toLower)
-
--- 定义一个函数来转换字符串为小写
-toLowerString :: String -> String
-toLowerString = map toLower
+```Haskell
+lowercaseString :: String -> String
+lowercaseString str = concat (map toLower (toUpperCase str))
 ```
 
-``` Haskell
-main = do
-    let str = "HeLlo, WoRld!"
-    putStrLn $ "原始字符串：" ++ str
-    putStrLn $ "转换为小写后：" ++ toLowerString str
+在这个例子中，我们定义了一个名为`lowercaseString`的函数，它接受一个字符串作为输入，并使用`map`函数将字符串中的每个字符都转换成小写。最后，我们使用`concat`函数将字符列表转换回一个字符串。
+
+让我们来看一个例子，假设我们有一个名为`name`的字符串变量，它的值是"Alice"。如果我们使用`lowercaseString`函数将它转换成小写，那么最后的结果将会是"alice"。下面是示例输出：
+
+```Haskell
+lowercaseString "Alice" -- output: "alice"
 ```
 
-``` bash
-原始字符串：HeLlo, WoRld!
-转换为小写后：hello, world!
-```
+现在我们已经知道如何使用`map`和`toLower`函数来将字符串转换成小写，让我们深入探讨一下如何实现这个转换。
 
-## 深入探究
+## 深入了解
 
-在上面的例子中，我们使用了 `Data.Char` 模块中的 `toLower` 函数来转换字符为小写。除了 `toLower` 函数之外，还有其他一些函数也可以达到同样的效果，比如 `toLowerAscii`、`toLowerUnicode` 等，它们之间的区别在于是否支持Unicode字符。
+在Haskell中，字符串实际上是一个字符列表，所以我们可以使用列表操作来处理字符串。`map`函数接受一个函数和一个列表作为参数，并将该函数应用到列表中的每个元素。`toLower`函数是一个处理字符的函数，它可以将一个大写字符转换成小写。
 
-此外，我们也可以通过组合函数来实现复杂的字符串操作。下面的例子中，我们使用 `words` 函数来将字符串按照空格拆分为单词，然后使用 `toLowerString` 函数来转换每个单词为小写，最后使用 `unwords` 函数将单词拼接回去。
+在我们的函数`lowercaseString`中，我们首先使用`toUpperCase`函数将字符串转换成一个字符列表。然后使用`map`函数将`toLower`函数应用到每个字符上，这样就实现了将字符串转换成小写的功能。
 
-``` Haskell
-main = do
-    let str = "Hello, World!"
-    putStrLn $ "原始字符串：" ++ str
-    putStrLn $ "单词转换为小写后：" ++ (unwords . map toLowerString . words) str
-```
+## 参考链接
 
-``` bash
-原始字符串：Hello, World!
-单词转换为小写后：hello, world!
-```
+- [Haskell map](https://www.tutorialspoint.com/haskell/haskell_map.htm)
+- [Haskell toLower](https://www.tutorialspoint.com/haskell/haskell_tolower.htm)
+- [Haskell concat](https://www.tutorialspoint.com/haskell/haskell_concat.htm)
 
-# 参考链接
+## 参见
 
-- [Haskell Data.Char模块文档](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Haskell Map函数文档](https://hackage.haskell.org/package/base/docs/Prelude.html#v:map)
-- [Haskell String类型文档](https://hackage.haskell.org/package/base/docs/Prelude.html#t:String)
-- [Haskell 初学者指南（中文）](http://learnyouahaskell.zbzzbq.com/)
+- [Haskell字符串操作指南](https://www.haskell.org/tutorial/strings.html)
+- [Haskell字符串处理函数](https://www.tutorialspoint.com/haskell/string_manipulation_functions.htm)

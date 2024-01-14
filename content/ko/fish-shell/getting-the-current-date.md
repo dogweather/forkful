@@ -1,36 +1,39 @@
 ---
-title:    "Fish Shell: 현재 날짜 가져오기"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/getting-the-current-date.md"
+title:                "Fish Shell: 현재 날짜 받기"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-저희가 모두 알고있듯이 오늘 날짜를 알고있는 것은 매우 유용합니다. 불과 몇 년 전까지는 달력을 뒤져야 했지만, 우리는 이제 컴퓨터를 켜고 **Fish Shell**을 실행하면 즉시 오늘 날짜를 바로 확인할 수 있습니다. 이런 작업들을 더 편리하게 만들기 위해, 오늘은 **Fish Shell**에서 현재 날짜를 가져오는 방법에 대해 알아보겠습니다.
+## 왜 필요한가? 
 
-## 왜
-오늘 날짜를 가져오는 것은 매우 유용합니다. 예를 들어, 우리가 마감 날짜를 맞추기 위해 중요한 프로젝트에 참여하고 있을 때, 현재 날짜를 알고있다면 몇 일 남았는지 쉽게 계산할 수 있습니다. 또는 생각해보세요, 작업 중인 파일의 이름에 자동으로 오늘 날짜를 추가한다면 얼마나 좋을까요? 그렇기 때문에 현재 날짜를 가져오는 것은 프로그래밍에서 매우 유용합니다.
+현재 날짜를 알고 싶은 이유는 다양할 수 있습니다! 일상적으로는 프로그램을 실행할 때마다 현재 날짜가 필요할 수 있습니다. 또는 날짜를 기반으로 한 다양한 기능을 포함하는 프로그램을 개발하고자 할 때도 마찬가지입니다. 어떤 이유든 간에 현재 날짜를 가져오는 것은 매우 유용합니다!
 
-## 사용 방법
-우선, **Fish Shell**을 실행하세요. 그리고 아래의 코드를 복사하여 붙여넣기 한 후 엔터를 누르세요.
+## 어떻게 하나요? 
+
+Fish Shell을 사용하면 쉽게 현재 날짜를 가져올 수 있습니다. 아래 코드 블록을 참고하여 보시죠!
 
 ```Fish Shell
-set today (date +%Y-%m-%d)
-echo $today
+set curr_date (date +%Y-%m-%d)
+echo $curr_date
 ```
 
-그러면 화면에 현재 날짜가 정확한 형식으로 출력될 것입니다. 예를 들어, 오늘 날짜가 2021년 10월 15일이라면 "2021-10-15"라는 결과가 나올 것입니다.
+위 코드를 실행하면 현재 날짜를 년-월-일 형식으로 출력해주게 됩니다. 예를 들어, 오늘 날짜가 2021년 11월 3일이라면 "2021-11-03"이 출력됩니다. 또한, date 명령어를 사용하면 시간 정보까지 함께 가져올 수 있습니다. 아래 코드를 참고해보세요.
 
-## 딥 다이브
-그렇다면 위의 코드를 좀 더 자세히 살펴보겠습니다. 첫 번째 줄의 `set today`는 변수를 설정하는 구문입니다. 그리고 `date +%Y-%m-%d`는 현재 날짜를 가져오는 명령어입니다. 여기서 `%Y`는 년도, `%m`은 월, `%d`는 일을 나타냅니다. 따라서 위의 예시에서 "2021-10-15" 중 "2021"은 `%Y`, "10"은 `%m`, "15"는 `%d`에 해당합니다. 마지막으로 `echo $today`는 변수에 저장된 값을 출력하는 구문입니다. 따라서 위의 예시에서 오늘 날짜가 저장된 변수를 출력하므로 "2021-10-15"가 출력된 것입니다.
+```Fish Shell
+set curr_date_time (date +%Y-%m-%d_%H:%M:%S)
+echo $curr_date_time
+```
 
-## 더 알아보기
-오늘 날짜를 가져오는 더 많은 방법들이 있는데, 그 중에는 `date` 명령어의 다양한 옵션들을 활용하는 것도 있습니다. 더 알아보고 싶다면 아래의 링크들을 참고해보세요.
+위 코드를 실행하면 현재 날짜와 시간을 년-월-일_시:분:초 형식으로 출력해줍니다. 예를 들어, 현재 시간이 오후 2시 30분 10초라면 "2021-11-03_14:30:10"이 출력됩니다.
 
-## 관련 링크
+## 더 깊게 들어가보기 
+
+"date +%Y-%m-%d"와 같은 형식으로 사용하는 date 명령어는 날짜 형식을 원하는 대로 설정할 수 있습니다. 예를 들어, %Y 대신 %d를 사용하면 일만 출력되며, %b를 사용하면 현재 월의 약어가 출력됩니다. 더 자세한 정보는 아래 링크들을 참고해보세요.
+
+## 같이 보기 
+
 - [Fish Shell 공식 문서](https://fishshell.com/docs/current/cmds/date.html)
-- [Linux 명령어 - date](https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EB%AA%85%EB%A0%B9%EC%96%B4_-_%EB%8B%A4%ED%8A%B8)
-- [Date and time formatting in Fish Shell](https://thoughtbot.com/blog/date-and-time-formatting-in-fish-shell)
-
-## 참고
-모두 함께 즐겁게 **Fish Shell** 프로그래밍을 배워보세요! 그리고 항상 최신 날짜를 이용하여 유용한
+- [GNU 'date' 명령어 설명서](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

@@ -1,53 +1,63 @@
 ---
-title:    "Ruby recipe: Searching and replacing text"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/searching-and-replacing-text.md"
+title:                "Ruby recipe: Searching and replacing text"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Searching and replacing text is a common task in programming, especially when dealing with large amounts of data. It allows you to efficiently make bulk changes to your code or text without having to manually go through each occurrence. In this blog post, we will explore how to do this in Ruby, a popular and versatile programming language.
+
+Have you ever found yourself needing to search and replace text in your code or document? Maybe you used a specific word or variable that you now want to change throughout your entire codebase. Or perhaps you accidentally mistyped a word and need to correct it everywhere. Whatever the reason may be, searching and replacing text is a common task in programming and can save you a lot of time and effort.
 
 ## How To
-First, let's create a string with some sample text as an example:
+
+To search and replace text in Ruby, we can use the `gsub` method. This stands for "global substitution" and allows us to replace all instances of a specific string with a new string. Let's take a look at an example:
 
 ```Ruby
-str = "I love programming in Ruby!"
+string = "Hello world!"
+puts string.gsub("world", "Ruby")
 ```
 
-To replace a specific word or phrase in a string, we can use the `gsub` method. This method takes two arguments: the string to be replaced and the replacement string.
+The `gsub` method takes two arguments - the string we want to replace and the new string we want to replace it with. In this case, we are replacing the word "world" with "Ruby". The output of this code would be:
+
+```
+Hello Ruby!
+```
+
+If you want to replace all occurrences of a specific word regardless of its case, we can use the `gsub!` method with the `i` modifier:
 
 ```Ruby
-str.gsub("love", "enjoy")
+string = "Hello World, hello WORLD!"
+puts string.gsub!(/hello/i, "Hi")
 ```
 
-This will output: "I enjoy programming in Ruby!"
+In this example, we are using a regular expression with the `i` modifier to ignore case sensitivity. The output would be:
 
-We can also use regular expressions to search and replace patterns in a string. For example, if we want to remove all numbers from a string, we can use the `\d` regex pattern which represents any digit:
-
-```Ruby
-str = "There are only 3 days left before the deadline!"
-str.gsub(/\d/, "")
 ```
-
-This will output: "There are only days left before the deadline!"
-
-Additionally, we can use the `sub` method to only replace the first occurrence of a string, instead of all occurrences. This can be useful in certain situations where you only want to modify a specific part of a string.
-
-```Ruby
-str = "Ruby is the best language! Ruby is my favorite!"
-str.sub("Ruby", "Python")
+Hi World, Hi WORLD!
 ```
-
-This will output: "Python is the best language! Ruby is my favorite!"
 
 ## Deep Dive
-The `gsub` and `sub` methods are just a few of the many ways you can search and replace text in Ruby. There are also other methods such as `tr` and `tr_s` that allow you to replace characters in a string with other characters or delete them entirely. Additionally, Ruby has powerful regular expression capabilities that make searching and replacing even more robust.
 
-It's important to note that these methods do not modify the original string, but rather return a new string with the modifications. If you want to modify the original string, you can use the destructive versions of these methods, `gsub!` and `sub!`.
+If we want to get more specific with our search and replace, we can use regular expressions. Regular expressions are sequences of characters that define a search pattern. Let's say we want to find and replace all numbers in a piece of text. We can use the `\d` pattern, which represents any digit, and the `+` modifier, which means one or more occurrences. Check out the following code:
+
+```Ruby
+string = "I have 5 apples and you have 2 oranges."
+puts string.gsub(/\d+/, "10")
+```
+
+The output would be:
+
+```
+I have 10 apples and you have 10 oranges.
+```
+
+Regular expressions can get quite complex, so it's worth learning more about them and how to use them effectively for searching and replacing text.
 
 ## See Also
-- Ruby String Documentation: https://ruby-doc.org/core-3.0.2/String.html
-- Ruby Regular Expressions Tutorial: https://www.rubyguides.com/2015/06/ruby-regex/
-- Ruby Official Website: https://www.ruby-lang.org/en/
+
+- [Ruby `gsub` documentation](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+- [Regular Expressions in Ruby](https://www.regular-expressions.info/ruby.html)
+- [Rubular](https://rubular.com/), an interactive regular expression tester for Ruby

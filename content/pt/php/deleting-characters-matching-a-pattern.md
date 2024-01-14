@@ -1,59 +1,52 @@
 ---
-title:    "PHP: Excluindo caracteres que correspondem a um padrão"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/deleting-characters-matching-a-pattern.md"
+title:                "PHP: Excluindo caracteres que correspondem a um padrão"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que deletar caracteres que correspondem a um padrão?
+## Por que
 
-Às vezes, na programação, nos deparamos com a necessidade de deletar caracteres específicos que seguem um padrão em uma string ou array. Isso pode ser útil para diversas finalidades, como limpar dados ou validar inputs de usuários. Neste artigo, vamos aprender como fazer isso usando PHP.
+Existe uma necessidade às vezes de remover caracteres de uma string que correspondam a um padrão específico. Isso pode ser útil para limpar dados de entrada ou formatar informações de saída de maneira consistente.
 
 ## Como fazer
 
-Para deletar caracteres que correspondem a um padrão em uma string, podemos usar a função `preg_replace()` do PHP. Esta função aceita três parâmetros: o padrão a ser procurado, o que será usado para substituir os caracteres correspondentes e a string em que a substituição será feita.
+Para realizar esta tarefa em PHP, podemos usar a função `preg_replace()`. Esta função permite substituir caracteres que correspondam a um padrão por uma string vazia, efetivamente removendo-os.
 
-Vamos supor que temos a string "Olá, #mundo!". Se quisermos deletar todos os caracteres que começam com "#" (neste caso, apenas o "#"), podemos usar o seguinte código:
-
-```PHP
-$string = "Olá, #mundo!";
-$padrao = '/#/';
-$substituto = '';
-
-$resultado = preg_replace($padrao, $substituto, $string);
-
-echo $resultado; // Resultado: Olá, mundo!
-```
-
-Neste exemplo, estamos usando a expressão regular `/#/` como padrão, que significa "encontre todos os "#" na string". No segundo parâmetro, passamos uma string vazia para indicar que queremos deletar todos os caracteres que correspondem ao padrão.
-
-Podemos também usar a função `preg_replace()` para deletar caracteres em uma array. Por exemplo, se tivermos uma array com os seguintes valores: "João", "Maria" e "Pedro", e quisermos deletar todas as letras "a":
+Veja um exemplo simples abaixo:
 
 ```PHP
-$array = array("João", "Maria", "Pedro");
-$padrao = '/a/';
-$substituto = '';
-
-$resultado = preg_replace($padrao, $substituto, $array);
-
-print_r($resultado); // Resultado: Array ( [0] => Jõo [1] => Mr[i] => Pedro )
+<?php
+$string = "Hello World!";
+$nova_string = preg_replace("/[!o]/", "", $string);
+echo $nova_string; // resultado: Hell Wrld
+?>
 ```
 
-As letras "a" em todos os nomes foram substituídas por uma string vazia, resultando em "João" se tornando "Jõo" e "Maria" se tornando "Mr[i]".
+Neste exemplo, estamos removendo os caracteres "o" e "!" da string original "Hello World!" e imprimindo o resultado. A sintaxe da função `preg_replace()` é `preg_replace($padrao, $substituicao, $string)`, onde `$padrao` especifica o padrão de caracteres a serem removidos e `$substituicao` é a string que será usada para substituir os caracteres correspondentes.
 
-## Deep Dive
+Podemos até mesmo usar expressões regulares mais complexas no padrão para alcançar diferentes tipos de exclusão. Por exemplo, para remover todos os caracteres que não são letras ou números, podemos usar o padrão `/[^A-Za-z0-9]/`:
 
-A expressão regular utilizada como padrão na função `preg_replace()` é formada por caracteres especiais que permitem uma busca mais precisa. Aqui estão alguns exemplos:
+```PHP
+<?php
+$string = "123!AbC@";
+$nova_string = preg_replace("/[^A-Za-z0-9]/", "", $string);
+echo $nova_string; // resultado: 123AbC
+?>
+```
 
-- `[a-z]`: Busca por qualquer letra minúscula entre "a" e "z".
-- `[^a-z]`: Busca por qualquer caracter que NÃO seja uma letra minúscula entre "a" e "z".
-- `\d`: Busca por qualquer dígito.
-- `\s`: Busca por qualquer espaço em branco.
+## Profundando
 
-Existem muitos outros caracteres especiais que podem ser utilizados em expressões regulares. É importante lembrar que o padrão utilizado deve ser adequado à string ou array em que a substituição será feita.
+Para entender melhor como a função `preg_replace()` funciona, precisamos saber sobre expressões regulares. Expressões regulares são padrões de caracteres que correspondem a diferentes tipos de strings. No exemplo acima, usamos a expressão regular `/[!o]/`, que significa "encontre todos os caracteres que sejam '!' ou 'o'". A barra (/) no início e no final do padrão é usada para delimitá-lo.
 
-## Veja Também
+Existem muitos caracteres especiais que podem ser usados em expressões regulares para alcançar diferentes tipos de correspondência. Por exemplo, `.` corresponde a qualquer caractere, `[a-zA-Z]` corresponde a letras maiúsculas e minúsculas, `+` corresponde a um ou mais ocorrências do padrão anterior e assim por diante.
 
-- [Documentação oficial do PHP sobre a função `preg_replace()`](https://www.php.net/manual/pt_BR/function.preg-replace.php)
-- [Tutoriais sobre expressões regulares em PHP](https://www.guru99.com/php-regular-expressions.html)
+No PHP, podemos usar expressões regulares em muitas funções além de `preg_replace()`, como `preg_match()` para encontrar correspondências em uma string e `preg_split()` para quebrar uma string em partes com base em um padrão.
+
+## Veja também
+
+- Documentação do PHP sobre [Expressões Regulares](http://php.net/manual/pt_BR/reference.pcre.pattern.syntax.php)
+- Tutorial do W3Schools sobre [Expressões Regulares em PHP](https://www.w3schools.com/php/php_regex.asp)
+- Tutorial do SitePoint sobre [Expressões Regulares em PHP](https://www.sitepoint.com/expressions-regulaires-php/)

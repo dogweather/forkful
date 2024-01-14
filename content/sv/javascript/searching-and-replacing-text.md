@@ -1,43 +1,70 @@
 ---
-title:    "Javascript: Sökning och ersättning av text"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/searching-and-replacing-text.md"
+title:                "Javascript: Sökning och ersättning av text"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-javascriptÄr du trött på att manuellt byta ut ord eller fraser i din kod? Eller kanske letar du efter ett smidigt sätt att byta ut alla återkommande variabelnamn i ett projekt? Då kan sökning och ersättning vara en användbar teknik för dig. Genom att använda denna funktion kan du enkelt söka efter specifika ord eller fraser och ersätta dem med det som passar bättre för din kod.
-
 ## Varför
 
-Söka och ersätta är en användbar metod för att spara tid och minska risken för mänskliga fel. Istället för att manuellt leta igenom din kod efter varje instans av ett visst ord eller uttryck, kan du enkelt genomföra en sökning och ersättning för att snabbt uppdatera alla förekomster.
+Att söka och ersätta text är en vanlig uppgift inom Javascript-programmering. Genom att använda en sök-och-ersätt-funktion kan du enkelt ändra texten på många platser i din kod, vilket sparar tid och minskar risken för felaktig stavning.
 
-## Hur man gör
+## Så här gör du
 
-För att genomföra en sökning och ersättning i Javascript, börja med att öppna din kod i en textredigerare eller integrerad utvecklingsmiljö (IDE). Sedan kan du använda inbyggda funktioner eller regex (regular expressions) för att söka efter en specifik sträng och ersätta den med en annan.
+För att söka och ersätta text i Javascript använder du metoden `replace()`. Dess syntax är enkel: du anger först den text du vill söka efter och sedan den text du vill ersätta den med.
 
-Här är ett exempel på hur du kan byta ut alla instanser av "hej" med "hallå" i en sträng:
 
 ```Javascript
-let text = "Hej världen! Jag är en textsträng.";
-let nyText = text.replace(/hej/g, "hallå");
-console.log(nyText);
+let str = "Välkommen till min blogg!";
+let newStr = str.replace("blogg", "hemsida");
+console.log(newStr);
 ```
 
 Output:
 ```Javascript
-"Hallå världen! Jag är en textsträng."
+Välkommen till min hemsida!
 ```
 
-## Fördjupa dig
+Funktionen `replace()` tar även emot en så kallad *regular expression* (regex) som sökparameter. Med hjälp av regex kan du utföra avancerade sökningar och ersättningar baserat på mönster i texten.
 
-När du behärskar grundläggande sökning och ersättning i Javascript, kan du börja experimentera med regex för mer komplexa sökningar. Du kan också utforska olika IDE:er och tillägg som erbjuder avancerade sök- och ersättningsfunktioner.
+```Javascript
+let str = "Dagens datum är 2021-10-15.";
+let newStr = str.replace(/\d{4}-\d{2}-\d{2}/, "YYYY-MM-DD");
+console.log(newStr);
+```
 
-Se till att vara noggrann och försiktig när du genomför sökningar och ersättningar i din kod, speciellt när det gäller variabelnamn. En felaktig sökning eller ersättning kan leda till buggar och fel i din kod.
+Output:
+```Javascript
+Dagens datum är YYYY-MM-DD.
+```
+
+Du kan också använda en global flagga `/g` för att söka och ersätta alla förekomster av en viss text.
+
+```Javascript
+let str = "Jag älskar äpplen och äppelpaj!";
+let newStr = str.replace(/äpple/g, "banan")
+console.log(newStr);
+```
+
+Output:
+```Javascript
+Jag älskar bananer och bananpaj!
+```
+
+## Djupdykning
+
+När du använder `replace()`-metoden är det viktigt att förstå hur den fungerar. Standardmässigt ersätts bara den första förekomsten av den sökta texten. Om du vill ersätta alla förekomster måste du använda en global flagga, som vi visade i exemplet ovan.
+
+En annan viktig aspekt att tänka på är att `replace()`-metoden returnerar en ny sträng och inte ändrar den befintliga strängen. Om du vill spara ändringarna måste du tilldela den nya strängen till en variabel.
+
+Det finns också andra metoder inom Javascript som kan användas för att söka och ersätta text, som `replaceAll()` och `substr()`. Det är alltid en bra idé att utforska olika möjligheter och hitta den som passar bäst för ditt specifika fall.
 
 ## Se även
 
-- [Regular Expressions Cheat Sheet](https://www.regexbuddy.com/regex.html)
-- [IDE-Tips för effektiv kodredigering](https://www.developersfeed.com/basta-code-editors-for-frontend-developers/)
+Här är några länkar som kan vara till hjälp när du ska söka och ersätta text i Javascript:
 
-Tack för läsningen, lycka till med dina sökningar och ersättningar i din Javascript-kod!
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [W3Schools](https://www.w3schools.com/js/js_string_replace.asp)
+- [Regex Tutorial](https://www.regular-expressions.info/javascript.html)

@@ -1,56 +1,45 @@
 ---
-title:    "Kotlin: Écrire sur la sortie d'erreur standard"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/writing-to-standard-error.md"
+title:                "Kotlin: Écriture vers la sortie d'erreur standard"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Ecrire des messages sur la sortie standard d'erreur (standard error) peut sembler fastidieux pour certains programmeurs, mais c'est en réalité une pratique importante et utile. Lisez la suite pour découvrir pourquoi il est important d'engager votre code à écrire sur la sortie standard d'erreur.
+Si vous êtes un programmeur Kotlin, vous avez probablement déjà entendu parler de l'écriture sur l'erreur standard (standard error en anglais). Mais cela peut sembler un concept quelque peu mystérieux pour les nouveaux arrivants en Kotlin. Alors, pourquoi quelqu'un voudrait-il écrire sur l'erreur standard ? Jetons un coup d'œil.
 
-## Comment faire
+## Comment faire 
 
-L'écriture sur la sortie standard d'erreur peut sembler complexe, mais avec Kotlin c'est en fait assez simple. Voici un exemple de code pour écrire simplement un message sur la sortie standard d'erreur :
+Pour écrire sur l'erreur standard en Kotlin, nous utilisons la fonction `System.err.println()`. Cette fonction permet d'afficher un message sur l'erreur standard plutôt que sur la sortie standard (standard output). Regardons un exemple concret :
 
-```Kotlin
-fun main() {
-    System.err.println("Erreur : division par zéro !")
-}
+```
+val name = "Jean"
+System.err.println("Bonjour $name, quelle magnifique journée !")
 ```
 
-La sortie de ce code sera : `Erreur : division par zéro !`
+Dans cet exemple, nous utilisons la fonction `System.err.println()` pour afficher notre message de salutation sur l'erreur standard. Lorsque nous exécutons ce code, nous obtenons l'output suivant:
 
-Il est également possible d'écrire des variables ou des expressions sur la sortie standard d'erreur. Exemple :
-
-```Kotlin
-fun main() {
-    val nom = "Jean"
-    System.err.println("Bonjour $nom !")
-}
+```
+Bonjour Jean, quelle magnifique journée !
 ```
 
-La sortie de ce code sera : `Bonjour Jean !`
+Comme vous pouvez le voir, le message est imprimé sur l'erreur standard plutôt que sur la sortie standard.
 
-## Plongée en profondeur
+## Plongeons plus profondément
 
-Ecrire sur la sortie standard d'erreur est une pratique courante en programmation, car cela permet de signaler des erreurs ou des avertissements lors de l'exécution du code. Cela peut être utile pour les programmeurs lors du débogage du code, ainsi que pour les utilisateurs qui peuvent trouver des informations importantes sur les erreurs rencontrées.
+Maintenant que nous savons comment écrire sur l'erreur standard, nous pouvons nous demander dans quels cas cela pourrait être utile. La principale raison pour laquelle vous voudriez écrire sur l'erreur standard est si vous voulez séparer vos messages de log en deux catégories : les messages d'erreur et les messages d'information. Cela peut être particulièrement utile lorsque vous travaillez sur un projet en équipe et que vous voulez que les développeurs puissent rapidement voir et corriger les erreurs lors de la lecture des messages de log.
 
-Il est également possible de rediriger la sortie standard d'erreur vers un fichier pour enregistrer les messages importants ou les erreurs rencontrées lors de l'exécution du code. Cela peut être fait en utilisant la classe `PrintStream` et la méthode `setErr()` pour définir le fichier de sortie. Exemple :
+De plus, écrire sur l'erreur standard peut également être utile pour déboguer du code. Si vous voulez voir si une partie spécifique de votre programme est exécutée, vous pouvez utiliser la fonction `System.err.println()` pour afficher un message sur l'erreur standard et vérifier si le message est imprimé ou non. Cela peut vous aider à identifier les problèmes et à les résoudre plus rapidement.
 
-```Kotlin
-fun main() {
-    val fichier = File("erreurs.txt")
-    System.setErr(PrintStream(fichier))
-    System.err.println("Erreur : division par zéro !")
-}
-```
+## Voir aussi 
 
-La sortie de ce code sera écrite dans le fichier `erreurs.txt` plutôt que sur la sortie standard d'erreur.
+Si vous voulez en savoir plus sur l'écriture sur l'erreur standard en Kotlin, voici quelques ressources utiles :
 
-## Voir aussi
+- Documentation officielle de Kotlin sur l'écriture sur l'erreur standard : https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/system.err.html
+- Un tutoriel sur l'utilisation de la fonction `System.err.println()` : https://blog.frankel.ch/debugging-kotlin-std/
+- Un exemple de l'utilisation de l'erreur standard pour gérer les exceptions en Kotlin : https://www.baeldung.com/kotlin-exceptions
 
-- [Guide officiel de Kotlin](https://kotlinlang.org/docs/tutorials/command-line.html#standard-inputoutput)
-- [Tutoriel sur la redirection de la sortie standard d'erreur en Kotlin](https://www.baeldung.com/kotlin/redirect-system-out-err)
-- [Documentation de la classe `PrintStream`](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html) (en anglais)
+Maintenant que vous savez comment écrire sur l'erreur standard en Kotlin, vous pouvez l'utiliser pour améliorer vos messages de log et déboguer votre code plus efficacement. N'hésitez pas à essayer cette fonctionnalité dans vos prochains projets !

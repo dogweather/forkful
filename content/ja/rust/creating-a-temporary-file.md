@@ -1,41 +1,36 @@
 ---
-title:    "Rust: 一時ファイルを作成する"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/creating-a-temporary-file.md"
+title:                "Rust: 一時ファイルの作成"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ一時ファイルを作成するのか
+## なぜ
+一時ファイルを作成することには、多くの理由があります。例えば、プログラムが一時的に必要なデータを格納するため、またはプログラム実行中にファイルを作成する必要がある場合などです。
 
-一時ファイルを作成する理由は様々です。一時的な変数やデータを保存するために使用することができます。また、プログラムがファイルを必要とするが、使用後は削除する必要がある場合にも便利です。一時ファイルはプログラムの実行中に必要なファイルを作成するためにも使用されます。
-
-## 作成方法
-
-Rustプログラミング言語では、標準ライブラリの`tempfile`クレートを使用して一時ファイルを作成することができます。まず、`tempfile::Builder`構造体を使用して一時ファイルを作成する場所を指定します。次に、`tempfile::NamedTempFile`構造体を使用してファイルを作成します。以下のコードは、`tempfile::NamedTempFile`を使用して一時ファイルを作成し、ファイルにテキストを書き込む例です。
+## 作り方
+Rustでは、標準ライブラリの`std::fs`モジュールを使用することで、簡単に一時ファイルを作成することができます。まず、`use std::fs::File`で`File`型をインポートします。その後、`File::create("/path/to/file")?`という形式でファイルを作成し、必要に応じて書き込みや読み込みを行います。
 
 ```Rust
-use std::io::prelude::*;
 use std::fs::File;
 
-let mut file = tempfile::Builder::new()
-    .prefix("temp")
-    .suffix(".txt")
-    .tempfile()
-    .expect("Failed to create temporary file");
+let mut temp_file = File::create("/path/to/file")?;
+// ファイルに書き込みを行うコード
+// ...
 
-// Write some text to the file
-file.write_all(b"Hello, world!")?;
+// ファイルの読み込みを行うコード
+// ...
 ```
 
-ファイルを作成する際に、プレフィックスやサフィックスを指定することができます。また、`tempfile::NamedTempFile`の`tempfile`メソッドに`with_dir`や`with_prefix`などのメソッドをチェーンすることで、作成する一時ファイルの場所や名前をより詳細に指定することができます。
+まず、`File::create()`メソッドで一時ファイルを作成し、その後ファイルに書き込みや読み込みを行うためのコードを追加します。コードを実行すると、指定したパスに一時ファイルが作成され、処理が終わると自動的に削除されます。
 
-## 深く掘り下げる
+## 深堀り
+一時ファイルを作成する際、ファイルのパーミッションや開くモードを指定することもできます。また、`File`型の他にも`TempDir`型を使用することで、一時的なディレクトリを作成することもできます。詳細な情報については、公式ドキュメントを参照することをおすすめします。
 
-Rustの`tempfile`クレートは、OSの一時ディレクトリを使用して一時ファイルを作成するために、プラットフォーム毎に異なる値を使用します。また、一時ファイルが必要なだけのサイズが保証されているため、ファイルサイズを心配することなくファイルに書き込むことができます。
+## 参考リンク
 
-# 参考リンク
-
-- [Rustドキュメント：tempfileクレート](https://doc.rust-lang.org/tempfile/)
-- [Rust Cookbook：一時ファイルの作成](https://rust-lang-nursery.github.io/rust-cookbook/os/filesystem/tempfile.html)
-- [RustプログラマのためのLinuxプラットフォーム情報：一時ファイルとディレクトリ](https://www.crihan.fr/blogs/post/2017/07/24/using_temp_files_and_directories/)
+- [Standard Library - `std::fs`](https://doc.rust-lang.org/std/fs/index.html)
+- [Creating a Temporary Directory with Rust](https://www.fluvio.io/docs/architecture/code/creating-temporary-directory)
+- [Filesystem operations in Rust - File and directories](https://dev.to/lukbh/speed-up-filesystem-operations-in-rust-1c8f)

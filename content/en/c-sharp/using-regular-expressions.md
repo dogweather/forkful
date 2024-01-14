@@ -1,59 +1,57 @@
 ---
-title:    "C# recipe: Using regular expressions"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/using-regular-expressions.md"
+title:                "C# recipe: Using regular expressions"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Regular expressions are a powerful tool in the world of programming. They allow us to search, manipulate, and validate strings of text with ease. By learning how to use regular expressions, you can streamline your code and make it more efficient.
+##Why
 
-## How To
-Using regular expressions in C# is actually quite simple. Let's look at a few examples to see how they work.
+Have you ever found yourself searching through a large text document for a specific word or phrase? Or maybe you need to validate user input in your program? Regular expressions, or simply "regex", provides a powerful and efficient way to search, match, and manipulate text. It's a must-have tool for any developer looking to save time and increase productivity.
 
-```C#
-// Match a specific word in a sentence
-Regex regex = new Regex("hello");
-string sentence = "Hello there, how are you?";
-Match match = regex.Match(sentence);
-Console.WriteLine(match); // Output: "Hello"
+##How To
 
-// Find multiple occurrences
-Regex regex = new Regex("the");
-string sentence = "The cat in the hat";
-MatchCollection matches = regex.Matches(sentence);
-foreach (var match in matches)
+Using regular expressions in your C# code is relatively straightforward. First, you'll need to add the namespace "System.Text.RegularExpressions" to your code. This provides access to the Regex class, which is responsible for performing regex operations.
+
+Next, create an instance of the Regex class by passing in the pattern you want to match as a string. For example, to find all words that start with the letter "s" in a given string, you can use the pattern "s\w+" (the backslash escapes the special character "\w"). Then, use the "Match" method to find all the matches in your string.
+
+```
+using System.Text.RegularExpressions;
+
+//create a regex instance
+Regex regex = new Regex("s\w+");
+
+//find all matches in a string
+MatchCollection matches = regex.Matches("Sally sells seashells by the seashore.");
+
+//loop through each match and print the result
+foreach (Match match in matches)
 {
-    Console.WriteLine(match); // Output: "the" "the"
+    Console.WriteLine(match.Value); //prints "sells" and "seashells"
 }
-
-// Replace a word in a sentence
-Regex regex = new Regex("apple");
-string sentence = "I love apples!";
-string newSentence = regex.Replace(sentence, "oranges");
-Console.WriteLine(newSentence); // Output: "I love oranges!"
-
-// Validate email address
-Regex regex = new Regex(@"\w+@\w+\.\w+");
-string email = "johndoe@email.com";
-if (regex.IsMatch(email))
-{
-    Console.WriteLine("Valid email address");
-}
-else
-{
-    Console.WriteLine("Invalid email address");
-}
-// Output: Valid email address
 ```
 
-## Deep Dive
-Regular expressions may seem like a random assortment of symbols and characters, but each one serves a specific purpose. For example, the backslash "\" symbol indicates an escape character, which is used to give special meaning to certain characters. The dot "." symbol is a wildcard that represents any single character. By learning the different symbols and their meanings, you can create complex regular expressions to suit your needs.
+You can also use regular expressions to replace text. The "Replace" method takes in three parameters: the input string, the replacement string, and an optional integer to specify the maximum number of replacements. For instance, to replace all instances of the word "red" with "blue" in a given string, you can use the following code:
 
-Other advanced features of regular expressions in C# include capturing groups, which allow you to retrieve specific parts of a match, and lookaround assertions, which let you specify the position of a match relative to another string. These features can greatly enhance the functionality and efficiency of your regular expressions.
+```
+string newString = Regex.Replace("I have a red car and a red bike.", "red", "blue");
+//newString will now be "I have a blue car and a blue bike."
+```
 
-## See Also
-- [Regular Expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions-in-csharp)
-- [Regular Expressions 101](https://regex101.com/)
-- [Mastering Regular Expressions by Jeffrey Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)
+Regular expressions also allow for advanced patterns such as character classes, quantifiers, and backreferences. It may seem daunting at first, but with practice, you'll be able to create complex regex patterns to suit your needs. For more in-depth tutorials on using regular expressions in C#, MSDN and Regex101 are great resources to explore.
+
+##Deep Dive
+
+One thing to keep in mind when using regular expressions in C# is that they are case-sensitive by default. If you want to perform a case-insensitive search, you can use the "IgnoreCase" option in the Regex constructor. You can also use the "RegexOptions" enum to specify other options such as "Singleline" or "Multiline", which can affect how the regex pattern matches text.
+
+Another important concept to understand is the concept of "greedy" and "lazy" matching. By default, regular expressions are greedy, meaning they will match as much text as possible. For example, the pattern "a.+" will match "apple" in the string "I have an apple pie" instead of just the first letter "a". To make the matching lazy, simply add a question mark after the quantifier (e.g "a.+?").
+
+It's also worth noting that regex can be resource-intensive and if overused, can significantly impact the performance of your code. So, it's important to understand when and where to use regular expressions and to consider alternative approaches if necessary.
+
+##See Also
+
+- [MSDN - Regular Expression Language](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Regex101 - Interactive Regex Tutorial and Debugger](https://regex101.com/)
+- [DotNetPerls - C# Regular Expressions Guide](https://www.dotnetperls.com/regex)

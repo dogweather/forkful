@@ -1,41 +1,42 @@
 ---
-title:    "Ruby: Usuwanie znaków pasujących do wzorca"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/deleting-characters-matching-a-pattern.md"
+title:                "Ruby: Usuwanie znaków pasujących do wzorca"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Czasami w procesie tworzenia aplikacji lub skryptów w języku Ruby, możemy napotkać na sytuację, w której chcielibyśmy usunąć określone znaki z ciągu znaków. Może to być potrzebne do filtrowania danych lub wielu innych zastosowań. W tym artykule pokażemy jak w prosty sposób usunąć znaki pasujące do określonego wzorca.
+# Dlaczego usuwać znaki pasujące do wzorca?
 
-## Jak To Zrobić
-Aby usunąć znaki pasujące do wzorca w Ruby, możemy skorzystać z metody `gsub` lub `delete`. Poniżej przedstawiam przykładowy kod, który pokaże jak usunąć znaki `a` z podanego ciągu.
+Usuwanie określonych znaków z tekstu często jest ważną czynnością w programowaniu. Może to pomóc w filtrowaniu i przetwarzaniu danych, usunięciu białych znaków lub poprawieniu nieprawidłowych znaków. Podczas gdy w Ruby istnieje wiele metod do usuwania znaków, jedną z najbardziej użytecznych jest usuwanie znaków pasujących do wzorca.
 
-```ruby
-string = "ruby to język programowania"
-filtered_string = string.gsub("a", "")
-puts filtered_string
-# wyjście: ruby to jzyk programowni
+## Jak to zrobić?
+
+Wykorzystując metodę `gsub` możemy usunąć wszystkie znaki pasujące do danego wzorca z określonego tekstu. Na przykład, aby usunąć wszystkie znaki cyfr z ciągu znaków, wykonaj następujący kod:
+
+```Ruby
+string = "123abc456def"
+new_string = string.gsub(/\d/, '')
+puts new_string # wyświetli "abc def"
 ```
 
-Jest to prosta i szybka metoda usuwania znaków pasujących do wzorca. Możemy również zastosować to samo rozwiązanie do usuwania wielu znaków na raz.
+W powyższym przypadku, użyliśmy wyrażenia regularnego `/d/`, które pasuje do każdej cyfry. Aby usunąć inne znaki, możemy zmienić to wyrażenie na odpowiedni dla nas wzorzec. Na przykład, jeśli chcemy usunąć wszystkie znaki specjalne, możemy użyć `/[[:punct:]]/`.
 
-```ruby
-string = "1,2,3 are numbers"
-filtered_string = string.gsub(/[0-9]/, "")
-puts filtered_string
-# wyjście: , are numbers
+```Ruby
+string = "Hello! Are you there?"
+new_string = string.gsub(/[[:punct:]]/, '')
+puts new_string # wyświetli "Hello Are you there"
 ```
 
-Powyższy przykład wykorzystuje wyrażenia regularne, aby usunąć wszystkie cyfry z podanego ciągu.
+## Deep Dive
 
-## Przyjrzyjmy Się Temu Bliżej
-Metoda `gsub` może przyjmować wyrażenie regularne lub pojedynczy znak jako pierwszy argument. Możemy również wykorzystać dodatkowe opcje, takie jak ignorowanie wielkości liter czy podanie domyślnego znaku do zastąpienia. Możliwości są szerokie i warto eksperymentować z różnymi kombinacjami.
+Metoda `gsub` jest odpowiednikiem metody `sub`, która usuwa tylko pierwsze wystąpienie danego znaku. Jednak, używając `gsub` z wyrażeniem regularnym, możemy usunąć wszystkie pasujące znaki. Przykładowo `/s/` pasuje do wszystkich białych znaków, więc możemy użyć `string.gsub(/\s/, '')` aby usunąć wszystkie białe znaki z tekstu.
 
-## Zobacz Również
-Jeśli chcesz dowiedzieć się więcej na temat usuwania znaków pasujących do wzorca w Ruby, zobacz poniższe linki:
+Ważne jest również, aby pamiętać, że metoda `gsub` zwraca nowy zmodyfikowany ciąg znaków oraz nie zmienia oryginalnego. Jeśli chcemy nadpisać oryginalny string, musimy przypisać wynik metody `gsub` do tej samej zmiennej, jak w powyższych przykładach.
 
-- Dokumentacja Ruby: https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub
-- Darmowy kurs Ruby: https://www.codecademy.com/learn/learn-ruby
-- Wspólnota Ruby w Polsce: https://rubyonrails.pl/
+# Zobacz również
+
+- [Ruby String Class](https://ruby-doc.org/core-2.6.3/String.html)
+- [Ruby Regular Expressions](https://ruby-doc.org/core-2.6.3/Regexp.html)
+- [Ruby Methods: gsub vs. sub](https://medium.com/@sbespalko/ruby-methods-gsub-vs-sub-f8b0adefc67a)

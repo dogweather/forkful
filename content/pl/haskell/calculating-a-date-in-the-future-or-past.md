@@ -1,35 +1,64 @@
 ---
-title:    "Haskell: Obliczanie daty w przyszłości lub w przeszłości"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/calculating-a-date-in-the-future-or-past.md"
+title:                "Haskell: Obliczanie daty w przyszłości lub przeszłości"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Dlaczego warto posiąść umiejętność obliczania daty w przyszłości lub przeszłości? Możliwość wyliczenia dokładnego dnia lub czasu w przyszłości jest niezwykle przydatna w wielu projektach programistycznych, ponieważ pozwala na planowanie działań lub wykonywanie skomplikowanych operacji z uwzględnieniem określonego dnia. 
+Kalkulacja daty w przyszłości lub przeszłości może być przydatna w wielu przypadkach, takich jak planowanie ważnych wydarzeń czy obliczanie dokładnego wieku. W tym wpisie przedstawię przystępny sposób na wykonanie tego zadania za pomocą języka Haskell.
 
-## Jak to zrobić
+# Jak to zrobić
 
-Obliczanie daty w Haskellu jest bardzo proste dzięki wbudowanej bibliotece `Data.Time`. Aby ustawić datę w przyszłości lub przeszłości, wystarczy użyć funkcji `addDays` lub `addTime` wraz z odpowiednią ilością dni lub czasu, które chcemy dodać lub odjąć. 
+Pierwszym krokiem jest zaimportowanie modułu "Data.Time" do naszego kodu. Następnie należy zdefiniować zmienną zawierającą aktualną datę używając funkcji "getCurrentTime", a także zmienne dzienne, miesięczne i roczne, które będą odpowiadać za przesunięcie w przeszłości lub przyszłości.
 
 ```Haskell
 import Data.Time
 
--- Obliczanie daty w przyszłości
-futureDate = addDays 10 (fromGregorian 2021 12 15)  -- 25 grudnia 2021
+currentDate :: IO UTCTime
+currentDate = getCurrentTime
 
--- Obliczanie daty w przeszłości
-pastDate = addDays (-10) (fromGregorian 2021 12 15)  -- 5 grudnia 2021
+days :: (Num a) => a
+days = 7
+
+months :: (Num a) => a
+months = 6
+
+years :: (Num a) => a
+years = 5
 ```
 
-## Głębsze zagłębienie
+Następnie używając funkcji "addUTCTime" możemy obliczyć datę w przyszłości lub przeszłości. W poniższym przykładzie wyliczamy datę dwadzieścia dni w przyszłości.
 
-W przypadku bardziej skomplikowanych operacji z datami, warto poznać również bibliotekę `Data.Time.Calendar.OrdinalDate`, która pozwala na obliczanie daty na podstawie roku i numeru dnia w tym roku. Oprócz tego, wbudowana biblioteka `Data.Time.Clock` umożliwia pracę z czasem w formacie `UTCTime` oraz `LocalTime`, co może być przydatne w strefach czasowych. 
+```Haskell
+futureDate :: IO UTCTime
+futureDate = do
+  current <- currentDate
+  let future = addUTCTime (days * 20) current
+  return future
+```
 
-## Zobacz również
+Możemy również wyświetlić wynik jako czytelną dla użytkownika datę. W tym celu skorzystamy z funkcji "formatTime" i określimy odpowiednie formatowanie.
 
-- Dokumentacja `Data.Time` : https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
-- Dokumentacja `Data.Time.Calendar.OrdinalDate` : https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar-OrdinalDate.html
-- Dokumentacja `Data.Time.Clock` : https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html
+```Haskell
+outputDate :: IO ()
+outputDate = do
+  date <- futureDate
+  let formatted = formatTime defaultTimeLocale "%A, %d %B %Y" date
+  putStrLn formatted
+```
+
+Przykładowe wywołanie "outputDate" wyświetli: "Monday, 29 March 2021".
+
+# Pełne zanurzenie
+
+Funkcje, które zostały użyte w powyższych przykładach opierają się na bibliotece "Data.Time", która oferuje wiele innych przydatnych narzędzi do pracy z datami. Warto zapoznać się z dokumentacją, aby poznać wszystkie dostępne możliwości.
+
+# Zobacz również
+
+- Dokumentacja do biblioteki Data.Time: https://hackage.haskell.org/package/time/docs/Data-Time.html
+- Wprowadzenie do Haskell: https://learnyouahaskell.com/chapters
+- Przykłady formatowania dat i godzin w Haskell: https://wiki.haskell.org/Printing_a_locale-specific_time_and_date

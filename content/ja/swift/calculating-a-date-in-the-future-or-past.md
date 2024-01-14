@@ -1,41 +1,62 @@
 ---
-title:    "Swift: 将来または過去の日付を計算する"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/calculating-a-date-in-the-future-or-past.md"
+title:                "Swift: 未来または過去の日付の計算"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付を未来や過去に計算する必要性は、アプリケーションでイベントを管理する場合など、時にはとても重要です。Swiftでは、特定の日付を基準にして未来や過去の日付を計算することができます。
+日付の計算を行う理由はさまざまです。例えば、将来の誕生日や記念日を知るために、またはプロジェクトの締切日を把握するために、日付の計算が必要になることがあります。Swiftを使えば、簡単に日付を計算することが可能です。
 
 ## 方法
 
-まず、計算したい日付のコンポーネントを取得する必要があります。下記のような例を見てみましょう。
+### 日付を増やす
+
+日付を増やす場合には、DateComponentsを使用します。たとえば、今日の日付から2ヶ月後の日付を計算するには、次のようにコードを書きます。
 
 ```Swift
-// 今日の日付を取得
+//今日の日付を取得
 let today = Date()
-// カレンダーを取得
-let calendar = Calendar.current
-// 未来の日付を計算 (1年後)
-let oneYearFromToday = calendar.date(byAdding: .year, value: 1, to: today)
-// 過去の日付を計算 (1ヶ月前)
-let oneMonthAgo = calendar.date(byAdding: .month, value: -1, to: today) 
-
-print(oneYearFromToday) // 2021-09-09 05:36:29 +0000
-print(oneMonthAgo) // 2020-07-09 05:36:29 +0000
+//コンポーネントを作成
+var dateComponents = DateComponents()
+//2ヶ月後を設定
+dateComponents.month = 2
+//日付を増やす
+let futureDate = Calendar.current.date(byAdding: dateComponents, to: today)
+//結果を表示
+print(futureDate)
 ```
 
-ここでは、日付を取得するために `Date()` という関数を使用し、カレンダーを使って任意の日数を追加または減じることで未来や過去の日付を計算しています。`.year` や `.month` など、カレンダーのコンポーネントと組み合わせることで、さまざまな日付を計算することができます。
+このコードを実行すると、今日の日付から2ヶ月後の日付が計算されて表示されます。
+
+### 日付を減らす
+
+日付を減らす場合には、同じくDateComponentsを使用します。たとえば、今日の日付から1週間前の日付を計算するには、次のようにコードを書きます。
+
+```Swift
+//今日の日付を取得
+let today = Date()
+//コンポーネントを作成
+var dateComponents = DateComponents()
+//1週間前を設定
+dateComponents.week = -1
+//日付を減らす
+let pastDate = Calendar.current.date(byAdding: dateComponents, to: today)
+//結果を表示
+print(pastDate)
+```
+
+このコードを実行すると、今日の日付から1週間前の日付が計算されて表示されます。
 
 ## ディープダイブ
 
-Swiftで日付を計算する時、さまざまな方法があります。この記事では、カレンダーを使用する方法を紹介しましたが、 `DateComponents` や `DateInterval` などの方法もあります。また、タイムゾーンやロケールを考慮することも重要です。より詳細に学びたい方は、Swiftの公式ドキュメントやオンラインのチュートリアルなどを参考にしてみてください。
+日付の計算には、DateComponentsのほかにもCalendarを使用することができます。また、異なるタイムゾーンでの日付の計算や、平日の計算なども可能です。詳細については公式ドキュメントを参照してください。
 
-## さらに見る
+## 他にも見てみる
 
-[Swiftでの日付計算の方法](https://developer.apple.com/documentation/foundation/datecomponents)
-
-[カレンダーを使用した日付計算のチュートリアル](https://ios-diploma.com/blog/prog-nastroika/ios/datecalendariandcaleanddate)
+- [Date and Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html#//apple_ref/doc/uid/10000039i)
+- [Working with Dates and Times in Swift](https://www.swiftbysundell.com/basics/dates-and-times/)
+- [日付を計算する方法 - Swift編](https://qiita.com/yokoyazo/items/a73f803fccb3c5a64acb)

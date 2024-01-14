@@ -1,33 +1,39 @@
 ---
-title:    "Kotlin: חילוץ תת מחרוזות"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/extracting-substrings.md"
+title:                "Kotlin: חילוץ תת-מחרוזות"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-יתרון ראשון של שימוש בחילוץ מחרוזות תחתיות הוא לאפשר לנו לסנן ולעבד נתונים מסוימים מתוך מחרוזות גדולות יותר. 
 
-## איך לעשות זאת
-תחילה, נכין מחרוזת מסוימת שנרצה לחלץ ממנה מחרוזת תת-תחתית. לדוגמה, אם נרצה לחלץ את המילה "יקירתי" מהמחרוזת "שלום יקירתי", נשתמש בפקודה "substring" כך: 
+כתיבת תוכניות בשפת קוטלין הולכת והייחודיות שלה מאפשרות עיבוד נתונים בצורה מהירה ויעילה. אחת מהטכניקות הנפוצות לעיבוד נתונים היא חיתוך מחרוזות לתת מחרוזות קטנות יותר. במאמר הזה נלמד כיצד לבצע חיתוך מחרוזות בקוטלין ונבין את ההוראות העמוקות מאחורי הטכניקה הזו.
 
-```Kotlin
-val str = "שלום יקירתי"
-val substr = str.substring(6) // substr will contain "יקירתי"
-```
+## איך לעשות
 
-ניתן גם להשתמש בפקודה "substring" כדי לחלץ מחרוזת תת-תחתית על פי מיקום התווים במחרוזת. לדוגמה, אם נרצה לחלץ את המילה "גברת" מהמחרוזת "שלום גברת יקירתי", נשתמש בפעולה הבאה:
+חיתוך מחרוזות בקוטלין נעשה על ידי שימוש בפונקציה `substring(startIndex, endIndex)` שמקבלת שני פרמטרים: `startIndex` שזה האינדקס של התו הראשון שברצוננו לחתוך ו-`endIndex` שזה האינדקס של התו האחרון שברצוננו לחתוך. המילה המפותלת מעין הפס כדי להבהיר שאף לא תילמדם הפונקציה `startIncluded`, התוצאות האפשריות יכולות להיות ממש מונחים כדרך הבהירה. ננסה מה שנרצה כדי להתאים למחרוזות גם בחישוב:
 
 ```Kotlin
-val str = "שלום גברת יקירתי"
-val substr = str.substring(5, 10) // substr will contain "גברת"
+val str = "Hello World"
+val substr1 = str.substring(0, 5)  // Output: "Hello"
+val substr2 = str.substring(6)     // Output: "World"
 ```
 
-## למעמדי
-בניגוד לפקודת "substring", הפקודה "subSequence" מחזירה אובייקט מסוג CharSequence (מחרוזת תת-תחתית), שבו ניתן לעבוד עם המחרוזת התת-תחתית בפני עצמה. כמו כן, ניתן לעבוד עם מחרוזות תת-תחתיות באמצעות פקודת "replace" כדי להחליף מחרוזת תת-תחתית עם מחרוזת אחרת.
+כפי שאתם רואים, כאשר אנו נותנים רק `startIndex`, אנו מתחילים את החיתוך מהאינדקס הנתון ועד לסוף המחרוזת המקורית. הגדרת אף האינדקס האחרון שברצונכם מעלה את הכלל הכללי.
 
-## ראה גם
-- [המדריך המלא לשפת קוטלין](https://www.codecademy.com/learn/learn-kotlin)
-- [תיעוד רשמי לפקודת substring בשפת קוטלין](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
-- [מדריך לשימוש בפקודת subSequence בשפת קוטלין](https://www.javatpoint.com/kotlin-subsequence)
+הנה כמה דוגמאות נוספות:
+
+```Kotlin
+val str = "This is a sentence."
+val substr1 = str.substring(5, 7)  // Output: "is"
+val substr2 = str.substring(8, 11) // Output: "a"
+val substr3 = str.substring(12)    // Output: "sentence."
+```
+
+## כרפיה עמוקה
+
+עכשיו שאתם מבינים את היסודות של חיתוך מחרוזות בקוטלין, נשטוף עיוור למה זה טוב. הנה כמה יתרונות של חיתוך מחרוזות:
+
+- יעילות:

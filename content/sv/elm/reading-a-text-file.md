@@ -1,74 +1,46 @@
 ---
-title:    "Elm: Läsa en textfil"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/reading-a-text-file.md"
+title:                "Elm: Läsa en textfil"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att läsa och hantera textfiler är en viktig del av många programmerares arbete, oavsett om det är att läsa in data från en fil eller att skapa en rapport eller loggfil. I denna bloggpost kommer vi att titta närmare på hur man kan göra detta i Elm-programmeringsspråket.
+Att kunna läsa en textfil är en viktig färdighet för alla som lär sig programmera. Det låter dig läsa in data från en extern källa och använda den i ditt program. Om du vill lära dig hur man gör detta i Elm, är du på rätt plats!
 
-## Så här gör du
+## Hur man gör det
 
-För att läsa en textfil i Elm använder vi modulen `Text.File`, som ger oss funktioner för att hantera in- och utläsning av filer. Vi börjar med att importera modulen och sedan öppna filen som vi vill läsa:
+För att läsa en textfil i Elm, behöver du först importera den inbyggda modulen `File`:
 
-```elm
-import Text.File exposing (readFile)
-
-main =
-    readFile "textfil.txt"
+```Elm
+import File exposing (readTextFile)
 ```
 
-Detta ger oss tillgång till filinnehållet som en `Task`, som vi kan kedja till en `Cmd`-funktion för att utföra handlingar baserat på filens innehåll:
+Sedan kan du använda funktionen `readTextFile` för att läsa in en fil med hjälp av dess URL. Här är ett exempel som läser in en fil med namnet `textfile.txt`:
 
-```elm
-import Text.File exposing (readFile)
-
-main =
-    readFile "textfil.txt"
-        |> Task.map doSomething
-        |> Task.attempt HandleResult
- 
-doSomething : String -> String
-doSomething content =
-    -- här kan vi utföra önskade handlingar baserat på innehållet i filen
-    "Det här är vad som står i filen: " ++ content
- 
-type Msg
-    = HandleResult (Result String String)
- 
-update msg model =
-    case msg of
-        HandleResult (Ok result) ->
-            -- gör något med resultatet från filen
-            model
- 
-        HandleResult (Err error) ->
-            -- hantera eventuella fel som kan ha inträffat
-            model
+```Elm
+readTextFile "textfile.txt"
 ```
+
+Detta kommer att returnera en `Task String` som innehåller innehållet i filen som en sträng. Du kan sedan använda `Task`-modulen för att utföra den här uppgiften och få den faktiska strängen:
+
+```Elm
+Task.perform Debug.log >> Result.withDefault "" >> readTextFile "textfile.txt"
+```
+
+I detta exempel använder vi `Debug.log`-funktionen för att logga strängen till konsolen och `Result.withDefault` för att definiera en standardsträng om filen inte kan läsas in av någon anledning.
 
 ## Djupdykning
 
-För att fördjupa oss lite mer i ämnet kan det också vara intressant att veta hur man läser specifika delar av en textfil. I Elm kan vi använda funktionen `slice` från modulen `String` för att läsa ett visst antal tecken, rader eller ord från en textsträng. Till exempel:
+När du läser en textfil i Elm är det viktigt att förstå att detta är en asynkron operation. Det betyder att du behöver använda `Task`-modulen för att kunna hantera eventuella fel och få resultatet av läsningen.
 
-```elm
-content =
-    "Detta är en textfil som innehåller några rader med text."
-
-String.slice 0 10 content -- ger "Detta är e"
-String.slice 0 1 content -- ger "D"
-String.words (String.slice 0 21 content) -- ger ["Detta", "är", "en"]
-```
-
-Vi kan också använda funktionen `lines` från samma modul för att dela upp en textfil i rader och sedan göra mer specifika manipulationer baserat på dessa.
+En annan viktig sak att notera är att om du vill läsa in en fil från ett annat domän än din webbsida, behöver du använda ett CORS-proxy eller ändra dina inställningar för webbläsarsäkerhet.
 
 ## Se även
 
-- Officiell dokumentation för Text.File-modulen: https://package.elm-lang.org/packages/elm/file/latest/Text-File
-
-- Elm-exempel på hantering av textfiler: https://github.com/rofrol/elm-text-file-example
-
-- En annan bra guide för att läsa textfiler i Elm: https://www.elmbark.com/2017/11/13/reading-writing-files-in-elm/
+- [Elm dokumentation om att läsa filer](https://package.elm-lang.org/packages/elm/file/latest/)
+- [CORS-proxy för elm-file](https://github.com/elm-explorations/file/blob/master/EXAMPLE.md#using-a-cors-proxy)
+- [Elm-community lösning för CORS-proxy](https://github.com/elm-community/proxy)

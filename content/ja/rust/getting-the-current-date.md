@@ -1,76 +1,35 @@
 ---
-title:    "Rust: 現在の日付を取得する"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/getting-the-current-date.md"
+title:                "Rust: 「現在の日付を取得する」"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+Rustで現在の日付を取得するのは重要ですか？
 
-現在の日付を取得することの重要性を説明するために、 この Rust プログラミングのブログ記事があります。
+Rustは現代的なプログラミング言語であり、その才能に満ちています。Rustはメモリ安全性と高速性を備えているため、多くの開発者にとって魅力的なオプションとなっています。現在の日付を取得することは、プログラムの実行中に時間に関する情報を必要とする様々なアプリケーションにとって重要な要素です。そのため、Rustで現在の日付を取得する方法を知ることは、より効率的で正確なプログラムを作成する上で重要なスキルの1つです。
 
-## 方法
+## 使い方
+```rust
+use std::time::SystemTime;
+use chrono::{DateTime, Utc};
 
-日付を取得するには、標準ライブラリの `chrono` モジュールを使用します。まずは `Local` というタイムゾーンを指定します。
-
-```Rust
-use chrono::{Local, Datelike};
-
-let local = Local::today();
+fn main() {
+    let current_time = SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).unwrap();
+    let current_datetime = DateTime::<Utc>::from(current_time);
+    println!("{}", current_datetime);
+}
 ```
 
-その後、 `Local` のメソッドを使用することで、現在の日付や特定の要素を取得することができます。
+上記のコードを実行すると、現在の日付がUTC形式で出力されます。まず、`SystemTime::now()`を使用して現在の時間を取得し、`UNIX_EPOCH`との差を計算して時刻を取得します。それから、`chrono`ライブラリを使用して日付をUTC形式に変換し、`println!`マクロを使ってコンソールに出力します。このコードは、簡単にカスタマイズすることができ、ローカルタイムゾーンにも対応できます。
 
-```Rust
-// 現在の日付を取得
-let today = local.date();
+## 深堀り
+`SystemTime`と`chrono`ライブラリは、現在の日付を取得するための強力なツールです。`SystemTime`は、UNIXエポック（1970年1月1日00:00:00 UTC）からの経過時間を表すstructであり、プログラムの開始時に取得した`SystemTime`と比較することで、任意の時点の経過時間を計算することができます。また、`chrono`ライブラリは、タイムゾーンの変換や日付のフォーマットなど、さまざまな機能を提供しています。これらのツールを組み合わせることで、より正確な日付を取得することができます。
 
-// 年を取得
-let year = local.year();
-
-// 月を取得
-let month = local.month();
-
-// 日を取得
-let day = local.day();
-
-// 曜日を取得
-let weekday = local.weekday();
-```
-
-また、指定した形式に日付をフォーマットすることもできます。
-
-```Rust
-// "YYYY-MM-DD" 形式でフォーマット
-let formatted_date = today.format("%Y-%m-%d");
-```
-
-下記がサンプルコードの出力結果になります。
-
-```
-年：2021
-月：12
-日：31
-曜日：金
-フォーマットした日付：2021-12-31
-```
-
-## ディープダイブ
-
-`chrono` モジュールは、より複雑な日付操作を行うことも可能です。例えば、日付の比較や加算、減算、フォーマット、タイムゾーンの変更などができます。
-
-また、`NaiveDate` や `DateTime` といった、より詳細な日付オブジェクトを使用することもできます。詳細な情報は [公式ドキュメント](https://docs.rs/chrono/) を参照してください。
-
-## 参考文献
-
-- [Rust プログラミング言語公式サイト](https://www.rust-lang.org/ja/)
-- [chrono モジュールのドキュメント](https://docs.rs/chrono/)
-- [Rust での日付操作のためのライブラリ一覧](https://lib.rs/date)
-- [Rust の標準ライブラリのドキュメント (chrono は `time` モジュールに含まれます)](https://doc.rust-lang.org/std/time/index.html)
-
-## 関連リンク
-
-- [Rust の日付操作に関する質問/回答サイト (Stack Overflow)](https://stackoverflow.com/questions/tagged/rust+datetime)
-- [Rust における時刻と時間に関する知識 (Qiita)](https://qiita.com/enechange/items/3918008d6a399d8a2751)
-- [Rust での日付操作のベストプラクティス (Medium)](https://medium.com/better-programming/a-guide-to-working-with-dates-time-in-rust-750acdfe88a9)
+## See Also
+- [Rustドキュメント](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
+- [Chronoライブラリドキュメント](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rust入門ガイド](https://www.rust-lang.org/learn/get-started)

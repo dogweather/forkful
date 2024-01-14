@@ -1,35 +1,32 @@
 ---
-title:    "TypeScript: 文字列を小文字に変換する"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/converting-a-string-to-lower-case.md"
+title:                "TypeScript: 文字列を小文字に変換する"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-プログラミングで文字列を小文字に変換することの意義は、データの整合性を保つために欠かせません。例えば、入力フォームでユーザーの名前を受け取る際、大文字や小文字が混在していると同じ人物のデータと見做されず、誤った処理が行われてしまう可能性があります。そのため、文字列を小文字に統一することで、正確なデータ処理ができるようになります。
+文字列を小文字に変換することに関して、なぜそれをする必要があるのかということが気になるかもしれません。実際、私たちはしばしば文字列を小文字で使用したい場合があります。例えば、ユーザーからの入力を検証する際や、特定の検索キーワードを探す際に、文字列を小文字に変換する必要があるかもしれません。そのため、効率的かつ正確なコードを書くために、文字列を小文字に変換する方法を知ることは重要です。
 
 ## 方法
 
-TypeScriptで文字列を小文字に変換する方法は簡単です。以下のようなコードを使用します。
+TypeScriptでは、文字列を小文字に変換するためには`toLowerCase()`メソッドを使用します。このメソッドは文字列オブジェクトに内蔵されており、元の文字列を小文字に変換した新しい文字列を返します。以下のコードブロックを参考にしてください。
 
 ```TypeScript
 let str: string = "HELLO WORLD";
 let lowerCaseStr: string = str.toLowerCase();
-console.log(lowerCaseStr);
+console.log(lowerCaseStr); // 出力結果: hello world
 ```
-
-上記のコードを実行すると、出力結果は「hello world」となります。このように、`toLowerCase()`メソッドを使用することで、文字列を小文字に変換することができます。
 
 ## 深堀り
 
-では、実際に`toLowerCase()`メソッドはどのように文字列を小文字に変換しているのでしょうか？内部的には、文字列を文字の配列として扱い、それぞれの文字に対して`toLowerCase()`を適用して小文字に変換しています。
+TypeScriptにおける`toLowerCase()`メソッドは、文字列を小文字にするだけではなく、大文字や小文字を区別する言語に特化した変換を行うこともできます。また、特定の言語環境に依存した変換も行うことができます。詳細についてはドキュメントを参照してください。
 
-一般的に、大文字と小文字の間にはUnicodeで異なる数値が割り当てられています。そのため、`toLowerCase()`メソッドはこの数値を変換し、小文字の数値を返します。しかし、ごく稀に特殊な文字の変換がうまくいかないことがあります。その場合は、文字列そのものが返されることになります。
+## 併せて参照
 
-## もっと詳しく知るには
-
-[`toLowerCase()`メソッドの仕様書（英語）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-
-[`toUpperCase()`メソッドとの違い（英語）](https://www.geeksforgeeks.org/difference-between-tolowercase-and-touppercase-function-in-javascript/)
+見るべき他の関連記事やリンクを以下に挙げます。 
+- [TypeScriptドキュメント](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [MDN Web Docs - `toLowerCase()`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

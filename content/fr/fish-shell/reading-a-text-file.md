@@ -1,47 +1,63 @@
 ---
-title:    "Fish Shell: Lecture d'un fichier texte"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/reading-a-text-file.md"
+title:                "Fish Shell: Lecture d'un fichier texte"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un programmeur débutant ou un utilisateur régulier de Fish Shell, vous avez probablement entendu parler de la lecture de fichiers texte. Mais qu'est-ce que cela signifie exactement et pourquoi devriez-vous l'utiliser dans votre code? Lisez la suite pour en savoir plus sur cette fonctionnalité et comment elle peut vous être utile.
+Si vous utilisez Fish Shell pour votre programmation, il peut être très utile de savoir comment lire un fichier texte. Cela vous permettra de traiter facilement des fichiers de données et de manipuler les informations qu'ils contiennent.
 
-## Comment Faire
+## Comment faire
 
-Pour lire un fichier texte dans Fish Shell, utilisez simplement la commande `cat` suivie du nom du fichier:
-
-```Fish Shell
-cat mon_fichier.txt
-```
-
-Cela affichera le contenu du fichier sur votre terminal. Si vous voulez rediriger le contenu vers un autre fichier, vous pouvez utiliser l'opérateur de redirection `>`:
+La syntaxe pour lire un fichier texte dans Fish Shell est simple. Tout d'abord, vous devez ouvrir un terminal et naviguer jusqu'au dossier contenant votre fichier texte. Ensuite, vous pouvez utiliser la commande `cat` pour afficher le contenu du fichier.
 
 ```Fish Shell
-cat mon_fichier.txt > nouveau_fichier.txt
+cd chemin/vers/le/dossier
+cat fichier.txt
 ```
 
-Vous pouvez également ajouter du contenu à un fichier existant en utilisant l'opérateur de redirection `>>`:
+Cela affichera le contenu du fichier texte directement dans votre terminal. Si vous souhaitez enregistrer le contenu dans une variable Fish Shell, vous pouvez utiliser la commande `set` suivie du symbole de redirection `>`.
 
 ```Fish Shell
-cat mon_fichier.txt >> autre_fichier.txt
+set fichier_contents (cat fichier.txt)
 ```
 
-En plus de `cat`, il existe d'autres commandes dans Fish Shell que vous pouvez utiliser pour lire des fichiers texte, telles que `head`, `tail`, `more`, `less`, etc. Explorez-les pour découvrir leurs différentes fonctionnalités.
+Vous pouvez également utiliser cette méthode pour lire un fichier texte ligne par ligne en utilisant la commande `while` et la fonction `read`.
 
-## Plongée Profonde
+```Fish Shell
+while read ligne
+    echo $ligne
+end < fichier.txt
+```
 
-Lorsque vous lisez un fichier texte dans Fish Shell, il est important de connaître certains détails techniques qui peuvent être utiles pour effectuer des tâches plus complexes. Par exemple, vous pouvez spécifier le nombre de lignes que vous souhaitez afficher en utilisant le paramètre `-n`, ou vous pouvez utiliser l'option `-v` pour afficher également les caractères invisibles. Il existe également d'autres paramètres que vous pouvez utiliser pour personnaliser votre lecture de fichier.
+## Plongée plus profonde
 
-De plus, il est important de noter que les fichiers texte peuvent être lus de différentes manières en fonction du système d'exploitation sur lequel vous utilisez Fish Shell. Vous devriez donc garder cela à l'esprit lorsque vous travaillez avec des fichiers texte.
+Il existe de nombreuses options que vous pouvez utiliser avec la commande `cat` pour lire des fichiers texte dans Fish Shell. Par exemple, vous pouvez spécifier le nombre de lignes à afficher en utilisant l'option `-n`.
 
-## Voir Aussi
+```Fish Shell
+cat -n fichier.txt
+```
 
-- [La documentation officielle de Fish Shell sur la lecture de fichiers texte](https://fishshell.com/docs/current/cmds/cat.html)
-- [Un guide complet sur l'utilisation de la commande `cat`](https://www.tecmint.com/cat-command-usage-with-examples/)
-- [Un tutoriel vidéo sur la lecture de fichiers texte dans Fish Shell](https://www.youtube.com/watch?v=dQgkpjDIbfk)
+De plus, vous pouvez utiliser l'option `-s` pour remplacer les lignes vides par une seule ligne. Cela peut être utile si vous travaillez avec de grands fichiers et que vous voulez en voir un aperçu rapide.
 
-Maintenant que vous avez appris comment lire des fichiers texte dans Fish Shell, vous pouvez l'utiliser pour développer des scripts plus avancés et automatiser certaines tâches sur votre système. Amusez-vous bien!
+```Fish Shell
+cat -s fichier.txt
+```
+
+Enfin, si vous souhaitez afficher uniquement une partie spécifique du fichier, vous pouvez utiliser l'option `-o` suivie du numéro de ligne de début et de fin.
+
+```Fish Shell
+cat -o 5-10 fichier.txt
+```
+
+## Voir aussi
+
+- [Documentation officielle Fish Shell](https://fishshell.com/docs/current/)
+
+- [Tutoriel Fish Shell](https://devdojo.com/blog/tutorials/fish-shell-tutorial)
+
+- [Exemples pratiques d'utilisation de Fish Shell](https://www.binaryphile.com/fish/)

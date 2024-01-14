@@ -1,44 +1,59 @@
 ---
-title:    "Rust: Konwertowanie ciągu znaków na małe litery"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/converting-a-string-to-lower-case.md"
+title:                "Rust: Konwersja ciągu znaków na małe litery"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwersja tekstu na małe litery może być bardzo przydatna podczas programowania w języku Rust. Dzięki temu możemy upewnić się, że porównywane teksty są równe, niezależnie od tego czy zawierają duże lub małe litery. Jest to także ważne w przypadku pracy z danymi użytkownika, ponieważ zapewnia spójne działanie niezależnie od tego jak wpisane zostaną dane.
+Konwersja tekstu na małe litery jest częstym problemem, z którym spotykamy się w codziennej pracy programistycznej. Powodem może być np. potrzeba porównania dwóch ciągów znaków bez uwzględnienia wielkości liter. W takich sytuacjach konieczne jest przekształcenie tekstu na małe litery. W tym artykule dowiesz się jak to zrobić w języku Rust.
 
 ## Jak to zrobić
 
-Aby przekonwertować tekst na małe litery w Rust, możemy użyć metody `.to_lowercase()` na obiekcie typu `String`. Przykładowe użycie wyglądałoby następująco:
+W języku Rust istnieją różne metody konwertowania tekstu na małe litery, a każda może być wybrana w zależności od potrzeb. Jedną z najłatwiejszych i najczęściej używanych jest metoda `to_lowercase()`.
 
 ```Rust
-let name = "JAN KOWALSKI";
-let lowercase_name = name.to_lowercase();
-println!("Witaj, {}", lowercase_name); // Output: "Witaj, jan kowalski"
+let text = "HELLO WORLD";
+let lower_case = text.to_lowercase();
+
+println!("{}", lower_case);
+
+// Output: hello world
 ```
 
-W przypadku wartości zmiennoprzecinkowych, które nie mają metody `.to_lowercase()`, możemy użyć biblioteki `unicode-normalization` i funkcji `Chars()` aby przetworzyć każdy znak z osobna. Przykład:
+Jeśli chcemy zachować oryginalną wartość zmiennej `text`, możemy użyć metody `to_lowercase()` w połączeniu z `borrow()`.
 
 ```Rust
-let float_num = 99.99;
-let lowercase_num = format!("{:?}", float_num)
-    .chars()
-    .flat_map(|ch| ch.to_lowercase())
-    .collect::<String>();
-println!("{}", lowercase_num); // Output: "99.99"
+let mut text = "HELLO WORLD".to_string();
+let lower_case = text.to_lowercase().borrow();
+
+println!("{}", text);
+
+// Output: HELLO WORLD
 ```
 
-## Deep Dive
+Aby uzyskać dostęp tylko do pierwszej litery w małej formatce, można użyć metody `make_ascii_lowercase()`.
 
-W języku Rust istnieją także funkcje związane z konwersją tekstu na duże litery (`to_uppercase()`) oraz pierwszą literę każdego słowa na dużą (`to_titlecase()`). W przypadku kodowania ścieżek do plików, dostępna jest także funkcja `to_ascii_lowercase()` dla zachowania spójności z systemem plików.
+```Rust
+let mut text = "Hello world".to_string();
+text.make_ascii_lowercase();
 
-Podczas konwersji na małe litery, niektóre znaki mogą ulec zmianie, na przykład niemieckie litery `ß` i `ẞ` będą przekonwertowane na `ss` i `ẞ` odpowiednio. Jest to ważne do uwzględnienia podczas pracy z danymi zawierającymi specjalne znaki.
+println!("{}", text);
 
-## Zobacz również
+// Output: hello world
+```
 
-- Dokumentacja języka Rust dotycząca metod `to_lowercase()`, `to_uppercase()` i `to_titlecase()`: https://doc.rust-lang.org/std/string/trait.ToString.html
-- Biblioteka `unicode-normalization` dla konwersji znaków: https://crates.io/crates/unicode-normalization
-- Przykładowe zastosowanie konwersji na małe litery: https://www.dotnetperls.com/to-lowercase-rust
+## Vertigo
+
+Proces konwersji tekstu na małe litery w języku Rust można nazwać "vertigo" (od ang. vertiginous - zawrotny). Jest to nawiązanie do struktury danych przechowującej małe litery, która przypomina schody lub spiralę.
+
+Tak naprawdę proces konwersji wygląda trochę bardziej skomplikowanie, ponieważ język Rust nie operuje na samym tekście, a na indeksach i offsetach do niego. Dzięki temu jest w stanie dokonać zmiany na poziomie rekordu, a nie tylko pojedynczego znaku.
+
+## Zobacz także
+
+- [Dokumentacja języka Rust](https://www.rust-lang.org/)
+- [Przykładowy projekt w języku Rust](https://github.com/rust-lang/rustlings)
+- [Poradnik dla początkujących w języku Rust](https://doc.rust-lang.org/book/)

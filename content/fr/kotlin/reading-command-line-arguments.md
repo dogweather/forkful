@@ -1,45 +1,63 @@
 ---
-title:    "Kotlin: La lecture des arguments en ligne de commande"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/reading-command-line-arguments.md"
+title:                "Kotlin: Lecture des arguments de ligne de commande"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'utilisation des arguments de ligne de commande est un moyen efficace et rapide de fournir des entrées aux programmes Kotlin. Cela peut être utile dans de nombreux cas, comme dans les programmes en ligne de commande, les scripts shell ou encore les applications en mode texte.
+La lecture des arguments de ligne de commande est une compétence essentielle pour tout programmeur Kotlin. Cela vous permet de passer des paramètres à votre programme lors de son exécution, ce qui le rend plus dynamique et lui permet de traiter différents scénarios en fonction des entrées fournies. Que vous soyez développeur de logiciels ou étudiant en informatique, comprendre comment lire les arguments de ligne de commande vous sera utile dans de nombreuses situations.
 
-## Comment Faire
+## Comment faire
 
-Pour lire les arguments de ligne de commande en Kotlin, nous pouvons utiliser la fonction "main" avec un paramètre de type "Array<String>". Ensuite, nous pouvons utiliser la propriété "args" pour accéder aux arguments passés lors de l'exécution du programme.
+Pour lire les arguments de ligne de commande en Kotlin, vous devez suivre ces étapes simples :
+
+1. Tout d'abord, créez une fonction `main()` pour votre programme Kotlin. C'est la fonction principale qui sera exécutée lorsque vous lancerez votre programme.
 
 ```Kotlin
 fun main(args: Array<String>) {
-    // Accéder au premier argument
-    println("Le premier argument est: ${args[0]}") 
+    // Votre code ici
+}
+```
 
-    // Accéder à tous les arguments en utilisant une boucle
-    for (arg in args) {
-        println("Argument: $arg")
+2. Ensuite, utilisez le paramètre `args` de type `Array<String>` pour accéder à la liste des arguments de ligne de commande. Vous pouvez itérer à travers cette liste pour traiter chaque argument individuellement ou les utiliser directement.
+
+```Kotlin
+fun main(args: Array<String>) {
+    // Affiche tous les arguments de ligne de commande
+    args.forEach { println(it) }
+}
+```
+
+3. Pour exécuter votre programme avec des arguments de ligne de commande, ouvrez une fenêtre de terminal, accédez à l'emplacement de votre fichier Kotlin et utilisez la commande `kotlin <nom_fichier>.kt <arguments>`. Les arguments doivent être séparés par des espaces.
+
+```
+kotlin monprogramme.kt arg1 arg2 arg3
+```
+
+4. Vous pouvez également passer des arguments optionnels en utilisant des drapeaux. Par exemple, `-f <nom_fichier>` ou `--input <valeur>`.
+
+```Kotlin
+fun main(args: Array<String>) {
+    // Vérifie si le drapeau -v ou --verbose a été passé comme argument
+    if ("-v" in args || "--verbose" in args) {
+        println("Mode verbose activé")
     }
 }
 ```
-Exemple d'exécution du programme avec les arguments "Hello" et "World":
-```Kotlin
-$ kotlin MainKt Hello World
-> Le premier argument est: Hello 
-> Argument: Hello
-> Argument: World
-```
 
-## Plongée Profonde
+## Plongée en profondeur
 
-Nous pouvons également spécifier des options pour nos arguments de ligne de commande en utilisant les préfixes "-" ou "--". Par exemple, si nous voulons spécifier une option pour activer le mode débogage, nous pouvons utiliser "--debug" comme argument.
+Lors de la lecture des arguments de ligne de commande en Kotlin, il est important de prendre en compte certaines choses :
 
-De plus, nous pouvons utiliser la bibliothèque Kotlin-Argparser pour une gestion plus avancée des arguments de ligne de commande. Cette bibliothèque permet de définir des options et des valeurs pour plus de flexibilité dans nos programmes.
+- Les arguments de ligne de commande sont transmis à votre programme en tant que chaînes de caractères, donc vous devez les convertir en types de données appropriés si nécessaire.
+- Si vous n'avez pas besoin de traiter les arguments un par un et que vous souhaitez simplement en récupérer une liste, vous pouvez utiliser `args.toList()`.
+- N'oubliez pas de gérer les erreurs et les cas où aucun argument n'est fourni lors de l'exécution de votre programme.
 
-## Voir Aussi
+## Voir aussi
 
-- [Documentation sur les arguments de ligne de commande en Kotlin](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [Bibliothèque Kotlin-Argparser](https://github.com/xenomachina/kotlin-argparser)
+- [Documentation Kotlin sur les arguments de ligne de commande](https://kotlinlang.org/docs/tutorials/command-line.html)
+- [Guide sur les arguments de ligne de commande en Kotlin](https://www.baeldung.com/kotlin/command-line-arguments)

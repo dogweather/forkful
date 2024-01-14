@@ -1,89 +1,97 @@
 ---
-title:    "C#: Comparando dos fechas"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/comparing-two-dates.md"
+title:                "C#: Comparando dos fechas"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué Comparar Dos Fechas?
+## Por qué
 
-Comparar dos fechas puede ser una tarea común en la programación, ya sea para verificar si una fecha es posterior a otra o para calcular la diferencia entre ellas. Esta habilidad es especialmente importante en aplicaciones que manejan eventos o transacciones basadas en fechas. En esta publicación, exploraremos cómo comparar dos fechas en C# y algunas cosas a considerar al hacerlo.
+Comparar dos fechas es una tarea común en la programación. Puede ser útil para realizar cálculos basados en fechas o para determinar si un evento ha ocurrido antes o después de otro. En esta publicación, aprenderemos cómo comparar dos fechas en C#.
 
-## Cómo Comparar Dos Fechas
+## Cómo hacerlo
 
-Para comparar dos fechas en C#, podemos utilizar el método `Compare` de la clase `DateTime`. Este método toma dos parámetros de tipo `DateTime` y devuelve un valor entero que indica la relación entre las dos fechas:
-
-```C#
-DateTime fecha1 = new DateTime(2020, 06, 30);
-DateTime fecha2 = new DateTime(2021, 01, 15);
-int resultado = DateTime.Compare(fecha1, fecha2);
-if (resultado < 0)
-{
-  Console.WriteLine("La fecha 1 es anterior a la fecha 2.");
-}
-else if (resultado > 0)
-{
-  Console.WriteLine("La fecha 1 es posterior a la fecha 2.");
-}
-else
-{
-  Console.WriteLine("Ambas fechas son iguales.");
-}
-// Salida: La fecha 1 es anterior a la fecha 2.
-```
-
-Otra forma de comparar fechas es utilizar los operadores de comparación (`<`, `>`, `<=` y `>=`) directamente en las variables de tipo `DateTime`:
+El método más sencillo para comparar dos fechas en C# es utilizar el operador de comparación "menor que" o "mayor que". Esto funciona porque las fechas en C#, en realidad, son números, por lo que pueden ser comparadas como tales.
 
 ```C#
-if (fecha1 < fecha2)
+DateTime fecha1 = new DateTime(2020, 10, 15);
+DateTime fecha2 = new DateTime(2021, 01, 01);
+
+if(fecha1 < fecha2)
 {
-  Console.WriteLine("La fecha 1 es anterior a la fecha 2.");
+    Console.WriteLine("La fecha 1 es anterior a la fecha 2.");
 }
-// Salida: La fecha 1 es anterior a la fecha 2.
+else if (fecha1 > fecha2)
+{
+    Console.WriteLine("La fecha 1 es posterior a la fecha 2.");
+}
 ```
 
-Si solo queremos verificar si dos fechas son iguales, podemos utilizar el método `Equals` de la clase `DateTime`:
+En este ejemplo, creamos dos objetos DateTime, uno para cada fecha que queremos comparar. Luego, utilizamos un condicional if-else para determinar si la fecha 1 es anterior o posterior a la fecha 2.
+
+Otra forma de comparar fechas en C# es utilizando el método `Compare()` de la clase `DateTime`. Este método devuelve un número entero que indica si la primera fecha es menor, igual o mayor que la segunda fecha.
 
 ```C#
-if (fecha1.Equals(fecha2))
+DateTime fecha1 = new DateTime(2020, 10, 15);
+DateTime fecha2 = new DateTime(2021, 01, 01);
+
+if(DateTime.Compare(fecha1, fecha2) < 0)
 {
-  Console.WriteLine("Ambas fechas son iguales.");
+    Console.WriteLine("La fecha 1 es anterior a la fecha 2.");
 }
-// Salida: No se imprime nada.
+else if (DateTime.Compare(fecha1, fecha2) > 0)
+{
+    Console.WriteLine("La fecha 1 es posterior a la fecha 2.");
+}
 ```
 
-Es importante tener en cuenta que al comparar fechas, también debemos considerar la zona horaria y el formato de fecha utilizado. Si deseamos comparar solo la fecha y no la hora, podemos usar el método `Date` para obtener la fecha sin la hora:
+En este ejemplo, utilizamos el método `Compare()` para comparar las fechas y luego utilizamos un condicional if-else para imprimir el mensaje correspondiente.
+
+## Profundizando
+
+Comparar dos fechas no solo se limita a determinar si una es mayor o menor que la otra. También podemos realizar comparaciones más específicas, como si las fechas son iguales o si son del mismo año, mes o día.
+
+Para comparar si dos fechas son iguales, podemos utilizar el método `Equals()` de la clase `DateTime`.
 
 ```C#
-if (fecha1.Date.Equals(fecha2.Date))
+// Supongamos que tenemos la siguiente fecha:
+DateTime fecha1 = new DateTime(2020, 10, 15);
+
+DateTime fecha2 = new DateTime(2020, 10, 15);
+
+if(fecha1.Equals(fecha2))
 {
-  Console.WriteLine("Las fechas son iguales sin tener en cuenta la hora.");
+    Console.WriteLine("Las fechas son iguales.");
 }
-// Salida: Las fechas son iguales sin tener en cuenta la hora.
 ```
 
-También podemos utilizar los métodos `Add`, `Subtract` y `DateTimeSpan` para calcular la diferencia entre dos fechas en días, meses o años. Aquí hay un ejemplo de cómo obtener la diferencia en años entre dos fechas:
+Si queremos comparar solo el año, el mes o el día de dos fechas, podemos utilizar las propiedades `Year`, `Month` y `Day` de la clase `DateTime`.
 
 ```C#
-DateTime fecha1 = new DateTime(1990, 06, 30);
-DateTime fecha2 = new DateTime(2021, 01, 15);
-TimeSpan diferencia = fecha1.Subtract(fecha2);
-int diferenciaEnAnos = DateTimeSpan.Compare(diferencia, new TimeSpan(365, 0, 0, 0)) / 365;
-Console.WriteLine($"La diferencia entre las dos fechas es de {diferenciaEnAnos} años.");
-// Salida: La diferencia entre las dos fechas es de 30 años.
+DateTime fecha1 = new DateTime(2020, 10, 15);
+DateTime fecha2 = new DateTime(2021, 01, 01);
+
+if(fecha1.Year == fecha2.Year)
+{
+    Console.WriteLine("Las fechas tienen el mismo año.");
+}
+
+if(fecha1.Month == fecha2.Month)
+{
+    Console.WriteLine("Las fechas tienen el mismo mes.");
+}
+
+if(fecha1.Day == fecha2.Day)
+{
+    Console.WriteLine("Las fechas tienen el mismo día.");
+}
 ```
 
-## Detalles Sobre Comparar Dos Fechas
+Ten en cuenta que también podemos utilizar los operadores de igualdad (`==`) y desigualdad (`!=`) para realizar estas comparaciones.
 
-Al comparar dos fechas, es importante tener en cuenta el formato de fecha que estamos utilizando. Si queremos comparar fechas con diferentes formatos, primero debemos convertirlas a un formato estándar utilizando el método `Parse` de la clase `DateTime`.
+## Ver también
 
-También debemos tener en cuenta que las fechas son objetos inmutables, lo que significa que una vez que se crean, no se pueden modificar. Por lo tanto, cualquier operación que realicemos en una fecha devolverá una nueva fecha en lugar de modificar la original.
-
-Por último, es importante tener en cuenta que los cálculos de fechas pueden verse afectados por cambios en el horario de verano y otras consideraciones de zona horaria. Por lo tanto, es importante estar al tanto de estas posibles diferencias al comparar fechas.
-
-## Véase También
-
-- [Documentación de Microsoft sobre el método `Compare`](https://docs.microsoft.com/es-es/dotnet/api/system.datetime.compare)
-- [Tutorial de C# en Codecademy](https://www.codecademy.com/learn/learn-c-sharp)
-- [Foro de discusión sobre cómo comparar fechas en C#](https://stackoverflow.com/questions/14117305/how-to-compare-date-values-in-c-sharp
+- Documentación de Microsoft sobre la clase `DateTime`: https://docs.microsoft.com/es-es/dotnet/api/system.datetime?view=net-5.0
+- Ejemplos de comparaciones de fechas en C#: https://www.c-sharpcorner.com/article/comparing-dates-and-datetime-is-so-easy-in-net/

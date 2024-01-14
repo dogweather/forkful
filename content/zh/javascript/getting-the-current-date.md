@@ -1,49 +1,71 @@
 ---
-title:    "Javascript: 获取当前日期"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/getting-the-current-date.md"
+title:                "Javascript: 获取当前日期"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么: 获取当前日期是编程中经常需要的一个操作。无论你是在开发一个网页还是在创建一个应用程序，都会涉及到与日期相关的功能。因此，了解如何获取当前日期是非常重要的。
 
-获取当前日期是在编写Javascript代码时经常会遇到的情况。它可以帮助我们在程序中使用日期和时间功能，并且很容易添加到我们的代码中。
+## 如何做
 
-## 如何实现
+为了获取当前日期，我们需要使用内置的Date对象。这个对象允许我们访问和操作日期和时间。让我们来看一个简单的例子：
 
-要获取当前日期，我们可以使用内置的Javascript `Date`对象。通过创建一个新的`Date`实例，我们可以获取当前的日期、月份、年份、小时数、分钟数、秒数、毫秒数等信息。
+``` javascript
+// 创建一个新的Date对象
+let currentDate = new Date();
 
-例如，要获取当前日期的年份，我们可以使用以下代码：
+// 打印当前日期
+console.log(currentDate);
 
-```Javascript
-const currentDate = new Date();
-const currentYear = currentDate.getFullYear();
-console.log(currentYear); // 输出当前年份，如2021
+// Output: Fri Apr 02 2021 10:24:35 GMT+0800 (China Standard Time)
 ```
 
-同样地，要获取当前日期的月份，我们可以使用`getMonth()`方法，它会返回一个0到11的整数，代表一年中的月份。需要注意的是，0表示一月，11表示十二月。例如：
+在上面的代码中，我们首先使用`new Date()`来创建一个新的Date对象，该对象将保存当前日期和时间。然后，我们使用`console.log()`来打印出当前日期。你也可以看到输出结果中包含的时区信息，这是因为我们使用的是中国标准时间。如果你想要获取的是UTC时间，可以使用`getUTCDate()`方法来替代`getDate()`方法。
 
-```Javascript
-const currentMonth = currentDate.getMonth();
-console.log(currentMonth); // 输出当前月份，如3（代表4月）
+除了打印日期外，我们还可以获取特定的日期信息，例如年份、月份、日期等。让我们来看一个例子：
+
+``` javascript
+// 获取当前年份
+let currentYear = currentDate.getFullYear();
+console.log(currentYear);
+
+// Output: 2021
+
+// 获取当前月份（从0开始，所以需要加1）
+let currentMonth = currentDate.getMonth() + 1;
+console.log(currentMonth);
+
+// Output: 4
+
+// 获取当前日期
+let currentDay = currentDate.getDate();
+console.log(currentDay);
+
+// Output: 2
 ```
+
+除了以上日期信息外，我们还可以获取更多的数据，例如小时、分钟、秒等。你可以在[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)中查看所有可用的方法。
 
 ## 深入了解
 
-虽然获取当前日期看起来很简单，但其背后的原理并不简单。Javascript的内置`Date`对象根据本地时间来表示日期和时间，而本地时间在不同的时区和时间设置下是不同的。另外，获取当前日期只能返回当前时刻，无法精确到毫秒数，如果需要精确到毫秒数，需要使用额外的库进行处理。
+在深入了解获取当前日期之前，我们先来谈谈日期格式。在国际标准中，日期格式通常为`年-月-日`，例如`2021-04-02`。然而，在不同的国家和文化中，日期格式可能会有所不同。在JavaScript中，我们可以使用`toLocaleDateString()`方法来获取适合特定语言环境的日期格式，例如：
 
-此外，`Date`对象也提供了许多其他有用的方法来获取特定日期、设置日期和时间等功能。如果想要更深入地了解`Date`对象的用法，可以参考官方文档或者其他教程。
+``` javascript
+let currentDateString = currentDate.toLocaleDateString('zh-CN');
+
+// Output: 2021/4/2
+```
+
+另外，如果你需要将日期格式化为特定的样式，可以使用第三方库，例如[Day.js](https://day.js.org/)或[Moment.js](https://momentjs.com/)。这些库提供了更多的灵活性和功能，可以满足不同的需求。
+
+除了获取当前日期，我们还可以对日期进行操作。比如，我们可以增加或减少特定的时间，可以比较两个日期的差异，可以判断一个日期是否在另一个日期之后等等。这对于处理日期相关的数据非常有用，因此建议你在学习日期操作的同时，也要了解如何避免常见的日期错误。
 
 ## 参考链接
 
-- [Javascript Date对象文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [获取日期的其他方法](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [Moment.js库，用于更精确地处理日期和时间](https://momentjs.com/)
-- [阮一峰的Javascript教程](https://wangdoc.com/javascript/) （涵盖了Javascript的基础知识和常用方法）。
-
-## 参见
-
-- [在Javascript中格式化日期和时间](https://example.com)
-- [如何在网页中显示当前日期和时间](https://example.com)
-- [Javascript如何处理不同的时间和时区](https://example.com)
+- [MDN文档 - Date对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Day.js官方网站](https://day.js.org/)
+- [Moment.js官方网站](https://momentjs.com/)
+- [避免日期相关错误的建议](https://codeburst.io/browserify-vs-webpack-b3d7ca08a0e9)

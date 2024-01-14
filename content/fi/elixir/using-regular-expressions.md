@@ -1,41 +1,47 @@
 ---
-title:    "Elixir: Säännöllisten ilmaisujen käyttö"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/using-regular-expressions.md"
+title:                "Elixir: Regular expressionien käyttö"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi käyttäisit säännöllisiä lausekkeita Elixir-ohjelmoinnissa?
 
-Regular expressionien käyttö on erittäin hyödyllistä, kun halutaan löytää ja muokata tietoa tekstimuotoisesta datasta nopeasti ja tehokkaasti.
+Säännölliset lausekkeet ovat voimakas työkalu, jota Elixir-ohjelmoijat voivat käyttää datan käsittelyyn ja muokkaamiseen. Niitä voidaan käyttää esimerkiksi merkkijonojen hakuun ja korvaamiseen, datan validointiin ja parsimiseen. Säännöllisillä lausekkeilla voi olla suuri vaikutus koodin tehokkuuteen ja luettavuuteen.
 
-## Kuinka
+## Miten säännöllisiä lausekkeita käytetään Elixirissä?
 
-Regular expressionit ovat osa monia ohjelmointikieliä, mukaan lukien Elixir. Niitä käytetään merkkijonojen käsittelyyn ja manipulointiin. Alla on muutamia esimerkkejä regular expressionien käytöstä Elixirissä:
+Käytämme säännöllisiä lausekkeita "Regex" -moduulin kautta, joka sisältää valmiita toimintoja säännöllisten lausekkeiden käsittelyyn. Voimme myös luoda omia säännöllisiä lausekkeita "Regex" -kääreellä.
 
-```
-Elixir -regex "hello|world"
-```
-
-Tämä haku löytäisi kaikki esiintymät sanoista "hello" tai "world" tekstissä.
-
-```
-Elixir -regex "(\\d+)\\s*(\\w+)"
+```Elixir
+Regex.match?(~/hello/, "hello") # Palauttaa true
+Regex.replace(~r/world/, "hello world", "elixir") # Palauttaa "hello elixir"
 ```
 
-Tämä haku löytäisi numeron ja sitä seuraavan sanan missä tahansa tekstissä. Esimerkiksi jos teksti olisi "123 hello" niin haku palauttaisi "123 hello".
+## Syvällisempi sukellus säännöllisten lausekkeiden käyttöön
 
-Elixirin regular expressionit tukevat myös monia eri vaihtoehtoja ja metakaraktereita, jotka tekevät niiden käytöstä joustavaa ja voimakasta. Voit oppia lisää Elixirin regular expressioneista [täältä](https://hexdocs.pm/elixir/Regex.html).
+Säännöllisiä lausekkeita voidaan käyttää monella eri tavalla Elixirissä. Yksi hyödyllisimistä tavoista on merkkijonojen haku ja korvaaminen. Esimerkiksi voimme käyttää säännöllisiä lausekkeita tarkistaaksemme, onko tietty sana tai merkkijono annetussa tekstissä.
 
-##Syväsukellus
+```Elixir
+Regex.match?(~r/elixir/, "I love Elixir!") # Palauttaa true
+```
 
-Regular expressioneiden lukeminen ja ymmärtäminen voi olla vaikeaa aluksi, mutta harjoittelu tekee mestarin. On tärkeää ymmärtää, että regular expressionit ovat vain merkkijonoja, joten ne voivat tuntua vaikeilta luettavilta ja epämääräisiltä. Paras tapa oppia niitä on kokeilemalla erilaisia hakuja ja näkemällä, miten ne toimivat eri skenaarioissa.
+Voimme myös käyttää säännöllisiä lausekkeita datan parsimiseen ja validointiin. Esimerkiksi voimme tarkistaa, onko annettu merkkijono kelvollinen sähköpostiosoite käyttämällä säännöllistä lauseketta.
 
-On myös hyödyllistä muistaa, että regular expressionien käyttö ei ole ainoa tapa käsitellä merkkijonoja Elixirissä. On olemassa muita vaihtoehtoja, kuten String-moduulin funktiot, jotka voivat joskus olla parempi ratkaisu ongelmaan.
+```Elixir
+Regex.match?(~r/@/, "example@email.com") # Palauttaa true
+```
+
+Lisäksi voimme käyttää säännöllisiä lausekkeita tehokkaasti tiedonetsintään. Voimme esimerkiksi etsiä kaikki numerot annetusta merkkijonosta käyttämällä säännöllistä lauseketta.
+
+```Elixir
+Regex.scan(~r/\d+/, "There are 5 apples and 10 oranges") # Palauttaa ["5", "10"]
+```
 
 ## Katso myös
 
-- [Elixirin virallinen Regex-dokumentaatio](https://hexdocs.pm/elixir/Regex.html)
-- [Visual Regex: Interaktiivinen työkalu regexien harjoitteluun](https://www.debuggex.com/)
-- [Regex101: Sivusto, joka opettaa regexien rakentamista ja testaamista](https://regex101.com/)
+- [Elixir-kirjaston "Regex" virallinen dokumentaatio](https://hexdocs.pm/elixir/Regex.html)
+- [Säännöllisten lausekkeiden perusteet Elixirissä](https://www.tutorialspoint.com/elixir/elixir_regular_expressions.htm)
+- [Säännöllisten lausekkeiden hyödyntäminen Elixiriin liittyvissä tehtävissä](https://medium.com/@josevalim/matching-hl7-messages-with-elixir-7b220559f5e6)

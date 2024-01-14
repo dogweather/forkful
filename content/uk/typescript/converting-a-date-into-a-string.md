@@ -1,31 +1,65 @@
 ---
-title:    "TypeScript: Перетворення дати у рядок."
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/converting-a-date-into-a-string.md"
+title:                "TypeScript: Перетворення дати у рядок"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Перетворення дати в рядок є важливим завданням, яке зустрічається у багатьох програмах. Це допоможе користувачу отримати зрозумілу та зручну форму дати, яку можна вивести на екран або зберегти у файл. Крім того, конвертація дати в рядок дозволяє здійснити різноманітні обчислення, перевірки та порівняння.
+В першу чергу, конвертація дати в рядок є важливим процесом для програмістів, що працюють з TypeScript. Рядок дати може бути необхідним для подальших операцій в програмі, таких як збереження, виведення на екран, передача на сервер тощо.
 
-## Як
+## Як це зробити
+
+Для початку, ми повинні створити змінну з типом Date, яка буде містити поточну дату і час:
 
 ```TypeScript
-let date = new Date(); 
-let dateAsString = date.toDateString(); 
-console.log(dateAsString);
+const currentDate: Date = new Date();
 ```
 
-У цьому прикладі ми створюємо об'єкт дати за допомогою конструктора `new Date()` і зберігаємо його у змінній `date`. Потім ми використовуємо метод `toDateString()`, який перетворює дату в рядок у форматі "день тижня, місяць день, рік". Наприклад, результатом виконання коду буде `Tue May 18 2021`. Цей рядок ми зберігаємо у змінній `dateAsString` та виводимо на екран за допомогою `console.log()`.
+Далі, ми можемо використовувати методи Date для отримання окремих частин дати, таких як день, місяць та рік:
 
-## Deep Dive
+```TypeScript
+const day: number = currentDate.getDate();
+const month: number = currentDate.getMonth();
+const year: number = currentDate.getFullYear();
+```
 
-Конвертація дати в рядок може бути корисною не лише для виведення дати на екран, але й для подальшої обробки та форматування. Наприклад, за допомогою різних методів, які мають об'єкт `Date`, можна отримати окремі значення дати, такі як день, місяць або рік. Також існує можливість встановлення будь-якого формату дати за допомогою методу `toLocaleDateString()`. Детальніше про методи та формати можна дізнатися з [офіційної документації TypeScript](https://www.typescriptlang.org/docs/handbook/standard-library.html#date).
+Для перетворення цих чисел у рядок, ми можемо використовувати функцію `toString()`:
 
-## Дивись також
+```TypeScript
+const dateString: string = day.toString() + "/" + month.toString() + "/" + year.toString();
+```
 
-- [Офіційна документація TypeScript: Робота з датами](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-- [Основи роботи з датами в TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-in-typescript)
-- [Порівняння дат у TypeScript](https://javascript.plainenglish.io/comparing-dates-in-typescript-ec062f51b9d2)
+У кінці, ми отримаємо рядок, який містить дату у форматі "день/місяць/рік".
+
+Нижче наведений вихід програми для поточної дати:
+
+```TypeScript
+console.log(dateString);
+// 15/3/2021
+```
+
+## Глибше дослідження
+
+Окрім методів, що використовуються в прикладі вище, TypeScript має ще декілька корисних функцій для роботи з датами.
+
+Наприклад, метод `toLocaleDateString()` дозволяє виводити дату у вигляді, придатному для користувача, враховуючи регіональні налаштування:
+
+```TypeScript
+const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const localeDateString: string = currentDate.toLocaleDateString('uk-UK', options);
+
+console.log(localeDateString);
+// понеділок, 15 березня 2021 р.
+```
+
+Крім того, TypeScript має вбудований тип `Date`, який містить потужні методи для роботи з датою і часом. Детальніше про цей тип можна дізнатися у [документації](https://www.typescriptlang.org/docs/handbook/utility-types.html#date).
+
+## Дивіться також
+
+- [Керування датою та часом в TypeScript](https://www.typescriptlang.org/docs/handbook/datetime.html)
+- [Робота з рядками в TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [Методи роботи з датою в TypeScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

@@ -1,49 +1,57 @@
 ---
-title:    "Java: Znajdowanie długości ciągu znaków"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/finding-the-length-of-a-string.md"
+title:                "Java: Znajdowanie długości ciągu znaków"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Dlaczego warto dowiedzieć się, jak znaleźć długość ciągu znaków w Javie? Wiele programów, zwłaszcza w środowisku programistycznym, wymaga określenia długości ciągu znaków. Wiedza ta jest również niezbędna w wielu algorytmach i operacjach na ciągach, dlatego warto poznać sposób na jej znalezienie.
+Czasami, podczas pisania programów w Javie, musimy mieć możliwość obliczenia długości tekstu, który użytkownik wprowadzi do naszej aplikacji. Może być to przydatne w przypadku walidacji danych lub oddzielania słów w zdaniach. W tym artykule omówimy, jak obliczyć długość łańcucha znaków za pomocą Java.
 
-# Jak To Zrobić
+## Jak to zrobić
 
-Aby znaleźć długość ciągu znaków w Javie, możemy skorzystać z metody `length()` klasy `String`. Przykładowy kod wyglądałby następująco:
+Aby obliczyć długość łańcucha znaków, możemy użyć metody `length()` z klasy `String`. Przykładowy kod wyglądałby następująco:
 
-```java
-String word = "Hello World!";
-int length = word.length();
-System.out.println("Długość wyrazu 'Hello World!' to " + length + " znaków.");
+```Java
+String text = "To jest przykładowy tekst.";
+int length = text.length();
+System.out.println("Długość tekstu wynosi: " + length);
 ```
 
-Po uruchomieniu powyższego kodu, otrzymamy następujący wynik:
+Powyższy kod utworzy zmienną `text`, która przechowuje nasz tekst, następnie wywoła metodę `length()` na tej zmiennej i przypisze wynik do zmiennej `length`. Na koniec wyświetli wynik w konsoli.
 
-```
-Długość wyrazu 'Hello World!' to 12 znaków.
-```
+Możemy również obliczyć długość tekstu bez przypisywania jej do zmiennej, za pomocą dowolnej zmiennej typu `String`, np.:
 
-Możemy również obliczyć długość ciągu znaków wprowadzonego przez użytkownika, używając metody `length()` na obiekcie `Scanner`:
-
-```java
-Scanner input = new Scanner(System.in);
-System.out.print("Wprowadź wyraz: ");
-String word = input.next();
-int length = word.length();
-System.out.println("Długość wybranego wyrazu to " + length + " znaków.");
+```Java
+System.out.println("Długość tekstu: " + "To jest inny tekst.".length());
 ```
 
-Tym razem otrzymamy wynik zależny od wprowadzonego przez nas wyrazu.
+Wynikiem tego kodu będzie wyświetlenie w konsoli "Długość tekstu: 17".
 
-# Deep Dive
+Możemy również sprawdzić długość tekstu wprowadzonego przez użytkownika podczas działania programu, na przykład:
 
-Metoda `length()` zwraca liczbę znaków w ciągu, uwzględniając również spacje i znaki specjalne. Zwraca ona wartość typu `int`, więc nie możemy jej użyć na ciągach znaków, których długość przekroczy típ `int`. W takiej sytuacji możemy skorzystać z metody `length()` klasy `StringBuffer`, która zwraca wartość typu `long`, co pozwala na obliczenie długości znaków nawet w bardzo długich ciągach.
+```Java
+Scanner scanner = new Scanner(System.in);
+System.out.print("Wprowadź dowolny tekst: ");
+String userInput = scanner.nextLine();
+System.out.println("Długość tekstu: " + userInput.length());
+```
 
-# Zobacz także
+W tym przypadku, program zapyta użytkownika o wprowadzenie tekstu, a następnie wyświetli jego długość.
 
-* [Dokumentacja Java - metoda length](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#length())
-* [Przykłady użycia metody length w Javie](https://www.java67.com/2017/02/how-to-find-length-of-string-in-java-with-example.html)
-* [Poradnik dla początkujących - długość ciągu znaków w Javie](https://www.w3schools.com/java/java_ref_string.asp)
+## Pogłębione zagadnienia
+
+Podczas obliczania długości tekstu warto zwrócić uwagę na kilka rzeczy. Po pierwsze, długość tekstu jest mierzona w liczbie znaków, nie w słowach. Oznacza to, że spacja jest również traktowana jako znak i jest wliczana w długość.
+
+Po drugie, metoda `length()` nie może być wywoływana na wartościach null, w przeciwnym razie spowoduje to wystąpienie błędu.
+
+Warto również zauważyć, że metoda `length()` jest często wykorzystywana do iterowania przez wszystkie znaki w tekście przy użyciu pętli for lub while.
+
+## Zobacz również
+
+* [Jak porównywać napisy w Java](https://www.samouczekprogramisty.pl/porownywanie-napisow-w-javie/)
+* [Jak zwracać podciągi (substring) w Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
+* [Metody klasy String w Javie](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)

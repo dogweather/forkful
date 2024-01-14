@@ -1,38 +1,49 @@
 ---
-title:    "Elixir: 문자열을 소문자로 변환하기"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/converting-a-string-to-lower-case.md"
+title:                "Elixir: 문자열을 소문자로 변환하기"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-문자열을 소문자로 변환하는 이유는 데이터의 일관성을 유지하고, 검색 및 비교 작업을 더 쉽게하기 위해서입니다.
+문자열을 소문자로 변환하는 이유는 개발자가 주어진 입력을 다루기 쉽게 만들기 위해서입니다.
 
-## 하기 방법
+## 어떻게 하나요?
 
 ```Elixir
-# 간단한 방법
-String.downcase("ELIXIR") #=> "elixir"
-
-# 변수에 할당하기
-original_string = "ELIXIR"
-lower_case = String.downcase(original_string) #=> "elixir"
-
-# 조건문과 함께 사용하기
-String.downcase("Elixir", "en") #=> "elixir"
-String.downcase("Elixir", "ko") #=> "elixir"
+iex> String.downcase("HELLO WORLD")
+"hello world"
 ```
 
-첫번째 예제는 단순히 `String.downcase/1` 함수를 사용하여 문자열을 소문자로 변환합니다. 두번째 예제는 변수를 사용하여 변환한 문자열을 다룰 수 있도록 합니다. 마지막 예제는 두번째 인자에 언어 코드를 지정하여 해당 언어에 맞는 소문자로 변환할 수 있습니다.
+```Elixir
+iex> String.downcase("Elixir is AWESOME")
+"elixir is awesome"
+```
 
-## 더 깊게 들어가기
+변환된 문자열은 원본 문자열과 다른 새로운 문자열로 반환됩니다. 따라서 이와 관련된 작업을 수행하려면 변환된 값을 변수에 할당해야 합니다.
 
-Elixir에서는 문자열 변환 작업을 위해 내장 함수인 `String.downcase/1` 외에도 더 많은 옵션을 제공합니다. `String.downcase/3` 함수를 사용하면 언어 코드 외에도 유니코드 표준에 따라 변환 작업을 할 수 있습니다. 또한, `String.downcase/3` 함수는 `:locale` 옵션을 통해 사용자가 직접 언어에 맞는 변환 규칙을 전달할 수 있습니다.
+```Elixir
+iex> original_string = "BeWare oF CapItAls"
+"BeWare oF CapItAls"
+
+iex> transformed_string = String.downcase(original_string)
+"beware of capitals"
+
+iex> original_string #원본 문자열은 변화하지 않습니다.
+"BeWare oF CapItAls"
+
+```
+
+## 깊게 파고들기
+
+문자열을 소문자로 변환하는 `String.downcase/1` 함수는 Elixir의 내장 함수입니다. 이 함수는 문자열에 있는 모든 문자를 소문자로 변환하고, 원본 문자열에는 아무런 영향을 미치지 않습니다.
+
+하지만 이 함수를 사용할 때에는 주의해야 할 점이 있습니다. `String.downcase/1` 함수는 Unicode 문자를 처리할 때 바이트 수준에서의 작업이 아닌 문자 수준에서의 작업을 수행합니다. 따라서 변환된 문자열의 길이는 원본 문자열의 길이와 다를 수 있습니다.
 
 ## 관련 링크
 
-[《Elixir School》](https://elixirschool.com/ko/lessons/basics/strings/#%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%B3%80%ED%99%98)  
-[《Programming Elixir 1.6》](https://doc-kurento.readthedocs.io/en/latest/INSTALL.html)  
-[《Elixir Korea》](http://elixir-kr.github.io/2015/08/23/section_3.html)
+- [String.downcase/1 문서](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [String 모듈 문서](https://hexdocs.pm/elixir/String.html)

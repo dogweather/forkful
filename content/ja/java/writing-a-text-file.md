@@ -1,41 +1,53 @@
 ---
-title:    "Java: テキストファイルの作成"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/writing-a-text-file.md"
+title:                "Java: テキストファイルの作成"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ書く？
 
-テキストファイルを書くことは、様々なプログラミングプロジェクトで非常に重要です。テキストファイルは、データを保存するための簡単な方法です。また、データの永久的なバックアップや転送、構造化されたテキストファイルからのデータ処理など、多くの利点があります。そのため、テキストファイルを書くことは、プログラミングにおいて不可欠なスキルです。
+テキストファイルを作成することは、プログラミングにおいて非常に重要です。テキストファイルを使用することで、データを読み書きすることができ、プログラムの実行を制御することができます。
 
-## ハウツー
+## 作り方
 
-テキストファイルをJavaで書く方法を学ぶためには、まずファイルを取り扱うクラスであるFileWriterクラスを理解する必要があります。以下のようなコードで、テキストファイルを書くことができます。
+テキストファイルを作成するには、まずファイルをオープンして文字を書き込み、最後にファイルを閉じる必要があります。以下はJavaでのサンプルコードです。
 
-```
 ```Java
-// FileWriterクラスのインスタンスを作成
-FileWriter writer = new FileWriter("sample.txt");
-// テキストを書き込む
-writer.write("これはテストのテキストです。");
-// ファイルを閉じる
-writer.close();
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteToFile {
+  public static void main(String[] args) {
+    try {
+      // ファイルをオープン
+      FileWriter fileWriter = new FileWriter("sample.txt");
+
+      // 文字を書き込む
+      fileWriter.write("こんにちは、世界！");
+
+      // ファイルを閉じる
+      fileWriter.close();
+    } catch (IOException e) {
+      System.out.println("エラーが発生しました。");
+      e.printStackTrace();
+    }
+  }
+}
 ```
-```
 
-上記のコードで、ファイルを書き込むための準備が整いました。ただし、FileWriterはファイルが存在しない場合に新しいファイルを作成するため、既に存在するファイルを編集する場合には、FileWriterのコンストラクタに第二引数としてtrueを渡して、既存のファイルを編集モードで開く必要があります。
+上記のコードを実行すると、"sample.txt"というファイルが作成され、その中に"こんにちは、世界！"という文字が書き込まれます。
 
-## ディープダイブ
+## より深く知る
 
-テキストファイルをスケーラブルかつ効率的に書くためには、BufferedWriterクラスを使用することをお勧めします。BufferedWriterは、性能の向上とさまざまなデータ形式をサポートすることができます。また、データの追加や書き換え、削除などの機能も提供します。さらに、エラー処理や例外処理にも対応しているため、より安全なコーディングが可能です。
+テキストファイルを作成する際には、エラー処理をしっかりと行うことが重要です。また、ファイル形式によっては特定の文字コードを指定する必要がある場合があります。詳細はJavaの公式ドキュメントを参照してください。
 
-## 余談
-もしも、テキストファイルをJavaで読み込む方法を学びたい方は、```FileReader```クラスを使用することができます。また、テキストファイルの管理や操作をより高度に行いたい場合は、```Scanner```クラスやApache Commons IOライブラリを使用することもできます。
+## 詳細はこちらを参考にしてください
 
-## 参考リンク
-- [Java FileWriterドキュメント](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
-- [Java BufferedWriterドキュメント](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html)
-- [Java FileReaderドキュメント](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)
-- [Apache Commons IOライブラリ](https://commons.apache.org/proper/commons-io/)
+[Javaの公式ドキュメント](https://docs.oracle.com/javase/jp/)
+
+[テキストファイルの作成方法](https://www.javadrive.jp/start/file/index1.html)
+
+[文字コードの指定について](https://docs.oracle.com/javase/jp/8/docs/api/java/io/OutputStreamWriter.html)

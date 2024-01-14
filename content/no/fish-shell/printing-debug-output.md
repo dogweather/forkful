@@ -1,51 +1,30 @@
 ---
-title:    "Fish Shell: Utskrift av feilsøkingsresultater"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/printing-debug-output.md"
+title:                "Fish Shell: Utskrift av feilsøkingsutdata"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å skrive ut feilsøkingsutdata kan være en viktig del av utviklingsprosessen for å finne feil og forbedre koden din. Det kan hjelpe deg med å identifisere hvor programmet ditt mislykkes og hvorfor det gjør det.
+Når man skriver kode, er det alltid en god idé å inkludere debug-utskrifter i koden for å feilsøke og forstå hvordan koden fungerer. Debug-utskrifter kan også bidra til å forbedre koden din ved å hjelpe deg med å finne feil og ineffektivitet.
 
 ## Hvordan gjøre det
+Fish Shell tilbyr en enkel måte å skrive ut debug-utskrifter i koden din. For å gjøre dette, bruker du kommandoen `echo` etterfulgt av en beskrivelse av hva du vil skrive ut i anførselstegn. La oss si at du vil skrive ut verdien av en variabel kalt `count`, du kan gjøre det på følgende måte:
 
-For å skrive ut feilsøkingsutdata i Fish Shell, kan du bruke kommandoen `echo` etterfulgt av teksten du ønsker å skrive ut. For eksempel:
-
-```Fish Shell
-echo "Dette er et eksempel på feilsøkingsutdata."
+```
+Fish Shell kode:
+set count 5
+echo "Verdien av count er $count"
 ```
 
-Dette vil skrive ut teksten "Dette er et eksempel på feilsøkingsutdata." i terminalen når du kjører programmet ditt.
-
-En annen måte å skrive ut feilsøkingsutdata på er å bruke kommandoen `printf` etterfulgt av teksten du ønsker å skrive ut. For eksempel:
-
-```Fish Shell
-printf "Verdi 1: %d\nVerdi 2: %d" $var1 $var2
-```
-
-Dette vil skrive ut verdiene av variablene `var1` og `var2` sammen med teksten "Verdi 1:" og "Verdi 2:".
-
-Det er også mulig å skrive ut feilsøkingsutdata til en fil ved å bruke `echo` eller `printf` og omdirigere utdata til en fil ved hjelp av `>` operatøren. For eksempel:
-
-```Fish Shell
-echo "Dette er et eksempel på feilsøkingsutdata." > feilsøkingsutdata.txt
-
-printf "Verdi 1: %d\nVerdi 2: %d" $var1 $var2 > feilsøkingsutdata.txt
-```
-
-Dette vil skrive ut teksten eller verdiene til en fil kalt "feilsøkingsutdata.txt".
+Denne koden vil skrive ut `Verdien av count er 5` når den kjøres. Du kan også skrive ut verdier av flere variabler ved å bruke mellomrom mellom hver variabelbeskrivelse i `echo`-kommandoen.
 
 ## Dypdykk
-
-Det er flere formateringsalternativer du kan bruke når du skriver ut feilsøkingsutdata. For eksempel kan du bruke `echo -e` kommandoen for å vise spesielle tegn som linjeskift eller tabuleringer. Du kan også bruke variabler i utdataen din ved hjelp av `$` tegnet.
-
-I tillegg kan du bruke betingede uttrykk i `echo` eller `printf` for å kun skrive ut utdata hvis en gitt betingelse er oppfylt. Dette kan være nyttig for å skrive ut informasjon bare når noe spesielt skjer i programmet ditt.
+Å legge til debug-utskrifter i koden din kan være en uunnværlig måte å forstå og feilsøke koden din på. Ved å se verdier av variabler og utskrifter fra bestemte deler av koden din, kan du identifisere potensielle problemområder og forbedre koden din. Husk at du alltid kan fjerne disse utskriftene når du er ferdig med å feilsøke, så de påvirker ikke ytelsen til koden din.
 
 ## Se også
-
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/)
-- [Guide til feilsøkingsutdata i Fish Shell](https://dev.to/thenemoscope/debugging-your-code-using-fish-shell-41i)
-- [Eksempler på feilsøkingsutdata i Fish Shell](https://www.maketecheasier.com/printing-debug-output-in-fish-shell/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Hvordan bruke variabler i Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_variables)
+- [Debugging i Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_debugging)

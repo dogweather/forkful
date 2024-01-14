@@ -1,92 +1,62 @@
 ---
-title:    "Python: 用 Mandarin 写的如果生成随机数"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/python/generating-random-numbers.md"
+title:                "Python: 产生随机数"
+programming_language: "Python"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要生成随机数？
+## 为什么要生成随机数
 
-在编程中，我们经常会遇到需要随机数的情况。随机数可以帮助我们模拟真实世界中的事件和数据，并且在测试代码时可以提供更多的可能性。因此生成随机数是编程中很常见的操作。
+在编程中，随机数是一个非常有用的概念。它可以被用来创建不同的测试数据、模拟随机事件和增加算法的复杂性。生成随机数可以让程序具有更大的灵活性和多样性。
 
-## 如何生成随机数？
+## 如何生成随机数
 
-为了在Python中生成随机数，我们可以使用random模块。首先，我们需要导入random模块，然后使用其中的random()函数来生成0到1之间的随机数。下面是一个示例代码：
-
-```Python
-import random
-
-# 生成0到1之间的随机数
-random_number = random.random() 
-
-# 打印随机数
-print(random_number) 
-
-# 输出示例：0.8250246179509934 
-```
-
-如果我们想要生成一个指定范围内的随机整数，可以使用random模块中的randint()函数，以下是一个示例代码：
+生成随机数可以在Python中非常方便地实现。下面是一个简单的例子，展示了如何使用Python的random模块来生成随机数。
 
 ```Python
 import random
 
-# 生成1到10之间的随机整数
-random_number = random.randint(1, 10) 
+# 生成一个介于0到10之间的随机整数
+random_num = random.randint(0, 10)
+print(random_num)
 
-# 打印随机整数
-print(random_number) 
+# 生成一个0到1之间的随机小数
+random_float = random.random()
+print(random_float)
 
-# 输出示例：7 
+# 从一个列表中随机选择一个元素
+options = ["A", "B", "C", "D"]
+random_choice = random.choice(options)
+print(random_choice)
 ```
 
-## 深入了解生成随机数
+以上代码的输出结果可能为：
 
-随机数生成的结果并不是完全随机的，而是基于一个种子(seed)值。默认情况下，random模块使用系统时间作为种子值，因此每次运行程序都会得到不同的随机数。如果我们想要重复利用相同的随机数序列，可以通过random.seed()来设置种子值，例如：
+```
+8
+0.83257
+B
+```
+
+除了以上这些简单的例子，Python的random模块还有许多不同的函数可以用来生成不同类型的随机数。通过灵活地使用这些函数，我们可以在编程中实现更多有趣的功能。
+
+## 深入了解随机数生成
+
+其实，计算机无法真正生成完全的随机数。它们通常是通过一个称为“伪随机数生成器”的算法来产生的。这个算法使用一个称为“种子”的数字作为输入，然后根据特定的规则来确定生成的随机数。一般来说，相同的种子会导致相同的随机数序列。因此，在使用随机数时，我们需要仔细选择种子，以避免重复的结果。
+
+在Python中，默认的种子是当前系统时间。如果我们需要每次运行程序时生成不同的随机数序列，可以通过使用random模块的seed()函数来指定种子。举个例子，如果我们想要每次运行程序时都生成相同的随机数序列，可以在程序的开头加上如下代码：
 
 ```Python
-import random
-
-# 设置种子值为10
-random.seed(10) 
-
-# 生成0到1之间的随机数
-random_number = random.random() 
-
-# 打印随机数
-print(random_number) 
-
-# 输出示例：0.5714025946899135 
-
-# 生成0到1之间的随机数
-random_number = random.random() 
-
-# 打印随机数
-print(random_number) 
-
-# 输出示例：0.4288890546751146
-
-# 重置种子值为10
-random.seed(10) 
-
-# 生成0到1之间的随机数
-random_number = random.random() 
-
-# 打印随机数
-print(random_number) 
-
-# 输出示例：0.5714025946899135 
+# 设置种子为100，保证每次运行时都会生成相同的随机数序列
+random.seed(100)
 ```
 
-除了random模块，我们还可以使用其他的Python包来生成随机数，如numpy包中的random子模块。
+另外，Python的random模块还有一些高级函数，可以用来生成更复杂的随机数，如随机排列一个列表、生成符合特定概率分布的随机数等。对于想要深入学习随机数生成的读者，可以通过阅读Python官方文档来了解更多。
 
-## 参考资料
+## 查看其他资源
 
-- [Python文档：random模块](https://docs.python.org/3/library/random.html)
-- [Python random模块使用指南](https://zhuanlan.zhihu.com/p/52239011)
-- [掘金：Python种子不变时的随机数生成](https://juejin.cn/post/6844903992566318605)
-
-## 同类文章
-
-- [如何在Python中使用循环](https://example.com/how-to-use-loops-in-python)
-- [学习Python的最佳实践](https://example.com/best-practices-for-learning-python)
+- [Python官方文档 - random模块](https://docs.python.org/3/library/random.html)
+- [实用Python技巧：生成随机数](https://www.geeksforgeeks.org/python-tricks-generate-random-number/)
+- [使用Python生成随机数的几种方法](https://medium.com/@mohirpara/ways-of-generating-random-numbers-in-python-8bc2f174c4a5)

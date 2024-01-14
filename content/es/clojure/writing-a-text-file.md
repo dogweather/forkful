@@ -1,39 +1,50 @@
 ---
-title:    "Clojure: Escribiendo un archivo de texto"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-a-text-file.md"
+title:                "Clojure: Escribiendo un archivo de texto"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto
+## Por qué
 
-Escribir un archivo de texto es una actividad común en la programación. Proporciona una forma de almacenar y organizar datos de forma legible para los seres humanos y también para que las computadoras los procesen. Además, los archivos de texto son universales y son compatibles con una amplia gama de lenguajes de programación.
-
-[imagen de archivo de texto]
+Escribir un archivo de texto es una habilidad importante en la programación en Clojure. Te permite almacenar y manipular datos de manera organizada y eficiente. Además, la escritura de archivos de texto a menudo es necesaria en la creación de aplicaciones y herramientas.
 
 ## Cómo hacerlo
 
-Para escribir un archivo de texto en Clojure, primero debemos definir una ruta de archivo y el contenido que queremos escribir. Luego, utilizamos la función `spit` para escribir el archivo.
+La escritura de un archivo de texto en Clojure es una tarea sencilla gracias a las funciones integradas en el lenguaje. A continuación se muestra un ejemplo de código que escribe un archivo de texto y luego lo lee para mostrar su contenido:
+
+```clojure
+;; Definir el contenido del archivo
+(def texto "Este es el contenido que se escribirá en el archivo.")
+
+;; Crear el archivo en la carpeta actual
+(spit "mi_archivo.txt" texto)
+
+;; Leer el archivo y almacenar su contenido en una variable
+(def contenido (slurp "mi_archivo.txt"))
+
+;; Imprimir el contenido
+(print contenido)
+```
+
+La salida de este código sería:
 
 ```
-(def ruta-archivo "ejemplo.txt")
-(def contenido "Este es un archivo de texto de ejemplo.")
-
-(spit ruta-archivo contenido)
+Este es el contenido que se escribirá en el archivo.
 ```
 
-[imagen de código de Clojure con salida]
+Como se puede ver, el archivo de texto se escribió de manera exitosa y su contenido se pudo leer y manipular fácilmente.
 
 ## Profundizando
 
-Hay algunas cosas a tener en cuenta al escribir un archivo de texto en Clojure. Por ejemplo, si queremos añadir contenido a un archivo existente, utilizamos la función `spit` con la opción `:append true`.
+Aunque escribir y leer archivos de texto en Clojure es una tarea simple, es importante conocer algunos detalles más avanzados. Por ejemplo, la función `spit` también puede tomar un tercer parámetro opcional que indica el tipo de codificación del archivo. Por defecto, usa la codificación `UTF-8`.
 
-Además, Clojure nos permite escribir en diferentes formatos, como CSV o JSON, utilizando librerías específicas. Esto nos da una mayor flexibilidad al trabajar con diferentes tipos de datos.
+Otro detalle a considerar es que la función `slurp` devuelve una cadena de texto sin formato, por lo que puede ser necesaria una conversión de datos dependiendo de la estructura del archivo.
 
 ## Ver también
 
-- [Documentación oficial de Clojure sobre archivos de texto](https://clojure.org/reference/io)
-- [Tutorial de programación en Clojure](https://learnxinyminutes.com/docs/es-es/clojure-es/)
-- [Librería clojure.data.csv para escribir archivos CSV](https://github.com/clojure/data.csv)
-- [Librería org.clojure/data.json para escribir archivos JSON](https://github.com/clojure/data.json)
+- [Documentación oficial sobre la función `spit`](https://clojuredocs.org/clojure.core/spit)
+- [Documentación oficial sobre la función `slurp`](https://clojuredocs.org/clojure.core/slurp)
+- [Ejemplos de escritura y lectura de archivos de texto en Clojure](https://clojure-examples.com/io/write-read-text-file/)

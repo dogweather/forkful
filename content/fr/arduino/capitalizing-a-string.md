@@ -1,38 +1,50 @@
 ---
-title:    "Arduino: Mettre en majuscule une chaîne de caractères"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/capitalizing-a-string.md"
+title:                "Arduino: Majuscules d'une chaîne de caractères"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Le fait de capitaliser une chaîne de caractères peut sembler être une tâche simple, mais c'est en réalité très utile lors de la manipulation de données dans un programme Arduino. Cela permet de rendre les données plus lisibles pour l'utilisateur et facilite leur traitement dans le code. Dans cet article, nous allons explorer comment capitaliser une chaîne de caractères en utilisant l'Arduino.
+Vous vous demandez peut-être pourquoi quelqu'un voudrait capitaliser une chaîne de caractères dans un programme Arduino? La réponse est simple: cela peut être utile lorsque vous travaillez avec des données provenant de différentes sources et que vous voulez vous assurer que les noms sont formatés de manière cohérente.
 
-# Comment faire
+## Comment faire
 
-Pour capitaliser une chaîne de caractères en utilisant l'Arduino, nous allons utiliser la fonction toUpperCase() de la bibliothèque String. Cette fonction prend en paramètre la chaîne de caractères que nous voulons capitaliser et renvoie une nouvelle chaîne de caractères avec toutes les lettres en majuscule.
-
-Voici un exemple de code pour capitaliser une chaîne de caractères "arduino" et l'afficher sur le moniteur série :
+Heureusement, il est facile de capitaliser une chaîne de caractères en utilisant Arduino. Tout d'abord, vous devez inclure la bibliothèque "string.h" dans votre programme. Ensuite, utilisez la fonction "toUpperCase ()" pour convertir tous les caractères de la chaîne en majuscules.
 
 ```
-Arduino.setup()(); // initialise la carte Arduino et le port série
-String chaine = "arduino"; // création d'une chaîne de caractères
-String chaineMaj = chaine.toUpperCase(); // appel de la fonction pour capitaliser la chaîne
-Serial.println(chaineMaj); // affiche "ARDUINO" dans le moniteur série
+Arduino #include <string.h>
+
+void setup() {
+    // initialisation du programme
+}
+
+void loop() {
+    String nom = "arduino";
+    nom.toUpperCase(); // convertir la chaîne en majuscules
+    Serial.println(nom); // afficher "ARDUINO" dans le moniteur série
+    delay(1000); // attendez une seconde avant de répéter la boucle
+}
 ```
 
-# Plongée en profondeur
+En utilisant cette méthode, vous pouvez capitaliser n'importe quelle chaîne de caractères dans votre programme Arduino.
 
-En utilisant la fonction toUpperCase(), il est important de noter que les caractères spéciaux ou accentués ne seront pas pris en compte et resteront inchangés dans la chaîne de caractères capitalisée. De plus, cette fonction ne modifie pas la chaîne d'origine, elle renvoie une nouvelle chaîne modifiée.
+## Plongée en profondeur
 
-Il est également possible d'utiliser la fonction toUpperCase() sur un caractère unique. Dans ce cas, la fonction renverra une chaîne de caractères avec le caractère en majuscule.
+La fonction "toUpperCase ()" est disponible dans la bibliothèque "string.h" car elle est une fonction standard de C ++. Cette fonction modifie directement la chaîne de caractères d'origine, donc si vous avez besoin de conserver la chaîne de départ, vous devrez en faire une copie.
 
-# Voir aussi
+Il est également important de noter que la fonction "toUpperCase ()" ne fonctionne que pour les caractères ASCII. Si vous utilisez des caractères spéciaux ou des alphabets autres que latin, vous devrez utiliser des méthodes plus avancées pour capitaliser correctement votre chaîne de caractères.
 
-- La documentation officielle de la fonction toUpperCase() de la bibliothèque String : https://www.arduino.cc/en/Reference/StringUpperCase
-- Un tutoriel complet sur la manipulation de chaînes de caractères avec l'Arduino : https://www.arduino.cc/en/Tutorial/StringSubstring
-- Le forum de la communauté Arduino pour échanger et poser des questions sur ce sujet : https://forum.arduino.cc/
+## Voir aussi
 
-N'hésitez pas à explorer d'autres fonctions de la bibliothèque String pour manipuler et formater vos chaînes de caractères selon vos besoins. Bonne programmation !
+Pour en savoir plus sur la manipulation de chaînes de caractères en Arduino, consultez ces ressources utiles:
+
+- [Documentation officielle Arduino - Bibliothèque String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Tutoriel sur les chaînes de caractères en Arduino](https://www.arduino.cc/en/Tutorial/StringComparisonOperators)
+- [Exemples de projets utilisant la manipulation de chaînes en Arduino](https://create.arduino.cc/projecthub/projects/tags/string)
+- [Forum Arduino - Discussions sur la manipulation de chaînes de caractères](https://forum.arduino.cc/index.php?board=2.0)
+
+Maintenant que vous savez comment capitaliser une chaîne de caractères en Arduino, vous pouvez l'appliquer dans vos projets pour une plus grande cohérence et un meilleur traitement des données. Bonne programmation!

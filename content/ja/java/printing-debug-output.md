@@ -1,45 +1,59 @@
 ---
-title:    "Java: デバッグ出力の出力"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/printing-debug-output.md"
+title:                "Java: デバッグ出力の表示"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力を表示するのか
+## なぜ
 
-デバッグ出力を表示することには、多くの利点があります。例えば、プログラムがどのように実行されているかを確認したり、エラーを特定したりするのに役立ちます。また、特定の変数の値を確認することで、プログラムの動作を理解することができます。
+プログラミングを行う際、デバッグ出力を表示することの重要性は言うまでもありません。デバッグ出力はコードを理解し、バグを見つけるために役立ちます。それでは、Javaでデバッグ出力を行う方法をご紹介します。
 
 ## 方法
 
-プログラム内でデバッグ出力を表示するには、```System.out.println()```メソッドを使用します。これは文字列や変数の値をコンソールに表示させることができます。例えば、以下のコードを実行すると、```Hello World```という文字列がコンソールに表示されます。
+デバッグ出力を行う方法は非常に簡単です。プログラミングには、print文を使用します。下記にJavaでの例を示します。
 
 ```Java
-public class HelloWorld {
+public class DebugOutput {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        // 変数の値を出力する例
+        String name = "John";
+        System.out.println("名前：" + name);
+
+        // ループ処理中のデバッグ出力の例
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("現在のiの値：" + i);
+        }
     }
 }
 ```
 
-変数の値を表示する場合は、```System.out.println()```メソッドの中に変数名を記述します。例えば、以下のコードでは```num```という変数の値がコンソールに表示されます。
+出力結果は次のようになります。
 
-```Java
-public class Example {
-    public static void main(String[] args) {
-        int num = 10;
-        System.out.println(num);
-    }
-}
 ```
+名前：John
+現在のiの値：1
+現在のiの値：2
+現在のiの値：3
+現在のiの値：4
+現在のiの値：5
+```
+
+デバッグ出力は、変数の値を確認したり、ループ処理中の変数を追跡したりする際に役立ちます。また、デバッグ出力を使用して、プログラムの実行中にどのコードが実行されているのかも確認できます。
 
 ## ディープダイブ
 
-デバッグ出力を使うと、プログラムの実行経路や変数の値を詳しく確認することができます。さらに、```System.out.println()```メソッドを使わずに、```System.out.print()```メソッドを使用することで、表示される出力が改行されないため、大量のデータを正確に確認することができます。
+デバッグ出力は、プログラムをデバッグするのに役立つだけでなく、コードの理解にも役立ちます。デバッグ出力を適切に使用することで、プログラムの動作をより詳細に理解することができます。また、デバッグ出力を使用する際には、出力結果を視覚的に整形することで、コードの可読性を向上させることもできます。
 
 ## 参考リンク
 
-- [Java 公式ドキュメント](https://docs.oracle.com/en/java/)
-- [Java デバッグ入門 - TechAcademyマガジン](https://techacademy.jp/magazine/8661)
-- [Java でコーディングする際に Debug 出力/StackTrace を print する方法のまとめ - Qiita](https://qiita.com/nagase/items/6cbe95e667a3b98f2968)
-- [Java でデバッグを行う方法 概要 - programmer-office.com](https://www.programmer-office.com/coding-javadebug/)
+- Javaの基本: デバッグ出力
+- Javaのステップバイステップチュートリアル：デバッグ出力の使い方
+
+## 参考
+
+- [Markdownを使ってみよう！](https://www.markdownguide.org/basic-syntax/)
+- [Javaの基本: デバッグ出力](https://qiita.com/opengl-8080/items/37575ef4ef53e505be2b)
+- [Javaのステップバイステップチュートリアル：デバッグ出力の使い方](https://www.javatpoint.com/java-print)

@@ -1,77 +1,43 @@
 ---
-title:    "Haskell recipe: Writing a text file"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/writing-a-text-file.md"
+title:                "Haskell recipe: Writing a text file"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Text files are an essential part of any programming language as they allow us to store and retrieve data easily. In Haskell, writing a text file can be done in a few simple steps and can greatly enhance the functionality of your code. Plus, it's a useful and practical skill to have as a programmer.
+Writing a text file in Haskell may seem like a simple task, but it can actually have many practical uses. From creating simple documentation to storing data in a format that can be easily read and manipulated, understanding how to write a text file in Haskell can greatly expand your programming capabilities.
 
 ## How To
 
-To begin with, we need to import the necessary modules for file input and output in Haskell. This can be done by adding the following code at the top of your file:
+To write a text file in Haskell, we will be using the `writeFile` function from the `System.IO` library. First, we need to open a new file or overwrite an existing one using the `openFile` function. Then, we can use the `writeFile` function to actually write the data to the file. Here is an example of how it looks in code:
 
 ```Haskell
 import System.IO
-import Data.Char
-```
-
-Next, we need to create a file handle using the `openFile` function. This function takes in three arguments: the file name, the mode (which specifies if we want to read, write, or append to the file), and the encoding. For example, to create a new file called "myFile.txt" for writing, we can use the following code:
-
-```Haskell
-file <- openFile "myFile.txt" WriteMode
-```
-
-Once we have our file handle, we can write to the file using the `hPutStrLn` function. This function takes in the file handle and the string that we want to write to the file. For example, we can write "Hello World!" to our file as follows:
-
-```Haskell
-hPutStrLn file "Hello World!"
-```
-
-After we have finished writing to the file, it is important to close the file handle using the `hClose` function. This ensures that all the changes are saved and the file is ready to be used. We can close our file as follows:
-
-```Haskell
-hClose file
-```
-
-Now, let's take a look at a complete example. In the following code, we will ask the user to enter their name and then save it to a text file called "names.txt". We will also add a new line character to the end of each input so that each name is on a separate line in the file.
-
-```Haskell
-import System.IO
-import Data.Char
 
 main = do
-  file <- openFile "names.txt" WriteMode
-  putStrLn "Enter your name:"
-  name <- getLine
-  hPutStrLn file (name ++ "\n")
-  putStrLn "Enter another name:"
-  name2 <- getLine
-  hPutStrLn file (name2 ++ "\n")
-  hClose file
-  putStrLn "Names have been saved to file."
+  let fileName = "newfile.txt" -- name of the file we want to create
+  handle <- openFile fileName WriteMode -- open the file in WriteMode
+  writeFile handle "This is a new text file!" -- write the data to the file
+  hClose handle -- close the file handle
 ```
 
-If we run this code and enter "John" and "Sarah" as names, our "names.txt" file will contain the following:
+In the above code, we first import the necessary library and then use the `openFile` function to create a file named "newfile.txt" in WriteMode. Then, we use the `writeFile` function to write the data "This is a new text file!" to the file. Finally, we close the file handle using the `hClose` function.
 
-```
-John
-Sarah
-```
+Running this code will create a new text file named "newfile.txt" with the content "This is a new text file!". You can also use string interpolation to write dynamic data to the file, such as variables or functions.
 
 ## Deep Dive
 
-In Haskell, there are a few other functions and techniques that can be used to write to text files. For example, we can use the `withFile` function instead of `openFile` and `hClose`. This function takes in the file name, mode, and a function to execute with the file handle. This ensures that the file handle is automatically closed after the function's execution.
+Now that we know the basic steps for writing a text file in Haskell, let's dive deeper into the `writeFile` function. This function takes in two parameters - the file handle and the data to be written. It automatically converts the data to a string and writes it to the file, making it convenient and efficient for writing text files.
 
-We can also use the `appendFile` function to add content to an existing file without overwriting the existing text.
-
-Additionally, we can use the `writeFile` function to create and write to a file in one step, rather than using `openFile` and `hPutStrLn` separately.
+However, it's important to note that the data must be a string in order for the function to work. If you want to write other data types, you will need to convert them to strings first. Additionally, you can also use the `appendFile` function to add new data to an existing text file without overwriting its contents.
 
 ## See Also
+- [Haskell Wiki on File IO](https://wiki.haskell.org/IO/File_IO)
+- [Official Documentation for System.IO Library](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
+- [A Beginner's Guide to Haskell IO](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10_IO)
 
-- [Haskell documentation on file input and output](https://www.haskell.org/tutorial/inputoutput.html)
-- [TutorialsPoint's guide on file handling in Haskell](https://www.tutorialspoint.com/haskell/haskell_input_output.htm)
-- [Real World Haskell chapter on file handling](http://book.realworldhaskell.org/read/io.html)
+Writing a text file in Haskell may seem daunting at first, but with the knowledge of these basic concepts and functions, you can easily create and manipulate text files to enhance your programming projects. Happy coding!

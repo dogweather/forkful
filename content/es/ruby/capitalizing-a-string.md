@@ -1,70 +1,72 @@
 ---
-title:    "Ruby: Capitalizando una cadena"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/capitalizing-a-string.md"
+title:                "Ruby: Capitalizar una cadena"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué capitalizar una cadena en Ruby
+## ¿Por qué capitalizar una cadena?
 
-Capitalizar una cadena en Ruby es una tarea común en la programación. Es útil cuando se desea resaltar una palabra o frase en un texto, o cuando se quiere seguir una convención de estilo específica. A continuación, explicaremos cómo se puede hacer esto en Ruby.
+Capitalizar una cadena es una tarea común en la programación. Al capitalizar una cadena, se cambian todas las letras de la cadena a su forma mayúscula. Esto puede ser útil en situaciones como la validación de entradas del usuario o la manipulación de datos.
 
-## Cómo capitalizar una cadena en Ruby
+## Cómo hacerlo
 
-```ruby
-cadena = "hola, mundo"
-puts cadena.capitalize
+Para capitalizar una cadena en Ruby, podemos utilizar el método `upcase` en la cadena. También podemos utilizar el método `capitalize` para capitalizar solo la primera letra de la cadena.
+
+```Ruby
+cadena = "hola mundo"
+puts cadena.upcase 
+# SALIDA: HOLA MUNDO
+
+puts cadena.capitalize 
+# SALIDA: Hola mundo
 ```
 
-Salida: "Hola, mundo"
+También podemos utilizar el método `upcase!` y `capitalize!` si queremos modificar la cadena original en lugar de crear una nueva.
 
-En el ejemplo anterior, utilizamos el método `capitalize` para capitalizar la primera letra de la cadena `hola, mundo`. Este método devuelve una copia de la cadena con la primera letra en mayúscula.
+```Ruby
+cadena = "hola mundo"
+cadena.upcase!
+puts cadena
+# SALIDA: HOLA MUNDO
 
-Además, también podemos utilizar el método `capitalize!` para modificar la cadena original en lugar de crear una nueva:
-
-```ruby
-cadena = "hola, mundo"
 cadena.capitalize!
 puts cadena
+# SALIDA: Hola mundo
 ```
 
-Salida: "Hola, mundo"
+También podemos capitalizar solo la primera letra de cada palabra en una cadena utilizando el método `titleize` del gem 'activesupport'.
 
-Si la cadena comienza con una letra mayúscula, estos métodos no harán ningún cambio en la cadena original.
-
-## Profundizando en la capitalización de cadenas en Ruby
-
-Existen otros métodos en Ruby que nos permiten capitalizar una cadena de distintas formas. Por ejemplo, el método `upcase` nos permite convertir todas las letras de una cadena en mayúsculas:
-
-```ruby
-cadena = "hola, mundo"
-puts cadena.upcase
+```Ruby
+require 'active_support/all' 
+cadena = "hola mundo"
+puts cadena.titleize
+# SALIDA: Hola Mundo
 ```
 
-Salida: "HOLA, MUNDO"
+## Profundizando
 
-Mientras que el método `downcase` hace lo contrario, convirtiendo todas las letras en minúsculas:
+En Ruby, también podemos utilizar la función `scan` junto con una expresión regular para capitalizar solo ciertas letras en una cadena.
 
-```ruby
-cadena = "HOLA, MUNDO"
-puts cadena.downcase
+```Ruby
+cadena = "código ruby 123"
+regex = /(\w)(\w+)/
+puts cadena.scan(regex) {|match| match[0].upcase + match[1]}
+# SALIDA: Código Ruby 123
 ```
 
-Salida: "hola, mundo"
+También podemos utilizar el método `tr` para capitalizar solo letras específicas en una cadena.
 
-Además, el método `swapcase` nos permite intercambiar las letras mayúsculas y minúsculas en una cadena:
-
-```ruby
-cadena = "Hola, Mundo"
-puts cadena.swapcase
+```Ruby
+cadena = "cadena con letras minúsculas"
+puts cadena.tr("a-z", "A-Z")
+# SALIDA: CADENA CON LETRAS MINÚSCULAS
 ```
-
-Salida: "hOLA, mUNDO"
-
-Estos métodos pueden ser útiles en diferentes situaciones, dependiendo de nuestras necesidades.
 
 ## Ver también
 
-- Documentación oficial de Ruby sobre el método `capitalize`: https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize
-- Tabla de contenido de la documentación de Ruby: https://ruby-doc.org/core-2.7.1/
+- [Ruby String documentation](https://ruby-doc.org/core-2.6/String.html)
+- [Ruby regular expressions tutorial](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [ActiveSupport gem documentation](https://guides.rubyonrails.org/v3.2.13/active_support_core_extensions.html)

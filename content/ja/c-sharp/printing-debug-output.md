@@ -1,38 +1,35 @@
 ---
-title:    "C#: デバッグ出力の印刷"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/printing-debug-output.md"
+title:                "C#: デバッグ出力の印刷"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜデバッグ出力を行うのか
-デバッグ出力を行うことのメリットは多くあります。コーディング中に発生したエラーやバグを特定し、修正するために欠かせない作業です。通常、デバッグ出力は更に高度なデバッグ手法の一部として活用されることもあります。
+## 為に
+デバッグ出力をプリントする理由は、コーディングのプロセスにおいてバグを発見しやすくするためです。
 
-## デバッグ出力の使い方
-デバッグ出力を行うには、プログラムの中に出力するコードを記述する必要があります。以下にC#言語での例を示します。
+## 方法
+デバッグ出力をプリントするには、C#の内部処理の中で```Console.WriteLine```を使用します。これにより、コードの特定の箇所で変数の値やメッセージを表示することができます。例を示します。
 
 ```C#
-Console.WriteLine("Debug output:"); // 文字列の出力
-Console.Write("Variable value: "); // 改行しないで出力
-Console.WriteLine(variable); // 変数の値を出力
+int num = 5;
+Console.WriteLine("The value of num is: " + num);
 ```
 
-上記のコードを実行すると、コンソールに以下のように出力されます。
+このコードを実行すると、「The value of num is: 5」というメッセージが出力されます。これにより、特定の変数の値を確認したり、どの行でエラーが発生しているかを特定することができます。
 
-```
-Debug output:
-Variable value: 5
-```
+## ディープダイブ
+デバッグ出力は、プログラムが複雑になったりバグが生じたりした場合に非常に有用です。しかし、コードに多くのデバッグ出力を入れすぎると、パフォーマンスが低下する可能性があります。そのため、デバッグ出力を含めるべき箇所を慎重に選択することが重要です。
 
-このように、デバッグ出力を行うことで特定の箇所でのプログラムの動作を確認することができます。
+また、デバッグ出力は開発中のみに使われるべきで、リリースする際には全て削除することが推奨されます。デバッグ出力を残したままリリースすると、プログラムの動作に影響を及ぼす可能性があります。
 
-## デバッグ出力の深掘り
-デバッグ出力は、コードの実行中に特定の変数や情報を出力することができるため、エラーやバグの原因を特定するのに非常に役立ちます。また、コードの最適化やパフォーマンスの改善にも活用されることがあります。
+## 参考リンク
+- [C# Console.WriteLineメソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.console.writeline?view=net-5.0)
+- [デバッグ出力が有効な.Netプログラムを記録する](https://docs.microsoft.com/ja-jp/dotnet/framework/debug-trace-profile/debug-write-to-stdout)
+- [Debug.WriteLine()メソッドを使用してプログラムの実行中にコンソールにログを書き込む](https://www.codeproject.com/tips/88588/debug-write-in-csharp-program-running-output-for)
+- [デバッグ出力のパフォーマンスへの影響](https://stackoverflow.com/questions/7432477/how-much-does-debug-writeline-affect-performance)
 
-しかし、注意しなければならないのは、デバッグ出力を多用するとプログラムの実行速度に影響を与える可能性があることです。そのため、デバッグ出力はデバッグ作業が終わったら削除することが推奨されます。
-
-# See Also
-- [C# デバッグの基本](https://docs.microsoft.com/ja-jp/visualstudio/debugger/debugger-feature-tour?view=vs-2019)
-- [C# デバッグ出力の高度な活用方法](https://blogs.msdn.microsoft.com/jmstall/2006/09/24/writing-to-the-debug-window-from-an-extension/)
-- [C# デバッグのパフォーマンスへの影響について](https://docs.microsoft.com/ja-jp/contribute/how-to-write-high-performance-code?view=vs-2019&redirectedfrom=MSDN#performance-concepts)
+## 関連記事
+参考になる他の記事を見つけるために、Markdownのヘッダー「関連記事」をチェックしてみてください。

@@ -1,43 +1,50 @@
 ---
-title:    "Bash: 日付を文字列に変換する"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/converting-a-date-into-a-string.md"
+title:                "Bash: 日期を文字列に変換する"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
+## なぜ
 
-Bashプログラミングの中で日付を文字列に変換する必要性は、コンピューターは日付情報を数字の形式で扱うため、人間が理解しやすい形式に変換するためです。
+プログラミングにおいて、日付を文字列に変換する方法は非常に重要です。例えば、日付をデータベースに保存したり、ファイル名として使用したりする際に、特定のフォーマットの文字列が必要になるためです。
 
-##方法
+## 方法
 
-まずは、今日の日付を文字列に変換してみましょう。```Bash
-date +"今日は %Y年%m月%d日です。"
-``` 
-出力結果は以下のようになります。
-```
-今日は 2021年08月31日です。
-```
-次に、特定の日付を指定して、その日の日付を文字列に変換してみましょう。
+日付を文字列に変換するには、Bashの組み込みコマンドである `date` を使用します。以下のように記述して実行することで、現在の日付が `2021年07月21日` のような形式で表示されます。
+
 ```Bash
-date -d "2021-10-25" +"%Aは、%B %d, %Yです。"
-```
-出力結果は以下のようになります。
-```
-月曜日は、10月 25, 2021です。
+date +"%Y年%m月%d日"
 ```
 
-##深く掘り下げる
+また、日付のフォーマットを変更することも可能です。例えば、`2021-07-21` のような形式に変更するには、次のように記述します。
 
-日付を文字列に変換する際には、特定の変換指定子を使用する必要があります。例として、```%Y```は年を4桁、```%y```は年を下2桁、```%m```は月を2桁、```%d```は日を2桁で表すことができます。また、より詳細な日付や時刻を表示したい場合には、変換指定子の前に```-```を付けることで指定することができます。
+```Bash
+date +"%Y-%m-%d"
+```
 
-さらに詳しく知りたい方は、Bashのマニュアルページを参照することで、さまざまな変換指定子やオプションを学ぶことができます。
+さらに、変換した日付を文字列として別の変数に保存することもできます。
 
-##関連リンク
+```Bash
+date_string=$(date +"%Y年%m月%d日")
+echo $date_string
+```
 
-[Bashのマニュアルページ](https://www.gnu.org/software/bash/manual/bash.html)
+このように、日付を文字列に変換する方法は非常に簡単です。
 
-[Dateコマンドのマニュアルページ](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+## ディープダイブ
 
-[日付の変換指定子一覧](https://wiki.bash-hackers.org/commands/builtin/date)
+日付のフォーマットオプションには、`%Y` などの一文字のコードだけでなく、`%Y年` のように日本語を入れることも可能です。また、日付の前後に任意の文字を追加することもできます。詳細なオプションは、`man date` コマンドで確認することができます。
+
+## 参考リンク
+
+- [Bash dateコマンドの使い方](https://eng-entrance.com/linux-bash-date)
+- [How to format date in Bash?](https://stackoverflow.com/questions/1401482)
+- [Bash Date and Time (Manipulate the Output or Input) – nixCraft](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
+- [Homepage for the "date" program](https://www.gnu.org/savannah-checkouts/gnu/coreutils/manual/html_node/date-invocation.html)
+
+## 他にも見るべきもの
+
+[マークダウン](https://ja.wikipedia.org/wiki/Markdown)

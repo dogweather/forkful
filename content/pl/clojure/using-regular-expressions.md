@@ -1,49 +1,42 @@
 ---
-title:    "Clojure: Używanie wyrażeń regularnych"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/using-regular-expressions.md"
+title:                "Clojure: Używanie wyrażeń regularnych"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego używać wyrażeń regularnych w języku Clojure?
+## Dlaczego
 
-Wyrażenia regularne są narzędziem niezbędnym dla programistów, którzy chcą manipulować i przetwarzać tekst. W języku Clojure są one szczególnie przydatne, ponieważ pozwalają na wygodne i precyzyjne wyszukiwanie i modyfikację tekstu. Dzięki nim można również szybko przetwarzać dane tekstowe, co jest szczególnie ważne w przypadku dużych zbiorów danych.
+Działanie wyrażeń regularnych może wydawać się skomplikowane i niepotrzebne, ale w rzeczywistości jest to bardzo przydatne narzędzie dla programistów. Pozwala ono na szybkie i precyzyjne przetwarzanie tekstów, znajdowanie określonych wzorców oraz manipulację nimi.
 
-## Jak używać wyrażeń regularnych w języku Clojure?
+## Jak to zrobić
 
-Wyrażenia regularne w języku Clojure są obsługiwane przez bibliotekę core.match, która jest dostępna w standardowej bibliotece. Aby użyć wyrażeń regularnych, należy zaimportować tę bibliotekę do swojego projektu.
+Aby użyć wyrażeń regularnych w języku Clojure, należy użyć funkcji `re-seq` lub `re-matches`. Przykładowo, jeśli chcemy znaleźć wszystkie wystąpienia słowa "programowanie" w tekście, możemy użyć wyrażenia regularnego `#"programowanie"`. Następnie, możemy użyć funkcji `re-seq` do przetworzenia tekstu i otrzymać listę wszystkich pasujących fragmentów. 
 
 ```Clojure
-(ns moj-projekt
-  (:require [clojure.core.match :as m]))
+(def tekst "Kiedy potrzebujemy lekkiego odprężenia, najlepiej zająć się czymś przyjemnym, np. programowaniem.")
+(re-seq #"\w+" tekst)
 
-(m/defmatch moj-wyrażenie "wzorzec"
-  [match] "tutaj wpisz wyrażenie")
-
-(m/match moj-wyrażenie "tekst do przetworzenia")
-;; oczekiwany wynik
-;; "wynik przetworzenia"
+; Output: ["Kiedy" "potrzebujemy" "lekkiego" "odprężenia" "najlepiej" "zająć" "się" "czymś" "przyjemnym" "np" "programowaniem"]
 ```
 
-W powyższym przykładzie użyliśmy funkcji m/defmatch, aby stworzyć nasze wyrażenie regularne o nazwie "moj-wyrażenie". W nawiasach kwadratowych podaliśmy nazwę naszego wzorca oraz zmienną "match", która będzie przechowywać wynik przetworzenia wyrażenia.
+Aby zastąpić fragment tekstu, można użyć funkcji `re-find`, a następnie funkcji `clojure.string/replace`. W poniższym przykładzie zastępujemy wszystkie wystąpienia słowa "programowaniem" słowem "kodowaniem".
 
-Kolejnym krokiem jest użycie funkcji m/match, aby dopasować nasze wyrażenie do konkretnego tekstu. W tym przypadku przetwarzamy tekst "tekst do przetworzenia" i oczekujemy wyniku "wynik przetworzenia".
+```Clojure
+(def tekst "Kiedy potrzebujemy lekkiego odprężenia, najlepiej zająć się czymś przyjemnym, np. programowanie.")
+(re-find #"\w+" tekst)
+(clojure.string/replace tekst #"programowaniem" "kodowaniem")
 
-Dodatkowo, w języku Clojure można również wykorzystać wyrażenia regularne w funkcjach takich jak re-seq czy re-find, które zwracają odpowiednio liste dopasowanych wyrażeń lub pierwsze dopasowanie. Aby uzyskać więcej informacji o tych funkcjach, warto zajrzeć do dokumentacji biblioteki core.match.
+; Output: "Kiedy potrzebujemy lekkiego odprężenia, najlepiej zająć się czymś przyjemnym, np. kodowaniem."
+```
 
-## Pogłębiona wiedza o wyrażeniach regularnych w języku Clojure
+## Głębszy Przegląd
 
-Wyrażenia regularne w języku Clojure są oparte na wyrażeniach regularnych z języka Perl, co oznacza, że posiadają wiele zaawansowanych funkcji i możliwości. Dzięki temu można manipulować tekstem na wiele różnych sposobów, na przykład:
-
-- wykorzystywanie zmiennych
-- wyrażenia warunkowe
-- zagnieżdżone wyrażenia
-
-Ponadto, w języku Clojure można również tworzyć własne operatory dopasowujące za pomocą funkcji m/defoperator oraz wykorzystywać wyrażenia regularne w konstrukcjach takich jak pętle czy funkcje rekurencyjne.
+Wyrażenia regularne pozwalają na używanie zaawansowanych wzorców, takich jak klasy znaków, kwantyfikatory czy grupy. Dzięki temu można dokładnie określić, jakich fragmentów tekstu szukamy. Ważnym elementem jest wyrażenie `^` oznaczające początek tekstu oraz wyrażenie `$` oznaczające koniec tekstu, które można wykorzystać do szukania ciągów znaków na początku lub końcu wyrażenia.
 
 ## Zobacz też
 
-- Dokumentacja biblioteki core.match w języku Clojure: https://clojure.github.io/core.match/
-- Przykładowe zadania z wykorzystaniem wyrażeń regularnych w języku Clojure: https://www.4clojure.com/solutions/regular-expressions
-- Poradnik o wyrażeniach regularnych w języku Clojure na stronie Clojure for the Brave and True: https://www.braveclojure.com/regular-expressions/
+- Dokumentacja Clojure dotycząca wyrażeń regularnych: https://clojuredocs.org/clojure.core/re-seq
+- Przydatny tutorial odnośnie wyrażeń regularnych w języku Clojure: https://www.braveclojure.com/regular-expressions/

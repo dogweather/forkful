@@ -1,37 +1,56 @@
 ---
-title:    "PHP: Kontrollera om en mapp finns"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/checking-if-a-directory-exists.md"
+title:                "PHP: Kontrollera om en mapp existerar"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kontrollera om en mapp existerar är en vanlig uppgift för många PHP-utvecklare. Det kan vara till nytta när man till exempel behöver lägga till filer i en specifik mapp eller för att se om ett installationssteg har implementerats korrekt. Oavsett anledning är det viktigt att veta hur man enkelt kan utföra denna uppgift i PHP.
+Att kontrollera om en mapp existerar är en viktig del av PHP-programmering. Det är en enkel men kraftfull funktion som hjälper till att säkerställa att våra program fungerar korrekt och ger rätt resultat. Detta är särskilt viktigt när man arbetar med stora och komplexa projekt, där det kan finnas flera olika mappar som ska hanteras.
 
-## Hur man
+## Hur man gör det
 
-För att kontrollera om en mapp existerar i PHP används funktionen `file_exists()`. Den här funktionen tar en sökväg som argument och returnerar `true` om sökvägen existerar och `false` om den inte gör det.
+För att kontrollera om en mapp existerar i PHP kan du använda funktionen `is_dir()`. Detta kommer att returnera ett booleskt värde (true eller false) beroende på om mappen finns eller inte.
 
-```PHP
-if (file_exists("/mapp/exempel")) {
-    echo "Mappen existerar";
-} else {
-    echo "Mappen existerar inte";
-}
+```PHP 
+<?php 
+// Definiera sökvägen till mappen som ska kontrolleras 
+$folder = "/hem/min_mapp"; 
+
+// Använd is_dir() för att se om mappen existerar 
+if(is_dir($folder)) { 
+  echo "Mappen existerar."; 
+} else { 
+  echo "Mappen existerar inte."; 
+} 
+?> 
 ```
 
-Om mappen existerar kommer "Mappen existerar" att skrivas ut i konsolen, annars kommer "Mappen existerar inte" att skrivas ut.
+Beroende på om mappen finns eller inte kommer koden att skriva ut en av meddelandena. Om mappen `min_mapp` existerar kommer det första meddelandet att skrivas ut, annars kommer det andra meddelandet att skrivas ut.
 
-## Deep Dive
+## Djupdykning
 
-För att förstå hur `file_exists()`-funktionen fungerar djupare kan vi titta på dess returvärde. Om det returnerade värdet är `true` betyder det att sökvägen finns och PHP-programmet kan fortsätta att exekvera. Om det returnerade värdet är `false` innebär det att sökvägen inte finns och att speciella åtgärder kan behövas för att hantera detta.
+För mer avancerade projekt kan det vara användbart att veta mer om mappen som ska kontrolleras. I så fall kan funktionen `scandir()` användas för att returnera en lista över filer och mappar inuti den specifika mappen.
 
-Det är också viktigt att notera att `file_exists()`-funktionen inte bara fungerar för mappar, utan kan även användas för att kontrollera om en fil existerar.
+```PHP 
+<?php 
+// Definiera sökvägen till mappen som ska kontrolleras 
+$folder = "/hem/min_mapp"; 
 
-## Se också
+// Använd scandir() för att lista alla filer och mappar 
+$contents = scandir($folder); 
 
-- [PHP filsystemfunktioner](https://www.php.net/manual/en/ref.filesystem.php)
-- [Kontrollera om en fil existerar i PHP](https://www.domainit.com/help/topic/052/how-to-check-if-a-file-exists-in-php/)
-- [Hitta mappens sökväg i PHP](https://stackoverflow.com/questions/45792601/how-can-i-get-path-of-my-directory-in-php)
+// Skriv ut resultatet 
+print_r($contents); 
+?> 
+```
+
+Koden ovan kommer att skriva ut en lista med alla filer och mappar som finns i mappen `min_mapp`. Detta kan vara användbart för att kontrollera om rätt filer eller mappar finns innan man fortsätter med resten av koden.
+
+## Se även
+
+- [PHP Manual: is_dir()](https://www.php.net/manual/en/function.is-dir.php)
+- [PHP Manual: scandir()](https://www.php.net/manual/en/function.scandir.php)

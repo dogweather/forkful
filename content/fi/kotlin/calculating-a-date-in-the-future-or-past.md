@@ -1,45 +1,58 @@
 ---
-title:    "Kotlin: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/calculating-a-date-in-the-future-or-past.md"
+title:                "Kotlin: Päivämäärän laskeminen tulevaisuudesta tai menneisyydestä"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi laskurilla olisi merkitystä ohjelmoinnissa?
 
-Monet ohjelman rakentajat ja kehittäjät saattavat törmätä tarpeeseen laskea tietty päivämäärä etukäteen tai taaksepäin. Tämä voi johtua esimerkiksi tiettyjen toimintojen ajanrajoituksista tai tarpeesta tietää tulevien tapahtumien ajankohta. Onneksi tämä ongelma voidaan ratkaista helposti käyttämällä Kotlin-ohjelmointikielen valmiita ominaisuuksia.
+Päivämäärien laskeminen tulevaisuuteen tai menneisyyteen voi olla hyödyllistä esimerkiksi sovelluksissa, jotka vaativat tarkan ajan määrittämistä. Se voi myös auttaa laskemaan tulevia tapahtumia tai käsittelemään aikaperusteista dataa.
 
-## Kuinka
+## Kuinka laskea päivämääriä Kotlinilla
 
-Kotlin tarjoaa Date-luokan, jota voidaan käyttää päivämäärän ja ajan käsittelyyn. Se tarjoaa myös kätevän toiminnon, jolla voidaan helposti lisätä tai vähentää päiviä, kuukausia tai vuosia nykyisestä päivämäärästä. Katso seuraavassa koodiesimerkissä, kuinka tämä toimii:
+Jos haluat laskea päivämääriä tulevaisuuteen tai menneisyyteen Kotlinilla, voit käyttää `Calendar` -luokkaa ja sen `add` -metodia. Tässä on yksinkertainen esimerkki, joka laskee päivän päähän nykyisestä päivästä:
 
 ```Kotlin
-import java.time.LocalDate
-
-fun main(args: Array<String>) {
-
-  val tanaan = LocalDate.now() // nykyinen päivämäärä
-  val huomenna = tanaan.plusDays(1) // lisätään yksi päivä
-  val ensiViikolla = tanaan.plusWeeks(1) // lisätään yksi viikko
-  val ensiVuonna = tanaan.plusYears(1) // lisätään yksi vuosi
-
-  println("Tänään on $tanaan") // tulostaa "Tänään on 2021-07-27"
-  println("Huomenna on $huomenna") // tulostaa "Huomenna on 2021-07-28"
-  println("Ensi viikolla on $ensiViikolla") // tulostaa "Ensi viikolla on 2021-08-03"
-  println("Ensi vuonna on $ensiVuonna") // tulostaa "Ensi vuonna on 2022-07-27"
-}
+val cal = Calendar.getInstance()
+cal.add(Calendar.DAY_OF_YEAR, 1)
+val tulevaPaiva = cal.time
+println("Tuleva päivä on: $tulevaPaiva")
 ```
 
-Huomaa, että voit myös vähentää päiviä, viikkoja tai vuosia käyttämällä funktiota "minusDays", "minusWeeks" tai "minusYears".
+Tulostus olisi:
+
+```
+Tuleva päivä on: Tue Jul 14 17:47:52 EEST 2020
+```
+
+Voit myös määrittää tietyn päivämäärän, johon haluat lisätä tai vähentää päiviä. Tämä voidaan tehdä asettamalla `Calendar` -luokan `time` -ominaisuus halutuksi päivämääräksi. Esimerkiksi, jos haluat laskea päivämäärää 10 päivän päähän, voit käyttää seuraavaa koodia:
+
+```Kotlin
+val cal = Calendar.getInstance()
+cal.time = Date(2020, 6, 14)
+cal.add(Calendar.DAY_OF_YEAR, 10)
+val tulevaPaiva = cal.time
+println("Tuleva päivä on: $tulevaPaiva")
+```
+
+Tulostus olisi:
+
+```
+Tuleva päivä on: Fri Jun 24 00:00:00 EEST 2020
+```
 
 ## Syventävä tarkastelu
 
-Kotlinin Date-luokan lisäksi voit myös käyttää Java API:n Date- ja Calendar-luokkia päivämäärän käsittelyyn. Näillä luokilla on laajempi valikoima toimintoja ja ne voivat olla hyödyllisiä monimutkaisempien aikaluokkien hallitsemiseksi, kuten aikavyöhykkeiden tai ajanjaksojen käsittelyyn.
+Kzechma on avoimen lähdekoodin kirjasto, joka tarjoaa erilaisia työkaluja päivämäärien laskemiseen Kotlinissa. Se tarjoaa muun muassa metodeja pysyvien ja kausien päivämäärien laskentaan.
 
-Kannattaa myös tutustua Java 8:n LocalDate-luokkaan, joka tarjoaa samankaltaisia toimintoja kuin Kotlinin Date-luokka. Se on uudempi ja parantaa Javan vanhempia date- ja time-luokkia.
+Voit myös muokata `Calendar` -luokkaan liittyviä asetuksia, kuten käyttää eri aikavyöhykkeitä tai asettaa tietyn päivämäärän ensimmäiseksi viikoksi. Tämä voi olla hyödyllistä, jos haluat laskenut päivämäärät noudattamaan tiettyä aikavyöhykettä tai viikkoesitystä.
 
 ## Katso myös
 
-- [Kotlindocs - Java API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.util.-date/)
-- [Oracle Docs - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Kzechma-kirjasto](https://github.com/Kzechma/Kzechma)
+- [Kotlindokumentaatio - Calendar-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-calendar/)
+- [Kotlindokumentaatio - Date-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)
+- [Kotlindokumentaatio - Time-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-time/)

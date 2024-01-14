@@ -1,60 +1,41 @@
 ---
-title:    "C#: Порівняння двох дат"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/comparing-two-dates.md"
+title:                "C#: Порівняння двох дат"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Для чого
+##Чому
 
-В програмуванні часто виникає необхідність порівнювати дві дати. Наприклад, для перевірки часу, проведеного певною операцією або для знаходження проміжку між датами. У цьому блозі, ми розглянемо, як можна порівняти дві дати в мові C#.
+Зацікавлення у порівнянні двох дат може виникнути з різних причин. Наприклад, ви можете потребувати визначити, яка з двох дат є більш новою або якщо вони співпадають. Також це може бути корисно у випадку, коли потрібно сортувати дані за датою.
 
-## Як
+##Як
 
-Можна скористатись класом `DateTime` для перевірки двох дат. Для цього необхідно використати метод `Compare`, який приймає два об'єкти типу `DateTime` і повертає значення `-1`, якщо перша дата менша за другу, `0` - якщо дати однакові та `1` - якщо перша дата більша за другу.
+Для порівняння дат у C# використовується клас `DateTime`. Для початку, ми можемо створити дві змінні цього класу, які будуть містити наші дати. Наприклад:
 
 ```C#
-DateTime date1 = new DateTime(2021, 3, 15);
-DateTime date2 = new DateTime(2021, 3, 20);
+DateTime date1 = new DateTime(2020, 11, 15);
+DateTime date2 = new DateTime(2021, 5, 20);
+```
 
+Далі ми можемо використати метод `Compare` для порівняння цих двох дат. Він повертає цілочисельне значення, яке показує, чи одна дата менша, більша або рівна іншій. Наприклад:
+
+```C#
 int result = DateTime.Compare(date1, date2);
-Console.WriteLine(result); // виведе -1, оскільки перша дата менша за другу
 ```
 
-Також, можна скористатись перевантаженим оператором `<` та методом `Equals` для порівняння дат.
+Значення `result` буде -1, оскільки дата 15 листопада 2020 року є меншою, ніж 20 травня 2021 року.
 
-```C#
-if(date1 < date2) // перша дата менша за другу
-{
-    Console.WriteLine("Дата {0} більша за дату {1}", date2, date1);
-}
-else if(date1.Equals(date2)) // дати однакові
-{
-    Console.WriteLine("Дата {0} та дата {1} однакові", date1, date2);
-}
-else // перша дата більша за другу
-{
-    Console.WriteLine("Дата {0} менша за дату {1}", date2, date1);
-}
-```
+##Поглиблене дослідження
 
-Вивід:
+Це лише найпростіший спосіб порівняти дві дати. У C# є багато інших методів та функцій, які можуть допомогти у цьому процесі. Наприклад, методи `Equals`, `Add`, `Subtract` та багато інших. Також, ви можете використати різні формати дат для отримання різних результатів.
 
-```
-Дата 2021-03-20 більша за дату 2021-03-15
-```
+Наведений приклад не враховує часові зони, що також може впливати на порівняння дат. Для цього варто врахувати методи `ToUniversalTime` та `ToLocalTime`.
 
-## Deep Dive
+##Подивіться також
 
-При порівнянні дат у мові C#, варто пам'ятати про наступне:
-
-- Метод `Compare` порівнює не лише дати, а й час, тобто `dateTime1` і `dateTime2` повинні бути з одним і тим же часом, якщо потрібно порівняти тільки дати.
-- Крім методу `Compare`, у класі `DateTime` є ще метод `CompareOrdinal`, який порівнює дати за їх номером, без врахування різниці у часі.
-- При перевірці часу, можна використовувати методи `Add` і `Subtract` для додавання чи віднімання певної кількості часу з дати.
-
-## Дивись також
-
-- [Документація по класу DateTime в C#](https://docs.microsoft.com/ru-ru/dotnet/api/system.datetime?view=net-5.0)
-- [Порівняння дат в C#](https://www.c-sharpcorner.com/blogs/date-comparison-in-c-sharp1)
-- [Про час і дату в C#](https://metanit.com/sharp/tutorial/10.2.php)
+- [DateTime.Compare Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0)
+- [DateTime Methods in C# (C# Corner)](https://www.c-sharpcorner.com/blogs/datetime-method-in-c-sharp-programming1)
+- [Different date formats in C# (Stack Overflow)](https://stackoverflow.com/questions/11452588/different-date-formats-in-c-sharp)

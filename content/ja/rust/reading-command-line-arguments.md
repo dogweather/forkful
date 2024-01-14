@@ -1,72 +1,44 @@
 ---
-title:    "Rust: コンピュータープログラミングにおける「コマンドライン引数の読み取り」"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/reading-command-line-arguments.md"
+title:                "Rust: 「コマンドライン引数の読み込み」"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-コマンドライン引数を読み込むことの重要性をお伝えするために、今回はRustプログラミング言語での読み込み方を紹介します。
+コマンドライン引数の読み取りを学ぶことは、Rustプログラミングにとって非常に重要です。コマンドライン引数を正しく理解することで、より柔軟で効率的なプログラムを書くことができます。
 
-## ハウツー
+## 方法
 
-コマンドライン引数を読み込むには、標準ライブラリの `env` モジュールを使用します。以下の例では、`std::env::args()` を使用してコマンドライン引数を受け取り、`println!` マクロを使用して出力します。
+コマンドライン引数を読み取るには、標準ライブラリの`std::env`を使用します。まず、`use std::env`を使用してライブラリをインポートし、次に`std::env::args()`を使用してコマンドライン引数のイテレーターを取得します。このイテレーターを使用して、引数を一つずつ処理することができます。
 
-```Rust
-use std::env;
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    println!("コマンドライン引数: {:?}", args);
-}
-```
-
-実行すると、以下のような結果が得られます。
-
-```
-コマンドライン引数: ["target/debug/sample"]
-```
-
-そして、引数を使用してプログラムを実行する際には、`cargo run` コマンドを使用します。
-
-さらに、コマンドライン引数に直接値を渡すこともできます。
+例えば、コマンドライン引数で与えられた数値を合計するプログラムを書くとします。その場合、以下のようにコードを記述することができます。
 
 ```Rust
 use std::env;
+let mut sum = 0;
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    let first_arg = &args[1];
-    println!("最初の引数: {}", first_arg);
+for arg in env::args().skip(1) {
+    let num: i32 = arg.parse().unwrap(); // 引数を数値に変換
+    sum += num; // 合計に加算
 }
+
+println!("The sum is {}", sum); // 結果を表示
 ```
 
-実行結果:
-
-```
-最初の引数: hello
-```
-
-これで、コマンドライン引数を読み込む方法が分かりました。
+コマンドラインで`rustc sum_args.rs`のようにファイル名を与えずに実行すると、エラーが発生することに注意しましょう。なぜなら、最初の引数にはファイル名が渡されているため、数値ではないからです。そのため、`.skip(1)`を使用してファイル名をスキップするようにしています。
 
 ## ディープダイブ
 
-さらに、`std::env` モジュールには他にも便利な関数があります。例えば、`args_os()` を使用すれば、引数を `OsString` オブジェクトとして受け取ることができます。また、`current_dir()` を使用すれば、現在のディレクトリを取得できます。
+コマンドライン引数の詳細は非常に深いトピックです。例えば、オプション引数を使用したい場合は、`std::env::args()`ではなく`std::env::args_os()`を使用する必要があります。これにより、Unicodeでエンコードされた引数を処理することができます。
 
-また、環境変数を取得・設定する機能も `std::env` モジュールに備わっています。例えば、`var()` 関数を使用すると、指定した環境変数の値を取得できます。
-
-コマンドライン引数や環境変数を使用することで、柔軟性の高いプログラムを作ることができます。ぜひ、試してみてください。
+また、クレート（ライブラリ）を使用してより高度な引数のパースを行うこともできます。こういったトピックは、より詳細な学習や実践によって深めることができます。
 
 ## 参考リンク
 
-- [Rustプログラミング言語公式サイト](https://www.rust-lang.org/ja/)
-- [std::env モジュール　ドキュメント](https://doc.rust-lang.org/std/env/index.html)
-- [コマンドライン引数を使う方法](https://qiita.com/termoshtt/items/d099cd08dbe68270e32b)
-- [Rustで環境変数を扱う方法](https://qiita.com/7ma7X/items/6fa51a74604b5d83576f)
-
-# オススメのリンク
-
-- [よく使う標準ライブラリの関数まとめ](https://qiita.com/__init__/items/f5e5d2556d36ac40dad2)
-- [Rustプログラミングのコツとテクニック](https://qiita.com/Qui/items/d18e207e04b172c8f72d)
+- [Rust標準ライブラリドキュメント - envモジュール](https://doc.rust-lang.org/std/env/index.html)
+- [Rust by Example - コマンドライン引数](https://doc.rust-lang.org/stable/rust-by-example/std_misc/arg.html)
+- [clap - Rustのコマンドラインパーサーライブラリ](https://docs.rs/clap/2.33.0/clap/)

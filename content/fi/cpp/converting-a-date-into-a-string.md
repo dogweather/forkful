@@ -1,51 +1,58 @@
 ---
-title:    "C++: Päivämäärän muuntaminen merkkijonoksi"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/converting-a-date-into-a-string.md"
+title:                "C++: Päivämäärän muuntaminen merkkijonoksi"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Aina välillä C++ ohjelmoinnissa tulee tarve muuttaa päivämäärä merkkijonoksi. Tämä voi olla tarpeen esimerkiksi laskurin näyttämiseksi käyttäjälle tai tallennettaessa tietoja tietokantaan. Seuraavassa kerromme, kuinka tämä voidaan tehdä helposti ja tehokkaasti.
 
-## Kuinka
-Tätä toimintoa varten tarvitsemme käyttöömme muutaman C++ kielisen kirjaston. Ensiksi meidän täytyy sisällyttää <iostream> ja <sstream> kirjastot, koska ne tarjoavat meille tiedon tulostamiseen tarvittavia työkaluja. Tämän lisäksi tarvitsemme myös <ctime> kirjaston, jotta voimme käsitellä päivämäärätietoja. Ohessa on esimerkkikoodi, kuinka voit muuttaa päivämäärän merkkijonoksi.
+Monet ohjelmoijat kohtaavat tarpeen muuttaa päivämäärä merkkijonoksi eri ohjelmointiprojekteissaan. Tässä blogipostissa käymme läpi, miksi tämä on tärkeää ja miten se voidaan tehdä tehokkaasti C++:lla.
+
+## Miten
+
+Konvertointi päivämäärästä merkkijonoksi on helpompaa kuin luulisi. Olemme luoneet yksinkertaisen ohjelman, joka ottaa käyttäjän antaman päivämäärän ja muuttaa sen haluttuun muotoon.
+
 ```C++
 #include <iostream>
-#include <sstream>
-#include <ctime>
+#include <string>
+#include <iomanip>
 
-int main()
-{
-	// Luodaan päivämäärä tyyppi time_t
-	time_t now = time(0);
+int main() {
+    //Kysytään käyttäjältä päivämäärä ja tallennetaan se muuttujaan
+    std::string paivamaara;
+    std::cout << "Anna päivämäärä muodossa dd.mm.yyyy: ";
+    std::cin >> paivamaara;
 
-	// Muutetaan nyt muuttujan sisältämä päivämäärä merkkijonoksi
-	char* date = ctime(&now);
+    //Luodaan output merkkijono ja käytetään put_time-funktiota vaaditun muodon luomiseen
+    std::string output;
+    std::stringstream ss(paivamaara);
+    std::tm t = {};
+    ss >> std::get_time(&t, "%d.%m.%Y");
+    std::stringstream oss;
+    oss << put_time(&t, "%A, %d. %B %Y");
+    output = oss.str();
 
-	// Muutetaan merkkijono streamiksi
-	std::ostringstream os;
-
-	// Lisätään merkkijono streamiin
-	os << "Nykyinen päivämäärä ja aika: " << date;
-
-	// Tulostetaan merkkijonoina
-	std::cout << os.str();
-
-	return 0;
+    //Tulostetaan muunnettu päivämäärä halutussa muodossa
+    std::cout << "Päivämäärä merkkijonona: " << output << std::endl;
+    return 0;
 }
 ```
-Tämän koodin tulostus näyttää seuraavalta:
-```
-Nykyinen päivämäärä ja aika: Tue Jul 14 20:25:38 2020
-```
-Koodi ensin luo time_t tyyppisen muuttujan, johon tallennetaan nykyinen päivämäärä ja aika. Sitten se käyttää ctime() funktiota muuntaakseen tämän muuttujan sisältämän päivämäärän merkkijonoksi. Lopuksi se lisää merkkijonoon myös tarkemman päivämäärän ja tulostaa sen lopulta konsolille.
 
-## Syvempi sukellus
-C++ tarjoaa useita erilaisia tapoja muuttaa päivämäärä merkkijonoksi. Esimerkiksi <chrono> kirjastosta löytyy Chrono Type Library, joka tarjoaa C++ standardin mukaiset työkalut aikamääreiden käsittelemiseen. Tämän lisäksi myös boost::date_time kirjasto tarjoaa useita erilaisia päivämäärä ja aika luokkia.
+**Esimerkkitulostus:**
+
+```
+Anna päivämäärä muodossa dd.mm.yyyy: 14.07.2021
+Päivämäärä merkkijonona: Wednesday, 14. July 2021
+```
+
+## Syvemmällä
+
+Vaikka konvertointi päivämäärästä merkkijonoksi näyttää yksinkertaiselta, se voi olla monimutkaisempaa, kun tarvitaan tarkempia muotoja. C++ sisältää kuitenkin hyödyllisiä kirjastoja, kuten `<iomanip>` ja `<ctime>` jotka tekevät tästä prosessista helpompaa. Esimerkiksi `<iomanip>` sisältää put_time-funktion, joka ottaa käyttäjän määrittämän ajan ja muuttaa sen haluttuun muotoon. `<ctime>` sisältää myös hyödyllisiä funktioita, kuten `get_time`, joka muuntaa string-esityksen päivämääräksi.
 
 ## Katso myös
-- <a href="https://www.cplusplus.com/reference/ctime/">ctime()</a> - C++ referenssi päivämäärätietojen käsittelyyn.
-- <a href="https://www.cplusplus.com/reference/iomanip/">iomanip</a> - C++ referenssi tavujen tulostamiseen.
-- <a href="https://www.boost.org/doc/libs/1_73_0/doc/html/date_time.html">boost::date_time</a> - Boost kirjasto päivämäärä ja aikatietojen käsittelyyn.
+
+- [C++ <iomanip>kirjasto](https://www.cplusplus.com/reference/iomanip/)
+- [C++ <ctime>kirjasto](https://www.cplusplus.com/reference/ctime/)

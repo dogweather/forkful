@@ -1,76 +1,50 @@
 ---
-title:    "Gleam: 텍스트 검색 및 교체하기"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/searching-and-replacing-text.md"
+title:                "Gleam: 텍스트 검색 및 바꾸기"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 
-만일 당신이 텍스트를 검색하고 바꾸는 작업에 참여하고 싶다면, 그 이유는 매우 간단합니다. 당신의 코드에서 오탈자나 잘못된 문법을 수정하고, 더 효율적인 코딩을 위해 특정 텍스트를 일괄적으로 변경하기 위해서입니다.
+Gleam로 텍스트 검색 및 교체하는 방법
 
-## 방법:
-텍스트를 검색하고 바꾸는 작업을 Gleam으로 어떻게 할 수 있는지 살펴보겠습니다. 아래의 코드 예제는 간단한 텍스트 검색 및 치환 작업을 보여줍니다.
+## 왜?
 
-```Gleam
-import gleam/re/replace
-import gleam/io
+텍스트 검색 및 교체는 프로그래밍에서 매우 중요한 기술입니다. 이를 통해 코드나 문서에서 원하는 텍스트를 쉽게 찾고 수정할 수 있습니다. Gleam에서는 이를 위해 다양한 기능을 제공합니다.
 
-// 초기 텍스트
-let text = "안녕, Gleam 독자여!"
+## 어떻게 하나요?
 
-// "안녕"을 "안녕하세요"로 변경
-let replaced = replace.regex(text, "안녕", "안녕하세요")
-
-// 변경된 텍스트 출력
-io.print(replaced)
-```
-
-위의 코드를 실행하면 다음과 같은 출력이 나옵니다.
-
-```
-안녕하세요, Gleam 독자여!
-```
-
-위의 예제에서는 단순한 문장을 대상으로 작업하였지만, Gleam의 강력한 정규식 기능을 사용하여 더 복잡한 텍스트 검색 및 치환 작업도 가능합니다.
-
-## 깊이 들어가기:
-텍스트 검색 및 치환 작업을 위해 Gleam의 정규식 기능을 제대로 활용하는 방법에 대해 더 알아보겠습니다. Gleam은 PCRE(Perl Compatible Regular Expressions) 라이브러리를 사용하기 때문에 광범위한 정규식 패턴을 지원합니다. 또한 캡쳐 그룹이나 후방참조 같은 고급 기능도 사용할 수 있습니다.
-
-예를 들어, 아래의 코드는 주민등록번호에서 뒷자리를 마스킹하는 작업을 보여줍니다.
+Gleam에서는 문자열에서 특정 패턴을 찾아 교체할 수 있는 강력한 기능을 제공합니다. 예를 들어, 다음과 같은 문자열이 있다고 가정해보겠습니다.
 
 ```Gleam
-import gleam/re/replace
-import gleam/io
-
-// 주민등록번호 초기 값
-let ssn = "801202-1234567"
-
-// 마스킹할 부분을 정규식으로 지정
-let regex = "\\d{6}(?=\\d{7})"
-
-// 정규식을 사용하여 뒷자리 마스킹
-let masked = replace.regex(ssn, regex, "******")
-
-// 마스킹된 주민등록번호 출력
-io.print(masked)
+let str = "Hello, world!"
 ```
 
-위의 코드를 실행하면 다음과 같은 출력이 나옵니다.
+이 문자열에서 "Hello"라는 단어를 "Hi"로 바꾸고 싶다면 다음과 같이 작성할 수 있습니다.
 
+```Gleam
+let replaced_str = String.replace(str, "Hello", "Hi")
 ```
-801202-******
+
+그러면 "Hi, world!"라는 문자열이 출력됩니다. 또한 여러 개의 단어를 동시에 바꿀 수도 있습니다. 예를 들어, "Hello"를 "Hi"로, "world"를 "Gleam"으로 바꾸고 싶다면 다음과 같이 작성할 수 있습니다.
+
+```Gleam
+let replaced_str = String.replace(str, ["Hello", "world"], ["Hi", "Gleam"])
 ```
 
-더 많은 정규식 사용 예제와 Gleam의 다른 기능들을 통해 좀 더 심도 있는 텍스트 검색 및 치환 작업을 수행할 수 있습니다. 
+그러면 "Hi, Gleam!"이라는 문자열이 출력됩니다.
 
-## 참고:
-- <https://gleam.run/documentation/standard-libraries/regex/>
-- <https://gleam.run/documentation/tutorials/regex/>
-- <https://gleam.run/documentation/tutorials/lists/>
+이 외에도 Gleam에서는 더 복잡한 검색과 교체를 위한 다양한 함수를 제공합니다. 자세한 내용은 아래의 "## 깊이 파보기"를 참고하시기 바랍니다.
 
----
-# 참고:
-- <https://gleam.run/documentation/standard-libraries/regex/>
-- <https://gleam.run/documentation/tutorials/regex/>
-- <https://gleam.run/documentation/tutorials/lists/>
+## 깊이 파보기
+
+Gleam에서는 검색과 교체를 위한 다양한 함수를 제공합니다. 예를 들어, 정규표현식을 사용하여 특정 패턴을 검색하고 교체할 수 있는 함수도 있습니다. 또한 대소문자를 구분하지 않는 검색이나 특정 언어의 규칙에 따라 문자열을 변환하는 함수도 있습니다. 이 외에도 Gleam에서는 검색과 교체를 위한 다양한 고급 기능을 제공하니, 깊이 파보기를 통해 더 많은 기능을 알아보시기 바랍니다.
+
+## 더 알아보기
+
+Gleam 공식 홈페이지: https://gleam.run/
+
+Gleam 공식 문서: https://gleam.run/documentation
+
+Gleam GitHub 저장소: https://github.com/gleam-lang/gleam

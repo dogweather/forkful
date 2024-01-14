@@ -1,55 +1,65 @@
 ---
-title:    "C++: 日付を文字列に変換する"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/converting-a-date-into-a-string.md"
+title:                "C++: 日付を文字列に変換する"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+日付を文字列に変換することに取り組む理由を説明します。
 
-C++を勉強する際、日付を文字列に変換する必要があることがあります。そのため、この記事では日付の文字列変換について説明します。
-
-## 使い方
-
-日付を文字列に変換するには、次のようなコードを使用します。
-
+## 方法
+「```C++ ... ```」コードブロック内にコーディング例とサンプル出力を記載します。
+例：
 ```C++
 #include <iostream>
-#include <string>
-#include <ctime>
-
 using namespace std;
-
 int main() {
-    // 現在の日付を取得
-    time_t now = time(nullptr);
-
-    // 文字列に変換
-    string date_string = ctime(&now);
-
-    // 出力
-    cout << "今日の日付は" << date_string << "です。" << endl;
-
+    // 日付を文字列に変換する
+    int day = 29;
+    int month = 10;
+    int year = 2021;
+    string date = to_string(month) + "/" + to_string(day) + "/" + to_string(year);
+    cout << "変換後の日付：" << date << endl;
     return 0;
 }
 ```
-
-このコードを実行すると、次のような出力が得られます。
-
+出力：
 ```
-今日の日付はFri Jul 2 20:20:21 2021です。
+変換後の日付：10/29/2021
 ```
 
-このように、`ctime`関数を使用することで日付を文字列に変換することができます。
+## ディープダイブ
+日付を文字列に変換するときには、**stringstream**クラスを使用することで、より柔軟な方法で変換することができます。stringstreamを使用することで、日付のフォーマットや特定の言語に合わせた文字列に変換することができます。
+例えば、上記のコードをstringstreamを使用して書き換えると次のようになります。
+```C++
+#include <iostream>
+#include <sstream>
+using namespace std;
+int main() {
+    // 日付を文字列に変換する
+    int day = 29;
+    int month = 10;
+    int year = 2021;
+    stringstream ss;
+    ss << year << "年" << month << "月" << day << "日";
+    string date;
+    ss >> date;
+    cout << "変換後の日付：" << date << endl;
+    return 0;
+}
+```
+出力：
+```
+変換後の日付：2021年10月29日
+```
 
-## 深堀り
+## 参考リンク
+「See Also」
+- [C++ stringstreamクラスの使用方法](https://www.cplusplus.com/reference/sstream/stringstream/)
+- [C++ to_string関数の使用方法](https://www.cplusplus.com/reference/string/to_string/)
+- [C++ 日付のフォーマット](https://www.cplusplus.com/reference/ctime/strftime/)
 
-日付を文字列に変換する際には、`<ctime>`ヘッダーファイルを使用する必要があります。また、`time_t`というデータ型を使用して現在の日付を取得します。`ctime`関数は、`time_t`型の変数を引数として受け取り、`char`型の文字列を返します。これにより、日付を必要な形式の文字列に変換することができます。
-
-## 関連リンク
-
-- [C++ 日付と時刻](https://programming-place.net/ppp/contents/cpp/language/006.html)
-- [std::time_t](https://cpprefjp.github.io/reference/ctime/time_t.html)
-- [std::string](https://cpprefjp.github.io/reference/string/string.html)
-- [std::ctime](https://cpprefjp.github.io/reference/ctime/ctime.html)
+**Happy coding!**

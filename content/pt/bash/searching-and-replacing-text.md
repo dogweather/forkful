@@ -1,32 +1,58 @@
 ---
-title:    "Bash: Buscando e substituindo texto"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/searching-and-replacing-text.md"
+title:                "Bash: Buscando e substituindo texto"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que fazer a substituição de texto em Bash?
+## Por que
 
-A substituição de texto em Bash é uma habilidade fundamental que todo programador deve ter. Ela permite que você faça alterações em massa em um arquivo de texto ou em uma série de arquivos, economizando tempo e esforço. É uma técnica muito útil para automatizar tarefas repetitivas, como a correção de erros de digitação em um grande número de arquivos ou a atualização de informações em um documento.
+A busca e substituição de texto é uma tarefa comum no mundo da programação, em especial na linguagem Bash. Ao realizar essa ação, é possível agilizar e otimizar o processo de edição de arquivos de texto, poupando tempo e esforço.
 
-## Como fazer a substituição de texto em Bash
+## Como fazer
 
-Para fazer a substituição de texto em Bash, você pode usar o comando `sed` (Stream Editor). Ele é um programa de linha de comando que permite realizar edições em um arquivo de texto seguindo um padrão específico. Vamos ver um exemplo:
+A seguir, apresentaremos alguns exemplos de como realizar a busca e substituição de texto utilizando a linguagem Bash. Esses exemplos podem ser facilmente adaptados para atender às suas necessidades específicas.
+
+Para iniciar, vamos criar um arquivo de texto chamado "lista.txt" com as seguintes informações:
 
 ```
-# Código Bash para substituir todas as ocorrências de "gato" por "cachorro" em um arquivo de texto chamado "animais.txt"
-sed 's/gato/cachorro/g' animais.txt
+1. Maçã
+2. Pera
+3. Banana
+4. Morango
 ```
 
-Seu arquivo de texto será alterado e cada instância da palavra "gato" será substituída por "cachorro". Você também pode usar expressões regulares para tornar a substituição mais precisa e abrangente.
+Agora, se quisermos substituir a palavra "Pera" por "Abacaxi" em todo o arquivo, podemos utilizar o seguinte comando:
 
-## Aprofundando na substituição de texto em Bash
+```
+sed -i 's/Pera/Abacaxi/g' lista.txt
+```
 
-Há muitas opções e recursos avançados no comando `sed` que permitem personalizar ainda mais a substituição de texto em Bash. Por exemplo, você pode usar as flags `-i` para fazer a edição diretamente no arquivo original ou `-r` para usar expressões regulares estendidas. Além disso, com o uso de pipes (`|`), é possível conectar vários comandos em uma única linha para realizar várias substituições em um único arquivo.
+Nesse comando, "sed" é o comando utilizado para fazer a substituição, "-i" é a opção para que a alteração seja feita diretamente no arquivo e 's/Pera/Abacaxi/g' é o padrão de substituição que será aplicado.
+
+Podemos também utilizar a busca e substituição com base em padrões ou expressões regulares. Por exemplo, se quisermos substituir todos os números por asteriscos no arquivo "lista.txt", podemos utilizar o seguinte comando:
+
+```
+sed -i 's/[0-9]/*/g' lista.txt
+```
+
+Isso irá substituir todos os números, independentemente de quantos dígitos possuem. Ou seja, o número 10 também será substituído por "*".
+
+## Mergulho profundo
+
+A linguagem Bash possui diversas opções e comandos para realizar a busca e substituição de texto de forma mais complexa. Algumas opções comuns são:
+
+- "-i" para fazer a alteração diretamente no arquivo
+- "-g" para substituir todas as ocorrências da palavra ou padrão
+- "-s" para silenciar as mensagens de erro
+- "-r" para utilizar expressões regulares
+- "-d" para fazer a alteração sem criar um backup do arquivo original
+
+É importante sempre se certificar de utilizar essas opções de acordo com as suas necessidades e de forma cuidadosa, para evitar qualquer alteração indesejada no seu arquivo.
 
 ## Veja também
 
-- [Guia de Referência do comando sed](https://www.gnu.org/software/sed/manual/sed.html)
-- [Aprendendo expressões regulares em Bash](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-sed)
-- [Introdução ao Bash scripting](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#Bourne-Shell-Builtins)
+- [Artigo da Linuxaria sobre busca e substituição de texto no Bash](https://linuxaria.com/article/how-to-search-and-replace-text-in-a-file-on-linux-vim-sed-and-more)

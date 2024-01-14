@@ -1,41 +1,48 @@
 ---
-title:    "Fish Shell: Tarkastetaan, onko hakemisto olemassa"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/checking-if-a-directory-exists.md"
+title:                "Fish Shell: Tarkista onko hakemistoa olemassa"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi tarkistaa hakemiston olemassaolo?
 
-On monia syitä, miksi saattaisit haluta tarkistaa, onko kansiossa olemassa. Esimerkiksi voit käyttää tätä tarkistamaan, onko tarvittava kansio olemassa ennen tiedoston luomista, jotta voit varmistaa, että koodisi toimii oikein.
+Monissa ohjelmointiprojekteissa on tarpeen tarkistaa, onko tietty hakemisto olemassa ennen kuin siihen tehdään muutoksia. Tämä voi olla hyödyllistä esimerkiksi skriptejä ja komentorivikomentoja käytettäessä. Tässä blogikirjoituksessa opit, miten voit tarkistaa hakemiston olemassaolon Fish Shell käyttämällä.
 
-## Miten
+## Miten tehdä se?
 
-Fish Shelliin sisäänrakennettu `test` -toiminto mahdollistaa helposti kansion olemassaolon tarkistamisen. Se palauttaa `true`, jos kansio löytyy ja `false`, jos sitä ei ole olemassa. Käytä sitä seuraavasti:
+Ensinnäkin, voit käyttää komentoa `test` tarkistaaksesi, onko hakemisto olemassa. Tämä komento palauttaa arvon 0, jos hakemisto on olemassa, ja arvon 1, jos sitä ei ole.
 
 ```Fish Shell
-if test -d [kansion nimi]
-    echo "Kansio on olemassa"
+if test -d "hakemiston_nimi"
+    echo "Hakemisto on olemassa."
+else
+    echo "Hakemisto ei ole olemassa."
 end
 ```
 
-Voit myös käyttää kansion olemassaolon tarkistamiseen `set` -komennon `--query` vaihtoehtoa. Tämä palauttaa `true`, jos kansiota ei ole olemassa ja `false` muuten:
+Tämä koodi tarkistaa, onko `hakemiston_nimi` niminen hakemisto olemassa ja tulostaa sen mukaisen viestin.
+
+Voit myös käyttää komentoa `stat` tarkistaaksesi hakemiston tilasta. Tämä komento palauttaa tietoja tiedostosta tai hakemistosta, ja sen avulla voit tarkistaa, onko hakemisto olemassa.
 
 ```Fish Shell
-set --query [kansion nimi]
+if stat -t "hakemiston_nimi" > /dev/null 2>&1
+    echo "Hakemisto on olemassa."
+else
+    echo "Hakemisto ei ole olemassa."
+end
 ```
 
-### Syöte ja tuloste
+Huomaa, että tässä käytetään hyödyksi `> /dev/null 2>&1` -merkintää, joka ohjaa komennon tulosteen pois näkyvistä, jottei sitä tulosteta ruudulle.
 
-Syöteenä voit käyttää kansion nimeä tai polkua, joka sisältää kansion nimen. Tulosteessa `true` osoittaa, että kansio on olemassa ja `false` osoittaa, että sitä ei ole.
+## Syvempi sukellus
 
-## Syvemmälle
-
-Kansion olemassaolon tarkistaminen perustuu tiedostojärjestelmän olemassaolon tarkistamiseen, joka on yksi Unix-järjestelmän perusperiaatteista. Fish Shellin sisäänrakennettu `test` -toiminto käyttää taustalla olevaa `test` -komennon toteutusta, joka on myös Unix-järjestelmässä.
+Fish Shellin manuaalisivulta löytyy lisätietoja näistä ja muista hakemiston olemassaolon tarkistamiseen liittyvistä komennoista. Voit myös käyttää komentoa `help [komento]` saadaksesi tarkempia tietoja tietyistä komennoista, esimerkiksi `help test` tai `help stat`.
 
 ## Katso myös
 
-- [Fish Shellin dokumentaatio kansioita koskevista komentoista](https://fishshell.com/docs/current/cmds/dirs.html)
-- [Unix-järjestelmän perusperiaatteet](https://en.wikipedia.org/wiki/Unix_philosophy#The_Modular_Design_Principle)
-- [Fish Shellin dokumentaatio `test` -toiminnosta](https://fishshell.com/docs/current/cmds/test.html)
+- [Fish Shellin manuaalisivut](https://fishshell.com/docs/current/index.html)
+- [Fish Shellin ohjeet ja esimerkit](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shellin Slack-yhteisö](https://fishshell.com/docs/current/tutorial.html)

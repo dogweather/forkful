@@ -1,57 +1,43 @@
 ---
-title:    "Fish Shell: Å starte et nytt prosjekt"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell: Innledning av et nytt prosjekt"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å starte et nytt prosjekt kan virke skremmende for noen, men med Fish Shell-programmering kan det være enklere enn du tror. Ved å bruke dette kraftige interaktive skallet, kan du enkelt opprette og administrere prosjektene dine mens du samtidig optimaliserer arbeidsflyten din.
+Lurer du på hva Fish Shell er og hvorfor du bør engasjere deg i å starte et nytt prosjekt med det? Da er du på rett sted! Fish Shell er et kraftig verktøy for å skrive og kjøre kommandoer i terminalen din. Den har et intuitivt grensesnitt og er enkel å lære for både nybegynnere og erfarne utviklere. Ved å bruke Fish Shell vil du øke effektiviteten din og kunne fullføre oppgaver raskere.
 
-# Slik gjør du
+## Slik gjør du det
 
-For å starte et nytt prosjekt i Fish Shell, åpner du først terminalen og skriver følgende kommando:
+Hvis du vil begynne å bruke Fish Shell, må du først installere det på datamaskinen din. Det kan gjøres ved hjelp av kommandoen `brew install fish` i terminalen din hvis du bruker macOS eller ved å følge veiledningen på Fish Shells offisielle nettside for andre operativsystemer.
 
-```Fish Shell
-mkdir mitt-prosjekt
-```
-
-Dette vil opprette en ny mappe med navnet "mitt-prosjekt" som vil bli ditt prosjektområde. Deretter navigerer du til denne mappen ved å skrive:
+Etter at installasjonen er fullført, kan du åpne en ny terminal og skrive `fish` for å starte Fish Shell. Du vil umiddelbart legge merke til det moderne og brukervennlige utseendet. La oss prøve å skrive noen kommandoer og se resultatene.
 
 ```Fish Shell
-cd mitt-prosjekt
+ls
 ```
-
-Nå kan du begynne å kode og bygge prosjektet ditt. Du kan for eksempel opprette en ny fil ved hjelp av kommandoen:
+----
+Documents  Downloads  Music  Pictures  Videos
 
 ```Fish Shell
-touch index.js
+echo Hei, verden!
 ```
+----
+Hei, verden!
 
-Dette vil opprette en tom fil med navnet "index.js" som du kan begynne å fylle med koden din. Når du er ferdig med å kode, kan du bruke kommandoen "navn" for å vise koden i terminalen.
+Som du kan se, kjører kommandoene og resultatene seg selv uten behov for å skrive `enter` etter hver kommando. Dette er en av de mange funksjonene som gjør Fish Shell så praktisk å bruke.
 
-```Fish Shell
-cat index.js
-```
+## Dypdykk
 
-Fish Shell tilbyr også mange nyttige kommandoer for å hjelpe deg med å administrere og organisere prosjektet ditt. For eksempel kan du bruke kommandoen "mv" for å flytte filer, "cp" for å kopiere filer og "rm" for å slette filer.
+Nå som du er komfortabel med å bruke Fish Shell, kan du begynne å utforske flere funksjoner og tilpasningsmuligheter. Du kan enkelt endre utseendet og fargene på prompten din ved å redigere Fish Shells konfigurasjonsfil. Du kan også lage dine egne funksjoner og snarveier for å gjøre arbeidsflyten din enda mer effektiv.
 
-# Dypdykk
+Men kanskje det beste med Fish Shell er støtten for plugins og utvidelser. Det finnes et bredt utvalg av tredjeparts plugins som kan legges til for å gjøre Fish Shell enda kraftigere. Du kan for eksempel installere plugins for å håndtere versjonskontroll, gjøre nettverkskall og kjøre kommandoer i parallell.
 
-Når du starter et nytt prosjekt, er det viktig å ha en god struktur og organisering fra begynnelsen av. En viktig kommando som kan hjelpe deg med dette er "alias". Dette lar deg opprette en snarvei eller alias for ofte brukte kommandoer. For eksempel kan du opprette et alias for å navigere til prosjektområdet ditt ved å skrive:
+## Se også
 
-```Fish Shell
-alias prosjektnavn="cd ~/mitt-prosjekt"
-```
-
-Dette vil gjøre det enklere for deg å navigere til prosjektet ditt ved å bare skrive "prosjektnavn" i terminalen.
-
-Det er også en god praksis å bruke virtual environments når du jobber med et prosjekt for å holde det isolert fra andre prosjekter. Fish Shell har en integrert kommando for dette kalt "bass" som gjør det enklere å håndtere og bytte mellom virtual environments.
-
-# Se også
-
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [10 grunner til at du bør bytte til Fish Shell](https://www.shellboost.net/2020/02/14/reasons-to-use-fish-as-your-go-to-shell.html)
-- [Enkle triks for å optimalisere Fish Shell-arbeidsflyten din](https://nickjanetakis.com/blog/fish-shell-quick-tips-and-tricks)
+- [Fish Shell offisiell nettside](https://fishshell.com)
+- [Liste over Fish Shell plugins](https://github.com/fisherman/awesome-fish)

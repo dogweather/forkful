@@ -1,40 +1,48 @@
 ---
-title:    "TypeScript: Obliczanie daty w przyszłości lub przeszłości"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/calculating-a-date-in-the-future-or-past.md"
+title:                "TypeScript: Liczenie daty w przyszłości lub przeszłości"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Obliczanie daty w przyszłości lub przeszłości jest bardzo przydatne w programowaniu. Może pomóc w wyświetlaniu terminów lub dat wydarzeń, tworzeniu harmonogramów lub wyznaczaniu czasowych ograniczeń dla aplikacji. Jest to również ważne, ponieważ dostarcza informacji o datach, które mogą być trudne lub nieintuicyjne do obliczenia ręcznie.
+Obliczanie daty w przyszłości lub przeszłości może być przydatne w wielu przypadkach, na przykład w aplikacjach do zarządzania zadaniami lub planowaniu spotkań. Jest to również dobry sposób, aby lepiej zrozumieć manipulację datami i czasem w programowaniu.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości w TypeScript, musisz użyć wbudowanej klasy `Date`. Możesz użyć różnych metod tej klasy, aby dodawać lub odejmować dni, miesiące, lata lub inne jednostki czasu od bieżącej daty. Następnie możesz użyć metody `toLocaleDateString()` lub `toLocaleString()` w celu sformatowania wyjścia według preferencji językowych użytkownika. Przykładowy kod wyglądałby następująco:
+Aby obliczyć datę w przyszłości lub przeszłości w TypeScript, można użyć wbudowanej metody `Date()` lub biblioteki zewnętrznej, takiej jak Moment.js. Przedstawimy przykładowe kody dla obu opcji.
+
+### Użycie wbudowanej metody `Date()`
 
 ```
 TypeScript
-let currentDate = new Date();
-let futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 14);
-console.log(futureDate.toLocaleDateString()); // wyświetli datę dwa tygodnie od bieżącej daty, sformatowaną według preferencji językowych użytkownika
+let today = new Date();
+let futureDate = today.getDate() + 7;
+console.log(futureDate); // Output: 29
 ```
 
-Output:
+W powyższym przykładzie, tworzymy obiekt daty dla dzisiejszego dnia za pomocą wbudowanej metody `Date()`. Następnie, korzystając z metody `getDate()`, pobieramy dzień z daty dzisiejszej i dodajemy do niego liczbę 7, aby obliczyć datę w przyszłości.
+
+### Użycie biblioteki Moment.js
 
 ```
-"21.06.2021"
+TypeScript
+import moment from 'moment';
+let today = moment();
+let futureDate = today.add(7, 'days');
+console.log(futureDate.format('YYYY-MM-DD')); // Output: 2019-11-29
 ```
+
+W tym przykładzie, korzystamy z biblioteki Moment.js do obliczenia daty w przyszłości. Najpierw, importujemy bibliotekę i tworzymy obiekt daty dla dzisiejszego dnia. Następnie, używając metody `add()` z biblioteki, dodajemy 7 dni do daty dzisiejszej. Na koniec, używamy metody `format()` do sformatowania daty w żądanym formacie.
 
 ## Deep Dive
 
-W tym przykładzie użyliśmy metody `getDate()` klasy `Date`, aby dodać 14 dni do bieżącej daty. Jednak istnieje wiele innych metod, które mogą być wykorzystane do obliczania dat w przyszłości lub przeszłości. Na przykład, można użyć metody `setFullYear()`, aby ustawiać rok, `setMonth()` dla miesięcy lub `setDate()` dla dni. Możliwości są praktycznie nieograniczone, a w zależności od potrzeb programisty, różne kombinacje metod mogą być wykorzystane do osiągnięcia pożądanego wyniku.
+Obliczanie daty w przyszłości lub przeszłości może być bardziej skomplikowane, jeśli chcemy uwzględnić różne strefy czasowe, operacje arytmetyczne z datami lub przystępne formaty wyjściowe. W takim przypadku, warto zapoznać się z dokumentacją wbudowanej metody `Date()` i zwrócić szczególną uwagę na bibliotekę Moment.js, która oferuje wiele przydatnych funkcji związanych z manipulacją datami i czasem.
 
 ## Zobacz również
 
-Jeśli jesteś zainteresowany/a dalszym zgłębianiem tematu obliczania dat w przyszłości lub przeszłości w TypeScript, polecamy Ci zapoznać się z następującymi linkami:
-
-- [Dokumentacja TypeScript dla klasy Date](https://www.typescriptlang.org/docs/handbook/date-and-time.html)
-- [Artykuł na temat obliczania dat w TypeScript](https://www.digitalocean.com/community/tutorials/how-to-code-a-date-picker)
-- [Tutorial na temat manipulacji datami w TypeScript](https://www.digitalocean.com/community/tutorials/manipulating-dates-and-times-in-javascript-with-moment-js)
+* [Dokumentacja wbudowanej metody Date()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [Dokumentacja biblioteki Moment.js](https://momentjs.com/docs/)

@@ -1,43 +1,45 @@
 ---
-title:    "Java: Konwersja ciągu znaków na małe litery"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/converting-a-string-to-lower-case.md"
+title:                "Java: Przekształcanie ciągu znaków na małe litery"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
+Często w programowaniu potrzebujemy przekształcić tekst na małe litery. Jest to szczególnie przydatne w przypadku porównywania i przetwarzania danych. W tym artykule dowiesz się, jak możesz łatwo przekonwertować string na małe litery w języku Java.
 
-Konwertowanie danych na małe litery jest częstym zadaniem wykonywanym w programowaniu Java. Jest to ważne, ponieważ pozwala na porównywanie i analizowanie napisów w sposób jednolity i spójny. W tym artykule omówimy, dlaczego warto przetwarzać dane na małe litery i jak to zrobić w prosty sposób.
-
-## Jak to zrobić
-
-Aby przekonwertować napis na małe litery w Javie, wystarczy użyć metody `toLowerCase()`. Przykładowy kod wyglądałby następująco:
-
+# Jak to zrobić
 ```Java
-String napis = "PRZYKŁADOWY NAPIS";
-String napisMaly = napis.toLowerCase();
-System.out.println(napisMaly);
+String text = "KONWERTOWANIE TEKSTU NA MAŁE LITERY";
+String lowercaseText = text.toLowerCase();
+System.out.println(lowercaseText);
 ```
+*Output:* konwertowanie tekstu na małe litery
 
-Powyższy przykład wyświetli na ekranie "przykładowy napis". Metoda `toLowerCase()` zwraca nowy obiekt typu String, więc warto przypisać go do nowej zmiennej.
+Kod powyżej pokazuje przykładowe użycie metody `toLowerCase()`, która jest dostępna w klasie `String` w języku Java. Metoda ta konwertuje podany tekst na małe litery i zwraca nowy obiekt typu String.
 
-Innym sposobem na konwersję napisu na małe litery jest użycie metody `toUpperCase()` w celu zamiany wszystkich liter na duże, a następnie metody `toLowerCase()` dla uzyskania małych liter.
-
+Możesz również wykorzystać pętlę `for` i metodę `charAt()` w celu ręcznego konwertowania każdego znaku na małą literę:
 ```Java
-String napis = "Przykładowy napis";
-String napisMaly = napis.toUpperCase().toLowerCase();
-System.out.println(napisMaly);
+String text = "KONWERTOWANIE TEKSTU NA MAŁE LITERY";
+String lowercaseText = "";
+for (int i = 0; i < text.length(); i++) {
+    char c = text.charAt(i);
+    if (Character.isUpperCase(c)) {
+        c = Character.toLowerCase(c);
+    }
+    lowercaseText += c;
+}
+System.out.println(lowercaseText);
 ```
+*Output:* konwertowanie tekstu na małe litery
 
-## Deep Dive
+# Deep Dive
+W języku Java, konwersja tekstu na małe litery jest realizowana przez wykorzystanie standardowego wyrażenia regularnego `\p{javaLowerCase}`, które odpowiada wszystkim małym literom w alfabecie Unicode. Metoda `toLowerCase()` wykorzystuje to wyrażenie w celu wykonania konwersji.
 
-Podczas konwersji na małe litery należy pamiętać o tym, że zależy to od ustawień lokalnych systemu operacyjnego. Jeśli system operacyjny jest ustawiony na język, który używa znaków Unicode, wynikiem działania metody `toLowerCase()` może być inny niż oczekiwany. Aby uniknąć tego problemu, można użyć metody `toLowerCase(Locale.ROOT)`.
+W przypadku, gdy potrzebujemy konwertować tekst na małe litery w określonym języku, możemy wykorzystać metodę `toLowerCase(Locale)` i przekazać jako argument odpowiedni obiekt klasy `Locale`.
 
-Kolejną ważną kwestią jest to, że metoda `toLowerCase()` działa tylko dla liter łacińskich. Jeśli potrzebujemy konwertować napis składający się z liter z alfabetów innych języków, należy użyć metody `toLowerCase(Locale)` i podać odpowiednie ustawienia regionalne. Na przykład, dla napisu w języku polskim, powinniśmy użyć `toLowerCase(new Locale("pl"))`.
-
-## Zobacz także
-
-- Java String methods: https://www.javatpoint.com/java-string
-- Java Locale class: https://www.baeldung.com/java-locale
-- Unicode character sets: https://unicode-table.com/en/
+# Zobacz również
+- [Dokumentacja Java - metoda toLowerCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+- [Porównywanie tekstów - czy duże i małe litery mają znaczenie?](https://developer.mozilla.org/pl/docs/Web/JavaScript/Equality_comparisons_and_sameness#Z_eCMaScript_6_22806)

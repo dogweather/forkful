@@ -1,54 +1,49 @@
 ---
-title:    "Kotlin: Skrivande av tester"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/writing-tests.md"
+title:                "Kotlin: Skriva tester"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva tester är en viktig del av processen när man utvecklar kod. Med hjälp av tester kan man säkerställa att ens kod fungerar som den ska och undvika potentiella buggar. Det sparar tid och möjliga problem längre fram i utvecklingsprocessen. 
+Att skriva tester är en viktig del av utvecklingen av hållbar och pålitlig kod. Genom att skriva tester kan du identifiera och lösa buggar innan de når produktion och även kontrollera att din kod fungerar som det är tänkt. Det kan även hjälpa till att förbättra din kodstruktur och göra det lättare för andra att förstå och bidra till ditt projekt.
 
 ## Hur man gör
 
-För att skriva tester i Kotlin behöver man först importera JUnit biblioteket. Sedan kan man skapa en testklass som ser ut så här:
+Testning i Kotlin kan göras med hjälp av ramverket JUnit. För att skriva ett grundläggande enhetstest, kan du använda funktionen `assertEquals()` för att jämföra det förväntade resultatet med det faktiska resultatet. 
 
 ```Kotlin
-import org.junit.Test
-import org.junit.Assert.assertEquals
-
-class CalculatorTest {
-
-    @Test
-    fun testAddition() {
-        // Arrange
-        val calculator = Calculator()
-
-        // Act
-        val result = calculator.add(2, 3)
-
-        // Assert
-        assertEquals(5, result)
-    }
+@Test
+fun testAddFunction() {
+    val result = add(3, 5)
+    assertEquals(8, result)
 }
-
 ```
 
-I detta exempel testar vi en grundläggande metod för att lägga ihop två tal i en klass som heter Calculator. Vi har tre delar - "arrange", där vi förbereder vår testdata, "act", där vi utför själva testet och "assert", där vi kontrollerar att resultatet är som förväntat. 
+Du kan även använda funktionen `assertThrows()` för att kontrollera att ett visst undantag kastas. Till exempel kan du testa att en `IllegalArgumentException` kastas om du försöker dela med noll.
+
+```Kotlin
+@Test
+fun testDivideByZero() {
+    assertThrows<IllegalArgumentException> {
+        divide(10, 0)
+    }
+}
+```
+
+Att skriva tester som täcker alla fall och avvikelser i din kod kan vara tidskrävande, men det är viktigt för att säkerställa att din kod fungerar korrekt. Det är också en bra praxis att skriva testerna först och sedan skriva koden för att uppfylla testfallen.
 
 ## Djupdykning
 
-För att skriva effektiva tester behöver man förstå skillnaden mellan enhetstester och integrationstester. Enhetstester fokuserar på specifika delar av koden, medan integrationstester testar flera komponenter tillsammans. Det kan vara fördelaktigt att använda en kombination av båda för att få en bättre täckning av ens kod.
+En viktig aspekt av testning är att följa principen om "Enhetstestning" där varje enskild enhet av kod testas separat. Detta hjälper till att isolera och identifiera eventuella buggar i specifika delar av koden. Det är också viktigt att skriva testfall som täcker både positiva och negativa scenarier.
 
-En annan viktig aspekt av att skriva tester är att ha en bra teststrategi och att regelbundet utföra regressionstester för att kontrollera att eventuella ändringar i koden inte har påverkat tidigare fungerande delar av koden.
+Ett annat tips är att använda sig av "Test Driven Development" (TDD) där man skriver testerna först, sedan koden som uppfyller testen och sedan återgår till att förbättra testerna och koden efter behov.
 
 ## Se även
 
-Här är några användbara resurser för att lära sig mer om att skriva tester i Kotlin:
-
-- [Officiell Kotlin dokumentation för tester](https://kotlinlang.org/docs/home.html)
-- [Introduktion till att skriva tester i Kotlin](https://www.baeldung.com/kotlin/testing)
-- [Exempel på enhetstester i Kotlin](https://github.com/junit-team/junit4/wiki/Getting-started-with-JUnit-4)
-
-Genom att inkludera tester i ens utvecklingsprocess kan man förbättra kvaliteten på sin kod och minska risken för buggar och felaktigt beteende i produktion. Med hjälp av de resurser som finns tillgängliga kan man enkelt komma igång med att skriva effektiva tester i Kotlin. Lycka till!
+- [Kotlin Testing with JUnit](https://www.baeldung.com/kotlin/junit-5-kotlin-testing)
+- [Introduction to Test Driven Development (TDD)](https://www.guru99.com/test-driven-development.html)
+- [Kotlin Test Documentation](https://kotlinlang.org/docs/tutorials/testing.html)

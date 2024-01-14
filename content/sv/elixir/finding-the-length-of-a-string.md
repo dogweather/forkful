@@ -1,32 +1,43 @@
 ---
-title:    "Elixir: Att hitta längden på en sträng"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/finding-the-length-of-a-string.md"
+title:                "Elixir: Att hitta längden på en sträng"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Det finns många olika användningsområden för att hitta längden på en sträng. Det kan vara för att räkna antalet tecken i en text eller för att kontrollera om en sträng är tillräckligt lång för ett visst syfte. Oavsett vad anledningen är så är det en viktig färdighet för alla som arbetar med Elixir-programmering.
+
+Att hitta längden på en sträng är en grundläggande uppgift som kan vara användbar i en mängd olika scenarier när du programmerar med Elixir. Det kan hjälpa dig att manipulera strängar, kontrollera indata och utföra andra operationer som kräver kunskap om strängens längd. Det är också en bra övning för att bygga upp din förståelse för grundläggande Elixir-funktioner och syntax.
 
 ## Så här gör du
-För att hitta längden på en sträng i Elixir kan du använda funktionen `String.length()` som tar in en sträng som argument. Det här är ett exempel på kod och tillhörande utdata:
+
+För att hitta längden på en sträng i Elixir, används funktionen `String.length/1`. Denna funktion tar en sträng som inmatning och returnerar dess längd som ett heltal. Se nedan för ett exempel på hur detta kan se ut i Elixir:
 
 ```Elixir
-str = "Hej världen"
-length = String.length(str)
-
-IO.puts "Längden på strängen är #{length}" 
-
-# => Längden på strängen är 11
+string = "Hej världen!"
+String.length(string)
 ```
 
-Här använder vi variabeln `str` för att lagra vår sträng och sedan använder vi `String.length()`-funktionen för att hitta längden på strängen. Den returnerade längden lagras sedan i variabeln `length` som sedan skrivs ut med hjälp av `IO.puts()`-funktionen.
+Detta skulle ge följande utmatning:
+
+```Elixir
+12
+```
+
+Som du kan se beräknar funktionen `String.length/1` längden på strängen genom att räkna antalet tecken, inklusive mellanslag och skiljetecken. Detta betyder att den inte bara tar hänsyn till bokstäverna, utan också till alla andra tecken som är en del av strängen.
+
+Nu när du vet hur man använder funktionen `String.length/1`, kan du experimentera med den på olika sätt och kombinera den med andra Elixir-funktioner för att uppnå olika resultat.
 
 ## Djupdykning
-Det kan vara intressant att veta hur `String.length()`-funktionen fungerar bakom kulisserna. När en sträng skapas lagras den i minnet som en lista av tecken. Dessa tecken har sina egna unika kodpunkter och `String.length()`-funktionen räknar helt enkelt antalet tecken i listan och returnerar det som längden på strängen.
 
-## Se även
-- [Elixir dokumentation för `String.length/1`](https://hexdocs.pm/elixir/String.html#length/1)
-- [Elixir string primers](https://elixirschool.com/en/lessons/basics/basics/#string-primers)
-- [Elixir förklaring av strängkodning](https://elixirschool.com/en/lessons/specifics/strings/#codepoints-and-graphemes)
+En intressant sak att notera är att Elixir har flera inbyggda funktioner för att hantera strängar, inklusive `String.length/1` som vi har sett ovan. Men det finns också andra sätt att hitta längden på en sträng i Elixir. Till exempel kan du använda mönstermatchning och rekursion för att skapa en egen funktion som räknar tecken i en sträng.
+
+Det finns också vissa viktiga skillnader att vara medveten om när man hanterar strängar i Elixir jämfört med andra programmeringsspråk. Till exempel är strängar i Elixir inte muterbara, vilket innebär att de inte kan ändras direkt. Istället måste du använda funktioner som `String.replace/3` för att göra ändringar i en sträng.
+
+## Se också
+
+- [Elixir String Module](https://hexdocs.pm/elixir/String.html)
+- [Elixir String Functions Cheat Sheet](https://devhints.io/elixir-strings)
+- [Elixir Strings Tutorial](https://elixirschool.com/sv/lessons/basics/strings/)

@@ -1,67 +1,83 @@
 ---
-title:    "C#: 새 프로젝트 시작하기"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/starting-a-new-project.md"
+title:                "C#: 새 프로젝트 시작하기"
+programming_language: "C#"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 시작하느냐
+## 왜
+왜 누군가 새로운 프로젝트를 시작하는 것에 흥미를 느끼게 될까요? 프로그래밍은 끊임없이 발전하고 발전하는 분야이기 때문입니다. 새로운 프로젝트를 시작하면 새로운 기술과 도구를 배우고, 능력을 향상시키고, 아이디어를 구체화할 수 있습니다.
 
-새로운 프로젝트를 시작하는 이유는 다양합니다. 누군가는 새로운 기술이나 언어를 배우기 위해 시작할 수 있고, 또 다른 사람은 새로운 아이디어를 실현하기 위해 프로젝트를 시작할 수 있습니다. 어떤 이유든지 간에 새로운 프로젝트를 시작하는 것은 배움과 창의성을 키우는 좋은 방법입니다.
+## 시작하는 방법
+새로운 프로젝트를 시작하는 것은 쉬운 일이 아닙니다. 하지만 C# 프로그래밍 언어를 사용한다면, 당신은 프로젝트를 시작하고 성공적으로 완료할 수 있을 것입니다.
 
-## 어떻게 시작하나요?
-
-새로운 프로젝트를 시작하기 위해 C#을 사용하고 싶은 경우, 다음과 같은 단계를 따라 해보세요!
-
-### 1. 프로젝트를 생성하세요. 
-
-첫 번째 단계는 새로운 프로젝트를 생성하는 것입니다. 여러분은 비전공자이거나 초보자라면 아마도 어떻게 시작해야할지 감이 잡히지 않을 수도 있습니다. 그러나 걱정하지 마세요! 인터넷에서 많은 자료들이 있고, Microsoft Docs 같은 곳에서도 쉽게 따라할 수 있는 가이드를 제공합니다.
-
-### 2. 기본 구조를 이해하세요.
-
-C# 프로젝트를 시작하기 위해서는 몇 가지 기본적인 지식이 필요합니다. 그 중 하나가 클래스와 메소드의 개념입니다. 클래스는 데이터와 메소드를 묶어 놓은 것이고, 메소드는 클래스 내에서 실행할 코드의 블록입니다. 또 다른 중요한 개념은 Main 메소드입니다. 이는 프로그램이 실행될 때 첫 번째로 실행되는 메소드입니다.
-
-### 3. 예제 코드와 출력을 확인하세요.
-
-이제 실제로 C#으로 코딩해보겠습니다. 아래 예제 코드는 두 수를 더하는 간단한 프로그램입니다. 코드를 보면서 어떤 역할을 하는지 파악해보세요. 그리고 출력 결과를 확인해보세요!
+먼저, C# 언어를 사용하여 새로운 콘솔 프로젝트를 만들어보겠습니다. 코드 블록 ```C# ... ``` 안에 있는 예제를 참고하면서 직접 따라해 보세요.
 
 ```C#
 using System;
 
-namespace AddTwoNumbers
+namespace HelloWorld
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-      // 두 수를 입력받습니다.
-      Console.Write("첫 번째 수를 입력하세요: ");
-      int num1 = Convert.ToInt32(Console.ReadLine());
-
-      Console.Write("두 번째 수를 입력하세요: ");
-      int num2 = Convert.ToInt32(Console.ReadLine());
-
-      // 두 수를 더하고 결과를 출력합니다.
-      int result = num1 + num2;
-      Console.WriteLine($"{num1}와(과) {num2}의 합은 {result}입니다.");
-      
-      // 프로그램을 종료합니다.
-      Console.ReadLine();
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello world!");
+        }
     }
-  }
 }
-
-// 출력 결과:
-// 첫 번째 수를 입력하세요: 3
-// 두 번째 수를 입력하세요: 5
-// 3와(과) 5의 합은 8입니다.
 ```
 
-## 딥 다이브
+위의 코드는 콘솔 창에 "Hello world!"라는 메시지를 출력하는 간단한 프로그램입니다. C# 언어는 중괄호를 사용하여 코드의 영역을 나누고, 세미콜론을 사용하여 각 줄의 끝을 표시합니다.
 
-새로운 프로젝트를 시작할 때는 어떤 개념부터 시작해야 할지, 어떤 자료를 참고해야 할지 많은 고민이 따릅니다. 그러나 어떤 자료를 사용하든, 중요한 것은 항상 이해하는 것입니다. 프로젝트를 시작하기 전에는 기본적인 개념부터 충분히 이해하고, 이후에는 실제로 코딩을 해보는 것이 좋은 방법입니다. 또한 다른 사람들의 코드를 보면서 배울 수도 있기 때문에, 커뮤니티나 포럼에 참여하는 것도 추천합니다.
+위의 예제를 실행하면, 콘솔 창에 "Hello world!"라는 문구가 출력될 것입니다. 이제 여러분은 새로운 프로젝트를 시작하는 첫 단계를 완료했습니다.
 
-## 참고자료
+더 복잡한 예제를 살펴보면서 C# 언어를 더 자세히 알아보겠습니다.
 
-- [C
+```C#
+using System;
+
+namespace Calculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1 = 10;
+            int num2 = 5;
+
+            int sum = num1 + num2;
+            int difference = num1 - num2;
+            int product = num1 * num2;
+            int quotient = num1 / num2;
+
+            Console.WriteLine("Sum: " + sum);
+            Console.WriteLine("Difference: " + difference);
+            Console.WriteLine("Product: " + product);
+            Console.WriteLine("Quotient: " + quotient);
+        }
+    }
+}
+```
+
+위의 예제는 두 개의 숫자를 더하고, 빼고, 곱하고, 나누는 간단한 계산기 프로그램입니다. 할당 연산자인 "=" 를 사용하여 변수에 값을 할당하고, 사칙연산 기호를 사용하여 산술 연산을 수행합니다.
+
+위의 예제를 실행하면, 콘솔 창에 다음과 같은 결과가 출력될 것입니다.
+
+```
+Sum: 15
+Difference: 5
+Product: 50
+Quotient: 2
+```
+
+위의 예제처럼 여러분도 자신만의 프로젝트를 만들 수 있습니다. 이렇게 하면 프로그래밍이 더 재미있어질 것입니다.
+
+## 더 깊게 알아보기
+새로운 프로젝트를 시작하는 것은 단순히 말하기 쉽지만, 실제로 이를 실행하는 것은 쉽지 않습니다. 프로젝트를 시작하기 전에 몇 가지 중요한 고려사항이 있습니다.
+
+첫째, 무엇을 만들고 싶은지 생각해보세요. 새로운 아이디어를 구체화하고, 목표를 설정하는 것이 중요합니다.
+
+둘째, 사용할 도

@@ -1,42 +1,39 @@
 ---
-title:    "C: Ein neues Projekt starten"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/starting-a-new-project.md"
+title:                "C: Ein neues Projekt beginnen"
+programming_language: "C"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Wenn Sie neu im Bereich der Programmierung sind oder einfach nur ein neues Projekt starten möchten, fragen Sie sich vielleicht, warum Sie überhaupt anfangen sollten. Die Antwort ist einfach: Durch die Erstellung eigener Projekte können Sie Ihre Fähigkeiten verbessern, neue Konzepte und Techniken erlernen und stolz auf Ihre eigenen Kreationen sein.
+Wenn Sie ein Programmierer sind, kann es viele Gründe geben, ein neues Projekt zu starten. Möglicherweise möchten Sie eine bestimmte Funktionalität implementieren, eine neue Programmiersprache lernen oder einfach nur aus Spaß programmieren. Egal aus welchem ​​Grund, ein neues Projekt zu beginnen kann aufregend sein und Sie können viel lernen.
 
-## Wie geht es
+## Wie starte ich ein neues Projekt in C
 
-Um ein neues C-Programmprojekt zu starten, müssen Sie zunächst sicherstellen, dass Sie einen Compiler und eine integrierte Entwicklungsumgebung (IDE) für C haben. Dann können Sie ein leeres Projekt erstellen und mit dem Codieren beginnen. Hier ist ein kleines Beispiel, das eine einfache Berechnung durchführt und das Ergebnis ausgibt:
+Um ein neues Projekt in C zu starten, müssen Sie zunächst einen Compiler installieren. Der beliebteste C-Compiler ist GNU Compiler Collection (GCC). Nachdem Sie den Compiler installiert haben, können Sie eine Textdatei erstellen und Ihren Code schreiben. Zum Beispiel:
 
-```C
+\`\`\`C
 #include <stdio.h>
 
-int main()
-{
-  int a = 10;
-  int b = 5;
-  int sum = a + b;
-
-  printf("Das Ergebnis von %d + %d ist %d", a, b, sum);
-
-  return 0;
+int main() {
+    printf("Hallo Welt!");
+    return 0;
 }
-```
+\`\`\`
 
-Die Ausgabe dieses Programms wird sein: "Das Ergebnis von 10 + 5 ist 15". Natürlich gibt es noch viel mehr, was Sie mit C tun können, aber dies ist ein guter Ausgangspunkt für Anfänger.
+Dies ist ein einfaches Beispiel, das "Hallo Welt!" auf der Konsole ausgibt. Sie können verschiedene Funktionalitäten und Algorithmen nach Belieben erkunden und implementieren.
 
-## Tief eintauchen
+## Tiefere Einblicke
 
-Wenn Sie tiefer in die Welt der C-Programmierung eintauchen möchten, sollten Sie sich mit einigen grundlegenden Konzepten wie Variablen, Datentypen und Kontrollstrukturen vertraut machen. Darüber hinaus gibt es auch fortgeschrittene Themen wie Pointers, Funktionen und Datenstrukturen, die es zu entdecken und zu verstehen gilt. Eine gute Strategie ist es, Tutorials, Bücher oder Online-Kurse zu nutzen, um Ihre Kenntnisse zu erweitern und praktische Übungen zu absolvieren.
+Bevor Sie mit dem Codieren beginnen, ist es wichtig, ein gutes Verständnis der Grundlagen von C zu haben. Dazu gehört das Beherrschen von Variablen, Bedingungen, Schleifen und Funktionen. Auch das Verständnis von Pointern ist unerlässlich für die Programmierung in C. Sie sollten auch die grundlegenden Datenstrukturen und Algorithmen kennen, um wirklich effektive Programme schreiben zu können.
 
-Siehe auch
+Ein weiterer wichtiger Aspekt ist das Schreiben von sauberem und gut strukturiertem Code. Dies erleichtert das Lesen und Verstehen Ihres Codes für andere Entwickler und macht es einfacher, Fehler zu finden.
 
-- [C Tutorial für Anfänger](https://www.learn-c.org/)
-- [Bücher über C-Programmierung](https://www.amazon.de/s?k=c+programming+buch&ref=nb_sb_noss_2)
-- [Online-Kurs über C bei Udacity](https://www.udacity.com/course/c-for-programmers--ud283)
+## Siehe auch
+
+- Beginner's Guide to C Programming: https://geeksforgeeks.org/c-programming-language/
+- C Tutorials von Tutorialspoint: https://www.tutorialspoint.com/cprogramming/index.htm
+- GCC Compiler herunterladen: https://gcc.gnu.org/

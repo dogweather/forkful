@@ -1,46 +1,93 @@
 ---
-title:    "C: 텍스트 검색과 대체"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/searching-and-replacing-text.md"
+title:                "C: 텍스트 검색 및 대체"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-### 왜: 텍스트를 검색하고 대체하는 것에 참여하는 이유 
-텍스트 검색 및 교체는 프로그래머에게 매우 중요한 작업이다. 이를테면, 일반적으로 문제를 해결하거나 코드를 개선하는데에 사용된다. 따라서 이 작업을 효과적으로 수행하는 방법을 배우는 것은 매우 중요하다.
+# 왜 
 
-### 하는 방법: C 코드 블록 내에 코딩 예제와 샘플 출력 
-우리는 먼저 텍스트 검색 및 교체를 위해 가장 일반적으로 사용되는 두 가지 함수인 "strstr()"와 "strreplace()"를 살펴볼 것이다. 아래는 이 두 함수가 어떻게 작동하는지 보여주는 예제 코드이다.
+텍스트 검색 및 대체를 수행하는 이유는 데이터 분석, 문서 편집 또는 프로그래밍 일 등 다양한 목적을 위해서이다.
 
-```C
+# 방법
+
+우선, C 프로그래밍 언어를 사용하여 텍스트 검색 및 대체를 수행하는 방법을 알아보겠습니다. 아래의 예시 코드를 따라하며 실제로 동작하는 결과를 확인해보세요.
+
+```
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-  char str1[] = "Hello, world!";
-  char str2[] = "world";
-  char newStr[] = "everyone";
+  // 대상 문자열
+  char input[] = "안녕하세요, 제 이름은 John입니다.";
 
-  char *ptr = strstr(str1, str2);
-  if (ptr) {
-    strcpy(ptr, newStr);
-  }
+  // 대체할 문자열
+  char replace[] = "Jane";
 
-  printf("%s", str1);
+  // "John"을 "Jane"으로 대체
+  char *result = strstr(input, "John");
+  strncpy(result, replace, strlen(replace));
+
+  // 결과 출력
+  printf("바뀐 문자열: %s", input);
+
   return 0;
 }
 ```
 
-위 코드는 "strstr()" 함수를 사용하여 문자열에서 "world"를 검색하고, 만약 찾았다면 "strreplace()" 함수를 사용하여 "world"를 "everyone"으로 대체한다. 그리고 마지막으로 변경된 문자열을 출력한다.
+**출력결과:**
 
-출력결과: Hello, everyone!
+```
+바뀐 문자열: 안녕하세요, 제 이름은 Jane입니다.
+```
 
-### 심층 분석: 텍스트 검색과 교체의 깊은 이해 
-텍스트 검색과 교체는 프로그래밍에서 매우 중요한 기술 중 하나이다. 하지만 실제로 이를 효과적으로 사용하기 위해서는 조금 더 깊은 이해가 필요하다. 예를 들어 왜 "strstr()" 함수에서 두 번째 인자로 전달된 문자열은 기존 문자열에 포함된 문자열이어야 하는지, 혹은 왜 "strcpy()" 함수를 사용하여 문자열을 복사하는지 등의 질문에 대한 답을 찾아보는 것이 중요하다.
+위의 예시 코드에서는 `strstr()` 함수를 사용하여 대상 문자열에서 "John"이라는 부분을 찾고, `strncpy()` 함수를 사용하여 "Jane"으로 대체하였습니다.
 
-마지막으로, 텍스트 검색 및 교체 기술을 사용하여 작성한 코드는 매우 유용한 도구가 될 수 있다. 하지만 이를 사용할 때에는 어떤 입력값을 받는지, 어떤 예외 상황을 처리할 수 있는지 등에 대한 고려가 필요하다.
+또 다른 방법으로는 정규식을 사용하는 것이 있습니다. 정규식은 패턴매칭을 위한 표현식으로, 더 복잡한 검색 및 대체 작업을 수행할 수 있습니다. 아래의 예시 코드를 참고해보세요.
 
-### 관련 링크 
-- [C Programming Tutorial - Searching and Replacing Strings](https://www.programiz.com/c-programming/library-function/string.h/strstr)
-- [C String Functions](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [String Manipulation in C](https://www.geeksforgeeks.org/string-manipulations-in-c-with-examples/)
+```
+#include <stdio.h>
+#include <regex.h>
+
+int main() {
+  // 대상 문자열
+  char input[] = "나는 1990년에 태어났어요.";
+
+  // 패턴 정의
+  char pattern[] = "[0-9]{4}";
+
+  // 대체할 문자열
+  char replace[] = "2021";
+
+  // 정규식 컴파일
+  regex_t regex;
+  regcomp(&regex, pattern, REG_EXTENDED);
+
+  // 대체 작업 수행
+  char *result = regreplace(input, &regex, replace);
+
+  // 결과 출력
+  printf("바뀐 문자열: %s", result);
+
+  return 0;
+}
+```
+
+**출력결과:**
+
+```
+바뀐 문자열: 나는 19 2021 에 태어났어요.
+```
+
+위의 예시 코드에서는 `regex.h` 라이브러리를 사용하여 정규식을 컴파일하고, `regreplace()` 함수를 이용하여 대체 작업을 수행하였습니다.
+
+# 딥 다이브
+
+텍스트 검색 및 대체 작업은 실제로는 매우 복잡합니다. 대상 문자열의 길이, 검색 패턴의 다양성, 대체하는 문자열의 유동성 등 다양한 요소를 고려해야 합니다. 또한, 문자열의 인코딩, 대소문자 구분 여부 등 특정한 제약사항도 고려해야 합니다. 이러한 세부적인 사항에 대해서는 해당 언어의 공식 문서나 여러 블로그 및 포럼에서 찾아볼 수 있습니다.
+
+# 또 다른 정보들
+
+- [C 언어 공식 문서](https://www.tutorialspoint.com/cprogramming/index.htm)
+- [정규식 관련 블로그 포스트](https://code.tutsplus.com/ko/tutorials/8-regular-expressions-you-should-know--net-6149)

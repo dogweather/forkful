@@ -1,36 +1,47 @@
 ---
-title:    "Swift: כתיבת קובץ טקסט"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/writing-a-text-file.md"
+title:                "Swift: כתיבת קובץ טקסט"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-רישום קבצי טקסט הוא חלק בסיסי בתכנות Swift. זהו דרך מהירה וקלה ליצור קבצי טקסט עם תוכן מעניין ולהשתמש בהם בתוך אפליקציות.
+כתיבת קובץ טקסט היא פעולה חשובה בתכנות בשפת Swift. באמצעות כתיבת טקסט, ניתן ליצור מידע מבונה ולשמור את המידע בקבצים. כתיבת קבצי טקסט מאפשרת לנו לשמור נתונים ולטפל בהם בנוחות ויעילות.
 
-## איך לעשות זאת
+## כיצד לכתוב קובץ טקסט בשפת Swift
 
-נתחיל על ידי הגדרת משתנה חדש בשם "text" שיכיל את הטקסט שאנחנו רוצים לכתוב לקובץ. לאחר מכן, נשתמש בפונקציה "write" על ידי פתיחת הקובץ והכנסת הטקסט לתוכו. לדוגמה:
+כדי לכתוב קובץ טקסט בשפת Swift, ניתן להשתמש בפונקציות פונקציות של ליברריות הבנויות של השפה.
 
-```Swift
-var text = "שלום לכולם! זוהי דוגמה לטקסט המופיע בקובץ טקסט."
-write(text)
-```
-
-כעת, נכנס לפתיחת הקובץ כך שנוכל לקרוא את הטקסט שהכנסנו. לדוגמה:
+לדוגמה, כדי ליצור קובץ טקסט חדש ולכתוב לו את הנתונים, ניתן להשתמש בפונקציה "write" של המחלקה "FileManager". הנה דוגמה של כיצד ניתן להשתמש בפונקציה זו כדי ליצור קובץ טקסט ולכתוב לו מידע:
 
 ```Swift
-var file = "./myTextFile.txt"
-var text = "שלום לכולם! זוהי דוגמה לטקסט המופיע בקובץ טקסט."
-write(text, toFile: file, atomically: true, encoding: String.Encoding.utf8)
-var readText = try String(contentsOfFile: file, encoding: String.Encoding.utf8)
-print(readText)
+let fileManager = FileManager()
+let fileURL = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("myFile.txt")
+
+do {
+    try "Hello world!".write(to: fileURL, atomically: true, encoding: .utf8)
+    print("File created and data written successfully.")
+} catch {
+    print("Error creating file: \(error)")
+}
 ```
 
-בתוך תיקייה בשם "myTextFile.txt" תמצאו את הקובץ החדש שנוצר עם הטקסט שכתבנו. לאחר מכן, נשמור את הקובץ ונכנס לתיקייה כדי לבדוק שהוא נכתב ונקרא כראוי.
+תוצאה:
 
-## העמקה נוספת
+```
+File created and data written successfully.
+```
 
-לאחר שהזכרנו איך לכתוב קבצי טקסט ב-Swift, ניתן ללמוד עוד על כתיבת וקריאת קבצים באמצעות ספריות נוספות. יכול להיות שישנן צורות יותר מתקדמות לכתוב ולקרוא קבצים שיכולות להיות שימושיות כאשר מתעסקים עם קבצים גדולים או עובדים עם תוכן סיבוכי. כמו כן, ישנן ספריות שיכולות לעזור בעיצוב ועיבוד נת
+## חקירה מעמיקה
+
+כתיבת קבצי טקסט בשפת Swift אינה מסובכת מדי, אך מבינים את המנגנונים של מחלקות ופונקציות שונות יכול לעזור לנו ליצור קבצי טקסט מתקדמים ומותאמים לצרכים שלנו.
+
+כאשר ניתן לקרוא ולכתוב נתונים מקבצי טקסט באמצעות שפת Swift, אנחנו מקבלים אפשרות לייצר ולנהל מידע בצורה ממוקדת ויעילה.
+
+## ראה גם
+
+- [מדריך לשפת Swift - מה זה וכיצד ללמוד](https://medium.com/@tomerpacific/hebrew-swift-tutorial-how-and-why-to-learn-it-0223349d81da?sk=4c09bdd84bab4265ef408fa6cde307a7)
+- [כתיבת קבצי טקסט

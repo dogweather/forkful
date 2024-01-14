@@ -1,37 +1,51 @@
 ---
-title:    "Kotlin: Tests schreiben"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/writing-tests.md"
+title:                "Kotlin: Tests schreiben"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Tests sind ein unverzichtbarer Bestandteil einer qualitativ hochwertigen Softwareentwicklung. Sie dienen dazu, Fehler frühzeitig zu erkennen, die Funktionalität einer Anwendung zu überprüfen und sicherzustellen, dass zukünftige Änderungen die bestehende Funktionalität nicht beeinträchtigen. Durch das Schreiben von Tests können Entwickler Zeit und Geld sparen, indem sie potenzielle Probleme im Voraus identifizieren und beheben.
+Wenn Sie ein Softwareentwickler sind, haben Sie höchstwahrscheinlich schon von "Tests" oder "Testgetriebener Entwicklung" gehört. Aber warum sollte man überhaupt Zeit darauf verschwenden, Tests zu schreiben? Schließlich kann man doch einfach den Code ausführen und schauen, ob er funktioniert, oder?
 
-## How To
+Die Wahrheit ist, dass Tests ein unverzichtbares Werkzeug in der Welt der Softwareentwicklung sind. Sie ermöglichen es uns, sicherzustellen, dass unser Code so funktioniert, wie wir es erwarten, und helfen uns dabei, mögliche Fehlerquellen frühzeitig zu erkennen. Außerdem erleichtern sie die Zusammenarbeit im Team, da jeder Entwickler nachvollziehen kann, was der Code tun sollte, und bei einem Fehler schnell den Ursprung finden kann.
 
-Um in Kotlin Tests zu schreiben, müssen Sie zuerst das Testframework JUnit in Ihrem Projekt hinzufügen. Anschließend können Sie Tests erstellen, indem Sie eine Funktion mit dem Annotation "@Test" erstellen und die zu testende Funktionalität innerhalb dieser Funktion aufrufen. Hier ist ein Beispiel für eine einfache Funktion, die addieren kann:
+## Wie geht man vor
+
+Tests können in Kotlin mit dem integrierten Test-Framework "JUnit" geschrieben werden. Um ein neues Testprojekt zu erstellen, können Sie einfach "gradle init" in Ihrem Terminal ausführen und das Projekt mit Java und Kotlin als Sprache auswählen. Dann können Sie die "build.gradle" Datei anpassen und JUnit als Dependency hinzufügen.
+
+Um einen einfachen Testfall zu schreiben, können Sie eine Klasse erstellen, die mit "Test" annotiert ist, und eine Funktion mit der "Test" Annotation innerhalb dieser Klasse schreiben. Innerhalb dieser Funktion können Sie Assertions verwenden, um zu überprüfen, ob das erwartete Ergebnis erzielt wurde. Hier ist ein Beispiel:
 
 ```Kotlin
-@Test
-fun addTest() {
-    val result = add(2, 3)
-    assertTrue(result == 5)
+class MathTest {
+
+    @Test
+    fun `adding numbers`() {
+        val result = add(2, 2)
+        assertEquals(4, result)
+    }
+    
+    fun add(a: Int, b: Int): Int {
+        return a + b
+    }
 }
 ```
 
-Zuerst wird die Funktion "addTest" mit der Annotation "@Test" gekennzeichnet. Dann wird die add-Funktion aufgerufen und das Ergebnis mit der Funktion "assertTrue" überprüft, ob es der erwarteten Summe entspricht.
+Wenn Sie den Test ausführen, sollte er erfolgreich sein. Wenn wir jedoch das Ergebnis von "assertEquals" ändern, zum Beispiel von "4" auf "5", wird der Test fehlschlagen und uns darauf aufmerksam machen, dass unser Code nicht das erwartete Ergebnis liefert.
 
-## Deep Dive
+## Tiefgreifende Analyse
 
-Beim Schreiben von Tests ist es wichtig, verschiedene Szenarien und Randfälle zu berücksichtigen, um sicherzustellen, dass die Anwendung in allen Fällen korrekt funktioniert. Auch ist es von Vorteil, Assertions zu verwenden, um sicherzustellen, dass die tatsächlichen Ergebnisse mit den erwarteten übereinstimmen. Zusätzlich können Mock-Objekte verwendet werden, um externe Abhängigkeiten zu simulieren und isolierte Tests durchzuführen.
+Es gibt viele verschiedene Arten von Tests, die in Kotlin geschrieben werden können, wie Unit-Tests, Integrationstests und Akzeptanztests. Jede Art hat ihre eigene Bedeutung und hilft uns dabei, die Qualität unseres Codes zu verbessern.
 
-Ein weiterer wichtiger Aspekt ist die kontinuierliche Integration (CI). Durch die Integration von Tests in den CI-Prozess können Entwickler sicherstellen, dass ihre Code-Änderungen nicht die bestehende Funktionalität beeinträchtigen und die Anwendung weiterhin zuverlässig bleibt.
+Ein weiterer wichtiger Aspekt beim Testen ist die Codeabdeckung. Dies bezieht sich darauf, wie viel unseres Codes tatsächlich von unseren Tests abgedeckt wird. Eine hohe Codeabdeckung bedeutet, dass wir mehr Vertrauen in unseren Code haben können, da mehrere Szenarien abgedeckt werden.
+
+Es ist auch wichtig zu beachten, dass Tests nicht nur beim Schreiben des Codes hilfreich sind, sondern auch bei zukünftigen Änderungen und Erweiterungen. Denn wenn wir neue Funktionen hinzufügen, können wir sicherstellen, dass diese nicht die bestehende Funktionalität beeinträchtigen, indem wir die vorher geschriebenen Tests erneut ausführen.
 
 ## Siehe auch
 
-- [JUnit documentation] (https://junit.org/junit5/docs/current/user-guide/)
-- [Kotlin Test documentation] (https://kotlinlang.org/docs/tutorials/getting-started.html)
-- [Test Driven Development (TDD) in Kotlin] (https://developer.android.com/training/testing/tdd)
+1. Offizielle JUnit-Dokumentation: https://junit.org/junit5/docs/current/user-guide/
+2. Codeabdeckung in Kotlin mit Jacoco: https://www.jetbrains.com/help/idea/code-coverage.html
+3. TDD - Testgetriebene Entwicklung: https://www.amazon.de/Test-Driven-Development-Klassiker-Softwareengineering/dp/3446204463/ref=sr_1_1?dchild=1&keywords=test+driven+development&qid=1619926466&sr=8-1

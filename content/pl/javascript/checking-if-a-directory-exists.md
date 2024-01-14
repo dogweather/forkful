@@ -1,57 +1,74 @@
 ---
-title:    "Javascript: Sprawdzenie czy istnieje katalog"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/checking-if-a-directory-exists.md"
+title:                "Javascript: Sprawdzanie, czy istnieje katalog"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Jeśli jesteś programistą lub hobbystycznym programistą, z pewnością spotkałeś się z sytuacją, w której musiałeś sprawdzić, czy dany folder lub ścieżka istnieje w systemie plików. W tym artykule dowiesz się, dlaczego jest to ważna umiejętność i jak ją wykorzystać w swoim kodzie.
+Często w trakcie programowania musimy sprawdzić, czy dany katalog istnieje. Może to być potrzebne w celu uniknięcia błędów lub poprawnego odczytu danych. W tym artykule dowiesz się, jak sprawdzić istnienie katalogu w języku JavaScript.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Sprawdzenie, czy dany katalog istnieje w systemie plików, może być potrzebne w wielu sytuacjach, na przykład przy tworzeniu aplikacji do zarządzania plikami lub przy automatycznej obsłudze plików. W JavaScript jest kilka sposobów, aby to osiągnąć.
-
-Pierwszym sposobem jest użycie wbudowanej funkcji `fs.existsSync()`, która zwraca wartość logiczną `true`, jeśli dany katalog istnieje, lub `false`, jeśli nie istnieje. Przykładowy kod wyglądałby następująco:
+Zacznijmy od importowania modułu `fs`, który jest wbudowany w środowisko Node.js. Następnie użyjemy metody `existsSync()` wraz z ścieżką do naszego katalogu jako argumentem.
 
 ```Javascript
-var fs = require('fs');
-var directoryPath = 'ścieżka/do/katalogu';
+const fs = require('fs');
+fs.existsSync('/sciezka/do/katalogu');
+```
 
-if (fs.existsSync(directoryPath)) {
-    console.log('Katalog istnieje.');
-} else {
-    console.log('Katalog nie istnieje.');
+Jeśli katalog istnieje, metoda zwróci wartość `true`, a w przeciwnym razie `false`. Możemy również użyć metody `statSync()`, która zwróci błąd, jeśli ścieżka nie istnieje.
+
+```Javscript
+const fs = require('fs');
+try {
+  fs.statSync('/sciezka/do/katalogu');
+  console.log('Katalog istnieje!');
+}
+catch(err) {
+  console.error('Katalog nie istnieje!');
 }
 ```
 
-Drugim sposobem jest użycie funkcji `fs.stat()` i obsłużenie błędu w przypadku, gdy dany katalog nie istnieje. Przykładowy kod wyglądałby następująco:
+## Deep Dive
+
+W przypadku, gdy chcemy sprawdzić, czy katalog istnieje na zdalnym serwerze, musimy użyć modułu `ssh2-sftp-client`. Ten moduł umożliwia nam połączenie z serwerem SFTP i przeprowadzenie operacji na plikach i katalogach.
+
+Najpierw musimy utworzyć połączenie ustawiając odpowiednie dane uwierzytelniajace oraz hosta i port. Następnie użyjemy metody `exists()` z ścieżką do katalogu jako argumentem, która zwróci wartość `true`, jeśli katalog istnieje, a `false` w przeciwnym razie.
 
 ```Javascript
-var fs = require('fs');
-var directoryPath = 'ścieżka/do/katalogu';
-
-fs.stat(directoryPath, function(err, stats) {
-    if (err) {
-        console.log('Katalog nie istnieje.');
-    } else {
-        console.log('Katalog istnieje.');
-    }
+const sftp = require('ssh2-sftp-client');
+const config = {
+  host: 'hostname',
+  port: 'port',
+  username: 'login',
+  password: 'haslo'
+};
+let client = new sftp();
+client.connect(config)
+.then(() => {
+  client.exists('/sciezka/do/katalogu');
+})
+.then((exists) => {
+  if (exists) 
+    console.log('Katalog istnieje!');
+  else
+    console.log('Katalog nie istnieje!');
+})
+.catch((err) => {
+  console.error(err);
+})
+.finally(() => {
+  client.end();
 });
 ```
 
-## Głębsze zagadnienia
-
-Podczas tworzenia aplikacji z wykorzystaniem sprawdzania istnienia katalogów, możesz natknąć się na kilka wyzwań. Na przykład, funkcja `fs.existsSync()` może zwrócić `true` nawet w przypadku, gdy podana ścieżka wskazuje na plik, a nie katalog. W takiej sytuacji, można wykorzystać funkcję `fs.statSync()`, aby dokładnie określić, czy dany element jest katalogiem czy plikiem.
-
-Możesz również wykorzystać `fs.mkdirSync()` lub `fs.mkdir()` w połączeniu z warunkiem sprawdzającym istnienie katalogu, aby utworzyć go tylko w przypadku, gdy jeszcze nie istnieje.
-
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o operacjach na plikach i katalogach w JavaScript, polecamy Ci zapoznać się z poniższymi artykułami:
-
-- [Manipulowanie plikami przy użyciu Node.js](https://www.blogName.com/manipulowanie-plikami-nodejs)
-- [Tworzenie plików za pomocą Node.js](https://www.blogName.com/tworzenie-plikow-nodejs)
-- [Node.js - Sprawdzanie czy plik istnieje](https://www.blogName.com/nodejs-sprawdzanie-czy-plik-istnieje)
+- [Dokumentacja Node.js - fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [Dokumentacja Node.js - fs.statSync()](https://nodejs.org/api/fs.html#fs_fs_statsync_path)
+- [Dokumentacja ssh2-sftp-client - exists()](https://ssh2-sftp-client.js.org/#existspath-options)
+- [Moduł ssh2-sftp-client na GitHub](https://github.com/jyu213/ssh2-sftp-client)

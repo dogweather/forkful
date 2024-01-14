@@ -1,54 +1,35 @@
 ---
-title:    "TypeScript: Ermitteln der Länge eines Strings"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/finding-the-length-of-a-string.md"
+title:                "TypeScript: Die Länge eines Strings finden"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Ermittlen der Länge eines Strings ist eine häufige Aufgabe in der Programmierung. Es ist wichtig, die Länge eines Strings zu kennen, um beispielsweise Strings korrekt zu validieren oder sie in einer längenbeschränkten Datenbank einzufügen. In diesem Blog-Beitrag werden wir uns ansehen, wie man die Länge eines Strings in TypeScript ermitteln kann.
+Wer kennt es nicht? Man möchte in seinem Code die Länge eines Textes ermitteln, sei es zum Validieren einer Eingabe oder zur Berechnung von Abständen. Doch wie macht man das in TypeScript? In diesem Artikel werden wir uns damit beschäftigen, wie man die Länge eines Strings in TypeScript finden kann.
 
 ## Wie
 
-Um die Länge eines Strings zu finden, gibt es in TypeScript verschiedene Möglichkeiten. Die einfachste und am häufigsten genutzte Methode ist die Verwendung der `length` Eigenschaft eines Strings, die die Gesamtzahl der Zeichen im String zurückgibt.
+Um die Länge eines Strings in TypeScript zu ermitteln, gibt es eine einfache Methode namens `length`. Diese wird auf den String aufgerufen und gibt die Anzahl der Zeichen zurück. Schauen wir uns das an einem Beispiel an:
 
 ```TypeScript
-const text: string = "Hallo Welt";
-console.log(text.length); // Output: 10
+const text: string = "Hallo, Welt!";
+const length: number = text.length;
+
+console.log(length);
+// Output: 12
 ```
-
-Alternativ kann auch die `size` Methode des `string` Objekts verwendet werden, die ebenfalls die Länge des Strings zurückgibt.
-
-```TypeScript
-const text: string = "Hallo Welt";
-console.log(text.size); // Output: 10
-```
-
-Es ist auch möglich, die `length` Eigenschaft von `Array` zu verwenden, um die Länge eines Strings zu ermitteln. Da Strings in TypeScript als Arrays von Zeichen behandelt werden, kann die `length` Eigenschaft auf sie angewendet werden.
-
-```TypeScript
-const text: string = "Hallo Welt";
-console.log(text.split("").length); // Output: 10
-```
+Wie man sieht, werden alle Zeichen, einschließlich Leerzeichen, gezählt. Die Methode `length` kann auf jede Art von String in TypeScript angewendet werden, sei es ein einzelner Buchstabe oder ein ganzer Text.
 
 ## Deep Dive
 
-Die `length` Eigenschaft ist nicht nur auf Strings beschränkt, sondern kann auch auf anderen Datentypen wie Arrays, Maps und Sets angewendet werden. Es ist wichtig zu beachten, dass die `length` Eigenschaft die tatsächliche Anzahl der Elemente im Datentyp zurückgibt, nicht die Anzahl der indizierten Elemente.
-
-Ein weiterer wichtiger Aspekt ist, dass die `length` Eigenschaft nicht die tatsächliche Länge eines Strings in Bezug auf Bytes oder Speicherplatz zurückgibt. Sie gibt nur die Anzahl der Zeichen im String zurück.
-
-Wir können auch die `toString()` Methode verwenden, um einen Datentyp in einen String umzuwandeln und dann die `length` Eigenschaft darauf anzuwenden.
-
-```TypeScript
-// Anzahl der Zeichen im Integer-Wert 12345
-const number: number = 12345;
-console.log(number.toString().length); // Output: 5
-```
+Wenn man sich den TypeScript Code genauer anschaut, wird man bemerken, dass die Methode `length` in Wirklichkeit eine Eigenschaft von `String` ist. Diese gibt die Anzahl der Zeichen einer Zeichenkette zurück. Dabei müssen jedoch Unicode-Zeichen als mehr als ein Zeichen gezählt werden, was zu einer höheren Länge führt. Es ist außerdem wichtig zu beachten, dass die Methode `length` nur für lesende Operationen genutzt werden kann, das heißt, man kann sie nicht zur Modifikation eines Strings verwenden.
 
 ## Siehe auch
 
-- [Offizielle TypeScript Dokumentation zur Länge eines Strings](https://www.typescriptlang.org/docs/handbook/strings.html#length)
-- [Stack Overflow Beitrag zum Ermitteln der Länge eines Strings in TypeScript](https://stackoverflow.com/questions/32714563/typescript-get-the-length-of-a-string)
-- [Tutorial zur Arbeit mit Strings in TypeScript](https://blog.logrocket.com/working-strings-typescript/)
+- [Offizielle TypeScript Dokumentation](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-length)
+- [JavaScript String length property](https://www.w3schools.com/jsref/jsref_length_string.asp)
+- [JavaScript String objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)

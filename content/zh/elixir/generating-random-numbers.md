@@ -1,32 +1,60 @@
 ---
-title:    "Elixir: 生成随机数"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/generating-random-numbers.md"
+title:                "Elixir: 生成随机数"
+programming_language: "Elixir"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：如果你正在寻找一种简单的方法来生成随机数，Elixir的内置功能可以帮助你达到这一目的。无论是为了生成测试数据或者游戏，生成随机数都是很有用的。
+## 为什么：为什么要生成随机数
 
-怎么做：使用Elixir自带的 ```rand/0``` 和 ```rand/1``` 函数来生成随机数。例如：
+随机数在编程中扮演着重要的角色，它们可以用于模拟现实世界中的随机事件或者用于加密算法。在Elixir编程中，生成随机数可以帮助我们更轻松地处理一些问题，并且让程序更加有趣。
+
+## 如何生成随机数
+
+要在Elixir中生成随机数，我们可以使用内置的Random模块。首先，我们需要导入该模块，然后调用Random.uniform/2函数并传入一个范围值来产生一个随机数。
 
 ```elixir
-rand()
-# => 0.7347234097808059
+import Random
 
-rand(1..10)
-# => 7
+# 生成一个1到10之间的随机数
+Random.uniform(1, 10)
+#=> 7
 ```
 
-深入探讨：Elixir使用Mersenne Twister算法来生成随机数，这是一种高效并且产生高质量随机数的算法。它可以生成非常大的随机数（2^19937-1），同时保持很低的内存占用。
+我们也可以传入一个浮点数作为范围值来生成随机的小数。
 
-另外，Elixir还提供了一个有用的函数 ```shuffle/1``` 来对一个列表进行随机化操作。这在编写简单的游戏或者打乱数据顺序时非常有用。
+```elixir
+# 生成一个0到1之间的随机小数
+Random.uniform(0.0, 1.0)
+#=> 0.3456
+```
 
-其他的一些有用的随机数生成函数还包括 ```uniform/1``` （生成0到1之间的随机小数）和 ```uniform!/1``` （生成指定范围之内的随机小数）。
+除了uniform/2函数，Random模块还提供了其他一些用于生成随机数的函数，如Random.int/1、Random.float/1和Random.seed/1等。
 
-最后，使用 ```Seed.random/0``` 可以获取一个当前时刻的随机种子，这个种子可以在需要可复现的随机数的情况下使用。
+## 深入了解随机数生成
+
+在计算机科学中，真正的随机数是不存在的。所有的随机数都是由一个随机数生成器算法计算出来的。因此，对于同一个种子值，随机数生成器总是会生成相同的随机数序列。在Elixir中，我们可以通过Random.seed/1函数来设置随机数生成器的种子值。
+
+```elixir
+# 设置种子值为123，之后对于同一个种子值，都会生成相同的随机数序列
+Random.seed(123)
+#=> :ok
+Random.uniform(1, 10)
+#=> 6
+Random.uniform(1, 10)
+#=> 3
+```
+
+另外，Elixir的随机数生成器是基于Mersenne Twister算法实现的，它可以生成高质量的随机数序列。我们还可以使用Random.api_seed/0函数来获取当前的随机数种子值。
+
+## 参考链接
+
+- 关于Elixir中Random模块的官方文档：https://hexdocs.pm/elixir/Random.html
+- Mersenne Twister随机数算法的介绍：https://en.wikipedia.org/wiki/Mersenne_Twister
 
 ## 参见
-- [Elixir官方文档 - 随机数生成器](https://hexdocs.pm/elixir/Kernel.html#rand/1)
-- [Elixir官方文档 - List模块](https://hexdocs.pm/elixir/List.html#shuffle/1)
-- [Elixir官方文档 - 内置Seed模块](https://hexdocs.pm/elixir/Seed.html)
+
+- Elixir的官方网站：https://elixir-lang.org/
+- Elixir的中文社区网站：http://elixir-cn.com/

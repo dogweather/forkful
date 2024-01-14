@@ -1,39 +1,41 @@
 ---
-title:    "Elixir: 컴퓨터 프로그래밍을 위한 텍스트 파일 쓰기"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/writing-a-text-file.md"
+title:                "Elixir: 텍스트 파일 작성하기"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-텍스트 파일의 작성은 프로그래밍에서 가장 기초적이면서도 중요한 요소 중 하나입니다. 텍스트 파일은 코드의 저장과 공유를 쉽게 만들어주며, 버전 관리 시스템과의 상호 작용 역시 용이해집니다. 따라서, 프로그래머로서 텍스트 파일 작성을 배우는 것은 매우 중요합니다.
+텍스트 파일을 쓰는 것의 중요성은 매우 간단합니다. 프로그래밍에서 텍스트 파일은 데이터를 저장하고 읽는데 매우 유용한 방법입니다. 또한 이를 통해 프로그램의 사용자와 상호작용 할 수 있습니다.
 
-## 어떻게?
+## 사용 방법
 
-텍스트 파일을 만드는 법은 간단합니다. Elixir에서는 `File.write/2` 함수를 사용하여 새로운 파일을 생성하고, 내용을 작성할 수 있습니다. 예를 들어, 다음과 같은 코드로 `hello.txt` 파일을 생성하고 내용을 작성할 수 있습니다.
+```Elixir
+defmodule FileExamples do
+  # 텍스트 파일 생성
+  def create_file do
+    File.write("text_file.txt", "Hello, world!")
+  end
 
-```elixir
-File.write("hello.txt", "안녕하세요!")
+  # 텍스트 파일 읽기
+  def read_file do
+    text = File.read("text_file.txt")
+    IO.puts(text) # 출력: Hello, world!
+  end
+end
 ```
-`"hello.txt"`는 생성할 파일의 이름을 나타내며, `"안녕하세요!"`는 해당 파일에 작성할 내용입니다. 위 코드를 실행하면 현재 디렉토리에 `hello.txt` 파일이 생성되고, 해당 파일 내용을 열어보면 `"안녕하세요!"`가 작성되어 있는 것을 확인할 수 있습니다.
 
-## 깊이 파고들기
+위의 예제에서는 File 모듈을 사용하여 텍스트 파일을 생성하고 읽는 방법을 보여줍니다. "File.write" 함수는 두 개의 인수를 받는데, 하나는 파일의 이름이고 다른 하나는 파일에 추가 될 내용입니다. 마찬가지로 "File.read" 함수는 파일 이름만 인수로 받습니다.
 
-텍스트 파일을 작성할 때 더욱 세부적인 조작을 하고 싶다면, Elixir의 `File` 모듈에서 제공하는 다양한 함수들을 이용할 수 있습니다. 예를 들어, 다음 코드를 통해 이전에 생성했던 `hello.txt` 파일에 내용을 추가할 수 있습니다.
+## 깊이 파헤치기
 
-```elixir
-File.append("hello.txt", "또 만나요!")
-```
+보다 깊이 안다면 우리는 "File.write" 함수가 새 파일을 생성하거나 이미 존재하는 파일을 덮어쓴다는 것을 알 수 있습니다. 또한 "File.read" 함수는 파일에서 읽은 내용을 문자열로 반환한다는 것을 알 수 있습니다.
 
-위 코드를 실행하면 `hello.txt` 파일에 `"안녕하세요!또 만나요!"`가 작성되는 것을 확인할 수 있습니다.
+## 참고 자료
 
-## 또 다른 정보들
-
-텍스트 파일을 생성하고 조작하는 종류의 작업들은 무궁무진합니다. 따라서, 더 많은 정보를 얻고 싶다면 Elixir 공식 문서를 참조해보는 것을 추천합니다.
-
-## 참고
-
-- [Elixir File 모듈 문서](https://hexdocs.pm/elixir/File.html)
-- [Elixir 공식 문서](https://elixir-lang.org/docs.html)
+- [File 모듈 문서](https://hexdocs.pm/elixir/File.html)
+- [Elixir 파일 작성하기](https://elixir-lang.org/getting-started/file-operations.html#files-reading-and-writing)
+- [Elixir 텍스트 파일 처리 예제](https://www.programming-elixir.com/categories/elixir-io/reading-and-writing-text-files/#_read_and_write_text_files)

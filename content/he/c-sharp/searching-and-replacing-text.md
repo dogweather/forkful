@@ -1,38 +1,43 @@
 ---
-title:    "C#: חיפוש והחלפת טקסט"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/searching-and-replacing-text.md"
+title:                "C#: חיפוש והחלפת טקסט"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-חיפוש והחלפת טקסט הוא כלי חיוני בתכנות בשפת C#. באמצעותו, אפשר לשנות את התוכן של מחרוזות, קבצים ועוד, לפי הצורך שלנו. אם אתם מעוניינים לפתח יכולות תכנות מתקדמות בשפת C#, מנתקדים אכן לצורך כידוע לתרגל ולהכיר את כלי החיפוש וההחלפה שמציעה השפה.
+למה איש רוצה לעסוק בחיפוש והחלפת טקסט? ישנם מספר סיבות לכך, ביניהם: על מנת למצוא ולתקן שגיאות בקוד, ליישר פורמטים, ולשנות משתנים או ערכים במספר מקומות בקוד המקור.
 
-## איך לעשות את זה
+## איך לעשות זאת 
 
-```C#
-// דוגמה לחיפוש והחלפת טקסט במחרוזת יחידה
-string sentence = "שלום לכולם!";
-string newSentence = sentence.Replace("שלום", "היי");
-Console.WriteLine(newSentence);
-// פלט: היי לכולם!
-```
+ישנם מספר דרכים לבצע חיפוש והחלפה טקסט בשפת סי שארפ. הכי פשוט הוא להשתמש בפונקציה "Replace" שבספריית "String", כך שאתם יכולים למצוא ולהחליף טקסט במחרוזת. ישנם גם מתודות אחרות כגון "ReplaceAll" או "ReplaceFirst" שבאפשרותכם להשתמש בהם לפי הצורך. כדי להציג את הפונקציות והתוצאות בצורה מדויקת, הנה דוגמאות בקוד:
 
 ```C#
-// דוגמה לחיפוש והחלפת טקסט בקובץ
-string filePath = @"C:\Users\User\Documents\file.txt";
-string fileContent = File.ReadAllText(filePath); // קריאת תוכן הקובץ למחרוזת
-fileContent = fileContent.Replace("בכבוד", "בהערכה");
-File.WriteAllText(filePath, fileContent); // כתיבת המחרוזת המעודכנת לקובץ המקורי
+// הגדרת מחרוזת עם טקסט לחיפוש והחלפה
+string text = "שלום עולם";
+
+// השתמשו בפונקציית Replace כדי להחליף את האות ובין לאות ליברך
+text = text.Replace("ו", "כל");
+
+// תוצאה כלומר "שלם כלמ"
+Console.WriteLine(text);
+
+// הגדרת משתנה מספרי לחיפוש והחלפה
+int number = 12345;
+
+// השתמשו בפונקציית ToString כדי להמיר את המספר למחרוזת
+string numberString = number.ToString();
+
+// השתמשו בפונקציית ReplaceAll כדי להחליף את הספרות הזוגיות במספר באחדים
+numberString = numberString.ReplaceAll("2, 4", "1");
+
+// תוצאה כלומר "1335"
+Console.WriteLine(numberString);
 ```
 
-## העברה עמוקה
+## לכיוון עמוק 
 
-בנוסף לחיפוש והחלפת טקסט במחרוזות וקבצים, תוכלו גם להשתמש בכלי זה כדי לעבור על מבני נתונים שונים ולשנות אותם לפי הצורך. כמו כן, אפשר גם להשתמש בתנאיים כדי להחליף טקסט רק עבור מקרים מסוימים.
-
-## ראו גם
-
-- [חיפוש והחלפת טקסט בשפת C# - תיעוד מראש](https://docs.microsoft.com/he-il/dotnet/csharp/programming-guide/string/string-replace)
-- [דוגמה מעניינת לחיפוש והחלפת טקסט בשפת C#](https://www.c-sharpcorner.com/blogs/find-and-replace-strings-in-c-sharp1)
+בנוסף לפונקציות המובנות לחיפוש והחלפה, ישנם גם ספריות מתקדמות כמו "Regex" שמאפשרות לנו לתאם ולהחליף אמור לחיפוש בטקסט בצורה עמוקה יותר. כמו כן, ניתן להשתמש בלולאות כד

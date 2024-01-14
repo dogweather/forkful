@@ -1,58 +1,46 @@
 ---
-title:    "Kotlin: 명령 줄 인자 읽기"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/reading-command-line-arguments.md"
+title:                "Kotlin: '컴퓨터 프로그래밍에서 명령줄 인수 읽기'"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜: 
+코틀린에서 커맨드 라인 인자를 읽는 것은 많은 유용한 기능 중 하나입니다. 이 기능을 배우면 다양한 용도로 활용할 수 있으며, 프로그래밍 작업을 더욱 빠르고 효율적으로 수행할 수 있습니다.
 
-코틀린 프로그래밍을 하고 있는 독자분들이 커맨드 라인 인자를 읽는 프로그래밍 방법에 대해 배우고 싶으실 수 있습니다.
-
-## 어떻게 하나요
-
-커맨드 라인 인자를 읽는 가장 간단한 방법은 `main` 함수의 `args` 매개변수를 사용하는 것입니다. 이 매개변수는 배열로써 프로그램 실행 시 전달된 모든 인자들을 포함하고 있습니다.
+## 사용 방법: 
+코틀린에서 커맨드 라인 인자를 읽는 방법은 간단합니다. ```main()``` 함수의 매개변수로 ```args: Array<String>```를 추가하기만 하면 됩니다. 아래는 이 방법의 예시입니다.
 
 ```Kotlin
 fun main(args: Array<String>) {
-    println("전달된 커맨드 라인 인자들:")
-    for (arg in args) println(arg)
+    println("입력한 인자는 ${args[0]}입니다.")
 }
 ```
 
-이 예제를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+이 코드를 실행할 경우, 커맨드 라인에서 입력한 첫 번째 인자가 출력됩니다. 예를 들어, ```kotlin Main.kt hello```를 입력하면 ```입력한 인자는 hello입니다.```라는 결과가 나오게 됩니다.
 
-```
-$ kotlin Main.kt a b c
-전달된 커맨드 라인 인자들:
-a
-b
-c
-```
-
-## Deep Dive
-
-커맨드 라인 인자를 읽는 더 깊이 들어가보면, `kotlin.system` 패키지에 있는 `CommandLine` 클래스를 사용할 수 있습니다.
+또한, 여러 개의 인자를 입력한 경우 for문을 활용해 모든 인자를 출력할 수도 있습니다.
 
 ```Kotlin
-import kotlin.system.*
-
 fun main(args: Array<String>) {
-    val cmd = CommandLine(args)
-    val option = cmd.getOptionValue("option")
-    
-    if (option != null) {
-        println("전달된 옵션 값은 $option 입니다.")
-    } else {
-        println("옵션 값이 전달되지 않았습니다.")
+    for (arg in args) {
+        println(arg)
     }
 }
 ```
 
-이 예제는 `kotlin.system` 패키지를 임포트하고, 커맨드 라인 인자들을 `CommandLine` 클래스로 전달한 후, `getOptionValue()` 메소드를 사용하여 전달된 인자 중 옵션 값을 가져오는 방법을 보여줍니다.
+이 코드를 실행하면 모든 입력된 인자가 한 줄씩 출력됩니다.
 
-## See Also
+## 심화 학습: 
+코틀린에서 커맨드 라인 인자를 읽는 방법은 다양한 방법이 있습니다. 예를 들어, ```args``` 배열의 ```size``` 프로퍼티를 활용하면 입력된 인자의 개수를 알 수 있습니다. 또한, ```args``` 배열의 ```contains()``` 메소드를 활용하면 특정 인자가 입력되었는지 확인할 수도 있습니다.
 
-- [코틀린 공식 문서: 커맨드 라인 인자](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [코틀린 예제 코드: 커맨드 라인 인자 읽기](https://play.kotlinlang.org/byExample/01_introduction/09_command_line_arguments)
+더 깊이 들어가 보면, 코틀린에서는 ```CommandLine.kt```라는 라이브러리를 통해 커맨드 라인 인자를 더욱 효율적으로 처리할 수 있습니다. 이 라이브러리를 사용하면 인자들을 구분하고 필터링할 수 있으며, 인자들을 자동으로 타입변환해주는 기능도 제공합니다.
+
+# 더 알아보기: 
+코틀린에서 커맨드 라인 인자를 읽는 방법에 대해 더 자세히 알아보려면 아래의 링크들을 참고해보세요.
+
+- [코틀린 공식 문서](https://kotlinlang.org/docs/command-line.html)
+- [많은 예시와 함께 설명되어있는 엔트리](https://medium.com/@nataschabruno/kotlin-tutorial-command-line-arguments-e51eef6a5de3)
+- [```.option()``` 메소드를 사용하여 설명하는 블로그 글](https://juejin.cn/post/6844904021605325832)

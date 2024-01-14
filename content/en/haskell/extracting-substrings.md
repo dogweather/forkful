@@ -1,53 +1,80 @@
 ---
-title:    "Haskell recipe: Extracting substrings"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/extracting-substrings.md"
+title:                "Haskell recipe: Extracting substrings"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Substring extraction is a useful technique in programming, especially when working with text. It allows us to extract a specific portion of a string, which can be useful in a variety of applications. Whether you're manipulating user input or parsing through large text files, understanding how to extract substrings can greatly enhance your coding skills.
+Substring extraction is a common task in programming, especially when working with text data. It involves taking a part of a larger string and using it separately. This can be useful when manipulating data, searching for specific patterns, or just organizing information.
 
 ## How To
 
-Extracting substrings in Haskell is done using the `take` and `drop` functions. These functions take in a string and a number representing the desired length of the substring. The `take` function returns the specified number of characters from the beginning of the string, while the `drop` function returns the remaining characters after the specified number. Let's see an example below:
+### Basic Substring Extraction
+
+In Haskell, substring extraction can be done using the `take`, `drop`, and `splitAt` functions. The `take` function takes the first n characters from a string, while the `drop` function drops the first n characters. The `splitAt` function takes a number n and a string, and returns a tuple with the substring up to n characters and the remaining characters.
 
 ```Haskell
--- Extract the first 5 characters from the string "Hello World"
-take 5 "Hello World" 
--- Output: "Hello"
+-- Basic substring extraction using take, drop, and splitAt
 
--- Return the remaining characters after the first 5 from the string "Hello World"
-drop 5 "Hello World"
--- Output: " World"
+-- take first 5 characters
+take 5 "Hello, World!" 
+-- output: "Hello"
+
+-- drop first 5 characters
+drop 5 "Hello, World!"
+-- output: ", World!"
+
+-- split at index 5
+splitAt 5 "Hello, World!"
+-- output: ("Hello", ", World!")
 ```
 
-We can also use the `splitAt` function to split a string at a specific index, returning a tuple of the substrings before and after the split point.
+### Regex Substring Extraction
+
+Haskell also has a `substring` function in the `Text.Regex.PCRE` module that allows for regular expression substring extraction. Regular expressions are useful for more complex patterns that cannot be easily handled with the basic substring functions.
 
 ```Haskell
--- Split the string "Hello World" at index 5
-splitAt 5 "Hello World"
--- Output: ("Hello", " World")
+-- Substring extraction using regular expressions
+
+-- extract numbers from a string
+substring "[0-9]+" "21 days left"
+-- output: "21"
+
+-- extract email domain
+substring "@[a-z]+\\.[a-z]+" "email@example.com"
+-- output: "@example.com"
 ```
 
-These functions can also be used in conjunction with other functions, such as `length` and `words`, to create more dynamic substring extraction. For example, if we wanted to extract the first word of a sentence, we could use the `length` and `take` functions to do so.
+### Partial Application
+
+A useful technique when working with substring extraction is partial application. Partial application means applying a function to some of its arguments and returning a new function with the remaining arguments as parameters. This allows for greater flexibility when dealing with strings of different lengths.
 
 ```Haskell
--- Extract the first word from the sentence "This is a test"
-take (length (words "This is a test") !! 0) "This is a test"
--- Output: "This"
+-- Partial application for substring extraction using take
+
+-- create a function to take the first n characters
+substringN n = take n "Hello, World!"
+
+-- take first 5 characters
+substring5 = substringN 5 "Hello, World!"
+-- output: "Hello"
+
+-- take first 10 characters
+substring10 = substringN 10 "Hello, World!"
+-- output: "Hello, Worl"
 ```
 
 ## Deep Dive
 
-Behind the scenes, these functions are using the `substring` function from the standard library. This function takes in a string, a starting index, and a length, and returns the specified substring. Understanding this can be helpful in troubleshooting any issues with your substring extraction code.
-
-It's also worth noting that these functions operate on the entire string, including any white space. If you want to extract a substring without any leading or trailing white space, you can use the `trim` function from the `Data.Text` library before using the `take` and `drop` functions.
+There are many other functions and techniques that can be used for substring extraction in Haskell, such as `substr`, `breakOn`, `takeWhile`, and more. It is also important to consider the efficiency of substring extraction, as certain functions may be more efficient for large strings. Understanding the different options and techniques for substring extraction can greatly improve the efficiency and functionality of your code.
 
 ## See Also
 
-- [Haskell String Functions](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html)
-- [Haskell Text Functions](https://hackage.haskell.org/package/text-1.2.4.0/docs/Data-Text.html)
-- [Haskell List Functions](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
+- [Haskell `take` function](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:take)
+- [Haskell `drop` function](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:drop)
+- [Haskell `splitAt` function](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:splitAt)
+- [Haskell `substring` function](http://hackage.haskell.org/package/regex-pcre-1.0.2/docs/Text-Regex-PCRE.html#v:substring)

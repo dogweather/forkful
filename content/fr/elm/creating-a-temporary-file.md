@@ -1,47 +1,35 @@
 ---
-title:    "Elm: Création d'un fichier temporaire"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/creating-a-temporary-file.md"
+title:                "Elm: Création d'un fichier temporaire"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi créer des fichiers temporaires en Elm?
 
-Dans cet article, nous allons explorer comment créer des fichiers temporaires en Elm. Les fichiers temporaires peuvent être utiles pour stocker des données temporaires ou pour effectuer des tâches de manipulation de fichiers. Nous allons voir pourquoi cela peut être utile, comment le faire et plonger plus en profondeur dans cette technique.
+Créer des fichiers temporaires peut sembler être une tâche inutile, mais elle peut en fait être très utile lors de la programmation en Elm. Que ce soit pour stocker des données temporaires ou pour éviter de surcharger votre système de fichiers avec des fichiers inutiles, apprendre à créer des fichiers temporaires en Elm peut vous être très pratique.
 
-## Comment faire
+## Comment créer des fichiers temporaires en Elm
 
-Pour créer un fichier temporaire, nous allons utiliser la fonction `File.Temp.file` du package `elm/file`. Voici un exemple de code :
+Il existe plusieurs façons de créer des fichiers temporaires en Elm, mais voici l'une des méthodes les plus simples. Tout d'abord, nous devons importer la bibliothèque `File` qui nous permettra de travailler avec des fichiers en Elm. Ensuite, nous pouvons utiliser la fonction `createTemp` pour créer un fichier temporaire avec un nom aléatoire.
 
 ```Elm
-import File.Temp
-
-main =
-    File.Temp.file "test.txt" "Hello, world!"
-        |> Task.attempt handleResult
-
-handleResult result =
-    case result of
-        Ok path ->
-            Debug.log "The path to the temporary file is:" path
-            -- Output: The path to the temporary file is: /var/folders/23/stcmfnbp4dx_ey9r1m4hpkrm0000gn/T/elm-temp-9t9gN4k/test.txt
-
-        Err error ->
-            Debug.log "Error creating temporary file:" error
-
+import File
+file : File
+file = File.createTemp ()
 ```
 
-Dans cet exemple, nous créons un fichier temporaire nommé "test.txt" avec le contenu "Hello, world!". Nous utilisons `Task.attempt` pour gérer le résultat de la création du fichier, qui peut être soit un `Ok` avec le chemin du fichier temporaire, soit une `Err` avec une erreur.
+Cela créera un fichier temporaire dans le dossier de votre projet avec un nom aléatoire, tel que "temp1234". Vous pouvez alors utiliser ce fichier pour stocker des données ou effectuer d'autres opérations.
 
 ## Plongée en profondeur
 
-Il est important de noter que la fonction `File.Temp.file` crée un fichier temporaire qui sera automatiquement supprimé lorsque l'application Elm se termine. Cela signifie que le fichier temporaire ne persistera pas entre les exécutions de l'application. De plus, en utilisant `Task.attempt`, nous pouvons gérer les erreurs lors de la création du fichier temporaire, par exemple si l'utilisateur n'a pas les permissions nécessaires pour créer des fichiers.
+Bien que la méthode ci-dessus soit simple et pratique, il est important de comprendre le processus de création d'un fichier temporaire en Elm. Lorsque nous utilisons la fonction `createTemp`, un nom aléatoire est généré et le fichier est créé dans le dossier de notre projet. Cependant, le fichier n'existe pas réellement tant que nous n'avons pas écrit de données à l'intérieur. Cela signifie que si vous essayez de lire le contenu du fichier avant d'y avoir écrit, vous obtiendrez une erreur.
 
-Pour plus d'informations sur les fichiers temporaires en Elm, vous pouvez consulter la documentation du package `elm/file` <https://package.elm-lang.org/packages/elm/file/latest/>. Vous pouvez également explorer d'autres fonctions utiles telles que `File.Temp.directory`, qui crée un répertoire temporaire, ou `File.Temp.with`, qui nous permet de faire une opération avec un fichier temporaire et de le supprimer automatiquement après.
+Il est également important de noter que les fichiers temporaires créés de cette manière seront automatiquement supprimés lors de la fermeture de votre application ou lorsque le Garbage Collector sera appelé.
 
 ## Voir aussi
 
-- Documentation du package `elm/file` <https://package.elm-lang.org/packages/elm/file/latest/>
-- Tutoriel sur les fichiers en Elm <https://elmprogramming.com/working-with-files-in-elm.html>
-- Exemples de code pour la manipulation de fichiers en Elm <https://github.com/elm-community/elm-file/tree/master/examples>
+- Documentation sur la bibliothèque `File`: https://package.elm-lang.org/packages/elm/core/latest/File
+- Exemples de code pour créer des fichiers temporaires: https://github.com/elm/random/blob/master/examples/temp_file.elm

@@ -1,54 +1,54 @@
 ---
-title:    "Bash: Utskrift av feilsøkingsutdata"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/printing-debug-output.md"
+title:                "Bash: Utskrift av feilsøkingsutdata"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Utskrift av feilsøkingsmeldinger er en viktig del av Bash programmering. Det lar deg se hva som skjer under kjøring av koden din og finne feil eller ineffektiviteter som kan forbedres. Det er også en nyttig måte å forstå nøyaktig hva som skjer i koden din og hvordan den reagerer på forskjellige inputs.
+Når man skriver Bash-programmer, er det ofte at man kommer over feil og problemer som må løses. I slike situasjoner kan det være nyttig å ha en måte å sjekke hva som foregår i programmet for å finne ut hva som forårsaker feilen. Dette er hvor å printe debug output kommer inn i bildet.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å skrive ut en feilsøkingsmelding i Bash, kan du bruke kommandoen "echo". En enkel måte å gjøre dette på er å inkludere variabelen "$PS4" før du kjører kommandoen "set -x" for å aktivere sporing av kommandoene. Dette vil skrive ut en linje med koden som kjøres før hver kommando som gir deg mer kontroll over utskriftsprosessen.
+Det er flere måter å printe debug output når man skriver Bash-programmer. En enkel metode er å bruke `echo` kommandoen og printe ut variabler eller beskrivelser av hva som skjer i programmet. Her er et eksempel på hvordan man kan printe ut en variabel:
 
 ```Bash
-$ set -x
-$ PS4='$LINENO: '
-$ echo "Dette er en feilsøkingsmelding"
+NAME="Per"
+echo "Navnet er $NAME"
 ```
 
 Dette vil gi følgende output:
 
 ```Bash
-1: echo "Dette er en feilsøkingsmelding"
-Dette er en feilsøkingsmelding
+Navnet er Per
 ```
 
-Et annet nyttig verktøy for å skrive ut feilsøkingsmeldinger er "printf" kommandoen. Dette lar deg formatere utskriften slik du vil og inkludere variabler og andre data i meldingen. For eksempel:
+Man kan også bruke kommandoen `set -x` for å printe ut hele kommandolinjen og ønsket output til skjermen. Dette er spesielt nyttig når man ønsker å se alle steg i programmet og sjekke hva som går galt. Her er et eksempel på hvordan dette kan se ut:
 
 ```Bash
-printf "Variabelen heter %s og verdien er %d" $variabel $verdi
+set -x
+NAME="Per"
+echo "Navnet er $NAME"
 ```
 
-Dette vil skrive ut følgende:
+Dette vil gi følgende output:
 
 ```Bash
-Variabelen heter variabel og verdien er 10
++ NAME="Per"
++ echo "Navnet er $NAME"
+Navnet er Per
 ```
 
 ## Dypdykk
 
-For å få enda mer kontroll over utskriftsprosessen kan du bruke "enable -x" kommandoen som lar deg angi en funksjon som skal kjøres før hver kommando. Dette kan være nyttig hvis du vil ha en mer tilpasset feilsøkingsmelding eller må ta hensyn til forskjellige inputs.
+Å printe debug output er en nyttig måte å finne ut hva som skjer i et Bash-program. Det kan også være lurt å bruke forskjellige nivåer av debug output, der man printer ut mer detaljert informasjon hvis feilene man opplever er mer komplekse. Dette kan gjøres ved å bruke `set` kommandoen med forskjellige flags, som `-v` for å printe ut variablene som en blir brukt, og `-x` for å printe ut hele kommandolinjen.
 
-En annen nyttig teknikk er å bruke ">&2" for å skrive til standard error i stedet for standard output. Dette kan være nyttig hvis du vil skille utskrifter for feilsøking fra f.eks. vanlige feilmeldinger som skrives ut til standard error.
-
-Disse teknikkene kan være nyttige for å finne problematiske områder i koden din og forbedre effektivitet og feilhåndtering.
+Det er også mulig å lagre debug output i en fil ved å bruke `>>` operator etter kommandoen man ønsker å printe ut. Dette vil føre til at output blir lagt til i en fil istedenfor å bare bli vist på skjermen. Dette kan være nyttig hvis man trenger å se gjennom mye output for å finne ut hva som forårsaker en feil.
 
 ## Se også
 
-- [Echo Command in Linux with Examples](https://www.tecmint.com/echo-command-in-linux/)
-- [The printf Command in Linux](https://www.linux.com/news/printf-command-linux/) 
-- [Debugging Bash Scripts – Part 1: Commands & Functions](https://www.linuxjournal.com/content/debugging-bash-scripts-part-1-commands-functions)
+- [Official Bash Documentation](https://www.gnu.org/software/bash/)
+- [Debugging shell scripts with bash -x](https://www.linux.com/news/debugging-shell-scripts-bash-x/)

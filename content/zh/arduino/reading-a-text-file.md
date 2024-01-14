@@ -1,58 +1,61 @@
 ---
-title:    "Arduino: 读取文本文件"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/reading-a-text-file.md"
+title:                "Arduino: 读取文本文件"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么选择读取文本文件
-在Arduino编程中，读取文本文件是一个非常有用的功能。它可以帮助你在代码中储存大量的文本信息，从而提高程序的灵活性和可读性。读取文本文件还可以让你轻松地更新和修改代码中的文本内容，而不需要重新编译程序。
+# 为什么要读取文本文件
 
-#如何实现读取文本文件
-首先，我们需要使用Arduino的SD库来读取文本文件。然后，我们需要使用`File`对象来打开和读取文本文件。接下来，我们可以使用`read()`函数来读取文件中的每一个字符，并将其存储在一个数组或字符串中。最后，我们可以使用`while`循环来读取整个文件，直到所有的内容都被读取完毕。
+阅读文本文件是用来从外部资源获取数据的重要方法。它可以让您的Arduino项目与其他设备或网络通信，并从中获取数据。这是一个非常有用的功能，可以让您的项目变得更加智能和灵活。
 
-```Arduino
+## 如何读取文本文件
+
+读取文本文件的方法与读取其他类型的文件类似，可以通过Arduino的SD库来实现。首先，您需要将文本文件保存在SD卡中，然后使用```SD.open()```函数来打开文件。接下来，可以使用```readLine()```函数来逐行读取文件中的内容，并将其存储在变量中。最后，使用```close()```函数来关闭文件。
+
+下面是一个简单的示例代码，演示了如何读取文本文件并将其打印到串行监视器中。
+
+```
 #include <SD.h>
+
 File myFile;
 
 void setup() {
+  // 初始化串行监视器
   Serial.begin(9600);
-  //初始化SD卡
-  if (!SD.begin(4)) {
-    Serial.println("SD卡失败！");
-  }
-  //打开文件，参数为文件名和打开方式（只读）
-  myFile = SD.open("data.txt", FILE_READ);
-  //如果文件无法打开，则输出错误信息
-  if (!myFile) {
-    Serial.println("无法打开文件！");
-  }
-  //读取文件中的字符，并逐个打印
+
+  // 初始化SD卡
+  SD.begin(10);
+
+  // 打开文本文件
+  myFile = SD.open("data.txt");
+
+  // 读取文件内容并打印到串行监视器
   while (myFile.available()) {
-    char c = myFile.read();
-    Serial.print(c);
+    Serial.println(myFile.readStringUntil('\n'));
   }
-  //关闭文件
+
+  // 关闭文件
   myFile.close();
 }
 
 void loop() {
-  //你的代码
+  // 空
 }
 ```
 
-输出结果：
-```
-这是一个测试文件。
-```
+运行上面的代码后，您将在串行监视器中看到文本文件中的内容。
 
-#深入了解读取文本文件
-除了使用`read()`函数，我们还可以使用`readString()`函数来读取整个文件中的一行文本内容。我们可以使用`indexOf()`和`substring()`函数来查找和提取特定内容，从而实现更加复杂的文本处理。
+## 深入了解文本文件的读取
 
-另外，我们也可以在读取文本文件时进行错误检测，例如文件是否打开成功，文件是否存在等。这样可以让我们的程序更加健壮和稳定。
+虽然读取文本文件的方法比较简单，但是深入了解其原理可以让您更好的掌握文件操作。首先，需要知道的是文本文件是由一系列字符组成的，每行以换行符或回车符结尾。因此，使用```readLine()```函数可以逐行读取文件中的内容。另外，您还可以使用```parseInt()```和```parseFloat()```函数来将读取的字符转换为整数或浮点数。
 
-#相关链接
-- Arduino SD库文档：https://www.arduino.cc/en/Reference/SD
-- `read()`函数文档：https://www.arduino.cc/en/Reference/FileRead
-- `readString()`函数文档：https://www.arduino.cc/en/Reference/FileReadString
+此外，您还可以使用逗号分隔符来将每一行中的不同数据分开读取，并存储在数组中。
+
+# 参考链接
+
+- [SD卡读写教程](https://www.arduino.cc/en/Reference/SD)
+- [文本文件读取示例](https://www.arduino.cc/en/Tutorial/ReadASCIIString)
+- [SD库参考手册](https://www.arduino.cc/en/Reference/SD)

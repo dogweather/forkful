@@ -1,44 +1,49 @@
 ---
-title:    "Kotlin: Läsning av en textfil"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/reading-a-text-file.md"
+title:                "Kotlin: Läsa en textfil"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför läsa en textfil?
+## Varför
 
-Att läsa en textfil är en grundläggande uppgift inom programmering och kan vara användbart för att hämta data från en extern källa, såsom en databas eller internet. Det är också ett bra sätt att lära sig hur man hanterar olika filformat och datatyper.
+Att läsa en textfil är en grundläggande uppgift för många programmerare. Det gör det möjligt att bearbeta och använda information som är lagrad i en enkel och läsbar form. Om du vill lära dig hur man läser en textfil i Kotlin, fortsätt läsa!
 
-# Så här gör du det:
+## Hur man gör det
+
+För att läsa en textfil i Kotlin behöver du först skapa en File-objekt som representerar din fil. Du kan då använda File-objektets readText () metod för att läsa innehållet i filen som en sträng.
 
 ```Kotlin
-val fil = File("min_textfil.txt")
-val radListe = fil.readLines()
+val fil = Fil("exempel.txt")
+val innehåll = fil.readText()
+print(innehåll)
+```
 
-for (rad in radListe) {
-    println(rad)
+Om innehållet i din fil är formaterat med rader separerade av "ny rad" -tecken kan du dela upp strängen till en lista med hjälp av split () -metoden.
+
+```Kotlin
+val fil = Fil("exempel.txt")
+val innehåll = fil.readText()
+val rader = innehåll.split("\n")
+for (rad in rader) {
+    print(rad)
 }
 ```
-Det första steget är att skapa en instans av File-klassen och peka på den textfil som du vill läsa. Sedan använder vi metoden "readLines()" för att läsa in texten i filen och lagra den i en lista. Sedan kan vi använda en for-loop för att skriva ut varje rad i filen.
 
-Output:
-```
-Det här är en textfil.
+## Djupdykning
 
-Här är lite mer text.
+När du läser en textfil i Kotlin finns det några saker du bör tänka på. För det första måste du se till att filen faktiskt finns på den plats som du anger i File-objektet. Om filen inte finns, kommer en FileNotFoundException att kastas.
 
-Slutligen, lite till text.
-```
+För det andra är det viktigt att förstå att läsa en textfil är en synkron operation, vilket innebär att all kod som kommer efter att filinnehållet lästs kommer att vänta på att operationen är klar. Om du vill göra flera saker med filinnehållet samtidigt, kan du göra det genom att använda en AsyncTask eller andra trådhanteringsmekanismer.
 
-# Djupdykning:
+Slutligen ska man komma ihåg att stänga filen efter läsningen är klar. Detta görs enkelt genom att kalla close () -metoden på File-objektet.
 
-Det finns flera olika sätt att läsa en textfil på, beroende på hur du vill hantera och använda datat som finns i filen. Förutom att använda "readLines()", finns det också metoder som "readText()" och "readBytes()" som kan användas för att läsa filen som en sträng eller en array av bytes.
+## Se även
 
-En annan viktig aspekt att tänka på är hur du hanterar eventuella fel som kan uppstå. Det är viktigt att inkludera en try-catch-block för att fånga eventuella IOExceptions som kan uppstå när filen läses.
+Här är några användbara länkar för att lära dig mer om hur man läser en textfil i Kotlin:
 
-## Se även:
-
-- [Kotlin's Dokumentation om File-läsning](https://kotlinlang.org/docs/tutorials/kotlin-for-py/file-input-and-output.html)
-- [Java's Dokumentation om filhantering](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [GeeksforGeeks's Guide till att läsa en textfil i Kotlin](https://www.geeksforgeeks.org/kotlin-reading-file-operations/)
+- Kotlin.org - Filhantering: https://kotlinlang.org/docs/tutorials/kotlin-for-py/download-files.html
+- Tutorialspoint - Läsning och skrivning av filer med Kotlin: https://www.tutorialspoint.com/kotlin/kotlin_reading_and_writing_files.htm
+- Kotlin för Androidutvecklare - Att läsa och skriva filer: https://www.raywenderlich.com/182266/kotlin-for-android-an-introduction

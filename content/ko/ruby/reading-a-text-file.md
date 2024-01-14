@@ -1,48 +1,44 @@
 ---
-title:    "Ruby: 텍스트 파일 읽기"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/reading-a-text-file.md"
+title:                "Ruby: 텍스트 파일 읽기"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-누군가가 텍스트 파일을 읽는 것에 참여하는 이유는 다양합니다. 예를 들어, 텍스트 파일은 데이터를 저장하고 공유하는 데 사용되며, 프로그래밍 시험에서 요구 사항을 이해하는 데 도움이 될 수 있습니다.
+텍스트 파일을 읽는 것은 프로그래밍에서 매우 중요한 기술이다. 텍스트 파일을 읽는 방법을 배우면 다양한 파일 형식을 다룰 수 있고, 데이터를 처리하고 분석하는 데 도움이 된다.
 
 ## 어떻게
 
-텍스트 파일을 읽는 것은 간단하게 보일 수 있지만, 우리는 Ruby 언어를 사용하여 실제로 어떻게 할 수 있는지 살펴보겠습니다. 아래 코드 블록에서, 우리는 텍스트 파일을 여는 방법과 해당 파일에서 데이터를 읽는 방법을 보여줍니다.
+아래의 코드 예제를 통해 Ruby로 텍스트 파일을 읽는 방법을 알아보자.
 
 ```Ruby
-# 텍스트 파일 열기
-file = File.open("sample.txt")
+# 파일 열기
+file = File.open("sample.txt", "r")
 
-# 파일에서 한 줄씩 읽기
-file.each do |line|
-    puts line
-end
-```
-
-위 코드를 실행하면 "sample.txt" 파일의 모든 내용이 한 줄씩 출력됩니다. 반복문을 통해 파일의 모든 줄을 읽을 수도 있고, `readlines` 메서드를 사용하여 파일의 모든 줄을 배열로 저장할 수도 있습니다.
-
-또한 다양한 옵션을 사용하여 파일을 읽을 수 있습니다. 예를 들어, `read` 메서드를 사용하면 파일의 모든 내용을 하나의 문자열로 읽을 수 있습니다.
-
-```Ruby
-# 파일 전체 내용 읽기
+# 파일 내용 읽기
 contents = file.read
+
+# 파일 닫기
+file.close
+
+# 내용 출력
 puts contents
 ```
 
-## 깊이 파헤치기
+위의 코드는 "sample.txt" 파일을 읽고, 그 내용을 출력하는 간단한 예제이다.
 
-텍스트 파일을 읽는 데 사용되는 Ruby의 `File` 클래스에는 다양한 메서드와 옵션이 있습니다. 예를 들어, 읽기 모드 외에도 쓰기 모드, 추가 모드 등의 다양한 옵션을 설정할 수 있습니다.
+## 딥 다이브
 
-또한 파일을 읽는 데 있어서 오류 처리와 관련된 중요한 부분도 있습니다. 파일이 존재하지 않거나 읽을 수 없는 경우 발생할 수 있는 예외 상황을 미리 처리하는 것이 중요합니다.
+텍스트 파일을 읽는 방법은 간단하지만, 조금 더 깊은 수준에서 살펴보면 다양한 옵션이 있다. 예를 들어, 파일을 한 줄씩 읽을 수도 있고, 파일에 존재하는 특정 문자열을 찾을 수도 있다.
 
-텍스트 파일을 읽는 것은 여러 이유로 유용하고 중요합니다. 따라서 Ruby를 사용하여 텍스트 파일을 읽는 것을 잘 익히는 것이 중요합니다.
+텍스트 파일을 읽는 과정에서 발생할 수 있는 오류도 잘 다루는 것이 중요하다. 오류 처리에 대한 더 자세한 정보는 다른 블로그 게시글을 참고하길 바란다.
 
-## 참고 자료
+## 관련 글
 
-- [Ruby 공식 문서 - File 클래스](https://docs.ruby-lang.org/en/2.6.0/File.html)
-- [TechNet Wiki - Ruby에서 텍스트 파일 읽기](https://social.technet.microsoft.com/wiki/contents/articles/33819.ruby-read-text-files.aspx)
+- [Ruby 파일 읽기와 쓰기](https://rubykr.github.io/ruby/corereference/file/)
+- [RubyMine으로 텍스트 파일 읽기](https://blog.jetbrains.com/ruby/2012/10/rubymine-50-fle-editing/)
+- [Ruby에서 파일 입출력](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-using-ruby)

@@ -1,64 +1,60 @@
 ---
-title:    "Kotlin: Escribiendo un archivo de texto"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-a-text-file.md"
+title:                "Kotlin: Escribiendo un archivo de texto"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué escribir un archivo de texto
 
-Escribir un archivo de texto es una habilidad esencial para cualquier programador, ya que permite almacenar y manipular datos de manera sencilla y eficiente. Además, los archivos de texto son un formato muy común y compatible con casi todos los lenguajes de programación, por lo que aprender a escribirlos te brindará una base sólida para trabajar en cualquier proyecto.
+Escribir un archivo de texto es una de las tareas más básicas en la programación. Puede ser una manera sencilla de almacenar datos que necesitamos manipular o compartir con otros programas. También puede ser útil para guardar registros, como mensajes de error o informes de rendimiento.
 
 ## Cómo escribir un archivo de texto en Kotlin
 
-Para escribir un archivo de texto en Kotlin, primero debemos crear un objeto `File` que represente al archivo. Luego, utilizaremos el método `printWriter()` para crear un escritor que nos permitirá escribir en el archivo. A continuación, podemos utilizar el método `println()` para escribir líneas de texto en el archivo y finalmente, debemos cerrar el escritor para asegurarnos de que los datos se guarden correctamente. Veamos un ejemplo de código:
+Para escribir un archivo de texto en Kotlin, primero necesitamos abrirlo y luego escribir los datos que deseamos guardar. Para ello, utilizamos la función `FileWriter()` y luego escribimos en el archivo usando el método `write()`. Veamos un ejemplo:
 
 ```Kotlin
-//creamos el objeto File
-val file = File("miArchivo.txt")
+val archivo = File("mi_archivo.txt")
+val writer = FileWriter(archivo)
 
-//creamos el escritor
-val escritor = file.printWriter()
+// escribir datos en el archivo
+writer.write("¡Hola mundo! Este es mi archivo de texto.")
 
-//escribimos en el archivo
-escritor.println("Este es un ejemplo de texto.")
-escritor.println("Podemos escribir varias líneas en un solo archivo.")
-
-//cerramos el escritor
-escritor.close()
+// cerrar el archivo
+writer.close()
 ```
 
-Al ejecutar este código, se creará un archivo de texto llamado `miArchivo.txt` con las líneas de texto escritas en él. Si abrimos el archivo, veremos que cada línea está en una nueva línea, ya que utilizamos el método `println()` que agrega automáticamente un salto de línea al final de cada línea de texto.
+Si ejecutas este código, se creará un archivo llamado "mi_archivo.txt" en la misma ubicación que tu archivo de Kotlin. Este archivo contendrá el texto "¡Hola mundo! Este es mi archivo de texto.".
+
+También podemos escribir en el archivo línea por línea usando el método `writeLine()` en lugar de `write()`. En este caso, cada llamada a `writeLine()` agregará una nueva línea al archivo.
+
+```Kotlin
+val archivo = File("mi_archivo.txt")
+val writer = FileWriter(archivo)
+
+// escribir datos en el archivo línea por línea
+writer.writeLine("Línea 1")
+writer.writeLine("Línea 2")
+writer.writeLine("Línea 3")
+
+// cerrar el archivo
+writer.close()
+```
+
+El resultado de este código sería un archivo de texto con tres líneas, cada una conteniendo una de las cadenas de texto anteriores.
 
 ## Profundizando en la escritura de archivos de texto
 
-Además de escribir líneas de texto en un archivo, también es posible escribir otros tipos de datos, como números, arreglos y objetos. Para hacerlo, simplemente debemos convertir los datos en una cadena de texto utilizando el método `toString()` y luego escribirlos en el archivo como lo haríamos con una cadena. Por ejemplo:
+Existen distintas formas de escribir archivos de texto en Kotlin, como por ejemplo, usando la clase `PrintWriter` en lugar de `FileWriter`, lo cual nos permite agregar formato de manera más sencilla a nuestro archivo. También podemos utilizar la función `bufferedWriter()` que nos permitirá escribir en el archivo de manera más rápida y eficiente.
 
-```Kotlin
-//escribimos un número en el archivo
-val numero = 123
-escritor.println(numero.toString())
-
-//escribimos un arreglo en el archivo
-val arreglo = arrayOf(1, 2, 3, 4, 5)
-escritor.println(arreglo.toString())
-
-//escribimos un objeto en el archivo
-val objeto = Persona("Juan", 25)
-escritor.println(objeto.toString())
-```
-
-Además, al utilizar el método `println()`, podemos utilizar la interpolación de cadenas de texto para escribir variables o expresiones directamente en el archivo. Por ejemplo:
-
-```Kotlin
-val nombre = "María"
-escritor.println("Hola, mi nombre es $nombre.")
-```
-
-Este código escribirá en el archivo la línea "Hola, mi nombre es María." Esto es muy útil cuando queremos escribir datos dinámicos en un archivo.
+Además, es importante tener en cuenta que cuando escribimos en archivos de texto, es necesario manejar las excepciones que puedan ocurrir, como por ejemplo, si el archivo no existe o si no tenemos permisos para escribir en él.
 
 ## Ver también
 
-- [Documentación oficial de Kotlin sobre escritura de archivos](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/print-writer.html)
-- [Tutorial de programación en Kotlin para principiantes](https://kodepad.com/es/blog/aprendiendo-kotlin-programacion-basica-para-principiantes)
+- [Kotlin Documentation: File Handling](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Tutorial de Kotlin: Manejo de archivos](https://www.tutorialspoint.com/kotlin/kotlin_file_io.htm)
+- [Ejemplo de escritura de archivos de texto en Kotlin](https://www.techiediaries.com/kotlin-file-io-write-text-file/)
+
+¡Con estos recursos podrás seguir profundizando en el manejo de archivos de texto en Kotlin y crear tus propios programas que requieran escribir en archivos para almacenar datos o información relevante!

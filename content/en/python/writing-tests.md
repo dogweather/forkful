@@ -1,56 +1,63 @@
 ---
-title:    "Python recipe: Writing tests"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-tests.md"
+title:                "Python recipe: Writing tests"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Testing is an essential aspect of any software development project. It helps in detecting bugs and errors early on, reducing the chances of unexpected failures in the future. Writing tests not only saves time and resources but also increases the overall quality and stability of the code. In this blog post, we will discuss the importance of writing tests in Python and how to do it efficiently.
+## Why
 
-## How To 
-Writing tests in Python is quite simple and straightforward. Let's take a look at a basic example. Consider a function that adds two numbers:
+As a programmer, writing tests may seem like an additional task on top of writing code. However, investing time in writing tests can actually save time and effort in the long run. It ensures that your code works as expected and helps catch bugs early on, making it an essential part of the development process.
 
-```Python
+## How To
+
+Writing tests in Python is fairly simple and can be done using the built-in `unittest` module. Let's take a look at an example of writing a test for a function that adds two numbers:
+
+```python
+# Import the `unittest` module
+import unittest
+
+# Define a function to be tested
 def add_numbers(x, y):
     return x + y
+
+# Create a class for testing our function
+class TestAddNumbers(unittest.TestCase):
+    # Create a test method
+    def test_add_numbers(self):
+        result = add_numbers(5, 10)
+        # Assert if the result is equal to the expected output
+        self.assertEqual(result, 15)
+
+# Run the tests
+unittest.main()
 ```
 
-To test this function, we can write a test case using the `assert` statement. 
+Output:
+```
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
 
-```Python
-def test_add_numbers():
-    result = add_numbers(2, 3)
-    assert result == 5
+OK
 ```
 
-In this test, we are checking if the result of adding 2 and 3 is equal to 5, as expected. To run this test, we can use a testing framework like `pytest`, which will execute all the test functions in our code and provide a report of the results. 
+In the code block above, we first import the `unittest` module. Then we define the function `add_numbers` that takes in two numbers and returns their sum. Next, we create a class `TestAddNumbers` that inherits from `unittest.TestCase`. This allows us to use built-in methods such as `assertEqual()` to check if the result of our function is equal to the expected output. Finally, we run our test using `unittest.main()`.
 
-```
-========================= test session starts ==========================
-platform win32 -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-x.x.x
-rootdir: C:\Path\to\tests
-plugins: mock-3.x.y
-collected 1 item
+Writing tests for more complex functions follows a similar structure. You can also use different `assert` methods such as `assertTrue()` or `assertFalse()` depending on the purpose of your test.
 
-test_example.py .                                                 [100%]
+## Deep Dive
 
-========================= 1 passed in 0.x seconds =========================
-```
+When writing tests, it's important to keep in mind the various cases your code may encounter. This includes testing for different input values, edge cases, and even errors or exceptions. Writing tests for these cases can help ensure that your code is robust and can handle unexpected situations.
 
-This output indicates that our test passed successfully, and the function is working as expected. We can also write multiple test cases to cover different scenarios and edge cases.
+Another important practice is to write tests along with your code. This means that for every function or feature you add, you also write a test for it. This ensures that your tests are always up-to-date and reflects any changes made to your code.
 
-## Deep Dive 
-While writing tests in Python, it is crucial to keep in mind that tests must be independent, isolated, and repeatable. This means that tests should not depend on each other and should be able to run on any system without any external dependencies. Test-driven development (TDD) is a popular approach in software development, where tests are written before writing the actual code. This helps in maintaining a more robust and reliable codebase.
+It's also worth mentioning that there are other Python testing frameworks available such as `pytest` or `nose`. These offer additional features and a different syntax compared to `unittest`, so it's worth exploring and finding the one that works best for you and your team.
 
-In Python, there are various testing frameworks available, each with its advantages and features. Some popular ones are `unittest`, `pytest`, and `nose`. It is essential to choose the right framework based on the project's needs and requirements.
+## See Also
 
-It is also crucial to have a balance between the number of tests and the project's size or complexity. Too many tests can make the codebase difficult to maintain, while too few tests may leave bugs undetected. It is a good practice to regularly review and refactor tests as the codebase evolves.
-
-## See Also 
-- [Python Testing Tools Taxonomy](https://wiki.python.org/moin/PythonTestingToolsTaxonomy)
-- [Test-Driven Development with Python](https://www.obeythetestinggoat.com/pages/book.html)
-- [Choosing the Right Test Framework in Python](https://medium.com/@chengpo/choosing-the-right-test-framework-in-python-1abb255ecf5f)
-
-By following these best practices and writing effective tests, not only can we catch bugs early on but also have confidence in the code's functionality and maintainability. Happy testing!
+- [Python's official unittest documentation](https://docs.python.org/3/library/unittest.html)
+- [A detailed guide to writing tests in Python](https://realpython.com/python-testing/)
+- [Comparing different Python testing frameworks](https://medium.com/nuances-of-programming/comparing-python-testing-frameworks-unittest-vs-pytest-eafd3928db7c)

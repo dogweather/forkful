@@ -1,59 +1,101 @@
 ---
-title:    "C#: Lesen von Befehlszeilenargumenten"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/reading-command-line-arguments.md"
+title:                "C#: Lesen von Befehlszeilenargumenten"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Haben Sie sich jemals gefragt, wie Sie Befehlszeilenargumente in Ihrem C# Programm lesen können? Möchten Sie eleganter auf Benutzereingaben reagieren? In diesem Blog-Beitrag erfahren Sie, warum das Lesen von Befehlszeilenargumenten nützlich sein kann.
+Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil der Programmierung in C#. Mit der Kenntnis und Verwendung von Befehlszeilenargumenten können Sie Ihrem Programm die Fähigkeit geben, spezifische Daten oder Optionen zu erhalten, die Sie bei der Ausführung des Codes anpassen möchten. Dies kann die Effizienz beim Testen und Debuggen verbessern und die Anwendung insgesamt flexibler und benutzerfreundlicher machen.
 
-## Wie es geht
+## So geht's
 
-Die Verwendung von Befehlszeilenargumenten in Ihrem C# Code ist einfacher als Sie denken. Zunächst müssen Sie die `Main`-Methode ändern, indem Sie die `args`-Parameter hinzufügen. Diese Parameter enthalten alle vom Benutzer eingegebenen Befehlszeilenargumente als Array von Zeichenfolgen. Hier ist ein Beispiel dafür, wie Sie die `Main`-Methode schreiben könnten:
-
-```C#
-static void Main(string[] args)
-{
-    // Code hier
-}
-```
-
-Stellen Sie sich vor, Sie möchten, dass Ihr Programm eine Zahl als Befehlszeilenargument erhält und diese in eine `int`-Variable speichert. Hier ist, wie Sie das mit Befehlszeilenargumenten tun könnten:
+Das Lesen von Befehlszeilenargumenten ist in C# relativ einfach. Dazu müssen Sie zunächst das `System`-Namespace und den `Main()`-Abschnitt Ihres Codes nutzen. In diesem Abschnitt können Sie mit der statischen `Environment`-Klasse und der `GetCommandLineArgs()`-Methode auf die Befehlszeilenargumente zugreifen. Dies kann wie folgt aussehen:
 
 ```C#
-static void Main(string[] args)
+using System;
+
+class Program
 {
-    // Überprüfen, ob mindestens ein Argument eingegeben wurde
-    if (args.Length > 0)
+    static void Main(string[] args)
     {
-        // Das erste Argument als Zahl parsen und in einer Variable speichern
-        int zahl = Int32.Parse(args[0]);
-        // Ausgabe des Ergebnisses
-        Console.WriteLine($"Die Zahl war {zahl}");
-    }
-    else
-    {
-        // Ausgabe einer Fehlermeldung, wenn kein Argument eingegeben wurde
-        Console.WriteLine("Es wurde kein Befehlszeilenargument eingegeben.");
+        // Code, der Befehlszeilenargumente liest und ausgibt
+        string[] arguments = Environment.GetCommandLineArgs();
+
+        Console.WriteLine("Die übergebenen Befehlszeilenargumente sind:");
+        foreach (string argument in arguments)
+        {
+            Console.WriteLine(argument);
+        }
     }
 }
 ```
 
-Nun können Sie Ihr Programm ausführen und ihm eine Zahl als Argument übergeben, z.B. `dotnet ProgrammName.dll 42`. Die Ausgabe wäre `Die Zahl war 42`.
+Wenn Sie diesen Code ausführen, erhalten Sie eine Ausgabe ähnlich der folgenden:
 
-## Tiefer gehend
+```
+Die übergebenen Befehlszeilenargumente sind:
+C:\Program Files\MyProgram.exe
+Argument1
+Argument2
+Argument3
+```
 
-Sie können nicht nur Zahlen, sondern auch andere Datentypen als Befehlszeilenargumente übergeben, wie z.B. `string` oder `bool`. Außerdem können Sie mehrere Argumente in einer Zeile eingeben, indem Sie sie mit Leerzeichen trennen. In unserem Beispiel würde dies mit `dotnet ProgrammName.dll 42 true` funktionieren.
+Als nächstes können Sie die `args`-Parameterübergabe in der `Main()`-Methode nutzen, um gezielt auf bestimmte Befehlszeilenargumente zuzugreifen. Sie können beispielsweise eine Bedingung einfügen, die überprüft, ob das erste Befehlszeilenargument dem gewünschten Format entspricht, und dann basierend darauf eine Aktion ausführen. Hier ein Beispiel:
 
-Es gibt auch Möglichkeiten, die Eingabe der Befehlszeilenargumente zu überprüfen und zu validieren, z.B. mit Regulären Ausdrücken oder Try-Methoden. Es lohnt sich also, sich mit den verschiedenen Optionen vertraut zu machen, um Ihre Befehlszeilenargumente effektiv zu nutzen.
+```C#
+using System;
 
-## Siehe auch
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Code, der Befehlszeilenargumente liest und verarbeitet
+        string[] arguments = Environment.GetCommandLineArgs();
 
-- [Offizielle Dokumentation zu Befehlszeilenargumenten in C#](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [Tutorial zum Lesen von Befehlszeilenargumenten in C#](https://www.codeproject.com/Articles/3111/Reading-Command-Line-Arguments)
-- [Beispielcode für die Verwendung von Befehlszeilenargumenten in C#](https://www.dotnetperls.com/args)
+        // Überprüfung auf ein bestimmtes Befehlszeilenargument
+        if (arguments[0].EndsWith(".txt"))
+        {
+            // Durchsucht das übergebene Textdokument nach bestimmten Wörtern
+            string[] textLines = System.IO.File.ReadAllLines(arguments[0]);
 
-Danke, dass Sie meinen Blog-Beitrag gelesen haben. Ich hoffe, Sie fühlen sich nun in der Lage, Befehlszeilenargumente in Ihren C# Programmen zu nutzen. Bis zum nächsten Mal!
+            string searchString = "Lorem ipsum";
+            int counter = 0;
+
+            foreach (string line in textLines)
+            {
+                if (line.Contains(searchString))
+                {
+                    counter++;
+                }
+            }
+
+            Console.WriteLine($"Das Wort \"{searchString}\" kommt {counter} mal in dem Textdokument vor.");
+        }
+    }
+}
+```
+
+In diesem Beispiel wird überprüft, ob das erste Befehlszeilenargument mit ".txt" endet (was darauf hinweist, dass hier eine Textdatei übergeben wurde). Wenn dies der Fall ist, wird das Programm die Datei öffnen und nach dem Suchbegriff "Lorem ipsum" suchen. Die Ausgabe könnte dann beispielsweise lauten: "Das Wort "Lorem ipsum" kommt 5 mal in dem Textdokument vor."
+
+## Tiefer Einblick
+
+Während das Lesen von Befehlszeilenargumenten in C# relativ einfach ist, gibt es doch einige Besonderheiten, auf die Sie achten sollten. Zum Beispiel werden Befehlszeilenargumente, die in Anführungszeichen gesetzt sind (z.B. `MyProgram.exe "Argument 1" "Argument 2"`), als einzelne Argumente behandelt, auch wenn sie Leerzeichen enthalten. Um diese Argumente als eine Einheit zu lesen, müssen Sie zusätzlich den `String.Join()`-Befehl verwenden. Hier ein Beispiel:
+
+```C#
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string allArguments = String.Join(" ", args);
+        Console.Write($"Alle Befehlszeilenargumente in einem String: {allArguments}");
+    }
+}
+```
+
+In diesem Beispiel werden alle Befehlszeilenargumente in einer Zeile ausgegeben, inklusive der Leerzeichen zwischen den Argumenten. Die Ausgabe könnte dann beispielsweise lauten: "Alle Befehlszeilenargumente in einem String: Argument1 Argument

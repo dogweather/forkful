@@ -1,41 +1,54 @@
 ---
-title:    "Gleam: Tests schreiben"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/writing-tests.md"
+title:                "Gleam: Tests schreiben"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Testen von Code ist eine wichtige Praxis, die dabei hilft, die Funktionalität und Zuverlässigkeit von Software zu verbessern. Es ermöglicht Entwicklern, potenzielle Fehler und Schwachstellen frühzeitig zu erkennen und zu beheben, was letztendlich zu einer besseren Nutzererfahrung führt.
+In der Welt des Programmierens ist es wichtig, effiziente und fehlerfreie Code zu schreiben. Eine bewährte Methode, um sicherzustellen, dass der Code einwandfrei funktioniert und verwendbar ist, sind Tests. In diesem Beitrag werden wir uns genauer anschauen, warum das Schreiben von Tests in Gleam von Vorteil ist.
 
-## Wie man Tests in Gleam schreibt
+## Wie
 
-Um Tests in Gleam zu schreiben, müssen wir zunächst das `gleam/test` Paket importieren. Anschließend können wir Testfunktionen mit dem `test`-Makro erstellen und innerhalb dieser Funktionen unsere Testfälle mit Assertions definieren.
+Gleam bietet eine eingebaute Testbibliothek, die das Schreiben von Tests leicht und effizient macht. Zunächst müssen wir diese in unserem Programm importieren:
 
 ```Gleam
 import gleam/test
+```
 
-pub fn my_test() {
-  assert.equal(2, 1 + 1)
+Als nächstes definieren wir unsere eigentlichen Tests, indem wir eine Funktion schreiben und sie mit der Attribut `#[test]` versehen:
+
+```Gleam
+#[test]
+pub fn add_test() {
+  assert.equal(10, add(6, 4))
+}
+
+#[test]
+pub fn subtract_test() {
+  assert.equal(2, subtract(8, 6))
 }
 ```
 
-Wenn wir nun unsere Tests ausführen, erhalten wir die folgende Ausgabe:
+Hier sehen wir, dass wir mit dem `assert.equal`-Befehl die erwarteten Ergebnisse unserer Funktionen überprüfen können. Wir können auch weitere Assertions hinzufügen, um sicherzustellen, dass unsere Funktionen in verschiedenen Szenarien richtig funktionieren.
 
-```
-my_test: PASS
-```
+Um unsere Tests auszuführen, verwenden wir den Befehl `gleam test` in der Konsole. Wenn alle Tests erfolgreich sind, sehen wir eine Erfolgsmeldung. Wenn ein Test fehlschlägt, werden wir über den Grund informiert und können unseren Code entsprechend anpassen.
 
-## Tiefgreifende Einblicke
+## Deep Dive
 
-Tests ermöglichen es uns, verschiedene Szenarien zu simulieren und sicherzustellen, dass unser Code in allen Fällen ordnungsgemäß funktioniert. Es ist wichtig, Tests für jede Funktion und jedes Modul zu schreiben, um sicherzustellen, dass Änderungen oder Updates keine unerwarteten Auswirkungen haben.
+Jetzt, wo wir wissen, wie man Tests in Gleam schreibt, werden wir tiefer in das Thema eintauchen. Hier sind einige Tipps, die beim Schreiben von Tests hilfreich sein können:
 
-Es ist auch ratsam, das Arrange-Act-Assert Muster zu verwenden, um unsere Tests klar zu strukturieren. Dies bedeutet, dass wir zuerst die erforderlichen Vorbedingungen für unseren Test definieren, dann die Aktion durchführen, die wir testen möchten, und schließlich überprüfen, ob das Ergebnis unseren Erwartungen entspricht.
+- Schreibe Tests, bevor du den entsprechenden Code entwickelst. Auf diese Weise weißt du sofort, ob dein Code richtig funktioniert, sobald er fertig ist.
+- Vermeide es, Daten oder Funktionen direkt in deinen Tests zu verwenden. Stattdessen sollten wir Mock-Daten oder -Funktionen erstellen, um sicherzustellen, dass unsere Tests unabhängig von anderen Teilen des Codes sind.
+- Führe regelmäßig Tests durch, besonders wenn du neue Funktionen hinzufügst oder vorhandenen Code änderst, um sicherzustellen, dass keine unerwarteten Fehler auftreten.
+
+Das Schreiben von effektiven Tests kann dazu beitragen, die Qualität und Zuverlässigkeit deines Codes zu verbessern und dazu beitragen, Probleme frühzeitig zu erkennen und zu beheben.
 
 ## Siehe auch
 
-- [Offizielle Gleam Dokumentation zum Testen](https://gleam.run/book/testing.html)
-- [Tutorial: Gleam Testen für Anfänger](https://medium.com/@matthewphilleo/getting-started-with-gleam-testing-for-beginners-3d5de14a9f6b)
-- [Gleam Testen mit dem `unit_test` Paket](https://davidgom.github.io/tdd-with-gleam/)
+- [Gleam Dokumentation über Tests](https://gleam.run/book/testing.html)
+- [Fünf Tipps für das Schreiben von guten Tests](https://www.oreilly.com/library/view/five-tips-for/9781491935223/)
+- [Warum Tests so wichtig sind](https://www.softwaretestingnews.co.uk/why-testing-important/)

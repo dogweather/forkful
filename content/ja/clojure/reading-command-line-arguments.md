@@ -1,51 +1,29 @@
 ---
-title:    "Clojure: コンピュータープログラミングの記事のタイトル:「コマンドライン引数の読み込み」"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/reading-command-line-arguments.md"
+title:                "Clojure: コンピュータプログラミングのための「コマンドライン引数の読み込み」"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜコマンドライン引数を読み取るのか
+＃＃なぜ
+コマンドライン引数を読み込むことについて学ぶのは重要です。プログラムをより動的に制御したり、ユーザーの入力に基づいて処理を行ったりするために必要です。
 
-## どのように
+＃＃方法
+コマンドライン引数を読み込むには、`main`関数内で`args`パラメーターを使用します。例えば、以下のように入力値を出力するプログラムを作成することができます。
 
-コマンドライン引数を読み取ることは、プログラムにとって非常に便利です。JavaやC++などのよく使われる言語では、コマンドライン引数を扱うための組み込み関数があります。しかし、Clojureではそういうものはありません。そのため、私たちは独自の方法でコマンドライン引数を読み取る必要があります。
-
-まず、```(System/getProperty "sun.java.command")```を使用して、コマンドライン引数がどのように渡されるかを確認します。この方法では、プログラムの実行方法によっては意図しない結果を得ることがあります。そのため、次の例を使用して安定的な方法でコマンドライン引数を読み取ります。
-
-```
-(ns command-line-args.core
-  (:require [clojure.string :as str]))
-```
-
-```
-(defn get-args []
-  (str/split (get (System/getProperties) "sun.java.command") #" ")) 
-```
-
-ここで、```clojure.string```モジュールを使用して、スペースで区切られたコマンドライン引数を分割し、配列にすることができます。これで、次のようにコマンドライン引数を読み取ることができます。
-
-```
+`` `Clojure
 (defn -main [& args]
-  (println (get-args)))
+  (println "入力値は：" args))
 ```
 
-このプログラムを ```lein run arg1 arg2 arg3```というように実行すると、```["arg1" "arg2" "arg3"]```という結果が得られます。
+入力値が`java -jar myprogram.jar input1 input2`の場合、出力は`入力値は： (input1 input2)`となります。
 
-## 詳細
+＃＃深い潜り込み
+コマンドライン引数を読み込むことで、プログラムをより動的に制御できます。`getopts`関数を使用すると、引数をオプションとして受け取ることができます。また、`clojure.tools.cli`ライブラリを使用すると、より多くのオプションや引数を処理できるようになります。詳細については、公式ドキュメントを参照してください。
 
-Clojureには、```clojure.main```モジュールに含まれる```command-line-args```という関数もあります。これは、コマンドライン引数を文字列の配列として返すことができます。ただし、これはClojureのスクリプトファイルを実行する場合のみ使用でき、```lein```のようなビルドツールを使用する場合は使用できません。
-
-さらに、Clojureでは```clojure.tools.cli```というライブラリを使用することもできます。これは、前述の方法よりも柔軟性があり、より高度なオプションをサポートしています。
-
-# 参考リンク
-
-- [Clojure - Command Line Arguments](https://www.tutorialspoint.com/clojure/clojure_command_line_args.htm)
-- [Manipulating command line arguments in Clojure](https://jayway.github.io/clojure/2012/11/16/manipulating-command-line-arguments-in-clojure.html)
-- [Reading command line arguments in Clojure](https://blog.worldofcoding.com/2015/07/30/reading-command-line-arguments-in-clojure/)
-- [Clojure Tools Command Line Argument Parsing](https://clojure-liberator.github.io/clojure/liberator/configuration/parsing-command-line.html)
-
-# 参照
-
-- [Clojureでコマンドライン引数を取得する方法](https://qiita.com/amapyon/items/b20ebd04fe2cd96f3a69)
+＃＃参考リンク
+- 公式ドキュメント：https://clojure.org/reference/java_command_line_tools
+- `getopts`関数の使用方法：https://stackoverflow.com/questions/47492213/clojure-command-line-arguments
+- `clojure.tools.cli`ライブラリの使用方法：https://github.com/clojure/tools.cli

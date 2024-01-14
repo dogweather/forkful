@@ -1,59 +1,65 @@
 ---
-title:    "PHP: Porównywanie dwóch dat"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/comparing-two-dates.md"
+title:                "PHP: Porównywanie dwóch dat"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wybór odpowiedniej metody porównania dwóch dat jest kluczowy dla prawidłowego działania aplikacji. W tym artykule przyjrzymy się różnym podejściom do tego problemu i jak je zaimplementować w języku PHP.
+Często w programowaniu musimy porównać dwie daty, np. aby sprawdzić, czy pewien wydarzenie ma miejsce przed czy po innej dacie. W tym artykule pokażemy jak w prosty sposób porównać dwie daty w języku PHP.
 
 ## Jak to zrobić
 
-Przy comparowaniu dwóch dat w PHP należy pamiętać o kilku ważnych czynnikach. Pierwszym z nich jest konieczność użycia odpowiednich funkcji do przetwarzania dat. W przypadku porównywania dat zapisanych w formacie tekstowym, należy skorzystać z funkcji `strtotime()` do ich konwersji na liczbę. Następnie można użyć `date()` lub `strftime()` w celu porównania dwóch liczb reprezentujących daty.
-
-Przykładowy kod w PHP wykorzystujący te funkcje wyglądałby następująco:
+Porównanie dwóch dat w PHP jest bardzo proste dzięki wykorzystaniu funkcji `strtotime()` oraz operatorów logicznych. Poniżej znajduje się przykładowy kod, który porównuje dwie daty i zwraca odpowiedni komunikat:
 
 ```PHP
-$data1 = "2020-01-01";
-$data2 = "2020-01-15";
+$date1 = strtotime("01-01-2021");
+$date2 = strtotime("05-01-2021");
 
-if (strtotime($data1) < strtotime($data2)) {
-  echo "Data 1 jest wcześniejsza niż data 2.";
+if ($date1 < $date2) {
+   echo "Pierwsza data jest wcześniejsza niż druga data.";
 } else {
-  echo "Data 2 jest wcześniejsza niż data 1.";
+   echo "Pierwsza data jest późniejsza lub równa drugiej dacie.";
 }
 ```
+**Output:** Pierwsza data jest wcześniejsza niż druga data.
 
-W powyższym przykładzie, funkcja `strtotime()` przekształca daty do postaci liczb, a następnie porównujemy je za pomocą konstrukcji warunkowej `if`.
+W przykładzie powyżej najpierw używamy funkcji `strtotime()` aby przekonwertować daty na wartości liczbowe, które można porównać za pomocą operatorów logicznych. Funkcja ta jest bardzo przydatna, ponieważ pozwala nam na porównywanie dat w różnych formatach.
 
-Można również wykorzystać wbudowane w PHP klasy do obsługi dat oraz funkcję `DateTime::diff()` do porównania dwóch dat. Przykładowy kod wykorzystujący tę metodę wyglądałby następująco:
+Możemy również porównywać daty z obecnym czasem, używając funkcji `time()`:
 
 ```PHP
-$data1 = new DateTime("2020-01-01");
-$data2 = new DateTime("2020-01-15");
+$date = strtotime("03-01-2021");
+$today = time();
 
-$roznica = $data1->diff($data2);
-
-if ($roznica->invert == 0) {
-  echo "Data 1 jest wcześniejsza niż data 2.";
+if ($date < $today) {
+   echo "Data jest wcześniejsza niż obecny czas.";
 } else {
-  echo "Data 2 jest wcześniejsza niż data 1.";
+   echo "Data jest późniejsza lub równa obecnemu czasowi.";
 }
 ```
+**Output:** Data jest wcześniejsza niż obecny czas.
 
-W powyższym przykładzie, za pomocą funkcji `DateTime::diff()` pobieramy różnicę między dwoma datami i sprawdzamy pole `invert` w obiekcie `DateInterval`. Jeśli jego wartość wynosi 0, to oznacza, że pierwsza data jest wcześniejsza niż druga.
+## Głębszy wgląd
 
-## Deep Dive
+W języku PHP istnieje również funkcja `date_diff()`, która pozwala na dokładniejsze porównywanie dat przez uwzględnienie różnych jednostek czasu. Na przykład:
 
-Podczas porównywania dat należy zwrócić uwagę na fakt, że niektóre operacje mogą prowadzić do błędów. Przykładowo, porównanie dwóch dat zapisanych w różnych strefach czasowych może dać nieoczekiwane rezultaty. Dlatego ważne jest, aby dokładnie przeanalizować swoje wymagania i wybrać odpowiednie rozwiązanie.
+```PHP
+$date1 = date_create("30-01-2021");
+$date2 = date_create("05-02-2021");
 
-Innym ważnym czynnikiem jest formatowanie danych. W zależności od potrzeb, można wybrać różne formaty zapisu daty w PHP, np. `yyyy-mm-dd` lub `mm/dd/yyyy`. Należy pamiętać, aby używać konsekwentnego formatu i zawsze najpierw przekształcać daty na liczbę lub obiekt, zanim zacznie się porównywać je ze sobą.
+$diff = date_diff($date1, $date2);
+echo "Różnica między datami wynosi {$diff->format('%d')} dni.";
+```
+**Output:** Różnica między datami wynosi 6 dni.
+
+Funkcja `date_diff()` zwraca obiekt `DateInterval`, który zawiera wiele przydatnych metod, dzięki którym możemy uzyskać różnicę w różnych jednostkach czasu.
 
 ## Zobacz także
 
-- [PHP Manual - Porównywanie dat](https://www.php.net/manual/en/function.strtotime.php)
-- [PHP Manual - DateTime::diff()](https://www.php.net/manual/en/datetime.diff.php)
-- [W3Schools - PHP Date and Time functions](https://www.w3schools.com/php/php_date.asp)
+- Przewodnik po funkcjach daty i czasu w PHP: https://www.php.net/manual/en/datetime.fun
+- Przykłady użycia funkcji strtotime(): https://www.w3schools.com/php/func_date_strtotime.asp
+- Dokumentacja funkcji date_diff(): https://www.php.net/manual/en/datetime.diff.php

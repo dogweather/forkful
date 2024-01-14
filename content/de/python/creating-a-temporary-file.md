@@ -1,48 +1,70 @@
 ---
-title:    "Python: Erstellen einer temporären Datei"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/creating-a-temporary-file.md"
+title:                "Python: Ein temporäres Datei erstellen"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Warum sollte man sich überhaupt mit der Erstellung einer temporären Datei beschäftigen? Das Erstellen von temporären Dateien kann in verschiedenen Programmierszenarien nützlich sein, wie z.B. zum Speichern von Zwischenergebnissen, zum Debuggen von Code oder zum Erstellen von temporären Ordnerstrukturen.
+Temporäre Dateien sind häufig in der Programmierwelt anzutreffen und können in verschiedenen Situationen hilfreich sein. Sie werden meist dazu verwendet, um Daten temporär zu speichern, bevor sie in eine endgültige Datei geschrieben werden oder um temporäre Konfigurationsdateien zu erstellen. Der Vorteil von temporären Dateien liegt darin, dass sie automatisch vom System gelöscht werden, sobald sie nicht mehr benötigt werden. In diesem Blog-Beitrag werden wir uns genauer anschauen, wie man in Python temporäre Dateien erstellen kann und warum es nützlich ist, dies zu tun.
 
-## So geht's
+## Wie man temporäre Dateien in Python erstellt
 
-Um eine temporäre Datei in Python zu erstellen, gibt es mehrere Möglichkeiten. Eine einfache Methode ist die Verwendung der `tempfile` Bibliothek. Hier ein Beispielcode, der eine temporäre Datei erstellt und einen Text in die Datei schreibt:
+Das Erstellen einer temporären Datei in Python ist dank der integrierten Bibliothek `tempfile` sehr einfach. Zunächst müssen wir die Bibliothek importieren:
 
 ```Python
 import tempfile
+```
 
-# Erstelle eine temporäre Datei
+Anschließend können wir mit der Funktion `NamedTemporaryFile()` eine temporäre Datei erstellen. Diese Funktion erstellt automatisch eine temporäre Datei im temporären Verzeichnis des Systems und gibt ein Dateiobjekt zurück, das wir zum Schreiben und Lesen verwenden können:
+
+```Python
 temp_file = tempfile.NamedTemporaryFile()
+```
 
-# Schreibe einen Text in die Datei
-text = "Dies ist ein Beispieltext."
-temp_file.write(text.encode())
+Die erstellte Datei wird automatisch im binären Lesemodus geöffnet, daher müssen wir gegebenenfalls den Modus auf den gewünschten Typ ändern. Zum Beispiel, um die Datei im Textmodus zu öffnen, können wir den Parameter `mode="w"` an die Funktion `NamedTemporaryFile()` übergeben:
 
-# Drucke den Inhalt der Datei
+```Python
+temp_file = tempfile.NamedTemporaryFile(mode="w")
+```
+
+Jetzt können wir Daten in die Datei schreiben:
+
+```Python
+temp_file.write("Dies ist eine temporäre Datei.")
+```
+
+Und zum Lesen können wir entweder `read()` oder `readlines()` verwenden:
+
+```Python
 print(temp_file.read())
 ```
 
-Die Ausgabe des obigen Codes würde folgendermaßen aussehen:
+Die temporäre Datei wird automatisch gelöscht, sobald das `temp_file`-Objekt geschlossen wird. Wir können die Datei auch manuell löschen, indem wir die `delete`-Methode aufrufen:
 
 ```Python
-b'Dies ist ein Beispieltext.'
+temp_file.delete()
 ```
 
-Um die erstellte temporäre Datei zu verwenden, können Sie den Pfad zur Datei mit `temp_file.name` abrufen.
+## Tiefergehende Informationen
 
-## Tiefere Einblicke
+Der Standardtupel von `tempfile.NamedTemporaryFile()` enthält sowohl die Dateiobjekt als auch den Dateinamen. Wenn wir jedoch die Namen der temporären Dateien sehen möchten, können wir den Kontextmanager `TemporaryFile` verwenden, der von der Funktion `tempfile.NamedTemporaryFile()` verwendet wird. Mit diesem Kontextmanager können wir auf den Dateinamen der erstellten temporären Datei zugreifen, ohne auf das Dateiobjekt selbst zugreifen zu müssen:
 
-Wenn Sie sich tiefer mit dem Erstellen von temporären Dateien in Python beschäftigen möchten, gibt es einige wichtige Dinge zu beachten. Zum Beispiel können Sie beim Erstellen einer temporären Datei angeben, ob sie gleich gelöscht werden soll oder nicht. Dies kann mit dem Parameter `delete` in der `NamedTemporaryFile` Funktion angegeben werden. Außerdem können Sie festlegen, in welchem Modus die Datei geöffnet werden soll (z.B. zum Schreiben oder Lesen). Weitere Informationen dazu finden Sie in der offiziellen [Dokumentation](https://docs.python.org/3/library/tempfile.html).
+```Python
+with tempfile.TemporaryFile() as temp_file:
+    print(temp_file.name)
+```
+
+Es ist auch möglich, die temporäre Datei in einem bestimmten Verzeichnis zu erstellen, anstatt das standardmäßige temporäre Verzeichnis des Systems zu verwenden. Dazu können wir den Parameter `dir` an die Funktion `NamedTemporaryFile()` übergeben und den gewünschten Pfad angeben:
+
+```Python
+temp_file = tempfile.NamedTemporaryFile(dir="/home/username/temp/")
+```
 
 ## Siehe auch
 
-- [Temporäre Dateien in Python erstellen](https://www.tutorialspoint.com/create-temporary-file-in-python)
-- [Die `tempfile` Bibliothek in Python](https://www.geeksforgeeks.org/tempfile-in-python/)
-
-Vielen Dank, dass Sie sich die Zeit genommen haben, diesen Blog-Beitrag zu lesen. Wir hoffen, dass er Ihnen dabei geholfen hat, ein besseres Verständnis für das Erstellen von temporären Dateien in Python zu erlangen. Happy coding!
+- [tempfile - Python-Dokumentation](https://docs.python.org/3/library/tempfile.html)
+- [How to Create Temporary Files and Directories in Python](https://www.digitalocean.com/community/tutorials/how-to-create-temporary-files-and-directories-in-python)

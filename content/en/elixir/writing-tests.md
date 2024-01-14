@@ -1,84 +1,62 @@
 ---
-title:    "Elixir recipe: Writing tests"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/writing-tests.md"
+title:                "Elixir recipe: Writing tests"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Writing tests is an essential part of any programming project, and Elixir is no exception. Tests allow us to validate our code, catch bugs early on, and ensure that our code functions as expected. In this blog post, we will explore the importance of writing tests in Elixir and how it can benefit your development process.
+Testing is an essential aspect of programming, especially in a language like Elixir where concurrency and fault tolerance are highly valued. By writing tests, you can ensure that your code is functioning properly, catch any bugs early on, and have the confidence to make changes without breaking the code.
 
 ## How To
 
-To write tests in Elixir, we use the built-in ExUnit framework. Let's start by creating a simple test file named "my_test.exs". In this file, we will write our first test case:
-
-```elixir
-defmodule MyTest do 
-  use ExUnit.Case 
-  
-  test "addition" do 
-    assert 1 + 1 == 2 
-  end 
-end 
-```
-
-Here, we declared a module named "MyTest" and used the ExUnit.Case module to define our test cases. In our first test, we added an assertion to check if 1 + 1 equals 2. Now let's run our test by typing `elixir my_test.exs` in the terminal. You should see an output like this:
+Writing tests in Elixir is relatively easy, thanks to its built-in testing framework called ExUnit. Let's take a look at a simple example of a test for a function that adds two numbers together:
 
 ```
-.
+defmodule Calculator do
+  def add(a, b) do
+    a + b
+  end
+end
 
-Finished in 0.001 seconds 
-1 do, 0 failures 
+defmodule CalculatorTest do
+  use ExUnit.Case
+  doctest Calculator
+
+  test "add/2 adds two numbers together" do
+    result = Calculator.add(2, 3)
+    assert result == 5
+  end
+end
 ```
 
-The dot indicates that our test was successful, and there were no failures. Let's add another test case to see what happens when something goes wrong:
+In the above code, we define a `Calculator` module with a `add/2` function. Then, in our `CalculatorTest` module, we use the `ExUnit.Case` module and include `doctest Calculator` to automatically generate tests for our functions. We then write a test that asserts the output of `Calculator.add(2, 3)` is equal to 5. 
 
-```elixir
-defmodule MyTest do 
-  use ExUnit.Case 
-  
-  test "addition" do 
-    assert 1 + 1 == 2 
-  end 
-  
-  test "subtraction" do 
-    assert 1 - 1 == 0 
-  end 
-end 
-```
-
-Our new test case will check if 1 - 1 equals 0. Now when we run our test, we should get an output like this:
+To run the test, we can use the `mix test` command, and it should return the following output:
 
 ```
-F.
-
-Finished in 0.001 seconds 
-1 do, 1 failures 
-
-1) do test subtraction (MyTest) 
-test/my_test.exs XMixPanalyzerTest.test_add (module) 
-test/my_test.exs:6 
-(assert 1 - 1 == 0) 
-AssertionError 
-
-Stacktrace 
-(test/my_test.exs:6) 
+.....
+Finished in 0.02 seconds
+5 tests, 0 failures
 ```
 
-As you can see, the first test passed, but the second test failed, showing us an error message and the line where the assertion failed. This is the power of tests, as they help us identify and fix errors in our code.
+You can see that our test passed successfully! We can continue to write more tests to cover edge cases and ensure our code is robust.
 
 ## Deep Dive
 
-Writing good tests involves more than just adding a few assertions. It requires understanding the purpose and functionality of the code being tested. Tests should be focused, independent, and reproducible. In Elixir, we can use the "setup" and "teardown" functions to set up any required data before running our tests and clean up after each test, respectively. This ensures that our tests are isolated and don't rely on external factors.
+Elixir's ExUnit framework provides various useful assert functions such as `assert`, `refute`, `assert_raise`, `assert_receive`, and more. These assert functions allow you to specify the expected outcome of your tests, making them more robust and efficient.
 
-We can also use "test tags" to categorize and run specific tests based on their tags. This allows us to run only a specific set of tests during development or in different environments.
+Additionally, ExUnit also supports meta-programming, which enables you to dynamically generate and execute tests. This can be useful when testing functions that have multiple possible outcomes.
 
-Additionally, Elixir has a built-in code coverage tool that helps us track the lines of code covered by tests. This gives us confidence in our test suite and shows us which parts of our code may need more testing.
+Moreover, Elixir has a unique feature called doctests, as seen in our example above. Doctests automatically generate tests based on the code documentation, making it easier to keep the documentation and tests in sync.
 
 ## See Also
 
-- [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Effective Testing in Elixir](https://www.manning.com/books/effective-testing-in-elixir)
-- [10 Tips for Writing Clean and Usable Tests in Elixir](https://codeship.com/blog/2017/06/20/10-tips-for-writing-clean-and-usable-tests-in-elixir.html)
+- [ExUnit documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [An Introduction to Testing in Elixir](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html)
+- [The Power of Meta-testing in Elixir](https://medium.com/@rrgalvan/the-power-of-meta-testing-in-elixir-a2bf70005925)
+
+Remember, writing tests not only helps catch bugs but also serves as documentation for your code. So, keep writing tests and happy coding!

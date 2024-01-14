@@ -1,32 +1,35 @@
 ---
-title:    "Elixir: חיפוש והחלפת טקסט"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/searching-and-replacing-text.md"
+title:                "Elixir: חיפוש והחלפת טקסטים"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+למה: רק 1-2 משפטים להסבר *למה* מישהו יחשוב על לחפש ולהחליף טקסט.
 
-השימוש בחיפוש והחלפה של טקסט הוא כלי חשוב בכל שפת תכנות, כולל ב-Elixir. יתרון השימוש בפונקציות מובנות במקום בכתיבת קוד מחדש הוא בביטחון וביעילות משופרת.
+לשום דבר להיות מסווג כטקסט מה שיש לנו פקודות סביבת אליקסיר כיבוד מילים לחשוב על שורות של טקסט להיות מחולק למספר מחרוזות קטנות כדי ליישם שינויים או בדיקות בתוך טקסט גדול יותר.
 
-## איך לעשות זאת
+##למה
 
-כדי לחלוף על טקסט ב-Elixir, ניתן להשתמש בפונקציה `String.replace/3`. פונקציה זו מקבלת שלושה פרמטרים: המחרוזת שבה כתוב הטקסט המקורי, הטקסט שברצונכם להחליף, והטקסט החדש שתרצו שיוחלף על ידו. לדוגמה:
+כדי לקצר את הזמן והמאמץ שנדרשים בעבודה עם טקסט גדול או מספר קבצים שונים, חיפוש והחלפה של טקסט היא כלי חשוב בתהליך הבדיקה והתיקון של קוד בקוד הפתוח באליקסיר.
+
+##איך לעשות
+
+בשפת אליקסיר, ישנן פקודות פשוטות עבור חיפוש והחלפה של טקסט. לעשות זאת, ניתן להשתמש בפקודות הכוללות `String.replace` או `String.replace_leading` כדי לחלץ רצף של תווים מהטקסט ולהחליף אותם. ניתן גם להשתמש בפקודת `Regex.replace` כדי לחלץ רצף של תווים בעזרת ביטוי רגולרי ולהחליף אותם. כל אחת מהפקודות הללו מקבלת משתנה של טקסט ואת הנתונים החדשים שמברים.
+
+לדוגמה:
 
 ```elixir
-string = "שלום עולם"
-new_string = String.replace(string, "עולם", "מאתנו")
+text = "Hello, world!"
+String.replace(text, "world", "Elixir") # output: "Hello, Elixir!"
+
+new_text = Regex.replace(text, ~r/world/, "Elixir") # output: "Hello, Elixir!"
 ```
 
-במקרה זה, המחרוזת החדשה `new_string` תהיה "שלום מאתנו".
+ישנן גם אפשרויות נוספות כמו `Regex.replace_first` ו `Regex.replace_all` כדי להחליף רק את ההתאמה הראשונה או את כל ההתאמות בחלקי הטקסט, בהתאמה.
 
-## חפירה מעמיקה
+##מעמקים
 
-בנוסף לפונקציה `String.replace/3`, ישנן פונקציות נוספות לחיפוש והחלפת טקסט ב-Elixir. למשל, `String.replace_leading/3` ו-`String.replace_trailing/3` נועדו להחליף רק את הטקסט המתחיל או נגמר בטקסט המקורי. ישנן גם פונקציות נוספות להתאמה עם ביטויים רגולריים, כמו `Regex.replace/3` ו-`Regex.replace_leading/3`. כל הפונקציות הללו מכילות בעצם את הפונקציה `String.replace/3`, אך מותאמות למטרות ספציפיות.
-
-## ראו גם
-
-- [מדריך על השתמשות בפונקציות טקסט ב-Elixir](https://elixir-lang.org/getting-started/string-patterns-and-operations.html)
-- [מדריך על שימוש בביטויים רגולריים ב-Elixir](https://elixir-lang.org/getting-started/regex.html)
-- [תיעוד על הפונקציות המובנות להחלפת טקסט ב-Elixir](https://hexdocs.pm/elixir/String.html#functions-for-string-manipulation)
+למי שמעוניין להיכנס לעומק יותר בתהליך החיפוש וההחלפה של טקסט, ניתן להתייחס לתיעוד של אליקס

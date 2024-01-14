@@ -1,40 +1,54 @@
 ---
-title:    "Elm: Jämföring av två datum"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/comparing-two-dates.md"
+title:                "Elm: Jämförande av två datum"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att jämföra två datum är ett vanligt problem inom programmering när man arbetar med tidsbaserade applikationer. Det kan vara användbart för att sortera eller filtrera data, beräkna åldrar eller för att visa olika meddelanden baserat på datum.
+Att jämföra två datum kan vara väldigt användbart i många olika programmeringssammanhang. Oavsett om du behöver kontrollera om ett datum har passerat, räkna ut hur många dagar som gått mellan två datum eller helt enkelt sortera datum i en lista, är det en viktig kunskap för utvecklare. I denna bloggpost kommer vi att gå igenom hur man jämför två datum i Elm.
 
-## Hur man gör det
+## Hur man gör
 
-För att jämföra två datum i Elm använder man funktionen `compare`, som tar två datum som argument och returnerar en `Order` typ. Den kan sedan användas för att avgöra om det första datumet är före, efter eller lika med det andra.
+För att jämföra två datum i Elm kan man använda funktionen `compare` tillsammans med modulen `Date`. Här är ett exempel:
 
+```Elm
+import Date exposing (..)
+
+myDate1 = fromString "2020-12-01"
+myDate2 = fromString "2020-12-05"
+
+result = compare myDate1 myDate2 
 ```
-Elm  2011-05-14 |>  compare  (2011-05-12) == GT
-Elm  2011-05-12 |>  compare  (2011-05-12) == EQ
-Elm  2011-05-10 |>  compare  (2011-05-12) == LT
+
+I detta exempel jämför vi två olika datum, "2020-12-01" och "2020-12-05". Funktionen `fromString` används för att konvertera strängarna till datumobjekt och sedan används `compare` för att jämföra dem. Resultatet är en `Order` som kan vara antingen `LT` (less than), `GT` (greater than) eller `EQ` (equal).
+
+En annan funktion som kan vara användbar är `daysBetween` som räknar ut antalet dagar mellan två datum:
+
+```Elm
+import Date exposing (..)
+
+myDate1 = fromString "2020-12-01"
+myDate2 = fromString "2020-12-05"
+
+result = daysBetween myDate1 myDate2 
 ```
 
-Man kan också använda funktionen `max` och `min` för att välja det senaste respektive tidigaste datumet från en lista av datum.
-
-```
-Elm  max [2011-05-11, 2011-05-12, 2011-05-13] == 2011-05-13
-Elm  max [] ==  Nothing
-```
+I detta exempel skulle resultatet bli `4`, eftersom det är fyra dagar mellan de två datumobjekten.
 
 ## Djupdykning
 
-När man jämför datum är det viktigt att vara medveten om att det inte bara handlar om att jämföra det faktiska datumet, utan också tiden och tidszonen. Om man till exempel jämför en tidzonavhängig datumtyp (som `Date`) med en tidszonberoende typ (som `Posix`), kan man få oönskade resultat. Det är därför viktigt att i sådana fall konvertera de två datumtyperna till samma format innan man jämför dem.
+När man jämför datum i Elm är det viktigt att förstå hur de representeras. Date-objekt består av flera olika delar såsom år, månad, dag, timme, minut och sekund. När man jämför två datum är det viktigt att man också tar hänsyn till alla dessa delar, inte bara datumet.
 
-Det finns också flera användbara funktioner för att göra mer komplexa jämförelser av datum, som `isSameDay`, `isBefore`, `isAfter` och `withinRange`. Dessa funktioner kan användas för att avgöra om två datum är samma dag, om ett datum är före eller efter ett annat eller om ett datum ligger inom en viss tidsperiod.
+Det finns också flera olika funktioner för att skapa och manipulera datum i Elm, som `add` för att lägga till en viss tidsperiod till ett datum och `startOfYear` för att få det första datumet av ett visst år.
+
+Det är också viktigt att vara medveten om att jämföra datum kan bli problematiskt om man inte hanterar tidszoner på rätt sätt. Det är alltid rekommenderat att konvertera till UTC-tid innan man jämför datumobjekt.
 
 ## Se även
 
-- [Elm dokumentation om Date](https://package.elm-lang.org/packages/elm/time/latest/Time#Date)
-- [Elm paket för att arbeta med datum](https://package.elm-lang.org/packages/elm-community/date-extra/latest/)
-- [Blogginlägg om att arbeta med datum i Elm](https://terezka.cz/elm/date-utilities/)
+- Officiell Elm Date-dokumentation: https://package.elm-lang.org/packages/elm/time/latest/Date
+- En tutorial om att arbeta med datum och tid i Elm: https://elmprogramming.com/dates-and-times.html
+- Elm Date-paketet på GitHub: https://github.com/elm-lang/elm-package/tree/master/packages/elm/time/latest

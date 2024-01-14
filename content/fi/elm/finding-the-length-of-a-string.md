@@ -1,62 +1,28 @@
 ---
-title:    "Elm: Merkkijonon pituuden löytäminen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/finding-the-length-of-a-string.md"
+title:                "Elm: Merkkijonon pituuden löytäminen"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi laskea merkkijonon pituutta?
+### Miksi
+Jos olet uusi ohjelmoinnissa tai olet vain tutustumassa uuteen kieleen, yksi tärkeimmistä taidoista on kyky löytää merkkijonon pituus. Tämä taito on hyödyllinen monissa ohjelmointiprojekteissa, ja siksi on tärkeää ymmärtää, miten se tehdään.
 
-Merkkijonon pituuden laskeminen on tärkeä osa ohjelmointia ja se auttaa ratkaisemaan monia ongelmia, kuten sanan tai lauseen oikean määrän merkkejä laskeminen tai sopivan rivin mittaaminen tekstiruudussa. Se on myös hyödyllistä tietää, kuinka monta merkkiä voidaan tallentaa tietokannassa tai tiedostossa.
-
-## Kuinka: Esimerkkejä koodin ja tulosteen kanssa "```Elm ... ```" koodilohkoissa.
-
-Merkkijonon pituuden laskeminen Elm-ohjelmointikielellä on helppoa. Seuraavassa on muutamia yksinkertaisia esimerkkejä:
-
-### Esimerkki 1:
+### Kuinka tehdä
+Elm:ssä voit helposti laskea merkkijonon pituuden käyttämällä `String.length` -toimintoa. Esimerkiksi, jos haluat laskea merkkijonon "Hei" pituuden, sinun täytyy vain kirjoittaa seuraava koodi:
 
 ```Elm
-length "Terve!"
-```
-Tuloste:
-```
-6
-```
-Tässä esimerkissä lasketaan merkkijonon "Terve!" pituus, joka on 6 merkkiä.
-
-### Esimerkki 2:
-
-```Elm
-length "Moro"
-```
-Tuloste:
-```
-4
+String.length "Hei"
 ```
 
-Tässä toisessa esimerkissä lasketaan merkkijonon "Moro" pituus, joka on myös 4 merkkiä.
+Tämän koodin suorituksen tulos on `3`, sillä "Hei" koostuu kolmesta merkistä.
 
-Voit myös käyttää tätä toimintoa yhdessä muuttujien kanssa:
+## Syvempi sukellus
+On tärkeää ymmärtää, että merkkijonoilla on merkittävä rooli ohjelmoinnissa. Ne voivat sisältää tietoa käyttäjistä, sivuista, tiedostoista ja paljon muuta. Siksi on tärkeää voida hallita ja manipuloida merkkijonoja eri ohjelmointikielet. Elm:ssä merkkijonojen käsittely on helppoa ja tehokasta.
 
-```Elm
-nimi = "Mikko"
-length nimi
-```
-Tuloste:
-```
-5
-```
-
-Tässä esimerkissä käytetään muuttujaa "nimi" ja lasketaan sen pituus, joka on 5 merkkiä.
-
-## Syvempi sukellus: Tietoa merkkijonon pituudesta
-
-Merkkijonon pituuden laskeminen perustuu merkkijonon sisältämiin merkkeihin. Jokainen merkki on yksi yksikkö ja pituutta lasketaan yksikköjen määrän avulla. Elm-kielessä "length" -funktio palauttaa kokonaisluvun, joka edustaa merkkien kokonaismäärää merkkijonossa.
-
-On tärkeää huomata, että "length" -funktio ei laske välilyöntejä merkkijonossa, joten jos haluat lukea myös välilyönnit, sinun on lisättävä ne erikseen merkkijonoon.
-
-## Katso myös
-
-- [String - Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Learn Elm - merkkijonot](https://www.youtube.com/watch?v=bf9SmwXMAb4)
+### Katso myös
+- [Elm-opetusohjelma](https://guide.elm-lang.org/)
+- [Virallinen Elm-sivusto](https://elm-lang.org/)
+- [Merkkijonotoiminnot Elm:ssä](https://package.elm-lang.org/packages/elm/core/latest/String)

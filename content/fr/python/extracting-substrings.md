@@ -1,61 +1,69 @@
 ---
-title:    "Python: Extraction de sous-chaînes"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/extracting-substrings.md"
+title:                "Python: Extraction des sous-chaînes"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-Pourquoi:
+## Pourquoi
 
-Extraction de sous-chaînes en Python
+Extraire des sous-chaînes est une compétence importante en programmation Python qui permet de manipuler les données de manière efficace. Cela peut être utile pour des tâches telles que la récupération d'informations spécifiques dans une grande quantité de données ou la manipulation de chaînes de caractères pour un formatage spécifique.
 
-Si vous travaillez avec des chaînes de caractères en Python, vous avez peut-être remarqué que parfois vous devez extraire une sous-chaîne à partir d'une chaîne plus grande. Cela peut être utile lors de la manipulation de données ou de la création de fonctions pour traiter les chaînes de manière spécifique. Dans cet article, nous allons explorer comment extraire des sous-chaînes en Python.
+## Comment faire
 
-Comment faire:
-
-Pour extraire une sous-chaîne en Python, nous pouvons utiliser la méthode `slice()` ou l'opérateur de tranche `[:]`. Par exemple, supposons que nous avons la chaîne de caractères "Bonjour à tous" et que nous voulons extraire la sous-chaîne "à tous". Nous pouvons le faire en utilisant la méthode `slice()` de cette façon:
-
- ```
- phrase = "Bonjour à tous"
- sous_chaine = phrase.slice(8, 14)
- print(sous_chaine)
- ```
-
-Cela nous donnera la sortie suivante:
-
-`à tous`
-
-Nous pouvons également utiliser l'opérateur de tranche `[:]` de cette façon:
-
- ```
- phrase = "Bonjour à tous"
- sous_chaine = phrase[8:14]
- print(sous_chaine)
- ```
-
-Cela nous donnera la même sortie que précédemment. L'opérateur de tranche utilise les mêmes indices que la méthode `slice()`, mais est plus concis et pratique à utiliser.
-
-Deep Dive:
-
-La méthode `slice()` prend en compte trois arguments: `start`, `end` et `step`. `start` représente l'indice de départ de la sous-chaîne, `end` représente l'indice de fin et `step` représente le pas. Le pas est optionnel et par défaut, il est égal à 1. Cela signifie que la sous-chaîne extraite comprendra tous les caractères entre les indices `start` et `end`. Cependant, si nous spécifions un pas différent de 1, nous pouvons obtenir une sous-chaîne avec chaque n-ème caractère.
-
-Par exemple, si nous voulons extraire tous les autres caractères de la chaîne "Bonjour à tous", nous pouvons utiliser un pas de 2 de cette manière:
+Pour extraire une sous-chaîne d'une chaîne de caractères en Python, vous pouvez utiliser la méthode de découpe (slicing). Cette méthode prend deux indices en paramètres, le début et la fin de la sous-chaîne, et renvoie la partie de la chaîne originale située entre ces deux indices. Par exemple:
 
 ```
-phrase = "Bonjour à tous"
-sous_chaine = phrase.slice(0, 14, 2)
-print(sous_chaine)
+Python string = "Bonjour à tous"
+sub_string = string[7:10]
+print(sub_string)
 ```
 
-La sortie sera alors:
+Résultat:
 
-`Bno àtu`
+```
+à to
+```
 
-Cela peut être utile dans certaines situations spécifiques.
+Vous pouvez également spécifier un troisième paramètre pour la méthode de découpe, qui indique le pas de la sous-chaîne, c'est-à-dire le nombre de caractères à sauter à chaque étape. Par exemple:
 
-Voir aussi:
+```
+Python string = "Bonjour à tous"
+sub_string = string[::3]
+print(sub_string)
+```
 
-- https://www.geeksforgeeks.org/python-string-slice/
-- https://www.tutorialspoint.com/python/string_slice.htm
-- https://www.programiz.com/python-programming/methods/string/slice
+Résultat:
+
+```
+Bno  u
+```
+
+## Plongée en profondeur
+
+Outre la méthode de découpe, il existe d'autres outils en Python pour extraire des sous-chaînes de manière plus complexe, tels que les expressions régulières. Les expressions régulières sont des motifs de recherche qui permettent de trouver des combinaisons de caractères spécifiques dans une chaîne de caractères. Elles peuvent être utilisées pour extraire des sous-chaînes en fonction de motifs spécifiques plutôt que d'indices précis.
+
+Par exemple, imaginez que vous voulez extraire tous les mots contenant le préfixe "py" dans une chaîne donnée. Vous pouvez utiliser une expression régulière pour trouver tous ces mots et les stocker dans une liste. Voici un exemple de code utilisant le module "re" de Python pour accomplir cette tâche:
+
+```
+import re
+
+string = "Python est un langage de programmation très populaire."
+
+sub_strings = re.findall(r"py\w+", string)
+print(sub_strings)
+```
+
+Résultat:
+
+```
+['Python', 'programmation']
+```
+
+## Voir aussi
+
+- [Documentation officielle de Python sur la méthode de découpe](https://docs.python.org/fr/3/library/stdtypes.html#mutable-sequence-types)
+- [Tutoriel sur les expressions régulières en Python](https://www.youtube.com/watch?v=K8L6KVGG-7o)
+- [Guide pour travailler avec les chaînes de caractères en Python](https://realpython.com/python-strings/)

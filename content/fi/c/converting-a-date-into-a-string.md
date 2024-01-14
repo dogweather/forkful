@@ -1,83 +1,59 @@
 ---
-title:    "C: Päivämäärän muuntaminen merkkijonoksi"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/converting-a-date-into-a-string.md"
+title:                "C: Päivämäärän muuntaminen merkkijonoksi"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tervetuloa tutustumaan C-ohjelmointikieleen ja siihen, miten päivämäärä voidaan muuttaa merkkijonoksi. Tämä taito on hyödyllinen monissa ohjelmointiprojekteissa, ja voit käyttää sitä luomaan erilaisia toimintoja, kuten kalentereita tai aikaleimoja.
+Monissa ohjelmointiprojekteissa on tarve muuttaa päivämäärä merkkijonoksi. Tähän voi olla monia syitä, kuten päiväyksen näyttäminen käyttäjälle tai datan tallentaminen tietokantaan. Jotkut kielet tarjoavat sisäänrakennettuja toimintoja päivämäärän muuttamiseen merkkijonoksi, mutta C-kielessä tätä ei ole.
 
-## Miten tehdä
+## Miten
 
-Aloitetaan esimerkillä, joka muuttaa päivämäärän merkkijonoksi. Tarvitsemme päivämäärän tallennettuna päivä, kuukausi ja vuosi -muuttujiin, ja käytämme sprintf-funktiota muuntamaan arvot merkkijonoksi.
+Päivämäärän muuttaminen merkkijonoksi C-kielessä vaatii hieman enemmän työtä kuin muissa kielissä. Ensimmäinen askel on luoda päivämäärää edustava rakenne, esimerkiksi käyttäen `struct tm` -rakennetta. Sitten voimme käyttää `strftime()` -funktiota muuttamaan tämän rakenneeseen tallennetun päivämäärän merkkijonoksi halutussa muodossa.
 
-```C
-#include <stdio.h>
-#include <stdlib.h>
-
-int main()
-{
-   int day, month, year;
-   char date[12];
-   
-   printf("Anna päivämäärä muodossa dd/mm/yyyy: ");
-   scanf("%d/%d/%d", &day, &month, &year);
-   
-   sprintf(date, "%02d/%02d/%04d", day, month, year);
-   // Lukuja esittävät %d merkinnät 
-   // muunnetaan merkkijonoiksi käyttämällä %02d ja %04d 
-   
-   printf("Päivämäärä merkkijonona: %s", date);
-   
-   return 0;
-}
 ```
-
-Output:
-```
-Anna päivämäärä muodossa dd/mm/yyyy: 12/05/2020
-Päivämäärä merkkijonona: 12/05/2020
-```
-
-Seuraavaksi katsotaan esimerkki, joka käyttää strftime-funktiota muuttamaan päivämäärän merkkijonoksi annetun formaatin mukaan. Tässä tapauksessa käytämme myös ajan tietoja, joten sisällytämme tietyt kirjastot.
-
-```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-   time_t now;
-   struct tm *timeinfo;
-   char date[50];
-   
-   time(&now);
-   timeinfo = localtime(&now);
-   
-   strftime(date, 50, "Tänään on %d.%m.%Y klo %H:%M:%S", timeinfo);
-   // %d edustaa päivää, %m kuukautta, %Y vuotta, %H tuntia, %M minuutteja, %S sekunteja
-   
-   printf("%s", date);
-   
-   return 0;
+int main() {
+    // Luodaan päivämäärää edustava rakenne
+    struct tm date = { .tm_year = 2021, 
+                        .tm_mon  = 7,
+                        .tm_mday = 30 };
+
+    // Muutetaan päivämäärä merkkijonoksi
+    char dateString[11]; // tarpeeksi pitkä pvm-merkkijonolle
+    strftime(dateString, 11, "%d.%m.%Y", &date);
+
+    // Tulostetaan merkkijono
+    printf("Päivämäärä muodossa DD.MM.YYYY: %s\n", dateString);
+
+    return 0;
 }
 ```
-Output:
+
+Tämä koodi tuottaa seuraavan tulosteen:
+
 ```
-Tänään on 12.05.2020 klo 13:25:43
+Päivämäärä muodossa DD.MM.YYYY: 30.07.2021
 ```
 
-## Syvemmälle
+On tärkeää huomata, että `strftime()` hyväksyy useita erilaisia muotoilumerkkejä eri päivämäärän osien muotoiluun. Esimerkiksi `%d` tarkoittaa päivää, `%m` kuukautta ja `%Y` vuotta. Voit löytää lisää erilaisia muotoilumerkkejä [täältä](https://www.cplusplus.com/reference/ctime/strftime/).
 
-Päivämäärän muuntaminen merkkijonoksi voi aluksi vaikuttaa hankalalta ja monimutkaiselta, mutta onneksi C-kielessä on useita hyödyllisiä funktioita ja kirjastoja, jotka helpottavat tätä tehtävää. sprintf-funktio ottaa argumenteiksi merkkijonon ja numeromuuttujia ja muuntaa ne halutun muotoon, kun taas strftime hyödyntää aikatietoja ja antaa mahdollisuuden valita haluamansa formaatin.
+## Syvällinen sukellus
 
-Olisi myös hyvä tutustua erilaisiin aikafunktioihin C-kielessä ja niiden käyttöön. Näiden avulla voit tehdä tarkempia ja monipuolisempia toimintoja päivämäärän käsittelyssä.
+Päivämäärän muuttamisen merkkijonoksi takana on oikeastaan kaksi tärkeää käsitettä: päivämäärän esittäminen ja merkkijonojen käsittely.
+
+Päivämäärän esittäminen on tärkeä asia, sillä meidän täytyy varmistaa, että päivämäärä näytetään halutussa muodossa. Tämä tarkoittaa esimerkiksi oikean päivämääräjärjestyksen ja erottimien käyttöä. Merkkijonojen käsittely puolestaan tarkoittaa, että meidän täytyy varata tarpeeksi tilaa merkkijonolle ja tarkistaa, ettei se ylitä maksimipituutta.
+
+On myös tärkeää huomata, että C-kielessä olevat päivämäärämuodot ovat hieman erilaisia kuin esimerkiksi JavaScriptissä tai Pythonissa. Tämä tarkoittaa, että jos siirrät koodia toisesta kielestä, päivämäärän muotoilu voi vaatia hieman muuntamista.
 
 ## Katso myös
 
-- [C-kieli - Ohjelmointipaketti](https://www.cs.cmu.edu/~ab/15-123S11/Lectures/Lecture%2003.pdf)
-- [sprintf-funktion dokumentaatio](https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html)
-- [strftime-funktion dokumentaatio](https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html#Low_002dLevel-Time-String-Parsing)
+- [strftime() -funktio C-kielen dokumentaatiossa](https://www.cplusplus.com/reference/ctime/strftime/)
+- [Päivämäärän esittäminen ja merkkijonojen käsittely C-kielessä](https://www.geeksforgeeks.org/converting-strings-numbers-structures-c/)
+- [Esimerkkejä päivämäärän

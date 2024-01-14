@@ -1,51 +1,45 @@
 ---
-title:    "Java: 현재 날짜 가져오기"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/getting-the-current-date.md"
+title:                "Java: 현재 날짜 가져오기"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 현재 날짜를 가져오는 것이 중요한 이유
+# 현재 날짜를 가져오는 이유
 
-컴퓨터 프로그래밍을 할 때, 모든 프로그램은 현재 시간과 날짜에 많은 의존성이 있습니다. 예를 들어, 파일 생성일, 시간 기반 이벤트 스케줄링, 사용자 인터페이스 등에서 현재 날짜를 사용하여 프로그램의 동작을 조정할 수 있습니다. 이러한 이유로 현재 날짜를 가져오는 것은 중요합니다.
+Java 프로그래밍을 하는 많은 사람들은 현재 날짜에 대한 정보를 필요로 합니다. 예를 들어, 파일 이름에 날짜를 추가하거나 특정 이벤트나 기록을 남기기 위해 현재 날짜를 사용할 수 있습니다. 또한, 날짜를 비교하거나 분석하는 프로그램을 작성할 때도 현재 날짜가 필요합니다.
 
-## 어떻게: 현재 날짜를 가져오는 방법
+# 가져오는 방법
 
-Java에서 현재 날짜를 가져오는 방법은 간단합니다. Date 클래스를 사용하여 현재 시간을 객체로 생성하고, SimpleDateFormat 클래스를 사용하여 원하는 형식으로 날짜를 출력할 수 있습니다. 아래의 예제 코드를 참고해보세요.
+자바에서 현재 날짜를 가져오는 방법은 간단합니다. Date 라이브러리를 사용하면 됩니다. 다음은 자바 코드로 현재 날짜를 가져오는 예시입니다.
 
 ```Java
 import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class CurrentDate {
-  public static void main(String[] args) {
-    // 현재 날짜 객체 생성
-    Date currentDate = new Date();
-
-    // 날짜 출력 형식 지정
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
-
-    // 현재 날짜를 지정한 형식으로 출력
-    System.out.println("현재 날짜: " + dateFormat.format(currentDate));
-  }
+    public static void main(String[] args) {
+        // 현재 날짜를 가져오는 Date 객체 생성
+        Date currentDate = new Date();
+        // 현재 날짜를 출력
+        System.out.println("Current Date: " + currentDate);
+    }
 }
 ```
 
-위의 코드를 실행하면 아래와 같은 결과가 출력됩니다.
+위의 코드를 실행하면 다음과 같은 결과가 출력됩니다.
 
 ```
-현재 날짜: 2021년 01월 01일
+Current Date: Mon Oct 18 14:10:05 KST 2021
 ```
 
-## 깊이 있는 정보: 현재 날짜를 가져오는 원리
+# 깊이 파헤치기
 
-Java에서는 Date 클래스를 사용하여 현재 날짜와 시간을 객체로 생성할 수 있습니다. 이 클래스는 다양한 메소드를 제공하여 날짜와 시간을 다룰 수 있도록 도와줍니다. 또한 SimpleDateFormat 클래스를 사용하여 날짜를 지정한 형식으로 출력할 수 있으며, 이 클래스는 많은 형식 지정자를 제공하여 날짜를 원하는 형식으로 변환할 수 있도록 해줍니다.
+현재 날짜를 가져오는 방법은 실제로 Date 객체 생성 후 시간을 설정하는 것입니다. Date 객체는 기본적으로 현재 시간으로 초기화되며, getTime() 메소드를 사용하여 밀리초 단위로 시간을 가져올 수 있습니다. 또한, Date 객체를 원하는 형식으로 출력하려면 SimpleDateFormat 클래스를 사용하여 형식을 지정할 수 있습니다.
 
-Java 8부터는 새로운 날짜와 시간 API인 LocalDateTime 클래스를 제공합니다. 이 클래스가 제공하는 메소드를 사용하여 날짜와 시간을 더 쉽게 다룰 수 있습니다.
+# 관련 자료
 
-# 참고자료
-
-- [Java Date 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java SimpleDateFormat 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java 8 LocalDateTime 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+- [Java Date 클래스 API 문서](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [SimpleDateFormat 클래스를 이용한 날짜 출력 예시](https://www.javatpoint.com/java-date-format)
+- [자바로 날짜와 시간 다루는 방법](https://www.baeldung.com/java-date-time)

@@ -1,36 +1,91 @@
 ---
-title:    "C#: Umwandlung eines Datums in eine Zeichenfolge"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/converting-a-date-into-a-string.md"
+title:                "C#: Umwandeln von einem Datum in einen String."
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Umwandeln von Datum in einen String ist eine grundlegende Funktion, die jeder Programmierer in C# kennen sollte. Ob Sie ein Anfänger sind oder ein erfahrener Entwickler, es ist wichtig zu verstehen, wie man dies in C# richtig macht. In diesem Blogbeitrag werden wir uns genauer damit beschäftigen, warum wir Datumsangaben in Strings umwandeln müssen und wie man dies in C# effektiv durchführt.
+Das Konvertieren von Daten in einen String ist ein häufiger Schritt beim Programmieren. Es kann hilfreich sein, um Daten besser lesbar oder manipulierbar zu machen. In diesem Blogbeitrag werden wir uns genauer anschauen, wie man in C# ein Datum in einen String umwandelt.
 
-## Wie man Datum in String konvertiert
+## Wie geht das?
 
-Um in C# ein Datum in einen String zu konvertieren, benötigen wir die Methode "ToString()". Diese Methode gehört zu jeder Datum- und Uhrzeitklasse in C# und ermöglicht es uns, ein Datum in verschiedenen Formaten als String auszugeben. Schauen wir uns ein Beispiel an:
+Um ein Datum in einen String umzuwandeln, gibt es verschiedene Methoden in C#. Eine davon ist die Verwendung der `ToString()`-Methode, die in das `DateTime`-Objekt eingebaut ist. Diese Methode ermöglicht es uns, das Datum in verschiedenen Formaten darzustellen, je nach Bedarf. Hier ist ein Beispielcode, der ein Datum in den String "dd.MM.yyyy" umwandelt:
 
 ```C#
-using System;
 
-DateTime date = new DateTime(2020, 6, 23);
-string dateString = date.ToString("dd/MM/yyyy");
+DateTime now = DateTime.Now;
+string dateAsString = now.ToString("dd.MM.yyyy");
+Console.WriteLine(dateAsString);
 
-Console.WriteLine(dateString); // output: 23/06/2020
 ```
 
-In diesem Beispiel haben wir ein DateTime-Objekt "date" erstellt, das den 23. Juni 2020 darstellt. Dann haben wir die Methode "ToString()" verwendet, um dieses Datum in einem benutzerdefinierten Format ("dd/MM/yyyy") als String auszugeben. Sie können das Format nach Ihren Wünschen anpassen, indem Sie verschiedene Parameter in die Methode einfügen. Weitere Informationen zu den verfügbaren Formaten finden Sie in der offiziellen C#-Dokumentation.
+Ausgabe:
 
-## Tiefer Einblick
+```
+05.10.2021
+```
 
-Die Konvertierung von Datum in String mag einfach erscheinen, aber es gibt einige Dinge, die man beachten sollte. Zum Beispiel kann es in Fällen, in denen verschiedene Sprachen und Kulturen eine Rolle spielen, zu Problemen kommen. Stellen Sie sich vor, Sie möchten das Datum in einigen Ländern als "MM/dd/yyyy" und in anderen als "dd/MM/yyyy" ausgeben. Um dies richtig zu machen, müssen Sie die richtige CultureInfo verwenden und diese in der ToString()-Methode festlegen. Ein weiterer Faktor ist die Verwendung von DateTime-Formatierungszeichenfolgen, die einige spezielle Zeichen enthalten, um das Datum in der gewünschten Form auszugeben. Es ist wichtig, diese sorgfältig auszuwählen, um die beste Darstellung des Datums zu erreichen.
+Wir können auch andere Formate wie "MM/dd/yyyy" oder "yyyy-MM-dd" verwenden, je nachdem, welches Format in unserer Anwendung benötigt wird. Hier ist ein Beispiel, wie wir das Format "MM/dd/yyyy" verwenden können:
+
+```C#
+
+DateTime now = DateTime.Now;
+string dateAsString = now.ToString("MM/dd/yyyy");
+Console.WriteLine(dateAsString);
+
+```
+
+Ausgabe:
+
+```
+10/05/2021
+```
+
+Es ist auch möglich, zusätzliche Informationen hinzuzufügen, wie z.B. die Uhrzeit. Dazu können wir das Format "dd.MM.yyyy HH:mm:ss" verwenden:
+
+```C#
+
+DateTime now = DateTime.Now;
+string dateAsString = now.ToString("dd.MM.yyyy HH:mm:ss");
+Console.WriteLine(dateAsString);
+
+```
+
+Ausgabe:
+
+```
+05.10.2021 15:54:42
+```
+
+Wir können auch das Kürzen und Auffüllen von Werten steuern, indem wir das Format "`d`" oder "`D`" verwenden. Hier ist ein Beispiel, wie wir die Monatsbezeichnungen auf 3 Buchstaben kürzen können:
+
+```C#
+
+DateTime now = DateTime.Now;
+string dateAsString = now.ToString("dd.MMM.yyyy");
+Console.WriteLine(dateAsString);
+
+```
+
+Ausgabe:
+
+```
+05.Okt.2021
+```
+
+Weitere Informationen zu den verfügbaren Formatierungsoptionen finden Sie in der offiziellen C#-Dokumentation.
+
+## Tiefergehende Informationen
+
+Beim Konvertieren von Daten in einen String gibt es einige wichtige Dinge zu beachten. Zum Beispiel kann es zu Fehlern kommen, wenn die verwendeten Formate nicht richtig interpretiert werden können. Es ist auch wichtig, sich über unterschiedliche lokale Datumsformate bewusst zu sein, da diese je nach Region variieren können.
+
+Darüber hinaus gibt es auch Möglichkeiten, benutzerdefinierte Formate zu erstellen und zu verwenden. Wenn Sie tiefer in das Thema einsteigen möchten, empfehlen wir Ihnen, sich mit der `DateTimeFormatInfo`-Klasse und ihren Eigenschaften und Methoden vertraut zu machen.
 
 ## Siehe auch
 
-- Microsoft C# Dokumentation: [ToString() Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring)
-- Codecademy: [C# Date and Time](https://www.codecademy.com/learn/learn-c-sharp/modules/csharp-date-and-time)
-- YouTube Video: [C# Tutorial - DateTime Format](https://www.youtube.com/watch?v=WLTwATsKtFk)
+- [C#-DateTime.ToString() Methode](https://docs.microsoft.com/de-de/dotnet/api/system.datetime.tostring?view=net-5.0)
+- [DateTimeFormatInfo-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.globalization.datetimeformatinfo?view=net-5.0)

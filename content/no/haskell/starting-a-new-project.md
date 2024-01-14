@@ -1,42 +1,37 @@
 ---
-title:    "Haskell: Å starte et nytt prosjekt"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/starting-a-new-project.md"
+title:                "Haskell: Å starte et nytt prosjekt"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å begynne et nytt prosjekt kan virke skremmende, spesielt for nybegynnere i Haskell. Men det å lage dine egne programmer er en flott måte å lære språket og utforske dets muligheter. Det kan også være en spennende måte å løse problemer på og skape noe nytt og unikt.
+Starte et nytt prosjekt kan virke som en overveldende oppgave, men det kan også være en spennende og givende opplevelse. Ved å lære Haskell og utvikle dine egne prosjekter, vil du få en dypere forståelse for funksjonell programmering og kunne utvide dine programmeringsferdigheter.
 
-## Hvordan du går frem
+## Hvordan
 
-Først må du installere Haskell på datamaskinen din. Dette kan enkelt gjøres ved å følge instruksjonene på haskell.org. Når du har satt opp Haskell, er du klar til å begynne å kode.
+For å starte et nytt Haskell-prosjekt, må du først sørge for at du har installert GHC (Glasgow Haskell Compiler) og Cabal (et bygg- og pakkesystem for Haskell). Deretter kan du opprette et nytt prosjekt ved å følge disse trinnene:
 
-For å opprette et nytt prosjekt, må du først lage en mappe og gi den et passende navn. Innenfor denne mappen kan du opprette en fil ved å bruke .hs-filendelsen for å indikere at den inneholder Haskell-kode. Deretter kan du åpne filen i en teksteditor og begynne å skrive koden din.
+1. Åpne et terminalvindu og naviger til en mappe der du ønsker å lagre prosjektet ditt.
+2. Skriv følgende kommando for å opprette en ny mappe for prosjektet ditt: ```mkdir project-name```
+3. Gå inn i den nye mappen ved å skrive: ```cd project-name```
+4. Skriv kommandoen ```cabal init``` for å opprette en ny konfigurasjonsfil for prosjektet ditt.
+5. Deretter vil du bli bedt om å svare på noen spørsmål om prosjektet ditt, som navn, forfatter, beskrivelse osv. Du kan også la noen felter være tomme og gå videre til neste trinn.
+6. Dette vil opprette en mappestruktur for prosjektet ditt og en cabal fil som holder konfigurasjonsinformasjonen din.
 
-For å kompilere og kjøre koden din, kan du bruke kommandoen `ghc navn-på-filen.hs` i terminalen. Når koden er ferdigkjørt, vil du se resultatet i terminalen.
+Etter at du har satt opp prosjektet ditt, kan du begynne å kode i Haskell ved å åpne filen som heter ```Main.hs``` i ```app```-mappen. Du kan også legge til avhengigheter til prosjektet ditt ved å redigere cabal-filen og deretter kjøre ```cabal install``` i terminalen for å installere dem.
 
-La oss se på et enkelt eksempel på hvordan man kan skrive et "Hello, World!" program i Haskell:
+## Dykk dypere
 
-```Haskell
--- Her definerer vi en funksjon kalt "main"
-main = putStrLn "Hello, World!"
-```
+Når du har satt opp prosjektet ditt, kan du begynne å utforske ulike biblioteker og funksjoner i Haskell for å bygge et mer komplekst program. Du kan også bruke konseptene du har lært i kurs eller på nettet til å skrive mer effektiv kode og implementere nye funksjoner.
 
-Dette vil skrive ut "Hello, World!" når du kjører koden din. 
-
-## Dypdykk
-
-Når du starter et nytt prosjekt i Haskell, er det viktig å ha en plan og forstå hva du vil oppnå. En god måte å begynne på er å bryte ned prosjektet ditt i mindre deler og fokusere på en del av gangen. Dette gjør det lettere å håndtere og feilsøke din kode.
-
-Det kan også være lurt å undersøke eksisterende prosjekter og se hvordan andre har løst lignende problemer. Dette kan hjelpe deg med å få en bedre forståelse av Haskell og lære fra andres erfaringer.
-
-Ikke vær redd for å gjøre feil, det er en naturlig del av læring. Haskell har et sterkt type-system som kan hjelpe deg med å unngå noen vanlige feil, men det er fortsatt viktig å teste og feilsøke koden din grundig.
+Det er også viktig å huske på å organisere koden din på en strukturert og lesbar måte. Dette vil ikke bare gjøre det enklere for deg å implementere nye funksjoner, men det vil også gjøre koden din mer vedlikeholdsvennlig og forståelig for andre.
 
 ## Se også
 
-- [Haskell.org](https://www.haskell.org/)
-- [Haskell Wikibooks](https://en.wikibooks.org/wiki/Haskell)
-- [Haskell on Reddit](https://www.reddit.com/r/haskell/)
+- [Offisiell Haskell-hjemmeside](https://www.haskell.org/)
+- [Haskell Tutorial for Beginners](https://www.tutorialspoint.com/haskell/index.htm)
+- [Haskell Programming From First Principles](https://haskellbook.com/)

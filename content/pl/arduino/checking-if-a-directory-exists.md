@@ -1,65 +1,57 @@
 ---
-title:    "Arduino: Weryfikacja istnienia katalogu"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/checking-if-a-directory-exists.md"
+title:                "Arduino: Sprawdzanie istnienia katalogu"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli jesteś twórcą projektów z użyciem Arduino, pewnie wiesz, jak ważne jest, aby program był nie tylko wydajny, ale także bezpieczny. Czasami może się zdarzyć, że potrzebujesz sprawdzić, czy określony folder istnieje przed wykonaniem określonych działań. W tym artykule dowiesz się, dlaczego i jak można to zrobić w Arduino.
+W dzisiejszych czasach programowanie stało się nieodłączną częścią naszego codziennego życia. Jeśli jesteś pasjonatem elektroniki i programowania, to z pewnością słyszałeś o Arduino - małej, ale potężnej platformie do tworzenia projektów związanych z automatyką, robotyką czy Internetem rzeczy. Używając Arduino, możemy sprawić, że nasze pomysły ożyją i staną się rzeczywistością. Jedną z ważnych umiejętności w programowaniu Arduino jest sprawdzanie istnienia katalogu. W tym artykule dowiesz się, dlaczego jest to ważne i jak to zrobić.
 
 ## Jak to zrobić
 
-Sprawdzenie, czy dany folder istnieje na karcie SD lub w pamięci wewnętrznej Arduino, jest stosunkowo prostym procesem. Wystarczy użyć funkcji `SD.exists()` lub `SPIFFS.exists()`, w zależności od tego, gdzie znajduje się folder, który chcesz sprawdzić. 
+Aby sprawdzić, czy katalog istnieje, użyjemy funkcji ```SD.exists()``` wraz z biblioteką SD dla Arduino. Poniższy kod pokazuje, jak to zrobić:
 
-```Arduino
+```
 #include <SD.h>
-#include <SPIFFS.h>
+
+// piny używane do komunikacji z czytnikiem kart SD
+const int chipSelect = 4;
 
 void setup() {
-  // inicjalizacja modułu SD lub SPIFFS
-  SD.begin(4); // 4 to numer pinu CS dla modułu SD
-  SPIFFS.begin();
+  // inicjalizacja połączenia z czytnikiem kart SD
+  if (!SD.begin(chipSelect)) {
+    Serial.println("Nie można znaleźć karty SD");
+    return;
+  }
+
+  // sprawdzenie, czy katalog "Dane" istnieje
+  if (SD.exists("/Dane")) {
+    Serial.println("Katalog istnieje!");
+  } else {
+    Serial.println("Katalog nie istnieje");
+  }
 }
 
 void loop() {
-
-  // sprawdzenie czy folder "dane" istnieje na karcie SD
-  if(SD.exists("/dane")) {
-    Serial.println("Folder istnieje na karcie SD!");
-  } else {
-    Serial.println("Nie znaleziono folderu na karcie SD.");
-  }
-
-  // sprawdzenie czy folder "dane" istnieje w pamięci wewnętrznej
-  if(SPIFFS.exists("/dane")) {
-    Serial.println("Folder istnieje w pamięci wewnętrznej!");
-  } else {
-    Serial.println("Nie znaleziono folderu w pamięci wewnętrznej.");
-  }
-
-  // odczekanie 5 sekund przed kolejną pętlą
-  delay(5000);
+  // kod wykonywany w pętli
 }
 ```
 
-Przykładowy output:
+Po uruchomieniu programu, w monitorze szeregowym powinieneś zobaczyć informację, czy katalog "Dane" istnieje czy nie. Pamiętaj, że aby kod działał poprawnie, musisz mieć podłączoną kartę SD do czytnika.
 
-```
-Folder istnieje na karcie SD!
-Nie znaleziono folderu w pamięci wewnętrznej.
-```
+## Pogłębiona wiedza
 
-## Głębsza analiza
+Teraz, gdy wiemy, jak sprawdzać istnienie katalogu, warto dowiedzieć się nieco więcej na temat tej funkcji. Funkcja ```SD.exists()``` zwraca wartość logiczną - prawda lub fałsz. Jeśli katalog istnieje, funkcja zwróci prawdę, w przeciwnym wypadku zwróci fałsz. Jest to bardzo przydatne, gdy tworzymy projekty, w których chcemy mieć pewność, że dany katalog lub plik istnieje przed wykonaniem pewnych operacji na nim.
 
-Funkcje `SD.exists()` i `SPIFFS.exists()` zwracają wartość `true` lub `false` w zależności od tego, czy folder istnieje lub nie. Można również wykorzystać je do sprawdzenia, czy plik lub inny obiekt istnieje w danym folderze. 
+## Zobacz także
 
-Warto również pamiętać, że przy użyciu `SPIFFS` trzeba najpierw zainicjalizować pamięć wewnętrzną przy pomocy `SPIFFS.begin()`, co zostało pokazane w przykładzie powyżej.
+- [Dokumentacja funkcji SD.exists()](https://www.arduino.cc/en/Reference/SDExists)
+- [Przykładowy projekt z wykorzystaniem funkcji SD.exists()](https://create.arduino.cc/projecthub/Arduino%20Genuino/is-there-a-file-3c17b3)
 
-## Zobacz również
+Nadzieję, że ten artykuł pomógł Ci zrozumieć, dlaczego i jak sprawdzać istnienie katalogu w programowaniu Arduino. Zachęcamy do dalszego samodzielnego eksperymentowania z tą funkcją oraz do tworzenia fascynujących projektów za pomocą Arduino.
 
-1. Dokumentacja Arduino: [Sprawdzanie czy plik istnieje](https://www.arduino.cc/en/Reference/SDexists)
-2. Instrukcja obsługi modułu SD z Arduino: [Używanie modułu SD z Arduino](https://learn.adafruit.com/adafruit-tutorial-sparkfun-microsd-shield-arduino-library)
-3. Wideo tutorial na YouTube: [Jak używać karty SD w projekcie Arduino](https://www.youtube.com/watch?v=4DzMKqZZ9N0)
+**Uwaga:** Aby funkcja ```SD.exists()``` działała poprawnie, musisz mieć zainstalowaną bibliotekę SD. Jeśli nie masz jej na swoim komputerze, możesz ją pobrać z [oficjalnej strony Arduina](https://www.arduino.cc/en/Reference/SD), a następnie dodać ją do swojego projektu w Arduino IDE.

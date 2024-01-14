@@ -1,52 +1,52 @@
 ---
-title:    "PHP: Testien kirjoittaminen"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/writing-tests.md"
+title:                "PHP: Testien kirjoittaminen"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+Miksi Testausten Kirjoittaminen on Tärkeää PHP-ohjelmoinnissa
 
-Kirjoittaminen testejä on tärkeä osa PHP-ohjelmointia, sillä se auttaa varmistamaan ohjelman laadun ja vähentää mahdollisia virheitä järjestelmässä.
+Testausten kirjoittaminen on olennainen osa PHP-ohjelmointia. Se auttaa varmistamaan koodin laadun ja toimivuuden sekä vähentää mahdollisia bugeja ja virheitä. Lisäksi testien kirjoittaminen on myös hyvä tapa dokumentoida koodia ja auttaa uusien kehittäjien ymmärtämään sitä.
 
-## Kuinka kirjoittaa testejä PHP:lla
+Miten
 
-Testien kirjoittaminen PHP:lla on helppoa, ja se tehdään yleensä jokaisen toiminnon yhteydessä. Alla on esimerkki siitä, kuinka voit kirjoittaa yksinkertaisen testin funktiolle, joka laskee kahden luvun summan.
+Testausten kirjoittaminen PHP:ssa on helppoa ja vaivatonta. Seuraavassa on muutama esimerkki, kuinka voit kirjoittaa testejä ohjelmallesi.
 
-```PHP
-function sum($a, $b){
-  return $a + $b;
+````PHP
+public function testLaskePisteet()
+{
+  $lukujoukko = [5, 8, 3, 9];
+  $pisteet = laskePisteet($lukujoukko);
+  $this->assertEquals(25, $pisteet);
 }
+````
 
-echo sum(2, 3); // Output: 5
-```
+Yllä olevassa esimerkissä luodaan testi, joka varmistaa, että funktio `laskePisteet` laskee oikein pistemäärän annetusta lukujoukosta. Voit myös luoda useita testejä eri skenaarioille ja varmistaa, että ohjelmointisi toimii oikein kaikissa tilanteissa.
 
-Nyt voimme kirjoittaa yksinkertaisen testin, joka testaa että funktio palauttaa odotetun arvon.
-
-```PHP
-// Tarkistetaan että funktio palauttaa oikean summan
-function test_sum(){
-  $expected = 5;
-  $actual = sum(2, 3);
-  if ($expected === $actual) {
-    echo "Testi onnistui! Summa on 5.";
-  } else {
-    echo "Testi epäonnistui! Summa ei vastaa odotettua arvoa.";
-  }
+````PHP
+public function testKorvaaKirjaimet()
+{
+  $merkkijono = "Hello World";
+  $uusiMerkkijono = korvaaKirjaimet($merkkijono);
+  $this->assertEquals("H3ll0 W0rld", $uusiMerkkijono);
 }
+````
 
-test_sum(); // Output: Testi onnistui! Summa on 5.
-```
+Toisessa esimerkissä testataan funktiota `korvaaKirjaimet`, joka korvaa merkkijonossa olevat kirjaimet numeroina. Tekemällä erilaisia testejä eri skenaarioille voit varmistaa, että funktiosi toimii oikein kaikilla mahdollisilla syötteillä.
 
-## Syvempi sukellus testien kirjoittamiseen
+Syötteen antamisen lisäksi on myös tärkeää testata mahdollisia virhetilanteita ja niiden käsittelyä. Tämä auttaa varmistamaan, että ohjelmasi toimii oikein myös poikkeustilanteissa.
 
-Testien kirjoittaminen auttaa paitsi varmistamaan ohjelman toimivuuden, myös helpottaa koodin korjaamista ja ylläpitoa tulevaisuudessa. Hyvä käytäntö on kirjoittaa testejä jokaiselle toiminnolle ja varmistaa, että testit kattavat kaikki mahdolliset tilanteet ja antavat oikeat tulokset.
+Syvempi Sukellus
 
-Voit myös käyttää erilaisia testikehyksiä, kuten PHPUnit, joka tarjoaa lisäominaisuuksia testien kirjoittamiseen ja suorittamiseen.
+Testien kirjoittamisessa on monia erilaisia tekniikoita ja työkaluja, jotka voivat auttaa sinua kirjoittamaan parempia testejä. Esimerkiksi PHPUnit on yleisesti käytetty työkalu PHP-testausten kirjoittamiseen. Lisäksi voit myös tutustua pohjatestaukseen, joka on tekniikka, jossa luodaan yksinkertaisia ja toimivia testejä jo ennen varsinaisen koodin kirjoittamista. Tämä auttaa varmistamaan koodin laadun jo varhaisessa vaiheessa.
 
-## Katso myös
+Ulkoisten API:en ja kolmannen osapuolen kirjastojen testaaminen on myös tärkeää, jotta voit varmistaa niiden toimivuuden omissa projekteissasi. Niitä voi testata esimerkiksi käyttäen mock-kirjastoja, jotka luovat keinotekoisia vastauksia testien suorittamista varten.
 
-- [PHPUnit](https://phpunit.de/)
-- [PHP-testausopas](https://www.php.net/manual/en/writing-tests.php)
-- [Testien kirjoittaminen PHP:lla](https://www.tutorialspoint.com/phpunit/phpunit_writing_tests.htm)
+Katso Myös
+
+ - Lisätietoa PHPUnitista: https://phpunit.de/
+ - Pohjatestauksen opas: https://www.guru99.com/string-mockup-test-design-technique.html
+ - Mock-kirjastot: https://phpmock.readthedocs.io/en/latest/

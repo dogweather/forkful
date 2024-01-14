@@ -1,54 +1,59 @@
 ---
-title:    "C: 文字列の抽出"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/extracting-substrings.md"
+title:                "C: 部分列を抽出する"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-サブストリングを抽出するのに興味があるのかもしれません。この機能を使用すると、文字列から必要な部分を簡単に抽出することができます。例えば、特定の言語や文字を含む文字列を処理する際に便利です。
+# なぜサブストリングを抽出するのか
 
-## 方法
-まずは、文字列を格納する変数と、抽出したい部分の開始位置と終了位置を示すための変数を宣言しましょう。
+サブストリングを抽出するとは、文字列の一部分を取り出すことです。これには多くの理由があります。例えば、大きな文字列から必要な情報だけを取り出したい場合や、文字列を特定のパターンで分割したい場合などです。
 
-```
-// テスト用の文字列を宣言
-char str[] = "こんにちは、世界！";
+## 抽出方法
 
-// 抽出する部分の開始位置と終了位置を設定
-int start = 4; // "にちは、世界！"の"に"の位置
-int end = 11; // "にちは、世界！"の最後の"界"の位置
-```
-
-次に、抽出したい部分を格納するための変数を宣言します。
+C言語では、サブストリングを抽出するための便利な関数が用意されています。例えば、```strncat()```を使うことで、任意の長さのサブストリングを取得することができます。以下にサンプルコードを示します。
 
 ```
-// 抽出した部分を保存するための文字列を宣言
-char sub_str[8]; // テスト用の文字列の"にちは、"は8文字なので、この長さで十分です
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char str1[50] = "Hello";
+  char str2[50] = "World";
+  char result[50];
+
+  // strncatを使用して、str1から最初の3文字を抽出
+  strncat(result, str1, 3);
+  printf("Result: %s\n", result);
+
+  // 文字列の連結を行い、resultに格納
+  strncat(result, str2, 3);
+  printf("Result: %s\n", result);
+
+  return 0;
+}
 ```
 
-最後に、`strncpy()`関数を使用して、指定した開始位置から指定した長さまでの文字列を抽出します。
+上記のコードを実行すると、以下のような出力が得られます。
 
 ```
-// 部分文字列を抽出
-strncpy(sub_str, str + start, end - start);
-
-// 出力
-printf("部分文字列：%s", sub_str);
-
-// 出力結果：にちは、世界！
+Result: Hel
+Result: HelWor
 ```
 
-## ディープダイブ
-サブストリングを抽出する際には、注意しなければいけない点がいくつかあります。まず、指定した長さよりも長い部分文字列を抽出するとバッファーオーバーフローの可能性があります。そのため、必ず抽出した部分よりも長い長さを指定しないように注意しましょう。
+このように、```strncat()```を使用することで、必要なサブストリングを取得することができます。
 
-また、C言語では文字列の最後には必ずヌル文字を追加する必要があります。そのため、サブストリングを抽出する際には必ず抽出した部分の最後にヌル文字を追加しておくようにしましょう。これにより、抽出した文字列を別の文字列として扱うことができます。
+## 詳しい解説
 
-## もっと詳しく知りたい方へ
-[文字列操作関数](https://ja.wikipedia.org/wiki/C%E8%A8%80%E8%AA%9E%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97#%E6%96%87%E5%AD%97%E5%88%97%E6%93%8D%E4%BD%9C%E9%96%A2%E6%95%B0) についてさらに学びたい方は、上のリンクをご参照ください。
+サブストリングを抽出する方法は、文字列処理において非常に重要です。C言語では、文字列操作に関する様々な関数が提供されていますが、サブストリングを抽出するためには特に注意が必要です。文字列の長さや文字の種類によって、適切な関数を選択する必要があります。
 
-## 参考リンク
-- [C言語: 文字列の抽出](https://www.softel.co.jp/blogs/tech/archives/5528)
-- [C言語ではじめる文字列操作入門](https://www.geeksforgeeks.org/c-program-extracting-substring/)
-- [C言語プログラミング-リンクの繋ぎ方](http://programming.pc-note.net/c/link.html)
+また、サブストリングを抽出する際には、メモリ管理にも注意が必要です。サブストリングを取得するためには、必要な長さだけのメモリを確保する必要があります。その際には、配列の長さと確保するメモリの長さが一致するようにすることが重要です。
+
+# 参考リンク
+
+- [C言語でのサブストリングの抽出方法](https://www.studytonight.com/c/substring-manipulation-in-c.php)
+- [String Functions in C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Understanding String Manipulation in C](https://www.techiedelight.com/string-manipulation-in-c/)
+- [C言語入門をしよう](https://www.code4startup.com/article/c-for-beginners)

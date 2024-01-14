@@ -1,48 +1,44 @@
 ---
-title:    "Go: 컴퓨터 프로그래밍에서의 명령 줄 인자 읽기"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/reading-command-line-arguments.md"
+title:                "Go: 컴퓨터 프로그래밍: 커맨드 라인 인자 읽기"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-왜 *command line arguments*를 읽는 데에 집중하는 것이 좋을까요? <Organization> 프로그래머로서, 많은 작업을 효율적으로 처리하기 위해서는 사용자의 입력을 이해하고 활용하는 것이 중요합니다. 이 포스트에서는 *Go* 언어에서 *command line arguments*를 어떻게 읽을 수 있는지 알아보겠습니다.
 
-## 방법
-다음은 *Go* 코드를 사용하여 *command line arguments*를 읽는 방법입니다. 
+Go 프로그래밍 언어를 사용할 때 가장 많이 사용되는 기능 중 하나는 커맨드 라인 인수를 읽는 것입니다. 이 기능을 사용하면 사용자는 프로그램 실행 시 인수를 제공할 수 있으며, 이를 통해 프로그램에 영향을 미칠 수 있습니다. 그래서 우리는 Go에서 커맨드 라인 인수를 읽는 방법에 대해 알아보겠습니다.
 
-```Go
-package main
+## 우리가 어떻게 할까
 
-import (
-    "fmt"
-    "os"
-)
+커맨드 라인 인수를 읽는 것은 아주 간단합니다. 사용자는 프로그램을 실행할 때 함께 제공하는 인수를 받아와서 사용할 수 있습니다. 예를 들어, 다음과 같이 프로그램을 실행하는 경우를 생각해보겠습니다.
 
+```
+go run main.go -input hello -output world
+```
+
+위 예시에서 `-input`과 `-output`은 각각 인수의 이름이며, `hello`와 `world`는 각 인수에 전달된 값입니다. 이를 Go 코드로 작성하면 다음과 같을 것입니다.
+
+```
 func main() {
-    // os.Args를 이용하여 커맨드라인 입력을 저장합니다.
-    args := os.Args
-    
-    // 첫번째 요소는 프로그램명이므로 무시합니다.
-    // 실제 입력은 두번째 요소부터 시작합니다.
-    // 반복문을 통해 모든 인자를 출력합니다.
-    for i := 1; i < len(args); i++ {
-        fmt.Println(args[i])
-    }
+    input := flag.String("input", "", "input string")
+    output := flag.String("output", "", "output string")
+    flag.Parse()
+
+    fmt.Println(*input, *output)
 }
 ```
 
-이 예시 코드를 *main.go*라는 이름으로 저장하고, 커맨드 라인에서 `go run main.go argument1 argument2`와 같이 실행하면 아래와 같은 출력을 볼 수 있습니다.
+위 코드에서는 `flag` 패키지를 사용하여 인수를 읽고, `flag.String` 메서드를 통해 각 인수의 이름, 기본값, 및 사용법을 설정합니다. 그리고 `flag.Parse()`를 호출하여 인수를 해석해줍니다. 마지막으로 인수 값을 출력하는 예시를 추가했습니다.
 
-```
-argument1
-argument2
-```
+## 더 깊이 들어가기
 
-## 딥 다이브
-위의 예시 코드에서 `os.Args`는 입력된 모든 커맨드라인 인자를 슬라이스로 저장합니다. 여기서 슬라이스는 배열과 유사한 형태로, 인덱스를 통해 각 인자에 접근할 수 있습니다. 또한, `os.Args[0]`는 프로그램명을 나타내며 실제 커맨드 라인 인자는 `os.Args[1]`부터 시작합니다.
+Go에서 인수를 읽는 방법은 `flag` 패키지를 사용하는 것 외에도 `os.Args` 배열을 직접 접근하거나 `os.Args[1:]`를 사용하여 첫 번째 인수부터 끝까지 접근하는 방법도 있습니다. 또한 `flag` 패키지를 사용할 때 더 다양한 타입의 인수를 처리할 수 있으며, `flag` 패키지를 확장하여 사용자 정의 인수도 처리할 수 있습니다. 따라서 `flag` 패키지를 사용하는 방법을 익히는 것이 유용할 것입니다.
 
-## 이것도 봐주세요
-- [Go 공식 문서 - Command-line arguments](https://golang.org/doc/articles/Command-line-arguments.md)
-- [Go 언어 슬라이스(Slices) 개념 이해하기](https://velog.io/@kimmachinegun/Golang-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8A%A4-Slices)
+## 참고
+
+- [Go 프로그래밍 튜토리얼](https://tour.golang.org/welcome)
+- [Go 공식 문서 - flag 패키지](https://golang.org/pkg/flag/)
+- [Go 공식 문서 - os 패키지](https://golang.org/pkg/os/)

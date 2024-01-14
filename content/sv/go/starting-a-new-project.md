@@ -1,18 +1,19 @@
 ---
-title:    "Go: Att börja ett nytt projekt"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/starting-a-new-project.md"
+title:                "Go: Att starta ett nytt projekt"
+programming_language: "Go"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skapa ett nytt projekt kan vara ett spännande och givande äventyr för alla programmerare. Det ger dig möjlighet att utforska nya koncept, utmana dig själv och lyckas med en unik lösning. Dessutom har Go ett lättanvänt och effektivt syntax som gör det till ett utmärkt språk för att skapa projekt.
+Att starta ett nytt projekt i Go kan verka överväldigande till en början, men det finns många fördelar med att lära sig och använda detta programmeringsspråk. Go är snabbt, tillförlitligt och enkelt att läsa och skriva kod. Det är också ett populärt språk inom mjukvaruutveckling och används många gånger för back-end-system och datahantering. Om du vill bli en allsidig programmerare och lära dig ett kraftfullt språk, så är Go definitivt värt att titta närmare på.
 
-## Hur
+## Hur man gör det
 
-Det första steget för att skapa ett nytt Go-projekt är att installera Go-miljön på din dator. Sedan kan du välja mellan att skapa antingen ett enkelt konsolprogram eller ett webbprogram. Nedan följer ett exempel på hur man skapar ett enkelt "Hello World" -program i Go:
+Att starta ett nytt Go-projekt är enkelt och kan göras på bara några få steg. Först och främst behöver du Go installerat på din dator. Sedan kan du skapa en ny mapp för ditt projekt och en ny Go-fil med filändelsen ".go". Öppna filen i din favorittextredigerare och börja koda!
 
 ```Go
 package main
@@ -20,47 +21,20 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hej världen!")
+    fmt.Println("Välkommen till mitt Go-projekt!")
 }
 ```
 
-Detta program kommer att skriva ut "Hej världen!" på skärmen när du kör det. Det är enkelt, men det ger dig en förståelse för Go-programmering.
-
-För att skapa ett webbprogram kan du använda Go:s mångsidiga paket för att skapa en HTTP-server och sedan skriva kod för att hantera GET- och POST-förfrågningar. Här är ett exempel på hur man skapar en server som skriver ut ett meddelande när du besöker den i din webbläsare:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"net/http"
-)
-
-func main() {
-	// Skapa en server som hanterar GET-förfrågningar till /
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Välkommen till min webbserver!")
-	})
-	
-	// Starta servern och ange vilken port den ska lyssna på
-	http.ListenAndServe(":8080", nil)
-}
-```
-
-Med dessa enkla exempel kan du snabbt komma igång med att skapa ditt första Go-projekt. Det finns många resurser online för att lära dig mer om Go-programmering och utveckla mer avancerade projekt.
+I detta enkla exempel importerar vi "fmt" paketet för att kunna använda funktionen "Println", som skriver ut en sträng i terminalen. För att utföra programmet, navigera till mappen i din terminal och kör kommandot "go run filnamn.go". Du bör nu se utskriften "Välkommen till mitt Go-projekt!".
 
 ## Djupdykning
 
-För att lyckas med ditt nya Go-projekt är det viktigt att ha en bra plan och en tydlig målsättning. Börja med att identifiera vad ditt projekt ska uppnå och vilka problem det kommer att lösa. Sedan kan du börja skissa på en arkitektur och en struktur för ditt projekt.
+För att göra ditt Go-projekt mer avancerat, kan du börja använda paket från Go standardbiblioteket eller installera externa paket från Go-filer. Du kan också använda Go-moduler för att hantera beroenden och projektstruktur.
 
-En annan viktig sak att tänka på är att dela upp ditt projekt i mindre moduler som kan utvecklas och testas separat. Detta gör det lättare att felsöka och underhålla din kod.
-
-Det är också viktigt att använda dokumentation och kommentarer för att göra koden mer läsbar och lättare att förstå för andra utvecklare som eventuellt kommer att bidra till ditt projekt.
-
-Slutligen är det viktigt att vara flexibel och anpassa sig till eventuella ändringar eller utökningar som kan behöva göras under utvecklingsprocessen. Med en stark grund och en tydlig målsättning kommer ditt Go-projekt att lyckas.
+En annan viktig aspekt av att starta ett nytt Go-projekt är att använda rätt katalogstruktur. Du kanske vill ha en mapp för din kod, en för tester och en för externa paket. Det är viktigt att organisera din kod på ett sätt som är lätt att förstå och underhålla.
 
 ## Se också
 
-- [Go-språkets officiella hemsida](https://golang.org)
-- [Go-byggarens dokumentation](https://golang.org/cmd/go)
-- [Dokumentation för Go-paket](https://pkg.go.dev)
+- [Go-programmeringsspråkets officiella webbplats](https://golang.org/)
+- [Go-programmeringsspråkets dokumentation](https://golang.org/doc/)
+- [Tutorials Point's "Learn Go in 24 Hours" guide](https://www.tutorialspoint.com/go/index.htm)

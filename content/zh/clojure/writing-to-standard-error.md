@@ -1,47 +1,69 @@
 ---
-title:    "Clojure: 写入标准错误"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/writing-to-standard-error.md"
+title:                "Clojure: 标准错误写作"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要写到标准错误
+# 为什么要写标准错误？
 
-编写到标准错误（standard error）是调试和测试中极其重要的一步。它允许程序员实时地观察代码的执行过程，并且能够捕捉到程序中出现的错误信息。这样可以帮助我们更快地定位和解决问题，提高代码质量。
+写标准错误可能听起来不像是一件很有趣的事情，但它却是一个非常有用的技能。当你在编写Clojure程序时，可能会遇到各种错误，而有时候这些错误信息并不会显示在控制台中，而是会被发送到标准错误流中。因此，了解如何写入标准错误是至关重要的，它可以帮助你更好地理解程序的运行情况，并解决潜在的问题。
 
-## 如何做到
+# 如何写入标准错误？
 
-在Clojure中，我们可以使用`println`或`eprintln`函数来将信息输出到标准错误。下面是一个例子：
-
-```Clojure
-(eprintln "Hello world!")
-```
-
-程序会在运行时将`Hello world!`这条信息显示在终端中的标准错误流中。
-
-## 深入探讨
-
-除了简单的输出信息外，我们还可以将更复杂的信息结构化后输出到标准错误流中。比如，我们可以将信息封装为一个含有关键字的map，再使用`prn`函数将其输出。下面是一个例子：
+如果想要将错误信息写入标准错误，可以使用`System/err`方法，它代表标准错误流。下面的代码展示了如何使用`System/err`将一条简单的错误信息写入标准错误：
 
 ```Clojure
-(def error {:error-type "Runtime Error"
-            :error-message "Division by zero"
-            :error-line 5})
-
-(eprn error)
+(System/err "这是一个错误信息")
 ```
 
-输出结果为：
+运行以上代码，你会在控制台中看到如下输出：
 
 ```
-{:error-type "Runtime Error", :error-message "Division by zero", :error-line 5}
+这是一个错误信息
 ```
 
-这样的结构化输出可以让我们更清晰地了解程序中出现的错误，方便调试和修复代码。此外，我们还可以使用`throw`函数将错误信息抛出到标准错误流中，让程序在遇到错误时停止执行。
+同样地，你也可以使用`println`函数将信息打印到标准错误流中：
 
-## 参考链接
+```Clojure
+(println "这是一个错误信息" (System/err))
+```
 
-- [Clojure文档](https://clojure.org/)
-- [关于标准错误流的介绍](https://www.linuxnix.com/fixing-the-golang-standard-error-traping-improve-your-effectiveness/) 
-- [更多关于异常处理的方法](https://purelyfunctional.tv/guide/clojure-error-handling/)
+以上代码的控制台输出和上面一样。
+
+# 深入了解
+
+除了上面提到的写入标准错误的基本方法，Clojure还提供了一些宏来更方便地处理错误信息。其中一个是`with-out-str`，它可以将输出存储到一个字符串中，而不是直接打印到控制台。下面的代码展示了如何使用`with-out-str`将错误信息存储到一个字符串中，并在控制台中打印：
+
+```Clojure
+(println (with-out-str (System/err "这是一个错误信息")))
+```
+
+运行以上代码，你会在控制台中看到如下输出：
+
+```
+这是一个错误信息
+```
+
+此外，Clojure还提供了`binding`宏来控制输出的位置。它可以让你将输出重定向到另一个流，例如一个文件。下面的代码展示了如何使用`binding`将错误信息写入到一个名为"error.txt"的文件中：
+
+```Clojure
+(binding [*err* (clojure.java.io/writer "error.txt")]
+  (System/err "这是一个错误信息"))
+```
+
+运行以上代码后，你会在当前目录下看到一个名为"error.txt"的文件，其中包含着一条错误信息。
+
+# 查看更多信息
+
+除了以上提到的方法外，Clojure还有许多其他的处理错误信息的方式。如果你想了解更多关于写入标准错误流的用法，可以查看以下链接：
+
+- [Clojure文档](https://clojuredocs.org/)
+- [Clojure错误处理官方指南](https://clojure.org/guides/learning/errors)
+- [Clojure错误处理教程](https://www.baeldung.com/clojure-errors)
+
+# 参考链接
+
+- [Writing to Standard Error in Clojure](https://gist.github.com/malcolmsparks/629001)

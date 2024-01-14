@@ -1,55 +1,45 @@
 ---
-title:    "Gleam: Calculando uma data no futuro ou no passado"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/calculating-a-date-in-the-future-or-past.md"
+title:                "Gleam: Calculando uma data no futuro ou passado."
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que
+## Por que
 
-Calcular datas no futuro ou no passado é uma habilidade útil e prática para programadores Gleam. Ao utilizar essa funcionalidade, é possível automatizar tarefas que envolvem datas e tempo, facilitando a vida dos desenvolvedores.
+Calcular datas no futuro ou no passado pode ser útil em várias situações, como agendar eventos ou tarefas, planejar viagens ou acompanhar prazos importantes.
 
-# Como fazer
+## Como fazer
 
-Para calcular uma data no futuro ou no passado em Gleam, é necessário utilizar a função `Date.add` e `Date.subtract` respectivamente. Essas funções recebem três argumentos: a data base, o número de dias a serem adicionados ou subtraídos e a unidade de tempo (dias, semanas, meses ou anos).
+Para realizar essa tarefa no Gleam, podemos utilizar a função `DateTime.add` ou `DateTime.sub`. A primeira recebe uma data e um intervalo de tempo como parâmetros e retorna uma nova data avançando o intervalo de tempo especificado. Já a segunda faz o oposto, retrocedendo o intervalo de tempo fornecido.
 
-Vejamos alguns exemplos de código para entender melhor como utilizar essas funções:
-
-```Gleam
-import gleam/time.Date
-
-let data_atual = Date.now()
-let data_futura = Date.add(data_atual, 7, Date.Day)
-let data_passada = Date.subtract(data_atual, 14, Date.Week)
-
-// Saída:
-// data_futura: 2021-06-21T00:00:00.000Z
-// data_passada: 2021-05-28T00:00:00.000Z
-```
-
-No exemplo acima, utilizamos as funções `Date.add` e `Date.subtract` para calcular uma data 7 dias no futuro e uma data 14 dias no passado a partir da data atual. É importante ressaltar que a data base também pode ser uma data específica, e não apenas a data atual.
-
-# Aprofundando-se
-
-Além das funções `Date.add` e `Date.subtract`, também é possível realizar cálculos mais complexos utilizando a função `Date.shift`. Essa função permite adicionar ou subtrair uma certa quantidade de múltiplas unidades de tempo de uma vez.
-
-Vejamos um exemplo de código utilizando essa função:
+Vejamos um exemplo de uso da função `DateTime.add` para calcular uma data 1 semana no futuro:
 
 ```Gleam
-import gleam/time.Date
+import gleam/datetime.{ DateTime, Week }
 
-let data_base = Date.from_naive(2021, 4, 15, 0, 0, 0) // 15 de abril de 2021
-let data_shifted = Date.shift(data_base, (2, Date.Week), (3, Date.Month), (1, Date.Year))
-
-// Saída:
-// data_shifted: 2022-09-26T00:00:00.000Z
+let data_atual = DateTime.now()
+let data_futura = DateTime.add(Week(1), data_atual)
 ```
 
-Neste exemplo, utilizamos a função `Date.shift` para adicionar 2 semanas, 3 meses e 1 ano à data base, resultando na data final de 26 de setembro de 2022.
+Neste caso, a variável `data_futura` terá o valor correspondente a uma semana após a data atual.
 
-# Veja também
+## Mergulho profundo
 
-- [Documentação oficial do módulo `gleam/time`](https://gleam.run/modules/time) 
-- [Cálculo de datas em outras linguagens de programação](https://www.educative.io/blog/calculate-difference-between-two-time-datetime-objects-python)
-- [Exemplo de uso da função `Date.shift`](https://qiita.com/peccul/items/a988254476573e718c71)
+Caso queiramos calcular uma data futura ou passada com base em um intervalo de tempo específico, podemos utilizar a função `DateTime.from_parts`. Esta função permite fornecer diretamente os valores para ano, mês, dia, hora, minuto e segundo da data desejada. Por exemplo, para calcular uma data daqui a 2 anos e 3 meses, podemos fazer o seguinte:
+
+```Gleam
+import gleam/datetime.{ DateTime }
+
+let data_futura = DateTime.from_parts(year=DateTime.now().year + 2, month=DateTime.now().month + 3, day=DateTime.now().day, hour=DateTime.now().hour, minute=DateTime.now().minute, second=DateTime.now().second)
+```
+
+Note que utilizamos os valores atuais para hora, minuto e segundo, já que não foi especificado um intervalo de tempo para estes.
+
+## Veja também
+
+- [Documentação oficial do módulo DateTime do Gleam](https://gleam.run/modules/gleam_datetime/latest/DateTime.html)
+- [Tutorial de programação em Gleam](https://gleam.run/blog/getting-started-with-gleam-to-build-a-todo-backend.html)
+- [Exemplos de projetos em Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)

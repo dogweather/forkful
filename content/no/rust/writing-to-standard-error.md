@@ -1,47 +1,82 @@
 ---
-title:    "Rust: Skriving til standard feil"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/writing-to-standard-error.md"
+title:                "Rust: Skriving til standardfeil"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor skrive til standard error i Rust?
 
-Å skrive til standard feil er en viktig del av å lage pålitelige og robuste Rust-programmer. Når du skriver til standard feil, er det en effektiv måte å håndtere feil og uventede situasjoner som kan oppstå i løpet av kjøretiden til programmet ditt.
+Å skrive til standard error er en viktig måte å håndtere feil og debugging i Rust-programmering. Når ting går galt, er det nyttig å kunne sende ut spesifikke feilmeldinger til standard error for å hjelpe med å identifisere og løse problemer.
 
-## Hvordan
+# Hvordan gjøre det i praksis
 
-Rust har en innebygd funksjon for å skrive til standard feil, som kalles `eprintln!()` . Denne funksjonen tar inn en formateringsstreng og eventuelle variabler som du vil skrive ut, og skriver dem til standard feil i stedet for standard utgang.
-
-Her er et eksempel på hvordan du kan bruke `eprintln!()` for å skrive ut en feilmelding hvis en fil ikke kan åpnes:
+Først må vi importere `std::io` modulen for å kunne skrive til standard error. Her er et eksempel på en enkel funksjon som skriver en feilmelding til standard error:
 
 ```Rust
-use std::fs::File;
+use std::io;
 
-let file = File::open("my_file.txt");
+fn main() {
+    println!("Dette er en test av å skrive til standard error!");
 
-match file {
-    Ok(f) => {
-        // gjør noe med filen her
-    },
-    Err(e) => {
-        // skriv feilmelding til standard feil
-        eprintln!("Kunne ikke åpne filen: {}", e);
-    }
+    let err = "Dette er en feilmelding."; // En variabel for vår feilmelding
+    let stderr = &mut io::stderr(); // Oppretter en mutable reference til standard error
+    writeln!(stderr, "{}", err).expect("Kunne ikke skrive til standard error.");
 }
 ```
 
-Når programmet ditt kjører, vil feilmeldingen bli skrevet til standard feil i stedet for å bli vist på skjermen. Dette gjør det enklere å fange opp potensielle problemer og håndtere dem på en hensiktsmessig måte.
+La oss si at vi ønsker å inkludere linjenummeret i vår feilmelding slik at det blir enklere å spore opp hvor i programmet feilen oppstod. Da kan vi benytte oss av `line!` makroen, som returnerer et tall for nåværende linje i koden:
 
-## Dypdykk
+```Rust
+use std::io;
 
-Å skrive til standard feil kan også være nyttig når du vil logge informasjon om programmet ditt under kjøring. Ved å skrive til standard feil i stedet for standard utgang, kan du få en tydeligere og mer organisert utskrift av dataene dine.
+fn main() {
+    let linje = line!(); // Henter nåværende linjenummer
+    let err = format!("En feil oppstod på linje {}.", linje); // Oppretter feilmelding med linjenummeret
+    let stderr = &mut io::stderr(); // Oppretter en mutable reference til standard error
+    writeln!(stderr, "{}", err).expect("Kunne ikke skrive til standard error.");
+}
+```
 
-I tillegg kan du også bruke `eprintln!()` for å logge informasjon om debug-utskrifter mens du utvikler og tester programmet ditt. Dette er spesielt nyttig hvis du jobber med flertrådede applikasjoner eller komplekse systemer.
+Dette vil gi oss en feilmelding som inneholder linjenummeret, noe som kan være veldig nyttig når man jobber med større og mer komplekse koder.
 
-## Se også
+# Dypdykk i å skrive til standard error
 
-- [Rust dokumentasjon: eprintln!()](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Rust referanse: std::io::stderr()](https://doc.rust-lang.org/std/io/fn.stderr.html)
-- [Rust guide: håndtering av feil](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+Et annet nyttig aspekt ved å skrive til standard error i Rust er muligheten til å benytte seg av `Error` traitet. Dette lar oss lage egendefinerte feilobjekter som kan gi mer nyttig informasjon om feil som oppstår.
+
+La oss for eksempel si at vi ønsker å lage et bildebibliotek hvor vi ønsker å ha en egen feiltype for når et bilde ikke kan lastes inn. Vi kan da definere vår egen `BildeError` som implementerer `Error` traitet:
+
+```Rust
+use std::error::Error;
+use std::fmt;
+
+pub struct BildeError {
+    pub beskrivelse: String,
+}
+
+// Vi implementerer fmt::Display og fmt::Debug for å kunne skrive ut feilmeldingen
+impl fmt::Display for BildeError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Kunne ikke laste inn bilde: {}", self.beskrivelse)
+    }
+}
+
+impl fmt::Debug for BildeError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "Kunne ikke laste inn bilde: {}", self.beskrivelse)
+    }
+}
+
+// Og implementerer Error traitet for å få tilgang til metoder som for eksempel backtrace()
+impl Error for BildeError {}
+```
+
+Vi kan nå bruke vårt egendefinerte `BildeError` for å håndtere feil ved innlasting av bilder på en mer strukturert og informativ måte.
+
+# Se også
+
+- [Rust dokumentasjon om io::stderr()](https://doc.rust-lang.org/std/io/fn.stderr.html)
+- [Rust dokumentasjon om line!() makroen](https://doc.rust-lang.org/std/macros/macro.line.html)
+- [Rust dokumentasjon om Error traitet](https://doc.rust-lang.org/std/error/trait.Error.html)

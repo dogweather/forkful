@@ -1,49 +1,64 @@
 ---
-title:    "Arduino recipe: Writing a text file"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-a-text-file.md"
+title:                "Arduino recipe: Writing a text file"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-As Arduino programmers, we often use text files to store and retrieve data in our projects. Whether it's saving sensor readings or creating a simple user interface, writing a text file can be a useful and efficient way to store information. In this blog post, we will explore how to write a text file using Arduino programming. 
+## Why
+If you're an Arduino enthusiast, you may have come across the need to write a text file using your board. This can serve a variety of purposes such as storing sensor data, creating a log, or even just printing a message on a display. Whatever the reason may be, learning how to write a text file using Arduino can open up a whole new world of possibilities for your projects.
 
-## How To 
-To write a text file using Arduino, you will need to use the SD (Secure Digital) library. This library allows us to access a microSD card and read and write files on it. Here is a simple example of how to write a text file using Arduino:
+## How To
+
+To write a text file using Arduino, we will be using the `File` library. Firstly, make sure to include the library by adding `#include <File.h>` at the top of your code. Next, initialize an object of the `File` class by calling `File myFile = File("filename.txt", FILE_WRITE);` where "filename.txt" is the name of your text file and FILE_WRITE ensures that we can write to the file.
+
+Next, we can use the `print()` or `println()` functions to write text to our file. For example, `myFile.println("Hello World!");` will write the text "Hello World!" to our file. To save the changes, we need to close the file by calling `myFile.close();`.
+
+Now, let's see an example of writing sensor data to a text file:
 
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
+#include <File.h>
 
-//Initialize microSD card
-if (!SD.begin(4)) {
-	Serial.println("Initialization failed!");
-	return;
+void setup() {
+
+  // initialize serial communication
+  Serial.begin(9600);
+
+  // open file in write mode
+  File myFile = File("sensor_data.txt", FILE_WRITE);
+  
+  // read temperature sensor value
+  float temp = analogRead(A0) * 0.48828125; // convert from ADC value to Celsius
+  
+  // write temperature to file
+  myFile.print("Current temperature: ");
+  myFile.print(temp);
+  myFile.println(" °C");
+
+  // close file
+  myFile.close();
+
 }
-//Create and open a new text file
-File myFile = SD.open("myFile.txt", FILE_WRITE);
-//Write data to the file
-myFile.println("This is a text file written using Arduino!");
-//Close the file
-myFile.close();
+
+void loop() {
+  // do nothing
+}
 ```
 
-The `FILE_WRITE` mode in the `open()` function allows us to write to the file, while the `println()` function writes a line of text to the file. In this example, the file was named "myFile.txt", but you can choose any name you want.
+After running this code, you should see a new text file named "sensor_data.txt" containing the current temperature in Celsius. You can modify the code to write any other type of data or message to your text file.
 
-To check if the text file was successfully written, you can use a microSD card reader and open the file on your computer. You should see the text we wrote in the file "This is a text file written using Arduino!".
+## Deep Dive
 
-## Deep Dive 
-Now, let's dive deeper into the process of writing a text file with Arduino. It's important to note that the SD library has a limitation when it comes to file sizes - the maximum file size is 2GB. 
+The `print()` and `println()` functions can be used to write not just text, but also variables and other data types to your file. You can also use the `write()` function to write individual characters.
 
-When creating a new file, we use the `open()` function as shown in the example above. This function takes in two parameters - the file name and the mode. The mode argument defines how we want to interact with the file - whether we want to read, write, or both. Some of the common mode options are `FILE_READ`, `FILE_WRITE`, and `FILE_APPEND` which allows us to append new data to the end of the file without overwriting the existing data.
+By default, the `File` library will create a new text file if it doesn't already exist. However, you can also use the `FILE_APPEND` flag when initializing your `File` object to append new data to an existing file instead of overwriting it.
 
-After creating the file, we can use the `write()` function to write individual characters or `println()` to write full lines of text. Once we are done writing, we need to close the file using the `close()` function to ensure all data is saved to the file before we access it again.
+It's important to note that the `File` library has a limited amount of memory for storing data. Therefore, it's recommended to use this method for smaller amounts of data, such as sensor readings, and not for large text files.
 
-## See Also 
-For more information on writing text files using Arduino, you can check out these resources: 
-- [Arduino - SD Library](https://www.arduino.cc/en/reference/SD)
-- [Tutorial: How to Write a Text File to an SD Card using Arduino](https://randomnerdtutorials.com/guide-for-writing-a-text-file-to-an-sd-card-using-arduino/) 
-- [How to Save Data to an SD Card using Arduino](https://www.makerguides.com/arduino-sd-card-write-text-file-example/)
+## See Also
 
-Now that you know how to write a text file using Arduino, you can use this knowledge in your own projects. Happy coding!
+- [Arduino File Class Reference](https://www.arduino.cc/reference/en/libraries/file/)
+- [Writing to Files on Arduino](https://www.arduino.cc/en/Tutorial/WriteToFile)
+- [How to Write Text Files](https://forum.arduino.cc/index.php?topic=421610.0)

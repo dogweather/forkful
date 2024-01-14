@@ -1,47 +1,44 @@
 ---
-title:    "Elixir: Testien kirjoittaminen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-tests.md"
+title:                "Elixir: Testien kirjoittaminen"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Kirjoitamme testejä?
+## Miksi
 
-Kirjoittaminen testejä on tärkeä osa Elixir-ohjelmointia, sillä se auttaa varmistamaan, että koodimme toimii halutulla tavalla ja välttämään virheitä. Testien avulla voimme myös helpommin muokata ja parantaa koodia, koska tiedämme miten muutokset vaikuttavat jo olemassa olevaan koodiin.
+Miksi testaaminen on tärkeää Elixir-ohjelmoinnissa? Onko se vain ylimääräinen askel vai hyödyllinen osa ohjelmistokehitystä? Tässä blogipostauksessa käymme läpi testaamisen tärkeyden ja hyödyt Elixirin ohjelmointikielen näkökulmasta.
 
-## Kuinka: Esimerkkejä ja koodilohkoja
+## Miten
 
-Testien kirjoittaminen Elixirissä on helppoa käyttämällä sisäänrakennettua ExUnit-testikehystä. Alla on esimerkki yksinkertaisesta testitapauksesta, jossa haluamme tarkistaa, että yhteenlasku toimii oikein.
+Testaaminen Elixirissä on helppoa ja välttämätöntä. Testien avulla voidaan varmistaa ohjelman toiminnan oikeellisuus ja ehkäistää mahdollisia bugeja ja virheitä. Alla on muutamia esimerkkejä testien kirjoittamisesta Elixirillä ja niiden tulosteista.
 
 ```Elixir
-defmodule Laskin do
-  def summa(a, b) do
-    a + b
-  end
-end
-
-defmodule LaskinTesti do
+defmodule CalculatorTest do
   use ExUnit.Case
-  
-  test "summa palauttaa oikean tuloksen" do
-    assert Laskin.summa(2, 3) == 5
+
+  test "addition" do
+    assert Calculator.add(2, 3) == 5
+  end
+
+  test "division" do
+    assert Calculator.divide(10, 2) == 5
   end
 end
 ```
 
-Yllä olevassa esimerkissä luomme moduulin nimeltä "Laskin", jossa on toiminto summa, joka laskee kahden numeron summan. Sitten testaamme tätä toimintoa luomalla LaskinTesti-moduulin ja kirjoittamalla yhden testitapauksen, jossa odotamme, että toiminto palauttaa oikean tuloksen. Käyttämällä assert-komentoa voimme tarkistaa, että toiminto palauttaa odotetun tuloksen. 
+Testikoodi on hyvä kirjoittaa samassa tiedostossa kuin varsinaisen koodin kanssa, ja ne suoritetaan erillisissä testeissä. Testauksen avulla voidaan myös helposti varmistaa, että uudet muutokset eivät riko olemassa olevaa toiminnallisuutta.
 
-Kun ajamme testit käyttämällä "mix test" komentoa, tulisi saada viesti "1 test, 0 virhettä".
+## Syvemmälle
 
-## Syvempää tietoa testeistä
+Testaaminen Elixirissä perustuu ExUnit-testikehykseen ja automaattisen testauksen periaatteisiin. Elixirin avoin syntaksirakenne mahdollistaa yksinkertaisten ja luettavien testien kirjoittamisen. ExUnit tarjoaa myös käteviä toimintoja, kuten testien ajamisen tiettyjen funktioiden ja moduulien mukaan.
 
-Testien kirjoittaminen Elixirissä vaatii hieman tutustumista ExUnit-testikehykseen ja sen käyttöön, mutta se on ehdottomasti vaivan arvoista. Hyviä käytäntöjä testien kirjoittamisessa ovat esimerkiksi testikattavuuden tarkistaminen ja testaustölkkipakan käyttö monimutkaisempien testien kirjoittamiseen.
-
-On myös tärkeää muistaa, että testien kirjoittaminen on jatkuva prosessi ja niitä tulisi muokata ja parantaa koodin muuttuessa.
+On myös hyvä huomioida, että testien kirjoittaminen voi tuntua ylimääräiseltä työltä aluksi, mutta se säästää lopulta aikaa ja vaivaa korjaamalla mahdollisia bugeja ja virheitä myöhemmin ohjelman elinkaaren aikana.
 
 ## Katso myös
 
-- [ExUnit-testikehyksen dokumentaatio](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Testikattavuuden tarkistaminen Elixirissä](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html#code-coverage)
-- [Testaustölkkipakan käyttö Elixirissä](https://github.com/lpil/elixir-test-tube)
+- [Elixir-käsikirja: Testaus](https://elixir-lang.org/getting-started/testing.html)
+- [Test-Driven Development Elixirillä](https://medium.com/@jeffkreeftmeijer/test-driven-development-in-elixir-f5143abea963)
+- [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)

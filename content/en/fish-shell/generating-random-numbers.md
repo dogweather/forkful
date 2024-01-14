@@ -1,64 +1,48 @@
 ---
-title:    "Fish Shell recipe: Generating random numbers"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell recipe: Generating random numbers"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever needed to generate random numbers while coding in Fish Shell? Maybe you were working on a game, a simulation, or a statistical analysis project. Whatever the reason may be, generating random numbers is a useful skill to have in your programming repertoire.
+Generating random numbers is a common task in programming that is essential for various applications such as creating randomized tests, simulations, and games. By understanding how to generate random numbers using the Fish Shell, you can add an element of unpredictability to your code.
 
 ## How To
 
-Coding in Fish Shell, generating random numbers is as easy as using the `random` command. This command can generate both integers and floating-point numbers. Here's an example of how to generate 5 random integers between 1 and 10:
+Coding a simple command to generate a random number in Fish Shell is straightforward. The syntax is as follows:
 
 ```Fish Shell
-set i 0
-while [ $i -lt 5 ]
-  echo (random --min 1 --max 10)
-  set i (math $i + 1)
-end
+echo (math —random)
 ```
 
-The output of this code will look something like this:
+The output of this command will be a random decimal value between 0 and 1.
 
-```
-3
-7
-9
-1
-4
-```
-
-If you need to generate floating-point numbers, you can use the `-l` flag to specify the number of decimals. For example, to generate 5 random floating-point numbers between 0 and 1 with 2 decimal places:
+To generate a random integer within a specific range, we can add parameters to the `math-random` command. For example, if we want to generate a random number between 1 and 10, we can modify the command to this:
 
 ```Fish Shell
-set i 0
-while [ $i -lt 5 ]
-  echo (random --min 0 --max 1 -l 2)
-  set i (math $i + 1)
-end
+echo (math —random —min=1 —max=10)
 ```
 
-The output of this code will look something like this:
+The output from this command will be a random integer between 1 and 10.
 
+We can also use the `seq` command to generate a list of random numbers. The syntax is as follows:
+
+```Fish Shell
+seq 10 | math —random
 ```
-0.34
-0.72
-0.05
-0.98
-0.11
-```
+
+This command will generate 10 random decimal values and output them on separate lines.
 
 ## Deep Dive
 
-The `random` command in Fish Shell uses the Mersenne Twister algorithm to generate random numbers. This is a pseudorandom number generator that is known for its long period and high quality of randomness. It is also efficient and easy to implement, making it a popular choice for generating random numbers in many programming languages.
-
-If you want to dig deeper into the technical details of generating random numbers with the Mersenne Twister algorithm, there are plenty of resources available online. You can also find documentation for the `random` command in the Fish Shell website.
+Behind the scenes, the Fish Shell uses a pseudo-random number generator (PRNG) to generate random numbers. A PRNG is an algorithm that uses a seed value to generate a sequence of numbers that appear random. However, since the algorithm is deterministic, the same seed value will produce the same sequence of numbers. In Fish Shell, the seed value is based on the current time, meaning that every time you run the command, you will get a different sequence of numbers.
 
 ## See Also
 
-- Fish Shell Documentation on `random`: https://fishshell.com/docs/current/cmds/random.html
-- Wikipedia page on Mersenne Twister: https://en.wikipedia.org/wiki/Mersenne_Twister
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Generating Random Numbers in Other Programming Languages](https://www.geeksforgeeks.org/generating-random-numbers-in-java/)
+- [Understanding Pseudo-Random Number Generators](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/understanding-pseudo-random-number-generators)

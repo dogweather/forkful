@@ -1,45 +1,86 @@
 ---
-title:    "Rust: Sjekke om en mappe eksisterer"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/checking-if-a-directory-exists.md"
+title:                "Rust: Å sjekke om en mappe eksisterer"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Mange programmer trenger å sjekke om en bestemt mappe eksisterer før de kan gjøre en handling. Dette kan være for å sikre at filer ikke blir overskrevet, eller for å lage en ny mappe hvis den ikke finnes. I denne bloggposten vil jeg forklare hvordan man kan sjekke om en mappe eksisterer ved hjelp av Rust programmeringsspråket.
 
-Å sjekke om en mappe eksisterer er en viktig del av programmering i Rust, spesielt når du jobber med filsystemer. Dette kan hjelpe deg med å håndtere feil og sikre at programmet ditt fungerer som det skal.
-
-## Hvordan
-
-For å sjekke om en mappe eksisterer i Rust, kan du bruke funksjonen `Path::is_dir()` fra standardbiblioteket. Her er et eksempel på hvordan du kan bruke denne funksjonen i et program:
+## Hvordan 
+For å sjekke om en mappe eksisterer i Rust, kan vi bruke funksjonen ```std::fs::metadata```. Denne funksjonen returnerer en ```std::fs::Metadata``` struct som inneholder informasjon om en gitt fil eller mappe. Vi kan deretter bruke metoden ```std::fs::Metadata::is_dir()``` for å sjekke om det er en mappe.
 
 ```Rust
 use std::fs;
 
-fn main() {
-    let directory = "min_mappe";
+let file_path = "/din/mappe/sti";
 
-    if fs::metadata(directory).is_ok() && fs::metadata(directory).unwrap().is_dir() {
-        println!("Mappen {} eksisterer!", directory);
+if let Ok(metadata) = fs::metadata(file_path) {
+    if metadata.is_dir() {
+        println!("Mappen eksisterer!");
     } else {
-        println!("Mappen {} eksisterer ikke.", directory);
+        println!("Mappen eksisterer ikke.");
     }
+} else {
+    println!("Kunne ikke finne metadata for gitt sti.");
 }
 ```
 
-I dette eksempelet bruker vi først `fs::metadata()` for å hente metadata om mappen. Hvis dette er vellykket, kan vi bruke `is_dir()` for å sjekke om det er en mappe. Hvis det er tilfelle, vil vi få en beskjed om at mappen eksisterer.
+Output:
 
-## Dypdykk
+```
+Mappen eksisterer!
+```
 
-Når vi bruker `fs::metadata()` for å sjekke om mappen eksisterer, må vi også håndtere eventuelle feil som kan oppstå. Dette kan gjøres ved hjelp av `Result`-typen og `unwrap()`-metoden.
+## Deep Dive
+Hvis vi vil gå dypere inn i sjekkingen av en mappe, kan vi også bruke funksjonen ```std::path::Path::exists()```. Denne funksjonen sjekker direkte om en fil eller mappe eksisterer og returnerer et ```bool``` resultat.
 
-En annen måte å sjekke om en mappe eksisterer på, er å bruke `Path::exists()` i stedet for `is_dir()`. Forskjellen er at `exists()` vil returnere `true` selv om det er en fil og ikke en mappe med det aktuelle navnet.
+```Rust
+use std::path::Path;
 
-Det er også verdt å merke seg at disse funksjonene bare sjekker om en fil eksisterer og ikke om du har tilgang til den. Derfor er det fortsatt viktig å håndtere eventuelle feil som kan oppstå når du prøver å åpne en fil eller mappe.
+let file_path = "/din/mappe/sti";
+
+if Path::new(file_path).exists() {
+    println!("Mappen eksisterer!");
+} else {
+    println!("Mappen eksisterer ikke.");
+}
+```
+
+Output:
+
+```
+Mappen eksisterer!
+```
+
+Et annet alternativ er å bruke funksjonen ```std::fs::read_dir```, som returnerer en ```std::fs::ReadDir``` struct. Denne structen inneholder en iterator over filer og mapper i en gitt mappe. Hvis den gis en korrekt mappesti, vil iterator objektet inneholde minst én fil eller mappe. Hvis mappestien ikke eksisterer, vil iterator objektet være tomt.
+
+```Rust
+use std::fs;
+
+let file_path = "/din/mappe/sti";
+
+if let Ok(entries) = fs::read_dir(file_path) {
+    if entries.count() > 0 {
+        println!("Mappen eksisterer!");
+    } else {
+        println!("Mappen eksisterer ikke.");
+    }
+} else {
+    println!("Kunne ikke åpne gitt sti.");
+}
+```
+
+Output:
+
+```
+Mappen eksisterer!
+```
 
 ## Se også
-
-- [Dokumentasjon for stienes koplinger (Path links)](https://doc.rust-lang.org/std/path/index.html#links)
-- [Rust std::fs dokumentasjon](https://doc.rust-lang.org/std/fs/index.html)
-- [Hvordan håndtere feil og unntak i Rust](https://www.rust-lang.org/learn/errors)
+- [Rust dokumentasjon for filsystem operasjoner](https://doc.rust-lang.org/std/fs/index.html)
+- [Enkel guide til å sjekke om en fil eksisterer i Rust](https://www.linode.com/docs/development/rust/how-to-check-if-file-or-directory-exists-in-rust/)
+- [Offisiell Rust Discord-server](https://discord.gg/rust-lang)

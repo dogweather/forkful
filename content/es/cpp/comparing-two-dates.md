@@ -1,70 +1,67 @@
 ---
-title:    "C++: Comparando dos fechas"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/comparing-two-dates.md"
+title:                "C++: Comparando dos fechas"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Qué
-En la programación, a menudo necesitamos comparar fechas para realizar diferentes acciones. Ya sea para validar una tarjeta de crédito, calcular la edad o simplemente para ordenar eventos cronológicamente, trabajar con fechas es una tarea común en el desarrollo de software. En este artículo, te mostraremos cómo comparar dos fechas en C++ y profundizar en el tema para que puedas implementarlo en tus proyectos.
+## Por qué comparar dos fechas en C++
 
-## Cómo Hacerlo
-Para comparar dos fechas en C++, utilizamos el operador de comparación "==" que compara si dos valores son iguales. La clase "tm" de la biblioteca estándar de C++ nos permite trabajar con fechas y horas. En el siguiente ejemplo, comparamos dos fechas para ver si son iguales:
+Así como en cualquier otro lenguaje de programación, comparar fechas en C++ es una tarea común y muy útil. Puede ser necesario para realizar operaciones matemáticas, ordenar datos o simplemente para comprobar si una fecha es mayor o menor que otra. En este artículo, exploraremos cómo realizar esta tarea de manera efectiva en C++.
+
+## Cómo hacerlo
+
+Para comparar dos fechas en C++, es necesario crear dos objetos de la clase `tm` que representen las fechas que deseamos comparar. La clase `tm` es una estructura de datos estándar de C++ que contiene información sobre fecha y hora. A continuación, se muestra un ejemplo de cómo crear dos objetos `tm` con fechas diferentes:
 
 ```C++
-#include <iostream>
-#include <ctime>
-
-int main()
-{
-  // Definimos dos variables de tipo struct tm
-  struct tm fecha1 = { .tm_year = 2020, .tm_mon = 11, .tm_mday = 30 };
-  struct tm fecha2 = { .tm_year = 2020, .tm_mon = 11, .tm_mday = 30 };
-
-  // Utilizamos el operador de comparación "=="
-  if (fecha1 == fecha2) {
-    std::cout << "Las fechas son iguales" << std::endl;
-  } else {
-    std::cout << "Las fechas son diferentes" << std::endl;
-  }
-
-  return 0;
-}
+tm date1 = {0, 0, 0,  //segundos, minutos, horas
+            1, 2, 2021};  //día, mes, año
+tm date2 = {0, 0, 0,
+            3, 4, 2022};
 ```
 
-El resultado de este código será "Las fechas son iguales", ya que ambas variables tienen la misma fecha asignada. Ahora, si queremos comparar si una fecha es mayor o menor que otra, podemos utilizar el operador de comparación ">" y "<" respectivamente.
+Una vez que tenemos nuestros dos objetos `tm`, podemos utilizar la función `difftime()` de C++ para calcular la diferencia en segundos entre las dos fechas. Esta función toma dos argumentos: las dos fechas a comparar en forma de punteros a objetos `tm`. A continuación, se muestra cómo calcular la diferencia entre `date2` y `date1`:
 
 ```C++
-// Utilizamos el operador de comparación ">"
-if (fecha1 > fecha2) {
-  std::cout << "fecha1 es mayor que fecha2" << std::endl;
+double diff = difftime(&date2, &date1);
+```
+
+El resultado de esta operación será un número en segundos, que puede ser utilizado para realizar comparaciones entre las dos fechas.
+
+Ahora que tenemos la diferencia en segundos, podemos realizar diversas operaciones, como por ejemplo, comprobar si una fecha es anterior o posterior a otra, o calcular cuántos días hay entre dos fechas. A continuación, se muestran algunos ejemplos de cómo utilizar la diferencia en segundos:
+
+```C++
+if (diff > 0) {
+    // date2 es posterior a date1
+} else if (diff < 0) {
+    // date2 es anterior a date1
 } else {
-  std::cout << "fecha1 es menor que fecha2" << std::endl;
+    // las fechas son iguales
 }
 ```
 
-Además de estos operadores de comparación, también es posible utilizar la función "difftime" de la biblioteca estándar de C++, que compara dos fechas y devuelve la diferencia en segundos. Esto puede ser útil si necesitas calcular la edad de una persona o la duración entre dos eventos.
-
-Para utilizar "difftime", debemos convertir nuestras fechas a un formato que la función reconozca. En este caso, utilizaremos la función "mktime" para convertir las fechas a un valor de tipo "time_t", que es el formato aceptado por "difftime".
-
 ```C++
-// Convertimos las fechas a tipo "time_t"
-time_t date1 = mktime(&fecha1);
-time_t date2 = mktime(&fecha2);
-
-// Utilizamos la función "difftime" para obtener la diferencia en segundos
-double diferencia = difftime(date1, date2);
-
-std::cout << "La diferencia en segundos es de: " << diferencia << std::endl;
+int days = int(diff / (24*60*60)); // obtener la diferencia en días
+cout << "Entre date1 y date2 hay " << days << " días de diferencia." << endl;
 ```
 
-## Descubriendo Más
-Para profundizar en el tema de comparación de fechas en C++, es importante conocer la estructura de datos "struct tm" y sus diferentes campos, como año, mes, día, hora, entre otros. También es necesario tener conocimiento de cómo funcionan las funciones "mktime" y "difftime" para poder utilizarlas correctamente.
+```C++
+date1.tm_hour += int(s); // sumar la diferencia en segundos a la hora de date1
+mktime(&date1); // actualizar la fecha teniendo en cuenta la nueva hora
+```
 
-Otra opción para trabajar con fechas en C++ es utilizar una librería externa como Boost Date Time Library, que ofrece una amplia variedad de funciones y estructuras para trabajar con fechas y horas de manera más eficiente.
+## Más información sobre comparar fechas
 
-## Ver También
-- [Cómo trabajar con la fecha y hora en C++](https://loopback.io/doc/en/lb3/Working-with-Dates.html)
-- [Boost Date Time Library](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
-- [Estructura de datos "struct tm"](https://www.cplusplus.com/reference/ctime/tm/)
+Además de la función `difftime()`, C++ ofrece otras funciones útiles para trabajar con fechas, como `mktime()`, `gmtime()` y `localtime()`. Estas funciones permiten convertir una fecha a diferentes formatos, como fechas locales o en formato de hora GMT.
+
+En la mayoría de los casos, solo necesitarás utilizar la función `difftime()` para realizar operaciones con fechas en C++. Sin embargo, si estás trabajando con fechas en un formato específico, estas otras funciones pueden ser de ayuda.
+
+## Ver también
+
+- [Documentación de la clase `tm` en C++](https://www.cplusplus.com/reference/ctime/tm/)
+- [Guía de programación de fechas y horas en C++](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html)
+- [Ejemplos de código de comparación de fechas en C++](https://www.geeksforgeeks.org/comparing-two-dates-c-cpp/)
+
+Gracias por leer este artículo sobre cómo comparar dos fechas en C++. Esperamos que sea de ayuda para tu desarrollo como programador. ¡Hasta la próxima!

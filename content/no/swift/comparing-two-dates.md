@@ -1,51 +1,68 @@
 ---
-title:    "Swift: Sammenligning av to datoer"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/comparing-two-dates.md"
+title:                "Swift: Sammenligning av to datoer"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å sammenligne to datoer er en viktig del av Swift programmering. Det kan hjelpe deg med å organisere og sortere data, samt utføre forskjellige operasjoner basert på datoer. Å forstå hvordan man sammenligner datoer kan være avgjørende for å skrive effektiv og nøyaktig kode.
+Når man programmerer i Swift, kan man komme over situasjoner der man trenger å sammenligne to datoer. Dette kan være nyttig for å sortere data eller for å sjekke om en dato kommer før eller etter en annen. I denne bloggposten skal vi gå gjennom hvordan man kan gjøre dette på en enkel måte.
 
-## Hvordan
+# Hvordan
 
-For å sammenligne to datoer i Swift, må du bruke `Date` og `Calendar` klassene. Først må du definere de to datoene du ønsker å sammenligne som `Date` objekter. Deretter må du bruke `Calendar` klassen til å utføre sammenligningen ved å bruke metodene `compare()` eller `isDate()`.
+For å sammenligne to datoer i Swift, kan man bruke compare-metoden som er tilgjengelig på Date-objekter. Denne metoden sammenligner to datoer og returnerer en ComparisonResult som kan være .orderedAscending hvis datoen kommer før, .orderedDescending hvis datoen kommer etter eller .orderedSame hvis de to datoene er lik.
 
 ```Swift
-let date1 = Date()
-let date2 = Date()
+let firstDate = Date()
+let secondDate = Date().addingTimeInterval(3600) // legger til en time til første dato
 
-let calendar = Calendar.current
-let result = calendar.compare(date1, to: date2, toGranularity: .day)
-
-if result == .orderedAscending {
-    print("Date 1 er før Date 2")
-} else if result == .orderedDescending {
-    print("Date 1 er etter Date 2")
+if firstDate.compare(secondDate) == .orderedAscending {
+    print("Første dato kommer før den andre")
+} else if firstDate.compare(secondDate) == .orderedDescending {
+    print("Første dato kommer etter den andre")
 } else {
-    print("Date 1 og Date 2 er like")
+    print("Datoene er like")
 }
+// Output: Første dato kommer før den andre
 ```
 
-Output:
+Man kan også bruke ==, < og > operatorer for å sammenligne datoer direkte.
 
+```Swift
+let thirdDate = Date()
+let fourthDate = Date(timeIntervalSinceReferenceDate: 0) // unix epoch dato
+
+if thirdDate < fourthDate {
+    print("Første dato kommer før den andre")
+} else if thirdDate > fourthDate {
+    print("Første dato kommer etter den andre")
+} else {
+    print("Datoene er like")
+}
+// Output: Første dato kommer etter den andre
 ```
-Date 1 og Date 2 er like
+
+# Dypdykk
+
+Det er viktig å merke seg at datoer kan bli påvirket av tidsone og sommertid. Det kan derfor være lurt å konvertere datoer til et ensartet tidsformat før man sammenligner dem for å unngå feilaktige resultater.
+
+Man kan også bruke Calendar-objektet til å få mer detaljert informasjon om datoene man sammenligner, som for eksempel å få ut dag, måned eller år.
+
+```Swift
+let today = Date() // gjeldende dato
+let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today) // legger til en dag til gjeldende dato
+
+let day = Calendar.current.component(.day, from: tomorrow!) // henter ut dag fra morgendatoen
+
+print("Morgendatoen er den \(day). dagen i måneden.")
+// Output: Morgendatoen er den 29. dagen i måneden.
 ```
 
-Du kan endre `toGranularity` parameteren til `Year`, `Month`, `Day`, `Hour`, `Minute` eller `Second` for å sammenligne på en mer spesifikk nivå.
+# Se også
 
-## Deep Dive
-
-Når du sammenligner datoer, er det viktig å være oppmerksom på tidssoner. Datomodellen i Swift bruker UTC (Coordinated Universal Time) som standard, så hvis du ønsker å sammenligne datoer i en annen tidssone, må du først konvertere dem ved hjelp av `TimeZone` klassen.
-
-En annen viktig faktor er datoforskjellig. Dette kan påvirke resultatet av sammenligningen, spesielt hvis en av datoene har en tidspunkt mens den andre ikke har det. Det er derfor viktig å bruke `timeInterval` parameteren i `compare()` metoden for å inkludere tiden i sammenligningen.
-
-## Se også
-
-- [Dato og klokkeslett håndtering i Swift](https://developer.apple.com/documentation/foundation/date_and_time)
-- [Kalender håndtering i Swift](https://developer.apple.com/documentation/foundation/calendar)
-- [Tidssone håndtering i Swift](https://developer.apple.com/documentation/foundation/timezone)
+- [Apple Developer Documentation - Comparing Dates](https://developer.apple.com/documentation/foundation/date/3123307-compare)
+- [Hacking with Swift - Working with Dates and Times](https://www.hackingwithswift.com/example-code/system/how-to-work-with-dates-and-times-in-swift)
+- [NSHipster - DateFormatter](https://nshipster.com/dateformatter/)

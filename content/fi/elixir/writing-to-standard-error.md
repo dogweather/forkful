@@ -1,56 +1,34 @@
 ---
-title:    "Elixir: Kirjoittaminen standardivirheeseen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-to-standard-error.md"
+title:                "Elixir: Kirjoittaminen standardivirheeseen"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi kirjoittaa standardin virheille?
 
-Miksi kirjoittaa standardivirheeseen?
+Kirjoittaminen standardin virheille (standard error) on tärkeä osa ohjelmointia ja se auttaa kehittäjiä löytämään ja korjaamaan virheitä nopeasti. Kun kehität Elixir-sovelluksia, voit käyttää tätä menetelmää virheiden jäljittämiseen ja ymmärtää, mitä ohjelma tekee.
 
-Kirjoittaminen standardivirheeseen on tärkeä osa Elixir-ohjelmoinnissa. Se voi auttaa löytämään virheitä ja ongelmatilanteita ohjelman suorituksen aikana. Se on myös hyvä tapa varmistaa, että ohjelman suoritus onnistuu ilman ongelmia.
+## Miten tehdä se?
 
-## Miten
-
-Esimerkkejä ja koodilohkoja:
-
-```Elixir
-IO.puts "Kirjoitetaan virheviesti standardivirheeseen"
-```
+Voit kirjoittaa standardin virheille yksinkertaisesti käyttämällä `IO.puts/1` -funktiota ja välittämällä sille virheviestisi parametrina. Esimerkiksi, jos haluat näyttää käyttäjälle virheviestin, voit käyttää seuraavaa koodia:
 
 ```
-Kirjoitetaan virheviesti standardivirheeseen
+Elixir
+IO.puts("Tapahtui virhe: Tietoja ei löytynyt.")
 ```
 
-Kuten näemme yllä olevassa koodilohkossa, meillä on IO.puts-funktio, jonka avulla voimme kirjoittaa viestin standardivirheeseen. Tämä viesti näkyy terminaalissa tai komentokehotteessa, joka suorittaa ohjelman.
+Tämä tulostaa tekstin "Tapahtui virhe: Tietoja ei löytynyt." standardin virheille.
 
-Voimme myös käyttää IO.inspect-funktiota tarkastellaksemme muuttujien arvoja ja kirjoittaa ne standardivirheeseen. Tämä on erityisen hyödyllistä silloin, kun haluamme tietää, mitä tapahtuu ohjelman suorituksen aikana.
+## Syvempi sukellus
 
-```Elixir
-nimi = "Maria"
-IO.inspect nimi
-```
+Kun kirjoitat standardin virheille, on tärkeää huomata, että se ei pysäytä ohjelman suorittamista. Sen sijaan se vain tulostaa virheviestin ja jatkaa ohjelman suorittamista normaalisti. Tämä tekee siitä hyödyllisen työkalun virheiden jäljittämiseen ja korjaamiseen.
 
-```
-Maria
-```
+Lisäksi, jos haluat näyttää erityyppisiä virheviestejä, voit käyttää `IO.puts/2` -funktiota ja välittää sille toisen parametrin tulostuskanavana. Tällä tavoin voit erottaa virheviestit muista tulostuksista ja hallita niitä erikseen.
 
-## Syvällinen sukellus
+# Katso myös
 
-Kirjoittaessamme standardivirheeseen, voimme myös käyttää Logger-moduulia. Tämä antaa meille enemmän hallintaa siitä, mihin virheviestit kirjoitetaan ja miten niitä käsitellään.
-
-Esimerkiksi voimme määrittää, että virheviestit kirjoitetaan tiedostoon tai lähetetään eteenpäin toiselle palvelimelle loggausta varten.
-
-```Elixir
-Logger.error("Tämä on virheviesti")
-```
-
-Tässä tapauksessa virheviesti kirjoitetaan standardivirheeseen käyttämällä Logger-moduulia.
-
-## Katso myös
-
-- [Elixir Dokumentaatio](https://hexdocs.pm/elixir/)
-- [Logger-moduulin käyttö](https://elixirschool.com/en/lessons/advanced/logging/)
-- [Lue ja kirjoita tiedostoihin Elixirissa](https://elixirschool.com/en/lessons/basics/io/)
+- Elixirin virallinen dokumentaatio: https://elixir-lang.org/docs.html
+- Virheiden hallinta Elixirissä: https://elixirschool.com/en/lessons/basics/error-handling/

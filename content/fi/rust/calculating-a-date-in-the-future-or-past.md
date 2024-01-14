@@ -1,76 +1,52 @@
 ---
-title:    "Rust: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/calculating-a-date-in-the-future-or-past.md"
+title:                "Rust: Laskeminen tulevaan tai menneeseen päivämäärään"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Suunnittellessamme tulevia tapahtumia tai tehdessämme aikatauluja, voimme usein joutua laskemaan tietyn päivämäärän tulevaisuuteen tai menneisyyteen. Tässä blogikirjoituksessa tutustumme siihen, miten Rust-ohjelmointikielellä voimme helposti laskea päivämääriä tulevaisuuteen tai menneisyyteen.
+Joskus ohjelmiston on laskettava päivämäärä tulevaisuudessa tai menneisyydessä. Tähän on monia mahdollisia syitä, kuten aikaperustaisen palkan laskeminen tai tulevien tapahtumien aikatauluttaminen. Jokainen sovellus voi tarvita tätä ominaisuutta eri syistä, mutta yhteinen tekijä on päivämäärän laskeminen halutun ajanjakson päässä nykyisestä ajasta.
 
-## Miten tehdä se
+## Miten
 
-Rustin `chrono` -kirjasto tarjoaa meille helpon ja tarkan tavan käsitellä päivämääriä ja aikoja. Voimme käyttää `chrono` -kirjastoa laskemaan tietyn määrän päiviä tulevaisuuteen tai menneisyyteen.
+Rustilla on joukko sisäänrakennettuja työkaluja ja kirjastoja, jotka tekevät päivämäärän laskemisen helpoksi. Ensimmäinen askel on lisätä `chrono`-kirjasto `Cargo.toml` tiedostoon:
 
 ```Rust
-use chrono::{Utc, Duration};
+[dependencies]
+chrono = "0.4"
+```
 
-fn laske_paivamaara(pv: i64) {
-    let nykyinen_paivamaara = Utc::now();
-    let uusi_paivamaara = nykyinen_paivamaara + Duration::days(pv);
+Seuraavaksi voit luoda uuden `DateTime` -muuttujan nykyisellä ajalla ja käyttää `chrono` -kirjastoa lisätäksesi tai vähentääksesi päiviä tai muita aikayksiköitä. Alla on esimerkki kahden päivän päästä olevan päivämäärän laskemisesta:
 
-    println!("Päivämäärä {} päivän päästä on: {}", pv, uusi_paivamaara.format("%d.%m.%Y"));
-}
+```Rust
+use chrono::{DateTime, Datelike, Local, Duration};
 
 fn main() {
-    laske_paivamaara(14);
+   let today: DateTime<Local> = Local::now();
+   let two_days_from_today: DateTime<Local> = today + Duration::days(2);
+
+   println!("Päivämäärä kahden päivän päästä on {}.", two_days_from_today.date())
 }
 ```
 
-Tämä yksinkertainen esimerkki koodi laskee päivämäärän 14 päivää nykyisestä päivämäärästä eteenpäin ja tulostaa sen muodossa dd.mm.yyyy. Voimme käyttää samaa logiikkaa myös menneisyyteen laskemisessa vaihtamalla `Duration` -metodin `days()` `neljännesvuodeksi()`.
-
-Voimme myös lukea päivämäärän käyttäjän syöttämästä pvm-muodostimesta ja tulostaa sen jälkeen halutun päivämäärän tulevaisuudessa tai menneisyydessä.
+Tämä koodi tuottaa seuraavan tulosteen:
 
 ```Rust
-use chrono::{NaiveDate, Duration};
-
-fn laske_paivamaara(paivamaara: &str, pv: i64) {
-    let parsed_date = NaiveDate::parse_from_str(paivamaara, "%Y-%m-%d").unwrap();
-    let uusi_paivamaara = parsed_date + Duration::days(pv);
-
-    println!("Päivämäärä {} päivän päästä on: {}", pv, uusi_paivamaara.format("%d.%m.%Y"));
-}
-
-fn main() {
-    laske_paivamaara("2021-09-10", 30);
-}
+Päivämäärä kahden päivän päästä on 2021-11-11.
 ```
 
-Tässä esimerkissä laskemme päivämäärän 30 päivää eteenpäin antamalla käyttäjän syöttää päivämäärän `YYYY-MM-DD` -muodossa.
+Muita hyödyllisiä aikayksiköitä, joita voit käyttää `chrono` -kirjastossa, ovat esimerkiksi `minutes()`, `hours()`, `weeks()` jne.
 
-## Syvempi sukellus
+## Syvällinen sukellus
 
-`chrono` -kirjaston lisäksi voimme myös käyttää `time` -kirjastoa laskemaan päivämääriä tulevaisuuteen tai menneisyyteen. Tämä kirjasto tarjoaa vaihtoehtoisia tapoja käsitellä ja muokata aikoja ja päivämääriä.
+Jotta voitaisiin laskea tarkempia päivämääriä, kuten palkanmaksupäivä kuukauden lopussa tai tulevien tapahtumien aikataulutus vuosien päähän, sinun kannattaa tutustua `chrono` -kirjaston dokumentaatioon ja erilaisiin aikayksiköihin, joita voit käyttää. Lisäksi voit luoda omia `Duration`-muuttujia esimerkiksi yhdistämällä erilaisia aikayksiköitä ja käyttää niitä päivämäärän laskemiseen.
 
-Voimme myös lisätä tai vähentää päivämääriä käyttämällä `date` kirjaston `add()` ja `sub()` metodeita sekä antamalla halutun ajanjakson parametriksi.
+## Katso myös
 
-```Rust
-use time::{Date, Duration};
-
-fn laske_paivamaara(pv: i64) {
-    let nykyinen_paivamaara = Date::today();
-    let uusi_paivamaara = nykyinen_paivamaara.add(Duration::days(pv));
-
-    println!("Päivämäärä {} päivän päästä on: {}", pv, uusi_paivamaara.format("%d.%m.%Y"));
-}
-
-fn main() {
-    laske_paivamaara(14);
-}
-```
-
-`date` -kirjaston käyttö antaa meille enemmän joustavuutta muokata päivämääriä haluamallamme tavalla.
-
-##
+- [Chrono Crate Documentation](https://docs.rs/chrono/latest/chrono/)
+- [Rust Language Reference](https://doc.rust-lang.org/reference/index.html)
+- [Cargo Package Registry](https://crates.io/)

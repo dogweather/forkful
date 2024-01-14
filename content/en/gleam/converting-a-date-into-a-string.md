@@ -1,45 +1,48 @@
 ---
-title:    "Gleam recipe: Converting a date into a string"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/converting-a-date-into-a-string.md"
+title:                "Gleam recipe: Converting a date into a string"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Converting a date into a string may seem like a simple task, but it can actually be quite useful in many programming scenarios. By converting a date into a string, you can easily display it in a readable format or use it in calculations and comparisons.
+Converting dates into strings is a common task in programming, especially when working with date and time data. By converting a date into a string, it becomes easier to display and manipulate the date in different formats and styles.
 
 ## How To
 
-To convert a date into a string in Gleam, we will use the `|> String.from_date()` function. This function takes in a date value and returns a string representation of it. Let's take a look at this in action:
+To convert a date into a string in Gleam, we can use the `format` function from the `Time` module. We first need to import the `Time` module, and then we can use it to format the date.
 
 ```Gleam
+import Time
+
 let date = Time.now()
-|> String.from_date()
+let string = Time.format(date, "MMMM d, yyyy")
 ```
 
-This code will first get the current time using the `now()` function from the `Time` module, and then convert it into a string using the `from_date()` function. The output will be a string like this: `2020-10-22T15:34:58.197Z`. 
+The first argument of the `format` function is the date we want to convert, and the second argument is the format we want to use. In this example, we are using the format for the month, day, and year. 
 
-But what if we want to display the date in a specific format? We can pass in a formatting string as a second argument to the `from_date()` function. For example, let's say we want to display the date in the format of `YYYY-MM-DD`:
+The `format` function accepts a wide range of formatting options, including different date and time components, as well as custom formatting using placeholders. You can refer to the [Gleam documentation](https://gleam.run/documentation/?api=time) for a full list of available options.
 
 ```Gleam
+import Time
+
 let date = Time.now()
-|> String.from_date("YYYY-MM-DD")
+let string = Time.format(date, "The date is {\yyyy} {\M} {\d}")
 ```
 
-The output will now be `2020-10-22`. We can also customize the format further by including other date and time elements such as hour, minute, and second. For a full list of available format options, check out the [Gleam documentation](https://gleam.run/documentation/modules/time#format_string).
+This code will output: "The date is 2021 11 28" 
 
 ## Deep Dive
 
-In Gleam, dates are represented by the `Time` type. This type includes information about the current time, such as year, month, day, hour, minute, second, and millisecond. When we convert a date into a string, these values are formatted and displayed according to the chosen formatting string.
+Behind the scenes, the `format` function is using the [ICU (International Components for Unicode) library](http://site.icu-project.org/) to handle the formatting of dates. This library supports a wide range of languages, date and time formats, and localized formatting.
 
-It's important to note that the `String.from_date()` function will return a string in the UTC timezone. If you want to display the date in a specific timezone, you will need to use the `Time.zone_offset()` function to adjust the time before converting it into a string.
+If you need more advanced functionality, such as handling time zones or converting between different calendars, you can use the `ZonedDateTime` and `LocalDateTime` types from the `Time` module. These types provide additional functions for manipulating and formatting date and time data.
 
 ## See Also
 
-- [Gleam documentation on `String` module](https://gleam.run/documentation/modules/string)
-- [Gleam documentation on `Time` module](https://gleam.run/documentation/modules/time)
-- [Timezone reference from Microsoft](https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-choose-timezone#:~:text=To%20set%20the%20time%20zone,the%20timezone%20for%20the%20time)
-
-Happy coding with Gleam!
+- [Gleam documentation on Time module](https://gleam.run/documentation/?api=time)
+- [ICU library documentation](http://site.icu-project.org/)
+- [Blog post on working with dates and times in Gleam](https://example.com/working-with-dates-in-gleam)

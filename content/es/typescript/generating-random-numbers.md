@@ -1,42 +1,52 @@
 ---
-title:    "TypeScript: Generando números aleatorios"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/generating-random-numbers.md"
+title:                "TypeScript: Generando números aleatorios"
+programming_language: "TypeScript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué generar números aleatorios en TypeScript?
+## Por qué generar números aleatorios en TypeScript
 
-Generar números aleatorios es una habilidad importante en la programación ya que puede ser útil en una variedad de aplicaciones. Ya sea para crear juegos, simular datos o realizar pruebas, la generación de números aleatorios es una herramienta importante que ahorra tiempo y hace que el código sea más dinámico.
+Generar números aleatorios es una técnica comúnmente utilizada en programación para simular situaciones aleatorias y tomar decisiones al azar. En TypeScript, esta funcionalidad se puede implementar de manera sencilla y efectiva gracias a sus características de tipado estático y robustez.
 
-## Cómo hacerlo
+## Cómo generar números aleatorios en TypeScript
 
-En TypeScript, podemos generar números aleatorios utilizando la función `Math.random()`. Esta función devuelve un número decimal aleatorio entre 0 y 1. Para obtener un número entero aleatorio dentro de un rango específico, podemos usar las funciones `Math.floor()` y `Math.ceil()`. Veamos un ejemplo:
+Generar números aleatorios en TypeScript se puede realizar de varias formas. Una manera es utilizando el método `Math.random()` que retorna un número aleatorio entre 0 y 1.
 
-```TypeScript
-// Generar un número aleatorio entre 1 y 10
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber); // Output: 7
+```
+TypeScript
+let randomNumber = Math.random();
+console.log(randomNumber); //output: 0.3412946 
 ```
 
-También podemos utilizar la función `Math.random()` en combinación con un bucle `for` para generar múltiples números aleatorios. Por ejemplo:
+También se pueden generar números enteros aleatorios utilizando `Math.floor()` y multiplicando el resultado por un rango deseado.
 
-```TypeScript
-// Generar 5 números aleatorios entre 1 y 100
-for (let i = 0; i < 5; i++) {
-  let randomNumber = Math.floor(Math.random() * 100) + 1;
-  console.log(randomNumber); // Output: 53, 28, 99, 15, 72
-}
+```
+TypeScript
+let randomInteger = Math.floor(Math.random() * 10);
+console.log(randomInteger) //output: 7
 ```
 
-## Profundizando
+Otra forma más específica de generar números aleatorios en TypeScript es utilizando la librería `Random-js`. Primero se debe instalar la librería mediante el comando `npm install random-js` y luego se puede utilizar dentro de un proyecto TypeScript de la siguiente manera:
 
-Existen diferentes algoritmos para generar números aleatorios, y algunos pueden ser más eficientes que otros. En TypeScript, la función `Math.random()` utiliza el algoritmo de multiplicador lineal congruencial (LCG), que puede generar números pseudoaleatorios. Esto significa que, aunque parezcan aleatorios a simple vista, los números generados siguen un patrón predecible.
+```
+TypeScript
+import { Random } from "random-js";
+let random = new Random(); //crea una instancia de la clase Random
+let randomNumber = random.integer(1, 10); //genera un número aleatorio entre 1 y 10
+console.log(randomNumber); //output: 8
+```
 
-Para aplicaciones que requieren un alto nivel de aleatoriedad, como juegos de azar o sistemas de encriptación, se pueden utilizar otros algoritmos más complejos o generar una semilla a partir de una fuente externa de verdadera aleatoriedad.
+## Profundizando en la generación de números aleatorios
+
+La generación de números aleatorios puede parecer simple, pero en realidad se basa en algoritmos y técnicas matemáticas complejas. Por ejemplo, el método `Math.random()` utiliza un algoritmo llamado "punto flotante" que genera números pseudoaleatorios. Estos números no son realmente aleatorios, pero para la mayoría de los casos cumplen con su objetivo de simular aleatoriedad.
+
+Un detalle importante a tener en cuenta al generar números aleatorios es que no se debe confiar en ellos para fines de seguridad y criptografía, ya que pueden ser predecibles para alguien con conocimientos avanzados en matemáticas y programación.
 
 ## Ver también
 
-- [Documentación de TypeScript sobre la función Math.random()](https://www.typescriptlang.org/docs/handbook/functions.html#return)
-- [Más información sobre el algoritmo LCG](https://www.quora.com/What-is-the-linear-congruential-generator-and-what-are-some-good-things-about-it)
+- [Documentación de TypeScript: Generación de números aleatorios](https://www.typescriptlang.org/docs/handbook/intro-to-typescript.html#generación-de-números-aleatorios)
+- [Artículo sobre generación de números aleatorios en TypeScript](https://medium.com/devtrails/random-number-generation-in-typescript-edc497371e97)
+- [Librería Random-js](https://github.com/ckknight/random-js)

@@ -1,50 +1,59 @@
 ---
-title:    "Arduino: Convertire una data in una stringa"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/converting-a-date-into-a-string.md"
+title:                "Arduino: Converting una data in una stringa"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Convertingire una data in una stringa è un'operazione molto comune nell'ambito della programmazione con Arduino. La possibilità di visualizzare una data in forma di testo può essere utile per diversi progetti, come ad esempio la creazione di un orologio o una stazione meteorologica.
+Molti progetti Arduino richiedono l'utilizzo delle date, ad esempio per registrare un evento specifico o per sincronizzarsi con altri dispositivi. Convertire una data in una stringa è un processo fondamentale per poter ottenere un formato leggibile per l'utente.
 
 ## Come fare
-
-Per convertire una data in una stringa, è necessario utilizzare la libreria "TimeLib.h" inclusa in Arduino. Questa libreria fornisce diverse funzioni utili per gestire date e orari.
+Per convertire una data in una stringa, è necessario prima definire la data utilizzando la funzione "RTC.adjust()" per impostare l'ora locale e poi utilizzare le funzioni "day()", "month()" e "year()" per estrarre il giorno, il mese e l'anno. Infine, si può utilizzare la funzione "sprintf()" per creare la stringa con il formato desiderato. Ecco un esempio di codice che converte la data in formato "dd/mm/yyyy":
 
 ```Arduino
-#include <TimeLib.h> 
+#include <RTClib.h>
 
-// Inizializzazione dell'oggetto "tmElements_t" per la gestione della data
-tmElements_t data; 
+RTC_DS1307 rtc;
 
-// Impostazione della data e dell'ora
-data.Year = 2021;
-data.Month = 10;
-data.Day = 5;
-data.Hour = 15;
-data.Minute = 30;
-data.Second = 0;
+void setup() {
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  Serial.begin(9600);
+}
 
-// Conversione della data in una stringa
-String dataString = String(monthShortStr(data.Month, "%b") + " " + data.Day + ", " + data.Year);
+void loop() {
+  DateTime now = rtc.now();
 
-// Stampa della stringa nella seriale
-Serial.println(dataString); // Output: Oct 5, 2021
+  // Estrarre giorno, mese e anno
+  int day = now.day();
+  int month = now.month();
+  int year = now.year();
+
+  // Creare la stringa con il formato desiderato
+  char date_str [10];
+  sprintf(date_str, "%d/%d/%d", day, month, year);
+
+  // Stampare la data convertita
+  Serial.println(date_str);
+
+  delay(1000);
+}
 ```
 
-La funzione "monthShortStr()" viene utilizzata per ottenere il nome abbreviato del mese, mentre i formati "%b" e "%Y" specificano rispettivamente il formato del nome del mese e dell'anno. La stringa "dataString" viene composta unendo questi elementi insieme.
+Ecco un possibile output dei dati:
 
-## Approfondimento
+```
+25/02/2021
+```
 
-Per una gestione più approfondita delle date, è possibile utilizzare le funzioni fornite dalla libreria "TimeLib.h". Ad esempio, la funzione "monthStr()" può essere utilizzata per ottenere il nome completo del mese, mentre la funzione "isLeapYear()" restituisce un valore booleano che indica se l'anno specificato è bisestile o meno.
+## Approfondimenti
+La funzione "sprintf()" è molto utile per creare stringhe con formati personalizzati. Per conoscere tutte le opzioni di formattazione disponibili, si consiglia di consultare la documentazione ufficiale di Arduino.
 
-Altre funzioni utili includono "dayOfWeekStr()" per ottenere il nome del giorno della settimana, "hourFormat12()" per utilizzare il formato orario a 12 ore e "UNIXtime()" per ottenere il valore UNIX timestamp della data e ora specificate.
+Inoltre, esistono diverse librerie disponibili che semplificano la conversione delle date in stringhe, come ad esempio la libreria "DateTime" o "TimeLib".
 
 ## Vedi anche
-
-- Documentazione ufficiale di "TimeLib.h": https://www.pjrc.com/teensy/td_libs_Time.html
-- Esempi di utilizzo di TimeLib: https://www.arduino.cc/en/Tutorial/TPrintingIntegerVariables
-- Come creare un orologio con Arduino: https://www.instructables.com/Arduino-Clock-With-Timer-and-Alarm/
+- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/)
+- [Libreria DateTime](https://github.com/PaulStoffregen/DateTime)
+- [Libreria TimeLib](https://github.com/PaulStoffregen/TimeLib)

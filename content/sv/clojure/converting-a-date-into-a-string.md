@@ -1,32 +1,48 @@
 ---
-title:    "Clojure: Omvandla ett datum till en sträng"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/converting-a-date-into-a-string.md"
+title:                "Clojure: Omvandla ett datum till en sträng"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera datum till en sträng är en vanlig uppgift inom programmering eftersom det gör det enkelt att representera datum i ett läsbart format.
+
+Att konvertera ett datum till en sträng kan vara användbart när man vill visa datumet i ett specifikt format eller spara det som en sträng i en databas. Det är också ett vanligt problem som man kan stöta på i programmering och det är därför viktigt att veta hur man hanterar det på ett effektivt sätt.
 
 ## Hur man gör det
-Att konvertera ett datum till en sträng kan göras enkelt i Clojure med hjälp av den inbyggda funktionen `str`. Här är ett exempel som visar hur man kan konvertera dagens datum till en sträng:
 
 ```Clojure
-(str (java.util.Date.)) ;=> "Tue Aug 17 00:00:00 UTC 2021"
+(require '[clojure.java-time :as time])
+(import '[java.time.format DateTimeFormatter])
+
+;; Skapa ett datumobjekt
+(def date (java.time.LocalDate/now))
+
+;; Konvertera till en sträng med standardformatet
+(time/format date)
+;; => "2021-10-12"
+
+;; Använda ett anpassat format
+(time/format date "dd.MM.yyyy")
+;; => "12.10.2021"
+
+;; Ställa in olika format
+(def custom-formatter (DateTimeFormatter/ofPattern "yyyy/MM/dd"))
+(time/format date custom-formatter)
+;; => "2021/10/12"
+
 ```
 
-Om du vill ha ett specifikt format för datumet kan du använda sig av funktionen `format`. Nedan är ett exempel på hur man kan konvertera datumet till formatet DD-MM-YYYY:
-
-```Clojure
-(require '[clojure.string :as str])
-(str/join "-" (format "%td" (java.util.Date.)) (format "%tm" (java.util.Date.)) (format "%tY" (java.util.Date.))) ;=> "17-08-2021"
-``` 
+Det finns många olika formatteringsalternativ beroende på vilket datum- och tidspaket som används. Det är alltid en god idé att läsa dokumentationen eller använda en formatteringsguide för att hitta det mest lämpliga alternativet för ditt specifika behov.
 
 ## Djupdykning
-För att få en djupare förståelse för hur datum kan konverteras till strängar kan det vara bra att titta på olika typer av format och hur de skapas. Till exempel kan man använda sig av funktionen `strf` för att formatera datumet baserat på ett visst mönster. Det finns också olika bibliotek som tillhandahåller ytterligare funktioner för att konvertera datum.
 
-## Se också
-- [Clojure dokumentation för str](https://clojuredocs.org/clojure.core/str)
-- [Javadoc för java.util.Date](https://docs.oracle.com/javase/9/docs/api/java/util/Date.html)
-- [Clojure-datum bibliotek](https://github.com/clj-datetime/clj-datetime)
+När man konverterar ett datum till en sträng bör man tänka på några viktiga aspekter. Till exempel kan olika tidszoner påverka hur datumet visas eller om det är ett lokaliserat eller standardiserat datumformat. Det finns också möjlighet att formatera och jämföra datum på ett mer unikt sätt med hjälp av Clojure's chrono bibliotek.
+
+## Se även
+
+- [Clojure's java-time bibliotek](https://clojure.github.io/java-time/)
+- [Formatteringsguiden för Java's standardiserade format](https://docs.oracle.com/javase/tutorial/i18n/format/sdf.html)
+- [Chrono biblioteket för Clojure](https://github.com/clj-time/chronoj)

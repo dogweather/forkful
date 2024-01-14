@@ -1,57 +1,52 @@
 ---
-title:    "Rust: Lesing av kommandolinjeargumenter"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/reading-command-line-arguments.md"
+title:                "Rust: Lesing av kommandolinje-argumenter"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Lesing av kommandolinje-argumenter er en grunnleggende ferdighet for enhver programmerer, uansett hvilket språk de bruker. I Rust, en moderne programmeringsspråk med fokus på ytelse og pålitelighet, er det flere måter å lese og håndtere kommandolinje-argumenter på. I denne bloggposten vil vi utforske hvordan du enkelt kan lese og behandle kommandolinje-argumenter i Rust.
+Mange programmer krever interaksjon med brukeren, og et vanlig eksempel på dette er å lese inn kommandolinjeargumenter. Dette lar programmet ta imot informasjon fra brukeren og utføre handlinger basert på disse argumentene. Lesing av kommandolinjeargumenter er derfor en viktig ferdighet for enhver programmerer, og i denne artikkelen vil vi se på hvordan man kan gjøre dette i Rust.
 
 ## Hvordan
 
-For å lese kommandolinje-argumenter i Rust, må du bruke standardbiblioteket `std::env` og deretter bruke funksjonen `args()` for å hente argumentene som en iterator. La oss se på et eksempel:
+For å lese kommandolinjeargumenter i Rust, kan vi bruke et innebygd bibliotek som heter `args`. Vi trenger først å importere dette biblioteket i vårt program ved å legge til `use std::env;` i toppen av koden vår. Deretter kan vi bruke funksjonen `args()` fra dette biblioteket for å få en vektor med alle de gitte argumentene.
 
-```Rust
+For å få tilgang til de enkelte argumentene, kan vi bruke indeksering på vektoren vår. For eksempel, hvis vi ønsker å lese inn det første argumentet, kan vi skrive `args[1]` (indeksering starter på 1, siden det første argumentet er selve programnavnet).
+
+La oss se på et eksempel på hvordan dette kan se ut:
+
+```rust
 use std::env;
-
 fn main() {
     let args: Vec<String> = env::args().collect();
-    println!("Antall argumenter: {}", args.len());
-
-    for argument in args.iter() {
-        println!("{}", argument);
-    }
+    println!("Programnavn: {}", args[0]);
+    println!("Første argument: {}", args[1]);
 }
 ```
 
-I dette eksempelet bruker vi `args()` for å hente alle argumentene og deretter legge dem til i en vektor. Deretter printer vi ut antall argumenter som ble sendt inn, og deretter printer vi ut hvert argument på en ny linje. La oss si at vi kjører programmet med følgende kommandolinje-argumenter: `./program arg1 arg2 arg3`. Da vil utgangen bli:
+Her oppretter vi først en vektor ved hjelp av `args()`-funksjonen og lagrer den i en variabel kalt `args`. Deretter bruker vi `println!()`-makroen for å skrive ut programnavnet og det første argumentet. For å kjøre dette programmet, må vi først kompilere det og deretter kan vi gi argumentene vi ønsker å lese inn i kommandolinjen. For eksempel kan vi skrive `./programnavn argument_1 argument_2` og få output som følger:
 
-```
-Antall argumenter: 4
-./program
-arg1
-arg2
-arg3
+```bash
+Programnavn: programnavn
+Første argument: argument_1
 ```
 
-## Dypdykk
+## Deep Dive
 
-I Rust, kan du også spesifisere hvilke argumenter du forventer å motta ved å bruke `args_os()` i stedet for `args()`. Dette er spesielt nyttig hvis du håndterer argumenter som ikke kan konverteres til UTF-8, som for eksempel filbaner. I tillegg kan du vise en tilpasset hjelpetekst ved å bruke `std::env::args()` i kombinasjon med `println!()` makroen.
+Nå som vi har sett hvordan man enkelt kan lese inn kommandolinjeargumenter i Rust, la oss se på noen flere detaljer om dette. Det er viktig å merke seg at når man leser inn argumenter, vil alle disse være `String`-typer, uavhengig av hva slags datatype det faktiske argumentet er. Hvis vi ønsker å konvertere et argument til en annen datatype, må vi gjøre dette manuelt ved å bruke funksjoner som `parse()` og `unwrap()`.
 
-Det er også verdt å nevne at det finnes forskjellige biblioteker og rammeverk tilgjengelig i Rust for å gjøre håndteringen av kommandolinje-argumenter enda enklere og mer fleksibel. Noen av disse inkluderer:
-
-- `clap`: Et kraftig og intuitivt bibliotek for å lese og håndtere kommandolinje-argumenter. Det har også støtte for å generere hjelpetekster og underkommandoer.
-- `structopt`: En rustrelatert makro for å lage en kommandolinje-grensesnitt(rust related macro for parsing command line interface (CLI)) direkte fra en Rust-struktur.
-- `docopt`: En rammeverk som bruker en hjelpetekst for å generere en parser for å håndtere kommandolinje-argumenter.
+Vi kan også legge til funksjonalitet for å sjekke om riktig antall argumenter er gitt, eller for å gi en brukerfeilmelding hvis et forventet argument ikke er gitt. Dette kan være nyttig for å gjøre programmet vårt mer robust og brukervennlig.
 
 ## Se også
 
-- [Rust documentation: std::env](https://doc.rust-lang.org/std/env/index.html)
-- [Clap: A full-featured, fast Command Line Argument Parser for Rust](https://clap.rs/)
-- [Structopt: Declarative Parsing for Structs in Rust](https://docs.rs/structopt/0.3.11/structopt/)
-- [Docopt: A Rust implementation of Docopt language](https://docs.rs/docopt/1.1.0/docopt/)
+For mer informasjon om lesing av kommandolinjeargumenter i Rust, kan du besøke følgende ressurser:
 
-Vi håper denne bloggposten har gitt deg en grundig forståelse for hvordan du kan lese og håndtere kommandolinje-argumenter i Rust. Husk å sjekke ut de ulike bibliotekene og rammeverkene nevnt ovenfor for å finne den som passer best for ditt prosjekt. Lykke til med din Rust-programmering!
+- [Rust Docs: Command Line Arguments](https://doc.rust-lang.org/std/env/fn.args.html)
+- [Rust by Example: Command Line Arguments](https://doc.rust-lang.org/rust-by-example/std_misc/arg.html)
+- [The Rust Programming Language: Handling Command Line Arguments](https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html#handling-command-line-arguments)
+
+Takk for at du leste denne artikkelen om å lese kommandolinjeargumenter i Rust. Vi håper den var nyttig og gir deg en god forståelse av hvordan man kan gjøre dette i ditt eget prosjekt. Lykke til med programmeringen!

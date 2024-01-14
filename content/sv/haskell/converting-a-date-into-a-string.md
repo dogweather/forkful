@@ -1,54 +1,50 @@
 ---
-title:    "Haskell: Omvandla ett datum till en sträng"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/converting-a-date-into-a-string.md"
+title:                "Haskell: Omvandla ett datum till en sträng"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Haskell är ett kraftfullt programmeringsspråk som är populärt bland utvecklare på grund av sin funktionella stil och starka typsystem. Något som många utvecklare kanske inte vet är att Haskell också är ett effektivt verktyg när det gäller att konvertera datum till strängar. I denna bloggpost kommer vi att utforska varför du skulle vilja konvertera datum till strängar och hur du kan göra det i Haskell.
+# Varför
 
-## Hur man gör det
-För att konvertera datum till strängar i Haskell kan du använda funktionen `show`. Denna funktion omvandlar ett datum till en sträng som följer formatet "YYYY-MM-DD". Här är ett exempel på hur man använder `show`:
+Att konvertera ett datum till en sträng är en viktig del av många programmeringsprojekt, särskilt när man hanterar användardata eller analyserar tidsdata. Genom att förstå hur man gör det i Haskell kan du effektivt manipulera och presentera datumdata för dina användare.
 
-```Haskell
-import Data.Time.Clock
-import Data.Time.Format
+# Hur man gör
 
-currentDate <- getCurrentTime
-let stringDate = show (utctDay currentDate)
-print stringDate
-```
-
-Output:
-```
-"2019-11-28"
-```
-
-Som du kan se i exemplet ovan, behöver du först importera datatyperna `Data.Time.Clock` och `Data.Time.Format` för att kunna använda funktionen `show`. Sedan använder du `getCurrentTime` för att få det aktuella datumet och `utctDay` för att hämta dagen från detta datum. Slutligen använder du `show` för att konvertera dagen till en sträng.
-
-## Djupdykning
-Om du vill konvertera datum till en sträng som följer ett annat format, kan du använda funktionen `formatTime`. Du behöver fortfarande importera `Data.Time.Clock` och `Data.Time.Format` men denna gång ska du också importera `System.Locale` för att kunna välja det format du vill använda. Här är ett exempel på hur man använder `formatTime`:
+För att konvertera ett datum till en sträng i Haskell kan du använda funktionen `show` tillsammans med datatypen `Day` och `LocalTime`. Här är ett exempel på hur du gör det:
 
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Format
-import System.Locale
+import Data.Time
 
-currentDate <- getCurrentTime
-let stringDate = formatTime defaultTimeLocale "%d %b, %Y" currentDate
-print stringDate
+-- Skapa en `Day`-datatype från ett datum
+let date = fromGregorian 2021 04 15
+-- Använd `show` för att konvertera datumet till en sträng
+let str = show date
+
+-- Skapa en `LocalTime`-datatype från datum och tid
+let datetime = LocalTime date (TimeOfDay 13 30 00)
+-- Använd `show` för att konvertera datetimen till en sträng
+let str = show datetime
+
+-- Output:
+-- "2021-04-15"
+-- "2021-04-15 13:30:00"
 ```
 
-Output:
-```
-"28 Nov, 2019"
-```
+Här har vi använt `show` för att konvertera både datumet och datetimen till strängar, vilket ger oss ett standardiserat format som är lätt att läsa och förstå. Du kan också använda `formatTime`-funktionen för att anpassa utdataformatet ytterligare, beroende på dina behov.
 
-I exemplet ovan valde vi formatet "%d %b, %Y" som betyder dagens nummer, månadens förkortning och årets fyra sista siffror. Det finns många andra format som du kan välja från, såsom "%d/%m/%Y" för att få datumet i standard europeiskt format eller "%A, %d %B, %Y" för att få hela datumet utskrivet med dagens namn och månadens namn.
+# Djupdykning
 
-## Se även
-- [Haskell Date- och tidsbibliotek](https://github.com/robstewart57/Haskell-Data-Time-Library)
-- [Haskell-dokumentation: Data.Time.Format](https://hackage.haskell.org/package/time-1.9.2/docs/Data-Time-Format.html)
-- [En introduktion till Haskell för nybörjare](https://codeburst.io/an-introduction-to-haskell-for-beginners-c382af5be24f)
+När det gäller konvertering av datum till strängar i Haskell, är det viktigt att förstå hur dessa datatyper fungerar. `Day` är en datatyp som representerar ett datum, medan `LocalTime` är en datatyp som representerar datum och tid tillsammans. Dessa datatyper är en del av biblioteket `Data.Time` som innehåller användbara funktioner för hantering av datum och tid i Haskell.
+
+För att konvertera en sträng tillbaka till datum eller datetid, kan du använda funktioner som `parseTimeM` eller `readTime`. Dessa funktioner tar vanligtvis emot en sträng och en formatsträng som parameter för att korrekt avkoda den tillbaka till dess ursprungliga datatyp.
+
+Det är också viktigt att tänka på att olika länder och kulturer kan ha olika format för datum och tidsrepresentation. Om du behöver hantera flera språk och regioner, kan du använda `Locale`-datatypen tillsammans med `formatTime`-funktionen för att skapa anpassade format för olika språk.
+
+# Se även
+
+- [Dokumentation om Data.Time-biblioteket](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Tutorial om hur man hanterar datum och tid i Haskell](https://yiufung.net/post/2018-10-14-datetime-haskell/)
+- [Så här gör du omvandlingar mellan datatyper med "Convert" i Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/bytes-strings-functions#convert)

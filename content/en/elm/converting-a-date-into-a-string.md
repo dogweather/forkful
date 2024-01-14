@@ -1,52 +1,47 @@
 ---
-title:    "Elm recipe: Converting a date into a string"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/converting-a-date-into-a-string.md"
+title:                "Elm recipe: Converting a date into a string"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+##Why
+If you're familiar with Elm, you may have come across the need to convert a date into a string. This is a common task when working with user input or displaying dates in a readable format. In this blog post, we'll explore why converting dates to strings is useful and how it can be done in Elm.
 
-Understanding how to convert a date into a string is an essential skill for any Elm programmer. Converting a date into a string allows you to display dates in a user-friendly format, making your application more user-friendly and intuitive.
+##How To
+Converting a date into a string in Elm is a straightforward process and can be done using the `format` function from the `Time` library. Let's look at an example:
 
-## How To
+```Elm
+import Time
 
-In Elm, dates are stored as a type called `Posix`, which represents the number of milliseconds since January 1, 1970, at midnight UTC. To convert a `Posix` value into a human-readable date string, we will use the `Time` library. Let's look at an example of converting a `Posix` value into a string representing the current date:
+dateToConvert = Time.posixToMillis 1549560000 --Monday, February 7th, 2019 at 14:00:00
 
-```elm
-import Time exposing (posixToMillis, millisToPosix, toString, Date)
+formattedDate = Time.format "%A, %B %d, %Y at %H:%M:%S" dateToConvert
 
--- Get current date as `Posix` value
-currentTime : Time.Posix
-currentTime =
-  Time.now
-
--- Convert `Posix` value to `Date` type
-currentDate : Time.Date
-currentDate =
-  Time.millisToPosix currentTime
-
--- Convert `Date` type to string
-dateString : String
-dateString =
-  Time.toString Date.utc "%Y-%m-%d" currentDate
 ```
 
-In this example, we first import the `Time` library which has functions for working with dates and times. We then use the `now` function to get the current time as a `Posix` value. Next, we use the `millisToPosix` function to convert this value into a `Date` type. Finally, we use the `toString` function to format the `Date` into a string, using the `"%Y-%m-%d"` format for a date in the UTC timezone.
+In this example, we first import the `Time` library, which provides functions for working with dates and times. Then, we create a variable `dateToConvert` which represents a specific date in milliseconds since January 1st, 1970. This is a common format used for dates in programming.
 
-Running this code will give us an output of "2021-01-25" as the current date in the UTC timezone. You can play around with different formats and timezones to get your desired output.
+Next, we use the `format` function to convert our date into a string using the specified format string. This function takes two arguments - the first being the format string, and the second being the date to format.
 
-## Deep Dive
+In our example, we use the format string `"%A, %B %d, %Y at %H:%M:%S"` which represents the format we want our date to be displayed in. The letters A, B, d, Y, H, M, and S are placeholders that will be replaced with the actual values from our date. You can find a list of these placeholders and their meanings in the Elm documentation for `Time`.
 
-As mentioned earlier, Elm stores dates as `Posix` values, which is a common way of representing dates in programming. This format allows for easy comparisons and calculations with dates. However, for displaying dates in a user-friendly format, we must convert them into a string.
+The `format` function then returns a string representation of our date, which we store in the `formattedDate` variable. Printing `formattedDate` to the console would result in the string "Monday, February 7, 2019 at 14:00:00".
 
-The `Time` library provides many functions for working with dates and times, including formatting and parsing strings. It also has functions for performing operations on dates, such as adding and subtracting days, hours, and other time units.
+##Deep Dive
+Now that we have a basic understanding of how to convert a date into a string in Elm, let's dive deeper and explore some other useful functions and formatting options.
 
-When converting a date into a string, it's essential to consider the timezone to get accurate results. The `Date` type in Elm allows for specifying the timezone when converting to a `String` to ensure the correct date is displayed.
+1. `posixToTime`: This function converts a date in milliseconds since January 1st, 1970 into a `Time.Posix` value, which can then be used with `format` to convert into a string. This is useful when working with user input or dates from an external API.
 
-## See Also
+2. `Time.Year`, `Time.Month`, `Time.Day`, etc.: These functions can be used to extract specific parts of a date, such as the year, month, or day, and can be combined with the placeholders in the format string to customize the output.
 
-- Elm Time Library Documentation: https://package.elm-lang.org/packages/elm/time/latest/
-- Date and Time Formatting in Elm: https://guide.elm-lang.org/effects/time.html#date-time-formatting
-- Elm DateTime Cheat Sheet: https://korban.net/elm/elm-datetime-cheat-sheet/
+3. `Time.inUtc`: This function converts a `Time` value to Coordinated Universal Time (UTC), which is helpful when working with dates in different timezones.
+
+There are also other formatting options available for customizing the output, such as adding leading zeros to numbers or displaying the time in a 12-hour format. You can find more information about these options in the `Time` documentation.
+
+##See Also
+- [The `Time` package documentation](https://package.elm-lang.org/packages/elm/core/latest/Time)
+- [Elm Guide: Dates and Times](https://guide.elm-lang.org/dates_and_times/)
+- [Elm Time Cheatsheet](https://github.com/TimelessLearner/elm-time-cheatsheet)

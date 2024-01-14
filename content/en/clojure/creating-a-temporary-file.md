@@ -1,41 +1,35 @@
 ---
-title:    "Clojure recipe: Creating a temporary file"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/creating-a-temporary-file.md"
+title:                "Clojure recipe: Creating a temporary file"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Creating temporary files is a common task in programming, especially when working with large or complex data. Temporary files provide a convenient way to store data that is only needed temporarily, without cluttering up the main file system.
+Creating temporary files is a common practice in programming, especially in Clojure. These files serve as a placeholder for data that is only needed temporarily during the execution of a program. They allow for efficient and organized data management, improving the performance and functionality of a program.
 
 ## How To
 
-To create a temporary file in Clojure, we can use the `java.io.File` class along with the `with-open` macro. First, we need to import the `java.io` package:
+Creating a temporary file in Clojure is a simple process that can be done using the `java.io.File` class. The following code block shows an example of how to create a temporary file in Clojure and print its name:
 
 ```Clojure
-(import '[java.io File])
+(let [temp-file (java.io.File/createTempFile "clojure-temp" ".txt")]
+  (println (.getName temp-file))) ; outputs "clojure-temp2047400008450058639.txt"
 ```
 
-Then, we can use the `with-open` macro to create a temporary file and write data to it:
-
-```Clojure
-(with-open [temp-file (File/createTempFile "mytempfile" ".txt")]
-  (println "Writing data to temporary file...")
-  (spit temp-file "This is temporary data.")
-  (println "Temporary file created at" (.getAbsolutePath temp-file)))
-```
-
-Running this code will result in the temporary file "mytempfile.txt" being created in the default temporary file directory, with the contents "This is temporary data." The `with-open` macro will also automatically close the file after the code block has executed.
+In this code, we use the `createTempFile` method to create a new temporary file with a prefix of "clojure-temp" and a suffix of ".txt". The file's name will be a combination of the prefix, a random number, and the suffix. We then use the `getName` method to retrieve the name of the temporary file and print it to the console.
 
 ## Deep Dive
 
-The `createTempFile` method in the `java.io.File` class is used to create a temporary file with a specified prefix and suffix. The prefix is the first parameter, and the suffix is the second parameter. For example, in our code block, we specified the prefix as "mytempfile" and the suffix as ".txt", resulting in a temporary file named "mytempfile.txt". If no prefix is specified, a default prefix of "tmp" will be used.
+When creating a temporary file, we can also specify a directory where the file should be created. By default, the file will be created in the default temporary directory of the system, but we can choose to create it in a specific directory by passing a file object as the second argument to the `createTempFile` method.
 
-Additionally, the `with-open` macro is a convenient way to open and close files in Clojure. It takes a series of bindings as parameters, where each binding pairs a symbol with an open resource. In our code block, we used a single binding for the `temp-file` symbol and the `File/createTempFile` expression. This allows us to work with the temporary file inside the `with-open` code block, and the file will be closed automatically once the code block has finished executing.
+Another important aspect to consider when creating temporary files is their lifespan. Temporary files are automatically deleted when the program terminates, but we can also delete them manually using the `deleteOnExit` method. This method takes no arguments and will mark the file for deletion when the program exits.
 
 ## See Also
 
-- [Java File Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Official Clojure Documentation on IO](https://clojure.org/reference/io)
+- [Clojure Java Interop Guide](https://clojure.org/reference/java_interop)
+- [Official Java Documentation on temporary files](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html#createTempFile(java.lang.String,java.lang.String,java.io.File))
+- [Clojure File API Docs](https://clojuredocs.org/clojure.java.io/file)

@@ -1,58 +1,42 @@
 ---
-title:    "Ruby: Ein neues Projekt beginnen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/starting-a-new-project.md"
+title:                "Ruby: Ein neues Projekt starten"
+programming_language: "Ruby"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Wenn man in der Welt der Softwareentwicklung tätig ist, kommt man nicht umhin, neue Projekte zu beginnen. Diese Projekte können eine Vielzahl von Gründen haben, sei es das Lernen einer neuen Sprache oder das Erstellen einer Anwendung für den persönlichen Gebrauch. Egal aus welchem Grund, das Starten eines neuen Projekts kann aufregend und herausfordernd sein. In diesem Blogpost werde ich Ihnen zeigen, wie Sie mit Leichtigkeit ein neues Ruby-Projekt starten können.
+Das Erstellen eines neuen Projekts in Ruby kann sehr aufregend sein. Es bietet die Möglichkeit, etwas Neues zu schaffen und Ihren Programmierfähigkeiten eine Herausforderung zu stellen. Außerdem können Sie Ihre kreativen Ideen umsetzen und Ihr Wissen über die Sprache erweitern. Egal, ob Sie ein erfahrener Ruby-Programmierer sind oder gerade erst anfangen, es gibt immer einen guten Grund, ein neues Projekt zu starten.
 
-##Wie geht es?
+## Wie man anfängt
 
-Um ein neues Ruby-Projekt zu starten, müssen Sie zunächst Ruby auf Ihrem Computer installiert haben. Wenn Sie ein Mac-Benutzer sind, haben Sie Glück, da Ruby bereits auf Ihrem Computer installiert ist. Wenn Sie jedoch Windows verwenden, müssen Sie Ruby selbst installieren. Sobald Sie Ruby installiert haben, können Sie mit dem Erstellen Ihres Projekts beginnen.
+Um ein neues Projekt in Ruby zu starten, müssen Sie zunächst die Ruby-Umgebung auf Ihrem Computer einrichten. Dies beinhaltet die Installation von Ruby und eines Paketmanagers wie Bundler. Sobald dies erledigt ist, können Sie Ihren Code in einem Texteditor oder einer integrierten Entwicklungsumgebung (IDE) schreiben. Hier ist ein Beispielcode, der "Hello World" in der Konsole ausgibt:
 
-Öffnen Sie zunächst die Eingabeaufforderung oder das Terminal und navigieren Sie zum Ordner, in dem Sie Ihr Projekt speichern möchten. Dann geben Sie den folgenden Befehl ein:
-
-```ruby
-mkdir mein_projekt
-```
-
-Dieser Befehl erstellt einen neuen Ordner mit dem Namen "mein_projekt". Navigieren Sie nun in diesen Ordner, indem Sie den Befehl "cd" verwenden. In der Eingabeaufforderung sieht das folgendermaßen aus:
-
-```ruby
-cd mein_projekt
-```
-
-Als nächstes müssen Sie ein neues Ruby-Skript erstellen. Dies kann entweder über eine Textverarbeitungssoftware wie Notepad oder durch die Verwendung des Befehls "touch" in der Eingabeaufforderung erfolgen.
-
-```ruby
-touch main.rb
-```
-
-Dies erstellt eine Datei mit dem Namen "main.rb" in Ihrem Projektordner. Öffnen Sie diese Datei in Ihrer bevorzugten Textverarbeitungssoftware und beginnen Sie mit dem Schreiben Ihres Codes.
-
-```ruby
+```Ruby
+# Hello World Beispiel
 puts "Hallo Welt!"
 ```
 
-Dies ist ein einfaches Beispiel für einen Ruby-Code, der "Hallo Welt!" ausgibt. Sie können dies natürlich anpassen und erweitern, je nachdem, was Ihr Projekt erfordert.
+Nachdem Sie Ihr Ruby-Programm geschrieben haben, können Sie es mit dem folgenden Befehl in Ihrer Konsole ausführen:
 
-##Tief eintauchen
+```Ruby
+ruby hello_world.rb
+```
 
-Der Code, den Sie in Ihrem Ruby-Skript schreiben, kann mit vielen nützlichen Funktionen, Klassen und Methoden erweitert werden. Um mehr über diese zu erfahren, empfehle ich Ihnen, die Dokumentation auf der offiziellen Ruby-Website zu besuchen. Dort finden Sie alle Informationen, die Sie benötigen, um Ihr Projekt zum Laufen zu bringen.
+Die Ausgabe sollte "Hallo Welt!" sein. Das ist die erste und einfachste Möglichkeit, ein Ruby-Projekt zu starten.
 
-Ein weiterer wichtiger Aspekt bei der Erstellung eines Ruby-Projekts ist die Verwendung von Paketverwaltungstools wie Bundler. Diese erleichtern es, die von Ihrem Projekt benötigten Bibliotheken und Abhängigkeiten zu verwalten.
+## Tiefer tauchen
 
-Es ist auch wichtig, sich mit den Best Practices in der Ruby-Community vertraut zu machen und ein lebendiges Open-Source-Ökosystem zu nutzen. Eine großartige Möglichkeit, dies zu tun, ist die Teilnahme an Ruby Meetups und Konferenzen oder die Teilnahme an Online-Communities wie Rubyists Slack oder Reddit.
+Bevor Sie mit Ihrem neuen Projekt loslegen, ist es wichtig, ein paar Dinge zu beachten. Denken Sie zunächst über das Ziel Ihres Projekts nach und welche Funktionen es haben soll. Dann können Sie mit dem Entwurf Ihres Programms beginnen, indem Sie es in kleinere Teilaufgaben aufteilen. Diesen Ansatz nennt man auch "komponentenorientierte Programmierung", bei der das Gesamtprogramm in kleinere, leichter zu handhabende Komponenten unterteilt wird.
 
-##Siehe auch
+Außerdem empfiehlt es sich stark, die Ruby-Dokumentation zu lesen, um das volle Potenzial der Sprache zu verstehen. Es gibt auch viele Online-Ressourcen, Tutorials und Foren, die Ihnen bei Fragen und Problemen helfen können. Verzweifeln Sie nicht, wenn Sie auf Hindernisse stoßen – es erfordert Übung und Geduld, um sich in Ruby zu verbessern.
 
-- Offizielle Ruby-Website (https://www.ruby-lang.org/de/)
-- Dokumentation zu Ruby (https://www.ruby-lang.org/de/documentation/)
-- Bundler-Dokumentation (https://bundler.io/)
-- Ruby Meetups und Konferenzen (https://www.meetup.com/de/topics/ruby/)
-- Rubyists Slack (https://rubyists.slack.com/)
-- Reddit r/Ruby (https://www.reddit.com/r/ruby/)
+## Siehe auch
+
+- [Offizielle Ruby-Website](https://www.ruby-lang.org/de/)
+- [Bundler Dokumentation](https://bundler.io/)
+- [RubyGems](https://rubygems.org/)
+- [Ruby-Community-Forum](https://ruby-talk.org/)

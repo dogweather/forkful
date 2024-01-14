@@ -1,48 +1,68 @@
 ---
-title:    "C++: Sjekke om en mappe eksisterer"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/checking-if-a-directory-exists.md"
+title:                "C++: Sjekke om en mappe eksisterer."
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Det er ofte nyttig å sjekke om en mappe eksisterer i et C++ program. Dette kan være nyttig for å håndtere filer og lagre data på en organisert måte. I tillegg kan det bidra til å unngå feil og krasj i programmet. I dette blogginnlegget vil vi utforske hvordan man kan sjekke om en mappe eksisterer i et C++ program.
+Enten du er en erfaren C++ utvikler eller en nybegynner, kan det være nyttig å vite hvordan du sjekker om en mappe eksisterer i ditt program. Dette gjør det mulig å utføre forskjellige oppgaver, som å navigere til en bestemt mappe eller sjekke om en fil er på riktig plassering.
 
-## Hvordan
+# Hvordan gjøre det
 
-Det første vi må gjøre er å inkludere "filesystem" biblioteket i programmet vårt. Dette gjøres ved å bruke "include" kommandoen:
-
-```C++
-#include <filesystem>
-```
-
-Deretter definerer vi en variabel for mappen vi vil undersøke, for eksempel "myFolder". Vi kan deretter bruke "std::filesystem::exists" funksjonen for å sjekke om denne mappen eksisterer eller ikke. Dette vil returnere en boolsk verdi, som vi kan bruke til å utføre ulike handlinger i programmet vårt. Her er et eksempel på hvordan dette kan se ut:
+Det å sjekke om en mappe eksisterer i C++ krever bruk av en innebygd funksjon som heter `opendir()`. Denne funksjonen tar inn en tekststreng som representerer mappen du ønsker å sjekke. Her er et eksempel på hvordan dette kan gjøres:
 
 ```C++
+// inkluder nødvendige biblioteker
 #include <iostream>
-#include <filesystem>
+#include <dirent.h>
+using namespace std;
 
 int main() {
-    std::filesystem::path myFolder = "/path/to/my/folder";
-    if (std::filesystem::exists(myFolder)) {
-        std::cout << "Mappen eksisterer!" << std::endl;
-    } else {
-        std::cout << "Mappen eksisterer ikke!" << std::endl;
-    }
+    // definer mappen som skal sjekkes
+    string mappe = "/bruker/navn/program/";
 
+    // forsøk å åpne mappen og lagre returverdien
+    DIR* retur = opendir(mappe.c_str());
+
+    // sjekk om returverdien er lik NULL
+    if (retur == NULL) {
+        // mappen eksisterer ikke, gi brukeren en feilmelding
+        cout << "Mappen eksisterer ikke!" << endl;
+    } else {
+        // mappen eksisterer, gi brukeren en bekreftelse
+        cout << "Mappen eksisterer!" << endl;
+        // husk å lukke mappen etter at du er ferdig med å sjekke
+        closedir(retur);
+    }
+    
     return 0;
 }
 ```
 
-Dette eksempelet vil skrive ut enten "Mappen eksisterer!" eller "Mappen eksisterer ikke!" avhengig av om mappen eksisterer eller ikke.
+Koden vil forsøke å åpne mappen som er definert i `mappe` variabelen. Hvis mappen ikke eksisterer, vil `opendir()` returnere en NULL-verdi, som betyr at vi kan gi en feilmelding til brukeren. Ellers, hvis mappen eksisterer, vil vi få en bekreftelse og lukke mappen igjen.
 
-## Deep Dive
+## Dypdykk
 
-Når vi bruker "std::filesystem::exists" funksjonen, vil det sjekkes om mappen eksisterer og returnere en boolsk verdi. Men hva skjer egentlig bak kulissene? Funksjonen bruker Win32 GetFileAttributes eller POSIX operating system lstat funksjoner for å hente informasjon om en gitt fil eller mappe. Deretter brukes en rekke forskjellige flagg for å bestemme om filen eller mappen eksisterer eller ikke. Dette gir en effektiv måte å sjekke om en mappe eksisterer i et C++ program.
+Når du sjekker om en mappe eksisterer, kan det være nyttig å vite at `opendir()` funksjonen også tar inn flere argumenter. For eksempel, hvis du kun ønsker å sjekke om mappen eksisterer og ikke åpne den, kan du bruke `access()` funksjonen i stedet. Her er et eksempel på hvordan det kan gjøres:
 
-## Se også
+```C++
+// sjekk om mappen eksisterer uten å åpne den
+if (access(mappe.c_str(), F_OK) == 0) {
+    // mappen eksisterer, gi brukeren en bekreftelse
+    cout << "Mappen eksisterer!" << endl;
+} else {
+    // mappen eksisterer ikke, gi brukeren en feilmelding
+    cout << "Mappen eksisterer ikke!" << endl;
+}
+```
 
-- [std::filesystem::exists dokumentasjon](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [C++ Filesystem biblioteket](https://en.cppreference.com/w/cpp/filesystem)
+Her bruker vi `access()` funksjonen som tar inn to argumenter: en tekststreng som representerer mappen, og en funksjonell modus som forteller hvilken operasjon som skal utføres på mappen. `F_OK` modus betyr at vi kun ønsker å sjekke om mappen eksisterer.
+
+# Se også
+
+- [C++ Dokumentasjon: opendir()](https://www.cplusplus.com/reference/cstdio/opendir/)
+- [Programiz: How to Check if a Directory Exists in C++](https://www.programiz.com/cpp-programming/files-directories-check-existence)

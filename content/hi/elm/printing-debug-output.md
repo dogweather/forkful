@@ -1,40 +1,31 @@
 ---
-title:    "Elm: डिबग आउटपुट प्रिंट करना"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/elm/printing-debug-output.md"
+title:                "Elm: डिबग आउटपुट प्रिंट करना"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun:
 
-डीबग आउटपुट को प्रिंट करने का काम करने के पीछे का पीछा करने के लिए कई कारण हो सकते हैं। यह मदद कर सकता है कि हम न केवल बग्स को समझें, बल्कि हमारे कोड को भी दोषमुक्त और स्पष्ट बनाए।
+Debug output ko print karne ka matlab hai ki aap apne code ki performance aur errors ko monitor kar sake. Isse aap apne code ke kisi bhi hisse mein agar koi problem ho to usse identify aur solve kar sakte hain. Debug output aapko apne code ko samajhne aur improve karne mein madad karta hai.
 
-## रचना
+## Kaise Kare:
 
-डीबग आउटपुट को प्रिंट करने के लिए, हम `Debug` मॉड्यूल का उपयोग कर सकते हैं और उसमें उपलब्ध विभिन्न फंक्शन्स का उपयोग कर सकते हैं। नीचे एक उदाहरण है:
+Debug output ko print karne ke liye, aapko Elm ka `Debug.log` function ka istemal karna hoga. Is function mein aapko apne desired message aur value ko pass karna hai jisse aap debug output mein dekhna chahte hain.
 
-```elm
-import Debug exposing (log)
-
-name = "John Smith"
-age = 25
-
-log "Name: " name
-log "Age: " age
+```Elm
+myNumber = 5
+Debug.log "My Number is:" myNumber
 ```
+Ye code debug output mein "My Number is: 5" print karega. Is tarah se aap apne code ki kisi bhi variable ya value ka output dekh sakte hain.
 
-उपरोक्त कोड का परिणाम निम्न होगा:
+## Gehri Jhaank:
 
-```
-Name: "John Smith"
-Age: 25
-```
+Debug output ka istemal aapko apne code ki performance aur errors ke alawa bhi kuch aur fayde deta hai. Aap isse apne code ki execution flow ko samajh sakte hain aur apne code ko optimize kar sakte hain. Iske alawa, aap apne code mein breakpoints laga kar step through debugging bhi kar sakte hain.
 
-जब हम `log` फंक्शन को डीबग आउटपुट के साथ दोष संदेशों को एकत्र करते हैं, तो आप आसानी से दोनों को कंपायल करके उन्हें समान्य मॉड में प्रिंट कर सकते हैं। इससे हमारे कोड के प्रति प्रभाव और सुधार एक व्यक्तिगत स्तर पर हो सकते हैं।
+## Dekhe Bhi:
 
-## गहराई में
-
-डीबग आउटपुट को प्रिंट करने के लिए हम कुछ और चीजें भी कर सकते हैं, जैसे कि `toString` फंक्शन का उपयोग डेटा को तैयार करने के लिए और `Just` और `Nothing` जैसे डेटा संरचनाओं का उपयोग करके विभिन्न प्रकार के डेटा को प्रिंट करने के लिए। इसके अलावा, हम अपने कोड में डीबग आउटपुट को प्रिंट करने से पहले `Debug.log "Debugging!"` के साथ एक संदेश भी प्रिंट कर सकते हैं, जिससे कि हम क्या डिबग कर रहे हैं यह समझ पाते हैं।
-
-## देखें
+- [Elm ka Debug library](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Elm ka Debugging Guide](https://guide.elm-lang.org/debugging/)

@@ -1,50 +1,47 @@
 ---
-title:    "Elm: 文字列の抽出"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/extracting-substrings.md"
+title:                "Elm: 部分文字列の抽出"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
+なぜサブストリングを抽出した方が良いのか？
 
-エルムプログラミングを行う人が文字列を抽出するのかを説明します。 「Why」セクションでは、これを行う理由を1〜2文で説明します。
+サブストリングを抽出することが、Web開発やデータ処理を行う際に非常に有用です。特定のテキストや文字列から、必要な情報だけを抽出することができます。これにより、データの収集や整理がより効率的に行えます。
 
-文字列を抽出することは非常に一般的なタスクです。例えば、大きなテキストから必要な情報だけを取得したり、特定の単語やフレーズを抽出したりすることができます。これは、データ処理やパターンマッチングに役立つことができます。
+## How To
+サブストリングを抽出する方法をご紹介します。「```Elm ... ```」のコードブロックを使用し、実際のコーディング例と出力を確認していきましょう。
 
-## 方法
-
-エルムで文字列を抽出する方法をコーディングの例とともに説明します。
-
-``` Elm
-import String exposing (extract)
-
--- テキストから "Elm" を抽出
-result = extract "I love Elm programming" "Elm"
+### 例題1: 文字列の一部を抽出する
+```
+Elm String.slice "Hello World" 6 11
+```
+```
+"Just"
 ```
 
-上記の例では、テキストの中から "Elm" という単語を抽出しています。抽出した結果は `result` という変数に格納され、次のように出力されます。
+この例では、String.sliceメソッドを使用して、"Hello World"という文字列から、インデックス6から11までの部分文字列を抽出しています。これにより、最初の単語"Hello"を除いた「World」という部分文字列が取得できます。
 
-``` Elm
-{ start = 8, end = 11, match = "Elm" }
+### 例題2: 正規表現を使用して特定のパターンを抽出する
+```
+Elm Regex.find Regex.All "Hello 123 World" "([0-9]+)"
+```
+```
+Just [ "123" ]
 ```
 
-このように、抽出する文字の開始位置と終了位置、および抽出された文字列自体がオブジェクトとして返されます。
+正規表現を使用することで、特定のパターンを持つ文字列を抽出することができます。上記の例では、"Hello 123 World"という文字列から数字の部分文字列を抽出しています。
 
-## ディープダイブ
+## Deep Dive
+サブストリングを抽出する方法についてもっと詳しく知りたい方は、[Elmの公式ドキュメント](https://elm-lang.org/docs)をご覧ください。また、[elm/regexパッケージ](https://package.elm-lang.org/packages/elm/regex/latest/)を使用することで、より高度な文字列抽出を行うことができます。
 
-文字列を抽出する方法についてより詳しく説明します。
+## See Also
+参考情報:
 
-文字列を抽出する際に使用する `extract` 関数は、2つのパラメータを受け取ります。第1パラメータには抽出したいテキストを、第2パラメータには抽出したい文字列を指定します。また、抽出した文字が複数ある場合は、最初に見つかった文字列のみが返されます。
+- [Elmの公式ドキュメント](https://elm-lang.org/docs)
+- [elm/regexパッケージ](https://package.elm-lang.org/packages/elm/regex/latest/)
 
-また、 `extract` 関数には3つのオプションのパラメータがあります。これらを使用することで、大文字と小文字を区別しない、正規表現を使用するなどの操作が可能になります。
-
-詳細な使用方法は、エルムのドキュメンテーションを参照してください。
-
-## は見て
-
-次のリンクを参照して、エルムで文字列を抽出する方法についてのさらなる情報を入手してください。
-
-- [エルムのドキュメンテーション](https://elm-lang.org/docs)
-- [エルムのチュートリアル](https://www.elm-tutorial.org/jp/)
-- [エルムコミュニティフォーラム](https://discourse.elm-lang.org/c/japanese)
+サブストリングを抽出することで、より柔軟なデータ処理が可能になります。ぜひ、上記の方法を参考にしてみてください。

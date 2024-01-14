@@ -1,39 +1,42 @@
 ---
-title:    "Haskell: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/calculating-a-date-in-the-future-or-past.md"
+title:                "Haskell: Berechnen eines Datums in der Zukunft oder Vergangenheit"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Berechnen von Datum in der Zukunft oder Vergangenheit kann nützlich sein, um beispielsweise Termine oder Fristen zu planen oder zu überprüfen.
+Das Berechnen von zukünftigen oder vergangenen Datumsangaben kann sehr nützlich sein, wenn man zum Beispiel eine Erinnerungsfunktion oder Terminplanung in seiner Haskell-Anwendung benötigt.
 
 ## Wie geht das?
 
-In Haskell kann dies einfach mit der Funktion `addDays` aus dem `Data.Time`-Modul durchgeführt werden. Hier ist ein Beispiel, das das Datum, das in 30 Tagen sein wird, berechnet:
-
 ```Haskell
-import Data.Time
+import Data.Time.Calendar
 
-currentDate <- getCurrentTime
-let futureDate = addDays 30 (utctDay currentDate)
-print futureDate
+-- Berechnung eines Datums in der Zukunft
+let future = addDays 10 today
+-- future wird das Datum in 10 Tagen enthalten
+
+-- Berechnung eines Datums in der Vergangenheit
+let past = addDays (-7) today
+-- past wird das Datum vor 7 Tagen enthalten
 ```
 
-Die Ausgabe für `futureDate` wäre `2022-02-15`, was in 30 Tagen dem heutigen Datum entspricht.
+Die `addDays` Funktion aus dem `Data.Time.Calendar` Modul ermöglicht es uns, ein bestimmtes Datumsobjekt (hier `today`) um eine bestimmte Anzahl an Tagen zu erweitern oder zu reduzieren.
 
-## Tiefentauchen
+## Tieferer Einblick
 
-Die `addDays`-Funktion verwendet den Datentyp `Day`, der in `Data.Time.Calendar` definiert ist, um Datumsoperationen durchzuführen. Der Datentyp `Day` ist eine Instanz des Typklassen `Num`, was bedeutet, dass wir arithmetische Operationen wie `addDays` auf ihm anwenden können.
+Für die Berechnung von Datumsangaben in der Zukunft oder Vergangenheit gibt es verschiedene Optionen. Neben der `addDays` Funktion gibt es auch noch `addMonths` und `addYears`, um Datumsangaben um Monate bzw. Jahre zu erweitern. Diese Funktionen funktionieren ähnlich wie `addDays`.
 
-In diesem Beispiel haben wir `utctDay` verwendet, um das aktuelle Datum aus der aktuellen `UTCTime`-Uhrzeit abzurufen. Wir haben der `addDays`-Funktion die Anzahl der Tage übergeben, um das zukünftige Datum zu berechnen. Die Funktion gibt dann das zukünftige Datum als `Day`-Objekt zurück, das wir dann ausdrucken können.
-
-Um ein Datum in der Vergangenheit zu berechnen, können wir einfach eine negative Anzahl von Tagen an `addDays` übergeben.
+Außerdem gibt es auch Funktionen wie `diffDays`, `diffMonths` und `diffYears`, mit denen die Differenz zwischen zwei Datumsangaben berechnet werden kann.
 
 ## Siehe auch
-
-- Die offizielle Haskell-Dokumentation für `Data.Time` (https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- Ein Tutorial zu Datum und Zeit in Haskell (https://wiki.haskell.org/Date_and_time)
-- Weitere Funktionen für die Arbeit mit Datum in Haskell (https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)
+- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:addDays
+- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:addMonths
+- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:addYears
+- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:diffDays
+- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:diffMonths
+- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:diffYears

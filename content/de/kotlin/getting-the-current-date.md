@@ -1,60 +1,49 @@
 ---
-title:    "Kotlin: Das Erhalten des aktuellen Datums"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/getting-the-current-date.md"
+title:                "Kotlin: Das aktuelle Datum erhalten"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Abrufen des aktuellen Datums ist ein häufiges Szenario in der Programmierung. Es kann verwendet werden, um das Erstellungsdatum eines Dokuments zu speichern, asynchrone Aufgaben zu planen oder einfach nur das aktuelle Datum in einer Anwendung anzuzeigen.
+In der heutigen Zeit ist es oft wichtig, das aktuelle Datum zu kennen. Sei es für geschäftliche Zwecke oder um persönliche Aufzeichnungen zu machen, die genaue Zeit und Datum können eine entscheidende Rolle in unserem täglichen Leben spielen. In dieser Blog-Post werden wir uns ansehen, wie man das aktuelle Datum in Kotlin abrufen kann und welche praktischen Anwendungen es dafür gibt.
 
-# Wie
+## Wie geht man vor
 
-Die aktuelle Datum in Kotlin zu erhalten ist sehr einfach. Dazu können wir die `java.time` API verwenden.
-
-```Kotlin 
-// importieren der benötigten Klassen
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-
-// Abrufen des aktuellen Datums als LocalDate-Objekt
-val currentDate : LocalDate = LocalDate.now()
-
-// Formatieren des Datums als String mithilfe des DateTimeFormatter-Objekts
-val formattedDate : String = currentDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
-
-// Ausgabe des aktuellen Datums
-println("Das aktuelle Datum ist: $formattedDate")
-```
-
-Die Ausgabe würde wie folgt aussehen:
-
-```
-Das aktuelle Datum ist: 30.08.2021
-```
-
-# Deep Dive
-
-Wenn wir uns die `java.time.LocalDate` Klasse genauer ansehen, können wir sehen, dass sie viele nützliche Methoden bietet, um mit Datumswerten umzugehen. Zum Beispiel können wir das Datum um eine beliebige Anzahl von Tagen, Monaten oder Jahren vorwärts oder rückwärts verschieben.
+Um das aktuelle Datum in Kotlin abzurufen, können wir die Date-Klasse verwenden, die in der Standardbibliothek von Kotlin enthalten ist. Hier ist ein Beispielcode, der das aktuelle Datum im Format Tag/Monat/Jahr ausgibt:
 
 ```Kotlin
-// Verschieben des aktuellen Datums um 10 Tage in die Zukunft
-val futureDate = currentDate.plusDays(10)
-println("Das Datum in 10 Tagen ist: ${futureDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))}")
+import java.util.Date
+
+val currentDate = Date()
+println(currentDate)
 ```
 
-Die Ausgabe würde wie folgt aussehen:
+Die Ausgabe dieses Codes wird je nach aktuellem Datum variieren, aber ein Beispieloutput könnte "Sat Sep 18 16:09:33 CEST 2021" sein. Um das Datum in einem bestimmten Format auszugeben, können wir die SimpleDateFormat-Klasse verwenden. Hier ist ein Beispielcode, der das aktuelle Datum im Format Tag.Monat.Jahr ausgibt:
 
+```Kotlin
+import java.util.Date
+import java.text.SimpleDateFormat
+
+val currentDate = Date()
+val dateFormat = SimpleDateFormat("dd.MM.yyyy")
+val formattedDate = dateFormat.format(currentDate)
+println(formattedDate)
 ```
-Das Datum in 10 Tagen ist: 09.09.2021
-```
 
-Außerdem bietet die `java.time` API auch Unterstützung für andere Zeitformate wie z.B. Zeitzonen, Uhrzeiten und mehr.
+Die Ausgabe dieses Codes ist unabhängig vom aktuellen Datum immer im Format "TT.MM.JJJJ", also zum Beispiel "18.09.2021". Dies ist besonders nützlich, wenn man das Datum in einer Datenbank speichern oder für andere Zwecke verwenden möchte.
 
-# Siehe auch
+## Tiefergehende Einblicke
 
-- [Kotlin Standard Library - Datum und Uhrzeit](https://kotlinlang.org/docs/tutorials/kotlin-for-py/dates.html)
-- [Java API - Local Date Klasse](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java API - Date and Time Tutorial](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+Die Date-Klasse in Kotlin ist im Grunde eine Wrapperschicht um die java.util.Date-Klasse, die in Java verwendet wird. In Kotlin gibt es jedoch einige zusätzliche Funktionen, die das Arbeiten mit Datum und Zeit erleichtern. Zum Beispiel können wir ein Datum mit der "copy" Methode kopieren und einzelne Teile davon ändern, wie zum Beispiel den Monat oder das Jahr. Auch die Java 8 Time API ist in Kotlin gut integriert und bietet zusätzliche Funktionen und Klassen zum Arbeiten mit Datum und Zeit.
+
+Es ist wichtig zu beachten, dass die Date-Klasse in Kotlin nicht thread-sicher ist. Wenn mehrere Threads auf dasselbe Datum zugreifen, kann es zu unerwünschten Ergebnissen oder sogar Fehlern führen. In solchen Fällen sollten wir Synchronisationsmechanismen verwenden, um sicherzustellen, dass das Datum korrekt abgerufen und verwendet wird.
+
+## Siehe auch
+
+- Offizielle Kotlin-Dokumentation zur Date-Klasse: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date
+- Java 8 Time API-Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Kotlin-Java-Interop: https://kotlinlang.org/docs/tutorials/interoperability-java.html

@@ -1,40 +1,30 @@
 ---
-title:    "Swift: स्ट्रिंग को अक्षरमण प्रमाणित करना"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/capitalizing-a-string.md"
+title:                "Swift: स्ट्रिंग को कैपिटलाइज़ करना"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
+यदि आप Swift में प्रोग्रामिंग करते हैं तो आपने शायद capitalizing या वक्रीकरण के बारे में सुना होगा। अगर आप आज भी इसके बारे में जानना चाहते हैं, तो यह लेख आपके लिए ही है।
 
-कोई भी प्रोग्रामिंग भाषा में, स्ट्रिंगों को ओपरेशन करना बहुत आम है। एक ऐसा महत्वपूर्ण ऑपरेशन है स्ट्रिंग कैपिटलाइज़ करना। जब हमें एक स्ट्रिंग को uppercase में बदलना होता है, तो हम स्ट्रिंग प्रोपर्टी कैपिटलाइज से इसे कर सकते हैं। यह बहुत सारे स्थितियों में उपयोगी होता है, जैसे कि डेटा फॉर्मेटिंग, लोगिंग, यूआई एलेमेंट्स और अन्य भी में है।
+## कैसे करें
+इसके लिए, हमें एक string को capitalize करने के लिए String वर्ग के एक विशेष तरीके या तकनीक का उपयोग करना होगा। इसके लिए हम ```Swift.uppercased()``` का उपयोग कर सकते हैं। इसका उपयोग निम्न तरह से किया जा सकता है:
 
-## कैसे
-
-इस ऑपरेशन को Swift में कैसे किया जाए, यह अतीत में अपेक्षक है। यदि हमें एक सिंपल स्ट्रिंग कैपिटलाइज करना है, तो हम बस स्ट्रिंग प्रोपर्टी कैपिटलाइज को इस्तेमाल कर सकते हैं। उदाहरण के लिए:
-
-```Swift 
-var string = "hello world"
-string.capitalized // output: "Hello World"
+```Swift
+let str = "hello"
+print(str.uppercased())
+// Output: "HELLO"
 ```
 
-अगर हमें स्ट्रिंग के सभी वर्णों को uppercase में बदलना हो, तो हम एक और ऑप्शन, uppercased, का इस्तेमाल कर सकते हैं।
+पहले, हम उपरोक्त कोड के माध्यम से "str" नाम का एक string बनाते हैं। उसके बाद, हम ```uppercased()``` तकनीक का उपयोग करके इस string को capitalized करते हैं और अंत में हम उसको प्रिंट करते हैं।
 
-```Swift 
-var string = "hello world"
-string.uppercased // output: "HELLO WORLD"
-```
-
-अगर हमें स्ट्रिंग के सभी वर्णों को lowercase में बदलना हो, तो हम lowercased ऑप्शन का भी इस्तेमाल कर सकते हैं।
-
-```Swift 
-var string = "HELLO WORLD"
-string.lowercased // output: "hello world"
-```
-
-## डीप डाइव
-
-यह स्ट्रिंग कैपिटलाइज ऑपरेशन कैसे काम करता है वह डीप डाइव आर्टिकल के लिए आप अन्य स्रोतों से जान सकते हैं। इसके अलावा, आप Swift की आधिकारिक डॉक्यूमेंटेशन भी देख सकते हैं। यह आपको इस ऑपरेशन के पीछे के लोजिक की समझ में मदद करेगा।
+## गहराई में
+Capitalizing string के बारे में और गहराई में जानने के लिए, आप हमारे द्वारा लिखित एक अन्य आलेख पढ़ सकते हैं जो आपको Swift में strings के साथ काम करने के बारे में विस्तृत जानकारी देगा।
 
 ## देखें भी
+- [Strings Tutorial in Swift](https://www.raywenderlich.com/147162/swift-tutorial-part-1-expressions-variables-constants)
+- [Working with Strings in Swift](https://medium.com/@surabhisatamkari/working-with-strings-in-swift-431c6f788949)
+- [Capitalizing and Lowercasing Strings in Swift](https://swiftrocks.com/capitalizing-and-lowercasing-strings-in-swift.html)

@@ -1,48 +1,66 @@
 ---
-title:    "TypeScript recipe: Calculating a date in the future or past"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/calculating-a-date-in-the-future-or-past.md"
+title:                "TypeScript recipe: Calculating a date in the future or past"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why: Calculating Dates in the Future or Past
 
-In today's fast-paced world, it is important to be able to calculate dates accurately and efficiently. Whether it is for scheduling appointments, planning events, or managing deadlines, being able to calculate a date in the future or past is a useful skill for any programmer. With the help of TypeScript, this task can easily be achieved.
+Have you ever needed to calculate a date in the future or past in your TypeScript program? Perhaps you are creating a booking system and need to display dates for booking availability. Or maybe you are creating a countdown timer and need to calculate a future date to countdown towards. Whatever the reason may be, knowing how to accurately calculate dates in the future or past is a useful skill for any TypeScript programmer.
 
-## How To
+# How To: Coding Examples and Sample Output
 
-To calculate a date in the future or past using TypeScript, there are a few steps that can be followed:
+Calculating dates in the future or past may seem like a complex task, but with TypeScript, it's actually quite simple. Let's take a look at some coding examples to see just how easy it can be.
 
-1. First, we will need to create a new date object using the `Date()` constructor. This will give us the current date and time.
-```
-TypeScript
-let currentDate: Date = new Date();
-```
-2. Next, we will need to specify the number of milliseconds to add or subtract from the current date and time to get the desired future or past date. This can be done by using the `getTime()` method, which returns the number of milliseconds since January 1, 1970, and then multiplying it by the desired time interval (e.g. 24 hours, 7 days, etc.).
-```
-TypeScript
-let futureDate: Date = new Date(currentDate.getTime() + (24 * 60 * 60 * 1000));
-// This will give us the future date and time by adding 24 hours to the current date and time.
-```
-3. Finally, to get a formatted output, we can use the `toLocaleDateString()` or `toLocaleTimeString()` methods, depending on our preference.
-```
-TypeScript
-console.log(futureDate.toLocaleDateString());
-// Output: 7/7/2021
-console.log(futureDate.toLocaleTimeString());
-// Output: 12:00:00 AM
+## Calculating a Date in the Future
+
+To calculate a date in the future, we can use the `Date` class in TypeScript. First, we need to create a new `Date` object with the current date as its value. Then, we can use the `setDate()` method to set the date to a future date by providing the number of days we want to add to the current date. Finally, we can use the `getFullYear()`, `getMonth()`, and `getDate()` methods to get the year, month, and day respectively.
+
+Here's an example of calculating a date 10 days into the future:
+
+```TypeScript
+const currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 10);
+
+const year = currentDate.getFullYear();
+const month = currentDate.getMonth() + 1; // Note: Month is zero-indexed
+const day = currentDate.getDate();
+
+console.log(`The date 10 days from now is: ${day}/${month}/${year}`);
+// Output: The date 10 days from now is: 20/7/2021
 ```
 
-## Deep Dive
+## Calculating a Date in the Past
 
-The calculation of dates in the future or past can be more complex depending on various factors like leap years, time zones, and daylight savings. One important thing to note is that JavaScript/TypeScript's `Date` object deals only with local time. This means that if you are working with different time zones, you will need to take that into consideration when calculating a future or past date.
+Calculating a date in the past follows a similar process as calculating a date in the future. However, this time we will use the `setDate()` method to subtract the number of days from the current date. We can also use the `getFullYear()`, `getMonth()`, and `getDate()` methods to get the year, month, and day respectively for the past date.
 
-Additionally, there are many useful libraries and packages available for handling dates and times in a more robust and intuitive way in TypeScript. These include libraries such as Moment.js, Day.js, and Date-fns, which provide more advanced functionalities for date calculations.
+Let's see an example of calculating a date 5 days in the past:
 
-## See Also
+```TypeScript
+const currentDate = new Date();
+currentDate.setDate(currentDate.getDate() - 5);
 
-- [TypeScript Date() Object Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js Library](https://momentjs.com/)
-- [Day.js Library](https://day.js.org/)
-- [Date-fns Library](https://date-fns.org/)
+const year = currentDate.getFullYear();
+const month = currentDate.getMonth() + 1; 
+const day = currentDate.getDate();
+
+console.log(`The date 5 days ago was: ${day}/${month}/${year}`);
+// Output: The date 5 days ago was: 10/7/2021
+```
+
+# Deep Dive: The Date Object
+
+The `Date` class in TypeScript is a built-in object that represents a specific moment in time. It has various methods for getting and setting different date components, such as the year, month, day, hour, minute, and second. It also has methods for comparing dates and working with timezones.
+
+To learn more about the `Date` class and its methods, check out the TypeScript documentation for dates [here](https://www.typescriptlang.org/docs/handbook/2/objects.html#date).
+
+# See Also
+
+- [Using Date and Time in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript Handbook: Date](https://www.typescriptlang.org/docs/handbook/2/objects.html#date)
+- [How to Work with Dates and Time in TypeScript](https://www.sitepoint.com/working-with-dates-and-time-in-typescript/)
+
+Now that you have a better understanding of how to calculate dates in the future or past with TypeScript, put your knowledge into practice and start incorporating dates into your next project! Happy coding!

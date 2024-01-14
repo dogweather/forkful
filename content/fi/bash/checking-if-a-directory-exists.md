@@ -1,63 +1,43 @@
 ---
-title:    "Bash: Tarkistetaan löytyykö hakemisto"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/checking-if-a-directory-exists.md"
+title:                "Bash: Tarkista onko hakemisto olemassa"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi haluaisit tarkistaa, onko hakemisto olemassa?
+## Miksi
 
-Hakemiston olemassaolon tarkistaminen on tärkeä osa Bash-ohjelmointia, sillä se auttaa sinua varmistamaan, että olet oikeassa paikassa ja käsittelet oikeaa hakemistoa. Tämä voi säästää paljon aikaa ja vaivaa virheiden selvittämisessä ja tekee ohjelmoinnista yleisesti ottaen tehokkaampaa.
+ Bash-ohjelmoinnissa on usein tarve tarkistaa, onko tietty hakemisto olemassa. Tässä blogikirjoituksessa kerromme, miksi tämä tarkistus on tärkeä osa ohjelmointia ja kuinka se tehdään helposti Bash-kielellä.
 
-## Kuinka:
+## Kuinka tarkistaa hakemiston olemassaolo Bashilla
 
-Voit tarkistaa hakemiston olemassaolon Bashissa käyttämällä "test" -komentoa ja "-d" -tunnusta, joka tarkoittaa directory (hakemisto englanniksi). "test" -komentoa käytetään yleensä ehdollisten lauseiden yhteydessä ja se palauttaa joko "true" tai "false" riippuen siitä, onko ehto täytetty.
+Hakemiston olemassaolon tarkistaminen Bashilla on helppoa käyttämällä `test`-komentoa yhdessä `-d`-valitsimen kanssa. Tämä tarkistaa, onko parametrina annettu polku olemassa ja onko kyseessä hakemisto.
 
-```
-Bash
-test -d <hakemisto>
-```
-
-Jos haluat esimerkiksi tarkistaa, onko hakemisto "Kuvat" olemassa, koodi olisi:
-
-```
-Bash
-test -d Kuvat
-```
-
-Jos hakemisto on olemassa, ohjelma palauttaa "true". Voit myös käyttää "if" -lauseketta yhdessä "test" -komenton kanssa käsittelemään erilaisia skenaarioita.
-
-```
-Bash
-if test -d Kuvat
-then
-    echo "Hakemisto 'Kuvat' on olemassa."
+```Bash
+if [ -d <hakemiston_polku> ]; then
+  echo "Hakemisto on olemassa."
 else
-    echo "Hakemistoa ei löytynyt."
+  echo "Hakemistoa ei löytynyt."
 fi
 ```
 
-Tässä esimerkissä, jos hakemisto "Kuvat" on olemassa, tulostetaan "Hakemisto 'Kuvat' on olemassa." Muussa tapauksessa tulostetaan "Hakemistoa ei löytynyt."
+Komento palauttaa 0, jos hakemisto on olemassa, ja muun kuin 0, jos hakemistoa ei löydy. Voit myös tarkistaa hakemiston olemassaolon suoraan if-lausekkeen avulla:
 
-## Syvempää tietoa:
-
-Komento "test" tarkistaa myös muiden tiedostojen ja kansioiden olemassaolon käyttämällä erilaisia tunnuksia. Esimerkiksi "-f" tarkoittaa regular file (tavallinen tiedosto), "-e" tarkoittaa existence (olemassaolo), jne. Voit lukea lisää erilaisista tunnuksista Bashin manuaalisivulta.
-
-Voit myös tarkistaa hakemiston olemassaolon käyttämällä "if" -lauseketta ja "ls" -komentoa, joka listaa tiedostot ja kansiot halutussa hakemistossa. Tämä lähestymistapa voi olla hyödyllinen, jos haluat tehdä muita toimintoja, kuten tulostaa sisältö tai poistaa hakemiston, jos se on olemassa.
-
-```
-Bash
-if [ -d Kuvat ]
-then
-    echo "Hakemisto 'Kuvat' on olemassa."
-else
-    echo "Hakemistoa ei löytynyt."
+```Bash
+if [ -d <hakemiston_polku> ]; then
+  echo "Hakemisto on olemassa."
 fi
 ```
 
-## Katso myös:
+## Syvempi sukellus
 
-- [Bash Manuali](https://www.gnu.org/software/bash/manual/bash.html)
-- [Linux Commando's Bash scripting tutorial](https://linuxcommando.blogspot.com/2008/03/bash-test-command.html)
-- [Tutustu Bashin ehtolausekkeisiin](https://www.tutorialspoint.com/unix/unix-basic-operators.htm)
+Bashissa on myös muita tapoja tarkistaa hakemiston olemassaolo, kuten `ls`-komento yhdessä `-d`-valitsimen kanssa, joka listaa tiedoton tiedoston sijasta hakemistojen nimet. Voit myös käyttää `[[`-operaattoria, joka tukee säännöllisiä lausekkeita. Tarkemmat tiedot näistä vaihtoehdoista löydät Bashin dokumentaatiosta.
+
+On myös tärkeää huomata, että hakemiston olemassaolon tarkistaminen ei takaa, että hakemisto on käytettävissä tai luku- ja kirjoituskelpoinen. Tämän vuoksi on suositeltavaa edelleen käyttää tarkistuksia ennen hakemiston käyttöä ohjelmassa.
+
+## Katso myös
+- [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

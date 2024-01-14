@@ -1,36 +1,51 @@
 ---
-title:    "Elixir: Encontrando o comprimento de uma string"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/finding-the-length-of-a-string.md"
+title:                "Elixir: Encontrando o comprimento de uma string."
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Saber como obter o tamanho de uma string é uma habilidade básica e essencial para qualquer programador. Além disso, é uma tarefa comum em muitas aplicações, o que torna importante entender como ela funciona em Elixir.
+Encontrar o comprimento de uma string é uma tarefa fundamental em qualquer linguagem de programação. Como programadores, frequentemente precisamos manipular e analisar strings em nossos projetos. É por isso que é importante entender como encontrar o comprimento de uma string em Elixir e usar essa habilidade em nossos códigos.
 
 ## Como fazer
 
-A linguagem de programação Elixir possui uma função embutida para encontrar o tamanho de uma string. Para usá-la, basta chamar a função `String.length()` seguida da string desejada dentro de parênteses. Veja um exemplo:
+Para encontrar o comprimento de uma string em Elixir, podemos usar a função `String.length/1`. Esta função recebe uma string como entrada e retorna o número de caracteres na string. Veja um exemplo abaixo:
 
-```Elixir
-nome = "Maria"
-
-String.length(nome)
 ```
-A saída desse código seria `5`, pois a string "Maria" possui 5 caracteres. Além disso, essa função também funciona com qualquer outra string, independente do seu tamanho ou conteúdo.
+Elixir
+iex> String.length("Elixir")
+6
+```
 
-## Mergulho profundo
+Podemos também usar essa função para encontrar o comprimento de uma string armazenada em uma variável. Veja o exemplo abaixo:
 
-Para entender melhor como a função `String.length()` funciona, precisamos saber um pouco mais sobre strings em Elixir. Em primeiro lugar, é importante lembrar que os caracteres em Elixir são representados por valores numéricos de 8 bits, ou seja, cada caractere possui um código único e específico.
+```
+Elixir
+iex> str = "Esta é uma string"
+iex> String.length(str)
+17
+```
 
-Quando usamos a função `String.length()`, ela retorna a quantidade de caracteres em uma string, mas na verdade ela está contando a quantidade de caracteres em bytes. Por exemplo, a string "çáé" possui 3 caracteres, mas a função `String.length()` retornaria 5, pois cada caractere ocupa 2 bytes.
+Também podemos usar esta função para verificar se uma string está vazia. Se a string tiver comprimento 0, ela será considerada vazia. Veja o exemplo abaixo:
 
-Porém, é importante lembrar que nem todos os caracteres são representados por 2 bytes. Alguns caracteres especiais, como emojis, possuem códigos maiores e podem ocupar mais bytes. Por isso, é sempre bom ter isso em mente ao trabalhar com strings em Elixir.
+```
+Elixir
+iex> String.length("")
+0
+```
+
+## Profundidade
+
+Ao trabalhar com strings em Elixir, é importante entender que elas são imutáveis. Isso significa que uma string nunca será modificada e cada operação na string retornará uma nova string. Portanto, quando usamos a função `String.length/1`, não estamos alterando a string original, mas sim retornando o comprimento da string.
+
+Também é importante notar que a função `String.length/1` é sensível a caracteres Unicode. Isso significa que ela contará corretamente o número de caracteres em uma string, mesmo que eles sejam caracteres Unicode de vários bytes.
 
 ## Veja também
 
-- [Documentação oficial do Elixir sobre strings](https://hexdocs.pm/elixir/String.html)
-- [Tutorial de Elixir do Alura](https://www.alura.com.br/conteudo/elixir)
-- [Comunidade de Elixir no Brasil](https://elixirbrasil.org/)
+- [Documentação da função `String.length/1`](https://hexdocs.pm/elixir/String.html#length/1)
+- [Tutorial sobre strings em Elixir](https://elixirschool.com/pt/lessons/basics/strings/)
+- [Guia de estilo de strings em Elixir](https://github.com/lexmag/elixir-style-guide#strings)

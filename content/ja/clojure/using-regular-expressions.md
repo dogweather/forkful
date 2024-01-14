@@ -1,35 +1,44 @@
 ---
-title:    "Clojure: 「正規表現の使用」"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/using-regular-expressions.md"
+title:                "Clojure: 正規表現の使用"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+使用正規表現の理由:
 
-正規表現を使用する理由は何でしょうか？正規表現は、テキストのパターンマッチングや検索を行うための強力なツールです。テキスト処理やデータ抽出を行う際に役立つため、プログラミングの世界では広く使用されています。
+正規表現は、文字列を検索や置換したりといったテキスト処理を行うために非常に便利なツールです。また、パターンを用いて文書を高度にマッチングすることも可能です。Clojureで正規表現を使用することで、テキスト処理の速度が向上し、コードをよりクリーンに保つことができます。
 
-## 使い方
+方法:
 
-正規表現を使用するには、まず「re」ライブラリをClojureプログラムにインポートする必要があります。例えば、文字列からメールアドレスを抽出することを考えてみましょう。
+正規表現は、さまざまな方法で使用できます。まずは、```regex```関数を使用してパターンを定義し、```re-find```や```re-groups```などの関数を使用してテキスト処理を行います。以下は、```re-find```を使用して文字列内の数値を抽出する例です。
 
 ```Clojure
-(require '[clojure.string :as str])
-(require '[clojure.repl :refer [source]])
-(def email "example@email.com")
-(str/split email #"@") ; => ["example" "email.com"]
+(defn find-numbers [text]
+  (re-find #"\d+" text))
+
+(find-numbers "今日の気温は22度です。")
+;; => "22"
 ```
 
-上記のコードでは、「re」ライブラリの「split」関数を使用し、メールアドレスを「@」で区切って配列として返しています。また、Clojureの文字列処理ライブラリである「clojure.string」を使用し、文字列からメールアドレスの部分を取得しています。
+さらに、正規表現を用いて文字列を置換することもできます。例えば、以下のように```re-seq```を使用して、文字列内の全ての空白を除去することができます。
 
-## ディープダイブ
+```Clojure
+(defn remove-spaces [text]
+  (apply str (re-seq #"\S" text)))
 
-正規表現には様々な特殊文字が存在します。例えば、「^」は文字列の先頭を表し、「$」は文字列の末尾を表します。これらの特殊文字を組み合わせることで、パターンをより詳細に指定することができます。また、正規表現では量指定子を使用し、特定の文字やパターンの出現回数を指定することができます。
+(remove-spaces "Hello World")
+;; => "HelloWorld"
+```
 
-Clojureでは、「#””」という記法を使用することで、正規表現を文字列として直接指定することができます。これにより、パターンの作成がより柔軟になります。
+深堀り:
 
-## 関連リンクを見る
+正規表現をより理解するために、以下のリンクを参考にすることをお勧めします。
 
-- [Clojureで正規表現を使う方法](https://qiita.com/SunaharaKawakami/items/86a9dcb546a817a59b4f)
-- [正規表現レファレンス](http://clojure.github.io/spec.alpha/)
+見る価値あり:
+
+- [Clojure 正規表現チュートリアル](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
+- [正規表現クイックシート](https://www.rexegg.com/regex-quickstart.html)
+- [Clojure 正規表現リファレンス](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/re-find)

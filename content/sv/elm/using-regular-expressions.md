@@ -1,46 +1,58 @@
 ---
-title:    "Elm: Användning av reguljära uttryck"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/using-regular-expressions.md"
+title:                "Elm: Användning av reguljära uttryck"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Om du programmerar i Elm, är chansen stor att du har stött på strängmanipulering. En vanlig metod för att hantera detta är att använda reguljära uttryck, eller "regular expressions" på engelska. Här ska vi titta på anledningarna till varför det kan vara användbart att ha kunskap om reguljära uttryck och hur du kan använda dem i dina Elm-program.
+Reguljära uttryck (regular expressions) är ett kraftfullt verktyg inom programmering som möjliggör matching and manipulation av strängar. Genom att använda reguljära uttryck i dina Elm-program, kan du enkelt filtrera, ersätta och extrahera data från textsträngar. Detta gör det möjligt för dig att manipulera data på ett smidigt och effektivt sätt.
 
 ## Så här gör du
 
-Först och främst är det viktigt att veta vad reguljära uttryck är. De är en syntax för att söka och matcha mönster i strängar. I Elm kan du använda funktionen `Regex.find` för att söka igenom en sträng med hjälp av ett reguljärt uttryck. Här är ett exempel där vi söker efter ett exakt matchat ord:
+För att använda reguljära uttryck i Elm, behöver du använda modulen `Regex`. Först måste du importera den i din kod genom att lägga till följande rad i början av din fil:
 
-```Elm
-import Regex exposing (..)
-
-find "elit" "Hej, detta är en text om Elite Hotel."
---> Just {match = "elit", index = 27, number = 0}
-
+``` Elm
+import Regex
 ```
 
-Om du vill ha mer flexibilitet kan du använda teckenklasser i ditt reguljära uttryck. De används för att matcha flera möjligheter, till exempel alla bokstäver eller siffror. Här är ett exempel där vi söker efter både stora och små bokstäver:
+Sedan kan du använda funktionen `Regex.contains` för att matcha en del av en sträng. Här är ett exempel där vi matchar förekomsten av bokstäverna "hej" i strängen "Hej på dig!":
 
-```Elm
-import Regex exposing (..)
+``` Elm
+Regex.contains (Regex.regex "hej") "Hej på dig!"  -- ger True
+```
 
-find "[A-Za-z]" "Hello, World!"
---> Just {match = "H", index = 0, number = 0}
+Du kan också använda funktionen `Regex.replace` för att ersätta en del av en sträng med en viss text. Här är ett exempel där vi ersätter alla blanksteg i en sträng med "_":
+
+``` Elm
+Regex.replace (Regex.regex " ") (\_ -> "_") "Hej på dig!"  -- ger "Hej_på_dig!"
+```
+
+Slutligen kan du också använda funktionen `Regex.find` för att hitta en del av en sträng som matchar ett visst mönster. Här är ett exempel där vi hittar första förekomsten av en siffra i en sträng:
+
+``` Elm
+Regex.find (Regex.regex "\\d+") "Det finns 2 katter i huset"  -- ger Just (Regex.Match "2")
 ```
 
 ## Djupdykning
 
-Reguljära uttryck kan verka förvirrande och överväldigande till en början, men när du blir bekväm med dem kommer du upptäcka hur kraftfulla de är för att manipulera strängar. Här är några tips för att hjälpa dig på vägen:
+Det finns många olika mönster som du kan använda för att skapa reguljära uttryck. Här är några användbara mönster som kan hjälpa dig att göra mer avancerade matchningar:
 
-- `Regex.attempt` kan användas för att hantera felaktiga reguljära uttryck. Det returnerar `Result` vilket är användbart för felhantering.
-- `Regex.replace` kan användas för att ersätta delar av en sträng som matchar ett reguljärt uttryck. Detta är särskilt användbart när du vill filtrera eller formatera en sträng.
-- Se till att lära dig vanliga teckenklasser, specialtecken och kvantifierare för att kunna bygga mer avancerade reguljära uttryck.
+- `.`: Matchar vilken tecken som helst.
+- `\\s`: Matchar blanksteg.
+- `[A-Za-z0-9]`: Matchar en alfabetisk eller numerisk karaktär.
+- `\\w`: Matchar en alfanumerisk karaktär.
+- `^`: Används för att matcha början av en sträng.
+- `$`: Används för att matcha slutet av en sträng.
+
+Du kan också använda speciella modifierare för att göra dina uttryck mer specifika. Några exempel på sådana modifierare är `*` (noll eller flera förekomster), `+` (en eller flera förekomster) och `?` (noll eller en förekomst).
+
+Det finns också många andra funktioner som du kan använda med `Regex`-modulen, såsom `matches`, `findAll`, och `findSubmatches`.
 
 ## Se även
 
-- [Elm Regex Package](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Regular Expressions Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Learn Regex The Hard Way (Engelska)](https://regex.learncodethehardway.org/)
+- [Regexp Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Elm Dokumentation - Regex](https://package.elm-lang.org/packages/elm/regex/latest/Regex)

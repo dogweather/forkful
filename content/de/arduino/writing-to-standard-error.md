@@ -1,46 +1,102 @@
 ---
-title:    "Arduino: Schreiben auf Standardfehler"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/writing-to-standard-error.md"
+title:                "Arduino: Schreiben in die Standardfehlerausgabe"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum 
+## Warum
 
-Wenn du anfangen möchtest, mit Arduino zu programmieren, wirst du oft auf die Funktion `Serial.println()` stoßen. Aber was ist mit `Serial.print()` und `Serial.write()`? In diesem Blogbeitrag werden wir uns auf die letzte Funktion konzentrieren und warum es wichtig ist, sie zu verwenden.
+Das Schreiben auf den Standardfehler ist ein wichtiger Aspekt der Arduino-Programmierung. Es ermöglicht uns, Fehler und Warnungen in unserem Code zu erkennen und zu diagnostizieren.
 
-# Wie man es macht
-
-Um mit Arduino auf den Standardfehler zu schreiben, musst du zunächst die serielle Schnittstelle initialisieren. Dazu verwendest du die Funktion `begin()` im Setup-Teil deines Codes:
+## Wie man schreibt auf den Standardfehler
+Um auf den Standardfehler zu schreiben, verwenden wir die `Serial` Bibliothek und die Funktion `Serial.println()`. Hier ist eine einfache Beispielcode, der "Hello World" auf den Standardfehler ausgibt:
 
 ```Arduino
 void setup() {
+  // initialisiere die serielle Kommunikation
   Serial.begin(9600);
+}
+
+void loop() {
+  // schreibe auf den Standardfehler
+  Serial.println("Hello World");
+  delay(1000);
 }
 ```
 
-Als nächstes ist es wichtig, die Fehlermeldung zu definieren, die du ausgeben möchtest. Dazu verwendest du den Befehl `sprintf()`:
+Die Ausgabe wird im seriellen Monitor angezeigt und sieht wie folgt aus:
 
-```Arduino
-char error[50];
-sprintf(error, "Es ist ein Fehler aufgetreten: %d", errorCode);
+```
+Hello World
+Hello World
+Hello World
+...
 ```
 
-Schließlich verwendest du die Funktion `Serial.write()` um die Fehlermeldung auf den Standardfehler zu schreiben:
+## Tiefer blicken
+Das Schreiben auf den Standardfehler ist besonders nützlich, wenn wir unser Programm debuggen möchten. Wir können Variablenwerte und andere Informationen ausgeben, um zu verstehen, wo unser Code möglicherweise fehlerhaft ist.
 
 ```Arduino
-Serial.write(error);
+int num = 5;
+
+void setup() {
+  // initialisiere die serielle Kommunikation
+  Serial.begin(9600);
+}
+
+void loop() {
+  // schreibe den Wert der Variable auf den Standardfehler
+  Serial.println("Der Wert von num ist: " + String(num));
+  delay(1000);
+}
 ```
 
-# Tiefer eintauchen
+Die Ausgabe im seriellen Monitor lautet nun:
 
-Die Verwendung von `Serial.write()` ermöglicht es uns, Fehlermeldungen auf den Standardfehler zu schreiben, anstatt sie nur auf dem seriellen Monitor auszugeben. Dies ist besonders nützlich, wenn unser Code mit anderen Geräten oder Systemen kommunizieren muss, die auf den Standardfehler angewiesen sind.
+```
+Der Wert von num ist: 5
+Der Wert von num ist: 5
+Der Wert von num ist: 5
+...
+```
 
-Es ist auch wichtig zu beachten, dass `Serial.write()` die Fehlermeldung als Bytes schreibt und nicht als ASCII-Zeichen. Dies kann zu Problemen führen, wenn dein Empfänger nur ASCII-Zeichen erwartet. In diesem Fall solltest du `Serial.print()` verwenden, um die Fehlermeldung als ASCII-Zeichen zu senden.
+Wir können auch Warnungen oder Fehlermeldungen ausgeben, um auf potenzielle Probleme in unserem Code aufmerksam zu machen:
 
-# Siehe auch
+```Arduino
+int num = 0;
 
-- [Einrichten der seriellen Kommunikation mit Arduino](https://www.dr-duino.com/serielle-kommunikation-mit-arduino-einrichten)
-- [Die Funktion sprintf() verstehen](https://codybonney.com/understanding-sprintf/)
-- [Arduino Dokumentation zu Serial.write()](https://www.arduino.cc/reference/en/language/functions/communication/serial/write/)
+void setup() {
+  // initialisiere die serielle Kommunikation
+  Serial.begin(9600);
+}
+
+void loop() {
+  // erhöhe den Wert von num
+  num++;
+  
+  // überprüfe, ob es größer als 5 ist
+  if (num > 5) {
+    // gib eine Warnung auf den Standardfehler aus
+    Serial.println("Achtung, num ist größer als 5!");
+  }
+  
+  delay(1000);
+}
+```
+
+Die Ausgabe im seriellen Monitor sieht nun folgendermaßen aus:
+
+```
+Achtung, num ist größer als 5!
+Achtung, num ist größer als 5!
+Achtung, num ist größer als 5!
+...
+```
+
+## Siehe auch
+- [Arduino Serial Library Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Debugging in Arduino](https://www.arduino.cc/en/Guide/AdvancedDebugging)
+- [Einführung in das Schreiben von Fehlern in C++](https://www.learncpp.com/cpp-tutorial/5-8-writing-files/)

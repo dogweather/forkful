@@ -1,68 +1,41 @@
 ---
-title:    "Ruby: Skrivande till standardfel"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-to-standard-error.md"
+title:                "Ruby: Skrivning till standardfel"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att skriva till standard error är ett användbart verktyg för att felsöka dina Ruby-program. Genom att skriva till standard error kan du skriva ut specifika meddelanden som hjälper dig att identifiera och förstå varför ett program inte fungerar som det ska.
+Att skriva till standardfel är en viktig del av att skriva effektiv kod i Ruby. Genom att skicka felmeddelanden till standardfel istället för standardutmatningen kan du se till att din kod fungerar korrekt och tydligt identifiera eventuella problem. Läs vidare för att lära dig hur du kan använda denna teknik i din Ruby programmering.
 
-# Hur man gör det
+## Så här gör du
 
-För att skriva till standard error i Ruby, används metoden `warn`. Detta gör att meddelanden skrivs ut till standard error istället för till standard output. Här är ett exempel:
-
-```Ruby
-def divide(x, y)
-  if y == 0
-    warn "Kan inte dividera med 0!"
-  else
-    puts x / y
-  end
-end
-
-divide(10, 0)
-```
-
-Output:
-
-```sh
-Kan inte dividera med 0!
-```
-
-I detta exempel använder vi `warn` för att skriva ut ett felmeddelande om vi försöker dividera med 0. Detta hjälper oss att snabbt identifiera felet i vårt program.
-
-# Djupdykning
-
-I vissa fall kan du vilja skriva till standard error även när allt fungerar som det ska. Detta kan vara till nytta när du vill skriva ut debugging-meddelanden för att kontrollera variabler eller andra värden i ditt program.
-
-En annan användbar metod är `raise`, som låter dig kasta ett undantag och skriva ett meddelande till standard error. Detta är användbart för att fånga och hantera fel i ditt program.
+Att skriva till standardfel i Ruby är enkelt och kräver bara några få rader kod. Om du vill skicka ett felmeddelande till standardfel använder du metoden `warn` och skickar meddelandet som ett argument. Nedan visas ett exempel på hur du kan använda `warn` för att skriva ut ett felmeddelande till standardfel.
 
 ```Ruby
-def get_user_age
-  age = gets.chomp.to_i
-  if age < 18
-    raise "Användaren är inte myndig!"
-  else
-    puts "Användaren är ${age} år gammal."
-  end
-end
-
-get_user_age()
+# Exempel på hur man skriver till standardfel
+warn "Det här är ett felmeddelande"
 ```
 
-Output:
+När du kör detta program kommer du att se att meddelandet skrivs ut i rött och föregås av ordet "WARNING". Detta gör det tydligt för användaren att det finns ett problem som behöver lösas.
 
-```sh
-Användaren är inte myndig!
-```
+## Djupdykning
+
+Att skriva till standardfel är en av de många sätt att hantera fel i Ruby. Det ger möjlighet att fånga mindre allvarliga fel och ge användaren information om vad som kan ha gått snett i koden.
+
+En annan viktig aspekt med att skriva till standardfel är att det inte stoppar programkörningen, vilket kan vara användbart om man vill fortsätta köra programmet trots ett fel. Detta gör det också lättare att hitta och åtgärda problemen i koden.
+
+Det är också värt att notera att du kan skicka alla typer av objekt till `warn` metoden, inte bara strängar. Detta gör det möjligt att skicka mer komplexa felmeddelanden med information om variabler eller andra delar av koden som kan hjälpa till med felsökning.
 
 ## Se även
 
-Här är några resurser du kan använda för att lära dig mer om att skriva till standard error i Ruby:
+Här är några användbara länkar för att lära dig mer om att skriva till standardfel i Ruby:
 
-- Ruby dokumentation: https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-warn
-- Learn Ruby the Hard Way: https://learnrubythehardway.org/book/ex17.html
-- RubyGuides: https://www.rubyguides.com/2019/02/ruby-stderr-stdout/
+- [Ruby dokumentation om warn metoden](https://ruby-doc.org/core-3.0.2/Kernel.html#method-i-warn)
+- [RubyGuides artikel om hantering av fel i Ruby](https://www.rubyguides.com/2019/01/ruby-exception-handling/)
+- [Ruby on Rails Guides om diagnostiska verktyg i Rails](https://guides.rubyonrails.org/debugging_rails_applications.html#diagnostic-tools)
+
+Med dessa resurser vid din sida kan du bli en expert på att skriva till standardfel och förbättra din förmåga att hantera fel i din kod. Lycka till med din Ruby programmering!

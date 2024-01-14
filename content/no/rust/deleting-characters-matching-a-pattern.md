@@ -1,33 +1,37 @@
 ---
-title:    "Rust: Slette tegn som samsvarer med et mønster"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/deleting-characters-matching-a-pattern.md"
+title:                "Rust: Fjerne tegn med matchende mønster"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I noen programmeringsspråk, som Rust, kan man noen ganger komme over en situasjon hvor man ønsker å slette visse tegn som matcher et bestemt mønster. Dette kan være for å rydde opp i data, fjerne unødvendig informasjon eller for andre formål. Å kunne slette slike tegn på en effektiv og korrekt måte er viktig for å opprettholde et ryddig og lesbart kodebase.
+Å slette tegn som matcher et mønster kan være en viktig del av å skrive effektiv og feilfri Rust-kode. Ved å fjerne unødvendige tegn kan man for eksempel forbedre effektiviteten til koden og gjøre den mer lesbar for andre utviklere.
 
 ## Hvordan
 
-For å kunne slette tegn som matcher et mønster i Rust, kan man bruke metoden “retain” på en mutabel streng. Denne metoden tar inn en closure som parameter og evaluerer hvert tegn i strengen mot mønsteret som er gitt. Tegnene som matcher vil bli beholdt, mens de som ikke matcher vil bli slettet.
+Det å slette tegn som matcher et mønster i Rust kan gjøres på flere måter, avhengig av hva som passer best for oppgaven. En måte å gjøre det på er å bruke `replace()` funksjonen, som tar inn et mønster og en tom streng for å erstatte de matchende tegnene. Her er et eksempel:
 
-```Rust
-let mut tekst = "Hei, dette er en test!".to_string();
-tekst.retain(|c| c != 'i'); // sletter alle "i" i teksten
-println!("{}", tekst);
+``` Rust
+fn main() {
+    let my_string = "Hello, World!";
+    let new_string = my_string.replace("o", "");
+    
+    println!("{}", new_string); // prints "Hell, Wrld!"
+}
 ```
-Output: "He, dette er en test!"
 
-Her har teksten blitt endret ved at alle "i" er blitt slettet, og man sitter igjen med en renset versjon av teksten.
+For å gjøre dette på en mer avansert måte og håndtere flere forskjellige mønstre kan man også bruke et regex-bibliotek som `regex` eller `serde_regex`. Disse gir mer fleksibilitet og funksjonalitet for å håndtere komplekse mønstre.
 
 ## Dypdykk
 
-Det finnes flere måter å slette tegn som matcher et mønster i Rust, men metoden med å bruke "retain" er en enkel og effektiv løsning. Man kan også bruke regex-biblioteket for å finne og slette mønstre, men dette krever litt mer av koden. Det er viktig å huske på at slettingen av tegn kan påvirke andre deler av koden, så det er viktig å sjekke at alt fungerer som ønsket etter slettingen.
+Slettetegn etter et mønster kan virke som en enkel oppgave, men det er viktig å forstå hvordan og hvorfor man gjør det for å skrive god Rust-kode. Det kan også være lurt å undersøke forskjellige metoder og biblioteker for å finne den beste løsningen for ulike situasjoner.
 
-## Se også
+## Se Også
 
-- [Offisiell Rust dokumentasjon](https://www.rust-lang.org/)
-- [Rust programmingspråkets nettside](https://www.rust-lang.org/)
+- [Offisiell Rust dokumentasjon for replace() funksjonen](https://doc.rust-lang.org/std/string/trait.Replace.html)
+- [Rust regex-bibliotek](https://github.com/rust-lang-nursery/regex)
+- [Serde regex-bibliotek](https://github.com/serde-rs/serde_regex)

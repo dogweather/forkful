@@ -1,34 +1,41 @@
 ---
-title:    "Arduino: Kirjoittaminen standardivirheeseen"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-to-standard-error.md"
+title:                "Arduino: Tiedon kirjoittaminen standardivirheeseen"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi kirjoittaa standardi virheeseen?
 
-Miksi kukaan haluaisi kirjoittaa standard erroriin Arduino-ohjelmoinnissa? Se on hyvä kysymys. Standard error on virtuaalinen kanava, jota käytetään ohjelmointivirheiden ja muunlaisen diagnostiikkainformaation tallentamiseen. Tämä tarkoittaa, että tulostaminen standard erroriin auttaa sinua ymmärtämään ja korjaamaan projektisi virheitä.
+On monia syitä miksi kirjoittaa tiedot standardi virheeseen (standard error). Yksi yleisimmistä syistä on virheiden käsittely. Kun ohjelmassa tapahtuu virhe, se kirjoitetaan standardi virheeseen, mikä helpottaa sen löytämistä ja korjaamista.
 
-## Miten
+## Miten: Esimerkkejä ja koodinpätkiä kirjoittamisesta standardi virheeseen
 
-Tässä esimerkiksi koodinpätkä, joka näyttää, miten kirjoittaa standard erroriin Arduino-ohjelmoinnissa:
+#### ```Arduinovoid setup() {
+  Serial.begin(9600);
+  Serial.println("Ohjelma aloitettu.");
+}
 
-```Arduino
-int x = 10;
-if (x > 5) {
-  Serial.println("X on suurempi kuin 5");
-} else {
-  Serial.println("X ei ole suurempi kuin 5");
+void loop() {
+  int luku = analogRead(A0); //luetaan tulon arvo
+  if (luku < 500) { //jos arvo alle 500
+    //kirjoitetaan virhe standardi virheeseen
+    Serial.print("Tulon arvo on liian pieni: ");
+    Serial.println(luku);
+  }
 }
 ```
-Kun tämä koodi ajetaan, standard erroriin tulostuu joko "X on suurempi kuin 5" tai "X ei ole suurempi kuin 5" riippuen siitä, mikä ehto on totta. Voit myös käyttää standard erroria tulostamaan muuttujien arvoja tai muita tärkeitä tietoja suoraan ohjelmasta.
+Esimerkissä luetaan analogisen tulon arvo ja jos se on alle 500, kirjoitetaan virhe standardi virheeseen. Tämä esimerkki osoittaa, miten könnykkästi virhekirjoitukset voidaan toteuttaa Arduino-koodissa.
 
-## Syvällisempi sukellus
+## Syvemmälle: Tietoa kirjoittamisesta standardi virheeseen
 
-Standard errorin käyttäminen voi olla todella hyödyllistä etenkin monimutkaisemmissa projekteissa. Se auttaa sinua selvittämään, missä kohdassa ohjelmaasi on virhe ja saat tärkeää tietoa ohjelman suorituskyvystä. On tärkeää muistaa, että standard errorin käyttö ei korvaa hyvää ohjelmointia ja ohjelman virheitä tulisi aina pyrkiä korjaamaan, mutta se voi olla hyödyllinen työkalu virheiden jäljittämiseen ja korjaamiseen.
+Kirjoittaminen standardi virheeseen on tärkeää virheiden käsittelyn lisäksi myös siksi, että se erottaa virheet normaalista tulostuksesta. Kun tulostus ja virheet ovat erillään, helpottaa se koodin lukemista ja ylläpitoa. Myös monimutkaisemmissa ohjelmissa, joissa on useita tiedostoja, standardi virheeseen kirjoittaminen auttaa löytämään virheet nopeammin.
 
 ## Katso myös
-- [Arduino-ohjelmointiopas](https://www.arduino.cc/en/Guide/)
-- [Standard errorin käyttö muissa ohjelmointikielissä](https://www.tutorialspoint.com/cplusplus/cpp_error_handling.htm)
-- [Virheenhallinta Arduino-ohjelmoinnissa](https://www.instructables.com/Arduino-Error-Handling/)
+
+- [Arduino Serial.begin()](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+- [Arduino Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Arduino Debugging](https://www.arduino.cc/en/Tutorial/debugging)
+- [C++ Standard Error Output](http://www.cplusplus.com/reference/cstdio/stderr/)

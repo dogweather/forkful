@@ -1,57 +1,47 @@
 ---
-title:    "Kotlin: Päivämäärien vertailu"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/comparing-two-dates.md"
+title:                "Kotlin: Vertailemalla kahden päivämäärän välillä"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahta päivämäärää?
+## Miksi
+Miksi haluaisit vertailla kahta päivämäärää Kotlinin avulla? Usein esimerkiksi sovelluksissa tarvitaan tietoa siitä, kumpi päivämäärä on aiempi tai myöhempi, jotta voidaan tehdä tarkempia laskelmia tai näyttää käyttäjälle oikeat tiedot.
 
-Vertailemalla kahta päivämäärää voimme selvittää, onko toinen päivämäärä ennen tai jälkeen toista, tai ovatko ne sama päivämäärä. Tämä voi olla hyödyllistä esimerkiksi laskiessa vuosia, päiviä tai tunteja kahden päivämäärän välillä. Kotlinin avulla tämä prosessi on helppoa ja nopeaa.
-
-## Miten vertailla kahden päivämäärän välillä Kotlinissa?
-
-Kotlin tarjoaa kätevän `LocalDate` -luokan, jolla voimme luoda päivämääriä ja vertailla niitä toisiinsa. Alla on esimerkki kahden päivämäärän vertailusta ja niiden tulostamisesta:
-
+## Kuinka tehdä
+Vertailu kahta päivämäärää Kotlinilla on helppoa ja nopeaa. Voit käyttää `LocalDate`-luokkaa ja sen `compareTo()`-metodia. Tässä esimerkissä vertailemme kahta päivämäärää ja tulostamme konsoliin tiedon siitä, kumpi päivämäärä on aiempi:
 ```Kotlin
-val firstDate = LocalDate.of(2020, 1, 1)
-val secondDate = LocalDate.of(2020, 12, 31)
+// Luodaan kaksi LocalDate-oliota
+val date1 = LocalDate.of(2020, 5, 15)
+val date2 = LocalDate.of(2020, 6, 1)
 
-println("Ensimmäinen päivämäärä: $firstDate")
-println("Toinen päivämäärä: $secondDate")
+// Vertaillaan päivämääriä
+val result = date1.compareTo(date2)
 
-if (firstDate.isBefore(secondDate)) {
-  println("$firstDate on ennen $secondDate")
-} else if (firstDate.isAfter(secondDate)) {
-  println("$firstDate on jälkeen $secondDate")
+// Tulostetaan tulos
+if (result < 0) {
+    println("$date1 on aiempi kuin $date2")
+} else if (result > 0) {
+    println("$date2 on aiempi kuin $date1")
 } else {
-  println("Päivämäärät ovat samat")
+    println("Päivämäärät ovat samat")
 }
 ```
 Tulostus:
 ```
-Ensimmäinen päivämäärä: 2020-01-01
-Toinen päivämäärä: 2020-12-31
-2020-01-01 on ennen 2020-12-31
+2020-05-15 on aiempi kuin 2020-06-01
 ```
 
-Voimme myös tarkastella päivämäärien eroa käyttäen `ChronoUnit` -luokkaa ja sen `between()` -metodia:
+## Syvempi sukellus
+Kotlinissa päivämäärän vertaileminen perustuu päivämäärän sisältävän `LocalDate`-olion `compareTo()`-metodiin. Tämä metodi palauttaa arvon, joka kertoo, kumpi päivämäärä on aiempi:
+- Jos palautettu arvo on negatiivinen, ensimmäinen päivämäärä on aiempi kuin toinen.
+- Jos palautettu arvo on positiivinen, toinen päivämäärä on aiempi kuin ensimmäinen.
+- Jos palautettu arvo on nolla, päivämäärät ovat samat.
 
-```Kotlin
-val difference = ChronoUnit.DAYS.between(firstDate, secondDate)
-println("Päivämäärien ero on $difference päivää")
-```
-Tulostus:
-```
-Päivämäärien ero on 365 päivää
-```
-
-## Syvempi sukellus päivämäärien vertailuun
-
-Kotlinin `LocalDate` -luokka tarjoaa myös muita hyödyllisiä metodeja päivämäärien vertailuun, kuten `isLeapYear()` tarkastamaan, onko vuosi karkausvuosi, tai `plus()` ja `minus()` lisäämään tai vähentämään päiviä tarvittaessa. Lisäksi Kotlinin laajennusfunktiot mahdollistavat oman vertailumetodin luomisen, jos tarpeen.
+Voit myös käyttää `isBefore()` ja `isAfter()` -metodeita, jotka palauttavat boolean-arvon päivämäärien järjestyksestä. Lisää tietoa päivämäärien vertailusta löytyy Kotlinin virallisista dokumentaatioista.
 
 ## Katso myös
-
-- [Kotlinin LocalDate-dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
-- [Java 8 Date and Time API-opas](https://www.baeldung.com/java-8-date-time-intro)
+- [Kotlinin viralliset dokumentaatiot - Päivämäärät ja ajat](https://kotlinlang.org/docs/reference/dates.html)
+- [Kotlinin LocalDate-luokka](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

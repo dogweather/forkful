@@ -1,46 +1,19 @@
 ---
-title:    "C++: Encontrando o tamanho de uma string."
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/finding-the-length-of-a-string.md"
+title:                "C++: Encontrando o comprimento de uma sequência"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que?
 
-Encontrar o comprimento de uma string é uma tarefa comum na programação. Saber a quantidade de caracteres em uma string é importante para várias operações, como limitar a entrada de dados, criar espaçamento em um texto e muito mais.
+Encontrar o comprimento de uma string é uma habilidade fundamental em programação. Saber como fazer isso pode ajudá-lo a manipular e analisar dados de forma mais eficiente, além de tornar seu código mais dinâmico e eficaz.
 
-## Como Fazer
+## Como fazer
 
-Para encontrar o comprimento de uma string em C++, podemos utilizar a função `strlen()` da biblioteca `string.h`. Ela retorna um valor do tipo `size_t`, que representa o tamanho da string.
-
-```C++
-#include <iostream>
-#include <string.h>
-
-using namespace std;
-
-int main()
-{
-    char palavra[50];
-    cout << "Digite uma palavra: ";
-    cin >> palavra;
-
-    size_t tamanho = strlen(palavra);
-    cout << "O tamanho da palavra " << palavra << " e: " << tamanho << endl;
-
-    return 0;
-}
-```
-
-**Saída:**
-
-```
-Digite uma palavra: programação
-O tamanho da palavra programação é: 11
-```
-
-Podemos também utilizar a função `length()` do objeto `string` da biblioteca `string`, que retorna um valor do tipo `size_t`.
+Existem várias maneiras de encontrar o comprimento de uma string em C++, mas a mais comum é usando a função `size()` da biblioteca `string`. Veja um exemplo de código abaixo:
 
 ```C++
 #include <iostream>
@@ -48,62 +21,60 @@ Podemos também utilizar a função `length()` do objeto `string` da biblioteca 
 
 using namespace std;
 
-int main()
-{
-    string frase;
-    cout << "Digite uma frase: ";
-    getline(cin, frase);
+int main() {
+  string nome = "Maria";
+  cout << "O comprimento da string \"" << nome << "\" é: " << nome.size() << endl;
 
-    size_t tamanho = frase.length();
-    cout << "O tamanho da frase '" << frase << "' e: " << tamanho << endl;
-
-    return 0;
+  return 0;
 }
 ```
 
-**Saída:**
-
+Output:
 ```
-Digite uma frase: Amanhã é sexta-feira!
-O tamanho da frase 'Amanhã é sexta-feira!' é: 21
+O comprimento da string "Maria" é: 5
 ```
 
-## Aprofundando-se
+Neste exemplo, usamos a função `size()` para encontrar o tamanho da string armazenada na variável `nome`. É importante lembrar que em C++, uma string é considerada como um objeto, portanto, precisamos utilizar `nome.size()` ao invés de simplesmente `size(nome)`.
 
-Além das funções mencionadas acima, também é possível utilizar outras técnicas para encontrar o comprimento de uma string em C++. Por exemplo, podemos percorrer a string utilizando um loop `for` e contar a quantidade de caracteres até encontrar o caractere nulo `'\0'` que marca o final da string.
+Outra forma de encontrar o comprimento de uma string é utilizando um loop `for`. Isso nos permite percorrer cada caractere da string e contar quantos são até chegar ao final. Veja um exemplo:
 
 ```C++
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main()
-{
-    char frase[50];
-    cout << "Digite uma frase: ";
-    cin.getline(frase, 50);
+int main() {
+  string nome = "João";
+  int tamanho = 0;
 
-    int tamanho = 0;
-    for (int i = 0; frase[i] != '\0'; i++)
-    {
-        tamanho++;
-    }
-    cout << "O tamanho da frase '" << frase << "' e: " << tamanho << endl;
+  for (int i = 0; nome[i] != '\0'; i++) {
+    tamanho++;
+  }
 
-    return 0;
+  cout << "O comprimento da string \"" << nome << "\" é: " << tamanho << endl;
+
+  return 0;
 }
 ```
 
-**Saída:**
-
+Output:
 ```
-Digite uma frase: Tenho que terminar esse projeto hoje.
-O tamanho da frase 'Tenho que terminar esse projeto hoje.' é: 40
+O comprimento da string "João" é: 4
 ```
 
-Lembre-se de sempre tratar strings com cuidado, pois elas podem ser sensíveis a maiúsculas e minúsculas e também podem conter acentos e caracteres especiais, o que pode afetar o resultado das suas operações.
+Neste exemplo, usamos um loop `for` para percorrer a string e incrementar a variável `tamanho` a cada iteração até que seja encontrado o caractere nulo (`\0`) que indica o final da string.
+
+## Deep Dive
+
+Se você está se perguntando por que a função `size()` retorna um valor do tipo `size_t`, isso acontece porque essa função é implementada como um inteiro sem sinal (não pode ter valores negativos) e é capaz de armazenar valores maiores do que um inteiro comum.
+
+Outra coisa importante a saber é que a função `size()` só retorna o tamanho da string em bytes, ou seja, ela pode ser diferente do número de caracteres dependendo do tipo de caractere usado (ex: letras Unicode ocupam mais de um byte). Para encontrar o número exato de caracteres em uma string, é necessário usar a função `length()`.
 
 ## Veja também
 
-- [Documentação oficial do C++ sobre a função `strlen()`](https://en.cppreference.com/w/cpp/string/byte/strlen)
-- [Documentação oficial do C++ sobre a função `length()`](https://en.cppreference.com/w/cpp/string/basic_string/length)
+Aqui estão alguns links úteis para aprender mais sobre strings em C++:
+
+- [Documentação oficial da função size()](https://www.cplusplus.com/reference/string/string/size/)
+- [Tutorial de strings em C++](https://www.geeksforgeeks.org/string-class-in-c/)
+- [Funcionamento interno da função size()](https://medium.com/@SasiPrabhu/c-std-string-whats-the-difference-between-size-and-length-ff0c2d2f1941)

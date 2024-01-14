@@ -1,55 +1,66 @@
 ---
-title:    "Rust: Lesen von Befehlszeilenargumenten"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/reading-command-line-arguments.md"
+title:                "Rust: Das Lesen von Befehlszeilenargumenten"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Wenn du ein Python-Programmierer bist, kennst du wahrscheinlich die `sys.argv`-Liste zum Lesen von Befehlszeilenargumenten. Aber wusstest du, dass Rust auch eine integrierte `std::env`-Bibliothek hat, die das Lesen von Befehlszeilenargumenten noch einfacher macht? In diesem Blogbeitrag werden wir uns ansehen, wie man Befehlszeilenargumente in Rust liest und warum es eine nützliche Fähigkeit ist.
+Manchmal ist es nützlich, ein Programm mit zusätzlichen Informationen zu starten, die direkt von der Kommandozeile eingegeben werden können. In Rust können diese Argumente einfach gelesen und in das Programm integriert werden.
 
-# Wie man Befehlszeilenargumente in Rust liest
+## Wie geht man vor
 
-Um Befehlszeilenargumente in Rust zu lesen, müssen wir die `std::env`-Bibliothek importieren. Dann können wir die Funktion `args()` aufrufen, um eine Sammlung von Strings mit den übergebenen Argumenten zu erhalten. Schauen wir uns ein Beispiel an:
+Um Kommandozeilenargumente in Rust zu lesen, müssen wir die `std::env` Bibliothek importieren. Dann können wir die Funktion `args()` verwenden, um eine Liste der Argumente zu erhalten. Wir können diese Liste durchlaufen und jeden Wert für unsere Zwecke nutzen.
 
 ```Rust
 use std::env;
-
-fn main() {
-    // Lesen der Befehlszeilenargumente
-    let args: Vec<String> = env::args().collect();
-
-    // Ausgabe der Befehlszeilenargumente
-    for arg in args {
-        println!("Argument: {}", arg);
-    }
+let args: Vec<String> = env::args().collect();
+for arg in args.iter() {
+    println!("{}", arg);
 }
 ```
 
-Wenn du dieses Programm mit dem Befehl `cargo run test1 test2` ausführst, sollte die Ausgabe folgendermaßen aussehen:
+Wenn wir dieses Stück Code ausführen, werden alle Argumente, die beim Start des Programms angegeben wurden, ausgegeben. Wenn wir das Programm beispielsweise mit dem Befehl `rustc main.rs` kompilieren und dann mit dem Befehl `./main argument1 argument2` ausführen, würde die Ausgabe folgendermaßen aussehen:
 
+```sh
+./main
+argument1
+argument2
 ```
-Argument: target/debug/program_name
-Argument: test1
-Argument: test2
+
+## Tieferer Einblick
+
+Die Funktion `args()` gibt uns eine `std::env::Args` Struktur zurück, die eine Iterator-ähnliche Schnittstelle bereitstellt. Das bedeutet, dass wir nicht nur über die Argumente iterieren können, sondern auch andere nützliche Methoden wie `nth()` oder `next()` verwenden können. Außerdem gibt es auch die Möglichkeit, einen spezifischen Index des Arguments zu extrahieren, indem wir die Methode `nth()` mit der Indexnummer aufrufen.
+
+Ein weiteres nützliches Feature dieser Struktur ist die Möglichkeit, den Namen des Programms zu erhalten, das ausgeführt wurde. Wir können dies tun, indem wir die Methode `next()` aufrufen, da der erste Eintrag in der Liste normalerweise der Name des Programms ist.
+
+```Rust
+use std::env;
+let args: Vec<String> = env::args().collect();
+let program_name = args[0].clone();
+
+let mut args = env::args();
+args.next();
+
+for arg in args {
+    println!("{}", arg);
+}
+
+println!("Programm: {}", program_name);
 ```
 
-Wie du sehen kannst, gibt uns die `args()`-Funktion eine Sammlung von Strings mit den übergebenen Argumenten. Beachte, dass der erste String `target/debug/program_name` ist, was der Pfad zum ausführbaren Programm ist. Wenn du diese Ausgabe nicht haben möchtest, kannst du die `args()`-Funktion auch mit `skip(1)` kombinieren, um den ersten String (den Pfad zum ausführbaren Programm) zu überspringen.
+Die Ausgabe dieses Codes wäre folgende:
 
-# Tiefer Einblick
+```sh
+argument1
+argument2
+Programm: ./main
+```
 
-In der `std::env`-Bibliothek gibt es noch einige weitere nützliche Funktionen zum Lesen von Befehlszeilenargumenten. Hier sind einige der wichtigsten:
+## Siehe auch
 
-- `current_dir()`: Liefert den Pfad zum aktuellen Arbeitsverzeichnis als `PathBuf`-Objekt zurück.
-- `home_dir()`: Liefert den Pfad zum Home-Verzeichnis des Benutzers als `Option<PathBuf>` zurück.
-- `var()`: Liefert den Wert einer Umgebungsvariablen als `Result<String>` zurück.
-- `var_os()`: Liefert den Wert einer Umgebungsvariablen als `Option<OsString>` zurück.
-
-Du kannst mehr über diese Funktionen und andere Möglichkeiten, Befehlszeilenargumente in Rust zu lesen, in der offiziellen Dokumentation der `std::env`-Bibliothek erfahren.
-
-# Siehe auch
-
-- [Rust-Dokumentation zu `std::env`](https://doc.rust-lang.org/std/env/)
-- [Ein anderes Beispiel zum Lesen von Befehlszeilenargumenten in Rust](https://stevedonovan.github.io/rust-gentle-intro/1-basics.html#command-line-arguments)
+- [Rust-Dokumentation: Kommandozeilen-Argumente lesen](https://doc.rust-lang.org/std/env/fn.args.html)
+- [Der offizielle Rust-Blog](https://blog.rust-lang.org/)

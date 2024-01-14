@@ -1,60 +1,94 @@
 ---
-title:    "C: Beräkning av ett datum i framtiden eller förfluten tid"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/calculating-a-date-in-the-future-or-past.md"
+title:                "C: Beräkning av ett datum i framtiden eller det förflutna"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna beräkna ett datum i framtiden eller förflutna är en användbar funktion inom programmering. Det kan hjälpa till att organisera och planera viktiga händelser eller samla data för analyser. 
 
-Att kunna beräkna datum i framtiden eller det förflutna är en viktig färdighet inom programmering. Det kan vara användbart för att skapa kalendrar, planera händelser eller utföra olika tidsberäkningar i ett program.
-
-## Hur man gör det
-
-För att beräkna ett datum i framtiden eller det förflutna behöver vi använda oss av några grundläggande matematiska formler. Först och främst måste vi ha ett startdatum som vi utgår ifrån. Detta datum måste vara av typen `time_t`, vilket är en standardiserad datatyp inom C som representerar en specifik tidpunkt.
-
-Efter att ha definierat startdatumet använder vi oss av ett `int` värde för att ange antalet dagar som vi vill addera eller subtrahera från vårt startdatum. Detta representerar alltså skillnaden mellan det framtida eller förflutna datumet och vårt startdatum.
-
-I exemplet nedan har vi ett startdatum som är den 1 januari 2021 och vi vill räkna ut vilket datum det kommer att vara 30 dagar framåt i tiden.
+## Så här
+Att beräkna ett datum i C-programmering kan göras med hjälp av olika funktioner och metoder, beroende på vad som passar bäst för ditt specifika projekt. Nedan finns några kodexempel för att illustrera hur man kan gå tillväga.
 
 ```C
-#include <stdio.h>
-#include <time.h>
+// Beräkna datumet från imorgon
+int main() {
+    int day = 28; // Dag 28
+    int month = 12; // December
+    int year = 2020; // År 2020
+    int numDays = 1; // Antal dagar att lägga till
 
-int main()
-{
-    //Set start date
-    time_t start_date;
-    struct tm *start_tm;
-    start_date = time(NULL);
-    start_tm = localtime(&start_date);
-    start_tm->tm_year = 121; //2021
-    start_tm->tm_mon = 0; //January
-    start_tm->tm_mday = 1; //1st
-    start_date = mktime(start_tm);
-
-    //Calculate future date
-    int days_to_add = 30;
-    start_date += days_to_add * 24*60*60; //Convert days to seconds and add to start date
-    struct tm *future_tm;
-    future_tm = localtime(&start_date);
-    printf("The future date is: %d-%d-%d", future_tm->tm_year+1900, future_tm->tm_mon+1, future_tm->tm_mday);
+    // Anropa funktionen för att beräkna datumet
+    calcFutureDate(day, month, year, numDays);
     
+    return 0;
+}
+
+// Funktionen för att beräkna ett datum i framtiden
+void calcFutureDate(int day, int month, int year, int numDays) {
+    // Uppdatera dag och månad beroende på antalet dagar som ska läggas till
+    day = day + numDays;
+    if(day > daysInMonth(month, year)) {
+        day = day - daysInMonth(month, year);
+        month = month + 1;
+    }
+
+    // Uppdatera året om det behövs
+    if(month > 12) {
+        year = year + 1;
+        month = 1;
+    }
+
+    // Skriv ut datumet i önskad format
+    printf("%d/%d/%d", day, month, year);
+}
+
+// Funktionen som räknar ut antalet dagar i en månad
+int daysInMonth(int month, int year) {
+    int numDays;
+    // Kontrollera om det är ett skottår
+    if(month == 2 && isLeapYear(year)) {
+        numDays = 29;
+    }
+    // Annars, använd en switch-sats för att bestämma antalet dagar i månaden
+    else {
+        switch(month) {
+            case 1: numDays = 31; break;
+            case 2: numDays = 28; break;
+            case 3: numDays = 31; break;
+            case 4: numDays = 30; break;
+            case 5: numDays = 31; break;
+            case 6: numDays = 30; break;
+            case 7: numDays = 31; break;
+            case 8: numDays = 31; break;
+            case 9: numDays = 30; break;
+            case 10: numDays = 31; break;
+            case 11: numDays = 30; break;
+            case 12: numDays = 31; break;
+        }
+    }
+
+    return numDays;
+}
+
+// Funktionen som avgör om ett år är ett skottår
+int isLeapYear(int year) {
+    if(year % 400 == 0) return 1;
+    if(year % 100 == 0) return 0;
+    if(year % 4 == 0) return 1;
+
     return 0;
 }
 ```
 
-Detta program kommer att skriva ut "The future date is: 2021-2-1" vilket betyder att datumet 30 dagar från och med 1 januari 2021 kommer att vara den 1 februari 2021.
+Detta är en enkel metod för att beräkna ett datum i framtiden. Det finns många andra funktioner och metoder som kan användas för att göra mer komplexa beräkningar, såsom att ta hänsyn till olika datumformat eller hantera negativa antal dagar för att beräkna ett datum i förflutna. 
 
-## Djupdykning
-
-För att kunna beräkna datum i framtiden eller det förflutna på ett korrekt sätt, måste vi ta hänsyn till olika faktorer som skottår och tidzoner. Därför är det viktigt att förstå hur `time_t` datatypen fungerar och hur man kan konvertera datum och tider mellan olika zoner.
-
-Det finns också andra metoder för att beräkna datum i framtiden eller det förflutna, till exempel genom att använda sig av bibliotek som `datetime.h` eller `date.h` som innehåller mer avancerade funktioner för tidsberäkningar.
+## Fördjupning
+För den som är intresserad av att lära sig mer om hur datumberäkningar fungerar i C-programmering finns det många resurser på nätet som ger en djupare förståelse för olika tekniker och metoder. Det är också bra att utforska olika kodexempel och experimentera med dem för att få en bättre känsla för hur man kan anpassa dem efter sina egna behov.
 
 ## Se även
-
-- [C Programming Tutorial (på svenska)](https://www.programiz.com/c-programming)
-- [Working with Dates and Time in C](https://www.guru99.com/c-date-time-operations.html)
-- [The Time and Date Standard Library in C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+- [C-programmering för nybörjare](https://www.programiz.com/c-programming)
+- [Datum och tidshantering i C](https://www.geeksforgeeks.org/date-time-functions-in-c

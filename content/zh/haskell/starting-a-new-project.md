@@ -1,40 +1,54 @@
 ---
-title:    "Haskell: 开始一个新项目"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/starting-a-new-project.md"
+title:                "Haskell: 开始一个新项目"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要开始一个新项目
+# 为什么: 为什么要开始一个新的项目？
 
-开始一个新的编程项目是一件充满创造力和乐趣的事情。它可以带来新的挑战、刺激和成就感。无论你是新手还是资深程序员，开始一个新项目都是一个学习和提升自己技能的好机会。
+很多人都对编程感兴趣，希望能够用技术来创造一些有用的东西。开始一个新的项目是实现这一目标的重要一步，它允许我们探索新的编程语言和技术，并且通过构建自己的应用来提高自己的技能。
 
-## 如何开始一个新项目
+## 如何做到: 开始一个新的项目
 
-在Haskell中开始一个新项目非常简单。首先，我们需要安装GHC编译器和Haskell平台。然后，我们可以使用Stack来创建一个新的haskell项目。
+开始一个新的项目需要一些准备工作。首先，我们需要安装Haskell编译器和包管理器。然后，我们可以使用```Haskell```来编写我们的代码。
 
-````haskell
-$ stack new myproject
-````
+下面是一个简单的例子，展示如何在Haskell中打印“Hello, World!”：
 
-这将创建一个包含有默认项目结构的文件夹，并生成一个简单的Haskell程序。我们可以在该文件夹中打开命令行终端，使用以下命令编译和运行程序。
+```Haskell
+main = putStrLn "Hello, World!"
+```
 
-````haskell
-$ stack build
-$ stack exec myproject
-````
+编译并执行这个程序，我们可以得到以下输出：
 
-现在我们已经有了一个新的Haskell项目，可以开始编写代码了。
+```
+Hello, World!
+```
 
-## 深入了解开始一个新项目
+通过这个例子，我们可以看到Haskell的语法非常简洁和优雅。它也有着强大的类型系统，能够帮助我们避免许多常见的编程错误。
 
-除了使用Stack创建项目，我们还可以手动创建一个项目文件夹，并使用Cabal来管理依赖和构建。此外，我们可以学习如何使用不同的包管理工具，如Hackage和Stackage，来扩展项目的功能。
+## 深入了解开始一个新的项目
 
-另外，我们也可以探索使用不同的编译器、编辑器和IDE来编写Haskell代码的不同方式。无论是命令行编译还是图形化IDE，Haskell都拥有广泛的工具生态系统，让我们可以选择最适合自己的工具来开发项目。
+开始一个新的项目并不仅仅是编写一些简单的代码。我们还需要考虑如何组织我们的代码，如何处理错误，如何与其他人协作等等。
 
-# 参考链接
+一种推荐的做法是使用一个现成的框架，如Yesod或HappStack，来帮助我们组织我们的代码。这些框架提供了一些常用的功能，如路由，数据库访问和表单处理，可以节省我们的时间和精力。
 
-- [Haskell官方网站](https://www.haskell.org/)
-- [Haskell学习资源列表](https://github.com/bitemyapp/learnhaskell)
-- [Stack官方文档](https://docs.haskellstack.org/en/stable/GUIDE/)
+另外，当我们遇到问题时，我们可以通过参考Haskell社区的文档和论坛来寻求帮助。Haskell社区非常友好和乐于助人，我们可以从中学习并与其他有相同兴趣的人交流。
+
+## 参考
+
+[Learn You a Haskell for Great Good! - 一个好的Haskell教程](http://learnyouahaskell.com/)
+
+[Haskell官方文档 - 官方的Haskell文档和论坛](https://www.haskell.org/documentation/)
+
+[Yesod官方网站 - Yesod框架的官方网站](https://www.yesodweb.com/)
+
+[HappStack官方网站 - HappStack框架的官方网站](http://happstack.com/)
+
+# 参见
+
+[使用Haskell构建Web应用 - 一篇关于使用Haskell构建Web应用的博客文章](https://www.cnblogs.com/zippy/p/5747416.html)
+
+[为什么选择Haskell作为新的编程语言 - 一篇关于选择Haskell的优势的博客文章](https://www.cnblogs.com/stonexulu/p/5615772.html)

@@ -1,46 +1,41 @@
 ---
-title:    "Javascript: Säännöllisten lausekkeiden käyttö"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/using-regular-expressions.md"
+title:                "Javascript: Säännöllisten lausekkeiden käyttö"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Miksi käyttää regular expressioneja?
 
-Säännölliset lausekkeet ovat tehokas työkalu JavaScript-ohjelmoijille, jotka haluavat hakea ja manipuloida merkkijonoja. Ne voivat auttaa sinua lyhentämään koodin määrää ja tehostamaan suorituskykyä. 
+Regular expressionit ovat erittäin hyödyllinen työkalu ohjelmoinnin maailmassa. Ne auttavat suorittamaan monimutkaisia hakukuvioita ja korvaamaan sekä muokkaamaan tekstiä tehokkaasti. Ne myös säästävät aikaa, kun etsitään tiettyjä merkkijonoja koodin joukosta.
 
-## Miten aloittaa
-
-Säännöllisillä lausekkeilla on erityinen syntaksi, joka mahdollistaa merkkijonojen hakemisen ja muokkaamisen. Yksinkertainen esimerkki on hakea kaikki sanat, jotka alkavat kirjaimella "a".
+## Miten käyttää regular expressioneja?
 
 ```Javascript
-let merkkijono = "Aloitetaan koodaus säännöllisillä lausekkeilla.";
-
-let haku = merkkijono.match(/\ba\w*/g);
-
-console.log(haku);
-// Output: ["Aloitetaan", "a", "säännöllisillä"]
+// Etsitään sanaa "tietokone" tekstistä ja tulostetaan sen indeksi
+const teksti = "Haluaisin ostaa uuden tietokoneen.";
+const regex = /tietokone/g;
+console.log(teksti.search(regex)); // output: 21
 ```
 
-Ensimmäisellä rivillä luomme muuttujan ja määritämme siihen merkkijonon, josta haluamme hakea sanoja. Toisella rivillä käytämme `match`-metodia säännölliselle lausekkeelle ja tallennamme tuloksen muuttujaan `haku`. Lopuksi tulostamme tuloksen konsoliin.
+Tässä esimerkissä käytämme `search`-funktiota yhdessä regular expressionin kanssa löytääksemme ensimmäisen esiintymän sanasta "tietokone". Huomaa myös sana "g" regular expressionin lopussa, mikä tarkoittaa "globaalia" eli sitä, että haluamme löytää kaikki esiintymät.
 
-## Syvällinen sukellus
+```Javascript
+// Korvataan sanat "tietokone" sanalla "läppäri"
+const uusiTeksti = teksti.replace(regex, "läppäri");
+console.log(uusiTeksti); // output: Haluaisin ostaa uuden läppärin.
+```
 
-Säännölliset lausekkeet koostuvat erikoismerkeistä ja merkkipaljastimista, joiden avulla voit luoda monimutkaisempia hakuja. Alla on muutamia yleisiä esimerkkejä.
+Tässä käytämme `replace`-funktiota korvataksemme kaikki esiintymät sanasta "tietokone" sanalla "läppäri". Näin voimme helposti muokata tekstiä tarpeidemme mukaan.
 
-- `.`: Mikä tahansa merkki paitsi uusi rivi
-- `^`: Merkkijonon alku
-- `$`: Merkkijonon loppu
-- `[]`: Määritä merkkijono, jonka haluat hakea
-- `[-]`: Määritä merkkijonoalue, jonka sisältä haluat hakea
-- `\w`: Pienet ja isot kirjaimet sekä numerot
-- `\W`: Kaikki muu kuin `\w`
+## Syväsukellus regular expressioneihin
 
-Katso lisää esimerkkejä ja tarkempaa syventymistä [MDN:n sivulta](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+Regular expressioneja käyttäessä on tärkeää muistaa, että ne ovat erittäin tarkkoja ja pienikin virhe voi johtaa epätoivottuihin tuloksiin. Tästä syystä on hyvä lukea lisää niiden syntaksista ja toiminnasta ennen käyttöönottoa. On myös hyödyllistä kokeilla ja testata regular expressioneja eri tilanteissa, jotta niiden käyttö tulee luontevaksi.
 
 ## Katso myös
 
-- [RegExp Objektin dokumentaatio](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [Regex101 - Työkalu säännöllisten lausekkeiden testaamiseen](https://regex101.com/)
-- [JavaScript Regex Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/javascript)
+- [W3Schools: Regular Expressions](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [MDN web docs: Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [Regexr: Learn, Build & Test RegEx](https://regexr.com/)

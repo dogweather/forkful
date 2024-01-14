@@ -1,47 +1,53 @@
 ---
-title:    "Arduino: Å starte et nytt prosjekt"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/starting-a-new-project.md"
+title:                "Arduino: Å starte et nytt prosjekt"
+programming_language: "Arduino"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hvorfor?
 
-Å starte et nytt prosjekt med Arduino kan være en spennende og givende opplevelse. Det å programmere ulike sensorer og komponenter for å lage et fungerende system kan gi en dypere forståelse for teknologien og åpne opp for kreative muligheter. I tillegg kan det være en morsom måte å lære seg koding på!
+Å starte et nytt prosjekt med Arduino kan være en spennende og givende opplevelse. Med Arduino kan du enkelt lage dine egne elektroniske apparater og roboter. Det er også en flott måte å lære om programmering og elektronikk på, samtidig som du kan skape noe som faktisk fungerer.
 
-# Slik gjør du det
+# Hvordan?
 
-Arduino-programmering er svært tilgjengelig og enkelt å lære seg. Alt du trenger er en Arduino-mikrokontroller, noen sensorer og komponenter, og en datamaskin. Følg disse enkle trinnene for å komme i gang:
+For å starte et Arduino-prosjekt trenger du selvfølgelig en Arduino-enhet, enten det er en Uno, Nano eller annen modell. Du trenger også noen grunnleggende deler som motstander, LED-lys, jumperkabler og en breadboard.
 
-```
-Arduino.uno
+Først må du koble Arduinoen til datamaskinen din og laste ned den nyeste versjonen av Arduino-programvaren. Deretter kan du begynne å skrive koden din i det åpne tekstfeltet i programvaren. Her er et eksempel på en enkel kode som får en LED til å blinke:
 
+```Arduino
+// Sett opp pinne 13 som utgang
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(13, OUTPUT);
 }
 
+// Gjenta for alltid
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);
+  // Skru på LED-en
+  digitalWrite(13, HIGH);
+  // Vent i ett sekund
   delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
+  // Skru av LED-en
+  digitalWrite(13, LOW);
+  // Vent i ett sekund
   delay(1000);
 }
 ```
 
-I dette eksempelet bruker vi en Arduino uno og en LED-lysdiode. Først setter vi opp pinnen som LED-en er koblet til som en utgang. Deretter bruker vi en løkke for å skru LED-en av og på med en pause på én sekund mellom hver tilstand. Når du laster opp koden til Arduino-en din, vil du se at LED-en blinker i ett sekund intervaller.
-
-Arduino-plattformen har et nettbasert utviklingsverktøy som heter Arduino Create. Denne plattformen gjør det enda enklere å programmere Arduino ved å tilby en intuitiv brukergrensesnitt og et økosystem av biblioteker og eksempler. Du kan også programmere i tradisjonelle kodespråk som C++ eller Python ved hjelp av Arduino IDE-programvaren.
+Når du har skrevet koden din og lagret den, kan du laste den opp til Arduinoen ved å klikke på "Upload" -knappen. Du vil da se at LED-lyset blinker i ett sekund av gangen.
 
 # Dykk dypere
 
-Når du har fått et grunnleggende grep om Arduino-programmering, kan du begynne å utforske mer avanserte konsepter som variabler, funksjoner og sensorer. Det er også mulig å koble Arduino til internett og kommunisere med andre enheter eller plattformer.
+Det er utallige muligheter og muligheter når du starter et Arduino-prosjekt. Du kan leke deg med sensorer og aktuatorer, lage interaktive prosjekter med knapper og LCD-skjermer, eller til og med kommunisere med andre enheter via Bluetooth eller Wi-Fi.
 
-En god ressurs for videre læring er Arduino sin offisielle dokumentasjon og forum. Her finner du tonnevis av nyttige ressurser, fra tutorials og eksempler til diskusjoner med andre Arduino-entusiaster.
+Det er også viktig å nevne at Arduino-miljøet er stort og aktivt, med mange ressurser og guider tilgjengelig online. Det er også vanligvis lett å finne lignende prosjekter som andre har gjort for inspirasjon og hjelp.
+
+Så hva venter du på? Koble til Arduinoen din og begynn å utforske de endeløse mulighetene som ligger foran deg.
 
 # Se også
 
-- [Arduino Norge](https://www.arduino.cc)
-- [Arduino Create](https://create.arduino.cc)
-- [Arduino Offisiell Dokumentasjon](https://www.arduino.cc/reference/en)
-- [Arduino Forum](https://forum.arduino.cc)
+- Offisiell Arduino-nettside: https://www.arduino.cc/
+- Arduino-prosjekter og guider: https://www.instructables.com/arduino/
+- Arduino-fellesskapet og forum: https://forum.arduino.cc/

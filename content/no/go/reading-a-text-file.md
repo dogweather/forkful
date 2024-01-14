@@ -1,71 +1,75 @@
 ---
-title:    "Go: Lesing av tekstfil"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/reading-a-text-file.md"
+title:                "Go: Lesing av tekstfiler"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+## Hvorfor
 
-Lesing av tekstfiler er en vanlig oppgave for mange utviklere, enten det er for å behandle og analysere store datamengder, eller bare for å lese innholdet i en konfigurasjonsfil. Uansett grunn er det viktig å kunne lese tekstfiler effektivt for å kunne lage robuste og funksjonelle programmer. I denne bloggposten vil jeg forklare hvordan du kan lese tekstfiler ved hjelp av Go-programmeringsspråket. 
+Hvorfor skulle noen ønske å lese en tekstfil? Vel, for det første er tekstfiler en vanlig måte å lagre og organisere data på. Som en programmer er det nyttig å kunne lese og manipulere tekstfiler for å få tilgang til viktig informasjon.
 
-## Hvordan 
-For å lese en tekstfil i Go, må du først åpne filen ved hjelp av `os.Open()`-funksjonen som tar inn filbanen som parameter. Deretter bruker vi `bufio.NewScanner()`-funksjonen for å skanne gjennom filen linje for linje. I dette eksempelet vil vi lese en tekstfil og skrive ut hvert linjeinnhold til konsollen. 
+Å lese tekstfiler er også en essensiell ferdighet for å utvikle Go programmer, siden mange programmer får input fra tekstfiler og produserer output til tekstfiler. Derfor er det viktig å forstå hvordan man leser en tekstfil i Go.
+
+## Slik gjør du det
+
+For å lese en tekstfil i Go, må vi først åpne filen ved hjelp av funksjonen `os.Open()`. Deretter kan vi bruke en buffer for å lese data fra filen. Etter å ha lest filen, må vi lukke den ved å kalle `file.Close()`.
+
+Her er et eksempel på hvordan man kan lese en tekstfil og skrive ut innholdet til konsollen:
 
 ```Go
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
 	"os"
 )
 
 func main() {
-	// Åpner tekstfilen
+	// Åpner filen
 	file, err := os.Open("tekstfil.txt")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
+		return
 	}
 	defer file.Close()
 
-	// Skanner gjennom filen
-	scanner := bufio.NewScanner(file)
+	// Lager en buffer for å lese data fra filen
+	buffer := make([]byte, 1024)
+	for {
+		// Leser data fra filen inn i bufferet
+		n, err := file.Read(buffer)
 
-	// Itererer over hver linje i tekstfilen
-	for scanner.Scan() {
-		// Skriver ut linjeinnholdet
-		fmt.Println(scanner.Text())
-	}
+		// Avslutter dersom det ikke er mer data å lese
+		if err != nil {
+			fmt.Println("Ferdig lesing av filen")
+			break
+		}
 
-	// Sjekker om det var noen feil under lesing av filen
-	if err := scanner.Err(); err != nil {
-		log.Fatal(err)
+		// Skriver ut dataen fra bufferet til konsollen
+		fmt.Println(string(buffer[:n]))
 	}
 }
 ```
 
-### Eksempel tekstfil (`tekstfil.txt`):
+Output:
+```
+Dette er en tekstfil som skal leses.
 
-```
-Dette er en tekstfil.
-Her kan du se eksempeltekst.
-```
-
-### Eksempel output:
-```
-Dette er en tekstfil.
-Her kan du se eksempeltekst.
+Det finnes mange forskjellige eksempler på hvordan man kan lese tekstfiler i Go.
 ```
 
-## Dypdykk 
-Det finnes flere måter å lese og behandle tekstfiler i Go på, som å bruke `ioutil.ReadFile()`-funksjonen eller `os.ReadFile()`-funksjonen. Det er også mulig å spesifisere en spesifikk del av tekstfilen du vil lese ved hjelp av `io.ReadSeeker`-grensesnittet. Videre kan du også behandle tekstfiler ved å bruke `strings.Split()`-funksjonen for å dele opp tekstfilen i mindre biter basert på en spesifikk separator, for eksempel komma eller tabulator. 
+## Dypdykk
 
-## Se også 
-- https://golang.org/pkg/bufio/#Scanner
-- https://golang.org/pkg/os/#File
-- https://golang.org/pkg/io/#Copy 
-- https://pkg.go.dev/io#ReadSeeker
-- https://pkg.go.dev/strings#Split
+Å lese tekstfiler i Go kan virke enkelt, men det er noen ting å være oppmerksom på. For det første er data fra filer i binære formater og må derfor konverteres til tekst før vi kan lese det.
+
+I tillegg må vi være oppmerksomme på hvor mye data som blir lest inn i bufferet vårt. Dersom filen er større enn størrelsen på bufferet, må vi fortsette å lese filen til den er helt lest.
+
+Det er også verdt å nevne at det finnes mer avanserte måter å lese tekstfiler på ved hjelp av Go's `bufio` pakke, som inkluderer funksjoner som for eksempel `bufio.Scanner` for å gjøre lesingen enklere og mer effektiv.
+
+## Se også
+
+- [Les en tekstfil - Go dokumentasjon](https://golang.org/pkg/os/#Open)
+- [Go's `bufio` pakke - Go dokumentasjon](https://golang.org/pkg/bufio/)

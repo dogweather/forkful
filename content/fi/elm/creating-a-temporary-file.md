@@ -1,47 +1,43 @@
 ---
-title:    "Elm: Väliaikaisen tiedoston luominen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/creating-a-temporary-file.md"
+title:                "Elm: Väliaikaisen tiedoston luominen"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: 
+## Miksi luoda väliaikainen tiedosto?
 
-Miksi luoda väliaikainen tiedosto? Väliaikaiset tiedostot ovat hyödyllisiä, kun tarvitset tilapäistä tallennustilaa ohjelmassa, esimerkiksi väliaikaisesti tallentaaksesi käyttäjän syöttämiä tietoja.
+Monesti puhuttaessa ohjelmoinnista, keskitytään lopullisiin tuloksiin ja pysyviin muutoksiin. Mutta joskus on tarpeen luoda väliaikaisia tiedostoja, jotka ovat olemassa vain lyhyen aikaa esimerkiksi tietojen tallentamiseen tai väliaikaiseen muokkaamiseen. Tässä blogikirjoituksessa käsittelemme, miten voit luoda väliaikaisia tiedostoja käyttäen Elm-ohjelmointikieltä.
 
-## Kuinka: 
+## Näin luot väliaikaisen tiedoston
+
+Väliaikaiset tiedostot ovat hyödyllisiä monessa tilanteessa, esimerkiksi jos tarvitset tallentaa tilapäistä dataa tai luoda tilapäisen tiedostonohjauspolun. Elm-ohjelmointikieli tarjoaa helpon tavan luoda ja hallinnoida väliaikaisia tiedostoja. Alla on esimerkki koodista, joka luo väliaikaisen tiedoston ja kirjoittaa sinne tekstiä:
 
 ```Elm
-import File
-import Random
+tempFile : File
+tempFile =
+  File.temp
 
-
-main =
-    File.withTempPath "temp.txt" <|
-        \path ->
-            Random.generate 5 10 (File.write path)
-```
-
-Koodiesimerkissä käytämme `File`-moduulista löytyvää`withTempPath`-funktiota, joka luo väliaikaisen tiedoston annetulla nimellä ja suorittaa sille annetun toiminnon (`Random.generate` ja `File.write`). Lopuksi väliaikainen tiedosto poistetaan automaattisesti.
+writeToFile : String -> Cmd Msg
+writeToFile text =
+  Task.perform (\_ -> File.write tempFile text) (\_ -> Msg.FileSaved)
 
 ```
-temp.txt
-8
-10
-2
-3
-9
-```
 
-Yllä olevassa esimerkissä `withTempPath` luo tiedoston nimeltä `temp.txt` ja kirjoittaa sinne viisi satunnaista lukua välillä 5-10. Tämän jälkeen tiedosto poistetaan ja konsolille tulostuu tiedostossa olleet luvut.
+Tässä esimerkissä käytetään `File.temp`-funktiota, joka luo uuden väliaikaisen tiedoston. Sitten `writeToFile`-funktio ottaa parametrinaan merkkijonon ja kirjoittaa sen käyttäen `File.write`-funktiota väliaikaiseen tiedostoon. Lopuksi suoritetaan `Task`, joka tallentaa tiedon ja palauttaa viestin `FileSaved`.
 
-## Syväreissaus: 
+## Syvemmälle väliaikaisiin tiedostoihin
 
-Väliaikaisten tiedostojen luomiseen liittyy useita tekijöitä, jotka voivat vaikuttaa ohjelman ajamiseen ja suorituskykyyn. On tärkeää muistaa poistaa väliaikainen tiedosto ohjelman suorituksen jälkeen, jotta se ei aiheuta ylimääräistä tilaa tai mahdollisia tietoturvariskejä.
+Kuten huomaat, väliaikaisen tiedoston luominen ja kirjoittaminen on melko yksinkertaista Elm-kielen avulla. Kuitenkin, jos haluat mennä syvemmälle ja hallinnoida väliaikaisia tiedostoja tarkemmin, voit käyttää `File`-moduulia. Tämä moduuli tarjoaa erilaisia toimintoja ja ominaisuuksia, jotka auttavat sinua käsittelemään väliaikaisia tiedostoja tehokkaasti.
 
-## Katso myös: 
+Voit esimerkiksi käyttää `File.createTemp`-funktiota luomaan uuden väliaikaisen tiedoston haluamallasi nimellä. Tai jos haluat tarkastella ja muokata väliaikaisen tiedoston tiedoissa olevia tietoja, voit käyttää `File.read` ja `File.write`-funktioita.
 
-- [Elm File -documentation](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Random -documentation](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Understanding Temporary Files in Programming](https://www.geeksforgeeks.org/understanding-temporary-files-in-programming/)
+Nyt kun tiedät, miten voit käyttää väliaikaisia tiedostoja Elm-ohjelmointikielellä, voit lisätä tämän taidon työkalupakkiisi ja pärjätä tulevissa projekteissasi entistäkin paremmin.
+
+## Katso myös
+
+- [File-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Ohjelmointikieli Elm - virallinen sivusto](https://elm-lang.org/)
+- [Elm-yhteisö](https://discourse.elm-lang.org/)

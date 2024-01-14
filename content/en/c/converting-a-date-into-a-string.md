@@ -1,62 +1,52 @@
 ---
-title:    "C recipe: Converting a date into a string"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/converting-a-date-into-a-string.md"
+title:                "C recipe: Converting a date into a string"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Converting a date into a string may seem like a trivial task, but it can actually be quite useful in certain situations. For example, if you are working on a project that requires date inputs from users, it may be more convenient to have those inputs in string format for easier manipulation and validation. Additionally, converting dates into strings can also be helpful for displaying date information in a specific format.
+Converting dates into strings may seem like a simple task, but it has important applications in programming. By turning a date into a string, we can easily manipulate and display it in different formats, making our code more dynamic and user-friendly.
 
 ## How To
 
-To convert a date into a string in C programming, we can use the `strftime()` function from the `time.h` library. This function allows us to format a given date according to a specified format and returns a string representation of the date.
+To convert a date into a string in C programming, we can use the `strftime` function from the `time.h` library. This function takes in a date and a format string as parameters and returns the date in the specified format.
 
-Let's take a look at an example:
+To illustrate this, let's take a look at a simple code snippet:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-   // obtain current time
    time_t now = time(NULL);
 
-   // declare buffer to store string
-   char buffer[100];
+   char buffer[20];
+   strftime(buffer, 20, "%Y-%m-%d", localtime(&now));
 
-   // format date to string
-   strftime(buffer, sizeof(buffer), "%B %d, %Y", localtime(&now));
-
-   // print string
-   printf("Current date: %s\n", buffer);
+   printf("Today's date is: %s", buffer);
 
    return 0;
 }
 ```
 
-**Output:**
+In this example, we first declare a `time_t` variable `now` and use the `time` function to get the current date and time. We then create a character array `buffer` with enough space to store our desired date format. Next, we use `strftime` to convert the current date into the specified format, which in this case is `"%Y-%m-%d"`, representing year-month-day.
 
-Current date: June 01, 2021
+Running this code will give us the output: `Today's date is: 2021-09-22`.
 
-In this example, we used the `%B` format specifier to get the full month name, `%d` for the day of the month, and `%Y` for the full year. You can refer to the [strftime documentation](https://www.cplusplus.com/reference/ctime/strftime/) for a complete list of format specifiers.
+We can also include other elements in our format string, such as the day of the week or the time, to get a more comprehensive date and time display. `strftime` allows for a wide range of format options, so feel free to experiment and find the best fit for your needs.
 
 ## Deep Dive
 
-While `strftime()` is a convenient function for converting dates into strings, it is important to note that the format of the string output may vary depending on the system's locale settings. This means that the same format specifier may produce different results on different systems.
+When converting a date into a string, we must be mindful of the locale settings and the time zone of the system. These can affect the format of the resulting string or cause errors if not properly accounted for.
 
-To ensure consistency in the output, we can set the locale using the `setlocale()` function before calling `strftime()`:
-
-```C
-setlocale(LC_ALL, "en_US"); // set locale to U.S.
-```
-
-Additionally, `strftime()` only works for dates within the range of January 1, 1970 and December 31, 2037 on most systems due to the `time_t` data type used in the function. For dates outside of this range, we can use the `mktime()` function to convert a `tm` struct into a `time_t` value that can be passed into `strftime()`.
+Additionally, we can encounter issues with leap years, DST (Daylight Saving Time), or the beginning and end of a month. These can be tackled by using the `mktime` function to convert a `struct tm` object into a `time_t` value before using `strftime`.
 
 ## See Also
 
-- [strftime documentation](https://www.cplusplus.com/reference/ctime/strftime/)
-- [mktime documentation](https://www.cplusplus.com/reference/ctime/mktime/)
-- [setlocale documentation](https://www.cplusplus.com/reference/clocale/setlocale/)
+- `strftime` function documentation: https://www.cplusplus.com/reference/ctime/strftime/
+- `time.h` library documentation: https://www.cplusplus.com/reference/ctime/
+- `mktime` function documentation: https://www.cplusplus.com/reference/ctime/mktime/

@@ -1,36 +1,37 @@
 ---
-title:    "PHP: Omvandla en sträng till små bokstäver"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/converting-a-string-to-lower-case.md"
+title:                "PHP: Omvandla en sträng till gemener"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I PHP-programmering är det ibland nödvändigt att konvertera en sträng till små bokstäver för att till exempel säkerställa att en sökning blir korrekt eller för att jämföra två strängar. Det är en enkel men viktig funktion som kan ha stor inverkan på programmets funktionalitet.
+Det kan finnas flera anledningar till att man vill konvertera en sträng till små bokstäver. Det kan till exempel vara för att man vill ha en enhetlig formatering av texten, för ett mer enhetligt utseende eller för att undvika förvirring vid jämförelse av textsträngar.
 
-## Hur man gör det
+## Hur man gör
 
-För att konvertera en sträng till små bokstäver i PHP används funktionen `strtolower()`. Nedan visas ett kodexempel och dess resultat.
+För att konvertera en sträng till små bokstäver kan man använda PHP funktionen strtolower(). Detta kan enkelt göras genom att ge strängen som man vill konvertera som ett argument till funktionen. Nedan ser du ett exempel på hur man gör:
 
 ```PHP
-$str = "Detta är En Sträng";
-echo strtolower($str);
+$text = "DETTA ÄR EN TEXT";
+echo strtolower($text);
 ```
+Output:
+`detta är en text`
 
-Resultatet blir: "detta är en sträng".
+Det är viktigt att notera att detta endast fungerar för bokstäver i det engelska alfabetet, så användningen av andra tecken kan leda till oönskade resultat.
 
-## Djupdykning
+## Deep Dive
 
-Funktionen `strtolower()` tar endast in en parameter, strängen som ska konverteras. Den returnerar en ny sträng med alla bokstäver omvandlade till små bokstäver. Detta inkluderar även specialtecken och åäö.
+Om man vill få en djupare förståelse för hur funktionen strtolower() fungerar är det bra att veta att den bygger på Unicode teckenattribut. Detta gör att den kan hantera olika språk och karaktärer på ett korrekt sätt.
 
-Det är viktigt att tänka på att denna funktion endast konverterar bokstäver i det engelska alfabetet. Om du behöver konvertera strängar med bokstäver från andra språk behövs en annan lösning.
+Ytterligare en intressant detalj är att när man konverterar en sträng till små bokstäver, byts även eventuella accenter ut till motsvarande vanliga bokstäver. Detta kan vara bra att veta om man behöver hantera flerspråkiga texter.
 
-## Se även
+## Se också
 
-För mer information om strängar i PHP och andra användbara funktioner, se följande länkar:
-
-- [PHP Manual: strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [W3Schools: PHP String Functions](https://www.w3schools.com/php/php_ref_string.asp)
-- [PHP String Functions Cheatsheet](https://github.com/Codecademy/cheatsheets/blob/master/php_string_functions/cheatsheet.md) (Engelska)
+- Denna artikel är skriven av Muhammad Suleman, som ger en bra överblick över hur man kan konvertera en sträng till små bokstäver i PHP: [https://www.cloudways.com/blog/php-string-lowercase/](https://www.cloudways.com/blog/php-string-lowercase/)
+- PHPs officiella dokumentation kring funktionen strtolower(): [https://www.php.net/manual/en/function.strtolower.php](https://www.php.net/manual/en/function.strtolower.php)
+- En guide för att hantera språk och teckenkodning i PHP: [https://www.toptal.com/php/a-utf-8-primer-for-php-and-mysql](https://www.toptal.com/php/a-utf-8-primer-for-php-and-mysql)

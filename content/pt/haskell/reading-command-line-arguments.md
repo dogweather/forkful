@@ -1,51 +1,47 @@
 ---
-title:    "Haskell: Lendo argumentos da linha de comando"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/reading-command-line-arguments.md"
+title:                "Haskell: Lendo argumentos da linha de comando"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que ler argumentos da linha de comando?
 
-Se você já trabalha com Haskell, provavelmente já ouviu falar sobre argumentos da linha de comando e como eles podem ser úteis em suas aplicações. No entanto, para aqueles que são novos na linguagem, pode não ser óbvio por que essa habilidade é tão importante. Neste artigo, vamos explorar o porquê de ler argumentos da linha de comando pode ser uma habilidade valiosa para qualquer programador Haskell.
+Ler argumentos da linha de comando é uma habilidade valiosa para qualquer programador Haskell. Ao entender como processar e manipular esses argumentos, você pode criar programas mais eficientes e flexíveis, permitindo que o usuário personalize a execução do seu código.
 
-## Como fazer
+## Como fazer a leitura de argumentos da linha de comando em Haskell
 
-Ler argumentos da linha de comando em Haskell é relativamente simples. Primeiro, precisamos importar o módulo `System.Environment` para ter acesso às funções que nos permitem ler e manipular os argumentos. Em seguida, utilizamos a função `getArgs` para receber uma lista de argumentos fornecida pelo usuário na linha de comando. Vamos ver um exemplo:
+Para ler os argumentos da linha de comando em Haskell, você precisa importar o módulo `System.Environment`. Em seguida, use a função `getArgs` para obter uma lista de strings contendo os argumentos passados na chamada do seu programa. Você também pode especificar a quantidade de argumentos esperada usando a função `length`.
 
-```Haskell
-import System.Environment
-
-main = do
-  args <- getArgs
-  print args
-```
-
-Se executarmos este código no terminal e fornecermos alguns argumentos, por exemplo: `runhaskell read_args.hs arg1 arg2`, o resultado será uma lista contendo esses argumentos `["arg1", "arg2"]`.
-
-No entanto, a lista de argumentos fornecida pela função `getArgs` é do tipo `IO [String]`, o que pode ser um pouco confuso para os iniciantes em Haskell. Mas não se preocupe, basta pensar em `IO` como uma ação que será executada pelo compilador. Para conseguirmos trabalhar com essa lista, usamos a desestruturação de `IO` com a função de ordem superior `map` para converter cada elemento da lista em um valor do tipo `String`. Vamos ver como ficaria o código:
+Veja um exemplo simples de código que lê dois argumentos da linha de comando e imprime a soma deles:
 
 ```Haskell
 import System.Environment
 
 main = do
   args <- getArgs
-  let argsList = map show args
-  print argsList
+  if length args /= 2
+    then putStrLn "Erro: forneça exatamente 2 argumentos"
+    else do
+      let x = read $ args !! 0 -- converte o primeiro argumento para um número
+      let y = read $ args !! 1 -- converte o segundo argumento para um número
+      putStrLn $ "A soma de " ++ show x ++ " e " ++ show y ++ " é " ++ show (x + y)
 ```
-O resultado será uma lista contendo os argumentos lidos da linha de comando no formato `String`, o que nos permite manipulá-los em nossos programas.
+Ao executar esse código com `runhaskell soma.hs 3 5`, o output será:
 
-## Mergulho Profundo
+```
+A soma de 3 e 5 é 8
+```
 
-Agora que já sabemos como ler os argumentos da linha de comando em Haskell, podemos nos aprofundar um pouco mais e entender melhor como essa habilidade pode ser útil em nossos programas. Alguns casos de uso comuns são:
+## Aprofundando na leitura de argumentos da linha de comando
 
-- Configurações de programas: podemos fornecer opções e configurações para nossos programas através da linha de comando, tornando-os mais flexíveis e customizáveis.
-- Depuração e testes: ao ler argumentos da linha de comando, podemos testar diferentes cenários e utilizar argumentos de entrada específicos para depurar e encontrar possíveis erros em nossos programas.
-- Integração com outros programas: se nosso programa precisa interagir com outros softwares, podemos utilizar argumentos da linha de comando para passar informações e realizar a comunicação entre eles.
+Ao trabalhar com a leitura de argumentos da linha de comando, é importante ter em mente que eles são sempre lidos como strings. Portanto, se você precisar usá-los como outros tipos de dados (como números), é necessário convertê-los usando funções como `read` ou `readMaybe` do módulo `Text.Read`.
+
+Além disso, o primeiro argumento (index 0) é sempre o nome do programa em execução, e os demais argumentos são passados na ordem em que foram especificados.
 
 ## Veja também
 
-- [Documentação do módulo `System.Environment`](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html)
-- [Aprenda Haskell (em inglês)](https://learn.hfm.io)
-- [Curso de Programação Funcional (em português)](https://www.coursera.org/learn/programacao-funcional)
+- [Documentação do módulo System.Environment](https://hackage.haskell.org/package/base/docs/System-Environment.html)
+- [Guia básico do Haskell](https://www.haskell.org/tutorial/)

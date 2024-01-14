@@ -1,53 +1,40 @@
 ---
-title:    "Rust: Dette er tittelen på en artikkel om dataprogrammering: Å finne lengden av en streng."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/finding-the-length-of-a-string.md"
+title:                "Rust: Å finne lengden på en snor."
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+## Hvorfor
+Å finne lengden på en streng er en grunnleggende operasjon i mange programmeringsspråk. I Rust, kan dette gjøres på flere måter avhengig av behovene til utvikleren.
 
-Rust er et kraftig og effektivt programmeringsspråk som er stadig mer populært blant utviklere. Det er designet for å hjelpe deg med å skrive sikker og rask kode, og har også et sterkt fokus på parallell programmering. En av de grunnleggende oppgavene i enhver programmeringsoppgave er å finne lengden på en streng. I denne bloggposten lærer du hvordan du gjør akkurat det ved hjelp av Rust-programmeringsspråket. 
+## Hvordan
+```Rust
+let string = "Hei, verden!";
+let len = string.len();
 
-## Slik gjør du det 
+// Output: len = 12
+```
+Den enkleste måten å finne lengden på en streng i Rust er å bruke `.len()` funksjonen. Denne funksjonen returnerer lengden på strengen som et heltall.
 
-Først må du importere standardbiblioteket for å kunne jobbe med strenger i Rust: 
+Hvis du ønsker å finne lengden på en streng som inneholder ikke-ASCII-tekst, som for eksempel Unicode-tegn, kan du bruke `.chars()` funksjonen sammen med `.count()` funksjonen.
 
-```Rust 
-use std::str; 
-``` 
+```Rust
+let string = "こんにちは、世界！";
+let len = string.chars().count();
 
-Deretter kan du bruke funksjonen "len" for å finne lengden på en streng: 
+// Output: len = 8
+```
+I dette eksemplet, blir lengden på strengen beregnet ved å først dele den opp i en samling av tegn, og deretter telle antall tegn i samlingen.
 
-```Rust 
-let string = "Hei, verden!"; 
-let length = str::len(string); 
-println!("Lengden på strengen er {}", length); 
-``` 
+## Deep Dive
+For å virkelig forstå hvordan lengden på en streng blir funnet i Rust, må vi gå litt ned i dybden. I Rust, er strenger representert som UTF-8 sekvenser. Dette betyr at hver karakter kan bestå av flere bytes. Når vi bruker `.len()` funksjonen, blir antall bytes i strengen returnert.
 
-Output: 
-Lengden på strengen er 13 
+Når det gjelder å finne lengden på en streng med Unicode-tegn, er `.chars()` og `.count()` funksjonene nyttige fordi de tar hensyn til at noen tegn kan bestå av flere bytes. Dette er en viktig ting å huske på når man arbeider med strenger i Rust.
 
-Du kan også bruke metoden "len" på en streng-verdi, uten å importere standardbiblioteket: 
-
-```Rust 
-let string = "Hei, verden!"; 
-let length = string.len(); 
-println!("Lengden på strengen er {}", length); 
-``` 
-
-Output: 
-Lengden på strengen er 13 
-
-Merk at begge disse metodene tar hensyn til unicode-tegn, så den faktiske lengden på en streng kan variere avhengig av antall tegn i strengen. 
-
-## Dypdykk 
-
-I Rust er en streng en samling av utf8-bytes, mens en unicode kodepoeng kan bestå av en eller flere utf8-bytes. Dette betyr at en enkelt unicode karakter kan ha en annen bytelengde enn en vanlig ascii-karakter. Derfor er det viktig å være oppmerksom på dette når du jobber med strenger i Rust. Det anbefales også å bruke metoden "chars" for å iterere gjennom en streng og få tilgang til hver unicode karakter enkeltvis. 
-
-## Se også 
-
-- [The Rust Programming Language](https://www.rust-lang.org) 
-- [Rust Standard Library Documentation](https://doc.rust-lang.org/std/index.html) 
-- [Rust String Types](https://doc.rust-lang.org/std/string/struct.String.html)
+## Se også
+- [Offisiell Rust Dokumentasjon for Strenger](https://doc.rust-lang.org/std/string/)
+- [Rust By Examples: Strenger](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
+- [Følger oppskrift for strenger i Rust](https://ovid.github.io/rust/guide/2016/02/03/strings.html)

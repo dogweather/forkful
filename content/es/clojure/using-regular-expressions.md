@@ -1,52 +1,49 @@
 ---
-title:    "Clojure: Utilizando expresiones regulares"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-regular-expressions.md"
+title:                "Clojure: Utilizando expresiones regulares"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué usar expresiones regulares en Clojure
+## Por qué
 
-Las expresiones regulares son herramientas poderosas para manipular y buscar cadenas de texto en un programa. En Clojure, pueden ser útiles para validar entradas de usuario, transformar datos y muchas otras tareas. 
+Las expresiones regulares son una herramienta poderosa en la programación, ya que permiten realizar búsquedas y manipulaciones de texto de manera eficiente. Son especialmente útiles para realizar tareas como validación de formularios, análisis de datos y extracción de información específica de un texto.
 
-## Cómo utilizarlas
+## Cómo hacerlo
 
-Para utilizar expresiones regulares en Clojure, primero es necesario incluir el namespace `clojure.string` en tu código:
+Para utilizar expresiones regulares en Clojure, primero debemos importar el módulo ```clojure.string```. Luego, podemos utilizar la función ```re-find``` para buscar patrones en una cadena de texto. Por ejemplo, si queremos encontrar todas las palabras que empiecen con la letra "c" en una oración, podemos hacer lo siguiente:
 
 ```Clojure
 (require '[clojure.string :as str])
+
+(def oracion "Clojure es un lenguaje de programación funcional")
+(re-find #"c\S+" oracion)
 ```
 
-Luego, puedes utilizar la función `re-find` para buscar una expresión regular en una cadena de texto y devolver la primera coincidencia encontrada:
+Esto nos devolverá una lista con todas las palabras que comienzan con "c" en la oración, en este caso ```["Clojure" "c" "comienzan" "con" "com" "ción" "cional"]```. 
+En el código anterior, utilizamos la expresión regular ```#"c\S+"```, donde la letra "c" indica el inicio de la palabra y el meta-carácter ```\S+``` representa cualquier cantidad de caracteres no espacios en blanco.
+
+Otra función útil para trabajar con expresiones regulares en Clojure es ```re-seq```, que nos permite obtener todas las coincidencias en vez de solo la primera. Por ejemplo, si queremos encontrar todos los números en una cadena de texto, podemos utilizar la expresión regular ```#"(\d+)"``` y la función ```re-seq```, como se muestra a continuación:
 
 ```Clojure
-(str/re-find #"^[AEIOU]" "Hola") ; Devuelve "H"
+(def cadena "Hoy es 15 de noviembre de 2021")
+(re-seq #"\d+" cadena)
 ```
 
-También puedes utilizar la función `re-seq` para buscar todas las coincidencias en una cadena y devolver una secuencia de ellas:
+Esto nos devolverá una lista con todos los números encontrados en la cadena, en este caso ```["15" "2021"]```. 
+Con estas funciones y expresiones regulares, podemos realizar una gran cantidad de operaciones de búsqueda y manipulación de texto de manera eficiente en Clojure.
 
-```Clojure
-(str/re-seq #"\d+" "Tengo 3 gatos y 2 perros") ; Devuelve la secuencia (3 2)
-```
+## Profundizando
 
-Además, Clojure tiene funciones específicas para trabajar con expresiones regulares, como `re-matches`, `re-groups` y `re-pattern`. Puedes consultar más detalles en la documentación oficial de Clojure.
+Además de las funciones mencionadas anteriormente, Clojure también ofrece otras herramientas para trabajar con expresiones regulares. Por ejemplo, ```re-pattern``` nos permite compilar una expresión regular antes de utilizarla, lo cual puede mejorar la eficiencia en ciertos casos. Asimismo, podemos utilizar ```re-find-all``` para obtener todas las coincidencias en un texto y ```re-groups``` para obtener grupos específicos dentro de una coincidencia.
 
-## Profundizando en expresiones regulares
+Es importante tener en cuenta que las expresiones regulares pueden ser un poco complicadas de entender al comienzo, pero con la práctica se vuelven una herramienta muy útil y poderosa en la programación. Se recomienda utilizar recursos en línea para aprender más detalles sobre su uso en Clojure y practicar con diferentes patrones y funciones.
 
-Las expresiones regulares en Clojure siguen la misma sintaxis que en otros lenguajes, por lo que si ya tienes experiencia con ellas, no deberías tener problemas. Sin embargo, si eres nuevo en ellas, puede ser útil conocer algunos elementos básicos:
+## Ver también
 
-- `^` y `$`: Representan el inicio y fin de una cadena, respectivamente.
-- `.`: Representa cualquier carácter.
-- `*`, `+` y `?`: Indican repetición de patrones, siendo `*` cero o más veces, `+` una o más veces, y `?` cero o una vez.
-- `[]`: Representan un conjunto de carácteres, pudiendo ser especificados individualmente o a través de un rango (por ejemplo, `[a-z]` incluye todas las letras minúsculas).
-- `|`: Indica alternativa, es decir, puede ser uno o el otro.
-- `(  )`: Sirven para agrupar patrones.
+- [Documentación oficial de funciones de expresiones regulares en Clojure](https://clojuredocs.org/clojure.string)
+- [Artículo de introducción a expresiones regulares en Clojure](https://www.braveclojure.com/regular-expressions/)
 
-Un buen ejercicio para practicar es jugar con diferentes combinaciones de estos elementos y ver cómo afecta a los resultados de las expresiones regulares.
-
-# Ver También
-
-- [Documentación oficial de expresiones regulares en Clojure](https://clojure.org/reference/strings#_regular_expressions)
-- [Tutorial de expresiones regulares en Clojure](https://www.theserverside.com/tutorial/A-tutorial-on-how-to-use-Clojure-regular-expressions)
-- [Ejemplos de expresiones regulares en Clojure](https://gist.github.com/shriphani/5392592)
+¡Ahora estás listo para utilizar expresiones regulares en tus proyectos de Clojure! Esperamos que esta guía haya sido útil para comprender el uso y la importancia de esta herramienta en la programación. ¡A seguir aprendiendo y mejorando tus habilidades en Clojure!

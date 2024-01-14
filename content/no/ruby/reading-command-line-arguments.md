@@ -1,40 +1,60 @@
 ---
-title:    "Ruby: Lesing av kommandolinje-argumenter"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/reading-command-line-arguments.md"
+title:                "Ruby: Lesing av kommandolinje-argumenter"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hva er Kommandolinje Argumenter?
+## Hvorfor
 
-Kommandolinje argumenter er informasjon som kan bli gitt til et Ruby program når det blir startet fra kommandolinjen. Dette kan inneholde data som kan påvirke programmet ditt, som for eksempel filnavn til en fil du ønsker å prosessere, en spesifikk modus eller annen relevant informasjon. Å lese kommandolinje argumenter blir ofte brukt i Ruby programmer for å gi en mer fleksibel og tilpasningsdyktig opplevelse for brukeren.
+Det å lese kommandolinje-argumenter er en viktig ferdighet for å kunne lage effektive Ruby-programmer. Det er også en viktig del av enhver programmeringsjobb. Ved å lære hvordan kommandolinje-argumenter fungerer, kan du skrive mer avansert og mer tilpassede programmer.
 
-## Hvordan lese kommandolinje argumenter i Ruby
+## Hvordan
 
-I Ruby, kan vi lese kommandolinje argumenter ved hjelp av et spesialsymbol, "$" etterfulgt av et tall, som indikerer hvilket kommandolinje argument som skal leses. For eksempel, hvis du ønsker å lese det første kommandolinje argumentet, kan du bruke "$0". Andre symbolet vi kan bruke inkluderer "$*", som vil returnere en streng med alle kommandolinje argumentene. La oss se på et eksempel på hvordan dette fungerer i praksis:
+For å lese kommandolinje-argumenter i Ruby, må du bruke ARGV-metoden. Denne metoden returnerer en matrise med argumentene som ble gitt ved å kjøre programmet. Her er et eksempel:
 
-```Ruby
-# kode for å lese kommandolinje argumenter
-puts "Det første kommandolinje argumentet er: " + $0
-puts "Alle kommandolinje argumentene er: " + $*.to_s 
+```ruby
+# Program for å lese og skrive ut kommandolinje-argumenter
+puts "Følgende kommandolinje-argumenter ble gitt:"
+puts ARGV
 ```
 
-Hvis vi kjører programmet med følgende kommandolinje argumenter: "ruby programm.rb hello world", vil utgangen bli:
+Eksempel på output:
 
 ```
-Det første kommandolinje argumentet er: hello
-Alle kommandolinje argumentene er: [hello, world]
+$ ruby kommando.rb argument1 argument2
+Følgende kommandolinje-argumenter ble gitt:
+["argument1", "argument2"]
 ```
 
-Som du kan se, blir kommandolinje argumentene automatisk konvertert til en liste som vi kan bruke i programmet vårt.
+Du kan også bruke ARGV-nummerering for å få en spesifikk del av argumentene. ARGV[0] vil gi den første argumentet, ARGV[1] vil gi det andre argumentet, og så videre. Her er et eksempel på hvordan du kan bruke dette for å lagre argumentene i variabler:
 
-## Dykk dypere inn i kommandolinje argumenter
+```ruby
+# Program for å lagre kommandolinje-argumenter i variabler
+argument1 = ARGV[0]
+argument2 = ARGV[1]
+puts "Argument 1 er: #{argument1}"
+puts "Argument 2 er: #{argument2}"
+```
 
-Å jobbe med kommandolinje argumenter kan være veldig nyttig i mer komplekse Ruby programmer. Noen nyttige tips å huske på er å alltid sjekke om det er nok argumenter gitt til programmet ditt, og å bruke metoden ".to_i" for å konvertere argumenter til tall. Det kan også være lurt å organisere kommandolinje argumentene i forskjellige variabler for enklere håndtering. For mer informasjon, kan du sjekke ut Ruby-dokumentasjonen om kommandolinje argumenter.
+Eksempel på output:
 
-# Se også
+```
+$ ruby kommando.rb heia norge
+Argument 1 er: heia
+Argument 2 er: norge
+```
 
-- [Ruby Dokumentasjon - Kommandolinje Argumenter](https://ruby-doc.org/core-2.7.1/ARGV.html)
-- [Ruby Programming Language - Kommandolinje Argumenter](https://www.ruby-lang.org/no/documentation/quickstart/4/)
-- [The Ruby Toolbox - Kommandolinje Argumenter Librarier](https://www.ruby-toolbox.com/categories/cli_option_parsing)
+## Deep Dive
+
+Når du leser kommandolinje-argumenter, må du være oppmerksom på at argumenter som inneholder mellomrom må omgis med anførselstegn. Dette gjelder også for argumenter som inneholder spesialtegn som "!" og "&". Ellers vil programmet lese argumentene som separate elementer og gi feil output.
+
+Det er også viktig å være klar over at når du leser argumenter, vil ARGV[0] alltid være programnavnet. Derfor må du begynne med å lese ARGV[1] for å få det første argumentet gitt av brukeren.
+
+## Se også
+
+- [Ruby ARGV documentation](https://ruby-doc.org/core-2.7.1/ARGV.html)
+- [Ruby ARGF class](https://ruby-doc.org/core-2.7.1/ARGF.html)
+- [Ruby Command Line Arguments tutorial](https://www.rubyguides.com/2019/08/ruby-command-line-arguments/)

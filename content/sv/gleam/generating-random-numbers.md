@@ -1,46 +1,35 @@
 ---
-title:    "Gleam: Generering av slumpmässiga nummer"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/generating-random-numbers.md"
+title:                "Gleam: Skapa slumpmässiga tal"
+programming_language: "Gleam"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att generera slumpmässiga nummer är en viktig del av många program. Det kan användas för att skapa olika användare, utföra slumpvisa tester eller spela ett slumpmässigt spel. I denna bloggpost kommer vi att diskutera hur man kan använda Gleam för att enkelt generera slumpmässiga nummer i dina program.
 
-Att generera slumpade nummer är ett vanligt behov inom programmering, speciellt inom spel- och simuleringstillämpningar. Det kan också vara användbart för att skapa testdata eller för att räkna ut statistiska sannolikheter.
-
-## Hur man gör det
-
-För att generera slumpade nummer i Gleam behöver du importera modulen `random` och använda funktionen `int`, som tar emot två parameterar: ett minimum och ett maximum. Här är ett enkelt exempel på hur du kan använda det:
+## Hur man gör
+För att generera slumpmässiga nummer i Gleam kan du använda den inbyggda funktionen `random.uniform()` som tar två tal som parametrar och returnerar ett slumpmässigt nummer mellan dem. Låt oss ta en titt på ett exempel:
 
 ```Gleam
-import random
-
-let random_number = random.int(1, 100)
-
+let random_number = random.uniform(1, 10)
 ```
 
-Detta kodblock kommer att ge ett slumpat heltal mellan 1 och 100. Om du vill ha ett decimaltal kan du istället använda funktionen `float`, som tar emot samma parametrar men returnerar ett flyttal istället.
-
-Men vad händer om du vill ha en lista av slumpade nummer? För att göra det kan du använda funktionen `list`, som tar emot ett antal parametrar och returnerar en lista av slumpade nummer. Här är ett exempel:
+I detta exempel kommer `random_number` att tilldelas ett slumpmässigt nummer mellan 1 och 10. Du kan också använda `random.pick()` för att välja ett slumpmässigt element från en lista:
 
 ```Gleam
-import random
-
-let random_list = random.list(10, 1, 100)
-
+let fruits = ["apple", "banana", "orange", "kiwi"]
+let random_fruit = random.pick(fruits)
 ```
 
-Detta kodblock kommer att returnera en lista med 10 slumpade heltal mellan 1 och 100. Du kan självklart ändra antalet nummer och intervallet för att anpassa det efter dina behov.
+I detta exempel kommer `random_fruit` att välja ett slumpmässigt element från listan `fruits` och tilldela det till variabeln.
 
 ## Djupdykning
-
-Bakom kulisserna använder Gleam en algoritm som kallas "Mersenne Twister" för att generera slumpade nummer. Denna algoritm är väl testad och anses vara en av de bästa metoderna för att skapa tillförlitliga slumpade nummer. Om du vill lära dig mer om hur den fungerar och vilka fördelar den har kan du läsa mer här: [Mersenne Twister på Wikipedia](https://en.wikipedia.org/wiki/Mersenne_Twister).
+För mer komplexa användningsområden kan du också använda `random.seed()` för att generera en given sekvens av slumpmässiga nummer baserade på ett visst startvärde. Detta kan vara användbart för exempelvis simuleringar eller spel där det är viktigt att samma sekvens av slumpmässiga nummer används varje gång programmet körs. Du kan också använda `random.shuffle()` för att blanda en lista på ett slumpmässigt sätt.
 
 ## Se även
-
-- [Gleams officiella dokumentation för modulen `random`](https://gleam.run/modules/random.html)
-- [Gleam Playground](https://gleam.run/try), där du kan testa olika variationer av kodexempelna ovan.
-
-Tack för att du läste! Hoppas detta har hjälpt dig att förstå hur du kan generera slumpade nummer i Gleam. Lycka till med dina program!
+- Officiell Gleam-dokumentation: [Random Modul](https://gleam.run/modules/random/)
+- Gleam Cookbook: [Generating Random Numbers](https://www.gleam.run/cookbook/random-number-generation/)
+- Gleam Discord-community: [Slumpmässiga nummer-kanalen](https://discord.gg/Qk7a9W6d)

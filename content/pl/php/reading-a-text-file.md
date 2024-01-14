@@ -1,42 +1,48 @@
 ---
-title:    "PHP: Odczytywanie pliku tekstowego"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/reading-a-text-file.md"
+title:                "PHP: Odczyt pliku tekstowego"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Czy kiedykolwiek znalazłeś się w sytuacji, w której musiałeś przeczytać zawartość pliku tekstowego w swoim kodzie PHP? Może chcesz odczytać dane z pliku dziennika lub wyświetlić zawartość pliku konfiguracyjnego dla Twojej aplikacji. Niezależnie od powodu, czytanie pliku tekstowego jest niezbędnym narzędziem w programowaniu PHP i w tym artykule pokażemy Ci, jak to zrobić.
+W dzisiejszych czasach, wiele aplikacji internetowych wymaga przetworzenia plików tekstowych, takich jak pliki konfiguracyjne czy pliki dziennika. Dlatego też, umiejętność czytania plików tekstowych jest niezwykle przydatna dla każdego programisty PHP. W tym artykule dowiesz się, jak w prosty sposób odczytać plik tekstowy za pomocą PHP.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-Aby odczytywać pliki tekstowe w kodzie PHP, używamy funkcji `file_get_contents()`. Poniżej znajdziesz przykłady użycia tej funkcji wraz z odpowiadającym im wynikiem.
+Zacznijmy od stworzenia prostego pliku tekstowego o nazwie "tekst.txt". W pliku tym wpiszmy kilka linii tekstu, które będą służyć jako dane przykładowe. Następnie, w swoim skrypcie PHP, możemy wykorzystać funkcję "file_get_contents()" aby odczytać ten plik.
 
 ```PHP
-// Przykład 1 - Odczyt całego pliku tekstowego
-$content = file_get_contents('example.txt');
-echo $content; // wyświetli zawartość pliku
+<?php
+$plik = file_get_contents("tekst.txt");
+echo $plik;
+```
 
-// Przykład 2 - Odczyt wiersza po wierszu
-$lines = file('example.txt');
-foreach ($lines as $line) {
-    echo $line . '<br>'; // wyświetli każdy wiersz z pliku 
-}
+W powyższym przykładzie, funkcja "file_get_contents()" odczytuje zawartość pliku tekst.txt i przypisuje ją do zmiennej $plik. Następnie, za pomocą polecenia "echo", wyświetlamy zawartość tej zmiennej, co w efekcie wyświetla całą zawartość pliku tekst.txt.
 
-// Przykład 3 - Odczyt pliku jako tablica z wykorzystaniem opcji SKIP_EMPTY_LINES
-$content = file('example.txt', FILE_SKIP_EMPTY_LINES);
-foreach ($content as $line) {
-    echo $line . '<br>'; // wyświetli każdy wiersz pliku, ale pominie puste linie
+Aby odczytać plik linia po linii, możemy wykorzystać funkcję "file()", która zapisuje każdą linię pliku jako element tablicy.
+
+```PHP
+<?php
+$plik = file("tekst.txt");
+foreach($plik as $linia) {
+    echo $linia;
 }
 ```
 
-## Głębsze zagadnienia
+W powyższym przykładzie, funkcja "file()" odczytuje plik tekst.txt i zapisuje go jako tablicę o nazwie $plik. Następnie, za pomocą pętli "foreach", iterujemy przez każdy element tablicy i wyświetlamy go za pomocą polecenia "echo".
 
-Podczas odczytywania plików tekstowych zauważysz, że bardziej wydajne jest używanie funkcji `file()` zamiast `file_get_contents()`. Funkcja ta zwraca zawartość pliku w postaci tablicy, co może być wygodne przy przeprowadzaniu dodatkowych operacji na pliku. Możesz również przekazać opcje jako drugi parametr funkcji `file()`, co pozwala na jeszcze większą kontrolę nad odczytywanym plikiem.
+## Głębsze Zanurzenie
 
-## Zobacz także
-- [Dokumentacja PHP - file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Dokumentacja PHP - file()](https://www.php.net/manual/en/function.file.php)
-- [Blog KursPHP.pl - Odczytywanie plików tekstowych w PHP](https://kursphp.pl/odczytywanie-plikow-tekstowych-w-php/)
+PHP oferuje także wiele innych funkcji, które umożliwiają zaawansowane operacje na plikach tekstowych, takich jak "fopen()" do otwierania pliku, "feof()" do sprawdzania czy osiągnięto koniec pliku, czy "fgets()" do odczytywania pojedynczej linii pliku.
+
+Korzystanie z tych funkcji może być przydatne, gdy chcemy przetwarzać dane w bardziej złożony sposób lub manipulować zawartością pliku przed wyświetleniem go lub zapisaniem do innego pliku.
+
+## Zobacz też
+
+- [Dokumentacja PHP: file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
+- [Dokumentacja PHP: file()](https://www.php.net/manual/en/function.file.php)
+- [Dokumentacja PHP: fopen()](https://www.php.net/manual/en/function.fopen.php)

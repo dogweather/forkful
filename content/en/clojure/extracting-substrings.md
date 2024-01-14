@@ -1,47 +1,49 @@
 ---
-title:    "Clojure recipe: Extracting substrings"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/extracting-substrings.md"
+title:                "Clojure recipe: Extracting substrings"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever found yourself needing to extract certain parts of a string in your Clojure program? Maybe you want to manipulate a specific word or set of characters within a larger string. If so, then this blog post is for you! In this article, we will explore how to extract substrings in Clojure and why it can be a useful tool in your programming toolkit.
+Substring extraction is a common task in programming, regardless of the language being used. In Clojure, extracting substrings can be particularly useful for manipulating strings and parsing data. By understanding how to extract substrings, you can greatly enhance your ability to work with text data in Clojure.
 
 ## How To
 
-First, let's start by defining a string that we want to extract a substring from:
+To extract a substring in Clojure, the `subs` function is used. It takes in a string and two parameters specifying the starting and ending index of the substring. Here's an example:
 
 ```Clojure
-(def my-string "Hello, Clojure!")
+(def str "Hello, world!")
+(print (subs str 0 5))
 ```
 
-To get a specific substring from this string, we can use the `subs` function and specify the starting and ending indexes of the substring we want:
+In this example, we have a string "Hello, world!" and we use `subs` to extract the first 5 characters, resulting in "Hello" being printed to the console.
+
+We can also use negative indices to specify the index from the end of the string. For example:
 
 ```Clojure
-(subs my-string 7 14)
+(print (subs str 7 -1))
 ```
 
-This will return the substring "Clojure" from our original string. 
-
-Another way to extract substrings is by using regular expressions. We can use the `re-find` function to search for a specific pattern within a string and extract the substrings that match that pattern. For example, if we want to extract all the vowels from our original string, we can do the following:
-
-```Clojure
-(re-find #"[aeiou]" my-string)
-```
-
-This will return a list of all the vowels in our string.
+This will extract the characters from index 7 (including) until the end of the string, resulting in "world!" being printed.
 
 ## Deep Dive
 
-Under the hood, the `subs` function uses the `subvec` function to extract the substring. The `subvec` function is similar to the `subarray` function in other programming languages, where it takes a vector as input and returns a portion of that vector based on the specified indexes. This explains why we can also use `subs` on vectors and get the same results.
+Clojure also provides the `subseq` function for substring extraction. Unlike `subs`, `subseq` returns a sequence rather than a string. Here's an example:
 
-It is also worth noting that the `subs` function is inclusive of the starting index but exclusive of the ending index. This means that the character at the ending index will not be included in the returned substring.
+```Clojure
+(def str "Hello, world!")
+(print (subseq str 0 5))
+```
+
+This will return a sequence containing "H", "e", "l", "l", and "o". We can use the `join` function to convert this sequence back into a string if needed.
+
+It's important to note that the indices used in `subs` and `subseq` are zero-based, meaning the first character is at index 0 and the last character at index -1.
 
 ## See Also
 
-For more information on substrings and other string manipulation functions in Clojure, check out the official documentation here: https://clojuredocs.org/clojure.core/subs
-
-You can also explore regular expressions in more detail and see how they can be used for extracting substrings in Clojure here: https://clojuredocs.org/clojure.core/re-find
+- Official Clojure Documentation for the `subs` function: https://clojuredocs.org/clojure.core/subs
+- Official Clojure Documentation for the `subseq` function: https://clojuredocs.org/clojure.core/subseq

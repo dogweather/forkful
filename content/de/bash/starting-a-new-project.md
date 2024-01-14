@@ -1,54 +1,44 @@
 ---
-title:    "Bash: Ein neues Projekt beginnen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/starting-a-new-project.md"
+title:                "Bash: Eine neue Projekt starten"
+programming_language: "Bash"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Warum sollte man sich dafür entscheiden, ein neues Projekt zu starten? Es gibt viele Gründe, warum man sich als Programmierer oder Programmiererin für ein neues Projekt entscheiden könnte. Vielleicht möchtest du etwas Neues ausprobieren, dein Wissen vertiefen oder einfach eine Lösung für ein bestimmtes Problem finden. Egal aus welchem Grund, es ist immer aufregend, ein neues Projekt zu starten!
+Egal ob du schon lange ein begeisterter Programmierer bist oder gerade erst in die Welt des Codens eintauchst - es gibt immer einen Grund, ein neues Projekt zu starten. Vielleicht möchtest du deine Fähigkeiten verbessern, eine bestimmte Aufgabe erledigen oder einfach nur aus Spaß an der Sache neue Code-Snippets ausprobieren. Egal welcher Grund es auch sein mag, das Schreiben von Bash-Skripten kann eine interessante und lohnende Erfahrung sein.
 
-## Wie Geht Es
+## Wie geht man vor?
 
-Aber wie fängt man eigentlich an? Zunächst einmal solltest du dir Gedanken darüber machen, welche Programmiersprache du verwenden möchtest. Wir werden hier Beispiele mit Bash zeigen, einer Skriptsprache für die Arbeit in der Terminal-Umgebung. Mit Bash kannst du Befehle und Programme schnell und effektiv ausführen.
-
-Um ein neues Projekt in Bash zu beginnen, kannst du einfach einen neuen Ordner mit dem Namen deines Projekts erstellen. Nennen wir ihn zum Beispiel "Mein Projekt". Öffne dann deinen Terminal und navigiere in den Ordner "Mein Projekt". Nun kannst du mit dem Befehl `touch` eine neue Datei erstellen, die wir "script.sh" nennen werden. Diese Datei wird unser Skript enthalten, mit dem wir unser Projekt ausführen können.
+Um ein neues Bash-Projekt zu starten, gibt es ein paar grundlegende Schritte zu beachten. Zuerst solltest du sicherstellen, dass du eine geeignete Programmierumgebung hast, um dein Skript zu schreiben und auszuführen. Dann kannst du mit dem Schreiben deines Bash Codes beginnen. Hier ist ein einfaches Beispiel für die Ausgabe eines "Hello World"-Statements in der Konsole:
 
 ```Bash
-mkdir Mein-Projekt
-cd Mein-Projekt
-touch script.sh
+# Dieses Bash-Skript gibt "Hello World" in der Konsole aus
+echo "Hello World"
 ```
 
-Jetzt können wir beginnen, unser Skript zu schreiben. Wir werden mit dem Befehl `echo` eine Ausgabe erstellen und sie dann auf dem Bildschirm anzeigen lassen. Füge dazu folgenden Code in deine "script.sh" Datei ein:
+Um das Skript auszuführen, musst du es zunächst speichern und dann mit dem Befehl "bash" gefolgt vom Namen deiner Datei aufrufen:
 
 ```Bash
-#!/bin/bash
-echo "Willkommen zu meinem Projekt!"
+bash helloworld.sh
 ```
 
-Damit unser Skript auch ausgeführt werden kann, müssen wir es noch ausführbar machen. Das können wir mit dem Befehl `chmod` tun, gefolgt von `+x` und dem Namen unserer Datei, in diesem Fall "script.sh".
+In der Konsole sollte nun die Nachricht "Hello World" angezeigt werden. Das ist natürlich nur ein einfaches Beispiel, aber es zeigt, wie man das Skript schreibt und ausführt.
 
-```Bash
-chmod +x script.sh
-```
+## Tiefere Einblicke
 
-Nun kannst du dein Skript ausführen, indem du einfach den Namen deiner Datei in deinem Terminal eingibst.
-
-```Bash
-./script.sh
-```
-
-Und schon wird die Ausgabe "Willkommen zu meinem Projekt!" auf deinem Bildschirm angezeigt.
-
-## Tiefer Eintauchen
-
-Natürlich gibt es noch viel mehr, was du mit Bash machen kannst, um dein Projekt zu verbessern und zu erweitern. Expressions, Variablen und Schleifen sind nur einige der Dinge, die dir dabei helfen können, komplexe Skripte zu erstellen. Indem du dich tiefer in die Welt der Bash-Programmierung hineinbegibst, wirst du in der Lage sein, leistungsstarke und effiziente Lösungen für deine Projekte zu entwickeln.
+Es gibt natürlich viele weitere Aspekte beim Starten eines neuen Bash-Projekts zu beachten, wie zum Beispiel die Verwendung von Variablen, Bedingungen und Schleifen. Auch das Debuggen von Fehlern und die Optimierung der Effizienz deines Skripts sind wichtige Dinge zu beachten. Es lohnt sich, etwas Zeit zu investieren, um mehr über die verschiedenen Möglichkeiten und Techniken zu lernen, um deine Bash-Skripte zu verbessern.
 
 ## Siehe auch
 
-- [Bash-Programmierung für Einsteiger und Fortgeschrittene](https://www.linux-community.de/ausgaben/linuxuser/2010/08/bash-programmierung/)
-- [Bash-Handbuch für Anfänger](https://wiki.ubuntuusers.de/Bash/Programmierung/Einfuehrung/)
-- [Bash-Skripte auf Bash-Hackers Wiki](https://wiki.bash-hackers.org/)
+Hier sind einige hilfreiche Links, die dir beim Starten deines Bash-Projekts helfen können:
+
+- [Offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/)
+- [Bash-Skripting-Tutorial von Linuxize](https://linuxize.com/post/bash-scripting-tutorial/)
+- [Bash Hacker's Wiki](http://wiki.bash-hackers.org/)
+- [Shellcheck - Tool zur Überprüfung von Bash-Skripten](https://www.shellcheck.net/)
+
+Viel Spaß beim Coden!

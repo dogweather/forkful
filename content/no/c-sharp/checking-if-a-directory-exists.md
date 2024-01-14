@@ -1,48 +1,40 @@
 ---
-title:    "C#: Sjekke om en mappe eksisterer"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/checking-if-a-directory-exists.md"
+title:                "C#: Sjekke om en mappe eksisterer"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor:
+## Hvorfor
 
-Hver gang vi utvikler software kommer vi over situasjoner der koden vår må håndtere forskjellige typer data. En vanlig operasjon er å sjekke om en katalog eksisterer. Dette kan være nyttig i tilfeller der vi må laste opp eller hente filer, eller når vi må sjekke om en bestemt katalog er tilgjengelig før vi fortsetter med prosessen vår.
+Å sjekke om et katalog eksisterer er en viktig del av programmering. Det gjør det mulig for oss å håndtere ulike tilfeller som kan oppstå når vi jobber med våre programmer. Ved å sjekke om en katalog eksisterer, kan vi håndtere feil på en trygg og effektiv måte.
 
-## Hvordan:
+## Hvordan
 
-Sjekking av eksistensen av en katalog er en enkel prosess i C#. Vi kan bruke klassen `Directory` for å utføre denne operasjonen.
-
-```C#
-if(Directory.Exists("min_katalog"))
-{
-    Console.WriteLine("Katalogen eksisterer");
-}
-else
-{
-    Console.WriteLine("Katalogen eksisterer ikke");
-}
-```
-
-Koden over vil sjekke om katalogen "min_katalog" eksisterer. Hvis den gjør det vil den skrive ut en melding om at katalogen eksisterer, ellers vil den skrive ut en melding om at den ikke eksisterer.
-
-## Deep Dive:
-
-Hvis du trenger å utføre mer komplekse operasjoner i tillegg til å bare sjekke eksistensen av en katalog, kan du bruke metoden `GetDirectories()` fra `Directory` klassen. Denne metoden returnerer en array med navnene på alle kataloger som finnes innenfor en gitt sti. Vi kan bruke dette til å utforske flere stier og kataloger i systemet vårt.
+Vi kan enkelt sjekke om en katalog eksisterer ved å bruke metoden `Directory.Exists()` i C#. Dette er en innebygd funksjon som tar inn en streng som representerer katalogens bane, og returnerer en boolsk verdi som indikerer om katalogen eksisterer eller ikke.
 
 ```C#
-string[] kataloger = Directory.GetDirectories("start_katalog");
+// Sjekker om katalogen "Documents" eksisterer i "Min datamaskin"
+bool exists = Directory.Exists(@"C:\Min datamaskin\Documents");
 
-foreach(string katalog in kataloger)
-{
-    Console.WriteLine("Katalog: " + katalog);
-}
+// Utskrift av resultatet
+Console.WriteLine(exists);
+
+// Resultat: True
 ```
 
-Koden over vil skrive ut navnene på alle kataloger som finnes i "start_katalog".
+## Dypdykk
 
-## Se også:
+Når vi bruker `Directory.Exists()` metoden, er det viktig å merke seg at den også vil returnere `true` hvis katalogen er en filbane og ikke en mappe. Dette kan føre til uventede resultater hvis vi forventer at katalogen skal være en mappe.
 
-- [Microsoft Docs - Directory Class](https://docs.microsoft.com/nb-no/dotnet/api/system.io.directory?view=netframework-4.8)
-- [C# Directory and File Exists Usage Examples](https://www.tutorialsteacher.com/csharp/csharp-check-if-file-folder-exists)
+En annen ting å merke seg er at denne metoden bare sjekker for eksistensen av en katalog og ikke nødvendigvis om vi har tilgang til den. Det er derfor viktig å sørge for å håndtere eventuelle unntak som kan oppstå.
+
+Vi kan også bruke `Directory.GetDirectories()` og `Directory.GetFiles()` metoder til å hente en liste over kataloger og filer i en angitt bane. Disse metodene vil også kaste unntak hvis vi ikke har tilgang til den angitte banen.
+
+## Se også
+
+- [Microsoft dokumentasjon om Directory.Exists() metoden](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
+- [C# Directory.Exists() eksempel på GeeksforGeeks](https://www.geeksforgeeks.org/check-if-a-directory-exists-in-a-path-in-c-sharp/)
+- [Se om jeg har tilgang til en fil eller katalog med C# blogginnlegg på norsk](https://blogg.example.com/se-om-jeg-har-tilgang-til-en-fil-eller-katalog-med-c-sharp.html)

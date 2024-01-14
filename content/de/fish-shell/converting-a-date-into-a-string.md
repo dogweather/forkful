@@ -1,53 +1,54 @@
 ---
-title:    "Fish Shell: Umwandeln eines Datums in eine Zeichenkette"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/converting-a-date-into-a-string.md"
+title:                "Fish Shell: Ein Datum in einen String umwandeln"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Konvertieren von einem Date in eine Zeichenkette ist eine nützliche Fähigkeit, die in der Programmierung häufig benötigt wird. Es ermöglicht uns, Daten in einem für uns verständlichen Format anzuzeigen und zu manipulieren.
+Es gibt viele Gründe, warum man ein Datum in eine Zeichenkette umwandeln möchte. Eine häufige Anwendung ist zum Beispiel die Ausgabe von Datumsangaben in einem bestimmten Format, das besser lesbar oder besser an die Anforderungen des Projekts angepasst ist.
 
-# Wie
+## Wie geht es
 
-Um ein Datum in eine Zeichenfolge zu konvertieren, können wir die in Fish Shell eingebaute Funktion `date` verwenden. Diese Funktion akzeptiert ein Datum im Format `YYYY-MM-DD` und gibt es als Zeichenfolge aus.
+Um ein Datum in eine Zeichenkette umzuwandeln, gibt es verschiedene Ansätze, je nachdem welche Programmiersprache oder Framework man verwendet. Im Folgenden wird gezeigt, wie man dies in der Fish Shell erreichen kann.
 
-```
-Fish Shell Datumskonvertierung Beispiel:
-
-$ date 2021-09-01
-1. September 2021
-
-$ date -f "%d.%m.%Y" 2021-09-01
-01.09.2021
+```Fish Shell
+set -l date (date -f "%Y-%m-%d") 
+echo "Das heutige Datum ist $date."
 ```
 
-Die `-f` Option erlaubt es uns, das Ausgabeformat nach unseren eigenen Wünschen anzupassen. Die vollständige Liste der möglichen Formatierungsoptionen ist in der Fish Shell Dokumentation zu finden.
+Dieser Code verwendet den Befehl `date` mit dem Parameter `-f`, um das Datum in das gewünschte Format zu bringen. In diesem Fall wird `%Y-%m-%d` verwendet, was für das aktuelle Jahr, Monat und Tag steht. Die Ausgabe wird dann in der Variablen `date` gespeichert und anschließend mit dem Befehl `echo` ausgegeben.
 
-# Deep Dive
-
-Die `date` Funktion verwendet die in Ihrem System eingestellte Spracheinstellung, um die Ausgabe zu formatieren. Wenn Sie also möchten, dass die Ausgabe in einer anderen Sprache erscheint, können Sie dies über die Umgebungsvariable `LANG` angeben.
-
-Ein Beispiel für das Konvertieren von einem Datum in eine Zeichenfolge in Deutsch:
+Die Ausgabe dieses Codes sieht wie folgt aus:
 
 ```
-$ set -x LANG "de_DE.UTF-8"
-$ date 2021-09-01
-1. September 2021
+Das heutige Datum ist 2020-09-24.
 ```
 
-Es ist auch möglich, eine andere Zeichenfolge anstelle eines Datums zu übergeben und sie als Datum zu interpretieren. Dies kann nützlich sein, wenn Sie beispielsweise eine Zeichenkette aus einer Benutzereingabe erhalten und sie als Datum verwenden möchten.
+## Tiefer eintauchen
+
+Die Fish Shell enthält auch eine integrierte Funktion `strftime`, um ein Datum in eine Zeichenkette umzuwandeln. Hier ein Beispiel:
+
+```Fish Shell
+set -l date (strftime "%A, %e %B %Y")
+echo "Heute ist $date."
+```
+
+Die Funktion `strftime` verwendet für das Datum das Format `%A, %e %B %Y`, was für den aktuellen Wochentag, den Tag im Monat ausgeschrieben, den Monat des Jahres ausgeschrieben und das gesamte Jahr steht.
+
+Die Ausgabe dieses Codes sieht wie folgt aus:
 
 ```
-$ date -f "%Y/%m/%d" 2021/09/01
-01. September 2021
+Heute ist Donnerstag, 24 September 2020.
 ```
 
-Diese Funktionen sind nur einige Beispiele für das Konvertieren von einem Datum in eine Zeichenfolge in Fish Shell. Es gibt noch viele weitere Optionen, die Sie in der Dokumentation entdecken können.
+Es gibt noch viele weitere Formatierungsoptionen für die Funktion `strftime`, die je nach Bedarf angepasst werden können. Eine vollständige Liste findet man in der [Fish Shell Dokumentation](https://fishshell.com/docs/current/cmds/strftime.html).
 
-# Siehe auch
+## Siehe auch
 
-- Offizielle Fish Shell Dokumentation: https://fishshell.com/docs/current/cmds/date.html
-- Umgebungsvariable `LANG` in Fish Shell: https://fishshell.com/docs/current/variables.html#locale.lang
+- [Offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/)
+- [Fish Shell Cheatsheet in Deutsch](https://github.com/fish-shell/fish-shell/blob/master/doc/info/fish.info)
+- [Übersicht über die wichtigsten Fish Shell Befehle](https://digitalocean.com/community/tutorials/an-introduction-to-fish-a-smart-and-user-friendly-command-line-shell)

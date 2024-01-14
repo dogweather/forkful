@@ -1,69 +1,47 @@
 ---
-title:    "Swift: Odczytywanie argumentów wiersza poleceń"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/reading-command-line-arguments.md"
+title:                "Swift: Odczytywanie argumentów linii poleceń"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak programy takie jak systemy operacyjne czy aplikacje konsolowe przyjmują argumenty z wiersza poleceń? W tym wpisie dowiecie się, dlaczego jest to ważna umiejętność dla każdego programisty Swift.
+Programowanie w języku Swift może być fascynującym wyzwaniem, ale na początku może wydawać się dość trudne. Jednak nauka używania podstawowych narzędzi, takich jak parametry wiersza poleceń, może pomóc Ci zrozumieć jak działa ten język i ułatwić Ci pracę w przyszłości.
 
-## Jak To Zrobić?
+## Jak to zrobić
 
-Aby odczytać argumenty z wiersza poleceń w Swift, użyjemy biblioteki "Foundation" i funkcji "CommandLine.arguments". Poniższy kod demonstruje, jak możemy wyświetlić wszystkie argumenty przekazane do programu:
+Aby przeczytać parametry wiersza poleceń w języku Swift, możesz użyć metody `arguments` klasy `Process`. Najpierw musisz utworzyć obiekt typu `Process`, a następnie użyć metody `arguments` aby uzyskać listę podanych parametrów. Poniższy kod jest prostym przykładem, który pokazuje jak to zrobić:
 
 ```Swift
-import Foundation
+let process = Process()
+let arguments = process.arguments
 
-let arguments = CommandLine.arguments
+print(arguments)
+```
 
-for argument in arguments {
-    print(argument)
+Gdy uruchomisz ten kod, powinnaś zobaczyć listę parametrów, które zostały podane przy uruchamianiu programu w terminalu. Na przykład, jeśli uruchomiłaś program ze wiersza poleceń wpisując `swift Example.swift 1 2 3`, lista parametrów będzie wyglądała tak:
+
+```
+["Example.swift", "1", "2", "3"]
+```
+
+## Głębszy zanurzenie
+
+Możesz również użyć parametrów wiersza poleceń do wykonywania różnych działań w swoim programie. Na przykład, możesz użyć prostego warunku `if` aby sprawdzić czy został podany odpowiedni parametr. Poniższy kod pokazuje jak to zrobić:
+
+```Swift
+if arguments.contains("help") {
+    print("Ta aplikacja zawiera pomoc.")
 }
 ```
 
-Aby przekazać argumenty do programu podczas kompilacji, wystarczy wpisać je po nazwie pliku w terminalu. Przykładowo, jeśli nazwa pliku to "myProgram.swift" oraz chcemy przekazać argumenty "Hello" i "world", to wpiszemy w terminalu:
+W tym przykładzie, jeśli podałaś jako parametr `help`, wyświetli się odpowiednie komunikat w konsoli.
 
-```
-swift myProgram.swift Hello world
-```
+## Zobacz również
 
-Po wykonaniu programu, otrzymamy następujący output:
-
-```
-Hello
-world
-```
-
-## Głębszy Wgląd
-
-Możliwość przekazywania argumentów do programu z wiersza poleceń jest szczególnie użyteczna, gdy chcemy zmienić działanie naszej aplikacji w zależności od parametrów. Dzięki temu możemy dostosowywać nasz program do różnych potrzeb i ułatwić jego używanie.
-
-Na przykład, możemy sprawdzić, czy przekazane argumenty zawierają określone wartości i na tej podstawie wykonać różne akcje. W naszym przykładowym kodzie, zamiast wyświetlać wszystkie argumenty, możemy sprawdzić, czy pierwszym argumentem jest słowo "Hello" i w zależności od tego, wyświetlić różne powitania:
-
-```Swift
-import Foundation
-
-let arguments = CommandLine.arguments
-let firstArgument = arguments[1]
-
-if firstArgument == "Hello" {
-    print("Witaj!")
-} else {
-    print("Cześć!")
-}
-```
-
-Dzięki temu, nasz program będzie bardziej interaktywny i elastyczny.
-
-## Zobacz Również
-
-Jeśli chcesz dowiedzieć się więcej o pracy z argumentami z wiersza poleceń w Swift, polecamy zapoznać się z dokumentacją języka oraz poniższymi linkami:
-
-- [Dokumentacja języka Swift](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-- [Tutorial o obsłudze argumentów z wiersza poleceń w Swift](https://www.raywenderlich.com/1224214-command-line-programs-on-macos-tutorial-for-beginners)
-- [Inne artykuły na temat Swift na naszym blogu](https://www.raywenderlich.com/archive/?s=swift)
-
-Mamy nadzieję, że ten wpis był dla Ciebie pomocny. Pozostajemy do dyspozycji w razie pytań lub uwag w komentarzach poniżej!
+- [Dokumentacja Swift: Process](https://developer.apple.com/documentation/foundation/process)
+- [Inne sposoby czytania parametrów wiersza poleceń w Swift](https://stackoverflow.com/questions/37540209/swift-how-i-do-reading-a-command-line-argument/37540286#37540286)
+- [Tutorial: Parametry wiersza poleceń w języku Swift](https://www.raywenderlich.com/287-command-line-programs-on-macos-tutorial)

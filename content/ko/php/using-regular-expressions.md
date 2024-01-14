@@ -1,43 +1,30 @@
 ---
-title:    "PHP: 정규 표현식 사용하기"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/using-regular-expressions.md"
+title:                "PHP: 정규식 사용하기"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 정규식을 사용하는가?
+##왜 Regular Expressions를 사용해야 하는가? 
+정규표현식은 파이썬 프로그래밍에서 필수적인 요소입니다. 여러분은 이를 사용하여 문자열에서 원하는 패턴을 찾거나, 특정 문자열의 포맷을 검증하거나, 특정 문자열을 교체할 수 있습니다.
 
-정규식은 PHP 프로그래밍에서 매우 강력한 도구입니다. 정규식을 사용하면 문자열의 유무나 패턴 등을 검사하고 원하는 작업을 수행할 수 있습니다. 또한 정규식은 코드를 더욱 간결하고 효율적으로 작성할 수 있게 도와줍니다.
-
-# 정규식 사용 방법
-
-PHP에서 정규식을 사용하려면 `preg_match()` 함수를 사용해야 합니다. 예를 들어, 문자열이 이메일 주소 형식인지를 확인하고 싶다면 다음과 같은 코드를 작성할 수 있습니다.
+##어떻게 사용하나요? 
+Regular Expressions는 다양한 방법으로 사용할 수 있지만, 가장 기본적인 방법은 "preg_match()" 함수를 사용하는 것입니다. 예를 들어, 다음과 같은 코드를 사용하여 이메일 주소의 유효성을 검증할 수 있습니다.
 
 ```PHP
-$email = "example@gmail.com";
-if (preg_match('/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/', $email)) {
-    echo "유효한 이메일 주소입니다.";
-} else {
-    echo "유효하지 않은 이메일 주소입니다.";
+$email = "example@example.com";
+if (preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i", $email)) {
+  echo "유효한 이메일 주소입니다.";
 }
 ```
+위 코드에서는 정규표현식을 사용하여 이메일 주소의 패턴을 검증하고 있습니다. "preg_match()" 함수는 해당 문자열에서 정규표현식 패턴과 일치하는 부분을 찾아내어, 찾지 못하면 "false"를 반환합니다.
 
-이 코드를 실행하면 다음과 같은 결과가 출력됩니다.
+##더 깊이 알아보기 
+패턴 내용이 복잡해지면, 정규표현식 관련 메타문자를 사용하여 더 복잡한 패턴을 정의할 수 있습니다. 또한, "preg_match_all()" 함수를 사용하면 해당 문자열에서 일치하는 모든 패턴을 찾아낼 수도 있습니다.
 
-```
-유효한 이메일 주소입니다.
-```
-
-위의 예제에서는 정규식 표현을 사용하여 이메일 주소의 유효성을 검사했습니다. 이 외에도 정규식을 사용하면 정수, 전화번호 등 각종 데이터의 유효성을 검사할 수 있습니다.
-
-# 정규식 깊게 들어가기
-
-정규식을 사용할 때 가장 중요한 것은 정규식 표현에 대한 이해입니다. 정규식은 특정 패턴을 검사할 때 사용하는데, 이때 사용되는 메타문자(특수 기호)들이 있습니다. 이 메타문자를 이해하고 적절하게 사용할 수 있다면 정규식을 더욱 유용하게 사용할 수 있을 것입니다.
-
-또한 정규식에서는 캡처(그룹) 기능을 사용할 수 있습니다. 이를 통해 특정 부분을 추출하거나 매칭된 부분을 다른 문자열로 치환할 수 있습니다.
-
-# 관련 자료
-
-- [PHP 공식 메뉴얼 - 정규식](https://www.php.net/manual/kr/book.pcre.php)
-- [정규식 교재](http://www.regexr.com)
+See Also (더 알아보기) 
+- PHP Manual: 정규표현식 (https://www.php.net/manual/kr/ref.pcre.php)
+- 정규표현식 테스트 사이트 (https://regexr.com/)
+- 정규표현식 관련 온라인 강의 (https://www.inflearn.com/course/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-regex/dashboard)

@@ -1,41 +1,44 @@
 ---
-title:    "Clojure: デバッグ出力のプリント"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/printing-debug-output.md"
+title:                "Clojure: デバッグの出力を出力する"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-デバッグ出力を印刷することの利点を説明する前に、まずなぜそれが重要であるかを理解する必要があります。デバッグ出力を使用することで、コードの実行中に起こったことを確認し、エラーの原因を特定し、プログラムをより信頼性の高いものにすることができます。
+デバッグ出力をプリントするのに、なぜ人々が従事するのかを説明するために1-2文を記述します。
+
+デバッグ出力をプリントすることは、プログラムの実行時に特定の値や変数の値を確認することができるため、コードの動作を理解する上で非常に有用です。また、ユーザーへのエラー情報の提供や、コードのパフォーマンスの改善にも役立ちます。
 
 ## 方法
 
-Clojureでは、デバッグ出力を表示するには`println`関数を使用します。必要な変数やメッセージを引数として渡すことで、実行中に出力を確認することができます。以下に例を示します。
+プログラミング言語Clojureでは、デバッグ出力のために `println` という関数を使用します。以下のようにコードブロック内にClojureのコードを書くことで、実際の動作を確認することができます。
 
 ```Clojure
-(println "変数xの値は" x "です。")
+(defn add-two [n]
+  (println "Calculating sum of" n "and 2...")
+  (+ n 2))
+
+(add-two 5)
+
+;; 出力:
+;; Calculating sum of 5 and 2...
+;; 7
 ```
 
-出力は次のようになります。
+このように、 `println` 関数を使用することで、任意の値や変数の値を出力することができます。また、文字列と変数・値を組み合わせて出力することもできます。これにより、コードの動作や実行結果を可視化することができます。
 
-```
-変数xの値は 5 です。
-```
+## ディープダイブ
 
-また、Clojureの開発環境であるREPL（Read-Eval-Print-Loop）を使用することで、簡単にデバッグ出力を確認することができます。REPL上でコードを実行すると、その結果が直接表示されるため、デバッグに役立ちます。
+デバッグ出力をプリントする方法は、プログラムの実行中に随時行うことができます。また、特定の条件下でのみ出力するように条件分岐を組み合わせることも可能です。
 
-## 深堀り
-
-デバッグ出力は、必ずしもエラーが起きたときにのみ使用するものではありません。コードの実行が進むにつれ、特定の変数や関数がどのように変化しているかを確認することも重要です。これにより、プログラムの正しさや最適性を確認することができます。また、デバッグ出力を使用する際には、出力内容を詳細に設定し過ぎるとプログラムのパフォーマンスが低下する可能性があることに注意してください。
-
-## 佐藤シドのブログ
-
-このブログ記事では、Clojureでデバッグ出力を行う方法について説明しました。Clojureの学習を進める上で、デバッグ出力は欠かせないものです。今後は自分のコードにデバッグ出力を積極的に取り入れて、より確実なプログラムを作成していきましょう。
+また、Clojureではデバッグ用のマクロとして `debug` が用意されています。これを使用することで、デバッグ出力を簡単に行うことができます。詳細については、公式ドキュメントを参照してください。
 
 ## 参考リンク
 
-- [Clojure - Debugging](https://clojure.org/guides/dev_debugging)
-- [REPL Driven Development (Clojure/West 2018 talk)](https://www.youtube.com/watch?v=RZ3G5vapQdo)
-- [ClojureのREPLを楽しんでいる話](https://blog.cybozu.io/entry/2016/02/25/110000)
+- Clojureの`println`関数についての公式ドキュメント: https://clojuredocs.org/clojure.core/println
+- 条件分岐を使用したデバッグ出力の方法についてのブログ記事: https://blog.clojure.org/2017/09/14/debugging
+- Clojureの `debug` マクロについての公式ドキュメント: https://clojuredocs.org/clojure.core/debug

@@ -1,62 +1,36 @@
 ---
-title:    "Haskell: Convertir una cadena en minúsculas"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/converting-a-string-to-lower-case.md"
+title:                "Haskell: Convirtiendo una cadena a minúsculas"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-En la programación, es común encontrarse con la necesidad de manipular strings de texto. Una tarea común es convertir un string a su versión en minúsculas. En este artículo, exploraremos cómo realizar esta tarea en Haskell.
+ Muchas veces en la programación, nos encontramos con la necesidad de manipular cadenas de texto y una de las operaciones más comunes es convertirlas a minúsculas. Ya sea para hacer comparaciones de cadenas de igual tamaño, validar datos ingresados por el usuario, o simplemente para fines estéticos. En este blog post, aprenderemos cómo convertir cadenas de texto a minúsculas en Haskell de manera sencilla y eficiente.
 
 ## Cómo hacerlo
-Para convertir un string a minúsculas en Haskell, podemos usar la función `toLower` de la librería `Data.Char`. Esta función toma como argumento un `Char` y devuelve el mismo carácter en minúscula.
+Para convertir una cadena de texto a minúsculas en Haskell, podemos utilizar la función `toLower` del módulo `Data.Char`. Esta función tiene la siguiente definición:
 
 ```Haskell
-import Data.Char (toLower)
-
--- Ejemplo de uso de la función toLower
-toLower 'H' -- Devuelve 'h'
-toLower 'E' -- Devuelve 'e'
+toLower :: Char -> Char
 ```
 
-Sin embargo, para aplicarlo a un string completo, necesitamos usar la función `map` para aplicar `toLower` a cada carácter del string.
+Esto significa que toma un carácter como argumento y devuelve el mismo carácter en minúscula. Podemos hacer uso de la función `map` para aplicar `toLower` a cada carácter de una cadena de texto. Veamos un ejemplo de cómo utilizarlo:
 
 ```Haskell
-convertirAMin :: String -> String
-convertirAMin str = map toLower str
-
--- Ejemplo de uso de la función convertirAMin
-convertirAMin "Haskell" -- Devuelve "haskell"
-convertirAMin "Proyecto" -- Devuelve "proyecto"
+Prelude> import Data.Char
+Prelude Data.Char> map toLower "Haskell"
+"haskell"
 ```
 
-También podemos utilizar la función `map` en conjunto con la función `words` para convertir cada palabra de un string a minúsculas.
-
-```Haskell
-convertirPalabrasAMin :: String -> String
-convertirPalabrasAMin str = unwords $ map convertirAMin (words str)
-
--- Ejemplo de uso de la función convertirPalabrasAMin
-convertirPalabrasAMin "Hola A Todos" -- Devuelve "hola a todos"
-convertirPalabrasAMin "Bienvenidos Al Mundo De Haskell" -- Devuelve "bienvenidos al mundo de haskell"
-```
+Aquí, hemos importado el módulo `Data.Char` y luego utilizado la función `map` para aplicar `toLower` a cada carácter de la cadena "Haskell". El resultado es una nueva cadena en minúsculas: "haskell".
 
 ## Profundizando
-La función `toLower` realiza la conversión a minúsculas basándose en la tabla de caracteres Unicode. Esto significa que no solo funciona para letras del alfabeto, sino también para caracteres especiales y acentos.
-
-Otra forma de convertir un string a minúsculas en Haskell sería utilizando la función `mapM`, que permite aplicar una acción monádica a cada elemento de una lista. En este caso, la acción monádica sería `putStrLn` para imprimir cada carácter en minúscula.
-
-```Haskell
-convertirStringAMin :: String -> IO ()
-convertirStringAMin str = mapM (putStrLn . toLower) str
-
--- Ejemplo de uso de la función convertirStringAMin
-convertirStringAMin "Haskell" -- Imprime "haskell"
-convertirStringAMin "¡Hola Mundo!" -- Imprime "¡hola mundo!"
-```
+Ahora que sabemos cómo usar la función `toLower`, es importante entender cómo funciona por debajo. En Haskell, las cadenas de texto son listas de caracteres, por lo que cuando aplicamos `map` a una cadena, estamos aplicando la función a cada elemento de la lista (es decir, cada carácter). Además, en Haskell, los caracteres se representan internamente como números (códigos ASCII), y la función `toLower` simplemente resta 32 a estos códigos para convertirlos a sus equivalentes en minúsculas.
 
 ## Ver también
-- [Documentación de la función toLower en Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
-- [Tutorial de Haskell en español](https://www.haskell-es.org/tutorial/)
-- [Ejemplos de código en Haskell en GitHub](https://github.com/Haskell-Es/Ejercicios)
+- [Documentación de `Data.Char`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- [Tutorial de Haskell en español](https://www.haskell.org/documentation.es.html)
+- [Artículo sobre el uso de `map` en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples#map)

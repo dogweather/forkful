@@ -1,32 +1,38 @@
 ---
-title:    "Java: उप स्थापना उपशब्दों का निकालना"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/extracting-substrings.md"
+title:                "Java: उपस्थित सबस्ट्रिंग्स को निकालना (Upasthit substrings ko nikalna)"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun:
+Substring nikalne ka pehla aur sabse zaruri sawal hai ki hum aisa kyun karna chahte hain. Substring kya hota hai? Ye ek programming term hai jo string ke ek hisse ko alag se nikalta hai. Ye bahut useful ho sakta hai jab hume kisi specific information ko string se extract karna ho.
 
-सबस्ट्रिंग्स को निकालने में लगे होने का कारण है कि यह आपको बहुत सारे उपयोगी समाधान प्रदान कर सकता है। आपको उन्हें उन्नतीकरण अथवा संपीड़न कर सकते हैं।
-
-## कैसे करें
-
-सबस्ट्रिंग को निकालने के लिए, आपको `substring()` फ़ंक्शन का इस्तेमाल करना होगा। यह फ़ंक्शन आपको दो संख्याओं के बीच के अक्षरों को वापस देगा। नीचे दिए गए कोड ब्लॉक में आप इसके उदाहरण और संभावित आउटपुट देख सकते हैं।
+## Kaise Karein:
+Substring extract karne ke liye, pehle humein original string ka pata hona chahiye. Fir hum iss string par kaam kar sakte hain aur usse substring banakar usse kisi variable mein store kar sakte hain. Iss process ko karne ke liye hum Java programming language ka use kar sakte hain. Neeche diye gaye code snippet mein hum ye dekhenge ki kaise hum substring extract kar sakte hain.
 
 ```Java
-String str = "मेरा नाम जॉन है।";
-// सबस्ट्रिंग को निकालने के लिए, हमें शुरुआती और अंत अक्षर के इंगिताओं की पद्धति देनी होगी।
-String name = str.substring(7, 10); // जॉन
-System.out.println(name); // जॉन
+// Original string
+String str = "Meri pehli blog post";
+
+// Substring  "pehli" extract karne ke liye
+String substr = str.substring(5, 10); 
+
+// Output
+System.out.println(substr); // "pehli"
 ```
 
-## गहराई में जाएं
+Is code mein humne pehle original string "Meri pehli blog post" ko ek variable mein store kiya, fir uss string par kaam karke substring extract kiya aur usse ek alag variable mein store kiya. Fir humne output ko print kiya jisme humne dekha ki sirf "pehli" word extract hua hai. Is tarah hum kisi bhi string se substring extract kar sakte hain.
 
-सबस्ट्रिंग्स को निकालने के लिए, आप संख्याओं के साथ साथ `indexOf()` और `lastIndexOf()` फ़ंक्शन का भी इस्तेमाल कर सकते हैं। इन फ़ंक्शन्स की मदद से, आप सबस्ट्रिंग के लिए भी उपयोगी स्थान पता कर सकते हैं। इसके अलावा, आप अपनी सबस्ट्रिंग से संबंधित अन्य महत्वपूर्ण मेथड्स जैसे `length()`, `startsWith()` और `endsWith()` भी जान सकते हैं।
+## Gehri Jankari:
+Substring extract karne ke liye, hum string ke index numbers ka use karte hain. Index numbers hote hain string ke har character ka count karke assign kiya hua number. Ye process left se right hoti hai, matlab string ke pehle character ka index number 0 hoga, dusre ka 1, teesre ka 2 aur aise hi aage badhta jaega.
 
-## उससे अधिक जानें
+Substring extract karne ke liye, hum `substring()` method ka use karte hain. Is method mein hume do parameters pass karne hote hain - start index aur end index. Start index se substring shuru hota hai aur end index se string khatam ho jata hai. Yahan dyaan rakhe ki end index ke value mein hum last character ke index number se 1 subtract karte hain.
 
-यदि आप और गहराई में जानना चाहते हैं कि सबस्ट्रिंग क्या है और इसका इस्तेमाल कैसे कर सकते हैं, तो आप इन वेबसाइट्स पर जाकर इसके बारे में अधिक जानकारी प्राप्त कर सकते हैं।
+Agar hum sirf start index pass karte hain to end index string ke last character ka index number liya jaega. Agar hum sirf ek parameter pass karte hain to substring method uss index se lekar string ke last character tak ka part extract kar dega.
 
-## देखें
+### See Also:
+- Java Strings Tutorial (in Hindi): https://www.programiz.com/java-programming/string
+- String substring() method docs: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-

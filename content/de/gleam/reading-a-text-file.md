@@ -1,30 +1,41 @@
 ---
-title:    "Gleam: Einen Textdatei lesen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/reading-a-text-file.md"
+title:                "Gleam: Ein Textdokument lesen"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Lesen einer Textdatei ist eine grundlegende Fähigkeit in der Programmierung und kann nützlich sein, um Daten zu analysieren, zu verarbeiten oder anzuzeigen. Wenn Sie mehr über den Prozess des Lesens von Textdateien erfahren möchten, lesen Sie weiter!
 
-## Wie man eine Textdatei liest
-Es ist sehr einfach, eine Textdatei mit Gleam zu lesen. Zunächst müssen Sie die Datei mit der Funktion `file.open` öffnen. Geben Sie den Dateipfad und den gewünschten Modus an (z.B. `read` für den Lesezugriff). Anschließend können Sie die `file.read_all` Funktion verwenden, um den gesamten Inhalt der Datei zu lesen. Hier ist ein Beispiel, wie man eine Textdatei mit Gleam liest:
+Das Lesen von Textdateien ist eine wichtige Fähigkeit in der Programmierung, die Ihnen ermöglicht, Daten aus externen Dateien in Ihr Programm zu integrieren. Dies kann hilfreich sein, um große Datenmengen zu verarbeiten oder um Benutzereingaben zu speichern.
+
+## Wie geht das?
+
+Die Sprache Gleam bietet eine einfache und effiziente Möglichkeit, Textdateien zu lesen. Im Folgenden finden Sie Beispiele für das Lesen von Textdateien mit verschiedenen Methoden.
 
 ```Gleam
-let file = file.open("meine_datei.txt", "read")
-let content = file.read_all()
+// Datei öffnen
+file := File.open("meine_datei.txt", {|file| file})
+
+// Eine Zeile lesen
+gleam_line := File.read_line(file)
+
+// Die Datei Zeile für Zeile lesen und in einer Liste speichern
+lines := file
+|> File.read_lines
+|> List.map(String.trim)
 ```
 
-Die Variable `content` enthält nun den gesamten Inhalt der Textdatei, den Sie dann weiterverarbeiten können.
+Das Ergebnis des obigen Codes ist eine Liste von Strings, die jede Zeile der Textdatei enthält. Durch die Verwendung von `List.map` können Manipulationen an jeder Zeile durchgeführt werden, bevor sie in der Liste gespeichert wird.
 
-## Tiefer Einblick
-Beim Lesen von Textdateien gibt es einige wichtige Dinge zu beachten. Zum Beispiel müssen Sie möglicherweise überprüfen, ob die Datei existiert und ob Sie die richtige Zugriffsrechte haben, um sie zu öffnen. Außerdem müssen Sie möglicherweise die Dateicodierung berücksichtigen, besonders wenn Sie mit internationalen Zeichen arbeiten.
+## Deep Dive
 
-Es kann auch nützlich sein, die Textdatei zeilenweise zu lesen, anstatt den gesamten Inhalt auf einmal zu lesen. Hierfür können Sie die `file.read_line` Funktion verwenden. Denken Sie daran, die Datei nach dem Lesen immer mit `file.close` zu schließen, um Ressourcen zu sparen.
+Wenn Sie tiefer in das Lesen von Textdateien mit Gleam eintauchen möchten, können Sie die Dokumentation von Gleam zu den `File`- und `String`-Modulen konsultieren. Diese bieten eine Vielzahl von Funktionen, die es Ihnen ermöglichen, komplexe Operationen auf Textdateien durchzuführen. Es ist auch wichtig, sich bewusst zu sein, wie Gleam mit Datei- und Zeichenkodierungen umgeht, um unerwartete Ergebnisse zu vermeiden.
 
 ## Siehe auch
-- [Gleam Dokumentation für die Datei-Bibliothek](https://gleam.run/documentation/stdlib/file)
-- [Erlang-Referenz für das Datei-Modul](https://erlang.org/doc/man/file.html)
-- [Einfacher Lesen und Verarbeiten von Textdateien mit Gleam](https://medium.com/@exampleuser/gentle-introduction-to-gleam-a-new-functional-programming-language-7111fa7ba0ff)
+
+- [Gleam-Dokumentation zu File-Modul](https://gleam.run/modules/gleam_io/file.html)
+- [Gleam-Dokumentation zu String-Modul](https://gleam.run/modules/gleam_core/string.html)
+- [Beispielprojekt zum Lesen von Textdateien mit Gleam](https://github.com/gleam-lang/gleam_io_examples)

@@ -1,34 +1,37 @@
 ---
-title:    "TypeScript: 패턴과 일치하는 문자 삭제"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/deleting-characters-matching-a-pattern.md"
+title:                "TypeScript: 패턴과 일치하는 문자 삭제"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-얼마 전 나는 새로운 프로젝트를 시작하게 되었습니다. TypeScript를 사용하여 이 프로젝트를 만들기로 결정했는데, TypeScript는 정적 타입을 지원하여 코드를 더 견고하고 유지보수하기 쉽게 만들어줍니다. 프로젝트를 진행하면서, 자바스크립트 문자열에서 특정 패턴을 일치하는 문자를 제거해야 하는 상황이 발생했습니다. 왜 이를 해야 하는지 궁금하셨을 것입니다. 그러므로 오늘은 왜 문자열에서 패턴을 일치하는 문자를 삭제하는 것이 중요한지에 대해 이야기하려고 합니다.
+여러분은 TypeScript 프로그래머일지라도 때때로 문자열에서 특정한 패턴과 일치하는 문자를 삭제해야 할 수 있습니다. 이런 작업은 문제 해결에 필수적일 수 있으며 효율적인 프로그래밍을 위해 꼭 알아두어야 할 기능입니다.
 
-## 어떻게
-
-일치하는 문자를 삭제하는 방법은 간단합니다. 먼저, TypeScript의 `replace()` 메소드를 사용하여 문자열을 새로운 문자열로 대체합니다. 그 다음, 정규식을 사용하여 특정 패턴을 일치하는 문자를 찾아 삭제합니다. 아래의 코드 예제를 참고하세요.
+## 방법
 
 ```TypeScript
-let str: string = "Hello, world!";
-str = str.replace(/l/g, "");
-console.log(str); // Heo, word!
+const targetString: string = "Hello World!";
+const pattern: RegExp = /l/g;
+
+const result: string = targetString.replace(pattern, "");
+
+console.log(result); // "Heo Word!"
 ```
 
-위의 예제에서, 우리는 `replace()` 메소드를 사용하여 문자열에서 `l`을 모두 찾아 빈 문자열로 대체하였습니다. 그 결과, 문자열에서 모든 `l`이 삭제되었습니다. 정규식을 사용하면 더 복잡한 패턴을 일치하는 문자를 삭제할 수 있습니다.
+위의 예제 코드는 문자열에서 `l` 이라는 문자를 전부 삭제하는 간단한 예시입니다. `replace` 함수에 대한 사용법을 이해하고 있다면 다른 패턴을 사용해 원하는 결과를 얻을 수 있을 것입니다.
 
-## 깊이 속 들어가기
+## 딥 다이브
 
-여기에서 정규식을 사용하여 문자열에서 특정 패턴을 일치하는 문자를 삭제하는 방법을 알아봤습니다. 그러나 더 깊이 들어가보면, 정규식에 대해 더 많은 것을 배우게 될 것입니다. 이를 통해 더욱 복잡한 문자열 처리를 할 수 있게 됩니다.
+TypeScript에서 `replace` 함수는 문자열에서 원하는 패턴과 일치하는 부분을 찾아 다른 문자로 변경하는 역할을 합니다. 이 함수에는 정규표현식을 사용할 수 있습니다. 정규표현식은 패턴을 정의하는 데 사용되며 매우 강력한 기능을 제공합니다. 예를 들어, `l` 이외의 문자, 즉 모음만 삭제하려면 `/[^aeiou]/g`와 같이 정규표현식을 사용할 수 있습니다.
 
-## 함께 보기
+또한 `replace` 함수는 콜백 함수를 전달할 수도 있습니다. 이를 통해 문자열의 각 부분에 대해 복잡한 작업을 수행할 수 있습니다. 자세한 내용은 TypeScript 공식 문서를 참고하시기 바랍니다.
 
-이 글에서는 문자열에서 패턴을 일치하는 문자를 삭제하는 방법에 대해 배웠습니다. 비슷한 주제로 TypeScript에서 정규식을 사용하는 방법에 대해 더 알고 싶다면 아래의 링크를 참고해보세요.
+## 참고하십시오
 
-- [https://www.typescriptlang.org/docs/handbook/regular-expressions.html](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [https://www.regular-expressions.info/tutorial.html](https://www.regular-expressions.info/tutorial.html)
+- [TypeScript 공식 문서 - 문자열](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [MDN 웹 문서 - 정규표현식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [MDN 웹 문서 - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

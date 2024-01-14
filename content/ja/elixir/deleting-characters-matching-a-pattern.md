@@ -1,43 +1,42 @@
 ---
-title:    "Elixir: パターンに合致する文字を削除する"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/deleting-characters-matching-a-pattern.md"
+title:                "Elixir: パターンに一致する文字を削除する"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-ある特定のパターンにマッチする文字を削除することのイディオムを理解することは、Elixirプログラミングにおける重要なスキルです。これを行うことで、より簡潔なコードを書くことができ、パフォーマンスを最適化することができます。
+文字列にマッチする文字を削除することが重要である理由は、データ処理や情報取得の際に必要な情報を特定のパターンに基づいて除外するためです。
 
 ## 方法
 
-文字列やリストから特定のパターンにマッチする文字を削除するには、Elixirの標準モジュールであるRegexを使用します。下記のコード例を参考にしてください。
+文字列からマッチする文字を削除する方法は簡単です。Elixirでは、`Regex.replace/3`関数を使用することができます。以下は、簡単な例です。
 
 ```Elixir
-str = "Hello, world!"
-regex = ~r/[aeiou]/ # 母音を表す正規表現パターン
-result = str |> Regex.replace(regex, "") # 結果は"Hll, wrld!"になります
+pattern = ~r/[aeiou]/ # 削除するパターンを定義
+string = "hello world" # 文字列の定義
+Regex.replace(pattern, string, "") # "hello world"から"e"と"o"を削除した結果は"hll wrld"となります
 ```
 
-または、リストの場合は下記のように書くことができます。
+## ディープダイブ
+
+`Regex.replace/3`関数は、マッチしたすべての文字を削除しますが、単一の文字だけでなく、パターンに基づいて削除することもできます。以下の例を見てみましょう。
 
 ```Elixir
-list = [1, 2, 3, 4, 5]
-regex = ~r/[24680]/ # 偶数を表す正規表現パターン
-result = list |> Enum.filter(fn x -> not Regex.match?(regex, to_string(x)) end) # 結果は[1, 3, 5]になります
+pattern = ~r/[aeiou]/ # 削除するパターンを定義
+whole_string = "Lorem ipsum dolor sit amet" # 文字列の定義
+pattern_string = "lor" # パターンとして使用する文字列
+Regex.replace(pattern, string, pattern_string) # "Lorem ipsum dolor sit amet"から"o"と"e"を削除した結果は"Lrem ipsum drlr sit amet"となります
 ```
 
-## 深堀り
+このように、パターンに合致するすべての文字を削除することができます。
 
-Regexモジュールを使用することで、一度に複数の文字を置換することもできます。また、正規表現のメタキャラクタやオプションを使うことで、より複雑なパターンにもマッチさせることができます。詳細についてはElixirの公式ドキュメントを参照してください。
+## 他の記事を見る
 
-## 参考リンク
-
-- [ElixirのRegexモジュール](https://hexdocs.pm/elixir/Regex.html)
-- [正規表現の基礎](https://qiita.com/jnchito/items/893c887fbf19e17ee464)
-- [Elixirで正規表現を使う方法](https://qiita.com/hmuronaka/items/708f4f4d9b7157c76521) 
-
-## 参考
-
-[正規表現のパターンにマッチする文字を削除する方法](https://exampleblog.com/)
+- [Elixir公式ドキュメント](https://elixir-lang.org/getting-started/introduction.html)
+- [正規表現の基本](https://qiita.com/kazup01/items/c7c3f04f84446986afa9)
+- [Elixirでの文字列操作](http://elixir-users.jp/posts/111)
+- [Regexモジュールのドキュメント](https://hexdocs.pm/elixir/Regex.html)

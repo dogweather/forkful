@@ -1,54 +1,54 @@
 ---
-title:    "Javascript: Unire stringhe"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/concatenating-strings.md"
+title:                "Javascript: Concatenazione di stringhe"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La concatenazione di stringhe è una delle funzioni fondamentali della programmazione in Javascript. Consiste nell'unione di due o più stringhe in una sola, ideale per la creazione di testi dinamici. Imparare come concatenare stringhe ti permetterà di migliorare le tue abilità di programmazione e di creare applicazioni più complesse.
+La concatenazione delle stringhe è un concetto fondamentale nella programmazione JavaScript che consente di unire più stringhe in una sola. Questo può essere utile per creare una stringa personalizzata con dati dinamici o per formattare l'output di un programma.
 
 ## Come fare
 
-La concatenazione di stringhe in Javascript è molto semplice. Puoi farlo utilizzando l'operatore ```+``` o l'operatore di assegnazione ```+=```. Vediamo un esempio:
+Per concatenare le stringhe in JavaScript, si utilizza l'operatore "+" oppure il metodo "concat()". Vediamo un esempio di entrambi i metodi:
 
-```Javascript
-let nome = "Mario";
+```
+// Utilizzo dell'operatore "+"
+
+let nome = "Marco";
 let cognome = "Rossi";
 let nomeCompleto = nome + " " + cognome;
-console.log(nomeCompleto);
+console.log(nomeCompleto); // Output: Marco Rossi
 ```
-Output: ```Mario Rossi```
 
-In questo caso, abbiamo creato due variabili, "nome" e "cognome", e le abbiamo poi concatenate utilizzando l'operatore ```+```. È inoltre possibile inserire spazi o altri caratteri tra le stringhe per ottenere il formato desiderato.
+```
+// Utilizzo del metodo "concat()"
+
+let frase1 = "Ciao";
+let frase2 = "a tutti";
+let saluto = frase1.concat(" ", frase2);
+console.log(saluto); // Output: Ciao a tutti
+```
+
+È possibile concatenare più di due stringhe e anche variabili possono essere usate all'interno dell'operazione di concatenazione.
+
+```
+let saluto = "Ciao";
+let nome = "Matteo";
+let messaggio = saluto + " " + nome + ", benvenuto!";
+console.log(messaggio); // Output: Ciao Matteo, benvenuto!
+```
 
 ## Approfondimento
 
-In Javascript, è possibile concatenare non solo stringhe ma anche altri tipi di dati, come numeri e booleani. Quando si utilizza l'operatore ```+```, è importante fare attenzione al tipo di dati che si sta unendo, in quanto potrebbe portare a risultati inaspettati. Ad esempio:
+In JavaScript, le stringhe sono immutabili, il che significa che non possono essere modificate. Quindi, ogni volta che si esegue un'operazione di concatenazione, viene creata una nuova stringa anziché modificare la stringa originale. Questo è importante da tenere presente quando si lavora con grandi quantità di dati, in quanto l'utilizzo eccessivo della concatenazione può avere un impatto negativo sulle prestazioni del programma.
 
-```Javascript
-let num1 = 10;
-let num2 = 5;
-let somma = num1 + num2;
-console.log(somma);
-```
-Output: ```15```
-
-Ma se utilizziamo l'operatore ```+``` con una stringa, il risultato sarà diverso:
-
-```Javascript
-let num1 = 10;
-let num2 = "5";
-let somma = num1 + num2;
-console.log(somma);
-```
-Output: ```105```
-
-Javascript infatti, quando incontra una stringa, cercherà di convertire i numeri in essa contenuti in stringhe per poterle concatenare.
+Esistono anche altri metodi utili per manipolare le stringhe in JavaScript, come ad esempio "trim()" per eliminare gli spazi vuoti all'inizio e alla fine di una stringa, "toUpperCase()" per rendere tutte le lettere maiuscole e "split()" per dividere una stringa in un array di sotto-stringhe basate su un separatore specificato.
 
 ## Vedi anche
 
-- [Documentazione su stringhe in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [Articolo sulla concatenazione di stringhe in Javascript](https://www.w3schools.com/js/js_strings.asp)
+- Documentazione su concatenazione di stringhe in JavaScript: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/concat
+- Metodi stringa in JavaScript: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String

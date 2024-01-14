@@ -1,43 +1,47 @@
 ---
-title:    "Clojure: Das Abrufen des aktuellen Datums"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/getting-the-current-date.md"
+title:                "Clojure: Die aktuelle Datum ermitteln"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Abrufen des aktuellen Datums ist in der Programmierung eine nützliche Aufgabe und kann in verschiedenen Anwendungsfällen erforderlich sein. Zum Beispiel können wir das Datum in einer Anwendung anzeigen, um die Aktualität von Daten zu überprüfen oder in einer monatlichen Berichtsfunktion verwenden.
+Das aktuelle Datum ist ein wesentlicher Bestandteil der meisten Anwendungen, sei es für die Anzeige von Timern oder für die Verwaltung von Terminen. Deshalb ist es wichtig zu wissen, wie man in Clojure das aktuelle Datum abrufen kann.
 
-# Wie es gemacht wird
+## Wie geht das?
 
-Um das aktuelle Datum in Clojure zu bekommen, verwenden wir die Funktion ` (java.util.Date.)` . Diese Funktion erstellt ein Objekt vom Typ `java.util.Date` , das das aktuelle Datum und die Uhrzeit enthält.
+In Clojure gibt es eine spezielle Funktion namens `java.util.Date`, welche das aktuelle Datum und die aktuelle Uhrzeit zurückgibt. Diese Funktion muss importiert werden, bevor sie verwendet werden kann. Schauen wir uns ein Beispiel an:
 
-```
-Clojure (java.util.Date.)
-```
-
-Das obige Beispiel gibt das aktuelle Datum und die Uhrzeit als Objekt zurück. Um das Datum lesbarer zu machen, können wir die ` (format)` Funktion verwenden.
-
-```
-Clojure (format (java.text.SimpleDateFormat. "dd.MM.yyyy") (java.util.Date.))
-```
-
-Dies gibt das Datum in dem Format "TT.MM.JJJJ" aus (zum Beispiel 10.09.2021).
-
-# Tiefentauchen
-
-Es gibt viele Möglichkeiten, das Datum in Clojure weiter zu manipulieren oder es in verschiedene Formate zu konvertieren. Eine Möglichkeit ist die Verwendung der ` (clj-time)` Bibliothek, die eine einfachere und flexiblere Art und Weise bietet, mit Datum und Zeit in Clojure zu arbeiten. Zum Beispiel können wir das gleiche Beispiel wie oben mit dieser Bibliothek wie folgt schreiben:
-
-```
-Clojure (require 'clj-time.core)
-Clj (d/in (clj-time.core/today) (clj-time.core/formatter "dd.MM.yyyy"))
+```Clojure
+(ns my-app.core
+  (:import [java.util Date]))
+  
+(defn get-current-date []
+  (let [current-date (Date.)]
+    (println "Das aktuelle Datum ist:" (.toString current-date))))
 ```
 
-Dies gibt das gleiche Ergebnis wie das vorherige Beispiel zurück. Mit dieser Bibliothek können wir auch das Datum nach unseren Wünschen manipulieren, z.B. indem wir eine bestimmte Anzahl von Tagen oder Monaten hinzufügen oder abziehen.
+Der obige Code importiert die `java.util.Date` Funktion und definiert dann eine Funktion `get-current-date`, die das aktuelle Datum abruft und ausgibt. Führt man diesen Code aus, wird die aktuelle Datum und Zeit im Format `yyyy-mm-dd hh:mm:ss` ausgegeben.
 
-# Siehe auch
+## Tiefergehend
 
-- Dokumentation zur Funktion ` (java.util.Date.)`: https://clojuredocs.org/clojure.java/javadoc/clojure.java.api/. Date
-- Dokumentation zur ` (clj-time)` Bibliothek: https://github.com/clj-time/clj-time
+Es gibt noch einige andere Möglichkeiten, um das aktuelle Datum in Clojure abzurufen. Eine davon ist die Verwendung der `java.time.LocalDateTime` Funktion, die in Java 8 eingeführt wurde. Diese Funktion bietet mehr Flexibilität beim Arbeiten mit Datum und Zeit. Hier ist ein Beispiel:
+
+```Clojure
+(ns my-app.core
+  (:import [java.time LocalDateTime]))
+  
+(defn get-current-date []
+  (let [current-date (LocalDateTime/now)]
+    (println "Das aktuelle Datum ist:" (.toString current-date))))
+```
+
+Dieser Code importiert die `java.time.LocalDateTime` Funktion und ruft dann die `now` Funktion auf, um das aktuelle Datum und die Zeit zurückzugeben. Auch hier wird das Datum im Format `yyyy-mm-dd hh:mm:ss` ausgegeben.
+
+## Siehe auch
+
+- [Clojure-Dokumentation zu `java.util.Date`](https://clojuredocs.org/clojure.java.api#clojure.java.api/clojure.lang.IDeref/javagive) 
+- [Java-Dokumentation zu `java.time.LocalDateTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)

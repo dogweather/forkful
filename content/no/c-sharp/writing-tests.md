@@ -1,57 +1,49 @@
 ---
-title:    "C#: Skriver tester"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/writing-tests.md"
+title:                "C#: Skriving av tester"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tester er en viktig del av god programmeringspraksis. Det hjelper utviklere med å sikre at koden deres fungerer som den skal og oppdage eventuelle feil før de påvirker produksjonen. Å skrive tester bidrar også til å forbedre kvaliteten på koden og gjøre det lettere å vedlikeholde den i fremtiden.
+Å skrive tester er en viktig del av enhver programmeringsprosess. Det hjelper deg med å sikre at koden din fungerer som den skal, og det gjør det enklere å finne og fikse feil når de oppstår. Å skrive tester kan også være en god måte å dokumentere koden din på og gjøre det enklere for andre utviklere å forstå hva du har gjort.
 
 ## Hvordan
 
-```C#
-using NUnit.Framework;
+For å skrive tester i C# kan du bruke et rammeverk som heter NUnit. Dette er et populært rammeverk som gjør det enkelt å lage og kjøre tester. La oss se på et enkelt eksempel av hvordan du kan skrive en testklasse:
 
-[TestFixture]
+```C#
+[TestClass]
 public class CalculatorTests
 {
-    [Test]
-    public void Add_WhenIntegers_ReturnsSum()
+    [TestMethod]
+    public void Calculator_ShouldAddNumbersCorrectly()
     {
         // Arrange
-        int num1 = 5;
-        int num2 = 3;
-        int expected = 8;
-
         Calculator calculator = new Calculator();
 
         // Act
-        int result = calculator.Add(num1, num2);
+        int result = calculator.Add(3, 5);
 
         // Assert
-        Assert.AreEqual(expected, result);
-    }
-}
-
-public class Calculator
-{
-    public int Add(int num1, int num2)
-    {
-        return num1 + num2;
+        Assert.AreEqual(8, result);
     }
 }
 ```
 
-I dette eksempelet bruker vi NUnit som testrammeverk for å skrive en enkel test som sjekker om summen av to tall blir korrekt beregnet. Vi starter med å opprette en testklasse og dekorere den med [TestFixture] attributtet. Deretter oppretter vi en testmetode som også er dekorert med [Test] attributtet. Inne i testmetoden bruker vi Assert.AreEqual() for å sammenligne den forventede verdien med resultatet fra å kalle metoden vi tester. Til slutt kjører vi testen ved å opprette en instans av Calculator-klassen og kalle Add() metoden.
+I dette eksempelet, oppretter vi en testklasse og en testmetode som sjekker om vår kalkulator-klasse legger sammen tallene riktig. Vi bruker NUnit sin `Assert.AreEqual`-metode for å sammenligne forventet resultat med det faktiske resultatet.
 
-## Dypdykk
+## Deep Dive
 
-Å skrive gode tester handler om mer enn bare å sjekke om koden fungerer. Det handler også om å designe testene på en måte som gir god dekning av koden og oppdager eventuelle feil og mangler. Det er viktig å tenke på ulike scenarier og kanttilfeller når du skriver tester, og å ha et godt forståelse av koden du tester. Ved å følge beste praksis og kontinuerlig forbedre testene dine, vil du kunne oppnå en mer pålitelig og robust kodebase.
+Det er mange ting du kan teste i en applikasjon, som for eksempel metoder, klasser, og grensesnitt. Men det er viktig å huske at tester skal være enkle, spesifikke og uavhengige av hverandre. Det er også viktig å teste både positive og negative scenarioer for å sikre at koden din håndterer alle mulige tilfeller.
+
+NUnit har også mange nyttige funksjoner for å gjøre testingen din mer effektiv, som for eksempel data-driven testing og parallell testing. Det er også mulig å integrere NUnit med andre verktøy som for eksempel Visual Studio eller TeamCity for å automatisere testingen din.
 
 ## Se Også
-- [NUnit Testing Framework](https://nunit.org)
-- [Introduction to Unit Testing in C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
-- [Writing Reliable and Readable Tests in C#](https://blog.gurock.com/writing-reliable-readable-tests-csharp/)
+
+- [NUnit offisiell nettside](https://nunit.org/)
+- [En guide til test-drevet utvikling i C#](https://blog.testproject.io/2018/07/05/tdd-c-sharp/)
+- [Hvordan skrive gode tester i C#](https://medium.com/@SergeyTeplyakov/writing-good-unit-tests-in-c-eaa10b0b4cde)

@@ -1,47 +1,43 @@
 ---
-title:    "C++: स्ट्रिंग को बड़े अक्षरों में परिवर्तित करना"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/capitalizing-a-string.md"
+title:                "C++: स्ट्रिंग को मुख्य अक्षरों में व्याप्त करना"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# वजह
+## क्यों
 
-एक लचीले स्ट्रिंग को कैपिटलाइज करने के लिए कोई क्यों करे? 
+यदि आपने C++ प्रोग्रामिंग को थोड़ा भी सीखा हो, तो आपने सूत्र से अवगत होंगे कि क्रूरता या स्पष्टता की दृष्टि से कोड लिखने के लिए किन्हीं बहस की आवश्यकता नहीं होती है। एक उदाहरण के रूप में, आपको कुछ लड़कों और लड़कियों को समूहित करने के लिए एक सरल for लूप प्रदान करता है: और आप संभवतः अपनी एकाएक पहली C++ लिखने से पहले उसे स्वीकार करेंगे।
 
-## कैसे करें
+## कैसे करे
 
+```C++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  // स्ट्रिंग प्रदान करें
+  string s = "hello world";
+
+  // प्रथम अक्षर को कैपिटल बनाएं
+  s[0] = toupper(s[0]);
+
+  // प्रदर्शित करें
+  cout << s << endl;
+
+  return 0;
+}
 ```
-C++ 
-#include <iostream> 
-#include <string> 
-
-using namespace std; 
-
-int main() 
-{ 
-  string str = "hindi blog"; 
-  
-  // capitalize the first letter of each word 
-  for (int i=0; i<str.length(); i++) 
-  { 
-    // if current character is space 
-    if (i == 0 || str[i-1] == ' ') 
-      str[i] = toupper(str[i]); // convert to uppercase 
-  } 
-  
-  cout << str; // output: Hindi Blog
-  return 0; 
-} 
 ```
+आउटपुट:
+Hello world
+```
+इस उदाहरण में, हमने सबसे पहले string s को "hello world" के साथ इनिशियलाइज़ किया है। फिर हमने s[0] (प्रथम अक्षर) को toupper() फ़ंक्शन का उपयोग करके उपर ले जाते हुए (कैपिटल करने वाले) अक्षर में परिवर्तित किया है। अंत में, हमने cout फ़ंक्शन का उपयोग करके परिणाम को प्रदर्शित किया है। इस तरह, हम अपनी स्ट्रिंग को कैपिटल बनाने का पहला हिस्सा कर सकते हैं।
 
-## डीप डाइव
+## गहराई में जाओ
 
-कैपिटलाइज़ फ़ंक्शन एक बहुत ही उपयोगी फ़ंक्शन है जो की स्ट्रिंग में एक लाइन या शब्द को uppercase में बदल देती है। यह स्ट्रिंग को मॉडीफ़ाई करती है और इसे लूप के द्वारा लागू किया जाता है। आप स्ट्रिंग के प्रत्येक आइटम को चेक कर सकते हैं और उसको uppercase में बदल सकते हैं। इस फ़ंक्शन के साथ आप टेक्स्ट आधारित गेम्स बना सकते हैं या शब्दों को स्विच कर सकते हैं। 
-
-# देखें भी
-
-- [C++ string फ़ॉर्मेटिंग](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)
-- [एक स्ट्रिंग को uppercase करने के तरीके](https://www.geeksforgeeks.org/how-to-capitalize-the-first-letter-of-each-word-in-a-string-in-cpp/)
-- [स्ट्रिंग कैसे मॉडीफ़ाई करें](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+स्ट्रिंग को कैपिटल करने से पहले, हमेशा स्ट्रिंग के अनुभागों को समझना जरूरी है। स्ट्रिंग का प्रथम अक्षर हमेशा s[0] होता है, और हम हमेशा एक for लूप का उपयोग कर सकते हैं ताकि हम सभी अनुभागों को दौरा कर सकें और उनमें बदल

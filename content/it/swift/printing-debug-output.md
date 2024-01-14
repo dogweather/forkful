@@ -1,75 +1,56 @@
 ---
-title:    "Swift: Stampa dell'output di debug"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/printing-debug-output.md"
+title:                "Swift: Stampa della rappresentazione debug"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Stampare l'output di debug è un'importante abilità per ogni programmatore Swift. Ci permette di verificare il funzionamento del nostro codice e di individuare eventuali errori o problemi. Inoltre, l'output di debug può aiutare a comprendere meglio il flusso di esecuzione del programma.
+Stampare l'output di debug è un'importante pratica di programmazione che aiuta a identificare e risolvere rapidamente errori nel codice. Conoscere come stampare l'output di debug può aiutare a migliorare la qualità e l'efficienza del tuo codice.
 
-## Come Fare
+## Come fare
 
-Per stampare l'output di debug in Swift, possiamo utilizzare la funzione "print". Questa funzione accetta un numero variabile di parametri di qualsiasi tipo e li stampa sulla console. Vediamo un esempio:
-
-```Swift
-let nome = "Mario"
-let eta = 30
-print("Ciao, mi chiamo \(nome) e ho \(eta) anni.")
-```
-
-L'output di questo codice sarà:
-
-```
-Ciao, mi chiamo Mario e ho 30 anni.
-```
-
-Possiamo anche utilizzare la funzione "debugPrint" per stampare un oggetto in modo più dettagliato, includendo anche il tipo di dati e altre informazioni utili per il debugging.
+Per stampare l'output di debug in Swift, è possibile utilizzare la funzione `print()`. Ad esempio, se si vuole stampare una variabile `x` con un messaggio di testo aggiuntivo, si può scrivere:
 
 ```Swift
-let listaSpesa = ["pane", "latte", "frutta"]
-debugPrint(listaSpesa)
+print("Valore di x:", x)
 ```
 
-L'output sarà simile a questo:
+Questo produrrà un output nel seguente formato:
 
+```Console
+Valore di x: 10
 ```
-["pane", "latte", "frutta"]
+
+È anche possibile stampare più variabili o costanti in una singola riga, separandole con una virgola:
+
+```Swift
+let nome = "Marco"
+let cognome = "Rossi"
+print("Il tuo nome è", nome, "e il tuo cognome è", cognome)
+```
+
+Questo produrrà un output simile a questo:
+
+```Console
+Il tuo nome è Marco e il tuo cognome è Rossi
 ```
 
 ## Approfondimento
 
-Stampare l'output di debug è particolarmente utile quando si lavora con strutture dati complesse come array, dizionari o oggetti personalizzati. In questi casi, utilizzare la funzione "dump" può essere più efficace. Questa funzione ci mostra a schermo una rappresentazione più dettagliata dell'oggetto, compresi i suoi valori e le sue proprietà.
+Ci sono alcune opzioni interessanti per la funzione `print()` che possono aiutare a migliorare l'output di debug. Alcune di queste includono:
 
-```Swift
-struct Persona {
-    var nome: String
-    var eta: Int
-}
+- Utilizzare la funzione `dump()` invece di `print()` per stampare un output più dettagliato di una variabile, inclusi i suoi nomi di proprietà e i valori.
+- Utilizzare la funzione `debugPrint()` per stampare una versione degli oggetti in modalità debug.
+- Aggiungere un carattere di fine riga (`\n`) alla fine del messaggio stampato per andare a capo.
 
-let persone = [
-    Persona(nome: "Luca", eta: 25),
-    Persona(nome: "Giulia", eta: 32)
-]
+Inoltre, è possibile utilizzare `#if DEBUG` per condizionare l'esecuzione della funzione `print()` durante la fase di sviluppo, in modo che non venga eseguito quando l'applicazione viene compilata per la release finale.
 
-dump(persone)
-```
+## Vedi anche
 
-L'output sarà:
-
-```
-▿ 2 elements
-  ▿ Person
-    - name: "Luca"
-    - age: 25
-  ▿ Person
-    - name: "Giulia"
-    - age: 32
-```
-
-## Vedi Anche
-
-- [Documentazione ufficiale di Swift su debugging](https://docs.swift.org/swift-book/LanguageGuide/PrintingAndDebugging.html)
-- [Articolo su stampa di output di debug in Swift](https://medium.com/ios-os-x-development/basic-debugging-with-print-and-the-debug-console-in-swift-2b2ed26505c9) (in inglese)
+- [Documentazione Apple su print()](https://developer.apple.com/documentation/swift/1541053-print)
+- [Tutorial su print() di Hacking with Swift](https://www.hackingwithswift.com/example-code/language/how-to-dump-an-object-with-print)
+- [Articolo su debugPrint() di NSHipster](https://nshipster.com/debugging/)

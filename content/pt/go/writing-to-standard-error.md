@@ -1,82 +1,42 @@
 ---
-title:    "Go: Escrevendo para o erro padrão"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/writing-to-standard-error.md"
+title:                "Go: Escrevendo para a saída de erro padrão"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o fluxo de erro padrão?
+# Por que escrever para o erro padrão em Go?
 
-Escrever para o fluxo de erro padrão é uma prática comum na programação Go. Isso permite que os desenvolvedores exibam mensagens de erro ou avisos durante a execução de um programa, facilitando a identificação e solução de problemas. Além disso, escrever para o fluxo de erro padrão é uma forma de padronizar as mensagens de erro e tornar o código mais legível e organizado.
+Escrever para o erro padrão, também conhecido como standard error ou `stderr`, é uma prática comum em programação, especialmente em linguagens de programação de sistema como Go. Esse recurso permite que os desenvolvedores tenham mais controle sobre os erros e mensagens que seus programas produzem, facilitando a depuração e o entendimento do código. Neste artigo, vamos dar uma olhada em como escrever para o erro padrão em Go e por que isso é importante.
 
 ## Como fazer
 
-Ao escrever para o fluxo de erro padrão em Go, é necessário importar o pacote `os`. Em seguida, é possível utilizar a função `os.Stderr.WriteString()` para enviar uma string para o fluxo de erro padrão. Por exemplo:
+Para escrever para o erro padrão em Go, podemos usar a função `fmt.Fprintln()` ou `fmt.Fprintf()` do pacote `fmt`, que permitem imprimir uma mensagem diretamente para o `stderr`. Por exemplo:
 
 ```Go
 package main
 
-import (
-    "fmt"
-    "os"
-)
+import "fmt"
 
 func main() {
-    // Escreve uma mensagem de erro no fluxo de erro padrão
-    os.Stderr.WriteString("Ocorreu um erro ao executar o programa!")
-    
-    fmt.Println("Continuando a execução do programa...")
+	fmt.Fprintln(os.Stderr, "Esta é uma mensagem de erro")
 }
 ```
 
-A saída desse programa seria:
+Neste exemplo, passamos a mensagem desejada como segundo argumento da função `fmt.Fprintln()`, que será automaticamente escrita no `stderr`. Você também pode formatar a mensagem usando a função `fmt.Sprintf()` antes de passá-la para `fmt.Fprintf()`.
 
-```
-Ocorreu um erro ao executar o programa!
-Continuando a execução do programa...
-```
+## Mergulho profundo
 
-Além disso, você também pode usar a função `fmt.Fprintf()` para formatar suas mensagens de erro antes de enviá-las para o fluxo de erro padrão. Por exemplo:
+Agora que sabemos como escrever para o erro padrão em Go, é importante entender quando e por que devemos fazer isso. O erro padrão é usado para mensagens de erro, alertas e outras informações importantes que devem ser exibidas ao usuário. Além disso, muitas ferramentas de linha de comando, como o `grep` e o `make`, usam o erro padrão para exibir informações de estado e feedback ao usuário. Por padrão, o `stdout` (standard output) é usado para a saída normal do programa, enquanto o `stderr` é usado para informações importantes.
 
-```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    num1 := 10
-    num2 := 0
-    
-    // Verifica se o segundo número é igual a 0
-    if num2 == 0 {
-        // Escreve uma mensagem formatada de erro no fluxo de erro padrão
-        fmt.Fprintf(os.Stderr, "Erro: o segundo número (%d) é igual a 0!", num2)
-        os.Exit(1) // Encerra o programa com status de erro
-    }
-}
-```
-
-A saída desse programa seria:
-
-```
-Erro: o segundo número (0) é igual a 0!
-```
-
-## Profundidade
-
-Ao escrever para o fluxo de erro padrão, é importante considerar alguns aspectos importantes. Primeiramente, mensagens de erro devem ser claras e descritivas o suficiente para ajudar outros desenvolvedores a entender o problema e encontrar uma solução. Por isso, é importante incluir informações relevantes sobre o erro, como qual função ou linha de código causou o problema.
-
-Além disso, é recomendável utilizar o pacote `errors` para criar erros personalizados, com mensagens mais detalhadas e específicas sobre o problema. Dessa forma, é possível personalizar as mensagens de acordo com a necessidade do programa.
-
-Outra dica importante é evitar o uso excessivo de mensagens de erro. Isso pode sobrecarregar o fluxo de erro padrão e dificultar a identificação dos erros importantes. O ideal é utilizar mensagens de erro apenas em situações críticas ou em casos que exijam uma explicação mais detalhada.
+Além disso, usar o `stderr` também pode ser útil para debugar seu código. Como o `stderr` geralmente é usado para mensagens de erro, é mais fácil localizar e identificar problemas em seu código quando essas mensagens são escritas diretamente no `stderr`.
 
 ## Veja também
 
-- [Pacote `os` da documentação oficial do Go](https://golang.org/pkg/os/)
-- [Pacote `fmt` da documentação oficial do Go](https://golang.org/pkg/fmt/)
-- [Pacote `errors` da documentação oficial do Go](https://golang.org/pkg/errors/)
-- [Tutorial sobre fluxo de erro padrão em Go](https://blog.golang.org/error-handling-and-go) (em inglês)
+Para mais informações sobre como escrever para o erro padrão em Go, consulte os links a seguir:
+
+- [Pacote fmt na documentação oficial do Go](https://golang.org/pkg/fmt/)
+- [Artigo sobre o uso de stderr em Go](https://blog.golang.org/error-handling-and-go)
+- [Exemplo de código usando o erro padrão em Go](https://gist.github.com/bgentry/5c0f2277f47f67e59fc9)

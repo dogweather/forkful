@@ -1,38 +1,43 @@
 ---
-title:    "Elm: Vergleich von zwei Daten"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/comparing-two-dates.md"
+title:                "Elm: Vergleich von zwei Daten"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Wenn Sie gerade erst anfangen, mit Elm zu programmieren, fragen Sie sich vielleicht, warum Sie sich die Zeit nehmen sollten, zwei Daten zu vergleichen. Der Vergleich von Daten kann sehr hilfreich sein, um Zeitstempel zu verarbeiten oder um zu überprüfen, ob ein Datum in einem bestimmten Zeitraum liegt. Lesen Sie weiter, um zu erfahren, wie Sie dies mit Elm ganz einfach machen können.
 
-Es gibt viele Gründe, warum man sich mit der Programmiersprache Elm beschäftigen sollte, und das Vergleichen von zwei Daten ist definitiv einer davon. Mit diesem Artikel möchte ich Ihnen zeigen, warum dies eine wichtige Fähigkeit ist, die Sie beherrschen sollten.
-
-## Wie geht man vor?
-
-Um zwei Daten in Elm zu vergleichen, gibt es verschiedene Methoden, aber die einfachste ist die Verwendung des inbuilt `Time.compare` Moduls. Hier ist ein Beispiel, wie man zwei Daten mit dieser Methode vergleichen kann:
+## Wie geht's
+Um zwei Daten in Elm zu vergleichen, können Sie die Funktion `compare` aus dem Kernmodul `Basics` verwenden. Diese Funktion nimmt zwei Werte und gibt einen von drei möglichen Werten zurück: `LT`, `EQ` oder `GT`, je nachdem, ob der erste Wert kleiner, gleich oder größer als der zweite Wert ist.
 
 ```Elm
-import Time
+compare "2020-05-01" "2020-04-01" == GT
 
-date1 = Time.millisToPosix 1564262400000
-date2 = Time.millisToPosix 1564262460000
-
-result = Time.compare date1 date2
-
--- result wird -1 zurückgeben, da date1 vor date2 liegt
+compare "2020-01-01 00:00:00" "2020-01-01 12:00:00" == LT
 ```
 
-In diesem Beispiel habe ich zwei Millisekundenzeitstempel zum einfacheren Verständnis verwendet, aber Sie können auch andere Datentypen verwenden, wie z.B. `Time.Posix`, `Time.Year`, `Time.Month`, etc. `Time.compare` gibt einen Integer zurück, der -1, 0 oder 1 sein kann, je nachdem, ob die erste Date vor, gleich oder nach der zweiten Date liegt.
+In diesen Beispielen vergleichen wir zwei Strings, die Datumsangaben darstellen. Beachten Sie, dass es wichtig ist, dass die Daten im gleichen Format dargestellt werden, damit der Vergleich korrekt ausgeführt werden kann.
 
-## Tiefes Eintauchen
+## Tiefentauchen
+Die Funktion `compare` mag auf den ersten Blick einfach erscheinen, aber es lohnt sich, tiefer in die Details einzutauchen. Zum Beispiel können wir `compare` nicht nur für den Vergleich von Daten nutzen, sondern auch für die Vergleich von anderen Werten wie Zahlen und Zeichenketten.
 
-Wenn Sie noch tiefer in das Vergleichen von zwei Daten in Elm eintauchen möchten, gibt es noch viele andere Methoden und Funktionen, die Sie verwenden können. Ein Beispiel dafür ist `Time.compareInUtc`, das die Zeit in UTC-Variante vergleicht, oder `Time.dayOfYear`, das den Tag im Jahr zurückgibt. Sie können auch benutzerdefinierte Funktionen schreiben, um spezifischere Vergleiche durchzuführen, wie zum Beispiel das Vergleichen von Daten mit unterschiedlichen Zeitformaten.
+``` Elm
+compare 5 10 == LT
+
+compare "apple" "banana" == LT
+```
+
+Eine weitere wichtige Sache zu beachten ist, dass der Vergleich auch hierarchisch funktioniert. Wenn wir zum Beispiel zwei Daten vergleichen, die unterschiedliche Granularitäten haben, wird die höhere Granularität (z.B. Monat) als wichtiger betrachtet als die niedrigere Granularität (z.B. Tag).
+
+``` Elm
+compare "2020-01-01" "2020-01-01 12:00:00" == EQ
+```
+
+Schließlich ist es auch wichtig zu beachten, dass der Vergleich von Daten standardmäßig vom ältesten bis zum neuesten Datum funktioniert. Wenn Sie dies ändern möchten, können Sie einen Custom Comparator verwenden.
 
 ## Siehe auch
-
-- [Elm Dokumentation - Time](https://elm-lang.org/docs/time)
-- [Blog post - Vergleichen von zwei Daten in Elm](https://medium.com/@joeljosephjohnson/elm-101-comparing-dates-83cb35ed8055)
-- [Github Gist - Vergleichen von zwei Daten in Elm](https://gist.github.com/ngvasa/f6411e4a3b7e8c72da9ce31a90727982)
+- Elm Offizielle Dokumentation zu `compare`: https://package.elm-lang.org/packages/elm/core/latest/Basics#compare
+- Elm Comparators Paket: https://package.elm-lang.org/packages/elm/core/latest/Basics#comparing

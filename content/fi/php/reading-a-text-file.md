@@ -1,77 +1,31 @@
 ---
-title:    "PHP: Tiedostojen lukeminen"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/reading-a-text-file.md"
+title:                "PHP: Tekstitiedoston lukeminen"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: Miksi lukisi ohjelmoinnin blogitekstiä?
+## Miksi
+Jos olet PHP-ohjelmoinnin aloittelija tai haluat oppia lisää, lukeminen on yksi tärkeimmistä taidoista, jotka sinun tulisi hallita. Luku- ja kirjoitustaidon avulla voit käsitellä ja tallentaa tietoa eri tiedostoihin, mikä on välttämätöntä monissa ohjelmoinnin tehtävissä.
 
-Usein ohjelmoijat ja kehittäjät tarvitsevat tietoa erilaisista koodausongelmista ja haasteista, joita he kohtaavat päivittäin työssään. Lukemalla blogitekstejä ja opetusmateriaaleja he voivat oppia uusia taitoja ja tekniikoita, jotka auttavat heitä ratkaisemaan näitä ongelmia. Lisäksi lukemalla blogitekstejä voi saada uusia ideoita ja inspiroitua kehittämään omia projektejaan.
-
-Kuinka: Näin luet tiedostoa PHP:lla
-
+## Miten
+PHP: lla on useita sisäänrakennettuja toimintoja tiedostojen lukemiseen ja kirjoittamiseen. Tässä esimerkissä käytämme "file_get_contents" -toimintoa lukemaan tiedoston ja "echo" -toimintoa tulostamaan tiedot näytölle.
 ```PHP
-$file = fopen("tiedosto.txt", "r"); // Avataan tiedosto lukemista varten
- 
-// Luetaan tiedosto rivi kerrallaan ja tulostetaan ne näytölle
-while(!feof($file)) {
-  echo fgets($file) . "<br>";
-}
- 
-fclose($file); // Suljetaan tiedosto
- 
-/* Tulostus:
-Rivi 1
-Rivi 2
-Rivi 3
-*/
+<?php
+$file = file_get_contents('tekstitiedosto.txt'); //tallenna tiedoston sisältö muuttujaan
+echo $file; //tulosta tiedoston sisältö näytölle
+?>
 ```
+Tuloste: Tervetuloa lukemaan minun blogiartikkeliani!
 
-Jos haluat lukea koko tiedostoa kerralla, voit käyttää esimerkiksi file_get_contents-funktiota:
+## Syvempää
+Tiedoston lukeminen on yksi tärkeimmistä taidoista PHP-ohjelmoinnissa ja siitä on hyötyä monissa tilanteissa. Se voi auttaa sinua käsittelemään ja tallentamaan käyttäjän syöttämiä tietoja, kuten lomakkeiden kautta lähetettyjä viestejä tai käyttäjänimen ja salasanan tarkistamista kirjautumislomakkeella. Voit myös käyttää tiedostojen lukemista verkkosivuilla näyttämään dynaamisesti päivittyviä tietoja, kuten uutisotsikoita.
 
-```PHP
-$file = "tiedosto.txt";
- 
-// Luetaan koko tiedosto kerralla ja tulostetaan se näytölle
-echo file_get_contents($file);
- 
-/* Tulostus:
-Rivi 1
-Rivi 2
-Rivi 3
-*/
-```
+Toinen tärkeä osa tiedoston lukemista on tiedostopolkujen käyttö. Muista aina määrittää oikea polku tiedostoon, jonka haluat lukea, jotta koodisi toimisi oikein.
 
-Syötä-tiedosto voidaan myös käsitellä lukemalla tiedosto rivi kerrallaan ja tallentamalla tiedot esimerkiksi taulukkoon:
-
-```PHP
-$file = "tiedosto.txt";
-$rows = file($file); // Tallennetaan tiedoston rivit taulukkoon
- 
-// Tulostetaan taulukon sisältö
-foreach($rows as $row) {
-  echo $row . "<br>";
-}
- 
-/* Tulostus:
-Rivi 1
-Rivi 2
-Rivi 3
-*/
-```
-
-Syötä-tiedosto voidaan myös avata ja lukea käyttämällä erilaista tiedostoa lukemista varten tarjoavaa funktiota, kuten file, fread tai freadf. Näihin voit tutustua lisää PHP:n virallisista dokumentaatioista.
-
-Syvällinen sukellus: Lisätietoa tiedoston lukemisesta
-
-Tiedoston lukeminen PHP:lla on erittäin tärkeä ja hyödyllinen taito. On tärkeää ymmärtää, että tiedostot voivat sisältää erilaisia tietoja, kuten tekstitiedostoja, CSV-tiedostoja, XML-tiedostoja jne. Siksi on tärkeää tietää, miten käsitellä tiedostoja oikein ja lukea niitä halutulla tavalla.
-
-Lisäksi on tärkeää huomioida tietoturva, kun käsitellään tiedostoja. On tärkeää tarkistaa, että tiedoston avaamiseen käytettävät polut ovat turvallisia. Lisäksi on suositeltavaa käyttää PHP:n sisäänrakennettuja turvallisuustoimintoja, kuten htmlspecialchars, jotta vältetään haitallisten tietojen suoraviivainen lukeminen tiedostosta.
-
-Katso myös
-
-- PHP:n viralliset dokumentaatiot tiedoston lukemisesta: https://www.php.net/manual/en/function.file-get-contents.php
-- Lisätietoa tiedoston käsittelystä PHP:lla: https://www.w3schools.com/php/php_file.asp
-- Artikkeli tiedostojen käsittelystä ja turvallisuudesta PHP:lla: https://www.securitycompass.com/blog/secure-file-handling-in-php/
+## Katso myös
+- [PHP:n virallinen dokumentaatio tiedostojen lukemiseen ja kirjoittamiseen](https://www.php.net/manual/en/ref.filesystem.php)
+- [Opas tiedostopolun määrittämiseen PHP:ssa](https://www.w3schools.com/php/php_file_paths.asp)
+- [Ohjeet tiedostojen lukemisesta ja kirjoittamisesta Javassa](https://www.codecademy.com/articles/reading-files-in-java)

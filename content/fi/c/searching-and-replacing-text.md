@@ -1,49 +1,71 @@
 ---
-title:    "C: Tekstin etsiminen ja korvaaminen"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/searching-and-replacing-text.md"
+title:                "C: Hakeminen ja tekstin korvaaminen"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia syitä, miksi joku saattaisi haluta etsiä ja korvata tekstiä ohjelmointityössään. Ehkä tiettyä tekstipätkää käytetään usein ja halutaan helpottaa sen muuttamista, tai ehkä tietyt muuttujat pitää päivittää jatkuvasti eri projekteissa. Riippumatta syystä, C-ohjelmointikielessä on olemassa hyvät työkalut tekstikorvausten tekemiseen.
+Tekstin etsintä ja korvaaminen on tärkeä osa C-ohjelmointia. Se mahdollistaa tekstissä olevien tiettyjen termien tai muotojen korvaamisen toisilla, mikä helpottaa koodin muokkaamista ja ylläpitämistä. Tämä blogikirjoitus auttaa sinua ymmärtämään, kuinka tämä prosessi toimii ja miten voit hyödyntää sitä omassa koodissasi.
 
 ## Miten tehdä
 
-Etsimisen ja korvaamisen tekeminen C-ohjelmointikielessä on hyvin yksinkertaista, ja useimmat ohjelmoijat ovat sen jo oppineet perusohjelmoinnin kurssilla. Perusmalli on seuraava:
+Tekstin etsintä ja korvaaminen C-kielellä onnistuu käyttämällä 'str' -perheen funktioita, kuten `strchr` ja `strstr`. Näiden funktioiden avulla voit etsiä haluamasi merkkijonon ja korvata sen toisella. Katso esimerkki alla olevasta koodiblokista:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char text[] = "Tervetuloa, maailma!";
-    char search[] = "Tervetuloa";
-    char replace[] = "Hei";
+int main(void) {
+    char teksti[] = "Hei maailma!";
+    char *esiintyma;
 
-    // Etsitään tekstistä etsittävä teksti
-    char *result = strstr(text, search);
+    esiintyma = strchr(teksti, 'm');
+    *esiintyma = 'k';
 
-    // Korvataan teksti käyttämällä strcpy-funktiota
-    strcpy(result, replace);
-
-    printf("%s", text);
+    printf("%s", teksti); // Tulostaa "Hei kaailka!"
     return 0;
 }
 ```
 
-Tässä esimerkissä haetaan "Tervetuloa" tekstistä ja korvataan se "Hei"-tekstillä. Lopputuloksena tulostuu "Hei, maailma!". 
+Tässä esimerkissä käytämme `strchr` funktiota löytämään ensimmäisen esiintymän merkille 'm' ja korvaamme sen kirjaimella 'k'. Tämän jälkeen tulostamme uuden muokatun tekstin, "Hei kaailka!".
 
-## Syvällinen tarkastelu
+Voit myös käyttää `strstr` funktiota etsimään tiettyä merkkijonoa ja korvaamaan sen toisella merkkijonolla. Katso esimerkki alla:
 
-On tärkeää huomata, että strstr-funktio etsii vain tekstin ensimmäisen esiintymän. Jos tekstissä on useita samanlaisia kohtia, ne eivät korvata. Tämä voidaan kiertää käyttämällä esimerkiksi while-silmukkaa ja käsittelemällä tekstiä yksi merkki kerrallaan. Lisäksi C-kielen stringien manipulointiin on muitakin tehokkaita funktioita, kuten strtok ja strncmp.
+```C
+#include <stdio.h>
+#include <string.h>
 
-On myös tärkeää käsitellä korvattavan tekstin pituus oikein, jotta sitä ei korvata liikaa tai liian vähän. Esimerkiksi strncpy-funktio kopioidaan vain määritellyn määrän merkkejä, joten se on hyödyllinen jos korvattava teksti on pidempi kuin uuden tekstin. Jos taas halutaan vain lisätä tekstiä olemassa olevan tekstin jatkoksi, käytetään strcat-funktiota.
+int main(void) {
+    char teksti[] = "Tämä on esimerkkiteksti";
+    char *esiintyma;
+
+    esiintyma = strstr(teksti, "esimerkki");
+    strcpy(esiintyma, "uusi");
+    
+    printf("%s", teksti); // Tulostaa "Tämä on uusi teksti"
+    return 0;
+}
+```
+
+Tässä käytämme `strstr` funktiota löytämään tekstin "esimerkki" ja korvaamme sen tekstillä "uusi". Tuloksena saamme "Tämä on uusi teksti".
+
+## Syvempi sukellus
+
+C-kielessä tekstien etsiminen ja korvaaminen tapahtuu merkkijonojen manipuloinnin avulla. Mutta on tärkeää huomata, että merkkijonot ovat loppujen lopuksi vain merkkitaulukoita, joissa jokainen merkki vastaa tiettyä numerokoodia. Tämän vuoksi on tärkeää olla tarkkaavainen, kun käsitellään merkkijonoja, jotta varmistetaan, että ohjelma toimii oikein.
+
+Jos haluat oppia lisää merkkijonojen manipuloinnista C-kielessä, voit tutustua näihin resursseihin:
+
+- [C String Handling](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [Working with strings in C](https://www.geeksforgeeks.org/working-with-strings-in-c/)
+- [Using string functions in C](https://www.cprogramming.com/tutorial/string.html)
+
 
 ## Katso myös
 
-- [C-kielen merkkijonojen käsittely](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Stringin käsittely C:ssä](https://www.geeksforgeeks.org/string-handling-strings-c-2/)
-- [Strstr man-sivu](https://linux.die.net/man/3/strstr)
+- [Merkkijonon etsiminen ja korvaaminen C++:ssa](https://www.tutorialcup.com/cplusplus/replace-string-c-programming.htm)
+- [Regex-etsintä ja korvaaminen C:ssä](https://www.tutorialspoint.com/regex/regex_string_handling.htm)
+- [C-kielen dokumentaatio merkkijonofunktioille](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)

@@ -1,55 +1,62 @@
 ---
-title:    "Ruby: Zufallszahlen generieren"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/generating-random-numbers.md"
+title:                "Ruby: Eineinerung von Zufallszahlen"
+programming_language: "Ruby"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Generieren von zufälligen Zahlen ist ein Schlüsselelement im Ruby Programmieren. Es ermöglicht Entwicklern, sichere Passwörter, zufällige Zahlencodes oder eine Vielzahl von anderen Anwendungen zu erstellen, die zufällige Zahlen benötigen.
+Generieren von zufälligen Zahlen kann nützlich sein, um beispielsweise Passwörter oder Geheimzahlen zu erstellen oder um in Simulationen oder Spielen zufällige Elemente zu erzeugen.
 
 ## Wie man es macht
 
-Es gibt mehrere Möglichkeiten, um in Ruby zufällige Zahlen zu generieren. Eine davon ist die `rand`-Funktion, die eine zufällige Gleitkommazahl zwischen 0 und 1 zurückgibt.
+Es gibt verschiedene Möglichkeiten, in Ruby zufällige Zahlen zu generieren. Eine Möglichkeit ist die Verwendung der Methode `.rand()` mit einem optionalen Argument, um den Bereich der Zahlen anzugeben, aus denen die zufällige Zahl gewählt werden soll.
 
 ```Ruby
-rand # 0.8301278610310736
-rand # 0.5720940406395727
-rand # 0.9699427929522021
+# Generieren einer zufälligen Zahl zwischen 0 und 10
+puts rand(10)
+# Beispiel Output: 5
+
+# Generieren einer zufälligen Fließkommazahl zwischen 0 und 5
+puts rand(0.0..5.0)
+# Beispiel Output: 3.278948935
 ```
 
-Man kann auch die `rand`-Funktion mit einem Argument verwenden, um eine zufällige Ganzzahl in einem bestimmten Bereich zu generieren.
+Eine weitere Möglichkeit ist die Verwendung der Klasse `Random`, die mehr Kontrolle über die Generierung zufälliger Zahlen bietet.
 
 ```Ruby
-rand(10) # 4
-rand(10) # 8
-rand(10) # 2
+# Erstellen einer neuen Instanz von Random
+random = Random.new
+
+# Generieren einer zufälligen Zahl zwischen 0 und 100
+puts random.rand(100)
+# Beispiel Output: 47
+
+# Generieren einer zufälligen Zahl zwischen -5 und 5
+puts random.rand(-5..5)
+# Beispiel Output: -3
 ```
 
-Um eine zufällige Zahl zwischen zwei bestimmten Werten zu erstellen, kann man die Formel `rand(max-min) + min` verwenden.
+Es ist auch möglich, zufällige Elemente aus einem Array auszuwählen.
 
 ```Ruby
-rand(10-5) + 5 # 8
-rand(10-5) + 5 # 9
-rand(10-5) + 5 # 6
+# Erstellen eines Arrays
+fruit = ["Apfel", "Banane", "Orange", "Erdbeere", "Kiwi"]
+
+# Zufällige Auswahl eines Elementes aus dem Array
+puts fruit.sample
+# Beispiel Output: Erdbeere
 ```
 
-## Tiefergehende Informationen
+## Tieferer Einblick
 
-Die `rand`-Funktion verwendet standardmäßig den Systemzeitstempel als Seed, um pseudo-zufällige Zahlen zu generieren. Das Seed kann jedoch auch manuell gesetzt werden, indem man `srand` mit einer beliebigen Zahl als Argument aufruft.
-
-```Ruby
-srand(12345)
-rand # 0.45676654043610995
-rand # 0.6420109550311959
-rand # 0.8807432638651273
-```
-
-Man kann auch einen Seed-Generator wie die `SecureRandom`-Klasse verwenden, um sicherere und zufälligere Zahlen zu generieren.
+Zufallszahlen können auf verschiedene Weise generiert werden, aber es gibt wichtige Faktoren zu beachten. Zum Beispiel kann das Einbinden der aktuellen Zeit in den Algorithmus dazu führen, dass die generierten Zahlen nicht tatsächlich zufällig sind, da die Zeit sich wiederholen kann. Auch die Verwendung von bestimmten Basiszahlen oder geheimen Mustern kann das Ergebnis weniger zufällig machen. Es ist wichtig, sorgfältig zu wählen, welche Methode zur Generierung zufälliger Zahlen verwendet wird, je nachdem, für welchen Zweck sie benötigt werden.
 
 ## Siehe auch
 
-- [Offizielle Ruby Dokumentation zur `rand`-Funktion](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-rand)
-- [Blog-Beitrag zur Verwendung von SecureRandom in Ruby](https://www.gitarts.com/blog/use-secure-random-in-ruby-to-generate-unpredictable-random-numbers/)
+- [Ruby Dokumentation: rand()](https://ruby-doc.org/core-2.6.3/Kernel.html#method-i-rand)
+- [Ruby Dokumentation: Random](https://ruby-doc.org/core-2.6.3/Random.html)
+- [Ruby Dokumentation: Array#sample](https://ruby-doc.org/core-2.6.3/Array.html#method-i-sample)

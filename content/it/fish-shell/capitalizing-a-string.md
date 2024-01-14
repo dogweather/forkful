@@ -1,44 +1,31 @@
 ---
-title:    "Fish Shell: Capitalizzazione di una stringa"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell: Maiuscolizzare una stringa"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se stai iniziando a imparare il Fish Shell, potresti trovarti a dover manipolare le stringhe di testo. Una delle operazioni più comuni è la capitalizzazione di una stringa, ovvero rendere la prima lettera maiuscola.
+Ci sono molti motivi per cui uno potrebbe voler capitalizzare una stringa di testo nel proprio codice Fish Shell. Ad esempio, potresti voler dare un aspetto più pulito e facile da leggere ai tuoi output, o potresti essere semplicemente un perfezionista che vuole che tutto sia scritto correttamente.
 
-Ma perché dovresti farlo? Ci sono molte ragioni, ad esempio per uniformare lo stile del testo, per rendere più leggibili i titoli o per rispettare alcune convenzioni di scrittura.
+## Come Fare
 
-## Come fare
+Per capitalizzare una stringa nel Fish Shell, puoi utilizzare il comando `string capitalize` seguito dalla stringa che desideri capitalizzare. Ecco un esempio:
 
-Se stai usando il Fish Shell, ci sono diverse opzioni per capitalizzare una stringa. Vediamo alcune di esse utilizzando l'operatore di sostituzione dei comandi ```sub```:
-
+```Fish Shell
+string capitalize "ciao a tutti"
 ```
-# Capitalizza solo la prima lettera
-echo "ciao mondo" | sed 's/^\([a-z]\)/\U\1/'
-
-# Capitalizza tutte le lettere
-echo "ciao mondo" | sed 's/.*/\U&/'
-```
-
-Un'altra opzione è utilizzare la funzione ```string```, disponibile nel pacchetto Fish Shell's string.
-
-```
-# Capitalizza solo la prima lettera
-echo (string upper --first "ciao mondo")
-
-# Capitalizza tutte le lettere
-echo (string upper "ciao mondo")
-```
+ 
+Questo produrrà un output di `Ciao a tutti`. Puoi anche specificare più stringhe separate da spazi per capitalizzare simultaneamente più parole.
 
 ## Approfondimento
 
-Se vuoi approfondire il tema della capitalizzazione delle stringhe nel Fish Shell, troverai una guida dettagliata sulla documentazione ufficiale (https://fishshell.com/docs/current/cmds/string.html). Inoltre, puoi esplorare ulteriori tecniche utilizzando l'operatore di sostituzione dei comandi ```sub```.
+Il comando `string capitalize` è una funzione molto utile e versatile nel Fish Shell. Non solo può capitalizzare l'iniziale di ogni parola in una stringa, ma può anche capitalizzare solo la prima lettera di una singola parola. Ad esempio, se la stringa è `ciao` il risultato sarebbe `Ciao`, mentre se la stringa è `CIAO` il risultato sarebbe ancora `Ciao`. Inoltre, questa funzione funziona correttamente anche con stringhe che includono caratteri speciali e numeri.
 
-## Vedi anche
+## Vedi Anche
 
-- Guida ufficiale alla documentazione del Fish Shell: https://fishshell.com/docs/current/cmds/string.html
-- Comandi di sostituzione dei comandi Fish Shell: https://fishshell.com/docs/current/commands.html#substitutions
+- [Documentazione del comando `string capitalize`](https://fishshell.com/docs/current/cmds/string-capitalize.html)
+- [Esempi di utilizzo del comando `string capitalize`](https://dev.to/username/comparable-programs-in-bash-and-fish-shell-string-manipulation-3168)

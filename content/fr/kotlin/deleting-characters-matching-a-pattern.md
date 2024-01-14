@@ -1,47 +1,53 @@
 ---
-title:    "Kotlin: Supprimer les caractères correspondant à un modèle"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/deleting-characters-matching-a-pattern.md"
+title:                "Kotlin: Suppression de caractères correspondants à un modèle"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-#Pourquoi
+## Pourquoi
 
-Supprimer des caractères correspondants à un motif peut être utile lorsqu'il s'agit de nettoyer ou de filtrer des données. Cela peut également être utilisé pour formater une chaîne de caractères selon un modèle spécifique.
+Vous vous demandez pourquoi vous devriez vous intéresser à supprimer des caractères correspondant à un motif en Kotlin ? Vous êtes au bon endroit ! La suppression de caractères correspondant à un motif est un outil utile à connaître pour effectuer des modifications de chaînes de manière efficace et rapide.
 
-##Comment Faire
+## Comment faire
 
-```Kotlin
-val string = "Bonjour, mon nom est Jean."
-val pattern = """[a-zA-Z]+"""
-val result = string.replace(Regex(pattern), "")
-print(result)
-```
-**Output:** , .
+Pour supprimer des caractères correspondant à un motif en Kotlin, il existe plusieurs méthodes. Voici deux façons d'y parvenir :
 
-Dans cet exemple, nous utilisons la méthode `replace` pour supprimer tous les caractères correspondant au motif `[a-zA-Z]+`, qui représente toutes les lettres de l'alphabet en majuscules et minuscules. Cela nous donne une chaîne de caractères résultante qui ne contient que des espaces et des signes de ponctuation. 
-
-Il est important de noter que la méthode `replace` retourne une nouvelle chaîne de caractères et ne modifie pas la chaîne d'origine. Si vous souhaitez modifier la chaîne d'origine, vous pouvez utiliser la méthode `replace` sur une variable mutable de type `StringBuilder`.
-
-##Plongée Profonde
-
-Maintenant, allons un peu plus en profondeur sur la façon dont cela fonctionne réellement. La méthode `replace` prend deux paramètres : le premier est le motif Regex que nous voulons rechercher et remplacer, et le deuxième est la valeur de remplacement. Dans notre exemple, nous utilisons une chaîne vide comme valeur de remplacement, ce qui signifie que tout ce qui correspond au motif sera remplacé par une chaîne vide.
-
-Il est également possible d'utiliser des groupes de capture pour personnaliser la façon dont la chaîne est remplacée. Par exemple, si nous voulons remplacer tous les noms dans une chaîne par la chaîne `"John Doe"`, nous pouvons utiliser le groupe de capture `$0` qui correspond à la partie de la chaîne qui a été trouvée par le motif.
+1. Utiliser la méthode `replace()` sur la chaîne et passer le motif à supprimer et une chaîne vide en tant que paramètres. En voici un exemple :
 
 ```Kotlin
-val string = "Bonjour, mon nom est Jean."
-val pattern = """([a-zA-Z]+) ([a-zA-Z]+) ([a-zA-Z]+)"""
-val result = string.replace(Regex(pattern), "$0 Doe")
-print(result)
+val originalString = "Bonjour le monde !"
+val modifiedString = originalString.replace("le monde", "")
+println(modifiedString)
 ```
 
-**Output:** Bonjour, mon nom est John Doe.
+Résultat :
 
-Le motif que nous utilisons ici correspond à trois groupes de lettres formant un nom complet. En utilisant `$0` comme valeur de remplacement, nous remplaçons tout le nom par `John Doe`. Nous pouvons également utiliser d'autres groupes de capture dans notre valeur de remplacement, tels que `$1`, `$2`, etc., pour faire référence à des parties spécifiques du motif.
+```Kotlin
+Bonjour  !
+```
 
-#Voir Aussi
+2. Utiliser la méthode `replace(regex, "")` en passant un motif regex (expression régulière) en tant que premier paramètre et également une chaîne vide en tant que deuxième paramètre. Voici un exemple :
 
-- [Référence de la classe Regex dans la documentation de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/) 
-- [Tutoriel sur l'utilisation des Regex en Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm)
+```Kotlin
+val originalString = "Codez avec Kotlin !"
+val modifiedString = originalString.replace(Regex("[ae]"), "")
+println(modifiedString)
+```
+
+Résultat :
+
+```Kotlin
+Codz vc Ktlin !
+```
+
+## Plongée en profondeur
+
+Maintenant que vous savez comment supprimer des caractères correspondant à un motif en Kotlin, plongeons plus en détail dans la méthode `replace()` et la classe `Regex`. La méthode `replace()` renvoie une nouvelle chaîne avec les caractères remplacés selon le motif spécifié. La classe `Regex` est utilisée pour représenter une expression régulière et est souvent utilisée pour effectuer des opérations de correspondance et de remplacement complexes sur des chaînes.
+
+## Voir aussi
+
+- [Documentation Kotlin sur replace()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Documentation Kotlin sur Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)

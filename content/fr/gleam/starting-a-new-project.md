@@ -1,50 +1,36 @@
 ---
-title:    "Gleam: Commencer un nouveau projet"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/starting-a-new-project.md"
+title:                "Gleam: Lancement d'un nouveau projet"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Si vous êtes un passionné de programmation et que vous cherchez un nouveau langage à apprendre, alors Gleam pourrait être la réponse. Avec sa syntaxe minimaliste et son support pour la programmation fonctionnelle et orientée objet, Gleam offre une expérience de développement moderne et robuste. De plus, sa compatibilité avec Erlang et sa gestion efficace de la concurrence en font un langage très prometteur pour les projets de toutes tailles.
+Avant de commencer un nouveau projet, il est important de comprendre pourquoi vous le faites. Peut-être avez-vous une idée que vous voulez voir prendre vie, ou peut-être voulez-vous simplement apprendre un nouveau langage de programmation. Quelle que soit la raison, sachez que Gleam est un excellent choix pour votre prochain projet.
 
-## Comment faire
+## Comment faire 
 
-Pour commencer un nouveau projet en Gleam, il suffit de suivre ces quelques étapes :
+Pour commencer, assurez-vous d'avoir Gleam installé sur votre ordinateur. Ensuite, vous pouvez créer un nouveau projet en utilisant la commande `gleam new`. Cela générera une structure de dossier de base pour votre projet.
+
+Ensuite, vous pouvez commencer à écrire votre code en utilisant les blocs `Gleam ...` pour créer des fonctions, des types de données et des modules. Voici un exemple de fonction simple qui ajoute deux nombres ensemble:
 
 ```Gleam
-// Importer les bibliothèques nécessaires
-use orkestra/http
-use gleam/json
-
-// Définir une fonction qui effectue une requête HTTP
-pub fn getInfo(url: String) String {
-  // Faire la requête et stocker le résultat dans une variable
-  let response = http.get(url)
-
-  // Extraire les données JSON de la réponse
-  let json = response.body()
-    |> json.from_string
-
-  // Récupérer une clé spécifique du JSON
-  let info = json["info"]
-
-  info
+fn add(x, y) {
+  x + y
 }
 ```
 
-Ce code montre comment importer les bibliothèques nécessaires, effectuer une requête HTTP et extraire des données JSON de la réponse. Bien entendu, il est possible de créer des structures de données plus complexes et de les manipuler selon les besoins de votre projet.
+Une fois que vous avez écrit votre code, vous pouvez le compiler en utilisant la commande `gleam build`. Cela créera un exécutable que vous pourrez exécuter sur votre machine.
 
-## Plongée en profondeur
+## Plongée en profondeur 
 
-L'une des principales caractéristiques de Gleam est sa compilation en bytecode, qui lui permet d'être exécuté sur la machine virtuelle Erlang (BEAM). Cela signifie que les projets Gleam bénéficient de la fiabilité et de la concurrence fournies par Erlang, tout en utilisant une syntaxe plus moderne et plus accessible.
+Pour ceux qui veulent en savoir plus sur la création d'un nouveau projet Gleam, il est important de comprendre comment fonctionnent les modules et l'importation de fichiers. Vous pouvez également en apprendre davantage sur les types de données et comment les utiliser dans votre code. 
 
-De plus, Gleam encourage le développement d'applications modulaires grâce à son système de modules et de types forts. Ainsi, il est plus facile de gérer la complexité de vos projets et de les faire évoluer au fil du temps.
+## Voir aussi 
 
-## Voir aussi
-
-- [Documentation officielle de Gleam](https://gleam.run/)
-- [Exemples de projets Gleam](https://github.com/gleam-lang)
-- [Communauté Gleam sur Discord](https://discord.gg/jDWWSDC)
+- Guide de démarrage rapide pour Gleam : https://gleam.run/getting-started/
+- Documentation officielle de Gleam : https://gleam.run/docs/
+- Communauté Gleam sur Discord : https://discordapp.com/invite/vecg8Wj

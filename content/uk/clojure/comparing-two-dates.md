@@ -1,43 +1,51 @@
 ---
-title:    "Clojure: Порівняння двох дат"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/comparing-two-dates.md"
+title:                "Clojure: Porivnyannya dvoh dat"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Найперше, перед тим як глибше заглиблюватися у порівняння двох дат, важливо зрозуміти, чому це може бути корисно. Один з найбільш поширених випадків - це порівняння двох дат, щоб визначити, яка з них була пізніше або раніше. Це особливо корисно при роботі з даними, де потрібно відстежувати часові проміжки.
+Ця стаття призначена для висвітлення порівняння двох дат в Clojure та як це може бути корисним в програмуванні.
 
 ## Як це зробити
 
-Для порівняння двох дат у Clojure ми використовуємо функцію `compare`, яка порівнює два об'єкти дати і повертає `-1`, якщо перша дата є ранішою, `1`, якщо друга дата є ранішою, або `0`, якщо дати рівні. Приклад коду наведено нижче:
+Порівняння двох дат в Clojure дуже просте за допомогою вбудованих функцій. Спочатку ми визначимо дві змінні для дат, які потрібно порівняти:
 
 ```Clojure
-(def d1 (java.util.Date. 2021 6 1))
-(def d2 (java.util.Date. 2021 6 15))
-
-(println (compare d1 d2)) ; виведе -1
+(def date1 (java.util.Date. 2021 6 1))
+(def date2 (java.util.Date. 2021 7 1))
 ```
 
-У цьому прикладі ми порівнюємо дві дати: перша - 1 червня 2021 року, а друга - 15 червня 2021 року. Використовуючи функцію `compare`, ми бачимо, що перша дата є ранішою за другу.
-
-## Глибше заглиблюємось
-
-У Clojure дати представлені об'єктами класу `java.util.Date`, але також є більш універсальний тип дати - `java.time.LocalDate`. Цей тип має багато корисних методів для порівняння дат, як, наприклад, `isBefore`, `isEqual`, `isAfter`. Приклад використання:
+Тепер ми можемо використовувати функцію `(.before date1 date2)`, щоб перевірити, чи `date1` передує `date2`. Вона поверне `true` у цьому випадку:
 
 ```Clojure
-(def d1 (java.time.LocalDate/of 2021 6 1))
-(def d2 (java.time.LocalDate/of 2021 6 15))
-
-(println (d1.isBefore d2)) ; виведе true
+(.before date1 date2) ;=> true
 ```
 
-У цьому прикладі ми використовуємо метод `isBefore`, який повертає `true`, якщо перша дата є ранішою за другу.
+Аналогічно, використовуючи функцію `(.after date1 date2)`, ми можемо перевірити, чи `date1` слідує за `date2`:
 
-## Дивись також
+```Clojure
+(.after date1 date2) ;=> false
+```
 
-- [Documentation on comparing dates in Clojure](https://clojuredocs.org/clojure.core/compare)
-- [Java documentation on Date class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
-- [Java documentation on LocalDate class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+Крім того, ми можемо порівняти дати за допомогою функцій `(.compareTo date1 date2)` або `(.compare date1 date2)`, які повертають відповідний цілочисельний результат:
+
+```Clojure
+(.compareTo date1 date2) ;=> -1
+(.compare date1 date2) ;=> -1
+```
+
+Цей значення означає, що `date1` передує `date2`. Якщо `date1` було б пізніше `date2`, результат був би `1`. Для однакових дат результатом буде 0.
+
+## Profound Dive
+
+У Clojure дати представлені як об'єкти типу `java.util.Date`. Тому, перед порівнянням дат, ми можемо використати всі методи, які доступні для цього типу, наприклад, знаходження різниці між двома датами за допомогою функції `(.getTime date)`. Також є цікавим відомості, що дати можуть бути порівняні таким чином, тому що вони інтерпретуються як цілі числа.
+
+## Дивитися також
+
+- [Документація Clojure з вбудованими функціями дат](https://clojuredocs.org/clojure.core/date-time#clj)
+- [Туторіал з порівнянням дат в Clojure](https://www.baeldung.com/clojure-comparing-dates)

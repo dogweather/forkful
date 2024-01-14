@@ -1,46 +1,60 @@
 ---
-title:    "Swift: Å skrive en tekstfil"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-a-text-file.md"
+title:                "Swift: Skriver en tekstfil"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tekstfiler er en viktig del av å kode i Swift. Det lar deg lagre og manipulere data på en strukturert måte, og en tekstfil kan være en enkel måte å utveksle informasjon på. Les videre for å lære hvordan du enkelt kan skrive en tekstfil i Swift.
+Å skrive en tekstfil er en viktig del av å programmere, spesielt i Swift. Det lar deg lagre og lagre data, og brukes ofte til å lagre konfigurasjonsinnstillinger og annen informasjon. Uten å kunne skrive en tekstfil, vil det være vanskelig å utvikle effektive og funksjonsrike programmer.
 
 ## Hvordan
 
-For å kunne skrive en tekstfil i Swift, må du først opprette en `URL`-variabel som peker til en eksisterende fil. Du kan deretter bruke `write(to:atomically:encoding)` -metoden for å skrive tekst til filen. Her er et eksempel på hvordan du kan gjøre det:
+For å skrive en tekstfil i Swift, kan du følge disse trinnene:
+
+1. Først må du opprette en `URL` for plasseringen der du vil lagre tekstfilen din. For eksempel, hvis du vil lagre den i dokumentmappen, kan du bruke `FileManager` -klassen for å få tilgang til denne mappen og deretter bruke `appendingPathComponent` -metoden for å legge til navnet på tekstfilen.
 
 ```Swift
-// Opprett en URL som peker til filen du vil skrive til
-let url = URL(fileURLWithPath: "<full path to file>")
-
-do {
-    // Her skrives teksten "Hei, verden!" til filen
-    try "Hei, verden!".write(to: url, atomically: true, encoding: .utf8)
-} catch {
-    // Hvis noe feiler, vil en feilmelding bli skrevet ut
-    print("Feil ved skriving til fil: \(error)")
+let fileManager = FileManager.default
+guard let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+return
 }
-
-print("Tekstfilen ble skrevet suksessfullt.")
+let fileURL = documentsDirectory.appendingPathComponent("minTekstfil.txt")
 ```
 
-Etter å ha kjørt denne koden, bør du kunne åpne filen og se teksten "Hei, verden!" skrevet inn i den. Det kan også være nyttig å vite at du kan bruke `FileManager`-klassen til å opprette en ny fil dersom filen ikke eksisterer fra før.
+2. Deretter må du lage selve teksten du vil lagre i tekstfilen. Dette kan være en tekststreng eller et dataobjekt.
 
-## Deep Dive
+```Swift
+let tekst = "Dette er en tekstfil som er skrevet i Swift"
+```
 
-Hvis du ønsker å lære mer om skriving av tekstfiler i Swift, er det flere ting du kan utforske. For eksempel kan du se på forskjellige typer `Data`-strukturer og hvordan man kan konvertere disse til tekst som kan skrives til fil. Du kan også lære mer om `FileManager`-klassen og hvordan den kan brukes til å håndtere filer på enheten din.
+3. For å skrive teksten til filen, kan du bruke `write(to:atomically:encoding:)` -metoden på tekstobjektet ditt, og angi `atomically` -parameteren til `true`, noe som sikrer at teksten først lagres i en midlertidig fil og deretter erstatter den opprinnelige filen. Dette er en sikker måte å sikre at teksten blir lagret riktig.
 
-Det er også viktig å være klar over at teksten som skrives til en fil vil bli lagret som `UTF-8`-koding som standard. Dette kan endres ved å bruke en annen `encoding`-parameter i `write()`-metoden.
+```Swift
+do {
+try tekst.write(to: fileURL, atomically: true, encoding: .utf8)
+} catch {
+print("Kunne ikke skrive til filen")
+}
+```
+
+4. Hvis alt går bra, vil teksten din bli lagret i tekstfilen på plasseringen du angav.
+
+## Dypdykk
+
+Mens det å skrive en tekstfil kan virke enkelt, er det faktisk en ganske kompleks prosess under panseret. Når du bruker metodene vi har nevnt ovenfor, vil Swift konvertere teksten din til en binærfil som kan leses og lagres av maskinen. Dette gjøres ved å bruke konverteringsmekanismer som koding og dekoding, noe som gjør det mulig å lagre teksten på en optimal måte.
+
+For de som ønsker å lære mer om disse konverteringsmekanismene, anbefales det å lese dokumentasjonen til Swifts `Codable` -protokoll. Dette er et viktig konsept som brukes i skriving og lesing av tekstfiler, og kan være nyttig å bli kjent med.
 
 ## Se også
 
-For mer informasjon om skriving av tekstfiler i Swift, sjekk ut følgende ressurser:
+For mer informasjon om skriving av tekstfiler i Swift, kan disse ressursene være nyttige:
 
-- [Apple sin offisielle dokumentasjon om `Data`-strukturer](https://developer.apple.com/documentation/foundation/data)
-- [En fin tutorial om å lese og skrive tekstfiler i Swift](https://www.hackingwithswift.com/read/8/3/introduction)
-- [En guide til FileManager-klassen i Swift](https://www.swiftbysundell.com/basics/file-manager)
+- [Apple-sidene om å skrive filer](https://developer.apple.com/documentation/foundation/file_management/writing_data_to_a_file)
+- [Swift-dokumentasjonen om `Codable` -protokollen](https://docs.swift.org/swift-book/LanguageGuide/Codable.html)
+- [Tutorial om skriving av tekstfiler i Swift](https://cocoacasts.com/working-with-files-in-swift-part-2-reading-and-writing-text/)
+
+Lykke til med skriving av tekstfiler i Swift!

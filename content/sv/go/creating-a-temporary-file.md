@@ -1,63 +1,49 @@
 ---
-title:    "Go: Skapa en tillfällig fil"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/creating-a-temporary-file.md"
+title:                "Go: Skapa en tillfällig fil"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför skapa temporära filer i Go?
+## Varför
 
-En temporär fil är en fil som endast behövs för en kort stund och sedan kan tas bort. Skapandet av en temporär fil kan vara användbart når man behöver skriva data som endast behövs tillfälligt, till exempel för mellanlagring eller för att hantera temporära tillfälliga filer för ett program. I denna bloggpost kommer jag att visa dig hur du skapar en temporär fil i Go och möjliga användningsområden.
+Att skapa tillfälliga filer är en vanlig process inom programmering. De används för att temporärt lagra data eller för att tillfälligt hantera filer som annars skulle ta upp mycket utrymme. Att kunna skapa en tillfällig fil kan vara en viktig del av många program, och det är därför värt att lära sig hur man gör det i Go.
 
-## Så här gör du
+## Hur man gör det
 
-För att skapa en temporär fil i Go, behöver du använda "ioutil" paketet tillsammans med funktionen "TempFile". "TempFile" tar två parametrar, sökvägen där filen ska skapas samt ett prefix för filnamnet.
+För att skapa en temporär fil i Go använder man funktionen "TempFile" från paketet "ioutil". Den här funktionen tar två argument - första är sökvägen där filen ska skapas och andra är prefixet för filnamnet. Om sökvägen lämnas som tom kommer filen att skapas i standardmapp för temporära filer. Prefixet är bara en sträng som används som en del av filnamnet, till exempel "tempfile". Det är också möjligt att lämna både sökvägen och prefixet som tomma och i det fallet kommer filen att skapas i standardmappen med ett slumpmässigt namn som prefix.
 
+För att använda "TempFile" behöver man importera paketet "ioutil":
 ```Go
-package main
-
-import (
-    "fmt"
-    "io/ioutil"
-)
-
-func main() {
-    // Skapa temporär fil i samma mapp som programmet och prefixet "temp"
-    tempFile, err := ioutil.TempFile(".", "temp")
-
-    if err != nil {
-        fmt.Println("Kunde inte skapa temporär fil: ", err)
-        return
-    }
-
-    // Skriv data till filen
-    data := []byte("Detta är en temporär fil skapad av Go")
-    _, err = tempFile.Write(data)
-
-    if err != nil {
-        fmt.Println("Kunde inte skriva till filen: ", err)
-        return
-    }
-
-    // Stäng filen när vi är klara
-    defer tempFile.Close()
-    
-    // Skriv ut filnamnet för den skapade temporära filen
-    fmt.Println("Skapade en temporär fil med namn:", tempFile.Name())
-}
+import "io/ioutil"
 ```
 
-När du kör detta program så kommer en temporär fil med prefixet "temp" att skapas i samma mapp som ditt program. Den skapade filen kommer att innehålla texten "Detta är en temporär fil skapad av Go". Notera att du även stänger filen när du är klar med hjälp av "defer" funktionen.
+För att skapa en temporär fil i standardmappen används följande kod:
+```Go
+tempFile, err := ioutil.TempFile("", "tempfile")
+if err != nil {
+    // hantera fel
+}
+defer os.Remove(tempFile.Name()) // ta bort filen när den inte längre behövs
+```
+
+Kör man koden ovan kommer en ny fil att skapas i standardmappen för temporära filer, med namnet "tempfile" och ett unikt slumpmässigt nummer som suffix. Om man vill att filen ska skapas i en specifik mapp kan man ange den mappen som första argument till "TempFile", till exempel "C:/temp". Det är också möjligt att lämna sökvägen tom och endast ange prefixet för att få en unik fil i standardmappen.
 
 ## Deep Dive
 
-Det finns flera användbara funktioner som du kan använda tillsammans med "TempFile" i Go. Till exempel kan du ange ett postfix för filnamnet eller ange den mapp där filen ska skapas. Du kan även använda funktionen "TempDir" för att skapa en temporär mapp istället för en fil.
+Funktionen "TempFile" skapar inte bara en temporär fil, utan den öppnar också filen för läs och skrivning. Det är också möjligt att ange ett tredje argument till funktionen för att ställa in filens behörighet. Om man till exempel vill att filen endast ska gå att läsa av den process som skapade den kan man använda följande kod:
+```Go
+tempFile, err := ioutil.TempFile("", "tempfile", 0600) // behörighet sätts till 600
+```
 
-Det är också viktigt att notera att "TempFile" funktionen returnerar en "File" typ, vilket du kan använda för att utföra olika operationer på den skapade filen som t.ex. att läsa eller skriva till den.
+Det finns också en motsvarande funktion "TempDir" som används för att skapa tillfälliga mappar istället för filer. Den fungerar på samma sätt som "TempFile" och har även en tredje parameter för att ställa in behörighet.
 
-# Se även
+## Se även
 
-- [ioutil paketet i Go](https://golang.org/pkg/io/ioutil/)
-- [Go dokumentation för TempFile funktionen](https://golang.org/pkg/io/ioutil/#TempFile)
-- [En guide för hur man skapar temporära filer i Go](https://www.calhoun.io/creating-a-temporary-file-in-go/)
+Här är några användbara länkar för mer information om att skapa temporära filer i Go:
+
+- [Go's officiella dokumentation för "ioutil" paketet](https://golang.org/pkg/io/ioutil/)
+- [Mer om att skapa temporära filer i Go på Stack Overflow](https://stackoverflow.com/questions/39824125/creating-temporary-file-in-golang)
+- [En översikt av "ioutil" paketet på Go by Examples](https://gobyexample.com/writing-files)

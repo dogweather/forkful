@@ -1,39 +1,32 @@
 ---
-title:    "Elm: Virheenjäljitys tulostus"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/printing-debug-output.md"
+title:                "Elm: Tulostetaan virheenjäljitystietoja"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet ohjelmoijat joutuvat joskus käsittelemään ohjelmoinnin vikasietoa koodia. Tulostuslausekkeet voivat auttaa ratkaisemaan näitä ongelmia ja lisätä ohjelman luettavuutta.
+On monia syitä, miksi voit haluta käyttää debuggausta ohjelmoinnissa. Ehkä haluat tarkistaa sovelluksesi sisäisiä tiloja tai löytää vaikeasti havaittavia virheitä. Oli syy mikä tahansa, debuggaus voi olla hyödyllistä ja tehokasta työkalua ohjelmoijille.
 
 ## Miten
 
-Elm-kielessä käytetään "Debug.log" -funktiota ​​tulostamaan debug-tietoja. Tämä funktio ottaa argumentikseen merkkijonon ja arvon, joka tulostetaan näytölle.
+Elm tarjoaa sisäänrakennetun debuggausominaisuuden, joka helpottaa debuggausta ja mahdollistaa nopeamman ohjelmoinnin. Voit tulostaa debug viestejä käyttäen `Debug.log` funktiota. Se ottaa kaksi argumenttia: merkkijonon ja arvon, jonka haluat tulostaa.
 
 ```Elm
-Debug.log "viesti" 5
+Debug.log "Viesti" muuttuja
 ```
 
-Tämä tulostaa "viesti : 5" konsolille tai selaimen kehitystyökaluihin.
+Tämä tulostaa `muuttuja` arvon termiiniprojektiisi. Voit myös käyttää `Debug.log` funktiota tuplakesyhityksessä tarkan debuggauksen helpottamiseksi.
 
-## Syvällisemmin
+## Syvällinen sukellus
 
-"Debug.log" -funktio auttaa ohjelmoijaa näkemään, mitä koodi tekee tiettynä hetkenä suorituksen aikana. Näin ollen se voi auttaa tunnistamaan ongelmia ja virheitä ohjelmassa.
-
-On myös mahdollista tulostaa monimutkaisempia arvoja, kuten lista tai tietue, "Debug.log" -funktion avulla.
-
-```Elm
-Debug.log "lista" [1, 2, 3]
-```
-
-Tämä tulostaa "lista : [1, 2, 3]" konsolille. Tämä voi auttaa ohjelmoijaa ymmärtämään paremmin ohjelman datan rakennetta.
+`Debug.log` funktio ei ole ainoastaan kätevä tapa tulostaa arvoja, vaan sillä on myös hyödyllisiä ominaisuuksia. Voit esimerkiksi käyttää sitä tarkistaaksesi, onko tietyn ehtolausekkeen osa suoritettu. Jos ehtolausekkeen ei pitäisi olla osa suoritusta, voit tulostaa virheilmoituksen käyttämällä `Debug.crash` funktiota. Tämä auttaa sinua löytämään virheitä ja korjaamaan ne nopeasti.
 
 ## Katso myös
 
-- [Elm-kurssi](https://guide.elm-lang.org/)
-- [Elm-yhteisö](https://www.elm-community.org/)
-- [Debug.log dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
+- [Elm-kielen virallinen sivusto](https://elm-lang.org/)
+- [Elm-kielen dokumentaatio](https://elm-lang.org/docs)
+- [Elm-kielen Slack-yhteisö](https://elmlang.slack.com/archives/C01AFPS347Y)

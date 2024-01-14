@@ -1,36 +1,58 @@
 ---
-title:    "Python: 「文字列を小文字に変換する」"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/converting-a-string-to-lower-case.md"
+title:                "Python: 「文字列を小文字に変換する」"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
 
-文字列を小文字に変換する必要性は、データの整理や検索のために必要です。
+文字列を小文字に変換する理由は、大文字と小文字の区別なく文字列を処理する必要がある場合や、比較する際に一貫性を保つためです。
 
-## 方法
+## How To
+
+文字列を小文字に変換する方法を紹介します。まずは、`lower()`メソッドを使用します。
 
 ```Python
-# 文字列の定義
+# 文字列の宣言
 string = "HELLO WORLD"
 
-# 小文字に変換
-lowercase_string = string.lower()
+# lower()メソッドを使用して小文字に変換
+new_string = string.lower()
 
-# 結果の出力
-print(lowercase_string)
+# 変換後の文字列を出力
+print(new_string)
 
-# 出力結果: hello world
+# Output: hello world
 ```
 
-## 深堀り
+また、`str.casefold()`メソッドも使用することができます。これは、より厳密な小文字変換を行います。例えば、ドイツ語のような文字列では、`lower()`メソッドではうまく変換できない場合があります。そのような場合には、`casefold()`メソッドを使用しましょう。
 
-文字列を小文字に変換する方法は、Pythonの標準ライブラリである`lower()`メソッドを使用することで可能です。このメソッドは文字列の先頭から1文字ずつ取り出し、英字であれば小文字に変換し、それ以外の文字はそのまま返します。
+```Python
+# ドイツ語の文字列の例
+string = "ßIG"
 
-また、大文字と小文字を区別せずに比較したい場合は、`lower()`メソッドを使用して文字列をすべて小文字に変換した上で比較することができます。
+# casefold()メソッドを使用して小文字に変換
+new_string = string.casefold()
 
-## See Also 
-[Pythonの文字列に関する公式ドキュメント (英語)](https://docs.python.org/ja/3/library/stdtypes.html#str.lower)  
-[文字列の比較についての解説 (日本語)](https://www.python.jp/train/string/string_index.html#id9)
+# 変換後の文字列を出力
+print(new_string)
+
+# Output: ßig
+```
+
+## Deep Dive
+
+文字列を小文字に変換する際には、`lower()`メソッドと`casefold()`メソッドの違いを理解することが重要です。`lower()`メソッドは、ASCII文字のみを変換しますが、`casefold()`メソッドはUnicode文字をすべて変換するため、より柔軟な変換が可能です。
+
+また、`lower()`メソッドや`casefold()`メソッドは、元の文字列を変更するのではなく、新しい文字列を返します。そのため、変換後の文字列を変数に代入する必要があります。
+
+## See Also
+
+他にも有用なPythonの文字列操作については、以下のリンクを参考にしてください。
+
+- [Python String Methods](https://www.w3schools.com/python/python_strings_methods.asp)
+- [Practical Tips for Using Python String Methods](https://towardsdatascience.com/practical-tips-for-using-python-string-methods-7db6986b8b0d)
+- [Python 3's str Methods: Making the Most of an Essential Type](https://realpython.com/python3-string-methods/)

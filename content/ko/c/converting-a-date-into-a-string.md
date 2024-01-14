@@ -1,40 +1,57 @@
 ---
-title:    "C: 날짜를 문자열로 변환하기"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/converting-a-date-into-a-string.md"
+title:                "C: 날짜를 문자열로 변환하기"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-누군가는 날짜를 문자열로 변환하는 것을 왜 하지w 면서 궁금할 수 있습니다. 이 글에서 우리는 이러한 변환의 중요성과 이를 어떻게 할 수 있는지를 살펴보겠습니다.
+## 왜
+날짜를 문자열로 변환하는 것이 왜 중요한지 궁금하셨나요? 프로그래밍에서 날짜를 문자열로 변환하는 이유는 많습니다. 예를 들어, 데이터베이스에서 날짜를 문자열로 쿼리하는 경우, 데이터베이스의 날짜 형식과 일치시켜야 합니다. 이를테면, 우리는 오늘의 날짜를 yyyy-mm-dd 형식에 맞춰서 문자열로 변환해야 합니다.
 
-## 어떻게 할까요
+## 어떻게
+날짜를 문자열로 변환하는 코드는 간단하지만, 언어마다 조금씩 다릅니다. 여기서는 C 프로그래밍 언어를 사용하겠습니다. 아래의 코드 블록을 사용하여 날짜를 문자열로 변환하는 예제를 살펴보세요!
+
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
-int main(void){
-    // 현재 시간을 구하는 함수인 time() 함수를 사용합니다.
-    time_t t = time(NULL);
-    // 관습적인 형식인 RFC 822 형식으로 시간을 변환합니다.
-    char buffer[26];
-    strftime(buffer, 26, "%a, %d %b %Y %H:%M:%S %z", localtime(&t));
+int main()
+{
+    // 오늘의 날짜를 가져옵니다.
+    time_t now = time(NULL);
+
+    // tm 구조체에 날짜를 저장합니다.
+    struct tm *t = localtime(&now);
+
+    // 날짜를 문자열로 변환합니다.
+    char date[11];
+    strftime(date, sizeof(date), "%Y-%m-%d", t);
+
     // 결과를 출력합니다.
-    printf("오늘은 %s 입니다.\n", buffer);
+    printf("오늘의 날짜는: %s", date);
+
     return 0;
 }
 ```
-```bash
-> 오늘은 Thu, 02 Sep 2021 17:49:35 +0900 입니다.
+
+위의 코드를 실행하면 다음과 같은 결과가 나타납니다:
+
+```
+오늘의 날짜는: 2021-10-12
 ```
 
-프로그래밍 언어 C에서 날짜와 시간은 시스템에서 제공하는 시간 함수를 사용하여 관리됩니다. 그 중에서도 `time()` 함수는 주로 현재 시간을 구하는데 사용됩니다. 이 함수를 이용해서 얻어낸 시간은 숫자 형태이기 때문에 보통 사람이 읽기 쉬운 형태인 문자열로 변환하게 됩니다. 이때, `strftime()` 함수를 사용하여 원하는 형식으로 변환할 수 있습니다. 이 함수는 다양한 형식의 문자열을 제공하며, 직접 형식을 지정해줄 수도 있습니다. 위 코드에서는 RFC 822 형식을 사용한 예시를 보여줍니다.
+친절한 독자분들을 위해 좀 더 자세한 설명을 드리자면, 위의 코드에서 우리는 time_t, struct tm, 그리고 strftime 함수를 사용했습니다. time_t는 초 단위로 오늘의 날짜와 시간을 나타내는 개념입니다. localtime 함수는 time_t 값을 주어진 지역의 시간대에 맞는 struct tm 값으로 변환해줍니다. 마지막으로 strftime 함수는 struct tm을 사용하여 원하는 형식으로 날짜를 문자열로 변환해줍니다.
 
-## 깊이 파보기
-프로그래밍에서 날짜와 시간은 아주 중요한 요소 중 하나입니다. 이를 변환하는 방법을 알아보는 것만으로도 많은 것을 배울 수 있습니다. 날짜와 시간은 시스템에서 제공하는 시간 함수를 이용하여 얻어낼 수 있으며, 문자열로 변환하고 싶다면 `strftime()` 함수를 사용하면 됩니다. 이 함수를 더 자세히 알기 위해서는 날짜와 시간에 관한 더 깊은 지식이 필요합니다. 이를 확장하고 싶다면 다른 프로그래밍 언어에서도 제공하는 시간 함수를 살펴보며 비교해보는 것도 좋을 것 같습니다.
+## 깊이 파고들기
+날짜를 문자열로 변환하는 것은 간단하지만, 이를 위해 사용하는 다양한 함수와 개념들이 있습니다. 이를 더 잘 이해하기 위해서는 날짜와 시간에 대한 더 많은 공부가 필요합니다. 또한 각 언어마다 날짜를 문자열로 변환하는 방식이 조금씩 다른데, 이를 사용할 때에는 반드시 그 언어의 문서를 참고하는 것이 좋습니다.
 
-# 참고
-## 링크들
-1. [C언어 날짜와 시간 함수 - 나무위키](https://namu.wiki/w/C%EC%96%B8%EC%96%B4%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%8B%9C%EA%B0%84%20%ED%95%A8%EC%88%98)
-2. [C 날짜와 시간 처리 - GeeksforGeeks](https://www.geeksforgeeks.org/c-date-time-processing/)
+## 참고 자료
+- [C 언어를 한 눈에 정리한 사이트](https://dojang.io/course/view.php?id=2)
+- [C 언어에서 time_t와 struct tm을 사용하는 예제](https://modoocode.com/224)
+- [strftime 함수에 대한 자세한 설명](https://www.cplusplus.com/reference/ctime/strftime/)
+- [데이터베이스에서 날짜를 문자열로 쿼리하는 예제](https://www.bennadel.com/blog/190-querying-dates-in-mysql-using-date_format-or-str_to_date.htm)
+
+## 더 읽어보기

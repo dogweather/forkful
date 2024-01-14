@@ -1,42 +1,57 @@
 ---
-title:    "Fish Shell: Sprawdzanie czy istnieje katalog"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/checking-if-a-directory-exists.md"
+title:                "Fish Shell: Sprawdzanie czy istnieje katalog"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto sprawdzić, czy istnieje katalog?
+## Dlaczego
 
-Sprawdzanie istnienia katalogu jest bardzo przydatną umiejętnością w programowaniu, szczególnie w języku Fish Shell. Pozwala to na sprawadzenie, czy dany katalog istnieje i podejmowanie odpowiednich działań w zależności od wyniku. Jest to szczególnie przydatne w skryptach, które wymagają dostępu do określonego katalogu.
+Cześć! Jeśli jesteś programistą pracującym z językiem Fish Shell, możliwe, że w pewnym momencie będziesz potrzebować sprawdzić, czy dany katalog istnieje. Może to być wymagane do przechowywania plików lub do wykonania pewnych działań tylko wtedy, gdy dany katalog istnieje. W tym wpisie dowiesz się, jak to zrobić.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby sprawdzić, czy dany katalog istnieje w Fish Shell, należy użyć polecenia `test -d` w połączeniu z żądanym katalogiem. Na przykład, aby sprawdzić, czy katalog "documents" istnieje w bieżącym katalogu, użyjemy następującego kodu:
+Nie ma potrzeby używania zewnętrznych narzędzi lub programów do sprawdzenia istnienia katalogu w Fish Shell. Możemy wykorzystać wbudowane funkcje i zmienne, aby uzyskać tę informację. Oto kilka przykładów kodu:
 
-```Fish Shell
-if test -d documents 
-    echo "Katalog documents istnieje"
+```
+set folder "folder_name"
+
+if test -d $folder
+    echo "Katalog istnieje!"
+else
+    echo "Katalog nie istnieje"
 end
 ```
 
-W przypadku, gdy katalog nie istnieje, polecenie `echo` nie będzie wykonane.
+Powyższy kod przyjmuje nazwę katalogu i wykorzystuje funkcję `test -d` do sprawdzenia, czy jest on katalogiem. Jeśli tak, zostanie wyświetlony komunikat "Katalog istnieje!", w przeciwnym wypadku wyświetlimy informację o nieistniejącym katalogu.
 
-## Pogłębione zagadnienie
+Możesz również użyć zmiennej `status`, która zawiera informacje o ostatniej operacji, aby uzyskać bardziej szczegółowe informacje o wyniku sprawdzenia istnienia katalogu. Przykładowy kod wykorzystujący tę zmienną wyglądałby tak:
 
-Podstawowe sprawdzenie istnienia katalogu jest bardzo przydatne, ale w niektórych przypadkach może być również potrzebna bardziej szczegółowa informacja o katalogu. W takim przypadku, użyjemy polecenia `stat`, które pozwala na wyświetlenie różnych informacji o pliku lub katalogu, w tym również daty modyfikacji czy rozmiaru.
+```
+set folder "folder_name"
 
-Przykładowo, poniższy kod wykorzystuje polecenie `stat` do wyświetlenia informacji na temat katalogu "documents":
-
-```Fish Shell
-if test -d documents
-    stat documents
+test -d $folder
+if test $status -eq 0
+    echo "Katalog istnieje!"
+elif test $status -eq 1
+    echo "Katalog nie istnieje!"
+else
+    echo "Wystąpił błąd podczas sprawdzania istnienia katalogu."
 end
 ```
 
-Wyjście zawiera wiele informacji i może być wykorzystane do bardziej precyzyjnej analizy katalogu.
+## Głębszy zanurzenie
 
-# Zobacz również
+Jeśli jesteś ciekawy, jak dokładnie działa funkcja `test -d`, jest to sprawdzane przez sprawdzenie, czy podana ścieżka jest katalogiem i czy użytkownik ma do niego dostęp do odczytu. Jeśli tak, funkcja zwróci wartość 0, w przeciwnym wypadku zwróci wartość 1. Jest to również powód, dla którego możemy użyć zmiennej `status`, aby uzyskać więcej informacji o wyniku sprawdzenia.
 
-- Dokumentacja Fish Shell dla polecenia `test`: https://fishshell.com/docs/current/cmds/test.html
-- Przewodnik po poleceniu `stat` w Fish Shell: https://fishshell.com/docs/current/cmds/stat.html
+## Zobacz również
+
+Jeśli jesteś zainteresowany innymi funkcjami i możliwościami, jakie oferuje Fish Shell, zapraszamy do zapoznania się z poniższymi linkami:
+
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Poradnik po Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Obsługa błędów w Fish Shell](https://fishshell.com/docs/current/tutorial.html#error-handling)
+
+Dzięki za przeczytanie naszego wpisu. Mamy nadzieję, że ten krótki poradnik był pomocny i pomoże Ci w pracy z Fish Shell. Powodzenia!

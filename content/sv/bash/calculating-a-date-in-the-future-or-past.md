@@ -1,46 +1,48 @@
 ---
-title:    "Bash: Beräkning av ett datum i framtiden eller det förflutna"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/calculating-a-date-in-the-future-or-past.md"
+title:                "Bash: Beräkning av ett datum i framtiden eller förflutna"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+### Varför
+Att kunna räkna ut ett datum i framtiden eller förfluten tid kan vara användbart i många situationer. Det kan hjälpa dig att planera framtida händelser eller att spåra tillbaka händelser som redan har inträffat. Genom att lära dig hur man gör detta med hjälp av Bash programmering kan du enkelt utföra dessa beräkningar direkt från din terminal.
 
-Att kunna räkna ut ett datum i framtiden eller i förflutnan kan vara användbart i många olika situationer. Det kan hjälpa dig att planera evenemang, boka resor eller helt enkelt hålla koll på viktiga datum.
+### Hur man gör det
+För att räkna ut ett datum i framtiden eller förfluten tid, behöver du använda kommandot ```date``` i Bash. Detta kommando visar det aktuella datumet och tiden, men genom att lägga till vissa parametrar kan vi få det att beräkna ett framtida eller förflutet datum åt oss.
 
-##Så här gör du
-
-Att beräkna ett datum i framtiden eller förflutna kan enkelt göras med hjälp av Bash-programmering. Först behöver du ange ett datum i form av år, månad och dag. Sedan kan du använda ett enkelt Bash-kommando för att lägga till eller dra bort ett antal dagar från datumet.
-
-Här är ett exempel på hur du kan beräkna ett datum i framtiden:
+För att beräkna ett datum i framtiden kan vi använda parametern ```+``` följt av antalet dagar vi vill lägga till. Till exempel, om vi vill veta vilket datum det är om 7 dagar, kan vi använda följande kommando:
 
 ```Bash
-date -d "2021-12-01 + 7 days"
+date +7 days
 ```
 
-Detta kommando kommer att ge dig datumet för en vecka efter det angivna datumet, i det här fallet den 8:e december 2021. Om du vill beräkna ett datum i förflutna behöver du bara byta ut "plus" mot "minus" i kommandot.
-
-##Djupdykning
-
-För att förstå hur detta fungerar behöver vi veta att Bash använder sig av Unix-tiden, som är antalet sekunder som har gått sedan 1 januari 1970. När du lägger till eller drar bort dagar från ett datum, konverteras detta datum till Unix-tiden och sedan omvandlas tillbaka till datumformatet.
-
-För att ta reda på Unix-tiden för ett visst datum kan du använda följande kommando:
+Detta kommer att ge oss resultatet i formatet "YYYY-MM-DD". Om vi vill ha ett annat format, som t.ex. "DD/MM/YYYY", kan vi använda kommandot ```+``` igen följt av formatet vi vill ha, till exempel:
 
 ```Bash
-date -d "2021-12-01" +%s
+date +"%d/%m/%Y" +7 days
 ```
 
-Detta kommer att returnera antalet sekunder som har gått sedan 1970-01-01 00:00:00 UTC fram till detta datum. Sedan för att omvandla tillbaka till ett datum kan du använda följande kommando:
+På samma sätt kan vi beräkna ett datum i förfluten tid genom att använda parametern ```-``` istället för ```+```. Till exempel, om vi vill veta vilket datum det var för 2 veckor sedan, kan vi använda följande kommando:
 
 ```Bash
-date -d @${unix_time}
+date -2 weeks
 ```
 
-Här ska du ersätta ${unix_time} med det värde du fick från det förra kommandot.
+### Djupdykning
+Datumberäkningar kan bli mer komplicerade när det kommer till månader och år. I dessa fall måste vi ta hänsyn till antalet dagar i varje månad och eventuella skottdagar. Detta kan göras med hjälp av Bashs inbyggda funktioner för datumberäkningar, som ```date --date```.
 
-##Se även
+Detta kommando låter oss ange ett datum i ett visst format och sedan beräkna ett annat datum baserat på det. Till exempel, om vi vill räkna ut vilket datum det är om 1 månad och 3 dagar, kan vi använda följande kommando:
 
-- [Bash man-sidan för date](https://ss64.com/bash/date.html)
-- [Unix-tiden på Wikipedia](https://sv.wikipedia.org/wiki/Unix-tid)
+```Bash
+date --date="2021-05-15 + 1 month 3 days"
+```
+
+Detta kommer att ge oss resultatet "2021-06-18". Genom att använda Bashs inbyggda funktioner för datumberäkningar kan vi ta hänsyn till alla olika faktorer som kan påverka resultatet.
+
+### Se även
+- [Linux Bash Guide](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Programming Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Bash Date Man Page](https://man7.org/linux/man-pages/man1/date.1.html)

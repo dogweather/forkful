@@ -1,52 +1,43 @@
 ---
-title:    "Fish Shell: 新しいプロジェクトを始める"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell: 新しいプロジェクトを開始する"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ: 新しいプロジェクトを始めるのか
+## なぜ
 
-プログラミングにおいて、新しいプロジェクトを始めることは刺激的で楽しいものです。新しいアイデアを実現し、自分のスキルを向上させるために、新しいプロジェクトを始めることが重要です。
+新しいプロジェクトを始める理由は様々ですが、多くの場合は新しいアイデアを実現したいという思いや挑戦したいという意欲があります。また、プロジェクトを始めることで、新しいスキルや知識を習得することもできます。
 
-## 作り方
+## 手順
 
-Fish Shellを使って、新しいプロジェクトを始める方法を紹介します。まずは、ターミナルで以下のコマンドを実行します。
-
-```Fish Shell
-mkdir my-project
-cd my-project
-```
-
-これにより、"my-project"という名前のディレクトリが作成され、それに移動することができます。
-
-次に、プロジェクトに必要なファイルを作成します。例えば、"index.html"というファイルを作成するには以下のコマンドを実行します。
+プロジェクトを始めるには、まずはFish Shellをインストールする必要があります。次に、プロジェクトのディレクトリを作成し、その中にコーディングを開始するためのファイルを作成します。以下のコードを使用して、新しいプロジェクトのディレクトリを作成しましょう。
 
 ```Fish Shell
-touch index.html
+mkdir my_project
+cd my_project
 ```
 
-これでファイルが作成されます。さらに、"index.html"を編集するには、次のコマンドを実行します。
+次に、コーディングを開始するためのファイルを作成します。例えば、Pythonのプロジェクトを始める場合は、以下のコマンドを使用します。
 
 ```Fish Shell
-vim index.html
+touch main.py
 ```
 
-これにより、Vimエディタが起動し、ファイルを編集することができます。
+これでプロジェクトの準備が整いました。あとは、必要なコードを作成していきましょう。
 
-## ディープダイブ
+## 深堀り
 
-新しいプロジェクトを始めるためには、様々なツールや言語を学ぶ必要があります。例えば、Web開発をする場合にはHTMLやCSS、JavaScriptなどの知識が必要になります。また、バージョン管理システムのGitやパッケージ管理ツールのnpmなども重要なツールです。また、プロジェクトを始める前に、どのようなアーキテクチャーを使うかやプロジェクトの目的を明確にすることも重要です。
+新しいプロジェクトを始めるときには、気をつけるべきことがいくつかあります。まずは、プロジェクトの目的を明確にすることが重要です。何を作成するのか、どのような機能が必要なのかを把握し、それに合わせてコーディングを行うことが大切です。
 
-新しいプロジェクトを始める際には、初心者にとって多くの情報が必要になるかもしれませんが、継続的に学びながらプロジェクトを進めることが大切です。また、書籍やオンラインコースなどを利用することも効果的です。
+また、プロジェクトを始める前に、使用する言語やフレームワークのドキュメントやチュートリアルを確認することも重要です。これにより、必要な知識を身につけることができ、よりスムーズなプロジェクトの進行が可能になります。
 
-## 参考リンク
+さらに、プロジェクトを始める前にソフトウェアのバージョン管理を行うこともおすすめです。バージョン管理をすることで、プロジェクトの進捗を管理し、後から変更や修正を簡単に行うことができます。
 
-- [HTML入門](https://www.codecademy.com/learn/learn-html)
-- [CSS入門](https://www.codecademy.com/learn/learn-css)
-- [JavaScript入門](https://www.codecademy.com/learn/introduction-to-javascript)
-- [Gitの基本操作](https://backlog.com/ja/git-tutorial/)
-- [npmを使ったパッケージ管理](https://qiita.com/buchiya4th/items/0e7a95079c080b079039)
-- [プロジェクト管理のベストプラクティス](https://boxil.jp/mag/a3875/)
-- [オンライン学習プラットフォームUdemy](https://www.udemy.com/)
+## See Also
+
+- [Fish Shellの公式ウェブサイト](https://fishshell.com/)
+- [新しいプロジェクトを始める前に知っておきたいこと](https://www.dreamtown-tech.com/column/programming/new-project/)
+- [プログラミング初心者のための基礎知識](https://paiza.jp/works/cs/primer)

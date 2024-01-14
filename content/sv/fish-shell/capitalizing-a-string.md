@@ -1,39 +1,41 @@
 ---
-title:    "Fish Shell: Stora en sträng"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell: Formatera en sträng"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att använda sig av en "Fish Shell" för att omvandla en sträng till stora bokstäver kan vara otroligt användbart när man vill få en enhetlig presentation av text. Det kan också hjälpa till att förbättra läsbarheten och minska risken för felaktig stavning.
+Det kan vara viktigt att formatera din kod på ett snyggt och enhetligt sätt för att göra den mer lättläslig och lättförståelig för andra utvecklare. Att använda capitalisering av strängar är en del av denna formatering och kan bidra till en mer professionell kodbas.
 
-## Så här gör du
+## Hur man gör det
 
-För att omvandla en sträng till stora bokstäver i Fish Shell, använd kommandot `string toupper`. Detta kommando tar in en sträng som argument och returnerar samma sträng med alla bokstäver omvandlade till stora bokstäver.
+För att göra detta i Fish Shell, kan du använda funktionen `string capitalize` tillsammans med en variabel som innehåller din sträng. Exempelvis:
 
-```Fish Shell
-string toupper "hej!" # output: "HEJ!"
+```
+set my_string "hej världen!"
+echo (string capitalize $my_string)
 ```
 
-Om du vill spara resultatet av detta kommando i en variabel kan du använda dig av följande syntax:
+Detta kommer att ge följande utmatning:
 
-`set STORED_STRING (string toupper "hej!")`
+```
+Hej världen!
+```
 
-Nu kan du använda variabeln `STORED_STRING` för att använda den omvandlade strängen i ditt skript.
+Funktionen `string.capitalize` tar emot en parameter och returnerar en version av denna parameter med den första bokstaven kapitaliserad.
 
 ## Djupdykning
 
-Även om det kan verka som en enkel funktion, så finns det faktiskt en hel del som händer bakom kulisserna när du omvandlar en sträng till stora bokstäver i Fish Shell.
+För dem som önskar ytterligare förståelse kan det vara intressant att veta hur denna funktion arbetar bakom kulisserna. I grund och botten konverterar den strängen till ett teckenmatris, ändrar sedan den första bokstaven från lowercase till uppercase och sätter sedan ihop matrisen igen till en sträng.
 
-När du kör kommandot `string toupper`, letar Fish efter din aktuella "locale" (språkkonfiguration) och använder sig av den för att avgöra vilka tecken som ska omvandlas. Varje språk har sina egna regler för vilka tecken som ska ses som små eller stora bokstäver.
+Detta kan även göras med andra tecken istället för bokstäver. Om man till exempel använder `string capitalize '123hello'`, kommer utmatningen att bli `123Hello`.
 
-En annan intressant funktion är att du kan använda `string toupper` för att omvandla textfiler på din dator. Om du kör kommandot `string toupper < test.txt`, kommer innehållet i filen "test.txt" att skrivas ut med alla bokstäver som stora bokstäver.
+## Se även
 
-## Se också
-
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [En guide till Fish Shell för nybörjare](https://www.makeuseof.com/tag/use-fish-shell-macos-terminal/) 
-- [Fish Shell kommandon för effektivare programmering](https://opensource.com/article/20/1/fish-shell)
+- [`string capitalize` dokumentation](https://fishshell.com/docs/current/cmds/string.html#string-capitalize)
+- [En guide till Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Att automatisera uppgifter med Fish Shell](https://fishshell.com/docs/current/tutorial.

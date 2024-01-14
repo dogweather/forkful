@@ -1,36 +1,31 @@
 ---
-title:    "Fish Shell: Testien kirjoittaminen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-tests.md"
+title:                "Fish Shell: Testien kirjoittaminen"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Kirjoittamalla testejä
-Kirjoittamalla testejä voi varmistaa koodin toimivuuden ja vähentää mahdollisia virheitä. Testien avulla voi myös helpommin muokata ja päivittää koodia ilman pelkoa siitä, että se aiheuttaa ongelmia muualla.
+## Miksi
 
-## Miten:
-Harjoitellaan testien kirjoittamista Fish Shellin avulla.
+Kun ohjelmoit, on tärkeää varmistaa, että koodisi toimii odotetulla tavalla. Yksi tapa tehdä tämä on kirjoittaa testejä koodillesi. Testit varmistavat, että koodisi toimii halutulla tavalla ja estävät mahdollisia virheitä ja bugien syntymistä.
 
-```Fish Shell
-echo "Tervetuloa Fish Shell blogiin!"
-sleep 1
-```
+## Kuinka tehdä
+
+```Fish Shell``` -testien kirjoittaminen on helppoa ja nopeaa. Voit aloittaa luomalla ``` do_test.fish``` -tiedoston, jossa voit kirjoittaa testejä. Seuraavaksi voit lisätä testejä haluamallesi komentoriville näin:
 
 ```Fish Shell
-set name "Maija"
-echo "Hei " $name
-sleep 1
+test "$komennon-nimi " -nimeni-alussa " " -haun-tulos-on ""määritetty-arvo
 ```
 
-Tässä esimerkissä luodaan muuttuja "name" nimelle "Maija" ja printataan tervehdys hänen nimellään. "sleep 1" komennolla viive simuloituna, jotta koodi näyttää hitaammalta testien aikana.
+Lisäämällä testejä tällä tavalla, voit varmistaa, että komentosi palauttaa halutun tuloksen. Voit myös käyttää ehtolauseita testikoodisi tarkistamiseen. Kun olet lisännyt kaikki haluamasi testit, suorita testit ajamalla komento ```fish do_test.fish``` ja näet tuloksen testien läpäisystä tai mahdollisista virheistä.
 
-## Syvemmälle:
-Testien kirjoittamiseen on useita erilaisia lähestymistapoja, mutta yleisesti ottaen tärkeintä on varmistaa, että ne testaavat kaikkia koodin osia ja mahdollisia virhetilanteita. Tärkeää on myös pitää testit jatkuvasti päivitettyinä muutosten yhteydessä.
+## Syvällisempi sukellus
 
-On myös tärkeää käyttää erilaisia testaustyökaluja, kuten käyttöliittymätestauksia ja yksikkötestejä, jotta koodin laatu ja toimivuus voidaan taata.
+```Fish Shell``` tarjoaa erilaisia ​​komentoja ja toimintoja testien kirjoittamiseen. Voit esimerkiksi käyttää ```bass``` -komennon avulla muita komentoriviltä löytyviä työkaluja testeissäsi. Voit myös käyttää ehtolauseita testien tarkistamiseen, kuten ```test %%komento -exclude "virhe"``` tarkistaa mahdolliset virheet testien suorittamisen yhteydessä.
 
-## Katso myös:
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell Test Frameworks](https://gist.github.com/fisherman/on-the-fly-1f7677c3f3b81f17f9c59200bb928ae3)
-- [How to Write Good Tests](https://www.adventuresintechland.com/writing-good-unit-tests/)
+## Katso myös
+
+- [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Ohjeita testien kirjoittamiseen ```Fish Shell``` -pohjaisilla projekteilla](https://10nalli.fi/article/2019/1/1/ohjeita-testien-kirjoittamiseen-fish-shell-pohjaisilla-projekteilla)

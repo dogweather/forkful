@@ -1,58 +1,42 @@
 ---
-title:    "Bash: השוואת שני תאריכים"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/bash/comparing-two-dates.md"
+title:                "Bash: השוואת שתי תאריכים"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-נראה קל להשוות שתי תאריכים, אבל בפועל זה עשוי להיות מעט מורכב. לכן, זה מעשה טוב ללמוד כיצד לעשות זאת ב-Bash כדי להיות יעילים בכתיבת קוד.
+על מה מדובר בשינוי תאריך? בשפת התכנות Bash ניתן להשתמש בפקודות להשוות שתי תאריכים ולבצע פעולות עליהם. כתיבת תוכניות כעין זו יכולה להקל על הפעולות המתחשבות במדיניות מכירה ותיקון.
 
-## איך לעשות
+## איך לבצע
 
-כשמדובר בשפות תכנות, ישנן כמה דרכים להשוות שתי תאריכים. ב-Bash, ישנן כמה אפשרויות די פשוטות. הנה דוגמאות לקוד ותצוגה של התוצאות:
+ניתן להשוות שני תאריכים בשפת התכנות Bash באמצעות הפקודה `[[ תאריך1 -eq תאריך2 ]]`. לדוגמה, אם נרצה לבדוק אם תאריך מסוים הוא ראשון או חג, נוכל להשתמש בפקודות הבאות:
 
 ```Bash
-# השוואת תאריך עם מבנה yyyy-mm-dd
-date1="2020-01-15"
-date2="2021-05-20"
+# שם הקוד פקודת bash שמקבלת שתי תאריכים כפרמטרים ובודקת אם הם תאריכים ראשונים או חגים
+first_date="2021-01-01"
+second_date="2021-04-13"
 
-if [ "$date1" == "$date2" ]; then
-  echo "זהים"
-elif [ "$date1" \< "$date2" ]; then
-  echo "$date1 מוקדם מ-$date2"
+if [[ $first_date -eq $second_date ]]; then
+    echo "שני התאריכים זהים"
+elif [[ $first_date -lt $second_date ]]; then
+    echo "התאריך הראשון הוא ראשון לפני כדי השני"
 else
-  echo "$date2 מוקדם מ-$date1"
-fi
-
-# השוואת תאריך עם מבנה dd/mm/yy
-date1="1/15/20"
-date2="5/20/21"
-
-# המרת התאריך לפורמט של Unix timestamp
-date1_unix=$(date -d "$date1" "+%s")
-date2_unix=$(date -d "$date2" "+%s")
-
-if [ "$date1_unix" -eq "$date2_unix" ]; then
-  echo "זהים"
-elif [ "$date1_unix" -lt "$date2_unix" ]; then
-  echo "$date1 מוקדם מ-$date2"
-else
-  echo "$date2 מוקדם מ-$date1"
+    echo "התאריך הראשון הם חולים האחרונים לפני כדי השני"
 fi
 ```
 
-תוצאות הריצה:
+פלט:
 
 ```
-2020-01-15 מוקדם מ-2021-05-20
-1/15/20 מוקדם מ-5/20/21
+התאריכים הראשונים הם חולים האחרונים לפני כדי השני
 ```
 
-## עיון מעמיק
+ניתן גם להשתמש בפקודת `test` כמו `[[ תאריך1 = תאריך2 ]]` עבור השוואה עם אופרטורים נוספים כמו `-lt` (פחות מתאריך), `-gt` (גדול יותר מתאריך) וכו'. למידע נוסף ניתן לעיין במדריך הרשמי של הפקודה `test`.
 
-בכדי להשוות שתי תאריכים ב-Bash, כדאי להשתמש בפקודת [date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html). חלק מהאופציות שמצוינות בדוגמאות הראשונות ניתן לעשות גם עם הפקודה הזו. לפני השתמשות ב-`date` כדאי לבדוק את הפורמט של התאריך באמצעות [Formats Date Strings Using GNU date](https://linuxmoz.com/formats-date-strings-using-gnu-date/) כדי לוודא שהוא תואם את הצורך שלכם.
+## חקירה עמוקה
 
-בנוסף, אפשר גם להשתמש בפקודה [cmp](https://www.gnu.org/software/diffutils/manual/html_node/cmp-invocation.html) כדי להשוות שתי קבצי טקסט ולאחר מכן להשתמש בתוצאה של השוואת הקבצים כ
+בכדי להשתמש בפקודות להשוות שני תאריכים, יש להפריד ביניהם עם מינוס (`-`), ולהשתמש בפורמט המקביל לתאריך מסוג date. לדוגמה, אם נרצה להשוות את התאריך הנוכחי עם תאריך מסוים, נוכל להשתמש בפק

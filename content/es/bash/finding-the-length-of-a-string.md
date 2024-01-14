@@ -1,38 +1,43 @@
 ---
-title:    "Bash: Encontrando la longitud de una cadena"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/finding-the-length-of-a-string.md"
+title:                "Bash: Encontrando la longitud de una cadena"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Algunas veces, al programar en Bash, necesitamos encontrar la longitud de una cadena de texto. Esta información puede ser útil para manipular o validar datos de entrada. En este post, te mostraremos cómo hacerlo de manera sencilla.
+## ¿Por qué buscar la longitud de una cadena en Bash?
 
-## Cómo hacerlo
-Afortunadamente, Bash cuenta con una función integrada para encontrar la longitud de una cadena de texto. Se trata de `expr length`, seguido de la cadena entre comillas.
+En la programación, a menudo nos encontramos con la necesidad de conocer la longitud de una cadena de texto. Ya sea para validar entradas de usuario, formatear datos o realizar operaciones específicas, es importante poder obtener esta información de manera rápida y precisa. En Bash, existen varias formas de encontrar la longitud de una cadena, y en este artículo te enseñaré cómo hacerlo fácilmente.
 
-```
-Bash
-cadena="Hola mundo"
-longitud=`expr length $cadena`
-echo $longitud
-```
-El código anterior nos regresará el valor de 11, ya que la cadena "Hola mundo" cuenta con 11 caracteres.
+## Cómo hacerlo en Bash
 
-## Profundizando
-Si quieres profundizar un poco más en cómo funciona `expr length`, es importante entender que esta función cuenta espacios en blanco y caracteres especiales como parte de la longitud de la cadena. Si deseas contar únicamente los caracteres alfanuméricos, puedes combinar la función con `tr -d`, que elimina cualquier carácter que no sea alfanumérico.
+Para encontrar la longitud de una cadena en Bash, podemos usar la función "expr length" o el comando "wc" (word count). Por ejemplo, si queremos conocer la longitud de la cadena "hola", podemos escribir lo siguiente en la terminal:
 
-```
-Bash
-cadena="¡Hola mundo!"
-longitud=`expr length $cadena | tr -d '[:punct:]'`
-echo $longitud
+```Bash
+expr length "hola" 
 ```
 
-En este caso, el resultado será de 10, ya que hemos eliminado el signo de exclamación de nuestra cadena antes de contar la longitud.
+El resultado que obtendríamos es 4, ya que la cadena tiene 4 caracteres. También podemos usar el comando "wc" de la siguiente manera:
+
+```Bash
+echo -n "hola" | wc -c
+```
+
+El resultado será el mismo, ya que "wc -c" cuenta el número de caracteres en la entrada.
+
+## Profundizando en la longitud de una cadena
+
+Es importante tener en cuenta que en Bash, los espacios en blanco también se consideran caracteres. Por lo tanto, si tenemos una cadena como "hola mundo", la longitud será de 11 caracteres, ya que hay un espacio entre ambas palabras.
+
+También podemos usar la expansión de parámetros "${#variable}" para obtener la longitud de una cadena almacenada en una variable. Por ejemplo, si tenemos la variable "nombre" con el valor "Juan", podemos escribir lo siguiente para obtener su longitud:
+
+```Bash
+echo ${#nombre}
+```
 
 ## Ver también
-- [Documentación de Bash: expr](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
-- [Documentación de Bash: tr](https://www.gnu.org/software/bash/manual/html_node/Bash-Text-Manipulation.html#Bash-Text-Manipulation)
-- [Tutorial de Bash para principiantes](https://www.tecmint.com/bash-if-statement-examples/)
+
+- [Documentación de expr](https://www.gnu.org/software/coreutils/manual/html_node/expr-invocation.html#expr-invocation)
+- [Documentación de wc](https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html#wc-invocation)

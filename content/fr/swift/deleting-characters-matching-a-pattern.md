@@ -1,36 +1,34 @@
 ---
-title:    "Swift: Suppression des caractères correspondant à un motif"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/deleting-characters-matching-a-pattern.md"
+title:                "Swift: Suppression de caractères correspondant à un motif"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Souvent, lors de la programmation en Swift, vous pouvez rencontrer une situation où vous devez supprimer certains caractères d'une chaîne de caractères en fonction d'un modèle spécifique. Cela peut sembler fastidieux à première vue, mais il existe en fait une méthode simple pour le faire.
+Supprimer des caractères correspondant à un motif est un moyen efficace de nettoyer et de manipuler des données dans un programme Swift. Que vous ayez besoin d'enlever des espaces, des signes de ponctuation ou d'autres caractères spéciaux, cette technique peut vous aider à simplifier votre code et à obtenir les résultats souhaités.
 
-## Comment Faire
+## Comment faire
 
-Pour supprimer des caractères correspondant à un modèle en Swift, vous devez utiliser la méthode `replacingOccurrences()` de la classe `NSString`. Cette méthode prend en paramètre le modèle que vous souhaitez supprimer et le caractère par lequel vous souhaitez le remplacer. Voici un exemple de code:
+Voici un exemple de code Swift qui utilise la méthode `replacingOccurrences` pour supprimer tous les espaces dans une chaîne de caractères.
 
 ```Swift
-let myString = "Bonjour tout le monde"
-let newString = myString.replacingOccurrences(of: "o", with: "")
-print(newString)
+let phrase = "Bonjour, le monde!"
+let nouvellePhrase = phrase.replacingOccurrences(of: " ", with: "")
+print(nouvellePhrase)
 ```
 
-Cet exemple va imprimer "Bnjur tut le mnde", car tous les "o" ont été supprimés de la chaîne originale.
+Ce code produira une sortie de `Bonjour,lemonde!`. Vous pouvez remplacer l'espace avec n'importe quel autre caractère ou chaîne de caractères, en fonction de vos besoins spécifiques.
 
-## Plongée Profonde
+## Plongeons plus en profondeur
 
-Il est important de noter que la méthode `replacingOccurrences()` est sensible à la casse, ce qui signifie qu'elle ne remplacera que les caractères correspondant exactement au modèle spécifié. De plus, elle ne supprimera pas les caractères spéciaux ou les espaces.
+Il y a plusieurs façons de supprimer des caractères correspondant à un motif dans Swift, en utilisant des méthodes telles que `range(of:)` et `filter`. Vous pouvez également utiliser les expressions régulières pour une manipulation plus avancée de la chaîne de caractères. Assurez-vous de consulter la documentation officielle Swift pour en savoir plus sur ces méthodes et d'autres techniques utiles.
 
-Si vous souhaitez supprimer les caractères correspondant à un modèle indépendamment de la casse, vous pouvez utiliser la méthode `replacingOccurrencesWithCaseInsensitive()` à la place.
+## Voir aussi
 
-Vous pouvez également utiliser des expressions régulières dans la méthode `replacingOccurrences()` pour des modifications plus complexes. Cependant, cela nécessite une compréhension plus approfondie des expressions régulières et peut s'avérer plus complexe.
-
-## Voir Aussi
-
-- [Documentation Apple sur la méthode `replacingOccurrences()`](https://developer.apple.com/documentation/foundation/nsstring/1408728-replacingoccurrences)
-- [Guide complet sur les expressions régulières en Swift](https://www.swift-studies.com/blog/2018/8/7/regular-expressions)
+- [Documentation officielle Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Supprimer un caractère d'une chaîne de caractères en Swift](https://www.hackingwithswift.com/example-code/strings/how-to-remove-a-character-from-a-string-using-index)
+- [Manipulation de chaînes de caractères avec des expressions régulières en Swift](https://www.raywenderlich.com/821780-regular-expressions-tutorial-for-swift-getting-started)

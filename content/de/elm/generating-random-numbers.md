@@ -1,46 +1,74 @@
 ---
-title:    "Elm: Zufällige Zahlen generieren"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/generating-random-numbers.md"
+title:                "Elm: Erzeugen von Zufallszahlen"
+programming_language: "Elm"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-In der Programmierung gibt es oft die Notwendigkeit, zufällige Zahlen zu generieren. Zum Beispiel können sie in Spielen für verschiedene Ereignisse verwendet werden, oder um ein Element aus einer Liste auszuwählen. In Elm wird die Generierung von Zufallszahlen durch das Modul `Random` ermöglicht. In diesem Artikel werden wir uns genauer anschauen, wie man zufällige Zahlen in Elm generieren kann.
+Das Generieren von Zufallszahlen spielt eine wichtige Rolle bei der Entwicklung von Software. Zum Beispiel kann es in Spielen verwendet werden, um zufällige Ereignisse zu simulieren oder in der Kryptographie, um Schlüssel zu generieren. In dieser Blog-Post werden wir uns mit der Generierung von Zufallszahlen in der funktionalen Programmiersprache Elm beschäftigen und wie man sie in Projekten verwenden kann.
 
-# Wie geht das?
+## Wie es geht
 
-Um das Modul `Random` nutzen zu können, müssen wir es zuerst importieren: 
+Um Zufallszahlen in Elm zu generieren, verwenden wir die `Random` Bibliothek. Zunächst müssen wir sie importieren, indem wir am Anfang unseres Codes `import Random` schreiben.
 
-```Elm
-import Random
-```
-
-Als nächstes müssen wir einen generischen Typ für die zu generierende Zufallszahl angeben, zum Beispiel `Int` für ganze Zahlen oder `Float` für Gleitkommazahlen. Dann können wir eine `Seed` (Samen) angeben, die für die Generierung der Zufallszahlen verwendet wird. Diese können wir mithilfe von `Random.initialSeed` generieren.
-
-Hier ist ein Beispiel, wie man eine zufällige Ganzzahl zwischen 1 und 10 generieren kann: 
+Dann können wir `Random.generate` verwenden, um eine Zufallszahl zu generieren. Zum Beispiel können wir eine Funktion schreiben, die eine Zufallszahl zwischen 1 und 10 generiert und sie in der Konsole ausgibt:
 
 ```Elm
-Random.generate randomNumber (Random.int 1 10)
-    -- Seed: Random.initialSeed
-randomNumber int =
-    Debug.log (toString int) int
+import Random 
+
+randomNumber : Int
+randomNumber =
+  Random.generate (\_ -> Random.int 1 10) 
+
+main =
+  randomNumber |> Debug.log "Random Number"
 ```
 
-Dieses Beispiel nutzt die Funktion `Random.generate`, um die zufällige Zahl zu generieren. Diese Funktion erwartet zwei Argumente: eine Funktion, die das Ergebnis des Zufallsgenerators verwaltet, und den eigentlichen Zufallsgenerator (in diesem Fall `Random.int 1 10`).
+In diesem Beispiel wird die `Random.int` Funktion verwendet, um eine Zufallszahl zwischen 1 und 10 zu generieren. Wir verwenden das `_` Argument in der `Random.generate` Funktion, da wir es nicht verwenden und es einfach überspringen können.
 
-Um das Ergebnis zu erhalten, nutzen wir die Funktion `Debug.log` und geben die generierte Zahl zusammen mit dem generierten Seed als Argumente an.
+Unsere Ausgabe sieht dann folgendermaßen aus:
 
-# Deep Dive
+```
+Random Number: 5
+```
 
-`Random` bietet viele verschiedene Funktionen und Möglichkeiten für die Generierung von Zufallszahlen. Zum Beispiel kann man mithilfe von `Random.generate` auch mehrere Zufallszahlen auf einmal generieren. Auch können verschiedene Wahrscheinlichkeitsverteilungen für die Generierung von Zufallszahlen ausgewählt werden.
+Um mehrere Zufallszahlen in einer Liste zu generieren, können wir `List.map` und `Random.generate` zusammen verwenden. Zum Beispiel können wir eine Funktion schreiben, die eine Liste mit 5 zufälligen Zahlen zwischen 1 und 10 generiert:
 
-Ein wichtiger Punkt bei der Generierung von Zufallszahlen ist die `Seed`. Der Seed bestimmt, welche Zahlen generiert werden und in welcher Reihenfolge. Wenn man denselben Seed verwendet, bekommt man auch dieselben Ergebnisse. Um verschiedene Ergebnisse zu erhalten, kann man den Seed zufällig generieren oder manuell ändern.
+```Elm
+import Random 
+import List
 
-# Siehe auch
+randomNumberList : List Int
+randomNumberList =
+  List.map (\_ -> Random.int 1 10) (List.range 1 5) 
 
-- Offizielle Dokumentation von Elm zu `Random`: https://elm-lang.org/docs/random
-- Eine Einführung in die Generierung von Zufallszahlen in Elm: https://blog.echobind.com/random-number-generation-in-elm-864945933d1d
-- Eine vertiefte Analyse von `Random` und seiner Verwendung in Elm: https://guide.elm-lang.org/effects/random.html
+main =
+  randomNumberList |> Debug.log "Random Number List"
+```
+
+In diesem Beispiel wird die `List.map` Funktion verwendet, um die `Random.generate` Funktion 5 Mal auszuführen und eine Liste mit den Ergebnissen zurückzugeben. Unsere Ausgabe sieht dann folgendermaßen aus:
+
+```
+Random Number List: [3, 8, 2, 9, 7]
+```
+
+Es gibt auch andere Funktionen in der `Random` Bibliothek, die wir verwenden können, um verschiedene Arten von Zufallszahlen zu generieren, wie zum Beispiel Gleitkommazahlen oder Booleans. Weitere Informationen dazu findest du in der "## Deep Dive" Sektion.
+
+## Deep Dive
+
+In der `Random` Bibliothek gibt es einige Funktionen, die verschiedene Aspekte der Generierung von Zufallszahlen kontrollieren. Beispielsweise können wir mit der `Random.step` Funktion die Seed-Nummer für die Zufallszahlengenerierung festlegen, um wiederholbare Ergebnisse zu erhalten. Wir können auch mit der `Random.initialSeed` Funktion eine Seed-Nummer aus dem Systemzeitstempel generieren lassen.
+
+Es ist auch möglich, eigene Generatoren für Zufallszahlen zu erstellen, indem man die `Random.Generator` Funktion verwendet. Dies ermöglicht es uns, benutzerdefinierte Logik für die Generierung von Zufallszahlen zu schreiben.
+
+Weitere Details zu diesen Funktionen findest du in der offiziellen Elm Dokumentation zur [Random Bibliothek](https://package.elm-lang.org/packages/elm/random/latest/Random).
+
+## Siehe auch
+- Offizielle Elm Dokumentation zur [Random Bibliothek](https://package.elm-lang.org/packages/elm/random/latest/Random)
+- [An Introduction to Random Numbers in Elm](https://medium.com/@noahprusik/an-introduction-to-random-numbers-in-elm-8e1866ca97d5)
+- [Exploring Random Generation in Elm](https://www.valentinog.com/blog/exploring-elm-random-number-generation/)
+
+Happy coding in Elm 🎉!

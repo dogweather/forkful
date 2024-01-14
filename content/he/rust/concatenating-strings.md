@@ -1,65 +1,45 @@
 ---
-title:    "Rust: חיבור מחרוזות"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/rust/concatenating-strings.md"
+title:                "Rust: מחברת מחרוזות"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-למינוייית סימני מחרוזות היא דרך נוחה לשלב מחרוזות יחד וליצור מחרוזת אחת גדולה.
+עם גישה חדשנית ויכולת לנהל מעבדת תכנותית קשוחה, שפת תכנות Rust הפכה לאחת השפות המובילות בעולם התכנות. אחת היכולות החזקות של Rust היא שיכולתה לעבוד ביעילות עם מחרוזות. ולכן, רצוי להכיר את זה בצורה מפורטת יותר.
 
-## איך לעשות זאת
+## איך לעשות זאת?
 
-```Rust
-let first_name = "דפנה";
-let last_name = "כהן";
-let full_name = format!("{} {}", first_name, last_name);
-
-println!("שלום, אני {}", full_name);
-```
-
-הפלט:
+לפני שנתחיל לחבר מחרוזות יחד, חשוב להבין שאין אפשרות לשנות מחרוזת ברוחב ותמיד נדרשת חלוקה מחדש של כל המחרוזות המשתתפות. כמו כן, אנו חייבים להשתמש בדרך שונה בכדי לחבר מחרוזות סטטיות ומשתנות ביחד. אם כולכם מעוניינים להבין כיצד לעשות זאת, עקבו אחר הדוגמאות הבאות:
 
 ```Rust
-שלום, אני דפנה כהן
+// חיבור של מחרוזות סטטיות
+fn main() {
+	let str1 = "משחק";
+	let str2 = "ביליארד";
+	let str3 = str1.to_string() + str2;
+	println!("{}", str3);
+}
 ```
-
-אפשר גם להתמש באופרטור `+` כדי למזג מחרוזות:
+`משחקביליארד`
 
 ```Rust
-let hello = "שלום";
-let name = "דפנה";
-let message = hello + ", " + name + "!";
-
-println!("{}", message);
+// חיבור של מחרוזת סטטית ומשתנה
+fn main() {
+	let ball_score = 9;
+	let ball_type = "כדור רגיל";
+	let message = format!("הכדור התקבל כ{} עם ניקוד של {}", ball_type, ball_score);
+	println!("{}", message);
+}
 ```
+`הכדור התקבל ככדור רגיל עם ניקוד של 9`
 
-הפלט:
+## התחקרות מעמיקה
 
-```Rust
-שלום, דפנה!
-```
+כעת שאנו מבינים את היכולת לחבר מחרוזות בשפת Rust, ניתן להעמיק קצת יותר בנושא. בחיבור מחרוזות, רחבה חדשה נוצרת על מנת להכניס את המחרוזות המשתתפות, אך ישנן עוד כמה פעולות שהיא יכולה לבצע:
 
-## חפירה עמוקה
-
-כשמשתמשים בפונקציית `format` במחרוזות מוגדרים מראש כמערך, אפשר להשתמש באותו אינדקס כמפתח למחרוזת במערך כדי למזג אותן:
-
-```Rust
-let names = ["דפנה", "אלכס", "תמר"];
-let sentence = "{0} ו{1} נפגשו עם {2}.".format(&names[0], &names[1], &names[2]);
-
-println!("{}", sentence);
-```
-
-הפלט:
-
-```Rust
-דפנה ואלכס נפגשו עם תמר.
-```
-
-## ראו גם
-
-- [השתמש בפונקציית `format`](https://doc.rust-lang.org/std/fmt/#formatting-traits)
-- [אופרטורים ברחבי Rust](https://doc.rust-lang.org/book/ch05-02-example-stacks.html#operators)
+- יצירת מצב נוסף כאשר מחרוזת נוספת מתוך מחרוזת נתונה
+- שימוש בפונקציות לעריכה או טיהור של מחרוזת מצוינת לפני ח

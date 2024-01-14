@@ -1,50 +1,45 @@
 ---
-title:    "Python: חיפוש והחלפת טקסט"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/python/searching-and-replacing-text.md"
+title:                "Python: חיפוש והחלפת טקסט"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה?
 
-בעת התכנות בפייתון, ישנם רבים מצבים שבהם יהיה צורך לחפש ולהחליף טקסט בתוך קוד. למשל, ייתכן שיהיו שגיאות כתיב בחלק מהמשתנים או ייתכן שאנחנו רוצים לשנות משהו בטקסט המוצג למשתמש באפליקציה. בעזרת חיפוש והחלפה, אנו יכולים לבצע כך בקלות ובמהירות רבה.
+למה לפתח בקוד Python? אחד המשימות הנפוצות בתכנות הוא החיפוש וההחלפה של טקסט בקוד. בעזרת פייתון, ניתן לעשות זאת בקלות ובמהירות, ולכן הוא מיועד למתכנתים שמחפשים כלי עוצמתי לעבודתם.
 
-## איך לעשות זאת
+## כיצד לעשות זאת?
 
-לפניכם דוגמאות לשימוש בפונקציות חיפוש והחלפה עם פייתון. שימו לב שהפעלת חיפוש והחלפה תבוצע מתוך תיקית העבודה הנוכחית.
+הראה לנו כיצד ניתן לחפש ולהחליף טקסט בקוד Python:
 
 ```python
-# חיפוש והחלפה בכל הטקסט שמתאים לתבנית מסוימת
-import re
-
-text = "Hello, my name is John. I am from Israel."
-new_text = re.sub(r"John", "David", text)
-
-print(new_text)
-# Output: Hello, my name is David. I am from Israel.
-
-# חיפוש והחלפה בכל הקבצים שסיומים ב-ext
-import os, re
-
-file_list = os.listdir()
-ext = input("Extension: ")
-
-for file in file_list:
-    matched = re.search(rf"{ext}$", file)
-
-    if matched:
-        new_file = re.sub(r"old_text", "new_text", file)
-        os.rename(file, new_file)
-
-print("Files renamed successfully!")
+phrase = "שלום לכולם, אני מלמד Python!"
+new_phrase = phrase.replace("Python", "פייתון")
+print(new_phrase)
 ```
 
-## עומק נוסף
+תוצאה:
 
-ניתן להשתמש בתבניות מתקדמות יותר לחיפוש והחלפה, כגון שימוש בפונקציות כמו split ו- join, או להשתמש בתוסף כמו re.Match המאפשר לגשת למידע נוסף על התאים המתאימים בטקסט.
+```
+שלום לכולם, אני מלמד פייתון!
+```
+
+בדוגמה זו, אנו משתמשים בפונקציה המתאימה בשם "replace" שתחליף את המחרוזת "Python" במחרוזת "פייתון". כך ניתן לשנות טקסט באופן דינמי בתוך הקוד שלנו.
+
+## העומק
+
+בנוסף לפונקציה "replace", ישנן עוד מספר פונקציות שיכולות ללכלך ולטפל בטקסט בקוד Python. כמה דוגמאות לכך יכולות להיות:
+
+- פונקציה "findall" שתחפש את כל המופעים של מחרוזת מסוימת בתוך טקסט.
+- פונקציה "strip" שתסיר רווחים ותווים חסרים מסביב למחרוזת.
+- פונקציה "capitalize" שתפרט את האות הראשונה של מחרוזת לאות גדולה, ואת שאר המחרוזת לאותיות קטנות.
+
+אלו רק כמה דוגמאות מתוך מגוון הפונקציות שקיימות לניהול ולעיבוד טקסט בקוד Python. כדאי ללמוד אותן כדי להשתמש בהן במהירות וביעילות.
 
 ## ראו גם
-- [מדריך לתוספי פייתון לחיפוש והחלפה](https://realpython.com/regex-python/)
-- [מדריך לביטויים רגולריים בפייתון](https://www.analyticsvidhya.com/blog/2019/03/beginner-guide-regex-python/)
-- [מדריך לתרגול חיפוש והחלפה בפייתון](https://www.w3schools.com/python/python_regex.asp)
+
+- [Python מדריך רשמי](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [איך להתמודד עם טקסטים בקוד Python](https://realpython.com/string-manipulation-python/)

@@ -1,46 +1,44 @@
 ---
-title:    "Arduino: Transformer une date en chaîne de caractères"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/converting-a-date-into-a-string.md"
+title:                "Arduino: Transformer une date en chaîne de caractères"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous êtes peut-être en train de programmer votre propre horloge ou calendrier sur votre Arduino, ou vous avez simplement besoin de présenter la date sous forme de texte. Dans les deux cas, vous aurez besoin de convertir la date en une chaîne de caractères (string). Heureusement, c'est un processus simple et nous allons vous montrer comment le faire dans cet article.
+La conversion d'une date en une chaîne de caractères est une tâche courante lors de la programmation en Arduino. Cela peut être utile pour l'affichage de la date et de l'heure actuelles sur un écran LCD ou pour sauvegarder des données dans une carte SD dans un format facilement identifiable. Dans cet article, nous allons explorer comment réaliser cette conversion en utilisant Arduino.
 
 ## Comment faire
 
-Pour convertir une date en une chaîne de caractères, nous allons utiliser la fonction `sprintf()` de la bibliothèque `Time.h`. Voici un exemple de code :
+Pour convertir une date en une chaîne de caractères, nous allons utiliser la bibliothèque Time d'Arduino. Cette bibliothèque permet de manipuler facilement les informations liées au temps comme la date, l'heure et les fuseaux horaires. Tout d'abord, nous devons inclure la bibliothèque Time dans notre code :
 
 ```Arduino
 #include <Time.h>
-
-void setup() {
-  Serial.begin(9600); // initialiser la communication série
-  setTime(12, 34, 56, 1, 4, 2021); // définir la date et l'heure actuelles
-}
-
-void loop() {
-  char dateStr[11]; // déclarer un tableau pour stocker la date
-  sprintf(dateStr, "%02d/%02d/%04d", day(), month(), year()); // utiliser sprintf pour convertir la date en une chaîne
-  Serial.println(dateStr); // afficher la date sur le moniteur série
-  delay(1000);
-}
 ```
 
-Dans cet exemple, nous utilisons la fonction `setTime()` pour définir une date spécifique. Ensuite, nous déclarons un tableau de char (`char`) pour stocker la date sous forme de chaîne avec une taille de 11 caractères (ce qui est suffisant pour une date au format JJ/MM/AAAA). Enfin, nous utilisons `sprintf()` pour remplir ce tableau avec la date formatée en utilisant les fonctions `day()`, `month()` et `year()` fournies par la bibliothèque `Time.h`.
+Ensuite, nous pouvons utiliser la fonction `format()` pour convertir une date en une chaîne de caractères, en spécifiant le format souhaité. Par exemple, pour convertir la date actuelle en une chaîne de caractères au format dd/mm/yyyy, nous utiliserons la ligne suivante dans notre code :
 
-Lorsque le code est exécuté, vous devriez obtenir une sortie telle que `04/01/2021` sur le moniteur série de votre Arduino.
+```Arduino
+String date = String(format(Time.now(), "%d/%m/%Y"));
+```
 
-## Plongez plus profondément
+La variable `date` contiendra maintenant la date au format souhaité. Nous pouvons également ajouter l'heure à cette chaîne en utilisant la même méthode :
 
-La fonction `sprintf()` est un moyen pratique de convertir des nombres en chaînes de caractères en utilisant un format spécifique, comme nous l'avons fait avec la date dans l'exemple précédent. Cependant, il existe d'autres moyens de convertir des nombres en chaînes, comme la fonction `itoa()` qui convertit un entier en chaîne ou la fonction `String()` qui crée un objet String à partir d'un entier ou d'un nombre à virgule flottante.
+```Arduino
+String dateHeure = String(format(Time.now(), "%d/%m/%Y %H:%M:%S"));
+```
 
-Il est également intéressant de noter que la bibliothèque `Time.h` fournit d'autres fonctions pratiques pour obtenir la date et l'heure actuelles, ainsi que pour effectuer des opérations sur celles-ci.
+La variable `dateHeure` contiendra maintenant la date et l'heure actuelles au format dd/mm/yyyy hh:mm:ss. Vous pouvez expérimenter avec différents formats en utilisant la fonction `format()` pour obtenir le résultat souhaité.
+
+## Plongée en profondeur
+
+La bibliothèque Time d'Arduino utilise un objet de type `tmElements_t` pour stocker les informations liées au temps. Cet objet contient différentes variables telles que `tmYear`, `tmMonth` et `tmDay` pour la date et `tmHour`, `tmMinute` et `tmSecond` pour l'heure. La fonction `format()` prend cet objet en entrée et retourne une chaîne de caractères en fonction du format spécifié. Vous pouvez également utiliser la fonction `makeTime()` pour créer un objet `tmElements_t` à partir de valeurs spécifiques, ce qui peut s'avérer utile si vous devez travailler avec une date et une heure personnalisées.
 
 ## Voir aussi
 
-- La documentation officielle de la bibliothèque `Time.h` : https://www.arduino.cc/en/Reference/Time
-- Un tutoriel sur l'utilisation des fonctions `sprintf()` et `itoa()` : https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm
+- [Documentation de la bibliothèque Time d'Arduino](https://www.arduino.cc/en/Reference/Time)
+- [Tutoriel vidéo sur la conversion d'une date en une chaîne de caractères en utilisant Arduino](https://www.youtube.com/watch?v=7IQhNOs5W5M)
+- [Forum Arduino dédié à la bibliothèque Time](https://forum.arduino.cc/index.php?topic=239078.0)

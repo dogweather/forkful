@@ -1,54 +1,45 @@
 ---
-title:    "Clojure: Lage en midlertidig fil"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/creating-a-temporary-file.md"
+title:                "Clojure: Opprettelse av en midlertidig fil"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det kan være mange grunner til å programmere i Clojure, og en av dem kan være å skape midlertidige filer. Dette kan være nyttig for å lagre data eller utføre midlertidige oppgaver mens man arbeider med et større prosjekt.
+Å skape midlertidige filer er en vanlig oppgave i mange programmeringsspråk, inkludert Clojure. Disse filene brukes midlertidig for å lagre data eller informasjon som kun trengs i en kort periode. Det kan være nyttig for å organisere og behandle data i et program, og sørger for at filene blir slettet etter bruk for å unngå rot og hindre konflikter i filnavn.
 
-## Slik gjør du det
+## Hvordan
 
-Å opprette en midlertidig fil i Clojure er enkelt og kan gjøres ved hjelp av funksjonen `with-open` og `java.io/FileWriter`. Først må vi importere `java.io.File` og `java.io.FileWriter` i vårt Clojure-prosjekt:
-
-```Clojure
-(ns mitt.prosjekt
-  (:import [java.io File FileWriter]))
-```
-
-Deretter kan vi bruke `with-open` for å opprette vår midlertidige fil, og `java.io.FileWriter` for å skrive til filen:
+For å opprette en midlertidig fil i Clojure, kan du bruke funksjonen `with-open` sammen med `clojure.java.io` biblioteket. Dette gjør at filen automatisk blir slettet når den blir lukket.
 
 ```Clojure
-(with-open [fil (File/createTempFile "mittprosjekt-" ".txt")]
-  (let [skriver (FileWriter. fil)]
-    (.write skriver "Dette er innholdet i vår midlertidige fil.")
-    (.close skriver)))
+(require '[clojure.java.io :as io])
+
+(with-open [temp-file (io/file "temp/file.txt")]
+  (io/copy (io/resource "input.txt") temp-file)
+  (println "Den midlertidige filen ble opprettet!")
+  (io/delete-file temp-file))
 ```
 
-Her oppretter vi en midlertidig fil med prefix "mittprosjekt-" og filextension ".txt". Deretter bruker vi `FileWriter` til å skrive til filen ved hjelp av `.write`-metoden, og til slutt lukker vi filen ved hjelp av `.close`-metoden.
+I dette eksempelet vil en midlertidig fil med navnet "file.txt" bli opprettet i mappen "temp". Deretter kopieres innholdet fra filen "input.txt" (som må ligge i samme mappe som Clojure-filen) inn i den midlertidige filen. Når programmet er ferdig, vil den midlertidige filen bli slettet automatisk.
 
-## Dypdykk
+## Dykk dypere ned
 
-Når man oppretter en midlertidig fil i Clojure, blir filen automatisk slettet når `with-open`-blokken avsluttes. Dette er en sikkerhetsfunksjon som sørger for at filen ikke blir liggende igjen i systemet.
-
-Man kan også angi en filsti som første parameter i `File/createTempFile`. Dette gjør det mulig å opprette midlertidige filer i spesifikke mapper.
+Det er også mulig å bruke Java-klassen `java.io.File` direkte for å opprette en midlertidig fil.
 
 ```Clojure
-(with-open [fil (File/createTempFile "/bruker/mittprosjekt/" "temp-" ".txt")]
-  (let [skriver (FileWriter. fil)]
-    (.write skriver "Dette er innholdet i en midlertidig fil opprettet i /bruker/mittprosjekt-mappen.")
-    (.close skriver)))
+(let [temp-file (java.io.File/createTempFile "prefix" ".txt")]
+  (println (.getPath temp-file))
+  (.delete temp-file))
 ```
 
-Det er også mulig å angi en låsende flagg ved hjelp av `:lockable true` som tredje parameter i `File/createTempFile`, dersom man ønsker å sikre at andre prosesser ikke kan lese fra filen mens den er åpen.
+Her brukes `createTempFile`-funksjonen til å lage en midlertidig fil med et prefiks og en filtype. Deretter blir stien til den midlertidige filen skrevet ut, og filen blir slettet når programmet er ferdig.
 
 ## Se også
 
-Her er noen nyttige ressurser for å lære mer om å opprette midlertidige filer i Clojure:
-
-- [ClojureDocs - createTempFile](https://clojuredocs.org/java.io.File/createTempFile)
-- [Official Clojure website](https://clojure.org/)
-- [Clojure for the Brave and True](https://www.braveclojure.com/) - en nybegynnerguide til Clojure
+- [Java Docs: java.io.File#createTempFile](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-)
+- [Clojure Docs: clojure.java.io/file](https://clojuredocs.org/clojure.java.io/file)
+- [Tutorial: Creating and Deleting Files in Clojure](https://www.baeldung.com/clojure-create-and-delete-file)

@@ -1,53 +1,63 @@
 ---
-title:    "Python: Verwendung von regulären Ausdrücken"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/using-regular-expressions.md"
+title:                "Python: Verwendung von regulären Ausdrücken"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Wenn Sie schon einmal versucht haben, einen Text nach bestimmten Mustern oder Zeichenfolgen zu durchsuchen und zu manipulieren, haben Sie vielleicht bemerkt, dass dies ein mühsamer und zeitaufwändiger Prozess sein kann. Hier kommen reguläre Ausdrücke ins Spiel. Mit Hilfe von regulären Ausdrücken können Sie Texte auf einfache und effiziente Weise durchsuchen und bearbeiten. Wenn Sie also häufig mit Texten arbeiten und schnell Ergebnisse erzielen möchten, sollten Sie sich mit regulären Ausdrücken vertraut machen.
+Reguläre Ausdrücke sind ein mächtiges Werkzeug in der Python-Programmierung. Sie erlauben es uns, komplexe Muster in Texten zu erkennen und zu manipulieren. Durch die Verwendung von regulären Ausdrücken können wir effizienter und präziser arbeiten und so unseren Code verbessern.
 
-## Wie geht das?
+## Wie man sie verwendet
 
-Um reguläre Ausdrücke in Python zu verwenden, müssen Sie das `re` Modul importieren. Das `re` Modul bietet verschiedene Funktionen, mit denen Sie reguläre Ausdrücke erstellen und auf Texte anwenden können. Hier ist ein Beispiel, wie Sie eine Telefonnummer in einem Text mit regulären Ausdrücken finden können:
+Reguläre Ausdrücke werden in Python mit dem Modul `re` implementiert. Um dieses Modul zu verwenden, müssen wir es zunächst importieren:
 
 ```Python
 import re
-
-text = "Ich bin unter der Nummer 0123-456789 zu erreichen."
-
-# regulärer Ausdruck erstellen
-pattern = r'\d{4}-\d{6}'
-
-# regulären Ausdruck auf Text anwenden
-result = re.search(pattern, text)
-
-# Ausgabe der Telefonnummer
-print(result.group())
 ```
-Output: 0123-456789
 
-Der reguläre Ausdruck `r'\d{4}-\d{6}'` beschreibt ein Muster, das aus einer vierstelligen Zahl, einem Bindestrich und einer sechsstelligen Zahl besteht. Diese Struktur entspricht dem Format einer Telefonnummer. Mit der `search` Funktion suchen wir nun in unserem Text nach diesem Muster und geben die gefundene Telefonnummer aus.
+Ein grundlegendes Beispiel für die Verwendung von regulären Ausdrücken ist die Suche nach einer bestimmten Zeichenkette in einem Text. Dazu verwenden wir die Funktion `search()` und geben den regulären Ausdruck sowie den Text als Parameter an:
 
-## Tiefer ins Thema
+```Python
+text = "Dies ist ein Beispieltext."
+ergebnis = re.search("ist", text)
+```
 
-Reguläre Ausdrücke bieten eine Vielzahl von Funktionen und Optionen, mit denen Sie noch komplexere Suchmuster erstellen und Texte bearbeiten können. Hier sind einige nützliche Tipps, die Ihnen den Einstieg erleichtern können:
+Das Ergebnis dieser Suche ist ein sogenanntes Match-Objekt. Um zu überprüfen, ob die Suche erfolgreich war, können wir die Methode `group()` verwenden, die uns die gefundene Zeichenkette zurückgibt:
 
-- Verwenden Sie Metazeichen wie den Punkt (`.`) um beliebige Zeichen zu finden und der Stern (`*`) um die Anzahl der wiederholten Zeichen anzugeben.
-- Stellen Sie mit den eckigen Klammern (`[]`) eigene Zeichenklassen zusammen, um bestimmte Zeichen in einem Muster zu suchen.
-- Nutzen Sie die regulären Ausdrücke der `re` Module wie `match`, `findall` und `sub` für verschiedene Anwendungsfälle.
+```Python
+print(ergebnis.group()) # Ausgabe: "ist"
+```
 
-Für weitere Informationen und eine ausführlichere Einführung in reguläre Ausdrücke in Python empfehle ich Ihnen, die offizielle [Python-Dokumentation](https://docs.python.org/3/howto/regex.html) zu lesen.
+## Tiefergehende Informationen
+
+Reguläre Ausdrücke bieten weit mehr Möglichkeiten als nur die Suche nach einer bestimmten Zeichenkette. Wir können beispielsweise auch bestimmte Zeichenklassen wie Ziffern oder Buchstaben suchen, Quantifizierer verwenden, um die Anzahl der zu findenden Zeichen anzugeben, oder Gruppierungen nutzen, um Teile eines Ausdrucks zu markieren.
+
+Beispiel 1: Suche nach einer ISBN-Nummer
+
+```Python
+text = "Die ISBN-Nummer ist 978-3-446-25893-2."
+isbn = re.search("\d{3}-\d-\d{6}-\d", text) # \d steht für eine Ziffer, \d{3} bedeutet also drei Ziffern
+if isbn:
+    print(isbn.group()) # Ausgabe: "978-3-446-25893-2"
+```
+
+Beispiel 2: Suche nach allen Zeichenkombinationen, die mit einem @-Symbol beginnen
+
+```Python
+text = "Meine Email-Adresse ist max@beispiel.com."
+emails = re.findall("@\w+\.\w+", text) # \w steht für einen beliebigen Buchstaben oder eine Ziffer, + bedeutet mindestens einmal
+if emails:
+    print(emails) # Ausgabe: ["@beispiel.com"]
+```
+
+Für eine detaillierte Beschreibung aller verfügbaren Funktionen und Syntax-Elemente empfehle ich die offizielle Dokumentation des Moduls `re` sowie weitere Tutorials im Internet.
 
 ## Siehe auch
 
-Hier sind einige nützliche Ressourcen, die Ihnen helfen können, Ihr Verständnis von regulären Ausdrücken in Python zu vertiefen:
-
-- [Reguläre Ausdrücke in Python](https://docs.python.org/3/howto/regex.html)
-- [RegExr - Interaktiver Regulärer Ausdruck Tester und Generator](https://regexr.com/)
-- [Video-Tutorial: Reguläre Ausdrücke in Python](https://www.youtube.com/watch?v=K8L6KVGG-7o)
-
-Ich hoffe, dieser Artikel hat Ihnen geholfen, zu verstehen, wie reguläre Ausdrücke in Python funktionieren und wie Sie sie in Ihren Projekten anwenden können. Viel Spaß beim Codieren!
+- [Offizielle Dokumentation des Moduls re](https://docs.python.org/3/library/re.html)
+- [Weitere Informationen und Tutorials zu regulären Ausdrücken in Python](https://www.tutorialspoint.com/python/python_reg_expressions.htm)
+- [Interaktiver regulärer Ausdruck-Tester](https://regex101.com/) (englisch)

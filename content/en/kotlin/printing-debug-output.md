@@ -1,57 +1,34 @@
 ---
-title:    "Kotlin recipe: Printing debug output"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/printing-debug-output.md"
+title:                "Kotlin recipe: Printing debug output"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-As developers, we've all been in situations where our code just doesn't seem to be working. We spend hours trying to figure out the issue, only to realize that a simple `println()` statement could have saved us so much time and frustration. That's where printing debug output comes in - it's a simple yet effective way to track the flow of your program and identify any errors or bugs.
+Debugging is a crucial part of any programming process. It helps us identify and fix any errors or bugs in our code. However, sometimes it can be difficult to understand where the error lies, especially in large and complex code bases. This is where printing debug output comes in handy. By printing specific information or values at certain points in our code, we can get a better understanding of how our code is executing and what values are being passed around. This can greatly aid in the debugging process and ultimately save us time and effort. 
 
-## How To
+## How To 
 
-Printing debug output in Kotlin is quite straightforward. You can use the built-in `println()` function to display messages in the console. Let's take a look at an example:
-
-```Kotlin
-fun main() {
-    val name = "John"
-    println("Hello $name!") // prints "Hello John!"
-}
-```
-
-In the code above, we used `println()` to print a simple greeting message. We can also use it to display the values of variables or perform basic calculations. For example:
+To print debug output in Kotlin, we can use the `println()` or `print()` functions. These functions take in a string as a parameter and print it to the console. We can also use string interpolation to easily print out variable values. For example:
 
 ```Kotlin
-fun main() {
-    val num1 = 5
-    val num2 = 10
-    println("$num1 + $num2 = ${num1 + num2}") // prints "5 + 10 = 15"
-}
+val name = "John"
+val age = 25
+println("Name: $name, Age: $age")
 ```
 
-Another useful function for printing debug output is `print()` which works the same as `println()` but does not include a line break after the message. This can be handy if you want to display multiple messages on the same line.
+This will print out `Name: John, Age: 25` to the console. We can also use these functions within conditional statements or loops to print out specific values at different points in our code. 
 
-```Kotlin
-fun main() {
-    print("Hello ")
-    print("World!") // prints "Hello World!"
-}
-```
+## Deep Dive 
 
-Besides these basic functions, Kotlin also provides more advanced options for printing debug output. You can use the `Logger` class from the `java.util.logging` package to log messages to a file or customize the level of logging. This is useful for larger projects where you need more control over the debugging process.
+There are a few things to keep in mind when printing debug output. First, it's important to only print out relevant information. Printing out too much can clutter the console and make it difficult to find the information we need. Second, we can use the `Log` class from the Kotlin standard library to print out debug output to log files instead of the console. This can be useful when debugging on a production server. We can also use the `assert()` function to print out debug output that only runs during debugging and not in a production environment. Lastly, remember to remove any debug output before deploying your code to a production environment to avoid cluttering the codebase and potential security risks. 
 
-## Deep Dive
+## See Also 
 
-While printing debug output may seem like a simple concept, there are some best practices and insights to keep in mind. One important thing to remember is to remove any print statements once you've solved the issue. Leaving them in your code can impact performance and lead to cluttered code.
-
-Additionally, consider using conditional statements or logging levels to control when and where your print statements are displayed. This can help to limit the amount of output and make debugging more efficient.
-
-Another useful tip is to use meaningful messages in your print statements. Instead of just printing variable names, include relevant information about what that variable represents or the result of a calculation. This will make it easier to understand the output and debug any issues.
-
-## See Also
-
-- [Official Kotlin Documentation on Basic Input and Output](https://kotlinlang.org/docs/tutorials/kotlin-for-py/basic-input-output.html)
-- [Java Logging Tutorial](https://www.vogella.com/tutorials/Logging/article.html)
-- [Debugging Tips and Tricks for Kotlin Developers](https://medium.com/@vladimir_milenkovic/debugging-tips-and-tricks-for-kotlin-developers-e3052fa0eb93)
+- [Kotlin Debugging Documentation](https://kotlinlang.org/docs/reference/debugging.html)
+- [Debugging Strategies in Kotlin](https://www.contemplator.com/kotlin-tutorials/part3-debugging-strategies.html)
+- [Kotlin Logging Tutorial](https://www.baeldung.com/kotlin-logging)

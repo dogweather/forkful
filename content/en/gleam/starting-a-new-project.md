@@ -1,47 +1,57 @@
 ---
-title:    "Gleam recipe: Starting a new project"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/starting-a-new-project.md"
+title:                "Gleam recipe: Starting a new project"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Starting a new programming project can be an exciting and daunting task. It allows you to explore new ideas, solve complex problems, and create something that has the potential to impact others. With Gleam, a functional programming language built for creating scalable and maintainable software, you have the opportunity to take on new challenges and improve your coding skills.
+
+Starting a new project can be a daunting task, but it can also be an exciting opportunity to create something new and innovative. With Gleam, you have the power to build powerful and efficient software in a modern and functional language.
 
 ## How To
-To get started with Gleam, first make sure you have the latest version of the Gleam compiler installed on your computer. Then, follow these simple steps to begin your project:
 
-  1. Create a new directory for your project and navigate into it.
-  2. Initialize a new Gleam project by running `gleam new my_project` in your terminal.
-  3. Once the project is initialized, you can open the `my_project` directory in your preferred code editor.
-  4. Within this directory, you will find a `src` folder where you can add your Gleam source code files.
-  5. To run your project, use the `gleam build` command to compile your code and then `gleam run` to execute it.
+To get started with a new project in Gleam, you first need to make sure you have the Gleam compiler and runtime installed on your machine. You can find detailed instructions for doing this in the Gleam documentation.
 
-Here is a simple `Hello World` example to demonstrate the code structure:
+Once you have Gleam installed, you can create a new project by running the following command in your terminal:
 
-```Gleam
-pub fn main() {
-  let greeting = "Hello World!"
-  io.println(greeting)
+```Gleam new <project_name>```
+
+This will create a new directory with the given project name and initialize it with all the necessary files and folders for a Gleam project. 
+
+Next, you can navigate into the project directory and open the `gleam.toml` file. This is where you can specify any dependencies or external libraries you may need for your project. You can also customize the project name, version number, and other configuration options in this file.
+
+After configuring your project, you can start writing code in the `src` directory. Gleam follows a standard file structure, with each module having its own file with the `.gleam` extension. Modules can then be imported into other modules with the `import` statement.
+
+Here's an example of a simple `hello_world.gleam` module:
+
+```
+fn say_hello() {
+  "Hello, world!"
 }
 ```
 
-The output when running this code will be `Hello World!` printed to your terminal.
+To compile and run this module, you can use the following commands in your terminal:
+
+```
+$ gleam build
+$ gleam run
+```
+
+The output of running this code should be `Hello, world!` printed to your terminal. Congratulations, you have successfully created and executed your first Gleam project!
 
 ## Deep Dive
-When starting a new project with Gleam, there are a few things to keep in mind. Firstly, the language is strongly typed, which means all variables must have a defined type. This may take some getting used to, but it ultimately leads to more robust and bug-free code.
 
-Additionally, Gleam uses the pipe operator `|>` to chain functions together, making code more readable and easier to debug. It also has a powerful type inference system, reducing the amount of type annotations needed.
+When starting a new project in Gleam, it's important to have a clear understanding of the language's core concepts, such as modules, functions, types, and pattern matching. These concepts may seem unfamiliar at first, especially if you're coming from an object-oriented language, but they are integral to writing efficient and maintainable code in Gleam.
 
-Another important aspect of starting a new Gleam project is understanding the concept of modules. Modules are used to organize functions and data types, and they can be used to create libraries that can easily be imported into other projects. By breaking your code into modules, you can improve the reusability and maintainability of your codebase.
+It's also important to keep in mind that Gleam is a statically typed language, meaning that all types are known at compile time. This can help catch errors early on and ensure that your code is free of many common bugs.
 
-Lastly, Gleam has a growing community of developers who are always willing to provide support and answer any questions you may have. There are also many helpful resources available, including tutorials, documentation, and sample projects.
+To learn more about the fundamentals of Gleam and how to effectively start a new project, be sure to check out the comprehensive documentation on the Gleam website.
 
 ## See Also
-Here are some useful links to help you get started with Gleam:
-- [Gleam Documentation](https://gleam.run/documentation/)
-- [Gleam on GitHub](https://github.com/gleam-lang/gleam)
-- [Official Gleam Discord Server](https://discord.gg/gleam-lang)
 
-With these resources, you can further explore the capabilities of Gleam and create amazing projects. Happy coding!
+- [Gleam website](https://gleam.run/)
+- [Gleam documentation](https://gleam.run/book/introduction.html)
+- [Gleam on GitHub](https://github.com/gleam-lang/gleam)

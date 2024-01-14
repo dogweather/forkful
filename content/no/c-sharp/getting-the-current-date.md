@@ -1,37 +1,59 @@
 ---
-title:    "C#: Hente nåværende dato"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/getting-the-current-date.md"
+title:                "C#: Hente gjeldende dato"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Mange programmerere vil på et eller annet tidspunkt ha behov for å hente ut den nåværende datoen. Dette kan være for å logge når noe ble opprettet eller for å vise datoen til brukeren. Uansett årsak, er det viktig å vite hvordan du kan få tak i riktig dato og hvordan du kan formatere den slik at den passer ditt behov.
 
-Noen ganger kan det være viktig å vite nøyaktig hvilken dato det er i programmet ditt. Dette kan være for å logge tidsstempler, planlegge fremtidige hendelser, eller bare for å gi informasjon til brukeren. Uansett årsak, er det viktig å vite hvordan man får tak i riktig dato i C#.
-
-## Hvordan få tak i dagens dato i C#
-
-For å få tak i dagens dato i C#, kan du bruke den innebygde DateTime-klassen. Denne klassen har metoder for å hente ut dato og klokkeslett, samt konvertere mellom ulike datoformater. Her er et eksempel på hvordan du kan få tak i dagens dato og skrive den ut i et bestemt format:
+## Hvordan du gjør det
+Å få tak i den nåværende datoen i C# er en enkel prosess. Først må du importere System namespace for å få tilgang til DateTime-klassen. Deretter kan du bruke metoden DateTime.Now for å få tak i dagens dato og klokkeslett. Her er et eksempel på hvordan du kan skrive dette i C#:
 
 ```C#
-DateTime now = DateTime.Now;
-Console.WriteLine("Dagens dato er: " + now.ToString("dd.MM.yyyy"));
+using System;
+
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate);
 ```
+
+Dette vil gi deg en output som ser slik ut:
+
+```C#
+10/02/2021 08:45:00
+```
+
+Ønsker du å bare få tak i datoen, kan du bruke metoden ToShortDateString() i stedet for å få følgende output:
+
+```C#
+10/02/2021
+```
+
+Du kan også formatere datoen på ulike måter ved hjelp av metoden ToString() og å bruke et formatmønster. Her er et eksempel hvor vi formaterer datoen til å vise bare måneden i bokstaver:
+
+```C#
+DateTime currentDate = DateTime.Now;
+string formattedDate = currentDate.ToString("MMMM");
+Console.WriteLine(formattedDate);
+```
+
 Dette vil gi deg følgende output:
 
-```
-Dagens dato er: 08.03.2021
+```C#
+Oktober
 ```
 
-Som du kan se, bruker vi ToString()-metoden med parameteren "dd.MM.yyyy" for å formatere datoen slik vi ønsker det. Du kan også endre formatet til å inkludere måned og år, eller til og med skrive ut dagens dato og klokkeslett.
+For en full liste over formatmønstre, kan du se Dokumentasjonen til Microsoft om DateTime-format.
 
 ## Dypdykk
+Det er viktig å merke seg at DateTime.Now vil hente ut datoen basert på den lokale datoen på maskinen din. Hvis du ønsker å hente ut den nåværende datoen i en annen tidsone, kan du bruke metoden DateTime.UtcNow i stedet. Du kan også bruke metoden DateTime.Today for å få tak i dagens dato uten klokkeslett.
 
-Hvis du ønsker enda mer kontroll over datoen, kan du bruke flere metoder i DateTime-klassen. For eksempel kan du få tak i kun dag, måned eller år ved å bruke Day, Month og Year-propertyene. Du kan også legge til eller trekke fra dager, timer eller andre tidsenheter ved å bruke Add- eller Subtract-metodene. Ta en titt på dokumentasjonen til DateTime-klassen for å lære om alle mulighetene.
+En annen nyttig funksjon i DateTime-klassen er metoden TryParseExact. Denne metoden lar deg konvertere en streng til en DateTime-objekt ved å spesifisere et formatmønster. Dette kan være nyttig hvis du henter et datostring fra en annen kilde og ønsker å konvertere den til en DateTime for å kunne arbeide med den videre i koden din.
 
 ## Se også
-
-- [DateTime-strukturen i C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Omfattende guide til dato og tid i C#](https://www.c-sharpcorner.com/blogs/c-sharp-datetime-methods1)
-- [Hvordan formatere dato og tid i C#](https://www.c-sharpcorner.com/UploadFile/hirendra_singh/how-to-format-date-and-time-in-C-Sharp/)
+- [Dokumentasjon for DateTime-format fra Microsoft](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [DateTime-klassen fra Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [C# DateTime i praksis fra Codeburst](https://codeburst.io/c-datetime-in-practice-df642cae0487)

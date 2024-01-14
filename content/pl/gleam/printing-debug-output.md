@@ -1,47 +1,52 @@
 ---
-title:    "Gleam: Wyświetlanie informacji debugowania"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/printing-debug-output.md"
+title:                "Gleam: Wyświetlanie danych debugowania"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Drukowanie informacji debugujących jest częstym narzędziem wykorzystywanym przez programistów do śledzenia i rozwiązywania problemów w kodzie. Pozwala to na wyświetlanie wartości zmiennych, wywoływania funkcji oraz informacji o błędach, co znacznie ułatwia proces debugowania.
+Dlaczego ktoś miałby chcieć wyświetlać debugowanie wyjścia? Istnieją wiele powodów, dla których wyświetlanie danych debugowania może być przydatne podczas pisania kodu w języku programowania Gleam. Na przykład, może pomóc zidentyfikować błędy lub dowiedzieć się więcej o działaniu programu.
 
 ## Jak to zrobić
 
-Aby wydrukować informacje debugujące w Gleam, należy użyć funkcji `debug.log()` oraz przekazać do niej wartość, którą chcemy wyświetlić jako argument. Przykładowy kod wyglądałby następująco:
+Aby wyświetlić debugowanie wyjścia w języku Gleam, użyj funkcji `debug!`. Przykładowy kod wyglądałby tak:
 
 ```Gleam
+import gleam/debug
+
+let number = 42
+debug!(number) // wyświetli 42 w konsoli
+
 let name = "John"
-
-debug.log(name) // wydrukuje "John" 
+debug!(name) // wyświetli "John" w konsoli
 ```
 
-Dodatkowo, można również wyświetlać informacje o kodzie w formie tzw. "śladu wywołań" (ang. stack trace), co pozwala na dokładniejsze prześledzenie drogi wywołań funkcji. Aby to zrobić, należy użyć funkcji `debug.stack_trace()`. Poniżej przedstawiamy przykład jej użycia:
+Korzystanie z tej funkcji jest proste i pomocne przy sprawdzaniu wartości zmiennych podczas pracy nad kodem.
+
+## Dogłębna analiza
+
+Funkcja `debug!` może również przyjmować więcej niż jedną wartość do wyświetlenia. Na przykład:
 
 ```Gleam
-fn greet(name) {
-  debug.log("Witaj, " ++ name ++ "!") // wydrukuje "Witaj, John!"
-}
+import gleam/debug
 
-fn main() {
-  let name = "John"
-
-  greet(name)
-
-  debug.stack_trace() // wyświetli ślad wywołań: "main() -> greet(name)"
-}
+let age = 24
+let name = "Jane"
+debug!(name, age) // wyświetli "Jane" i 24 w konsoli
 ```
 
-## Głębszy zanurzenie
+Warto również pamiętać, że funkcja ta nie jest dostępna w kodzie produkcyjnym i należy ją usunąć przed udostępnieniem programu na serwerze lub publicznie.
 
-Wyświetlanie informacji debugujących jest nie tylko przydatne w procesie rozwiązywania problemów, ale również pozwala na lepsze zrozumienie działania programu. Możemy poprzez wyświetlane wartości zmiennych obserwować zmiany w ich wartościach podczas wykonywania kodu oraz prześledzić kolejność wywołań funkcji.
+## Zobacz również
 
-## Zobacz też
+Jeśli chcesz dowiedzieć się więcej o języku programowania Gleam i jego możliwościach, zajrzyj na poniższe linki:
 
-- Dokumentacja Gleam: https://gleam.run/
-- Przewodnik po Glemie dla początkujących: https://gleam.run/book/
-- Wprowadzenie do programowania funkcyjnego w Gleam: https://gleam.run/docs/functional-programming
+- Oficjalna dokumentacja Gleam: https://gleam.run/
+- Repozytorium Gleam na GitHubie: https://github.com/gleam-lang/gleam
+- Społeczność Gleam na Discordzie: https://discord.gg/gleam
+
+Mamy nadzieję, że ten artykuł był pomocny i pomoże Ci w dalszej nauce Gleam!

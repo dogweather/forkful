@@ -1,18 +1,17 @@
 ---
-title:    "Go: Ein Datum in eine Zeichenfolge umwandeln."
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/converting-a-date-into-a-string.md"
+title:                "Go: Ein Datum in eine Zeichenfolge umwandeln"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Konvertieren von Datumsangaben in eine Zeichenfolge ist ein häufiger Bedarf in der Entwicklung, sei es für die Anzeige von Daten in einer Benutzeroberfläche oder für den Export in ein bestimmtes Format. In diesem Blog-Beitrag werden wir uns ansehen, wie wir dies mit Go erreichen können.
 
-Das Konvertieren von Datumsangaben in Strings ist ein häufiges Problem, dem Entwickler in verschiedenen Anwendungsfällen begegnen. Zum Beispiel kann es erforderlich sein, ein Datum in einem bestimmten Format auszugeben, um es in einer Datenbank zu speichern oder als Teil eines Textes anzuzeigen. In diesem Beitrag werden wir uns ansehen, wie man in der Programmiersprache Go ein Datum in einen String konvertieren kann.
-
-## Wie geht's
-
-Die Konvertierung eines Datums in einen String ist in Go relativ einfach. Zunächst müssen wir die Funktion `Format` aus dem Paket `time` verwenden. Diese Funktion erwartet zwei Argumente: das angegebene Format und das Datum, das konvertiert werden soll. Im folgenden Beispiel konvertieren wir das aktuelle Datum in das Format "02.01.2006":
+## Wie
+Um ein Datum in eine Zeichenfolge umzuwandeln, können wir die Formatierungsfunktion in Go verwenden. Hier ist ein Beispiel, wie wir das aktuelle Datum in das Format "Tag.Monat.Jahr" umwandeln können:
 
 ```Go
 package main
@@ -23,13 +22,25 @@ import (
 )
 
 func main() {
-	currentDate := time.Now()
-	formattedDate := currentDate.Format("02.01.2006")
-	fmt.Println(formattedDate)
+	currentTime := time.Now()
+	formattedTime := currentTime.Format("02.01.2006")
+	fmt.Println(formattedTime)
 }
 ```
 
-Das Ergebnis wird in der Konsole als String ausgegeben und sieht folgendermaßen aus: "13.11.2021". Wir können auch die Funktion `Parse` verwenden, um ein Datum aus einem String in ein `time.Time`-Objekt zu konvertieren. Im folgenden Beispiel verwenden wir die gleiche Formatierung, um den String "13.11.2021" in ein `time.Time`-Objekt umzuwandeln:
+Das Ergebnis dieses Codes wird in der Konsole wie folgt angezeigt:
+
+`08.10.2021`
+
+Wie Sie sehen können, haben wir die Funktion `Format` verwendet und das gewünschte Format als Parameter übergeben. Hier sind weitere Parameter, die für die Formatierung von Datumsangaben verwendet werden können:
+
+- `Monat`: Monatsangabe, z.B. "Januar"
+- `Mon`: Abkürzung für Monat, z.B. "Jan"
+- `Tag`: Tagesangabe, z.B. "02"
+- `Jahr`: Vierstellige Jahreszahl, z.B. "2021"
+- `Jahr kurz`: Zwei-stellige Jahreszahl, z.B. "21"
+
+Sie können auch mehrere Parameter kombinieren, um ein spezifischeres Format zu erreichen. Hier ist ein Beispiel, bei dem wir das aktuelle Datum und die Uhrzeit in das Format "Tag.Monat.Jahr Stunden:Minuten:Sekunden" umwandeln:
 
 ```Go
 package main
@@ -40,24 +51,22 @@ import (
 )
 
 func main() {
-	dateString := "13.11.2021"
-	parsedDate, err := time.Parse("02.01.2006", dateString)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(parsedDate)
+	currentTime := time.Now()
+	formattedTime := currentTime.Format("02.01.2006 15:04:05")
+	fmt.Println(formattedTime)
 }
 ```
 
-Das Ergebnis ist das Datum als `time.Time`-Objekt, das für weitere Berechnungen oder Änderungen verwendet werden kann.
+Das Ergebnis wird wie folgt angezeigt:
 
-## Tiefer eintauchen
+`08.10.2021 13:30:00`
 
-Wenn wir uns tiefer in die Thematik der Datumsformatierung in Go einarbeiten, werden wir feststellen, dass es viele weitere Möglichkeiten gibt, ein Datum in einen String umzuwandeln. Zum Beispiel können wir mit der Methode `Month()` eines `time.Time`-Objekts den Monatsnamen in verschiedenen Sprachen ausgeben. Wir können auch die Funktion `Format` nutzen, um die Zeitzone oder den Wochentag zu einem Datum hinzuzufügen.
+## Deep Dive
+Die `Format`-Funktion verwendet das "Time Format Dataset", das am 2. Januar 2006, 15:04:05 Uhr MST (Mountain Standard Time) definiert wurde. Der Grund dafür ist, dass dieses Datum und diese Uhrzeit leicht zu merken sind und es somit einfacher ist, Formate zu erstellen. Wenn Sie weitere Informationen zu den möglichen Formaten benötigen, können Sie die offizielle Dokumentation von Go zurate ziehen.
 
-Eine wichtige Sache zu beachten ist, dass das angegebene Format in der Funktion `Format` und `Parse` in bestimmten Teilen flexibel ist. Zum Beispiel können wir statt "02" auch "2", "2006" oder "06" verwenden, um das Jahr auszugeben. Eine vollständige Liste der unterstützten Formatierungen kann in der Dokumentation des Pakets `time` gefunden werden.
+Es ist auch wichtig zu beachten, dass die `Format`-Funktion nur für Datumsangaben verwendet werden kann, die als `time.Time`-Objekt vorliegen. Wenn Sie ein Datum in Form einer Zeichenfolge oder eines anderen Datentyps haben, müssen Sie es zunächst in ein `time.Time`-Objekt umwandeln, bevor Sie es formatieren können.
 
 ## Siehe auch
-
-- [Go-Dokumentation zu `time`](https://golang.org/pkg/time/)
-- [Go Playground mit Beispielen zur Datumsformatierung](https://play.golang.org/p/_bgaWf0tKTD)
+- Offizielle Dokumentation zu Formatierungsanweisungen: https://golang.org/pkg/time/#Time.Format
+- Zeitpakete in Go: https://golang.org/pkg/time/
+- Umwandeln von Zeichenfolgen in Zeitobjekte in Go: https://yourbasic.org/golang/convert-string-to-time/

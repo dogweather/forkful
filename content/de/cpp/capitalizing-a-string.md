@@ -1,90 +1,66 @@
 ---
-title:    "C++: Ein String großschreiben"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/capitalizing-a-string.md"
+title:                "C++: Ein String großschreiben"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Kapitalisieren von Zeichenfolgen ist eine häufige Aufgabe in der Programmierung. Es ist wichtig, um beispielsweise Eingaben vom Benutzer oder von Datenbanken zu formatieren oder um Strings für bestimmte Ausgaben zu konvertieren.
+Das Verschriftlichen von Wörtern ist eine grundlegende Funktion in der Programmierung. Es kann jedoch vorkommen, dass ein String in Kleinbuchstaben geschrieben ist und für die Ausgabe oder die Verwendung in einer anderen Funktion in Großbuchstaben umgewandelt werden muss. Deshalb ist das "Kapitalisieren" eines Strings ein nützliches Werkzeug in der C++ Programmierung.
 
-## Wie man es macht
+## Wie geht das?
 
-Das Kapitalisieren einer Zeichenfolge in C++ ist einfach. Hier ist ein Beispiel:
-
-```C++
-#include <iostream>
-#include <string>
-using namespace std;
-
-int main() {
-  // Eine Zeichenfolge vom Benutzer eingeben
-  string eingabe;
-  cout << "Bitte geben Sie eine Zeichenfolge ein: ";
-  cin >> eingabe;
-
-  // Die Zeichenfolge in Großbuchstaben umwandeln
-  for (int i = 0; i < eingabe.length(); i++) {
-    eingabe[i] = toupper(eingabe[i]);
-  }
-
-  // Ausgabe der kapitalisierten Zeichenfolge
-  cout << "Die kapitalisierte Zeichenfolge ist: " << eingabe << endl;
-  return 0;
-}
-```
-
-#### Output:
-```
-Bitte geben Sie eine Zeichenfolge ein: Hallo Welt
-Die kapitalisierte Zeichenfolge ist: HALLO WELT
-```
-
-## Tief einsteigen
-
-Es gibt verschiedene Möglichkeiten, eine Zeichenfolge in C++ zu kapitalisieren. Das obige Beispiel ist nur eine Möglichkeit. Andere Optionen sind die Verwendung von String-Funktionen wie `transform()` oder das Erstellen einer eigenen Funktion.
-
-Die `transform()` Funktion kann auch dazu verwendet werden, eine Zeichenfolge in Kleinbuchstaben oder die erste Buchstabe eines Wortes in Großbuchstaben zu konvertieren. Hier ist ein Beispiel, das die ersten Buchstaben eines Wortes in Großbuchstaben umwandelt:
+Das Kapitalisieren eines Strings in C++ kann auf verschiedene Weisen erreicht werden. Eine Möglichkeit ist die Verwendung der "transform" Funktion aus der STL Bibliothek, wie im folgenden Beispiel gezeigt:
 
 ```C++
 #include <iostream>
-#include <string>
 #include <algorithm>
-using namespace std;
-
-// Funktion, die die ersten Buchstaben in Großbuchstaben umwandelt
-string erste_buchstaben(string s) {
-  s[0] = toupper(s[0]);
-  for (int i = 1; i < s.length(); i++) {
-    if (s[i-1] == ' ') {
-      s[i] = toupper(s[i]);
-    }
-  }
-  return s;
-}
+#include <string>
 
 int main() {
-  // Eine Zeichenfolge vom Benutzer eingeben
-  string eingabe;
-  cout << "Bitte geben Sie eine Zeichenfolge ein: ";
-  getline(cin, eingabe);
-
-  // Ausgabe der Zeichenfolge mit umgewandelten ersten Buchstaben
-  cout << "Zeichenfolge mit umgewandelten ersten Buchstaben: " << erste_buchstaben(eingabe) << endl;
-  return 0;
+    std::string text = "hallo welt";
+    // Umwandlung in Großbuchstaben
+    std::transform(text.begin(), text.end(), text.begin(), toupper);
+    std::cout << text << std::endl;
+    // Ausgabe: HALLO WELT
+    return 0;
 }
 ```
 
-#### Output:
+Eine weitere Möglichkeit ist die Verwendung des ASCII Codes, um zwischen Klein- und Großbuchstaben zu unterscheiden. Dies kann mit einem einfachen Loop und der Verwendung von "islower" und "toupper" Funktionen erreicht werden, wie im folgenden Beispiel gezeigt:
+
+```C++
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string text = "hallo welt";
+    // Loop durch jeden Buchstaben im String
+    for (int i = 0; i < text.length(); i++) {
+        // Überprüfen, ob der Buchstabe ein Kleinbuchstabe ist
+        if(islower(text[i])) {
+            // Konvertierung in Großbuchstabe
+            text[i] = toupper(text[i]);
+        }
+    }
+    std::cout << text << std::endl;
+    // Ausgabe: HALLO WELT
+    return 0;
+}
 ```
-Bitte geben Sie eine Zeichenfolge ein: dies ist ein beispiel
-Zeichenfolge mit umgewandelten ersten Buchstaben: Dies Ist Ein Beispiel
-```
+
+Es gibt noch viele weitere Möglichkeiten, einen String in C++ zu kapitalisieren, daher empfehle ich, verschiedene Methoden auszuprobieren und die für dich am besten geeignete zu verwenden.
+
+## Tiefergehender Einblick
+
+Die "transform" Funktion und die Verwendung von ASCII Codes sind nur zwei Beispiele für Möglichkeiten, Strings in C++ zu kapitalisieren. Es gibt viele weitere Methoden, die sich in Effizienz und Genauigkeit der Umwandlung unterscheiden. Es ist wichtig, die verschiedenen Möglichkeiten zu kennen und die beste für deine spezielle Situation auszuwählen.
 
 ## Siehe auch
 
-- [String-Funktionen in C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
-- [C++: Strings in Großbuchstaben umwandeln](https://stackoverflow.com/questions/7352046/c-strings-to-uppercase)
-- [C++: Erste Buchstaben eines Worts in Großbuchstaben umwandeln](https://stackoverflow.com/questions/35758809/c-convert-first-letter-of-every-word-in-a-string-to-uppercase)
+- [C++ String Manipulation Funktionen](http://www.cplusplus.com/reference/string/string/)
+- [ASCII Tabelle](http://www.asciitable.com/)
+- [C++ Touppper Funktion](http://www.cplusplus.com/reference/cctype/toupper/)
+- [C++ Transform Funktion](http://www.cplusplus.com/reference/algorithm/transform/)

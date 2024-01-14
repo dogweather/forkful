@@ -1,45 +1,57 @@
 ---
-title:    "C++: Läsning av kommandolinjeargument"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/reading-command-line-arguments.md"
+title:                "C++: Läsning av kommandoradsargument"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-Att kunna läsa in argument från kommandoraden är en mycket användbar funktion inom C++ programmering. Det är ett sätt att ge flexibilitet till dina program genom att få användaren att ge in data när de kör programmet istället för att ha hårdkodade värden direkt inuti koden. Läsning av kommandoradsargument är också vanligt inom kommandoradsbaserade program, så det är en viktig färdighet att behärska.
+Kommandoradsargument, även kallade "command line arguments" på engelska, är en viktig del av C++ programmering. Genom att läsa och använda kommandoradsargument kan du skapa mer flexibla och anpassningsbara program som kan ta emot olika indata från användaren.
 
-## Så här gör du
+## Hur man gör det
 
-För att läsa in kommandoradsargument i C++, behöver du inkludera biblioteket `<iostream>` och använda funktionen `int main(int argc, char* argv[])`. För att få åtkomst till de faktiska argumenten, använder du en loop som går igenom varje element i `argv` (argv[0] är alltid programnamnet) och skriver ut dem eller använder dem i din kod.
+Att läsa kommandoradsargument är faktiskt ganska enkelt i C++. Allt du behöver göra är att använda den inbyggda "main" funktionen och dess "argc" och "argv" parametrar. Här är ett exempel på hur du kan göra det:
 
 ```C++
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-    for (int i = 0; i < argc; i++) {
-        std::cout << argv[i] << std::endl; // Skriver ut argumentet
-    }
-    return 0;
+int main(int argc, char *argv[]) {
+  for (int i = 0; i < argc; i++) {
+    std::cout << "Argument " << i + 1 << ": " << argv[i] << std::endl;
+  }
+  return 0;
 }
 ```
 
-Om du kör programmet från kommandoraden med argumenten "hello" och "world" kommer output att vara:
+I detta exempel skriver vi ut alla kommandoradsargument som användaren matar in. "argc" parametern håller antalet argument som skickas till programmet och "argv" parametern innehåller själva argumenten som en vektor av strängar. Genom att använda en "for" loop kan vi gå igenom alla argument och skriva ut dem.
+
+Om vi skulle köra detta program med följande kommandon i kommandoraden:
 
 ```
-./program hello world
+./program argument1 argument2 argument3
 ```
 
-Hello
-World
+Så kommer outputen att se ut så här:
+
+```
+Argument 1: ./program
+Argument 2: argument1
+Argument 3: argument2
+Argument 4: argument3
+```
+
+Som du kan se inkluderas även programmet självt som det första argumentet.
 
 ## Djupdykning
 
-`argc` representerar antalet argument som skickas in till programmet, medan `argv` är en array av strängar som håller de faktiska argumenten. Det finns också andra sätt att hantera kommandoradsargument, som att använda `std::string` eller `getopt()` funktionen. Det är viktigt att vara medveten om att argument är olika typer av data, så det kan krävas konverteringar när du använder dem i din kod.
+Förutom att bara skriva ut kommandoradsargumenten kan du också använda dem för att göra din kod mer dynamisk och anpassningsbar. Genom att läsa in olika argument kan du till exempel ändra programmets beteende eller utföra olika uppgifter baserat på användarens indata.
+
+Du kan också använda externa bibliotek som "boost program_options" för att göra hantering av kommandoradsargumenten ännu enklare och mer strukturerad.
 
 ## Se även
 
-- [C++ Kommandoradsargument reference](https://en.cppreference.com/w/cpp/language/main_function)
-- [Using getopt() to Parse Command-Line Arguments in C++](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
-- [C++ String Class](https://www.cplusplus.com/reference/string/string/)
+- [cppreference - Argumente från kommandoraden](https://en.cppreference.com/w/cpp/language/main_function)
+- [Boost Program_options guide (på engelska)](https://www.boost.org/doc/libs/1_74_0/doc/html/program_options.html)

@@ -1,40 +1,33 @@
 ---
-title:    "PHP: Znajdowanie długości ciągu znaków"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/finding-the-length-of-a-string.md"
+title:                "PHP: Znajdowanie długości ciągu znaków"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Jeden z podstawowych zadań, z którymi spotykamy się w programowaniu, to operacje na ciągach znaków. Jedną z nich jest znajdowanie długości ciągu - jest to niezbędny krok, aby wiedzieć ile znaków zawiera dany napis. W tym artykule pokażemy, jak w prosty sposób uzyskać długość ciągu w języku PHP.
+W dzisiejszym poście dowiesz się, dlaczego jest istotne znaleźć długość ciągu znaków w PHP i jak to zrobić.
 
-## Jak to zrobić
+# Jak to zrobić
 
-Aby uzyskać długość ciągu w PHP, możemy skorzystać z funkcji `strlen()`. Przyjmuje ona jako argument ciąg znaków, a zwraca jego długość jako wartość całkowitą. Przykładowe użycie tej funkcji wygląda w następujący sposób:
-
-```PHP
-<?php
-$text = "Witaj świecie!";
-echo strlen($text); // wypisze: 15
-``` 
-
-W powyższym przykładzie najpierw tworzymy zmienną `$text`, do której przypisujemy napis "Witaj świecie!". Następnie wykorzystujemy funkcję `strlen()` do obliczenia długości tego napisu i wypisujemy wynik za pomocą funkcji `echo`. Proste, prawda?
-
-## Głębszy zanurzenie
-
-W przypadku, gdy chcemy liczyć długość ciągu zawierającego znaki niedwubajtowe, tj. nie będące jednoznacznymi znakami Unicode, musimy sięgnąć po funkcję `mb_strlen()`. Km jest ona dostępna tylko wtedy, gdy rozszerzenie `mbstring` jest załadowane w PHP. Przykładowe wykorzystanie tej funkcji wygląda następująco:
+Aby znaleźć długość ciągu znaków w PHP, można użyć wbudowanej funkcji `strlen()`. Przykładowy kod wygląda następująco:
 
 ```PHP
-<?php
-$text = "ąśćęźżłółń";
-echo mb_strlen($text, 'UTF-8'); // wypisze: 10
+$string = "Witaj, świecie!";
+echo strlen($string);
 ```
 
-Funkcja `mb_strlen()` przyjmuje dwa argumenty - pierwszy to ciąg znaków, a drugi (opcjonalny) to kodowanie, w którym znajduje się ten ciąg. Dzięki temu możemy bez problemu obliczać długość nawet najbardziej egzotycznych napisów.
+Po uruchomieniu tego kodu, ujrzymy na ekranie liczbę `16`, która jest długością ciągu `Witaj, świecie!`.
 
-## Zobacz także
+# Deep Dive
 
-- [Dokumentacja funkcji `strlen()` w PHP](https://www.php.net/manual/en/function.strlen.php)
-- [Dokumentacja funkcji `mb_strlen()` w PHP](https://www.php.net/manual/en/function.mb-strlen.php)
+Funkcja `strlen()` liczy liczbę znaków w danym ciągu, włącznie ze spacjami. Dlatego warto zwrócić uwagę na używane znaki, ponieważ mogą one mieć wpływ na wynik. Jeśli chcemy policzyć tylko znaki alfanumeryczne, można użyć funkcji `preg_replace()` w celu usunięcia innych znaków.
+
+# Zobacz także
+
+- Dokumentacja PHP: https://www.php.net/manual/en/function.strlen.php
+- Wideo tutorial na temat funkcji `strlen()`: https://www.youtube.com/watch?v=Pz8LSvgsNbg
+- Przykładowe zadanie dla praktyki: https://www.w3resource.com/php-exercises/php-basic-exercise-3.php

@@ -1,38 +1,52 @@
 ---
-title:    "Elm: 現在の日付を取得する"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/getting-the-current-date.md"
+title:                "Elm: 現在の日付の取得"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ現在の日付を取得する必要があるのか？
 
-現在の日付を取得することの魅力をご存知ですか？Elmでプログラミングをする際に、現在の日付を取得する必要がある場合があります。その理由を紹介します。
+プログラミングにおいて、特定のタスクを実行する際には、時には現在の日付が必要になることがあります。例えば、予定やイベントを作成するとき、あるいはユーザーが最後にアクションを起こした日付を記録したいときなどがあります。そのような場合、現在の日付を取得することは非常に便利です。
 
 ## 方法
 
-```Elm
-import Html exposing (text)
-import Time exposing (now)
+Elmで現在の日付を取得する方法はとても簡単です。```Date```モジュールを使用するだけで、現在の日付を取得できます。
 
-main =
-  now
-    |> Time.toUtc
-    |> Time.format "%Y/%m/%d"
-    |> text
+```elm
+import Date exposing (Date)
+import Time exposing (Posix)
+
+-- 現在の日付を取得
+currentDate : Date
+currentDate =
+  Time.posixToMillis Posix.now |> Date.fromMillisSinceEpoch
 ```
 
-このように、`Time`をインポートし、`now`を使用して現在の日時を取得します。そして、`toUtc`を使ってUTC時間に変換し、`format`を使って表示形式を指定します。最後に、`text`を使ってHTMLに変換して表示します。
+以上のコードを実行すると、現在の日付が```currentDate```に格納されます。
 
-このコードを実行すると、現在の日付が表示されます。例えば、2021年10月23日ならば、"2021/10/23"という形式で表示されます。
+また、特定の形式で日付を取得することも可能です。例えば、年、月、日のそれぞれの数値を取得したい場合は以下のようにコードを変更することができます。
+
+```elm
+import Date exposing (Date)
+import Time exposing (Posix)
+
+-- 現在の日付を取得
+currentDate : ( Int, Int, Int )
+currentDate =
+  Time.posixToMillis Posix.now |> Date.fromMillisSinceEpoch |> Date.toGregorian
+```
+
+上記のコードを実行すると、現在の年、月、日がそれぞれの数値として取得されます。
 
 ## ディープダイブ
 
-日付を取得する際には、タイムゾーンに注意する必要があります。例えば、上記のコードでは`toUtc`を使用してUTC時間に変換していますが、現在地のタイムゾーンに合わせて変換することも可能です。また、`format`を使って表示形式を自由に変更することができます。
+現在の日付を取得する際には、夏時間やタイムゾーンなど、さまざまな影響要因があります。そのため、取得した日付が正確であることを保証するためにはいくつかの追加処理が必要になります。詳しい情報は[公式ドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Time)を参照することをおすすめします。
 
-## 参考リンク
+## 関連情報
 
-- [Official Elm Documentation - Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Learn Elm Programming - Getting the Current Date](https://elmbasics.com/getting-the-current-date)
-- [Elm Japan User Group](https://elmjapan.org/)
+- [Elm公式ドキュメント](https://guide.elm-lang.org/)
+- [楽しく学べる Elm 入門 - Qiita](https://qiita.com/ci7lus/items/9f70a6224e68ee3c7abc)
+- [Elmってなんだ？ - Qiita](https://qiita.com/janus_wel/items/0c986741dcdd118f5f6b)

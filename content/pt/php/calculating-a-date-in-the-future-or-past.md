@@ -1,38 +1,55 @@
 ---
-title:    "PHP: Calculando uma data no futuro ou passado"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/calculating-a-date-in-the-future-or-past.md"
+title:                "PHP: Calculando uma data no futuro ou no passado"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+##Por que
 
-Você já se perguntou como é possível calcular a data no futuro ou no passado usando programação PHP? Bem, esta é uma habilidade útil para aprender a controlar o tempo em seus projetos.
+Às vezes, durante o desenvolvimento de um site ou aplicativo, pode ser necessário calcular uma data no futuro ou no passado com base em um determinado valor ou evento. Isso é comum em tarefas como agendamento de compromissos, alertas de renovação e muito mais.
 
-## Como fazer
+##Como Fazer
+
+Para realizar esse cálculo em PHP, é necessário utilizar a função `strtotime()` combinada com o operador `+` ou `-`. Por exemplo, para obter a data de hoje mais 10 dias, podemos fazer o seguinte código:
 
 ```PHP
-// Calculando a data atual
-$dataAtual = date("Y-m-d");
-
-// Calculando a data no futuro com base em um número de dias
-$numeroDias = 7;
-$dataFutura = date("Y-m-d", strtotime("+$numeroDias days"));
-
-echo "A data daqui a $numeroDias dias é: $dataFutura";
+$data_futura = strtotime("+10 days");
+echo date('d/m/Y', $data_futura);
 ```
 
-A saída deste código seria: "A data daqui a 7 dias é: 2021-04-28". Você também pode calcular a data no passado usando o operador "-".
+Isso resultará na saída `30/06/2020`, considerando que a data de hoje é `20/06/2020`.
 
-## Mergulho Profundo
+Da mesma forma, para obter uma data no passado, podemos usar o operador `-`. No exemplo abaixo, obteremos a data de três semanas atrás:
 
-Agora que aprendemos como usar as funções date() e strtotime() para calcular datas no futuro ou no passado, é importante entender seu funcionamento. A função date() retorna a data atual formatada de acordo com o parâmetro especificado, enquanto a função strtotime() analisa a string de data fornecida e a converte em um timestamp.
+```PHP
+$data_passada = strtotime("-3 weeks");
+echo date('d/m/Y', $data_passada);
+```
 
-Com esse conhecimento, podemos manipular facilmente datas em nossos projetos, adicionando ou subtraindo um determinado número de dias, semanas, meses ou anos. Também podemos especificar datas específicas em vez de usar o valor atual com a função strtotime().
+Isso resultará na saída `30/05/2020`.
 
-## Veja também
+##Mergulho Profundo
 
-- [Documentação oficial do PHP para a função date()](https://www.php.net/manual/en/function.date.php)
-- [Documentação oficial do PHP para a função strtotime()](https://www.php.net/manual/en/function.strtotime.php)
-- [Tutorial em vídeo: Como calcular datas usando PHP](https://www.youtube.com/watch?v=JbhEh3qJlLU)
+A função `strtotime()` aceita uma variedade de parâmetros, permitindo que você defina a data inicial e o valor a ser adicionado ou subtraído em vários formatos. Alguns exemplos são:
+
+- `strtotime("+2 months")` para adicionar 2 meses
+- `strtotime("+1 year +2 weeks")` para adicionar 1 ano e 2 semanas
+- `strtotime("next Monday")` para obter a próxima segunda-feira
+
+Você também pode definir a partir de uma data específica usando a função `mktime()`. Por exemplo, para obter a data de 10 dias após 20 de maio de 2020, podemos fazer o seguinte código:
+
+```PHP
+$data_inicio = mktime(0, 0, 0, 5, 20, 2020);
+$data_futura = strtotime("+10 days", $data_inicio);
+echo date('d/m/Y', $data_futura);
+```
+
+Isso resultará na saída `30/05/2020`.
+
+##Veja Também
+
+- [Documentação oficial sobre strtotime()](https://www.php.net/manual/en/function.strtotime.php)
+- [Tutorial: Como trabalhar com datas em PHP](https://www.phpk.org/php-time-date-output-format-func-php/)

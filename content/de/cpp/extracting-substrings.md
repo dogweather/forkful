@@ -1,18 +1,19 @@
 ---
-title:    "C++: Unterzeichenketten extrahieren"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/extracting-substrings.md"
+title:                "C++: Extrahieren von Teilzeichenfolgen"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
 
-Das Extrahieren von Teilstrings ist eine nützliche Fähigkeit, die in der Programmierung oft benötigt wird. Es ermöglicht uns, nur die Teile eines Textes zu isolieren, die wir benötigen, anstatt den gesamten String zu durchsuchen.
+Das Extrahieren von Teilstrings ist ein sehr nützliches Konzept beim Programmieren in C++. Mit Teilstrings können wir bestimmte Teile von Zeichenketten extrahieren, die wir benötigen, und sie dann für verschiedene Zwecke verwenden. Zum Beispiel können wir Teilstrings verwenden, um eine bestimmte Zeichenkette in einer Eingabe zu überprüfen oder um nur einen Teil einer längeren Zeichenkette für die weitere Verarbeitung zu verwenden. In diesem Blog-Beitrag werden wir uns genauer damit befassen, wie man Teilstrings in C++ extrahieren kann.
 
 ## Wie geht das?
 
-Um Teilstrings in C++ zu extrahieren, können wir die `substr()` Funktion verwenden. Diese Funktion nimmt zwei Parameter an: den Startindex und die Länge des gewünschten Teilstrings. Hier ist ein Beispielcode, der die `substr()` Funktion verwendet:
+Um Teilstrings in C++ zu extrahieren, müssen wir die C++ Standardbibliotheksfunktion `substr()` verwenden. Diese Funktion ermöglicht es uns, einen Teil einer Zeichenkette zu extrahieren, indem wir den Startindex und die Länge des zu extrahierenden Teils angeben. Ein Beispielcode könnte wie folgt aussehen:
 
 ```C++
 #include <iostream>
@@ -21,37 +22,31 @@ Um Teilstrings in C++ zu extrahieren, können wir die `substr()` Funktion verwen
 using namespace std;
 
 int main() {
-	// Definieren des Ausgangsstrings
-	string satz = "Das Wetter ist heute schön";
+    // Eingabezeichenkette
+    string input = "Hallo Welt";
 
-	// Extrahieren des zweiten Teilstrings "Wetter"
-	string wetter = satz.substr(4, 6);
+    // Extrahiere den Teilstring "Welt"
+    string extracted = input.substr(6, 4);
 
-	// Ausgabe des Teilstrings
-	cout << "Teilstring: " << wetter << endl;
+    // Gib den extrahierten Teilstring aus
+    cout << extracted << endl;
 
-	// Extrahieren des dritten Teilstrings "ist"
-	string ist = satz.substr(11, 3);
-
-	// Ausgabe des Teilstrings
-	cout << "Teilstring: " << ist << endl;
-
- 	return 0;
+    return 0;
 }
 ```
 
-Der Output dieses Codes wäre:
+Die Ausgabe des obigen Codes wäre "Welt", da wir ab dem 6. Zeichen (das erste Zeichen hat den Index 0) 4 Zeichen extrahiert haben.
 
-```
-Teilstring: Wetter
-Teilstring: ist 
-```
+Man kann auch den Startindex weglassen, in diesem Fall wird der Teilstring ab dem Anfang der Zeichenkette extrahiert. Außerdem kann man auch die Länge weglassen, dann wird der Teilstring bis zum Ende der Zeichenkette extrahiert.
 
-## Tiefergehende Informationen
+## Tiefer eintauchen
 
-Bei der Verwendung der `substr()` Funktion müssen wir darauf achten, dass der Startindex innerhalb der Länge des ursprünglichen Strings liegt, sonst wird ein Fehler auftreten. Außerdem wird die Länge des Teilstrings nicht automatisch an das Ende des ursprünglichen Strings angepasst, daher müssen wir sicherstellen, dass die angegebene Länge nicht über die Länge des ursprünglichen Strings hinausgeht.
+Die `substr()`-Funktion gibt uns einen `std::string` zurück, der den extrahierten Teilstring enthält. Dies bedeutet, dass wir mit diesem Teilstring genauso arbeiten können wie mit anderen Zeichenketten, z.B. ihn ausgeben oder ihn mit anderen Zeichenketten verknüpfen. Wir können auch mehrere Teilstrings extrahieren und diese dann kombinieren, um ein bestimmtes Muster in einer Zeichenkette zu finden.
+
+Es gibt auch weitere nützliche Funktionen für die Arbeit mit Teilstrings, wie zum Beispiel `find()`, `rfind()` oder `compare()`. Diese Funktionen ermöglichen es uns, Teilstrings in einer Zeichenkette zu suchen oder Zeichenketten miteinander zu vergleichen. Es lohnt sich also, sich mit diesen Funktionen auseinanderzusetzen, um noch mehr aus Teilstrings herauszuholen.
 
 ## Siehe auch
 
-- [C++ - Strings](https://www.cplusplus.com/doc/tutorial/ntcs/)
-- [C++ - substr() Funktion](http://www.cplusplus.com/reference/string/string/substr/)
+- [C++ substr() function documentation](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [C++ string manipulation functions](https://www.geeksforgeeks.org/string-manipulation-in-c-using-stl/)
+- [C++ string library reference](https://www.cplusplus.com/reference/string/)

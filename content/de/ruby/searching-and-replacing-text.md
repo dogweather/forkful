@@ -1,47 +1,38 @@
 ---
-title:    "Ruby: Suchen und Ersetzen von Text"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/searching-and-replacing-text.md"
+title:                "Ruby: Suchen und Ersetzen von Text"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Suchen und Ersetzen von Text ist eine nützliche Fähigkeit, die jeder Ruby-Programmierer beherrschen sollte. Es ermöglicht das effiziente Bearbeiten von Textdateien und -strings, was besonders bei der Bearbeitung großer Datenmengen hilfreich ist.
+Das Suchen und Ersetzen von Text ist eine häufige Aufgabe beim Programmieren. Es hilft dabei, bestimmte Begriffe oder Zeichenfolgen in einem Textdokument oder Code schnell und effizient zu finden und diese durch andere zu ersetzen. Dies kann vor allem dann nützlich sein, wenn man mehrere Dateien oder Zeilen Code auf einmal bearbeiten möchte.
 
-# Wie man Text sucht und ersetzt
+## Wie geht es
 
-Zur Durchführung von Such- und Ersetzungsvorgängen in Ruby gibt es verschiedene Methoden, die wir uns genauer anschauen werden.
+Um Text in Ruby zu suchen und zu ersetzen, kann man die `gsub`-Methode verwenden. Diese Methode durchsucht einen String nach einem bestimmten Muster und ersetzt es durch einen angegebenen Wert.
 
-## String#sub und String#gsub
-
-Die Methoden `sub` und `gsub` können auf Strings angewendet werden, um bestimmte Teilstrings zu suchen und zu ersetzen. Der Unterschied zwischen den beiden besteht darin, dass `sub` nur die erste Übereinstimmung ersetzt, während `gsub` alle Übereinstimmungen ersetzt.
-
-```ruby 
-# Beispiel mit String#sub
-"My name is John".sub("John", "Jane") # => "My name is Jane"
-
-# Beispiel mit String#gsub
-"Hello Ruby, welcome to Ruby".gsub("Ruby", "World") # =>"Hello World, welcome to World"
+```Ruby
+"Hello World".gsub("World", "Ruby") 
+# Output: "Hello Ruby"
 ```
 
-## Regex
+Man kann auch reguläre Ausdrücke verwenden, um gezielt nach bestimmten Mustern zu suchen und diese zu ersetzen.
 
-Die Verwendung von Regular Expressions ermöglicht es, komplexe Such- und Ersetzungsvorgänge durchzuführen. Um einen Regex in Ruby zu erstellen, verwenden wir den Konstruktor `/.../`. Im folgenden Beispiel wird der Regex `/[aeiou]/` verwendet, um alle Vokale in einem String zu ersetzen.
-
-```ruby
-"Hello World".gsub(/[aeiou]/, "*") # => "H*ll* W*rld"
+```Ruby
+"Hello 123".gsub(/\d+/, "World")
+# Output: "Hello World"
 ```
 
-# Tiefergehende Informationen
+## Tiefere Einblicke
 
-Beim Ersetzen von Text gibt es noch weitere wichtige Aspekte zu beachten, wie z.B. die Verwendung von Modifikatoren oder die Auswirkungen auf die Performance. Für eine ausführliche Erklärung empfehle ich die offizielle Dokumentation oder weitere Tutorials zu diesem Thema.
+Das Suchen und Ersetzen von Text kann auch mit Hilfe von Iterationen und Bedingungen erweitert werden. Durch die Verwendung von Schleifen kann man beispielsweise alle Dateien in einem Verzeichnis durchsuchen und bestimmte Textstellen ersetzen. Auch das Hinzufügen von Ausnahmen für bestimmte Muster oder Dateitypen ist möglich.
 
-# Siehe auch
+## Siehe auch
 
-- [Offizielle Dokumentation zu String#sub und String#gsub](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
-- [Regex Tutorial für Ruby](https://rubular.com/)
-- [Praxisbeispiel für die Verwendung von Regex zum Suchen und Ersetzen in Ruby](https://www.rubyguides.com/2019/07/ruby-regex/)
-
-Vielen Dank fürs Lesen! Falls du weitere Fragen hast oder Feedback zu diesem Beitrag hast, zögere nicht, einen Kommentar zu hinterlassen. Happy coding!
+- [Offizielle Ruby Dokumentation zu `gsub`](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+- [Eine Einführung in reguläre Ausdrücke in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Ein praktisches Beispiel für die Anwendung von `gsub` und regulären Ausdrücken](https://medium.com/@miguelmoura/building-a-word-counter-with-regular-expressions-in-ruby-55bcea68e824)

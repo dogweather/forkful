@@ -1,27 +1,36 @@
 ---
-title:    "TypeScript: डायरेक्टरी मौजूद है या नहीं जांचने की विधि"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript: डायरेक्ट्री मौजूद होने की जांच करें"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों?
+## क्यों
 
-एक डाइरेक्टरी अस्तित्व की जांच करने से पहले, एक प्रोग्रामर को सुनिश्चित करना चाहिए कि उनकी एप्लिकेशन अपनी आवश्यकताओं को पूरा करने के लिए सही स्थान पर फ़ाइलों को खोज सकती है। एक स्थान या डाइरेक्टरी अस्तित्व की जांच करने से, एप्लिकेशन की दृष्टि से समस्याओं से बच सकते हैं और सही तरीके से मापदंडों को सेट कर सकते हैं। इसके अलावा, यह डेवलपमेंट और टेस्टिंग के दौरान आपको समस्याओं को शीघ्रतापूर्वक पहचानने में मदद कर सकता है।
+जब हम कोई नया प्रोजेक्ट शुरू करते हैं तो उसमें कई फोल्डर और फ़ाइलें बनाने पड़ते हैं। यदि हम उनमें से कोई फोल्डर या फ़ाइल भूल जाते हैं, तो हमारे प्रोजेक्ट को काम करने में कठिनाई आ सकती है। इसलिए हमें यह जांचने की ज़रूरत होती है कि क्या दिए गए डायरेक्टरी में हमारे द्वारा चाहे गए फोल्डर या फ़ाइलें मौजूद हैं या नहीं। यह जांच करने के लिए हम निम्नलिखित तरीकों का उपयोग कर सकते हैं। 
 
-## कैसे करें?
+## कैसे करें
 
 ```TypeScript
+// Importing the fs module
 import * as fs from 'fs';
-
-const directory = './myDirectory'
-
-if (fs.existsSync(directory)) {
-    console.log('डाइरेक्टरी है!')
+// Storing the directory path in a variable
+let directoryPath = 'C:/Users/User/Desktop/MyProject';
+// Checking if the directory exists
+if (fs.existsSync(directoryPath)) {
+  console.log('Directory exists');
 } else {
-    console.log('डाइरेक्टरी मौजूद नहीं है।')
+  console.log('Directory does not exist');
 }
+
+// Output if directory exists: Directory exists
+// Output if directory does not exist: Directory does not exist
 ```
 
-इस उदाहरण में, हमने [File System (fs) मॉड्यूल](https://nodejs.org/api/fs.html) का उपयोग करके एक सरल तरीके से डाइरेक्टरी की जांच की है। यह मॉड्यूल Node.js में डिफ़ॉल्ट रूप से उपलब्ध होता है और यह स्ट्रिंग प्राइमरिटिव या एक यूनिकोड बाईट एरे को पढ़ कर फ़ाइल और फ़ोल्डर के साथ काम करने की सुविधा प्रदान करता है। इस तरह, हम दर्ज की गई डाइरेक्टरी नाम के साथ `existsSync()` फ़ंक्शन को कॉल करके स्थान के अस्तित्व का आकलन कर सकते हैं। अगर डाइरेक्टरी मौजूद है तो, हमारे `console.log()` के भीतरी प्रिंटिंग से सच संदेश लोग किया जाएगा। अन्यथा, अस्तित्व की जांच के अभाव में, एक
+टाइपस्क्रिप्ट में डायरेक्टरी की जांच के लिए हमें `fs` मॉड्यूल का इंपोर्ट करना होता है। उसके बाद हमें जो डिरेक्टरी का पथ हमारे पास होता है, उसे एक वेरिएबल में स्टोर करना होता है। `existsSync()` फ़ंक्शन के द्वारा हम पथ के साथ `if` कंडीशन लगाकर डायरेक्टरी की जांच कर सकते हैं। अगर डायरेक्टरी मौजूद होती है तो `existsSync()` फ़ंक्शन `true` रिटर्न करेगी और हम `Directory exists` का आउटपुट प्रिंट करेंगे, जबकि अगर डायरेक्टरी मौजूद न होती होती है तो `existsSync()` फ़ंक्शन `false` रिटर्न करेगी और हम `Directory does not exist` का आउटपुट प्रिंट करेंगे। 
+
+## गहराई में जाओ
+
+टाइपस्क्रिप्ट में डायरेक्ट

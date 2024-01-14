@@ -1,37 +1,52 @@
 ---
-title:    "Haskell: 정규식 사용하기"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/using-regular-expressions.md"
+title:                "Haskell: 정규 표현식 사용하기"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-정규 표현식은 Haskell 프로그래밍에서 매우 유용합니다. 이를 사용하면 텍스트에서 패턴을 찾거나 조작할 수 있습니다. 위대한 언어를 만드는 데 한 몫씩 하기 위해서는 정규 표현식을 배워야 합니다.
+정규 표현식을 사용하는 이유는 무엇일까요? 정규 표현식은 문자열 내의 패턴을 검색하고 일치하는 문자열을 찾는 강력한 도구입니다. 이를 통해 데이터를 처리하고 조작하는 데 유용하게 사용할 수 있습니다. 또한 많이 사용되는 언어인 Haskell에서 빠르고 쉽게 정규 표현식을 사용할 수 있습니다.
 
-## 사용 방법
-
-정규 표현식을 사용하는 가장 간단한 방법은 "ghc"나 "ghci" 프로그램을 사용하는 것입니다. 이 프로그램은 컴파일러 및 인터랙티브 환경입니다. 우선 "ghci"를 열고 다음을 입력해 보세요.
+## 어떻게 사용하나요?
 
 ```Haskell
-import Text.Regex.TDFA
+-- String 내에서 "apple"이라는 단어를 찾는 예제 코드
+import Text.Regex.PCRE
+
+findApple :: String -> Bool
+findApple str = str =~ "apple"
 ```
-그런 다음 컴파일러에서는 다음을 통해 패턴을 매칭할 수 있습니다.
+위의 코드는 "```" 사이에 적힌 부분을 제외하고 Haskell 코드이므로 따로 복사하여 실행시켜보셔야 합니다. 이 코드는 "^apple" 패턴과 일치하는 문자열을 찾는 함수를 정의한 것입니다. "```" 부분에 적힌 패턴을 조정하여 다른 문자열을 찾을 수도 있습니다.
+
+아래는 위의 함수를 이용하여 "I love apples"라는 문자열이 "apple"을 포함하는지 확인하는 예제 코드입니다.
 
 ```Haskell
-"Hello World!" =~ "Hello"
+findApple "I love apples" --출력: True
 ```
-출력은 "True"가 될 것입니다. 패턴을 찾지 못하면 "False"가 됩니다.
 
-## 깊이 알아보기
+## 심층 분석
 
-정규 표현식에서 사용 가능한 다른 기능도 있습니다. 예를 들어 패턴에서 값을 추출할 수 있습니다. 이는 중첩된 괄호를 사용하여 가능합니다. 올바른 패턴을 사용하면 값을 선택적으로 포함시킬 수 있습니다.
+정규 표현식을 사용하면 문자열을 분석하고 원하는 패턴을 추출할 수 있습니다. 이를 통해 텍스트 파일에서 특정 단어를 찾거나, 이메일 주소를 추출하거나, 특정 문구를 삭제할 수 있습니다. 정규 표현식은 문자열의 특정 부분을 찾는 데 유용한 메타 문자를 포함합니다. 아래는 주로 사용되는 메타 문자 몇 가지입니다.
 
-자세한 내용은 "Text.Regex.TDFA" 모듈 문서를 참조하세요. 정규 표현식을 사용하는 더 많은 예제도 찾을 수 있습니다.
+- `.`: 모든 문자와 일치
+- `*`: 이전 문자의 0회 이상의 반복과 일치
+- `+`: 이전 문자의 1회 이상의 반복과 일치
+- `?`: 이전 문자의 0회 또는 1회의 반복과 일치
+- `^`: 문자열의 시작과 일치
+- `$`: 문자열의 끝과 일치
 
-## 참고 자료
+자세한 사용 방법과 메타 문자 말고도 다양한 기능을 위해 추가적으로 알아야 할 것이 많습니다. 따라서 정규 표현식에 대한 심층적인 이해가 필요합니다.
 
-- [Haskell 정규 표현식 문서](https://www.haskell.org/haskellwiki/Regular_expressions)
-- [Haskell 정규 표현식 튜토리얼](https://web.archive.org/web/20121113020535/http://www.dreamsongs.com/Files/RegExp.pdf)
-- [Haskell 정규 표현식 사용 예제](https://wiki.haskell.org/Regular_expressions)
+## 또 다른 정보
+
+아래는 정규 표현식에 대해 더 많이 알아볼 수 있는 링크입니다.
+
+- [Haskell에 내장된 정규 표현식 패키지 문서](https://hackage.haskell.org/package/regex-base)
+- [온라인 정규 표현식 테스트 사이트](https://regexr.com)
+- [정규 표현식 강의 영상 (한글 번역)](https://youtu.be/mVgyKokKnVs)
+
+# 참고 자료

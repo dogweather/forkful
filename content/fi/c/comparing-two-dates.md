@@ -1,65 +1,73 @@
 ---
-title:    "C: Kahden päivämäärän vertailu"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/comparing-two-dates.md"
+title:                "C: Kahden päivämäärän vertailu"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi vertailla kahta päivämäärää?
+## Miksi
 
-Vertaillessamme kahta päivämäärää voimme selvittää, onko jokin tapahtuma tapahtunut ennen vai jälkeen toisen tapahtuman. Tämä on erittäin hyödyllistä esimerkiksi varausjärjestelmien tai tehtävälistojen yhteydessä.
+Vertaamalla kahta päivämäärää voidaan selvittää, kumpi niistä on aikaisempi tai myöhempi. Tämä voi olla tarpeellista esimerkiksi tarkistaessa, onko jokin tapahtuma jo ohitse vai onko se vasta tulossa.
 
-## Kuinka vertailla
+## Miten
 
-Käyttämällä C-kielen aikafunktioita, voimme luoda kaksi päivämäärää ja verrata niitä toisiinsa käyttämällä vertailuoperaattoreita. Koodin esimerkissä luomme kaksi päivämäärää ja tarkistamme, kumpi niistä on aikaisempi. Alla olevassa koodiesimerkissä käytetään aikafunktioita `mktime` ja `difftime`.
+Vertailun tekemiseen päivämäärien välillä tarvitaan useita toimintoja ja muuttujia. Seuraavassa on esimerkiksi yksinkertainen koodilohko, joka vertaa kahta syötettyä päivämäärää ja tulostaa tiedon siitä, kumpi niistä on myöhempi:
 
 ```C
 #include <stdio.h>
-#include <time.h>
+#include <stdlib.h>
 
-int main()
-{
-    // Luodaan ensimmäinen päivämäärä
-    struct tm date1 = {0};
-    date1.tm_year = 2020;
-    date1.tm_mon = 0;
-    date1.tm_mday = 1;
-
-    // Luodaan toinen päivämäärä
-    struct tm date2 = {0};
-    date2.tm_year = 2020;
-    date2.tm_mon = 6;
-    date2.tm_mday = 1;
-
-    // Vertaillaan päivämääriä
-    if (difftime(mktime(&date1), mktime(&date2)) > 0)
-    {
-        printf("Ensimmäinen päivämäärä on aikaisempi.");
+int main() {
+  // Alustetaan päivämäärien muuttujat
+  int day1, month1, year1, day2, month2, year2;
+  
+  // Pyydetään käyttäjältä syötteitä
+  printf("Syötä ensimmäinen päivämäärä muodossa päivä/kuukausi/vuosi: ");
+  scanf("%d/%d/%d", &day1, &month1, &year1);
+  
+  printf("Syötä toinen päivämäärä muodossa päivä/kuukausi/vuosi: ");
+  scanf("%d/%d/%d", &day2, &month2, &year2);
+  
+  // Suoritetaan vertailu ja tulostetaan tieto
+  if (year1 > year2) {
+    printf("Ensimmäinen päivämäärä on myöhempi.");
+  } else if (year1 < year2) {
+    printf("Toinen päivämäärä on myöhempi.");
+  } else {
+    // Vertaillaan tarvittaessa myös kuukausia ja päiviä
+    if (month1 > month2) {
+      printf("Ensimmäinen päivämäärä on myöhempi.");
+    } else if (month1 < month2) {
+      printf("Toinen päivämäärä on myöhempi.");
+    } else {
+      if (day1 > day2) {
+        printf("Ensimmäinen päivämäärä on myöhempi.");
+      } else if (day1 < day2) {
+        printf("Toinen päivämäärä on myöhempi.");
+      } else {
+        printf("Molemmat päivämäärät ovat samat.");
+      }
     }
-    else
-    {
-        printf("Toinen päivämäärä on aikaisempi.");
-    }
-
-    return 0;
+  }
+  return 0;
 }
 ```
 
-Tulostus:
+Esimerkki tulosteesta syötteillä "12/5/2020" ja "8/6/2020":
 
 ```
-Toinen päivämäärä on aikaisempi.
+Syötä ensimmäinen päivämäärä muodossa päivä/kuukausi/vuosi: 12/5/2020
+Syötä toinen päivämäärä muodossa päivä/kuukausi/vuosi: 8/6/2020
+Ensimmäinen päivämäärä on myöhempi.
 ```
 
-## Syvä sukellus
+## Syvemmälle
 
-Vaikka kaksi päivämäärää näyttävät samalta, ne ovat todellisuudessa erilaisia arvoja, joita tietokone käsittelee. Päivämäärät tallennetaan Unix-aikana, joka on käytännössä sekunteina kuluneesta ajasta 1. tammikuuta 1970 klo 00.00 UTC:sta lähtien. Tämä tarkoittaa, että kun luomme päivämääriä, tietokone muuntaa ne nanosekunneiksi ja tallentaa ne yhtenäiseen muotoon, jota on helppo vertailla.
+Päivämäärien vertaaminen voi olla monimutkaista, erityisesti jos halutaan huomioida esimerkiksi karkausvuodet tai eri aikavyöhykkeiden väliset erot. On tärkeää muistaa, että pelkistetty esimerkkimme ei välttämättä toimi kaikissa tilanteissa ja ohjelman tulee olla tarpeeksi joustava selviytyäkseen erilaisista syötteistä.
 
-Yksi tärkeä huomioitava asia on, että päivämäärän vertailun on oltava samassa aikavyöhykkeessä, jotta se toimisi oikein. Jos esimerkiksi vertailemme päivämäärää Suomen aikavyöhykkeellä ja Yhdysvaltojen aikavyöhykkeellä, tietokone laskee eroa ajanerojen lisäksi, mikä saattaa johtaa virheellisiin tuloksiin.
+## Katso myös
 
-# Katso myös
-
-- [Aikafunktiot C-kielessä (cprogramming.com)](https://www.cprogramming.com/tutorial/time.html)
-- [Aikafunktiot C-kirjastossa (C library functions)](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
-- [Päivämäärän vertailu Java-kielellä (Stack Overflow)](https://stackoverflow.com/questions/22359911/compare-two-dates-in-java)
+- [How to Compare Dates in C](https://www.programiz.com/c-programming/examples/difference-dates)
+- [Date Arithmetic in C](https://www.programiz.com/c-programming/examples/date-arithmetic)

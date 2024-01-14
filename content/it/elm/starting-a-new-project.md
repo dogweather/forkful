@@ -1,45 +1,44 @@
 ---
-title:    "Elm: Iniziare un nuovo progetto"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/starting-a-new-project.md"
+title:                "Elm: Iniziare un nuovo progetto"
+programming_language: "Elm"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se sei un programmatore in cerca di un nuovo linguaggio di programmazione da utilizzare per il tuo prossimo progetto, dovresti considerare Elm. È un linguaggio funzionale puramente funzionale che offre una sintassi pulita e semplice per scrivere applicazioni web front-end performanti e robuste.
+Se sei interessato a iniziare un nuovo progetto di programmazione, dovresti considerare l'utilizzo di Elm. Questo linguaggio funzionale ti permette di creare applicazioni web robuste e conformi ai principi della programmazione funzionale.
 
 ## Come fare
 
-Per iniziare a utilizzare Elm, è necessario seguire alcuni semplici passaggi:
+Per iniziare a scrivere in Elm, è necessario installare la sua dipendenza principale, il compilatore Elm. Una volta installato, puoi creare un nuovo file `.elm` e iniziare a codificare. Ecco un esempio di come dichiarare una funzione `add` che somma due numeri in Elm:
 
-1. Scarica l'ultima versione del compilatore Elm dal sito ufficiale.
-2. Installa il compilatore e il pacchetto di gestione delle dipendenze "Elm package manager" utilizzando il tuo gestore di pacchetti preferito, come NPM o Homebrew.
-3. Crea un nuovo progetto Elm utilizzando il comando "elm init" e segui le istruzioni a schermo per configurare il tuo ambiente di sviluppo.
-
-Una volta che il tuo progetto è stato configurato, puoi iniziare a scrivere il tuo codice Elm all'interno di un file con estensione .elm. Ecco un semplice esempio di codice Elm:
-
-```Elm
-import Html exposing (text)
-
-main =
-  text "Ciao mondo!"
+```elm
+add x y =
+  x + y
 ```
 
-Questo codice importa la libreria Html, che ci permette di utilizzare la funzione "text" per visualizzare il testo "Ciao mondo!" nella pagina web.
+Esempio di output:
 
-Una volta scritto il tuo codice, puoi eseguirlo utilizzando il comando "elm reactor". Questo avvierà un server locale e ti permetterà di visualizzare la tua applicazione Elm in azione nel tuo browser.
+```
+add 3 5
+=>  8
+```
+
+Uno dei concetti chiave di Elm è la gestione immutabile dei dati. Questo significa che una volta definito un valore, non può essere modificato. Invece, si crea una copia del valore con le modifiche desiderate. Questo aiuta a mantenere il codice pulito e prevenire bug causati da modifiche accidentali.
+
+Un'altra caratteristica utile di Elm è la sua architettura "Model-View-Update". Questo schema aiuta a strutturare il codice in modo modulare e prevedibile. Se vuoi saperne di più su come utilizzarlo, puoi consultare la documentazione ufficiale di Elm.
 
 ## Approfondimento
 
-Se vuoi approfondire l'utilizzo di Elm e scoprire tutte le sue funzionalità, puoi consultare la documentazione ufficiale sul sito di Elm. Troverai informazioni dettagliate su come utilizzare le librerie incluse, strumenti per il debugging e tecniche avanzate per scrivere codice Elm efficiente.
+Prima di iniziare un nuovo progetto in Elm, è importante avere una buona comprensione dei fondamenti del linguaggio. Puoi iniziare trovando risorse didattiche online, come corsi o tutorial, o partecipando a conferenze o meetup di Elm nella tua zona.
 
-Inoltre, puoi partecipare alla comunità di Elm attraverso il forum ufficiale o il canale Slack. Qui potrai ottenere aiuto e consigli da altri sviluppatori Elm e condividere le tue esperienze e conoscenze.
+Inoltre, assicurati di essere a tuo agio con i concetti della programmazione funzionale, come la currying e le funzioni di ordine superiore, prima di immergerti completamente in Elm.
 
 ## Vedi anche
 
-- [Sito ufficiale di Elm](https://elm-lang.org/)
-- [Documentazione di Elm](https://elm-lang.org/docs)
-- [Forum ufficiale di Elm](https://discourse.elm-lang.org/)
-- [Canale Slack di Elm](https://elmlang.herokuapp.com/)
+- Documentazione ufficiale di Elm: https://guide.elm-lang.org/
+- Esempi di progetti Elm: https://github.com/elm/projects
+- Risorse didattiche su Elm: https://www.elm-tutorial.org

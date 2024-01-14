@@ -1,47 +1,39 @@
 ---
-title:    "Javascript: Zufallszahlen generieren"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/generating-random-numbers.md"
+title:                "Javascript: Erzeugung von Zufallszahlen"
+programming_language: "Javascript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Javascript ist eine gängige Programmiersprache, die in vielen Bereichen eingesetzt wird. Eine wichtige Funktion dieser Sprache ist die Möglichkeit, Zufallszahlen zu generieren. Dies kann nützlich sein, um Spiele zu erstellen, Tests zu simulieren oder einfach nur zum Spaß. In diesem Blog-Beitrag werde ich erklären, warum das Generieren von Zufallszahlen in Javascript wichtig ist und wie es funktioniert.
+Warum sollte man sich überhaupt mit der Generierung von Zufallszahlen beschäftigen? Die Antwort ist einfach: Zufallszahlen sind ein wichtiger Bestandteil vieler Programmierprojekte. Sie ermöglichen beispielsweise die Erstellung von zufälligen Charakteren in Computerspielen oder die Durchführung von statistischen Simulationen.
 
-## Wie man Zufallszahlen in Javascript generiert
-Um Zufallszahlen in Javascript zu generieren, gibt es zwei Hauptmethoden: `Math.random()` und `crypto.getRandomValues()`. Die `Math.random()` Methode gibt eine Zufallszahl zwischen 0 (inklusive) und 1 (exklusive) zurück. Hier ist ein Beispiel:
-
-```Javascript
-var randomNum = Math.random();
-console.log(randomNum); // Output: 0.456892765
-```
-
-Um jedoch eine Zufallszahl in einem bestimmten Bereich zu bekommen, können wir diese Methode mit `Math.floor()` und `Math.ceil()` kombinieren, um die Zahl auf eine ganze Zahl zu runden. Das folgende Beispiel generiert eine zufällige Ganzzahl zwischen 1 und 10:
+## Wie
+Die Generierung von Zufallszahlen ist in Javascript sehr einfach und kann auf verschiedene Arten erfolgen. Eine Möglichkeit ist die Verwendung der Math.random() Funktion. Diese Funktion gibt eine zufällige Zahl zwischen 0 und 1 zurück. Um eine zufällige ganze Zahl zu generieren, kann man die Funktion mit der Methode Math.floor() kombinieren. Hier ein Beispiel:
 
 ```Javascript
-var randomNum = Math.floor(Math.random() * 10) + 1;
-console.log(randomNum); // Output: 7
+let randomInt = Math.floor(Math.random() * 10); // gibt eine zufällige ganze Zahl zwischen 0 und 9 zurück
+console.log(randomInt); // gibt den generierten Wert aus (z.B. 7)
 ```
 
-Eine weitere Methode ist die Verwendung von `crypto.getRandomValues()`, die aus der Web Crypto API stammt. Diese Methode gibt kryptografisch sichere Zufallszahlen zurück und ist daher nützlich, wenn es um Sicherheit und Verschlüsselung geht. Hier ist ein Beispiel:
+Die generierten Zahlen können auch in Arrays gespeichert werden, um eine zufällige Auswahl daraus zu treffen. Hier ein Beispiel, das eine zufällige Farbe aus einem Array ausgibt:
 
 ```Javascript
-var array = new Uint32Array(1);
-crypto.getRandomValues(array);
-console.log(array[0]); // Output: 3764842624
+let colors = ["rot", "gelb", "blau", "grün", "orange", "lila"];
+let randomColor = Math.floor(Math.random() * colors.length);
+console.log(colors[randomColor]); // gibt eine zufällige Farbe aus dem Array aus (z.B. "blau")
 ```
 
-Es ist wichtig zu beachten, dass beide Methoden nicht wirklich "zufällige" Zahlen generieren, sondern Pseudozufallszahlen basierend auf einem sogenannten "Seed" oder Startwert. Wenn Sie also dieselbe Methode mehrmals aufrufen, erhalten Sie dieselbe Zufallszahlenserie. Um dies zu vermeiden, können Sie den Seed manuell ändern oder die Zeit als Seed nutzen.
+Es gibt auch Bibliotheken wie beispielsweise "random.js", die umfangreichere Funktionen zur Generierung von Zufallszahlen bieten.
 
-## Tieferer Einblick
-Es ist wichtig zu verstehen, dass die Zufallszahlen, die in Javascript generiert werden, nicht wirklich zufällig sind. Sie basieren auf einem Algorithmus und sind daher vorhersehbar. Dies ist in Ordnung für viele Anwendungen, aber wenn es um Sicherheit geht, ist es wichtig, eine andere Methode zu verwenden, wie zum Beispiel `crypto.getRandomValues()`.
+## Deep Dive
+Bei der Verwendung von Zufallszahlen ist es wichtig zu beachten, dass diese nicht wirklich zufällig sind, sondern auf vordefinierten Algorithmen beruhen. Es gibt daher keine Garantie für absolute Zufälligkeit. Auch kann es vorkommen, dass bei schnelleren Aufrufen derselben Funktion, scheinbar gleiche Zufallszahlen zurückgegeben werden.
 
-Es gibt auch Bibliotheken und Frameworks, die erweiterte Funktionen für die Generierung von Zufallszahlen in Javascript bieten. Eine beliebte Bibliothek ist beispielsweise "random-js".
-
-Insgesamt ist das Generieren von Zufallszahlen in Javascript ein nützliches Werkzeug, das in vielfältigen Anwendungen verwendet wird. Es ist wichtig, die verschiedenen Methoden und deren Unterschiede zu verstehen, um die richtige Methode für jede Anwendung auszuwählen.
+Ein weiterer wichtiger Aspekt ist die "Saat" (Seed), die bei der Generierung von Zufallszahlen verwendet wird. Diese wird als Startwert für den Algorithmus verwendet und beeinflusst die darauffolgenden generierten Zahlen. Um beispielsweise stets dieselben Zufallszahlen zu erhalten, kann man einen festen Wert als Samen setzen. Andernfalls kann man auch einen dynamischen Wert wie zum Beispiel die aktuelle Uhrzeit verwenden, um eine größere Variabilität zu erzielen.
 
 ## Siehe auch
-- [MDN Web Docs - Math.random()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [MDN Web Docs - Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
-- [random-js](https://github.com/joelalejandro/random-js)
+- https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- https://github.com/joelnet/random.js
+- https://www.mathematik.de/geschichten-zahlung-hilfsbereite-zufallszahlen/

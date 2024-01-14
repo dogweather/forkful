@@ -1,57 +1,67 @@
 ---
-title:    "Java: Rozpoczynając nowy projekt"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/starting-a-new-project.md"
+title:                "Java: Rozpoczęcie nowego projektu"
+programming_language: "Java"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Próbujesz nauczyć się programować w Javie? A może już masz doświadczenie w tej dziedzinie i planujesz rozpocząć nowy projekt? Bez względu na motywację, jest wiele powodów, dla których warto rozpocząć nowy projekt w Javie. To wszechstronny język programowania, który jest wykorzystywany w różnych dziedzinach, od tworzenia aplikacji mobilnych po systemy bankowe. Ponadto, obecnie jest bardzo popularny wśród pracodawców, co oznacza, że posiadanie umiejętności programowania w Javie może otworzyć drzwi do ciekawych możliwości zawodowych.
+Rozpoczęcie nowego projektu programistycznego może być nie tylko ekscytującym wyzwaniem, ale także doskonałą okazją do nauki i rozwoju umiejętności programowania. W tym artykule dowiesz się, jak rozpocząć nowy projekt Java i jak wykorzystać to do poszerzenia swojej wiedzy.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby rozpocząć nowy projekt w Javie, należy postępować zgodnie z poniższymi krokami:
+Pierwszym krokiem do rozpoczęcia projektu Java jest utworzenie nowego projektu w wybranym IDE, takim jak IntelliJ lub Eclipse. Następnie dodajemy klasy i metody, które będą służyć naszym celom. Możemy wykorzystać również gotowe biblioteki, aby zaoszczędzić czas i uniknąć pisania kodu od zera.
 
-1. Zainstaluj środowisko programistyczne (IDE) dla Javy, na przykład Eclipse czy IntelliJ IDEA.
-2. Utwórz nowy projekt w wybranym IDE.
-3. Utwórz klasę główną, w której będzie uruchamiana aplikacja.
-4. Napisz kod wewnątrz metody `main` w klasie głównej.
-
-Oto przykładowy kod, który wypisze tekst "Witaj świecie!" w konsoli:
+Poniżej przedstawiam przykład utworzenia prostego programu, który wypisuje przywitanie na konsolę:
 
 ```Java
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Witaj świecie!");
-    }
+  public static void main(String[] args) {
+    System.out.println("Witaj, jestem Java!");
+  }
 }
 ```
-
-Po uruchomieniu tego kodu powinieneś zobaczyć poniższe wyjście w konsoli:
-
+Wyjście na konsolę:
 ```
-Witaj świecie!
+Witaj, jestem Java!
 ```
 
-To tylko podstawy, ale jest to wystarczające, aby rozpocząć działanie na własnym projekcie w Javie.
+Możemy również wykorzystać pakiet ```java.util```, aby skorzystać z gotowej klasy do pobierania danych od użytkownika:
 
-## Głębsze Zagadnienia
+```Java
+import java.util.Scanner;
 
-Poza podstawowymi krokami, warto poznać również kilka głębszych zagadnień związanych z rozpoczęciem nowego projektu w Javie. Należą do nich:
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Podaj swoje imię: ");
+    String name = input.nextLine();
+    System.out.println("Witaj, " + name + "!");
+  }
+}
+```
+Wyjście na konsolę po wpisaniu imienia "Jan":
+```
+Podaj swoje imię: 
+Jan
+Witaj, Jan!
+```
 
-- Używanie zewnętrznych bibliotek - Javy posiada wiele bibliotek, które mogą ułatwić pracę w projekcie. Warto znać i umieć wykorzystywać je w swoich projektach.
-- Organizacja kodu - ważne jest, aby utrzymywać porządek w kodzie, aby później nie mieć problemów z jego rozwijaniem i utrzymywaniem.
-- Testowanie - w Javie istnieje wiele narzędzi do testowania kodu, co jest niezwykle ważne przy większych projektach.
+## Głębsze zanurzenie
 
-Rozpoczęcie nowego projektu w Javie może być nieco przytłaczające, ale z czasem wszystko stanie się łatwiejsze i bardziej zrozumiałe.
+Podczas tworzenia nowego projektu Java warto również zwrócić uwagę na dobre praktyki programistyczne, takie jak używanie poprawnej konwencji nazewnictwa, stosowanie komentarzy do dokumentacji kodu oraz regularnie wykonywanie testów. Możemy również skorzystać z narzędzi do zarządzania kodem, takich jak Git, aby śledzić i kontrolować zmiany w kodzie.
 
-## Zobacz Również
+Ważne jest również, aby pamiętać o bezpieczeństwie i stosować się do dobrych praktyk w zakresie ochrony danych i unikania luk w zabezpieczeniach.
 
-- [Oficjalna strona Javy](https://www.java.com/pl/)
-- [Dokumentacja Javy](https://docs.oracle.com/javase/8/docs/)
-- [Początki z Javą: Pierwsza aplikacja](https://codecouple.pl/2016/08/10/poczatki-z-java-pierwsza-aplikacja/)
-- [Jak rozpocząć nowy projekt w IntelliJ IDEA](https://codingwithmanny.medium.com/how-to-start-a-new-java-project-in-intellij-idea-75bc8a20f6b5)
+Kolejnym ważnym aspektem jest dokumentacja naszego projektu. Należy pamiętać o regularnym aktualizowaniu dokumentacji i opisywaniu funkcjonalności oraz używanych rozwiązań.
 
-Dziękujemy za przeczytanie tego artykułu i mamy nadzieję, że będzie on pomocny w twoim przygodzie z programowaniem w Javie. Powodzenia!
+## Zobacz również
+
+- [Oficjalna dokumentacja języka Java](https://docs.oracle.com/en/java/)
+- [Poradnik dla początkujących programistów Java](https://java-programming.mooc.fi/)
+- [Blog o programowaniu w języku Java](https://www.javaworld.com/)
+
+Życzę powodzenia w tworzeniu nowych projektów Java oraz rozwijaniu swoich umiejętności programistycznych!

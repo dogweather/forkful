@@ -1,43 +1,69 @@
 ---
-title:    "Swift: Порівняння двох дат"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/comparing-two-dates.md"
+title:                "Swift: Порівняння двох дат"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Програмування не завжди просте, і часом нам треба порівняти дві дати для виконання певних дій. У цій статті ми розглянемо, як зробити це в мові Swift.
+У програмуванні часто виникає потреба порівняти дві дати. Це може бути необхідно для сортування, фільтрації або визначення часу між подіями. У цій статті ми подивимося, як легко та ефективно порівняти дати з допомогою мови Swift.
 
 ## Як це зробити
 
-Існує кілька способів порівняти дві дати в мові Swift, але ми розглянемо основний приклад, використовуючи функцію `compare` з класу `Date`.
+Коли ми порівнюємо дати у Swift, ми фактично порівнюємо об'єкти типу `Date`. Для цього у нас є декілька методів та операторів, які допоможуть нам виконати цю задачу. Давайте подивимося на приклади: 
+
+```Swift
+let today = Date()
+let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)
+
+if today < tomorrow {
+    print("Сьогодні раніше за завтра")
+}
+
+// Виведе "Сьогодні раніше за завтра"
+```
+
+Також ми можемо використовувати метод `compare`, щоб отримати результат порівняння у вигляді об'єкта типу `ComparisonResult`:
+
+```Swift
+let firstDate = Date()
+let secondDate = Calendar.current.date(byAdding: .hour, value: 3, to: firstDate)
+
+let result = firstDate.compare(secondDate!)
+
+switch result {
+case .orderedAscending:
+    print("Перша дата раніше за другу")
+case .orderedDescending:
+    print("Перша дата пізніше за другу")
+case .orderedSame:
+    print("Дати рівні")
+}
+// Виведе "Перша дата пізніше за другу"
+```
+
+## Глибоке занурення
+
+У випадку, коли нам не потрібно точно порівнювати дати і досягнута точність часу нам не важлива, ми можемо скористатися оператором `==` для порівняння дат у Swift. Це спрацює, якщо об'єкти містять однакові значення, але можуть бути різними об'єктами типу `Date`:
 
 ```Swift
 let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 3600) // поточна дата плюс 3600 секунд
+let date2 = Date(timeIntervalSince1970: date1.timeIntervalSince1970)
 
-if date1.compare(date2) == .orderedAscending { // перевіряємо чи перша дата менша за другу
-    print("Перша дата менша за другу")
-} else if date1.compare(date2) == .orderedDescending { // перевіряємо чи перша дата більша за другу
-    print("Перша дата більша за другу")
-} else { // якщо дати рівні
-    print("Дати рівні")
+if date1 == date2 {
+    print("Дати однакові")
 }
+
+// Виведе "Дати однакові"
 ```
 
-В цьому прикладі ми використовуємо функцію `compare`, яка повертає перечислення `ComparisonResult`. За допомогою цього перечислення ми можемо визначити, яка з дат більша або менша за іншу, або чи вони рівні.
+Крім того, у Swift ми можемо порівнювати дати за допомогою деяких інших параметрів, таких як часовий пояс або календар. Для цього ми можемо використовувати метод `isEquals(to:)` з об'єктом типу `Calendar`.
 
-## Глибоке дослідження
+## Дивіться також
 
-Тепер, коли ми познайомилися з основним способом порівняння двох дат, давайте розглянемо деякі додаткові можливості.
-
-- Ми також можемо порівнювати дати за допомогою операторів `>`, `<`, `>=`, `<=`. Це спрощує код і робить його більш зрозумілим.
-- Якщо нам потрібно зробити додаткові операції з датами (наприклад, додати або відняти певну кількість годин, днів тощо), ми можемо використовувати функцію `addingTimeInterval` з класу `Date`. Вона приймає кількість секунд як аргумент і повертає нову дату з врахуванням цього інтервалу.
-- Для того, щоб легше працювати з датами, ми можемо використовувати бібліотеку `Foundation`, яка містить розширений набір функцій для роботи з датами та часом.
-
-## Дивись також
-
-- [Робота з датами та часом в мові Swift](https://www.raywenderlich.com/160519/learn-dates-times-swift-3)
-- [Офіційна документація Swift](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#ID72)
+- [Oficialna dokumentatsiia z porivniannia dat u Swift](https://developer.apple.com/documentation/foundation/date/1781605-compare)
+- [Stack Overflow postopro porivniannia dat u Swift](https://stackoverflow.com/questions/42314272/comparing-two-dates-in-swift)
+- [Codecademy tutorial na temu porivniannia dat u Swift](https://www.codecademy.com/learn/learn-swift/modules/learn-swift-conditions/cheatsheet)

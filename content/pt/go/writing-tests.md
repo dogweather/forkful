@@ -1,57 +1,48 @@
 ---
-title:    "Go: Escrevendo testes"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/writing-tests.md"
+title:                "Go: Escrevendo testes"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Go?
+## Por que escrever testes é importante
 
-Escrever testes é uma parte importante do processo de desenvolvimento de software em Go. Testes ajudam a validar o código e garantir que o mesmo funcione corretamente. Além disso, eles também permitem aos desenvolvedores fazer alterações no código com mais confiança, sabendo que os testes vão detectar quaisquer erros ou falhas.
+O ato de escrever testes é uma parte crucial do processo de desenvolvimento de software. Ele garante que seu código esteja funcionando corretamente e evita erros e falhas no futuro. Além disso, escrever testes pode ajudá-lo a entender melhor o funcionamento do seu código e melhorar sua habilidade como programador.
 
 ## Como escrever testes em Go
 
-Escrever testes em Go é bastante simples e pode ser feito usando o pacote de teste padrão `testing`. Veja um exemplo abaixo:
+Escrever testes em Go é muito fácil e pode ser feito usando o pacote `testing`, que já vem incluído na biblioteca padrão da linguagem. Veja um exemplo de como escrever um teste simples para uma função:
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"testing"
-)
-
-func soma(a int, b int) int {
-	return a + b
+func Soma(a, b int) int {
+    return a + b
 }
 
 func TestSoma(t *testing.T) {
-	resultado := soma(2, 3)
-	esperado := 5
-	if resultado != esperado {
-		t.Errorf("Soma incorreta. Esperado: %d, obtido: %d", esperado, resultado)
-	}
+    resultado := Soma(2, 2)
+    esperado := 4
+    if resultado != esperado {
+        t.Errorf("Resultado incorreto. Esperado: %d, obtido: %d", esperado, resultado)
+    }
 }
 ```
 
-No exemplo acima, criamos uma função `soma` que retorna a soma de dois números e um teste `TestSoma` para validar a sua saída. Podemos executar este teste usando o comando `go test` e se tudo estiver correto, será exibida uma mensagem de sucesso. Caso contrário, será exibida uma mensagem de erro indicando o que deu errado.
+Na primeira função, `Soma`, criamos uma função simples que recebe dois números inteiros e retorna a soma deles. Na segunda função, `TestSoma`, usamos o pacote `testing` para verificar se a função `Soma` está funcionando corretamente. O teste é falhado se o resultado obtido for diferente do esperado.
 
-Outro aspecto importante a ser lembrado ao escrever testes em Go é seguir a convenção de nomenclatura `Test{nome da função a ser testada}` para os testes e `Example{nome da função a ser testada}` para exemplos. Isso garante que o Go reconheça automaticamente os testes e exemplos ao executar o comando `go test`.
+Este é apenas um exemplo básico, mas é possível escrever testes mais complexos e abrangentes para verificar diversas funcionalidades do seu código.
 
-## Mais sobre testes em Go
+## Aprofundando-se nos testes
 
-Escrever testes em Go não se resume apenas ao exemplo simples que mostramos acima. Existem várias ferramentas e recursos disponíveis para facilitar e melhorar a qualidade dos testes. Alguns desses recursos incluem:
+Além de apenas verificar o resultado esperado, também é possível testar possíveis erros e falhas no seu código. Para isso, o pacote `testing` oferece a função `Errorf`, que permite exibir uma mensagem de erro personalizada se algo der errado no teste.
 
-- Pacote `testing/quick`: fornece funções para gerar valores aleatórios e testar funções de forma rápida e fácil.
-- Cobertura de código: o Go possui uma ferramenta integrada para gerar relatórios de cobertura de código, que podem ser usados ​​para identificar áreas de código que não estão sendo testadas.
-- Testes de benchmarking: o pacote `testing` também fornece recursos para executar testes de benchmarking e medir o desempenho da sua função.
+Também é importante lembrar de testar as diferentes condições possíveis, como entradas inválidas ou valores extremos. Isso garantirá que seu código seja robusto e lide com todas as possibilidades.
 
-É importante lembrar que escrever testes de qualidade é uma habilidade que requer prática e aprendizado contínuo. Portanto, fique à vontade para explorar mais sobre o assunto e experimentar diferentes técnicas e abordagens para encontrar a que funciona melhor para você e seu código.
+Além disso, é possível utilizar ferramentas adicionais, como o pacote `testing/quick`, para gerar entradas aleatórias e testar seu código em uma variedade maior de situações.
 
 ## Veja também
 
-- Documentação oficial do pacote `testing`: https://golang.org/pkg/testing/
-- Tutorial sobre testes em Go: https://medium.com/@povilasve/go-advanced-tips-tricks-a872503ac859
-- Artigo sobre cobertura de código em Go: https://medium.com/rungo/unit-testing-made-easy-in-go-25077669318
-- Exemplo de testes de benchmarking em Go: https://blog.golang.org/benchmarks
+- [Documentação do pacote `testing` em Go](https://pkg.go.dev/testing)
+- [Tutorial sobre testes em Go](https://gobyexample.com/testing)
+- [Vídeo explicando a importância de escrever testes em programas](https://www.youtube.com/watch?v=_NnElPO5BU0)

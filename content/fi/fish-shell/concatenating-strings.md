@@ -1,38 +1,49 @@
 ---
-title:    "Fish Shell: Merkkijonojen yhdistäminen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/concatenating-strings.md"
+title:                "Fish Shell: Jonojen yhdistäminen"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit yhdistää merkkijonoja Fish Shell -ohjelmoinnissa? On olemassa monia tilanteita, joissa sinun on luotava uusi merkkijono yhdistämällä olemassa olevia merkkijonoja. Tämä voi olla hyödyllistä esimerkiksi tekstianalyyseissä tai kun luot sisällönhallintajärjestelmiä.
+Miksi haluat yhdistää merkkijonoja koodissasi? Yhdistämällä merkkijonoja voit luoda dynaamisia ja muokattavia tekstejä, mikä on erityisen hyödyllistä esimerkiksi käyttäjien syötteiden käsittelyssä tai käyttöliittymän muokkaamisessa.
 
 ## Miten
 
-Fish Shellissa voit yhdistää merkkijonoja käyttämällä sanaa "echo" ja kahden merkkijonon peräkkäistä kirjoittamista. Esimerkiksi, jos haluat yhdistää merkkijonot "Terve" ja "päivää", kirjoitat seuraavan komennon:
+```Fish Shell``` tarjoaa monia eri tapoja yhdistää merkkijonoja. Seuraavassa esimerkissä käytämme ```echo```-komennon yhteydessä ```&```-operaattoria yhdistämään kaksi stringiä:
 
-```Fish Shell
-echo "Terve" "päivää"
+```
+echo "Tervetuloa " & "Finnish Reader"
 ```
 
-Tämän komennon suorittamisen jälkeen näet tuloksen "Terve päivää" konsolissasi. Voit myös yhdistää useampia merkkijonoja yhdellä komennolla yksinkertaisesti kirjoittamalla ne peräkkäin.
+Tämän tuloksena saamme:
 
-## Syvällisempi tutustum
-
-Voit myös yhdistää merkkijonoja muuttujien kanssa käyttämällä "string concatenation" (merkkijonojen yhdistäminen). Tämä tarkoittaa yksinkertaisesti sitä, että sijoitat "+" -merkin kahden merkkijonon välille ja ne yhdistetään. Esimerkiksi, jos haluat luoda muuttujan nimeltä "nimi" arvolla "John" ja yhdistää sen merkkijonon "Hei", kirjoitat seuraavan komennon:
-
-```Fish Shell
-nimi="John"
-echo "Hei " + $nimi
+```
+Tervetuloa Finnish Reader
 ```
 
-Tämä tulostaa "Hei John". On tärkeää huomata, että muuttujan nimi on kirjoitettu "$"-merkillä komennossa, jotta Fish Shell tietää, että sen sisältö tulee yhdistää merkkijonon kanssa.
+Toinen tapa yhdistää merkkijonoja on käyttää ```string replace``` -komentoa. Tässä esimerkissä korvaamme ensimmäisen merkkijonon toisella merkkijonolla:
+
+```
+set stringi "Fish Shell on paras"
+string replace "paras" "mahtava" $stringi
+```
+
+Tulokseksi saamme:
+
+```
+Fish Shell on mahtava
+```
+
+## Syvempi sukellus
+
+Fish Shellin ```string```-moduuli tarjoaa myös muita käteviä työkaluja merkkijonojen käsittelyyn, kuten ```split```, ```trim```, ```length``` ja ```reverse```. Voit tutustua näihin tarkemmin esimerkiksi Fish Shellin dokumentaatiosta.
 
 ## Katso myös
 
-- Fish Shell virallinen verkkosivusto: https://fishshell.com/
-- Fish Shell dokumentaatio: https://fishshell.com/docs/current/index.html
-- Fish Shell yhteisö: https://github.com/fish-shell/fish-shell/
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/cmds/string.html)
+- [Fish Shell - opas aloittelijoille](https://www.freecodecamp.org/news/the-beginners-guide-to-fish-shell-c37c3a7c726/)
+- [Fish Shell - merkkijonojen yhdistäminen](https://www.linux.com/training-tutorials/learn-to-combine-strings-using-fish-shell/)

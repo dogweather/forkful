@@ -1,50 +1,65 @@
 ---
-title:    "C: Läsning av en textfil"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/reading-a-text-file.md"
+title:                "C: Läsa en textfil"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att läsa en textfil är en vanlig uppgift för programmerare och användbar för många olika ändamål. Det kan vara att läsa in användardata, behandla stora mängder information eller bara skapa en textbaserad applikation. Oavsett vad anledningen är, kan det vara en användbar kunskap för programmerare att veta.
 
-Att läsa en textfil är en viktigt del av att lära sig programmera i C. Genom att kunna läsa in data från en fil, kan du skapa mer dynamiska och användbara program. Det är också ett bra sätt att öva på filhantering i C.
+## Hur man gör
+För att läsa en textfil i C, behöver du först öppna filen med hjälp av ```fopen()``` funktionen. Du behöver också ange om du vill läsa, skriva eller lägga till i filen. Om du bara vill läsa innehållet i filen, kan du använda läget "r". Sedan använder du ```fscanf()``` för att läsa innehållet rad för rad tills du når slutet av filen.
 
-## Så här gör du
+```c
+#include <stdio.h>
 
-För att läsa en textfil i C, behöver du först öppna filen med hjälp av fopen() funktionen. Detta låter dig öppna filen i ett "read-only" läge, vilket innebär att filen bara kan läsas och inte ändras. För att öppna filen i "read-only" läge, använd följande syntax:
-
-```C
-FILE *fp; // Deklarera filpekaren
-fp = fopen("filnamn.txt", "r"); // Öppna filen i läge "read-only"
-```
-
-Efter att ha öppnat filen kan du sedan läsa innehållet rad för rad med hjälp av fgets() funktionen. Denna funktion läser in en rad av text från filen och sparar den i en strängvariabel. Du kan sedan använda printf() funktionen för att skriva ut raden på skärmen.
-
-```C
-char rad[100]; // Skapa en strängvariabel för att lagra raden
-while (fgets(rad, 100, fp)) // Loopa tills alla rader har lästs
+int main(void)
 {
-    printf("%s", rad); // Skriv ut raden på skärmen
+    FILE *fp; //variabel för att hålla filreferensen 
+    char buffer[255]; //för att hålla en rad text från filen
+
+    fp = fopen("textfil.txt", "r"); //öppna filen i läge "r"
+
+    if (fp == NULL) //om filen inte kan öppnas, avbryt programmet
+    {
+        printf("Filen kunde inte öppnas.");
+        return 1;
+    }
+
+    while (fscanf(fp, "%s", buffer) != EOF) //loopa tills slutet av filen är nått med hjälp av fscanf
+    {
+        printf("%s\n", buffer); //skriv ut innehållet från raden i filen
+    }
+
+    fclose(fp); //stäng filen när du är klar
+
+    return 0;
 }
 ```
 
-Om du vill läsa en specifik del av filen kan du använda fseek() funktionen för att navigera till en viss position i filen. Detta görs genom att först sätta läge på filpekaren med hjälp av fseek() funktionen och sedan läsa in önskad data med hjälp av fgets().
+Om du till exempel har en textfil som innehåller:
 
-```C
-fseek(fp, 16, SEEK_SET); // Sätta läge på filpekaren till teckennummer 16
-fgets(rad, 100, fp); // Läsa in nästa rad efter läget
-printf("%s", rad); // Skriv ut raden på skärmen
-```
+> Hej
+> Världen 
+> Detta är en textfil
+
+Så kommer utmatningen att bli:
+
+> Hej
+> Världen
+> Detta
+> är
+> en
+> textfil
 
 ## Djupdykning
+När du läser en textfil i C, kan du också hantera specialtecken som radbrytningar och mellanslag genom att använda ```fgets()``` och ```sscanf()``` istället för ```fscanf()```. Du kan också använda ```fprintf()``` för att skriva till en textfil.
 
-När du läser en textfil i C, är det viktigt att förstå hur olika teckenkodningar kan påverka inläsningen av filen. C använder standardteckenkodningen ASCII, vilket innebär att vissa specialtecken (som åäö) kanske inte läses in korrekt om filen är kodad på ett annat sätt. För att lösa detta kan du använda en textredigerare som kan konvertera filen till ASCII-kodning innan du läser in den.
-
-En annan sak att tänka på är att textfiler ofta innehåller radbrytningar som skiljer sig åt beroende på vilket operativsystem filen är skapad på. I Windows använder man till exempel \r\n, medan det i Unix/Linux används \n. Detta kan leda till problem om du inte hanterar radbrytningarna på rätt sätt i din kod.
+Det är också viktigt att kontrollera om filen öppnas korrekt genom att använda en if-sats. Om filen inte kan öppnas, så bör programmet avslutas för att undvika eventuella felmeddelanden eller felaktig datainsamling.
 
 ## Se även
-
-- [Dokumentation om filhantering i C (på svenska)](https://www.programiz.com/c-programming/c-file-input-output)
-- [Guide för att läsa och skriva filer i C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [C-funktioner för filhantering (på svenska)](https://www.webblabbet.se/funktioner-for-filhantering-pa-c/)
+- [C File Input/Output](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [C String Functions](https://www.programiz.com/c-programming/library-function/string.h)

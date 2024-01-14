@@ -1,41 +1,50 @@
 ---
-title:    "Elixir: Tworzenie tymczasowego pliku."
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/creating-a-temporary-file.md"
+title:                "Elixir: Tworzenie pliku tymczasowego"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Tworzenie tymczasowego pliku może być niezbędne w wielu przypadkach programowania w Elixir. Może być to przydatne do przechowywania danych tymczasowych lub do testowania kodu. Jednak niektórzy programiści mogą nie być pewni, jak stworzyć i korzystać z tymczasowych plików w Elixir. W tym artykule dowiesz się jak to zrobić.
+Tworzenie plików tymczasowych jest powszechnym zadaniem w wielu językach programowania, w tym w Elixirze. Są one przydatne w przypadku, gdy potrzebujemy przechowywać dane na krótki okres czasu i nie chcemy zaśmiecać naszego dysku twardego. Przeczytaj dalszą część tego artykułu, aby dowiedzieć się, jak możesz tworzyć pliki tymczasowe w języku Elixir i wykorzystywać je w swoich projektach.
 
 ## Jak to zrobić
 
-Jedną z najprostszych metod tworzenia tymczasowego pliku jest użycie funkcji `Path.join/2` i `File.write!/2`. Sprawdźmy to na przykładzie:
+Tworzenie plików tymczasowych w Elixirze jest łatwe dzięki wbudowanej bibliotece `File`. Aby utworzyć plik tymczasowy, użyj funkcji `File.temp_file/2` i przekaż jej ścieżkę do katalogu, w którym chcesz utworzyć plik oraz prefiks, który będzie częścią nazwy pliku tymczasowego. Na przykład:
 
 ```Elixir
-file_name = Path.join(["/tmp", "example.txt"])
-content = "To jest przykładowy tekst który zostanie zapisany w pliku."
-File.write!(file_name, content)
+{path, _} = File.temp_file("/tmp", "elixir_")
 ```
 
-W powyższym kodzie tworzymy zmienną `file_name`, która zawiera ścieżkę do pliku "/tmp/example.txt". Następnie tworzymy zmienną `content`, która zawiera tekst, który chcemy zapisać w pliku. W ostatnim kroku używamy funkcji `write!/2` aby zapisać zawartość zmiennej `content` do pliku o nazwie podanej w zmiennej `file_name`.
-
-Możesz również wykorzystać funkcję `Tempfile.open/2` aby stworzyć tymczasowy plik w wybranym przez Ciebie miejscu. Wykorzystajmy to w innym przykładzie:
+Funkcja zwróci krotkę zawierającą ścieżkę do utworzonego pliku oraz identyfikator pliku. Możesz również określić rozszerzenie pliku tymczasowego, dodając trzeci parametr do funkcji `File.temp_file/3`. Na przykład:
 
 ```Elixir
-file = Tempfile.open("example.txt", "/tmp")
-IO.puts(file.path)
+{path, _} = File.temp_file("/tmp", "elixir_", ".txt")
 ```
 
-W powyższym kodzie, funkcja `Tempfile.open/2` tworzy tymczasowy plik o nazwie "example.txt" w folderze "/tmp". Następnie używamy funkcji `IO.puts/2` aby wyświetlić ścieżkę do tego pliku w konsoli.
+Po utworzeniu pliku możesz zapisać do niego dane, korzystając z funkcji `File.write!/2`, na przykład:
 
-## Ciekawostki
+```Elixir
+File.write!(path, "To jest plik tymczasowy zapisany przez Elixir.")
+```
 
-W przypadku gdy chcesz stworzyć tymczasowy plik w obecnym folderze, użyj funkcji `Tempfile.tmpfile/0`. Pamiętaj również, że plik zostanie automatycznie usunięty po tym, jak zostanie zamknięty.
+Możesz również odczytać dane z pliku tymczasowego, używając funkcji `File.read!/1`, na przykład:
 
-## Zobacz również
+```Elixir
+data = File.read!(path)
+```
 
-- Dokumentacja Elixir - [Tworzenie tymczasowych plików](https://hexdocs.pm/elixir/File.html#write!/2)
-- Blog o Elixir - [Przetwarzanie plików tymczasowych w Elixir](https://dev.to/craftninja/processing-temporary-files-in-elixir-2ke6)
+## Deep Dive
+
+W języku Elixir, pliki tymczasowe są w rzeczywistości plikami o nazwie `.elixir_tempXXX`, gdzie `XXX` to identyfikator pliku. Ten plik jest usuwany automatycznie po zamknięciu procesu lub po skończeniu działania programu. Dzięki temu nie musisz martwić się o usuwanie pliku tymczasowego ręcznie.
+
+W przypadku, gdy chcesz utworzyć plik tymczasowy, który będzie istniał przez dłuższy czas lub potrzebujesz więcej kontroli nad nim, możesz użyć biblioteki `:tempfile`.
+
+## Zobacz też
+
+1. Dokumentacja dla funkcji `File.temp_file/2`: https://hexdocs.pm/elixir/File.html#temp_file/2
+2. Dokumentacja dla biblioteki `:tempfile`: https://hexdocs.pm/tempfile/Tempfile.html
+3. Przykłady użycia plików tymczasowych w języku Elixir: https://thoughtbot.com/blog/file-system-gotchas-in-elixir

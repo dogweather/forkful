@@ -1,39 +1,54 @@
 ---
-title:    "Javascript: Lesing av kommandolinje-argumenter"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/reading-command-line-arguments.md"
+title:                "Javascript: Lesing av kommandolinje-argumenter"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor?
+## Hvorfor
 
-Å lese kommandolinjeargumenter kan være en nyttig ferdighet for utviklere å ha i verktøykassen sin. Det kan gjøre det mulig å gjøre programmene dine mer fleksible ved å tillate brukerne å angi spesifikke parametere når de kjører programmet, som kan påvirke resultatene eller funksjonaliteten til programmet. Det kan også hjelpe med å feilsøke og teste programmet ditt med forskjellige datasett uten å måtte endre selve koden.
+Å lese kommandolinjeargumenter kan virke som en enkel og kanskje ubetydelig oppgave i JavaScript-programmering, men det er faktisk en viktig og nyttig ferdighet å ha. Å kunne lese kommandolinjeargumenter lar deg lage programmer som kan tilpasses og konfigureres av brukeren, og det kan også hjelpe deg med feilsøking og testing av kode. Det kan virke litt skremmende i begynnelsen, men å lære å lese kommandolinjeargumenter vil definitivt være nyttig for alle som vil bli bedre på JavaScript-programmering.
 
-# Hvordan gjør du det?
+## Hvordan
 
-Å lese kommandolinjeargumenter i Javascript er enkelt og kan gjøres ved hjelp av et innebygd objekt som heter "process". Dette objektet har en egenskap kalt "argv" som inneholder alle de gitte argumentene når programmet kjører.
-
-For å lese argumentene, kan du bruke "process.argv[i]" der "i" er plasseringen til argumentet du vil lese. Den første argumenten (indeks 0) er alltid navnet på programmet ditt, mens de etterfølgende argumentene vil være de som ble angitt av brukeren.
-
-Her er et enkelt eksempel på å lese to kommandolinjeargumenter og skrive dem ut til konsollen:
+Det første trinnet for å lese kommandolinjeargumenter i JavaScript er å definere en variabel som vi vil bruke til å lagre argumentene. Dette kan gjøres ved hjelp av `process.argv` objektet, som er en innebygd funksjon i Node.js for å få tilgang til kommandolinjeargumentene. La oss se på et eksempel:
 
 ```Javascript
-console.log(process.argv[0]); // output: "node"
-console.log(process.argv[1]); // output: "programnavn.js"
-console.log(process.argv[2]); // output: "arg1"
-console.log(process.argv[3]); // output: "arg2"
+// Første argument (index 0) er alltid selve stien til filen som blir kjørt
+// Andre argument (index 1) er filnavnet
+// Tredje argument (index 2) og utover er alle kommandolinjeargumentene
+let arguments = process.argv.slice(2);
+
+// Output: [ 'arg1', 'arg2', 'arg3' ]
+console.log(arguments);
 ```
 
-I dette eksempelet vil "arg1" og "arg2" være argumentene som brukeren angav når de kjørte programmet.
+I dette eksempelet har vi brukt `slice()` metoden for å fjerne de to første argumentene (filnavnet og stien) og bare fått tilgang til selve kommandolinjeargumentene. Nå kan vi enkelt bruke disse argumentene i koden vår. La oss si at vi har et program som tar inn to tall og multipliserer dem:
 
-# Dypdykk
+```Javascript
+let arguments = process.argv.slice(2);
 
-Process.argv-objektet inneholder også andre nyttige egenskaper, som "argv0" som inneholder navnet på programmet ditt, "execPath" som inneholder stien til kjørebanen for node.exe, og "env" som inneholder alle miljøvariabler som er tilgjengelige.
+// Sjekker om det er to argumenter (to tall som skal multipliseres)
+if (arguments.length !== 2) {
+  console.log("Du må angi to tall som argumenter");
+} else {
+  // Multipliserer de to tallene og outputter resultatet
+  let result = arguments[0] * arguments[1];
+  console.log(`${arguments[0]} * ${arguments[1]} = ${result}`);
+}
+```
 
-I tillegg er det også muligheter for å bruke et tredjepartsmodul som "yargs" for å håndtere kommandolinjeargumenter mer elegant og enkelt. Denne modulen tilbyr funksjoner for å definere aksepterte argumenter og håndtere standardverdier, og til og med generere hjelpetekster for programmet ditt.
+La oss si at vi kjører programmet vårt fra kommandolinjen ved å skrive inn `node program.js 5 10`. Programmet vil da outputte `5 * 10 = 50` og multipliserer de to argumentene vi angav.
 
-# Se også
+## Dypdykk
 
-- Dokumentasjon for "process" objektet: https://nodejs.org/docs/latest-v10.x/api/process.html
-- Yargs modul: https://www.npmjs.com/package/yargs
+Selv om det første eksempelet vi så på er ganske enkelt, kan lesing av kommandolinjeargumenter bli mye mer komplekst og nyttig i mer omfattende programmer. Det er også verdt å merke seg at kommandolinjeargumentene ikke alltid er tall, de kan være tekststrenger, boolske verdier eller til og med filnavn og -baner. Det er derfor viktig å ha god oversikt over kommandolinjeargumentene og bruke relevante metoder, som `split()` og `join()`, for å formatere og bruke dem i koden din.
+
+En annen viktig ting å huske på når du arbeider med kommandolinjeargumenter er å ta hensyn til brukerinput og sørge for at koden din håndterer feil og ugyldige argumenter på en god måte. Dette kan gjøres ved hjelp av try/catch blokker eller ved å bruke betingete uttrykk og å sjekke på forhånd om argumentene er gyldige.
+
+## Se også
+
+- [process.argv | Node.js v16.5.0 Documentation](https://nodejs.org/api/process.html#process_process_argv)
+- [Command-line arguments - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)

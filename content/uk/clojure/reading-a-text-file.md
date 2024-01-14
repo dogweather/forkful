@@ -1,57 +1,52 @@
 ---
-title:    "Clojure: Читання текстового файлу"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/reading-a-text-file.md"
+title:                "Clojure: Читання текстового файлу"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Робота з текстовими файлами є невідємною частиною розробки програм на Clojure. Це дозволяє зчитувати та обробляти дані з зовнішніх джерел, таких як CSV-файли, лог-файли та інші текстові формати. 
+Зчитування текстового файлу є важливою навичкою для будь-якого програміста. Це дає можливість працювати зі збереженими даними та обробляти їх за допомогою програмного коду. Знання роботи з текстовими файлами може збільшити продуктивність та ефективність процесу розробки програм.
 
-## Як
+## Як це зробити
 
-Один з способів зчитування текстових файлів - використання вбудованих функцій `slurp` та `line-seq`. Наприклад, якщо ми маємо файл `file.txt`, який містить наступний текст:
-
-```
-Hello
-World
-```
-
-Тоді за допомогою функції `slurp` ми можемо зчитати весь вміст файлу у вигляді одного рядка: 
+За допомогою мови програмування Clojure, зчитування текстового файлу є досить простим завданням. Для цього необхідно використати функцію "slurp", яка зчитує вміст файлу та повертає його в рядковому форматі.
 
 ```Clojure
-(slurp "file.txt") ; => "Hello\nWorld"
+(def file-contents (slurp "test.txt"))
+(println file-contents)
 ```
 
-Також ми можемо використовувати функцію `line-seq` для зчитування файлу по рядках: 
+Вище наведений приклад демонструє зчитування вмісту з файлу з назвою "test.txt" та виведення його на екран.
 
 ```Clojure
-(def lines (line-seq (slurp "file.txt")))
-(first lines) ; => "Hello"
-(second lines) ; => "World"
+(def file-contents (slurp "test.txt"))
+; Hello world!
+
+(println (.toUpperCase file-contents))
+; HELLO WORLD!
 ```
 
-## Глибше
+У цьому прикладі, зчитаний вміст файлу перетворюється в верхній регістр за допомогою методу ".toUpperCase" та виводиться на екран.
 
-Для більшої гнучкості та контролю над зчитуванням текстових файлів, ми можемо використовувати бібліотеку `clojure.java.io`. З її допомогою, ми можемо відкривати файл, читати його по рядках та обробляти ці рядки за потреби. Наприклад: 
+## Глибше в практицю
+
+Тепер, коли ви знаєте як зчитувати текстовий файл за допомогою Clojure, ви можете експериментувати з різними методами та функціями цієї мови для обробки та редагування даних з файлів.
+
+Наприклад, ви можете використати функцію "with-open" для відкриття та закриття файлу:
 
 ```Clojure
-(require '[clojure.java.io :as io])
-
-(with-open [reader (io/reader "file.txt")]
-  (doseq [line (line-seq reader)]
-    (println line)))
-    
-; => Hello
-; => World
+(with-open [file-reader (clojure.java.io/reader "test.txt")]
+  (doall (line-seq file-reader)))
 ```
 
-Для більш складних операцій, таких як розбиття рядка на слова чи робота з CSV-файлами, варто розглянути використання бібліотеки [clojure-csv](https://github.com/clojure-csv/clojure-csv).
+Цей приклад поверне список рядків з файлу "test.txt".
 
 ## Дивись також
 
-- [Офіційна документація зчитування та запису в файл на Clojure](https://clojure.org/guides/reading_writing)
-- [Повна документація бібліотеки clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Офіційна документація зчитування та запису CSV-файлів на Clojure](https://github.com/clojure-csv/clojure-csv/wiki/How-to-use-clojure-csv)
+- [Офіційна документація Clojure](https://clojure.org/)
+- [Вступ до Clojure для початківців](https://medium.com/@OrestisT17/clojure-for-beginners-introduction-and-basic-functions-386c842b5b66)
+- [Робота з файлами в Clojure](https://clojuredocs.org/clojure.java.io/reader)

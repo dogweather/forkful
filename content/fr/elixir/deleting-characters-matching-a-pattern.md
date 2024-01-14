@@ -1,56 +1,42 @@
 ---
-title:    "Elixir: Suppression des caractères correspondant à un modèle"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/deleting-characters-matching-a-pattern.md"
+title:                "Elixir: Suppression de caractères correspondants à un motif"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Dans le monde de la programmation, il y a souvent des tâches répétitives que l'on doit effectuer. Dans certains cas, il peut être utile de supprimer des caractères correspondant à un modèle donné dans une chaîne de caractères. Cela peut sembler simple, mais cela peut créer une différence significative dans la performance et l'efficacité de votre code.
+Lorsque vous travaillez avec du texte, il peut arriver que vous souhaitiez supprimer des caractères qui correspondent à un certain motif. Cela peut être utile si vous souhaitez nettoyer une chaîne de caractères ou extraire certaines informations spécifiques.
 
-## Comment faire
+# Comment faire
 
-Pour supprimer des caractères correspondant à un modèle, nous pouvons utiliser la fonction `String.replace/3` en Elixir. Cette fonction prend trois arguments : la chaîne de caractères d'origine, le modèle à rechercher et la chaîne de caractères de remplacement.
+Dans Elixir, vous pouvez facilement supprimer des caractères correspondant à un motif en utilisant la méthode `String.replace/4`. Cette méthode prend en paramètre une chaîne de caractères, le motif à rechercher, la chaîne de remplacement et des options facultatives.
 
-Voici un exemple de code :
-
-```elixir
-str = "Elixir est un langage de programmation fonctionnelle"
-new_str = String.replace(str, "e", "")
-IO.puts(new_str)
+```
+iex> String.replace("Bonjour!", ~r/o+/, "-")
+"B-nj-r!"
 ```
 
-Le résultat de ce code sera : "Elixir st un langag d programmation fonctionnll"
+Dans cet exemple, nous remplaçons toutes les occurrences de la lettre "o" par un tiret "-" dans la chaîne "Bonjour!". Nous utilisons également une expression régulière pour indiquer que nous voulons rechercher toutes les occurrences de la lettre "o" en tant que motif.
 
-Nous pouvons également utiliser des expressions régulières pour rechercher des motifs plus complexes. Par exemple, pour supprimer tous les signes de ponctuation d'une chaîne de caractères, nous pouvons utiliser la fonction `Regex.replace/3` :
+# Plongée profonde
 
-```elixir
-str = "Hello, world!"
-new_str = Regex.replace(~r/[[:punct:]]/, str, "")
-IO.puts(new_str)
+Il est important de noter que la méthode `String.replace/4` ne modifie pas la chaîne d'origine, elle renvoie plutôt une nouvelle chaîne avec les modifications apportées. Si vous voulez modifier la chaîne d'origine, vous pouvez utiliser la méthode `String.replace!/4` en ajoutant le symbole "!" à la fin. Cela rendra la méthode destructive et modifie la chaîne d'origine.
+
+Lorsque vous utilisez cette méthode, vous pouvez également utiliser des groupes de capture dans votre motif et les utiliser dans la chaîne de remplacement. Par exemple :
+
+```
+iex> String.replace("12/10/2021", ~r/(\d{2})\/(\d{2})\/(\d{4})/, "$2-$1-$3")
+"10-12-2021"
 ```
 
-Le résultat de ce code sera : "Hello world"
+Ici, nous utilisons des groupes de capture pour extraire le jour, le mois et l'année de la chaîne "12/10/2021" et les réorganiser dans un nouveau format.
 
-## Plongée en profondeur
+# Voir aussi
 
-La fonction `String.replace/3` est très utile, mais elle a quelques limites. Elle ne peut supprimer qu'un seul modèle à la fois et elle ne peut pas remplacer une chaîne de caractères par une autre de longueur différente. Pour surmonter ces limites, nous pouvons utiliser la fonction `String.replace/4`. Cette fonction prend un quatrième argument qui représente le nombre maximal de remplacements à effectuer.
-
-Par exemple, si nous voulons supprimer tous les nombres d'une chaîne de caractères, nous pouvons utiliser la fonction `String.replace/4` de cette façon :
-
-```elixir
-str = "12345,67890"
-new_str = String.replace(str, ~r/\d/, "", global: true)
-IO.puts(new_str)
-```
-
-Le résultat de ce code sera : ", "
-
-## Voir aussi
-
-- [Documentation de la fonction `String.replace/3`](https://hexdocs.pm/elixir/String.html#replace/3)
-- [Documentation de la fonction `Regex.replace/3`](https://hexdocs.pm/elixir/Regex.html#replace/3)
-- [Documentation de la fonction `String.replace/4`](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Guide sur les expressions régulières en Elixir](https://elixir-lang.org/getting-started/regex.html)
+- [Documentation officielle d'Elixir pour String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
+- [Liste des expressions régulières en Elixir](https://medium.com/@JottedPictionary/a-beginners-guide-to-regular-expressions-regex-in-elixir-5ca9c6f34184)
+- [Différence entre les méthodes destructives et non destructives en Elixir](https://elixir-lang.org/getting-started/runtime-errors.html#destructive-functions)

@@ -1,39 +1,36 @@
 ---
-title:    "Bash: Leyendo un archivo de texto"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/reading-a-text-file.md"
+title:                "Bash: Leyendo un archivo de texto"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer un archivo de texto en Bash?
+## ¿Por qué deberías leer un archivo de texto?
 
-Leer y manipular archivos de texto es una tarea común en la programación Bash. Puede ser útil para extraer datos, realizar operaciones en lote o simplemente hacer una tarea más eficiente. ¡Sigue leyendo para aprender cómo leer un archivo de texto en Bash!
+Si estás aprendiendo a programar en Bash, es importante comprender cómo leer y manipular archivos de texto. Esto te permitirá trabajar con datos de manera eficiente y automatizar tareas en tu sistema operativo. En este artículo, te explicaremos cómo leer un archivo de texto en Bash y algunas técnicas avanzadas para que puedas sacar el máximo provecho de esta habilidad.
 
-## Cómo hacerlo
+## Cómo leer un archivo de texto en Bash
 
-Para leer un archivo de texto en Bash, podemos utilizar el comando `read`. Este comando nos permite leer línea por línea un archivo y almacenar su contenido en una variable. Puedes ver un ejemplo a continuación:
-
-```Bash
-read file < archivo.txt
-```
-
-En este ejemplo, el contenido del archivo será almacenado en la variable `file` y podemos utilizarlo para realizar cualquier operación que necesitemos. Además, también podemos utilizar el comando `cat` para imprimir todo el contenido del archivo en la terminal.
-
-## Profundizando
-
-Ahora, es importante entender cómo Bash lee y procesa los archivos de texto. Por defecto, Bash separa cada línea de un archivo utilizando el caracter de nueva línea `\n`. Esto significa que si queremos separar el contenido de un archivo en diferentes variables, podemos utilizar `IFS` (Internal Field Separator) para cambiar el caracter de separación.
-
-Por ejemplo, si queremos separar cada palabra de una línea en una variable diferente, podemos utilizar el siguiente comando:
+Para leer un archivo de texto en Bash, puedes utilizar el comando `while` junto con el comando `read`, como se muestra en el siguiente ejemplo:
 
 ```Bash
-IFS=" " read -ra words < archivo.txt
+while IFS= read -r line; do
+  echo "$line"
+done < nombre_archivo.txt
 ```
 
-Esto cambiará el caracter de separación a un espacio en blanco y las palabras de cada línea serán almacenadas en el array `words`.
+Este código creará un bucle que leerá cada línea del archivo de texto y la imprimirá en la consola. Puedes personalizar el código según tus necesidades, como por ejemplo guardar cada línea en una variable para poder manipularla más tarde.
+
+## Profundizando en la lectura de archivos de texto
+
+Además de simplemente leer líneas de un archivo, Bash también te permite hacer cosas más avanzadas como buscar y filtrar datos específicos. Por ejemplo, puedes utilizar el comando `grep` para buscar una cadena de texto en un archivo o el comando `sed` para reemplazar ciertas palabras.
+
+Otra técnica útil es utilizar el comando `awk` para analizar datos estructurados en un archivo de texto. Por ejemplo, si tienes un archivo CSV, puedes utilizar `awk` para separar los campos y manipularlos de manera individual.
 
 ## Ver también
 
-- [Comandos fundamentales de Bash](https://www.hostinger.es/tutoriales/comandos-bash/)
-- [Bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Recetas útiles de Bash](https://github.com/Idnan/bash-guide)
+- [Guía de Bash para principiantes](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Manipulación de archivos en Bash](https://www.lifewire.com/all-about-file-redirection-3867575)
+- [Comandos básicos de Bash](https://towardsdatascience.com/bash-commands-with-practical-examples-773e3d03590a)

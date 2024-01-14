@@ -1,37 +1,58 @@
 ---
-title:    "Rust: Obtenir la date actuelle"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/getting-the-current-date.md"
+title:                "Rust: Obtenir la date actuelle"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Si vous êtes un développeur qui apprend Rust ou si vous êtes déjà familier avec le langage, vous savez probablement à quel point il est important de maîtriser la manipulation des dates et heures. Dans cet article, nous allons explorer comment obtenir la date et l'heure actuelles en utilisant Rust.
+
+Avez-vous déjà eu besoin de connaître la date actuelle dans vos programmes Rust? Peut-être que vous voulez afficher la date à l'utilisateur ou peut-être que vous voulez enregistrer la date dans une base de données. Dans cet article, nous allons explorer différentes façons d'obtenir la date actuelle dans vos projets Rust.
 
 ## Comment faire
-Voici comment vous pouvez obtenir la date et l'heure actuelles en utilisant Rust :
+
+Il existe différentes façons d'obtenir la date actuelle dans Rust, mais la méthode la plus simple consiste à utiliser la fonction "Local::now ()" de la bibliothèque "chrono". Voici un exemple de code utilisant cette fonction:
 
 ```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
+use chrono::{Local, DateTime};
 
-let now = SystemTime::now();
-let since_epoch = now.duration_since(UNIX_EPOCH).expect("Le composant horodaté lu est antérieur à l'époque UNIX.");
+// Obtenez la date et l'heure actuelles
+let now: DateTime<Local> = Local::now();
 
-println!("Il s'est écoulé {:?} secondes depuis l'époque UNIX.", since_epoch);
+// Afficher la date et l'heure au format ISO 8601
+println!("{}", now);
 ```
 
-Output :
+La sortie de ce code sera quelque chose comme "2021-04-07T14:30:00+02:00". Selon vos besoins, vous pouvez formater la date et l'heure dans un autre format en utilisant les méthodes de la structure DateTime.
 
+Si vous souhaitez obtenir uniquement la date sans l'heure, vous pouvez utiliser la méthode "date()" de la structure DateTime:
+
+```Rust
+// Obtenez la date actuelle
+let today = now.date();
+
+// Afficher la date au format ISO 8601
+println!("{}", today);
 ```
-Il s'est écoulé Duration { secs: 1638581007, nanos: 810074000 } secondes depuis l'époque UNIX.
+
+## Plongée en profondeur
+
+La bibliothèque "chrono" utilise en interne la fonction "time::now()" du langage C pour obtenir la date actuelle. Cela signifie que l'heure et la date peuvent être affectées par le fuseau horaire de votre système d'exploitation.
+
+Si vous souhaitez obtenir la date et l'heure en utilisant un fuseau horaire spécifique, vous pouvez utiliser la fonction "with_timezone()" de la structure DateTime:
+
+```Rust
+use chrono::{Local, DateTime, FixedOffset};
+
+// Obtenez la date et l'heure actuelles dans le fuseau horaire GMT+1
+let now: DateTime<FixedOffset> = Local::now().with_timezone(&FixedOffset::east(1 * 3600)); 
 ```
 
-Comme vous pouvez le voir dans cet exemple, nous utilisons la struct `SystemTime` pour obtenir l'heure actuelle et la comparons avec l'époque UNIX en utilisant la méthode `duration_since()`. Vous pouvez également transformer cette durée en d'autres formats si vous le souhaitez.
-
-## Deep Dive
-Il est important de noter que `SystemTime` n'est pas spécifiquement liée à l'époque UNIX, c'est-à-dire le 1er janvier 1970 à 00:00:00 UTC. Cependant, il est couramment utilisé pour représenter les dates et heures en informatique. De plus, certaines plates-formes peuvent utiliser différents points de départ pour leur mesure du temps, donc gardez toujours cela à l'esprit lorsque vous travaillez avec des dates et heures.
+Vous pouvez également obtenir la date et l'heure en utilisant un fuseau horaire UTC en utilisant la méthode "now_utc()" au lieu de "Local::now()".
 
 ## Voir aussi
-- [Documentation officielle de Rust sur la manipulation des dates et heures](https://doc.rust-lang.org/std/time/index.html)
-- [Article de blog sur la conversion des dates en Rust](https://sapphirepaw.github.io/AIRRS/manipulating-time-in-rust/)
+
+- Documentation de la bibliothèque Chrono: https://docs.rs/chrono
+- Article sur la manipulation des dates et heures en Rust: https://stevedonovan.github.io/rust-gentle-intro/8-dates-times.html

@@ -1,37 +1,52 @@
 ---
-title:    "Rust: Schreiben auf den Standardfehler"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-to-standard-error.md"
+title:                "Rust: Schreiben auf Standardfehler"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-In dieser Blogpost werden wir uns mit dem Schreiben in den Standardfehler beschäftigen und erfahren, warum es eine wichtige Fähigkeit im Rust-Programmieren ist.
 
-## Wie man in den Standardfehler schreibt
-Das Schreiben in den Standardfehler ist ein wichtiger Aspekt des Rust-Programmierens. Um in den Standardfehler zu schreiben, verwenden wir die Funktion `eprintln!`. Nehmen wir an, wir haben einen Fehler, der aus dem Code hervorgeht und wir diese Nachricht in der Standardfehlerausgabe ausgeben möchten. Hier ist ein Beispiel:
+In der Welt der Programmierung gibt es viele Situationen, in denen es hilfreich ist, eine Fehlermeldung in die Standardfehlerausgabe zu schreiben. Dies kann dazu beitragen, potenzielle Probleme frühzeitig zu erkennen und zu beheben, was letztendlich zu einem zuverlässigeren und stabileren Code führt.
+
+## Wie geht man vor?
+
+Das Schreiben in die Standardfehlerausgabe ist in der Programmierung oft eine einfache Aufgabe, aber es gibt einige wichtige Dinge zu beachten. Im Folgenden sind zwei Beispiele aufgeführt, wie man in Rust Code schreibt, der in die Standardfehlerausgabe schreibt:
 
 ```Rust
+// Beispiel 1: Verwendung von `eprintln!`-Makro
 fn main() {
-    let num1 = 10;
-    let num2 = 0;
+    let error_message = "Something went wrong!";
+    eprintln!("Error: {}", error_message);
+}
 
-    let result = num1 / num2;
-    eprintln!("Der Fehler ist: {}", result);
+// Beispiel 2: Verwendung von `std::io::stderr`-Modul
+use std::io::Write;
+fn main() {
+    let mut stderr = std::io::stderr();
+    let error_message = "Something went wrong!";
+    writeln!(stderr, "Error: {}", error_message).expect("Failed to write to stderr");
 }
 ```
 
-Das obige Beispiel wird den Fehler `thread 'main' panicked at 'impossible division: 0'` in der Konsole ausgeben. So einfach ist es, in den Standardfehler zu schreiben!
+Beide Beispiele erzielen dasselbe Ergebnis, aber es ist wichtig zu beachten, dass das erste Beispiel das `eprintln!`-Makro verwendet, während das zweite Beispiel das `std::io::stderr`-Modul verwendet. Beide Optionen sind gleichermaßen gültig, aber das Verständnis der Unterschiede kann dazu beitragen, die richtige Wahl für Ihren Code zu treffen.
 
-## Tiefgehender Einblick
-Jetzt, da wir wissen, wie man in den Standardfehler schreibt, lassen Sie uns einen tiefgehenden Einblick auf diesen Prozess werfen. Das Schreiben in den Standardfehler ist besonders nützlich, wenn wir Fehler in unserem Code finden. Es ermöglicht uns, wichtige Informationen über den Code zu erhalten, der ausgeführt wird, und hilft uns, diese Fehler schnell zu erkennen und zu beheben.
+Hier ist die Ausgabe unseres Beispielcodes:
 
-Ein weiterer wichtiger Aspekt des Schreibens in den Standardfehler ist die Möglichkeit, benutzerdefinierte Fehlermeldungen auszugeben. Dies kann hilfreich sein, um unsere eigenen Fehler zu identifizieren und zu verstehen, wo genau sie auftreten.
+```
+Error: Something went wrong!
+```
+
+## Tiefere Einblicke
+
+Das Schreiben in die Standardfehlerausgabe ist nicht nur hilfreich, um Probleme zu erkennen, sondern kann auch dazu beitragen, wichtige Informationen im Debugging-Prozess zu sammeln. Darüber hinaus ist es oft eine gängige Praxis, Fehlermeldungen in Protokolldateien zu schreiben, anstatt sie auf der Standardausgabe auszugeben. Dies kann dazu beitragen, ein saubereres und übersichtlicheres Output zu erhalten.
 
 ## Siehe auch
-Hier sind einige nützliche Links, die Ihnen beim Erlernen des Schreibens in den Standardfehler in Rust helfen können:
 
-- [Rust-Dokumentation über eprintln! Funktion](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Tutorial: Wie man Fehlerbehandlung in Rust lernt](https://blog.logrocket.com/how-to-learn-error-handling-in-rust/)
-- [Artikel: Grundlegende Fehlerbehandlung in Rust](https://www.joshmcguigan.com/blog/basic-error-handling-rust/)
+Hier sind einige nützliche Links, um Ihr Verständnis von Rust-Programmierung zu vertiefen:
+
+- [Rust-Dokumentation](https://www.rust-lang.org/learn)
+- [Standard Library Dokumentation](https://doc.rust-lang.org/std/index.html)
+- [Fehlerbehandlung in Rust](https://doc.rust-lang.org/book/ch09-00-error-handling.html)

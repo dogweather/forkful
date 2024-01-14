@@ -1,50 +1,77 @@
 ---
-title:    "Arduino: Eine Zeichenkette großschreiben"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/capitalizing-a-string.md"
+title:                "Arduino: Einen String großschreiben"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum:
+## Warum
 
-Sie haben vielleicht schon einmal von der Funktion "toUpper()" in Arduino gehört und sich gefragt, wofür sie gut ist. Die Antwort ist einfach: "toUpper()" wandelt einen String in Großbuchstaben um. Aber warum sollte man das überhaupt tun wollen?
+Das Ändern der Groß- und Kleinschreibung eines Strings kann in der Programmierung nützlich sein, um eine einheitliche Darstellung von Texten zu gewährleisten oder bestimmte Algorithmen anzuwenden. Um dies in Arduino zu erreichen, muss der String in ein Array von Buchstaben aufgeteilt und das entsprechende ASCII-Zeichen geändert werden.
 
-Es gibt viele Anwendungsbereiche, in denen es wichtig ist, dass ein String in Großbuchstaben ist. Zum Beispiel kann es bei der Verarbeitung von Benutzereingaben oder beim Vergleich von Strings hilfreich sein, wenn alle Buchstaben in der gleichen Größe sind. Auch bei der Ausgabe von Text auf einem Display kann es optisch ansprechender sein, wenn alles in Großbuchstaben geschrieben ist.
+## Wie man es macht
 
-## Wie geht das?
-
-Zunächst müssen wir einen String definieren, den wir in Großbuchstaben umwandeln möchten. Dazu können wir die Variable "text" erstellen und einen beliebigen Text zuweisen.
+Diese Funktion akzeptiert einen String als Parameter und gibt den gleichen String mit geänderten Groß- und Kleinschreibung zurück.
 
 ```Arduino
-String text = "Hallo Arduino Freunde!";
+String capitalizeString(String str) {
+  
+  // Loop through the characters of the string
+  for (int i = 0; i < str.length(); i++) {
+    
+    char c = str.charAt(i);
+    
+    // Check if the character is a lowercase letter
+    if (c >= 'a' && c <= 'z') {
+      
+      // Convert it to uppercase by subtracting 32 from its ASCII value
+      c = c - 32;
+    }
+    
+    // Replace the character in the string with the new character
+    str.setCharAt(i, c);
+  }
+  
+  // Return the capitalized string
+  return str;
+}
+
+void setup() {
+  // Initialize a string
+  String myString = "hallo welt";
+  
+  // Print the original string
+  Serial.println(myString);
+  
+  // Call the capitalizeString function and store the result
+  String capitalizedString = capitalizeString(myString);
+  
+  // Print the capitalized string
+  Serial.println(capitalizedString);
+}
+
+void loop() {
+  // Do nothing
+}
 ```
 
-Dann verwenden wir die Funktion "toUpper()" und weisen ihr den String "text" zu.
+Die Ausgabe dieses Codes wird sein:
 
-```Arduino
-text = text.toUpper();
+```
+hallo welt
+HALLO WELT
 ```
 
-Und voilà, unser String wird automatisch in Großbuchstaben umgewandelt. Um dies in der seriellen Monitor auszugeben, können wir einfach folgenden Code verwenden:
+## Tiefergehende Einblicke
 
-```Arduino
-Serial.println(text);
-```
+Die Änderung der Groß- und Kleinschreibung eines Strings kann auch durch die Verwendung von vordefinierten Funktionen wie `toUpperCase()` und `toLowerCase()` erreicht werden. Diese Funktionen können auf einen einzelnen Buchstaben oder auf den gesamten String angewendet werden. 
 
-Die Ausgabe wird dann "HALLO ARDUINO FREUNDE!" lauten.
+In dieser Funktion verwenden wir den ASCII-Code, um die Groß- und Kleinschreibung zu ändern, da dies effizienter ist als die Verwendung von vordefinierten Funktionen. Der ASCII-Code ist eine numerische Darstellung von Buchstaben, Zahlen und Sonderzeichen, die von Computern verwendet wird. Durch Hinzufügen oder Subtrahieren eines bestimmten Werts von diesem Code können wir die Groß- oder Kleinschreibung eines Buchstabens ändern. Zum Beispiel ist der ASCII-Code für den Buchstaben 'a' 97 und für den Buchstaben 'A' 65.
 
-## Tiefer gehende Informationen:
+## Siehe auch
 
-Wenn Sie sich für die technischen Details interessieren, können wir einen kurzen Blick auf die Funktion "toUpper()" werfen. Diese Funktion wird in der Arduino String Klasse implementiert und verwendet die ASCII-Tabelle, um jeden Buchstaben in seinen Großbuchstaben zu transformieren.
-
-Es ist wichtig zu beachten, dass die Funktion nur Buchstaben umwandelt. Sonderzeichen, Zahlen oder Leerzeichen bleiben unverändert. Außerdem wird der ursprüngliche String nicht verändert, sondern es wird ein neuer String mit den Großbuchstaben erstellt.
-
-## Siehe auch:
-
-Weitere Informationen und Beispiele zur Verwendung von "toUpper()" finden Sie in der offiziellen Arduino Dokumentation:
-- https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/toupper/
-- https://arduino-projekte.webnode.at/l/string-gros-schreiben-mit-arduino/
-- https://wolles-elektronikkiste.de/string-in-grossbuchstaben/
-
-Wir hoffen, dass dieser Artikel Ihnen geholfen hat, die Verwendung von "toUpper()" besser zu verstehen. Viel Spaß beim Experimentieren mit Strings und viel Erfolg bei Ihren zukünftigen Arduino Projekten!
+- [ASCII-Tabelle](https://www.asciitable.com/)
+- [String in ein Array von Buchstaben aufteilen](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/split/)
+- [Official Arduino Reference](https://www.arduino.cc/reference/en/)

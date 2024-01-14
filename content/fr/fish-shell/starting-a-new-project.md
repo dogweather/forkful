@@ -1,67 +1,37 @@
 ---
-title:    "Fish Shell: Commencer un nouveau projet"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell: Commencer un nouveau projet"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Si vous êtes un programmeur ou un amateur de la ligne de commande, vous savez probablement l'importance de trouver le bon shell pour travailler efficacement. Le Fish Shell est un bon choix pour de nombreuses raisons, notamment sa syntaxe simple et intuitive, sa saisie semi-automatique et ses fonctionnalités de personnalisation. Dans cet article, je vais vous montrer comment démarrer un nouveau projet avec Fish Shell et vous plonger dans ses fonctionnalités plus avancées.
+Si vous êtes un programmeur passionné par la ligne de commande, vous avez probablement entendu parler de Fish Shell. C'est un shell très populaire parmi les programmeurs pour sa simplicité et ses fonctionnalités. Si vous cherchez à démarrer un nouveau projet en utilisant Fish Shell, cet article est pour vous.
 
-## Comment faire
+## Comment faire 
 
-Pour commencer un nouveau projet avec Fish Shell, vous devrez d'abord installer Fish Shell sur votre système. Vous pouvez le faire en utilisant votre gestionnaire de paquets ou en téléchargeant les binaires à partir du site officiel. Une fois installé, vous pouvez suivre ces étapes pour créer un nouveau projet.
+Commençons par créer un nouveau répertoire pour notre projet. Ouvrez votre terminal et tapez la commande suivante : ```mkdir nouveau_projet```. Maintenant, changez de répertoire pour accéder à votre nouveau projet en utilisant la commande : ```cd nouveau_projet```.
 
-1. Tout d'abord, créez un dossier pour votre projet en utilisant la commande `mkdir` : 
+Maintenant, il est temps de démarrer Fish Shell. Tapez simplement la commande : ```fish``` pour accéder à votre shell. Vous devriez maintenant voir vos invites de commandes changer pour indiquer que vous êtes dans Fish Shell.
 
-```
-mkdir mon_projet
-```
+Une fois que vous êtes dans Fish Shell, vous pouvez commencer à travailler sur votre nouveau projet. Vous pouvez utiliser toutes les commandes normales que vous utilisez avec votre shell habituel. La seule différence est que Fish Shell a une syntaxe légèrement différente. Par exemple, pour afficher le contenu d'un répertoire, vous devez utiliser la commande : ```ls```.
 
-2. Ensuite, déplacez-vous dans ce dossier à l'aide de la commande `cd` :
+## Plongée en profondeur 
 
-```
-cd mon_projet
-```
+Maintenant que vous savez comment démarrer un nouveau projet en utilisant Fish Shell, laissez-moi vous donner quelques conseils pour l'utiliser efficacement. Tout d'abord, vous pouvez personnaliser votre Fish Shell en utilisant des fonctions et des variables. Cela peut vous aider à accomplir des tâches récurrentes plus facilement.
 
-3. Maintenant, vous pouvez initialiser un nouveau référentiel Git à l'aide de la commande `git init` :
+Deuxièmement, n'ayez pas peur d'explorer la documentation de Fish Shell pour découvrir toutes ses fonctionnalités. Vous pouvez également consulter la communauté en ligne pour trouver des astuces et des solutions à vos problèmes.
 
-```
-git init
-```
+Enfin, si vous souhaitez rouler votre propre projet en utilisant Fish Shell, vous pouvez le faire en utilisant un gestionnaire de paquets tel que Fisherman ou Oh My Fish.
 
-4. Pour commencer à coder, vous pouvez utiliser n'importe quel éditeur de texte ou utiliser l'éditeur de Fish Shell en tapant simplement `fish` :
+## Voir aussi 
 
-```
-fish
-```
+- [Documentation Fish Shell](https://fishshell.com/docs/current/)
+- [Communauté Fish Shell](https://github.com/fish-shell/fish-shell)
+- [Fisherman](https://github.com/jorgebucaran/fisher)
+- [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 
-5. Commencez à écrire votre code et enregistrez-le sous le nom souhaité, par exemple `main.sh`.
-
-6. Maintenant, vous pouvez exécuter votre code en utilisant la commande `source` :
-
-```
-source main.sh
-```
-
-7. Vous verrez la sortie de votre code directement dans votre terminal.
-
-## Plongée en profondeur
-
-Fish Shell a de nombreuses fonctionnalités avancées qui peuvent vous faciliter la vie lors de la création de nouveaux projets.
-
-- Saisie semi-automatique : Fish Shell offre une saisie semi-automatique avancée qui peut vous aider à taper plus rapidement en suggérant des commandes et des chemins de fichier.
-
-- Complétion des commandes : en appuyant sur la touche `tab`, Fish Shell complète automatiquement les commandes, les options et les chemins de fichier.
-
-- Personnalisation : vous pouvez personnaliser votre Fish Shell en ajoutant des plugins et en changeant le thème pour répondre à vos besoins.
-
-- Historique des commandes : Fish Shell garde une trace de vos commandes précédentes pour que vous puissiez facilement y accéder en utilisant les touches fléchées.
-
-## Voir aussi
-
-- [Guide de démarrage rapide de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Plugins Fish Shell](https://github.com/oh-my-fish/oh-my-fish)
+Maintenant que vous avez toutes les informations nécessaires, vous êtes prêt à démarrer votre nouveau projet en utilisant Fish Shell. Amusez-vous bien et n'oubliez pas de partager vos astuces et vos projets avec la communauté !

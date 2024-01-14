@@ -1,42 +1,40 @@
 ---
-title:    "Elm: Utskrift av feilsøkingsutdata"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/printing-debug-output.md"
+title:                "Elm: Utskrift av feilsøkingsutdata"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke print i Elm programmering
+## Hvorfor
 
-Mange utviklere foretrekker å bruke print-funksjonen når de programmerer, spesielt under utviklingsprosessen. Det er viktig å forstå hvorfor dette er nyttig og hvordan man kan implementere det i Elm.
+Hvorfor skulle noen ønske å printe ut feilsøkingsinformasjon? Det er fordi feil og problemer er en uunngåelig del av programmering. Ved å skrive ut feilsøkingsinformasjon kan du enklere identifisere og løse eventuelle problemer i koden din.
 
-## Hvordan bruke print i Elm
-For å bruke print-funksjonen i Elm kan du bruke "Debug.log" funksjonen. Dette gjør det mulig å skrive ut verdier og variabler direkte til Elm sin Developer Console. Her er et eksempel på hvordan dette kan gjøres:
+## Slik gjør du
 
-``` Elm
-main = 
+For å printe ut debug-utdata i Elm kan du bruke funksjonen `Debug.log` som tar inn en melding og en verdi som skal printes ut. Her er et eksempel:
+
+```Elm
+import Debug exposing (log)
+
+main =
     let
-        name = "Elm"
-        age = 5
+        sum = 2 + 2
     in
-        Debug.log "Dette er navnet" name
-        Debug.log "Dette er alderen" (toString age)
+    Debug.log "Summen er" sum
 ```
 
-Outputen vil se slik ut i konsollen:
-``` Elm
-"Dette er navnet": "Elm"
-"Dette er alderen": "5"
-```
+Dette vil printe ut følgende i konsollen: `Summen er 4`.
 
-Dette kan være spesielt nyttig når man prøver å feilsøke koden sin eller for å se verdiene til variablene på et gitt tidspunkt i programmet.
+Det er også mulig å printe ut mer komplekse strukturer som lister og tupler ved å bruke funksjonen `Debug.toString` på verdien du ønsker å printe ut.
 
-## Dypdykk i print-funksjonen
-En annen nyttig ting med print-funksjonen er at den kan brukes til å skrive ut verdier i løkker eller funksjoner. Dette kan hjelpe deg med å forstå hvordan koden din fungerer under forskjellige forhold. En annen måte å bruke det på er å printe ut verdier i HTTP-requests for å se hvilke data som blir hentet.
+## Dykk dypere
 
-Det er også verdt å merke seg at print-funksjonen kun vil bli kjørt under utvikling og ikke i produksjon. Dette betyr at koden din ikke blir påvirket av å ha print-linjer i den når du publiserer applikasjonen din.
+Å printe ut debug-utdata kan være nyttig i ulike situasjoner. Du kan for eksempel bruke det til å se hva som blir lagret i variabler, eller for å sjekke om en funksjon returnerer det forventede resultatet. Det er også mulig å aktivere debug-utskrift for hele applikasjonen ved å bruke `Debug.watch` eller `Debug.todo` funksjonene.
 
-# Se også
-- [Offisiell Elm dokumentasjon](https://guide.elm-lang.org/)
-- [Elm forum](https://discourse.elm-lang.org/)
-- [Elm slack samfunn](https://elmlang.herokuapp.com/)
+## Se også
+
+* [Elm Official Guide - Debugging](https://guide.elm-lang.org/debugging/)
+* [Elm Guide - Debug Output](https://elm-lang.org/debugging#debug-output)
+* [Elm Packages - Debug](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug)

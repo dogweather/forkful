@@ -1,51 +1,42 @@
 ---
-title:    "Java: Tarkistetaan onko hakemisto olemassa"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/checking-if-a-directory-exists.md"
+title:                "Java: Tarkista onko hakemisto olemassa"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Kansio on tärkeä osa tietokoneen tiedostorakennetta ja sen on oltava luotettava ja turvallinen. Tämän vuoksi on tärkeää tarkistaa, onko haluttu kansio jo olemassa, ennen kuin suoritetaan tähän kansioon liittyviä toimintoja.
+## Miksi: Tarkistaa, onko hakemistoa olemassa
 
-## Kuinka tehdä
-```Java
-import java.io.File;
+On monia syitä, miksi Java-ohjelmoijat saattavat tarvita tarkistaa, onko hakemistoa olemassa. Näihin voi kuulua esimerkiksi tiettyjen tiedostojen etsiminen, varmistaminen että tiedostot tallennetaan oikeaan paikkaan tai yleisesti ottaen sovelluksen toiminnan hallinta. Tässä blogikirjoituksessa tutustumme siihen, kuinka voit tarkistaa hakemiston olemassaolon Java-ohjelmassasi.
 
-public class DirectoryCheck {
-    public static void main(String[] args) {
-        String directoryName = "Kansio";
-        
-        // luodaan uusi File-olio annetulla kansiotiedoston nimellä
-        File directory = new File(directoryName);
-                
-        // tarkistetaan, onko kansio olemassa
-        if (directory.exists()) {
-            System.out.println("Kansio " + directoryName + " löytyy.");
-        } else {
-            System.out.println("Kansio " + directoryName + " ei löydy.");
-        }
-    }
+## Kuinka tehdä se: Koodi-esimerkkejä ja -tulosteita
+
+Java tarjoaa sisäänrakennetun tavan tarkistaa, onko hakemistoa olemassa. Tämä tehdään File-luokan avulla, joka vastaanottaa hakemiston polkunimen parametrina. Jos hakemisto on olemassa, File.exists() metodi palauttaa boolean-arvon true. Muussa tapauksessa se palauttaa arvon false.
+
+```
+Java
+
+public class Main {
+  public static void main(String[] args) {
+    // Tarkistaa, onko hakemisto olemassa
+    File directory = new File("polkunimi");
+    boolean exists = directory.exists();
+    System.out.println("Hakemisto on olemassa: " + exists);
+  }
 }
 ```
-Tässä esimerkissä käytetään File-luokkaa ja sen exist-metodia tarkistamaan, onko annettu kansio olemassa. Jos kansio löytyy, tulostetaan viesti, muussa tapauksessa tulostetaan virheilmoitus.
 
-Esimerkkituloste:
-```
-Kansio löytyy.
-```
+Esimerkkikoodin tulostus riippuu hakemiston olemassaolosta. Jos hakemisto on olemassa, tuloste on "Hakemisto on olemassa: true". Muussa tapauksessa tuloste on "Hakemisto on olemassa: false". Tämä yksinkertainen metodi on erittäin hyödyllinen esimerkiksi hakemistojen luomisessa tai tiettyjen tiedostojen etsimisessä tiettyyn paikkaan tallentamista varten.
 
-## Syvemmälle aiheeseen
-On tärkeää huomata, että exist-metodi ei tarkista vain kansiotiedostoa, vaan myös sen sisältöä. Jos kansio on olemassa, mutta tyhjä, exist-metodi palauttaa arvon 'false'.
+## Syvempi sukellus: Tarkempia tietoja hakemiston olemassaolosta
 
-Kansio voi myös olla piilossa, eli sen nimi alkaa pisteellä. Tällöin exist-metodi ei tunnista sitä, vaikka kansio olisikin olemassa.
+On tärkeää huomata, että File.exists() -metodi tarkistaa vain, onko tiedostopolku olemassa. Se ei tarkista, onko kyseessä todellinen kansio vai tiedosto. Tämä tarkoittaa sitä, että File-luokka voi myös hyväksyä tiedostopolun, joka osoittaa tiedostoon, eikä hakemistoon. Niinpä on hyvä käytäntö tarkistaa myös tiedoston tyyppi, ennen kuin käytetään File.exists() -metodia.
 
-On myös hyvä huomioida, että exist-metodi tarkistaa vain annetulla tiedostonimellä olevan kansion, eikä alikansioita. Jos haluat tarkistaa kaikki kansiotietokoneesta, voi olla tarpeen käyttää muita tiedostonhallintametodeja.
+Lisäksi on huomioitava, että File.exists() -metodin palauttama boolean-arvo ei kerro, onko kyseessä oleva polku todella tiedosto tai kansio. Se vain osoittaa, onko polku käytettävissä. Useimmissa tapauksissa tämä on kuitenkin tarpeeksi ja File.exists() -metodia käytetäänkin yleisesti hakemistojen ja tiedostojen olemassaolon tarkistamisessa.
 
 ## Katso myös
-- [File-luokan JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java.io-pakettidokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html)
-- [Java-tiedostonhallinta Stack Overflowssa (englanniksi)](https://stackoverflow.com/questions/972192/how-can-i-get-the-list-of-files-in-a-directory-using-java)
 
-### HUOM! Muista käsitellä tiedostoja ja kansioita turvallisesti ja vastuullisesti. Muista myös käyttää asianmukaisia tiedostonhallintametodeja ja varmistaa, että käyttäjällä on tarvittavat oikeudet tiedoston käsittelyyn.
+- Java File-luokka: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
+- File.exists() metodi: https://docs.oracle.com/javase/8/docs/api/java/io/File.html#exists--

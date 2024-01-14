@@ -1,66 +1,45 @@
 ---
-title:    "Bash: 부분 문자열 추출하기"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/extracting-substrings.md"
+title:                "Bash: 부분 문자열 추출하기"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-이 글에서는 Bash를 사용하여 substrings을 추출하는 방법을 배우게 됩니다. 문자열의 일부분만 필요한 경우가 많기 때문에 substring 추출은 코드 작성에 있어서 매우 유용합니다.
+서브스트링을 추출하는 이유는 무엇일까요? 이 작업은 문자열에서 특정 문자 또는 단어를 찾기 위해 자주 사용되며 유용한 정보를 추출하는 데 도움이 됩니다.
 
-## 추출하는 방법
+## 하우투
 
-Bash에서 substring을 추출하기 위해서는 `${변수:시작인덱스:길이}`와 같은 구문을 사용합니다. 다음의 예제를 통해 이를 살펴보겠습니다.
-
-```Bash
-sentence="안녕하세요, 반가워요!"
-echo ${sentence:0:3}
-```
-
-위 코드의 실행결과는 다음과 같습니다.
-
-```
-안녕하
-```
-
-`sentence` 변수의 인덱스 0부터 3개의 글자를 추출한 것을 볼 수 있습니다. 이를 통해 원하는 범위의 substring을 쉽게 추출할 수 있습니다.
-
-## 깊이있게 알아보기
-
-Bash에서 substring을 추출할 때 유의해야 할 몇가지 사항이 있습니다. 먼저, 시작 인덱스는 0부터 시작하며, 마지막 인덱스는 실제 길이보다 1 작은 값을 사용해야 합니다. 또한, 시작 인덱스와 길이를 생략할 경우 변수의 전체 값이 출력됩니다.
-
-추출한 substring을 다시 변수에 저장할 수도 있습니다. 예를 들어, 위의 예제에서 추출한 substring을 `greeting` 변수에 저장하고 싶다면 다음과 같이 작성할 수 있습니다.
+서브스트링을 추출하는 방법은 간단합니다. 다음의 Bash 코드를 사용하면 됩니다.
 
 ```Bash
-sentence="안녕하세요, 반가워요!"
-greeting=${sentence:0:3}
-echo $greeting
+# 문자열 변수 정의
+str="이것은 문자열 예제입니다"
+
+# 서브스트링 추출
+echo ${str:0:6} # 출력 : 이것은
+echo ${str:6} # 출력 : 문자열 예제입니다
 ```
 
-추출한 substring을 다른 명령어의 인자로 사용할 수도 있습니다. 예를 들어, `grep` 명령어를 사용하여 substring이 포함된 라인만 출력할 수 있습니다.
+위의 코드에서 `${str:start:length}` 형식으로 사용하며, `start` 위치부터 `length` 길이만큼의 서브스트링을 추출합니다. `start` 위치는 0부터 시작하며, `length`를 생략하면 `start` 위치부터 문자열 끝까지 추출합니다.
 
-```Bash
-text="Hello, my name is John Doe."
-substring="John"
-echo $text | grep $substring
-```
+## 딥 다이브
 
-위의 코드의 실행결과는 다음과 같습니다.
+서브스트링 추출에 대해 더 깊이 알아보겠습니다. Bash는 다음과 같은 방법으로 서브스트링을 추출할 수 있습니다.
 
-```
-Hello, my name is John Doe.
-```
+- `${str:start:length}` : 앞서 언급한 방법으로 추출
+- `${str: -start:length}` : 문자열의 뒤에서부터 `start` 위치부터 `length` 길이만큼 추출 (공백도 포함)
+- `${str: -start:-end}` : 뒤에서부터 `start` 위치부터 `end` 위치까지 추출
+- `${str#substring}` : `substring`과 일치하는 처음의 부분 문자열을 제거하고 나머지 문자열을 반환
+- `${str%substring}` : `substring`과 일치하는 마지막의 부분 문자열을 제거하고 나머지 문자열을 반환
 
-substring이 포함된 라인이 출력된 것을 볼 수 있습니다.
+더 자세한 내용은 [Bash 서브스트링 추출 방법](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)을 참고하세요.
 
-## 또 다른 정보들
+## 봐도 좋아요
 
-Bash에서 서브스트링을 추출하는 방법 외에도 다양한 문자열 조작 기능을 제공합니다. `sed` 명령어를 사용하면 문자열을 치환하거나 삭제하는 등 더욱 다양한 작업을 할 수 있습니다. 또한, 문자열 조작에 대한 더 많은 정보가 필요하다면 Bash 공식 문서를 참고하는 것도 좋은 방법입니다.
-
-## 관련 정보
-
-[Bash 문자열 조작 방법](https://www.tldp.org/LDP/abs/html/textops.html)
-
-[Bash 공식 문서](https://www.gnu.org/software/bash/)
+- [Bash String Manipulation](https://www.linuxjournal.com/content/bash-string-manipulation): Bash에서 문자열을 조작하는 방법에 대해 자세하게 설명한 글입니다.
+- [Bash String Operations](https://www.gnu.org/software/bash/manual/html_node/String-Operations.html): Bash에서 제공하는 다양한 문자열 처리 방법을 설명한 공식 문서입니다.
+- [Bash Substring Explained with Examples](https://www.shell-tips.com/bash/substring-extraction/): Bash에서 서브스트링을 추출하는 다양한 방법과 예제를 제공하는 글입니다.

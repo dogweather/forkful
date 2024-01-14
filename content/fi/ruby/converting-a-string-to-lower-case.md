@@ -1,37 +1,52 @@
 ---
-title:    "Ruby: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/converting-a-string-to-lower-case.md"
+title:                "Ruby: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Miksi kukaan haluaisi muuttaa merkkijonon pieniksi kirjaimiksi?
+ Monet Ruby-ohjelmoijat saattavat joutua muuttamaan merkkijonoja pieniksi kirjaimiksi, jotta ne vastaavat kirjastoista tai tietokannasta saatavia tietoja. Tämä voi auttaa välttämään haittatilanteita tai virheitä tietojen käsittelyssä.
 
-Muuttamalla merkkijonon pieniksi kirjaimiksi voit helpottaa tiedon vertailua ja käsittelyä. Pienet kirjaimet varmistavat myös, että merkkijonoja voidaan vertailla oikein, sillä Ruby-ohjelmointikieli on case-sensitive eli se huomioi kirjainten koon.
+## Miten tehdä
 
-## Miten
+Merkkijonon muuttaminen pieniksi kirjaimiksi on helppoa Rubyssa. Tätä varten voit käyttää `downcase`-metodia:
 
-```ruby
-puts "TÄMÄ ON MERKKIJONO".downcase
-puts "tämä on merkkijono".downcase
+```Ruby
+string = "Moi maailma!"
+puts string.downcase
 ```
 
-Seuraava koodinpätkä tulostaa molemmissa tapauksissa "tämä on merkkijono". Pilkkuja ja muita erikoismerkkejä ei muuteta, vaan ne pysyvät samanlaisina.
+Tulostaa:
 
-Tärkeää on muistaa käyttää `downcase`-metodia, joka muuttaa merkkijonon pieniksi kirjaimiksi. Ilman sitä, merkkijono pysyy ennallaan eikä muutosta tapahdu.
+```Ruby
+moi maailma!
+```
 
-## Syväsukellus
+Voit myös käyttää `downcase!` metodia, joka muuttaa alkuperäisen merkkijonon sisältöä:
 
-Merkkijonon muuttamiseen pieniksi kirjaimiksi vaikuttaa myös ohjelmiston käyttöjärjestelmä. Esimerkiksi Windows-käyttöjärjestelmässä pienet kirjaimet saattavat muuttua eri tavalla kuin Linux-ympäristössä.
+```Ruby
+string = "Moi maailma!"
+string.downcase!
+puts string
+```
 
-Rubyssa on myös muita tapoja muuttaa merkkijonon kirjaimia, kuten `capitalize`, joka muuttaa vain merkkijonon ensimmäisen kirjaimen isoksi ja muut pieniksi.
+Tulostaa:
 
-## Katso myös
+```Ruby
+moi maailma!
+```
 
-- [Ruby String Documentation](https://ruby-doc.org/core-3.0.2/String.html)
-- [Ruby Case Conversion Methods](https://www.rubyguides.com/2018/05/ruby-case-conversion-methods/)
-- [Ruby Tutorial - Strings](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-- [Ruby Style Guide - Case Conversion](https://rubystyle.guide/#case-conversion)
+## Syvällinen sukellus
+
+Rubyssa on myös muita tapoja muuntaa merkkijonoja pieniksi kirjaimiksi, kuten `swapcase`-metodi, joka muuttaa merkkijonon isot kirjaimet pieniksi ja päinvastoin. Voit myös käyttää `capitalize`-metodia, joka muuttaa merkkijonon ensimmäisen kirjaimen isoksi.
+
+Merkkijonojen muuntaminen pieniksi kirjaimiksi on tärkeä osa tietojen käsittelyä Rubyssa. Se auttaa varmistamaan, että tiedot ovat yhteensopivia ja virheetön.
+
+# Katso myös
+
+- [Ruby String Documentation](https://ruby-doc.org/core-2.7.2/String.html)
+- [Codecademy: Manipulating Strings in Ruby](https://www.codecademy.com/courses/learn-ruby/lessons/strings-in-ruby/exercises/manipulating-strings-in-ruby)

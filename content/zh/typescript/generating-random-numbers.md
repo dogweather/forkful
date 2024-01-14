@@ -1,45 +1,44 @@
 ---
-title:    "TypeScript: 生成随机数"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/generating-random-numbers.md"
+title:                "TypeScript: 生成随机数"
+programming_language: "TypeScript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要生成随机数？
+## 为什么生成随机数
+如今，随机数在计算机编程中变得越来越重要。它们可以用来创建随机游戏，保护密码，做数据分析等等。生成随机数可以增加程序的难度和安全性，保证每次运行程序都能得到不同的结果。
 
-在编程中，生成随机数是非常常见的一个操作。它可以被用来模拟真实的数据，进行测试，或者是增加程序的随机性。在任何需要随机性的情况下，生成随机数都是非常有用的。
-
-## 如何生成随机数？
-
-我们可以使用 TypeScript 中的 Math 对象来生成随机数。Math 对象提供了一系列的数学函数，其中就包括生成随机数的方法。
-
+## 如何生成随机数
 ```TypeScript
-// 生成一个 0 到 1 之间的随机数
-console.log(Math.random());
+// 导入Math库
+import { Math } from "tsmath";
 
-// 生成一个 0 到指定数值之间的随机数
-console.log(Math.floor(Math.random() * 10));
+// 生成0-1之间的随机数
+let randomNum = Math.random();
 
-// 生成一个指定范围的随机数
-console.log(Math.floor(Math.random() * (max - min + 1) + min));
+// 生成指定范围内的随机整数
+let randomInt = Math.floor(Math.random() * 10) + 1;
 ```
 
-输出结果可能会是这样的：
-
-```TypeScript
-0.52371456782
-5
-48
+输出示例:
+```
+randomNum = 0.547
+randomInt = 8
 ```
 
-另外，我们也可以使用第三方库如 `faker.js` 来生成随机的名字、地址、电话号码等信息。
+## 深入探讨随机数生成
+生成随机数的方法有很多种，每种方法都有其优缺点。常用的方法包括伪随机数生成器和真随机数生成器。伪随机数生成器基于一个初始值，之后每次运行都会按照确定的步骤生成相同的序列。而真随机数生成器则利用外部因素如游戏中的骰子或物理现象来产生真正的随机数。
 
-## 深入了解随机数
+另外，在生成随机数时也要注意其分布情况，以保证数值的均匀性。一般来说，我们希望生成的随机数能够近似于均匀分布，这样才能更好地实现随机的效果。
 
-生成随机数的原理其实并不复杂，主要是通过一系列的数学运算来获得一个随机的数值。然而，在实际应用中，需要注意一些细节以及避免一些常见的错误。比如，不要在循环中反复调用 `Math.random()` 方法来生成随机数，这样会导致生成的随机数并不是真正的随机，而是周期性重复的。另外，随机数也不能完全保证在某一范围内都是均匀分布的，因此在一些需要较高随机性的场景下，需要使用其他的方法来保证随机性。
+## 查看更多资料
+- [Math库文档](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example/library.html)
+- [伪随机数生成器和真随机数生成器的比较](https://www.geeksforgeeks.org/pseudo-random-vs-true-random-number-generator/)
+- [如何生成均匀分布的随机数](https://www.quora.com/What-is-the-best-way-to-generate-uniformly-distributed-random-numbers)
 
-# 查看更多信息
-
-- [Math 对象文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
-- [faker.js 文档](https://github.com/Marak/faker.js)
+## 参考资料
+- [Random Number Generation in TypeScript](https://blog.bitsrc.io/random-number-generation-in-typescript-7633d550e671)
+- [The Importance of Randomness in Programming](https://medium.com/@olenicksoftware/the-importance-of-randomness-in-programming-719d0346e3ac)
+- [The Art of Randomness in Programming](https://www.techrepublic.com/blog/software-engineer/the-art-of-randomness-in-programming/)

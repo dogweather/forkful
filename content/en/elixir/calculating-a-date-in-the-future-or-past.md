@@ -1,43 +1,56 @@
 ---
-title:    "Elixir recipe: Calculating a date in the future or past"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/calculating-a-date-in-the-future-or-past.md"
+title:                "Elixir recipe: Calculating a date in the future or past"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Calculating dates in the future or past can be a useful task for a variety of scenarios. From scheduling appointments and events to managing project timelines, being able to accurately determine a date in the future or past is an important skill for any programmer to have. In this blog post, we will explore how to do just that using the Elixir programming language.
+## Why 
 
-## How To
-To calculate a date in the future or past, we will be using the `Date` and `Timex` libraries in Elixir. First, we need to import these libraries by adding the following line to the top of our code:
-```Elixir
-import Date, only:[add: 2]
-import Timex
+In the world of programming, there are many instances where we may need to calculate dates in the future or past. Whether it's for scheduling tasks or managing events, being able to accurately calculate dates in Elixir can be incredibly useful.
+
+## How To 
+
+To calculate a date in the future or past in Elixir, we can use the `DateTime` module. Let's take a look at some examples: 
+
+```
+Elixir date_in_future = DateTime.utc_now() |> DateTime.add(60, :days) 
+Elixir date_in_past = DateTime.utc_now() |> DateTime.add(-14, :hours)
 ```
 
-To calculate a date in the future, we will use the `add` function from the `Date` library which takes two arguments - the starting date and the number of days to add. For example, if we want to calculate the date 30 days from today, we can use the following code:
-```Elixir
-Date.now() |> add(30)
-```
-The output will be in the format of `%Date{}` which contains the year, month, and day of the calculated date.
+In the first example, we are calculating a date 60 days in the future. We first call the `DateTime.utc_now()` function to get the current date and time in UTC format. Then, we use the `DateTime.add()` function to add 60 days to the current date. Similarly, in the second example, we are calculating a date 14 hours in the past.
 
-Similarly, to calculate a date in the past, we can use the same `add` function but with a negative number of days. For example, if we want to calculate the date 10 days before today, we can use the following code:
-```Elixir
-Date.now() |> add(-10)
+We can also use the `DateTime.add()` function to calculate dates based on different units such as weeks, months, or years. For example: 
+
+```
+Elixir date_in_future = DateTime.utc_now() |> DateTime.add(2, :years) 
 ```
 
-We can also specify a specific date as the starting point by passing in the year, month, and day as arguments to the `Date.new` function. For example, to calculate the date 20 days from January 1, 2021, we can use the code:
-```Elixir
-Date.new(2021, 1, 1) |> add(20)
+This will return a date 2 years in the future. We can also specify the unit as a keyword instead of an atom, for example: 
+
+```
+Elixir date_in_future = DateTime.utc_now() |> DateTime.add(1, :month) 
 ```
 
-## Deep Dive
-Internally, Elixir uses the Erlang Date library which represents dates as the number of days since January 1, 1970. This allows for efficient calculations of dates in the future or past without relying on complex algorithms. The `Timex` library provides additional functions for manipulating dates, such as calculating the difference between two dates or finding the day of the week for a given date.
+These examples may seem simple, but the `DateTime` module has many more functions and options for calculating dates. Keep reading to learn more!
 
-It's also worth noting that the `Date` library does not handle timezones, so if your application requires timezone awareness, you may need to use the `DateTime` library instead.
+## Deep Dive 
 
-## See Also
-- [Date - Elixir Documentation](https://hexdocs.pm/elixir/Date.html)
-- [Timex - Elixir Documentation](https://hexdocs.pm/timex/Timex.html)
-- [DateTime - Elixir Documentation](https://hexdocs.pm/elixir/DateTime.html)
+The `DateTime` module in Elixir provides a lot of useful functions for calculating dates. Here are a few of the most commonly used functions: 
+
+- `DateTime.utc_now()` - returns the current date and time in UTC format 
+- `DateTime.now()` - returns the current date and time in local time zone format 
+- `DateTime.add(date, number, unit)` - adds the specified number of units to the given date 
+- `Date.day_of_week(date)` - returns the day of the week for the given date 
+- `Date.day_of_year(date)` - returns the day of the year for the given date 
+
+These are just a few examples, but there are many more functions available in the `DateTime` module. It's important to note that all date calculations in Elixir are done using the Gregorian calendar.
+
+## See Also 
+
+- [Elixir Date and Time Calculation Documentation](https://hexdocs.pm/elixir/1.12.3/DateTime.html)
+- [Elixir Date and Time Functions Cheat Sheet](https://devhints.io/elixir-date)
+
+Calculating dates in the future or past may seem like a small task, but it can greatly improve the functionality of your Elixir programs. With the `DateTime` module, you have a powerful tool at your disposal. Happy coding!

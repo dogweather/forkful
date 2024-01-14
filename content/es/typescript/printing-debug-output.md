@@ -1,67 +1,52 @@
 ---
-title:    "TypeScript: Imprimiendo salida de depuración"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/printing-debug-output.md"
+title:                "TypeScript: Imprimiendo salida de depuración"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir la salida de depuración en TypeScript?
+## Por qué
 
-La impresión de la salida de depuración es una práctica común en el desarrollo de software. Al imprimir mensajes de depuración, podemos ver el estado de nuestro código en diferentes puntos de ejecución, lo que nos ayuda a identificar y solucionar errores más fácilmente.
+La impresión de salida de depuración es una herramienta valiosa para los programadores de TypeScript. Te permite ver qué sucede en tu código en tiempo real y te ayuda a identificar errores y problemas. También puede ser útil para realizar un seguimiento del flujo de ejecución de tu programa y entender mejor cómo funciona.
 
 ## Cómo hacerlo
 
-En TypeScript, podemos imprimir la salida de depuración utilizando la función `console.log()`. Vamos a ver un ejemplo sencillo:
+Para imprimir salida de depuración en TypeScript, puedes utilizar la función `console.log()`. Esta función toma como parámetro cualquier tipo de datos y lo imprime en la consola del navegador o del IDE que estés utilizando. Por ejemplo:
+
+ ```TypeScript
+console.log("¡Hola mundo!");
+```
+
+Esto imprimirá "¡Hola mundo!" en la consola. También puedes imprimir variables y objetos para ver su valor en un momento determinado de la ejecución del programa:
 
 ```TypeScript
-let nombre = "María";
-console.log("El nombre es: " + nombre);
-```
+let num = 5;
+console.log(num);
 
-Al ejecutar este código, veremos en la consola el siguiente resultado:
-
+let persona = {
+  nombre: "Ana",
+  edad: 25
+};
+console.log(persona);
 ```
-El nombre es: María
-```
-
-Podemos imprimir cualquier tipo de dato en la salida de depuración, ya sean cadenas de texto, números, booleanos o incluso objetos y arreglos. También podemos combinar varias variables en un solo mensaje de depuración:
-
-```TypeScript
-let edad = 27;
-console.log("La edad de " + nombre + " es " + edad);
-```
+La salida de la consola sería:
 
 ```
-La edad de María es 27
+5
+
+{ nombre: "Ana", edad: 25 }
 ```
 
-## Profundizando en la impresión de salida de depuración
+## Profundizando
 
-Además de utilizar `console.log()`, TypeScript proporciona otras funciones útiles para la impresión de la salida de depuración, como `console.info()`, `console.warn()` y `console.error()`, que nos permiten imprimir diferentes tipos de mensajes de forma legible. También podemos utilizar la función `console.table()` para imprimir datos en forma de tabla.
+Además de la función `console.log()`, TypeScript también tiene otras opciones para imprimir salida de depuración. Por ejemplo, puedes utilizar `console.error()` para imprimir mensajes de error en rojo en la consola o `console.warn()` para imprimir advertencias en amarillo. También puedes utilizar `console.table()` para imprimir objetos en formato de tabla y `console.time()` y `console.timeEnd()` para medir el tiempo de ejecución de una sección de código.
 
-Otra técnica útil para imprimir la salida de depuración es utilizar el operador de propagación (`...`) para imprimir todos los elementos de un arreglo o los pares clave-valor de un objeto:
-
-```TypeScript
-let numeros = [1, 2, 3, 4, 5];
-console.log(...numeros);
-```
-
-```
-1 2 3 4 5
-```
-
-```TypeScript
-let persona = { nombre: "Juan", edad: 30 };
-console.log(...persona);
-```
-
-```
-Juan 30
-```
-
-También podemos utilizar condicionales y ciclos para imprimir mensajes de depuración en determinados escenarios o en múltiples puntos de nuestro código.
+Es importante recordar que es recomendable eliminar todas las funciones de impresión de salida de depuración antes de publicar tu código en producción, ya que pueden ralentizar el rendimiento de la aplicación.
 
 ## Ver también
-- [Documentación oficial de TypeScript sobre la impresión de salida de depuración](https://www.typescriptlang.org/docs/handbook/decorators.html)
-- [Tutorial de depuración en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-with-the-built-in-debugger-and-chrome-devtools)
+
+- [Documentación oficial de TypeScript sobre la impresión de salida de depuración](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#void)
+- [Artículo sobre la impresión de salida de depuración en TypeScript](https://blog.logrocket.com/a-quick-guide-to-debugging-typescript-like-a-pro/)
+- [Video tutorial sobre la impresión de salida de depuración en TypeScript](https://www.youtube.com/watch?v=4zXbdWNRnXY)

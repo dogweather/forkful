@@ -1,47 +1,38 @@
 ---
-title:    "Bash: Sprawdzanie, czy istnieje katalog"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/checking-if-a-directory-exists.md"
+title:                "Bash: Sprawdzanie czy istnieje katalog"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto sprawdzać, czy istnieje katalog?
 
-Często zdarza się, że przy pisaniu skryptów w Bash potrzebujemy sprawdzić, czy dany katalog istnieje czy też nie. Może to być konieczne do przeprowadzenia odpowiednich operacji lub wyboru odpowiedniego ścieżki. Dlatego warto poznać sposób na sprawdzenie istnienia katalogu w języku Bash.
+Często w programowaniu bashowym konieczne jest sprawdzanie, czy dany katalog istnieje, zanim wykonamy na nim jakieś operacje. Jest to ważne, ponieważ unikamy w ten sposób błędów lub nadpisywania istniejących plików.
 
-## Jak to zrobić
+# Jak to zrobić?
 
-Sprawdzenie, czy dany katalog istnieje, jest bardzo proste w Bash. Wystarczy użyć polecenia `test` lub skrótu `[` i przekazać jako argument `d`, co oznacza katalog (directory), oraz ścieżkę do katalogu, który chcemy sprawdzić. Na przykład:
+Do sprawdzenia istnienia katalogu używamy polecenia `test -d [katalog]`, które zwraca wartość `true` lub `false` w zależności od istnienia katalogu. Przykładowy kod wyglądałby następująco:
 
-```bash
-if [ -d ~/Documents ]; then
-  echo "Katalog ~/Documents istnieje."
+```Bash
+if [ test -d "moj_katalog" ]; then
+  echo "Katalog istnieje."
 else
-  echo "Katalog ~/Documents nie istnieje."
+  echo "Katalog nie istnieje."
 fi
 ```
 
-Powyższy przykład sprawdza, czy katalog "Documents" znajdujący się w katalogu domowym użytkownika istnieje. Jeśli istnieje, wyświetla odpowiedni komunikat, w przeciwnym razie wyświetla inny. Możemy również użyć polecenia `mkdir` w celu utworzenia katalogu, jeśli ten nie istnieje, na przykład:
+W przypadku, gdy chcemy sprawdzić, czy katalog istnieje i jednocześnie jest pusty, możemy użyć polecenia `test -d [katalog] && test -z "$(ls -A [katalog])"`. Oznacza to, że najpierw sprawdzamy istnienie katalogu, a następnie - czy jest on pusty. Jeśli będzie wszystko w porządku, możemy wykonać na nim dowolne operacje.
 
-```bash
-if [ ! -d ~/Documents/NewFolder ]; then
-  mkdir ~/Documents/NewFolder
-else
-  echo "Katalog ~/Documents/NewFolder już istnieje."
-fi
-```
+# Głębszy zanurzenie
 
-W powyższym przykładzie, jeśli katalog "NewFolder" nie istnieje, zostanie on utworzony. W przeciwnym razie wyświetli się odpowiedni komunikat.
+Polecenie `test` jest alternatywą dla operatora warunkowego `[ ]` i jest często używane do sprawdzania różnych warunków w skryptach bash. Można użyć go również do sprawdzania istnienia innych elementów, takich jak pliki czy zmienne.
 
-## Wnikliwa analiza
+Przykładowo, aby sprawdzić, czy dany plik nie jest pusty, możemy użyć polecenia `test -s [plik]`, które zwróci `true` lub `false` w zależności od tego, czy plik jest niepusty. Możemy również użyć wielu operatorów logicznych, takich jak `&&` czy `||` w celu bardziej złożonych warunków.
 
-W języku Bash istnieje wiele innych warunkowych poleceń, które można użyć do sprawdzania istnienia katalogu, na przykład `if [ -e ~/Documents ]`, które sprawdza, czy dany plik lub katalog istnieje, lub `if [ -r ~/Documents ]`, które sprawdza, czy dany plik lub katalog jest dostępny do odczytu. Dzięki temu, że sama składnia języka Bash jest dość prosta i intuicyjna, możemy w błyskawiczny sposób sprawdzić wiele różnych warunków i podjąć odpowiednie działania.
+# Zobacz również
 
-Ważne jest również, aby pamiętać, że skrypt w Bash wykonywany jest w określonym katalogu, więc ścieżki do katalogów mogą być względne lub bezwzględne, co może mieć wpływ na wynik wykonywanych operacji. Dlatego zawsze warto sprawdzać i upewniać się, w jakim katalogu jesteśmy w danym momencie.
-
-## Zobacz także
-
-- [Programowanie w Bash - samouczek od podstaw](https://www.rytmy.pl/bash/wprowadzenie-do-programowania-w-bash/)
-- [Oficjalna dokumentacja języka Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Kurs Bash w Codecademy](https://www.codecademy.com/learn/learn-the-command-line)
+* [The Linux Command Line: A Complete Introduction](https://www.amazon.com/Linux-Command-Line-Complete-Introduction/dp/1593273894) - książka wprowadzająca w świat programowania w bashu
+* [Bash Scripting Tutorial](https://www.shellscript.sh/) - kurs programowania bashowego dla początkujących
+* [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/) - oficjalna dokumentacja języka bash

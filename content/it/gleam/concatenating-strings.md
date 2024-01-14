@@ -1,52 +1,50 @@
 ---
-title:    "Gleam: Unire stringhe"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/concatenating-strings.md"
+title:                "Gleam: Unione di stringhe"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La concatenazione di stringhe è un'operazione fondamentale nella programmazione che consente di combinare diverse stringhe in una sola. Questo può essere utile per creare messaggi personalizzati, creare output dinamici e altro ancora. Continua a leggere per scoprire come farlo in Gleam!
+Concatenare le stringhe è un'operazione fondamentale nella programmazione. Ci permette di unire più stringhe per creare una nuova stringa. Questo è utile quando si vuole creare un messaggio personalizzato che includa informazioni dinamiche o quando si vuole unire vari pezzi di testo.
 
 ## Come fare
 
-Per concatenare stringhe in Gleam, possiamo utilizzare l'operatore `~` che unisce due stringhe. Ad esempio:
+Per concatenare le stringhe in Gleam, è possibile utilizzare il simbolo "+" o la funzione `"~"string.concat()`. Vediamo un esempio:
 
 ```Gleam
 let nome = "Marco"
-let saluto = "Ciao " ~ nome
+let saluto = "Ciao"
+
+let messaggio = saluto + " " + nome
+// oppure
+let messaggio2 = string.concat(saluto, " ", nome)
+
+debug.(messaggio) // output: Ciao Marco
+debug.(messaggio2) // output: Ciao Marco
 ```
 
-Questa concatenazione produrrà la stringa "Ciao Marco". Possiamo anche unire più di due stringhe, come in questo esempio:
+Come si può vedere, entrambi i metodi producono lo stesso risultato. È importante notare che quando si utilizza il simbolo "+", è necessario assicurarsi di aggiungere uno spazio bianco tra le stringhe in modo da ottenere una corretta formattazione del testo.
+
+Le stringhe in Gleam sono immutabili, quindi è necessario creare una nuova stringa per aggiungere del testo. Tuttavia, possiamo combinare più stringhe in una volta utilizzando la funzione `~"string.concat()`:
 
 ```Gleam
-let nome = "Marco"
-let cognome = "Rossi"
-let saluto = "Ciao " ~ nome ~ " " ~ cognome
+let list_personalizza = ["Benvenuto", "nel", "nostro", "blog"]
+
+let messaggio_personalizzato = string.concat(...list_personalizza)
+debug.(messaggio_personalizzato) // output: Benvenuto nel nostro blog
 ```
 
-Questa volta otterremo la stringa "Ciao Marco Rossi". Possiamo anche concatenare stringhe e variabili di altri tipi di dati, come numeri:
+## Approfondimenti
 
-```Gleam
-let nome = "Anna"
-let contatore = 3
-let saluto = nome ~ ", hai " ~ contatore ~ " nuovi messaggi."
-```
+Nel nostro esempio precedente, abbiamo utilizzato l'operatore spread `...` per passare tutti gli elementi della lista come argomenti alla funzione `~"string.concat()`. Inoltre, è possibile concatenare non solo le stringhe, ma anche variabili di altri tipi di dati, come numeri, booleani, ecc.
 
-Questo codice produrrà la stringa "Anna, hai 3 nuovi messaggi." Come puoi vedere, la concatenazione di stringhe è un modo semplice ma potente per creare output personalizzati nei tuoi programmi Gleam.
-
-## Approfondimento
-
-In Gleam, le stringhe sono immutabili, il che significa che non possono essere modificate dopo essere state create. Ciò significa che ogni volta che concateniamo una stringa, in realtà stiamo creando una nuova stringa invece di modificare quella esistente. Questo è importante da tenere presente quando si lavora con stringhe più grandi o in situazioni in cui le prestazioni sono cruciali.
-
-Un altro concetto importante da comprendere è la conversione implicita nel concatenare tipi diversi di dati. Ad esempio, se proviamo a concatenare una stringa con un numero, Gleam effettuerà automaticamente la conversione del numero in una stringa prima di effettuare la concatenazione. Questo può essere utile, ma può anche portare a errori se non si ha la consapevolezza di questo comportamento.
-
-Inoltre, esistono anche alcune funzioni utili nella libreria standard di Gleam per la manipolazione delle stringhe, come `length` per ottenere la lunghezza di una stringa e `to_upper` per convertire una stringa in maiuscolo.
+Inoltre, è importante tenere a mente che l'operazione di concatenazione può essere costosa da un punto di vista delle prestazioni, specialmente se si lavora con un grande numero di stringhe. In questi casi, è consigliato utilizzare il tipo di dati `io.Appendable` per ottenere prestazioni migliori.
 
 ## Vedi anche
 
--  La [documentazione ufficiale di Gleam](https://gleam.run/documentation) per ulteriori informazioni sulla concatenazione di stringhe e altre funzionalità del linguaggio.
-- La [Guida Gleam di programmazione funzionale](https://gleam.run/book) per approfondire la conoscenza di Gleam e della programmazione funzionale in generale.
-- Il [blog ufficiale di Gleam](https://gleam.run/blog) per rimanere aggiornati sulle ultime novità e progetti inerenti a questo linguaggio di programmazione innovativo.
+- Documentazione ufficiale di Gleam sulla manipolazione delle stringhe: https://gleam.run/documentation/core/string.html
+- Una guida completa su come utilizzare i tipi di dati in Gleam: https://dev.to/gleam/gleam-101-types-18km

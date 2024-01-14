@@ -1,60 +1,36 @@
 ---
-title:    "C#: Konvertering av dato til en streng"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/converting-a-date-into-a-string.md"
+title:                "C#: Konvertere dato til tekststreng"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å konvertere en dato til en streng er en svært vanlig oppgave i programmering, spesielt i C#. Ofte trenger vi å vise dato og tid til brukeren på et leservennlig format, eller lagre datoer i en fil, database eller annen form for lagring. Å konvertere en dato til en streng gjør at vi kan endre formatet på datoen etter vårt behov og gjør informasjonen mer lesbar for brukeren.
+Å konvertere en dato til en streng er en vanlig oppgave i mange programmeringsspråk, inkludert C#. Dette er ofte nødvendig for å vise datoer på en leservennlig måte eller for å lagre dem i en database. I denne bloggposten vil vi gå gjennom hvordan du kan utføre denne oppgaven i C#.
 
 ## Slik gjør du det
 
-Vi kan konvertere en dato til en streng ved hjelp av den innebygde metoden `.ToString()` i C#. Denne metoden tar inn et argument som bestemmer formatet på den konverterte strengen. La oss se på noen eksempler:
+For å konvertere en dato til en streng i C#, kan du bruke den innebygde metoden `ToString()` i `DateTime`-klassen. Denne metoden tar imot et formatargument og returnerer en streng basert på dette formatet. Her er et eksempel på hvordan du kan bruke `ToString()` for å konvertere en dato til en streng:
 
 ```C#
-// Opprett en DateTime-variabel med en bestemt dato og tid
-DateTime minDato = new DateTime(2021, 4, 27, 10, 30, 0);
-
-// Konverter datoen til en streng på ulike formater
-string fullDato = minDato.ToString();          // Resultat: 27.04.2021 10:30:00
-string kortDato = minDato.ToString("d");        // Resultat: 27.04.2021
-string langDato = minDato.ToString("D");        // Resultat: tirsdag 27. april 2021
-string klokkeslett = minDato.ToString("t");     // Resultat: 10:30
-string tidOgDato = minDato.ToString("g");       // Resultat: 27.04.2021 10:30
+Console.WriteLine(DateTime.Now.ToString("dd.MM.yyyy"));
 ```
 
-Som du kan se, kan vi endre formatet på datoen ved å bruke ulike argumenter i `.ToString()`-metoden. Her er noen av de vanligste argumentene som kan brukes:
+Dette vil vise dagens dato i formatet "dd.MM.yyyy" (for eksempel 25.08.2021). Du kan også velge andre formatalternativer, for eksempel "MM/dd/yyyy" eller "dddd, d MMMM yyyy" for å få en mer detaljert dato.
 
-- `"d"`: Kort datoformat (dd.MM.yyyy)
-- `"D"`: Langt datoformat (dddd dd. MMMM yyyy)
-- `"t"`: Klokkeslett (HH:mm)
-- `"T"`: Klokkeslett, inkludert sekunder (HH:mm:ss)
-- `"g"`: Kort dato og klokkeslett (dd.MM.yyyy HH:mm)
-- `"G"`: Kort dato og klokkeslett, inkludert sekunder (dd.MM.yyyy HH:mm:ss)
+Det er også mulig å inkludere klokkeslett i strengen ved å bruke formatet "dd.MM.yyyy HH:mm:ss". Det finnes en rekke forskjellige formatalternativer, så det er lurt å se på dokumentasjonen til Microsoft for å finne det som passer best for ditt formål.
 
-Det finnes også flere andre argumenter du kan bruke for å skreddersy formatet på datoen og klokkeslettet. Det er også mulig å inkludere kultur-informasjon for å få riktig formatering basert på språket til brukeren.
+## Dykk dypere
 
-## Dypdykk
+Det finnes også andre måter å konvertere en dato til en streng i C#, som for eksempel å bruke `ToString()`-metoden i `DateTimeOffset`-klassen eller å bruke `ToString()` i en kundeimplementert `IFormattable`-klasse. Det er også mulig å formatere datoen ved hjelp av `string.Format()`-metoden.
 
-Når vi kaller `.ToString()`-metoden på en dato, kalles den faktisk `.ToString()`-metoden til datoens underliggende `DateTime`-objekt. Dette objektet inneholder all informasjon om datoen, inkludert året, måneden, dagen, timen, minuttene og sekundene.
-
-Metoden `.ToString()` har imidlertid et annet sett med argumenter når vi kaller den på `DateTime`-objektet direkte. Når vi gjør dette, kan vi inkludere formatstrenger for hver enkelt del av datoen og klokkeslettet.
-
-For eksempel kan vi bruke følgende formatstrenger for å få individuelle deler av datoen og klokkeslettet:
-
-- `yyyy`: År (f.eks. 2021)
-- `MM`: Måned (f.eks. 04)
-- `dd`: Dag (f.eks. 27)
-- `HH`: Time på 24-timers format (f.eks. 10)
-- `mm`: Minutter (f.eks. 30)
-- `ss`: Sekunder (f.eks. 0)
-
-Ved å kombinere disse formatstrengene kan vi få akkurat det formatet vi ønsker på datoen og klokkeslettet.
+Det er viktig å være bevisst på formatering av datoer i ulike kulturer. Hvis du ønsker å formatere datoer basert på brukerens språk og kultur, kan du bruke `CultureInfo`-klassen og dens metoder som `ToString()`. Det er også viktig å håndtere eventuelle unntak som kan oppstå ved konvertering, for eksempel hvis formatet ikke er gyldig.
 
 ## Se også
 
-- [DateTime.ToString() Metode (System) - Microsoft Docs](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime.tostring)
-- [Custom Date and Time Format Strings - Microsoft Docs](https://docs.microsoft.com/nb-no/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- MSDN-dokumentasjon for `DateTime.ToString()`-metoden: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring
+- Oversikt over tilgjengelige formatalternativer for datoer i C#: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings
+- Eksempler på formattering av datoer basert på kulturelle innstillinger: https://www.c-sharpcorner.com/UploadFile/0f68f2/date-and-time-format-in-C-Sharp/

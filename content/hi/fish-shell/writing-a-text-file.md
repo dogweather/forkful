@@ -1,38 +1,22 @@
 ---
-title:    "Fish Shell: एक टेक्स्ट फाइल लिखना"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/writing-a-text-file.md"
+title:                "Fish Shell: एक पाठ फ़ाइल लिखना"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Text file likhne mai kya fayda hai? Text file  hume important information ya instructions ko aasani se store aur access karne ka option deta hai. Yeh badiya tarika hai apne programming projects aur daily tasks ko organized rakhne ka.
 
-पाठ फ़ाइल लिखने से जुड़े कुछ कारण हैं। एक संख्या को फाइल में सहेज करने, इसे भविष्य में उपयोग के लिए सुरक्षित रखने, या डेटा को स्ट्रक्चर के साथ संपादित करने के लिए। इस ब्लॉग आर्टिकल में, हम आपको Fish Shell का उपयोग करके एक पाठ फाइल लिखने के तरीके के बारे में बताने वाले हैं।
+## Kaise Kare
+Text file likhne ke liye, sabse pehle Fish Shell ko apne system mai install karna hoga. Phir terminal ko open kare aur ```touch``` command ka use karke file create kare. File create hone ke baad apni text ko file mai type kar de. Example ke liye, ```touch hello.txt``` command ka use karke ek text file create kare. Phir file mai hello world likh kar save kare. Ab file ko open karne ke liye, ```cat hello.txt``` command ka use kare. Aapko output mai "Hello world" likha hua milega. Simple!
 
-## कैसे करें
+## Deep Dive
+Text file likhne ke liye bahut saare formats available hai, jaise ki .txt, .md, .sh, .py, etc. Fish Shell mai ```touch``` command ka use file create karne ke liye hota hai. Is command ke baad file naam ka use bhi kiya jaa sakta hai jaise ki ```touch hello.txt```. File create karne ke baad kisi bhi text editor ya terminal se text ko file mai type kar sakte hai. Text file mai koi bhi text, instructions, code ya other information likh sakte hai aur use save karke later use kar sakte hai.
 
-पाठ फ़ाइल लिखने के लिए, आपको निम्नलिखित कदमों का पालन करना होगा:
-
-1. Fish Shell को खोलें।
-2. "```" चिह्नों के साथ एक नया फ़ॉल्डर बनाएं और उसमें जाएं।
-3. फ़ाइल नाम दें और .txt का एक्सटेंशन जोड़ें।
-4. पाठ फ़ाइल में अपने टेक्स्ट को लिखें।
-5. "ctrl+s" के साथ फ़ाइल सहेजें।
-
-इसके बाद, आपकी पाठ फ़ाइल तैयार हो जाएगी! इसे कॉम्प्यूटर पर खोलने के लिए किसी भी टेक्स्ट एडिटर का उपयोग कर सकते हैं।
-
-```Fish Shell
-mkdir newfolder
-cd newfolder
-touch example.txt
-nano example.txt
-"Hey, this is a text file!"
-ctrl+s
-```
-
-इस कोड के द्वारा, हमने एक नया फ़ोल्डर बनाया, उसमें गए, एक नई फ़ाइल बनाई, उसमें टेक्स्ट लिखा और उसे सहेजा। इस साथ, आपका प्रथम पाठ फ़ाइल तैयार होना चाहिए।
-
-## गहरा पानी
-
-पाठ फ़ाइल लिखने के बारे में अधिक जानने के लिए, आप विभिन्न भागों में अपने कोड को टेक्स्ट फ़ाइल में विस्तार से लिख सकते हैं। इससे आपको एक संरचित फ़ाइल
+## Dekhiye Bhi
+1. [Fish Shell ki official website](https://fishshell.com/)
+2. [Fish Shell ke basics aur commands](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-fish-shell)
+3. [Text file likhna sikhein](https://www.tutorialspoint.com/unix/unix-file-management.htm)

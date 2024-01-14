@@ -1,38 +1,45 @@
 ---
-title:    "Gleam: Lese en tekstfil"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/reading-a-text-file.md"
+title:                "Gleam: Å lese en tekstfil"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Lurer du på hvorfor du bør engasjere deg i å lese en tekstfil? Vel, tekstfiler er en essensiell del av nesten alle programmer. De inneholder viktig informasjon som input og output, konfigurasjonsinnstillinger og mye mer. Å lære å lese og behandle tekstfiler er derfor en viktig ferdighet for enhver programmerer.
+Velkommen! Visste du at å lese en tekstfil kan være en grunnleggende kode-oppførsel i enhver programmeringsverden? Det kan hjelpe deg å få tilgang til eller behandle informasjon som er lagret i en fil, for eksempel konfigurasjonsfiler eller datafiler. Uansett om du er nybegynner eller en erfaren Gleam-programmerer, er det viktig å forstå hvordan du kan lese en tekstfil for å kunne utnytte Gleam-potensialet fullt ut.
 
-# Hvordan gjøre det
+## Hvordan
 
-Ved hjelp av Gleam-programmeringsspråket, kan du enkelt lese og behandle tekstfiler. La oss se på et enkelt eksempel på å lese en tekstfil og skrive ut innholdet:
+For å lese en tekstfil i Gleam, følg disse trinnene:
+
+1. Åpne tekstfilen ved hjelp av en filbehandler eller en terminal.
+2. Merk deg filplasseringen og filnavnet.
+3. Åpne en teksteditor og skriv følgende kode:
 
 ```Gleam
-import gleam/file
-
-file := file.read("tekstfil.txt")
-
-// skriver ut innholdet i tekstfilen
-file |> io.print
+let tekstfil = std.io.file.read("stiftplassering/filnavn.txt")
 ```
 
-Dette er et enkelt eksempel, men det viser hvordan du kan lese en tekstfil og skrive ut innholdet ved hjelp av Gleam. Du kan også bruke forskjellige funksjoner og metoder for å behandle og manipulere tekstinnholdet etter behov.
+4. Erstatt `stiftplassering` og `filnavn` med den faktiske fila du vil lese.
+5. Kjør koden og sjekk resultatet.
 
-# Dypdykk
+Koden over bruker `std.io.file.read`-funksjonen til å lese filen og lagre innholdet i en variabel kalt `tekstfil`. Du kan da bruke variabelen til å manipulere eller bruke dataene som er lagret i filen.
 
-Når du leser en tekstfil, er det viktig å være klar over kodingen og formateringen av filen. Noen tekstfiler kan være skrevet med forskjellige kodinger som Unicode eller UTF-8, og det er viktig å være oppmerksom på dette for å sikre at innholdet leses riktig.
+## Dypdykk
 
-I tillegg bør du også være oppmerksom på formateringen av tekstinnholdet. Noen tekstfiler kan ha linjeskift, tabulatorer eller andre spesielle tegn som kan påvirke lesingen og behandlingen av innholdet. Det er derfor viktig å være nøye med å håndtere formateringen riktig for å unngå feil i koden.
+Å lese en tekstfil kan være enkel, men det er viktig å forstå noen av begrensningene og mulighetene.
 
-# Se også
+En begrensning er at Gleam ikke støtter direkte lesing av binære filer. Dette betyr at hvis tekstfilen din inneholder binær data, slik som bilder eller lydfiler, må du bruke et annet bibliotek eller åpne filen i en binær modus for å kunne lese den.
 
-- Gleam dokumentasjon: https://gleam.run/
-- Lesing av filer i Gleam: https://gleam.run/articles/working-with-files/
-- Eksempler på tekstbehandling i Gleam: https://github.com/gleam-lang/gleam-by-example/blob/master/8_reading_writing_files.md
+På den annen side er det noen nyttige funksjoner du kan bruke når du leser en tekstfil i Gleam. For eksempel kan du bruke `std.string.split`-funksjonen til å dele innholdet i filen basert på en separator. Dette er nyttig når du har strukturert data i filen og ønsker å behandle dem enkeltvis.
+
+Husk at du også kan kombinere å lese en tekstfil med andre Gleam-funksjoner for å skape mer avansert funksjonalitet.
+
+## Se også
+
+- [std.io.file modul](https://gleam.run/docs/standard-library/io#file-module)
+- [std.string modul](https://gleam.run/docs/standard-library/string)
+- [Gleam Community forum](https://community.gleam.run)

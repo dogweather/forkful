@@ -1,32 +1,32 @@
 ---
-title:    "Fish Shell: Kontrollera om en katalog finns."
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/checking-if-a-directory-exists.md"
+title:                "Fish Shell: Kontrollera om en mapp finns"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
+Att kontrollera om en mapp finns är en viktig del av Fish Shell programmering. Genom att lära dig hur detta fungerar kan du bli mer effektiv och strukturerad i ditt arbete.
 
-Att kontrollera om en mapp existerar är ett viktigt steg i programmering, särskilt vid skriptning av uppgifter som kräver åtkomst till specifika mappar. Det är också ett användbart sätt att undvika felaktig inmatning eller felaktig hantering av filstrukturer.
+## Hur man gör det
+För att kontrollera om en mapp finns kan du använda kommandot `test`, tillsammans med flaggan `-d` för att indikera att vi söker efter en mapp. Sedan behöver du ange sökvägen för mappen du vill kontrollera.
 
-## Så här gör du 
-
-```Fish Shell 
-if test -d /sökväg/till/mapp
-echo "Mappen existerar"
-else 
-echo "Mappen finns inte"
+```Fish Shell
+test -d /home/username/mapp
 ```
 
-Detta enkla kodexempel visar hur man kan använda testkommandot i Fish Shell för att kontrollera om en mapp existerar. Om mappen finns kommer meddelandet "Mappen existerar" att skrivas ut, annars kommer "Mappen finns inte" att visas. Detta kan naturligtvis anpassas för att passa till olika behov, till exempel kan du ange en annan åtgärd att utföra om mappen inte existerar.
+Om mappen finns kommer detta kommando att returnera `true`, annars kommer det att returnera `false`.
 
-## Utforska Mer 
+## Deep Dive
+För att förstå hur detta kommando fungerar kan vi titta närmare på dess syntax och funktionalitet. `test` är ett inbyggt kommando i Fish Shell som används för att utföra logiska tester. Flaggan `-d` står för "directory" och används för att indikera att vi söker efter en mapp. 
 
-Kontroll av mappars existens kan också uppnås med andra metoder såsom att kontrollera returvärdet från find-kommandot eller använda en loop för att gå igenom listan över tillgängliga mappar. Det kan också vara användbart att lära sig om flaggor som -d, -e och -f som kan användas med testkommandot för att kontrollera mappars och filers olika egenskaper. 
+När `test`-kommandot utförs evalueras sökvägen och om den pekar till en mapp returneras värdet `true`. Om sökvägen inte finns eller pekar till en annan typ av fil, såsom en vanlig fil eller program, returneras värdet `false`.
+
+Detta kommando är särskilt användbart inom shell programmering eftersom det ger möjlighet att strukturera och organisera arbetsflödet baserat på existensen av vissa mappar.
 
 ## Se även
-
-- [Fish Shell dokumentation] (https://fishshell.com/docs/current/commands.html?highlight=test)
-- [Linux-testkommando] (https://www.computerhope.com/unix/utest.htm)
-- [GeeksForGeeks-tutorial om kontroll av mappars existens i Fish Shell] (https://www.geeksforgeeks.org/check-if-a-directory-exists-in-fish-shell/)
+- [Fish Shell dokumentation om test-kommandot](https://fishshell.com/docs/current/commands.html#test)
+- [En mer detaljerad guide om att kontrollera om en mapp finns](https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript)
+- [Detaljerad information om Fish Shell](https://fishshell.com/docs/current/)

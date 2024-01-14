@@ -1,69 +1,55 @@
 ---
-title:    "C: Odczytywanie pliku tekstowego"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/reading-a-text-file.md"
+title:                "C: Odczytywanie pliku tekstowego"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto przeczytać plik tekstowy?
+## Dlaczego
 
-Jeśli programujesz w języku C, prawdopodobnie spotkałeś się z zadaniem odczytania pliku tekstowego. Jest to bardzo przydatne w wielu sytuacjach, na przykład gdy chcesz przetworzyć duże ilości danych lub pobierać informacje z zewnętrznego pliku. W tym artykule dowiesz się, jak w prosty sposób odczytywać pliki tekstowe w języku C.
+Często podczas programowania w C potrzebujemy odczytać dane z pliku tekstowego. Jest to ważna umiejętność, ponieważ pozwala nam na łatwiejsze manipulowanie danymi i uniknięcie wprowadzania tych danych ręcznie do programu. W tym artykule dowiesz się, dlaczego odczytywanie pliku tekstowego jest ważne i jak to zrobić w prosty sposób.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Zacznijmy od przykładu. Załóżmy, że mamy plik tekstowy o nazwie "dane.txt" z następującą zawartością:
+Aby odczytać plik tekstowy w C, musimy użyć funkcji `fopen()` do otwarcia pliku, a następnie funkcji `fscanf()` do odczytania danych z pliku. Oto przykładowy kod, który otwiera plik "dane.txt" i wypisuje jego zawartość na ekranie:
 
-```
-Imię: Jan
-Nazwisko: Kowalski
-Wiek: 28
-```
+```C
+#include <stdio.h>
 
-Naszym zadaniem będzie odczytać ten plik i wyświetlić jego zawartość na ekranie. W tym celu musimy najpierw otworzyć plik za pomocą funkcji `fopen()`:
+int main() {
+    FILE* plik = fopen("dane.txt", "r");
+    char slowo[100];
 
-```
-FILE *plik = fopen("dane.txt", "r");
-```
+    while (fscanf(plik, "%s", slowo) != EOF) {
+        printf("%s ", slowo);
+    }
 
-Teraz możemy użyć funkcji `fscanf()` do odczytania kolejnych wartości z pliku. Zwróć uwagę, że używamy tu formatowania `%s` do odczytania ciągów znaków - w tym przypadku imienia i nazwiska:
-
-```
-char imie[20], nazwisko[20];
-int wiek;
-
-fscanf(plik, "Imię: %s\nNazwisko: %s\nWiek: %d", imie, nazwisko, &wiek);
+    fclose(plik);
+    return 0;
+}
 ```
 
-Na końcu nie zapomnijmy zamknąć pliku za pomocą funkcji `fclose()`:
+W powyższym przykładzie użyliśmy pętli `while` i funkcji `fscanf()` do odczytywania danych z pliku do zmiennej `slowo`. Następnie wypisaliśmy tę zmienną na ekranie za pomocą funkcji `printf()`. Nie zapomnij o zamknięciu pliku za pomocą funkcji `fclose()`.
 
-```
-fclose(plik);
-```
+Spróbuj zmodyfikować powyższy kod, aby wczytywał inne typy danych (np. liczby całkowite) i wypisywał je na ekranie.
 
-Teraz możemy wyświetlić odczytane dane na ekranie:
+## Głębsza analiza
 
-```
-printf("Imię: %s, Nazwisko: %s, Wiek: %d\n", imie, nazwisko, wiek);
-```
+Podczas odczytywania pliku tekstowego w C, ważne jest, aby pamiętać o kilku rzeczach:
 
-Po uruchomieniu programu, powinniśmy zobaczyć na ekranie:
+1. Zawsze sprawdzaj, czy plik został otwarty prawidłowo. Jeśli funkcja `fopen()` zwróci wartość NULL, oznacza to, że wystąpił błąd podczas otwierania pliku.
 
-```
-Imię: Jan, Nazwisko: Kowalski, Wiek: 28
-```
+2. Zawsze pamiętaj o zamknięciu pliku za pomocą funkcji `fclose()` po zakończeniu pracy z plikiem. W przeciwnym razie może dojść do wycieku pamięci.
 
-## Deep Dive
+3. Uważaj na poprawność formatu danych. Jeśli używasz funkcji `fscanf()` do odczytywania danych, upewnij się, że format danych w pliku jest zgodny z tym, co oczekuje funkcja.
 
-W powyższym przykładzie użyliśmy funkcji `fscanf()` do odczytywania danych z pliku. Jest to funkcja z biblioteki standardowej języka C, która jest odpowiedzialna za wchłanianie danych ze strumienia tekstowego. Parametr `plik` to wskaźnik na otwarty plik, a parametr `format` określa rodzaj danych, które chcemy odczytać. Następnie, w kolejnych argumentach podajemy zmienne, do których chcemy zapisać odczytane dane.
+4. Należy pamiętać, że funkcja `fscanf()` pomija białe znaki, takie jak spacje i znaki nowej linii. Jeśli chcesz odczytać całą linię tekstu, użyj funkcji `fgets()`.
 
-W powyższym przykładzie użyliśmy również formatowania `%d` do odczytania wartości liczbowej. Wartości liczbowe odczytywane są w taki sam sposób, jak ciągi znaków, jednak musimy przekazać adres zmiennej przy pomocy operatora `&`.
+Mam nadzieję, że ten artykuł pomógł Ci zrozumieć dlaczego i jak odczytywać pliki tekstowe w C. Teraz możesz wykorzystać tę wiedzę do swoich kolejnych projektów!
 
-Dodatkowo, należy zwrócić uwagę na symbole `\n` w parametrze `format`. Są one potrzebne, aby odczytać kolejne linie z pliku.
+## Zobacz także
 
-## Zobacz też
-
-- [Funkcja fopen() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [Funkcja fscanf() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_fscanf.htm)
-- [Funkcja fclose() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_fclose.htm)
-- [Formatowanie w funkcji printf() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
+- [Podstawy programowania w języku C](https://pl.wikibooks.org/wiki/C/Podstawy_programowania)
+- [Dokumentacja języka C](https://devdocs.io/c/)

@@ -1,49 +1,39 @@
 ---
-title:    "Swift: Generowanie losowych liczb"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/generating-random-numbers.md"
+title:                "Swift: Generowanie losowych liczb"
+programming_language: "Swift"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Generowanie losowych liczb jest nieodłączną częścią wielu aplikacji programistycznych. Może być wykorzystane m.in. w grach, symulacjach czy testach jednostkowych. W artykule dowiesz się, w jaki sposób wygenerować losowe liczby w języku Swift.
+Generowanie losowych liczb jest nieodłącznym elementem wielu aplikacji i gier. Dzięki nim możliwe jest stworzenie nieskończonych kombinacji i wybór losowych wartości, co przyczynia się do zwiększenia interaktywności i różnorodności projektów programistycznych.
 
 ## Jak to zrobić
 
-Do generowania losowych liczb w Swift wykorzystujemy klasę `Int` oraz funkcję `random(in:)`. Przykładowy kod może wyglądać następująco:
+Generowanie losowych liczb w języku Swift jest bardzo proste dzięki dostępnym wbudowanym funkcjom. Można to zrobić na kilka sposobów, jednym z nich jest użycie funkcji arc4random_uniform(), która zwraca losową wartość całkowitą w podanym zakresie.
 
 ```Swift
-// Wygenerowanie losowej liczby całkowitej z zakresu od 0 do 100
-let randomNumber = Int.random(in: 0...100)
-print(randomNumber)
-// Wynik: np. 67
+var randomInt = Int(arc4random_uniform(100)) //wygeneruje liczbę w zakresie od 0 do 99
 ```
 
-Możemy również wygenerować losową liczbę zmiennoprzecinkową w podanym zakresie za pomocą funkcji `Double.random(in:)` lub `Float.random(in:)`.
+Jeśli chcemy stworzyć losową liczbę zmiennoprzecinkową, możemy użyć funkcji arc4random(), która zwraca wartość od 0 do 0.9999999999999999. W przypadku gdy potrzebujemy bardziej precyzyjnych wartości, możemy również użyć funkcji drand48().
 
 ```Swift
-// Wygenerowanie losowej liczby zmiennoprzecinkowej z zakresu od 0 do 1
-let randomNumber = Double.random(in: 0...1)
-print(randomNumber)
-// Wynik: np. 0.732977
+var randomDouble = Double(arc4random()) //niesprecyzowany zakres od 0 do 0.9999999999999999
+var randomPreciseDouble = drand48() //wyspecyfikowany zakres od 0 do 1
 ```
 
-Możliwe jest także wygenerowanie losowych wartości logicznych (true lub false) za pomocą funkcji `Bool.random()`.
+Powyższe funkcje mogą być również wykorzystane do generowania losowych wartości w tablicach lub pętlach, co pozwala na stworzenie większej ilości unikalnych kombinacji.
 
-```Swift
-// Wygenerowanie losowej wartości logicznej - true lub false
-let randomBoolean = Bool.random()
-print(randomBoolean)
-// Wynik: np. true
-```
+## Deep Dive
 
-## Głębszy przegląd
+Generowanie liczb losowych w języku Swift jest możliwe dzięki użyciu algorytmu generującego pseudolosowe liczby o nazwie Lehmer RNG. W przypadku funkcji arc4random_uniform() wartość ta jest mnożona przez wartość maksymalną zakresu, a następnie zaokrąglona w dół, aby uzyskać liczbę całkowitą. Algorytm ten jest szybki i zapewnia dużą losowość, jednak nie jest zalecany do zastosowań, w których bezpieczeństwo danych jest kluczowe.
 
-Generator losowych liczb w języku Swift wykorzystuje algorytm Mersenne Twister, który jest szeroko używany w różnych językach programowania. Dzięki temu możemy być pewni, że wygenerowane przez nas liczby będą w jak największym stopniu losowe.
+## Zobacz również
 
-## Zobacz także
-- Dokumentacja funkcji `random(in:)`: https://developer.apple.com/documentation/swift/int/2994691-random
-- Wykorzystanie generatora liczb losowych w aplikacjach iOS: https://www.tutorialspoint.com/generating-random-numbers-in-ios-using-swift
-- Wprowadzenie do Mersenne Twister: https://en.wikipedia.org/wiki/Mersenne_Twister
+1. Dokumentacja Swift dotycząca funkcji generujących losowe liczby: https://developer.apple.com/documentation/swift/1540917-random
+2. Wprowadzenie do generowania liczb losowych w języku Swift: https://www.hackingwithswift.com/articles/151/how-to-generate-random-numbers-in-swift
+3. Tutorial na temat tworzenia gry w języku Swift z wykorzystaniem funkcji random(): https://www.raywenderlich.com/7738344-random-numbers-in-game-development-using-swift

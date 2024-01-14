@@ -1,36 +1,36 @@
 ---
-title:    "Kotlin: Escrevendo para o erro padrão"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/writing-to-standard-error.md"
+title:                "Kotlin: Escrevendo para o erro padrão"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+Por que escrever para o erro padrão é importante
 
-Escrever para o erro padrão, também conhecido como stderr, pode ser útil para debugar seu código em Kotlin. Quando algum erro ocorre durante a execução do programa, a mensagem de erro é enviada para o erro padrão. Ao escrever diretamente para o erro padrão, você pode controlar melhor quais informações serão exibidas e como elas serão exibidas.
+Escrever para o erro padrão é uma prática essencial para programadores Kotlin, pois permite identificar e resolver problemas em seus códigos de forma mais eficiente. Além disso, é uma maneira de fornecer informações importantes sobre o funcionamento do programa ao usuário final.
 
-## Como escrever para o erro padrão em Kotlin
+Como fazer
 
-Para escrever para o erro padrão em Kotlin, você pode usar a função `System.err.println()`. Esta função recebe uma mensagem como parâmetro e a exibe no erro padrão. Por exemplo:
+Para escrever para o erro padrão em Kotlin, é necessário importar a classe `System` e utilizar o método `err`. Veja um exemplo abaixo:
 
 ```Kotlin
-fun main() {
-    // Exemplo de mensagem de erro padrão
-    System.err.println("Erro: Nome inválido.")
+import java.lang.System
+
+fun main(args: Array<String>) {
+    System.err.println("Um erro ocorreu!")
 }
 ```
 
-Neste exemplo, ao executar o programa, a mensagem "Erro: Nome inválido." será exibida no erro padrão.
+Neste exemplo, estamos utilizando a função `println` para imprimir a mensagem de erro para o erro padrão. É importante notar que a utilização do `err` garante que a mensagem será exibida em vermelho, facilitando a sua identificação.
 
-## Deep Dive
+Profundidade de mergulho
 
-Ao escrever para o erro padrão, é importante ter cuidado com o tipo de informação que está sendo exibida. Você não quer expor informações sensíveis ou críticas do seu código. Certifique-se de formatar corretamente a mensagem para que seja fácil de ler e entender. Além disso, você pode usar a função `System.exit()` para encerrar o programa em caso de erro, em vez de apenas imprimir a mensagem de erro no erro padrão.
+É possível especificar o tipo de erro ao utilizar o método `err` no seu código. Por exemplo, se você quiser indicar um erro de bug, pode usar o código `System.err.println("Um erro de bug ocorreu!")`. Além disso, também é possível utilizar o `printStackTrace()` para imprimir o stack trace completo do erro, fornecendo informações mais detalhadas sobre sua ocorrência.
 
-## Veja também
+Ver também
 
-- [Documentação oficial do Kotlin sobre a função System.err](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/system.err.html)
-
-- [Tutorial sobre tratamento de exceções em Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_exceptions_handling.htm)
-
-- [Artigo sobre a importância de escrever para o erro padrão](https://dzone.com/articles/why-print-to-stderr)
+- [Como escrever para o erro padrão em Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/system/i-o/err.html)
+- [Documentação oficial do Kotlin](https://kotlinlang.org/docs/reference/)
+- [Tutorial do Kotlin para iniciantes](https://www.devmedia.com.br/introducao-ao-kotlin/40247)

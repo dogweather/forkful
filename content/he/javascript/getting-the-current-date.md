@@ -1,54 +1,56 @@
 ---
-title:    "Javascript: לקבל את התאריך הנוכחי"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/javascript/getting-the-current-date.md"
+title:                "Javascript: לקבלת התאריך הנוכחי"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
+הנה כמה סיבות מדוע ייתכן שתרצו לדעת את התאריך הנוכחי בפיתוח קוד ג'אבהסקריפט: לשמור תאריך מדויק עבור אירוע או טרחנות, לתיעוד הפעלות רלוונטיות בפקודת זמן לתוצאת הקוד, או פשוט למטרות משתמש בהתאם לאפליקציה.
 
-מתחשק לכם ליצור אפליקציה שמציגה את התאריך והשעה הנוכחיים? אולי אתם רוצים ליצור משחק אינטראקטיבי שדורש מהמשתמש לנתח את הזמן הנוכחי? סימפוניות מסוימת? יישום זה הינו כלי חיוני אם תרצו ליצור תוכניות אינטראקטיביות.
+## איך לעשות זאת
+לקבלת תאריך נוכחי בג'אבהסקריפט, ישנן שתי אפשרויות. הראשונה היא להשתמש במתודת הנתונים המובנית, Date(), כך:
 
-## איך להשתמש
-
-```
-Javascript
-
-// סעיף זה השתמש בפעולות מובנות לקבלת התאריך הנוכחי.
-const getDate = new Date();
-const currentDay = getDate.getDay();
-const currentMonth = getDate.getMonth();
-const currentYear = getDate.getFullYear();
-
-// ניתן גם להציג תאריך נוסף כמו זמן נוכחי עם הפונקציה הבאה:
-const getTime = new Date();
+```Javascript
+let currentDate = new Date();
+console.log(currentDate);
 ```
 
-מקובל להציג את התאריך הנוכחי בפורמט מסוים כגון יום/חודש/שנה או שעות/דקות/שניות.
-
-**תוצאה של משתנים התאריך הנוכחיים:**
+פלט:
 ```
-שנה: 2021
-חודש: 12
-יום: 30
+"יום דצמבר 10 2019 21:55:23 GMT+0200 (שעון ישראל (קו ראשון))"
 ```
 
-**תוצאה של הפונקציה הזמן הנוכחי:**
+אם אתם רוצים לקבל תאריך מפורט יותר, תוכלו להשתמש במתודות נוספות כמו getFullYear(), getMonth(), getDay() ועוד, כך:
+
+```Javascript
+let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth() + 1;
+let currentDay = currentDate.getDay();
+console.log(currentDay + "/" + currentMonth + "/" + currentYear);
 ```
-שעה: 15
-דקות: 21
-שניות: 45
+
+פלט: 
+```
+"10/12/2019"
 ```
 
-## Deep Dive
+## ירידה עמוקה
+לקבלת תאריך נוכחי בג'אבהסקריפט, החומר שלכם הוא משתנה מסוג Date. כך גם ניתן להחיל פעולות כמו חישובים או השוואות על התאריך הזה על ידי שימוש במתודות מובנות נוספות. עמוק יותר, תאריך נוכחי הוא אכן מספר של ימים או שניות מאזכורות בתחילת הזמן, הנקראת גם Unix Timestamp. אם אתם רוצים להדפיס את התאריך הנוכחי כ-Unix Timestamp, יש להשתמש במתודת getTime(), כך:
 
-למרבה המזל, ב-Javascript ישנן פעולות מובנות שמאפשרות לנו לקבל את התאריך הנוכחי בקלות ובפשטות. נוכל להשתמש בפעולות כגון `new Date()` ו- `getDay()`, `getMonth()`, ו- `getFullYear()`. נוכל גם להשתמש בפעולה `getHours()`, `getMinutes()`, ו- `getSeconds()` כדי לקבל את הזמן הנוכחי.
+```Javascript
+let currentTime = currentDate.getTime();
+console.log(currentTime);
+```
 
-בנוסף, ניתן להשתמש בספריית חיצונית כגון Moment.js כדי לקבל יכולות נוספות כמו המרת זמני אזור זמן ופורמט מתאים.
+פלט:
+```
+1571822122394
+```
 
-## ראה גם
+ניתן להשתמש בערכים אלה כדי לייצר תנאים ולבצע פעולות יותר מתקדמות עם התאריך הנוכחי בקוד שלכם.
 
-- [מדריך לפעולות התאריך והזמן ב-Javascript](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [תיעוד של הפונקציות המובנות של תאריך וזמן ב-Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
--
+## ראו גם
+למידע

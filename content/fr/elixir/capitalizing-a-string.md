@@ -1,50 +1,55 @@
 ---
-title:    "Elixir: Capitaliser une chaîne de caractères"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/capitalizing-a-string.md"
+title:                "Elixir: Majuscule d'une chaîne de caractères"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Savez-vous que les strings en Elixir sont immuables ? Cela signifie que vous ne pouvez pas modifier une string une fois qu'elle a été créée. Mais parfois, il peut être utile de capitaliser une string pour des raisons esthétiques ou de traitement de données. Dans cet article, nous allons parler de la façon de capitaliser une string en Elixir et pourquoi cela peut être important. 
+La mise en majuscule d'une chaîne de caractères est un moyen courant de formater du texte dans de nombreuses langues de programmation. Dans cet article, nous allons plonger plus en profondeur dans le processus de mise en majuscule des chaînes en utilisant le langage de programmation Elixir.
 
 ## Comment faire
 
-Premièrement, nous avons besoin d'une fonction qui prendra en entrée une string et renverra une nouvelle string avec la première lettre en majuscule. Cette fonction peut être codée en une seule ligne en utilisant la fonction `String.capitalize/1` d'Elixir, comme ceci:
+Pour mettre en majuscule une chaîne de caractères en Elixir, vous pouvez utiliser la fonction `String.upcase/1`. Elle prend une chaîne de caractères en entrée et renvoie une nouvelle chaîne mise en majuscule.
 
 ```Elixir
-my_string = "elixir"
-String.capitalize(my_string)
+phrase = "Bonjour le monde!"
+
+resultat = String.upcase(phrase)
+
+IO.puts(resultat) # Affiche "BONJOUR LE MONDE!"
 ```
 
-Ce qui devrait renvoyer "Elixir" comme output. Mais que se passe-t-il si notre string contient déjà des lettres en majuscule ?
+Vous pouvez également utiliser la fonction `String.capitalize/1` pour mettre uniquement la première lettre de la chaîne en majuscule.
 
 ```Elixir
-my_string = "eLiXiR"
-String.capitalize(my_string)
+phrase = "bonjour le monde!"
+
+resultat = String.capitalize(phrase)
+
+IO.puts(resultat) # Affiche "Bonjour le monde!"
 ```
 
-Elixir est intelligent et ne modifiera que la première lettre pour la mettre en majuscule, renvoyant une nouvelle string avec le reste des lettres inchangées. Le résultat sera "ELiXiR". 
-
-Mais que faire si nous voulons capitaliser toutes les lettres de notre string ? Dans ce cas, nous pouvons utiliser la fonction `String.upcase/1` qui renvoie une string entièrement en majuscule. 
+Enfin, si vous souhaitez mettre en majuscule uniquement la première lettre de chaque mot dans une phrase, vous pouvez utiliser la fonction `String.capitalize_words/1`.
 
 ```Elixir
-my_string = "elixir"
-String.upcase(my_string)
+phrase = "bonjour le monde!"
+
+resultat = String.capitalize_words(phrase)
+
+IO.puts(resultat) # Affiche "Bonjour Le Monde!"
 ```
 
-Va renvoyer "ELIXIR" comme output. 
+## Plongée en profondeur
 
-## Deep Dive
+En Elixir, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées directement. Lorsque vous utilisez les fonctions `String.upcase/1`, `String.capitalize/1` ou `String.capitalize_words/1`, une nouvelle chaîne de caractères est renvoyée à partir de la chaîne d'origine. Cela peut sembler inutile, mais cela permet d'éviter les effets de bord et de garantir l'immutabilité des données.
 
-Maintenant que nous avons vu comment capitaliser une string en utilisant les fonctions intégrées d'Elixir, il est important de comprendre que la manipulation de strings peut être complexe. En fonction de la langue utilisée, des caractères spéciaux ou des accents peuvent être présents et doivent être pris en compte lors de la capitalisation d'une string. 
+De plus, ces fonctions s'appuient sur la bibliothèque Unicode pour prendre en charge les caractères non ASCII. Cela signifie que vous pouvez également utiliser ces fonctions pour mettre en majuscule des caractères Unicode spéciaux.
 
-Dans ces cas, il est recommandé d'utiliser la fonction `String.normalize/2` en fournissant le mode "NFD" qui sépare les caractères accentués ou spéciaux en deux parties : la lettre de base et l'accent. Ensuite, vous pouvez utiliser la fonction `String.capitalie/1` ou `String.upcase/1` sur la string normalisée, ce qui permettra de capitaliser correctement les lettres avec accents ou caractères spéciaux. 
+## Voir aussi
 
-## Voir également
-
-- [Documentation officielle d'Elixir sur les strings](https://hexdocs.pm/elixir/String.html)
-- [Guide Elixir pour le traitement des strings](https://elixirschool.com/fr/lessons/basics/string/)
-- [Tutoriel vidéo sur la manipulation de strings en Elixir](https://www.youtube.com/watch?v=UjvNLcYsXUs)
+- [Documentation officielle sur les chaînes de caractères en Elixir](https://hexdocs.pm/elixir/String.html)
+- [Liste des fonctions de la bibliothèque Unicode en Elixir](https://hexdocs.pm/elixir/Unicode.html)

@@ -1,37 +1,36 @@
 ---
-title:    "Fish Shell: Rozpoczynanie nowego projektu"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell: Rozpoczynanie nowego projektu"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli jesteś programistą, prawdopodobnie wiele razy zdarzyło Ci się zacząć nowy projekt. Może to być z powodu aktualizacji istniejącego kodu lub tworzenia całkowicie nowej aplikacji. Bez względu na powód, rozpoczynanie nowego projektu jest częstym aspektem pracy programisty. W tym blogowym poście dowiesz się, jak za pomocą Fish Shell możesz z łatwością rozpocząć nowy projekt.
+Czy kiedykolwiek zastanawiałeś się, dlaczego warto zacząć nowy projekt w Fish Shell? Fish Shell jest potężnym narzędziem, które udostępnia wiele przydatnych funkcji, ułatwiając pracę z powłoką systemową. Pisząc w Fish Shell, możesz zwiększyć swoją produktywność i oszczędzić czas. W tym artykule dowiesz się, dlaczego warto zacząć korzystać z Fish Shell w swoich projektach.
 
-## Jak To Zrobić
-
-Rozpoczynanie nowego projektu może być czasochłonnym procesem, ale z wykorzystaniem Fish Shell jest to całkowicie łatwe. W poniższym przykładzie przedstawimy kroki do utworzenia nowego katalogu i pliku w projekcie.
+## Jak to zrobić
 
 ```Fish Shell
-mkdir nowy_projekt
-cd nowy_projekt
-touch plik.py
+touch nowy_plik.txt
+echo "Cześć, świat!" > nowy_plik.txt
+cat nowy_plik.txt
 ```
 
-W powyższym przykładzie najpierw tworzymy nowy katalog o nazwie "nowy_projekt", a następnie przechodzimy do tego katalogu. Następnie tworzymy nowy plik o nazwie "plik.py". Możesz teraz zacząć pisać kod do swojego projektu!
+W powyższym przykładzie użyliśmy kilku podstawowych poleceń Fish Shell, aby utworzyć nowy plik tekstowy, dodać do niego treść i wyświetlić go w konsoli. Jak widać, jest to bardzo proste i intuicyjne. Fish Shell wykorzystuje składnię podobną do języka angielskiego, co ułatwia zapamiętanie poleceń.
 
-## Głębszy Zanurkuj
+Fish Shell oferuje również wiele wbudowanych funkcji, takich jak podpowiedzi w trakcie pisania, automatyczne uzupełnianie i historia poleceń. Dzięki temu możesz szybko i sprawnie pracować w terminalu.
 
-Tworzenie nowego projektu może być bardziej skomplikowane, jeśli chcesz użyć istniejących bibliotek lub narzędzi. Ale nie martw się, Fish Shell ma cię covered! Możesz użyć narzędzi takich jak `curl` lub `wget` do pobrania kodu źródłowego z GitHuba lub innego Repozytorium. Następnie możesz wykorzystać komendę `cd` aby przejść do pobranej lokalizacji i rozpocząć pisanie swojego własnego kodu.
+## Głębszy zanurzenie
 
-## Zobacz Również
+Kiedy rozpoczynamy nowy projekt, ważne jest, aby mieć odpowiednie narzędzia do jego wykonania. Fish Shell jest jednym z takich narzędzi, które mogą znacznie ułatwić pracę programistyczną. Dzięki swojej wydajności i przejrzystej składni, możesz skupić się na tworzeniu kodu, a nie na nauce skomplikowanych poleceń.
 
-Chcesz dowiedzieć się więcej o Fish Shell i jego funkcjonalności? Oto kilka przydatnych linków:
+Ponadto, Fish Shell jest wspierany przez aktywną społeczność programistów, którzy regularnie publikują nowe rozszerzenia i przydatne skrypty. Dzięki temu, istnieje duża szansa, że znajdziesz gotowe rozwiązanie dla swojego problemu lub będziesz mógł skorzystać z gotowego narzędzia.
 
-- [Fish Shell oficjalna strona] (https://fishshell.com/)
-- [Fish Shell dokumentacja] (https://fishshell.com/docs/current/index.html)
-- [Fish Shell na platformie GitHub] (https://github.com/fish-shell/fish-shell)
+## Zobacz również
 
-Teraz możesz z łatwością rozpocząć każdy nowy projekt korzystając z Fish Shell! Nie zapomnij również wypróbować różnych poleceń i narzędzi, aby zoptymalizować swoją pracę. Powodzenia!
+- Oficjalna dokumentacja Fish Shell (https://fishshell.com/docs/current/index.html)
+- Lista popularnych rozszerzeń do Fish Shell (https://github.com/fishery/fish-shell-extensions)
+- Poradnik dla początkujących w Fish Shell (https://fishshell.com/docs/current/tutorial.html)

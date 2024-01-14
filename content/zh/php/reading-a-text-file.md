@@ -1,56 +1,34 @@
 ---
-title:    "PHP: 阅读文本文件"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/reading-a-text-file.md"
+title:                "PHP: 读取文本文件"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要阅读文本文件？
 
-阅读文本文件对于PHP程序员来说是一个重要的技能。文本文件是存储数据的一种常见方式，它们可以被各种程序和系统所使用。学习如何读取文本文件将帮助你更有效地处理数据。
+阅读文本文件是每个程序员都会遇到的基本任务。文本文件中存储着大量的数据，比如配置文件、日志文件、文本记录等等。通过阅读这些文本文件，可以获取重要的数据，进行数据分析和处理，从而更好地编写代码。
 
-## 如何实现
+## 如何阅读文本文件
 
-要读取文本文件，我们可以使用PHP内置的`fopen()`函数来打开文件，并使用`fgets()`或`fread()`函数来读取文件内容。让我们看一个代码示例吧：
+阅读文本文件的方法很简单，只需要使用PHP的内置函数`file_get_contents()`即可。这个函数可以将文本文件的内容读取出来，并作为一个字符串返回。下面是一个简单的例子，演示如何读取一个文本文件：
 
 ```PHP
-$file = fopen("textfile.txt", "r"); // 打开文本文件，使用“r”参数以只读模式打开
-while(!feof($file)) { // 循环读取文件内容，直到到达文件末尾
-  $line = fgets($file); // 使用fgets函数读取一行内容
-  echo $line; // 输出每一行内容
-}
- 
-fclose($file); // 关闭文件
+$file_content = file_get_contents("text_file.txt");
+echo $file_content;
 ```
 
-假设我们有一个名为“textfile.txt”的文本文件，其中包含以下内容：
+上面的例子中，我们使用了`file_get_contents()`函数读取了名为`text_file.txt`的文本文件，并将其内容存储在变量`$file_content`中。然后我们使用`echo`语句打印出了读取到的文件内容。
 
-```
-Hello
-Hola
-Bonjour
-```
+## 深入了解阅读文本文件
 
-使用上面的代码，我们将会得到以下输出：
-
-```
-Hello
-Hola
-Bonjour
-```
-
-## 深入了解
-
-在读取文本文件时，有一些值得注意的事项。首先，我们可以使用`fgetc()`函数来读取一个字符，而不是整行。其次，当使用`fgets()`函数时，它会包含文本文件中的换行符。最后，如果我们想要在读取文本文件时指定文件指针移动的位置，可以使用`fseek()`函数。
-
-除了以上的基础知识外，你还可以学习如何使用PHP解析文本文件，处理文件中的特定数据，以及使用循环和条件语句来处理不同类型的文本文件。
+除了使用`file_get_contents()`函数，我们还可以使用其他的一些函数来读取文本文件。比如`fopen()`函数可以打开一个文本文件，`fgets()`函数可以逐行读取文件内容，`fclose()`函数可以关闭打开的文件句柄。深入了解这些函数的使用方法，有助于更灵活地读取文本文件，并处理其中的数据。
 
 ## 参考链接
 
-- [PHP fopen()函数](https://www.php.net/manual/zh/function.fopen.php)
-- [PHP fgets()函数](https://www.php.net/manual/zh/function.fgets.php)
-- [PHP fread()函数](https://www.php.net/manual/zh/function.fread.php)
-- [PHP fgetc()函数](https://www.php.net/manual/zh/function.fgetc.php)
-- [PHP fseek()函数](https://www.php.net/manual/zh/function.fseek.php)
-- [PHP 字符串处理](https://www.php.net/manual/zh/book.strings.php)
+- PHP `file_get_contents()`文档：https://www.php.net/manual/zh/function.file-get-contents.php
+- PHP `fopen()`文档：https://www.php.net/manual/zh/function.fopen.php
+- PHP `fgets()`文档：https://www.php.net/manual/zh/function.fgets.php
+- PHP `fclose()`文档：https://www.php.net/manual/zh/function.fclose.php

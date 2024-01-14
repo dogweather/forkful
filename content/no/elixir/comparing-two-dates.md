@@ -1,51 +1,53 @@
 ---
-title:    "Elixir: Sammenligning av to datoer"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/comparing-two-dates.md"
+title:                "Elixir: Sammenligning av to datoer"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når du jobber med Elixir programmering, kan det være nyttig å kunne sammenligne to datoer. Dette kan hjelpe deg med å organisere og sortere data på en effektiv måte. I denne bloggposten skal vi gå gjennom hvordan du kan sammenligne to datoer i Elixir.
+Å sammenligne datoer er en vanlig oppgave innen programmering, spesielt når man arbeider med tidsstyring og planlegging. Det kan også være nyttig for å sortere og filtrere data basert på datoer, noe som er viktig for mange applikasjoner.
 
 ## Hvordan
 
-Det finnes flere forskjellige måter å sammenligne datoer på i Elixir, avhengig av hva du prøver å oppnå. La oss gå gjennom noen eksempler og se på resultatene.
+Det er flere måter å sammenligne to datoer på i Elixir, avhengig av hva slags informasjon man vil ha ut av sammenligningen. Her er noen eksempler:
 
 ```Elixir
-date1 = ~D[2021-01-01]
-date2 = ~D[2020-01-01]
-date3 = ~D[2021-01-01]
+# Sjekke om datoer er like
+"2019-08-03" == "2019-08-03"
+=> true
 
-date1 > date2 # true
-date1 < date3 # false
+# Sjekke om en dato er før en annen
+"2019-08-03" < "2019-08-05"
+=> true
+
+# Få differansen i dager mellom to datoer
+"2020-01-01" - "2019-12-31"
+=> 1
+
+# Sjekke om en dato er i en bestemt måned
+"2020-01-01" |> Calendar.DateTime.to_date |> Date.month == 1
+=> true
+
+# Sjekke om en dato er i et bestemt år
+"2020-01-01" |> Calendar.DateTime.to_date |> Date.year == 2020
+=> true
 ```
 
-Her ser vi hvordan vi kan bruke operatørene ">", "<" og "=" for å sammenligne datoer. Det er viktig å merke seg at datoene må være i form av ElixirDate structs, som vi har definert ved hjelp av "~D" syntaksen. 
-
-En annen måte å sammenligne datoer på er ved bruk av funksjonen `DateTime.compare/2`. Denne funksjonen returnerer en numerisk verdi som indikerer forholdet mellom to datoer. 
-
-```Elixir
-date1 = ~D[2021-01-01]
-date2 = ~D[2020-01-01]
-date3 = ~D[2021-01-01]
-
-DateTime.compare(date1, date2) # 1
-DateTime.compare(date1, date3) # 0
-```
-
-I dette tilfellet vil `DateTime.compare` returnere en verdi på 1 hvis `date1` er senere enn `date2`, 0 hvis de to datoene er like, og -1 hvis `date1` er tidligere enn `date2`.
+Som du kan se, kan vi bruke vanlige sammenligningsoperatorer som `==` og `<` for å sammenligne to datoer direkte. Vi kan også konvertere datoer til forskjellige format og bruke funksjoner for å sjekke spesifikke egenskaper, som måned og år.
 
 ## Dypdykk
 
-Når du sammenligner to datoer, er det viktig å være oppmerksom på hvordan datoene blir lagret og behandlet. I Elixir er datoer basert på "Gregorian Calendar", som er den mest brukte kalenderen internasjonalt. Dette betyr at datoene blir konvertert og behandlet i henhold til denne kalenderen, uavhengig av hvilken kalender som brukes i ditt land.
+Når man sammenligner to datoer, er det viktig å være klar over forskjellige datoformater og hvordan de kan påvirke sammenligningen. For eksempel, hvis man sammenligner en dato med et klokkeslett, vil det kun sammenligne datoene og ikke ta hensyn til klokkeslettet. Det kan også være forskjeller i måten datoer vises på i forskjellige land og regioner.
 
-Det er også viktig å merke seg at datoer er immutable i Elixir. Dette betyr at når en dato er opprettet, kan den ikke endres. Dette betyr at alle sammenligninger du gjør med datoer ikke vil endre de opprinnelige datoene, men heller returnere en ny verdi.
+En annen viktig ting å huske på er hvordan man håndterer skuddår og klokken som justeres for året rundt.
 
 ## Se også
 
-- Offisiell Elixir dokumentasjon: https://hexdocs.pm/elixir/Date.html
-- Sammenligning av datoer i Elixir forumt innlegg: https://elixirforum.com/t/date-compare/2491
-- Elixir forumt tråd om variasjoner i datoer: https://elixirforum.com/t/different-date-conversions/4850/5
+- [Elixir DateTime dokumentasjon](https://hexdocs.pm/elixir/Calendar.DateTime.html)
+- [Elixir Date dokumentasjon](https://hexdocs.pm/elixir/Date.html)
+- [Elixir DateRange modul](https://hexdocs.pm/elixir/DateRange.html)
+- [Elixir Task modul](https://hexdocs.pm/elixir/Task.html) (for asynkron sammenligning av datoer)

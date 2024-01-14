@@ -1,64 +1,40 @@
 ---
-title:    "Gleam: Capitalizzazione di una stringa"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/capitalizing-a-string.md"
+title:                "Gleam: Capitalizzazione di una stringa"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
+## Perché
 
-Sembra un compito semplice, giusto? Capitalizzare una stringa significa semplicemente rendere maiuscola la prima lettera. Ma perché dovresti farlo? Beh, ci sono diverse ragioni.
+Capitalize una stringa è un'operazione comune quando si lavora con dati di testo in un programma. Potresti aver bisogno di capitalizzare un nome o una parola in maiuscolo per soddisfare determinate esigenze di formattazione o input.
 
-Innanzitutto, capitalizzare una stringa può migliorare l'estetica del tuo codice. Immagina di avere una variabile che contiene il nome di una persona, se il nome è scritto in maiuscolo sarà più facile da leggere e distinguere all'interno del codice.
+## Come fare
 
-Inoltre, capitalizzare una stringa può essere utile quando si lavora con dati di input. In alcuni casi, è necessario assicurarsi che la prima lettera di ogni parola sia maiuscola per una corretta formattazione dei dati.
-
-## Come Fare
-
-Per capitalizzare una stringa in Gleam, possiamo utilizzare il modulo `String` e la funzione `capitalize`:
+Per capitalizzare una stringa in Gleam, puoi utilizzare la funzione `String.to_uppercase()` come mostrato nell'esempio seguente:
 
 ```Gleam
-import String
+let name = "giovanni"
 
-let nome = "mario"
-let nome_cap = String.capitalize(nome)
+let capitalized_name = String.to_uppercase(name)
+
+io.println(capitalized_name) // Output: GIOVANNI
 ```
 
-Il risultato di questo codice sarà una nuova variabile `nome_cap` con il valore "Mario".
+Puoi anche controllare se una stringa è già in maiuscolo utilizzando la funzione `String.is_uppercase()` e, se necessario, utilizzare la funzione `String.to_lowercase()` per convertirla in minuscolo.
 
-Ma cosa succede se la nostra stringa ha più di una parola? In questo caso, possiamo utilizzare la funzione `titlecase` per capitalizzare ogni parola nella stringa:
+## Approfondimento
 
-```Gleam
-import String
+Capitalizzare una stringa può sembrare una semplice operazione, ma in realtà ci sono alcune considerazioni da tenere presente.
 
-let stringa = "ciao come stai"
-let stringa_cap = String.titlecase(stringa)
-```
+In Gleam, le stringhe sono immutabili, il che significa che quando vengono trasformate, viene creata una nuova stringa invece di modificare quella esistente. Questo può comportare un aumento di memoria e performance in caso di lavori su stringhe molto grandi e frequenti trasformazioni.
 
-Il risultato di questo codice sarà una nuova variabile `stringa_cap` con il valore "Ciao Come Stai".
+Inoltre, le funzioni di capitalizzazione nel linguaggio dipendono dalle specifiche di localizzazione del sistema operativo, quindi è importante tenere conto di possibili differenze nei risultati.
 
-È importante notare che queste funzioni non alterano la stringa originale, ma restituiscono una nuova stringa capitalizzata.
+## Vedi anche
 
-## Deep Dive
-
-Se vuoi approfondire il concetto di capitalizzazione delle stringhe, ci sono alcune cose che dovresti tenere a mente.
-
-Innanzitutto, la funzione `capitalize` non solo rende maiuscola la prima lettera, ma trasforma anche tutte le altre lettere in minuscolo. Se vuoi mantenere le lettere originali nella posizione in cui si trovano, puoi utilizzare la funzione`upper_case_first`:
-
-```Gleam
-import String
-
-let stringa = "pROGRAMMAZIONE"
-let stringa_cap = String.upper_case_first(stringa)
-```
-
-Il risultato di questo codice sarà una nuova variabile `stringa_cap` con il valore "PROGRAMMAZIONE".
-
-Inoltre, è importante notare che queste funzioni utilizzano le regole di capitalizzazione della lingua inglese. Se devi lavorare con stringhe in altre lingue, potresti dover eseguire alcune operazioni aggiuntive per gestire le lettere accentate o le regole di capitalizzazione specifiche della lingua.
-
-## Vedi Anche
-
-- Documentazione del modulo `String` in Gleam: https://gleam.run/modules/String.html
-- Approfondimenti sulle funzioni di manipolazione delle stringhe: https://gleam.run/cookbook/strings.html
-- Impara Gleam: https://gleam.run/learn/
+- Documentazione ufficiale di Gleam sulle stringhe: https://gleam.run/documentation/standard-library/strings/
+- Un tutorial su come lavorare con stringhe in Gleam: https://dev.to/gleam_lang/writing-text-programs-with-gleam-40ch
+- Una discussione sulla differenza tra la funzioni di capitalizzazione `to_uppercase()` e `to_titlecase()` in Gleam: https://github.com/gleam-lang/gleam/issues/364

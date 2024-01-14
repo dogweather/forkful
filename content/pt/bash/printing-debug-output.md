@@ -1,54 +1,43 @@
 ---
-title:    "Bash: Imprimindo saída de depuração"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/printing-debug-output.md"
+title:                "Bash: Impressão de saída de depuração"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que imprimir saída de depuração em Bash?
 
-Você já se deparou com um código que simplesmente não estava funcionando e se perguntou onde estava o erro? Ou talvez você tenha feito várias alterações em uma parte do seu programa e não conseguiu identificar qual alteração causou o problema? Bem, é aí que o debug output se torna útil. Ele permite que você imprima informações durante a execução do seu código, facilitando a identificação de erros e problemas.
+A saída de depuração é uma ferramenta essencial para desenvolvedores em qualquer linguagem de programação, incluindo Bash. Ela permite que você acompanhe o fluxo do seu código e identifique erros e bugs com mais facilidade. Imprimir a saída de depuração em Bash é uma maneira rápida e eficaz de entender a dinâmica do seu script e solucionar problemas de forma mais eficiente.
 
-## Como fazer
+## Como imprimir saída de depuração em Bash
 
-Para imprimir um debug output em Bash, você pode utilizar o comando `echo` seguido da informação que deseja imprimir. Por exemplo:
+Para imprimir saída de depuração em Bash, você pode usar o comando `echo` com a opção `-e` para formatar a saída, seguido pelo conteúdo que você deseja imprimir entre aspas. Por exemplo:
 
-```Bash
-echo "Variável x = $x"
+```bash
+#!/bin/bash
+
+echo -e "Iniciando processo de depuração..."
+echo -e "Variáveis de ambiente:"
+env | sort
+echo -e "Executando comandos..."
+ls -l
+echo -e "Fim do processo de depuração."
 ```
 
-Você também pode utilizar o redirecionamento de saída (`>` ou `>>`) para gravar o output em um arquivo:
+Ao executar este script, você verá a saída de depuração no terminal, indicando onde o seu código está no momento e o resultado dos comandos que você executou.
 
-```Bash
-echo "Erro: não foi possível abrir o arquivo" >> erros.log
-```
+## Mergulho Profundo
 
-Outra opção é utilizar o comando `printf` para formatar a saída:
+Além do comando `echo`, também é possível usar o comando `set -x` no início do seu script para ativar o modo de depuração, que imprimirá automaticamente todos os comandos e variáveis que são executados pelo seu script. Você também pode usar a opção `-v` com o comando `bash` para imprimir todos os comandos enquanto eles são executados.
 
-```Bash
-printf "O valor de x é %.2f" $x
-```
+Outra ferramenta útil para imprimir a saída de depuração em Bash é o comando `printf`, que permite formatar a saída de acordo com as suas necessidades. Consulte a documentação de Bash para mais informações sobre como usar o comando `printf`.
 
-## Deep Dive
-
-Além dos exemplos mencionados acima, existem outras maneiras de imprimir debug output em Bash. Por exemplo, você pode utilizar o comando `set -x` para ativar o modo de debug, que exibirá todas as linhas do seu código antes de serem executadas. Este modo pode ser desativado utilizando `set +x`.
-
-Também é possível criar funções personalizadas para imprimir debug output. Isso pode ser útil para imprimir informações específicas em determinados pontos do seu código. Por exemplo:
-
-```Bash
-debug() {
-   if [ "$DEBUG" == "true" ]; then
-      echo "$@"
-   fi
-}
-
-# Utilizando a função
-debug "Variável y = $y"
-```
+Certifique-se de remover todos os comandos de depuração do seu script antes de implantá-lo, para evitar que informações confidenciais ou desnecessárias sejam impressas.
 
 ## Veja também
 
-- [Guia de referência rápida do Bash](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
-- [Documentação do comando echo](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Builtins)
-- [Artigo sobre debugging em Bash](https://bash-prompt.net/guides/debugging-bash-scripts/)
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
+- [Tutorial de depuração em Bash](https://www.linuxjournal.com/content/more-using-bashs-built-devicedevtcpnull)
+- [Usando o comando `set` para depuração em Bash](https://tldrdevnotes.com/bash-set-x-label/)

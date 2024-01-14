@@ -1,63 +1,56 @@
 ---
-title:    "C++: Odczytywanie argumentów wiersza poleceń"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/reading-command-line-arguments.md"
+title:                "C++: Odczytywanie argumentów wiersza poleceń"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak programy wiersza poleceń pobierają informacje od użytkownika? Jeśli tak, to dobrze trafiłeś! W tym blogu dowiesz się, dlaczego jest ważne umieć czytać argumenty wiersza poleceń w języku C++.
+Czym są argumenty wiersza poleceń i dlaczego warto nauczyć się ich czytać w programowaniu C++? Argumenty wiersza poleceń pozwalają na przekazanie danych do programu przy uruchamianiu go z poziomu konsoli. Jest to przydatne w wielu sytuacjach, na przykład w przypadku konfiguracji programu lub przekazywania dużych ilości danych. W tym artykule dowiesz się, jak czytać argumenty wiersza poleceń w C++ i jak wykorzystać je w swoich projektach.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-W języku C++, istnieje prosty sposób na odczytywanie argumentów wprowadzonych przez użytkownika podczas uruchamiania programu. Wystarczy użyć funkcji `int main(int argc, char* argv[])`. Jest to funkcja, która pobiera dwa argumenty - `argc`, który przechowuje liczbę argumentów oraz `argv[]`, który przechowuje właściwe wartości argumentów w postaci tablicy.
-
-Poniżej znajduje się przykładowy kod, który demonstruje to w praktyce:
+C++ oferuje prosty sposób na czytanie argumentów wiersza poleceń dzięki funkcji `argc` oraz `argv`. Poniższy przykład pokazuje, jak wykorzystać te funkcje w prostym programie, który wyświetla podane argumenty w konsoli.
 
 ```C++
 #include <iostream>
 
-using namespace std;
-
 int main(int argc, char* argv[]) {
 
-    // Wypisanie wszystkich argumentów podanych przez użytkownika
-    for (int i = 0; i < argc; i++) {
-        cout << "Argument nr " << i << ": " << argv[i] << endl;
-    }
+  for (int i = 0; i < argc; i++) {
+    std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+  }
 
-    return 0;
+  return 0;
 }
 ```
 
-**Wejście:**
+Dzięki funkcji `argc` mamy możliwość odczytania ilości podanych argumentów, a funkcja `argv` zwraca tablicę ze wszystkimi argumentami (włącznie z nazwą pliku wykonywalnego). Przykład ten można łatwo modyfikować, np. dodając instrukcje warunkowe, aby odpowiednio obsłużyć różne ilości argumentów lub wyświetlić tylko wybrane argumenty.
 
-```sh
-./program argument1 argument2 argument3
+Przykładowe wywołanie programu w terminalu może wyglądać następująco:
+```
+./myprogram arg1 "argument 2" "trzeci argument"
 ```
 
-**Wyjście:**
-
-```sh
-Argument nr 0: ./program
-Argument nr 1: argument1
-Argument nr 2: argument2
-Argument nr 3: argument3
+A jego wynikiem będzie:
+```
+Argument 0: ./myprogram
+Argument 1: arg1
+Argument 2: argument 2
+Argument 3: trzeci argument
 ```
 
-## Wnikliwa Analiza
+Dzięki tej wiedzy możesz łatwo rozwinąć swoje umiejętności programistyczne i wykorzystywać argumenty wiersza poleceń w praktyce.
 
-Jeśli zastanawiasz się, jak to działa pod spodem, to właśnie poniżej znajdziesz odpowiedź.
+## Głębszy zanurzenie
 
-Zmienna `argc` przechowuje liczbę argumentów wprowadzonych przez użytkownika, w tym również nazwę samego programu. Jest to zawsze co najmniej jeden argument, ponieważ program musi być uruchomiony przy użyciu jego nazwy.
+W przypadku bardziej zaawansowanych zastosowań, można wykorzystać dodatkowe biblioteki, takie jak `boost::program_options`, które oferują rozszerzone możliwości dotyczące argumentów wiersza poleceń, np. walidację danych czy obsługę opcji.
 
-Z kolei zmienna `argv[]` jest tablicą przechowującą wszystkie argumenty wprowadzone przez użytkownika. Indeksowanie tablicy zaczyna się od 0, więc pierwszy argument znajduje się pod indeksem 0, drugi pod indeksem 1, itd.
+## Zobacz także
 
-**ProTip:** Jeśli chcesz pobrać wartości liczbowe z argumentów, możesz użyć funkcji `atoi()` lub `atof()`.
-
-## Zobacz również
-
-- [Dokumentacja C++ - Argumenty Programu](https://en.cppreference.com/w/cpp/language/main_function)
-- [C++ How to Program by Paul J. Deitel and Harvey Deitel](https://learning.oreilly.com/library/view/c-how-to/9780132323086/)
+1. Dokumentacja C++ dla funkcji `argc` i `argv`: https://en.cppreference.com/w/cpp/language/main_function
+2. Przykładowe wykorzystanie argumentów wiersza poleceń w C++: https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm
+3. Biblioteka `boost::program_options`: https://www.boost.org/doc/libs/1_66_0/doc/html/program_options.html

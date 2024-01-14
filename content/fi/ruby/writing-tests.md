@@ -1,45 +1,65 @@
 ---
-title:    "Ruby: Testausten kirjoittaminen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-tests.md"
+title:                "Ruby: Testien kirjoittaminen"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Miksi kirjoittaisit testejä?
 
-Testien kirjoittamiseen on monia syitä, mutta tärkein niistä on luottamuksen rakentaminen omaan koodiin. Testien avulla voit varmistaa, että koodisi toimii odotetulla tavalla ja vähentää mahdollisten virheiden riskiä. Lisäksi testien avulla on helpompi havaita ja korjata bugeja ennen kuin ne pääsevät tuotantoon.
+Kirjoittaminen testejä Ruby-ohjelmistoon saattaa tuntua ylimääräiseltä askeleelta, mutta se voi todella säästää aikaa ja vaivaa pitkällä aikavälillä. Testit varmistavat, että koodi toimii odotetulla tavalla ja auttavat havaitsemaan mahdolliset virheet ennen kuin koodi päätyy tuotantoon. Tämä takaa, että ohjelmisto toimii luotettavasti ja vähentää mahdollisia yllätyksiä jatkokehityksessä.
 
-## Miten
+# Miten: Testejä kirjoittamassa
 
-Testaaminen Rubyssa tapahtuu yleisimmin käyttämällä RSpec-kirjastoa. RSpec on testikirjasto, joka mahdollistaa selkeän ja helpon testien kirjoittamisen. Katso alla oleva esimerkki siitä, kuinka voit käyttää RSpec-kirjastoa testien kirjoittamiseen:
+Testien kirjoittaminen Ruby-ohjelmistoon on helppoa ja yksinkertaista. Voit käyttää Ruby:n sisäänrakennettuja testejä, kuten `assert` tai `expect`, tai voit käyttää suosittuja testikehyksiä, kuten RSpec tai MiniTest.
+
+Katsotaanpa esimerkiksi, kuinka voit kirjoittaa yksinkertaisen testin `Calculator`-luokan `add`-metodille, joka lisää yhteen kaksi lukua:
 
 ```Ruby
-# Esimerkki testiluokasta
-describe Calculator do
-  # Esimerkki testin nimestä ja toiminnasta
-  it "palauttaa oikean summan" do
-    # Alustetaan muuttujat
-    numero1 = 5
-    numero2 = 10
-    # Kutsutaan funktiota
-    summa = Calculator.summaa(numero1, numero2)
-    # Vertaillaan funktiosta saatua tulosta odotettuun
-    expect(summa).to eq(15)
+require "minitest/autorun"
+
+class Calculator
+  def add(num1, num2)
+    num1 + num2
+  end
+end
+
+class CalculatorTest < Minitest::Test
+  def test_add
+    calculator = Calculator.new
+    assert_equal 5, calculator.add(2, 3)
   end
 end
 ```
 
-Testien kirjoittamisessa kannattaa noudattaa DRY-periaatetta eli välttää turhien samanlaisten testien kirjoittamista. Lisäksi testien tulee olla erillään muusta koodista, jotta ne eivät vaikuta koodin toimintaan.
+Ensimmäisessä koodilohkossa luomme `Calculator`-luokan, joka sisältää `add`-metodin. Sitten luomme `CalculatorTest`-luokan, joka perii `Minitest::Test`-luokan ja sisältää testin `test_add`. Tämä testi luo `Calculator`-olion ja käyttää `assert_equal`-metodia tarkistaakseen, että `add`-metodi palauttaa odotetun tuloksen.
 
-## Syvällinen sukellus
+Voit ajaa tämän testin kirjoittamalla komentoriville `ruby [tiedostonimi]`, mikä näyttää seuraavan tulosteen:
 
-Testien kirjoittamisessa on tärkeää miettiä, mitä haluat testata ja mitä haluat jättää testien ulkopuolelle. Testien tulee kattaa tärkeimmät osat koodista ja niiden tulee olla selkeitä ja ymmärrettäviä. On myös tärkeää muistaa päivittää testejä, kun teet muutoksia koodiin.
+```bash
+Run options: "--seed 3808"
 
-Lisäksi testien kirjoittamisessa kannattaa hyödyntää myös muita kirjastoja, kuten FactoryGirlia, joka mahdollistaa testidatan luomisen helpommin. Muista myös, että testien kirjoittaminen on jatkuva prosessi ja niitä kannattaa päivittää ja parannella ajan myötä.
+# Running:
 
-## Katso myös
+.
 
-- [RSpec-kirjaston kotisivu](http://rspec.info/)
-- [FactoryGirl-kirjaston dokumentaatio](http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md)
-- [The RSpec Book](https://pragprog.com/book/achbd/the-rspec-book)
+Finished in 0.001136s, 879.5967 runs/s, 879.5967 assertions/s.
+
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+```
+
+Tässä näet, että testi suoritettiin onnistuneesti ilman virheitä tai virheilmoituksia.
+
+# Syvemmälle: Testien kirjoittamisessa
+
+Testien kirjoittaminen ei rajoitu vain yksinkertaisiin metodeihin ja tulosten tarkistamiseen. Voit myös testata monimutkaisempia toimintoja ja varmistaa, että koodi toimii kaikissa mahdollisissa tapauksissa.
+
+Esimerkiksi voit testata `Calculator`-luokan `add`-metodia useammin kuin vain yhdellä luvulla. Voit myös testata muiden operaatioiden, kuten vähennyslaskun tai kerto-laskun, toimivuuden. Näin varmistat, että kaikki laskutoimitukset toimivat oikein.
+
+Voit myös testata, miten ohjelmisto toimii virheellisillä käyttäjän syötteillä. Tämä auttaa havaitsemaan mahdollisia virheitä ja estää ohjelmiston kaatumisen käyttäjän antaessa vääriä syötteitä.
+
+Lisäksi voit kirjoittaa testejä, jotka suorittavat kelvollisen ja kelvottoman koodin, jotta voit selvittää, miten koodi käyttäytyy erilaisissa tilanteissa.
+
+Testien kirjoittaminen on tärkeä osa Ruby-ohjelmiston kehitystä, joten var

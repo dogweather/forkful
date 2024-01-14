@@ -1,45 +1,36 @@
 ---
-title:    "TypeScript: Konwertowanie ciągu znaków na małe litery."
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/converting-a-string-to-lower-case.md"
+title:                "TypeScript: Zamiana ciągu znaków na małe litery"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Często podczas programowania, musimy zmienić wszystkie litery w stringu na małe. Jest to przydatne w wielu sytuacjach, np. porównując dwa stringi czy w trakcie filtrowania listy słów. W tym artykule dowiesz się, jak w prosty sposób wykonać konwersję stringu na małe litery w języku TypeScript.
+
+Istnieje wiele sytuacji, kiedy potrzebujemy zamienić ciąg znaków na małe litery. Na przykład może to być potrzebne przy weryfikacji danych użytkownika, aby uniknąć błędów związanych z wielkością liter. Jest to również ważne w przypadku porównywania ciągów znaków, ponieważ znaki nie są zależne od wielkości. W tym blogu dowiesz się, jak prostym sposobem możesz przekształcić ciąg znaków na małe litery w języku TypeScript.
 
 ## Jak to zrobić
-Zanim przejdziemy do przykładowego kodu, ważne jest, aby wprowadzić do zmiennej nasz string, którego chcemy dokonać konwersji.
 
 ```TypeScript
-let str: string = "PROGRAMOWANIE";
+let str: string = "PRZYKŁADOWY CIĄG ZNAKÓW"
+console.log(str.toLowerCase());
 ```
-
-Aby dokonać konwersji, wykorzystujemy wbudowaną metodę `toLowerCase()` na zmiennej `str`. Następnie przypisujemy zwracaną wartość do nowej zmiennej.
-
-```TypeScript
-let strLower: string = str.toLowerCase();
-
-console.log(strLower); // output: programowanie
+**Wynik:**
 ```
-
-Po wywołaniu metody `toLowerCase()`, wszystkie litery w naszym stringu zostały zmienione na małe. Dodatkowo, warto zauważyć, że zmienna `str` nie została zmieniona, a jedynie zwrócona została wartość zmienionej wersji stringu.
+przykładowy ciąg znaków
+```
+W powyższym przykładzie utworzyliśmy zmienną str zawierającą nasz przykładowy ciąg znaków. Następnie użyliśmy metody `toLowerCase()` aby przekształcić ciąg znaków na małe litery. Metoda ta zwraca nowy ciąg znaków, więc musimy go przypisać do zmiennej, jeśli chcemy go wykorzystać w dalszej części kodu.
 
 ## Deep Dive
-W języku TypeScript istnieje również możliwość wykorzystania operatora `|` do określenia rodzajów danych, jakie mogą wystąpić w naszej zmiennej. Dzięki temu, możemy dopasować metodę `toLowerCase()` do konkretnego typu. Na przykład, jeśli nasza zmienna może przyjąć wartość typu `string` lub `null`, możemy napisać:
 
-```TypeScript
-let str: string | null = "JĘZYK PROGRAMOWANIA";
+Dokładniej rzecz biorąc, metoda `toLowerCase()` przekształca wszystkie wielkie litery w ciągu znaków na ich odpowiedniki małych liter. Jest to przydatne w przypadku języków, w których są różnice między małymi i dużymi literami, takich jak język polski. Metoda ta również pomija znaki specjalne oraz liczby, ponieważ nie mają one odpowiadających sobie małych i wielkich liter.
 
-let strLower: string = str!.toLowerCase();
-
-console.log(strLower); // output: język programowania
-```
-
-W przypadku tutaj występującego operatora `!`, który informuje TypeScript, że nie będzie żadnego błędu w użyciu metody `toLowerCase()`, ponieważ wartość zmiennej `str` jest zawsze typu `string` lub `null`.
+Ponadto, w języku TypeScript, istnieje również metoda `toUpperCase()` która wykonuje odwrotną operację - przekształca wszystkie litery w ciągu na duże litery.
 
 ## Zobacz również
-- [Dokumentacja języka TypeScript - metoda toLowerCase()](https://www.typescriptlang.org/docs/handbook/strings.html#method-tolowercase)
-- [Tutorial: Wprowadzenie do języka TypeScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-- [15 przydatnych metod string w TypeSript](https://www.javatpoint.com/typescript-string-methods)
+
+- Dokumentacja Microsoft na temat konwersji znaków: https://docs.microsoft.com/pl-pl/dotnet/api/system.string.tolower
+- Przykładowy kod z wykorzystaniem toLowerCase(): https://www.tutorialspoint.com/typescript/typescript_string_tolowercase.htm 
+- Porównanie między metodami toLowerCase() i toUpperCase(): https://www.freecodecamp.org/news/how-to-convert-a-string-to-uppercase-or-lowercase-in-javascript-49930eea3b8c/

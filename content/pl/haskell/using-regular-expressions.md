@@ -1,43 +1,51 @@
 ---
-title:    "Haskell: Korzystanie z wyrażeń regularnych"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/using-regular-expressions.md"
+title:                "Haskell: Użycie wyrażeń regularnych"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Regular expressions (wyrażenia regularne) są niezwykle przydatnym narzędziem w każdym języku programowania, a Haskell nie jest tutaj wyjątkiem. Dzięki nim możemy wykonywać zaawansowane manipulacje na ciągach znaków, co jest często niezbędne w pracy programisty. W tym wpisie dowiecie się, dlaczego warto poznać ten podstawowy mechanizm i jak można go wykorzystywać w Haskellu.
+Regular expressions są niezwykle przydatne w programowaniu, ponieważ pozwalają nam na wyrażanie reguł wyszukiwania i manipulowania tekstem w sposób bardziej złożony niż prosty ciąg znaków. Są to doskonałe narzędzie dla programistów, którzy chcą mieć większą kontrolę nad tym, jak ich programy przetwarzają i analizują dane tekstowe.
 
 ## Jak to zrobić
 
-Kodowanie wyrażeń regularnych w Haskellu jest bardzo proste i intuicyjne. Możemy skorzystać z funkcji `=~`, która pozwala na dopasowanie wzorca do podanego ciągu znaków. Na przykład, jeśli chcemy sprawdzić, czy dany tekst zawiera liczbę, możemy napisać:
+Aby użyć regular expressions w Haskellu, najpierw musimy zaimportować moduł "Text.Regex". Następnie możemy wykorzystać funkcje takie jak `matchRegex` lub `subRegex` do odpowiadających im operacji. Na przykład:
+
+```Haskell
+import Text.Regex
+
+main = do
+  let text = "Haskell jest najlepszym językiem programowania!"
+  let pattern = "programowania"
+  putStrLn $ "Tekst oryginalny: " ++ text
+  putStrLn $ "Zastosowany wzorzec: " ++ pattern
+  let matches = matchRegex (mkRegex pattern) text
+  putStrLn $ "Znalezione dopasowania: " ++ show matches
+  let replaced = subRegex (mkRegex pattern) text "tworzenia oprogramowania"
+  putStrLn $ "Tekst po zastąpieniu: " ++ replaced
+```
+
+Przykładowy wynik:
 
 ```
-"123" =~ "[0-9]+" :: Bool
+Tekst oryginalny: Haskell jest najlepszym językiem programowania!
+Zastosowany wzorzec: programowania
+Znalezione dopasowania: Just "programowania"
+Tekst po zastąpieniu: Haskell jest najlepszym językiem tworzenia oprogramowania!
 ```
-
-W powyższym przykładzie używamy wyrażenia regularnego `[0-9]+`, które oznacza dowolną liczbę, składającą się z co najmniej jednej cyfry. Funkcja `=~` zwróci wartość `True`, ponieważ dane wyrażenie znajduje się w podanym tekście.
-
-Możemy również wykorzystać wyrażenia regularne do przechwytywania i manipulowania danymi. Na przykład, jeśli mamy ciąg znaków w formacie "imie_nazwisko", możemy wyodrębnić imię i nazwisko, wykorzystując wyrażenie regularne:
-
-```
-"John_Doe" =~ "([A-Za-z]+)_([A-Za-z]+)" :: Maybe (String, String)
-```
-
-W tym przypadku używamy nawiasów do przechwycenia wartości imienia i nazwiska z tekstu, a następnie funkcja `=~` zwróci je jako parę wartości w typie `Maybe`.
 
 ## Głębsza analiza
 
-W Haskellu używa się składni podobnej do wyrażeń regularnych znanej z innych języków, jednak istnieją również pewne różnice i dodatkowe możliwości. Na przykład, możemy wykorzystać wzorce w wyrażeniach regularnych, dzięki czemu możemy dopasować nie tylko konkretne znaki, ale również różnego rodzaju wzorce, np. cyfry czy litery. Możemy również posługiwać się dodatkowymi funkcjami wyrażeń regularnych, takimi jak `grep`, `replace` czy `split`, które ułatwiają pracę z tekstami.
+Regular expressions w Haskellu są wykorzystywane przez moduł "Text.Regex" z pakietu "regex-base". Jest to interfejs ogólny, który udostępnia kilka funkcji, takich jak `RegexMaker` i `RegexLike`, do tworzenia i manipulowania wyrażeń regularnych. Więcej informacji na temat tych funkcji oraz innych modułów wykorzystujących regular expressions można znaleźć na stronie Hackage [regex](https://hackage.haskell.org/package/regex) i [regex-base](https://hackage.haskell.org/package/regex-base).
 
-Jednym z podstawowych mechanizmów wyrażeń regularnych w Haskellu jest operator `=~`, jednak istnieją także inne funkcje, takie jak `=~~` (dla obsługi wieloliniowych tekstów) czy `!~` (dla negatywnego dopasowania), które mogą okazać się przydatne w niektórych przypadkach.
-
-Wyrażenia regularne w Haskellu są również niezwykle wydajne i nie obciążają naszego kodu. Dzięki temu możemy bez obaw używać ich nawet w dużych projektach.
+Ponadto, warto pamiętać o sposobie, w jaki Haskell obsługuje wyrażenia regularne. Na przykład, znak "\" jest specjalnym znakiem w Haskellu, więc musimy użyć podwójnego znaku "\\" aby oznaczyć ten znak w wyrażeniu regularnym. Jest to tylko jeden z przykładów różnic między wzorcami regularnymi w innych językach programowania a w Haskellu.
 
 ## Zobacz także
 
-* [Oficjalna dokumentacja dla wyrażeń regularnych w bibliotece `Text.RE`](https://hackage.haskell.org/package/regex-doc-0.13.0/docs/Text-RE.html)
-* [Poradnik dla początkujących w wyrażeniach regularnych w Haskellu](http://learnyouahaskell.com/regular-expressions)
-* [Przykłady użycia wyrażeń regularnych](https://www.stackage.org/haddock/lts-12.26/regex-base-0.93.2/Text-Regex-Base.html#g:10)
+- [Haskell Regex Mini-Tutorial](https://wiki.haskell.org/Regular_expressions)
+- [Haskell Regex Tutorial](https://www.tutorialspoint.com/haskell/haskell_regular_expressions.htm)
+- [Regular Expressions on Hackage](https://hackage.haskell.org/packages/search?terms=regex)

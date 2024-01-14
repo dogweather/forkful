@@ -1,40 +1,40 @@
 ---
-title:    "Arduino: Läsning av kommandoradsargument"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/reading-command-line-arguments.md"
+title:                "Arduino: Läsning av kommandoradsargument"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Om du är en nybörjare inom Arduino-programmering, kan det kännas överväldigande att lära sig alla kommandon och metoder. Men en av de viktigaste delarna av programmering är att kunna läsa kommandoradsargument. Detta kan hjälpa dig att skriva mer flexibla och effektiva program. Så om du vill ta dina Arduino-programmeringsfärdigheter till nästa nivå, så är det dags att dyka djupare in i hur man läser kommandoradsargument.
+Att läsa kommandoradsargument kan vara en användbar funktion för både nybörjare och erfarna användare av Arduino-programmering. Genom att läsa argumenten som skickas med vid körning av programmet kan du anpassa ditt program för olika användningsscenarier eller göra det mer interaktivt.
 
-# Hur man gör
+## Hur man gör
 
-För att läsa kommandoradsargument i Arduino, behöver du först skapa en instans av Serial-klassen. Sedan använder du funktionen `Serial.readString()` för att läsa in kommandot i en strängvariabel. Här är ett exempel på hur man gör det:
+Att läsa kommandoradsargument i Arduino är ganska enkelt. Du kan använda funktionen `Serial.readStringUntil()` för att läsa in argumenten och sedan omvandla dem till lämpliga datatyper.
 
 ```Arduino
-Serial.readString();
+void setup() {
+  Serial.begin(9600);  // Öppnar seriell kommunikation
+}
 
-if (Serial.available() > 0) {
-  String inputString = Serial.readString();
-  Serial.println(inputString);
+void loop() {
+  String argument = Serial.readStringUntil('\n'); // Läser in argumentet fram till radbrytet
+  int nummer = argument.toInt(); // Omvandlar argumentet till heltal
+  Serial.println(nummer); // Skriver ut det inlästa argumentet
 }
 ```
 
-I detta exempel kommer du att skapa en variabel som heter `inputString`, som kommer att innehålla kommandot som läses in från seriell monitor. Sedan kan du använda `inputString` för att utföra olika uppgifter i ditt program.
+Om du till exempel skickar in "123" som argument vid körning av programmet, kommer programmet att skriva ut "123" i serial monitor. Du kan anpassa koden för att göra olika saker beroende på vilket argument som lästs in.
 
-# Dyk djupare
+## Djupdykning
 
-Det finns flera saker att tänka på när du arbetar med kommandoradsargument. Till exempel kan du använda en uppsättning olika funktioner för att hantera önskad användarinput, såsom `Serial.parseInt()` för att läsa in numeriska värden och `Serial.parseFloat()` för att läsa in flyttal. Det är också viktigt att ta hänsyn till olika typer av felaktig användarinput och hantera dem på ett korrekt sätt.
+Det finns flera olika sätt att läsa kommandoradsargument på i Arduino, beroende på dina behov. Du kan till exempel använda `Serial.parseInt()` för att läsa in heltal eller `Serial.parseFloat()` för att läsa in flyttal. Det finns också möjlighet att läsa in flera argument samtidigt genom att använda en "delimiter" som skiljer argumenten åt. Detta kan vara praktiskt om du behöver läsa in flera värden på en gång.
 
-En annan sak att komma ihåg är att läsa kommandoradsargument är mer användbart när du bygger mer komplexa program. Om du bara behöver läsa in ett enda kommando, kan det vara enklare att göra detta via seriell monitor istället.
+## Se även
 
-# Se även
-
-Här är några användbara länkar för att lära dig mer om att läsa kommandoradsargument i Arduino:
-
-- [Officiell Arduino-dokumentation om Serial-klassen] (https://www.arduino.cc/en/Reference/Serial)
-- [En guide till att använda kommandoradsargument i Arduino] (https://roboticsbackend.com/arduino-command-line-arguments/)
-- [En video som visar hur man läser in kommandoradsargument i Arduino] (https://www.youtube.com/watch?v=1t0cAcwqz1I)
+- [Dokumentation om Serial.readStringUntil()](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/)
+- [Exempel på läsning av kommandoradsargument i Arduino](https://www.arduino.cc/en/Tutorial/CommandLineArguments/)
+- [Diskussion och tips om läsning av kommandoradsargument i Arduino-forumet](https://forum.arduino.cc/index.php?topic=325524.0)

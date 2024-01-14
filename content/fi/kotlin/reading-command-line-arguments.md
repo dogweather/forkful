@@ -1,46 +1,48 @@
 ---
-title:    "Kotlin: Lukeminen komentoriviparametreista"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/reading-command-line-arguments.md"
+title:                "Kotlin: Komentoriviparametrien lukeminen."
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi lukea komentorivin argumentit?
+## Miksi lukea komentorivin argumentteja?
 
-Komentorivin argumentit ovat tärkeä osa jokapäiväistä ohjelmoinnin maailmaa. Ne antavat ohjelman suorittajalle mahdollisuuden antaa lisäohjeita suoritettavalle ohjelmalle ilman, että koodiä joutuu muokkaamaan. Tämä tarkoittaa, että ohjelman käyttäjä voi muokata ohjelman toimintaa ilman tarvetta ohjelmointitaitoihin.
+Kun ohjelmoit Kotlinilla, on tärkeää ymmärtää, miten voit lukea komentorivin argumentteja. Tämä antaa sinulle mahdollisuuden muokata ohjelmaasi suoraan komentoriviltä, mikä on erittäin hyödyllistä testauksessa ja virheiden korjaamisessa. Se on myös yksi perustavaa laatua olevista taidoista, kun opetellaan ohjelmointia.
 
-## Miten lukea komentorivin argumentit?
+## Kuinka lukea komentorivin argumentteja Kotlinilla
 
-Kotlinilla on helppo lukea ja käsitellä komentorivin argumentteja. Käytämme tähän tarkoitukseen `args` muuttujaa, joka sisältää listan kaikista komentorivin argumenteista.
+Voit helposti lukea komentorivin argumentteja Kotlinissa käyttämällä `args`-muuttujaa. Tämä muuttuja sisältää taulukon kaikista komentorivin argumenteista. Voit tulostaa ne konsolille yksinkertaisesti käyttämällä `println`-funktiota.
 
 ```Kotlin
 fun main(args: Array<String>) {
-    if (args.isNotEmpty()) {
-        for (arg in args) {
-            println(arg)
-        }
-    } else {
-        println("No arguments passed!")
-    }
+    println(args.joinToString())
 }
 ```
 
-Jos esimerkiksi suorittaisimme tämän ohjelman komentoriviltä seuraavasti: `kotlinc main.kt && kotlin Main abc def`, saisimme seuraavan tulosteen:
+Tämä tulostaa kaikki komentorivin argumentit yhdistettyinä merkkijonoksi. Voit myös käsitellä erilaisia argumentteja erikseen taulukkoindeksien avulla.
 
+```Kotlin
+fun main(args: Array<String>) {
+    println(args[0]) // ensimmäinen komentorivin argumentti
+    println(args[1]) // toinen komentorivin argumentti
+}
 ```
-abc
-def
-```
 
-Kun olemme saaneet `args` listan, voimme käsitellä ja käyttää argumentteja haluamallamme tavalla.
+Voit myös käyttää `args`-muuttujaa muiden funktioiden ja ehtojen sisällä, esimerkiksi luodaksesi ehtolausekkeen, joka tarkistaa, onko tietty argumentti annettu.
 
-## Syvempi sukellus komentorivin argumenttien lukemiseen
+## Syvempää tietoa komentorivin argumenttien lukemisesta
 
-Komentorivin argumentteja voidaan lukea myös järjestelmän ympäristömuuttujista, mikä tekee niistä entistä monipuolisempia. Näitä muuttujia voidaan muokata esimerkiksi `.bashrc` tai `.bash_profile` tiedoston kautta, jolloin ohjelmoija voi antaa oletusarvoja komentorivin argumenteille. Tämä tekee ohjelmasta joustavamman ja helpommin räätälöitävän käyttäjälle.
+Kun luet komentorivin argumentteja Kotlinilla, on tärkeää tietää, että `args`-muuttuja sisältää aina vähintään yhden arvon: ohjelman nimet. Tämä tarkoittaa, että jos et anna mitään argumentteja, taulukko on silti kooltaan vähintään yksi.
+
+On myös tärkeää muistaa, että komentorivin argumentit on eroteltu välilyönneillä. Tämä tarkoittaa, että jos haluat lukea argumentin, joka sisältää välilyönnin, sinun on yhdistettävä useampi taulukon indeksi yhteen merkkijonoon.
+
+Toinen hyödyllinen vinkki on käyttää `args`-muuttujan `size`-ominaisuutta, joka kertoo taulukon koon. Tämän avulla voit luoda silmukan, joka lukee kaikki komentorivin argumentit riippumatta siitä, kuinka monta niitä on.
 
 ## Katso myös
 
-- [Kotlinin virallinen dokumentaatio komentorivin argumenteista](https://kotlinlang.org/docs/reference/compiler-plugins.html)
-- [Kuinka luoda komentorivipohjainen ohjelma Kotlinilla](https://www.raywenderlich.com/7258573-command-line-programs-on-the-jvm-with-kotlin)
-- [Kotlinin ohjeet hakasulkujen käytöstä kertakäyttöisten komentorivin argumenttien kanssa](https://kotlinlang.org/docs/reference/compiler-plugin-reference.html#target-jvmargs)
+- [Kotlinin perusteiden oppiminen](https://kotlinlang.org/docs/reference/basic-syntax.html)
+- [Kotlinin Array- ja List-tietorakenteiden käyttö](https://kotlinlang.org/docs/reference/basic-types.html#arrays)
+
+Kirjoittaja: [Sofia Laakso](https://github.com/sofialaakso)

@@ -1,33 +1,66 @@
 ---
-title:    "Fish Shell: Ein Datum in der Zukunft oder Vergangenheit berechnen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/calculating-a-date-in-the-future-or-past.md"
+title:                "Fish Shell: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Vielleicht fragst du dich, warum du einem Blog-Post über "Fish Shell" und das Berechnen von zukünftigen oder vergangenen Daten lesen solltest. Nun, es gibt viele Anwendungsmöglichkeiten für diese Fähigkeit. Zum Beispiel kannst du damit eine Erinnerung für einen wichtigen Termin erstellen oder prüfen, ob ein bestimmtes Datum in der Vergangenheit ein Feiertag war.
+Das Berechnen von Daten in der Vergangenheit oder Zukunft kann in verschiedenen Situationen nützlich sein, zum Beispiel bei der Planung von Terminen oder der Überprüfung von Zeitangaben in einem Projekt. Mit der Fish Shell ist es möglich, diese Berechnungen einfach und präzise durchzuführen.
 
-## Wie man es macht
+## Wie geht's
 
-Um ein Datum in der Vergangenheit oder Zukunft zu berechnen, kannst du die im Fish Shell integrierten Funktionen "date" und "string" verwenden. Hier ist ein Beispiel für die Berechnung des Datums, das 5 Tage in der Zukunft liegt:
+```Fish Shell``` bietet verschiedene integrierte Funktionen und Optionen, um Datum und Zeit zu berechnen. Zum Beispiel können wir mit der ```date``` Funktion das aktuelle Datum anzeigen lassen:
 
-```Fish Shell
-set future_date (date -f %Y-%m-%d -s "5 days")
-echo $future_date
+```
+date
 ```
 
-Dieser Code verwendet die Option "-f", um das Datum im Format "Jahr-Monat-Tag" auszugeben. Die Option "-s" legt die Anzahl der Tage fest, die dem aktuellen Datum hinzugefügt werden sollen. Du kannst diese Werte anpassen, um unterschiedliche zukünftige oder vergangene Daten zu berechnen.
+Das Ergebnis ist das Datum und die Zeit des heutigen Tages. Um ein Datum in der Zukunft zu berechnen, können wir ein bestimmtes Datum im folgenden Format angeben:
 
-## Tiefer ins Detail
+```
+date -d "3 days"
+```
 
-Nun, da du weißt, wie du ein Datum in der Zukunft oder Vergangenheit berechnen kannst, wollen wir uns etwas genauer mit den Funktionen "date" und "string" befassen. "date" akzeptiert verschiedene Optionen, die es dir ermöglichen, das Datum in verschiedenen Formaten auszugeben. Zum Beispiel kannst du mit der Option "-u" auch die aktuelle Zeitzone ändern.
+Dies gibt uns das Datum in drei Tagen. Wir können auch verschiedene Einheiten wie Wochen, Monate oder Jahre verwenden, wie in diesem Beispiel:
 
-Die Funktion "string" dient dazu, Strings zu verarbeiten und zu konvertieren. In unserem Beispiel haben wir die Option "-s" verwendet, um die Anzahl der Tage festzulegen. Aber du kannst auch andere Zeiteinheiten wie Monate oder Jahre angeben. Weitere Informationen zu den verfügbaren Optionen findest du in der Fish Shell Dokumentation.
+```
+date -d "1 year 3 months"
+```
 
-## Siehe auch
+Dies gibt uns das aktuelle Datum plus ein Jahr und drei Monate.
 
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current)
-- [Berechnen von Differenzen zwischen zwei Daten mit Fish Shell](https://dev.to/jhermanns/berechnen-von-differenzen-zwischen-zwei-daten-mit-fish-shell-3am7)
+Zusätzlich gibt es auch die Option, ein bestimmtes Datum anhand eines festgelegten Formats zu berechnen. Zum Beispiel können wir das Datum in einer Woche im Format "Tag.Monat.Jahr" berechnen:
+
+```
+date -d "next week" +"%d.%m.%y"
+```
+
+Dies gibt uns das Datum im angegebenen Format, also zum Beispiel 12.09.19.
+
+Weitere nützliche Funktionen und Optionen für die Berechnung von Datum und Zeit findest du in der offiziellen [Fish Shell Dokumentation](https://fishshell.com/docs/current/cmds/date.html).
+
+## Tiefergehende Informationen
+
+Das Berechnen von Datum und Zeit kann auch komplexer sein, wenn zum Beispiel unterschiedliche Zeitzonen oder Schaltjahre berücksichtigt werden müssen. In solchen Fällen bietet die Fish Shell weitere Optionen, um die Berechnungen genau anzupassen.
+
+Um zum Beispiel eine andere Zeitzone zu verwenden, können wir die Option ```-u``` zusammen mit dem gewünschten Zeitzonen-Code angeben, zum Beispiel ```EST``` für die östliche Standardzeit. So können wir überprüfen, wie spät es an einem bestimmten Datum in einer anderen Zeitzone sein wird:
+
+```
+date -d "10pm next wednesday -u EST"
+```
+
+Natürlich ist es auch möglich, mit diesen Funktionen und Optionen komplexe Skripte zu schreiben, die verschiedene Berechnungen und Bedingungen beinhalten.
+
+## Sieh auch
+
+Hier sind einige weitere nützliche Ressourcen, um noch mehr über die verschiedenen Möglichkeiten der Fish Shell in Bezug auf das Berechnen von Datum und Zeit zu erfahren:
+
+- [Fish Shell Dokumentation über Date & Time](https://fishshell.com/docs/current/cmds/date.html)
+- [Fish Shell Tutorials auf Deutsch](https://www.das-labor.org/wiki/Fish_Anfänger_Tutorial)
+- [Stack Overflow Fragen zum Thema Fish Shell](https://stackoverflow.com/questions/tagged/fish)
+
+Wir hoffen, dass dieser Artikel hilfreich für dich war und wünschen dir viel Spaß beim Entdecken und Nutzen der vielfältigen Möglichkeiten der Fish Shell.

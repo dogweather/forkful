@@ -1,54 +1,35 @@
 ---
-title:    "TypeScript: 「デバッグ出力の印刷」"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/printing-debug-output.md"
+title:                "TypeScript: デバッグ出力の印刷"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-デバッグのためにデバッグ出力をプリントする必要があるか簡単に説明します。
+デバッグ出力をプリントすることで、失敗したテストや問題の特定に役立ちます。また、コードの特定の部分の実行を追跡することもできます。
 
-デバッグ出力をプリントすると、コードが実行されるときに何が起こっているのかをより詳細に知ることができます。これにより、問題箇所を特定し、修正するのに役立ちます。
+## 方法
 
-## やり方
-
-```TypeScript
-console.log("こんにちは、世界！");
-
-// 出力: こんにちは、世界！
-```
-
-デバッグ出力をプリントするには、`console.log()`メソッドを使用します。これは、コンソールに任意の値を出力するために使用されます。上記の例では、文字列「こんにちは、世界！」がコンソールにプリントされます。
-
-また、`console.log()`メソッドを使用して、変数の値や関数の戻り値を確認することもできます。
+デバッグ出力をプリントするには、`console.log()`メソッドを使用します。例えば、以下のように使用することができます。
 
 ```TypeScript
-let num = 10;
-console.log(num); 
-
-// 出力: 10
-
-function add(a: number, b: number) {
-  return a + b;
-}
-
-console.log(add(5, 3));
-
-// 出力: 8
+const name = "John";
+console.log("Hello, " + name);
 ```
 
-## ディープダイブ
+このコードを実行すると、コンソールに「Hello, John」という出力が表示されます。
 
-コンソールに出力される内容は、ブラウザの開発者ツールのコンソールタブに表示されます。ここには、コードを実行する際に生成されたエラーや警告も表示されます。また、`console.log()`メソッド以外にも、`console.error()`や`console.warn()`などのメソッドを使用して、より重要な情報を表示することもできます。
+## 深堀り
 
-厳密なデータ型を使用している場合、デバッグ出力において重要な情報を失わないために、`console.log()`の代わりに`console.info()`メソッドを使用することもできます。
+デバッグ出力をプリントすることで、コードの実行や処理の流れをより詳細に把握することができます。また、`console.log()`メソッドはオブジェクトや配列などの複雑なデータ型も表示することができるため、デバッグの際に有用です。
 
-さらに、`console.group()`と`console.groupEnd()`メソッドを使用して、出力をグループ化することができます。この機能は、複雑なコードのデバッグ時に特に役立ちます。
+## 参考リンク
 
-## 他に見るもの
+![See Also](https://i.imgur.com/CmDbfZq.png)
 
-- [TypeScript 公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [TypeScript チュートリアル (日本語訳)](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [TypeScript ブログ](https://devblogs.microsoft.com/typescript/)
+- [TypeScript 公式ドキュメントのconsole.log()メソッドの説明](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html)
+- [MDN web docsのconsole.log()メソッドの説明](https://developer.mozilla.org/ja/docs/Web/API/Console/log)
+- [TypeScriptでデバッグ出力をプリントする方法](https://www.codingdojo.com/blog/how-to-debug-typescript-code/)

@@ -1,65 +1,42 @@
 ---
-title:    "Fish Shell: 「文字列を小文字に変換する」"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/converting-a-string-to-lower-case.md"
+title:                "Fish Shell: 「文字列を小文字に変換する」"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-文字列を小文字に変換することについて、なぜ取り組む必要があるのか、1-2文で説明します。
+文字列を小文字に変換することの利点は何でしょうか？一般的に、文字列を小文字に変換することはプログラムの標準形式にすることができるため、データの整形や検索などの処理をしやすくなります。
 
-## 方法
+## 使い方
 
-```Fish Shell```を使ったコーディング例と出力のサンプルを、コードブロックで示します。
-
-```fish
-# 文字列を小文字に変換する方法
-set str "FISH SHELL"
-echo "変換前の文字列: $str"
-set lower (string tolower $str)
-echo "変換後の文字列: $lower"
+```Fish Shell
+set string "Hi, My Name is John."  
+echo $string | tr '[:upper:]' '[:lower:]'
 ```
 
-出力:
+出力： hi, my name is john.
 
-```
-変換前の文字列: FISH SHELL
-変換後の文字列: fish shell
-```
+`tr`コマンドは、テキストの変換を行うコマンドです。引数に`[:upper:]`と`[:lower:]`を指定することで、大文字を小文字に変換することができます。このコマンドを利用することで、簡単に文字列を小文字に変換することができます。
 
-## ディープダイブ
+## 深堀り
 
-文字列を小文字に変換する上で、深く掘り下げた情報を紹介します。この方法は、文字列処理やデータの整形に使われることが多く、特定の文字の大文字小文字を無視して処理する際にも便利です。
+文字列を小文字に変換する方法は、プログラミング言語によって異なりますが、Fish Shellでは`tr`コマンドを使うことができます。これはUNIX系のオペレーティングシステムでよく使われるコマンドで、実際には文字の置換を行うコマンドです。`tr`コマンドの詳細については、[公式ドキュメント](https://fishshell.com/docs/current/cmds/tr.html)を参照してください。
 
-例えば、```fish```という文字列を検索する場合、以下のように大文字小文字を無視して処理することができます。
+さらに、Fish Shellでは`string`コマンドを使うことでも文字列を小文字に変換することができます。こちらは、文字列を変数として定義し、`string`コマンドを利用して変換を行います。詳細な使い方については、[公式ドキュメント](https://fishshell.com/docs/current/cmds/string.html)を参照してください。
 
-```fish
-# 大文字小文字を無視して検索する方法
-set str "FISH SHELL"
-set search "fish"
-if string contains -i $str $search
-    echo "$str には $search が含まれています。"
-end
-```
+## 併せて読みたい
 
-出力:
+- [Fish Shell Quickstart](https://fishshell.com/docs/current/tutorial.html)
+- [UNIXコマンドの基本](https://qiita.com/take-yan/items/5b9a91c5fca9dce210bb)
+- [文字列の置換をするコマンドの使い方](https://qiita.com/take-yan/items/09bed116928c42775ca7)
 
-```
-FISH SHELL には fish が含まれています。
-```
+より詳細な内容については、上記リンクを参照してください。
 
-このように、文字列を小文字に変換することで、柔軟に文字列の処理ができるようになります。
+## 参考文献
 
-## 参考リンク
-
-- [Fish Shell - The friendly interactive shell](https://fishshell.com/)
-- [Fish Shell Tutorial](https://www.hostinger.com/tutorials/fish-shell)
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [String manipulation in Fish Shell](https://stackoverflow.com/questions/19482125/string-manipulation-in-fish-shell)
-- [Fish Shell Tips and Tricks](https://medium.com/@weblate/fish-shell-tips-and-tricks-4662fa441f9e)
-
-## 参考になるリンク
-
-[さらに読み込み]
+- [公式ドキュメント](https://fishshell.com/docs/current/index.html)
+- [Tutorial for Unix Commands](http://www.electronics.dit.ie/staff/tscarff/using_unix_commands.html)

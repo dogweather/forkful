@@ -1,51 +1,88 @@
 ---
-title:    "Ruby: 打印调试输出"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/printing-debug-output.md"
+title:                "Ruby: 打印调试输出"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么要打印调试输出？
 
-打印调试输出是在Ruby编程中重要的一部分。当您在编写代码时，有时候需要查看变量的值或程序的执行流程，以便更好地理解代码，发现潜在的错误。因此，打印调试输出可以帮助您更有效地调试和排除错误。
+在编程中，我们经常会遇到一些bug或者错误，而在找出问题所在时，打印调试输出是非常有用的工具。通过打印出变量的值、条件判断的结果等信息，可以帮助我们更轻松地定位问题并进行调试。
 
-## 如何做到
-
-打印调试输出可以通过简单的puts语句来实现。例如：
+如何打印调试输出：
 
 ```Ruby
-x = 5
-puts "The value of x is #{x}"
+# 创建一个变量
+name = "John"
+age = 25
+
+# 打印变量的值
+puts name
+puts age
+
+# 打印条件判断的结果
+if age > 18
+  puts "Adult"
+else
+  puts "Minor"
+end
 ```
 
-这将输出类似于：“The value of x is 5”的内容。您还可以打印复杂的变量或表达式，例如：
+输出结果：
 
 ```Ruby
-array = [1, 2, 3]
-puts "The sum of the array is #{array.sum}"
+John
+25
+Adult
 ```
 
-这将输出类似于：“The sum of the array is 6”的内容。您还可以使用p语句来打印带有数据结构的变量，例如：
+深入了解打印调试输出：
+
+除了简单地打印变量的值和条件判断的结果，我们还可以通过格式化输出，使调试信息更有用。例如，可以使用`p`方法而不是`puts`来打印变量的值，这样可以直接将变量的类型和值一起输出。我们还可以在输出的信息中添加一些标识符，以便更容易区分不同的输出。
 
 ```Ruby
-hash = { a: 1, b: 2, c: 3 }
-p hash
+# 使用p方法打印变量的值
+p name
+p age
+
+# 添加标识符
+p "Name: #{name}"
+p "Age: #{age}"
 ```
 
-这将输出类似于："{:a=>1, :b=>2, :c=>3}"的内容。请注意，使用p语句将打印出Ruby对象的详细信息，而不仅仅是它们的值。
+输出结果：
 
-## 深入了解
+```Ruby
+"John"
+25
+"Name: John"
+"Age: 25"
+```
 
-除了使用puts和p语句外，您还可以使用其他调试工具来打印输出。例如，您可以使用byebug gem来设置断点并跟踪程序的执行流程。您还可以使用pry gem来进入一个交互式调试会话，从而可以在运行时检查变量的值。
+另外，我们也可以使用调试工具来打印调试输出，例如pry或byebug。这些工具可以让我们在程序执行过程中暂停并检查变量的值，帮助我们更深入地了解程序的执行流程。
 
-另一种打印调试输出的方式是使用logger类。您可以通过创建一个logger实例来打印不同级别的调试日志，并在程序的不同部分使用它来跟踪程序的执行流程。
+总结：
 
-## 参考
+打印调试输出是一种简单但非常有效的调试工具，它可以帮助我们定位bug并了解程序的执行过程。通过格式化输出和使用调试工具，我们可以让调试信息更加有用，提高调试效率。
 
-在开始打印调试输出之前，您可以先阅读以下官方文档来了解更多信息：
+参考链接：
 
-- [Ruby文档：Kernel模块](https://ruby-doc.org/core-2.7.1/Kernel.html)
-- [byebug gem官方文档](https://github.com/deivid-rodriguez/byebug)
-- [pry gem官方文档](https://github.com/pry/pry)
-- [logger类官方文档](https://ruby-doc.org/stdlib-2.7.1/libdoc/logger/rdoc/Logger.html)
+- [Ruby方法文档-p](https://ruby-doc.org/core-2.6.3/Kernel.html#method-i-p)
+- [Pry调试工具](https://github.com/pry/pry)
+- [Byebug调试工具](https://github.com/deivid-rodriguez/byebug)
+
+相关阅读：
+
+- [Ruby调试技巧](https://www.sitepoint.com/debugging-ruby-primer/)
+- [Ruby调试工具比较](https://medium.com/@shanebdavis/ruby-debugging-tools-compared-141b8c3fa8dc)
+
+请参阅：
+
+[相关链接]：- [Ruby方法文档-p]（https://ruby-doc.org/core-2.6.3/Kernel.html＃method-i-p）
+- [Pry调试工具]（https://github.com/pry/pry）
+- [Byebug调试工具]（https://github.com/deivid-rodriguez/byebug）
+
+[相关阅读]：- [Ruby调试技巧]（https://www.sitepoint.com/debugging-ruby-primer/）
+- [Ruby调试工具比较]（https://medium.com/@shanebdavis/ruby-debugging-tools-compared-141b8c3fa8dc）

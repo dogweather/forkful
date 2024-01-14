@@ -1,39 +1,42 @@
 ---
-title:    "Clojure: Å bruke regulære uttrykk"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/using-regular-expressions.md"
+title:                "Clojure: Å bruke regulære uttrykk"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvorfor bruke regulære uttrykk i Clojure? Regulære uttrykk er en svært kraftig funksjon i Clojure som gjør det mulig å søke eller manipulere tekst på en enkel og effektiv måte. Enten du jobber med dataanalyse, tekstbehandling eller webutvikling, vil du ha nytte av å lære hvordan du bruker regulære uttrykk i Clojure.
+Å bruke regulære uttrykk er en kraftig måte å søke og manipulere tekst på i Clojure. Det kan hjelpe deg med å finne spesifikke mønstre i en tekst, erstatte deler av en streng eller validere data. Regulære uttrykk kan også brukes i ulike programmeringsspråk og tekstbehandlingsprogrammer, så det er en nyttig ferdighet å ha.
 
-# Slik gjør du det
+## Hvordan
 
-Å lære seg å bruke regulære uttrykk i Clojure kan virke skremmende ved første øyekast, men med litt øvelse vil du raskt få taket på det. La oss se på et eksempel der vi skal finne alle telefonnumre i en tekst:
-
-```Clojure
-(def tekst "Jeg kan nås på 12345678 eller 98765432")
-(re-find #"[0-9]+" tekst)
-```
-
-I dette eksempelet definerer vi en tekststreng og bruker deretter funksjonen `re-find` sammen med regulært uttrykk #"[0-9]+" for å finne alle tallsekvenser i teksten. Resultatet vi får er "12345678", det første telefonnummeret som matcher mønsteret vårt.
-
-Men hva om vi ønsker å finne både tall og bokstaver i teksten? Da må vi utvide vårt regulære uttrykk til å inkludere både tall og bokstaver:
+For å bruke regulære uttrykk i Clojure bruker vi funksjonene `re-seq` og `re-find`. `re-seq` returnerer en sekvens av treff for et gitt uttrykk, mens `re-find` returnerer det første treffet som en streng. La oss se på et eksempel der vi bruker regulære uttrykk til å finne alle ord som begynner med en stor bokstav i en tekst.
 
 ```Clojure
-(re-find #"[a-zA-Z0-9]+" tekst)
+(def tekst "Dette er en tekst med noen store bokstaver.")
+
+(re-seq #"[A-Z][a-z]*" tekst)
+;; => ("Dette" "tekst" "store" "bokstaver")
+
+(re-find #"[A-Z][a-z]*" tekst)
+;; => "Dette"
 ```
 
-Dette vil gi oss resultatet "Jegkanås" og "98765432". Som du kan se, er det viktig å være presis med hva du ønsker å finne med regulære uttrykk.
+I eksempelet bruker vi `re-seq` for å finne alle ord som starter med en stor bokstav og `re-find` for å finne det første ordet som gjør det. Vi bruker også regulære uttrykk for å spesifisere mønsteret vi søker etter, i dette tilfellet et ord som starter med en stor bokstav og har en eller flere små bokstaver etter det.
 
-# Dypdykk
+## Dypdykk
 
-Hvis du ønsker å lære mer om hvordan du bruker regulære uttrykk i Clojure, kan du sjekke ut dokumentasjonen for Clojure-regex-biblioteket og få mer informasjon om hvilke funksjoner du kan bruke for å søke og manipulere tekst. Du kan også øke dine ferdigheter ved å utforske ulike typer regulære uttrykk og se hvordan de fungerer.
+Regulære uttrykk kan være komplekse og vanskelige å lære, men de kan være utrolig nyttige når du blir komfortabel med dem. Hvis du ønsker å lære mer, anbefaler vi å se på følgende ressurser:
 
-# Se også
+- **Mastering Regular Expressions**: en omfattende bok om regulære uttrykk som dekker alt fra de grunnleggende til avanserte teknikker.
+- **RegexOne**: en interaktiv nettside som lærer deg regulære uttrykk ved å løse forskjellige oppgaver.
+- **ClojureDocs**: en samling av Clojure-dokumentasjon som inkluderer informasjon om regulære uttrykk og relaterte funksjoner.
 
-- [Clojure-regex dokumentasjon](https://clojure.github.io/clojure.contrib/regex-api.html)
-- [Clojure regex-hjelp](https://juxt.pro/blog/clojure-regex-guide.html)
+## Se også
+
+- [Mastering Regular Expressions](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)
+- [RegexOne](https://regexone.com/)
+- [ClojureDocs](https://clojuredocs.org/)

@@ -1,42 +1,68 @@
 ---
-title:    "Java: Få aktuellt datum"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/getting-the-current-date.md"
+title:                "Java: Att få den aktuella datumen"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Det finns många anledningar till varför man skulle vilja få den nuvarande datumet i en Java-applikation. Det kan vara för att skriva ut det på en användargränssnitt, spara det i en databas eller använda det för att utföra vissa beräkningar. Oavsett vilken anledning som finns, är det en viktig del av många programmeringsuppgifter.
 
-## Hur man gör det
-För att få den nuvarande datumet i Java, kan man använda sig av klassen "LocalDate". Detta är en del av "java.time" biblioteket som introducerades i Java 8. Genom att skapa en instans av detta objekt, kan man få tillgång till olika metoder för att hämta datumet, månaden, året osv. Här är ett enkelt exempel:
+Att få den nuvarande datumet är en vanlig uppgift inom programmering, oavsett om man skapar en kalenderapplikation eller behöver logga när en viss händelse inträffade. Genom att lära sig hur man kan hämta den aktuella datumet i Java kan man enkelt lägga till denna funktionalitet i sitt program.
 
-```Java
-LocalDate currentDate = LocalDate.now();
-System.out.println("Idag är det " + currentDate);
-```
-Output: Idag är det 2021-03-04
+## Så här gör du
 
-Det är också möjligt att formatera datumet enligt ens preferenser med hjälp av "DateTimeFormatter" klassen. Till exempel kan man skriva om det föregående exemplet för att få en mer läsbar output:
+Att få den nuvarande datumet i Java är en enkel process. Du behöver bara använda klassen `Date` och dess metod `toString()` för att få det aktuella datumet. Här är ett exempel på kod som visar hur man kan göra det:
 
 ```Java
-LocalDate currentDate = LocalDate.now();
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
-String formattedDate = currentDate.format(formatter);
-System.out.println("Idag är det " + formattedDate);
+// Importera Date-klassen
+import java.util.Date;
+
+// Hämta aktuellt datum och spara i en Date-variabel
+Date nuvarandeDatum = new Date();
+
+// Använd toString() för att konvertera datumet till en textsträng
+String datumText = nuvarandeDatum.toString();
+
+// Skriv ut resultatet
+System.out.println("Nuvarande datum är: " + datumText);
 ```
-Output: Idag är det 04 Mar 2021
 
-## Djupdykning
-För de som är intresserade av en djupare förståelse för hur Java hanterar datum och tider, finns det flera andra klasser och metoder som kan användas. Till exempel kan man använda "LocalDateTime" för att få tiden också, eller "ZonedDateTime" för att hantera tidszoner. Det finns också olika metoder för att jämföra datum och tider, beräkna skillnader mellan dem och mycket mer.
+#### Resultat:
+Nuvarande datum är: Sat May 08 19:17:22 CEST 2021
 
-Det är också viktigt att notera att "LocalDate" klassen inte är trådsäker, vilket betyder att den inte lämpar sig för flertrådiga applikationer där flera trådar kan försöka ändra datumet samtidigt. I sådana fall bör man använda sig av "Instant" eller "Calendar" klasserna som har inbyggd trådsäkerhet.
+Som du kan se är det inte svårt att få det aktuella datumet i Java. Om du vill kan du också formatera utskriften för att visa datumet på ett mer läsbart sätt. Du kan till exempel använda klassen `SimpleDateFormat` för att välja ett visst datumformat. Här är ett exempel på hur du kan göra det:
 
-## Se även
-Här är några användbara resurser för att lära sig mer om Java och hantering av datum och tider:
-- Officiell Java-dokumentation för "java.time" biblioteket: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Java Tutorials - Date Time API: https://docs.oracle.com/javase/tutorial/datetime/index.html
-- JournalDev - Java Date Time API: https://www.journaldev.com/2800/java-8-date-localdate-localdatetime-instant
+```Java
+// Importera Date- och SimpleDateFormat-klasserna
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
-Hoppas detta har varit en hjälpsam introduktion till hur man får den nuvarande datumet i Java. Lycka till med dina programmeringsprojekt!
+// Hämta aktuellt datum och spara i en Date-variabel
+Date nuvarandeDatum = new Date();
+
+// Använd SimpleDateFormat för att välja datumformat
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+
+// Använd formateratDatum för att få datumet i rätt format
+String formateratDatum = sdf.format(nuvarandeDatum);
+
+// Skriv ut resultatet
+System.out.println("Nuvarande datum är: " + formateratDatum);
+```
+
+#### Resultat:
+Nuvarande datum är: 2021/05/08
+
+## Deep Dive
+
+Förutom att få det aktuella datumet finns det en mängd andra saker du kan göra med Date-klassen i Java. Du kan till exempel jämföra datum, få ut specifika delar av datumet (som dag, månad och år) och även skapa nya datum baserat på ett visst antal dagar från ett given datum. Det finns också andra klasser som `Calendar` och `LocalDate` som kan vara användbara om du behöver hantera datum på ett mer avancerat sätt.
+
+## See Also
+
+För mer information om vad man kan göra med datum i Java, kolla in dessa resurser:
+
+- [Java Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Java SimpleDateFormat Class](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Comparing Dates in Java](https://www.baeldung.com/java-date-compare)

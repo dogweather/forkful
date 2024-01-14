@@ -1,79 +1,51 @@
 ---
-title:    "Clojure recipe: Reading command line arguments"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/reading-command-line-arguments.md"
+title:                "Clojure recipe: Reading command line arguments"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As a beginner in Clojure, understanding how to read command line arguments is an essential skill for developing command line applications. Knowing how to access and manipulate these arguments can greatly improve the functionality and flexibility of your programs.
+If you're a developer working with Clojure, you may already be familiar with the power and flexibility of the language. But what about when it comes to handling command line arguments? Understanding how to read and use these arguments can greatly enhance your programming skills and make your applications more versatile. In this blog post, we'll dive into the world of command line arguments in Clojure and explore why they are important for any developer.
 
-## How To 
+## How To
 
-To start off, let's take a look at a basic Clojure program that reads command line arguments and prints them out. Open up your preferred command line interface and type in the following commands:
+Reading command line arguments in Clojure is a straightforward process. First, you'll need to import the `clojure.java.io` and `clojure.string` libraries. Then, you can use the `command-line-args` function to retrieve a list of all the command line arguments passed in when your program is executed. Let's take a look at an example:
 
-```
-Clojure -M -e "(println *command-line-args*)"
-```
+```Clojure
+(require '[clojure.java.io :as io])
+(import 'java.io.File)
+(use '[clojure.string :only [join]])
 
-Press enter and you should see an output that looks something like this:
-
-```
-["-M" "-eval" "(println *command-line-args*)"]
-```
-
-What this does is it prints out the arguments that were passed in when running the program. In this case, we passed in the -M flag which tells Clojure to load modules before executing the program. This is why we see it as the first argument followed by the -eval flag and the code to be evaluated.
-
-But what if we want to do more than just print out the arguments? We can use the "get" function to access a specific argument at a particular index. Let's take a look at an example:
-
-```
-Clojure -M -e "(println (get *command-line-args* 2))"
+(def input-file (File. (first (command-line-args))))
+(def lines (io/reader input-file))
+(def content (join ", " (line-seq lines)))
+(println content)
 ```
 
-Here, we are telling Clojure to print out the argument at index 2, which in this case is the code to be evaluated. The output should be:
+In this example, we first import the necessary libraries and then use `command-line-args` to retrieve the first argument, which will be the input file that we want to read. We then use `io/reader` to convert the file into a sequence of lines, and finally use `join` to combine the lines into a single string. Finally, we print out the content of the file.
 
-```
-"(println *command-line-args*)"
-```
-
-Now, let's dive deeper into reading command line arguments.
+If we execute this program with the command `java -cp "myprogram.jar" input.txt`, we will see the contents of the input file printed out to the console.
 
 ## Deep Dive
 
-In addition to using the "get" function, we can also use the "nth" function to access a specific argument at an index. This is helpful when you have a larger number of arguments and need to access a specific one without counting them manually.
+Now that we've gone over the basics of reading command line arguments in Clojure, let's take a deeper dive into how these arguments are actually passed in and how we can access them.
 
-```
-Clojure -M -e "(println (nth *command-line-args* 1))"
-```
+When running a program from the command line, arguments are passed in after the program name. This is known as the "args" vector. For example, if we run `java -cp "myprogram.jar" input.txt`, the args vector will contain `["input.txt"]`. We can access these arguments using the `command-line-args` function as shown in the example above.
 
-In this example, we are printing out the argument at index 1, which in this case is the -eval flag. The output should be:
+It is important to note that command line arguments are always passed in as strings. So if you want to use the arguments as numbers or booleans, you will need to convert them using functions such as `Integer/parseInt` or `Boolean/parseBoolean`.
 
-```
-"-eval"
-```
-
-Another useful function for reading command line arguments is the "subs" function. This allows us to extract a substring from a larger string, which can be helpful if our arguments include words or phrases. Let's take a look:
-
-```
-Clojure -M -e "(println (subs (nth *command-line-args* 0) 1 3))"
-```
-
-Here, we are printing out a substring of the first argument, starting at index 1 and ending at index 3. The output should be:
-
-```
-"-M"
-```
-
-By utilizing these functions, we can easily access and manipulate command line arguments to improve the functionality of our programs.
+Additionally, we can pass in multiple arguments separated by spaces. These arguments will then be stored in the args vector as separate strings, allowing us to access and use them individually in our program.
 
 ## See Also
 
-To learn more about Clojure and its functions, check out these helpful resources:
+Now that you have a better understanding of how to read command line arguments in Clojure, here are some additional resources that you may find helpful:
 
-- [Official Clojure website](https://clojure.org)
-- [Clojure cheat sheet](https://clojure.org/api/cheatsheet)
-- [Clojure for the Brave and True](https://www.braveclojure.com)
+- [ClojureDocs: command-line-args function](https://clojuredocs.org/clojure.java.io/command-line-args)
+- [Official Clojure documentation on I/O](https://clojure.org/reference/io)
+- [Article on manipulating strings in Clojure](https://www.baeldung.com/clojure-string-manipulation)
 
 Happy coding!

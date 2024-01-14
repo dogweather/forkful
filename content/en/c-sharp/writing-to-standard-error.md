@@ -1,63 +1,44 @@
 ---
-title:    "C# recipe: Writing to standard error"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/writing-to-standard-error.md"
+title:                "C# recipe: Writing to standard error"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-As a programmer, you may have encountered errors while running your code. These errors can be helpful in troubleshooting and debugging, but they can also be quite frustrating. That's where standard error comes in. Writing to standard error allows you to specifically display error messages, making it easier to identify and address any issues in your code.
+Writing to the standard error in C# may seem like a small aspect of programming, but it can be incredibly useful in certain situations. Standard error, also known as stderr, is a stream used to display error messages from a program. By utilizing this feature, you can easily differentiate between normal output and error messages, making it easier to debug code and troubleshoot issues.
 
 ## How To
+To write to standard error in C#, we first need to understand the Stream class. Streams are used to read or write data to different sources, such as files or network connections. In this case, we will be using the standard error stream, which is represented by the "Console.Error" property.
 
-To write to standard error in C#, you will need to use the `Console` class and its `Error` property. This property allows you to write to the standard error stream rather than the standard output stream. Let's take a look at some code examples:
+To write to the standard error, we can use the "Write" or "WriteLine" methods from the "Console" class, passing in the string we want to output. For example:
 
-```
-using System;
-
-// Direct output to standard error
-Console.Error.WriteLine("Oops, something went wrong!");
-```
-
-In this first example, we use the `Error` property to write a string to the standard error stream. This will display the string on the console with a red font, indicating that it is an error message.
-
-```
-using System;
-
-// Demonstrating a divide by zero error 
-int num = 10;
-int div = 0;
-
-// Direct output to standard error
-Console.Error.WriteLine("Attempting division...");
-Console.Error.WriteLine("Result: " + (num / div));
+```C#
+string error = "This is an error message"; //create error message
+Console.Error.WriteLine(error); //write error message to stderr
 ```
 
-In this next example, we intentionally divide by zero to generate an error. By using `Console.Error`, we can output a message before the error occurs, helping us to better understand the context of the error.
+This will display the "This is an error message" string in the console, with a red color to differentiate it from normal output. We can also use formatting to make the error message more informative, such as adding variable values to the string.
 
-The output for both of these examples would look like this in a console:
-
-```
-Oops, something went wrong!
-Attempting division...
-Unhandled exception. System.DivideByZeroException: Attempted to divide by zero.
-   at Program.Main()
+```C#
+int number = 5; //create a variable
+string error = $"Variable value is {number}"; //create error message with variable value
+Console.Error.WriteLine(error); //write error message to stderr
 ```
 
-As you can see, using `Console.Error.WriteLine()` allows us to write to the standard error stream and provide additional information about the error.
+The output of this code would be "Variable value is 5" in red. This is especially useful when dealing with complex error messages or multiple variables.
 
 ## Deep Dive
+While writing to standard error may seem straightforward, there are a few things to keep in mind. First, it is important to note that the standard error stream is only used for error messages, not warnings or general output. This is to maintain the distinction between normal and error messages.
 
-When writing to standard error, it is important to consider the difference between the standard output and standard error streams. The standard output stream is meant for regular program output, while the standard error stream is specifically for error messages.
+Additionally, when writing to standard error, the error message will appear in the console, but it will also be logged to any logging mechanisms being used for the program. This will make it easier to track and analyze errors later on.
 
-Additionally, it is worth noting that you can redirect the standard error stream to a file rather than displaying it on the console. This can be helpful in situations where you need to save and analyze error messages.
+Finally, it is good practice to always include informative and specific error messages when writing to standard error. This will make debugging and troubleshooting much easier, as well as providing helpful information for end-users if they encounter errors.
 
 ## See Also
-
-- [C# Console Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netcore-3.1)
-- [C# Error Messages Tutorial](https://www.tutorialspoint.com/cplusplus/cpp_error_handling.htm)
-- [Redirecting Standard Error Stream in C#](https://www.dotnetperls.com/redirectstandarderror)
-
-Writing to standard error may seem like a small and simple concept, but it can greatly improve your debugging process. By using the `Console.Error` property, you can easily differentiate between regular program output and error messages, making troubleshooting and fixing errors much easier. Happy coding!
+For more information on streams and writing to different outputs, check out the following links:
+- [Stream Class - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream)
+- [Console Class - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.console)
+- [Logging in C# - C# Station](http://csharpstation.com/TextFiles/Logging.aspx)

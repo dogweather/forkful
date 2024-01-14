@@ -1,61 +1,54 @@
 ---
-title:    "C++: 두 날짜 비교하기"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/comparing-two-dates.md"
+title:                "C++: 두 날짜 비교하기"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+두 날짜를 비교하는 것에 관심을 가져야 할까요? 날짜는 컴퓨터 과학에서 매우 중요한 역할을 합니다. 예를 들어, 날짜를 기준으로 일정한 기간을 지정하기 위해 날짜를 사용합니다. 따라서 날짜를 비교하는 것은 매우 유용한 프로그래밍 기술입니다.
 
-날짜 두 개를 비교하는 것의 장단점에 대해 알아보기 위해 이 포스트를 읽으시는 독자들은 필요한 경우 프로그램에서 날짜를 비교해야할 때가 있을 것입니다.
-
-## 어떻게
-
-날짜를 비교하는 데에는 여러 가지 방법이 있지만, 이 포스트에서는 C++에서 가장 간단하게 사용할 수 있는 방법을 알려드리겠습니다. 아래 코드 예제를 통해 날짜를 조작하는 방법을 자세하게 알아보세요.
+## 방법
+아래에는 C ++로 두 날짜를 비교하는 방법과 샘플 출력이 포함 된 코딩 예제가 있습니다.
 
 ```C++
 #include <iostream>
-#include <ctime>
+using namespace std;
 
-int main() {
-  //날짜를 비교할 두 변수를 선언합니다.
-  // 구조체 tm은 time.h 라이브러리에 정의되어 있습니다.
-  struct tm date1 = {0, 0, 0, 1, 0, 2021 - 1900};  //2021년 1월 1일
-  struct tm date2 = {0, 0, 0, 15, 0, 2021 - 1900}; //2021년 1월 15일
+int main(){
+    // 날짜를 변수로 저장합니다.
+    int date1 = 20211112;
+    int date2 = 20200601;
 
-  // mktime 함수를 사용하여 날짜를 time_t 형식으로 변환합니다.
-  // time_t는 1970년 1월 1일 이후로 경과한 시간을 초로 나타내는 정수형입니다.
-  // 여기서는 비교를 위해 date1, date2를 모두 같은 시간으로 설정합니다.
-  time_t t1 = mktime(&date1);
-  time_t t2 = mktime(&date2);
+    // 두 날짜를 비교합니다.
+    if(date1 > date2){
+        cout << "두 번째 날짜가 첫 번째 날짜보다 이전입니다.";
+    } else if(date1 < date2){
+        cout << "첫 번째 날짜가 두 번째 날짜보다 이전입니다.";
+    } else {
+        cout << "두 날짜가 같습니다.";
+    }
 
-  // 두 날짜를 비교합니다.
-  if (difftime(t1, t2) > 0) {
-    // date1이 date2보다 더 늦은 날짜일 경우
-    std::cout << "date1 is a later date than date2" << std::endl;
-  } else if (difftime(t2, t1) > 0) {
-    // date2가 date1보다 더 늦은 날짜일 경우
-    std::cout << "date2 is a later date than date1" << std::endl;
-  } else {
-    // 두 날짜가 같은 경우
-    std::cout << "both dates are the same" << std::endl;
-  }
-
-  return 0;
+    return 0;
 }
-
-//출력결과:
-//date2 is a later date than date1
 ```
 
-위 코드를 실행하면 비교하는 두 날짜 중 더 늦은 날짜를 출력합니다. difftime() 함수를 사용하여 비교를 해주었습니다. 이 함수는 두 날짜 사이의 시간 차를 계산해주는 함수입니다.
+위 코드의 출력은 다음과 같습니다:
 
-## Deep Dive
+```
+두 번째 날짜가 첫 번째 날짜보다 이전입니다.
+```
 
-비교하는 날짜가 매우 많거나 복잡한 경우, difftime() 함수만으로는 충분하지 않을 수 있습니다. 이럴 때에는 C++에서 제공하는 다양한 날짜 비교 함수들을 적절하게 사용하면 더 세부적으로 날짜를 비교할 수 있습니다. 이러한 함수들을 활용하여 프로그램의 요구사항에 맞는 가장 최적화된 방법으로 날짜를 비교할 수 있습니다.
+위 예제에서는 날짜를 정수로 비교했지만, 실제로는 일반적으로 년, 월, 일과 같은 구성 요소를 사용하여 더 정확하게 비교하게 됩니다. 또한 프로그래머는 자신의 필요에 따라 다른 비교 연산자를 사용할 수 있습니다.
 
-## See Also
+## 깊이 파고들기
+날짜를 비교하는 방법은 프로그래밍에서 매우 유용하며, 여러 가지 방법으로 구현할 수 있습니다. 예를 들어, 두 날짜를 문자열로 변환하여 비교할 수도 있고, 년, 월, 일을 각각 변수로 사용하여 비교할 수도 있습니다. 따라서 프로그래밍에서 날짜를 비교하는 데는 정확한 방법이나 규칙이 없으며, 프로그래머가 자신의 필요에 따라 적절한 방법을 선택할 수 있습니다.
 
-- [C++에서의 날짜 비교](https://www.cplusplus.com/reference/ctime/)
-- [difftime() 함수에 대한 설명](https://www.cplusplus.com/reference/ctime/difftime/)
+## 관련 자료
+- [C++에서 두 날짜 비교하기](https://www.programiz.com/cpp-programming/datetime-comparison)
+- [C++에서 시간과 날짜 다루기](https://www.boost.org/doc/libs/1_64_0/doc/html/date_time.html)
+- [날짜와 시간을 처리하는 C++ 라이브러리](https://github.com/HowardHinnant/date)
+- [C++에서 날짜 비교하기 - 연산자 오버로딩 예제](https://stackoverflow.com/questions/16293896/comparing-dates-in-c-with-operators)
+- [ISO 8601: 날짜와 시간 표현 표준](https://en.wikipedia.org/wiki/ISO_8601)

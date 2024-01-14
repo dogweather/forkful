@@ -1,41 +1,33 @@
 ---
-title:    "Elixir: 文字列の大文字化"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/capitalizing-a-string.md"
+title:                "Elixir: 文字列の大文字化"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+# なぜ文字列の先頭を大文字にするのか
 
-文字列の大文字化を行うことの利点や重要性を知りたいですか？Elixirでの文字列処理は非常に便利です。大文字化は、データの整理や、見やすくするために活用されることがあります。
+文字列を大文字にしたい理由は様々です。例えば、ユーザー名や顧客の名前など、重要な情報を入力する際には正しい形式で入力されていることが重要です。また、出力する際にフォーマットを統一することで、見やすくしてユーザーにとって使いやすいインターフェースを提供することができます。
 
 ## 方法
 
-まずは、ElixirのString.capitalize/1関数を使い、大文字化したい文字列を引数として渡します。例えば、"elixir"という文字列を渡すと、"Elixir"という出力が得られます。
+文字列を大文字にする方法は簡単です。```String.capitalize/1```という関数を使用します。以下の例をご覧ください。
 
-```Elixir
-String.capitalize("elixir")
-> "Elixir"
+```elixir
+iex> String.capitalize("elixir")
+"Elixir" 
 ```
 
-また、String.upcase/1関数を使うことで、すべての文字を大文字にすることができます。例えば、"hello"という文字列を渡すと、"HELLO"という出力が得られます。
+このように、大文字にしたい文字列を関数に渡すだけで簡単に大文字に変換することができます。
 
-```Elixir
-String.upcase("hello")
-> "HELLO"
-```
+## 深堀り
 
-## ディープダイブ
+文字列を大文字にする方法がわかれば、次はその仕組みについて深く掘り下げてみましょう。Elixirでは、文字列に関する多くの便利な関数が組み込まれており、それらを組み合わせることでより多様な文字列操作が可能になります。まず、String.capitalize/1関数の内部では、String.capitalize/2関数が呼び出されています。この関数は内部で文字列をリストに変換し、最初の文字を大文字に変換してから再び文字列に変換しています。このように、Elixirでは文字列をリストとして扱い、それによってより柔軟な操作が可能になっています。
 
-Elixirでは、String.capitalize/1やString.upcase/1のような文字列処理を行う関数が多く提供されています。これらの関数を組み合わせることで、柔軟な文字列処理が可能です。
+## さらに参考になる情報
 
-また、Elixirでは文字列だけでなく、リストやバイナリなど様々なデータ型の処理も行うことができます。さらにパターンマッチングや関数のパイプラインなどの機能を使うことで、より効率的なコードを書くことができます。
-
-## 参考リンク
-
-- [Elixir 公式ドキュメント](https://elixir-lang.org/getting-started/basic-types.html#strings)
-- [Elixir School - Strings](https://elixirschool.com/en/lessons/basics/basics/#strings)
-- [Elixirで楽しく文字列を処理しよう](https://qiita.com/hikiko_/items/8a9df2ef599014ffd848) 
-
-##参考資料
+- [ElixirのStringモジュールについて](https://elixir-lang.org/getting-started/string.html)
+- [String.capitalize/1関数のドキュメント](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [他の文字列操作について知る](https://elixir-lang.org/getting-started/strings-and-binaries.html#strings)

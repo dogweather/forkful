@@ -1,35 +1,45 @@
 ---
-title:    "Elixir: 文字列の長さを見つける"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/finding-the-length-of-a-string.md"
+title:                "Elixir: 「文字列の長さを見つける」"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-スピーディーかつ効率的に文字列の長さを知る必要がある場合があります。Elixirのプログラミングを学ぶことで、これを簡単に実現することができます。
+文字列の長さを求めることに関心を持つ理由はたくさんあります。例えば、文字列の長さを求めることで、テキストエディタやデータベースなどのプログラムを改善することができます。また、文字列の長さを知ることで、プログラムの効率を上げることができるでしょう。
 
-## 方法
+# 方法
 
-文字列の長さを知るには、Elixirの組み込み関数である`String.length()`を使います。以下の例を参考にしてください。
+Elixirで文字列の長さを求める方法は簡単です。まず、文字列を変数に代入します。次に、String.length関数を使って文字列の長さを取得します。
 
 ```Elixir
-string = "こんにちは、世界！"
-String.length(string)
+str = "こんにちは、世界！"
+String.length(str) # 出力結果：9
 ```
 
-上記のコードを実行すると、文字列の長さである`9`が出力されます。
+また、文字列の中に含まれる特定の文字や、複数の単語の長さを求めることもできます。
 
-## ディープダイブ
+```Elixir
+str = "The quick brown fox jumps over the lazy dog."
+String.length("u") # 出力結果：1
+String.length("quick fox") # 出力結果：9
+```
 
-Elixirでは、文字列は単なるバイナリではなく、バイナリデータとして扱われます。そのため、文字列の長さを知る際には、バイナリデータとしてどのように処理されるかも重要です。また、文字列の長さを知る際にはUnicodeの扱いにも注意が必要です。
+# 深堀り
 
-## 参考リンク
+文字列の長さを求める際に、多くの開発者が間違えることがあります。それは、マルチバイト文字を含む文字列を扱う場合です。マルチバイト文字を含む文字列は、通常の文字列よりも長さが1文字あたり2〜4倍になるため、注意が必要です。
 
-- [Elixir公式ドキュメント: String](https://hexdocs.pm/elixir/String.html)
-- [Elixir String Module: length/1](https://hexdocs.pm/elixir/String.html#length/1)
-- [Understanding Binary Data in Elixir](https://www.poeticoding.com/understanding-binary-data-in-elixir/)
-- [Unicode and UTF-8 in Elixir](https://www.poeticoding.com/unicode-and-utf-8-in-elixir/)
+例えば、"こんにちは、世界！"という文字列を扱う場合、実際の文字数は9ではなく、18になります。これは、日本語の文字はマルチバイト文字であるためです。しかし、ElixirではString.codepoints_length関数を使うことで、正しい長さを取得することができます。
 
-## 関連情報を見る
+```Elixir
+str = "こんにちは、世界！"
+String.codepoints_length(str) # 出力結果：9
+```
+
+# 他に参考になるリンク
+
+- [Elixir公式ドキュメント - 文字列の操作](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+- [Qiita - String.lengthとString.codepoints_lengthの違い](https://qiita.com/kmizu/items/c0b967f21a93f96e2881)

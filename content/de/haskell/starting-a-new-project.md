@@ -1,35 +1,49 @@
 ---
-title:    "Haskell: Ein neues Projekt beginnen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/starting-a-new-project.md"
+title:                "Haskell: Eine neue Aufgabe beginnen"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn du dich für Haskell interessierst und ein neues Projekt starten möchtest, bist du hier genau richtig. Haskell ist eine funktionale Programmiersprache, die für ihre klare und elegante Syntax bekannt ist. Es ist auch eine großartige Möglichkeit, deine Fähigkeiten in der Programmierung zu verbessern und ein Projekt von Grund auf aufzubauen.
+Das Erstellen eines neuen Projekts in Haskell kann sowohl für Anfänger als auch erfahrene Programmierer eine spannende Herausforderung sein. Durch die funktionale Programmierung und starke Typisierung bietet Haskell eine elegante und robuste Herangehensweise an Programmierung, die zu schnellerem und sicherem Code führt.
 
-## Wie man startet
+# Wie geht man vor?
 
-Das Starten eines Haskell-Projekts kann zunächst etwas einschüchternd erscheinen, aber mit ein wenig Übung wirst du schnell in der Lage sein, eigene Codezeilen zu schreiben. Hier ein Beispiel, wie du einen einfachen "Hello World" -Code schreiben kannst:
+Um ein neues Projekt in Haskell zu starten, gibt es einige wichtige Schritte zu beachten:
+
+1. Installiere einen Haskell Compiler (z.B. GHC) und ein Build-Tool (z.B. Cabal oder Stack).
+2. Wähle einen Projektordner und erstelle eine Datei namens "package.yaml" oder "cabal.project" mit den nötigen Informationen über dein Projekt.
+3. Erstelle eine Datei "Main.hs" in deinem Projektordner und schreibe deinen Code in diesem File.
+4. Um dein Programm auszuführen, navigiere in deinem Terminal zum Projektordner und verwende den Befehl "ghc Main.hs -o <output>". Dort wird dein Executable erstellt, das du mit dem Befehl "./<output>" ausführen kannst.
+
+Hier ist ein Beispielcode für ein einfaches "Hello World" Programm in Haskell:
 
 ```Haskell
+-- HelloWorld.hs
 main :: IO ()
-main = do
-  putStrLn "Hallo Welt"
+main = putStrLn "Hallo Welt!"
 ```
 
-Das Ergebnis dieses Codes wird "Hallo Welt" auf deinem Bildschirm ausgeben. Du kannst auch andere Funktionen und Datenstrukturen in Haskell verwenden, um dein Projekt zu gestalten.
+Die Ausgabe dieses Codes sollte "Hallo Welt!" sein.
 
-## Tiefer in die Materie eintauchen
+# Tiefere Einblicke
 
-Wenn du mehr über das Starten eines neuen Projekts in Haskell erfahren möchtest, gibt es einige wichtige Konzepte, die du berücksichtigen solltest. Zum Beispiel bietet Haskell eine starke Typisierung, was bedeutet, dass du Variablen immer explizit einen Datentyp zuweisen musst. Dies kann am Anfang einschüchternd wirken, aber es hilft dabei, klareren und fehlerfreien Code zu schreiben.
+Wenn du ein neues Projekt in Haskell startest, solltest du dich auch mit wichtigen Konzepten wie Typen, Funktionen und Monaden auseinandersetzen. Eine gründliche Kenntnis dieser Konzepte ist entscheidend für die Entwicklung von effektivem Haskell-Code.
 
-Außerdem bietet Haskell auch eine Module-Struktur, mit der du deinen Code in verschiedene Dateien aufteilen und organisieren kannst. Dies ist besonders nützlich, wenn dein Projekt größer wird und es immer schwieriger wird, den Überblick über alle Funktionen und Variablen zu behalten.
+Es ist auch hilfreich, sich mit den verschiedenen Bibliotheken und Frameworks vertraut zu machen, die in der Haskell-Community verfügbar sind. Hier sind einige nützliche Ressourcen, die dir den Einstieg erleichtern können:
 
-## Siehe auch
+- Offizielle Haskell Dokumentation: https://www.haskell.org/documentation/
+- Ein Einstiegsleitfaden zu Haskell: https://wiki.haskell.org/Learn_Haskell
+- Eine Liste mit empfohlenen Bibliotheken und Tools: https://github.com/CommercialHaskell/awesome-haskell
+- Die häufigsten Probleme bei Haskell-Projekten und ihre Lösungen: https://stackoverflow.com/questions/tagged/haskell
 
-- [Haskell Beginner's Guide](https://www.haskell.org/learn/)
-- [Official Haskell Documentation](https://haskell.org/documentation/)
-- [Haskell for Good](https://www.haskellforgood.com/de/) - eine Gemeinschaft von Haskell-Entwicklern, die sich für gemeinnützige Projekte einsetzen.
+# Siehe auch
+
+- Offizielle Haskell Dokumentation: https://www.haskell.org/documentation/
+- Eine Liste mit empfohlenen Büchern für Haskell-Programmierer: https://github.com/hauptrolle/FreeHaskellBooks/blob/master/free-programming-books-de-de.md#haskell
+
+Ich wünsche dir viel Spaß beim Entdecken und Ausprobieren von Haskell!

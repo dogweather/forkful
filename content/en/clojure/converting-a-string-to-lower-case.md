@@ -1,53 +1,44 @@
 ---
-title:    "Clojure recipe: Converting a string to lower case"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/converting-a-string-to-lower-case.md"
+title:                "Clojure recipe: Converting a string to lower case"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Converting a string to lower case may seem like a simple task, but it's an important part of data manipulation and text processing in many programming projects. By converting strings to lower case, you can ensure consistency and improve the accuracy of your text-based operations.
+Converting strings to lower case is a fundamental operation in many programming languages, including Clojure. This is useful for tasks such as comparing strings without worrying about case sensitivity and formatting data in a consistent way.
 
 ## How To
 
-To convert a string to lower case in Clojure, you can use the `clojure.string/lower-case` function. Let's take a look at some examples:
+To convert a string to lower case in Clojure, we can use the `lower-case` function. Let's look at an example:
 
 ```Clojure
-(clojure.string/lower-case "HELLO") 
+(lower-case "HELLO WORLD")
 ```
-Output: hello
+
+This code will take the input string "HELLO WORLD" and return "hello world". Pretty simple, right?
+
+Now, let's say we have a list of strings and we want to convert all of them to lower case. We can use the `map` function in conjunction with `lower-case` to achieve this. Here's an example:
 
 ```Clojure
-(clojure.string/lower-case "H@ppy Birthday") 
+(map lower-case ["CAT", "DOG", "BIRD"])
 ```
-Output: h@ppy birthday
 
-As you can see, the `lower-case` function takes in a string as an argument and returns the same string in lower case. It's that simple!
-
-If you want to convert a string to lower case within a larger code block, you can use the `str` function to concatenate the converted string with the rest of your code. For example:
-
-```Clojure
-(str "The capital of Germany is " (clojure.string/lower-case "BERLIN"))
-```
-Output: The capital of Germany is berlin
+The output of this code will be `("cat" "dog" "bird")`. Notice how each string in the list has been converted to lower case.
 
 ## Deep Dive
 
-So how does the `lower-case` function actually work? In Clojure, all strings are represented as sequences of characters. The `lower-case` function simply maps these characters to their lower case equivalents, using the `clojure.string/lower-case-table` function.
+For those interested in the technical details, the `lower-case` function in Clojure uses the Java `String` class's `toLowerCase` method under the hood. This ensures consistent behavior across different platforms and avoids any potential issues with special characters.
 
-The `lower-case-table` function contains a map of character pairs, with the uppercase character as the key and the lowercase character as the value. For example: 
-
-```Clojure
-(clojure.string/lower-case-table "A") 
-```
-Output: \a
-
-This map is used by the `lower-case` function to replace each character in the string with its lower case equivalent. However, since Clojure is an immutable language, the original string remains unchanged and a new string with the converted characters is returned.
+Additionally, it's worth noting that the `lower-case` function only works on ASCII characters. This means that converting strings with non-English characters may not produce the desired results. If you need to handle non-ASCII characters, you can use the `clojure.string/lower-case` function, which uses the Java `Locale` class to handle different language-specific cases.
 
 ## See Also
 
-- `clojure.string/lower-case` documentation: https://clojuredocs.org/clojure.string/lower-case
-- `clojure.string/lower-case-table` documentation: https://clojuredocs.org/clojure.string/lower-case-table
-- String functions in Clojure: https://clojure.org/reference/strings
+Here are some helpful resources for further reading on string manipulation in Clojure:
+
+- Official Clojure documentation for `lower-case`: https://clojuredocs.org/clojure.core/lower-case
+- Clojure Cheat Sheet: https://clojure.org/api/cheatsheet
+- Clojure String API: https://clojure.org/reference/java_interop#_strings

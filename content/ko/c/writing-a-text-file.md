@@ -1,31 +1,52 @@
 ---
-title:    "C: 텍스트 파일 쓰기"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/writing-a-text-file.md"
+title:                "C: 텍스트 파일 작성하기"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-텍스트 파일을 작성하는 이유는 데이터를 저장하고 공유하기 위함입니다.
+문자 파일을 쓰는 이유는 복잡한 데이터를 저장하고 공유하기 위함입니다.
 
-## 어떻게
+## 하는 법
 
-먼저, 새로운 파일을 열어서 `fopen()` 함수를 사용하여 파일에 대한 포인터를 만듭니다. 그리고 `fputs()` 함수를 사용하여 원하는 데이터를 파일에 입력합니다. 파일을 다 사용한 후에는 `fclose()` 함수를 사용하여 포인터를 닫아줍니다.
+아래 코드 블록을 통해 코딩 예제와 출력 결과를 확인할 수 있습니다.
 
 ```C
-FILE *fp;
-fp = fopen("example.txt", "w");
-fputs("This is an example text file.", fp);
-fclose(fp);
+#include <stdio.h>
+ 
+int main() {
+    // 파일 포인터 생성
+    FILE *fp;
+    
+    // 파일 열기
+    fp = fopen("sample.txt", "w");
+    
+    // 데이터 쓰기
+    fprintf(fp, "여러분, 안녕하세요!");
+    
+    // 파일 닫기
+    fclose(fp);
+    
+    return 0;
+}
 ```
 
-## 딥다이브
+위 코드는 "sample.txt"라는 파일을 새로 생성하고, 그 안에 "여러분, 안녕하세요!"라는 문장을 쓰는 간단한 예제입니다. 이제 해당 파일을 열어보면 정확히 입력한 문장이 저장되어 있는 것을 확인할 수 있습니다.
 
-텍스트 파일을 작성하는 것은 매우 중요합니다. 파일을 작성할 때에는 적절한 형식으로 데이터를 입력해야 합니다. 또한 파일에 대한 포인터를 올바르게 관리하여 메모리 누수를 방지해야 합니다. 이를 위해서 `fopen()` 함수에서 리턴되는 포인터를 항상 체크하고, 파일을 닫을 때에는 `fclose()` 함수를 호출하는 것이 좋습니다.
+## 깊이 파고들기
 
-## 참고
+문자 파일을 쓰는 것은 기본적으로 파일을 생성하고 그 안에 데이터를 쓰는 과정입니다. 이 과정에서 특정 오류에 대한 처리, 파일에 접근하는 방식 등 다양한 요소가 포함될 수 있습니다. 또한 파일을 읽는 방법과 비슷한 구조를 가진다는 점에서 파일 입출력에 대한 개념을 확장하는 데도 도움이 됩니다. 따라서 프로그래밍을 좀 더 깊이 이해하고 싶은 분들은 문자 파일을 쓰는 과정에 대해 더욱 자세히 공부해보시는 것도 좋은 방법입니다.
 
-- [C 파일 입출력 - KMOOC 교육자료](https://kaist.edx.kr/courses/course-v1:KAISTX+AC101x+3T2019/course/) 
-- [The C Programming Language - 브라이언 커니핸(Brian Kernighan), 데니스 리치(Dennis Ritchie)](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=45009430)
+## See Also
+
+[파일 입출력 기초 in C](https://www.geeksforgeeks.org/basics-file-handling-c/)
+
+[Writing Files in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+
+[Exploring the C file input/output library](https://www.harding.edu/fmccown/internetexplorer/cio/)
+
+감사합니다!

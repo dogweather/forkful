@@ -1,40 +1,71 @@
 ---
-title:    "Elm recipe: Writing to standard error"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/writing-to-standard-error.md"
+title:                "Elm recipe: Writing to standard error"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why Write to Standard Error?
+## Why
 
-Writing to standard error (often abbreviated as "stderr") can be a useful tool for debugging and error handling in Elm programming. By printing out specific information to the error stream, developers can gain insight into the code and diagnose issues more easily.
+Every programmer knows that debugging can be a tedious and time-consuming task. Unfortunately, even with the most thorough testing, it is inevitable to come across unexpected errors in our code. As an Elm programmer, you have probably encountered the dreaded "Red Screen of Death" at some point in your development. That's where writing to standard error comes in - it allows us to get more detailed information about the error, making debugging a lot easier.
 
-# How To Write to Standard Error in Elm
+## How To
 
-Writing to standard error in Elm is a straightforward process. The `Debug.log` function allows developers to print a message to stderr, along with any values they want to include for debugging purposes. Here's an example:
+Writing to standard error in Elm is a simple process that can save us a lot of time and effort. We can achieve this by using the `Debug.log` function, which takes in a string and any type of value we want to log. Let's take a look at an example:
 
-```elm
--- Prints "x is 10" to stderr
-Debug.log "Debugging" ("x is " ++ toString 10)
+```Elm
+square : Int -> Int
+square x = 
+  x * x
+
+main : 
+  Html msg
+main = 
+  square "10"
 ```
 
-The above code would produce the following output in the console:
+If we try to run this code, we will receive a type mismatch error. However, the error message is not very informative - it just says "Ran into a problem with the type annotation for `main`". By using `Debug.log`, we can get more information about the error:
+
+```Elm
+square : Int -> Int
+square x =
+  Debug.log "Input value:" x
+  x * x
+
+main : Html msg
+main =
+  square "10"
+```
+
+Now, when we run the code, we will get the following output in our browser console:
 
 ```
-Debugging: x is 10
+Input value: "10"
+-- TYPE MISMATCH ----------------------------------------------------- src/Main.elm
+
+The argument to function `square` is causing a mismatch.
+
+10 is an Int
+
+But the type annotation on `square` says it expects the argument to be:
+
+Int
 ```
 
-# Deep Dive into Writing to Standard Error
+This tells us exactly what the input value was and what type of value was expected, making it easier to pinpoint the issue.
 
-The `Debug.log` function takes two arguments: a message string and a value to include in the output. It then returns the value, making it easy to insert into existing code without causing side effects. This can be especially helpful when trying to track the value of a variable over multiple function calls.
+## Deep Dive
 
-Another useful function for writing to standard error in Elm is `Debug.todo`, which is used to signify that a certain part of the code is unfinished and still needs to be implemented. This can be a helpful reminder when working on a large project and allows for easy identification of incomplete tasks.
+To better understand how writing to standard error works, it's important to know a bit about console logging in JavaScript. When we use `Debug.log`, the Elm compiler will convert it to a `console.log` call in JavaScript. This means we can also use all the features available in the console, such as using different log levels or styling our output.
 
-# See Also
+Additionally, we can also use `Debug.log2`, `Debug.log3`, and so on, to log multiple values in one call. This can come in handy when we want to log a function with multiple parameters, for example.
 
-For more information on writing to standard error in Elm, check out these resources:
+## See Also
 
-- [Elm's Official Debug Module Documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [A Guide to Debugging in Elm](https://dennisreimann.de/articles/elm-debugging.html)
-- [Using Debug.log and Debug.todo in Elm](https://medium.com/@sav_ya/using-debuglog-and-debugtodo-in-elm-4829e0be3d96)
+- [Elm's Debug package documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Introduction to Console Logging in JavaScript](https://www.digitalocean.com/community/tutorials/how-to-use-console-log-in-javascript)
+- [Debugging Tips and Tricks in Elm](https://dev.to/mostran/debugging-tips-and-tricks-in-elm-1ab)
+
+By using writing to standard error in our Elm code, we can save ourselves a lot of time and frustration when it comes to debugging. So next time you encounter an error, don't forget to use `Debug.log` to get more detailed information. Happy coding!

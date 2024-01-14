@@ -1,39 +1,59 @@
 ---
-title:    "Gleam: Comparando duas datas"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/comparing-two-dates.md"
+title:                "Gleam: Comparando duas datas"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Comparar Duas Datas em Gleam?
+## Por que Comparar Duas Datas é Útil no Gleam
 
-Quando se trabalha com bancos de dados ou com dados temporais em geral, muitas vezes precisamos comparar duas datas para realizar alguma funcionalidade. Em Gleam, isso pode ser feito de forma rápida e eficiente, o que torna a linguagem uma ótima opção para trabalhar com dados temporais. Neste artigo, vamos explorar como fazer isso.
+Comparar datas é uma tarefa comum em muitos projetos de programação. No Gleam, uma linguagem de programação funcional que executa no ambiente de máquina virtual Erlang, também é possível comparar duas datas para determinar qual é a mais recente. Isso pode ser muito útil em casos como encontrar a diferença em dias entre duas datas ou criar uma funcionalidade que valide a data de expiração de um documento. Neste post, vamos explorar como comparar duas datas no Gleam.
 
 ## Como Fazer
 
-Para comparar duas datas em Gleam, precisamos primeiro converter as datas em strings e então utilizar o módulo padrão `Date` da linguagem. A seguir, temos um exemplo de código que compara duas datas e imprime o resultado:
+Abaixo, mostraremos um exemplo simples de como comparar duas datas no Gleam utilizando a função `compare` da biblioteca padrão do Gleam.
 
 ```Gleam
-import Date
+import gleam/time
 
-let data_1 = Date.format({ day: 10, month: Jan, year: 2020 })
-let data_2 = Date.format({ day: 15, month: Feb, year: 2020 })
+let hoje = time.now()
+let amanha = Time.add(hoje, 1, "day")
 
-let resultado = Date.compare(data_1, data_2)
+let diff = Time.compare(hoje, amanha)
 
-sarada.# result: :equal
+IO.print(diff) // 1
 ```
 
-Neste exemplo, utilizamos a função `format` do módulo `Date` para converter as datas em strings no formato "d/m/yyyy", que é o padrão usado em Portuguese. Em seguida, utilizamos a função `compare` para comparar as duas datas. O resultado da comparação é atribuído à variável `resultado`, que pode ser igual a `:equal` se as datas forem iguais, `:preceding` se a primeira data for anterior à segunda, ou `:successor` se a primeira data for posterior à segunda.
+No exemplo acima, estamos importando a biblioteca `gleam/time` que nos permite trabalhar com datas e tempos no Gleam. Então, definimos duas variáveis `hoje` e `amanha` que representam as datas de hoje e amanhã, respectivamente. Em seguida, usamos a função `compare` passando essas duas datas como argumentos para determinar qual é a mais recente. O valor retornado da função `compare` será um número negativo se a primeira data for mais antiga, zero se as datas forem iguais ou um número positivo se a primeira data for mais recente. No nosso exemplo, o valor retornado é 1, pois a segunda data é um dia depois da primeira data.
 
-## Mergulho Profundo
+Você também pode usar a função `diff_in_days` para encontrar a diferença em dias entre duas datas.
 
-Além de comparar as datas, o módulo `Date` também oferece outras funcionalidades importantes para trabalhar com datas em Gleam. Por exemplo, podemos usar a função `add_days` para adicionar um determinado número de dias a uma data, ou `is_leap_year` para verificar se um determinado ano é bissexto. Além disso, o módulo também possui funções para trabalhar com horários e fusos horários.
+```Gleam
+import gleam/time
+
+let agora = time.now()
+let mais_tarde = Time.add(agora, 3, "day")
+
+let diff = Time.diff_in_days(agora, mais_tarde)
+
+IO.print(diff) // 3
+```
+
+Nesse exemplo, estamos usando a função `diff_in_days` para determinar a diferença em dias entre as duas datas. O valor retornado será 3, já que a segunda data é 3 dias depois da primeira data.
+
+## Profundando
+
+Existem outras funções na biblioteca `gleam/time` que podem ser úteis ao trabalhar com datas no Gleam. Aqui estão algumas delas:
+
+- `add`: adiciona uma quantidade específica de tempo a uma data
+- `diff_in_hours`: encontra a diferença em horas entre duas datas
+- `is_after`, `is_before`, `is_same` e outras funções para comparar diretamente duas datas
+
+Essas funções, juntamente com a função `compare`, podem ser úteis em diferentes cenários em que é necessário trabalhar com datas.
 
 ## Veja Também
 
-Para mais informações sobre o módulo `Date` e outras funcionalidades da linguagem Gleam, confira os seguintes recursos:
-
-- [Documentação do módulo Date](https://gleam.run/modules/Date.html)
-- [Documentação da linguagem Gleam](https://gleam.run/docs/)
+- Documentação da Biblioteca de Datas e Tempos do Gleam: https://gleam.run/modules/time.html
+- Tutorial do Gleam sobre Trabalhando com Datas e Tempos: https://gleam.run/news/dates-and-times.html

@@ -1,46 +1,80 @@
 ---
-title:    "Swift recipe: Printing debug output"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/printing-debug-output.md"
+title:                "Swift recipe: Printing debug output"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Debug output is an essential tool for any programmer during the development process. It allows you to track the flow of your code, identify errors and troubleshoot issues more efficiently. And with Swift's print() function, printing debug output has never been easier. 
+## Why
 
-## How To 
+Debugging is an essential part of any programming language, and printing debug output is a powerful tool that can assist in the process. By printing messages or values during runtime, you can get a better understanding of what your code is doing and how it is functioning. This can be helpful in detecting and fixing errors or simply gaining a better understanding of the flow of your program.
 
-To print debug output in Swift, we use the print() function. This function takes in a value or variable as an argument and prints it to the console. Let's take a look at a simple example: 
+## How To
 
-```Swift 
-let message = "Hello, world!"
-print(message) 
+Printing debug output in Swift is a straightforward process. You can use the built-in `print()` function to output any information you want to the console. Let's take a look at some examples:
+
+```Swift
+// Printing a message
+print("Hello, world!")
+
+// Printing a variable
+let age = 25
+print("User's age is: \(age)")
+
+// Printing a boolean value
+let isStudent = true
+print("Is the user a student? \(isStudent)")
 ```
 
-In this example, we have declared a constant named "message" with a value of "Hello, world!" and then printed it using the print() function. When we run this code, the output in the console will be "Hello, world!". 
+The output for these examples would be:
 
-We can also print multiple values or variables in a single statement by separating them with a comma. For example: 
-
-```Swift 
-let name = "John"
-let age = 27
-print("My name is \(name) and I am \(age) years old.") 
+```
+Hello, world!
+User's age is: 25
+Is the user a student? true
 ```
 
-This will print out "My name is John and I am 27 years old." to the console. As you can see, we can also use string interpolation to include the values of our variables in the printed statement. 
+You can also print multiple values at once, by separating them with a comma in the `print()` function:
 
-## Deep Dive 
+```Swift
+let name = "Sara"
+let gender = "female"
+print("User's name is: \(name) and their gender is: \(gender)")
+```
 
-There are a few more things to consider when it comes to printing debug output in Swift. Firstly, we can use the terminator and separator parameters to customize the output. The terminator parameter specifies what should be printed after the value, and the separator parameter specifies what should be printed between each value. By default, both of these parameters are set to "\n" (new line). 
+The output for this example would be:
 
-We can also use the debugPrint() function, which prints a more detailed description of the value or variable we pass in. This can be useful when debugging more complex data types. 
+```
+User's name is: Sara and their gender is: female
+```
 
-Lastly, it's important to note that using print() for debug output can affect the performance of our code. This is because it has to convert the value or variable to a string before printing it. So it's best practice to remove any debug statements from our code before publishing it to production. 
+## Deep Dive
 
-## See Also 
+There are a few more things to keep in mind when printing debug output in Swift. Firstly, you can use the `separator` and `terminator` parameters in the `print()` function to customize the output. The `separator` parameter allows you to specify what character or string should be used to separate the different values, and the `terminator` parameter lets you specify what should be added at the end of the output. By default, the `separator` is a space and the `terminator` is a new line.
 
-To learn more about the print() and debugPrint() functions, check out the official Apple documentation: 
+```Swift
+let score = 85
+print("User's score is: ", score, separator: "-", terminator: "!")
+```
 
-- [print(_:separator:terminator:)](https://developer.apple.com/documentation/swift/1541053-print)
-- [debugPrint(_:separator:terminator:)](https://developer.apple.com/documentation/swift/1541130-debugprint)
+The output for this example would be:
+
+```
+User's score is: 85!
+```
+
+Another useful tip is to use the `debugPrint()` function instead of `print()`. This will print the values in a format that is more suitable for debugging purposes, making it easier to read and understand.
+
+Additionally, you can add conditions to when the debug output should be printed, using the `#if` compiler directive. This can be helpful when you only want to print output in a specific environment, such as during development or testing.
+
+## See Also
+
+For more information about printing debug output in Swift, check out the official documentation:
+
+- [Debugging in Swift](https://developer.apple.com/swift/blog/?id=16)
+- [Print function](https://developer.apple.com/documentation/swift/1541053-print)
+- [Debug Print function](https://developer.apple.com/documentation/swift/special_topics/advanced_operators/compound_assignment_operators)
+
+Happy debugging!

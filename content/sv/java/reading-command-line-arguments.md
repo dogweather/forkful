@@ -1,72 +1,58 @@
 ---
-title:    "Java: Läsning av kommandoradsargument"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/reading-command-line-arguments.md"
+title:                "Java: Läsning av kommandoradsargument"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
----
 ## Varför
 
-Att läsa in argument från kommandoraden är en vanlig uppgift inom Java-programmering. Genom att lära sig hur man gör detta kan du få en bättre förståelse för hur ditt program interagerar med användaren och hur du kan göra det mer anpassningsbart.
+Att läsa in kommandoradsargument är en viktig del av Java-programmering, eftersom det ger användarna möjlighet att ge direktiv till programmet vid körning. Det är en bra funktion som ökar programmens flexibilitet och ger en mer anpassningsbar användarupplevelse.
 
-## Hur man gör det
+## Så här gör du
 
-Att läsa in kommandoradsargument i Java är enkelt och kräver bara några få steg.
-
-Först måste du skapa ett String-objekt för att lagra argumenten. Du kan sedan använda Java-klassen Scanner för att läsa in dessa argument från kommandoraden.
-
-Här är ett kodexempel som visar hur du kan läsa in och skriva ut en enkel sträng från kommandoraden:
+Att läsa kommandoradsargument i Java kan göras med hjälp av några enkla kodrader. Först måste du använda "args" som en parameter i huvudmetoden, som visas nedan:
 
 ```Java
-import java.util.Scanner;
+public static void main(String[] args) {
 
-public class CommandLineArgumentsExample {
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Skriv in ett meddelande: ");
-        String message = scanner.nextLine();
-        System.out.println("Ditt meddelande är: " + message);
-    }
 }
 ```
 
-Om du till exempel kör detta program med argumentet "Hej!", kommer du få följande utskrift:
-
-```
-Skriv in ett meddelande: Hej!
-Ditt meddelande är: Hej!
-```
-
-Du kan också läsa in flera argument genom att använda en loop och Scanner-metoden `next()`, vilket skulle se ut så här:
+Därefter kan du använda en loop för att läsa in varje argument som skickas med vid körning:
 
 ```Java
 for (int i = 0; i < args.length; i++) {
-    String argument = scanner.next();
-    // Gör något med argumentet här
+    // Läs in varje argument
+    String argument = args[i];
+    
+    // Gör något med argumentet (ex. skriv ut det)
+    System.out.println(argument);
 }
 ```
 
-Om du vill använda argumenten som numeriska värden måste du ändra typen från String till antingen int eller double. Detta kan göras med hjälp av metoderna `Integer.parseInt()` eller `Double.parseDouble()`.
+När du skriver ut argumenten kommer du att se dem i samma ordning som de skickades in vid körning. Du kan också använda en enkel if-sats för att kolla om ett visst argument har skickats med, till exempel:
 
-## Fördjupa dig
+```Java
+if (argument.equals("-help")) {
+    // Visa hjälpmeddelande
+    System.out.println("Det här är ett hjälpmeddelande.");
+}
+```
 
-För att verkligen förstå hur kommandoradsargument fungerar är det viktigt att förstå några grundläggande koncept.
+Dessa enkla kodexempel visar hur lätt det är att läsa in och använda kommandoradsargument i Java.
 
-Först och främst är det viktigt att komma ihåg att alla kommandoradsargument är strängar, oavsett om de representerar numeriska värden eller inte. Det är därför du måste använda de nämnda metoderna för att konvertera dem till rätt typ.
+## Djupdykning
 
-Vidare kan du komma ihåg att argumenten alltid lagras i en array av strängar, där det första argumentet är på index 0, det andra på index 1 osv.
+För dem som vill ha en djupare förståelse för hur kommandoradsargument fungerar i Java, finns det flera aspekter att överväga. Till exempel är det viktigt att veta att argumenten behandlas som en strängvektor, där varje argument representeras som en egen sträng. Detta innebär att det inte finns några speciella datastrukturer för kommandoradsargument i Java.
 
-Du kan också komma ihåg att kommandoradsargumenten är skilda åt med mellanslag, så om du vill läsa in en fråga eller ett citat med flera ord behöver du använda citationstecken runt det för att det ska läsas in som en enda sträng.
+En annan viktig punkt att notera är att det inte finns någon standard för hur argumenten ska skickas in vid körning. Det kan skilja sig åt beroende på vilken kompilator som används eller vilket operativsystem som programmet körs på.
 
-Genom att förstå dessa koncept kan du läsa in och använda kommandoradsargument på ett mer effektivt och säkert sätt.
+Det är också värt att nämna att läsa in kommandoradsargument kan vara användbart för att göra enkla konfigureringar av ett program. Till exempel kan ett argument användas för att välja vilken fil som ska läsas in eller vilket alternativ som ska aktiveras i programmet.
 
----
+## Se även
 
-## Se också
-
-- [Java Scanner-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
-- [Integer-klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html)
-- [Double-klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html)
+- [Java Dokumentation: Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Java Tutorial: Reading Command Line Arguments](https://www.javatpoint.com/command-line-argument-in-java)

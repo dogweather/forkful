@@ -1,69 +1,53 @@
 ---
-title:    "Bash: Sammanslagning av strängar"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/concatenating-strings.md"
+title:                "Bash: Sammanslagning av strängar"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att sammanfoga strängar är en vanlig uppgift inom Bash-programmering. Genom att kombinera flera strängar kan vi skapa mer dynamiska och anpassade meddelanden och utdata i våra skript. Det är också ett sätt att hålla koden renare och mer lättläslig.
+Att sammanfoga strängar är en vanlig uppgift inom programmering som används för att slå ihop flera mindre strängar till en större sträng. Detta är särskilt användbart när man vill skapa dynamiska texter eller meddelanden baserat på variabler eller användarinput.
 
-## Hur man gör
+## Hur man gör det
 
-För att sammanfoga strängar i Bash använder vi oss av operatorn "+", vilket indikerar att två strängar ska kombineras. Vi kan också använda oss av metoden "printf" för att formatera och sammanfoga flera strängar.
-
-```Bash
-strang1="Hej"
-strang2="världen!"
-echo $strang1$strang2
-
-# Resultat: Hej världen!
-```
-
-Vi kan också använda oss av variabler för att sammanfoga flera strängar på ett mer dynamiskt sätt.
+För att sammanfoga strängar i Bash används operatorn `+` eller genom att använda variabler inom dubbelfnuttar `" "` för att ersätta dem med deras faktiska värden.
 
 ```Bash
-namn="Johan"
-halsning="Hej"
-echo $halsning $namn", välkommen till min blogg!"
+förnamn="Lisa"
+efternamn="Svensson"
 
-# Resultat: Hej Johan, välkommen till min blogg!
+echo "Hej $förnamn $efternamn, välkommen till min blogg!"
 ```
 
-En annan metod är att använda sig av "printf" för att ange specifika format för våra strängar.
-
-```Bash
-namn="Maria"
-echo "Välkommen %s, till vår hemsida!" | printf $namn
-
-# Resultat: Välkommen Maria, till vår hemsida!
+Output:
 ```
+Hej Lisa Svensson, välkommen till min blogg!
+```
+
+I detta exempel ersätts variablerna `$förnamn` och `$efternamn` med sina faktiska värden när de används inom dubbelfnuttar.
 
 ## Djupdykning
 
-När vi sammanfogar strängar i Bash är det viktigt att vara medveten om korrekt formatering. Till exempel, om vi vill ange citattecken i en sträng så måste vi använda en escape-sekvens för att Bash inte ska tolka dem som en del av strängen.
+När man sammanfogar strängar i Bash är det viktigt att tänka på hur variabler hanteras. Om man använder en variabel utanför dubbelfnuttar kommer den inte att ersättas med sitt faktiska värde.
 
 ```Bash
-citat="\"En vän är en som vet allt om dig och ändå tycker om dig.\""
-echo $citat
-
-# Resultat: "En vän är en som vet allt om dig och ändå tycker om dig."
+namn="Johan"
+echo 'Hej $namn'
 ```
 
-Vi kan också använda oss av funktionen "bc" för att sammanfoga strängar med matematiska operationer.
-
-```Bash
-tal1=5
-tal2=8
-echo "Resultatet är: "$tal1"+"$tal2"="$(($tal1 + $tal2))| bc
-
-# Resultat: Resultatet är: 5+8=13
+Output:
+```
+Hej $namn
 ```
 
-## Se också
+Detta beror på att variabeln inte tolkas inuti enkelfnuttar och därför kommer den inte att ersättas med sitt värde. För att undvika detta kan man antingen använda variabler inom dubbelfnuttar eller använda operatorn `+` för att sammanfoga strängar.
 
-- [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash scripting tutorial for beginners](https://www.shellscript.sh/tutorial.html)
-- [The Linux Documentation Project](https://tldp.org/)
+Det är också viktigt att notera att man inte kan sammanfoga strängar genom att använda operatorn `+` om någon av strängarna innehåller specialtecken som mellanslag eller tabbar. I sådana fall måste man använda sig av dubbelfnuttar och variabler för att ersätta dem med rätt värden.
+
+## Se även
+
+- Bash manual: [Concatenating Strings](https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html#Shell-Arithmetic)
+- Stack Overflow: [Concatenating Strings in Bash](https://stackoverflow.com/questions/1251999/how-can-i-concatenate-string-variables-in-bash)
